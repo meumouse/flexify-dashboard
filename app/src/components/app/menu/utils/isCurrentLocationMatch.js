@@ -5,8 +5,7 @@
  */
 const formatUrl = (url) => {
   if (!url) return '';
-  
-  // Check if URL contains encoded characters
+
   if (url.includes('%')) {
     try {
       return decodeURIComponent(url);
@@ -14,8 +13,39 @@ const formatUrl = (url) => {
       return url;
     }
   }
-  
+
   return url;
+};
+
+let cachedLocationKey = '';
+let cachedCurrentLocations = [];
+
+const getCurrentLocationVariations = () => {
+  const key = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+  if (key === cachedLocationKey && cachedCurrentLocations.length) {
+    return cachedCurrentLocations;
+  }
+
+  const currentLocationHref = window.location.href;
+  const currentLocationDecoded = formatUrl(currentLocationHref);
+  const currentPath = window.location.pathname + window.location.search;
+  const currentPathDecoded = formatUrl(currentPath);
+  const currentPathWithHash =
+    window.location.pathname + window.location.search + window.location.hash;
+  const currentPathWithHashDecoded = formatUrl(currentPathWithHash);
+
+  cachedLocationKey = key;
+  cachedCurrentLocations = [...new Set([
+    currentLocationHref,
+    currentLocationDecoded,
+    currentPath,
+    currentPathDecoded,
+    currentPathWithHash,
+    currentPathWithHashDecoded,
+  ])];
+
+  return cachedCurrentLocations;
 };
 
 /**
@@ -27,58 +57,27 @@ const formatUrl = (url) => {
  */
 export const isCurrentLocationMatch = (linkUrl) => {
   if (!linkUrl) return false;
-  
-  // Get current location variations (both encoded and decoded)
-  const currentLocationHref = window.location.href;
-  const currentLocationDecoded = formatUrl(currentLocationHref);
-  
-  const currentPath = window.location.pathname + window.location.search;
-  const currentPathDecoded = formatUrl(currentPath);
-  
-  const currentPathWithHash = window.location.pathname + window.location.search + window.location.hash;
-  const currentPathWithHashDecoded = formatUrl(currentPathWithHash);
-  
-  // Create array of current location variations
-  const currentLocationVariations = [
-    currentLocationHref,
-    currentLocationDecoded,
-    currentPath,
-    currentPathDecoded,
-    currentPathWithHash,
-    currentPathWithHashDecoded,
-  ];
-  
-  // Remove duplicates
-  const uniqueCurrentLocations = [...new Set(currentLocationVariations)];
-  
-  // Format the link URL
+
+  const uniqueCurrentLocations = getCurrentLocationVariations();
   const formattedLinkUrl = formatUrl(linkUrl);
-  
-  // Create array of URL variations to check (both encoded and decoded)
-  const urlVariations = [
-    linkUrl, // Original (potentially encoded)
-    formattedLinkUrl, // Decoded version
-    encodeURI(linkUrl), // Explicitly encoded version
-    encodeURI(formattedLinkUrl), // Encoded version of decoded URL
-  ];
-  
-  // Remove duplicates
-  const uniqueUrlVariations = [...new Set(urlVariations)];
-  
-  // Check each URL variation against each current location variation
+  const uniqueUrlVariations = [...new Set([
+    linkUrl,
+    formattedLinkUrl,
+    encodeURI(linkUrl),
+    encodeURI(formattedLinkUrl),
+  ])];
+
   for (const urlVariation of uniqueUrlVariations) {
     for (const currentLocation of uniqueCurrentLocations) {
-      // Check if current location ends with the URL variation
       if (currentLocation.endsWith(urlVariation)) {
         return true;
       }
-      
-      // Check if the URL variation matches the current location exactly
+
       if (currentLocation === urlVariation) {
         return true;
       }
     }
   }
-  
+
   return false;
 };

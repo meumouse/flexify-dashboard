@@ -1,4 +1,5 @@
 <script setup>
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import MenuItemLink from './MenuItemLink.vue';
 import MenuIcon from './MenuIcon.vue';
 import MenuItemName from './MenuItemName.vue';
@@ -12,12 +13,10 @@ const appStore = useAppStore();
 
 // Composables
 import { useFavorites } from '../composables/useFavorites.js';
-import { useHoverStates } from '../composables/useHoverStates.js';
 import { useMenuState } from '../composables/useMenuState.js';
 
 const { favorites, addFavorite, isFavorite } = useFavorites();
-const { setHoverState, isHovered } = useHoverStates();
-const { isActive, shouldShowSubMenu, toggleMenuOpen } = useMenuState();
+const { isActive, toggleMenuOpen } = useMenuState();
 
 const props = defineProps({
   menuItems: {
@@ -33,39 +32,104 @@ const props = defineProps({
     default: false,
   },
 });
+
+const scrollContainer = ref(null);
+const hoveredItemId = ref(null);
+const suppressHover = ref(false);
+let hoverResetTimer = null;
+
+const activeStateById = computed(() => {
+  const states = new Map();
+
+  const collect = (items) => {
+    for (const item of items || []) {
+      if (item?.id) {
+        states.set(item.id, isActive(item));
+      }
+
+      if (Array.isArray(item?.submenu)) {
+        collect(item.submenu);
+      }
+    }
+  };
+
+  collect(props.menuItems);
+  return states;
+});
+
+const getIsActive = (link) => {
+  if (!link?.id) return false;
+  return activeStateById.value.get(link.id) || false;
+};
+
+const getShouldShowSubMenu = (link) => {
+  if (!Array.isArray(link?.submenu) || !link.submenu.length) return false;
+  return link.open || link.active || getIsActive(link);
+};
+
+const handleItemEnter = (link) => {
+  if (suppressHover.value || !link?.id) return;
+  hoveredItemId.value = link.id;
+};
+
+const handleItemLeave = (link) => {
+  if (!link?.id || hoveredItemId.value !== link.id) return;
+  hoveredItemId.value = null;
+};
+
+const isHovered = (link) => hoveredItemId.value === link?.id;
+
+const handleScroll = () => {
+  hoveredItemId.value = null;
+  suppressHover.value = true;
+
+  if (hoverResetTimer) {
+    clearTimeout(hoverResetTimer);
+  }
+
+  hoverResetTimer = window.setTimeout(() => {
+    suppressHover.value = false;
+  }, 120);
+};
+
+onMounted(() => {
+  scrollContainer.value?.addEventListener('scroll', handleScroll, { passive: true });
+});
+
+onBeforeUnmount(() => {
+  scrollContainer.value?.removeEventListener('scroll', handleScroll);
+
+  if (hoverResetTimer) {
+    clearTimeout(hoverResetTimer);
+  }
+});
 </script>
 
 <template>
-  <!-- Standard expanded menu
-  --
-  -- Menu template for non minimised menu
-  -->
   <div class="relative grow overflow-hidden flex min-h-0">
     <div
+      ref="scrollContainer"
       class="flex flex-col grow gap-1.5 custom-scrollbar pb-16 min-h-0 overflow-auto"
       :class="!favorites.length ? 'mt-6' : ''"
     >
       <template v-for="(link, index) in menuItems" :key="link.id || index">
         <div
           v-if="link.type != 'separator'"
-          @mouseenter="setHoverState(link, true)"
-          @mouseleave="setHoverState(link, false)"
+          @mouseenter="handleItemEnter(link)"
+          @mouseleave="handleItemLeave(link)"
           class="relative group-parent"
         >
           <MenuItemLink
             :link="link"
-            :isActive="isActive(link)"
+            :isActive="getIsActive(link)"
             class="p-1.5 pr-4 pl-1.5 text-[rgba(255,255,255,0.75)] hover:text-white"
           >
-            <!--Icon-->
             <div class="absolute px-4 left-0">
               <MenuIcon :link="link" />
             </div>
 
-            <!-- Item name -->
-            <MenuItemName :link="link" :active="isActive(link)" />
+            <MenuItemName :link="link" :active="getIsActive(link)" />
 
-            <!-- Favorite icon -->
             <AppIcon
               v-if="!isFavorite(link.url)"
               icon="star"
@@ -73,7 +137,6 @@ const props = defineProps({
               @click.prevent.stop="addFavorite(link)"
             />
 
-            <!-- Submenu icon -->
             <AppIcon
               v-if="
                 link.submenu &&
@@ -81,30 +144,28 @@ const props = defineProps({
                 appStore.state.flexify_dashboard_settings?.submenu_style != 'hover'
               "
               :icon="
-                isActive(link) || link.active || link.open
+                getIsActive(link) || link.active || link.open
                   ? 'expand_more'
                   : 'chevron_left'
               "
-              :class="isActive(link) ? 'opacity-100' : ''"
+              :class="getIsActive(link) ? 'opacity-100' : ''"
               class="opacity-0 max-md:opacity-100 group-hover:opacity-100 text-base transition-opacity"
               @click.prevent.stop="toggleMenuOpen(link)"
             />
 
-            <!-- Open in new -->
             <AppIcon
               v-if="link.settings?.open_new"
               icon="open_new"
-              :class="isActive(link) ? 'opacity-100' : ''"
+              :class="getIsActive(link) ? 'opacity-100' : ''"
               class="opacity-0 max-md:opacity-100 group-hover:opacity-100 text-base transition-opacity"
             />
           </MenuItemLink>
 
-          <!-- Inline Sub menu -->
-          <Transition v-if="shouldShowSubMenu(link)">
+          <Transition v-if="getShouldShowSubMenu(link)">
             <div class="mt-2 mb-4 pl-2 border-l border-zinc-200/80 dark:border-white/10 ml-5">
               <template v-for="sublink in link.submenu" :key="sublink.id">
                 <SubMenuItem
-                  :isActive="isActive(sublink)"
+                  :isActive="getIsActive(sublink)"
                   :sublink="sublink"
                   :isFavorite="isFavorite(sublink.url)"
                   class="pl-12"
@@ -113,7 +174,6 @@ const props = defineProps({
             </div>
           </Transition>
 
-          <!-- Hover submenu -->
           <div
             v-else-if="
               link.submenu &&
@@ -128,12 +188,12 @@ const props = defineProps({
             <Transition>
               <SubMenu
                 :parent="menupanel"
-                :mouseenter="() => setHoverState(link, true)"
-                :mouseleave="() => setHoverState(link, false)"
+                :mouseenter="() => handleItemEnter(link)"
+                :mouseleave="() => handleItemLeave(link)"
               >
                 <template v-for="sublink in link.submenu" :key="sublink.id">
                   <SubMenuItem
-                    :isActive="isActive(sublink)"
+                    :isActive="getIsActive(sublink)"
                     :sublink="sublink"
                     :isFavorite="isFavorite(sublink.url)"
                     :hideFavorite="true"
@@ -144,7 +204,6 @@ const props = defineProps({
           </div>
         </div>
 
-        <!-- Separator without name -->
         <div
           v-else-if="
             link.type == 'separator' &&
@@ -155,7 +214,6 @@ const props = defineProps({
           :id="link.id || link.settings?.id"
         ></div>
 
-        <!-- Separator with name (section header) -->
         <div
           v-else-if="
             link.type == 'separator' &&

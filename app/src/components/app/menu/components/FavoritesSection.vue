@@ -1,4 +1,5 @@
 <script setup>
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { VueDraggableNext } from 'vue-draggable-next';
 import MenuItemLink from './MenuItemLink.vue';
 import MenuIcon from './MenuIcon.vue';
@@ -17,7 +18,6 @@ const appStore = useAppStore();
 // Composables
 import { useFavorites } from '../composables/useFavorites.js';
 import { useShortcutEditing } from '../composables/useShortcutEditing.js';
-import { useHoverStates } from '../composables/useHoverStates.js';
 import { useMenuState } from '../composables/useMenuState.js';
 
 const { favorites, removeFavorite, updateFavorite, isFavorite } = useFavorites();
@@ -30,8 +30,7 @@ const {
   saveShortcutEdit,
   cancelShortcutEdit,
 } = useShortcutEditing(updateFavorite);
-const { setHoverState, isHovered } = useHoverStates();
-const { isActive, shouldShowSubMenu, toggleMenuOpen } = useMenuState();
+const { isActive, toggleMenuOpen } = useMenuState();
 
 const props = defineProps({
   menupanel: {
@@ -42,6 +41,82 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+});
+
+const scrollContainer = ref(null);
+const hoveredItemId = ref(null);
+const suppressHover = ref(false);
+let hoverResetTimer = null;
+
+const activeStateByUrl = computed(() => {
+  const states = new Map();
+
+  for (const favorite of favorites.value || []) {
+    if (favorite?.url) {
+      states.set(favorite.url, isActive(favorite));
+    }
+
+    if (Array.isArray(favorite?.submenu)) {
+      for (const sublink of favorite.submenu) {
+        if (sublink?.url) {
+          states.set(sublink.url, isActive(sublink));
+        }
+      }
+    }
+  }
+
+  return states;
+});
+
+const getItemKey = (link) => link?.id || link?.url || null;
+
+const getIsActive = (link) => {
+  if (!link?.url) return false;
+  return activeStateByUrl.value.get(link.url) || false;
+};
+
+const getShouldShowSubMenu = (link) => {
+  if (!Array.isArray(link?.submenu) || !link.submenu.length) return false;
+  return link.open || link.active || getIsActive(link);
+};
+
+const handleItemEnter = (link) => {
+  const key = getItemKey(link);
+  if (suppressHover.value || !key) return;
+  hoveredItemId.value = key;
+};
+
+const handleItemLeave = (link) => {
+  const key = getItemKey(link);
+  if (!key || hoveredItemId.value !== key) return;
+  hoveredItemId.value = null;
+};
+
+const isHovered = (link) => hoveredItemId.value === getItemKey(link);
+
+const handleScroll = () => {
+  hoveredItemId.value = null;
+  suppressHover.value = true;
+
+  if (hoverResetTimer) {
+    clearTimeout(hoverResetTimer);
+  }
+
+  hoverResetTimer = window.setTimeout(() => {
+    suppressHover.value = false;
+  }, 120);
+};
+
+onMounted(() => {
+  scrollContainer.value?.addEventListener('scroll', handleScroll, { passive: true });
+});
+
+onBeforeUnmount(() => {
+  scrollContainer.value?.removeEventListener('scroll', handleScroll);
+
+  if (hoverResetTimer) {
+    clearTimeout(hoverResetTimer);
+  }
 });
 </script>
 
@@ -54,7 +129,7 @@ const props = defineProps({
       >
         {{ __('Shortcuts', 'flexify-dashboard') }}
       </div>
-      <div class="flex flex-col gap-1" v-if="favorites.length">
+      <div ref="scrollContainer" class="flex flex-col gap-1" v-if="favorites.length">
         <VueDraggableNext
           class="contents"
           :group="{
@@ -74,7 +149,6 @@ const props = defineProps({
               :key="link.url || index"
               :index="index"
             >
-              <!-- Editing mode -->
               <div
                 v-if="
                   link.type != 'separator' &&
@@ -83,7 +157,6 @@ const props = defineProps({
                 class="p-2 bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 mb-1"
               >
                 <div class="flex flex-col gap-3">
-                  <!-- Name -->
                   <div class="flex flex-col gap-1">
                     <label
                       class="text-xs font-medium text-zinc-700 dark:text-zinc-300"
@@ -98,7 +171,6 @@ const props = defineProps({
                     />
                   </div>
 
-                  <!-- URL -->
                   <div class="flex flex-col gap-1">
                     <label
                       class="text-xs font-medium text-zinc-700 dark:text-zinc-300"
@@ -113,7 +185,6 @@ const props = defineProps({
                     />
                   </div>
 
-                  <!-- Icon -->
                   <div class="flex flex-col gap-1">
                     <label
                       class="text-xs font-medium text-zinc-700 dark:text-zinc-300"
@@ -135,7 +206,6 @@ const props = defineProps({
                     </div>
                   </div>
 
-                  <!-- Actions -->
                   <div class="flex flex-row gap-2 pt-1">
                     <AppButton
                       type="primary"
@@ -165,27 +235,23 @@ const props = defineProps({
                 </div>
               </div>
 
-              <!-- Display mode -->
               <div
                 v-else-if="link.type != 'separator'"
-                @mouseenter="setHoverState(link, true)"
-                @mouseleave="setHoverState(link, false)"
+                @mouseenter="handleItemEnter(link)"
+                @mouseleave="handleItemLeave(link)"
                 class="relative group-parent"
               >
                 <MenuItemLink
                   :link="link"
-                  :isActive="isActive(link)"
+                  :isActive="getIsActive(link)"
                   class="p-1 pr-4 pl-1 group"
                 >
-                  <!--Icon-->
                   <div class="absolute px-4 left-0">
                     <MenuIcon :link="link" />
                   </div>
 
-                  <!-- Item name -->
-                  <MenuItemName :link="link" />
+                  <MenuItemName :link="link" :active="getIsActive(link)" />
 
-                  <!-- Edit icon -->
                   <AppIcon
                     icon="edit"
                     class="opacity-0 max-md:opacity-100 group-hover:opacity-100 text-base transition-opacity"
@@ -193,7 +259,6 @@ const props = defineProps({
                     v-if="!editingShortcut"
                   />
 
-                  <!-- Remove icon -->
                   <AppIcon
                     icon="close"
                     class="opacity-0 max-md:opacity-100 group-hover:opacity-100 text-base transition-opacity"
@@ -201,7 +266,6 @@ const props = defineProps({
                     v-if="!editingShortcut"
                   />
 
-                  <!-- Submenu icon -->
                   <AppIcon
                     v-if="
                       link.submenu &&
@@ -210,30 +274,28 @@ const props = defineProps({
                         'hover'
                     "
                     :icon="
-                      isActive(link) || link.active || link.open
+                      getIsActive(link) || link.active || link.open
                         ? 'expand_more'
                         : 'chevron_left'
                     "
-                    :class="isActive(link) ? 'opacity-100' : ''"
+                    :class="getIsActive(link) ? 'opacity-100' : ''"
                     class="opacity-0 max-md:opacity-100 group-hover:opacity-100 text-base transition-opacity"
                     @click.prevent.stop="toggleMenuOpen(link)"
                   />
 
-                  <!-- Open in new -->
                   <AppIcon
                     v-if="link.settings?.open_new"
                     icon="open_new"
-                    :class="isActive(link) ? 'opacity-100' : ''"
+                    :class="getIsActive(link) ? 'opacity-100' : ''"
                     class="opacity-0 max-md:opacity-100 group-hover:opacity-100 text-base transition-opacity"
                   />
                 </MenuItemLink>
 
-                <!-- Inline Sub menu -->
-                <Transition v-if="shouldShowSubMenu(link)">
+                <Transition v-if="getShouldShowSubMenu(link)">
                   <div class="mt-2 mb-4 pl-1">
                     <template v-for="sublink in link.submenu" :key="sublink.id">
                       <SubMenuItem
-                        :isActive="isActive(sublink)"
+                        :isActive="getIsActive(sublink)"
                         :sublink="sublink"
                         :isFavorite="isFavorite(sublink.url)"
                         class="pl-12"
@@ -242,7 +304,6 @@ const props = defineProps({
                   </div>
                 </Transition>
 
-                <!-- Hover submenu -->
                 <div
                   v-else-if="
                     link.submenu &&
@@ -258,12 +319,12 @@ const props = defineProps({
                   <Transition>
                     <SubMenu
                       :parent="menupanel"
-                      :mouseenter="() => setHoverState(link, true)"
-                      :mouseleave="() => setHoverState(link, false)"
+                      :mouseenter="() => handleItemEnter(link)"
+                      :mouseleave="() => handleItemLeave(link)"
                     >
                       <template v-for="sublink in link.submenu" :key="sublink.id">
                         <SubMenuItem
-                          :isActive="isActive(sublink)"
+                          :isActive="getIsActive(sublink)"
                           :sublink="sublink"
                           :isFavorite="isFavorite(sublink.url)"
                           :hideFavorite="true"
