@@ -1,0 +1,19 @@
+{
+	"name": "meumouse/flexify-dashboard",
+	"type": "wordpress-plugin",
+	"autoload": {
+		"psr-4": {
+		"MeuMouse\\Flexify_Dashboard\\": "src/"
+		}
+	},
+	"require": {
+		"enshrined/svg-sanitize": "^0.16"
+	},
+	"config": {
+		"preferred-install": "dist",
+		"prepend-autoloader": false,
+		"optimize-autoloader": true,
+		"classmap-authoritative": true,
+		"autoloader-suffix": "Flexify_Dashboard"
+	}
+}

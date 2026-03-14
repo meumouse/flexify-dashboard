@@ -1,0 +1,97 @@
+<script setup>
+import { returnOriginalLinkAttribute } from '../utils/returnOriginalLinkAttribute.js';
+import MenuItemLink from './MenuItemLink.vue';
+import MenuIcon from './MenuIcon.vue';
+import SubMenu from './SubMenu.vue';
+import SubMenuItem from './SubMenuItem.vue';
+import UserDetails from './UserDetails.vue';
+
+// Composables
+import { useFavorites } from '../composables/useFavorites.js';
+import { useHoverStates } from '../composables/useHoverStates.js';
+import { useMenuState } from '../composables/useMenuState.js';
+
+const { favorites, isFavorite } = useFavorites();
+const { setHoverState, isHovered } = useHoverStates();
+const { isActive } = useMenuState();
+
+const props = defineProps({
+  menuItems: {
+    type: Array,
+    required: true,
+  },
+  menupanel: {
+    type: Object,
+    default: null,
+  },
+});
+
+/**
+ * Gets the notification count for a menu item
+ */
+const getNotificationCount = (link) => {
+  return returnOriginalLinkAttribute(link, 'notifications', link.notifications);
+};
+</script>
+
+<template>
+  <div class="relative grow flex overflow-hidden min-h-0 px-3">
+    <div
+      class="flex flex-col grow gap-1.5 custom-scrollbar pb-16 min-h-0 overflow-auto"
+      :class="!favorites.length ? 'mt-6' : ''"
+    >
+      <template v-for="(link, index) in menuItems" :key="link.id || index">
+        <div
+          v-if="link.type != 'separator'"
+          class="relative group-parent"
+          @mouseenter="setHoverState(link, true)"
+          @mouseleave="setHoverState(link, false)"
+        >
+          <MenuItemLink :link="link" :isActive="isActive(link)" class="p-2">
+            <MenuIcon :link="link" />
+
+            <div
+              v-if="getNotificationCount(link)"
+              class="absolute top-0 right-[-2px] text-xs bg-indigo-500/80 rounded border border-indigo-300/40 px-1 text-white"
+            >
+              {{ getNotificationCount(link) }}
+            </div>
+          </MenuItemLink>
+
+          <!-- Sub menu -->
+          <div
+            v-if="link.submenu && link.submenu.length && isHovered(link)"
+            class="absolute right-0 top-0 translate-x-full"
+            :target="link.settings?.open_new ? '_BLANK' : ''"
+          >
+            <Transition>
+              <SubMenu
+                :parent="menupanel"
+                :mouseenter="() => setHoverState(link, true)"
+                :mouseleave="() => setHoverState(link, false)"
+              >
+                <template v-for="sublink in link.submenu" :key="sublink.id">
+                  <SubMenuItem
+                    :isActive="isActive(sublink)"
+                    :sublink="sublink"
+                    :isFavorite="isFavorite(sublink.url)"
+                    :hideFavorite="true"
+                  />
+                </template>
+              </SubMenu>
+            </Transition>
+          </div>
+        </div>
+
+        <div v-else class="w-full my-2"></div>
+      </template>
+    </div>
+    <div
+      class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-100/95 to-transparent dark:from-[#061022] pointer-events-none"
+      id="fd-menu-overlay"
+    ></div>
+  </div>
+
+  <!-- User section for minimized menu -->
+  <UserDetails :minimized="true" />
+</template>
