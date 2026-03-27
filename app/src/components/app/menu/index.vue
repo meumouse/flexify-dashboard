@@ -535,7 +535,7 @@ setMenuWidthProperty(panelWidth.value);
       <template v-if="!isMenuMinified">
         <a
           :href="appStore.state.adminUrl"
-          class="pl-2 place-self-start"
+          class="pt-2 place-self-start"
           v-if="!appStore.state?.flexify_dashboard_settings?.logo"
         >
           <AppIcon icon="flexify-dashboard" class="text-5xl text-white" />

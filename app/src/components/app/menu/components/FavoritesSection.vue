@@ -347,7 +347,7 @@ onBeforeUnmount(() => {
   </TransitionGroup>
 
   <div
-    class="border-t border-zinc-200 dark:border-zinc-800 my-6"
+    class="border-t border-zinc-200/40 dark:border-white/20 my-6"
     v-if="favorites.length"
   ></div>
 </template>

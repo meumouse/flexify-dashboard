@@ -167,13 +167,13 @@ onBeforeUnmount(() => {
           </MenuItemLink>
 
           <Transition v-if="getShouldShowSubMenu(link)">
-            <div class="mt-2 mb-4 pl-2 border-l border-zinc-200/80 dark:border-white/10 ml-5">
+            <div class="mt-2 mb-4 border-l border-zinc-200/40 dark:border-white/20 ml-5">
               <template v-for="sublink in link.submenu" :key="sublink.id">
                 <SubMenuItem
                   :isActive="getIsActive(sublink)"
                   :sublink="sublink"
                   :isFavorite="isFavorite(sublink.url)"
-                  class="pl-12"
+                  class="pl-8"
                 />
               </template>
             </div>
