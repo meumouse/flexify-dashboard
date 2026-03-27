@@ -483,10 +483,15 @@ onUnmounted(() => {
     <div
       v-else
       ref="triggerRef"
-      class="p-2 bg-[#313d4a] rounded-xl flex flex-row items-center gap-3 w-full border border-[#444e59]"
+      class="group w-full p-2 rounded-xl flex flex-row items-center gap-3 border border-[#444e59] bg-[#313d4a] cursor-pointer transition-colors"
+      :class="
+        showUserDropdown
+          ? 'bg-[#1c2434] border-[#55606d]'
+          : 'hover:bg-[#1c2434] hover:border-[#55606d]'
+      "
     >
       <div
-        class="w-8 aspect-square bg-zinc-700 dark:bg-zinc-600 text-white rounded-full font-medium flex items-center justify-center shrink-0 relative overflow-hidden cursor-pointer hover:bg-zinc-600 dark:hover:bg-zinc-500 transition-colors"
+        class="w-8 aspect-square bg-zinc-700 dark:bg-zinc-600 text-white rounded-full font-medium flex items-center justify-center shrink-0 relative overflow-hidden transition-colors group-hover:bg-zinc-600 dark:group-hover:bg-zinc-500"
       >
         <span
           class="lowercase relative text-sm"
@@ -500,7 +505,7 @@ onUnmounted(() => {
         />
       </div>
       <div
-        class="flex flex-col leading-tight grow min-w-0 cursor-pointer hover:bg-[#1c2434] rounded-lg p-2 -m-2 transition-colors"
+        class="flex flex-col leading-tight grow min-w-0 rounded-lg p-2 -m-2"
       >
         <div class="flex items-center justify-between">
           <span

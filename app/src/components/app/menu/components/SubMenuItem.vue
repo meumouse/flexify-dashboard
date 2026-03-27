@@ -63,7 +63,7 @@ const formattedUrl = computed(() => formatUrl(props.sublink?.url));
   <a
     :href="formattedUrl"
     :id="sublink.sub_id"
-    class="flex flex-row p-1.5 px-4 rounded-lg items-center cursor-pointer gap-1 group transition-all duration-200"
+    class="flex flex-row p-1.5 px-4 rounded-lg items-center cursor-pointer gap-1 group transition-colors duration-150"
     :class="
       isActive || isFocused
         ? 'text-white bg-white/8'

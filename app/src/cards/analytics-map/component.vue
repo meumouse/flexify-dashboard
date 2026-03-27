@@ -218,7 +218,7 @@ const initializeMap = async () => {
     // Load Mapbox GL JS dynamically
     const mapboxgl = await import('mapbox-gl');
 
-	const mapboxToken = import.meta.env.MAPBOX_TOKEN;
+	const mapboxToken = '';
 
 	if ( ! mapboxToken ) {
 		throw new Error('Missing Mapbox access token');

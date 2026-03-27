@@ -95,7 +95,7 @@ class GlobalOptions
             ],
             "base_theme_color" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "base_theme_scale" => [
               "type" => "array",
@@ -103,7 +103,7 @@ class GlobalOptions
             ],
             "accent_theme_color" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "accent_theme_scale" => [
               "type" => "array",
@@ -111,11 +111,11 @@ class GlobalOptions
             ],
             "custom_css" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "login_path" => [
               "type" => "text",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "text_replacements" => [
               "type" => "array",
@@ -127,15 +127,15 @@ class GlobalOptions
             ],
             "turnstyle_site_key" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "turnstyle_secret_key" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "layout" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "admin_favicon" => [
               "type" => "string",
@@ -190,11 +190,11 @@ class GlobalOptions
             ],
             "google_analytics_service_account" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "google_analytics_property_id" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "use_modern_media_page" => [
               "type" => "boolean",
@@ -274,11 +274,11 @@ class GlobalOptions
             ],
             "custom_font_family" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "custom_font_url" => [
               "type" => "string",
-              "default" => "",
+              "default" => "#008aff",
             ],
             "custom_font_files" => [
               "type" => "array",

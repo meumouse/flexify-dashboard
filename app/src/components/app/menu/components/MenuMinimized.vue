@@ -68,8 +68,13 @@ const handleItemLeave = (link) => {
 const isHovered = (link) => hoveredItemId.value === link?.id;
 
 const handleScroll = () => {
-  hoveredItemId.value = null;
-  suppressHover.value = true;
+  if (hoveredItemId.value !== null) {
+    hoveredItemId.value = null;
+  }
+
+  if (!suppressHover.value) {
+    suppressHover.value = true;
+  }
 
   if (hoverResetTimer) {
     clearTimeout(hoverResetTimer);
@@ -107,7 +112,7 @@ onBeforeUnmount(() => {
       <template v-for="(link, index) in menuItems" :key="link.id || index">
         <div
           v-if="link.type != 'separator'"
-          class="relative group-parent"
+          class="relative group-parent p-1"
           @mouseenter="handleItemEnter(link)"
           @mouseleave="handleItemLeave(link)"
         >

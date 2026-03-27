@@ -28,7 +28,7 @@ const formattedUrl = computed(() => formatUrl(props.link?.url));
   <a
     :href="formattedUrl"
     :id="link.id"
-    class="flex flex-row rounded-xl items-center cursor-pointer gap-1 group transition-all duration-200 relative border border-transparent"
+    class="flex flex-row rounded-xl items-center cursor-pointer gap-1 group transition-colors duration-150 relative border border-transparent"
     :class="
       isActive || isFocused
         ? 'text-white active bg-white/8 shadow-sm border-white/15'

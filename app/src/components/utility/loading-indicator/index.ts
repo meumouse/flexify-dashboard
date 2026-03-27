@@ -19,7 +19,7 @@ export default defineComponent({
     },
     color: {
       type: [String, Boolean],
-      default: "repeating-linear-gradient(to right, rgb(var(--fd-accent-600) / 1) 0%, rgb(var(--fd-accent-400) / 1) 50%, rgb(var(--fd-accent-300) / 1) 100%)",
+      default: "repeating-linear-gradient(to right, rgb(var(--fd-base-600) / 1) 0%, rgb(var(--fd-base-500) / 1) 50%, rgb(var(--fd-base-400) / 1) 100%)",
     },
     estimatedProgress: {
       type: Function as unknown as () => (duration: number, elapsed: number) => number,
