@@ -23,91 +23,126 @@ const MAX_RETRIES = 3;
  * Sleep for a given number of milliseconds
  */
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // Supported languages - Google Translate language codes
 const LANGUAGES = {
-  de_DE: { code: "de", name: "German (Germany)" },
-  es_ES: { code: "es", name: "Spanish (Spain)" },
-  fr_FR: { code: "fr", name: "French (France)" },
-  it_IT: { code: "it", name: "Italian (Italy)" },
-  nl_NL: { code: "nl", name: "Dutch (Netherlands)" },
-  pt_BR: { code: "pt", name: "Portuguese (Brazil)" },
-  pt_PT: { code: "pt-PT", name: "Portuguese (Portugal)" },
-  zh_CN: { code: "zh-CN", name: "Chinese (Simplified)" },
+//    de_DE: { code: "de", name: "German (Germany)" },
+//    es_ES: { code: "es", name: "Spanish (Spain)" },
+//    fr_FR: { code: "fr", name: "French (France)" },
+//    it_IT: { code: "it", name: "Italian (Italy)" },
+//    nl_NL: { code: "nl", name: "Dutch (Netherlands)" },
+    pt_BR: { code: "pt", name: "Portuguese (Brazil)" },
+//    pt_PT: { code: "pt-PT", name: "Portuguese (Portugal)" },
+//    zh_CN: { code: "zh-CN", name: "Chinese (Simplified)" },
 };
 
 // Initialize Google Translate client
 const translate = new Translate({
-  key: process.env.GOOGLE_TRANSLATE_API_KEY,
+    key: process.env.GOOGLE_TRANSLATE_API_KEY,
 });
+
+function getSelectedLanguages() {
+    const args = process.argv.slice(2);
+    const langFlagIndex = args.findIndex((arg) => arg === "--lang" || arg === "-l");
+    const inlineLangArg = args.find((arg) => arg.startsWith("--lang="));
+
+    let selectedLangCode = null;
+
+    if (langFlagIndex !== -1) {
+        selectedLangCode = args[langFlagIndex + 1] || null;
+    } else if (inlineLangArg) {
+        selectedLangCode = inlineLangArg.split("=")[1] || null;
+    } else if (args[0] && !args[0].startsWith("-")) {
+        selectedLangCode = args[0];
+    }
+
+    if (!selectedLangCode) {
+        return LANGUAGES;
+    }
+
+    if (!LANGUAGES[selectedLangCode]) {
+        console.error(`Error: Unsupported language "${selectedLangCode}".`);
+        console.error(`Available languages: ${Object.keys(LANGUAGES).join(", ")}`);
+        process.exit(1);
+    }
+
+    return {
+        [selectedLangCode]: LANGUAGES[selectedLangCode],
+    };
+}
 
 /**
  * Parse a POT or PO file and return the parsed data
  */
 function parsePoFile(filePath) {
-  const content = fs.readFileSync(filePath);
-  return gettextParser.po.parse(content);
+    const content = fs.readFileSync(filePath);
+
+    return gettextParser.po.parse(content);
 }
 
 /**
  * Extract msgid strings from parsed PO data
  */
 function extractMsgIds(poData) {
-  const translations = poData.translations[""] || {};
-  const msgIds = new Map();
+    const translations = poData.translations[""] || {};
+    const msgIds = new Map();
 
-  for (const [msgid, entry] of Object.entries(translations)) {
-    if (msgid === "") continue; // Skip header
-    msgIds.set(msgid, entry);
-  }
+    for (const [msgid, entry] of Object.entries(translations)) {
+        if (msgid === "") continue; // Skip header
 
-  return msgIds;
+        msgIds.set(msgid, entry);
+    }
+
+    return msgIds;
 }
 
 /**
  * Find strings that need translation (new or empty translations)
  */
 function findStringsToTranslate(potMsgIds, existingPoData) {
-  const toTranslate = [];
-  const existingTranslations = existingPoData?.translations?.[""] || {};
+    const toTranslate = [];
+    const existingTranslations = existingPoData?.translations?.[""] || {};
 
-  for (const [msgid, potEntry] of potMsgIds) {
-    const existing = existingTranslations[msgid];
+    for (const [msgid, potEntry] of potMsgIds) {
+        const existing = existingTranslations[msgid];
 
-    // Translate if: doesn't exist, or msgstr is empty
-    if (!existing || !existing.msgstr || existing.msgstr[0] === "") {
-      toTranslate.push({
-        msgid,
-        comments: potEntry.comments,
-      });
+        // Translate if: doesn't exist, or msgstr is empty
+        if (!existing || !existing.msgstr || existing.msgstr[0] === "") {
+            toTranslate.push({
+                msgid,
+                comments: potEntry.comments,
+            });
+        }
     }
-  }
 
-  return toTranslate;
+    return toTranslate;
 }
 
 /**
  * Translate a single batch with retry logic
  */
 async function translateBatchWithRetry(stringsToTranslate, targetLangCode, retryCount = 0) {
-  try {
-    const [results] = await translate.translate(stringsToTranslate, {
-      from: "en",
-      to: targetLangCode,
-      format: "text",
-    });
-    return Array.isArray(results) ? results : [results];
-  } catch (error) {
-    if (retryCount < MAX_RETRIES && error.message.includes("Rate Limit")) {
-      const delay = Math.pow(2, retryCount + 1) * 1000; // Exponential backoff: 2s, 4s, 8s
-      console.log(`    Rate limited. Waiting ${delay / 1000}s before retry ${retryCount + 1}/${MAX_RETRIES}...`);
-      await sleep(delay);
-      return translateBatchWithRetry(stringsToTranslate, targetLangCode, retryCount + 1);
+    try {
+        const [results] = await translate.translate(stringsToTranslate, {
+            from: "en",
+            to: targetLangCode,
+            format: "text",
+        });
+
+        return Array.isArray(results) ? results : [results];
+    } catch (error) {
+        if (retryCount < MAX_RETRIES && error.message.includes("Rate Limit")) {
+            const delay = Math.pow(2, retryCount + 1) * 1000; // Exponential backoff: 2s, 4s, 8s
+            console.log(`    Rate limited. Waiting ${delay / 1000}s before retry ${retryCount + 1}/${MAX_RETRIES}...`);
+            await sleep(delay);
+
+            return translateBatchWithRetry(stringsToTranslate, targetLangCode, retryCount + 1);
+        }
+
+        throw error;
     }
-    throw error;
-  }
 }
 
 /**
@@ -248,12 +283,14 @@ function generateJsonFile(poData, jsonPath, langCode) {
 async function main() {
   console.log("🌍 flexifyDashboard Translation Script (Google Cloud Translation)");
   console.log("===========================================================\n");
+  const selectedLanguages = getSelectedLanguages();
 
   // Verify API key
   if (!process.env.GOOGLE_TRANSLATE_API_KEY) {
     console.error("Error: GOOGLE_TRANSLATE_API_KEY environment variable is not set.");
     console.error("Create a .env file with your API key or set it directly:");
     console.error("  GOOGLE_TRANSLATE_API_KEY=xxx node translate-cli.js");
+    console.error("  GOOGLE_TRANSLATE_API_KEY=xxx node translate-cli.js --lang=pt_BR");
     console.error("\nGet an API key from: https://console.cloud.google.com/apis/credentials");
     process.exit(1);
   }
@@ -271,7 +308,7 @@ async function main() {
   console.log(`   Found ${potMsgIds.size} translatable strings\n`);
 
   // Process each language
-  for (const [langCode, langInfo] of Object.entries(LANGUAGES)) {
+  for (const [langCode, langInfo] of Object.entries(selectedLanguages)) {
     console.log(`\n🔤 Processing ${langInfo.name} (${langCode})...`);
 
     const poPath = path.join(__dirname, `${TEXT_DOMAIN}-${langCode}.po`);
@@ -339,6 +376,6 @@ async function main() {
 
 // Run the script
 main().catch((error) => {
-  console.error("Fatal error:", error);
-  process.exit(1);
+    console.error("Fatal error:", error);
+    process.exit(1);
 });
