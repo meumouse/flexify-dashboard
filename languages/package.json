@@ -4,6 +4,8 @@
 	"description": "AI-powered translation workflow for Flexify Dashboard WordPress plugin",
 	"type": "module",
 	"scripts": {
+		"pot": "node generate-pot-cli.js",
+		"pretranslate": "npm run pot",
 		"translate": "node translate-cli.js"
 	},
 	"dependencies": {
