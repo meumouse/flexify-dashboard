@@ -1,7 +1,7 @@
 export default {
     id: 'woo-top-products',
-    title: 'Produtos mais vendidos',
-    description: 'Produtos mais vendidos no período selecionado',
+    title: 'Top Selling Products',
+    description: 'Best-selling products for the selected period.',
     width: 4,
     mobileWidth: 12,
     language: 'vue',

@@ -196,6 +196,10 @@ class GlobalOptions
               "type" => "string",
               "default" => "#008aff",
             ],
+            "mapbox_api_key" => [
+              "type" => "string",
+              "default" => "",
+            ],
             "use_modern_media_page" => [
               "type" => "boolean",
               "default" => false,
@@ -383,6 +387,10 @@ class GlobalOptions
 
     if (isset($value["google_analytics_property_id"])) {
       $sanitized_value["google_analytics_property_id"] = sanitize_text_field($value["google_analytics_property_id"]);
+    }
+
+    if (isset($value["mapbox_api_key"])) {
+      $sanitized_value["mapbox_api_key"] = sanitize_text_field($value["mapbox_api_key"]);
     }
 
     if (isset($value["use_modern_media_page"])) {
