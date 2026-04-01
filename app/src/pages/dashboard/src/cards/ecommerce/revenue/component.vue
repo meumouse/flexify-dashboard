@@ -41,7 +41,7 @@ const formattedSelectedRange = computed(() => {
     const [start, end] = props.dateRange || [];
 
     if (!start || !end) {
-        return __('Período selecionado', 'flexify-dashboard');
+        return __('Selected period', 'flexify-dashboard');
     }
 
     const formatter = new Intl.DateTimeFormat(undefined, {
@@ -59,10 +59,10 @@ const dateRangeLabel = computed(() => {
     }
 
     if (chartInterval.value === 'week') {
-        return `${__('Período semanal', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
+        return `${__('Weekly period', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
     }
 
-    return `${__('Período mensal', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
+    return `${__('Monthly period', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
 });
 
 const chartOptions = computed(() => ({
@@ -138,12 +138,12 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 </script>
 
 <template>
-    <div class="bg-zinc-50 dark:bg-zinc-800/20 border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl p-6 h-full flex flex-col">
+    <div class="bg-white border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl p-6 h-full flex flex-col">
         <div v-if="loading" class="flex-1 flex items-center justify-center">
             <div class="text-center">
                 <div class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"></div>
                 <p class="text-sm text-zinc-500 dark:text-zinc-400">
-                    {{ __('Carregando faturamento...', 'flexify-dashboard') }}
+                    {{ __('Loading revenue...', 'flexify-dashboard') }}
                 </p>
             </div>
         </div>
@@ -151,27 +151,27 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
         <div v-else-if="error" class="flex-1 flex items-center justify-center">
             <div class="text-center">
                 <p class="text-sm text-red-600 dark:text-red-400 mb-2">
-                    {{ __('Falha ao carregar faturamento', 'flexify-dashboard') }}
+                    {{ __('Failed to load revenue', 'flexify-dashboard') }}
                 </p>
                 <button
                     @click="loadData"
                     class="text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
                 >
-                    {{ __('Tentar novamente', 'flexify-dashboard') }}
+                    {{ __('Try again', 'flexify-dashboard') }}
                 </button>
             </div>
         </div>
 
         <div v-else class="h-full flex flex-col gap-5">
             <div>
-                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Faturamento', 'flexify-dashboard') }}</h3>
+                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Revenue', 'flexify-dashboard') }}</h3>
                 <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ dateRangeLabel }}</p>
             </div>
 
             <div class="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
                 <div class="rounded-2xl bg-white/70 dark:bg-zinc-950/30 border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
                     <div class="text-xs font-medium uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
-                        {{ __('Bruto', 'flexify-dashboard') }}
+                        {{ __('Gross', 'flexify-dashboard') }}
                     </div>
                     <div class="mt-2 text-xl font-semibold text-zinc-900 dark:text-zinc-100">
                         {{ formatCurrency(data?.revenue?.gross, currency) }}
@@ -180,7 +180,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 
                 <div class="rounded-2xl bg-white/70 dark:bg-zinc-950/30 border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
                     <div class="text-xs font-medium uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
-                        {{ __('Líquido', 'flexify-dashboard') }}
+                        {{ __('Net', 'flexify-dashboard') }}
                     </div>
                     <div class="mt-2 text-xl font-semibold text-zinc-900 dark:text-zinc-100">
                         {{ formatCurrency(data?.revenue?.net, currency) }}

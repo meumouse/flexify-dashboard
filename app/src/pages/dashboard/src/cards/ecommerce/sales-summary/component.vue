@@ -48,11 +48,11 @@ onMounted(loadData);
 </script>
 
 <template>
-  <div class="bg-zinc-50 dark:bg-zinc-800/20 border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl h-full flex flex-col">
+  <div class="bg-white border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl h-full flex flex-col">
     <div class="flex flex-col gap-3 border-b border-zinc-200/80 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 dark:border-zinc-800">
       <div>
-        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Resumo de vendas', 'flexify-dashboard') }}</h3>
-        <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{{ __('Últimos 5 pedidos', 'flexify-dashboard') }}</p>
+        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Sales Summary', 'flexify-dashboard') }}</h3>
+        <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{{ __('Latest 5 orders', 'flexify-dashboard') }}</p>
       </div>
 
       <div class="flex items-center gap-3 pr-6">
@@ -62,14 +62,14 @@ onMounted(loadData);
           class="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-400 shadow-sm dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-500"
         >
           <i class="bx bx-slider-alt text-lg"></i>
-          {{ __('Filtro', 'flexify-dashboard') }}
+          {{ __('Filter', 'flexify-dashboard') }}
         </button>
 
         <a
           :href="ordersPageUrl"
           class="inline-flex items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:border-zinc-300 hover:text-zinc-950 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:border-zinc-600 dark:hover:text-white"
         >
-          {{ __('Ver todos', 'flexify-dashboard') }}
+          {{ __('View all', 'flexify-dashboard') }}
         </a>
       </div>
     </div>
@@ -100,13 +100,13 @@ onMounted(loadData);
       <table class="min-w-[1100px] w-full">
         <thead class="border-b border-zinc-200/80 dark:border-zinc-800">
           <tr>
-            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400 sm:px-6">{{ __('Produto', 'flexify-dashboard') }}</th>
-            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">{{ __('Categoria', 'flexify-dashboard') }}</th>
+            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400 sm:px-6">{{ __('Product', 'flexify-dashboard') }}</th>
+            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">{{ __('Category', 'flexify-dashboard') }}</th>
             <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">{{ __('Total', 'flexify-dashboard') }}</th>
             <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">{{ __('Status', 'flexify-dashboard') }}</th>
-            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">{{ __('Pedido', 'flexify-dashboard') }}</th>
-            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">{{ __('Cliente', 'flexify-dashboard') }}</th>
-            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400 pr-6">{{ __('Origem', 'flexify-dashboard') }}</th>
+            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">{{ __('Order', 'flexify-dashboard') }}</th>
+            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400">{{ __('Customer', 'flexify-dashboard') }}</th>
+            <th class="px-4 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400 pr-6">{{ __('Source', 'flexify-dashboard') }}</th>
           </tr>
         </thead>
 
@@ -118,7 +118,7 @@ onMounted(loadData);
                   <img
                     v-if="order.product?.image"
                     :src="order.product.image"
-                    :alt="order.product?.name || __('Produto', 'flexify-dashboard')"
+                    :alt="order.product?.name || __('Product', 'flexify-dashboard')"
                     class="h-full w-full object-cover"
                   >
                   <i v-else class="bx bx-package text-2xl text-zinc-400 dark:text-zinc-500"></i>
@@ -126,16 +126,16 @@ onMounted(loadData);
 
                 <div class="min-w-0">
                   <p class="truncate text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                    {{ order.product?.name || __('Produto sem nome', 'flexify-dashboard') }}
+                    {{ order.product?.name || __('Unnamed product', 'flexify-dashboard') }}
                   </p>
                   <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                    {{ __('Pedido', 'flexify-dashboard') }} #{{ order.id }}
+                    {{ __('Order', 'flexify-dashboard') }} #{{ order.id }}
                   </p>
                 </div>
               </div>
             </td>
 
-            <td class="px-4 py-4 text-sm text-zinc-600 dark:text-zinc-300">{{ order.category || __('Sem categoria', 'flexify-dashboard') }}</td>
+            <td class="px-4 py-4 text-sm text-zinc-600 dark:text-zinc-300">{{ order.category || __('Uncategorized', 'flexify-dashboard') }}</td>
 
             <td class="px-4 py-4 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
               {{ formatCurrency(order.total, currency) }}
@@ -146,7 +146,7 @@ onMounted(loadData);
                 class="inline-flex rounded-full px-3 py-1 text-xs font-semibold"
                 :class="getStatusClasses(order.status?.slug)"
               >
-                {{ order.status?.label || __('Sem status', 'flexify-dashboard') }}
+                {{ order.status?.label || __('No status', 'flexify-dashboard') }}
               </span>
             </td>
 
@@ -164,7 +164,7 @@ onMounted(loadData);
             <td class="px-4 py-4 pr-6">
               <div class="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3 py-1.5 text-xs font-medium text-zinc-600 dark:bg-zinc-900 dark:text-zinc-300">
                 <i :class="order.source?.icon || 'bx bx-shopping-bag'" class="text-base"></i>
-                <span>{{ order.source?.label || __('Origem desconhecida', 'flexify-dashboard') }}</span>
+                <span>{{ order.source?.label || __('Unknown source', 'flexify-dashboard') }}</span>
               </div>
             </td>
           </tr>
@@ -172,6 +172,6 @@ onMounted(loadData);
       </table>
     </div>
 
-    <p v-else class="px-4 py-5 text-sm text-zinc-500 sm:px-6 dark:text-zinc-400">{{ __('Sem pedidos no período selecionado.', 'flexify-dashboard') }}</p>
+    <p v-else class="px-4 py-5 text-sm text-zinc-500 sm:px-6 dark:text-zinc-400">{{ __('No orders in the selected period.', 'flexify-dashboard') }}</p>
   </div>
 </template>

@@ -1,7 +1,7 @@
 export default {
     id: 'woo-revenue',
-    title: 'Faturamento',
-    description: 'Faturamento bruto e líquido no período selecionado',
+    title: 'Revenue',
+    description: 'Gross and net revenue in the selected period',
     width: 6,
     mobileWidth: 12,
     language: 'vue',

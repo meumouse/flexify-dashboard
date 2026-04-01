@@ -1,7 +1,7 @@
 export default {
     id: 'woo-sales-summary',
-    title: 'Resumo de vendas',
-    description: 'Resumo de pedidos no período selecionado',
+    title: 'Sales Summary',
+    description: 'Order summary for the selected period',
     width: 4,
     mobileWidth: 12,
     language: 'vue',

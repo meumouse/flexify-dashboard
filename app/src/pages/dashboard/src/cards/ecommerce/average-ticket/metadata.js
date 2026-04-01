@@ -1,7 +1,7 @@
 export default {
     id: 'woo-average-ticket',
-    title: 'Ticket médio',
-    description: 'Ticket médio no período selecionado',
+    title: 'Average Order Value',
+    description: 'Average order value in the selected period',
     width: 6,
     mobileWidth: 12,
     language: 'vue',

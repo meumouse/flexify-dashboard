@@ -1,7 +1,7 @@
 export default {
     id: 'woo-orders-received',
-    title: 'Pedidos recebidos',
-    description: 'Pedidos recebidos no período selecionado',
+    title: 'Orders Received',
+    description: 'Orders received in the selected period',
     width: 6,
     mobileWidth: 12,
     language: 'vue',

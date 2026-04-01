@@ -68,7 +68,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 </script>
 
 <template>
-    <div class="bg-zinc-50 dark:bg-zinc-800/20 border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl p-6 h-full flex flex-col justify-between">
+    <div class="bg-white border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl p-6 h-full flex flex-col justify-between">
         <div class="mb-5 flex items-center gap-4">
             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-[1.4rem] text-sky-600 dark:bg-zinc-800 dark:text-sky-300">
                 <i class="bx bx-user"></i>
