@@ -1,8 +1,9 @@
 <script setup>
-import { computed, defineProps, defineOptions } from 'vue';
+import { computed, defineEmits, defineOptions, defineProps } from 'vue';
 
 // Import the global component renderer
 import ComponentRender from '@/components/app/component-render/index.vue';
+import AppIcon from '@/components/utility/icons/index.vue';
 
 const props = defineProps({
 	card: {
@@ -13,7 +14,17 @@ const props = defineProps({
 		type: Array,
 		required: true,
 	},
+	isMobile: {
+		type: Boolean,
+		default: false,
+	},
+	isResizing: {
+		type: Boolean,
+		default: false,
+	},
 });
+
+const emit = defineEmits(['resize-start']);
 
 const colSpanClasses = {
 	1: 'col-span-1',
@@ -58,14 +69,15 @@ const getColSpanClass = (span = 4) => colSpanClasses[span] || colSpanClasses[4];
 const getMobileColSpanClass = (span = 12) =>
   mobileColSpanClasses[span] || mobileColSpanClasses[12];
 const getGridColsClass = (cols = 2) => gridColumnClasses[cols] || gridColumnClasses[2];
+const getDesktopSpan = (span = 4) => colSpanClasses[span] || colSpanClasses[4];
 
 /**
  * Gets the className for the card wrapper based on metadata (grid layout classes)
  * @returns {string} The className string for grid positioning
  */
 const cardClassName = computed(() => {
-	return `${getColSpanClass(props.card.metadata.width)} ${getMobileColSpanClass(
-		props.card.metadata.mobileWidth
+	return `${getDesktopSpan(props.card.metadata.width)} ${getMobileColSpanClass(
+		props.card.metadata.mobileWidth ?? 12
 	)} h-full flex flex-col`;
 });
 
@@ -88,7 +100,29 @@ defineOptions({
 	<!-- Single Card -->
 	<template v-if="!card.isGroup">
 		<div :class="cardClassName">
-		<ComponentRender :item="card" :date-range="dateRange" class="h-full flex-1" />
+			<div class="relative h-full flex flex-col fd-dashboard-card-shell">
+				<button
+					v-if="!isMobile"
+					type="button"
+					class="fd-card-drag-handle absolute right-14 top-4 z-20 inline-flex h-9 w-9 cursor-grab items-center justify-center rounded-xl border border-zinc-200/70 bg-white/90 text-zinc-500 shadow-sm transition hover:text-zinc-900 active:cursor-grabbing dark:border-zinc-700/80 dark:bg-zinc-900/85 dark:text-zinc-300 dark:hover:text-zinc-50"
+					:aria-label="__('Reorder card', 'flexify-dashboard')"
+					:title="__('Drag to reorder', 'flexify-dashboard')"
+				>
+					<AppIcon icon="drag_indicator" class="text-base" />
+				</button>
+				<button
+					v-if="!isMobile"
+					type="button"
+					class="fd-card-resize-handle absolute bottom-4 right-4 z-20 inline-flex h-9 w-9 cursor-col-resize items-center justify-center rounded-xl border border-zinc-200/70 bg-white/90 text-zinc-500 shadow-sm transition hover:text-zinc-900 dark:border-zinc-700/80 dark:bg-zinc-900/85 dark:text-zinc-300 dark:hover:text-zinc-50"
+					:class="isResizing ? 'scale-105 text-brand-600 dark:text-brand-400' : ''"
+					:aria-label="__('Resize card', 'flexify-dashboard')"
+					:title="__('Drag to resize', 'flexify-dashboard')"
+					@pointerdown.stop.prevent="emit('resize-start', { event: $event, cardId: card.metadata.id })"
+				>
+					<AppIcon icon="drag_indicator" class="rotate-45 text-base" />
+				</button>
+				<ComponentRender :item="card" :date-range="dateRange" class="h-full flex-1" />
+			</div>
 		</div>
 	</template>
 

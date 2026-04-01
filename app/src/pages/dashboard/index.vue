@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue';
 import { ShadowRoot } from 'vue-shadow-dom';
+import { VueDraggableNext } from 'vue-draggable-next';
 import { useDarkMode } from './src/useDarkMode.js';
 const { isDark } = useDarkMode();
 
@@ -74,10 +75,22 @@ const initializeDateRange = () => {
 // Dashboard state
 const dateRange = ref(initializeDateRange());
 
-const registeredCards = ref([]);
+const cardsByCategory = ref({});
 const registeredCategories = ref([]);
 const activeCategory = ref(null);
 const loading = ref(false);
+const dashboardGrid = ref(null);
+const isMobileViewport = ref(false);
+const resizingCardId = ref(null);
+
+const DASHBOARD_LAYOUT_STORAGE_KEY = 'flexify-dashboard:dashboard-layout:v1';
+const MOBILE_VIEWPORT_QUERY = '(max-width: 767px)';
+const DASHBOARD_GRID_COLUMNS = 12;
+const MIN_CARD_WIDTH = 3;
+const MAX_CARD_WIDTH = 12;
+
+let mediaQueryList = null;
+let resizeSession = null;
 
 const isWooCommerceActive = computed(() => {
     const plugins = appStore.state?.activePlugins || [];
@@ -117,6 +130,206 @@ const formattedCategories = computed(() => {
 
 	return formattedCategories;
 });
+
+const activeCategoryCards = computed(() => {
+	if (!activeCategory.value) {
+		return [];
+	}
+
+	return cardsByCategory.value[activeCategory.value] || [];
+});
+
+const hasRegisteredCards = computed(() =>
+	Object.values(cardsByCategory.value).some((cards) => cards.length > 0)
+);
+
+const clampGridSpan = (width, fallback = 12, min = 1) => {
+	const parsedWidth = Number.parseInt(width, 10);
+
+	if (Number.isNaN(parsedWidth)) {
+		return fallback;
+	}
+
+	return Math.min(MAX_CARD_WIDTH, Math.max(min, parsedWidth));
+};
+
+const clampCardWidth = (width, fallback = 4) =>
+	clampGridSpan(width, fallback, MIN_CARD_WIDTH);
+
+const cloneRegisteredCard = (card) => ({
+	...card,
+	metadata: {
+		...card.metadata,
+		width: clampCardWidth(card.metadata?.width, 4),
+		mobileWidth: clampGridSpan(card.metadata?.mobileWidth ?? 12, 12, 1),
+	},
+	children: Array.isArray(card.children)
+		? card.children.map(cloneRegisteredCard)
+		: card.children,
+});
+
+const groupCardsByCategory = (cards) =>
+	cards.reduce((groups, card) => {
+		const category = card.metadata?.category || 'site';
+
+		if (!groups[category]) {
+			groups[category] = [];
+		}
+
+		groups[category].push(cloneRegisteredCard(card));
+		return groups;
+	}, {});
+
+const loadStoredLayout = () => {
+	try {
+		const storedValue = window.localStorage.getItem(DASHBOARD_LAYOUT_STORAGE_KEY);
+		return storedValue ? JSON.parse(storedValue) : {};
+	} catch (error) {
+		return {};
+	}
+};
+
+const applyStoredLayout = (groupedCards, storedLayout) => {
+	const categories = storedLayout?.categories || {};
+	const nextGroups = {};
+
+	Object.entries(groupedCards).forEach(([category, cards]) => {
+		const categoryLayout = categories[category] || {};
+		const cardsById = new Map(cards.map((card) => [card.metadata.id, card]));
+		const orderedCards = [];
+
+		(categoryLayout.order || []).forEach((cardId) => {
+			if (!cardsById.has(cardId)) {
+				return;
+			}
+
+			orderedCards.push(cardsById.get(cardId));
+			cardsById.delete(cardId);
+		});
+
+		cardsById.forEach((card) => {
+			orderedCards.push(card);
+		});
+
+		orderedCards.forEach((card) => {
+			const savedWidth = categoryLayout.widths?.[card.metadata.id];
+			if (savedWidth != null) {
+				card.metadata.width = clampCardWidth(savedWidth, card.metadata.width);
+			}
+		});
+
+		nextGroups[category] = orderedCards;
+	});
+
+	return nextGroups;
+};
+
+const persistDashboardLayout = () => {
+	try {
+		const categories = {};
+
+		Object.entries(cardsByCategory.value).forEach(([category, cards]) => {
+			categories[category] = {
+				order: cards.map((card) => card.metadata.id),
+				widths: cards.reduce((widths, card) => {
+					widths[card.metadata.id] = clampCardWidth(card.metadata.width, 4);
+					return widths;
+				}, {}),
+			};
+		});
+
+		window.localStorage.setItem(
+			DASHBOARD_LAYOUT_STORAGE_KEY,
+			JSON.stringify({ categories })
+		);
+	} catch (error) {}
+};
+
+const syncViewportState = () => {
+	if (!window.matchMedia) {
+		return;
+	}
+
+	isMobileViewport.value = window.matchMedia(MOBILE_VIEWPORT_QUERY).matches;
+};
+
+const removeResizeListeners = () => {
+	window.removeEventListener('pointermove', handleResizeMove);
+	window.removeEventListener('pointerup', handleResizeEnd);
+	window.removeEventListener('pointercancel', handleResizeEnd);
+	document.body.style.cursor = '';
+	document.body.style.userSelect = '';
+};
+
+const handleResizeStart = ({ event, cardId }) => {
+	if (isMobileViewport.value || !dashboardGrid.value) {
+		return;
+	}
+
+	const activeCard = activeCategoryCards.value.find((card) => card.metadata.id === cardId);
+	if (!activeCard) {
+		return;
+	}
+
+	const gridBounds = dashboardGrid.value.getBoundingClientRect();
+	if (!gridBounds.width) {
+		return;
+	}
+
+	resizeSession = {
+		cardId,
+		startX: event.clientX,
+		startWidth: clampCardWidth(activeCard.metadata.width, 4),
+		gridWidth: gridBounds.width,
+		category: activeCategory.value,
+	};
+
+	resizingCardId.value = cardId;
+	document.body.style.cursor = 'col-resize';
+	document.body.style.userSelect = 'none';
+
+	window.addEventListener('pointermove', handleResizeMove);
+	window.addEventListener('pointerup', handleResizeEnd);
+	window.addEventListener('pointercancel', handleResizeEnd);
+};
+
+const handleResizeMove = (event) => {
+	if (!resizeSession) {
+		return;
+	}
+
+	const categoryCards = cardsByCategory.value[resizeSession.category] || [];
+	const resizedCard = categoryCards.find(
+		(card) => card.metadata.id === resizeSession.cardId
+	);
+
+	if (!resizedCard) {
+		return;
+	}
+
+	const columnWidth = resizeSession.gridWidth / DASHBOARD_GRID_COLUMNS;
+	const deltaColumns = Math.round((event.clientX - resizeSession.startX) / columnWidth);
+	const nextWidth = clampCardWidth(resizeSession.startWidth + deltaColumns);
+
+	if (nextWidth !== resizedCard.metadata.width) {
+		resizedCard.metadata.width = nextWidth;
+	}
+};
+
+function handleResizeEnd() {
+	if (!resizeSession) {
+		return;
+	}
+
+	resizeSession = null;
+	resizingCardId.value = null;
+	removeResizeListeners();
+	persistDashboardLayout();
+}
+
+const handleCardOrderChange = () => {
+	persistDashboardLayout();
+};
 
 /**
  * Handle date range changes
@@ -164,6 +377,18 @@ watch(
 );
 
 onMounted(async () => {
+  syncViewportState();
+
+  if (window.matchMedia) {
+    mediaQueryList = window.matchMedia(MOBILE_VIEWPORT_QUERY);
+
+    if (typeof mediaQueryList.addEventListener === 'function') {
+      mediaQueryList.addEventListener('change', syncViewportState);
+    } else if (typeof mediaQueryList.addListener === 'function') {
+      mediaQueryList.addListener(syncViewportState);
+    }
+  }
+
   // Dispatch event for plugins to register cards
   const event = new CustomEvent('flexify-dashboard/dashboard/ready');
   document.dispatchEvent(event);
@@ -187,9 +412,14 @@ onMounted(async () => {
   }
 
   // Let other apps modify/add to the widgets array
-  registeredCards.value = await applyFilters(
+  const registeredCards = await applyFilters(
     'flexify-dashboard/dashboard/cards/register',
-    registeredCards.value
+    []
+  );
+
+  cardsByCategory.value = applyStoredLayout(
+    groupCardsByCategory(registeredCards),
+    loadStoredLayout()
   );
 
   // Initialize date range query params if not present
@@ -209,6 +439,20 @@ watch(activeCategory, (newVal, oldVal) => {
     '',
     `${window.location.pathname}?${urlParams.toString()}`
   );
+});
+
+onUnmounted(() => {
+  handleResizeEnd();
+
+  if (!mediaQueryList) {
+    return;
+  }
+
+  if (typeof mediaQueryList.removeEventListener === 'function') {
+    mediaQueryList.removeEventListener('change', syncViewportState);
+  } else if (typeof mediaQueryList.removeListener === 'function') {
+    mediaQueryList.removeListener(syncViewportState);
+  }
 });
 </script>
 
@@ -257,15 +501,29 @@ watch(activeCategory, (newVal, oldVal) => {
         </div>
 
         <!-- Dashboard Cards Grid -->
-        <div v-if="registeredCards.length > 1" class="grid grid-cols-12 gap-10">
-          <template v-for="card in registeredCards">
-            <CardRender
-              v-if="card.metadata.category === activeCategory"
-              :key="card.metadata.id"
-              :card="card"
-              :date-range="dateRange"
-            />
-          </template>
+        <div v-if="hasRegisteredCards" ref="dashboardGrid" class="grid grid-cols-12 gap-6 md:gap-8 xl:gap-10">
+          <VueDraggableNext
+            class="contents"
+            :list="activeCategoryCards"
+            :sort="!isMobileViewport"
+            :disabled="isMobileViewport || resizingCardId !== null"
+            handle=".fd-card-drag-handle"
+            animation="250"
+            ghost-class="fd-dashboard-card-ghost"
+            chosen-class="fd-dashboard-card-chosen"
+            drag-class="fd-dashboard-card-dragging"
+            @end="handleCardOrderChange"
+          >
+            <template v-for="card in activeCategoryCards" :key="card.metadata.id">
+              <CardRender
+                :card="card"
+                :date-range="dateRange"
+                :is-mobile="isMobileViewport"
+                :is-resizing="resizingCardId === card.metadata.id"
+                @resize-start="handleResizeStart"
+              />
+            </template>
+          </VueDraggableNext>
         </div>
 
         <!-- Default content if no cards -->
@@ -295,3 +553,25 @@ watch(activeCategory, (newVal, oldVal) => {
     </div>
   </div>
 </template>
+
+<style>
+.fd-dashboard-card-shell > *:last-child {
+  border-radius: 0.725rem !important;
+}
+
+.fd-dashboard-card-shell > *:last-child .rounded-xl,
+.fd-dashboard-card-shell > *:last-child .rounded-2xl,
+.fd-dashboard-card-shell > *:last-child .rounded-3xl,
+.fd-dashboard-card-shell > *:last-child .rounded-lg {
+  border-radius: 0.5rem !important;
+}
+
+.fd-dashboard-card-ghost {
+  opacity: 0.35;
+}
+
+.fd-dashboard-card-chosen,
+.fd-dashboard-card-dragging {
+  z-index: 30;
+}
+</style>
