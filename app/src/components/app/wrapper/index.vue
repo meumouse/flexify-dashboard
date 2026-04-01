@@ -363,8 +363,50 @@ html.fd-rounded #wpwrap {
 #fd-wpadminbar #wpadminbar a.ab-item,
 #fd-wpadminbar #wpadminbar > #wp-toolbar span.ab-label,
 #fd-wpadminbar #wpadminbar > #wp-toolbar span.noticon {
-	color: #1c2434 !important;
+	color: #343A40 !important;
 	background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+#fd-wpadminbar #wpadminbar .ab-empty-item:hover,
+#fd-wpadminbar #wpadminbar a.ab-item:hover,
+#fd-wpadminbar #wpadminbar a.ab-item:hover span.ab-label,
+#fd-wpadminbar #wpadminbar a.ab-item:hover span.noticon {
+	color: #1c2434 !important;
+}
+
+#fd-wpadminbar #wpadminbar a.ab-item:hover #adminbarsearch:before,
+#fd-wpadminbar #wpadminbar a.ab-item:hover .ab-icon:before,
+#fd-wpadminbar #wpadminbar a.ab-item:hover .ab-item:before {
+  color: #1c2434 !important;
+}
+
+#fd-wpadminbar #wpadminbar #adminbarsearch:before,
+#fd-wpadminbar #wpadminbar .ab-icon:before,
+#fd-wpadminbar #wpadminbar .ab-item:before {
+  color: #a7aaad !important;
+}
+
+#fd-wpadminbar #wpadminbar .menupop .ab-sub-wrapper,
+#fd-wpadminbar #wpadminbar .shortlink-input {
+  background: unset;
+  background-color: rgb(28 36 52 / 90%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 0.375rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  box-shadow: none;
+  padding: 1rem;
+}
+
+#fd-wpadminbar #wpadminbar .ab-submenu a.ab-item {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+#fd-wpadminbar #wpadminbar .ab-submenu a.ab-item:hover {
+  color: #fff !important;
 }
 
 .dark #fd-wpadminbar #wpadminbar .ab-empty-item,
