@@ -81,9 +81,9 @@ addFilter('flexify-dashboard/dashboard/cards/register', (widgets) => {
 		bounceRateTime,
 		analyticsMap,
 		wooRevenue,
+		wooAverageTicket,
 		wooSalesSummary,
 		wooTopProducts,
-		wooAverageTicket,
 		wooOrdersReceived,
 	];
 });

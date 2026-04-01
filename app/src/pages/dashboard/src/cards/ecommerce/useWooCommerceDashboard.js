@@ -45,10 +45,10 @@ export const getWooDashboardData = async (dateRange) => {
     return result;
 };
 
-export const formatCurrency = (value) => {
+export const formatCurrency = (value, currency = 'USD') => {
     return new Intl.NumberFormat(undefined, {
         style: 'currency',
-        currency: 'USD',
+        currency,
         maximumFractionDigits: 2,
     }).format(Number(value || 0));
 };

@@ -2,7 +2,7 @@ export default {
     id: 'woo-revenue',
     title: 'Faturamento',
     description: 'Faturamento bruto e líquido no período selecionado',
-    width: 4,
+    width: 6,
     mobileWidth: 12,
     language: 'vue',
     category: 'e-commerce',
