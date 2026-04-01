@@ -167,7 +167,7 @@ onBeforeUnmount(() => {
           </MenuItemLink>
 
           <Transition v-if="getShouldShowSubMenu(link)">
-            <div class="mt-2 mb-4 border-l border-zinc-200/40 dark:border-white/20 ml-5">
+            <div class="mt-2 mb-4 border-l border-zinc-200/20 dark:border-white/20 ml-5">
               <template v-for="sublink in link.submenu" :key="sublink.id">
                 <SubMenuItem
                   :isActive="getIsActive(sublink)"

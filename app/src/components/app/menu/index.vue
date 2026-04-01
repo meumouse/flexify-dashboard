@@ -773,3 +773,23 @@ body.is-fullscreen-mode.learndash-post-type #sfwd-header {
   left: 0 !important;
 }
 </style>
+
+<style>
+#fd-menu .custom-scrollbar {
+  scrollbar-color: #313d4a transparent !important;
+  scrollbar-width: thin !important;
+}
+
+#fd-menu .custom-scrollbar::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+#fd-menu .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #313d4a !important;
+  border-radius: 9999px;
+}
+
+#fd-menu .custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+</style>
