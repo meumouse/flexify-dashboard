@@ -3,7 +3,7 @@
 	"type": "wordpress-plugin",
 	"autoload": {
 		"psr-4": {
-		"MeuMouse\\Flexify_Dashboard\\": "src/"
+			"MeuMouse\\Flexify_Dashboard\\": "src/"
 		}
 	},
 	"require": {

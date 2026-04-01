@@ -24,6 +24,7 @@ const loadData = async () => {
 
 const currency = computed(() => data.value?.currency || 'USD');
 const chartData = computed(() => data.value?.revenue?.chart_data || null);
+const chartInterval = computed(() => chartData.value?.interval || 'month');
 
 const chartSeries = computed(() => {
     if (!chartData.value?.datasets?.length) {
@@ -36,18 +37,32 @@ const chartSeries = computed(() => {
     }));
 });
 
+const formattedSelectedRange = computed(() => {
+    const [start, end] = props.dateRange || [];
+
+    if (!start || !end) {
+        return __('Período selecionado', 'flexify-dashboard');
+    }
+
+    const formatter = new Intl.DateTimeFormat(undefined, {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+    });
+
+    return `${formatter.format(start)} - ${formatter.format(end)}`;
+});
+
 const dateRangeLabel = computed(() => {
-    const totalLabels = chartData.value?.labels?.length || 0;
-
-    if (totalLabels >= 12) {
-        return __('Últimos 12 meses', 'flexify-dashboard');
+    if (chartInterval.value === 'day') {
+        return formattedSelectedRange.value;
     }
 
-    if (totalLabels > 1) {
-        return __('Últimos meses', 'flexify-dashboard');
+    if (chartInterval.value === 'week') {
+        return `${__('Período semanal', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
     }
 
-    return __('Período filtrado por data', 'flexify-dashboard');
+    return `${__('Período mensal', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
 });
 
 const chartOptions = computed(() => ({

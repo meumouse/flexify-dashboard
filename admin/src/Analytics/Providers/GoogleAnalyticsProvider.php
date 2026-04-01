@@ -587,8 +587,8 @@ class GoogleAnalyticsProvider implements AnalyticsProviderInterface
                     [
                         'label' => 'Page Views',
                         'data' => [],
-                        'borderColor' => 'rgb(99, 102, 241)',
-                        'backgroundColor' => 'rgba(99, 102, 241, 0.1)',
+'borderColor' => 'rgb(0, 138, 255)',
+'backgroundColor' => 'rgba(0, 138, 255, 0.1)',
                         'tension' => 0.4,
                     ],
                     [
@@ -614,8 +614,8 @@ class GoogleAnalyticsProvider implements AnalyticsProviderInterface
                     [
                         'label' => $chart_type === 'visitors' ? 'Unique Visitors' : 'Page Views',
                         'data' => [],
-                        'borderColor' => $chart_type === 'visitors' ? 'rgb(16, 185, 129)' : 'rgb(99, 102, 241)',
-                        'backgroundColor' => $chart_type === 'visitors' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(99, 102, 241, 0.1)',
+'borderColor' => $chart_type === 'visitors' ? 'rgb(16, 185, 129)' : 'rgb(0, 138, 255)',
+'backgroundColor' => $chart_type === 'visitors' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(0, 138, 255, 0.1)',
                         'tension' => 0.4,
                     ]
                 ]
@@ -1037,8 +1037,8 @@ class GoogleAnalyticsProvider implements AnalyticsProviderInterface
                 [
                     'label' => 'Page Views',
                     'data' => [],
-                    'borderColor' => 'rgb(99, 102, 241)',
-                    'backgroundColor' => 'rgba(99, 102, 241, 0.1)',
+'borderColor' => 'rgb(0, 138, 255)',
+'backgroundColor' => 'rgba(0, 138, 255, 0.1)',
                     'tension' => 0.4,
                 ]
             ]

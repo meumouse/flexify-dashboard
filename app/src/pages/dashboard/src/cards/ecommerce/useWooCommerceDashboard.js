@@ -45,8 +45,8 @@ export const getWooDashboardData = async (dateRange) => {
     return result;
 };
 
-export const formatCurrency = (value, currency = 'USD') => {
-    return new Intl.NumberFormat(undefined, {
+export const formatCurrency = (value, currency = 'USD', locale = 'pt-BR') => {
+    return new Intl.NumberFormat(locale, {
         style: 'currency',
         currency,
         maximumFractionDigits: 2,

@@ -94,7 +94,7 @@ class Plugin
     add_action('login_head', [$this, 'output_custom_font_css'], 2);
     add_action('wp_head', [$this, 'output_custom_font_css'], 2);
 
-    add_action("init", [$this, "languages_loader"]);
+    add_action("plugins_loaded", [$this, "languages_loader"]);
 
     add_action("admin_init", [$this, "get_global_options"], 0);
     add_action("admin_enqueue_scripts", [$this, "get_screen"], 0);
@@ -435,7 +435,15 @@ class Plugin
    */
   public static function languages_loader()
   {
-    load_plugin_textdomain("flexify-dashboard", false, dirname(dirname(dirname(dirname(plugin_basename(__FILE__))))) . "/languages");
+    $domain = 'flexify-dashboard';
+    $locale = function_exists('determine_locale') ? determine_locale() : get_locale();
+    $mofile = WP_LANG_DIR . '/plugins/' . $domain . '-' . $locale . '.mo';
+
+    load_plugin_textdomain($domain, false, dirname(dirname(dirname(dirname(plugin_basename(__FILE__))))) . '/languages');
+
+    if (is_readable($mofile)) {
+      load_textdomain($domain, $mofile);
+    }
   }
 
   /**

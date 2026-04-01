@@ -213,8 +213,8 @@ class UserAnalytics
                 [
                     'label' => __('New Users', 'flexify-dashboard'),
                     'data' => $data,
-                    'borderColor' => 'rgb(99, 102, 241)', // indigo-500
-                    'backgroundColor' => 'rgba(99, 102, 241, 0.1)',
+'borderColor' => 'rgb(0, 138, 255)', // #008aff
+'backgroundColor' => 'rgba(0, 138, 255, 0.1)',
                     'borderWidth' => 2,
                     'fill' => true,
                     'tension' => 0.4,
