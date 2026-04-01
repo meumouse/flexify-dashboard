@@ -104,7 +104,7 @@ defineOptions({
 				<button
 					v-if="!isMobile"
 					type="button"
-					class="fd-card-drag-handle absolute right-14 top-4 z-20 inline-flex h-9 w-9 cursor-grab items-center justify-center rounded-xl border border-zinc-200/70 bg-white/90 text-zinc-500 shadow-sm transition hover:text-zinc-900 active:cursor-grabbing dark:border-zinc-700/80 dark:bg-zinc-900/85 dark:text-zinc-300 dark:hover:text-zinc-50"
+					class="fd-card-drag-handle absolute right-2 top-2 z-20 inline-flex h-9 w-9 cursor-grab items-center justify-center text-zinc-500 transition hover:text-zinc-900 active:cursor-grabbing dark:text-zinc-300 dark:hover:text-zinc-50"
 					:aria-label="__('Reorder card', 'flexify-dashboard')"
 					:title="__('Drag to reorder', 'flexify-dashboard')"
 				>
@@ -113,13 +113,13 @@ defineOptions({
 				<button
 					v-if="!isMobile"
 					type="button"
-					class="fd-card-resize-handle absolute bottom-4 right-4 z-20 inline-flex h-9 w-9 cursor-col-resize items-center justify-center rounded-xl border border-zinc-200/70 bg-white/90 text-zinc-500 shadow-sm transition hover:text-zinc-900 dark:border-zinc-700/80 dark:bg-zinc-900/85 dark:text-zinc-300 dark:hover:text-zinc-50"
+					class="fd-card-resize-handle absolute bottom-2 right-2 z-20 inline-flex h-9 w-9 cursor-col-resize items-center justify-center text-zinc-500 shadow-sm transition hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50"
 					:class="isResizing ? 'scale-105 text-brand-600 dark:text-brand-400' : ''"
 					:aria-label="__('Resize card', 'flexify-dashboard')"
 					:title="__('Drag to resize', 'flexify-dashboard')"
 					@pointerdown.stop.prevent="emit('resize-start', { event: $event, cardId: card.metadata.id })"
 				>
-					<AppIcon icon="drag_indicator" class="rotate-45 text-base" />
+					<AppIcon icon="resize" class="text-base" />
 				</button>
 				<ComponentRender :item="card" :date-range="dateRange" class="h-full flex-1" />
 			</div>
