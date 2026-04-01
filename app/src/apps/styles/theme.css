@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark{
+    --background:#1a222c;
+    --card:#24303f;
+    --popover:#24303f;
+    --secondary:#24303f;
+    --muted:#24303f;
+    --accent:#24303f;
+    --border:#2e3a47;
+    --input:#2e3a47;
+    --sidebar:#24303f;
+    --sidebar-accent:#24303f;
+    --sidebar-border:#2e3a47;
+}
+
+.dark\:bg-zinc-800\/20:is(.dark *),
+.dark\:bg-zinc-800\/30:is(.dark *),
+.dark\:bg-zinc-800\/40:is(.dark *),
+.dark\:bg-zinc-800\/50:is(.dark *),
+.dark\:bg-zinc-800\/60:is(.dark *),
+.dark\:bg-zinc-800:is(.dark *),
+.dark\:bg-zinc-900\/50:is(.dark *),
+.dark\:bg-zinc-900:is(.dark *) {
+    background-color:#24303f !important;
+}
+
+.dark\:border-zinc-800\/60:is(.dark *),
+.dark\:border-zinc-800\/50:is(.dark *),
+.dark\:border-zinc-800\/30:is(.dark *),
+.dark\:border-zinc-800:is(.dark *),
+.dark\:border-zinc-700\/60:is(.dark *),
+.dark\:border-zinc-700\/50:is(.dark *),
+.dark\:border-zinc-700\/30:is(.dark *),
+.dark\:border-zinc-700:is(.dark *) {
+    border-color:#2e3a47 !important;
+}
+
 * {
     scrollbar-width: thin;
     scrollbar-color: hsl( 256 1.3% 92.9% ) transparent
