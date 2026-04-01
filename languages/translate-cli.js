@@ -1,159 +1,139 @@
 import fs from "fs";
 import path from "path";
-import { execSync } from "child_process";
 import { fileURLToPath } from "url";
 import gettextParser from "gettext-parser";
 import { Translate } from "@google-cloud/translate/build/src/v2/index.js";
 import dotenv from "dotenv";
 
-// Load environment variables
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Configuration
 const TEXT_DOMAIN = "flexify-dashboard";
 const POT_FILE = path.join(__dirname, `${TEXT_DOMAIN}.pot`);
-const BATCH_SIZE = 50; // Smaller batches to avoid rate limits
-const DELAY_BETWEEN_BATCHES = 1000; // 1 second delay between batches
+const BATCH_SIZE = 50;
+const DELAY_BETWEEN_BATCHES = 1000;
 const MAX_RETRIES = 3;
 
-/**
- * Sleep for a given number of milliseconds
- */
-function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-// Supported languages - Google Translate language codes
 const LANGUAGES = {
-//    de_DE: { code: "de", name: "German (Germany)" },
-//    es_ES: { code: "es", name: "Spanish (Spain)" },
-//    fr_FR: { code: "fr", name: "French (France)" },
-//    it_IT: { code: "it", name: "Italian (Italy)" },
-//    nl_NL: { code: "nl", name: "Dutch (Netherlands)" },
-    pt_BR: { code: "pt", name: "Portuguese (Brazil)" },
-//    pt_PT: { code: "pt-PT", name: "Portuguese (Portugal)" },
-//    zh_CN: { code: "zh-CN", name: "Chinese (Simplified)" },
+//  de_DE: { code: "de", name: "German (Germany)" },
+//  es_ES: { code: "es", name: "Spanish (Spain)" },
+//  fr_FR: { code: "fr", name: "French (France)" },
+//  it_IT: { code: "it", name: "Italian (Italy)" },
+//  nl_NL: { code: "nl", name: "Dutch (Netherlands)" },
+  pt_BR: { code: "pt", name: "Portuguese (Brazil)" },
+//  pt_PT: { code: "pt-PT", name: "Portuguese (Portugal)" },
+//  zh_CN: { code: "zh-CN", name: "Chinese (Simplified)" },
 };
 
-// Initialize Google Translate client
 const translate = new Translate({
-    key: process.env.GOOGLE_TRANSLATE_API_KEY,
+  key: process.env.GOOGLE_TRANSLATE_API_KEY,
 });
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function getSelectedLanguages() {
-    const args = process.argv.slice(2);
-    const langFlagIndex = args.findIndex((arg) => arg === "--lang" || arg === "-l");
-    const inlineLangArg = args.find((arg) => arg.startsWith("--lang="));
+  const args = process.argv.slice(2);
+  const langFlagIndex = args.findIndex((arg) => arg === "--lang" || arg === "-l");
+  const inlineLangArg = args.find((arg) => arg.startsWith("--lang="));
 
-    let selectedLangCode = null;
+  let selectedLangCode = null;
 
-    if (langFlagIndex !== -1) {
-        selectedLangCode = args[langFlagIndex + 1] || null;
-    } else if (inlineLangArg) {
-        selectedLangCode = inlineLangArg.split("=")[1] || null;
-    } else if (args[0] && !args[0].startsWith("-")) {
-        selectedLangCode = args[0];
-    }
+  if (langFlagIndex !== -1) {
+    selectedLangCode = args[langFlagIndex + 1] || null;
+  } else if (inlineLangArg) {
+    selectedLangCode = inlineLangArg.split("=")[1] || null;
+  } else if (args[0] && !args[0].startsWith("-")) {
+    selectedLangCode = args[0];
+  }
 
-    if (!selectedLangCode) {
-        return LANGUAGES;
-    }
+  if (!selectedLangCode) {
+    return LANGUAGES;
+  }
 
-    if (!LANGUAGES[selectedLangCode]) {
-        console.error(`Error: Unsupported language "${selectedLangCode}".`);
-        console.error(`Available languages: ${Object.keys(LANGUAGES).join(", ")}`);
-        process.exit(1);
-    }
+  if (!LANGUAGES[selectedLangCode]) {
+    console.error(`Error: Unsupported language "${selectedLangCode}".`);
+    console.error(`Available languages: ${Object.keys(LANGUAGES).join(", ")}`);
+    process.exit(1);
+  }
 
-    return {
-        [selectedLangCode]: LANGUAGES[selectedLangCode],
-    };
+  return {
+    [selectedLangCode]: LANGUAGES[selectedLangCode],
+  };
 }
 
-/**
- * Parse a POT or PO file and return the parsed data
- */
 function parsePoFile(filePath) {
-    const content = fs.readFileSync(filePath);
-
-    return gettextParser.po.parse(content);
+  const content = fs.readFileSync(filePath);
+  return gettextParser.po.parse(content);
 }
 
-/**
- * Extract msgid strings from parsed PO data
- */
 function extractMsgIds(poData) {
-    const translations = poData.translations[""] || {};
-    const msgIds = new Map();
+  const translations = poData.translations[""] || {};
+  const msgIds = new Map();
 
-    for (const [msgid, entry] of Object.entries(translations)) {
-        if (msgid === "") continue; // Skip header
-
-        msgIds.set(msgid, entry);
+  for (const [msgid, entry] of Object.entries(translations)) {
+    if (msgid === "") {
+      continue;
     }
 
-    return msgIds;
+    msgIds.set(msgid, entry);
+  }
+
+  return msgIds;
 }
 
-/**
- * Find strings that need translation (new or empty translations)
- */
 function findStringsToTranslate(potMsgIds, existingPoData) {
-    const toTranslate = [];
-    const existingTranslations = existingPoData?.translations?.[""] || {};
+  const toTranslate = [];
+  const existingTranslations = existingPoData?.translations?.[""] || {};
 
-    for (const [msgid, potEntry] of potMsgIds) {
-        const existing = existingTranslations[msgid];
+  for (const [msgid, potEntry] of potMsgIds) {
+    const existing = existingTranslations[msgid];
 
-        // Translate if: doesn't exist, or msgstr is empty
-        if (!existing || !existing.msgstr || existing.msgstr[0] === "") {
-            toTranslate.push({
-                msgid,
-                comments: potEntry.comments,
-            });
-        }
+    if (!existing || !existing.msgstr || existing.msgstr[0] === "") {
+      toTranslate.push({
+        msgid,
+        comments: potEntry.comments,
+      });
     }
+  }
 
-    return toTranslate;
+  return toTranslate;
 }
 
-/**
- * Translate a single batch with retry logic
- */
 async function translateBatchWithRetry(stringsToTranslate, targetLangCode, retryCount = 0) {
-    try {
-        const [results] = await translate.translate(stringsToTranslate, {
-            from: "en",
-            to: targetLangCode,
-            format: "text",
-        });
+  try {
+    const [results] = await translate.translate(stringsToTranslate, {
+      from: "en",
+      to: targetLangCode,
+      format: "text",
+    });
 
-        return Array.isArray(results) ? results : [results];
-    } catch (error) {
-        if (retryCount < MAX_RETRIES && error.message.includes("Rate Limit")) {
-            const delay = Math.pow(2, retryCount + 1) * 1000; // Exponential backoff: 2s, 4s, 8s
-            console.log(`    Rate limited. Waiting ${delay / 1000}s before retry ${retryCount + 1}/${MAX_RETRIES}...`);
-            await sleep(delay);
+    return Array.isArray(results) ? results : [results];
+  } catch (error) {
+    if (retryCount < MAX_RETRIES && error.message.includes("Rate Limit")) {
+      const delay = Math.pow(2, retryCount + 1) * 1000;
+      console.log(
+        `    Rate limited. Waiting ${delay / 1000}s before retry ${retryCount + 1}/${MAX_RETRIES}...`
+      );
+      await sleep(delay);
 
-            return translateBatchWithRetry(stringsToTranslate, targetLangCode, retryCount + 1);
-        }
-
-        throw error;
+      return translateBatchWithRetry(stringsToTranslate, targetLangCode, retryCount + 1);
     }
+
+    throw error;
+  }
 }
 
-/**
- * Translate strings using Google Cloud Translation API
- */
-async function translateStrings(strings, targetLangCode, langName) {
-  if (strings.length === 0) return {};
+async function translateStrings(strings, targetLangCode) {
+  if (strings.length === 0) {
+    return {};
+  }
 
   const translations = {};
 
-  // Process in batches
   for (let i = 0; i < strings.length; i += BATCH_SIZE) {
     const batch = strings.slice(i, i + BATCH_SIZE);
     const batchNum = Math.floor(i / BATCH_SIZE) + 1;
@@ -163,21 +143,18 @@ async function translateStrings(strings, targetLangCode, langName) {
       `    Translating batch ${batchNum}/${totalBatches} (${batch.length} strings)...`
     );
 
-    const stringsToTranslate = batch.map((s) => s.msgid);
+    const stringsToTranslate = batch.map((item) => item.msgid);
 
     try {
       const translatedArray = await translateBatchWithRetry(stringsToTranslate, targetLangCode);
 
-      // Map results back to original strings
       for (let j = 0; j < stringsToTranslate.length; j++) {
         translations[stringsToTranslate[j]] = translatedArray[j];
       }
     } catch (error) {
       console.error(`    Error translating batch: ${error.message}`);
-      // Continue with other batches even if one fails
     }
 
-    // Add delay between batches to avoid rate limiting
     if (i + BATCH_SIZE < strings.length) {
       await sleep(DELAY_BETWEEN_BATCHES);
     }
@@ -186,15 +163,10 @@ async function translateStrings(strings, targetLangCode, langName) {
   return translations;
 }
 
-/**
- * Create or update a PO file with new translations
- */
 function createPoFile(potData, existingPoData, newTranslations, langCode) {
-  // Clone the POT structure
   const poData = JSON.parse(JSON.stringify(potData));
-
-  // Update headers for the target language
   const headers = poData.translations[""][""];
+
   headers.msgstr[0] = headers.msgstr[0]
     .replace("LANGUAGE <LL@li.org>", `${LANGUAGES[langCode].name}`)
     .replace("Language: \\n", `Language: ${langCode.replace("_", "-")}\\n`)
@@ -203,18 +175,18 @@ function createPoFile(potData, existingPoData, newTranslations, langCode) {
       `PO-Revision-Date: ${new Date().toISOString()}\\n`
     );
 
-  // Get existing translations
   const existingTranslations = existingPoData?.translations?.[""] || {};
 
-  // Apply translations
   for (const msgid of Object.keys(poData.translations[""])) {
-    if (msgid === "") continue;
+    if (msgid === "") {
+      continue;
+    }
 
-    // Check for new translation first, then existing translation
     if (newTranslations[msgid]) {
       poData.translations[""][msgid].msgstr = [newTranslations[msgid]];
     } else if (
       existingTranslations[msgid] &&
+      existingTranslations[msgid].msgstr &&
       existingTranslations[msgid].msgstr[0]
     ) {
       poData.translations[""][msgid].msgstr = existingTranslations[msgid].msgstr;
@@ -224,34 +196,14 @@ function createPoFile(potData, existingPoData, newTranslations, langCode) {
   return poData;
 }
 
-/**
- * Write PO file to disk
- */
 function writePoFile(poData, outputPath) {
-  const output = gettextParser.po.compile(poData);
-  fs.writeFileSync(outputPath, output);
+  fs.writeFileSync(outputPath, gettextParser.po.compile(poData));
 }
 
-/**
- * Generate MO file from PO file using msgfmt
- */
-function generateMoFile(poPath, moPath) {
-  try {
-    execSync(`msgfmt -o "${moPath}" "${poPath}"`, { stdio: "pipe" });
-    return true;
-  } catch (error) {
-    console.warn(
-      `    Warning: Could not generate .mo file. Is gettext/msgfmt installed?`
-    );
-    console.warn(`    Install with: brew install gettext (macOS)`);
-    return false;
-  }
+function writeMoFile(poData, outputPath) {
+  fs.writeFileSync(outputPath, gettextParser.mo.compile(poData));
 }
 
-/**
- * Generate WordPress JSON file from PO data
- * Based on the existing convert-cli.js logic
- */
 function generateJsonFile(poData, jsonPath, langCode) {
   const wpFormat = {
     domain: TEXT_DOMAIN,
@@ -266,9 +218,11 @@ function generateJsonFile(poData, jsonPath, langCode) {
     },
   };
 
-  // Add translations
   for (const [msgid, entry] of Object.entries(poData.translations[""])) {
-    if (msgid === "") continue;
+    if (msgid === "") {
+      continue;
+    }
+
     if (entry.msgstr && entry.msgstr[0]) {
       wpFormat.locale_data[TEXT_DOMAIN][msgid] = entry.msgstr;
     }
@@ -277,39 +231,35 @@ function generateJsonFile(poData, jsonPath, langCode) {
   fs.writeFileSync(jsonPath, JSON.stringify(wpFormat, null, 2));
 }
 
-/**
- * Main function
- */
+function writeTranslationArtifacts(poData, poPath, moPath, jsonPath, langCode) {
+  writePoFile(poData, poPath);
+  console.log(`   Written: ${path.basename(poPath)}`);
+
+  writeMoFile(poData, moPath);
+  console.log(`   Written: ${path.basename(moPath)}`);
+
+  generateJsonFile(poData, jsonPath, langCode);
+  console.log(`   Written: ${path.basename(jsonPath)}`);
+}
+
 async function main() {
-  console.log("🌍 flexifyDashboard Translation Script (Google Cloud Translation)");
+  console.log("flexifyDashboard Translation Script (Google Cloud Translation)");
   console.log("===========================================================\n");
+
   const selectedLanguages = getSelectedLanguages();
 
-  // Verify API key
-  if (!process.env.GOOGLE_TRANSLATE_API_KEY) {
-    console.error("Error: GOOGLE_TRANSLATE_API_KEY environment variable is not set.");
-    console.error("Create a .env file with your API key or set it directly:");
-    console.error("  GOOGLE_TRANSLATE_API_KEY=xxx node translate-cli.js");
-    console.error("  GOOGLE_TRANSLATE_API_KEY=xxx node translate-cli.js --lang=pt_BR");
-    console.error("\nGet an API key from: https://console.cloud.google.com/apis/credentials");
-    process.exit(1);
-  }
-
-  // Verify POT file exists
   if (!fs.existsSync(POT_FILE)) {
     console.error(`Error: POT file not found: ${POT_FILE}`);
     process.exit(1);
   }
 
-  // Parse POT file
-  console.log("📖 Parsing POT file...");
+  console.log("Parsing POT file...");
   const potData = parsePoFile(POT_FILE);
   const potMsgIds = extractMsgIds(potData);
   console.log(`   Found ${potMsgIds.size} translatable strings\n`);
 
-  // Process each language
   for (const [langCode, langInfo] of Object.entries(selectedLanguages)) {
-    console.log(`\n🔤 Processing ${langInfo.name} (${langCode})...`);
+    console.log(`\nProcessing ${langInfo.name} (${langCode})...`);
 
     const poPath = path.join(__dirname, `${TEXT_DOMAIN}-${langCode}.po`);
     const moPath = path.join(__dirname, `${TEXT_DOMAIN}-${langCode}.mo`);
@@ -318,8 +268,8 @@ async function main() {
       `${TEXT_DOMAIN}-${langCode}-${TEXT_DOMAIN}.json`
     );
 
-    // Load existing PO file if it exists
     let existingPoData = null;
+
     if (fs.existsSync(poPath)) {
       try {
         existingPoData = parsePoFile(poPath);
@@ -329,53 +279,37 @@ async function main() {
       }
     }
 
-    // Find strings that need translation
     const stringsToTranslate = findStringsToTranslate(potMsgIds, existingPoData);
+    let poData;
 
     if (stringsToTranslate.length === 0) {
-      console.log("   All strings already translated!");
+      console.log("   All strings already translated");
+      poData = createPoFile(potData, existingPoData, {}, langCode);
     } else {
-      console.log(`   Found ${stringsToTranslate.length} strings to translate`);
-
-      // Translate with Google Cloud Translation
-      const newTranslations = await translateStrings(
-        stringsToTranslate,
-        langInfo.code,
-        langInfo.name
-      );
-
-      console.log(
-        `   Received ${Object.keys(newTranslations).length} translations`
-      );
-
-      // Create updated PO data
-      const poData = createPoFile(
-        potData,
-        existingPoData,
-        newTranslations,
-        langCode
-      );
-
-      // Write PO file
-      writePoFile(poData, poPath);
-      console.log(`   ✓ Written: ${path.basename(poPath)}`);
-
-      // Generate MO file
-      if (generateMoFile(poPath, moPath)) {
-        console.log(`   ✓ Written: ${path.basename(moPath)}`);
+      if (!process.env.GOOGLE_TRANSLATE_API_KEY) {
+        console.error("Error: GOOGLE_TRANSLATE_API_KEY environment variable is not set.");
+        console.error("Create a .env file with your API key or set it directly:");
+        console.error("  GOOGLE_TRANSLATE_API_KEY=xxx node translate-cli.js");
+        console.error("  GOOGLE_TRANSLATE_API_KEY=xxx node translate-cli.js --lang=pt_BR");
+        console.error("\nGet an API key from: https://console.cloud.google.com/apis/credentials");
+        process.exit(1);
       }
 
-      // Generate JSON file
-      generateJsonFile(poData, jsonPath, langCode);
-      console.log(`   ✓ Written: ${path.basename(jsonPath)}`);
+      console.log(`   Found ${stringsToTranslate.length} strings to translate`);
+
+      const newTranslations = await translateStrings(stringsToTranslate, langInfo.code);
+      console.log(`   Received ${Object.keys(newTranslations).length} translations`);
+
+      poData = createPoFile(potData, existingPoData, newTranslations, langCode);
     }
+
+    writeTranslationArtifacts(poData, poPath, moPath, jsonPath, langCode);
   }
 
-  console.log("\n✅ Translation complete!");
+  console.log("\nTranslation complete.");
 }
 
-// Run the script
 main().catch((error) => {
-    console.error("Fatal error:", error);
-    process.exit(1);
+  console.error("Fatal error:", error);
+  process.exit(1);
 });

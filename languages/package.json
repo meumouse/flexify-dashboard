@@ -5,6 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"pot": "node generate-pot-cli.js",
+		"compile:mo": "node compile-mo-cli.js",
+		"compile:mo:lang": "node compile-mo-cli.js --lang",
 		"pretranslate": "npm run pot",
 		"translate": "node translate-cli.js",
 		"translate:lang": "node translate-cli.js --lang"
