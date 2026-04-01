@@ -43,7 +43,7 @@ const layouts = [
       class="rounded flex flex-row h-32 aspect-video border border-zinc-200 dark:border-zinc-800 cursor-pointer transition-all"
       :class="
         currentLayout === 'default'
-          ? 'outline-2 outline-indigo-600 outline outline-offset-2'
+          ? 'outline-2 outline-brand-600 outline outline-offset-2'
           : ''
       "
       @click="currentLayout = 'default'"
@@ -73,7 +73,7 @@ const layouts = [
       class="rounded flex flex-row h-32 aspect-video border border-zinc-200 dark:border-zinc-800 cursor-pointer transition-all"
       :class="
         currentLayout === 'rounded'
-          ? 'outline-2 outline-indigo-600 outline outline-offset-2'
+          ? 'outline-2 outline-brand-600 outline outline-offset-2'
           : ''
       "
       @click="currentLayout = 'rounded'"
@@ -101,7 +101,7 @@ const layouts = [
       class="rounded flex flex-row h-32 aspect-video border border-zinc-200 dark:border-zinc-800 cursor-pointer transition-all"
       :class="
         currentLayout === 'bubble'
-          ? 'outline-2 outline-indigo-600 outline outline-offset-2'
+          ? 'outline-2 outline-brand-600 outline outline-offset-2'
           : ''
       "
       @click="currentLayout = 'bubble'"

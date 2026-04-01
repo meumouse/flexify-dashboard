@@ -209,7 +209,7 @@ setGravatar();
       </template>
 
       <div
-        class="w-6 aspect-square bg-zinc-700 dark:bg-indigo-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden ml-2 cursor-pointer dark:hover:bg-indigo-800 hover:bg-zinc-900 transition-colors border border-zinc-200 dark:border-zinc-700"
+        class="w-6 aspect-square bg-zinc-700 dark:bg-brand-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden ml-2 cursor-pointer dark:hover:bg-brand-800 hover:bg-zinc-900 transition-colors border border-zinc-200 dark:border-zinc-700"
         @click="contextmenu.show"
       >
         <span

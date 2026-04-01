@@ -255,7 +255,7 @@ getSelectedTags();
   <div
     ref="trigger"
     @click.prevent.stop="openTags($event)"
-    class="flex flex-row gap-2 w-full cursor-pointer p-1 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 focus:shadow-xs"
+    class="flex flex-row gap-2 w-full cursor-pointer p-1 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 focus:shadow-xs"
   >
     <div class="flex flex-row flex-wrap gap-1 flex-grow">
       <div v-for="(term, index) in returnCurrentTags" class="text-sm rounded-lg pl-2 pr-1 border border-zinc-200 dark:border-zinc-700 flex gap-1 items-center bg-zinc-50 dark:bg-zinc-800">
@@ -273,7 +273,7 @@ getSelectedTags();
         @keyup.down="handledownArrow"
         @keyup.up="handleupArrow"
       />
-      <svg v-else class="animate-spin text-indigo-500 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <svg v-else class="animate-spin text-brand-500 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
       </svg>

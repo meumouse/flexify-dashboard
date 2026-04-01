@@ -395,7 +395,7 @@ onBeforeUnmount(() => {
             <AppIcon
               v-if="modelValue === site.id"
               icon="check"
-              class="w-4 h-4 text-indigo-500 shrink-0" />
+              class="w-4 h-4 text-brand-500 shrink-0" />
           </button>
 
           <!-- Empty State -->

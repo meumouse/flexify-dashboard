@@ -59,7 +59,7 @@ const handleShowTutorial = () => {
             <div class="flex items-center gap-2">
               <AppIcon
                 :icon="example.icon"
-                class="text-zinc-400 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 text-sm transition-colors"
+                class="text-zinc-400 group-hover:text-brand-500 dark:group-hover:text-brand-400 text-sm transition-colors"
               />
               <div class="flex flex-col">
                 <span
@@ -128,7 +128,7 @@ const handleShowTutorial = () => {
       <button
         v-if="hasSeenOnboarding"
         @click.prevent="handleShowTutorial"
-        class="mt-6 text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+        class="mt-6 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
       >
         {{ __('Show tutorial again', 'flexify-dashboard') }}
       </button>

@@ -593,7 +593,7 @@ getSettings();
               v-model="searchQuery"
               type="text"
               :placeholder="__('Search settings...', 'flexify-dashboard')"
-              class="w-full pl-9 pr-3 py-2.5 text-sm border border-zinc-200 dark:border-zinc-700/40 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 dark:focus:outline-indigo-700 focus:shadow-xs focus:bg-white dark:focus:bg-zinc-800"
+              class="w-full pl-9 pr-3 py-2.5 text-sm border border-zinc-200 dark:border-zinc-700/40 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs focus:bg-white dark:focus:bg-zinc-800"
             />
             <button
               v-if="searchQuery"
@@ -664,7 +664,7 @@ getSettings();
                   class="w-8 h-8 rounded-lg flex items-center justify-center"
                   :class="
                     selectedCategory === category.value
-                      ? 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400'
+                      ? 'bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400'
                       : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400'
                   "
                 >
@@ -687,7 +687,7 @@ getSettings();
                   </span>
                   <span
                     v-if="category.hasMatchingSettings && category.matchCount"
-                    class="px-1.5 py-0.5 text-xs font-medium rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400"
+                    class="px-1.5 py-0.5 text-xs font-medium rounded-full bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400"
                   >
                     {{ category.matchCount }}
                   </span>

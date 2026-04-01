@@ -1459,7 +1459,7 @@ watch(
               />
               <span
                 v-if="activeFiltersCount > 0"
-                class="absolute -top-1 -right-1 w-4 h-4 bg-indigo-500 text-white text-[10px] font-semibold rounded-full flex items-center justify-center"
+                class="absolute -top-1 -right-1 w-4 h-4 bg-brand-500 text-white text-[10px] font-semibold rounded-full flex items-center justify-center"
               >
                 {{ activeFiltersCount }}
               </span>

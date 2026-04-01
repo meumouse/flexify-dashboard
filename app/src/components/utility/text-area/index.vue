@@ -37,7 +37,7 @@ const copyInput = async () => {
   <div class="relative flex">
     <textarea
       v-model="model"
-      class="px-2 py-2 border border-zinc-200 dark:border-zinc-700/40 dark:bg-transparent rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 dark:focus:outline-indigo-700 focus:shadow-xs text-sm"
+      class="px-2 py-2 border border-zinc-200 dark:border-zinc-700/40 dark:bg-transparent rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm"
       rows="3"
       :class="returnInputClass"
       v-bind="attrs"

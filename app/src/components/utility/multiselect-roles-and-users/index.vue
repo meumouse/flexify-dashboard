@@ -124,7 +124,7 @@ watchEffect(() => {
     @click="showOptions"
     v-bind="attrs"
     ref="parent"
-    class="px-2 py-2 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 dark:focus:outline-indigo-700 focus:shadow-xs text-sm col-span-2 flex flex-row gap-3 items-center"
+    class="px-2 py-2 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm col-span-2 flex flex-row gap-3 items-center"
   >
     <span v-if="model.length" class="grow">{{ `${model.length} ${__("Items selected", "flexify-dashboard")}` }}</span>
     <span v-else class="text-zinc-500 grow">{{ __("Select users or roles", "flexify-dashboard") }}</span>
@@ -140,7 +140,7 @@ watchEffect(() => {
       <div class="relative flex">
         <input
           v-model="search"
-          class="px-2 py-2 pl-8 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 dark:focus:outline-indigo-700 focus:shadow-xs text-sm dark:bg-transparent"
+          class="px-2 py-2 pl-8 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm dark:bg-transparent"
           :placeholder="__('Search')"
           @keyup.enter="getUsers"
         />

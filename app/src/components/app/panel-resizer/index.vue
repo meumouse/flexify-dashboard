@@ -1,7 +1,7 @@
 <template>
   <div
     ref="handleRef"
-    class="absolute top-0 h-full w-1 cursor-ew-resize transition-opacity duration-300 ease-in-out bg-indigo-500/20"
+    class="absolute top-0 h-full w-1 cursor-ew-resize transition-opacity duration-300 ease-in-out bg-brand-500/20"
     :class="[{ 'opacity-100': isHandleVisible || isDragging, 'opacity-0': !isHandleVisible && !isDragging }, isRTL || position == 'left' ? 'left-0' : 'right-0']"
     @mousedown.stop="startResize"
     @click.stop

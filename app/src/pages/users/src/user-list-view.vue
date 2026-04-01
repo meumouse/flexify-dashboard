@@ -915,7 +915,7 @@ watch(
               />
               <span
                 v-if="activeFiltersCount > 0"
-                class="absolute -top-1 -right-1 w-4 h-4 bg-indigo-500 text-white text-[10px] font-semibold rounded-full flex items-center justify-center"
+                class="absolute -top-1 -right-1 w-4 h-4 bg-brand-500 text-white text-[10px] font-semibold rounded-full flex items-center justify-center"
               >
                 {{ activeFiltersCount }}
               </span>
@@ -1299,7 +1299,7 @@ watch(
               :placeholder="__('Password', 'flexify-dashboard')"
               autocomplete="new-password"
               required
-              class="px-2 py-2 pr-20 border border-zinc-200 dark:border-zinc-700/40 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 dark:focus:outline-indigo-700 focus:shadow-xs text-sm bg-transparent"
+              class="px-2 py-2 pr-20 border border-zinc-200 dark:border-zinc-700/40 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm bg-transparent"
               @focus="handlePasswordFocus"
               @blur="handlePasswordBlur"
             />

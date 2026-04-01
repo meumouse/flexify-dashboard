@@ -170,7 +170,7 @@ onMounted(() => {
         </p>
       </div>
       <div class="flex items-center gap-2">
-        <div class="w-2 h-2 rounded-full bg-indigo-500"></div>
+        <div class="w-2 h-2 rounded-full bg-brand-500"></div>
         <span class="text-xs text-zinc-500 dark:text-zinc-400">
           {{ formatNumber(totalViews) }} {{ __('views', 'flexify-dashboard') }}
         </span>

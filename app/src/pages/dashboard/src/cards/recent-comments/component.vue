@@ -166,7 +166,7 @@ onMounted(() => {
         </p>
       </div>
       <div class="flex items-center gap-2">
-        <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+        <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
         <span class="text-xs text-zinc-500 dark:text-zinc-400"
           >{{ totalComments }} {{ __('total', 'flexify-dashboard') }}</span
         >
@@ -233,7 +233,7 @@ onMounted(() => {
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 mb-1" v-if="1 == 2">
             <h4
-              class="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200"
+              class="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors duration-200"
             >
               {{ comment.author }}
             </h4>
@@ -249,7 +249,7 @@ onMounted(() => {
               :href="comment.postLink"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+              class="text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
             >
               {{ comment.postTitle }}
             </a>

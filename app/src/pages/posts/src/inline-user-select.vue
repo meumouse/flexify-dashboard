@@ -95,7 +95,7 @@ const nextPage = () => {
     class="flex flex-row items-center gap-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer"
   >
     <div
-      class="w-5 aspect-square bg-zinc-700 dark:bg-indigo-700 text-white rounded-full font-semibold flex items-center justify-center shrink-0 relative overflow-hidden border border-zinc-200 dark:border-zinc-700"
+      class="w-5 aspect-square bg-zinc-700 dark:bg-brand-700 text-white rounded-full font-semibold flex items-center justify-center shrink-0 relative overflow-hidden border border-zinc-200 dark:border-zinc-700"
     >
       <span class="lowercase relative text-sm font-medium leading-none mb-0.5">{{ model.name ? model.name.charAt(0) : "u" }}</span>
       <img v-if="model.gravatar" :src="model.gravatar" class="absolute w-full h-full" />
@@ -110,7 +110,7 @@ const nextPage = () => {
       <div class="relative flex">
         <input
           v-model="search"
-          class="px-2 py-2 pl-8 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 dark:focus:outline-indigo-700 focus:shadow-xs text-sm dark:bg-transparent"
+          class="px-2 py-2 pl-8 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm dark:bg-transparent"
           :placeholder="__('Search', 'flexify-dashboard')"
           @keyup.enter="getUsers"
         />

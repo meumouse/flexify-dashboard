@@ -66,7 +66,7 @@ const updatePostStatus = (postType) => {
       <div class="relative flex">
         <input
           v-model="search"
-          class="px-2 py-2 pl-8 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 dark:focus:outline-indigo-700 focus:shadow-xs text-sm dark:bg-transparent"
+          class="px-2 py-2 pl-8 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm dark:bg-transparent"
           :placeholder="__('Search', 'flexify-dashboard')"
         />
 
@@ -97,10 +97,10 @@ const updatePostStatus = (postType) => {
 @reference "@/assets/css/tailwind.css";
 
 .fd-status {
-  @apply flex gap-2 flex-row relative items-center rounded-md text-xs py-1 px-2 inline-flex border transition-all text-zinc-800/80 dark:text-zinc-200/80 bg-indigo-300/20 border-indigo-300/80;
+  @apply flex gap-2 flex-row relative items-center rounded-md text-xs py-1 px-2 inline-flex border transition-all text-zinc-800/80 dark:text-zinc-200/80 bg-brand-300/20 border-brand-300/80;
 }
 .fd-status::before {
-  @apply relative w-2 h-2 rounded-full bg-indigo-500 content-[''] animate-pulse;
+  @apply relative w-2 h-2 rounded-full bg-brand-500 content-[''] animate-pulse;
 }
 .fd-status-publish {
   @apply bg-green-300/20 border-green-300/80 dark:border-green-700/80;

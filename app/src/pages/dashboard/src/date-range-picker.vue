@@ -165,7 +165,7 @@ watch(
 
 <template>
   <div
-    class="relative w-full min-w-56 px-3 py-1 pl-8 pr-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-800/50 rounded-lg transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-600 focus-within:ring-1 focus-within:ring-indigo-500/20 focus-within:border-indigo-500 dark:focus-within:ring-indigo-400/20 dark:focus-within:border-indigo-400 cursor-pointer"
+    class="relative w-full min-w-56 px-3 py-1 pl-8 pr-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-800/50 rounded-lg transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-600 focus-within:ring-1 focus-within:ring-brand-500/20 focus-within:border-brand-500 dark:focus-within:ring-brand-400/20 dark:focus-within:border-brand-400 cursor-pointer"
     @click="showPicker"
     v-bind="attrs"
   >

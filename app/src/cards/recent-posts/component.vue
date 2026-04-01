@@ -90,7 +90,7 @@ const getStatusColor = (status) => {
   const colors = {
     publish: 'text-green-600 dark:text-green-500/80',
     draft: 'text-amber-600 dark:text-amber-400',
-    scheduled: 'text-indigo-600 dark:text-indigo-400',
+    scheduled: 'text-brand-600 dark:text-brand-400',
   };
   return colors[status] || colors.draft;
 };
@@ -152,7 +152,7 @@ onMounted(() => {
         </p>
       </div>
       <div class="flex items-center gap-2">
-        <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+        <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
         <span class="text-xs text-zinc-500 dark:text-zinc-400"
           >{{ totalPosts }} {{ __('total', 'flexify-dashboard') }}</span
         >
@@ -224,7 +224,7 @@ onMounted(() => {
             class="block"
           >
             <h4
-              class="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200"
+              class="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors duration-200"
             >
               {{ post.title }}
             </h4>
@@ -268,7 +268,7 @@ onMounted(() => {
                 ? 'bg-amber-100 dark:bg-amber-900/20'
                 : '',
               post.status === 'scheduled'
-                ? 'bg-indigo-100 dark:bg-indigo-900/20'
+                ? 'bg-brand-100 dark:bg-brand-900/20'
                 : '',
             ]"
           >

@@ -255,7 +255,7 @@ onMounted(() => {
           class="w-full bg-zinc-200 dark:bg-zinc-700 rounded-full h-2 relative"
         >
           <div
-            class="h-2 rounded-full transition-all duration-500 bg-gradient-to-r from-indigo-500 to-red-600"
+            class="h-2 rounded-full transition-all duration-500 bg-gradient-to-r from-brand-500 to-red-600"
             :style="`clip-path: inset(0% ${100 - memoryStatus}% 0% 0%);`"
           ></div>
         </div>
@@ -290,7 +290,7 @@ onMounted(() => {
         </div>
         <div class="w-full bg-zinc-200 dark:bg-zinc-700 rounded-full h-2">
           <div
-            class="h-2 rounded-full transition-all duration-500 bg-gradient-to-r from-indigo-500 to-red-600"
+            class="h-2 rounded-full transition-all duration-500 bg-gradient-to-r from-brand-500 to-red-600"
             :style="`clip-path: inset(0% ${100 - diskStatus}% 0% 0%);`"
           ></div>
         </div>
@@ -307,7 +307,7 @@ onMounted(() => {
           class="text-center p-3 bg-white dark:bg-zinc-800/40 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-colors duration-200 group"
         >
           <div
-            class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+            class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors"
           >
             {{ healthData.plugins?.updates_available || 0 }}
           </div>
@@ -322,7 +322,7 @@ onMounted(() => {
           class="text-center p-3 bg-white dark:bg-zinc-800/40 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-colors duration-200 group"
         >
           <div
-            class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+            class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors"
           >
             {{ healthData.themes?.updates_available || 0 }}
           </div>
@@ -337,7 +337,7 @@ onMounted(() => {
           class="text-center p-3 bg-white dark:bg-zinc-800/40 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-colors duration-200 group"
         >
           <div
-            class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+            class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors"
           >
             {{ healthData.wordpress?.core_updates || 0 }}
           </div>

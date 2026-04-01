@@ -11,7 +11,7 @@ const model = defineModel();
     <select
       v-bind="attrs"
       v-model="model"
-      class="bg-white dark:bg-transparent border border-zinc-200 dark:border-zinc-700 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-indigo-600/10 dark:focus:border-indigo-600/10 block w-full px-2 py-1 appearance-none pr-8"
+      class="bg-white dark:bg-transparent border border-zinc-200 dark:border-zinc-700 rounded-lg focus:ring-brand-500 focus:border-brand-500 dark:focus:ring-brand-600/10 dark:focus:border-brand-600/10 block w-full px-2 py-1 appearance-none pr-8"
     >
       <template v-for="item in options">
         <option :value="item.value" :disabled="item.disabled ? true : false" v-html="item.label"></option>

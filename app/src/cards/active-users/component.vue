@@ -71,7 +71,7 @@ const getStatusColor = () => {
   if (activeUsers.value === 0) return 'bg-gray-400';
   if (activeUsers.value < 5) return 'bg-green-500';
   if (activeUsers.value < 20) return 'bg-green-500';
-  return 'bg-indigo-500';
+  return 'bg-brand-500';
 };
 
 /**
@@ -151,7 +151,7 @@ onUnmounted(() => {
       <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ error }}</p>
       <button
         @click="loadActiveUsers"
-        class="mt-2 text-indigo-600 dark:text-indigo-400 text-sm hover:underline"
+        class="mt-2 text-brand-600 dark:text-brand-400 text-sm hover:underline"
       >
         {{ __('Retry', 'flexify-dashboard') }}
       </button>

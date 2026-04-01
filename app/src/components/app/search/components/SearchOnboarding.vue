@@ -58,11 +58,11 @@ const handleDismiss = () => {
         >
           <div class="flex items-center gap-2">
             <div
-              class="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center group-hover:bg-indigo-200 dark:group-hover:bg-indigo-900/50 transition-colors"
+              class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center group-hover:bg-brand-200 dark:group-hover:bg-brand-900/50 transition-colors"
             >
               <AppIcon
                 :icon="example.icon"
-                class="text-indigo-600 dark:text-indigo-400 text-sm"
+                class="text-brand-600 dark:text-brand-400 text-sm"
               />
             </div>
             <div class="flex flex-col">
@@ -97,7 +97,7 @@ const handleDismiss = () => {
 
       <button
         @click.prevent="handleDismiss"
-        class="mt-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition-colors w-full"
+        class="mt-2 px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-sm font-medium transition-colors w-full"
       >
         {{ __('Got it, thanks!', 'flexify-dashboard') }}
       </button>

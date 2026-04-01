@@ -100,7 +100,7 @@ const getStatusClasses = (statusValue) => {
     draft: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300',
     pending: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300',
     trash: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300',
-    private: 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300',
+    private: 'bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300',
   };
   return statusMap[statusValue] || statusMap.draft;
 };

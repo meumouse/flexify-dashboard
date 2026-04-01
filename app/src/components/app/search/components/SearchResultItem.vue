@@ -42,7 +42,7 @@ const handleClick = () => {
       <!-- User Avatar -->
       <div
         v-if="category === 'user'"
-        class="w-8 aspect-square bg-zinc-700 dark:bg-indigo-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden"
+        class="w-8 aspect-square bg-zinc-700 dark:bg-brand-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden"
       >
         <span class="uppercase text-xs">{{
           (result.slug || result.name || result.email || '').charAt(0)

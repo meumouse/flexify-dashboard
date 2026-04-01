@@ -61,7 +61,7 @@ const formatBytes = (bytes, decimals = 2) => {
  */
 const getFileTypeColor = (fileType) => {
   const colors = {
-    image: 'text-indigo-600 dark:text-indigo-400',
+    image: 'text-brand-600 dark:text-brand-400',
     video: 'text-purple-600 dark:text-purple-400',
     audio: 'text-green-600 dark:text-green-400',
     application: 'text-orange-600 dark:text-orange-400',
@@ -128,7 +128,7 @@ onMounted(() => {
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-indigo-600 rounded-full animate-spin mx-auto mb-3"
+          class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"
         ></div>
         <p class="text-sm text-zinc-500 dark:text-zinc-400">
           {{ __('Loading media analytics...', 'flexify-dashboard') }}
@@ -145,7 +145,7 @@ onMounted(() => {
         </p>
         <button
           @click="loadAnalytics"
-          class="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+          class="text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
         >
           {{ __('Try again', 'flexify-dashboard') }}
         </button>
@@ -216,7 +216,7 @@ onMounted(() => {
             </div>
             <div class="text-right">
               <div
-                class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+                class="text-lg font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors"
               >
                 {{ fileType.count.toLocaleString() }}
               </div>

@@ -78,7 +78,7 @@ export const STATUS_BADGE_CLASSES = {
     'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400',
   private: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400',
   future:
-    'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400',
+    'bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400',
 };
 
 /**

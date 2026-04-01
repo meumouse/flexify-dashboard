@@ -195,7 +195,7 @@ watchEffect(() => {
 
       <div class="p-8 py-0 -mt-8 flex flex-col gap-2 items-start z-[1] shrink-0 animate-pulse">
         <div class="rounded-lg bg-white dark:bg-zinc-900 p-1 -ml-1 -mt-1">
-          <div class="rounded-md bg-indigo-600 aspect-square h-16 overflow-hidden"></div>
+          <div class="rounded-md bg-brand-600 aspect-square h-16 overflow-hidden"></div>
         </div>
         <div class="rounded-lg h-10 bg-zinc-100 dark:bg-zinc-800 animate-pulse w-2/3"></div>
         <div class="rounded-lg h-16 bg-zinc-100 dark:bg-zinc-800 animate-pulse w-full"></div>
@@ -232,7 +232,7 @@ watchEffect(() => {
       </div>
       <div class="p-8 py-0 -mt-8 flex flex-col gap-2 items-start z-[1] shrink-0">
         <div class="rounded-lg bg-white dark:bg-zinc-900 p-1 -ml-1 -mt-1">
-          <div class="rounded-md bg-indigo-600 aspect-square h-16 overflow-hidden">
+          <div class="rounded-md bg-brand-600 aspect-square h-16 overflow-hidden">
             <img :src="getPluginIcon" class="w-full h-full object-cover" />
           </div>
         </div>
@@ -400,7 +400,7 @@ watchEffect(() => {
 }
 
 .reviewer-name {
-  @apply hover:text-indigo-600 dark:hover:text-indigo-400;
+  @apply hover:text-brand-600 dark:hover:text-brand-400;
 }
 
 .review-date {

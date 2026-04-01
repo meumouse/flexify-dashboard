@@ -146,7 +146,7 @@ const highlightMatch = (text, query) => {
   );
   return text.replace(
     regex,
-    '<mark class="bg-indigo-200 dark:bg-indigo-800/50 text-indigo-900 dark:text-indigo-100 rounded px-0.5">$1</mark>'
+    '<mark class="bg-brand-200 dark:bg-brand-800/50 text-brand-900 dark:text-brand-100 rounded px-0.5">$1</mark>'
   );
 };
 

@@ -162,7 +162,7 @@ onMounted(() => {
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-indigo-600 rounded-full animate-spin mx-auto mb-3"
+          class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"
         ></div>
         <p class="text-sm text-zinc-500 dark:text-zinc-400">
           {{ __('Loading scheduled posts...', 'flexify-dashboard') }}
@@ -179,7 +179,7 @@ onMounted(() => {
         </p>
         <button
           @click="loadScheduledPosts"
-          class="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+          class="text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
         >
           {{ __('Try again', 'flexify-dashboard') }}
         </button>
@@ -260,11 +260,11 @@ onMounted(() => {
                 !day.isCurrentMonth,
               'text-zinc-900 dark:text-zinc-100':
                 day.isCurrentMonth && !day.isToday,
-              'bg-indigo-300 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 border-0 group-hover:bg-indigo-400 group-hover:dark:bg-indigo-900/40':
+              'bg-brand-300 dark:bg-brand-900/60 text-brand-700 dark:text-brand-300 border-0 group-hover:bg-brand-400 group-hover:dark:bg-brand-900/40':
                 day.isToday,
               'hover:bg-zinc-100 dark:hover:bg-zinc-700 border border-zinc-200/60 dark:border-zinc-700/40':
                 day.isCurrentMonth && day.postsCount === 0 && !day.isToday,
-              'hover:bg-indigo-50 dark:hover:bg-indigo-900/20 bg-zinc-100 dark:bg-zinc-700/40':
+              'hover:bg-brand-50 dark:hover:bg-brand-900/20 bg-zinc-100 dark:bg-zinc-700/40':
                 day.isCurrentMonth && day.postsCount > 0,
             }"
           >

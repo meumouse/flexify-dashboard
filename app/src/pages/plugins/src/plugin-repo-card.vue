@@ -106,7 +106,7 @@ const installPluginBySlug = async () => {
     </div>
     <div class="p-4 pt-0 -mt-3 flex flex-col gap-2 items-start grow z-[1]">
       <div class="rounded-lg bg-white dark:bg-zinc-900 p-1 -ml-1 -mt-1">
-        <div class="rounded-md bg-indigo-600 aspect-square h-10 overflow-hidden">
+        <div class="rounded-md bg-brand-600 aspect-square h-10 overflow-hidden">
           <img :src="getPluginIcon" class="w-full h-full object-cover" />
         </div>
       </div>

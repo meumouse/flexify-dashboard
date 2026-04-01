@@ -85,6 +85,6 @@ watchEffect(() => {
         </a>
       </template>
     </div>
-    <div v-if="showBack" class="absolute transition-all border-b-[2px] border-indigo-600" :style="bgStyle"></div>
+    <div v-if="showBack" class="absolute transition-all border-b-[2px] border-brand-600" :style="bgStyle"></div>
   </div>
 </template>

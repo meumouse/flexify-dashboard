@@ -92,11 +92,11 @@ const getDeviceIcon = (deviceType) => {
 const getDeviceColor = (deviceType) => {
   const colors = {
     desktop:
-      'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400',
+      'bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400',
     mobile:
       'bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400',
     tablet:
-      'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400',
+      'bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400',
   };
   return (
     colors[deviceType] ||
@@ -203,7 +203,7 @@ onMounted(() => {
         </p>
       </div>
       <div class="flex items-center gap-2">
-        <div class="w-2 h-2 rounded-full bg-indigo-500"></div>
+        <div class="w-2 h-2 rounded-full bg-brand-500"></div>
         <span class="text-xs text-zinc-500 dark:text-zinc-400">
           {{ formatNumber(totalViews) }} {{ __('views', 'flexify-dashboard') }}
         </span>
@@ -232,7 +232,7 @@ onMounted(() => {
       <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ error }}</p>
       <button
         @click="loadDeviceData"
-        class="mt-2 text-indigo-600 dark:text-indigo-400 text-sm hover:underline"
+        class="mt-2 text-brand-600 dark:text-brand-400 text-sm hover:underline"
       >
         {{ __('Retry', 'flexify-dashboard') }}
       </button>
@@ -273,7 +273,7 @@ onMounted(() => {
           class="mt-2 w-full bg-zinc-200 dark:bg-zinc-700 rounded-full h-1.5"
         >
           <div
-            class="h-1.5 rounded-full transition-all duration-300 bg-indigo-500 dark:bg-indigo-500/60"
+            class="h-1.5 rounded-full transition-all duration-300 bg-brand-500 dark:bg-brand-500/60"
             :style="{ width: getDevicePercentage(device.views) + '%' }"
           ></div>
         </div>

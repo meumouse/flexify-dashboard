@@ -121,7 +121,7 @@ onBeforeUnmount(() => {
 
             <div
               v-if="getNotificationCount(link)"
-              class="absolute top-0 right-[-2px] text-xs bg-indigo-500/80 rounded border border-indigo-300/40 px-1 text-white"
+              class="absolute top-0 right-[-2px] text-xs bg-brand-500/80 rounded border border-brand-300/40 px-1 text-white"
             >
               {{ getNotificationCount(link) }}
             </div>

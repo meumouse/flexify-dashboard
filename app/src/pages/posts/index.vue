@@ -918,8 +918,8 @@ fetchPostsData();
                 class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-md whitespace-nowrap transition-all duration-200 hover:scale-105"
                 :class="
                   item.key === 'categories'
-                    ? 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 dark:bg-indigo-950 dark:text-indigo-300 dark:hover:bg-indigo-900 dark:border-indigo-800'
-                    : 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 dark:bg-indigo-950 dark:text-indigo-300 dark:hover:bg-indigo-900 dark:border-indigo-800'
+                    ? 'bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 dark:bg-brand-950 dark:text-brand-300 dark:hover:bg-brand-900 dark:border-brand-800'
+                    : 'bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 dark:bg-brand-950 dark:text-brand-300 dark:hover:bg-brand-900 dark:border-brand-800'
                 "
                 v-html="tag.title"
               />
@@ -1007,7 +1007,7 @@ tbody .column-title {
 }
 
 .fd-comment-count {
-  @apply text-sm bg-indigo-500 dark:bg-indigo-600/30 rounded border border-indigo-600 px-1 text-zinc-100;
+  @apply text-sm bg-brand-500 dark:bg-brand-600/30 rounded border border-brand-600 px-1 text-zinc-100;
 }
 
 html {

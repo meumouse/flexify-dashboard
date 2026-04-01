@@ -35,7 +35,7 @@ const handleInput = (event) => {
 <template>
   <div class="relative flex">
     <input
-      class="px-2 py-2 border border-zinc-200 dark:border-zinc-700 dark:bg-transparent rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 dark:focus:outline-indigo-700 focus:shadow-xs text-sm pl-8 dark:text-zinc-300"
+      class="px-2 py-2 border border-zinc-200 dark:border-zinc-700 dark:bg-transparent rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm pl-8 dark:text-zinc-300"
       :value="modelValue"
       @input="handleInput"
       :placeholder="placeholder || __('Search posts, pages, categories, users...', 'flexify-dashboard')"
@@ -63,7 +63,7 @@ const handleInput = (event) => {
         v-if="isLoading"
       >
         <svg
-          class="animate-spin text-indigo-500 w-4"
+          class="animate-spin text-brand-500 w-4"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"

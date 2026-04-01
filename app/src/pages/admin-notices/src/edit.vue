@@ -350,7 +350,7 @@ watch(
             <div
               class="border rounded-lg p-4 bg-white dark:bg-zinc-900"
               :class="{
-                'border-indigo-200 bg-indigo-50 dark:bg-indigo-950/20 dark:border-indigo-800':
+                'border-brand-200 bg-brand-50 dark:bg-brand-950/20 dark:border-brand-800':
                   notice.meta.notice_type === 'info',
                 'border-green-200 bg-green-50 dark:bg-green-950/20 dark:border-green-800':
                   notice.meta.notice_type === 'success',
@@ -365,7 +365,7 @@ watch(
                   :icon="getNoticeIcon"
                   class="text-lg mt-0.5 flex-shrink-0"
                   :class="{
-                    'text-indigo-600 dark:text-indigo-400':
+                    'text-brand-600 dark:text-brand-400':
                       notice.meta.notice_type === 'info',
                     'text-green-600 dark:text-green-400':
                       notice.meta.notice_type === 'success',
@@ -379,7 +379,7 @@ watch(
                   <div
                     class="font-medium text-sm mb-1"
                     :class="{
-                      'text-indigo-800 dark:text-indigo-200':
+                      'text-brand-800 dark:text-brand-200':
                         notice.meta.notice_type === 'info',
                       'text-green-800 dark:text-green-200':
                         notice.meta.notice_type === 'success',
@@ -394,7 +394,7 @@ watch(
                   <div
                     class="text-sm"
                     :class="{
-                      'text-indigo-700 dark:text-indigo-300':
+                      'text-brand-700 dark:text-brand-300':
                         notice.meta.notice_type === 'info',
                       'text-green-700 dark:text-green-300':
                         notice.meta.notice_type === 'success',

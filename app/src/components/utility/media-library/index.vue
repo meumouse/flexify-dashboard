@@ -693,7 +693,7 @@ defineExpose({
           <div class="@container max-h-full h-full" :class="imageInspect ? 'w-1/2 flex-shrink-0' : ''">
             <div
               class="grid gap-3 max-h-full overflow-auto @[300px]:grid-cols-3 @[500px]:grid-cols-4 @[700px]:grid-cols-6 px-6 py-4"
-              :class="dragDrop.dragging ? 'bg-indigo-900/20' : ''"
+              :class="dragDrop.dragging ? 'bg-brand-900/20' : ''"
               @scroll="onScroll"
               @dragenter.prevent="handleDragover"
               @dragover.prevent
@@ -729,21 +729,21 @@ defineExpose({
                     v-if="image.uploading"
                     class="absolute top-0 left-0 right-0 bottom-0 bg-zinc-900/30 pointer-events-none rounded-lg flex flex-col place-content-center justify-center items-center"
                   >
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-brand-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                   </div>
 
                   <div class="absolute p-3 right-0 bottom-0 opacity-0 group-hover/media:opacity-100 transition-opacity" v-if="!image.uploading">
-                    <div class="rounded bg-indigo-700 p-1 text-white cursor-pointer" @click.stop.prevent="previewImage(image)"><AppIcon icon="preview" /></div>
+                    <div class="rounded bg-brand-700 p-1 text-white cursor-pointer" @click.stop.prevent="previewImage(image)"><AppIcon icon="preview" /></div>
                   </div>
                 </div>
                 <div class="text-sm truncate max-w-full w-full text-center" v-html="image.title.rendered"></div>
               </div>
 
               <div v-if="paginationLoading" class="@[300px]:col-span-3 @[500px]:col-span-4 @[700px]:col-span-6 p-6 flex flex-row place-content-center">
-                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-brand-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>

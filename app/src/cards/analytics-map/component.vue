@@ -434,7 +434,7 @@ onUnmounted(() => {
           class="flex items-center gap-4 text-xs text-zinc-500 dark:text-zinc-400"
         >
           <div class="flex items-center gap-1">
-            <div class="w-2 h-2 rounded-full bg-indigo-500"></div>
+            <div class="w-2 h-2 rounded-full bg-brand-500"></div>
             <span
               >{{ formatNumber(totalVisits) }}
               {{ __('visits', 'flexify-dashboard') }}</span
@@ -452,7 +452,7 @@ onUnmounted(() => {
     <div v-if="loading" class="flex-1 flex items-center justify-center h-80">
       <div class="text-center">
         <div
-          class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-indigo-600 rounded-full animate-spin mx-auto mb-3"
+          class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"
         ></div>
         <p class="text-sm text-zinc-500 dark:text-zinc-400">
           {{ __('Loading map data...', 'flexify-dashboard') }}
@@ -469,7 +469,7 @@ onUnmounted(() => {
         </p>
         <button
           @click="loadGeoData"
-          class="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+          class="text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
         >
           {{ __('Try again', 'flexify-dashboard') }}
         </button>
@@ -541,7 +541,7 @@ onUnmounted(() => {
           <div
             class="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400"
           >
-            <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+            <div class="w-3 h-3 rounded-full bg-brand-500"></div>
             <span>{{ __('Low', 'flexify-dashboard') }}</span>
           </div>
           <div

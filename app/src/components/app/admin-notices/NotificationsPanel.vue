@@ -106,7 +106,7 @@ const appliesToCurrentUser = (notice) => {
 
 const typeStyles = {
   info: {
-    dotColor: 'bg-indigo-500',
+    dotColor: 'bg-brand-500',
   },
   success: {
     dotColor: 'bg-green-500',

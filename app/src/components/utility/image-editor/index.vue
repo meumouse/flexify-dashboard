@@ -1387,7 +1387,7 @@ onUnmounted(() => {
               :class="[
                 'text-xs py-1.5 px-2',
                 showOriginal
-                  ? 'bg-indigo-500/20 text-indigo-400'
+                  ? 'bg-brand-500/20 text-brand-400'
                   : 'text-zinc-500 dark:text-zinc-400',
               ]"
             >
@@ -1455,7 +1455,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1477,7 +1477,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1499,7 +1499,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1521,7 +1521,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1543,7 +1543,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
             </div>
@@ -1584,7 +1584,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1606,7 +1606,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1628,7 +1628,7 @@ onUnmounted(() => {
                   min="-180"
                   max="180"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1650,7 +1650,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
                 <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">
                   {{ __('Cool ← → Warm', 'flexify-dashboard') }}
@@ -1675,7 +1675,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
                 <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">
                   {{ __('Green ← → Magenta', 'flexify-dashboard') }}
@@ -1719,7 +1719,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
                 <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">
                   {{ __('Negative = blur, positive = sharpen', 'flexify-dashboard') }}
@@ -1744,7 +1744,7 @@ onUnmounted(() => {
                   min="0"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1766,7 +1766,7 @@ onUnmounted(() => {
                   min="0"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1788,7 +1788,7 @@ onUnmounted(() => {
                   min="0"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
             </div>
@@ -1835,7 +1835,7 @@ onUnmounted(() => {
                     :class="[
                       'px-2 py-1.5 text-xs rounded-md transition-colors',
                       cropAspectRatio === preset.value
-                        ? 'bg-indigo-500 text-white'
+                        ? 'bg-brand-500 text-white'
                         : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700',
                     ]"
                   >
@@ -1880,7 +1880,7 @@ onUnmounted(() => {
                   v-model="lockAspectRatio"
                   type="checkbox"
                   id="lockAspectRatio"
-                  class="w-4 h-4 rounded border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-indigo-500 focus:ring-indigo-500"
+                  class="w-4 h-4 rounded border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-brand-500 focus:ring-brand-500"
                 />
                 <label
                   for="lockAspectRatio"
@@ -1907,7 +1907,7 @@ onUnmounted(() => {
                   @input="handleResizeWidthChangeWrapper"
                   type="number"
                   min="1"
-                  class="w-full px-2 py-1.5 text-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded text-zinc-900 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  class="w-full px-2 py-1.5 text-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded text-zinc-900 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-brand-500"
                 />
               </div>
 
@@ -1928,7 +1928,7 @@ onUnmounted(() => {
                   @input="handleResizeHeightChangeWrapper"
                   type="number"
                   min="1"
-                  class="w-full px-2 py-1.5 text-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded text-zinc-900 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  class="w-full px-2 py-1.5 text-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded text-zinc-900 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-brand-500"
                 />
               </div>
 
@@ -1989,7 +1989,7 @@ onUnmounted(() => {
                   type="transparent"
                   :class="[
                     'flex items-center justify-center gap-1.5 text-xs py-2',
-                    flipHorizontal ? 'bg-indigo-500/20 text-indigo-400' : '',
+                    flipHorizontal ? 'bg-brand-500/20 text-brand-400' : '',
                   ]"
                 >
                   <AppIcon icon="flip" class="text-sm" />
@@ -2002,7 +2002,7 @@ onUnmounted(() => {
                   type="transparent"
                   :class="[
                     'flex items-center justify-center gap-1.5 text-xs py-2',
-                    flipVertical ? 'bg-indigo-500/20 text-indigo-400' : '',
+                    flipVertical ? 'bg-brand-500/20 text-brand-400' : '',
                   ]"
                 >
                   <AppIcon icon="flip_camera_android" class="text-sm" />

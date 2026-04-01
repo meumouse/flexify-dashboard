@@ -191,7 +191,7 @@ watch(() => tab.value, getPluginPerformance);
       <div class="w-[600px] max-w-screen p-6">
         <div class="flex flex-col gap-6">
           <div class="flex flex-row items-center gap-3">
-            <div class="rounded-md bg-indigo-600 aspect-square h-8 overflow-hidden">
+            <div class="rounded-md bg-brand-600 aspect-square h-8 overflow-hidden">
               <img :src="getPluginIcon" class="w-full h-full object-cover" />
             </div>
 
@@ -224,50 +224,50 @@ watch(() => tab.value, getPluginPerformance);
             <div class="grid grid-cols-3 gap-3">
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total Queries", "flexify-dashboard") }}</div>
-                <div class="font-semibold text-xl text-indigo-500 dark:text-indigo-400">{{ returnPluginMetrics.metrics.query_count || 0 }}</div>
+                <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.metrics.query_count || 0 }}</div>
               </div>
 
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Query time", "flexify-dashboard") }}</div>
-                <div class="font-semibold text-xl text-indigo-500 dark:text-indigo-400">{{ formatExecutionTime(returnPluginMetrics.metrics.query_time) }}</div>
+                <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ formatExecutionTime(returnPluginMetrics.metrics.query_time) }}</div>
               </div>
 
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total hooks", "flexify-dashboard") }}</div>
-                <div class="font-semibold text-xl text-indigo-500 dark:text-indigo-400">{{ returnPluginMetrics.metrics.hook_count || 0 }}</div>
+                <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.metrics.hook_count || 0 }}</div>
               </div>
 
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Execution time", "flexify-dashboard") }}</div>
-                <div class="font-semibold text-xl text-indigo-500 dark:text-indigo-400">{{ formatExecutionTime(returnPluginMetrics.metrics.execution_time) }}</div>
+                <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ formatExecutionTime(returnPluginMetrics.metrics.execution_time) }}</div>
               </div>
 
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Memory usage", "flexify-dashboard") }}</div>
                 <div class="">
-                  <span class="font-semibold text-xl text-indigo-500 dark:text-indigo-400 mr-1">{{ formatMemoryUsage(returnPluginMetrics.metrics.total_memory_allocated) }}</span>
+                  <span class="font-semibold text-xl text-brand-500 dark:text-brand-400 mr-1">{{ formatMemoryUsage(returnPluginMetrics.metrics.total_memory_allocated) }}</span>
                   <span class="text-zinc-500">({{ returnMemoryPercentage }})</span>
                 </div>
               </div>
 
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total scripts", "flexify-dashboard") }}</div>
-                <div class="font-semibold text-xl text-indigo-500 dark:text-indigo-400">{{ returnPluginMetrics.assets.scripts.length }}</div>
+                <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.assets.scripts.length }}</div>
               </div>
 
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total styles", "flexify-dashboard") }}</div>
-                <div class="font-semibold text-xl text-indigo-500 dark:text-indigo-400">{{ returnPluginMetrics.assets.styles.length }}</div>
+                <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.assets.styles.length }}</div>
               </div>
 
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total asset size", "flexify-dashboard") }}</div>
-                <div class="font-semibold text-xl text-indigo-500 dark:text-indigo-400">{{ returnPluginAssetSize }}</div>
+                <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginAssetSize }}</div>
               </div>
 
               <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
                 <div class="text-sm whitespace-nowrap">{{ __("HTTP requests", "flexify-dashboard") }}</div>
-                <div class="font-semibold text-xl text-indigo-500 dark:text-indigo-400">{{ returnPluginMetrics.http_requests.length }}</div>
+                <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.http_requests.length }}</div>
               </div>
             </div>
 

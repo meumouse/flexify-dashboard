@@ -331,7 +331,7 @@ onMounted(() => {
     <!-- Loading State -->
     <div v-if="loading && !status" class="flex items-center gap-2">
       <div
-        class="w-4 h-4 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"
+        class="w-4 h-4 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"
       ></div>
       <span class="text-sm text-zinc-500">{{
         __('Checking connection...', 'flexify-dashboard')
@@ -402,7 +402,7 @@ onMounted(() => {
         <div class="flex gap-2">
           <select
             v-model="selectedProperty"
-            class="flex-1 px-3 py-2 text-sm border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            class="flex-1 px-3 py-2 text-sm border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-brand-500"
             :disabled="loadingProperties"
           >
             <option value="">
@@ -456,7 +456,7 @@ onMounted(() => {
               v-model="manualPropertyId"
               type="text"
               :placeholder="__('e.g. 123456789', 'flexify-dashboard')"
-              class="flex-1 px-3 py-2 text-sm border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              class="flex-1 px-3 py-2 text-sm border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
               autocomplete="off"
             />
             <AppButton
@@ -501,7 +501,7 @@ onMounted(() => {
         class="flex items-center gap-2 text-sm text-zinc-500"
       >
         <div
-          class="w-4 h-4 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"
+          class="w-4 h-4 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"
         ></div>
         {{ __('Loading properties...', 'flexify-dashboard') }}
       </div>
@@ -526,7 +526,7 @@ onMounted(() => {
       <div>
         <button
           @click="showInstructions = !showInstructions"
-          class="flex items-center gap-2 text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300"
+          class="flex items-center gap-2 text-sm text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300"
         >
           <AppIcon
             :icon="showInstructions ? 'expand_less' : 'expand_more'"
@@ -552,7 +552,7 @@ onMounted(() => {
               href="https://console.cloud.google.com/projectcreate"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-indigo-600 dark:text-indigo-400 hover:underline"
+              class="text-brand-600 dark:text-brand-400 hover:underline"
             >
               {{ __('Google Cloud Console', 'flexify-dashboard') }}
             </a>
@@ -564,7 +564,7 @@ onMounted(() => {
               href="https://console.cloud.google.com/apis/library/analyticsdata.googleapis.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-indigo-600 dark:text-indigo-400 hover:underline"
+              class="text-brand-600 dark:text-brand-400 hover:underline"
             >
               {{ __('Google Analytics Data API', 'flexify-dashboard') }}
             </a>
@@ -575,7 +575,7 @@ onMounted(() => {
               href="https://console.cloud.google.com/iam-admin/serviceaccounts"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-indigo-600 dark:text-indigo-400 hover:underline"
+              class="text-brand-600 dark:text-brand-400 hover:underline"
             >
               {{ __('Service Accounts', 'flexify-dashboard') }}
             </a>
@@ -598,7 +598,7 @@ onMounted(() => {
               href="https://analytics.google.com/analytics/web/"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-indigo-600 dark:text-indigo-400 hover:underline"
+              class="text-brand-600 dark:text-brand-400 hover:underline"
             >
               {{ __('Google Analytics', 'flexify-dashboard') }}
             </a>
@@ -663,7 +663,7 @@ onMounted(() => {
           <textarea
             v-model="serviceAccountJson"
             :placeholder="__('Paste your service account JSON key here...', 'flexify-dashboard')"
-            class="w-full h-40 px-3 py-2 text-sm font-mono border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+            class="w-full h-40 px-3 py-2 text-sm font-mono border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none"
             autocomplete="off"
             spellcheck="false"
           ></textarea>

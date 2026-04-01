@@ -775,8 +775,8 @@ const statusIcon = computed(() => {
 const statusColor = computed(() => {
   const colors = {
     idle: 'text-zinc-400',
-    capturing: 'text-indigo-400',
-    analyzing: 'text-indigo-400',
+    capturing: 'text-brand-400',
+    analyzing: 'text-brand-400',
     success: 'text-green-400',
     error: 'text-red-400',
   };
@@ -789,8 +789,8 @@ const statusColor = computed(() => {
 const statusBgColor = computed(() => {
   const colors = {
     idle: 'bg-zinc-100 dark:bg-zinc-800',
-    capturing: 'bg-indigo-100 dark:bg-indigo-900/30',
-    analyzing: 'bg-indigo-100 dark:bg-indigo-900/30',
+    capturing: 'bg-brand-100 dark:bg-brand-900/30',
+    analyzing: 'bg-brand-100 dark:bg-brand-900/30',
     success: 'bg-green-100 dark:bg-green-900/30',
     error: 'bg-red-100 dark:bg-red-900/30',
   };
@@ -995,7 +995,7 @@ watch(
                 <div class="mb-3">
                   <button
                     @click="showCSS = !showCSS"
-                    class="flex flex-row items-center gap-2 text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+                    class="flex flex-row items-center gap-2 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors"
                   >
                     <AppIcon
                       icon="chevron_right"

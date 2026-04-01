@@ -469,7 +469,7 @@ onUnmounted(() => {
     <div
       v-if="minimized"
       ref="triggerRef"
-      class="w-7 aspect-square bg-zinc-700 dark:bg-indigo-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden cursor-pointer hover:ring-2 hover:ring-indigo-300 dark:hover:ring-indigo-600"
+      class="w-7 aspect-square bg-zinc-700 dark:bg-brand-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden cursor-pointer hover:ring-2 hover:ring-brand-300 dark:hover:ring-brand-600"
     >
       <span class="uppercase">{{ appStore.state.userName.charAt(0) }}</span>
       <img

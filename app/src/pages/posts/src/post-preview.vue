@@ -105,7 +105,7 @@ const getStatusClasses = (statusValue) => {
     draft: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300',
     pending: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300',
     trash: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300',
-    private: 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300',
+    private: 'bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300',
   };
   return statusMap[statusValue] || statusMap.draft;
 };
@@ -372,7 +372,7 @@ watch(
             v-for="category in post.categories"
             :key="category.id"
             :href="category.url"
-            class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-md whitespace-nowrap transition-all duration-200 hover:scale-105 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 dark:bg-indigo-950 dark:text-indigo-300 dark:hover:bg-indigo-900 dark:border-indigo-800"
+            class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-md whitespace-nowrap transition-all duration-200 hover:scale-105 bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 dark:bg-brand-950 dark:text-brand-300 dark:hover:bg-brand-900 dark:border-brand-800"
             v-html="category.title"
           />
         </div>
@@ -390,7 +390,7 @@ watch(
             v-for="tag in post.tags"
             :key="tag.id"
             :href="tag.url"
-            class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-md whitespace-nowrap transition-all duration-200 hover:scale-105 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 dark:bg-indigo-950 dark:text-indigo-300 dark:hover:bg-indigo-900 dark:border-indigo-800"
+            class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-md whitespace-nowrap transition-all duration-200 hover:scale-105 bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 dark:bg-brand-950 dark:text-brand-300 dark:hover:bg-brand-900 dark:border-brand-800"
             v-html="tag.title"
           />
         </div>
@@ -406,7 +406,7 @@ watch(
         <a
           :href="post.view_url"
           target="_blank"
-          class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline break-all"
+          class="text-sm text-brand-600 dark:text-brand-400 hover:underline break-all"
         >
           {{ post.view_url }}
         </a>

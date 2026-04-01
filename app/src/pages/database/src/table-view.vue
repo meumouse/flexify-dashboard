@@ -509,7 +509,7 @@ watch(viewMode, () => {
                   >
                     <span
                       v-if="column.Key"
-                      class="px-2 py-1 text-xs rounded bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300"
+                      class="px-2 py-1 text-xs rounded bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300"
                     >
                       {{ column.Key }}
                     </span>

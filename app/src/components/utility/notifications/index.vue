@@ -30,8 +30,8 @@ const getNotificationStyles = (type) => {
     },
     info: {
       icon: 'info',
-      iconColor: 'text-indigo-400',
-      dot: 'bg-indigo-400',
+      iconColor: 'text-brand-400',
+      dot: 'bg-brand-400',
     },
   };
 

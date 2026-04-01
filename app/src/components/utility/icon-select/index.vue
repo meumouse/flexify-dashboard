@@ -102,7 +102,7 @@ const icons = [
   <div
     ref="trigger"
     @click="contextmenu.show($event, returnThisPos($event))"
-    class="p-2 border border-zinc-200 dark:border-zinc-700 rounded-lg transition-all outline outline-transparent outline-offset-[-2px] focus:outline-indigo-300 focus:shadow-xs"
+    class="p-2 border border-zinc-200 dark:border-zinc-700 rounded-lg transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 focus:shadow-xs"
   >
     <AppIcon :icon="icon ? icon : 'home'" class="text-xl" :class="!icon ? 'opacity-50' : ''" />
   </div>

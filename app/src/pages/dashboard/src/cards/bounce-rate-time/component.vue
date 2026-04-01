@@ -275,7 +275,7 @@ onMounted(() => {
       <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ error }}</p>
       <button
         @click="loadEngagementData"
-        class="mt-2 text-indigo-600 dark:text-indigo-400 text-sm hover:underline"
+        class="mt-2 text-brand-600 dark:text-brand-400 text-sm hover:underline"
       >
         {{ __('Retry', 'flexify-dashboard') }}
       </button>
