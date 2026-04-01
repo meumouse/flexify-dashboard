@@ -170,7 +170,7 @@ watch(
 
 <template>
   <div
-    class="bg-white rounded-3xl p-6 h-full flex flex-col border border-zinc-200/40 dark:border-zinc-800/60 pb-3"
+    class="bg-white dark:bg-[#24303f] rounded-3xl p-6 h-full flex flex-col border border-zinc-200/40 dark:border-[#2e3a47] pb-3"
   >
     <!-- Loading State -->
     <div v-if="loading" class="flex-1 flex items-center justify-center">

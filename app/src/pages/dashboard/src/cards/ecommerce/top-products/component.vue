@@ -23,7 +23,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 </script>
 
 <template>
-  <div class="bg-white border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl p-6 h-full flex flex-col">
+  <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 h-full flex flex-col">
     <div class="mb-5 flex items-center gap-4">
       <div class="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-100 text-[1.4rem] text-sky-600 dark:bg-zinc-800 dark:text-sky-300">
         <i class="bx bx-crown"></i>

@@ -48,7 +48,7 @@ onMounted(loadData);
 </script>
 
 <template>
-  <div class="bg-white border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl h-full flex flex-col">
+  <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl h-full flex flex-col">
     <div class="flex flex-col gap-3 border-b border-zinc-200/80 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 dark:border-zinc-800">
       <div>
         <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Sales Summary', 'flexify-dashboard') }}</h3>

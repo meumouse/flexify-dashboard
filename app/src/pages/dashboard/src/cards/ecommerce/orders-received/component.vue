@@ -22,7 +22,7 @@ onMounted(loadData);
 </script>
 
 <template>
-  <div class="bg-white border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl p-6 h-full">
+  <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 h-full">
     <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Orders received', 'flexify-dashboard') }}</h3>
     <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">{{ __('Quantity of orders from period', 'flexify-dashboard') }}</p>
     <div

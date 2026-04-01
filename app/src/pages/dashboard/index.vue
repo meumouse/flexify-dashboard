@@ -462,7 +462,7 @@ onUnmounted(() => {
     <Notifications />
     <div
       :class="isDark ? 'dark' : ''"
-      class="border border-solid border-zinc-200/50 dark:border-zinc-700/30 rounded-l-3xl max-h-[var(--fd-body-height)] overflow-auto bg-zinc-50 dark:bg-zinc-800/20"
+      class="border border-solid border-zinc-200/50 dark:border-zinc-700/30 rounded-l-3xl max-h-[var(--fd-body-height)] overflow-auto bg-zinc-50 dark:bg-[#1a222c]"
     >
       <div
         class="@container flexify-dashboard-normalize font-sans p-8 flex flex-col gap-6 text-zinc-500 dark:text-zinc-400"

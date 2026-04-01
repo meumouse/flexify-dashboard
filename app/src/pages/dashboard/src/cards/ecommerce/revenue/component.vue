@@ -138,7 +138,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 </script>
 
 <template>
-    <div class="bg-white border border-zinc-200/40 dark:border-zinc-800/60 rounded-3xl p-6 h-full flex flex-col">
+    <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 h-full flex flex-col">
         <div v-if="loading" class="flex-1 flex items-center justify-center">
             <div class="text-center">
                 <div class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"></div>
