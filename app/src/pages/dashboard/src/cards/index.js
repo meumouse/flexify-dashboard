@@ -16,6 +16,7 @@ import topCountries from './top-countries/index.js';
 import topReferrers from './top-referrers/index.js';
 import bounceRateTime from './bounce-rate-time/index.js';
 import analyticsMap from './analytics-map/index.js';
+import wooCustomers from './ecommerce/customers/index.js';
 import wooRevenue from './ecommerce/revenue/index.js';
 import wooSalesSummary from './ecommerce/sales-summary/index.js';
 import wooTopProducts from './ecommerce/top-products/index.js';
@@ -80,6 +81,7 @@ addFilter('flexify-dashboard/dashboard/cards/register', (widgets) => {
 		topReferrers,
 		bounceRateTime,
 		analyticsMap,
+		wooCustomers,
 		wooRevenue,
 		wooAverageTicket,
 		wooSalesSummary,
