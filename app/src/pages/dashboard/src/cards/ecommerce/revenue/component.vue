@@ -169,7 +169,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
             </div>
 
             <div class="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
-                <div class="rounded-2xl bg-white/70 dark:bg-zinc-950/30 border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
+                <div class="rounded-2xl bg-white/70 dark:bg-[#24303f] border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
                     <div class="text-xs font-medium uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
                         {{ __('Gross', 'flexify-dashboard') }}
                     </div>
@@ -178,7 +178,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
                     </div>
                 </div>
 
-                <div class="rounded-2xl bg-white/70 dark:bg-zinc-950/30 border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
+                <div class="rounded-2xl bg-white/70 dark:bg-[#24303f] border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
                     <div class="text-xs font-medium uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
                         {{ __('Net', 'flexify-dashboard') }}
                     </div>
@@ -190,7 +190,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 
             <div
                 v-if="chartSeries.length"
-                class="bg-white dark:bg-zinc-950/40 rounded-3xl border border-zinc-200/40 dark:border-zinc-700/20 p-4 -mx-2 flex-1"
+                class="bg-white dark:bg-[#24303f] rounded-3xl border border-zinc-200/40 dark:border-zinc-700/20 p-4 -mx-2 flex-1"
             >
                 <div class="h-[360px] max-md:h-72">
                     <VueApexCharts

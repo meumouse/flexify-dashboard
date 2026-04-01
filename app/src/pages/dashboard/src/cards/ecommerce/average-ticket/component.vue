@@ -38,7 +38,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
                 {{ formattedValue }}
             </div>
 
-            <div class="rounded-2xl bg-white/70 dark:bg-zinc-950/30 border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
+            <div class="rounded-2xl bg-white/70 dark:bg-[#24303f] border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
                 <div class="text-xs font-medium uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
                     {{ __('Indicator', 'flexify-dashboard') }}
                 </div>

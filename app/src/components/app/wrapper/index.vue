@@ -242,7 +242,7 @@ document.documentElement.classList.add('uixp');
 </script>
 
 <template>
-  <div class="fd-container">
+  <div class="flexify-dashboard-container">
     <component is="style"> :root{font-size:14px} </component>
     <component is="style" v-html="returnCustomCSS"></component>
     <component is="style" v-if="animationsEnabled">
@@ -253,7 +253,7 @@ document.documentElement.classList.add('uixp');
       <LoadingIndicator :height="3" class="z-[999]" />
     </div>
     <!-- Menu with combined classes -->
-    <div class="fd-layout">
+    <div class="flexify-dashboard-layout">
       <div :class="menuClasses" class="flexify-dashboard-isolation flex relative top-0">
         <AdminMenu id="fd-menu" :class="menuClasses" />
       </div>
@@ -304,12 +304,12 @@ html {
   display: none !important;
 }
 
-.fd-container {
-  @apply bg-white dark:bg-zinc-900 min-h-full w-full max-w-full text-zinc-700 dark:text-zinc-300;
+.flexify-dashboard-container {
+  @apply bg-white dark:bg-[#1a222c] min-h-full w-full max-w-full text-zinc-700 dark:text-zinc-300;
 }
 
-.fd-layout {
-  @apply shrink-0 bg-white dark:bg-zinc-950 flex flex-row flex-nowrap;
+.flexify-dashboard-layout {
+  @apply shrink-0 bg-white dark:bg-[#1a222c] flex flex-row flex-nowrap;
 }
 
 .fd-body-container {

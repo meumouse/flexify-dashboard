@@ -501,7 +501,7 @@ onUnmounted(() => {
         </div>
 
         <!-- Dashboard Cards Grid -->
-        <div v-if="hasRegisteredCards" ref="dashboardGrid" class="grid grid-cols-12 gap-6 md:gap-8 xl:gap-10">
+        <div v-if="hasRegisteredCards" ref="dashboardGrid" class="grid grid-cols-12 gap-3 md:gap-4 xl:gap-6">
           <VueDraggableNext
             class="contents"
             :list="activeCategoryCards"
