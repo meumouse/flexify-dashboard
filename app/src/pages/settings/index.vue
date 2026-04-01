@@ -100,6 +100,12 @@ const settingsCategories = [
     description: __('Built-in analytics and tracking settings', 'flexify-dashboard'),
   },
   {
+    value: 'integrations',
+    label: __('Integrations', 'flexify-dashboard'),
+    icon: 'api',
+    description: __('Configure external services and API keys', 'flexify-dashboard'),
+  },
+  {
     value: 'media',
     label: __('Media', 'flexify-dashboard'),
     icon: 'image',

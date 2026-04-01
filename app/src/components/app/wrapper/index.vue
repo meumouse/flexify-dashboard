@@ -349,19 +349,33 @@ html.fd-rounded #wpwrap {
 
 #fd-wpadminbar #wpadminbar {
 	display: flex !important;
-    position: relative;
+	position: relative;
 	z-index: 99;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    box-shadow: none;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border: none;
+	outline: none;
+	box-shadow: none;
 }
 
-#wpadminbar a.ab-item {
-	color: #3C434A !important;
-    background-color: transparent !important;
+#fd-wpadminbar #wpadminbar .ab-empty-item,
+#fd-wpadminbar #wpadminbar a.ab-item,
+#fd-wpadminbar #wpadminbar > #wp-toolbar span.ab-label,
+#fd-wpadminbar #wpadminbar > #wp-toolbar span.noticon {
+	color: #1c2434 !important;
+	background-color: transparent !important;
+}
+
+.dark #fd-wpadminbar #wpadminbar .ab-empty-item,
+.dark #fd-wpadminbar #wpadminbar a.ab-item,
+.dark #fd-wpadminbar #wpadminbar > #wp-toolbar span.ab-label,
+.dark #fd-wpadminbar #wpadminbar > #wp-toolbar span.noticon,
+body.dark #fd-wpadminbar #wpadminbar .ab-empty-item,
+body.dark #fd-wpadminbar #wpadminbar a.ab-item,
+body.dark #fd-wpadminbar #wpadminbar > #wp-toolbar span.ab-label,
+body.dark #fd-wpadminbar #wpadminbar > #wp-toolbar span.noticon {
+	color: #ffffff !important;
 }
 
 html.fd-rounded #adminmenuwrap {

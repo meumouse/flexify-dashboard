@@ -167,7 +167,58 @@ const stop = watchEffect(() => {
   	@apply flex flex-row items-center;
 }
 
-#fd-wpadminbar ul[role='menu'] li a {
-  	@apply px-2 py-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all relative cursor-pointer;
+#fd-wpadminbar ul[role='menu'] li > .ab-item,
+#fd-wpadminbar ul[role='menu'] li > .ab-empty-item {
+	@apply px-2 py-1 rounded-lg transition-all relative cursor-pointer;
+}
+
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper {
+	@apply mt-2 p-2 rounded-2xl border border-zinc-200 bg-white shadow-lg;
+	min-width: 200px;
+}
+
+.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper,
+body.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper {
+	@apply border-zinc-700 bg-slate-700;
+}
+
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu {
+	@apply flex flex-col gap-0.5;
+}
+
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li {
+	@apply p-0 rounded-xl;
+}
+
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-item,
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-empty-item {
+	@apply flex items-center rounded-xl px-3 py-2 text-sm font-medium leading-5;
+	color: #1c2434 !important;
+	min-height: 40px;
+}
+
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li:hover > .ab-item,
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li:hover > .ab-empty-item,
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-item:focus,
+#fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-empty-item:focus {
+	@apply bg-zinc-100;
+}
+
+.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-item,
+.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-empty-item,
+body.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-item,
+body.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-empty-item {
+	color: #ffffff !important;
+}
+
+.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li:hover > .ab-item,
+.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li:hover > .ab-empty-item,
+.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-item:focus,
+.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-empty-item:focus,
+body.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li:hover > .ab-item,
+body.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li:hover > .ab-empty-item,
+body.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-item:focus,
+body.dark #fd-wpadminbar #wpadminbar .ab-sub-wrapper .ab-submenu li > .ab-empty-item:focus {
+	@apply bg-slate-600;
 }
 </style>

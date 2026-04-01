@@ -3,9 +3,11 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue';
 import AppIcon from '@/components/utility/icons/index.vue';
 import { useAnalyticsQueue } from '@/composables/useAnalyticsQueue.js';
+import { useAppStore } from '@/store/app/app.js';
 
 // Initialize analytics queue
 const { analytics } = useAnalyticsQueue();
+const appStore = useAppStore();
 
 const props = defineProps({
   dateRange: {
@@ -27,6 +29,12 @@ const error = ref(null);
 const providerError = ref(null);
 const userLocation = ref(null);
 const mapStyle = ref('dark'); // Will be auto-detected
+const mapboxSettingsUrl = computed(
+  () => `${props.appData?.state?.adminUrl || ''}admin.php?page=flexify-dashboard-settings&category=integrations`
+);
+const hasMapboxToken = computed(() =>
+  Boolean(appStore.state?.flexify_dashboard_settings?.mapbox_api_key)
+);
 
 /**
  * Detect if app is in dark mode
@@ -67,6 +75,14 @@ const getUserLocation = () => {
  * Load geographic analytics data using queue
  */
 const loadGeoData = async () => {
+  if (!hasMapboxToken.value) {
+    loading.value = false;
+    error.value = null;
+    providerError.value = null;
+    geoData.value = [];
+    return;
+  }
+
   loading.value = true;
   error.value = null;
   providerError.value = null;
@@ -219,13 +235,13 @@ const initializeMap = async () => {
     // Load Mapbox GL JS dynamically
     const mapboxgl = await import('mapbox-gl');
 
-    const mapboxToken = '';
+    const mapboxToken =
+      appStore.state?.flexify_dashboard_settings?.mapbox_api_key || '';
 
-    if ( ! mapboxToken ) {
+    if (!mapboxToken) {
       throw new Error('Missing Mapbox access token');
     }
 
-    // Set your Mapbox access token
     mapboxgl.accessToken = mapboxToken;
 
     // Auto-detect dark mode
@@ -405,6 +421,10 @@ watch(
 );
 
 onMounted(async () => {
+  if (!hasMapboxToken.value) {
+    return;
+  }
+
   await loadGeoData();
   await nextTick();
   await initializeMap();
@@ -460,6 +480,46 @@ onUnmounted(() => {
         <p class="text-sm text-zinc-500 dark:text-zinc-400">
           {{ __('Loading map data...', 'flexify-dashboard') }}
         </p>
+      </div>
+    </div>
+
+    <div
+      v-else-if="!hasMapboxToken"
+      class="flex-1 flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-5 max-w-md"
+      >
+        <div class="flex items-start gap-3">
+          <AppIcon
+            icon="vpn_key"
+            class="text-2xl text-amber-500 flex-shrink-0"
+          />
+          <div class="flex-1 min-w-0">
+            <p
+              class="text-sm font-medium text-amber-800 dark:text-amber-200 mb-2"
+            >
+              {{ __('Mapbox API key required', 'flexify-dashboard') }}
+            </p>
+            <p
+              class="text-xs text-amber-700 dark:text-amber-300 leading-relaxed mb-3"
+            >
+              {{
+                __(
+                  'Add your Mapbox API key in Settings > Integrations to enable the Analytics Map card.',
+                  'flexify-dashboard'
+                )
+              }}
+            </p>
+            <a
+              :href="mapboxSettingsUrl"
+              class="inline-flex items-center gap-1 text-xs font-medium text-amber-700 dark:text-amber-300 hover:text-amber-800 dark:hover:text-amber-200"
+            >
+              {{ __('Open Integrations settings', 'flexify-dashboard') }}
+              <AppIcon icon="open_in_new" class="text-xs" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 

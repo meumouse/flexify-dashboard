@@ -782,6 +782,27 @@ export const settingsConfig = [
   },
 
   // ============================================
+  // INTEGRATIONS SETTINGS
+  // ============================================
+
+  {
+    id: 'mapbox_api_key',
+    category: 'integrations',
+    type: 'input',
+    label: __('Mapbox API key', 'flexify-dashboard'),
+    description: __(
+      'API key used by the analytics map card. Store the token here instead of keeping it in source code.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    componentProps: {
+      type: 'password',
+      placeholder: __('Enter your Mapbox token', 'flexify-dashboard'),
+      class: 'max-w-[420px]',
+    },
+  },
+
+  // ============================================
   // DATABASE SETTINGS
   // ============================================
 
