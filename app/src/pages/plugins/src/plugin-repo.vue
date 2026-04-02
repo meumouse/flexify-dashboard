@@ -132,16 +132,29 @@ getPlugins();
   <Drawer
     v-model="drawer"
     :showHeader="false"
+    :close-on-overlay-click="true"
     size="large"
+    desktop-mode="modal"
     @close="router.push({ path: '/', query: { ...route.query } })"
   >
     <div
-      class="w-full max-w-screen flex flex-col gap-6 p-6 h-full max-h-full overflow-hidden"
+      class="w-full max-w-screen flex flex-col gap-6 p-6 md:p-8 h-full max-h-full overflow-hidden"
       :class="isPluginInspect ? '' : 'p-6'"
     >
       <template v-if="!isPluginInspect">
-        <div class="text-xl flex-shrink-0">
-          {{ __('Add plugin', 'flexify-dashboard') }}
+        <div class="flex items-start justify-between gap-4 flex-shrink-0">
+          <div class="text-xl">
+            {{ __('Add plugin', 'flexify-dashboard') }}
+          </div>
+
+          <button
+            type="button"
+            class="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-xl text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            :aria-label="__('Close modal', 'flexify-dashboard')"
+            @click="router.push({ path: '/', query: { ...route.query } })"
+          >
+            <AppIcon icon="close" class="text-lg" />
+          </button>
         </div>
 
         <div class="flex flex-row gap-2 flex-shrink-0">

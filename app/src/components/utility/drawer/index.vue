@@ -36,6 +36,11 @@ const props = defineProps({
     default: 'default', // 'small', 'default', 'large', 'full'
     validator: (value) => ['small', 'default', 'large', 'full'].includes(value),
   },
+  desktopMode: {
+    type: String,
+    default: 'drawer', // 'drawer', 'modal'
+    validator: (value) => ['drawer', 'modal'].includes(value),
+  },
   zIndex: {
     type: Number,
     default: 70,
@@ -58,7 +63,7 @@ const sizeClasses = computed(() => {
   const sizes = {
     small: 'w-80 max-w-[80vw]',
     default: 'w-96 max-w-[85vw]',
-    large: 'w-[44rem] max-w-[90vw]',
+    large: 'w-[min(72rem,92vw)] max-w-[92vw]',
     full: 'w-full',
   };
   return sizes[props.size] || sizes.default;
@@ -72,6 +77,44 @@ const mobileHeightClass = computed(() => {
     full: 'max-h-[95vh]',
   };
   return heights[props.size] || heights.default;
+});
+
+const desktopPanelClass = computed(() => {
+  if (props.desktopMode === 'modal') {
+    return 'relative max-h-[min(90vh,56rem)] rounded-2xl bg-white dark:bg-zinc-950 overflow-hidden backdrop-blur-sm border border-zinc-200/60 dark:border-zinc-800 shadow-2xl flex flex-col';
+  }
+
+  return 'absolute right-6 top-6 bottom-6 rounded-2xl bg-white dark:bg-zinc-950 overflow-hidden backdrop-blur-sm border border-zinc-200/60 dark:border-zinc-800 shadow-2xl flex flex-col w-[40dvw]';
+});
+
+const desktopContainerClass = computed(() => {
+  if (props.desktopMode === 'modal') {
+    return 'absolute inset-0 flex items-center justify-center p-6';
+  }
+
+  return 'contents';
+});
+
+const desktopTransitionClass = computed(() => {
+  if (props.desktopMode === 'modal') {
+    return {
+      enterActiveClass: 'transition-all duration-300 ease-out',
+      enterFromClass: 'opacity-0 scale-95 translate-y-4',
+      enterToClass: 'opacity-100 scale-100 translate-y-0',
+      leaveActiveClass: 'transition-all duration-200 ease-in',
+      leaveFromClass: 'opacity-100 scale-100 translate-y-0',
+      leaveToClass: 'opacity-0 scale-95 translate-y-4',
+    };
+  }
+
+  return {
+    enterActiveClass: 'transition-transform duration-300 ease-out',
+    enterFromClass: 'transform translate-x-full',
+    enterToClass: 'transform translate-x-0',
+    leaveActiveClass: 'transition-transform duration-200 ease-in',
+    leaveFromClass: 'transform translate-x-0',
+    leaveToClass: 'transform translate-x-full',
+  };
 });
 
 // Methods
@@ -167,64 +210,64 @@ watch(
     >
       <!-- Desktop: Right slide panel -->
       <Transition
-        enter-active-class="transition-transform duration-300 ease-out"
-        enter-from-class="transform translate-x-full"
-        enter-to-class="transform translate-x-0"
-        leave-active-class="transition-transform duration-200 ease-in"
-        leave-from-class="transform translate-x-0"
-        leave-to-class="transform translate-x-full"
+        :enter-active-class="desktopTransitionClass.enterActiveClass"
+        :enter-from-class="desktopTransitionClass.enterFromClass"
+        :enter-to-class="desktopTransitionClass.enterToClass"
+        :leave-active-class="desktopTransitionClass.leaveActiveClass"
+        :leave-from-class="desktopTransitionClass.leaveFromClass"
+        :leave-to-class="desktopTransitionClass.leaveToClass"
       >
-        <div
-          v-if="!isMobile"
-          ref="panelRef"
-          class="absolute right-6 top-6 bottom-6 rounded-2xl bg-white dark:bg-zinc-950 overflow-hidden backdrop-blur-sm border border-zinc-200/60 dark:border-zinc-800 shadow-2xl flex flex-col w-[40dvw]"
-          :class="sizeClasses"
-          @click.stop
-        >
-          <!-- Desktop Header -->
+        <div v-if="!isMobile" :class="desktopContainerClass">
           <div
-            v-if="showHeader"
-            class="flex-shrink-0 px-6 py-4 border-b border-zinc-200/60 dark:border-zinc-800/50"
+            ref="panelRef"
+            :class="[desktopPanelClass, sizeClasses]"
+            @click.stop
           >
-            <div class="flex items-center justify-between">
-              <div v-if="title || subtitle" class="flex-1 min-w-0">
-                <h3
-                  v-if="title"
-                  class="text-lg font-semibold text-zinc-900 dark:text-white truncate leading-none"
+            <!-- Desktop Header -->
+            <div
+              v-if="showHeader"
+              class="flex-shrink-0 px-6 py-4 border-b border-zinc-200/60 dark:border-zinc-800/50"
+            >
+              <div class="flex items-center justify-between">
+                <div v-if="title || subtitle" class="flex-1 min-w-0">
+                  <h3
+                    v-if="title"
+                    class="text-lg font-semibold text-zinc-900 dark:text-white truncate leading-none"
+                  >
+                    {{ title }}
+                  </h3>
+                  <p
+                    v-if="subtitle"
+                    class="text-sm text-zinc-600 dark:text-zinc-400 mt-1 truncate leading-none"
+                  >
+                    {{ subtitle }}
+                  </p>
+                </div>
+                <div v-else class="flex-1">
+                  <slot name="header" />
+                </div>
+                <AppButton
+                  v-if="showCloseButton"
+                  @click="close"
+                  type="transparent"
                 >
-                  {{ title }}
-                </h3>
-                <p
-                  v-if="subtitle"
-                  class="text-sm text-zinc-600 dark:text-zinc-400 mt-1 truncate leading-none"
-                >
-                  {{ subtitle }}
-                </p>
+                  <AppIcon icon="close" class="w-5 h-5" />
+                </AppButton>
               </div>
-              <div v-else class="flex-1">
-                <slot name="header" />
-              </div>
-              <AppButton
-                v-if="showCloseButton"
-                @click="close"
-                type="transparent"
-              >
-                <AppIcon icon="close" class="w-5 h-5" />
-              </AppButton>
             </div>
-          </div>
 
-          <!-- Desktop Content -->
-          <div class="flex-1 overflow-hidden flex flex-col">
-            <slot />
-          </div>
+            <!-- Desktop Content -->
+            <div class="flex-1 overflow-hidden flex flex-col">
+              <slot />
+            </div>
 
-          <!-- Desktop Footer -->
-          <div
-            v-if="$slots.footer"
-            class="flex-shrink-0 border-t border-zinc-200/60 dark:border-zinc-800/50 bg-zinc-50 dark:bg-zinc-900/50"
-          >
-            <slot name="footer" />
+            <!-- Desktop Footer -->
+            <div
+              v-if="$slots.footer"
+              class="flex-shrink-0 border-t border-zinc-200/60 dark:border-zinc-800/50 bg-zinc-50 dark:bg-zinc-900/50"
+            >
+              <slot name="footer" />
+            </div>
           </div>
         </div>
       </Transition>
