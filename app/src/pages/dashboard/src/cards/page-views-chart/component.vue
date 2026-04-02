@@ -250,7 +250,7 @@ watch(
 
       <div
         v-if="chartData"
-        class="bg-white dark:bg-zinc-950/40 rounded-3xl p-4 -mx-3 grow"
+        class="bg-white dark:bg-[#24303f] rounded-3xl p-4 -mx-3 grow"
       >
         <div class="h-full">
           <VueApexCharts

@@ -236,7 +236,7 @@ onMounted(() => {
 
       <!-- Calendar Grid -->
       <div
-        class="bg-white dark:bg-zinc-950/40 rounded-2xl p-8 -mx-3 -mb-3 border border-zinc-200/40 dark:border-zinc-700/20"
+        class="bg-white dark:bg-[#24303f] rounded-2xl p-8 -mx-3 -mb-3 border border-zinc-200/40 dark:border-zinc-700/20"
       >
         <!-- Day Headers -->
         <div class="grid grid-cols-7 gap-6 mb-6">

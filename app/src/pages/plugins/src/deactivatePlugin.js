@@ -13,6 +13,7 @@ export const deactivatePlugin = async (plugin, emit) => {
   deactivating.value = true;
 
   const slug = plugin.slug.split("/")[0];
+  const pluginFile = plugin.slug;
 
   const args = { endpoint: `flexify-dashboard/v1/plugin/deactivate/${slug}`, params: {}, type: "POST" };
   const response = await lmnFetch(args);
@@ -20,6 +21,13 @@ export const deactivatePlugin = async (plugin, emit) => {
   deactivating.value = false;
 
   if (!response) return false;
+
+  const redirectUrl = response?.data?.redirect_url;
+
+  if (pluginFile === "flexify-dashboard/flexify-dashboard.php" && redirectUrl) {
+    window.location.assign(redirectUrl);
+    return true;
+  }
 
   notify({ title: __("Plugin deactivated", "flexify-dashboard"), message: plugin.Title, type: "success" });
   //emit("update", { active: false });

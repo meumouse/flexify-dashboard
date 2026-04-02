@@ -192,7 +192,7 @@ watch(
 
 <template>
   <div
-    class="bg-zinc-50 dark:bg-zinc-800/20 rounded-3xl p-6 h-full flex flex-col border border-zinc-200/40 dark:border-zinc-800/60 pb-3"
+    class="bg-zinc-50 dark:bg-[#24303f] rounded-3xl p-6 h-full flex flex-col border border-zinc-200/40 dark:border-zinc-800/60 pb-3"
   >
     <!-- Loading State -->
     <div v-if="loading" class="flex-1 flex items-center justify-center">
@@ -276,7 +276,7 @@ watch(
       <!-- Chart -->
       <div
         v-if="chartData"
-        class="bg-white dark:bg-zinc-950/40 rounded-3xl p-4 -mx-3 grow"
+        class="bg-white dark:bg-[#24303f] rounded-3xl p-4 -mx-3 grow"
       >
         <div class="h-full">
           <VueApexCharts

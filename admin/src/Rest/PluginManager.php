@@ -327,11 +327,17 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		);
 		}
 
-		return new WP_REST_Response(
-		[
+		$response_data = [
 			"success" => true,
 			"message" => "Plugin deactivated successfully",
-		],
+		];
+
+		if ($plugin_file === "flexify-dashboard/flexify-dashboard.php") {
+			$response_data["redirect_url"] = admin_url("plugins.php");
+		}
+
+		return new WP_REST_Response(
+		$response_data,
 		200
 		);
 	}

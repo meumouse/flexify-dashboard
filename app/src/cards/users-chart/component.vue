@@ -194,7 +194,7 @@ watch(
 
       <div
         v-if="chartData"
-        class="bg-white dark:bg-zinc-950/40 rounded-xl p-4 -mx-3 -mb-3 border border-zinc-200/40 dark:border-zinc-700/20"
+        class="bg-white dark:bg-[#24303f] rounded-xl p-4 -mx-3 -mb-3 border border-zinc-200/40 dark:border-zinc-700/20"
       >
         <div class="h-48">
           <VueApexCharts
