@@ -563,9 +563,7 @@ setMenuWidthProperty(panelWidth.value);
           v-if="!mobile"
           type="transparent"
           :title="__('Minify menu', 'flexify-dashboard')"
-          @click="
-            appStore.state.menu_minimised = !appStore.state.menu_minimised
-          "
+          @click="appStore.state.menu_minimised = !appStore.state.menu_minimised"
           class="hidden md:block"
         >
           <AppIcon
@@ -574,7 +572,7 @@ setMenuWidthProperty(panelWidth.value);
                 ? 'right_panel_close'
                 : 'left_panel_close'
             "
-            class="text-xl text-slate-400 hover:text-white transition-colors"
+            class="text-xl text-slate-400 transition-colors"
           />
         </AppButton>
       </div>

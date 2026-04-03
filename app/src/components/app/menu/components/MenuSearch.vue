@@ -365,7 +365,7 @@ onUnmounted(() => {
       >
         <AppIcon
           icon="search"
-          class="text-zinc-400 dark:text-zinc-500 text-sm"
+          class="text-zinc-400 dark:text-zinc-500 text-lg"
         />
       </div>
       <input
@@ -376,7 +376,7 @@ onUnmounted(() => {
         class="w-full pl-9 pr-8 py-2 text-sm border rounded-lg transition-all outline outline-transparent outline-offset-[-2px] text-white bg-[#313d4a] border-[#444e59] placeholder:text-zinc-400 focus:bg-[#1c2434] focus:border-[#1c2434] focus:outline-transparent focus:shadow-none"
         @focus="isOpen = true"
         @input="isOpen = true"
-		@blur="handleInputBlur"
+		    @blur="handleInputBlur"
         @keydown.escape="closeSearch"
       />
       <button

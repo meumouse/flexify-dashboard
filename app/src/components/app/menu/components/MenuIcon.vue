@@ -9,7 +9,7 @@ const props = defineProps(["link"]);
 <template>
   <div
     v-if="!link.settings?.icon"
-    class="icon text-[rgba(255,255,255,0.75)] group-hover:text-white group-[.active]:text-white w-[1.2rem] h-[1.2rem] bg-contain bg-center bg-no-repeat contrast-75 group-[.active]:contrast-[1] transition-colors duration-150"
+    class="icon text-[rgba(255,255,255,0.75)] group-hover:text-white group-[.active]:text-white w-[1.5rem] h-[1.5rem] bg-contain bg-center bg-no-repeat contrast-75 group-[.active]:contrast-[1] transition-colors duration-150"
     :class="returnOriginalLinkAttribute(link, 'imageClasses', link.imageClasses)"
     :style="returnOriginalLinkAttribute(link, 'iconStyles', link.iconStyles)"
   ></div>

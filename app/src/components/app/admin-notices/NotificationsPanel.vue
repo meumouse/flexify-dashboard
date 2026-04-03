@@ -228,12 +228,12 @@ onMounted(() => {
         <div
           class="w-12 h-12 bg-zinc-200 dark:bg-zinc-700 rounded-lg flex items-center justify-center mb-3"
         >
-          <AppIcon icon="notifications" class="text-xl text-zinc-400" />
+          <AppIcon icon="notifications" class="text-xl text-zinc-700" />
         </div>
-        <p class="text-sm text-zinc-600 dark:text-zinc-400 font-medium mb-1">
+        <p class="text-sm text-white font-medium mb-1">
           {{ __("You're all caught up", 'flexify-dashboard') }}
         </p>
-        <p class="text-xs text-zinc-500 dark:text-zinc-500">
+        <p class="text-xs text-zinc-200">
           {{ __('No new notifications', 'flexify-dashboard') }}
         </p>
       </div>
