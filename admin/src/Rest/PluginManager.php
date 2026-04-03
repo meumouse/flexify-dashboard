@@ -16,6 +16,7 @@ defined("ABSPATH") || exit();
 require_once ABSPATH . "wp-admin/includes/class-wp-upgrader.php";
 require_once ABSPATH . "wp-admin/includes/update.php";
 require_once ABSPATH . "wp-admin/includes/plugin.php";
+require_once ABSPATH . "wp-admin/includes/plugin-install.php";
 require_once ABSPATH . "wp-admin/includes/file.php";
 require_once ABSPATH . "wp-admin/includes/misc.php";
 
@@ -167,6 +168,17 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 			'sanitize_callback' => 'sanitize_text_field',
 			'description' => 'Specific version to install (optional)'
 			],
+		],
+		]);
+
+		register_rest_route('flexify-dashboard/v1', '/plugin/repository-assets/(?P<slug>[a-zA-Z0-9-_]+)', [
+		'methods' => 'GET',
+		'callback' => ['MeuMouse\Flexify_Dashboard\Rest\PluginManager', 'get_plugin_repository_assets'],
+		'permission_callback' => function ($request) {
+			return RestPermissionChecker::check_permissions($request, 'activate_plugins');
+		},
+		'args' => [
+			'slug' => $slug_arg_schema,
 		],
 		]);
 
@@ -823,6 +835,61 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 			"success" => true,
 			"message" => "Plugin installed successfully",
 			"plugin" => $plugin_data,
+		],
+		200
+		);
+	}
+
+	public static function get_plugin_repository_assets($request)
+	{
+		$plugin_slug = $request->get_param('slug');
+
+		if (empty($plugin_slug)) {
+		return new WP_REST_Response(
+			[
+			'success' => false,
+			'message' => 'Plugin slug is required',
+			],
+			400
+		);
+		}
+
+		$plugin_info = plugins_api('plugin_information', [
+		'slug' => $plugin_slug,
+		'fields' => [
+			'icons' => true,
+			'banners' => true,
+			'tags' => true,
+			'sections' => false,
+			'short_description' => false,
+			'description' => false,
+			'reviews' => false,
+			'downloaded' => false,
+			'active_installs' => false,
+			'requires' => false,
+			'tested' => false,
+			'requires_php' => false,
+		],
+		]);
+
+		if (is_wp_error($plugin_info)) {
+		return new WP_REST_Response(
+			[
+			'success' => false,
+			'message' => $plugin_info->get_error_message(),
+			'notInRepository' => true,
+			],
+			404
+		);
+		}
+
+		return new WP_REST_Response(
+		[
+			'success' => true,
+			'icons' => isset($plugin_info->icons) ? (array) $plugin_info->icons : [],
+			'banners' => isset($plugin_info->banners) ? (array) $plugin_info->banners : [],
+			'tags' => isset($plugin_info->tags) ? (array) $plugin_info->tags : [],
+			'notInRepository' => false,
 		],
 		200
 		);

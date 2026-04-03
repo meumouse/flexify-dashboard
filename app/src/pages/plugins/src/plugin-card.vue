@@ -8,6 +8,7 @@ import PluginActions from "./plugin-actions.vue";
 import PluginCardBanner from "./plugin-card-banner.vue";
 
 // Funcs
+import { lmnFetch } from "@/assets/js/functions/lmnFetch.js";
 import { notify } from "@/assets/js/functions/notify.js";
 import { updatePlugin } from "./updatePlugin.js";
 import { deactivatePlugin } from "./deactivatePlugin.js";
@@ -17,8 +18,8 @@ import { autoUpdate } from "./autoUpdate.js";
 
 // Store
 import { useAppStore } from "@/store/app/app.js";
-const appStore = useAppStore();
 
+const appStore = useAppStore();
 const plugin = defineModel();
 const emit = defineEmits(["update"]);
 const updating = ref(false);
@@ -32,6 +33,12 @@ const autoUpdating = ref(false);
  * Gets the best available icon for a plugin
  */
 const getPluginIcon = computed(() => {
+  const authorText = plugin.value?.Author ? plugin.value.Author.replace(/<[^>]*>/g, "").trim().toLowerCase() : "";
+
+  if (authorText === "meumouse" || authorText === "meumouse.com") {
+    return `${appStore.state.pluginBase}assets/icons/logo-meumouse.svg`;
+  }
+
   if (plugin.value?.icons) {
     const icons = plugin.value.icons;
     return icons["2x"] || icons["1x"] || icons.default;
@@ -85,11 +92,6 @@ const hasRequiredPlugins = computed(() => {
  * Fetches extended plugin data from WordPress.org with caching
  */
 const fetchPluginData = async () => {
-  // Data has already been fetched for this instance
-  if (plugin.value.banners || plugin.value.icons) {
-    return;
-  }
-
   // Bail if slug is not available
   if (!plugin.value?.slug) {
     return;
@@ -106,18 +108,18 @@ const fetchPluginData = async () => {
       const { data, timestamp } = JSON.parse(cached);
       const now = new Date().getTime();
       const age = now - timestamp;
+      const cachedHasIcons = Boolean(data?.icons && Object.keys(data.icons).length);
+      const cachedHasBanners = Boolean(data?.banners && Object.keys(data.banners).length);
 
       // If cache is less than 24 hours old (24 * 60 * 60 * 1000 = 86400000 ms)
-      if (age < 86400000) {
+      if (age < 86400000 && cachedHasIcons && cachedHasBanners) {
         emit("update", {
           banners: data.banners,
           icons: data.icons,
           tags: data.tags,
           notInRepository: data.notInRepository,
         });
-        return;
       } else {
-        // Cache expired, remove it
         localStorage.removeItem(`plugin_data_${slug}`);
       }
     } catch (error) {
@@ -127,28 +129,67 @@ const fetchPluginData = async () => {
     }
   }
 
-  // Fetch fresh data
-  try {
-    const response = await fetch(`https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&slug=${slug}&fields=icons`);
+  const updatePluginVisualData = (data) => {
+    emit("update", {
+      banners: data?.banners,
+      icons: data?.icons,
+      tags: data?.tags,
+      notInRepository: data?.notInRepository,
+    });
+  };
+
+  const fetchFromWordPressOrg = async () => {
+    const response = await fetch(`https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&slug=${slug}&fields=icons,banners`);
 
     if (!response.ok) {
-      emit("update", { notInRepository: true });
+      return null;
+    }
 
+    return await response.json();
+  };
+
+  const fetchFromPluginApiFallback = async () => {
+    const response = await lmnFetch({
+      endpoint: `flexify-dashboard/v1/plugin/repository-assets/${slug}`,
+      type: "GET",
+    });
+
+    if (!response?.success && !response?.data) {
+      return null;
+    }
+
+    return response.data || response;
+  };
+
+  try {
+    let data = await fetchFromWordPressOrg();
+
+    if (!data) {
+      data = await fetchFromPluginApiFallback();
+    }
+
+    if (!data) {
+      updatePluginVisualData({ notInRepository: true });
       cachePluginInfo({ notInRepository: true }, slug);
       return;
     }
 
-    const data = await response.json();
-
     cachePluginInfo(data, slug);
-
-    emit("update", {
-      banners: data.banners,
-      icons: data.icons,
-      tags: data.tags,
-    });
+    updatePluginVisualData(data);
   } catch (error) {
-    emit("update", { notInRepository: true });
+    try {
+      const fallbackData = await fetchFromPluginApiFallback();
+
+      if (fallbackData) {
+        cachePluginInfo(fallbackData, slug);
+        updatePluginVisualData(fallbackData);
+        return;
+      }
+    } catch (fallbackError) {
+      console.error(`Error fetching fallback plugin data for ${slug}:`, fallbackError);
+    }
+
+    updatePluginVisualData({ notInRepository: true });
     cachePluginInfo({ notInRepository: true }, slug);
     console.error(`Error fetching plugin data for ${slug}:`, error);
     return null;
@@ -209,9 +250,14 @@ const deletePluginBySlug = async () => {
   deleting.value = false;
 };
 
+watch(
+  () => plugin.value?.slug,
+  () => {
+    fetchPluginData();
+  },
+  { immediate: true }
+);
 
-
-fetchPluginData();
 defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug, deletePluginBySlug, toggleAutoUpdate });
 </script>
 
