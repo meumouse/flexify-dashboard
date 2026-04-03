@@ -674,7 +674,7 @@ getSettings();
                       : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400'
                   "
                 >
-                  <AppIcon :icon="category.icon" class="text-sm" />
+                  <AppIcon :icon="category.icon" class="text-lg" />
                 </div>
               </div>
 

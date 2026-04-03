@@ -41,8 +41,10 @@ const getPluginIcon = computed(() => {
 
   if (plugin.value?.icons) {
     const icons = plugin.value.icons;
+    
     return icons["2x"] || icons["1x"] || icons.default;
   }
+
   return `https://www.google.com/s2/favicons?domain=${plugin.value.PluginURI || plugin.value.AuthorURI}&sz=400`;
 });
 
@@ -270,7 +272,7 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
         <PluginCardBanner v-else />
 
         <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0"></div>
 
         <!-- Plugin Icon -->
         <div class="absolute bottom-6 left-6">

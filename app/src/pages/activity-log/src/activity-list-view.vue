@@ -280,10 +280,10 @@ watch([activities, searchQuery], () => {
         </div>
 
         <!-- Search Bar -->
-        <div class="relative mb-4">
+        <div class="relative flex items-center mb-4">
           <AppIcon
             icon="search"
-            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400 dark:text-zinc-500 text-base pointer-events-none"
+            class="absolute left-3 text-lg text-zinc-400 dark:text-zinc-500 pointer-events-none"
           />
           <input
             v-model="searchQuery"

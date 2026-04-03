@@ -193,10 +193,10 @@ getNotices();
         </div>
 
         <!-- Search -->
-        <div class="relative">
+        <div class="relative flex items-center">
           <AppIcon
             icon="search"
-            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400 text-sm"
+            class="absolute left-3 text-zinc-400 text-lg"
           />
           <input
             v-model="search"
@@ -250,7 +250,7 @@ getNotices();
             v-for="notice in filteredNotices"
             :key="notice.id"
             @click="openNotice(notice)"
-            class="flex items-center gap-3 px-3 py-3 cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all cursor-pointer group"
+            class="flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group"
             :class="
               route.params.noticeid == notice.id
                 ? 'bg-zinc-100 dark:bg-zinc-800'

@@ -372,10 +372,10 @@ watchEffect(() => {
           </div>
 
           <!-- Search -->
-          <div class="relative">
+          <div class="relative flex items-center">
             <AppIcon
               icon="search"
-              class="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400 text-sm"
+              class="absolute left-3 text-zinc-400 text-lg"
             />
             <input
               v-model="search"
