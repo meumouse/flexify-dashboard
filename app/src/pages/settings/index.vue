@@ -343,6 +343,7 @@ const updateSettings = async () => {
   // Remove google_analytics_service_account - it's saved via dedicated endpoint
   // with encryption and should not be overwritten by the main settings save
   delete settingsCopy.google_analytics_service_account;
+  delete settingsCopy.google_recaptcha_secret_key;
 
   let payload = {
     flexify_dashboard_settings: settingsCopy,
@@ -372,6 +373,8 @@ const exportSettings = () => {
 
   delete payload.flexify_dashboard_settings.license_key;
   delete payload.flexify_dashboard_settings.instance_id;
+  delete payload.flexify_dashboard_settings.google_analytics_service_account;
+  delete payload.flexify_dashboard_settings.google_recaptcha_secret_key;
 
   const jsonString = JSON.stringify(payload, null, 2);
   const blob = new Blob([jsonString], { type: 'application/json' });

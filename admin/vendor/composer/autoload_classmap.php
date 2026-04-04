@@ -303,6 +303,7 @@ return array(
     'MeuMouse\\Flexify_Dashboard\\Rest\\CustomPostTypes' => $baseDir . '/src/Rest/CustomPostTypes.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\DatabaseExplorer' => $baseDir . '/src/Rest/DatabaseExplorer.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\GoogleAnalyticsOAuth' => $baseDir . '/src/Rest/GoogleAnalyticsOAuth.php',
+    'MeuMouse\\Flexify_Dashboard\\Rest\\Login' => $baseDir . '/src/Rest/Login.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\Media' => $baseDir . '/src/Rest/Media.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\MediaAnalytics' => $baseDir . '/src/Rest/MediaAnalytics.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\MediaBulk' => $baseDir . '/src/Rest/MediaBulk.php',

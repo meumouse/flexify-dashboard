@@ -24,6 +24,7 @@ use MeuMouse\Flexify_Dashboard\Rest\Analytics;
 use MeuMouse\Flexify_Dashboard\Rest\GoogleAnalyticsOAuth;
 use MeuMouse\Flexify_Dashboard\Pages\Settings as SettingsPage;
 use MeuMouse\Flexify_Dashboard\Pages\Login;
+use MeuMouse\Flexify_Dashboard\Rest\Login as RestLogin;
 use MeuMouse\Flexify_Dashboard\Pages\MenuBuilder;
 use MeuMouse\Flexify_Dashboard\Pages\CustomPluginsPage;
 use MeuMouse\Flexify_Dashboard\Pages\FrontEnd;
@@ -122,7 +123,8 @@ class Plugin
 	new MediaAnalytics();
 	new UserAnalytics();
     new SettingsPage();
-    new Login();
+    $login_page = new Login();
+    new RestLogin($login_page);
     new SearchMeta();
     new MenuBuilder();
     new CustomPluginsPage();
@@ -927,6 +929,8 @@ class Plugin
     // Remove the 'license_key' key
     unset($options["license_key"]);
     unset($options["instance_id"]);
+    unset($options["google_recaptcha_secret_key"]);
+    unset($options["google_analytics_service_account"]);
 
     // Check if user has capability to access remote sites options
     // Prevents exposing passwords to unauthorized users

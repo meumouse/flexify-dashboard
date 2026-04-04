@@ -293,6 +293,22 @@ export const settingsConfig = [
   },
 
   {
+    id: 'enable_google_recaptcha',
+    category: 'login',
+    type: 'toggle',
+    label: __('Enable Google reCAPTCHA', 'flexify-dashboard'),
+    description: __(
+      'Use Google reCAPTCHA v2 checkbox in the modern administrative login and password recovery forms. Credentials are configured in Integrations.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    componentProps: {
+      class: 'max-w-[300px]',
+    },
+    condition: (settings) => settings.style_login === true,
+  },
+
+  {
     id: 'turnstyle_secret_key',
     category: 'login',
     type: 'input',
@@ -800,6 +816,19 @@ export const settingsConfig = [
       placeholder: __('Enter your Mapbox token', 'flexify-dashboard'),
       class: 'max-w-[420px]',
     },
+  },
+
+  {
+    id: 'google_recaptcha_connection',
+    category: 'integrations',
+    type: 'custom',
+    label: __('Google reCAPTCHA', 'flexify-dashboard'),
+    description: __(
+      'Configure the site key and secret key used by the modern administrative login and password recovery forms.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    customRender: 'google-recaptcha-connection',
   },
 
   // ============================================

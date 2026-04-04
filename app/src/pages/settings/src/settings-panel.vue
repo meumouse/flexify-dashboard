@@ -38,6 +38,7 @@ import TextPairsRender from './custom-renders/text-pairs.vue';
 import RemoteSitesSection from './sections/RemoteSitesSection.vue';
 import FontSelector from './custom-renders/font-selector.vue';
 import GoogleAnalyticsConnection from './custom-renders/google-analytics-connection.vue';
+import GoogleRecaptchaConnection from './custom-renders/google-recaptcha-connection.vue';
 
 // Refs
 const props = defineProps(['tab', 'categories', 'saving', 'searchQuery']);
@@ -92,6 +93,7 @@ const updateSettings = async () => {
   // Remove google_analytics_service_account - it's saved via dedicated endpoint
   // with encryption and should not be overwritten by the main settings save
   delete settingsCopy.google_analytics_service_account;
+  delete settingsCopy.google_recaptcha_secret_key;
 
   let payload = {
     flexify_dashboard_settings: settingsCopy,
@@ -450,6 +452,7 @@ const customHandlers = {
   'remote-sites': RemoteSitesSection,
   'font-selector': FontSelector,
   'google-analytics-connection': GoogleAnalyticsConnection,
+  'google-recaptcha-connection': GoogleRecaptchaConnection,
 };
 
 /**

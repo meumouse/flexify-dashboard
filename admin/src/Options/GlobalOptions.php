@@ -133,6 +133,14 @@ class GlobalOptions
               "type" => "string",
               "default" => "#008aff",
             ],
+            "enable_google_recaptcha" => [
+              "type" => "boolean",
+              "default" => false,
+            ],
+            "google_recaptcha_site_key" => [
+              "type" => "string",
+              "default" => "",
+            ],
             "layout" => [
               "type" => "string",
               "default" => "#008aff",
@@ -507,6 +515,18 @@ class GlobalOptions
 
     if (isset($value["turnstyle_secret_key"])) {
       $sanitized_value["turnstyle_secret_key"] = sanitize_text_field($value["turnstyle_secret_key"]);
+    }
+
+    if (isset($value["enable_google_recaptcha"])) {
+      $sanitized_value["enable_google_recaptcha"] = (bool) $value["enable_google_recaptcha"];
+    }
+
+    if (isset($value["google_recaptcha_site_key"])) {
+      $sanitized_value["google_recaptcha_site_key"] = sanitize_text_field($value["google_recaptcha_site_key"]);
+    }
+
+    if (isset($value["google_recaptcha_secret_key"])) {
+      $sanitized_value["google_recaptcha_secret_key"] = sanitize_text_field($value["google_recaptcha_secret_key"]);
     }
 
     if (isset($value["admin_favicon"])) {

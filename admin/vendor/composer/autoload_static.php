@@ -340,6 +340,7 @@ class ComposerStaticInitFlexify_Dashboard
         'MeuMouse\\Flexify_Dashboard\\Rest\\CustomPostTypes' => __DIR__ . '/../..' . '/src/Rest/CustomPostTypes.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\DatabaseExplorer' => __DIR__ . '/../..' . '/src/Rest/DatabaseExplorer.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\GoogleAnalyticsOAuth' => __DIR__ . '/../..' . '/src/Rest/GoogleAnalyticsOAuth.php',
+        'MeuMouse\\Flexify_Dashboard\\Rest\\Login' => __DIR__ . '/../..' . '/src/Rest/Login.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\Media' => __DIR__ . '/../..' . '/src/Rest/Media.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\MediaAnalytics' => __DIR__ . '/../..' . '/src/Rest/MediaAnalytics.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\MediaBulk' => __DIR__ . '/../..' . '/src/Rest/MediaBulk.php',
