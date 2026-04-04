@@ -164,14 +164,15 @@
     overflow: hidden;
     align-items: center;
     background:
-      radial-gradient(circle at 20% 20%, rgb(255 255 255 / 0.08), transparent 22%),
-      linear-gradient(
-        180deg,
-        var(--fd-login-aside-color, #008aff) 0%,
-        var(--fd-login-aside-start, #0070e0) 46%,
-        var(--fd-login-aside-end, #002f73) 100%
+      /* Glow suave */
+      radial-gradient(circle at 20% 20%, rgb(255 255 255 / 0.15), transparent 22%),
+      
+      /* Gradiente principal (centro claro → bordas escuras) */
+      radial-gradient(
+          circle at center,
+          var(--fd-login-aside-start, #008aff) 0%,
+          var(--fd-login-aside-end, #002f73) 100%
       );
-    padding: 2rem;
   }
 
   .fd-login-aside-image {
@@ -236,21 +237,15 @@
 
   .fd-login-brand-badge {
     display: flex;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    border-radius: 0.75rem;
-    background: rgb(255 255 255 / 0.98);
-    border: 1px solid rgb(255 255 255 / 0.22);
-    padding: 0.55rem;
-    color: #101828;
-    font-size: 1.15rem;
+    border-radius: 0.625rem;
+    background-color: #fff;
     font-weight: 700;
-    box-shadow:
-      0 16px 30px rgb(2 12 27 / 0.18),
-      inset 0 1px 0 rgb(255 255 255 / 0.7);
+    padding: 0.35rem;
   }
 
   .fd-login-brand-image {
@@ -265,8 +260,8 @@
   }
 
   .fd-login-brand-text {
-    font-size: clamp(2rem, 2vw, 2.3rem);
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.05;
     color: rgb(255 255 255 / 0.98);
@@ -274,9 +269,8 @@
 
   .fd-login-aside-copy {
     margin-top: 1.15rem;
-    max-width: 22rem;
     color: rgb(219 234 254 / 0.74);
-    font-size: 0.8rem;
+    font-size: 0.925rem;
     font-weight: 500;
     line-height: 1.7;
     text-align: center;
@@ -335,9 +329,9 @@
 
   .fd-login-mobile-glow {
     position: absolute;
-    inset: auto auto -7rem -5rem;
-    width: 14rem;
-    height: 14rem;
+    inset: auto auto -14rem -10rem;
+    width: 25rem;
+    height: 25rem;
     border-radius: 9999px;
     background: radial-gradient(circle, var(--fd-login-aside-glow, #1392ff) 0%, transparent 70%);
     filter: blur(16px);

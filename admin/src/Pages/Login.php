@@ -988,6 +988,12 @@ JS;
       "after"
     );
 
+    wp_add_inline_script(
+      "wp-i18n",
+      "window.flexifyDashboardLoginConfig = " . wp_json_encode($this->get_login_app_config()) . ";",
+      "after"
+    );
+
     add_filter("script_loader_tag", function ($tag, $handle, $src) {
       if ($handle === "flexify-dashboard-login-js") {
         return '<script type="module" src="' . esc_url($src) . '"></script>';
@@ -1018,11 +1024,6 @@ JS;
       );
     }
 
-    wp_add_inline_script(
-      "flexify-dashboard-login-js",
-      "window.flexifyDashboardLoginConfig = " . wp_json_encode($this->get_login_app_config()) . ";",
-      "before"
-    );
   }
 
   private static function hex_to_rgb($hex)

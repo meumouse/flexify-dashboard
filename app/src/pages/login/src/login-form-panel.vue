@@ -116,7 +116,7 @@ defineEmits([
         <a
           v-if="siteInfoLoading || siteInfo.logoUrl || config.authLogoUrl"
           :href="config.homeUrl || config.loginUrl || loginActionUrl"
-          class="mb-6 inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-3 no-underline shadow-[0_12px_32px_rgba(16,24,40,0.08)]"
+          class="mb-6 inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-3 no-underline shadow-[0_12px_32px_rgba(16,24,40,0.08)] lg:hidden"
         >
           <span
             v-if="siteInfoLoading"

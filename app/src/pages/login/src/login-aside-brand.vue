@@ -48,7 +48,7 @@ const descriptionLines = computed(() => {
 </script>
 
 <template>
-  <div class="fd-login-aside-brand-card flex max-w-xs flex-col items-center">
+  <div class="fd-login-aside-brand-card flex flex-col items-center">
     <a :href="href" class="fd-login-brand-link block">
       <div class="fd-login-brand-row">
         <span class="fd-login-brand-badge">
