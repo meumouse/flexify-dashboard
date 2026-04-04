@@ -131,7 +131,7 @@ defineEmits([
         </a>
 
         <template v-if="isLoginScreen">
-          <div class="mb-3 text-[clamp(2.1rem,2.7vw,3.2rem)] font-bold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
+          <div class="mb-3 text-[clamp(2.1rem,2.7vw,3.2rem)] font-semibold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
             Sign In
           </div>
           <p class="m-0 text-base leading-[1.55] text-gray-500 dark:text-gray-400">
@@ -140,7 +140,7 @@ defineEmits([
         </template>
 
         <template v-else>
-          <div class="mb-3 text-[clamp(2.1rem,2.7vw,3.2rem)] font-bold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
+          <div class="mb-3 text-[clamp(2.1rem,2.7vw,3.2rem)] font-semibold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
             Recover Password
           </div>
           <p class="m-0 text-base leading-[1.55] text-gray-500 dark:text-gray-400">

@@ -46,7 +46,7 @@ class DummyDataGenerator
 
         // Check if analytics is enabled
         if (!AnalyticsDatabase::is_analytics_enabled()) {
-            wp_die('Analytics is not enabled. Please enable analytics in settings first.');
+            wp_die(__('Analytics is not enabled. Please enable analytics in settings first.', 'flexify-dashboard'));
         }
 
         // Clear existing data
@@ -66,7 +66,7 @@ class DummyDataGenerator
         // Run aggregation to populate daily tables
         $this->aggregate_dummy_data();
 
-        echo "Generated dummy analytics data for {$months} months successfully!";
+        echo esc_html(sprintf(__('Generated dummy analytics data for %d months successfully!', 'flexify-dashboard'), $months));
     }
 
     /**

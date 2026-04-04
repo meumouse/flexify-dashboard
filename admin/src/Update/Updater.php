@@ -148,13 +148,13 @@ class Updater
         set_transient($transient_key, $remote, self::$expiry);
       } else {
         set_transient(self::$transientFailed, true, self::$expiry);
-        return new \WP_Error("remote_error", "Failed to retrieve remote data.");
+        return new \WP_Error("remote_error", __("Failed to retrieve remote data.", "flexify-dashboard"));
       }
     } else {
       $remote = get_transient($transient_key);
       if (!self::is_response_clean($remote)) {
         set_transient(self::$transientFailed, true, self::$expiry);
-        return new \WP_Error("cache_error", "Failed to retrieve data from cache.");
+        return new \WP_Error("cache_error", __("Failed to retrieve data from cache.", "flexify-dashboard"));
       }
     }
 

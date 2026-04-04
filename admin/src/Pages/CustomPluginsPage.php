@@ -61,7 +61,7 @@ class CustomPluginsPage
     }
 
     // Add custom plugins page
-    $hook_suffix = add_menu_page("Custom Plugins", $menu_title, "manage_options", "plugin-manager", [$this, "render_page"], "dashicons-admin-plugins", 65);
+    $hook_suffix = add_menu_page(__("Custom Plugins", "flexify-dashboard"), $menu_title, "manage_options", "plugin-manager", [$this, "render_page"], "dashicons-admin-plugins", 65);
     add_action("admin_head-{$hook_suffix}", [$this, "load_styles"]);
     add_action("admin_head-{$hook_suffix}", [$this, "load_scripts"]);
   }
@@ -173,7 +173,7 @@ class CustomPluginsPage
   public function render_page()
   {
     if (!current_user_can("manage_options")) {
-      wp_die(__("You do not have sufficient permissions to access this page."));
+      wp_die(__("You do not have sufficient permissions to access this page.", "flexify-dashboard"));
     } ?>
     <div id="fd-plugins-page"></div>
 <?php

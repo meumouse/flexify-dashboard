@@ -92,7 +92,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 			return is_string($param) && !empty($param) && preg_match('/^[a-zA-Z0-9-_]+$/', $param);
 		},
 		'sanitize_callback' => 'sanitize_text_field',
-		'description' => 'Plugin slug identifier'
+		'description' => __('Plugin slug identifier', 'flexify-dashboard')
 		];
 
 		// Endpoint for plugin activation
@@ -166,7 +166,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 				return empty($param) || (is_string($param) && preg_match('/^[\d\.]+$/', $param));
 			},
 			'sanitize_callback' => 'sanitize_text_field',
-			'description' => 'Specific version to install (optional)'
+			'description' => __('Specific version to install (optional)', 'flexify-dashboard')
 			],
 		],
 		]);
@@ -196,7 +196,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 				return empty($param) || (is_string($param) && preg_match('/^[a-zA-Z0-9-_]+$/', $param));
 			},
 			'sanitize_callback' => 'sanitize_text_field',
-			'description' => 'Plugin slug to get metrics for (optional)'
+			'description' => __('Plugin slug to get metrics for (optional)', 'flexify-dashboard')
 			],
 			'timeframe' => [
 			'required' => false,
@@ -206,7 +206,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 			},
 			'sanitize_callback' => 'sanitize_text_field',
 			'default' => 'day',
-			'description' => 'Timeframe for metrics (hour, day, week, month)'
+			'description' => __('Timeframe for metrics (hour, day, week, month)', 'flexify-dashboard')
 			],
 		],
 		]);
@@ -262,7 +262,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Plugin not found",
+			"message" => __("Plugin not found", "flexify-dashboard"),
 			],
 			404
 		);
@@ -299,7 +299,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 		[
 			"success" => true,
-			"message" => "Plugin activated successfully",
+			"message" => __("Plugin activated successfully", "flexify-dashboard"),
 			"action_links" => $cleaned_links,
 		],
 		200
@@ -321,7 +321,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Plugin not found",
+			"message" => __("Plugin not found", "flexify-dashboard"),
 			],
 			404
 		);
@@ -333,7 +333,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Failed to deactivate plugin",
+			"message" => __("Failed to deactivate plugin", "flexify-dashboard"),
 			],
 			500
 		);
@@ -341,7 +341,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 
 		$response_data = [
 			"success" => true,
-			"message" => "Plugin deactivated successfully",
+			"message" => __("Plugin deactivated successfully", "flexify-dashboard"),
 		];
 
 		if ($plugin_file === "flexify-dashboard/flexify-dashboard.php") {
@@ -369,7 +369,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Plugin not found",
+			"message" => __("Plugin not found", "flexify-dashboard"),
 			],
 			404
 		);
@@ -394,7 +394,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 		[
 			"success" => true,
-			"message" => "Plugin deleted successfully",
+			"message" => __("Plugin deleted successfully", "flexify-dashboard"),
 		],
 		200
 		);
@@ -415,7 +415,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Plugin not found",
+			"message" => __("Plugin not found", "flexify-dashboard"),
 			],
 			404
 		);
@@ -432,7 +432,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "No update available for this plugin",
+			"message" => __("No update available for this plugin", "flexify-dashboard"),
 			],
 			400
 		);
@@ -478,7 +478,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Plugin update failed",
+			"message" => __("Plugin update failed", "flexify-dashboard"),
 			],
 			500
 		);
@@ -491,7 +491,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 			return new WP_REST_Response(
 			[
 				"success" => true,
-				"message" => "Plugin updated successfully but reactivation failed: " . $activate_result->get_error_message(),
+				"message" => sprintf(__("Plugin updated successfully but reactivation failed: %s", "flexify-dashboard"), $activate_result->get_error_message()),
 			],
 			200
 			);
@@ -501,7 +501,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 		[
 			"success" => true,
-			"message" => "Plugin updated successfully" . ($was_active ? " and reactivated" : ""),
+			"message" => $was_active ? __("Plugin updated successfully and reactivated", "flexify-dashboard") : __("Plugin updated successfully", "flexify-dashboard"),
 		],
 		200
 		);
@@ -522,7 +522,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Plugin not found",
+			"message" => __("Plugin not found", "flexify-dashboard"),
 			],
 			404
 		);
@@ -537,11 +537,11 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		if ($auto_update_enabled) {
 		// Remove from auto updates
 		$auto_updates = array_diff($auto_updates, [$plugin_file]);
-		$message = "Auto updates disabled";
+		$message = __("Auto updates disabled", "flexify-dashboard");
 		} else {
 		// Add to auto updates
 		$auto_updates[] = $plugin_file;
-		$message = "Auto updates enabled";
+		$message = __("Auto updates enabled", "flexify-dashboard");
 		}
 
 		// Update the option
@@ -551,7 +551,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Failed to update auto update settings",
+			"message" => __("Failed to update auto update settings", "flexify-dashboard"),
 			],
 			500
 		);
@@ -584,7 +584,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "No plugin file uploaded",
+			"message" => __("No plugin file uploaded", "flexify-dashboard"),
 			],
 			400
 		);
@@ -598,7 +598,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Invalid file type. Please upload a ZIP file.",
+			"message" => __("Invalid file type. Please upload a ZIP file.", "flexify-dashboard"),
 			],
 			400
 		);
@@ -618,7 +618,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Failed to extract plugin ZIP: " . $extract_result->get_error_message(),
+			"message" => sprintf(__("Failed to extract plugin ZIP: %s", "flexify-dashboard"), $extract_result->get_error_message()),
 			],
 			500
 		);
@@ -655,7 +655,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Invalid plugin structure - no main plugin file found",
+			"message" => __("Invalid plugin structure - no main plugin file found", "flexify-dashboard"),
 			],
 			400
 		);
@@ -681,7 +681,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 			return new WP_REST_Response(
 			[
 				"success" => false,
-				"message" => "Failed to remove existing plugin: " . $delete_result->get_error_message(),
+				"message" => sprintf(__("Failed to remove existing plugin: %s", "flexify-dashboard"), $delete_result->get_error_message()),
 			],
 			500
 			);
@@ -720,7 +720,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Plugin installation failed",
+			"message" => __("Plugin installation failed", "flexify-dashboard"),
 			],
 			500
 		);
@@ -733,7 +733,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => true,
-			"message" => ($is_update ? "Plugin updated" : "Plugin installed") . " successfully but could not determine the plugin file",
+			"message" => $is_update ? __("Plugin updated successfully but could not determine the plugin file", "flexify-dashboard") : __("Plugin installed successfully but could not determine the plugin file", "flexify-dashboard"),
 			],
 			200
 		);
@@ -746,7 +746,9 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 			return new WP_REST_Response(
 			[
 				"success" => true,
-				"message" => ($is_update ? "Plugin updated" : "Plugin installed") . " successfully but reactivation failed: " . $activate_result->get_error_message(),
+				"message" => $is_update
+					? sprintf(__("Plugin updated successfully but reactivation failed: %s", "flexify-dashboard"), $activate_result->get_error_message())
+					: sprintf(__("Plugin installed successfully but reactivation failed: %s", "flexify-dashboard"), $activate_result->get_error_message()),
 			],
 			200
 			);
@@ -763,7 +765,9 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 		[
 			"success" => true,
-			"message" => ($is_update ? "Plugin updated" : "Plugin installed") . " successfully" . ($was_active ? " and reactivated" : ""),
+			"message" => $is_update
+				? ($was_active ? __("Plugin updated successfully and reactivated", "flexify-dashboard") : __("Plugin updated successfully", "flexify-dashboard"))
+				: ($was_active ? __("Plugin installed successfully and reactivated", "flexify-dashboard") : __("Plugin installed successfully", "flexify-dashboard")),
 			"plugin" => $plugin_data,
 			"was_update" => $is_update,
 		],
@@ -814,7 +818,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			"success" => false,
-			"message" => "Plugin installation failed",
+			"message" => __("Plugin installation failed", "flexify-dashboard"),
 			],
 			500
 		);
@@ -833,7 +837,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 		[
 			"success" => true,
-			"message" => "Plugin installed successfully",
+			"message" => __("Plugin installed successfully", "flexify-dashboard"),
 			"plugin" => $plugin_data,
 		],
 		200
@@ -848,7 +852,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response(
 			[
 			'success' => false,
-			'message' => 'Plugin slug is required',
+			'message' => __('Plugin slug is required', 'flexify-dashboard'),
 			],
 			400
 		);
@@ -936,7 +940,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		error_log("WP Error: " . $response->get_error_message());
 		return new WP_REST_Response(
 			[
-			"error" => "Failed to collect metrics",
+			"error" => __("Failed to collect metrics", "flexify-dashboard"),
 			"message" => $response->get_error_message(),
 			],
 			500
@@ -948,7 +952,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		error_log("HTTP Error: " . $status_code . " - " . wp_remote_retrieve_response_message($response));
 		return new WP_REST_Response(
 			[
-			"error" => "HTTP Error",
+			"error" => __("HTTP Error", "flexify-dashboard"),
 			"status" => $status_code,
 			"message" => wp_remote_retrieve_response_message($response),
 			],
@@ -964,7 +968,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		if ($metrics === null) {
 			return new WP_REST_Response(
 			[
-				"error" => "Failed to parse metrics JSON",
+				"error" => __("Failed to parse metrics JSON", "flexify-dashboard"),
 				"json_error" => json_last_error_msg(),
 			],
 			500
@@ -973,7 +977,7 @@ class Silent_Upgrader_Skin extends WP_Upgrader_Skin {
 		return new WP_REST_Response($metrics, 200);
 		}
 
-		return new WP_REST_Response(["error" => "No metrics found"], 404);
+		return new WP_REST_Response(["error" => __("No metrics found", "flexify-dashboard")], 404);
 	}
 
 	/**

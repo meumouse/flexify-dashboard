@@ -47,14 +47,14 @@ class Analytics
                     'required' => false,
                     'default' => null,
                     'type' => 'string',
-                    'description' => 'Browser timezone for accurate time calculations'
+                    'description' => __('Browser timezone for accurate time calculations', 'flexify-dashboard')
                 ],
                 'browser_time' => [
                     'required' => false,
                     'default' => null,
                     'type' => 'string',
                     'format' => 'date-time',
-                    'description' => 'Browser time in ISO format'
+                    'description' => __('Browser time in ISO format', 'flexify-dashboard')
                 ]
             ]
         ]);
@@ -70,27 +70,27 @@ class Analytics
                     'default' => null,
                     'type' => 'string',
                     'format' => 'date-time',
-                    'description' => 'Start date for analytics data (ISO 8601 format)'
+                    'description' => __('Start date for analytics data (ISO 8601 format)', 'flexify-dashboard')
                 ],
                 'end_date' => [
                     'required' => false,
                     'default' => null,
                     'type' => 'string',
                     'format' => 'date-time',
-                    'description' => 'End date for analytics data (ISO 8601 format)'
+                    'description' => __('End date for analytics data (ISO 8601 format)', 'flexify-dashboard')
                 ],
                 'page_url' => [
                     'required' => false,
                     'default' => null,
                     'type' => 'string',
-                    'description' => 'Filter by specific page URL'
+                    'description' => __('Filter by specific page URL', 'flexify-dashboard')
                 ],
                 'stat_type' => [
                     'required' => false,
                     'default' => 'overview',
                     'type' => 'string',
                     'enum' => ['overview', 'pages', 'referrers', 'devices', 'geo', 'events'],
-                    'description' => 'Type of analytics stats to retrieve'
+                    'description' => __('Type of analytics stats to retrieve', 'flexify-dashboard')
                 ]
             ]
         ]);
@@ -110,7 +110,7 @@ class Analytics
                     'validate_callback' => function($value) {
                         return filter_var($value, FILTER_VALIDATE_URL) !== false;
                     },
-                    'description' => 'URL of the page being viewed'
+                    'description' => __('URL of the page being viewed', 'flexify-dashboard')
                 ],
                 'page_title' => [
                     'required' => false,
@@ -120,7 +120,7 @@ class Analytics
                     'sanitize_callback' => function($value) {
                         return empty($value) ? null : sanitize_text_field($value);
                     },
-                    'description' => 'Title of the page being viewed'
+                    'description' => __('Title of the page being viewed', 'flexify-dashboard')
                 ],
                 'referrer' => [
                     'required' => false,
@@ -130,7 +130,7 @@ class Analytics
                     'sanitize_callback' => function($value) {
                         return empty($value) ? null : sanitize_url($value);
                     },
-                    'description' => 'Referrer URL'
+                    'description' => __('Referrer URL', 'flexify-dashboard')
                 ],
                 'user_agent' => [
                     'required' => false,
@@ -140,13 +140,13 @@ class Analytics
                     'sanitize_callback' => function($value) {
                         return empty($value) ? null : sanitize_text_field($value);
                     },
-                    'description' => 'User agent string'
+                    'description' => __('User agent string', 'flexify-dashboard')
                 ],
                 'session_id' => [
                     'required' => false,
                     'default' => null,
                     'type' => 'string',
-                    'description' => 'Client-side session ID'
+                    'description' => __('Client-side session ID', 'flexify-dashboard')
                 ]
             ]
         ]);
@@ -167,7 +167,7 @@ class Analytics
                 'settings' => [
                     'required' => true,
                     'type' => 'object',
-                    'description' => 'Analytics settings to update'
+                    'description' => __('Analytics settings to update', 'flexify-dashboard')
                 ]
             ]
         ]);
@@ -183,21 +183,21 @@ class Analytics
                     'default' => null,
                     'type' => 'string',
                     'format' => 'date-time',
-                    'description' => 'Start date for chart data (ISO 8601 format)'
+                    'description' => __('Start date for chart data (ISO 8601 format)', 'flexify-dashboard')
                 ],
                 'end_date' => [
                     'required' => false,
                     'default' => null,
                     'type' => 'string',
                     'format' => 'date-time',
-                    'description' => 'End date for chart data (ISO 8601 format)'
+                    'description' => __('End date for chart data (ISO 8601 format)', 'flexify-dashboard')
                 ],
                 'chart_type' => [
                     'required' => false,
                     'default' => 'pageviews',
                     'type' => 'string',
                     'enum' => ['pageviews', 'visitors', 'both'],
-                    'description' => 'Type of chart data to retrieve'
+                    'description' => __('Type of chart data to retrieve', 'flexify-dashboard')
                 ]
             ]
         ]);
@@ -343,7 +343,7 @@ class Analytics
                     $data = $provider->getEvents($start_date, $end_date);
                     break;
                 default:
-                    return new \WP_Error('invalid_stat_type', 'Invalid stat type', ['status' => 400]);
+                    return new \WP_Error('invalid_stat_type', __('Invalid stat type', 'flexify-dashboard'), ['status' => 400]);
             }
 
          
@@ -383,18 +383,18 @@ class Analytics
             $client_session_id = sanitize_text_field($request->get_param('session_id'));
 
             if (empty($page_url)) {
-                return new \WP_Error('missing_page_url', 'Page URL is required', ['status' => 400]);
+                return new \WP_Error('missing_page_url', __('Page URL is required', 'flexify-dashboard'), ['status' => 400]);
             }
             
             // Add input validation and length limits
             if (strlen($page_url) > 500) {
-                return new \WP_Error('url_too_long', 'URL exceeds maximum length', ['status' => 400]);
+                return new \WP_Error('url_too_long', __('URL exceeds maximum length', 'flexify-dashboard'), ['status' => 400]);
             }
             if (strlen($page_title) > 255) {
-                return new \WP_Error('title_too_long', 'Page title exceeds maximum length', ['status' => 400]);
+                return new \WP_Error('title_too_long', __('Page title exceeds maximum length', 'flexify-dashboard'), ['status' => 400]);
             }
             if (strlen($referrer) > 500) {
-                return new \WP_Error('referrer_too_long', 'Referrer URL exceeds maximum length', ['status' => 400]);
+                return new \WP_Error('referrer_too_long', __('Referrer URL exceeds maximum length', 'flexify-dashboard'), ['status' => 400]);
             }
             
             // Add rate limiting to prevent abuse
@@ -402,7 +402,7 @@ class Analytics
             $transient_key = 'flexify_dashboard_analytics_rate_limit_' . substr($ip_hash, 0, 16);
             $requests = get_transient($transient_key) ?: 0;
             if ($requests > 100) { // 100 requests per hour
-                return new \WP_Error('rate_limit', 'Too many requests', ['status' => 429]);
+                return new \WP_Error('rate_limit', __('Too many requests', 'flexify-dashboard'), ['status' => 429]);
             }
             set_transient($transient_key, $requests + 1, HOUR_IN_SECONDS);
 
@@ -457,7 +457,7 @@ class Analytics
                     'is_unique_visitor' => $is_unique
                 ], 200);
             } else {
-                return new \WP_Error('tracking_failed', 'Failed to track analytics event', ['status' => 500]);
+                return new \WP_Error('tracking_failed', __('Failed to track analytics event', 'flexify-dashboard'), ['status' => 500]);
             }
         } catch (\Exception $e) {
             return new \WP_Error('tracking_error', $e->getMessage(), ['status' => 500]);
@@ -501,7 +501,7 @@ class Analytics
             $settings = $request->get_param('settings');
             
             if (!is_array($settings)) {
-                return new \WP_Error('invalid_settings', 'Settings must be an object', ['status' => 400]);
+            return new \WP_Error('invalid_settings', __('Settings must be an object', 'flexify-dashboard'), ['status' => 400]);
             }
 
             foreach ($settings as $key => $value) {
@@ -1090,7 +1090,7 @@ class Analytics
             error_log('UiXpress Analytics Chart Data Error: ' . $e->getMessage());
             return new \WP_Error(
                 'chart_data_error',
-                'Failed to retrieve chart data',
+                __('Failed to retrieve chart data', 'flexify-dashboard'),
                 ['status' => 500]
             );
         }

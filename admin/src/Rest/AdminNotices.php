@@ -250,7 +250,7 @@ class AdminNotices
                     'sanitize_callback' => function ($value) {
                         return intval($value);
                     },
-                    'description' => 'ID of the notice to mark as seen'
+                    'description' => __('ID of the notice to mark as seen', 'flexify-dashboard')
                 ],
             ],
         ]);
@@ -268,7 +268,7 @@ class AdminNotices
         $notice_id = intval($request->get_param('notice_id'));
         $user_id = get_current_user_id();
         if (!$notice_id || !$user_id) {
-            return new \WP_Error('invalid_data', 'Invalid notice or user.', 400);
+            return new \WP_Error('invalid_data', __('Invalid notice or user.', 'flexify-dashboard'), 400);
         }
         $seen_by = get_post_meta($notice_id, 'seen_by', true);
         if (!is_array($seen_by)) $seen_by = [];

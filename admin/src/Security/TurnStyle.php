@@ -171,7 +171,7 @@ class TurnStyle
     if ($turnstile_loaded) {
       // Proceed with Turnstile validation only if it loaded successfully
       if (!isset($_POST["cf-turnstile-response"])) {
-        return new \WP_Error("turnstile_error", "Please complete the Turnstile challenge.");
+        return new \WP_Error("turnstile_error", __("Please complete the Turnstile challenge.", "flexify-dashboard"));
       }
 
       $turnstile_response = sanitize_text_field($_POST["cf-turnstile-response"]);
@@ -188,19 +188,19 @@ class TurnStyle
       ]);
 
       if (is_wp_error($response)) {
-        return new \WP_Error("turnstile_error", "Failed to validate Turnstile response.");
+        return new \WP_Error("turnstile_error", __("Failed to validate Turnstile response.", "flexify-dashboard"));
       }
 
       $body = wp_remote_retrieve_body($response);
       $result = json_decode($body, true);
 
       if (!$result["success"]) {
-        return new \WP_Error("turnstile_error", "Turnstile validation failed. Please try again.");
+        return new \WP_Error("turnstile_error", __("Turnstile validation failed. Please try again.", "flexify-dashboard"));
       }
     } else {
       // Check if the error is due to potential bot activity
       if (preg_match("/^(3|6)/", $turnstile_error)) {
-        return new \WP_Error("turnstile_error", "Security check failed. Please try again or contact the site administrator.");
+        return new \WP_Error("turnstile_error", __("Security check failed. Please try again or contact the site administrator.", "flexify-dashboard"));
       } else {
         // Log the failure to load Turnstile
         error_log("Turnstile failed to load. Error: " . $turnstile_error);

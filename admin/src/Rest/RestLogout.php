@@ -31,6 +31,6 @@ class RestLogout
   {
     wp_logout();
     wp_clear_auth_cookie();
-    return new \WP_REST_Response(["success" => true, "message" => "Logged out successfully"], 200);
+    return new \WP_REST_Response(["success" => true, "message" => __("Logged out successfully", "flexify-dashboard")], 200);
   }
 }

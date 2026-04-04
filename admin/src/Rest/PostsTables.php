@@ -44,7 +44,7 @@ class PostsTables
    */
   public function register_hidden_page()
   {
-    add_submenu_page("", "Posts Data", "Posts Data", "edit_posts", "flexify-dashboard-posts-data", [$this, "render_page"]);
+    add_submenu_page("", __("Posts Data", "flexify-dashboard"), __("Posts Data", "flexify-dashboard"), "edit_posts", "flexify-dashboard-posts-data", [$this, "render_page"]);
   }
 
   /**
@@ -82,7 +82,7 @@ class PostsTables
   {
     // Check if user is logged in
     if (!is_user_logged_in()) {
-      wp_die(__("You must be logged in to access this page."));
+      wp_die(__("You must be logged in to access this page.", "flexify-dashboard"));
     }
 
     // Use nonce verification - accept both REST API nonce and page-specific nonce
@@ -101,11 +101,11 @@ class PostsTables
     }
     
     if (!$nonce_valid) {
-      wp_die(__("Invalid request. Please refresh the page and try again."));
+      wp_die(__("Invalid request. Please refresh the page and try again.", "flexify-dashboard"));
     }
 
     if (!current_user_can("edit_posts")) {
-      wp_die(__("You do not have sufficient permissions to access this page."));
+      wp_die(__("You do not have sufficient permissions to access this page.", "flexify-dashboard"));
     }
   }
 

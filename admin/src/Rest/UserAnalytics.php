@@ -32,13 +32,13 @@ class UserAnalytics
                     'required' => false,
                     'type' => 'string',
                     'format' => 'date-time',
-                    'description' => 'Start date for analytics (ISO 8601)',
+                    'description' => __('Start date for analytics (ISO 8601)', 'flexify-dashboard'),
                 ],
                 'end_date' => [
                     'required' => false,
                     'type' => 'string',
                     'format' => 'date-time',
-                    'description' => 'End date for analytics (ISO 8601)',
+                    'description' => __('End date for analytics (ISO 8601)', 'flexify-dashboard'),
                 ],
             ],
         ]);

@@ -102,5 +102,33 @@ class Login
       "callback" => [$this->login_page, "get_login_site_info_rest_response"],
       "permission_callback" => "__return_true",
     ]);
+
+    register_rest_route($this->namespace, "/google-recaptcha/status", [
+      "methods" => "GET",
+      "callback" => [$this->login_page, "get_google_recaptcha_status"],
+      "permission_callback" => [$this->login_page, "check_admin_permissions"],
+    ]);
+
+    register_rest_route($this->namespace, "/google-recaptcha/credentials", [
+      "methods" => "POST",
+      "callback" => [$this->login_page, "save_google_recaptcha_credentials"],
+      "permission_callback" => [$this->login_page, "check_admin_permissions"],
+      "args" => [
+        "site_key" => [
+          "type" => "string",
+          "required" => true,
+        ],
+        "secret_key" => [
+          "type" => "string",
+          "required" => true,
+        ],
+      ],
+    ]);
+
+    register_rest_route($this->namespace, "/google-recaptcha/disconnect", [
+      "methods" => "POST",
+      "callback" => [$this->login_page, "disconnect_google_recaptcha"],
+      "permission_callback" => [$this->login_page, "check_admin_permissions"],
+    ]);
   }
 }

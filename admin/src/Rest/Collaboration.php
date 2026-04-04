@@ -222,7 +222,7 @@ class Collaboration
             if (!$user_id) {
                 return new \WP_REST_Response([
                     'can_edit' => false,
-                    'error' => 'Invalid authentication',
+                    'error' => __('Invalid authentication', 'flexify-dashboard'),
                 ], 401);
             }
         }
@@ -232,7 +232,7 @@ class Collaboration
         if (!$user || !$user->exists()) {
             return new \WP_REST_Response([
                 'can_edit' => false,
-                'error' => 'User not found',
+                'error' => __('User not found', 'flexify-dashboard'),
             ], 401);
         }
 
@@ -242,7 +242,7 @@ class Collaboration
         if (!$can_edit) {
             return new \WP_REST_Response([
                 'can_edit' => false,
-                'error' => 'User cannot edit this post',
+                'error' => __('User cannot edit this post', 'flexify-dashboard'),
             ], 403);
         }
 
