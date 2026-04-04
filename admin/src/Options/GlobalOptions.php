@@ -47,6 +47,7 @@ class GlobalOptions
       "show_in_rest" => [
         "schema" => [
           "type" => "object",
+          "additionalProperties" => true,
           "properties" => [
             "license_key" => [
               "type" => "string",
@@ -114,7 +115,7 @@ class GlobalOptions
               "default" => "#008aff",
             ],
             "login_path" => [
-              "type" => "text",
+              "type" => "string",
               "default" => "#008aff",
             ],
             "text_replacements" => [

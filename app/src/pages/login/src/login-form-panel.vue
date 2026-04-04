@@ -135,7 +135,7 @@ defineEmits([
         </a>
 
         <template v-if="isLoginScreen">
-          <div class="mb-3 text-[clamp(2.1rem,2.7vw,3.2rem)] font-semibold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
+          <div class="mb-3 text-[2.225rem] md:text-[2.725rem] font-semibold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
             {{ __('Sign In', 'flexify-dashboard') }}
           </div>
           <p class="m-0 text-base leading-[1.55] text-gray-500 dark:text-gray-400">
@@ -144,7 +144,7 @@ defineEmits([
         </template>
 
         <template v-else>
-          <div class="mb-3 text-[clamp(2.1rem,2.7vw,3.2rem)] font-semibold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
+          <div class="mb-3 text-[2.225rem] md:text-[2.725rem] font-semibold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
             {{ __('Recover Password', 'flexify-dashboard') }}
           </div>
           <p class="m-0 text-base leading-[1.55] text-gray-500 dark:text-gray-400">
