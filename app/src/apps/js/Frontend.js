@@ -56,10 +56,7 @@ const translatorFunction = (text, domain) => {
 window.__ = translatorFunction;
 
 // Declare translation functions
-app.config.globalProperties.__ = translatorFunction;
-app.config.globalProperties.sprintf = sprintf;
-// Note: We set __ manually here because we override it with translatorFunction
-// setVueGlobalProperties would use the original __, so we handle it manually
+setVueGlobalProperties(app, { __: translatorFunction });
 
 // Move favicon to head
 const faviconLink = document.getElementById('flexify-dashboard-favicon');

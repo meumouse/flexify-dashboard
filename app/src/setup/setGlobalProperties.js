@@ -1,6 +1,10 @@
 import { setupButtonTitleTooltips } from '@/setup/buttonTitleTooltips.js';
 
 const __ = window.wp?.i18n?.__ ?? ((s) => s);
+const _x = window.wp?.i18n?._x ?? ((s) => s);
+const _n = window.wp?.i18n?._n ?? ((single, plural, number) =>
+	Number(number) === 1 ? single : plural);
+const sprintfFn = window.wp?.i18n?.sprintf ?? window.sprintf ?? ((s) => s);
 
 /**
  * Sets global properties from script tag data attributes into the app store
@@ -170,9 +174,18 @@ export const setGlobalProperties = ( appStore, scriptTagSelector = '#fd-script',
  * @param {Object} app - Vue app instance
  * @returns {void}
  */
-export const setVueGlobalProperties = (app) => {
-	app.config.globalProperties.__ = __;
-	app.config.globalProperties.sprintf = sprintf;
+export const setVueGlobalProperties = (app, overrides = {}) => {
+	const i18n = {
+		__: overrides.__ ?? window.__ ?? __,
+		_x: overrides._x ?? window._x ?? _x,
+		_n: overrides._n ?? window._n ?? _n,
+		sprintf: overrides.sprintf ?? window.sprintf ?? sprintfFn,
+	};
+
+	app.config.globalProperties.__ = i18n.__;
+	app.config.globalProperties._x = i18n._x;
+	app.config.globalProperties._n = i18n._n;
+	app.config.globalProperties.sprintf = i18n.sprintf;
 
 	setupButtonTitleTooltips();
 };

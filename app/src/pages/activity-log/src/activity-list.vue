@@ -207,7 +207,7 @@ document.addEventListener('click', () => {
         v-for="item in activities"
         :key="item.id"
         @click="handleActivityClick(item, $event)"
-        class="flex items-center gap-2.5 px-4 py-2 cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group -mx-3 relative"
+        class="flex items-center gap-2.5 px-4 py-2 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group -mx-3 relative"
         :class="
           route.params.logId == item.id
             ? 'bg-zinc-100 dark:bg-zinc-800/60'

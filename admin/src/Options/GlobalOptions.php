@@ -453,7 +453,7 @@ class GlobalOptions
     }
 
     if (isset($value["enable_custom_post_types"])) {
-      $sanitized_value["enable_custom_post_types"] = false; // Disabled by default
+      $sanitized_value["enable_custom_post_types"] = (bool) $value["enable_custom_post_types"];
     }
 
     if (isset($value["enable_activity_logger"])) {

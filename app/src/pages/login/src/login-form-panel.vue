@@ -211,7 +211,7 @@ defineEmits([
               @toggle="$emit('togglePassword')"
             />
 
-            <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center justify-between gap-4 mb-5!">
               <LoginCheckbox
                 id="checkboxLabelOne"
                 v-model="remember"
@@ -222,7 +222,7 @@ defineEmits([
 
               <a
                 :href="config.lostPasswordUrl"
-                class="cursor-pointer rounded-md px-2 py-1 text-sm text-brand-500 no-underline transition-[color,background-color,box-shadow] duration-150 hover:bg-brand-50 hover:text-brand-600 hover:shadow-[inset_0_0_0_1px_rgba(0,138,255,0.08)] dark:text-brand-400 dark:hover:bg-white/5 dark:hover:text-brand-300"
+                class="cursor-pointer text-sm text-gray-500 no-underline transition-all duration-150 hover:text-brand-600 dark:text-brand-400 dark:hover:bg-white/5 dark:hover:text-brand-300"
                 @click.prevent="$emit('showRecovery')"
               >
                 {{ __('Forgot password?', 'flexify-dashboard') }}

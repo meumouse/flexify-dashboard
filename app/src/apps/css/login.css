@@ -33,6 +33,14 @@
     min-height: 100vh;
   }
 
+  body.fd-modern-login-active.fd-modern-login-pending #flexify-dashboard-login-fallback {
+    display: none !important;
+  }
+
+  body.fd-modern-login-active.fd-modern-login-mounted #flexify-dashboard-login-fallback {
+    display: none !important;
+  }
+
   body.fd-modern-login-active #fd-login-app form {
     margin: 0 !important;
     border: 0 !important;

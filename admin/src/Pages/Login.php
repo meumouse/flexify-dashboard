@@ -812,7 +812,8 @@ JS;
     wp_print_inline_script_tag($script);
 
     if (self::is_modern_login_screen()) {
-      echo wp_kses_post('<div id="flexify-dashboard-login-wrap"><div id="fd-login-app"></div><div id="flexify-dashboard-login-fallback" hidden>');
+      wp_print_inline_script_tag('document.body.classList.add("fd-modern-login-pending");');
+      echo wp_kses_post('<div id="flexify-dashboard-login-wrap"><div id="fd-login-app"></div><div id="flexify-dashboard-login-fallback">');
       return;
     }
 
