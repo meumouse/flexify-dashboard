@@ -55,7 +55,7 @@ const updateStylesheet = (index, value) => {
           :model-value="item"
           @update:model-value="updateStylesheet(index, $event)"
           type="text"
-          placeholder="URL"
+          :placeholder="__('URL', 'flexify-dashboard')"
           class="max-w-[300px] grow"
         />
         <AppButton

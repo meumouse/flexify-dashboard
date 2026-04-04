@@ -993,7 +993,9 @@ const handleUpload = async (files) => {
             ((i + 1) / files.length) * 100
           );
         } else {
-          throw new Error('Upload failed - no response data');
+          throw new Error(
+            __('Upload failed - no response data', 'flexify-dashboard')
+          );
         }
       } catch (e) {
         console.error('Upload error:', e);

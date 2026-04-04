@@ -104,7 +104,7 @@ watch(search, async (newValue) => {
       <AppInput
         v-model="search"
         type="text"
-        :placeholder="__('Paste URL or search', 'vendbase')"
+        :placeholder="__('Paste URL or search', 'flexify-dashboard')"
       />
 
       <template v-if="loading">
@@ -143,7 +143,7 @@ watch(search, async (newValue) => {
         class="mt-2"
         @click.prevent.stop="applyLink(manualUrl)"
       >
-        {{ __('Add URL', 'vendbase') }}
+        {{ __('Add URL', 'flexify-dashboard') }}
       </AppButton>
     </div>
   </ContextMenu>

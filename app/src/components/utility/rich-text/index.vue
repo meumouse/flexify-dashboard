@@ -57,7 +57,8 @@ const createExtensions = () => [
     alignments: ['left', 'center', 'right', 'justify'],
   }),
   Placeholder.configure({
-    placeholder: props.placeholder || __('Write something...', 'vendbase'),
+    placeholder:
+      props.placeholder || __('Write something...', 'flexify-dashboard'),
   }),
 ];
 
@@ -121,7 +122,7 @@ const handleModalClick = (event) => {
 };
 
 const setLink = () => {
-  const url = prompt('URL');
+  const url = prompt(__('URL', 'flexify-dashboard'));
   if (url) {
     editor.value.chain().focus().setLink({ href: url }).run();
   }
@@ -161,7 +162,7 @@ const removeLink = () => {
                 : 'text-zinc-400 dark:text-zinc-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
-            >Heading 1</AppButton
+            >{{ __('Heading 1', 'flexify-dashboard') }}</AppButton
           >
           <AppButton
             type="transparent"
@@ -171,7 +172,7 @@ const removeLink = () => {
                 : 'text-zinc-400 dark:text-zinc-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
-            >Heading 2</AppButton
+            >{{ __('Heading 2', 'flexify-dashboard') }}</AppButton
           >
           <AppButton
             type="transparent"
@@ -181,7 +182,7 @@ const removeLink = () => {
                 : 'text-zinc-400 dark:text-zinc-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
-            >Heading 3</AppButton
+            >{{ __('Heading 3', 'flexify-dashboard') }}</AppButton
           >
           <AppButton
             type="transparent"
@@ -191,7 +192,7 @@ const removeLink = () => {
                 : 'text-zinc-400 dark:text-zinc-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
-            >Heading 4</AppButton
+            >{{ __('Heading 4', 'flexify-dashboard') }}</AppButton
           >
           <AppButton
             type="transparent"
@@ -201,7 +202,7 @@ const removeLink = () => {
                 : 'text-zinc-400 dark:text-zinc-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
-            >Heading 5</AppButton
+            >{{ __('Heading 5', 'flexify-dashboard') }}</AppButton
           >
           <AppButton
             type="transparent"
@@ -211,7 +212,7 @@ const removeLink = () => {
                 : 'text-zinc-400 dark:text-zinc-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
-            >Heading 6</AppButton
+            >{{ __('Heading 6', 'flexify-dashboard') }}</AppButton
           >
 
           <AppButton
@@ -222,7 +223,7 @@ const removeLink = () => {
                 : 'text-zinc-400 dark:text-zinc-500'
             "
             @click="editor.chain().focus().setParagraph().run()"
-            >Paragraph</AppButton
+            >{{ __('Paragraph', 'flexify-dashboard') }}</AppButton
           >
         </div>
       </AppButton>

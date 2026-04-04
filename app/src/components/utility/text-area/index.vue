@@ -26,7 +26,10 @@ const copyInput = async () => {
   try {
     // Copy the text inside the text field using async/await
     await navigator.clipboard.writeText(model.value);
-    notify({ title: 'Texto copiado para a área de transferência', type: 'success' });
+    notify({
+      title: __('Text copied to clipboard', 'flexify-dashboard'),
+      type: 'success',
+    });
   } catch (err) {
     console.error('Failed to copy text: ', err);
   }

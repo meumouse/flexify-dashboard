@@ -238,7 +238,7 @@ const initializeMap = async () => {
       appStore.state?.flexify_dashboard_settings?.mapbox_api_key || '';
 
     if (!mapboxToken) {
-      throw new Error('Missing Mapbox access token');
+      throw new Error(__('Missing Mapbox access token', 'flexify-dashboard'));
     }
 
     mapboxgl.accessToken = mapboxToken;

@@ -24,8 +24,8 @@ const filtertrigger = ref(null);
 const contextmenu = ref(null);
 const startWatch = ref(null);
 const orderOptions = [
-  { label: __("Ascending", "vendbase"), value: "ASC" },
-  { label: __("Descending", "vendbase"), value: "DESC" },
+  { label: __("Ascending", "flexify-dashboard"), value: "ASC" },
+  { label: __("Descending", "flexify-dashboard"), value: "DESC" },
 ];
 
 // Local Storage Keys

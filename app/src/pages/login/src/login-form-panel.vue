@@ -125,26 +125,35 @@ defineEmits([
           <img
             v-else
             :src="siteInfo.logoUrl || config.authLogoUrl"
-            :alt="siteInfo.siteName || config.siteName || 'Logo'"
+            :alt="
+              siteInfo.siteName ||
+              config.siteName ||
+              __('Logo', 'flexify-dashboard')
+            "
             class="block max-h-12 max-w-44 object-contain"
           />
         </a>
 
         <template v-if="isLoginScreen">
           <div class="mb-3 text-[clamp(2.1rem,2.7vw,3.2rem)] font-semibold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
-            Sign In
+            {{ __('Sign In', 'flexify-dashboard') }}
           </div>
           <p class="m-0 text-base leading-[1.55] text-gray-500 dark:text-gray-400">
-            Enter your email and password to sign in!
+            {{ __('Enter your email and password to sign in!', 'flexify-dashboard') }}
           </p>
         </template>
 
         <template v-else>
           <div class="mb-3 text-[clamp(2.1rem,2.7vw,3.2rem)] font-semibold leading-none tracking-[-0.03em] text-gray-900 dark:text-white">
-            Recover Password
+            {{ __('Recover Password', 'flexify-dashboard') }}
           </div>
           <p class="m-0 text-base leading-[1.55] text-gray-500 dark:text-gray-400">
-            Enter your email or username and we will send you a recovery link.
+            {{
+              __(
+                'Enter your email or username and we will send you a recovery link.',
+                'flexify-dashboard'
+              )
+            }}
           </p>
         </template>
 
@@ -187,13 +196,13 @@ defineEmits([
             <LoginField
               id="fd-login-username"
               v-model="username"
-              label="Email"
+              :label="__('Email', 'flexify-dashboard')"
               required-label="*"
               input-name="log"
               input-type="email"
               inputmode="email"
               autocomplete="username"
-              placeholder="info@gmail.com"
+              :placeholder="__('info@gmail.com', 'flexify-dashboard')"
             />
 
             <LoginPasswordField
@@ -208,7 +217,7 @@ defineEmits([
                 v-model="remember"
                 input-name="rememberme"
                 input-value="forever"
-                label="Keep me logged in"
+                :label="__('Keep me logged in', 'flexify-dashboard')"
               />
 
               <a
@@ -216,7 +225,7 @@ defineEmits([
                 class="cursor-pointer rounded-md px-2 py-1 text-sm text-brand-500 no-underline transition-[color,background-color,box-shadow] duration-150 hover:bg-brand-50 hover:text-brand-600 hover:shadow-[inset_0_0_0_1px_rgba(0,138,255,0.08)] dark:text-brand-400 dark:hover:bg-white/5 dark:hover:text-brand-300"
                 @click.prevent="$emit('showRecovery')"
               >
-                Forgot password?
+                {{ __('Forgot password?', 'flexify-dashboard') }}
               </a>
             </div>
 

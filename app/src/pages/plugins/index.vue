@@ -111,8 +111,8 @@ const handlePluginUpload = async (evt) => {
   const file = files[0];
   if (!file.name.endsWith('.zip')) {
     notify({
-      title: 'Invalid File',
-      message: 'Please select a valid ZIP file',
+      title: __('Invalid File', 'flexify-dashboard'),
+      message: __('Please select a valid ZIP file', 'flexify-dashboard'),
       type: 'error',
     });
     return;
@@ -120,8 +120,8 @@ const handlePluginUpload = async (evt) => {
 
   if (file.size > 50 * 1024 * 1024) {
     notify({
-      title: 'File Too Large',
-      message: 'File size must be less than 50MB',
+      title: __('File Too Large', 'flexify-dashboard'),
+      message: __('File size must be less than 50MB', 'flexify-dashboard'),
       type: 'error',
     });
     return;
@@ -145,14 +145,16 @@ const handlePluginUpload = async (evt) => {
     const response = await lmnFetch(args);
 
     if (!response || !response.data || !response.data.plugin) {
-      throw new Error('Upload failed. Please try again.');
+      throw new Error(
+        __('Upload failed. Please try again.', 'flexify-dashboard')
+      );
     }
 
     const plugin = response.data.plugin;
 
     notify({
-      title: 'Success',
-      message: 'Plugin uploaded successfully',
+      title: __('Success', 'flexify-dashboard'),
+      message: __('Plugin uploaded successfully', 'flexify-dashboard'),
       type: 'success',
     });
 
@@ -175,8 +177,10 @@ const handlePluginUpload = async (evt) => {
   } catch (error) {
     console.error('Plugin upload error:', error);
     notify({
-      title: 'Upload Failed',
-      message: error.message || 'An unexpected error occurred during upload',
+      title: __('Upload Failed', 'flexify-dashboard'),
+      message:
+        error.message ||
+        __('An unexpected error occurred during upload', 'flexify-dashboard'),
       type: 'error',
     });
     setTimeout(() => {

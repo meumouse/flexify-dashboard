@@ -244,7 +244,9 @@ onMounted(() => {
           </p>
 
           <div class="flex items-center gap-2">
-            <span class="text-xs text-zinc-500 dark:text-zinc-400">on</span>
+            <span class="text-xs text-zinc-500 dark:text-zinc-400">{{
+              __('on', 'flexify-dashboard')
+            }}</span>
             <a
               :href="comment.postLink"
               target="_blank"
