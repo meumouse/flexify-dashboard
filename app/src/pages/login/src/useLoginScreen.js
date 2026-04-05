@@ -1,7 +1,5 @@
 import { computed, nextTick, onMounted, ref, watch } from 'vue';
 
-const SITE_INFO_CACHE_TTL = 5 * 60 * 1000;
-
 export const useLoginScreen = (config = {}) => {
   const screen = ref('login');
   const username = ref('');
@@ -31,7 +29,6 @@ export const useLoginScreen = (config = {}) => {
   const siteInfoLoading = ref(true);
 
   const recaptchaEnabled = Boolean(config.recaptchaEnabled);
-  const siteInfoCacheKey = `flexify-dashboard:login-site-info:${config.homeUrl || window.location.origin}`;
 
   const normalizeSiteInfo = (payload = {}) => ({
     siteName: payload.siteName || config.siteName || '',
@@ -45,50 +42,7 @@ export const useLoginScreen = (config = {}) => {
     asideGlowColor: payload.asideGlowColor || config.asideGlowColor || '#1392ff',
   });
 
-  const readCachedSiteInfo = () => {
-    try {
-      const rawValue = window.localStorage.getItem(siteInfoCacheKey);
-
-      if (!rawValue) {
-        return null;
-      }
-
-      const parsedValue = JSON.parse(rawValue);
-
-      if (!parsedValue?.expiresAt || parsedValue.expiresAt < Date.now()) {
-        window.localStorage.removeItem(siteInfoCacheKey);
-        return null;
-      }
-
-      return normalizeSiteInfo(parsedValue.data || {});
-    } catch (error) {
-      return null;
-    }
-  };
-
-  const writeCachedSiteInfo = (data) => {
-    try {
-      window.localStorage.setItem(
-        siteInfoCacheKey,
-        JSON.stringify({
-          expiresAt: Date.now() + SITE_INFO_CACHE_TTL,
-          data,
-        }),
-      );
-    } catch (error) {
-      // Ignore storage failures and keep runtime data only.
-    }
-  };
-
   const loadSiteInfo = async () => {
-    const cachedSiteInfo = readCachedSiteInfo();
-
-    if (cachedSiteInfo) {
-      siteInfo.value = cachedSiteInfo;
-      siteInfoLoading.value = false;
-      return;
-    }
-
     if (!config.siteInfoUrl) {
       siteInfo.value = normalizeSiteInfo();
       siteInfoLoading.value = false;
@@ -99,6 +53,7 @@ export const useLoginScreen = (config = {}) => {
       const response = await fetch(config.siteInfoUrl, {
         method: 'GET',
         credentials: 'same-origin',
+        cache: 'no-store',
         headers: {
           Accept: 'application/json',
         },
@@ -112,7 +67,6 @@ export const useLoginScreen = (config = {}) => {
       const normalizedPayload = normalizeSiteInfo(payload);
 
       siteInfo.value = normalizedPayload;
-      writeCachedSiteInfo(normalizedPayload);
     } catch (error) {
       siteInfo.value = normalizeSiteInfo();
     } finally {
