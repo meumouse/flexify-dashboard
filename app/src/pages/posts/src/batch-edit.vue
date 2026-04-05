@@ -3,7 +3,14 @@ import { defineProps, ref } from "vue";
 
 import AppButton from "@/components/utility/app-button/index.vue";
 import Modal from "@/components/utility/modal/index.vue";
-import AppSelect from "@/components/utility/select/index.vue";
+import {
+  Select,
+  SelectContent,
+  SelectIndicator,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/utility/select";
 import Confirm from "@/components/utility/confirm/index.vue";
 import CategorySelect from "./category-select.vue";
 import TagSelect from "./tag-select.vue";
@@ -116,7 +123,26 @@ const closeModal = () => {
           <span>{{ __("Status", "flexify-dashboard") }}</span>
         </div>
         <div class="col-span-2">
-          <AppSelect v-model="batchData.status" :options="appStore.state.postStatuses" />
+          <Select
+            v-model="batchData.status"
+            :placeholder="__('Select a status', 'flexify-dashboard')"
+          >
+            <SelectTrigger>
+              <SelectValue />
+              <SelectIndicator />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem
+                v-for="status in appStore.state.postStatuses"
+                :key="status.value"
+                :id="status.value"
+                :disabled="Boolean(status.disabled)"
+                :text-value="status.label"
+              >
+                {{ status.label }}
+              </SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         <!-- Author -->

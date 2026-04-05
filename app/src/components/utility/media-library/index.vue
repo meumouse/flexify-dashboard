@@ -8,7 +8,6 @@ import AppButton from "@/components/utility/app-button/index.vue";
 import AppInput from "@/components/utility/text-input/index.vue";
 import AppTextarea from "@/components/utility/text-area/index.vue";
 import AppCheckbox from "./src/checkbox.vue";
-import AppSelect from "@/components/utility/select/index.vue";
 import AppToggle from "@/components/utility/toggle/index.vue";
 import ContextMenu from "@/components/utility/context-menu/index.vue";
 import Confirm from "@/components/utility/confirm/index.vue";

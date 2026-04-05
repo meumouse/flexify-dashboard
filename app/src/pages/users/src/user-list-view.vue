@@ -25,7 +25,6 @@ import AppToggle from '@/components/utility/toggle/index.vue';
 import TagInput from '@/components/utility/tag-input/index.vue';
 import UserList from './user-list.vue';
 import Confirm from '@/components/utility/confirm/index.vue';
-import Select from '@/components/utility/select/index.vue';
 import UserImport from './user-import.vue';
 import { exportUsersToCSV } from '@/assets/js/functions/exportUsersToCSV.js';
 

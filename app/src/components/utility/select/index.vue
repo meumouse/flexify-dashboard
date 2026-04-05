@@ -1,32 +1,125 @@
 <script setup>
-import { defineModel, useAttrs, defineProps, computed } from "vue";
-import AppIcon from "@/components/utility/icons/index.vue";
+import { computed, useAttrs, useSlots } from 'vue';
+import { SelectRoot } from 'reka-ui';
+import { provideSelectContext } from './context.js';
+import SelectContent from './SelectContent.vue';
+import SelectHeader from './SelectHeader.vue';
+import SelectIndicator from './SelectIndicator.vue';
+import SelectItem from './SelectItem.vue';
+import SelectSection from './SelectSection.vue';
+import SelectTrigger from './SelectTrigger.vue';
+import SelectValue from './SelectValue.vue';
+import {
+  decodeSelectValue,
+  encodeSelectValue,
+  normalizeCategories,
+  normalizeOptions,
+  stripHtml,
+} from './utils.js';
+
+defineOptions({
+  inheritAttrs: false,
+});
+
 const attrs = useAttrs();
-const props = defineProps(["options", "categories"]);
+const slots = useSlots();
 const model = defineModel();
+
+const props = defineProps({
+  categories: {
+    type: Array,
+    default: () => [],
+  },
+  contentClass: {
+    type: String,
+    default: '',
+  },
+  indicatorClass: {
+    type: String,
+    default: '',
+  },
+  options: {
+    type: [Array, Object],
+    default: () => [],
+  },
+  placeholder: {
+    type: String,
+    default: '',
+  },
+  triggerClass: {
+    type: String,
+    default: '',
+  },
+  valueClass: {
+    type: String,
+    default: '',
+  },
+});
+
+const normalizedOptions = computed(() => normalizeOptions(props.options));
+const normalizedCategories = computed(() => normalizeCategories(props.categories));
+const hasCustomMarkup = computed(() => Boolean(slots.default));
+
+const containerClass = computed(() => attrs.class);
+const containerStyle = computed(() => attrs.style);
+
+const rootAttrs = computed(() => {
+  const { class: _class, style: _style, ...rest } = attrs;
+  return rest;
+});
+
+const modelProxy = computed({
+  get() {
+    return encodeSelectValue(model.value);
+  },
+  set(value) {
+    model.value = decodeSelectValue(value);
+  },
+});
+
+provideSelectContext({
+  placeholder: computed(() => props.placeholder),
+});
 </script>
 
 <template>
-  <div class="relative flex flex-row items-stretch">
-    <select
-      v-bind="attrs"
-      v-model="model"
-      class="bg-white dark:bg-transparent border border-zinc-200 dark:border-zinc-700 rounded-lg focus:ring-brand-500 focus:border-brand-500 dark:focus:ring-brand-600/10 dark:focus:border-brand-600/10 block w-full px-2 py-1 appearance-none pr-8"
-    >
-      <template v-for="item in options">
-        <option :value="item.value" :disabled="item.disabled ? true : false" v-html="item.label"></option>
-      </template>
+  <div :class="containerClass" :style="containerStyle">
+    <SelectRoot v-model="modelProxy" v-bind="rootAttrs">
+      <slot v-if="hasCustomMarkup" />
 
-      <template v-if="categories" v-for="cat in categories">
-        <optgroup :label="cat.label">
-          <template v-for="item in cat.items">
-            <option :value="item.value" v-html="item.label"></option>
-          </template>
-        </optgroup>
+      <template v-else>
+        <SelectTrigger :class="triggerClass">
+          <SelectValue :class="valueClass" />
+          <SelectIndicator :class="indicatorClass" />
+        </SelectTrigger>
+
+        <SelectContent :class="contentClass">
+          <SelectItem
+            v-for="item in normalizedOptions"
+            :key="`${item.value}`"
+            :id="item.value"
+            :disabled="item.disabled"
+            :html="item.html"
+            :text-value="stripHtml(item.label)"
+          />
+
+          <SelectSection
+            v-for="category in normalizedCategories"
+            :key="category.label"
+          >
+            <SelectHeader>{{ category.label }}</SelectHeader>
+
+            <SelectItem
+              v-for="item in category.items"
+              :key="`${category.label}-${item.value}`"
+              :id="item.value"
+              :disabled="item.disabled"
+              :html="item.html"
+              :text-value="stripHtml(item.label)"
+            />
+          </SelectSection>
+        </SelectContent>
       </template>
-    </select>
-    <div class="absolute right-0 top-0 bottom-0 px-2 py-1 z-[1] flex pointer-events-none">
-      <AppIcon icon="unfold" class="text-lg my-auto" />
-    </div>
+    </SelectRoot>
   </div>
 </template>

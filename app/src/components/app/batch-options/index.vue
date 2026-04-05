@@ -5,7 +5,6 @@ import { ref, computed, defineProps, defineEmits, defineModel, useSlots } from "
 import AppButton from "@/components/utility/app-button/index.vue";
 import AppIcon from "@/components/utility/icons/index.vue";
 import ContextMenu from "@/components/utility/context-menu/index.vue";
-import Multiselect from "@/components/utility/select/index.vue";
 import Confirm from "@/components/utility/confirm/index.vue";
 
 // Functions

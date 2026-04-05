@@ -3,7 +3,6 @@ import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue';
 import AppInput from '@/components/utility/text-input/index.vue';
 import AppButton from '@/components/utility/app-button/index.vue';
 import AppIcon from '@/components/utility/icons/index.vue';
-import AppSelect from '@/components/utility/select/index.vue';
 import MediaLibrary from '@/components/utility/media-library-v2/index.vue';
 
 const props = defineProps({

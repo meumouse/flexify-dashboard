@@ -11,7 +11,14 @@ import ContextMenu from "@/components/utility/context-menu/index.vue";
 import AppIcon from "@/components/utility/icons/index.vue";
 import AppButton from "@/components/utility/app-button/index.vue";
 import AppInput from "@/components/utility/text-input/index.vue";
-import AppSelect from "@/components/utility/select/index.vue";
+import {
+  Select,
+  SelectContent,
+  SelectIndicator,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/utility/select";
 import AppToggle from "@/components/utility/toggle/index.vue";
 import AppCheckbox from "@/components/utility/checkbox-input/index.vue";
 import CategorySelect from "./category-select.vue";
@@ -156,12 +163,50 @@ const openFilterPanel = (event) => {
         <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
           <span>{{ __("Order", "flexify-dashboard") }}</span>
         </div>
-        <AppSelect v-model="pagination.order" :options="orderOptions" class="col-span-2" />
+        <Select
+          v-model="pagination.order"
+          :placeholder="__('Select order', 'flexify-dashboard')"
+          class="col-span-2"
+        >
+          <SelectTrigger>
+            <SelectValue />
+            <SelectIndicator />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem
+              v-for="option in orderOptions"
+              :key="option.value"
+              :id="option.value"
+              :text-value="option.label"
+            >
+              {{ option.label }}
+            </SelectItem>
+          </SelectContent>
+        </Select>
 
         <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
           <span>{{ __("Order by", "flexify-dashboard") }}</span>
         </div>
-        <AppSelect v-model="pagination.orderby" :options="orderByOptions" class="col-span-2" />
+        <Select
+          v-model="pagination.orderby"
+          :placeholder="__('Select ordering', 'flexify-dashboard')"
+          class="col-span-2"
+        >
+          <SelectTrigger>
+            <SelectValue />
+            <SelectIndicator />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem
+              v-for="option in orderByOptions"
+              :key="option.value"
+              :id="option.value"
+              :text-value="option.label"
+            >
+              {{ option.label }}
+            </SelectItem>
+          </SelectContent>
+        </Select>
 
         <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
           <span>{{ __("Expand all posts", "flexify-dashboard") }}</span>

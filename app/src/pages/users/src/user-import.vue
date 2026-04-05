@@ -3,7 +3,14 @@ import { ref, computed, watch } from 'vue';
 import AppIcon from '@/components/utility/icons/index.vue';
 import AppButton from '@/components/utility/app-button/index.vue';
 import AppInput from '@/components/utility/text-input/index.vue';
-import Select from '@/components/utility/select/index.vue';
+import {
+  Select,
+  SelectContent,
+  SelectIndicator,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/utility/select';
 import { parseCSV } from '@/assets/js/functions/parseCSV.js';
 import { notify } from '@/assets/js/functions/notify.js';
 import { lmnFetch } from '@/assets/js/functions/lmnFetch.js';
@@ -489,12 +496,27 @@ watch(() => props.modelValue, (newVal) => {
               </div>
               <Select
                 v-model="fieldMapping[header]"
-                :options="[
-                  { value: '', label: __('— Skip —', 'flexify-dashboard') },
-                  ...userFields.map(f => ({ value: f.value, label: f.label })),
-                ]"
+                :placeholder="__('Map a field', 'flexify-dashboard')"
                 class="w-64"
-              />
+              >
+                <SelectTrigger>
+                  <SelectValue />
+                  <SelectIndicator />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem id="" :text-value="__('Skip', 'flexify-dashboard')">
+                    {{ __('Skip', 'flexify-dashboard') }}
+                  </SelectItem>
+                  <SelectItem
+                    v-for="field in userFields"
+                    :key="field.value"
+                    :id="field.value"
+                    :text-value="field.label"
+                  >
+                    {{ field.label }}
+                  </SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </div>

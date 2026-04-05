@@ -2,7 +2,14 @@
 import { ref, computed, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import AppInput from '@/components/utility/text-input/index.vue';
-import AppSelect from '@/components/utility/select/index.vue';
+import {
+  Select,
+  SelectContent,
+  SelectIndicator,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/utility/select';
 import AppButton from '@/components/utility/app-button/index.vue';
 import AppToggle from '@/components/utility/toggle/index.vue';
 import AppIcon from '@/components/utility/icons/index.vue';
@@ -437,11 +444,26 @@ watch(
                 >
                   {{ __('Notice Type', 'flexify-dashboard') }}
                 </label>
-                <AppSelect
+                <Select
                   v-model="notice.meta.notice_type"
-                  :options="noticeTypes"
+                  :placeholder="__('Select a notice type', 'flexify-dashboard')"
                   class="col-span-2"
-                />
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                    <SelectIndicator />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem
+                      v-for="noticeType in noticeTypes"
+                      :key="noticeType.value"
+                      :id="noticeType.value"
+                      :text-value="noticeType.label"
+                    >
+                      {{ noticeType.label }}
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               <div class="grid grid-cols-3 gap-2">

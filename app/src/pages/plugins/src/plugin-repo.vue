@@ -11,7 +11,14 @@ dayjs.extend(relativeTime);
 import AppButton from '@/components/utility/app-button/index.vue';
 import AppIcon from '@/components/utility/icons/index.vue';
 import PluginCard from './plugin-repo-card.vue';
-import AppSelect from '@/components/utility/select/index.vue';
+import {
+  Select,
+  SelectContent,
+  SelectIndicator,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/utility/select';
 import Drawer from '@/components/utility/drawer/index.vue';
 
 // Store
@@ -193,11 +200,26 @@ getPlugins();
           </div>
 
           <!-- Browse options don't work with search -->
-          <AppSelect
+          <Select
             v-if="1 == 2"
             v-model="activeSort"
-            :options="orderByOptions"
-          />
+            :placeholder="__('Sort plugins', 'flexify-dashboard')"
+          >
+            <SelectTrigger>
+              <SelectValue />
+              <SelectIndicator />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem
+                v-for="option in Object.values(orderByOptions)"
+                :key="option.value"
+                :id="option.value"
+                :text-value="option.label"
+              >
+                {{ option.label }}
+              </SelectItem>
+            </SelectContent>
+          </Select>
 
           <AppButton
             type="default"
