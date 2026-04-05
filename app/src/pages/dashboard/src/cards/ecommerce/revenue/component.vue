@@ -138,7 +138,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 </script>
 
 <template>
-    <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 h-full flex flex-col">
+    <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl py-6 px-8 h-full flex flex-col">
         <div v-if="loading" class="flex-1 flex items-center justify-center">
             <div class="text-center">
                 <div class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"></div>
@@ -190,7 +190,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 
             <div
                 v-if="chartSeries.length"
-                class="bg-white dark:bg-[#24303f] rounded-3xl border border-zinc-200/40 dark:border-zinc-700/20 p-4 -mx-2 flex-1"
+                class="bg-white dark:bg-[#24303f] -mx-2 flex-1"
             >
                 <div class="h-[360px] max-md:h-72">
                     <VueApexCharts

@@ -49,22 +49,13 @@ onMounted(loadData);
 
 <template>
   <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl h-full flex flex-col">
-    <div class="flex flex-col gap-3 border-b border-zinc-200/80 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 dark:border-zinc-800">
+    <div class="flex flex-col gap-3 border-b border-zinc-200/80 px-8 py-6 sm:flex-row sm:items-center sm:justify-between dark:border-zinc-800">
       <div>
         <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Sales Summary', 'flexify-dashboard') }}</h3>
         <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{{ __('Latest 5 orders', 'flexify-dashboard') }}</p>
       </div>
 
       <div class="flex items-center gap-3 pr-6">
-        <button
-          type="button"
-          disabled
-          class="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-400 shadow-sm dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-500"
-        >
-          <i class="bx bx-slider-alt text-lg"></i>
-          {{ __('Filter', 'flexify-dashboard') }}
-        </button>
-
         <a
           :href="ordersPageUrl"
           class="inline-flex items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:border-zinc-300 hover:text-zinc-950 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:border-zinc-600 dark:hover:text-white"

@@ -165,17 +165,17 @@ watch(
 
 <template>
   <div
-    class="relative w-full min-w-56 px-3 py-1 pl-8 pr-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-800/50 rounded-lg transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-600 focus-within:ring-1 focus-within:ring-brand-500/20 focus-within:border-brand-500 dark:focus-within:ring-brand-400/20 dark:focus-within:border-brand-400 cursor-pointer"
+    class="relative flex items-center w-full min-w-56 px-3 py-2 pl-8 pr-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-800/50 rounded-lg transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-600 focus-within:ring-1 focus-within:ring-brand-500/20 focus-within:border-brand-500 dark:focus-within:ring-brand-400/20 dark:focus-within:border-brand-400 cursor-pointer"
     @click="showPicker"
     v-bind="attrs"
   >
     <!-- Calendar Icon -->
     <div
-      class="absolute left-2 top-1/2 transform -translate-y-1/2 flex items-center justify-center"
+      class="absolute left-2 flex items-center justify-center"
     >
       <AppIcon
         icon="calendar_today"
-        class="text-sm text-zinc-400 dark:text-zinc-500"
+        class="text-lg text-zinc-400 dark:text-zinc-500"
       />
     </div>
 
