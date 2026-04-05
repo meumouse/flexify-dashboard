@@ -26,15 +26,11 @@ const siteDescription = computed(() => props.siteInfo.siteDescription || props.c
 const logoUrl = computed(() => props.siteInfo.logoUrl || props.config.asideLogoUrl || '');
 const gridPatternUrl = computed(() => props.config.gridPatternUrl || '');
 
-const asideStyle = computed(() => ({
-  '--fd-login-aside-bg': props.siteInfo.asideColor || props.config.asideColor || '#10175a',
-}));
 </script>
 
 <template>
   <aside
     class="fd-login-aside relative hidden h-full w-full items-center overflow-hidden lg:grid lg:min-h-screen"
-    :style="asideStyle"
   >
     <div class="fd-login-aside-inner relative z-[1] flex h-full w-full items-center justify-center">
       <img

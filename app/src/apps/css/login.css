@@ -4,14 +4,14 @@
   body.login {
     min-height: 100vh;
     background:
-      radial-gradient(circle at top left, rgb(0 138 255 / 0.10), transparent 28%),
+      radial-gradient(circle at top left, rgb(var(--fd-base-500) / 0.10), transparent 28%),
       linear-gradient(180deg, rgb(var(--fd-base-50) / 1), rgb(var(--fd-base-0) / 1));
     color: rgb(var(--fd-base-800) / 1);
   }
 
   body.login.dark {
     background:
-      radial-gradient(circle at top left, rgb(var(--fd-accent-900) / 0.35), transparent 24%),
+      radial-gradient(circle at top left, rgb(var(--fd-base-700) / 0.32), transparent 24%),
       linear-gradient(180deg, rgb(var(--fd-base-950) / 1), rgb(var(--fd-base-900) / 1));
     color: rgb(var(--fd-base-100) / 1);
   }
@@ -114,8 +114,8 @@
     position: relative;
     min-height: 100vh;
     background:
-      radial-gradient(circle at top left, rgb(var(--fd-accent-400) / 0.24), transparent 18%),
-      linear-gradient(135deg, rgb(var(--fd-accent-950) / 1), rgb(var(--fd-accent-900) / 1));
+      radial-gradient(circle at top left, rgb(var(--fd-base-400) / 0.24), transparent 18%),
+      linear-gradient(135deg, rgb(var(--fd-base-900) / 1), rgb(var(--fd-base-700) / 1));
   }
 
   @media (max-width: 1023px) {
@@ -134,14 +134,6 @@
     background: transparent;
     box-shadow: none;
     padding: 0;
-  }
-
-  .login label {
-    color: rgb(var(--fd-base-700) / 1);
-  }
-
-  .dark .login label {
-    color: rgb(var(--fd-base-300) / 1);
   }
 
   .login .button.wp-hide-pw {
@@ -264,7 +256,7 @@
   }
 
   .fd-login-brand-fallback {
-    color: rgb(var(--fd-accent-950) / 1);
+    color: rgb(var(--fd-base-900) / 1);
   }
 
   .fd-login-brand-text {
@@ -347,7 +339,7 @@
   }
 
   .dark .fd-login-mobile-glow {
-    background: radial-gradient(circle, rgb(var(--fd-accent-700) / 0.35), transparent 70%);
+    background: radial-gradient(circle, rgb(var(--fd-base-500) / 0.35), transparent 70%);
   }
 
   .fd-recaptcha-holder {

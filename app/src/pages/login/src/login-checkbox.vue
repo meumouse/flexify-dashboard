@@ -40,7 +40,7 @@ defineProps({
         :checked="model"
       />
       <div
-        class="mr-3 flex h-5 w-5 items-center justify-center rounded-md border-[1.25px] border-gray-300 bg-white transition-[border-color,background-color,box-shadow] duration-150 peer-checked:border-brand-500 peer-checked:bg-brand-500 peer-checked:shadow-[0_0_0_3px_rgba(0,138,255,0.14)] peer-focus-visible:border-brand-500 dark:border-gray-700 dark:bg-gray-900 dark:peer-checked:border-brand-500 dark:peer-checked:bg-brand-500"
+        class="mr-3 flex h-5 w-5 items-center justify-center rounded-md border-[1.25px] border-gray-300 bg-white transition-[border-color,background-color,box-shadow] duration-150 peer-checked:border-[rgb(var(--fd-base-500)/1)] peer-checked:bg-[rgb(var(--fd-base-500)/1)] peer-checked:shadow-[0_0_0_3px_rgb(var(--fd-base-500)/0.14)] peer-focus-visible:border-[rgb(var(--fd-base-500)/1)] dark:border-gray-700 dark:bg-gray-900 dark:peer-checked:border-[rgb(var(--fd-base-500)/1)] dark:peer-checked:bg-[rgb(var(--fd-base-500)/1)]"
       >
         <span
           class="transition-opacity duration-150"

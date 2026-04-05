@@ -211,7 +211,7 @@ defineEmits([
               @toggle="$emit('togglePassword')"
             />
 
-            <div class="flex items-center justify-between gap-4 mb-5!">
+            <div class="flex items-center justify-between gap-4">
               <LoginCheckbox
                 id="checkboxLabelOne"
                 v-model="remember"
@@ -222,14 +222,27 @@ defineEmits([
 
               <a
                 :href="config.lostPasswordUrl"
-                class="cursor-pointer text-sm text-gray-500 no-underline transition-all duration-150 hover:text-brand-600 dark:text-brand-400 dark:hover:bg-white/5 dark:hover:text-brand-300"
+                class="cursor-pointer text-sm text-gray-500 no-underline transition-all duration-150 hover:text-[rgb(var(--fd-base-600)/1)] dark:text-[rgb(var(--fd-base-400)/1)] dark:hover:bg-white/5 dark:hover:text-[rgb(var(--fd-base-300)/1)]"
                 @click.prevent="$emit('showRecovery')"
               >
                 {{ __('Forgot password?', 'flexify-dashboard') }}
               </a>
             </div>
 
-            <div>
+            <div
+              v-if="recaptchaEnabled"
+              class="space-y-2"
+            >
+              <div :ref="setRecaptchaContainer" class="fd-recaptcha-holder"></div>
+              <p
+                v-if="recaptchaError"
+                class="text-sm text-rose-600 dark:text-rose-300"
+              >
+                {{ recaptchaError }}
+              </p>
+            </div>
+
+            <div class="!mt-[3rem]">
               <LoginSubmitButton
                 :loading="loading"
                 :disabled="submitDisabled"
@@ -243,22 +256,12 @@ defineEmits([
           v-model:recovery-login="recoveryLogin"
           :loading="recoveryLoading"
           :disabled="recoverySubmitDisabled"
+          :recaptcha-enabled="recaptchaEnabled"
+          :recaptcha-error="recaptchaError"
+          :set-recaptcha-container="setRecaptchaContainer"
           @submit-recovery="$emit('submitRecovery')"
           @show-login="$emit('showLogin')"
         />
-
-        <div
-          v-if="recaptchaEnabled"
-          class="mt-5 space-y-2"
-        >
-          <div :ref="setRecaptchaContainer" class="fd-recaptcha-holder"></div>
-          <p
-            v-if="recaptchaError"
-            class="text-sm text-rose-600 dark:text-rose-300"
-          >
-            {{ recaptchaError }}
-          </p>
-        </div>
 
         <LoginFooterNote
           v-if="config.registrationUrl && isLoginScreen"

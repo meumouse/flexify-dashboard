@@ -681,7 +681,15 @@ class Login
   {
     self::ensure_options_loaded();
 
-    return is_array(self::$options) && isset(self::$options["enable_google_recaptcha"]) && self::$options["enable_google_recaptcha"];
+    if (!is_array(self::$options)) {
+      return false;
+    }
+
+    if (array_key_exists("enable_google_recaptcha", self::$options)) {
+      return (bool) self::$options["enable_google_recaptcha"];
+    }
+
+    return (bool) (self::google_recaptcha_site_key() && self::google_recaptcha_secret_key());
   }
 
   private static function google_recaptcha_site_key()
@@ -1190,20 +1198,55 @@ JS;
   {
     $configured_color = "";
 
-    if (!empty(self::$options["accent_theme_color"])) {
-      $configured_color = (string) self::$options["accent_theme_color"];
-    } elseif (!empty(self::$options["base_theme_color"])) {
+    if (!empty(self::$options["base_theme_color"])) {
       $configured_color = (string) self::$options["base_theme_color"];
+    } elseif (!empty(self::$options["base_theme_scale"]) && is_array(self::$options["base_theme_scale"])) {
+      $configured_color = $this->get_scale_color(self::$options["base_theme_scale"], ["500", "400", "600"]);
     }
 
     $aside_color = self::normalize_hex_color($configured_color ?: "#008aff");
+    $base_scale = isset(self::$options["base_theme_scale"]) && is_array(self::$options["base_theme_scale"])
+      ? self::$options["base_theme_scale"]
+      : [];
+
+    $gradient_start = $this->get_scale_color($base_scale, ["400", "500"]);
+    $gradient_end = $this->get_scale_color($base_scale, ["900", "800", "700"]);
+    $glow_color = $this->get_scale_color($base_scale, ["300", "400", "500"]);
 
     return [
       "asideColor" => $aside_color,
-      "asideGradientStart" => self::adjust_hex_color($aside_color, -26),
-      "asideGradientEnd" => self::adjust_hex_color($aside_color, -70),
-      "asideGlowColor" => self::adjust_hex_color($aside_color, 8),
+      "asideGradientStart" => $gradient_start ? self::normalize_hex_color($gradient_start) : self::adjust_hex_color($aside_color, -26),
+      "asideGradientEnd" => $gradient_end ? self::normalize_hex_color($gradient_end) : self::adjust_hex_color($aside_color, -70),
+      "asideGlowColor" => $glow_color ? self::normalize_hex_color($glow_color) : self::adjust_hex_color($aside_color, 8),
     ];
+  }
+
+  private function get_scale_color($scale, $preferred_steps = [])
+  {
+    if (!is_array($scale) || empty($scale)) {
+      return "";
+    }
+
+    foreach ($preferred_steps as $preferred_step) {
+      foreach ($scale as $color) {
+        if (
+          is_array($color) &&
+          isset($color["step"], $color["color"]) &&
+          (string) $color["step"] === (string) $preferred_step &&
+          $color["color"] !== ""
+        ) {
+          return (string) $color["color"];
+        }
+      }
+    }
+
+    foreach ($scale as $color) {
+      if (is_array($color) && !empty($color["color"])) {
+        return (string) $color["color"];
+      }
+    }
+
+    return "";
   }
 
   private function get_site_identity_logo()
