@@ -462,6 +462,51 @@ const handleActivateLicense = async (key) => {
   newKey.value = key;
   await activateLicence();
 };
+
+const resetSettingsToDefaults = async () => {
+  const userResponse = await confirm.value.show({
+    title: __('Reset settings?', 'flexify-dashboard'),
+    message: __(
+      'This will delete your current Flexify Dashboard configuration and restore the default settings. This action cannot be undone.',
+      'flexify-dashboard'
+    ),
+    okButton: __('Reset', 'flexify-dashboard'),
+    cancelButton: __('Cancel', 'flexify-dashboard'),
+  });
+
+  if (!userResponse) {
+    return;
+  }
+
+  appStore.updateState('loading', true);
+  saving.value = true;
+
+  const response = await lmnFetch({
+    endpoint: 'flexify-dashboard/v1/settings/reset',
+    type: 'POST',
+    params: {},
+    data: {},
+  });
+
+  appStore.updateState('loading', false);
+  saving.value = false;
+
+  if (!response?.data?.settings) {
+    notify({
+      title: __('Failed to reset settings', 'flexify-dashboard'),
+      type: 'error',
+    });
+    return;
+  }
+
+  flexify_dashboard_settings.value = response.data.settings;
+  appStore.updateState('flexify_dashboard_settings', response.data.settings);
+
+  notify({
+    title: response.data.message || __('Settings reset to defaults', 'flexify-dashboard'),
+    type: 'success',
+  });
+};
 </script>
 
 <template>
@@ -603,6 +648,30 @@ const handleActivateLicense = async (key) => {
             @update:settings="flexify_dashboard_settings = $event"
             class="col-span-2"
           />
+          <div
+            class="border-t border-zinc-200 dark:border-zinc-800 col-span-3"
+          ></div>
+        </template>
+
+        <template v-else-if="setting.customRender === 'reset-settings'">
+          <div class="flex flex-col pt-2 gap-2">
+            <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+              setting.label
+            }}</span>
+            <span class="text-zinc-500 dark:text-zinc-400 leading-snug">{{
+              setting.description
+            }}</span>
+          </div>
+          <div class="col-span-2 flex items-start justify-end">
+            <AppButton
+              type="default"
+              class="bg-red-600! hover:bg-red-700! text-white!"
+              :loading="saving"
+              @click="resetSettingsToDefaults"
+            >
+              {{ __('Reset to defaults', 'flexify-dashboard') }}
+            </AppButton>
+          </div>
           <div
             class="border-t border-zinc-200 dark:border-zinc-800 col-span-3"
           ></div>

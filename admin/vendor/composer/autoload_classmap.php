@@ -320,6 +320,7 @@ return array(
     'MeuMouse\\Flexify_Dashboard\\Rest\\RoleEditor' => $baseDir . '/src/Rest/RoleEditor.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\SearchMeta' => $baseDir . '/src/Rest/SearchMeta.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\ServerHealth' => $baseDir . '/src/Rest/ServerHealth.php',
+    'MeuMouse\\Flexify_Dashboard\\Rest\\SettingsManager' => $baseDir . '/src/Rest/SettingsManager.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\UserAnalytics' => $baseDir . '/src/Rest/UserAnalytics.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\UserCapabilities' => $baseDir . '/src/Rest/UserCapabilities.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\UserRoles' => $baseDir . '/src/Rest/UserRoles.php',

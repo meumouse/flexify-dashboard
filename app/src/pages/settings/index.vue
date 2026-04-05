@@ -138,6 +138,12 @@ const settingsCategories = [
     icon: 'database',
     description: __('Database explorer and management settings', 'flexify-dashboard'),
   },
+  {
+    value: 'advanced',
+    label: __('Advanced', 'flexify-dashboard'),
+    icon: 'warning',
+    description: __('Reset plugin configuration and other advanced actions', 'flexify-dashboard'),
+  },
 ];
 
 // Function to get query parameter (with URL decoding)

@@ -292,6 +292,22 @@ export const settingsConfig = [
     condition: (settings) => settings.enable_turnstyle === true,
   },
 
+  // ============================================
+  // ADVANCED SETTINGS
+  // ============================================
+  {
+    id: 'reset_settings',
+    category: 'advanced',
+    type: 'custom',
+    label: __('Reset settings', 'flexify-dashboard'),
+    description: __(
+      'Restore all Flexify Dashboard settings to their default values.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    customRender: 'reset-settings',
+  },
+
   {
     id: 'enable_google_recaptcha',
     category: 'login',

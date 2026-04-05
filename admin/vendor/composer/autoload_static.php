@@ -357,6 +357,7 @@ class ComposerStaticInitFlexify_Dashboard
         'MeuMouse\\Flexify_Dashboard\\Rest\\RoleEditor' => __DIR__ . '/../..' . '/src/Rest/RoleEditor.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\SearchMeta' => __DIR__ . '/../..' . '/src/Rest/SearchMeta.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\ServerHealth' => __DIR__ . '/../..' . '/src/Rest/ServerHealth.php',
+        'MeuMouse\\Flexify_Dashboard\\Rest\\SettingsManager' => __DIR__ . '/../..' . '/src/Rest/SettingsManager.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\UserAnalytics' => __DIR__ . '/../..' . '/src/Rest/UserAnalytics.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\UserCapabilities' => __DIR__ . '/../..' . '/src/Rest/UserCapabilities.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\UserRoles' => __DIR__ . '/../..' . '/src/Rest/UserRoles.php',

@@ -15,6 +15,7 @@ use MeuMouse\Flexify_Dashboard\Rest\UserAnalytics;
 use MeuMouse\Flexify_Dashboard\Rest\SearchMeta;
 use MeuMouse\Flexify_Dashboard\Rest\PostsTables;
 use MeuMouse\Flexify_Dashboard\Rest\AdminNotices;
+use MeuMouse\Flexify_Dashboard\Rest\SettingsManager;
 use MeuMouse\Flexify_Dashboard\Rest\PluginManager;
 use MeuMouse\Flexify_Dashboard\Rest\MediaReplace;
 use MeuMouse\Flexify_Dashboard\Rest\Media as RestMedia;
@@ -123,6 +124,7 @@ class Plugin
 	new MediaAnalytics();
 	new UserAnalytics();
     new SettingsPage();
+    new SettingsManager();
     $login_page = new Login();
     new RestLogin($login_page);
     new SearchMeta();
