@@ -13,6 +13,7 @@ defined('ABSPATH') || exit;
  *
  * @since 2.0.0
  * @package MeuMouse\Flexify_Dashboard\License
+ * @author MeuMouse.com
  */
 class LicenseService {
 

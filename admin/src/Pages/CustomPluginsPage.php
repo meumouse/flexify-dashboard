@@ -175,14 +175,10 @@ class CustomPluginsPage {
         $plugin_data['auto_update_enabled'] = in_array( $plugin_path, $auto_updates, true );
         $plugin_data['splitSlug'] = sanitize_key( $base_slug );
         $plugin_data['slug'] = $plugin_path;
-        $plugin_data['action_links'] = array();
+        $plugin_data['action_links'] = $this->get_plugin_action_links( $plugin_path, $plugin_data );
 
         if ( $plugin_data['has_update'] && isset( $plugin_updates[ $plugin_path ]->update->new_version ) ) {
             $plugin_data['new_version'] = sanitize_text_field( $plugin_updates[ $plugin_path ]->update->new_version );
-        }
-
-        if ( $is_active ) {
-            $plugin_data['action_links'] = $this->get_plugin_action_links( $plugin_path, $plugin_data );
         }
 
         return $plugin_data;

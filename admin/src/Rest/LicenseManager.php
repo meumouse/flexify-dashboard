@@ -15,6 +15,7 @@ defined('ABSPATH') || exit;
  *
  * @since 2.0.0
  * @package MeuMouse\Flexify_Dashboard\Rest
+ * @author MeuMouse.com
  */
 class LicenseManager {
 

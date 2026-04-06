@@ -908,26 +908,31 @@ class PluginManager {
 			);
 		}
 
-		$plugin_info = plugins_api(
-			'plugin_information',
-			array(
-				'slug' => $plugin_slug,
-				'fields' => array(
-					'icons' => true,
-					'banners' => true,
-					'tags' => true,
-					'sections' => false,
-					'short_description' => false,
-					'description' => false,
-					'reviews' => false,
-					'downloaded' => false,
-					'active_installs' => false,
-					'requires' => false,
-					'tested' => false,
-					'requires_php' => false,
-				),
-			)
+		$api_args = (object) array(
+			'slug' => $plugin_slug,
+			'fields' => array(
+				'icons' => true,
+				'banners' => true,
+				'tags' => true,
+				'sections' => false,
+				'short_description' => false,
+				'description' => false,
+				'reviews' => false,
+				'downloaded' => false,
+				'active_installs' => false,
+				'requires' => false,
+				'tested' => false,
+				'requires_php' => false,
+			),
 		);
+
+		// First ask registered plugins_api filters whether they can provide data for this slug.
+		// This avoids an unnecessary WordPress.org request for plugins served by custom updaters.
+		$filtered_plugin_info = apply_filters( 'plugins_api', false, 'plugin_information', $api_args );
+		$plugin_info = ( is_object( $filtered_plugin_info ) && ! is_wp_error( $filtered_plugin_info ) )
+			? $filtered_plugin_info
+			: plugins_api( 'plugin_information', (array) $api_args );
+		$resolved_via = ( is_object( $filtered_plugin_info ) && ! is_wp_error( $filtered_plugin_info ) ) ? 'filter' : 'wordpress_org';
 
 		if ( is_wp_error( $plugin_info ) ) {
 			return new WP_REST_Response(
@@ -935,6 +940,7 @@ class PluginManager {
 					'success' => false,
 					'message' => $plugin_info->get_error_message(),
 					'notInRepository' => true,
+					'resolved_via' => 'none',
 				),
 				404
 			);
@@ -947,6 +953,7 @@ class PluginManager {
 				'banners' => isset( $plugin_info->banners ) ? (array) $plugin_info->banners : array(),
 				'tags' => isset( $plugin_info->tags ) ? (array) $plugin_info->tags : array(),
 				'notInRepository' => false,
+				'resolved_via' => $resolved_via,
 			),
 			200
 		);

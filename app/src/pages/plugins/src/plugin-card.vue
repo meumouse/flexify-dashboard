@@ -140,17 +140,7 @@ const fetchPluginData = async () => {
     });
   };
 
-  const fetchFromWordPressOrg = async () => {
-    const response = await fetch(`https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&slug=${slug}&fields=icons,banners`);
-
-    if (!response.ok) {
-      return null;
-    }
-
-    return await response.json();
-  };
-
-  const fetchFromPluginApiFallback = async () => {
+  const fetchFromPluginApi = async () => {
     const response = await lmnFetch({
       endpoint: `flexify-dashboard/v1/plugin/repository-assets/${slug}`,
       type: "GET",
@@ -164,11 +154,7 @@ const fetchPluginData = async () => {
   };
 
   try {
-    let data = await fetchFromWordPressOrg();
-
-    if (!data) {
-      data = await fetchFromPluginApiFallback();
-    }
+    const data = await fetchFromPluginApi();
 
     if (!data) {
       updatePluginVisualData({ notInRepository: true });
@@ -180,7 +166,7 @@ const fetchPluginData = async () => {
     updatePluginVisualData(data);
   } catch (error) {
     try {
-      const fallbackData = await fetchFromPluginApiFallback();
+      const fallbackData = await fetchFromPluginApi();
 
       if (fallbackData) {
         cachePluginInfo(fallbackData, slug);

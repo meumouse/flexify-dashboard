@@ -1,310 +1,398 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Update;
 
-use MeuMouse\Flexify_Dashboard\License\LicenseService;
-use MeuMouse\Flexify_Dashboard\Options\Settings;
+use stdClass;
 
-// Prevent direct access to this file
-!defined("ABSPATH") ? exit() : "";
+defined('ABSPATH') || exit;
 
-class Updater
-{
-  private static $version = FLEXIFY_DASHBOARD_VERSION;
-  private static $transient = "flexify-dashboard-update-transient";
-  private static $transientFailed = "flexify-dashboard-failed-transient";
-  private static $updateURL = "https://accounts.uipress.co/api/v1/flexify-dashboard/update";
-  private static $expiry = 1 * HOUR_IN_SECONDS;
-  private static $timeout = 10;
+/**
+ * Handle plugin update requests against the MeuMouse packages repository.
+ *
+ * @since 1.0.0
+ * @version 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Update
+ * @author MeuMouse.com
+ */
+class Updater {
 
-  /**
-   * Adds actions and filters to update hooks
-   *
-   * @since 2.2.0
-   */
-  public function __construct()
-  {
-    add_filter("plugins_api", ["MeuMouse\Flexify_Dashboard\Update\Updater", "plugin_info"], 20, 3);
-    add_filter("site_transient_update_plugins", ["MeuMouse\Flexify_Dashboard\Update\Updater", "push_update"]);
-    add_action("upgrader_process_complete", ["MeuMouse\Flexify_Dashboard\Update\Updater", "after_update"], 10, 2);
-  }
+	/**
+	 * Remote update endpoint.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const UPDATE_URL = 'https://packages.meumouse.com/v1/updates/flexify-dashboard?path=dist&file=update-checker.json';
 
-  /**
-   * Fetches plugin update info
-   *
-   * @param object $res
-   * @param string $action
-   * @param object $args
-   * @return object
-   * @since 2.2.0
-   */
-  public static function plugin_info($res, $action, $args)
-  {
-    if ("plugin_information" !== $action) {
-      return $res;
-    }
+	/**
+	 * Repository slug returned by the remote API.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const REMOTE_SLUG = 'flexify-dashboard';
 
-    if (true == get_transient(self::$transientFailed)) {
-      return $res;
-    }
+	/**
+	 * Plugin slug used locally.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const PLUGIN_SLUG = 'flexify-dashboard';
 
-    $plugin_slug = "flexify-dashboard";
+	/**
+	 * Main plugin file.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const PLUGIN_FILE = 'flexify-dashboard/flexify-dashboard.php';
 
-    if ($plugin_slug !== $args->slug) {
-      return $res;
-    }
+	/**
+	 * Object cache key.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const CACHE_KEY = 'flexify_dashboard_check_updates';
 
-    $remote = self::get_remote_data("plugin_information");
+	/**
+	 * Transient key for remote payload.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const CACHE_DATA_KEY = 'flexify_dashboard_remote_data';
 
-    if (is_wp_error($remote)) {
-      return $res;
-    }
+	/**
+	 * Cache lifetime.
+	 *
+	 * @since 2.0.0
+	 * @var int
+	 */
+	private const CACHE_TTL = DAY_IN_SECONDS;
 
-    $remote = json_decode($remote["body"], true);
+	/**
+	 * Request timeout.
+	 *
+	 * @since 2.0.0
+	 * @var int
+	 */
+	private const REQUEST_TIMEOUT = 10;
 
-    // Check for error response
-    if (isset($remote["error"]) && $remote["error"] === true) {
-      return $res;
-    }
+	/**
+	 * Manual admin query arg.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const MANUAL_CHECK_QUERY_ARG = 'flexify_dashboard_check_updates';
 
-    $res = new \stdClass();
+	/**
+	 * Runtime update payload.
+	 *
+	 * @since 2.0.0
+	 * @var object|false
+	 */
+	private $update_available = false;
 
-    $res->name = isset($remote["name"]) ? $remote["name"] : "Flexify Dashboard";
-    $res->slug = $plugin_slug;
-    $res->version = isset($remote["version"]) ? $remote["version"] : self::$version;
-    $res->tested = isset($remote["tested"]) ? $remote["tested"] : "6.4";
-    $res->requires = isset($remote["requires"]) ? $remote["requires"] : "6.0";
-    $res->download_link = isset($remote["download_link"]) ? $remote["download_link"] : null;
-    $res->trunk = isset($remote["download_link"]) ? $remote["download_link"] : null;
-    $res->requires_php = isset($remote["requires_php"]) ? $remote["requires_php"] : "7.4";
-    $res->last_updated = isset($remote["last_updated"]) ? $remote["last_updated"] : "";
-    
-    // Handle sections
-    $res->sections = [];
-    if (isset($remote["sections"])) {
-      if (isset($remote["sections"]["description"])) {
-        $res->sections["description"] = $remote["sections"]["description"];
-      }
-      if (isset($remote["sections"]["changelog"])) {
-        $res->sections["changelog"] = $remote["sections"]["changelog"];
-      }
-      if (isset($remote["sections"]["installation"])) {
-        $res->sections["installation"] = $remote["sections"]["installation"];
-      }
-      if (isset($remote["sections"]["screenshots"])) {
-        $res->sections["screenshots"] = $remote["sections"]["screenshots"];
-      }
-    }
 
-    // Handle banners
-    $res->banners = [];
-    if (isset($remote["banners"])) {
-      if (isset($remote["banners"]["low"])) {
-        $res->banners["low"] = $remote["banners"]["low"];
-      }
-      if (isset($remote["banners"]["high"])) {
-        $res->banners["high"] = $remote["banners"]["high"];
-      }
-    }
+	/**
+	 * Register updater hooks.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		if ( defined( 'FLEXIFY_DASHBOARD_DEV_MODE' ) ) {
+			add_filter( 'https_ssl_verify', '__return_false' );
+			add_filter( 'https_local_ssl_verify', '__return_false' );
+			add_filter( 'http_request_host_is_external', '__return_true' );
+		}
 
-    return $res;
-  }
+		add_filter( 'plugins_api', array( $this, 'plugin_info' ), 20, 3 );
+		add_filter( 'site_transient_update_plugins', array( $this, 'update_plugin' ) );
+		add_action( 'upgrader_process_complete', array( $this, 'purge_cache' ), 10, 2 );
+		add_filter( 'plugin_row_meta', array( $this, 'add_check_updates_link' ), 10, 2 );
+		add_filter( 'all_admin_notices', array( $this, 'check_manual_update_query_arg' ) );
+	}
 
-  /**
-   * Retrieves remote data from the update URL
-   *
-   * @param string $action The action type (plugin_update_check or plugin_information)
-   * @return array|WP_Error
-   * @since 3.2.0
-   */
-  private static function get_remote_data($action = "plugin_update_check")
-  {
-    // Build query parameters
-    $query_args = [
-      "action" => $action,
-      "slug" => "flexify-dashboard",
-      "version" => self::$version,
-    ];
 
-    // Get license key from plugin options
-    $license_key = self::get_license_key();
-    if (!empty($license_key)) {
-      $query_args["license_key"] = $license_key;
-    }
+	/**
+	 * Get normalized remote data from the MeuMouse packages repository.
+	 *
+	 * @since 2.0.0
+	 * @return object|false
+	 */
+	public function request() {
+		$cached_data = wp_cache_get( self::CACHE_KEY );
 
-    // Build URL with query parameters
-    $url = add_query_arg($query_args, self::$updateURL);
+		if ( false !== $cached_data ) {
+			return $cached_data;
+		}
 
-    // Use transient key specific to action and version for better caching
-    $transient_key = self::$transient . "-" . $action . "-" . self::$version;
+		$remote_data = get_transient( self::CACHE_DATA_KEY );
 
-    if (false == ($remote = get_transient($transient_key))) {
-      $remote = wp_remote_get($url, [
-        "timeout" => self::$timeout,
-        "headers" => [
-          "Accept" => "application/json",
-        ],
-      ]);
+		if ( false === $remote_data ) {
+			$response = wp_remote_get(
+				self::UPDATE_URL,
+				array(
+					'timeout' => self::REQUEST_TIMEOUT,
+					'headers' => array(
+						'Accept' => 'application/json',
+					),
+				)
+			);
 
-      if (self::is_response_clean($remote)) {
-        set_transient($transient_key, $remote, self::$expiry);
-      } else {
-        set_transient(self::$transientFailed, true, self::$expiry);
-        return new \WP_Error("remote_error", __("Failed to retrieve remote data.", "flexify-dashboard"));
-      }
-    } else {
-      $remote = get_transient($transient_key);
-      if (!self::is_response_clean($remote)) {
-        set_transient(self::$transientFailed, true, self::$expiry);
-        return new \WP_Error("cache_error", __("Failed to retrieve data from cache.", "flexify-dashboard"));
-      }
-    }
+			if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+				return false;
+			}
 
-    return $remote;
-  }
+			$remote_data = json_decode( wp_remote_retrieve_body( $response ) );
 
-  /**
-   * Gets the license key from plugin options
-   *
-   * @return string License key or empty string
-   * @since 3.2.0
-   */
-  private static function get_license_key()
-  {
-    $license_key = LicenseService::get_validated_license_key();
+			if ( ! is_object( $remote_data ) || empty( $remote_data->version ) ) {
+				return false;
+			}
 
-    if (empty($license_key)) {
-      $license_key = Settings::get_setting("license_key", "");
-    }
+			set_transient( self::CACHE_DATA_KEY, $remote_data, self::CACHE_TTL );
+		}
 
-    // Allow filtering the license key
-    return apply_filters("flexify_dashboard_license_key", $license_key);
-  }
+		wp_cache_set( self::CACHE_KEY, $remote_data, '', self::CACHE_TTL );
 
-  /**
-   * Checks if the response is clean and valid
-   *
-   * @param object $status
-   * @return bool
-   * @since 3.2.0
-   */
-  private static function is_response_clean($status)
-  {
-    if (isset($status->errors)) {
-      return false;
-    }
+		return $remote_data;
+	}
 
-    if (isset($status["response"]["code"]) && $status["response"]["code"] != 200) {
-      return false;
-    }
 
-    if (is_wp_error($status)) {
-      return false;
-    }
+	/**
+	 * Provide plugin information for the update modal.
+	 *
+	 * @since 2.0.0
+	 * @param object|false $response Existing response.
+	 * @param string       $action API action.
+	 * @param object       $args API arguments.
+	 * @return object|false
+	 */
+	public function plugin_info( $response, $action, $args ) {
+		if ( 'plugin_information' !== $action ) {
+			return $response;
+		}
 
-    return true;
-  }
+		$requested_slug = isset( $args->slug ) ? (string) $args->slug : '';
 
-  /**
-   * Pushes plugin update to the plugin table
-   *
-   * @param object $transient
-   * @return object
-   * @since 1.4
-   */
-  public static function push_update($transient)
-  {
-    if (empty($transient->checked)) {
-      return $transient;
-    }
+		if ( ! in_array( $requested_slug, array( self::PLUGIN_SLUG, self::REMOTE_SLUG ), true ) ) {
+			return $response;
+		}
 
-    if (true == get_transient(self::$transientFailed)) {
-      return $transient;
-    }
+		$remote = $this->request();
 
-    $remote = self::get_remote_data("plugin_update_check");
+		if ( ! $remote ) {
+			return $response;
+		}
 
-    if (is_wp_error($remote)) {
-      return $transient;
-    }
+		$plugin_info = new stdClass();
+		$plugin_info->name = isset( $remote->name ) ? $remote->name : 'Flexify Dashboard';
+		$plugin_info->slug = self::PLUGIN_SLUG;
+		$plugin_info->version = isset( $remote->version ) ? $remote->version : FLEXIFY_DASHBOARD_VERSION;
+		$plugin_info->tested = isset( $remote->tested ) ? $remote->tested : '';
+		$plugin_info->requires = isset( $remote->requires ) ? $remote->requires : '';
+		$plugin_info->author = isset( $remote->author ) ? $remote->author : '';
+		$plugin_info->author_profile = isset( $remote->author_profile ) ? $remote->author_profile : '';
+		$plugin_info->homepage = isset( $remote->homepage ) ? $remote->homepage : '';
+		$plugin_info->download_link = isset( $remote->download_url ) ? $remote->download_url : '';
+		$plugin_info->trunk = isset( $remote->download_url ) ? $remote->download_url : '';
+		$plugin_info->requires_php = isset( $remote->requires_php ) ? $remote->requires_php : '';
+		$plugin_info->last_updated = isset( $remote->last_updated ) ? $remote->last_updated : '';
+		$plugin_info->sections = array(
+			'description'  => isset( $remote->sections->description ) ? $remote->sections->description : '',
+			'installation' => isset( $remote->sections->installation ) ? $remote->sections->installation : '',
+			'changelog'    => isset( $remote->sections->changelog ) ? $remote->sections->changelog : '',
+		);
 
-    $remote = json_decode($remote["body"], true);
+		if ( ! empty( $remote->banners ) ) {
+			$plugin_info->banners = array(
+				'low'  => isset( $remote->banners->low ) ? $remote->banners->low : '',
+				'high' => isset( $remote->banners->high ) ? $remote->banners->high : '',
+			);
+		}
 
-    // Check for error response
-    if (isset($remote["error"]) && $remote["error"] === true) {
-      return $transient;
-    }
+		return $plugin_info;
+	}
 
-    // The API returns data keyed by plugin file path
-    $plugin_file = "flexify-dashboard/flexify-dashboard.php";
-    
-    if (isset($remote[$plugin_file])) {
-      $update_data = $remote[$plugin_file];
-      
-      // Check if update is available
-      if (
-        isset($update_data["new_version"]) &&
-        version_compare(self::$version, $update_data["new_version"], "<")
-      ) {
-        $res = new \stdClass();
-        $res->id = isset($update_data["id"]) ? $update_data["id"] : $plugin_file;
-        $res->slug = isset($update_data["slug"]) ? $update_data["slug"] : "flexify-dashboard";
-        $res->plugin = $plugin_file;
-        $res->new_version = $update_data["new_version"];
-        $res->tested = isset($update_data["tested"]) ? $update_data["tested"] : "6.4";
-        $res->requires = isset($update_data["requires"]) ? $update_data["requires"] : "6.0";
-        $res->requires_php = isset($update_data["requires_php"]) ? $update_data["requires_php"] : "7.4";
-        $res->package = isset($update_data["package"]) ? $update_data["package"] : null;
-        $res->url = isset($update_data["url"]) ? $update_data["url"] : "https://uipress.co";
-        $res->compatibility = isset($update_data["compatibility"]) ? (object) $update_data["compatibility"] : new \stdClass();
-        
-        $transient->response[$res->plugin] = $res;
-      } else {
-        // If there's no update, add the plugin to the 'no_update' list
-        $transient->no_update[$plugin_file] = (object) self::getNoUpdateItemFields();
-      }
-    } else {
-      // If response doesn't contain our plugin, add to no_update
-      $transient->no_update[$plugin_file] = (object) self::getNoUpdateItemFields();
-    }
 
-    return $transient;
-  }
+	/**
+	 * Push update data into the WordPress update transient.
+	 *
+	 * @since 2.0.0
+	 * @param object $transient Update transient.
+	 * @return object
+	 */
+	public function update_plugin( $transient ) {
+		if ( ! is_object( $transient ) || empty( $transient->checked ) ) {
+			return $transient;
+		}
 
-  /**
-   * Get fields for the no update item
-   *
-   * @return array
-   */
-  private static function getNoUpdateItemFields()
-  {
-    return [
-      "new_version" => self::$version,
-      "url" => "", // You can add a URL to your plugin's page if you want
-      "package" => "",
-      "requires_php" => "7.4", // Adjust this to your plugin's PHP requirement
-      "requires" => "5.0", // Adjust this to your plugin's WordPress requirement
-      "icons" => [], // Add icons if you have them
-      "banners" => [], // Add banners if you have them
-      "banners_rtl" => [], // Add RTL banners if you have them
-      "tested" => "6.2", // Adjust this to the latest WordPress version you've tested with
-      "id" => "flexify-dashboard/flexify-dashboard.php",
-    ];
-  }
+		$remote = $this->request();
 
-  /**
-   * Cleans cache after update
-   *
-   * @param object $upgrader_object
-   * @param array $options
-   * @since 1.4
-   */
-  public static function after_update($upgrader_object, $options)
-  {
-    if ($options["action"] == "update" && $options["type"] === "plugin") {
-      // Clear all update transients after successful update
-      delete_transient(self::$transient . "-plugin_update_check-" . self::$version);
-      delete_transient(self::$transient . "-plugin_information-" . self::$version);
-      delete_transient(self::$transientFailed);
-    }
-  }
+		if ( ! $remote ) {
+			return $transient;
+		}
+
+		$current_version = defined( 'FLEXIFY_DASHBOARD_VERSION' ) ? FLEXIFY_DASHBOARD_VERSION : '0.0.0';
+		$wp_version = get_bloginfo( 'version' );
+		$requires = isset( $remote->requires ) ? (string) $remote->requires : '';
+		$requires_php = isset( $remote->requires_php ) ? (string) $remote->requires_php : '';
+		$remote_version = isset( $remote->version ) ? (string) $remote->version : '';
+
+		$is_compatible = (
+			'' !== $remote_version &&
+			( '' === $requires || version_compare( $wp_version, $requires, '>=' ) ) &&
+			( '' === $requires_php || version_compare( PHP_VERSION, $requires_php, '>=' ) )
+		);
+
+		if ( $is_compatible && version_compare( $current_version, $remote_version, '<' ) ) {
+			$this->update_available = $remote;
+
+			$response = new stdClass();
+			$response->slug = self::PLUGIN_SLUG;
+			$response->plugin = self::PLUGIN_FILE;
+			$response->new_version = $remote_version;
+			$response->tested = isset( $remote->tested ) ? $remote->tested : '';
+			$response->package = isset( $remote->download_url ) ? $remote->download_url : '';
+			$response->url = isset( $remote->homepage ) ? $remote->homepage : '';
+			$response->requires = $requires;
+			$response->requires_php = $requires_php;
+			$response->icons = array();
+			$response->banners = ! empty( $remote->banners ) ? (array) $remote->banners : array();
+
+			$transient->response[ self::PLUGIN_FILE ] = $response;
+
+			return $transient;
+		}
+
+		$transient->no_update[ self::PLUGIN_FILE ] = (object) array(
+			'id'           => self::PLUGIN_FILE,
+			'slug'         => self::PLUGIN_SLUG,
+			'plugin'       => self::PLUGIN_FILE,
+			'new_version'  => $current_version,
+			'url'          => isset( $remote->homepage ) ? $remote->homepage : '',
+			'package'      => '',
+			'requires'     => $requires,
+			'requires_php' => $requires_php,
+			'tested'       => isset( $remote->tested ) ? $remote->tested : '',
+			'icons'        => array(),
+			'banners'      => ! empty( $remote->banners ) ? (array) $remote->banners : array(),
+			'banners_rtl'  => array(),
+			'compatibility' => new stdClass(),
+		);
+
+		return $transient;
+	}
+
+
+	/**
+	 * Clear updater cache after plugin updates.
+	 *
+	 * @since 2.0.0
+	 * @param object $upgrader Upgrader instance.
+	 * @param array  $options Upgrade options.
+	 * @return void
+	 */
+	public function purge_cache( $upgrader, $options ) {
+		if ( empty( $options['action'] ) || empty( $options['type'] ) ) {
+			return;
+		}
+
+		if ( 'update' !== $options['action'] || 'plugin' !== $options['type'] ) {
+			return;
+		}
+
+		delete_transient( 'flexify_dashboard_api_request_cache' );
+		delete_transient( 'flexify_dashboard_api_response_cache' );
+		delete_transient( self::CACHE_DATA_KEY );
+		wp_cache_delete( self::CACHE_KEY );
+	}
+
+
+	/**
+	 * Add a manual update check link in the plugins table.
+	 *
+	 * @since 2.0.0
+	 * @param array  $actions Existing plugin row actions.
+	 * @param string $plugin_file Current plugin file.
+	 * @return array
+	 */
+	public function add_check_updates_link( $actions, $plugin_file ) {
+		if ( self::PLUGIN_FILE !== $plugin_file ) {
+			return $actions;
+		}
+
+		$actions['flexify_dashboard_check_updates'] = sprintf(
+			'<a href="%1$s">%2$s</a>',
+			esc_url( add_query_arg( self::MANUAL_CHECK_QUERY_ARG, '1' ) ),
+			esc_html__( 'Check updates', 'flexify-dashboard' )
+		);
+
+		return $actions;
+	}
+
+
+	/**
+	 * Handle manual update checks from the plugins table.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function check_manual_update_query_arg() {
+		$query_arg = isset( $_GET[ self::MANUAL_CHECK_QUERY_ARG ] )
+			? sanitize_text_field( wp_unslash( $_GET[ self::MANUAL_CHECK_QUERY_ARG ] ) )
+			: '';
+
+		if ( '1' !== $query_arg ) {
+			return;
+		}
+
+		delete_transient( 'flexify_dashboard_api_request_cache' );
+		delete_transient( 'flexify_dashboard_api_response_cache' );
+		delete_transient( self::CACHE_DATA_KEY );
+		wp_cache_delete( self::CACHE_KEY );
+
+		$remote_data = $this->request();
+
+		if ( ! $remote_data ) {
+			printf(
+				'<div class="%1$s"><p>%2$s</p></div>',
+				esc_attr( 'notice notice-error' ),
+				__( 'We were unable to verify updates for the <strong>Flexify Dashboard</strong> plugin.', 'flexify-dashboard' )
+			);
+
+			return;
+		}
+
+		$current_version = defined( 'FLEXIFY_DASHBOARD_VERSION' ) ? FLEXIFY_DASHBOARD_VERSION : '0.0.0';
+		$latest_version = isset( $remote_data->version ) ? (string) $remote_data->version : '';
+
+		if ( '' !== $latest_version && version_compare( $current_version, $latest_version, '<' ) ) {
+			printf(
+				'<div class="%1$s"><p>%2$s</p></div>',
+				esc_attr( 'notice notice-success' ),
+				__( 'A new version of the <strong>Flexify Dashboard</strong> plugin is available.', 'flexify-dashboard' )
+			); ?>
+
+			<script type="text/javascript">
+				if (!sessionStorage.getItem('reload_flexify_dashboard_update')) {
+					sessionStorage.setItem('reload_flexify_dashboard_update', 'true');
+					window.location.reload();
+				}
+			</script>
+			<?php
+
+			return;
+		}
+
+		printf(
+			'<div class="%1$s"><p>%2$s</p></div>',
+			esc_attr( 'notice notice-success' ),
+			__( 'The Flexify Dashboard plugin version is the latest.', 'flexify-dashboard' )
+		);
+	}
 }
