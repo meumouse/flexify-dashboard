@@ -10,7 +10,7 @@ use WP_Upgrader_Skin;
 use Plugin_Upgrader;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 // Include required files for the upgrader
 require_once ABSPATH . "wp-admin/includes/class-wp-upgrader.php";

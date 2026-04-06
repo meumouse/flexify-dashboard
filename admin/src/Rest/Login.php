@@ -5,7 +5,7 @@ namespace MeuMouse\Flexify_Dashboard\Rest;
 use MeuMouse\Flexify_Dashboard\Pages\Login as LoginPage;
 
 // Prevent direct access to this file.
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Registers login-related REST endpoints.

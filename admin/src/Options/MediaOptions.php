@@ -1,325 +1,322 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Options;
 
 use enshrined\svgSanitize\Sanitizer;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit();
+use WP_Error;
+use Exception;
+
+defined('ABSPATH') || exit;
 
 /**
  * Class MediaOptions
  *
- * Handles media-related options such as SVG uploads.
+ * Handle media-related options such as SVG and font uploads.
  *
- * @package UiXpress\Options
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Options
+ * @author MeuMouse.com
  */
-class MediaOptions
-{
-  /**
-   * Stores the global options.
-   *
-   * @var array|null
-   */
-  private static $options = null;
+class MediaOptions {
 
-  /**
-   * MediaOptions constructor.
-   *
-   * Initializes the class and adds filters for media options.
-   */
-  public function __construct()
-  {
-    // SVG upload filters
-    add_filter("upload_mimes", [$this, "maybe_enable_svg_uploads"], 10, 1);
-    add_filter("wp_check_filetype_and_ext", [$this, "fix_svg_filetype_check"], 10, 5);
-    add_filter("wp_prepare_attachment_for_js", [$this, "fix_svg_media_thumbnails"], 10, 3);
-    add_filter("wp_handle_upload_prefilter", [$this, "sanitize_svg_upload"], 10, 1);
+    /**
+     * Allowed font mime types.
+     *
+     * @since 2.0.0
+     * @var array
+     */
+    private static $font_types = array(
+        'woff2' => 'font/woff2',
+        'woff'  => 'font/woff',
+        'ttf'   => 'font/ttf',
+        'otf'   => 'font/otf',
+        'eot'   => 'application/vnd.ms-fontobject',
+    );
 
-    // Font upload filters
-    add_filter("upload_mimes", [$this, "maybe_enable_font_uploads"], 10, 1);
-    add_filter("wp_check_filetype_and_ext", [$this, "fix_font_filetype_check"], 10, 5);
-  }
 
-  /**
-   * Checks if SVG uploads are enabled.
-   *
-   * @return bool True if SVG uploads are enabled, false otherwise
-   */
-  private static function is_svg_uploads_enabled()
-  {
-    return Settings::is_enabled("enable_svg_uploads");
-  }
+    /**
+     * Class constructor.
+     *
+     * Register media-related hooks.
+     *
+     * @since 2.0.0
+     * @return void
+     */
+    public function __construct() {
+        add_filter( 'upload_mimes', array( $this, 'maybe_enable_svg_uploads' ), 10, 1 );
+        add_filter( 'wp_check_filetype_and_ext', array( $this, 'fix_svg_filetype_check' ), 10, 5 );
+        add_filter( 'wp_prepare_attachment_for_js', array( $this, 'fix_svg_media_thumbnails' ), 10, 3 );
+        add_filter( 'wp_handle_upload_prefilter', array( $this, 'sanitize_svg_upload' ), 10, 1 );
 
-  /**
-   * Enables SVG uploads if the setting is enabled.
-   *
-   * @param array $mimes Array of allowed mime types
-   * @return array Modified array of mime types
-   */
-  public static function maybe_enable_svg_uploads($mimes)
-  {
-    if (!self::is_svg_uploads_enabled()) {
-      return $mimes;
+        add_filter( 'upload_mimes', array( $this, 'maybe_enable_font_uploads' ), 10, 1 );
+        add_filter( 'wp_check_filetype_and_ext', array( $this, 'fix_font_filetype_check' ), 10, 5 );
     }
 
-    // Enable SVG uploads
-    $mimes["svg"] = "image/svg+xml";
-    $mimes["svgz"] = "image/svg+xml";
 
-    return $mimes;
-  }
-
-  /**
-   * Fixes WordPress filetype check for SVG files.
-   *
-   * WordPress doesn't recognize SVG files by default, so we need to help it.
-   *
-   * @param array $data File data array
-   * @param string $file Full path to the file
-   * @param string $filename The name of the file
-   * @param array $mimes Array of mime types keyed by the file extension regex
-   * @param string $real_mime The actual mime type or empty if unknown
-   * @return array Modified file data array
-   */
-  public static function fix_svg_filetype_check($data, $file, $filename, $mimes, $real_mime = null)
-  {
-    if (!self::is_svg_uploads_enabled()) {
-      return $data;
+    /**
+     * Check if SVG uploads are enabled.
+     *
+     * @since 2.0.0
+     * @return bool True if SVG uploads are enabled. Otherwise false.
+     */
+    private static function is_svg_uploads_enabled(): bool {
+        return Settings::is_enabled( 'enable_svg_uploads' );
     }
 
-    // Check if file is SVG
-    $wp_filetype = wp_check_filetype($filename, $mimes);
-    $ext = $wp_filetype["ext"];
-    $type = $wp_filetype["type"];
 
-    // If it's an SVG file, fix the filetype check
-    if ($ext === "svg" || $type === "image/svg+xml") {
-      $data = [
-        "ext" => "svg",
-        "type" => "image/svg+xml",
-        "proper_filename" => $filename,
-      ];
+    /**
+     * Enable SVG uploads when the setting is active.
+     *
+     * @since 2.0.0
+     * @param array $mimes Allowed mime types.
+     * @return array Modified mime types.
+     */
+    public static function maybe_enable_svg_uploads( $mimes ): array {
+        if ( ! self::is_svg_uploads_enabled() ) {
+            return $mimes;
+        }
+
+        $mimes['svg'] = 'image/svg+xml';
+        $mimes['svgz'] = 'image/svg+xml';
+
+        return $mimes;
     }
 
-    return $data;
-  }
 
-  /**
-   * Fixes SVG thumbnails in the media library.
-   *
-   * Ensures SVG files display correctly in the WordPress media library.
-   *
-   * @param array $response Array of prepared attachment data
-   * @param WP_Post $attachment Attachment object
-   * @param array|false $meta Array of attachment meta data, or false if there is none
-   * @return array Modified response array
-   */
-  public static function fix_svg_media_thumbnails($response, $attachment, $meta)
-  {
-    if (!self::is_svg_uploads_enabled()) {
-      return $response;
+    /**
+     * Fix WordPress filetype validation for SVG files.
+     *
+     * @since 2.0.0
+     * @param array       $data File data array.
+     * @param string      $file Full path to the file.
+     * @param string      $filename Uploaded filename.
+     * @param array       $mimes Allowed mime types.
+     * @param string|null $real_mime Detected mime type.
+     * @return array Modified file data.
+     */
+    public static function fix_svg_filetype_check( $data, $file, $filename, $mimes, $real_mime = null ): array {
+        if ( ! self::is_svg_uploads_enabled() ) {
+            return $data;
+        }
+
+        $wp_filetype = wp_check_filetype( $filename, $mimes );
+        $ext = isset( $wp_filetype['ext'] ) ? $wp_filetype['ext'] : '';
+        $type = isset( $wp_filetype['type'] ) ? $wp_filetype['type'] : '';
+
+        if ( 'svg' === $ext || 'image/svg+xml' === $type ) {
+            return array(
+                'ext'             => 'svg',
+                'type'            => 'image/svg+xml',
+                'proper_filename' => $filename,
+            );
+        }
+
+        return $data;
     }
 
-    // Check if attachment is an SVG
-    if ($response["mime"] === "image/svg+xml") {
-      // Get the attachment URL
-      $attachment_url = wp_get_attachment_url($attachment->ID);
 
-      // Set image data for SVG
-      $response["image"] = [
-        "src" => $attachment_url,
-        "width" => 150,
-        "height" => 150,
-      ];
+    /**
+     * Fix SVG thumbnails in the WordPress media library.
+     *
+     * @since 2.0.0
+     * @param array      $response Prepared attachment response.
+     * @param \WP_Post   $attachment Attachment object.
+     * @param array|bool $meta Attachment metadata.
+     * @return array Modified response.
+     */
+    public static function fix_svg_media_thumbnails( $response, $attachment, $meta ): array {
+        if ( ! self::is_svg_uploads_enabled() ) {
+            return $response;
+        }
 
-      // Set thumbnail sizes
-      $response["sizes"] = [
-        "full" => [
-          "url" => $attachment_url,
-          "width" => 150,
-          "height" => 150,
-          "orientation" => "landscape",
-        ],
-        "thumbnail" => [
-          "url" => $attachment_url,
-          "width" => 150,
-          "height" => 150,
-          "orientation" => "landscape",
-        ],
-        "medium" => [
-          "url" => $attachment_url,
-          "width" => 300,
-          "height" => 300,
-          "orientation" => "landscape",
-        ],
-        "large" => [
-          "url" => $attachment_url,
-          "width" => 1024,
-          "height" => 1024,
-          "orientation" => "landscape",
-        ],
-      ];
-    }
+        if ( ! isset( $response['mime'] ) || 'image/svg+xml' !== $response['mime'] ) {
+            return $response;
+        }
 
-    return $response;
-  }
+        $attachment_url = wp_get_attachment_url( $attachment->ID );
 
-  /**
-   * Sanitizes SVG files before they are uploaded.
-   *
-   * This filter runs before WordPress processes the upload and sanitizes
-   * SVG content to remove potentially malicious code.
-   *
-   * @param array $file Array of file data
-   * @return array Modified file data array, or WP_Error on failure
-   */
-  public static function sanitize_svg_upload($file)
-  {
-    if (!self::is_svg_uploads_enabled()) {
-      return $file;
-    }
+        if ( empty( $attachment_url ) ) {
+            return $response;
+        }
 
-    // Check if file is SVG
-    $filetype = wp_check_filetype($file["name"]);
-    if ($filetype["ext"] !== "svg" && $filetype["type"] !== "image/svg+xml") {
-      return $file;
-    }
-
-    // Check if file exists and is readable
-    if (!file_exists($file["tmp_name"]) || !is_readable($file["tmp_name"])) {
-      return $file;
-    }
-
-    // Read SVG content
-    $svg_content = file_get_contents($file["tmp_name"]);
-    if ($svg_content === false) {
-      return new \WP_Error(
-        "svg_read_error",
-        __("Unable to read SVG file for sanitization.", "flexify-dashboard"),
-        ["status" => 400]
-      );
-    }
-
-    // Sanitize SVG content
-    try {
-      $sanitizer = new Sanitizer();
-      $sanitized_svg = $sanitizer->sanitize($svg_content);
-
-      // Check if sanitization failed
-      if ($sanitized_svg === false) {
-        return new \WP_Error(
-          "svg_sanitize_error",
-          __("SVG file could not be sanitized. The file may be corrupted or contain invalid content.", "flexify-dashboard"),
-          ["status" => 400]
+        $response['image'] = array(
+            'src'    => $attachment_url,
+            'width'  => 150,
+            'height' => 150,
         );
-      }
 
-      // Write sanitized content back to temp file
-      $result = file_put_contents($file["tmp_name"], $sanitized_svg);
-      if ($result === false) {
-        return new \WP_Error(
-          "svg_write_error",
-          __("Unable to write sanitized SVG file.", "flexify-dashboard"),
-          ["status" => 500]
+        $response['sizes'] = array(
+            'full' => array(
+                'url'         => $attachment_url,
+                'width'       => 150,
+                'height'      => 150,
+                'orientation' => 'landscape',
+            ),
+            'thumbnail' => array(
+                'url'         => $attachment_url,
+                'width'       => 150,
+                'height'      => 150,
+                'orientation' => 'landscape',
+            ),
+            'medium' => array(
+                'url'         => $attachment_url,
+                'width'       => 300,
+                'height'      => 300,
+                'orientation' => 'landscape',
+            ),
+            'large' => array(
+                'url'         => $attachment_url,
+                'width'       => 1024,
+                'height'      => 1024,
+                'orientation' => 'landscape',
+            ),
         );
-      }
 
-      // Update file size after sanitization
-      $file["size"] = filesize($file["tmp_name"]);
-    } catch (\Exception $e) {
-      return new \WP_Error(
-        "svg_sanitize_exception",
-        sprintf(
-          __("Error sanitizing SVG file: %s", "flexify-dashboard"),
-          $e->getMessage()
-        ),
-        ["status" => 500]
-      );
+        return $response;
     }
 
-    return $file;
-  }
 
-  /**
-   * Checks if font uploads are enabled.
-   * Defaults to true if the setting has not been explicitly set.
-   *
-   * @return bool True if font uploads are enabled, false otherwise
-   */
-  private static function is_font_uploads_enabled()
-  {
-    $settings = Settings::get();
-    
-    // Default to true if not explicitly set
-    if (!isset($settings["enable_font_uploads"])) {
-      return true;
-    }
-    
-    return $settings["enable_font_uploads"] === true;
-  }
+    /**
+     * Sanitize SVG files before upload.
+     *
+     * @since 2.0.0
+     * @param array $file Uploaded file data.
+     * @return array|WP_Error Sanitized file data on success. WP_Error on failure.
+     */
+    public static function sanitize_svg_upload( $file ) {
+        if ( ! self::is_svg_uploads_enabled() ) {
+            return $file;
+        }
 
-  /**
-   * Enables font uploads if the setting is enabled.
-   *
-   * @param array $mimes Array of allowed mime types
-   * @return array Modified array of mime types
-   */
-  public static function maybe_enable_font_uploads($mimes)
-  {
-    if (!self::is_font_uploads_enabled()) {
-      return $mimes;
-    }
+        if ( empty( $file['name'] ) || empty( $file['tmp_name'] ) ) {
+            return $file;
+        }
 
-    // Enable font uploads
-    $mimes["woff2"] = "font/woff2";
-    $mimes["woff"] = "font/woff";
-    $mimes["ttf"] = "font/ttf";
-    $mimes["otf"] = "font/otf";
-    $mimes["eot"] = "application/vnd.ms-fontobject";
+        $filetype = wp_check_filetype( $file['name'] );
+        $ext = isset( $filetype['ext'] ) ? $filetype['ext'] : '';
+        $type = isset( $filetype['type'] ) ? $filetype['type'] : '';
 
-    return $mimes;
-  }
+        if ( 'svg' !== $ext && 'image/svg+xml' !== $type ) {
+            return $file;
+        }
 
-  /**
-   * Fixes WordPress filetype check for font files.
-   *
-   * WordPress doesn't always recognize font files correctly, so we need to help it.
-   *
-   * @param array $data File data array
-   * @param string $file Full path to the file
-   * @param string $filename The name of the file
-   * @param array $mimes Array of mime types keyed by the file extension regex
-   * @param string $real_mime The actual mime type or empty if unknown
-   * @return array Modified file data array
-   */
-  public static function fix_font_filetype_check($data, $file, $filename, $mimes, $real_mime = null)
-  {
-    if (!self::is_font_uploads_enabled()) {
-      return $data;
-    }
+        if ( ! file_exists( $file['tmp_name'] ) || ! is_readable( $file['tmp_name'] ) ) {
+            return $file;
+        }
 
-    // Get file extension
-    $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+        $svg_content = file_get_contents( $file['tmp_name'] );
 
-    // Define font extensions and their mime types
-    $font_types = [
-      "woff2" => "font/woff2",
-      "woff" => "font/woff",
-      "ttf" => "font/ttf",
-      "otf" => "font/otf",
-      "eot" => "application/vnd.ms-fontobject",
-    ];
+        if ( false === $svg_content ) {
+            return new WP_Error(
+                'svg_read_error',
+                __( 'The SVG file could not be read for sanitization.', 'flexify-dashboard' )
+            );
+        }
 
-    // If it's a font file, fix the filetype check
-    if (isset($font_types[$ext])) {
-      $data = [
-        "ext" => $ext,
-        "type" => $font_types[$ext],
-        "proper_filename" => $filename,
-      ];
+        try {
+            $sanitizer = new Sanitizer();
+            $sanitized_svg = $sanitizer->sanitize( $svg_content );
+
+            if ( false === $sanitized_svg ) {
+                return new WP_Error(
+                    'svg_sanitize_error',
+                    __( 'The SVG file could not be sanitized. The file may be corrupted or contain invalid content.', 'flexify-dashboard' )
+                );
+            }
+
+            $result = file_put_contents( $file['tmp_name'], $sanitized_svg );
+
+            if ( false === $result ) {
+                return new WP_Error(
+                    'svg_write_error',
+                    __( 'The sanitized SVG file could not be saved.', 'flexify-dashboard' )
+                );
+            }
+
+            $filesize = filesize( $file['tmp_name'] );
+
+            if ( false !== $filesize ) {
+                $file['size'] = $filesize;
+            }
+        } catch ( Exception $e ) {
+            error_log( 'SVG sanitize error: ' . $e->getMessage() );
+
+            return new WP_Error(
+                'svg_sanitize_exception',
+                __( 'An error occurred while sanitizing the SVG file.', 'flexify-dashboard' )
+            );
+        }
+
+        return $file;
     }
 
-    return $data;
-  }
+
+    /**
+     * Check if font uploads are enabled.
+     *
+     * Defaults to true when the setting does not exist.
+     *
+     * @since 2.0.0
+     * @return bool True if font uploads are enabled. Otherwise false.
+     */
+    private static function is_font_uploads_enabled(): bool {
+        $settings = Settings::get();
+
+        if ( ! isset( $settings['enable_font_uploads'] ) ) {
+            return true;
+        }
+
+        return true === $settings['enable_font_uploads'];
+    }
+
+
+    /**
+     * Enable font uploads when the setting is active.
+     *
+     * @since 2.0.0
+     * @param array $mimes Allowed mime types.
+     * @return array Modified mime types.
+     */
+    public static function maybe_enable_font_uploads( $mimes ): array {
+        if ( ! self::is_font_uploads_enabled() ) {
+            return $mimes;
+        }
+
+        foreach ( self::$font_types as $extension => $mime_type ) {
+            $mimes[ $extension ] = $mime_type;
+        }
+
+        return $mimes;
+    }
+
+
+    /**
+     * Fix WordPress filetype validation for font files.
+     *
+     * @since 2.0.0
+     * @param array       $data File data array.
+     * @param string      $file Full path to the file.
+     * @param string      $filename Uploaded filename.
+     * @param array       $mimes Allowed mime types.
+     * @param string|null $real_mime Detected mime type.
+     * @return array Modified file data.
+     */
+    public static function fix_font_filetype_check( $data, $file, $filename, $mimes, $real_mime = null ): array {
+        if ( ! self::is_font_uploads_enabled() ) {
+            return $data;
+        }
+
+        $ext = strtolower( pathinfo( $filename, PATHINFO_EXTENSION ) );
+
+        if ( ! isset( self::$font_types[ $ext ] ) ) {
+            return $data;
+        }
+
+        return array(
+            'ext'             => $ext,
+            'type'            => self::$font_types[ $ext ],
+            'proper_filename' => $filename,
+        );
+    }
 }
-

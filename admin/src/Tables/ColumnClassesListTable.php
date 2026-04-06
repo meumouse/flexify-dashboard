@@ -2,142 +2,162 @@
 
 namespace MeuMouse\Flexify_Dashboard\Tables;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit;
 
-require_once ABSPATH . "wp-admin/includes/class-wp-list-table.php";
-require_once ABSPATH . "wp-admin/includes/class-wp-posts-list-table.php";
+require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
+require_once ABSPATH . 'wp-admin/includes/class-wp-posts-list-table.php';
 
 /**
- * Enhanced WordPress Posts List Table with column class management.
+ * Class ColumnClassesListTable
  *
- * This class extends the core WordPress Posts List Table functionality to provide
- * additional features for managing column classes and cell styling. It captures
- * and allows modification of column classes through WordPress filters.
+ * Extend the WordPress posts list table with column class capture support.
  *
- * @package UiXpress\Tables
- * @extends \WP_Posts_List_Table
- * @since 1.0.0
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Tables
+ * @author MeuMouse.com
  */
-class ColumnClassesListTable extends \WP_Posts_List_Table
-{
-  /**
-   * Stores the captured classes for each column.
-   *
-   * @var array<string, string[]>
-   */
-  public $captured_classes = [];
+class ColumnClassesListTable extends \WP_Posts_List_Table {
 
-  /**
-   * Prints column headers and captures their classes.
-   *
-   * Extends the parent method to capture and store classes applied to each column header.
-   * Classes can be modified using WordPress filters.
-   *
-   * @param bool $with_id Whether to include column IDs in the header markup.
-   * @return void
-   *
-   * @uses \WP_Posts_List_Table::get_column_info()
-   * @uses apply_filters() Calls 'manage_{post_type}_posts_column_classes'
-   *                      and 'manage_posts_column_classes'
-   */
-  public function print_column_headers($with_id = true)
-  {
-    list($columns, $hidden, $sortable, $primary) = $this->get_column_info();
-    foreach ($columns as $column_key => $column_display_name) {
-      $classes = ["manage-column"];
-      if (in_array($column_key, $hidden)) {
-        $classes[] = "hidden";
-      }
-      if ("cb" === $column_key) {
-        $classes[] = "check-column";
-      } elseif ("comments" === $column_key) {
-        $classes[] = "num comments column-comments";
-      } else {
-        $classes[] = "column-$column_key";
-      }
-      if ($column_key === $primary) {
-        $classes[] = "column-primary";
-      }
-      if (isset($sortable[$column_key])) {
-        $classes[] = "sortable";
-        $classes[] = $this->get_sort_direction($column_key) === "asc" ? "asc" : "desc";
-      }
+	/**
+	 * Captured classes for each column.
+	 *
+	 * @since 2.0.0
+	 * @var array
+	 */
+	public $captured_classes = array();
 
-      $classes = apply_filters("manage_{$this->screen->post_type}_posts_column_classes", $classes, $column_key, $column_display_name);
-      $classes = apply_filters("manage_posts_column_classes", $classes, $column_key, $column_display_name);
+	/**
+	 * Print column headers and capture their classes.
+	 *
+	 * @since 2.0.0
+	 * @param bool $with_id Whether to include column IDs in the header markup.
+	 * @return void
+	 */
+	public function print_column_headers( $with_id = true ) {
+		list( $columns, $hidden, $sortable, $primary ) = $this->get_column_info();
 
-      $this->captured_classes[$column_key] = array_unique($classes);
-    }
-  }
+		foreach ( $columns as $column_key => $column_display_name ) {
+			$classes = $this->get_header_classes( $column_key, $hidden, $sortable, $primary );
 
-  /**
-   * Gets the CSS classes for a specific table cell.
-   *
-   * Generates and returns an array of CSS classes for a table cell based on
-   * the column name and post data. Classes can be modified using WordPress filters.
-   *
-   * @param string    $column_name The name of the column
-   * @param \WP_Post  $post        The current post object
-   * @return string[] Array of CSS classes for the cell
-   *
-   * @uses apply_filters() Calls 'manage_{post_type}_posts_column_cell_classes'
-   *                      and 'manage_posts_column_cell_classes'
-   */
-  public function get_cell_classes($column_name, $post)
-  {
-    $classes = [];
-    $classes[] = "column-$column_name";
+			$classes = apply_filters( "manage_{$this->screen->post_type}_posts_column_classes", $classes, $column_key, $column_display_name );
+			$classes = apply_filters( 'manage_posts_column_classes', $classes, $column_key, $column_display_name );
 
-    list($columns, $hidden, $sortable, $primary) = $this->get_column_info();
-    if (in_array($column_name, $hidden)) {
-      $classes[] = "hidden";
-    }
+			$this->captured_classes[ $column_key ] = array_values( array_unique( $classes ) );
+		}
 
-    switch ($column_name) {
-      case "cb":
-        $classes[] = "check-column";
-        break;
-      case "comments":
-        $classes[] = "num";
-        break;
-      case "title":
-        if ($post->post_parent > 0) {
-          $classes[] = "has-parent";
-        }
-        if (in_array($post->post_status, ["pending", "draft", "future"])) {
-          $classes[] = "status-" . $post->post_status;
-        }
-        break;
-      case "date":
-        $classes[] = "date column-date";
-        break;
-    }
+		parent::print_column_headers( $with_id );
+	}
 
-    $classes = apply_filters("manage_{$this->screen->post_type}_posts_column_cell_classes", $classes, $column_name, $post);
-    $classes = apply_filters("manage_posts_column_cell_classes", $classes, $column_name, $post);
 
-    return array_unique($classes);
-  }
+	/**
+	 * Get the CSS classes for a specific table cell.
+	 *
+	 * @since 2.0.0
+	 * @param string   $column_name The column name.
+	 * @param \WP_Post $post        The current post object.
+	 * @return array
+	 */
+	public function get_cell_classes( $column_name, $post ) {
+		$classes = array(
+			'column-' . sanitize_html_class( $column_name ),
+		);
 
-  /**
-   * Determines the sort direction for a column.
-   *
-   * Returns the current sort direction for a given column based on URL parameters
-   * or defaults to ascending order.
-   *
-   * @param string $column The column name to check
-   * @return string Sort direction ('asc' or 'desc')
-   */
-  public function get_sort_direction($column)
-  {
-    $orderby = isset($_GET["orderby"]) ? $_GET["orderby"] : "";
-    $order = isset($_GET["order"]) ? $_GET["order"] : "asc";
+		list( $columns, $hidden ) = $this->get_column_info();
 
-    if ($orderby === $column || $this->get_default_primary_column_name() === $column) {
-      return strtolower($order);
-    }
+		if ( in_array( $column_name, $hidden, true ) ) {
+			$classes[] = 'hidden';
+		}
 
-    return "asc";
-  }
+		switch ( $column_name ) {
+			case 'cb':
+				$classes[] = 'check-column';
+				break;
+
+			case 'comments':
+				$classes[] = 'num';
+				break;
+
+			case 'title':
+				if ( ! empty( $post->post_parent ) ) {
+					$classes[] = 'has-parent';
+				}
+
+				if ( in_array( $post->post_status, array( 'pending', 'draft', 'future' ), true ) ) {
+					$classes[] = 'status-' . sanitize_html_class( $post->post_status );
+				}
+				break;
+
+			case 'date':
+				$classes[] = 'date';
+				$classes[] = 'column-date';
+				break;
+		}
+
+		$classes = apply_filters( "manage_{$this->screen->post_type}_posts_column_cell_classes", $classes, $column_name, $post );
+		$classes = apply_filters( 'manage_posts_column_cell_classes', $classes, $column_name, $post );
+
+		return array_values( array_unique( $classes ) );
+	}
+
+
+	/**
+	 * Determine the sort direction for a column.
+	 *
+	 * @since 2.0.0
+	 * @param string $column Column name.
+	 * @return string
+	 */
+	public function get_sort_direction( $column ) {
+		$orderby = isset( $_GET['orderby'] ) ? sanitize_key( wp_unslash( $_GET['orderby'] ) ) : '';
+		$order   = isset( $_GET['order'] ) ? sanitize_key( wp_unslash( $_GET['order'] ) ) : 'asc';
+		$order   = in_array( strtolower( $order ), array( 'asc', 'desc' ), true ) ? strtolower( $order ) : 'asc';
+
+		if ( $orderby === $column || $this->get_default_primary_column_name() === $column ) {
+			return $order;
+		}
+
+		return 'asc';
+	}
+
+
+	/**
+	 * Build header classes for a given column.
+	 *
+	 * @since 2.0.0
+	 * @param string $column_key Column key.
+	 * @param array  $hidden     Hidden columns.
+	 * @param array  $sortable   Sortable columns.
+	 * @param string $primary    Primary column.
+	 * @return array
+	 */
+	private function get_header_classes( $column_key, $hidden, $sortable, $primary ) {
+		$classes = array(
+			'manage-column',
+		);
+
+		if ( in_array( $column_key, $hidden, true ) ) {
+			$classes[] = 'hidden';
+		}
+
+		if ( 'cb' === $column_key ) {
+			$classes[] = 'check-column';
+		} elseif ( 'comments' === $column_key ) {
+			$classes[] = 'num';
+			$classes[] = 'comments';
+			$classes[] = 'column-comments';
+		} else {
+			$classes[] = 'column-' . sanitize_html_class( $column_key );
+		}
+
+		if ( $column_key === $primary ) {
+			$classes[] = 'column-primary';
+		}
+
+		if ( isset( $sortable[ $column_key ] ) ) {
+			$classes[] = 'sortable';
+			$classes[] = $this->get_sort_direction( $column_key );
+		}
+
+		return $classes;
+	}
 }

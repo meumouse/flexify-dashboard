@@ -7,14 +7,14 @@ use MeuMouse\Flexify_Dashboard\Activity\ActivityCron;
 use MeuMouse\Flexify_Dashboard\Activity\ActivityDatabase;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class ActivityLog
  *
  * REST API endpoints for activity log management
  * 
- * @since 1.0.0
+ * @since 2.0.0
  */
 class ActivityLog
 {
@@ -30,7 +30,7 @@ class ActivityLog
      * Registers custom REST API endpoints
      * 
      * @return void
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function register_custom_endpoints()
     {
@@ -145,7 +145,7 @@ class ActivityLog
      *
      * @param \WP_REST_Request $request The request object
      * @return bool|\WP_Error True if the user has permission, WP_Error object otherwise
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function check_permissions($request)
     {
@@ -163,7 +163,7 @@ class ActivityLog
      *
      * @param \WP_REST_Request $request The request object
      * @return \WP_REST_Response The response object
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function get_logs($request)
     {
@@ -207,7 +207,7 @@ class ActivityLog
      *
      * @param \WP_REST_Request $request The request object
      * @return \WP_REST_Response|\WP_Error The response object or error
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function get_log($request)
     {
@@ -236,7 +236,7 @@ class ActivityLog
      *
      * @param \WP_REST_Request $request The request object
      * @return \WP_REST_Response The response object
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function get_stats($request)
     {
@@ -266,7 +266,7 @@ class ActivityLog
      *
      * @param \WP_REST_Request $request The request object
      * @return \WP_REST_Response The response object
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function manual_cleanup($request)
     {

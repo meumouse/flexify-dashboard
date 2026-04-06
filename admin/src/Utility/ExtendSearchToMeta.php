@@ -2,81 +2,84 @@
 
 namespace MeuMouse\Flexify_Dashboard\Utility;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit;
 
 /**
- * Extends WordPress search functionality to include post meta values.
+ * Class ExtendSearchToMeta
  *
- * This class modifies the default WordPress search behavior to include
- * post meta values in search queries. When instantiated, it adds a filter
- * to the posts_search hook that modifies the SQL query to include searches
- * within the postmeta table.
+ * Extend WordPress search queries to include post meta values.
  *
- * @package UiXpress\Utility
- * @since 1.0.0
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Utility
+ * @author MeuMouse.com
  */
-class ExtendSearchToMeta
-{
-  /**
-   * Initialize the extended search functionality.
-   *
-   * Creates an instance of the class and sets up the search modification
-   * by calling the extend_search_to_meta method.
-   *
-   * @param array  $args The WordPress query arguments
-   * @param string $s    The search term
-   */
-  public function __construct($args, $s)
-  {
-    self::extend_search_to_meta($args, $s);
-  }
+class ExtendSearchToMeta {
 
-  /**
-   * Extends WordPress search to include post meta values.
-   *
-   * Adds a filter to the posts_search hook that modifies the SQL query
-   * to search within post meta values in addition to post title, content,
-   * and excerpt.
-   *
-   * @param array  $args The WordPress query arguments
-   * @param string $s    The search term to look for
-   * @return void
-   *
-   * @global wpdb $wpdb WordPress database abstraction object
-   *
-   * @uses add_filter()  Hooks into 'posts_search'
-   * @uses esc_sql()     Escapes SQL query
-   * @uses wpdb::esc_like() Escapes LIKE query
-   */
-  private static function extend_search_to_meta($args, $s)
-  {
-    $args["s"] = $s;
+	/**
+	 * Search term used in the query filter.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private $search_term = '';
 
-    add_filter(
-      "posts_search",
-      function ($search, $wp_query) use ($s) {
-        global $wpdb;
+	/**
+	 * Constructor.
+	 *
+	 * Register the search filter to include post meta values.
+	 *
+	 * @since 2.0.0
+	 * @param array  $args Query arguments.
+	 * @param string $search_term Search term.
+	 * @return void
+	 */
+	public function __construct( $args, $search_term ) {
+		$this->search_term = is_string( $search_term ) ? sanitize_text_field( $search_term ) : '';
 
-        if (!empty($search) && !empty($wp_query->query_vars["s"])) {
-          $s = esc_sql($wpdb->esc_like($s));
-          // Create the new search SQL that includes postmeta
-          $search = " AND (
-						({$wpdb->posts}.post_title LIKE '%{$s}%')
-						OR ({$wpdb->posts}.post_content LIKE '%{$s}%')
-						OR ({$wpdb->posts}.post_excerpt LIKE '%{$s}%')
-						OR EXISTS (
-							SELECT 1 
-							FROM {$wpdb->postmeta} 
-							WHERE post_id = {$wpdb->posts}.ID 
-							AND meta_value LIKE '%{$s}%'
-						)
-					)";
-        }
-        return $search;
-      },
-      10,
-      2
-    );
-  }
+		if ( '' === $this->search_term ) {
+			return;
+		}
+
+		add_filter( 'posts_search', array( $this, 'extend_search_to_meta' ), 10, 2 );
+	}
+
+
+	/**
+	 * Extend the posts search SQL to include post meta values.
+	 *
+	 * @since 2.0.0
+	 * @param string   $search   Current search SQL.
+	 * @param \WP_Query $wp_query WordPress query object.
+	 * @return string
+	 */
+	public function extend_search_to_meta( $search, $wp_query ) {
+		global $wpdb;
+
+		if ( empty( $search ) || empty( $wp_query->query_vars['s'] ) ) {
+			return $search;
+		}
+
+		$search_term = $wpdb->esc_like( $this->search_term );
+		$like        = '%' . $search_term . '%';
+
+		$search = $wpdb->prepare(
+			" AND (
+				{$wpdb->posts}.post_title LIKE %s
+				OR {$wpdb->posts}.post_content LIKE %s
+				OR {$wpdb->posts}.post_excerpt LIKE %s
+				OR EXISTS (
+					SELECT 1
+					FROM {$wpdb->postmeta}
+					WHERE {$wpdb->postmeta}.post_id = {$wpdb->posts}.ID
+					AND {$wpdb->postmeta}.meta_value LIKE %s
+				)
+			)",
+			$like,
+			$like,
+			$like,
+			$like
+		);
+
+		return $search;
+	}
 }

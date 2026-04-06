@@ -5,7 +5,7 @@ namespace MeuMouse\Flexify_Dashboard\Rest;
 use WC_Order;
 use WP_REST_Response;
 
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 class WooCommerceDashboard
 {

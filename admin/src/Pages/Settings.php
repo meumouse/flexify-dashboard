@@ -1,120 +1,158 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Pages;
-use MeuMouse\Flexify_Dashboard\Options\GlobalOptions;
+
 use MeuMouse\Flexify_Dashboard\Options\Settings as SettingsOptions;
-use MeuMouse\Flexify_Dashboard\Update\Updater;
-use MeuMouse\Flexify_Dashboard\Rest\RestLogout;
 use MeuMouse\Flexify_Dashboard\Utility\Scripts;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit;
 
 /**
- * Class flexify-dashboard
+ * Class Settings
  *
- * Main class for initialising the flexify-dashboard app.
+ * Handle the main settings page initialization for Flexify Dashboard.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Pages
+ * @author MeuMouse.com
  */
-class Settings
-{
-  private static $screen = null;
-  /**
-   * flexify-dashboard constructor.
-   *
-   * Initialises the main app.
-   */
-  public function __construct()
-  {
-    add_action("admin_menu", ["MeuMouse\Flexify_Dashboard\Pages\Settings", "admin_settings_page"]);
-  }
+class Settings {
 
-  /**
-   * Adds settings page.
-   *
-   * Calls add_menu_page to add new page .
-   */
-  public static function admin_settings_page()
-  {
-    $plugin_name = SettingsOptions::get_setting("plugin_name", "Flexify Dashboard");
-    $menu_name = $plugin_name != "" ? esc_html($plugin_name) : "Flexify Dashboard";
+	/**
+	 * Current screen hook suffix.
+	 *
+	 * @since 2.0.0
+	 * @var string|null
+	 */
+	private static $screen = null;
 
-    $url = plugins_url("flexify-dashboard/assets/icons/flexify-dashboard-logo.svg");
-    // Add top-level menu page - callback set to null to prevent default submenu
-    add_menu_page($menu_name, $menu_name, "manage_options", "flexify-dashboard-settings", null, $url);
-    
-    // Replace the default submenu item by using the same slug as parent
-    // This removes the duplicate "Flexify Dashboard" submenu item
-    $hook_suffix = add_submenu_page('flexify-dashboard-settings', __("Settings", "flexify-dashboard"), __("Settings", "flexify-dashboard"), "manage_options", "flexify-dashboard-settings", ["MeuMouse\Flexify_Dashboard\Pages\Settings", "build_uipc"]);
+	/**
+	 * Constructor.
+	 *
+	 * Register hooks for the settings page.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'admin_menu', array( __CLASS__, 'admin_settings_page' ) );
+	}
 
-    // Load styles for admin menu logo
-    add_action('admin_head', ['MeuMouse\Flexify_Dashboard\Pages\Settings', 'load_admin_menu_logo']);
-    add_action("admin_head-{$hook_suffix}", ["MeuMouse\Flexify_Dashboard\Pages\Settings", "load_styles"]);
-    add_action("admin_head-{$hook_suffix}", ["MeuMouse\Flexify_Dashboard\Pages\Settings", "load_scripts"]);
-  }
 
-  /**
-   * Loads admin menu logo css
-   */
-  public static function load_admin_menu_logo()
-  {
-    $css = "
-    #adminmenu #toplevel_page_flexify-dashboard-settings .wp-menu-image img {
-      width: 16px;
-      height: 16px;
-    } 
-    ";
-    echo '<style type="text/css">' . esc_html($css) . '</style>';
-  }
+	/**
+	 * Add the main settings page and submenu.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function admin_settings_page() {
+		$plugin_name = SettingsOptions::get_setting( 'plugin_name', 'Flexify Dashboard' );
+		$menu_name = ! empty( $plugin_name ) ? esc_html( $plugin_name ) : 'Flexify Dashboard';
+		$icon_url = plugins_url( 'flexify-dashboard/assets/icons/flexify-dashboard-logo.svg' );
 
-  /**
-   * flexify-dashboard settings page.
-   *
-   * Outputs the app holder
-   */
-  public static function build_uipc()
-  {
-    // Enqueue the media library
-    wp_enqueue_media();
-    // Output the app
-    echo "<div id='fd-settings-app'></div>";
-  }
+		add_menu_page(
+			$menu_name, // Page title
+			$menu_name, // Menu title
+			'manage_options', // capatibility
+			'flexify-dashboard-settings', // menu slug
+			null, // callback
+			$icon_url, // icon
+		);
 
-  /**
-   * flexify-dashboard styles.
-   *
-   * Loads main lp styles
-   */
-  public static function load_styles()
-  {
-    // Get plugin url
-    $url = plugins_url("flexify-dashboard/");
-    $style = $url . "app/dist/assets/styles/settings.css";
-    wp_enqueue_style("flexify-dashboard-settings", $style, [], FLEXIFY_DASHBOARD_VERSION);
+		self::$screen = add_submenu_page(
+			'flexify-dashboard-settings',
+			__( 'Settings', 'flexify-dashboard' ),
+			__( 'Settings', 'flexify-dashboard' ),
+			'manage_options',
+			'flexify-dashboard-settings',
+			array( __CLASS__, 'render_settings' )
+		);
 
-    add_filter('flexify-dashboard/style-layering/exclude', function($excluded_patterns) use ($style) {
-      $excluded_patterns[] = $style;
-      return $excluded_patterns;
-    });
-  }
+		add_action( 'admin_head', array( __CLASS__, 'load_admin_menu_logo' ) );
 
-  /**
-   * flexify-dashboard scripts.
-   *
-   * Loads main lp scripts
-   */
-  public static function load_scripts()
-  {
-    // Get plugin url
-    $url = plugins_url("flexify-dashboard/");
-    $script_name = Scripts::get_base_script_path("Settings.js");
+		if ( ! self::$screen ) {
+			return;
+		}
 
-    // Setup script object
-    $builderScript = [
-      "id" => "fd-settings-script",
-      "src" => $url . "app/dist/{$script_name}",
-      "type" => "module",
-    ];
+		add_action( 'admin_head-' . self::$screen, array( __CLASS__, 'load_styles' ) );
+		add_action( 'admin_head-' . self::$screen, array( __CLASS__, 'load_scripts' ) );
+	}
 
-    // Print tag
-    wp_print_script_tag($builderScript);
-  }
+
+	/**
+	 * Load admin menu logo styles.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function load_admin_menu_logo() {
+		?>
+		<style type="text/css">
+			#adminmenu #toplevel_page_flexify-dashboard-settings .wp-menu-image img {
+				width: 16px;
+				height: 16px;
+			}
+		</style>
+		<?php
+	}
+
+
+	/**
+	 * Render the settings app container.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function render_settings() {
+		wp_enqueue_media();
+
+		echo '<div id="fd-settings-app"></div>';
+	}
+
+
+	/**
+	 * Load settings page styles.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function load_styles() {
+		$base_url = plugins_url( 'flexify-dashboard/' );
+		$style_path = $base_url . 'app/dist/assets/styles/settings.css';
+
+		wp_enqueue_style( 'flexify-dashboard-settings', $style_path, array(), FLEXIFY_DASHBOARD_VERSION );
+
+		add_filter(
+			'flexify-dashboard/style-layering/exclude',
+			function( $excluded_patterns ) use ( $style_path ) {
+				$excluded_patterns[] = $style_path;
+
+				return $excluded_patterns;
+			}
+		);
+	}
+
+
+	/**
+	 * Load settings page scripts.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function load_scripts() {
+		$base_url = plugins_url( 'flexify-dashboard/' );
+		$script_name = Scripts::get_base_script_path( 'Settings.js' );
+
+		if ( empty( $script_name ) ) {
+			return;
+		}
+
+		wp_print_script_tag(
+			array(
+				'id'   => 'fd-settings-script',
+				'src'  => $base_url . "app/dist/{$script_name}",
+				'type' => 'module',
+			)
+		);
+	}
 }

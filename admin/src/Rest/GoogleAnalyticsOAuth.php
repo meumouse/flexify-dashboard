@@ -3,7 +3,7 @@
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class GoogleAnalyticsOAuth
@@ -12,7 +12,7 @@ defined("ABSPATH") || exit();
  * Uses Service Account JSON key for simpler authentication without OAuth consent flow.
  * 
  * @package UiXpress\Rest
- * @since 1.0.0
+ * @since 2.0.0
  */
 class GoogleAnalyticsOAuth
 {

@@ -11,7 +11,7 @@
  */
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Cache key for field definitions

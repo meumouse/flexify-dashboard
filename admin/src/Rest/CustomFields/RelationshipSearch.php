@@ -4,7 +4,7 @@ namespace MeuMouse\Flexify_Dashboard\Rest\CustomFields;
 use MeuMouse\Flexify_Dashboard\Rest\RestPermissionChecker;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class RelationshipSearch

@@ -5,14 +5,14 @@ namespace MeuMouse\Flexify_Dashboard\Rest;
 use MeuMouse\Flexify_Dashboard\Utility\Scripts;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class AdminNotices
  *
  * Handles persistent admin notices via custom post type and REST API meta fields.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 class AdminNotices
 {
@@ -31,7 +31,7 @@ class AdminNotices
     /**
      * Registers the flexify_dash_notice custom post type.
      *
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public static function register_post_type()
     {
@@ -67,7 +67,7 @@ class AdminNotices
     /**
      * Registers meta fields for the notice post type.
      *
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public static function register_meta_fields()
     {
@@ -176,7 +176,7 @@ class AdminNotices
     /**
      * Adds the Admin Notices settings page to the WordPress Settings menu.
      *
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public static function admin_notices_settings_page()
     {
@@ -224,7 +224,7 @@ class AdminNotices
     /**
      * Outputs the Vue app holder for the Admin Notices settings page.
      *
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public static function render_admin_notices_app()
     {
@@ -234,7 +234,7 @@ class AdminNotices
     /**
      * Registers custom REST endpoints for admin notices.
      *
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public static function register_rest_endpoints()
     {
@@ -261,7 +261,7 @@ class AdminNotices
      *
      * @param \WP_REST_Request $request
      * @return \WP_REST_Response|\WP_Error
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public static function mark_notice_seen($request)
     {

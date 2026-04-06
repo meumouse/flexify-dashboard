@@ -6,7 +6,7 @@ use MeuMouse\Flexify_Dashboard\Rest\CustomFields\FieldValueSanitizer;
 use MeuMouse\Flexify_Dashboard\Rest\CustomFields\LocationRuleEvaluator;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class OptionPageRenderer

@@ -32,7 +32,7 @@ const showPicker = (evt) => {
 /**
  * Calculate predefined date ranges
  * @returns {Array} Array of predefined date range objects
- * @since 1.0.0
+ * @since 2.0.0
  */
 const getPredefinedRanges = () => {
   const today = new Date();
@@ -111,7 +111,7 @@ const getPredefinedRanges = () => {
 /**
  * Select a predefined date range
  * @param {Array} range - The date range array [start, end]
- * @since 1.0.0
+ * @since 2.0.0
  */
 const selectPredefinedRange = (range) => {
   date.value = range;

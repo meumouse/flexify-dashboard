@@ -1,131 +1,301 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Utility;
+
+defined('ABSPATH') || exit;
+
 /**
  * Class Scripts
  *
- * Main class for initialising the flexify-dashboard app.
+ * Handle Vite manifest lookups for built scripts and stylesheets.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Utility
+ * @author MeuMouse.com
  */
-class Scripts
-{
-  /**
-   * Get the path of the Vite-built base script.
-   *
-   * This function reads the Vite manifest file and finds the compiled filename
-   * for the 'flexify-dashboard.js' entry point. It uses WordPress file reading functions
-   * for better compatibility and security.
-   *
-   * @return string|null The filename of the compiled base script, or null if not found.
-   */
-  public static function get_base_script_path($filename)
-  {
-    $manifest_path = FLEXIFY_DASHBOARD_PLUGIN_PATH . "app/dist/.vite/manifest.json";
+class Scripts {
 
-    if (!file_exists($manifest_path)) {
-      return null;
-    }
+	/**
+	 * Relative path to the Vite manifest file.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const MANIFEST_PATH = 'app/dist/.vite/manifest.json';
 
-    $manifest_content = file_get_contents($manifest_path);
-    if ($manifest_content === false) {
-      return null;
-    }
+	/**
+	 * Get the path of a Vite-built base script.
+	 *
+	 * @since 2.0.0
+	 * @param string $filename Source entry filename.
+	 * @return string|null
+	 */
+	public static function get_base_script_path( $filename ) {
+		if ( empty( $filename ) || ! is_string( $filename ) ) {
+			return null;
+		}
 
-    $manifest = json_decode($manifest_content, true);
-    if (!is_array($manifest)) {
-      return null;
-    }
+		$manifest = self::get_manifest();
 
-    foreach ($manifest as $key => $value) {
-      if (isset($value["src"]) && $value["src"] === "apps/js/{$filename}") {
-        return $value["file"];
-      }
-    }
+		if ( empty( $manifest ) ) {
+			return null;
+		}
 
-    return null;
-  }
+		$target_src = 'apps/js/' . ltrim( $filename, '/' );
 
-  /**
-   * Get the path of a Vite-built stylesheet.
-   *
-   * This function reads the Vite manifest file and finds the compiled filename
-   * for a stylesheet. It can accept either a JavaScript entry point (e.g., 'flexify-dashboard.js')
-   * or a CSS filename (e.g., 'app.css'). If a JS entry is provided, it returns the
-   * CSS file associated with that entry.
-   *
-   * @param string $filename The JavaScript entry filename (e.g., 'flexify-dashboard.js') or stylesheet filename (e.g., 'app.css').
-   * @return string|null The filename of the compiled stylesheet, or null if not found.
-   */
-  public static function get_stylesheet_path($filename)
-  {
-    $manifest_path = FLEXIFY_DASHBOARD_PLUGIN_PATH . "app/dist/.vite/manifest.json";
+		foreach ( $manifest as $entry ) {
+			if ( ! is_array( $entry ) ) {
+				continue;
+			}
 
-    if (!file_exists($manifest_path)) {
-      return null;
-    }
+			if ( isset( $entry['src'] ) && $target_src === $entry['src'] && ! empty( $entry['file'] ) ) {
+				return $entry['file'];
+			}
+		}
 
-    $manifest_content = file_get_contents($manifest_path);
-    if ($manifest_content === false) {
-      return null;
-    }
+		return null;
+	}
 
-    $manifest = json_decode($manifest_content, true);
-    if (!is_array($manifest)) {
-      return null;
-    }
 
-    // Check if the filename is a JavaScript entry point
-    if (preg_match('/\.js$/', $filename)) {
-      foreach ($manifest as $key => $value) {
-        // Check if this entry matches the JS filename
-        if (isset($value["src"]) && $value["src"] === "apps/js/{$filename}") {
-          // Return the first CSS file associated with this entry
-          if (isset($value["css"]) && is_array($value["css"]) && !empty($value["css"])) {
-            return $value["css"][0];
-          }
-        }
-      }
-      return null;
-    }
+	/**
+	 * Get the path of a Vite-built stylesheet.
+	 *
+	 * This method accepts either a JavaScript entry file or a CSS filename.
+	 *
+	 * @since 2.0.0
+	 * @param string $filename JavaScript entry filename or stylesheet filename.
+	 * @return string|null
+	 */
+	public static function get_stylesheet_path( $filename ) {
+		if ( empty( $filename ) || ! is_string( $filename ) ) {
+			return null;
+		}
 
-    // Otherwise, search for CSS files by filename
-    // Normalize the filename to search for (remove leading path if present)
-    $search_filename = basename($filename);
-    $search_path = str_replace('assets/styles/', '', $filename);
+		$manifest = self::get_manifest();
 
-    foreach ($manifest as $key => $value) {
-      // Check if this entry has CSS files
-      if (isset($value["css"]) && is_array($value["css"])) {
-        foreach ($value["css"] as $css_file) {
-          // Check if the CSS file matches our search pattern
-          if (
-            strpos($css_file, $search_filename) !== false ||
-            strpos($css_file, $search_path) !== false
-          ) {
-            return $css_file;
-          }
-        }
-      }
+		if ( empty( $manifest ) ) {
+			return null;
+		}
 
-      // Also check direct CSS entries in the manifest
-      if (isset($value["file"]) && preg_match('/\.css$/', $value["file"])) {
-        if (
-          strpos($value["file"], $search_filename) !== false ||
-          strpos($value["file"], $search_path) !== false
-        ) {
-          return $value["file"];
-        }
-      }
+		if ( preg_match( '/\.js$/', $filename ) ) {
+			return self::get_stylesheet_from_js_entry( $manifest, $filename );
+		}
 
-      // Check if src matches a CSS file pattern
-      if (isset($value["src"]) && preg_match('/\.css$/', $value["src"])) {
-        if (
-          strpos($value["src"], $search_filename) !== false ||
-          strpos($value["src"], $search_path) !== false
-        ) {
-          return isset($value["file"]) ? $value["file"] : $value["src"];
-        }
-      }
-    }
+		return self::find_stylesheet_in_manifest( $manifest, $filename );
+	}
 
-    return null;
-  }
+
+	/**
+	 * Get and decode the Vite manifest file.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private static function get_manifest() {
+		static $manifest = null;
+
+		if ( null !== $manifest ) {
+			return $manifest;
+		}
+
+		$manifest = array();
+
+		$manifest_path = self::get_manifest_path();
+
+		if ( ! file_exists( $manifest_path ) || ! is_readable( $manifest_path ) ) {
+			return $manifest;
+		}
+
+		$manifest_content = file_get_contents( $manifest_path );
+
+		if ( false === $manifest_content || empty( $manifest_content ) ) {
+			return $manifest;
+		}
+
+		$decoded_manifest = json_decode( $manifest_content, true );
+
+		if ( ! is_array( $decoded_manifest ) ) {
+			return $manifest;
+		}
+
+		$manifest = $decoded_manifest;
+
+		return $manifest;
+	}
+
+
+	/**
+	 * Get the absolute manifest file path.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private static function get_manifest_path() {
+		return FLEXIFY_DASHBOARD_PLUGIN_PATH . self::MANIFEST_PATH;
+	}
+
+
+	/**
+	 * Get the stylesheet attached to a JavaScript entry.
+	 *
+	 * @since 2.0.0
+	 * @param array  $manifest Manifest data.
+	 * @param string $filename JavaScript filename.
+	 * @return string|null
+	 */
+	private static function get_stylesheet_from_js_entry( $manifest, $filename ) {
+		$target_src = 'apps/js/' . ltrim( $filename, '/' );
+
+		foreach ( $manifest as $entry ) {
+			if ( ! is_array( $entry ) ) {
+				continue;
+			}
+
+			if ( ! isset( $entry['src'] ) || $target_src !== $entry['src'] ) {
+				continue;
+			}
+
+			if ( isset( $entry['css'] ) && is_array( $entry['css'] ) && ! empty( $entry['css'][0] ) ) {
+				return $entry['css'][0];
+			}
+
+			return null;
+		}
+
+		return null;
+	}
+
+
+	/**
+	 * Find a stylesheet directly in the manifest.
+	 *
+	 * @since 2.0.0
+	 * @param array  $manifest Manifest data.
+	 * @param string $filename Stylesheet filename.
+	 * @return string|null
+	 */
+	private static function find_stylesheet_in_manifest( $manifest, $filename ) {
+		$search_filename = basename( $filename );
+		$search_path     = str_replace( 'assets/styles/', '', $filename );
+
+		foreach ( $manifest as $entry ) {
+			if ( ! is_array( $entry ) ) {
+				continue;
+			}
+
+			$css_match = self::find_css_match_in_entry( $entry, $search_filename, $search_path );
+
+			if ( ! empty( $css_match ) ) {
+				return $css_match;
+			}
+
+			$file_match = self::find_file_match_in_entry( $entry, $search_filename, $search_path );
+
+			if ( ! empty( $file_match ) ) {
+				return $file_match;
+			}
+
+			$src_match = self::find_src_match_in_entry( $entry, $search_filename, $search_path );
+
+			if ( ! empty( $src_match ) ) {
+				return $src_match;
+			}
+		}
+
+		return null;
+	}
+
+
+	/**
+	 * Search CSS assets inside a manifest entry.
+	 *
+	 * @since 2.0.0
+	 * @param array  $entry           Manifest entry.
+	 * @param string $search_filename Stylesheet filename.
+	 * @param string $search_path     Normalized stylesheet path.
+	 * @return string|null
+	 */
+	private static function find_css_match_in_entry( $entry, $search_filename, $search_path ) {
+		if ( empty( $entry['css'] ) || ! is_array( $entry['css'] ) ) {
+			return null;
+		}
+
+		foreach ( $entry['css'] as $css_file ) {
+			if ( self::matches_asset( $css_file, $search_filename, $search_path ) ) {
+				return $css_file;
+			}
+		}
+
+		return null;
+	}
+
+
+	/**
+	 * Search direct file entries for CSS assets.
+	 *
+	 * @since 2.0.0
+	 * @param array  $entry           Manifest entry.
+	 * @param string $search_filename Stylesheet filename.
+	 * @param string $search_path     Normalized stylesheet path.
+	 * @return string|null
+	 */
+	private static function find_file_match_in_entry( $entry, $search_filename, $search_path ) {
+		if ( empty( $entry['file'] ) || ! preg_match( '/\.css$/', $entry['file'] ) ) {
+			return null;
+		}
+
+		if ( self::matches_asset( $entry['file'], $search_filename, $search_path ) ) {
+			return $entry['file'];
+		}
+
+		return null;
+	}
+
+
+	/**
+	 * Search source entries for CSS assets.
+	 *
+	 * @since 2.0.0
+	 * @param array  $entry           Manifest entry.
+	 * @param string $search_filename Stylesheet filename.
+	 * @param string $search_path     Normalized stylesheet path.
+	 * @return string|null
+	 */
+	private static function find_src_match_in_entry( $entry, $search_filename, $search_path ) {
+		if ( empty( $entry['src'] ) || ! preg_match( '/\.css$/', $entry['src'] ) ) {
+			return null;
+		}
+
+		if ( self::matches_asset( $entry['src'], $search_filename, $search_path ) ) {
+			return ! empty( $entry['file'] ) ? $entry['file'] : $entry['src'];
+		}
+
+		return null;
+	}
+
+
+	/**
+	 * Check whether an asset path matches the requested filename.
+	 *
+	 * @since 2.0.0
+	 * @param string $asset_path      Asset path from manifest.
+	 * @param string $search_filename Stylesheet filename.
+	 * @param string $search_path     Normalized stylesheet path.
+	 * @return bool
+	 */
+	private static function matches_asset( $asset_path, $search_filename, $search_path ) {
+		if ( empty( $asset_path ) || ! is_string( $asset_path ) ) {
+			return false;
+		}
+
+		if ( false !== strpos( $asset_path, $search_filename ) ) {
+			return true;
+		}
+
+		if ( false !== strpos( $asset_path, $search_path ) ) {
+			return true;
+		}
+
+		return false;
+	}
 }

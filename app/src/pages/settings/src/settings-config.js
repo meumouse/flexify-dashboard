@@ -14,7 +14,7 @@
  * - customComponent: For special cases that need custom rendering
  * - customRender: For completely custom rendering logic
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 
 /**

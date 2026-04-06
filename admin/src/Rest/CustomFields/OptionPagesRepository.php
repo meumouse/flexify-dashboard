@@ -2,7 +2,7 @@
 namespace MeuMouse\Flexify_Dashboard\Rest\CustomFields;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class OptionPagesRepository

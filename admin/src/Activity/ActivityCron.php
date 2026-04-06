@@ -2,123 +2,249 @@
 
 namespace MeuMouse\Flexify_Dashboard\Activity;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class ActivityCron
- * 
- * Handles scheduled cleanup tasks for activity logs
- * 
- * @since 1.0.0
+ *
+ * Handle scheduled cleanup tasks for activity logs.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Activity
+ * @author MeuMouse.com
  */
-class ActivityCron
-{
-    /**
-     * ActivityCron constructor.
-     */
-    public function __construct()
-    {
-        // Schedule cleanup if not already scheduled
-        if (!wp_next_scheduled('flexify_dashboard_activity_log_cleanup')) {
-            wp_schedule_event(time(), 'daily', 'flexify_dashboard_activity_log_cleanup');
-        }
-        
-        add_action('flexify_dashboard_activity_log_cleanup', [$this, 'cleanup_old_logs']);
-    }
+class ActivityCron {
+    
+	/**
+	 * Cleanup cron hook.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const CLEANUP_HOOK = 'flexify_dashboard_activity_log_cleanup';
 
-    /**
-     * Cleans up old activity logs based on retention policy
-     * 
-     * @return void
-     * @since 1.0.0
-     */
-    public function cleanup_old_logs()
-    {
-        // Check if activity logger is enabled
-        if (!ActivityDatabase::is_activity_logger_enabled()) {
-            return;
-        }
+	/**
+	 * Flush cron hook.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const FLUSH_HOOK = 'flexify_dashboard_activity_log_flush';
 
-        // Check if auto cleanup is enabled
-        $settings = get_option('flexify_dashboard_settings', []);
-        if (!isset($settings['activity_log_auto_cleanup']) || !$settings['activity_log_auto_cleanup']) {
-            return;
-        }
+	/**
+	 * Plugin settings option key.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const SETTINGS_OPTION = 'flexify_dashboard_settings';
 
-        // Get retention period (default 90 days)
-        $retention_days = isset($settings['activity_log_retention_days']) ? absint($settings['activity_log_retention_days']) : 90;
+	/**
+	 * Activity log table suffix.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const TABLE_SUFFIX = 'flexify_dashboard_activity_log';
 
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'flexify_dashboard_activity_log';
+	/**
+	 * Default retention days.
+	 *
+	 * @since 2.0.0
+	 * @var int
+	 */
+	const DEFAULT_RETENTION_DAYS = 90;
 
-        // Check if table exists
-        if (!$wpdb->get_var($wpdb->prepare("SHOW TABLES LIKE %s", $table_name))) {
-            return;
-        }
 
-        // Calculate cutoff date
-        $cutoff_date = date('Y-m-d H:i:s', strtotime("-{$retention_days} days"));
+	/**
+	 * Class constructor.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		$this->maybe_schedule_cleanup();
 
-        // Delete old logs
-        $wpdb->query(
-            $wpdb->prepare(
-                "DELETE FROM {$table_name} WHERE created_at < %s",
-                $cutoff_date
-            )
-        );
-    }
+		add_action( self::CLEANUP_HOOK, array( $this, 'cleanup_old_logs' ) );
+	}
 
-    /**
-     * Manually triggers cleanup of old logs
-     * 
-     * @return int Number of deleted rows
-     * @since 1.0.0
-     */
-    public static function manual_cleanup()
-    {
-        $settings = get_option('flexify_dashboard_settings', []);
-        $retention_days = isset($settings['activity_log_retention_days']) ? absint($settings['activity_log_retention_days']) : 90;
 
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'flexify_dashboard_activity_log';
+	/**
+	 * Schedule cleanup event if it is not already registered.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	private function maybe_schedule_cleanup() {
+		if ( wp_next_scheduled( self::CLEANUP_HOOK ) ) {
+			return;
+		}
 
-        // Check if table exists
-        if (!$wpdb->get_var($wpdb->prepare("SHOW TABLES LIKE %s", $table_name))) {
-            return 0;
-        }
+		wp_schedule_event( time(), 'daily', self::CLEANUP_HOOK );
+	}
 
-        // Calculate cutoff date
-        $cutoff_date = date('Y-m-d H:i:s', strtotime("-{$retention_days} days"));
 
-        // Delete old logs
-        $deleted = $wpdb->query(
-            $wpdb->prepare(
-                "DELETE FROM {$table_name} WHERE created_at < %s",
-                $cutoff_date
-            )
-        );
+	/**
+	 * Clean up old activity logs based on retention policy.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function cleanup_old_logs() {
+		if ( ! ActivityDatabase::is_activity_logger_enabled() ) {
+			return;
+		}
 
-        return $deleted;
-    }
+		if ( ! $this->is_auto_cleanup_enabled() ) {
+			return;
+		}
 
-    /**
-     * Unschedules cron jobs
-     * 
-     * @return void
-     * @since 1.0.0
-     */
-    public static function unschedule_cron_jobs()
-    {
-        $timestamp = wp_next_scheduled('flexify_dashboard_activity_log_cleanup');
-        if ($timestamp) {
-            wp_unschedule_event($timestamp, 'flexify_dashboard_activity_log_cleanup');
-        }
+		$this->delete_old_logs();
+	}
 
-        $timestamp = wp_next_scheduled('flexify_dashboard_activity_log_flush');
-        if ($timestamp) {
-            wp_unschedule_event($timestamp, 'flexify_dashboard_activity_log_flush');
-        }
-    }
+
+	/**
+	 * Manually trigger cleanup of old logs.
+	 *
+	 * @since 2.0.0
+	 * @return int Number of deleted rows.
+	 */
+	public static function manual_cleanup() {
+		$instance = new self();
+
+		return $instance->delete_old_logs();
+	}
+
+
+	/**
+	 * Unschedule cron jobs used by the activity module.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function unschedule_cron_jobs() {
+		$cleanup_timestamp = wp_next_scheduled( self::CLEANUP_HOOK );
+
+		if ( $cleanup_timestamp ) {
+			wp_unschedule_event( $cleanup_timestamp, self::CLEANUP_HOOK );
+		}
+
+		$flush_timestamp = wp_next_scheduled( self::FLUSH_HOOK );
+
+		if ( $flush_timestamp ) {
+			wp_unschedule_event( $flush_timestamp, self::FLUSH_HOOK );
+		}
+	}
+
+
+	/**
+	 * Delete old activity logs from database.
+	 *
+	 * @since 2.0.0
+	 * @return int Number of deleted rows.
+	 */
+	private function delete_old_logs() {
+		global $wpdb;
+
+		$table_name = $this->get_table_name();
+
+		if ( ! $this->table_exists( $table_name ) ) {
+			return 0;
+		}
+
+		$deleted_rows = $wpdb->query(
+			$wpdb->prepare(
+				"DELETE FROM {$table_name} WHERE created_at < %s",
+				$this->get_cutoff_date()
+			)
+		);
+
+		return false === $deleted_rows ? 0 : absint( $deleted_rows );
+	}
+
+
+	/**
+	 * Check if automatic cleanup is enabled.
+	 *
+	 * @since 2.0.0
+	 * @return bool
+	 */
+	private function is_auto_cleanup_enabled() {
+		$settings = $this->get_settings();
+
+		return ! empty( $settings['activity_log_auto_cleanup'] );
+	}
+
+
+	/**
+	 * Get plugin settings.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_settings() {
+		$settings = get_option( self::SETTINGS_OPTION, array() );
+
+		return is_array( $settings ) ? $settings : array();
+	}
+
+
+	/**
+	 * Get retention period in days.
+	 *
+	 * @since 2.0.0
+	 * @return int
+	 */
+	private function get_retention_days() {
+		$settings = $this->get_settings();
+		$retention_days = isset( $settings['activity_log_retention_days'] ) ? absint( $settings['activity_log_retention_days'] ) : self::DEFAULT_RETENTION_DAYS;
+
+		if ( $retention_days <= 0 ) {
+			$retention_days = self::DEFAULT_RETENTION_DAYS;
+		}
+
+		return $retention_days;
+	}
+
+
+	/**
+	 * Get the activity log table name.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private function get_table_name() {
+		global $wpdb;
+
+		return $wpdb->prefix . self::TABLE_SUFFIX;
+	}
+
+
+	/**
+	 * Check if the activity log table exists.
+	 *
+	 * @since 2.0.0
+	 * @param string $table_name Database table name.
+	 * @return bool
+	 */
+	private function table_exists( $table_name ) {
+		global $wpdb;
+
+		$found_table = $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table_name ) );
+
+		return $found_table === $table_name;
+	}
+
+
+	/**
+	 * Get the cutoff date for old log deletion.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private function get_cutoff_date() {
+		$timestamp = current_time( 'timestamp' ) - ( DAY_IN_SECONDS * $this->get_retention_days() );
+
+		return wp_date( 'Y-m-d H:i:s', $timestamp );
+	}
 }
-

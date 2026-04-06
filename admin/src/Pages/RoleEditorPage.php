@@ -5,127 +5,141 @@ namespace MeuMouse\Flexify_Dashboard\Pages;
 use MeuMouse\Flexify_Dashboard\Options\Settings;
 use MeuMouse\Flexify_Dashboard\Utility\Scripts;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class RoleEditorPage
  *
- * Handles the role editor page for WordPress user roles and capabilities
+ * Handle the role editor admin page for WordPress roles and capabilities.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Pages
+ * @author MeuMouse.com
  */
-class RoleEditorPage
-{
-  /**
-   * RoleEditorPage constructor.
-   *
-   * Sets up the necessary hooks for the role editor page
-   */
-  public function __construct()
-  {
-    add_action("admin_menu", [$this, "setup_admin_page"]);
-  }
+class RoleEditorPage {
 
-  /**
-   * Sets up the admin page by adding it to the uiXPress menu
-   *
-   * @return void
-   */
-  public function setup_admin_page()
-  {
-    if (!current_user_can("manage_options")) {
-      return;
-    }
+	/**
+	 * Constructor.
+	 *
+	 * Register hooks for the role editor page.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'admin_menu', array( $this, 'setup_admin_page' ) );
+	}
 
-    // Check if role editor is enabled
-    if (!Settings::is_enabled("enable_role_editor")) {
-      return;
-    }
 
-    $menu_name = __("Role Editor", "flexify-dashboard");
-    $hook_suffix = add_submenu_page(
-      "flexify-dashboard-settings",
-      $menu_name,
-      $menu_name,
-      "manage_options",
-      "flexify-dashboard-role-editor",
-      [$this, "render_page"]
-    );
+	/**
+	 * Set up the role editor admin page.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function setup_admin_page() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
 
-    add_action("admin_head-{$hook_suffix}", [$this, "load_styles"]);
-    add_action("admin_head-{$hook_suffix}", [$this, "load_scripts"]);
-  }
+		if ( ! Settings::is_enabled( 'enable_role_editor' ) ) {
+			return;
+		}
 
-  /**
-   * Loads role editor styles
-   *
-   * @return void
-   */
-  public static function load_styles()
-  {
-    $url = plugins_url("flexify-dashboard/");
-    $style = $url . "app/dist/assets/styles/role-editor.css";
-    wp_enqueue_style("flexify-dashboard-role-editor", $style, [], FLEXIFY_DASHBOARD_VERSION);
+		$menu_name = __( 'Role Editor', 'flexify-dashboard' );
 
-    add_filter('flexify-dashboard/style-layering/exclude', function($excluded_patterns) use ($style) {
-      $excluded_patterns[] = $style;
-      return $excluded_patterns;
-    });
-  }
+		$hook_suffix = add_submenu_page(
+			'flexify-dashboard-settings',
+			$menu_name,
+			$menu_name,
+			'manage_options',
+			'flexify-dashboard-role-editor',
+			array( $this, 'render_page' )
+		);
 
-  /**
-   * Loads role editor scripts
-   *
-   * @return void
-   */
-  public static function load_scripts()
-  {
-    $url = plugins_url("flexify-dashboard/");
-    $script_name = Scripts::get_base_script_path("RoleEditor.js");
+		if ( ! $hook_suffix ) {
+			return;
+		}
 
-    if (!$script_name) {
-      return;
-    }
+		add_action( "admin_head-{$hook_suffix}", array( __CLASS__, 'load_styles' ) );
+		add_action( "admin_head-{$hook_suffix}", array( __CLASS__, 'load_scripts' ) );
+	}
 
-    // Get plugin settings
-    $options = Settings::get();
-    $plugin_name = Settings::get_setting("plugin_name", "uiXPress");
-    $plugin_name = $plugin_name != "" ? esc_html($plugin_name) : "uiXPress";
 
-    // Get current user and escape user data for security
-    $current_user = wp_get_current_user();
-    if (!$current_user || !$current_user->exists()) {
-      return;
-    }
+	/**
+	 * Load role editor styles.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function load_styles() {
+		$base_url   = plugins_url( 'flexify-dashboard/' );
+		$style_path = $base_url . 'app/dist/assets/styles/role-editor.css';
 
-    wp_print_script_tag([
-      "id" => "fd-role-editor-script",
-      "src" => $url . "app/dist/{$script_name}",
-      "plugin-base" => esc_url($url),
-      "rest-base" => esc_url(rest_url()),
-      "rest-nonce" => wp_create_nonce("wp_rest"),
-      "admin-url" => esc_url(admin_url()),
-      "site-url" => esc_url(site_url()),
-      "user-id" => absint($current_user->ID),
-      "user-name" => esc_attr($current_user->display_name),
-      "user-email" => esc_attr($current_user->user_email),
-      "flexify-dashboard-settings" => wp_json_encode($options),
-      "type" => "module",
-    ]);
-  }
+		wp_enqueue_style( 'flexify-dashboard-role-editor', $style_path, array(), FLEXIFY_DASHBOARD_VERSION );
 
-  /**
-   * Renders the role editor page content
-   *
-   * @return void
-   */
-  public function render_page()
-  {
-    if (!current_user_can("manage_options")) {
-      wp_die(__("You do not have sufficient permissions to access this page.", "flexify-dashboard"));
-    }
-    ?>
-    <div id="fd-role-editor-page"></div>
-    <?php
-  }
+		add_filter(
+			'flexify-dashboard/style-layering/exclude',
+			function( $excluded_patterns ) use ( $style_path ) {
+				$excluded_patterns[] = $style_path;
+
+				return $excluded_patterns;
+			}
+		);
+	}
+
+
+	/**
+	 * Load role editor scripts.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function load_scripts() {
+		$base_url    = plugins_url( 'flexify-dashboard/' );
+		$script_name = Scripts::get_base_script_path( 'RoleEditor.js' );
+
+		if ( empty( $script_name ) ) {
+			return;
+		}
+
+		$options = Settings::get();
+		$current_user = wp_get_current_user();
+
+		if ( ! $current_user || ! $current_user->exists() ) {
+			return;
+		}
+
+		wp_print_script_tag(
+			array(
+				'id'                         => 'fd-role-editor-script',
+				'src'                        => $base_url . "app/dist/{$script_name}",
+				'plugin-base'                => esc_url( $base_url ),
+				'rest-base'                  => esc_url( rest_url() ),
+				'rest-nonce'                 => wp_create_nonce( 'wp_rest' ),
+				'admin-url'                  => esc_url( admin_url() ),
+				'site-url'                   => esc_url( site_url() ),
+				'user-id'                    => absint( $current_user->ID ),
+				'user-name'                  => esc_attr( $current_user->display_name ),
+				'user-email'                 => esc_attr( $current_user->user_email ),
+				'flexify-dashboard-settings' => esc_attr( wp_json_encode( $options ) ),
+				'type'                       => 'module',
+			)
+		);
+	}
+
+
+	/**
+	 * Render the role editor page content.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function render_page() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'flexify-dashboard' ) );
+		}
+
+		echo '<div id="fd-role-editor-page"></div>';
+	}
 }
-

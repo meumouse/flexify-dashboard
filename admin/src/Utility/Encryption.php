@@ -2,93 +2,169 @@
 
 namespace MeuMouse\Flexify_Dashboard\Utility;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class Encryption
  *
- * Provides encryption and decryption functionality using AES-256-CBC.
+ * Provide encryption and decryption helpers using OpenSSL.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Utility
+ * @author MeuMouse.com
  */
-class Encryption
-{
-  /**
-   * Decrypts an encrypted string.
-   *
-   * @param string $string The encrypted string to decrypt.
-   * @return string|false The decrypted string or false on failure.
-   */
-  public static function decrypt($raw_value)
-  {
-    if (!extension_loaded("openssl")) {
-      return $raw_value;
-    }
+class Encryption {
 
-    $raw_value = base64_decode($raw_value, true);
-    $method = "aes-256-ctr";
-    $ivlen = openssl_cipher_iv_length($method);
-    $iv = substr($raw_value, 0, $ivlen);
-    $raw_value = substr($raw_value, $ivlen);
+	/**
+	 * Cipher method used for encryption.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const METHOD = 'aes-256-ctr';
 
-    $value = openssl_decrypt($raw_value, $method, LOGGED_IN_KEY, 0, $iv);
+	/**
+	 * Decrypt an encrypted value.
+	 *
+	 * @since 2.0.0
+	 * @param string $raw_value Encrypted value.
+	 * @return string|false
+	 */
+	public static function decrypt( $raw_value ) {
+		if ( ! self::is_openssl_available() ) {
+			return $raw_value;
+		}
 
-    if (!$value || substr($value, -strlen(LOGGED_IN_SALT)) !== LOGGED_IN_SALT) {
-      return false;
-    }
+		if ( empty( $raw_value ) || ! is_string( $raw_value ) ) {
+			return false;
+		}
 
-    return substr($value, 0, -strlen(LOGGED_IN_SALT));
-  }
+		$decoded_value = base64_decode( $raw_value, true );
 
-  /**
-   * Encrypts a string using AES-256-CBC.
-   *
-   * @param string $string The string to encrypt.
-   * @return string The encrypted string.
-   */
-  public static function encrypt($value)
-  {
-    if (!extension_loaded("openssl")) {
-      return $value;
-    }
+		if ( false === $decoded_value ) {
+			return false;
+		}
 
-    // Check if the value is already encrypted
-    if (self::isEncrypted($value)) {
-      return $value;
-    }
+		$iv_length = openssl_cipher_iv_length( self::METHOD );
 
-    $method = "aes-256-ctr";
-    $ivlen = openssl_cipher_iv_length($method);
-    $iv = openssl_random_pseudo_bytes($ivlen);
+		if ( empty( $iv_length ) || strlen( $decoded_value ) <= $iv_length ) {
+			return false;
+		}
 
-    $raw_value = openssl_encrypt($value . LOGGED_IN_SALT, $method, LOGGED_IN_KEY, 0, $iv);
+		$iv              = substr( $decoded_value, 0, $iv_length );
+		$encrypted_value = substr( $decoded_value, $iv_length );
 
-    if (!$raw_value) {
-      return false;
-    }
+		$value = openssl_decrypt( $encrypted_value, self::METHOD, LOGGED_IN_KEY, 0, $iv );
 
-    return base64_encode($iv . $raw_value);
-  }
+		if ( false === $value ) {
+			return false;
+		}
 
-  /**
-   * Checks if a value is already encrypted.
-   *
-   * @param string $value The value to check.
-   * @return bool True if the value is encrypted, false otherwise.
-   */
-  public static function isEncrypted($value)
-  {
-    $method = "aes-256-ctr";
-    $ivlen = openssl_cipher_iv_length($method);
+		$salt_length = strlen( LOGGED_IN_SALT );
 
-    $decoded_value = base64_decode($value, true);
+		if ( substr( $value, -$salt_length ) !== LOGGED_IN_SALT ) {
+			return false;
+		}
 
-    if (strlen($decoded_value) < $ivlen) {
-      return false;
-    }
+		return substr( $value, 0, -$salt_length );
+	}
 
-    $iv = substr($decoded_value, 0, $ivlen);
-    $raw_value = substr($decoded_value, $ivlen);
 
-    return !empty($raw_value);
-  }
+	/**
+	 * Encrypt a value.
+	 *
+	 * @since 2.0.0
+	 * @param string $value Plain value.
+	 * @return string|false
+	 */
+	public static function encrypt( $value ) {
+		if ( ! self::is_openssl_available() ) {
+			return $value;
+		}
+
+		if ( ! is_string( $value ) || '' === $value ) {
+			return false;
+		}
+
+		if ( self::is_encrypted( $value ) ) {
+			return $value;
+		}
+
+		$iv_length = openssl_cipher_iv_length( self::METHOD );
+
+		if ( empty( $iv_length ) ) {
+			return false;
+		}
+
+		try {
+			$iv = random_bytes( $iv_length );
+		} catch ( \Exception $e ) {
+			error_log( 'Encryption IV generation failed: ' . $e->getMessage() );
+
+			return false;
+		}
+
+		$encrypted_value = openssl_encrypt( $value . LOGGED_IN_SALT, self::METHOD, LOGGED_IN_KEY, 0, $iv );
+
+		if ( false === $encrypted_value ) {
+			return false;
+		}
+
+		return base64_encode( $iv . $encrypted_value );
+	}
+
+
+	/**
+	 * Check if a value appears to be encrypted by this helper.
+	 *
+	 * @since 2.0.0
+	 * @param string $value Value to inspect.
+	 * @return bool
+	 */
+	public static function is_encrypted( $value ) {
+		if ( ! self::is_openssl_available() ) {
+			return false;
+		}
+
+		if ( empty( $value ) || ! is_string( $value ) ) {
+			return false;
+		}
+
+		$decoded_value = base64_decode( $value, true );
+
+		if ( false === $decoded_value ) {
+			return false;
+		}
+
+		$iv_length = openssl_cipher_iv_length( self::METHOD );
+
+		if ( empty( $iv_length ) || strlen( $decoded_value ) <= $iv_length ) {
+			return false;
+		}
+
+		return false !== self::decrypt( $value );
+	}
+
+
+	/**
+	 * Backward-compatible alias for encrypted value checks.
+	 *
+	 * @since 2.0.0
+	 * @param string $value Value to inspect.
+	 * @return bool
+	 */
+	public static function isEncrypted( $value ) {
+		return self::is_encrypted( $value );
+	}
+
+
+	/**
+	 * Check if the OpenSSL extension is available.
+	 *
+	 * @since 2.0.0
+	 * @return bool
+	 */
+	private static function is_openssl_available() {
+		return extension_loaded( 'openssl' );
+	}
 }

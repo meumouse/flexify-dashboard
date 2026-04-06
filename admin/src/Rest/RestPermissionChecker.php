@@ -3,7 +3,7 @@
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class RestPermissionChecker
@@ -12,7 +12,7 @@ defined("ABSPATH") || exit();
  * - Local requests: Nonce verification (CSRF protection)
  * - Remote requests: Basic Auth with application password validation
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 class RestPermissionChecker
 {

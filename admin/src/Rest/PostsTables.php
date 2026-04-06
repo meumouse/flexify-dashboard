@@ -8,7 +8,7 @@ use MeuMouse\Flexify_Dashboard\Utility\CaptureStyles;
 use WP_Query;
 use WP_Screen;
 
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class PostsTables

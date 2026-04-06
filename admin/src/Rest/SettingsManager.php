@@ -7,7 +7,7 @@ use MeuMouse\Flexify_Dashboard\Options\Settings;
 use WP_REST_Request;
 use WP_REST_Response;
 
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 class SettingsManager
 {

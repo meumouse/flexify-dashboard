@@ -6,7 +6,7 @@ use MeuMouse\Flexify_Dashboard\Rest\CustomFields\OptionPageRenderer;
 use MeuMouse\Flexify_Dashboard\Rest\CustomFields\OptionPagesScriptLoader;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class OptionPagesLoader

@@ -10,7 +10,7 @@ use MeuMouse\Flexify_Dashboard\Rest\CustomFields\FieldSaver;
 use MeuMouse\Flexify_Dashboard\Rest\RestPermissionChecker;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class CustomFields

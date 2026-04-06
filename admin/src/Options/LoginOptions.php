@@ -1,46 +1,44 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Options;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class LoginOptions
  *
- * Handles text replacement functionality in the WordPress admin area.
+ * Handle login page option customizations.
  *
- * @package UiXpress\Options
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Options
+ * @author MeuMouse.com
  */
-class LoginOptions
-{
-  /**
-   * Stores the global options.
-   *
-   * @var array|null
-   */
-  private static $options = null;
+class LoginOptions {
 
-  /**
-   * TextReplacement constructor.
-   *
-   * Initializes the class and adds filters for text replacement.
-   */
-  public function __construct()
-  {
-    add_filter("login_display_language_dropdown", [$this, "maybe_remove_language_switcher"], 20);
-  }
-
-  /**
-   * Checks if language selector should be hidden on login page.
-   *
-   * @return bool False if language selector should be hidden, true otherwise.
-   */
-  public static function maybe_remove_language_switcher()
-  {
-    if (Settings::is_enabled("hide_language_selector")) {
-      return false;
+    /**
+     * Class constructor.
+     *
+     * Register login-related hooks.
+     *
+     * @since 2.0.0
+     * @return void
+     */
+    public function __construct() {
+        add_filter( 'login_display_language_dropdown', array( $this, 'maybe_remove_language_switcher' ), 20 );
     }
 
-    return true;
-  }
+
+    /**
+     * Determine whether the language selector should be displayed on the login page.
+     *
+     * @since 2.0.0
+     * @return bool False to hide the language selector. True to display it.
+     */
+    public static function maybe_remove_language_switcher(): bool {
+        if ( Settings::is_enabled( 'hide_language_selector' ) ) {
+            return false;
+        }
+
+        return true;
+    }
 }

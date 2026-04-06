@@ -4,7 +4,7 @@
  * Maps setting types to their Vue components.
  * This allows dynamic rendering of settings based on their type.
  * 
- * @since 1.0.0
+ * @since 2.0.0
  */
 
 import { defineAsyncComponent } from 'vue';

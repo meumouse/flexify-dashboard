@@ -6,7 +6,7 @@ use MeuMouse\Flexify_Dashboard\Analytics\AnalyticsDatabase;
 use MeuMouse\Flexify_Dashboard\Analytics\AnalyticsProviderRouter;
 
 // Prevent direct access to this file
-defined("ABSPATH") || exit();
+defined('ABSPATH') || exit();
 
 /**
  * Class Analytics
@@ -28,7 +28,7 @@ class Analytics
      * Registers analytics REST API routes
      * 
      * @return void
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function register_analytics_routes()
     {
@@ -208,7 +208,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request The REST request object
      * @return bool|WP_Error True if user has permission, WP_Error otherwise
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function check_analytics_view_permissions($request)
     {
@@ -224,7 +224,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request The REST request object
      * @return bool True if user has permission, false otherwise
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function check_analytics_track_permissions($request)
     {
@@ -252,7 +252,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request The REST request object
      * @return bool|WP_Error True if user has permission, WP_Error otherwise
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function check_analytics_permissions($request)
     {
@@ -266,7 +266,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request The REST request object
      * @return \WP_REST_Response|\WP_Error Response with active users data or error
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function get_active_users($request)
     {
@@ -310,7 +310,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request The REST request object
      * @return \WP_REST_Response|\WP_Error Response with analytics data or error
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function get_analytics_stats($request)
     {
@@ -370,7 +370,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request The REST request object
      * @return \WP_REST_Response|\WP_Error Response with tracking result or error
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function track_analytics_event($request)
     {
@@ -469,7 +469,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request The REST request object
      * @return \WP_REST_Response Response with analytics settings
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function get_analytics_settings($request)
     {
@@ -493,7 +493,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request The REST request object
      * @return \WP_REST_Response|\WP_Error Response with update result or error
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function update_analytics_settings($request)
     {
@@ -520,7 +520,7 @@ class Analytics
      * @param string $start_date Start date for current period
      * @param string $end_date End date for current period
      * @return array Array with comparison start and end dates
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_comparison_period($start_date, $end_date)
     {
@@ -550,7 +550,7 @@ class Analytics
      * @param string $end_date End date for stats
      * @param string|null $page_url Optional page URL filter
      * @return array Overview statistics
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_overview_stats($start_date, $end_date, $page_url = null)
     {
@@ -612,7 +612,7 @@ class Analytics
      * @param string $end_date End date for stats
      * @param string|null $page_url Optional page URL filter
      * @return array Pages statistics
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_pages_stats($start_date, $end_date, $page_url = null)
     {
@@ -646,7 +646,7 @@ class Analytics
      * @param string $start_date Start date for stats
      * @param string $end_date End date for stats
      * @return array Referrers statistics
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_referrers_stats($start_date, $end_date)
     {
@@ -675,7 +675,7 @@ class Analytics
      * @param string $start_date Start date for stats
      * @param string $end_date End date for stats
      * @return array Devices statistics
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_devices_stats($start_date, $end_date)
     {
@@ -706,7 +706,7 @@ class Analytics
      * @param string $start_date Start date for stats
      * @param string $end_date End date for stats
      * @return array Geographic statistics
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_geo_stats($start_date, $end_date)
     {
@@ -736,7 +736,7 @@ class Analytics
      * @param string|null $start_date Start date for filtering
      * @param string|null $end_date End date for filtering
      * @return array Events statistics
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_events_stats($start_date, $end_date)
     {
@@ -800,7 +800,7 @@ class Analytics
      * @param string|null $timezone Browser timezone
      * @param string|null $browser_time Browser time in ISO format
      * @return int Number of active users
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_active_users_count($timezone = null, $browser_time = null)
     {
@@ -827,7 +827,7 @@ class Analytics
      * @param string|null $timezone Browser timezone
      * @param string|null $browser_time Browser time in ISO format
      * @return string Cutoff time in MySQL format
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function calculate_cutoff_time($timezone = null, $browser_time = null)
     {
@@ -862,7 +862,7 @@ class Analytics
      * 
      * @param array $data Page view data
      * @return int|false Page view ID on success, false on failure
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function insert_page_view($data)
     {
@@ -880,7 +880,7 @@ class Analytics
      * 
      * @param string $user_agent User agent string
      * @return array Parsed client information
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function parse_user_agent($user_agent)
     {
@@ -936,7 +936,7 @@ class Analytics
      * Gets geographic information (placeholder - would integrate with GeoIP service)
      * 
      * @return array Geographic information
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_geo_info()
     {
@@ -954,7 +954,7 @@ class Analytics
      * Uses cookies as fallback since PHP sessions don't work reliably in REST API context
      * 
      * @return string Session ID
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function get_or_create_session_id()
     {
@@ -983,7 +983,7 @@ class Analytics
      * Generates a secure session ID
      * 
      * @return string Session ID
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function generate_session_id()
     {
@@ -996,7 +996,7 @@ class Analytics
      * 
      * @param string $ip IP address
      * @return string Hashed IP
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function hash_ip($ip)
     {
@@ -1009,7 +1009,7 @@ class Analytics
      * @param string $session_id Session ID
      * @param string $page_url Page URL
      * @return bool True if unique visitor
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function is_unique_visitor($session_id, $page_url)
     {
@@ -1031,7 +1031,7 @@ class Analytics
      * 
      * @param string $url URL
      * @return string|null Domain or null
-     * @since 1.0.0
+     * @since 2.0.0
      */
     private function extract_domain($url)
     {
@@ -1050,7 +1050,7 @@ class Analytics
      * 
      * @param \WP_REST_Request $request REST request object
      * @return \WP_REST_Response|\WP_Error Response object
-     * @since 1.0.0
+     * @since 2.0.0
      */
     public function get_chart_data($request)
     {
