@@ -8,6 +8,7 @@ import {
   defineAsyncComponent,
   defineProps,
   defineEmits,
+  onMounted,
 } from 'vue';
 
 // Store
@@ -48,6 +49,15 @@ const newKey = ref('');
 const keyactions = ref(false);
 const saving = ref(false);
 const confirm = ref(null);
+const licenseStatus = ref({
+  is_valid: false,
+  license_key: '',
+  license_title: '',
+  expire_date: '',
+  support_end: '',
+  renew_link: '',
+  status_source: 'none',
+});
 const submenuStyles = {
   click: { value: 'click', label: __('Click', 'flexify-dashboard') },
   hover: { value: 'hover', label: __('Hover', 'flexify-dashboard') },
@@ -119,6 +129,25 @@ const updateSettings = async () => {
 };
 
 /**
+ * Load current backend license status.
+ *
+ * @returns {Promise<void>}
+ */
+const loadLicenseStatus = async () => {
+  const response = await lmnFetch({
+    endpoint: 'flexify-dashboard/v1/license/status',
+    type: 'GET',
+  });
+
+  if (!response?.data) return;
+
+  licenseStatus.value = {
+    ...licenseStatus.value,
+    ...(response.data.data || {}),
+  };
+};
+
+/**
  * Routes license activation to the appropriate service based on key prefix.
  * Keys starting with "UIXP-" use Polar.sh, others use LemonSqueezy.
  *
@@ -150,41 +179,26 @@ const activateLicenseKey = async () => {
   keyactions.value = true;
 
   const payload = {
-    data: {
-      license_key: newKey.value.trim(),
-      instance_id: window.location.hostname,
-    },
+    license_key: newKey.value.trim(),
   };
 
   try {
-    const response = await fetch(
-      'https://accounts.uipress.co/api/v1/keys/validate-activate',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      }
-    );
+    const response = await lmnFetch({
+      endpoint: 'flexify-dashboard/v1/license/activate',
+      type: 'POST',
+      data: payload,
+    });
 
     appStore.updateState('loading', false);
     keyactions.value = false;
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      notify({
-        title: errorData.message || __('Failed to activate key', 'flexify-dashboard'),
-        type: 'error',
-      });
+    if (!response?.data) {
       return;
     }
 
-    const result = await response.json();
+    const result = response.data;
 
-    console.log(result);
-
-    if (result.error) {
+    if (!result.success) {
       notify({
         title: result.message || __('Failed to activate key', 'flexify-dashboard'),
         type: 'error',
@@ -194,16 +208,19 @@ const activateLicenseKey = async () => {
 
     if (result.success) {
       notify({
-        title: result.existing
-          ? __('Key already activated for this site', 'flexify-dashboard')
-          : __('Key successfully activated', 'flexify-dashboard'),
+        title: result.message || __('Key successfully activated', 'flexify-dashboard'),
         type: 'success',
       });
 
       flexify_dashboard_settings.value.license_key = newKey.value.trim();
-      flexify_dashboard_settings.value.instance_id = result.activation_id;
+      flexify_dashboard_settings.value.instance_id = '';
+      licenseStatus.value = {
+        ...licenseStatus.value,
+        ...(result.data || {}),
+      };
 
-      updateSettings();
+      await updateSettings();
+      await loadLicenseStatus();
     }
   } catch (error) {
     appStore.updateState('loading', false);
@@ -225,64 +242,34 @@ const activateLicenseKey = async () => {
  * @returns {Promise<void>}
  */
 const validateLicence = async () => {
-  // Nothing to validate
-  if (
-    !flexify_dashboard_settings.value.license_key ||
-    !flexify_dashboard_settings.value.instance_id
-  ) {
+  if (!flexify_dashboard_settings.value.license_key) {
     return;
   }
-
-  // Skip validation for Polar.sh keys
-  if (flexify_dashboard_settings.value.license_key.startsWith('UIXP-')) {
-    return;
-  }
-
-  const payload = {
-    data: {
-      license_key: flexify_dashboard_settings.value.license_key,
-      instance_id: flexify_dashboard_settings.value.instance_id,
-    },
-  };
 
   try {
-    const response = await fetch(
-      'https://accounts.uipress.co/api/v1/keys/validate-activate',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      }
-    );
+    const response = await lmnFetch({
+      endpoint: 'flexify-dashboard/v1/license/validate',
+      type: 'POST',
+      data: {
+        license_key: flexify_dashboard_settings.value.license_key,
+      },
+    });
 
-    if (!response.ok) {
-      // Validation failed - key might be invalid
+    if (!response?.data) {
       return;
     }
 
-    const result = await response.json();
+    const result = response.data;
 
-    if (result.error) {
-      // Key is invalid or activation limit reached
-      // Could notify user or handle error state here if needed
+    if (!result.success) {
       return;
     }
 
-    if (result.success) {
-      // License is valid and activated
-      // Optionally update instance_id if it changed
-      if (
-        result.activation_id &&
-        result.activation_id !== flexify_dashboard_settings.value.instance_id
-      ) {
-        flexify_dashboard_settings.value.instance_id = result.activation_id;
-        updateSettings();
-      }
-    }
+    licenseStatus.value = {
+      ...licenseStatus.value,
+      ...(result.data || {}),
+    };
   } catch (error) {
-    // Network error - silently fail validation
     console.error('License validation error:', error);
   }
 };
@@ -304,75 +291,62 @@ const validateLicence = async () => {
  * @throws Will not throw, but will return early if the response is invalid.
  */
 const removeKey = async () => {
-  appStore.updateState('loading', true);
-  keyactions.value = true;
+  const userResponse = await confirm.value.show({
+    title: __('Remove license?', 'flexify-dashboard'),
+    message: __(
+      'This will deactivate the current license for this site and remove the local license data. This action cannot be undone from here.',
+      'flexify-dashboard'
+    ),
+    okButton: __('Remove', 'flexify-dashboard'),
+    cancelButton: __('Cancel', 'flexify-dashboard'),
+  });
 
-  // Handle Polar.sh keys (no API call needed)
-  if (flexify_dashboard_settings.value.license_key?.startsWith('UIXP-')) {
-    flexify_dashboard_settings.value.license_key = '';
-    flexify_dashboard_settings.value.instance_id = '';
-    newKey.value = '';
-    emits('save');
-    appStore.updateState('loading', false);
-    keyactions.value = false;
-    notify({ title: __('Instance removed', 'flexify-dashboard'), type: 'success' });
+  if (!userResponse) {
     return;
   }
 
-  const payload = {
-    data: {
-      license_key: flexify_dashboard_settings.value.license_key,
-      instance_id: flexify_dashboard_settings.value.instance_id,
-    },
-  };
+  appStore.updateState('loading', true);
+  keyactions.value = true;
 
   try {
-    const response = await fetch(
-      'https://accounts.uipress.co/api/v1/keys/remove-activation',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      }
-    );
+    const response = await lmnFetch({
+      endpoint: 'flexify-dashboard/v1/license/deactivate',
+      type: 'POST',
+      data: {},
+    });
 
     appStore.updateState('loading', false);
     keyactions.value = false;
 
-    // Clear settings regardless of response
     flexify_dashboard_settings.value.license_key = '';
     flexify_dashboard_settings.value.instance_id = '';
     newKey.value = '';
+    licenseStatus.value = {
+      is_valid: false,
+      license_key: '',
+      license_title: '',
+      expire_date: '',
+      support_end: '',
+      renew_link: '',
+      status_source: 'none',
+    };
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
+    if (!response?.data?.success) {
       notify({
         title:
-          errorData.message || __('Failed to remove activation', 'flexify-dashboard'),
-        type: 'error',
-      });
-      // Still update settings to clear local state
-      nextTick(() => {
-        updateSettings();
-      });
-      return;
-    }
-
-    const result = await response.json();
-
-    if (result.error) {
-      notify({
-        title: result.message || __('Failed to remove activation', 'flexify-dashboard'),
+          response?.data?.message || __('Failed to remove activation', 'flexify-dashboard'),
         type: 'error',
       });
     } else {
-      notify({ title: __('Instance removed', 'flexify-dashboard'), type: 'success' });
+      notify({
+        title: response.data.message || __('Instance removed', 'flexify-dashboard'),
+        type: 'success',
+      });
     }
 
-    nextTick(() => {
-      updateSettings();
+    nextTick(async () => {
+      await updateSettings();
+      await loadLicenseStatus();
     });
   } catch (error) {
     appStore.updateState('loading', false);
@@ -382,14 +356,24 @@ const removeKey = async () => {
     flexify_dashboard_settings.value.license_key = '';
     flexify_dashboard_settings.value.instance_id = '';
     newKey.value = '';
+    licenseStatus.value = {
+      is_valid: false,
+      license_key: '',
+      license_title: '',
+      expire_date: '',
+      support_end: '',
+      renew_link: '',
+      status_source: 'none',
+    };
 
     notify({
       title: __('Network error during removal', 'flexify-dashboard'),
       type: 'error',
     });
 
-    nextTick(() => {
-      updateSettings();
+    nextTick(async () => {
+      await updateSettings();
+      await loadLicenseStatus();
     });
   }
 };
@@ -397,14 +381,7 @@ const removeKey = async () => {
 const isActivated = computed(() => {
   if (isNonProduction()) return true;
 
-  if (
-    flexify_dashboard_settings.value.license_key &&
-    flexify_dashboard_settings.value.instance_id
-  ) {
-    return true;
-  }
-
-  return false;
+  return Boolean(licenseStatus.value?.is_valid);
 });
 
 /**
@@ -462,6 +439,11 @@ const handleActivateLicense = async (key) => {
   newKey.value = key;
   await activateLicence();
 };
+
+onMounted(async () => {
+  await loadLicenseStatus();
+  await validateLicence();
+});
 
 const resetSettingsToDefaults = async () => {
   const userResponse = await confirm.value.show({
@@ -598,6 +580,7 @@ const resetSettingsToDefaults = async () => {
           <component
             :is="customHandlers[setting.customRender]"
             :model-value="flexify_dashboard_settings"
+            :license-status="licenseStatus"
             :on-activate="handleActivateLicense"
             :on-remove="removeKey"
             :keyactions="keyactions"

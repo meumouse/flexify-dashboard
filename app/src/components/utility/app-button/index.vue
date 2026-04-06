@@ -99,7 +99,7 @@ const focusRingColor = computed(() => {
 
     <div
       v-if="hasLoader"
-      class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-150"
+      class="absolute transition-opacity duration-150"
       :class="!isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'"
     >
       <svg

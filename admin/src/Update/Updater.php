@@ -1,6 +1,7 @@
 <?php
 namespace MeuMouse\Flexify_Dashboard\Update;
 
+use MeuMouse\Flexify_Dashboard\License\LicenseService;
 use MeuMouse\Flexify_Dashboard\Options\Settings;
 
 // Prevent direct access to this file
@@ -169,8 +170,11 @@ class Updater
    */
   private static function get_license_key()
   {
-    // Get license key from global options using Settings class
-    $license_key = Settings::get_setting("license_key", "");
+    $license_key = LicenseService::get_validated_license_key();
+
+    if (empty($license_key)) {
+      $license_key = Settings::get_setting("license_key", "");
+    }
 
     // Allow filtering the license key
     return apply_filters("flexify_dashboard_license_key", $license_key);

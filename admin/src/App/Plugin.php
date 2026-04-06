@@ -24,6 +24,7 @@ use MeuMouse\Flexify_Dashboard\Pages\PostsList;
 use MeuMouse\Flexify_Dashboard\Pages\RoleEditorPage;
 use MeuMouse\Flexify_Dashboard\Pages\Settings as SettingsPage;
 use MeuMouse\Flexify_Dashboard\Pages\Analytics as AnalyticsPage;
+use MeuMouse\Flexify_Dashboard\Rest\LicenseManager;
 use MeuMouse\Flexify_Dashboard\Rest\ActivityLog as RestActivityLog;
 use MeuMouse\Flexify_Dashboard\Rest\AdminNotices;
 use MeuMouse\Flexify_Dashboard\Rest\Analytics;
@@ -159,6 +160,7 @@ class Plugin {
         new UserAnalytics();
         new SettingsPage();
         new SettingsManager();
+        new LicenseManager();
 
         $login_page = new Login();
 
