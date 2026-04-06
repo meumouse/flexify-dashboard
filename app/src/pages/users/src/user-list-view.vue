@@ -833,10 +833,10 @@ watch(
         </div>
 
         <!-- Search Bar -->
-        <div class="relative">
+        <div class="relative flex items-center">
           <AppIcon
             icon="search"
-            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400 dark:text-zinc-500 text-base pointer-events-none"
+            class="absolute left-3 text-zinc-400 dark:text-zinc-500 text-lg pointer-events-none"
           />
           <input
             v-model="searchQuery"
@@ -1105,6 +1105,7 @@ watch(
       v-model="createUserDrawerOpen"
       :title="__('Create New User', 'flexify-dashboard')"
       size="large"
+      desktop-mode="modal"
     >
       <div class="p-6 space-y-6 overflow-auto">
         <!-- Username -->
@@ -1428,6 +1429,7 @@ watch(
           >
             {{ __('Cancel', 'flexify-dashboard') }}
           </AppButton>
+          
           <AppButton
             type="primary"
             @click="handleCreateUser"

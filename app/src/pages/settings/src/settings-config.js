@@ -556,14 +556,18 @@ export const settingsConfig = [
     id: 'use_classic_post_tables',
     category: 'posts',
     type: 'toggle',
-    label: __('Classic Post List View', 'flexify-dashboard'),
+    label: __('Enable modern list view', 'flexify-dashboard'),
     description: __(
-      "Switch to WordPress's traditional table layout for posts, removing the modern interface.",
+      'Use the modern posts list interface instead of the classic WordPress table layout.',
       'flexify-dashboard'
     ),
     requiresActivation: false,
     componentProps: {
       class: 'max-w-[300px]',
+      options: {
+        false: { label: 'No', value: false },
+        true: { label: 'Yes', value: true },
+      },
     },
   },
 
