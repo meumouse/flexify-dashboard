@@ -1,506 +1,670 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+use WP_Error;
+use WP_REST_Request;
+use WP_REST_Response;
+
+defined('ABSPATH') || exit;
 
 /**
  * Class RoleEditor
  *
- * REST API endpoints for managing WordPress user roles and capabilities
+ * REST API endpoints for managing WordPress user roles and capabilities.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest
+ * @author MeuMouse.com
  */
-class RoleEditor
-{
-  /**
-   * The namespace for the REST API endpoint.
-   *
-   * @var string
-   */
-  private $namespace = "flexify-dashboard/v1";
+class RoleEditor {
+	/**
+	 * REST namespace.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const REST_NAMESPACE = 'flexify-dashboard/v1';
 
-  /**
-   * The base for the REST API endpoint.
-   *
-   * @var string
-   */
-  private $base = "role-editor";
+	/**
+	 * REST route base.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const REST_BASE = 'role-editor';
 
-  /**
-   * Initialize the class and set up REST API routes.
-   */
-  public function __construct()
-  {
-    add_action("rest_api_init", [$this, "register_routes"]);
-  }
+	/**
+	 * Default roles that cannot be deleted.
+	 *
+	 * @since 2.0.0
+	 * @var array
+	 */
+	const DEFAULT_WORDPRESS_ROLES = array(
+		'administrator',
+		'editor',
+		'author',
+		'contributor',
+		'subscriber',
+	);
 
-  /**
-   * Register the REST API routes.
-   */
-  public function register_routes()
-  {
-    // Get role details with capabilities
-    register_rest_route($this->namespace, "/" . $this->base . "/role/(?P<role>[a-zA-Z0-9_-]+)", [
-      "methods" => "GET",
-      "callback" => [$this, "get_role_details"],
-      "permission_callback" => [$this, "permissions_check"],
-    ]);
+	/**
+	 * Constructor.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+	}
 
-    // Update role capabilities
-    register_rest_route($this->namespace, "/" . $this->base . "/role/(?P<role>[a-zA-Z0-9_-]+)", [
-      "methods" => "POST",
-      "callback" => [$this, "update_role_capabilities"],
-      "permission_callback" => [$this, "permissions_check"],
-    ]);
 
-    // Update role name
-    register_rest_route($this->namespace, "/" . $this->base . "/role/(?P<role>[a-zA-Z0-9_-]+)/name", [
-      "methods" => "POST",
-      "callback" => [$this, "update_role_name"],
-      "permission_callback" => [$this, "permissions_check"],
-    ]);
+	/**
+	 * Register REST API routes.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function register_routes() {
+		register_rest_route( self::REST_NAMESPACE, '/' . self::REST_BASE . '/role/(?P<role>[a-zA-Z0-9_-]+)', array(
+			'methods'             => 'GET',
+			'callback'            => array( $this, 'get_role_details' ),
+			'permission_callback' => array( $this, 'permissions_check' ),
+		) );
 
-    // Get all available capabilities
-    register_rest_route($this->namespace, "/" . $this->base . "/capabilities", [
-      "methods" => "GET",
-      "callback" => [$this, "get_all_capabilities"],
-      "permission_callback" => [$this, "permissions_check"],
-    ]);
+		register_rest_route( self::REST_NAMESPACE, '/' . self::REST_BASE . '/role/(?P<role>[a-zA-Z0-9_-]+)', array(
+			'methods'             => 'POST',
+			'callback'            => array( $this, 'update_role_capabilities' ),
+			'permission_callback' => array( $this, 'permissions_check' ),
+		) );
 
-    // Create new role
-    register_rest_route($this->namespace, "/" . $this->base . "/roles", [
-      "methods" => "POST",
-      "callback" => [$this, "create_role"],
-      "permission_callback" => [$this, "permissions_check"],
-    ]);
+		register_rest_route( self::REST_NAMESPACE, '/' . self::REST_BASE . '/role/(?P<role>[a-zA-Z0-9_-]+)/name', array(
+			'methods'             => 'POST',
+			'callback'            => array( $this, 'update_role_name' ),
+			'permission_callback' => array( $this, 'permissions_check' ),
+		) );
 
-    // Delete role
-    register_rest_route($this->namespace, "/" . $this->base . "/role/(?P<role>[a-zA-Z0-9_-]+)", [
-      "methods" => "DELETE",
-      "callback" => [$this, "delete_role"],
-      "permission_callback" => [$this, "permissions_check"],
-    ]);
-  }
+		register_rest_route( self::REST_NAMESPACE, '/' . self::REST_BASE . '/capabilities', array(
+			'methods'             => 'GET',
+			'callback'            => array( $this, 'get_all_capabilities' ),
+			'permission_callback' => array( $this, 'permissions_check' ),
+		) );
 
-  /**
-   * Check if the user has permission to access the endpoint.
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return bool|WP_Error True if the user has permission, WP_Error object otherwise.
-   */
-  public function permissions_check($request)
-  {
-    return RestPermissionChecker::check_permissions($request, 'manage_options');
-  }
+		register_rest_route( self::REST_NAMESPACE, '/' . self::REST_BASE . '/roles', array(
+			'methods'             => 'POST',
+			'callback'            => array( $this, 'create_role' ),
+			'permission_callback' => array( $this, 'permissions_check' ),
+		) );
 
-  /**
-   * Get role details including capabilities
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return WP_REST_Response The response object.
-   */
-  public function get_role_details($request)
-  {
-    $role_slug = sanitize_text_field($request->get_param('role'));
-    
-    // Validate role slug format
-    if (!preg_match('/^[a-zA-Z0-9_-]+$/', $role_slug)) {
-      return new \WP_Error('rest_invalid_role', __('Invalid role format.', 'flexify-dashboard'), ['status' => 400]);
-    }
-    
-    $wp_roles = wp_roles();
+		register_rest_route( self::REST_NAMESPACE, '/' . self::REST_BASE . '/role/(?P<role>[a-zA-Z0-9_-]+)', array(
+			'methods'             => 'DELETE',
+			'callback'            => array( $this, 'delete_role' ),
+			'permission_callback' => array( $this, 'permissions_check' ),
+		) );
+	}
 
-    if (!isset($wp_roles->roles[$role_slug])) {
-      return new \WP_Error('rest_invalid_role', __('Invalid role.', 'flexify-dashboard'), ['status' => 404]);
-    }
 
-    $role = $wp_roles->get_role($role_slug);
-    $role_info = $wp_roles->roles[$role_slug];
+	/**
+	 * Check whether the current user can access the endpoint.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return bool|WP_Error
+	 */
+	public function permissions_check( WP_REST_Request $request ) {
+		return RestPermissionChecker::check_permissions( $request, 'manage_options' );
+	}
 
-    // Get user count for this role
-    $user_count = count_users();
-    $users_with_role = isset($user_count['avail_roles'][$role_slug]) ? absint($user_count['avail_roles'][$role_slug]) : 0;
 
-    // Get all capabilities for this role
-    $capabilities = [];
-    if ($role && isset($role->capabilities)) {
-      foreach ($role->capabilities as $cap => $granted) {
-        if ($granted && is_string($cap)) {
-          $capabilities[] = sanitize_text_field($cap);
-        }
-      }
-    }
+	/**
+	 * Get role details including capabilities.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public function get_role_details( WP_REST_Request $request ) {
+		$role_slug = $this->sanitize_role_slug( $request->get_param( 'role' ) );
 
-    return new \WP_REST_Response([
-      'slug' => sanitize_text_field($role_slug),
-      'name' => translate_user_role($role_info['name']),
-      'userCount' => $users_with_role,
-      'capabilities' => $capabilities,
-    ], 200);
-  }
+		if ( is_wp_error( $role_slug ) ) {
+			return $role_slug;
+		}
 
-  /**
-   * Update role capabilities
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return WP_REST_Response The response object.
-   */
-  public function update_role_capabilities($request)
-  {
-    $role_slug = sanitize_text_field($request->get_param('role'));
-    
-    // Validate role slug format
-    if (!preg_match('/^[a-zA-Z0-9_-]+$/', $role_slug)) {
-      return new \WP_Error('rest_invalid_role', __('Invalid role format.', 'flexify-dashboard'), ['status' => 400]);
-    }
-    
-    $wp_roles = wp_roles();
+		$wp_roles = wp_roles();
 
-    if (!isset($wp_roles->roles[$role_slug])) {
-      return new \WP_Error('rest_invalid_role', __('Invalid role.', 'flexify-dashboard'), ['status' => 404]);
-    }
+		if ( ! isset( $wp_roles->roles[ $role_slug ] ) ) {
+			return new WP_Error(
+				'rest_invalid_role',
+				__( 'Invalid role.', 'flexify-dashboard' ),
+				array( 'status' => 404 )
+			);
+		}
 
-    $body = $request->get_json_params();
-    $capabilities = isset($body['capabilities']) ? $body['capabilities'] : [];
+		$role_info = $wp_roles->roles[ $role_slug ];
+		$role      = $wp_roles->get_role( $role_slug );
 
-    if (!is_array($capabilities)) {
-      return new \WP_Error('rest_invalid_capabilities', __('Capabilities must be an array.', 'flexify-dashboard'), ['status' => 400]);
-    }
+		return new WP_REST_Response( array(
+			'slug'         => $role_slug,
+			'name'         => translate_user_role( $role_info['name'] ),
+			'userCount'    => $this->get_role_user_count( $role_slug ),
+			'capabilities' => $this->get_role_capabilities( $role ),
+		), 200 );
+	}
 
-    $role = $wp_roles->get_role($role_slug);
-    if (!$role) {
-      return new \WP_Error('rest_role_not_found', __('Role not found.', 'flexify-dashboard'), ['status' => 404]);
-    }
 
-    // Get all available capabilities
-    $all_capabilities = $this->get_all_available_capabilities();
+	/**
+	 * Update role capabilities.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public function update_role_capabilities( WP_REST_Request $request ) {
+		$role_slug = $this->sanitize_role_slug( $request->get_param( 'role' ) );
 
-    // Validate and sanitize each capability
-    $validated_capabilities = [];
-    foreach ($capabilities as $cap) {
-      if (!is_string($cap)) {
-        continue;
-      }
-      $cap = sanitize_text_field($cap);
-      // Validate capability format (WordPress capabilities are typically lowercase with underscores)
-      if (preg_match('/^[a-z0-9_]+$/', $cap) && in_array($cap, $all_capabilities)) {
-        $validated_capabilities[] = $cap;
-      }
-    }
+		if ( is_wp_error( $role_slug ) ) {
+			return $role_slug;
+		}
 
-    // Remove all current capabilities
-    foreach ($all_capabilities as $cap) {
-      $role->remove_cap($cap);
-    }
+		$wp_roles = wp_roles();
+		$role     = $wp_roles->get_role( $role_slug );
 
-    // Add new capabilities
-    foreach ($validated_capabilities as $cap) {
-      $role->add_cap($cap);
-    }
+		if ( ! $role ) {
+			return new WP_Error(
+				'rest_role_not_found',
+				__( 'Role not found.', 'flexify-dashboard' ),
+				array( 'status' => 404 )
+			);
+		}
 
-    // Refresh roles
-    $wp_roles = wp_roles();
-    $role = $wp_roles->get_role($role_slug);
-    $updated_capabilities = [];
-    if ($role && isset($role->capabilities)) {
-      foreach ($role->capabilities as $cap => $granted) {
-        if ($granted && is_string($cap)) {
-          $updated_capabilities[] = sanitize_text_field($cap);
-        }
-      }
-    }
+		$body         = $request->get_json_params();
+		$capabilities = isset( $body['capabilities'] ) ? $body['capabilities'] : array();
 
-    return new \WP_REST_Response([
-      'slug' => sanitize_text_field($role_slug),
-      'capabilities' => $updated_capabilities,
-      'message' => __('Role capabilities updated successfully.', 'flexify-dashboard'),
-    ], 200);
-  }
+		if ( ! is_array( $capabilities ) ) {
+			return new WP_Error(
+				'rest_invalid_capabilities',
+				__( 'Capabilities must be an array.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
+			);
+		}
 
-  /**
-   * Update role name
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return WP_REST_Response The response object.
-   */
-  public function update_role_name($request)
-  {
-    $role_slug = sanitize_text_field($request->get_param('role'));
-    
-    // Validate role slug format
-    if (!preg_match('/^[a-zA-Z0-9_-]+$/', $role_slug)) {
-      return new \WP_Error('rest_invalid_role', __('Invalid role format.', 'flexify-dashboard'), ['status' => 400]);
-    }
-    
-    $wp_roles = wp_roles();
+		$all_capabilities       = $this->get_all_available_capabilities();
+		$validated_capabilities = $this->sanitize_capabilities_list( $capabilities, $all_capabilities );
 
-    if (!isset($wp_roles->roles[$role_slug])) {
-      return new \WP_Error('rest_invalid_role', __('Invalid role.', 'flexify-dashboard'), ['status' => 404]);
-    }
+		foreach ( $all_capabilities as $capability ) {
+			$role->remove_cap( $capability );
+		}
 
-    $body = $request->get_json_params();
-    $new_name = isset($body['name']) ? sanitize_text_field($body['name']) : '';
-    
-    // Strip HTML tags and trim whitespace
-    $new_name = wp_strip_all_tags($new_name);
-    $new_name = trim($new_name);
+		foreach ( $validated_capabilities as $capability ) {
+			$role->add_cap( $capability );
+		}
 
-    if (empty($new_name)) {
-      return new \WP_Error('rest_invalid_name', __('Role name cannot be empty.', 'flexify-dashboard'), ['status' => 400]);
-    }
-    
-    // Validate name length (WordPress role names are typically under 50 characters)
-    if (strlen($new_name) > 100) {
-      return new \WP_Error('rest_invalid_name', __('Role name is too long.', 'flexify-dashboard'), ['status' => 400]);
-    }
+		$updated_role = wp_roles()->get_role( $role_slug );
 
-    // Update the role name in the roles object
-    $wp_roles->roles[$role_slug]['name'] = $new_name;
-    
-    // Persist the change to the database
-    update_option($wp_roles->role_key, $wp_roles->roles);
+		return new WP_REST_Response( array(
+			'slug'         => $role_slug,
+			'capabilities' => $this->get_role_capabilities( $updated_role ),
+			'message'      => __( 'Role capabilities updated successfully.', 'flexify-dashboard' ),
+		), 200 );
+	}
 
-    return new \WP_REST_Response([
-      'slug' => sanitize_text_field($role_slug),
-      'name' => translate_user_role($new_name),
-      'message' => __('Role name updated successfully.', 'flexify-dashboard'),
-    ], 200);
-  }
 
-  /**
-   * Get all available capabilities
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return WP_REST_Response The response object.
-   */
-  public function get_all_capabilities($request)
-  {
-    $capabilities = $this->get_all_available_capabilities();
-    
-    // Group capabilities by category
-    $grouped = [
-      'general' => [],
-      'posts' => [],
-      'pages' => [],
-      'media' => [],
-      'users' => [],
-      'plugins' => [],
-      'themes' => [],
-      'settings' => [],
-      'other' => [],
-    ];
+	/**
+	 * Update role name.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public function update_role_name( WP_REST_Request $request ) {
+		$role_slug = $this->sanitize_role_slug( $request->get_param( 'role' ) );
 
-    foreach ($capabilities as $cap) {
-      $category = $this->categorize_capability($cap);
-      $grouped[$category][] = $cap;
-    }
+		if ( is_wp_error( $role_slug ) ) {
+			return $role_slug;
+		}
 
-    // Remove empty categories
-    $grouped = array_filter($grouped, function($caps) {
-      return !empty($caps);
-    });
+		$wp_roles = wp_roles();
 
-    return new \WP_REST_Response([
-      'all' => $capabilities,
-      'grouped' => $grouped,
-    ], 200);
-  }
+		if ( ! isset( $wp_roles->roles[ $role_slug ] ) ) {
+			return new WP_Error(
+				'rest_invalid_role',
+				__( 'Invalid role.', 'flexify-dashboard' ),
+				array( 'status' => 404 )
+			);
+		}
 
-  /**
-   * Get all available capabilities from WordPress
-   *
-   * @return array Array of capability strings
-   */
-  private function get_all_available_capabilities()
-  {
-    global $wp_roles;
-    $all_caps = [];
+		$body     = $request->get_json_params();
+		$new_name = isset( $body['name'] ) ? $this->sanitize_role_name( $body['name'] ) : '';
 
-    // Get capabilities from all roles
-    foreach ($wp_roles->roles as $role_slug => $role_info) {
-      $role = $wp_roles->get_role($role_slug);
-      if ($role && isset($role->capabilities)) {
-        foreach ($role->capabilities as $cap => $granted) {
-          if ($granted && is_string($cap) && !in_array($cap, $all_caps)) {
-            // Validate capability format
-            if (preg_match('/^[a-z0-9_]+$/', $cap)) {
-              $all_caps[] = $cap;
-            }
-          }
-        }
-      }
-    }
+		if ( is_wp_error( $new_name ) ) {
+			return $new_name;
+		}
 
-    // Sort alphabetically
-    sort($all_caps);
+		$wp_roles->roles[ $role_slug ]['name'] = $new_name;
+		update_option( $wp_roles->role_key, $wp_roles->roles );
 
-    return $all_caps;
-  }
+		return new WP_REST_Response( array(
+			'slug'    => $role_slug,
+			'name'    => translate_user_role( $new_name ),
+			'message' => __( 'Role name updated successfully.', 'flexify-dashboard' ),
+		), 200 );
+	}
 
-  /**
-   * Create a new role
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return WP_REST_Response The response object.
-   */
-  public function create_role($request)
-  {
-    $body = $request->get_json_params();
-    $role_name = isset($body['name']) ? sanitize_text_field($body['name']) : '';
-    $role_slug = isset($body['slug']) ? sanitize_text_field($body['slug']) : '';
-    $capabilities = isset($body['capabilities']) && is_array($body['capabilities']) ? $body['capabilities'] : [];
 
-    // Strip HTML tags and trim whitespace from role name
-    $role_name = wp_strip_all_tags($role_name);
-    $role_name = trim($role_name);
+	/**
+	 * Get all available capabilities.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response
+	 */
+	public function get_all_capabilities( WP_REST_Request $request ) {
+		$capabilities = $this->get_all_available_capabilities();
+		$grouped      = array(
+			'general'  => array(),
+			'posts'    => array(),
+			'pages'    => array(),
+			'media'    => array(),
+			'users'    => array(),
+			'plugins'  => array(),
+			'themes'   => array(),
+			'settings' => array(),
+			'other'    => array(),
+		);
 
-    // Validate role name
-    if (empty($role_name)) {
-      return new \WP_Error('rest_invalid_name', __('Role name cannot be empty.', 'flexify-dashboard'), ['status' => 400]);
-    }
-    
-    // Validate name length
-    if (strlen($role_name) > 100) {
-      return new \WP_Error('rest_invalid_name', __('Role name is too long.', 'flexify-dashboard'), ['status' => 400]);
-    }
+		foreach ( $capabilities as $capability ) {
+			$category = $this->categorize_capability( $capability );
+			$grouped[ $category ][] = $capability;
+		}
 
-    // Generate slug from name if not provided
-    if (empty($role_slug)) {
-      $role_slug = sanitize_title($role_name);
-    }
+		$grouped = array_filter( $grouped, array( $this, 'filter_empty_capability_group' ) );
 
-    // Validate slug format
-    if (!preg_match('/^[a-z0-9_-]+$/', $role_slug)) {
-      return new \WP_Error('rest_invalid_slug', __('Role slug can only contain lowercase letters, numbers, hyphens, and underscores.', 'flexify-dashboard'), ['status' => 400]);
-    }
-    
-    // Validate slug length (WordPress role slugs are typically under 40 characters)
-    if (strlen($role_slug) > 60) {
-      return new \WP_Error('rest_invalid_slug', __('Role slug is too long.', 'flexify-dashboard'), ['status' => 400]);
-    }
+		return new WP_REST_Response( array(
+			'all'     => $capabilities,
+			'grouped' => $grouped,
+		), 200 );
+	}
 
-    $wp_roles = wp_roles();
 
-    // Check if role already exists
-    if (isset($wp_roles->roles[$role_slug])) {
-      return new \WP_Error('rest_role_exists', __('A role with this slug already exists.', 'flexify-dashboard'), ['status' => 409]);
-    }
+	/**
+	 * Create a new role.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public function create_role( WP_REST_Request $request ) {
+		$body         = $request->get_json_params();
+		$role_name    = isset( $body['name'] ) ? $this->sanitize_role_name( $body['name'] ) : '';
+		$role_slug    = isset( $body['slug'] ) ? $this->sanitize_new_role_slug( $body['slug'] ) : '';
+		$capabilities = isset( $body['capabilities'] ) && is_array( $body['capabilities'] ) ? $body['capabilities'] : array();
 
-    // Get all available capabilities for validation
-    $all_capabilities = $this->get_all_available_capabilities();
+		if ( is_wp_error( $role_name ) ) {
+			return $role_name;
+		}
 
-    // Prepare capabilities array (WordPress expects capability => true format)
-    $role_capabilities = [];
-    foreach ($capabilities as $cap) {
-      if (!is_string($cap)) {
-        continue;
-      }
-      $cap = sanitize_text_field($cap);
-      // Validate capability format and existence
-      if (preg_match('/^[a-z0-9_]+$/', $cap) && in_array($cap, $all_capabilities)) {
-        $role_capabilities[$cap] = true;
-      }
-    }
+		if ( empty( $role_slug ) ) {
+			$role_slug = $this->sanitize_new_role_slug( sanitize_title( $role_name ) );
+		}
 
-    // Create the role
-    $result = add_role($role_slug, $role_name, $role_capabilities);
+		if ( is_wp_error( $role_slug ) ) {
+			return $role_slug;
+		}
 
-    if (!$result) {
-      return new \WP_Error('rest_role_creation_failed', __('Failed to create role.', 'flexify-dashboard'), ['status' => 500]);
-    }
+		$wp_roles = wp_roles();
 
-    // Get user count (will be 0 for new role)
-    $user_count = count_users();
-    $users_with_role = isset($user_count['avail_roles'][$role_slug]) ? absint($user_count['avail_roles'][$role_slug]) : 0;
+		if ( isset( $wp_roles->roles[ $role_slug ] ) ) {
+			return new WP_Error(
+				'rest_role_exists',
+				__( 'A role with this slug already exists.', 'flexify-dashboard' ),
+				array( 'status' => 409 )
+			);
+		}
 
-    // Return sanitized capabilities list
-    $returned_capabilities = array_keys($role_capabilities);
+		$all_capabilities = $this->get_all_available_capabilities();
+		$validated_caps   = $this->sanitize_capabilities_list( $capabilities, $all_capabilities );
+		$role_caps_map    = array();
 
-    return new \WP_REST_Response([
-      'slug' => sanitize_text_field($role_slug),
-      'name' => translate_user_role($role_name),
-      'userCount' => $users_with_role,
-      'capabilities' => $returned_capabilities,
-      'message' => __('Role created successfully.', 'flexify-dashboard'),
-    ], 201);
-  }
+		foreach ( $validated_caps as $capability ) {
+			$role_caps_map[ $capability ] = true;
+		}
 
-  /**
-   * Delete a role
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return WP_REST_Response The response object.
-   */
-  public function delete_role($request)
-  {
-    $role_slug = sanitize_text_field($request->get_param('role'));
-    
-    // Validate role slug format
-    if (!preg_match('/^[a-zA-Z0-9_-]+$/', $role_slug)) {
-      return new \WP_Error('rest_invalid_role', __('Invalid role format.', 'flexify-dashboard'), ['status' => 400]);
-    }
-    
-    $wp_roles = wp_roles();
+		$result = add_role( $role_slug, $role_name, $role_caps_map );
 
-    if (!isset($wp_roles->roles[$role_slug])) {
-      return new \WP_Error('rest_invalid_role', __('Invalid role.', 'flexify-dashboard'), ['status' => 404]);
-    }
+		if ( ! $result ) {
+			return new WP_Error(
+				'rest_role_creation_failed',
+				__( 'Failed to create role.', 'flexify-dashboard' ),
+				array( 'status' => 500 )
+			);
+		}
 
-    // Prevent deletion of default WordPress roles
-    $default_roles = ['administrator', 'editor', 'author', 'contributor', 'subscriber'];
-    if (in_array($role_slug, $default_roles)) {
-      return new \WP_Error('rest_cannot_delete_default', __('Cannot delete default WordPress roles.', 'flexify-dashboard'), ['status' => 403]);
-    }
+		return new WP_REST_Response( array(
+			'slug'         => $role_slug,
+			'name'         => translate_user_role( $role_name ),
+			'userCount'    => $this->get_role_user_count( $role_slug ),
+			'capabilities' => array_keys( $role_caps_map ),
+			'message'      => __( 'Role created successfully.', 'flexify-dashboard' ),
+		), 201 );
+	}
 
-    // Check if role has users
-    $user_count = count_users();
-    $users_with_role = isset($user_count['avail_roles'][$role_slug]) ? absint($user_count['avail_roles'][$role_slug]) : 0;
 
-    if ($users_with_role > 0) {
-      return new \WP_Error('rest_role_has_users', sprintf(__('Cannot delete role. There are %d user(s) with this role. Please reassign users to another role first.', 'flexify-dashboard'), $users_with_role), ['status' => 409]);
-    }
+	/**
+	 * Delete a role.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public function delete_role( WP_REST_Request $request ) {
+		$role_slug = $this->sanitize_role_slug( $request->get_param( 'role' ) );
 
-    // Delete the role
-    remove_role($role_slug);
+		if ( is_wp_error( $role_slug ) ) {
+			return $role_slug;
+		}
 
-    return new \WP_REST_Response([
-      'slug' => sanitize_text_field($role_slug),
-      'message' => __('Role deleted successfully.', 'flexify-dashboard'),
-    ], 200);
-  }
+		$wp_roles = wp_roles();
 
-  /**
-   * Categorize a capability based on its name
-   *
-   * @param string $capability The capability name
-   * @return string The category name
-   */
-  private function categorize_capability($capability)
-  {
-    if (strpos($capability, 'post') !== false || strpos($capability, 'edit_') !== false) {
-      return 'posts';
-    }
-    if (strpos($capability, 'page') !== false) {
-      return 'pages';
-    }
-    if (strpos($capability, 'upload') !== false || strpos($capability, 'media') !== false) {
-      return 'media';
-    }
-    if (strpos($capability, 'user') !== false || strpos($capability, 'role') !== false) {
-      return 'users';
-    }
-    if (strpos($capability, 'plugin') !== false) {
-      return 'plugins';
-    }
-    if (strpos($capability, 'theme') !== false) {
-      return 'themes';
-    }
-    if (strpos($capability, 'manage_options') !== false || strpos($capability, 'settings') !== false) {
-      return 'settings';
-    }
-    if (strpos($capability, 'read') !== false || strpos($capability, 'level_') !== false) {
-      return 'general';
-    }
-    return 'other';
-  }
+		if ( ! isset( $wp_roles->roles[ $role_slug ] ) ) {
+			return new WP_Error(
+				'rest_invalid_role',
+				__( 'Invalid role.', 'flexify-dashboard' ),
+				array( 'status' => 404 )
+			);
+		}
+
+		if ( in_array( $role_slug, self::DEFAULT_WORDPRESS_ROLES, true ) ) {
+			return new WP_Error(
+				'rest_cannot_delete_default',
+				__( 'Cannot delete default WordPress roles.', 'flexify-dashboard' ),
+				array( 'status' => 403 )
+			);
+		}
+
+		$users_with_role = $this->get_role_user_count( $role_slug );
+
+		if ( $users_with_role > 0 ) {
+			return new WP_Error(
+				'rest_role_has_users',
+				sprintf(
+					/* translators: %d: number of users */
+					__( 'Cannot delete role. There are %d user(s) with this role. Please reassign users to another role first.', 'flexify-dashboard' ),
+					$users_with_role
+				),
+				array( 'status' => 409 )
+			);
+		}
+
+		remove_role( $role_slug );
+
+		return new WP_REST_Response( array(
+			'slug'    => $role_slug,
+			'message' => __( 'Role deleted successfully.', 'flexify-dashboard' ),
+		), 200 );
+	}
+
+
+	/**
+	 * Get all available capabilities from WordPress.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_all_available_capabilities() {
+		$wp_roles = wp_roles();
+		$all_caps = array();
+
+		foreach ( $wp_roles->roles as $role_slug => $role_info ) {
+			$role = $wp_roles->get_role( $role_slug );
+
+			if ( ! $role || empty( $role->capabilities ) || ! is_array( $role->capabilities ) ) {
+				continue;
+			}
+
+			foreach ( $role->capabilities as $capability => $granted ) {
+				if ( ! $granted || ! is_string( $capability ) ) {
+					continue;
+				}
+
+				if ( ! preg_match( '/^[a-z0-9_]+$/', $capability ) ) {
+					continue;
+				}
+
+				if ( ! in_array( $capability, $all_caps, true ) ) {
+					$all_caps[] = sanitize_text_field( $capability );
+				}
+			}
+		}
+
+		sort( $all_caps );
+
+		return $all_caps;
+	}
+
+
+	/**
+	 * Get the number of users assigned to a role.
+	 *
+	 * @since 2.0.0
+	 * @param string $role_slug Role slug.
+	 * @return int
+	 */
+	private function get_role_user_count( $role_slug ) {
+		$user_count = count_users();
+
+		return isset( $user_count['avail_roles'][ $role_slug ] ) ? absint( $user_count['avail_roles'][ $role_slug ] ) : 0;
+	}
+
+
+	/**
+	 * Get the granted capabilities for a role.
+	 *
+	 * @since 2.0.0
+	 * @param object|null $role WordPress role object.
+	 * @return array
+	 */
+	private function get_role_capabilities( $role ) {
+		$capabilities = array();
+
+		if ( ! $role || empty( $role->capabilities ) || ! is_array( $role->capabilities ) ) {
+			return $capabilities;
+		}
+
+		foreach ( $role->capabilities as $capability => $granted ) {
+			if ( $granted && is_string( $capability ) ) {
+				$capabilities[] = sanitize_text_field( $capability );
+			}
+		}
+
+		sort( $capabilities );
+
+		return $capabilities;
+	}
+
+
+	/**
+	 * Sanitize and validate a role slug for existing roles.
+	 *
+	 * @since 2.0.0
+	 * @param string $role_slug Role slug.
+	 * @return string|WP_Error
+	 */
+	private function sanitize_role_slug( $role_slug ) {
+		$role_slug = sanitize_text_field( $role_slug );
+
+		if ( ! preg_match( '/^[a-zA-Z0-9_-]+$/', $role_slug ) ) {
+			return new WP_Error(
+				'rest_invalid_role',
+				__( 'Invalid role format.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
+			);
+		}
+
+		return $role_slug;
+	}
+
+
+	/**
+	 * Sanitize and validate a new role slug.
+	 *
+	 * @since 2.0.0
+	 * @param string $role_slug Role slug.
+	 * @return string|WP_Error
+	 */
+	private function sanitize_new_role_slug( $role_slug ) {
+		$role_slug = sanitize_text_field( $role_slug );
+		$role_slug = wp_strip_all_tags( $role_slug );
+		$role_slug = trim( $role_slug );
+
+		if ( empty( $role_slug ) ) {
+			return new WP_Error(
+				'rest_invalid_slug',
+				__( 'Role slug can only contain lowercase letters, numbers, hyphens, and underscores.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
+			);
+		}
+
+		if ( ! preg_match( '/^[a-z0-9_-]+$/', $role_slug ) ) {
+			return new WP_Error(
+				'rest_invalid_slug',
+				__( 'Role slug can only contain lowercase letters, numbers, hyphens, and underscores.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
+			);
+		}
+
+		if ( strlen( $role_slug ) > 60 ) {
+			return new WP_Error(
+				'rest_invalid_slug',
+				__( 'Role slug is too long.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
+			);
+		}
+
+		return $role_slug;
+	}
+
+
+	/**
+	 * Sanitize and validate a role name.
+	 *
+	 * @since 2.0.0
+	 * @param string $role_name Role name.
+	 * @return string|WP_Error
+	 */
+	private function sanitize_role_name( $role_name ) {
+		$role_name = sanitize_text_field( $role_name );
+		$role_name = wp_strip_all_tags( $role_name );
+		$role_name = trim( $role_name );
+
+		if ( empty( $role_name ) ) {
+			return new WP_Error(
+				'rest_invalid_name',
+				__( 'Role name cannot be empty.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
+			);
+		}
+
+		if ( strlen( $role_name ) > 100 ) {
+			return new WP_Error(
+				'rest_invalid_name',
+				__( 'Role name is too long.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
+			);
+		}
+
+		return $role_name;
+	}
+
+
+	/**
+	 * Sanitize a list of capabilities and keep only valid existing entries.
+	 *
+	 * @since 2.0.0
+	 * @param array $capabilities Raw capabilities.
+	 * @param array $allowed_capabilities Allowed capabilities.
+	 * @return array
+	 */
+	private function sanitize_capabilities_list( $capabilities, $allowed_capabilities ) {
+		$validated = array();
+
+		foreach ( $capabilities as $capability ) {
+			if ( ! is_string( $capability ) ) {
+				continue;
+			}
+
+			$capability = sanitize_text_field( $capability );
+
+			if ( ! preg_match( '/^[a-z0-9_]+$/', $capability ) ) {
+				continue;
+			}
+
+			if ( ! in_array( $capability, $allowed_capabilities, true ) ) {
+				continue;
+			}
+
+			if ( ! in_array( $capability, $validated, true ) ) {
+				$validated[] = $capability;
+			}
+		}
+
+		sort( $validated );
+
+		return $validated;
+	}
+
+
+	/**
+	 * Filter empty capability groups.
+	 *
+	 * @since 2.0.0
+	 * @param array $capabilities Grouped capabilities.
+	 * @return bool
+	 */
+	private function filter_empty_capability_group( $capabilities ) {
+		return ! empty( $capabilities );
+	}
+
+
+	/**
+	 * Categorize a capability based on its name.
+	 *
+	 * @since 2.0.0
+	 * @param string $capability Capability name.
+	 * @return string
+	 */
+	private function categorize_capability( $capability ) {
+		if ( false !== strpos( $capability, 'post' ) || false !== strpos( $capability, 'edit_' ) ) {
+			return 'posts';
+		}
+
+		if ( false !== strpos( $capability, 'page' ) ) {
+			return 'pages';
+		}
+
+		if ( false !== strpos( $capability, 'upload' ) || false !== strpos( $capability, 'media' ) ) {
+			return 'media';
+		}
+
+		if ( false !== strpos( $capability, 'user' ) || false !== strpos( $capability, 'role' ) ) {
+			return 'users';
+		}
+
+		if ( false !== strpos( $capability, 'plugin' ) ) {
+			return 'plugins';
+		}
+
+		if ( false !== strpos( $capability, 'theme' ) ) {
+			return 'themes';
+		}
+
+		if ( false !== strpos( $capability, 'manage_options' ) || false !== strpos( $capability, 'settings' ) ) {
+			return 'settings';
+		}
+
+		if ( false !== strpos( $capability, 'read' ) || false !== strpos( $capability, 'level_' ) ) {
+			return 'general';
+		}
+
+		return 'other';
+	}
 }
-

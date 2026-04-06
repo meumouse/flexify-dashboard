@@ -1,278 +1,372 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Rest\CustomFields;
 
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class OptionPagesRepository
  *
- * Handles JSON file operations and CRUD operations for option pages
+ * Handles JSON file operations and CRUD operations for option pages.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest\CustomFields
+ * @author MeuMouse.com
  */
-class OptionPagesRepository
-{
-  /**
-   * Path to the JSON storage file
-   *
-   * @var string
-   */
-  private $json_file_path;
+class OptionPagesRepository {
 
-  /**
-   * Initialize the repository
-   *
-   * @param string $json_file_path Path to the JSON file
-   */
-  public function __construct($json_file_path = null)
-  {
-    $this->json_file_path = $json_file_path ?? WP_CONTENT_DIR . '/flexify-dashboard-options-pages.json';
-  }
+	/**
+	 * Path to the JSON storage file.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private $json_file_path;
 
-  /**
-   * Read option pages from JSON file
-   *
-   * @return array Array of option pages
-   */
-  public function read()
-  {
-    if (!file_exists($this->json_file_path)) {
-      return [];
-    }
 
-    $json_content = file_get_contents($this->json_file_path);
-    if ($json_content === false) {
-      return [];
-    }
+	/**
+	 * Constructor.
+	 *
+	 * @since 2.0.0
+	 * @param string|null $json_file_path Path to the JSON file.
+	 */
+	public function __construct( $json_file_path = null ) {
+		$this->json_file_path = $json_file_path ? $json_file_path : WP_CONTENT_DIR . '/flexify-dashboard-options-pages.json';
+	}
 
-    $data = json_decode($json_content, true);
-    return is_array($data) ? $data : [];
-  }
 
-  /**
-   * Write option pages to JSON file
-   *
-   * @param array $option_pages Array of option pages
-   * @return bool True on success, false on failure
-   */
-  public function write($option_pages)
-  {
-    $json_content = wp_json_encode($option_pages, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    
-    // Ensure directory exists
-    $dir = dirname($this->json_file_path);
-    if (!file_exists($dir)) {
-      wp_mkdir_p($dir);
-    }
+	/**
+	 * Read option pages from JSON file.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public function read() {
+		if ( ! $this->is_readable_json_file() ) {
+			return array();
+		}
 
-    $result = file_put_contents($this->json_file_path, $json_content);
-    
-    // Clear any caches
-    if (function_exists('wp_cache_flush')) {
-      wp_cache_flush();
-    }
-    
-    // Fire action when option pages are saved
-    if ($result !== false) {
-      /**
-       * Fires after option pages are saved
-       *
-       * @since 1.4.0
-       * @param array $option_pages The saved option pages
-       */
-      do_action('flexify_dashboard_option_pages_saved', $option_pages);
-    }
-    
-    return $result !== false;
-  }
+		$json_content = file_get_contents( $this->json_file_path );
 
-  /**
-   * Generate unique slug from title
-   *
-   * @param string $title The title to generate slug from
-   * @param array $existing_pages Existing pages to check against
-   * @return string Unique slug
-   */
-  public function generate_slug($title, $existing_pages = null)
-  {
-    if ($existing_pages === null) {
-      $existing_pages = $this->read();
-    }
+		if ( false === $json_content || '' === $json_content ) {
+			return array();
+		}
 
-    // Convert title to slug
-    $slug = sanitize_title($title);
-    
-    // If empty, generate random slug
-    if (empty($slug)) {
-      $slug = 'option_page_' . substr(md5(uniqid(mt_rand(), true)), 0, 8);
-    }
+		$data = json_decode( $json_content, true );
 
-    // Make unique if exists
-    $original_slug = $slug;
-    $counter = 1;
-    while ($this->slug_exists($slug, $existing_pages)) {
-      $slug = $original_slug . '_' . $counter;
-      $counter++;
-    }
+		return is_array( $data ) ? $data : array();
+	}
 
-    return $slug;
-  }
 
-  /**
-   * Check if slug exists in option pages array
-   *
-   * @param string $slug The slug to check
-   * @param array $option_pages Array of option pages
-   * @return bool True if exists, false otherwise
-   */
-  public function slug_exists($slug, $option_pages = null)
-  {
-    if ($option_pages === null) {
-      $option_pages = $this->read();
-    }
+	/**
+	 * Write option pages to JSON file.
+	 *
+	 * @since 2.0.0
+	 * @param array $option_pages Array of option pages.
+	 * @return bool
+	 */
+	public function write( $option_pages ) {
+		if ( ! is_array( $option_pages ) ) {
+			$option_pages = array();
+		}
 
-    foreach ($option_pages as $page) {
-      if (isset($page['slug']) && $page['slug'] === $slug) {
-        return true;
-      }
-    }
-    return false;
-  }
+		$directory = dirname( $this->json_file_path );
 
-  /**
-   * Find option page by slug
-   *
-   * @param string $slug Option page slug
-   * @return array|null Option page or null if not found
-   */
-  public function find_by_slug($slug)
-  {
-    $option_pages = $this->read();
-    
-    foreach ($option_pages as $page) {
-      if (isset($page['slug']) && $page['slug'] === $slug) {
-        return $page;
-      }
-    }
-    
-    return null;
-  }
+		if ( ! file_exists( $directory ) ) {
+			wp_mkdir_p( $directory );
+		}
 
-  /**
-   * Find option page index by slug
-   *
-   * @param string $slug Option page slug
-   * @return int Index or -1 if not found
-   */
-  public function find_index_by_slug($slug)
-  {
-    $option_pages = $this->read();
-    
-    foreach ($option_pages as $index => $page) {
-      if (isset($page['slug']) && $page['slug'] === $slug) {
-        return $index;
-      }
-    }
-    
-    return -1;
-  }
+		$json_content = wp_json_encode( $option_pages, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE );
 
-  /**
-   * Check if we have active option pages
-   *
-   * @return bool True if active pages exist
-   */
-  public function has_active_pages()
-  {
-    $option_pages = $this->read();
-    
-    if (empty($option_pages)) {
-      return false;
-    }
+		if ( false === $json_content ) {
+			return false;
+		}
 
-    foreach ($option_pages as $page) {
-      if (!empty($page['active'])) {
-        return true;
-      }
-    }
+		$result = file_put_contents( $this->json_file_path, $json_content );
 
-    return false;
-  }
+		if ( false === $result ) {
+			return false;
+		}
 
-  /**
-   * Get all active option pages
-   *
-   * @return array Array of active option pages
-   */
-  public function get_active_pages()
-  {
-    $option_pages = $this->read();
-    $active = [];
-    
-    foreach ($option_pages as $page) {
-      if (!empty($page['active'])) {
-        $active[] = $page;
-      }
-    }
-    
-    return $active;
-  }
+		if ( function_exists( 'wp_cache_flush' ) ) {
+			wp_cache_flush();
+		}
 
-  /**
-   * Get default option page structure
-   *
-   * @return array Default option page data
-   */
-  public static function get_defaults()
-  {
-    return [
-      'slug' => '',
-      'title' => '',
-      'description' => '',
-      'menu_type' => 'submenu', // 'top_level' or 'submenu'
-      'parent_menu' => 'options-general.php', // Parent menu for submenu
-      'menu_icon' => 'settings', // Dashicon for top-level
-      'menu_position' => 100,
-      'capability' => 'manage_options',
-      'active' => true,
-      'created_at' => '',
-      'updated_at' => '',
-    ];
-  }
+		/**
+		 * Fires after option pages are saved.
+		 *
+		 * @since 2.0.0
+		 * @param array $option_pages Saved option pages.
+		 */
+		do_action( 'flexify_dashboard_option_pages_saved', $option_pages );
 
-  /**
-   * Get available parent menus for submenu pages
-   *
-   * @return array Parent menu options
-   */
-  public static function get_parent_menus()
-  {
-    return [
-      ['value' => 'options-general.php', 'label' => __('Settings', 'flexify-dashboard')],
-      ['value' => 'tools.php', 'label' => __('Tools', 'flexify-dashboard')],
-      ['value' => 'themes.php', 'label' => __('Appearance', 'flexify-dashboard')],
-      ['value' => 'plugins.php', 'label' => __('Plugins', 'flexify-dashboard')],
-      ['value' => 'users.php', 'label' => __('Users', 'flexify-dashboard')],
-      ['value' => 'upload.php', 'label' => __('Media', 'flexify-dashboard')],
-      ['value' => 'edit-comments.php', 'label' => __('Comments', 'flexify-dashboard')],
-      ['value' => 'edit.php', 'label' => __('Posts', 'flexify-dashboard')],
-      ['value' => 'edit.php?post_type=page', 'label' => __('Pages', 'flexify-dashboard')],
-      ['value' => 'index.php', 'label' => __('Dashboard', 'flexify-dashboard')],
-    ];
-  }
+		return true;
+	}
 
-  /**
-   * Get available capabilities
-   *
-   * @return array Capability options
-   */
-  public static function get_capabilities()
-  {
-    return [
-      ['value' => 'manage_options', 'label' => __('Administrator (manage_options)', 'flexify-dashboard')],
-      ['value' => 'edit_others_posts', 'label' => __('Editor (edit_others_posts)', 'flexify-dashboard')],
-      ['value' => 'publish_posts', 'label' => __('Author (publish_posts)', 'flexify-dashboard')],
-      ['value' => 'edit_posts', 'label' => __('Contributor (edit_posts)', 'flexify-dashboard')],
-      ['value' => 'read', 'label' => __('Subscriber (read)', 'flexify-dashboard')],
-    ];
-  }
+
+	/**
+	 * Generate a unique slug from title.
+	 *
+	 * @since 2.0.0
+	 * @param string     $title The title to generate slug from.
+	 * @param array|null $existing_pages Existing pages to check against.
+	 * @return string
+	 */
+	public function generate_slug( $title, $existing_pages = null ) {
+		if ( null === $existing_pages || ! is_array( $existing_pages ) ) {
+			$existing_pages = $this->read();
+		}
+
+		$slug = sanitize_title( $title );
+
+		if ( empty( $slug ) ) {
+			$slug = 'option_page_' . wp_generate_password( 8, false, false );
+		}
+
+		$original_slug = $slug;
+		$counter       = 1;
+
+		while ( $this->slug_exists( $slug, $existing_pages ) ) {
+			$slug = $original_slug . '_' . $counter;
+			++$counter;
+		}
+
+		return $slug;
+	}
+
+
+	/**
+	 * Check if a slug exists in option pages array.
+	 *
+	 * @since 2.0.0
+	 * @param string     $slug The slug to check.
+	 * @param array|null $option_pages Array of option pages.
+	 * @return bool
+	 */
+	public function slug_exists( $slug, $option_pages = null ) {
+		if ( null === $option_pages || ! is_array( $option_pages ) ) {
+			$option_pages = $this->read();
+		}
+
+		foreach ( $option_pages as $page ) {
+			if ( isset( $page['slug'] ) && $page['slug'] === $slug ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+
+	/**
+	 * Find option page by slug.
+	 *
+	 * @since 2.0.0
+	 * @param string $slug Option page slug.
+	 * @return array|null
+	 */
+	public function find_by_slug( $slug ) {
+		$option_pages = $this->read();
+
+		foreach ( $option_pages as $page ) {
+			if ( isset( $page['slug'] ) && $page['slug'] === $slug ) {
+				return $page;
+			}
+		}
+
+		return null;
+	}
+
+
+	/**
+	 * Find option page index by slug.
+	 *
+	 * @since 2.0.0
+	 * @param string $slug Option page slug.
+	 * @return int
+	 */
+	public function find_index_by_slug( $slug ) {
+		$option_pages = $this->read();
+
+		foreach ( $option_pages as $index => $page ) {
+			if ( isset( $page['slug'] ) && $page['slug'] === $slug ) {
+				return (int) $index;
+			}
+		}
+
+		return -1;
+	}
+
+
+	/**
+	 * Check if there are active option pages.
+	 *
+	 * @since 2.0.0
+	 * @return bool
+	 */
+	public function has_active_pages() {
+		$option_pages = $this->read();
+
+		if ( empty( $option_pages ) ) {
+			return false;
+		}
+
+		foreach ( $option_pages as $page ) {
+			if ( ! empty( $page['active'] ) ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+
+	/**
+	 * Get all active option pages.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public function get_active_pages() {
+		$option_pages = $this->read();
+		$active_pages = array();
+
+		foreach ( $option_pages as $page ) {
+			if ( ! empty( $page['active'] ) ) {
+				$active_pages[] = $page;
+			}
+		}
+
+		return $active_pages;
+	}
+
+
+	/**
+	 * Get default option page structure.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public static function get_defaults() {
+		return array(
+			'slug'          => '',
+			'title'         => '',
+			'description'   => '',
+			'menu_type'     => 'submenu',
+			'parent_menu'   => 'options-general.php',
+			'menu_icon'     => 'settings',
+			'menu_position' => 100,
+			'capability'    => 'manage_options',
+			'active'        => true,
+			'created_at'    => '',
+			'updated_at'    => '',
+		);
+	}
+
+
+	/**
+	 * Get available parent menus for submenu pages.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public static function get_parent_menus() {
+		return array(
+			array(
+				'value' => 'options-general.php',
+				'label' => __( 'Settings', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'tools.php',
+				'label' => __( 'Tools', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'themes.php',
+				'label' => __( 'Appearance', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'plugins.php',
+				'label' => __( 'Plugins', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'users.php',
+				'label' => __( 'Users', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'upload.php',
+				'label' => __( 'Media', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'edit-comments.php',
+				'label' => __( 'Comments', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'edit.php',
+				'label' => __( 'Posts', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'edit.php?post_type=page',
+				'label' => __( 'Pages', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'index.php',
+				'label' => __( 'Dashboard', 'flexify-dashboard' ),
+			),
+		);
+	}
+
+
+	/**
+	 * Get available capabilities.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public static function get_capabilities() {
+		return array(
+			array(
+				'value' => 'manage_options',
+				'label' => __( 'Administrator (manage_options)', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'edit_others_posts',
+				'label' => __( 'Editor (edit_others_posts)', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'publish_posts',
+				'label' => __( 'Author (publish_posts)', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'edit_posts',
+				'label' => __( 'Contributor (edit_posts)', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'read',
+				'label' => __( 'Subscriber (read)', 'flexify-dashboard' ),
+			),
+		);
+	}
+
+
+	/**
+	 * Check if the JSON file exists and is readable.
+	 *
+	 * @since 2.0.0
+	 * @return bool
+	 */
+	private function is_readable_json_file() {
+		if ( empty( $this->json_file_path ) || ! is_string( $this->json_file_path ) ) {
+			return false;
+		}
+
+		if ( ! file_exists( $this->json_file_path ) ) {
+			return false;
+		}
+
+		if ( ! is_readable( $this->json_file_path ) ) {
+			return false;
+		}
+
+		return true;
+	}
 }

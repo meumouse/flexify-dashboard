@@ -2,145 +2,217 @@
 
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
-// Prevent direct access to this file
-defined("ABSPATH") || exit("No direct script access allowed.");
+defined('ABSPATH') || exit;
 
 /**
  * Class PostEditorSEO
  *
- * Outputs SEO meta tags (title, description, canonical URL) to the frontend
+ * Output SEO meta tags for singular content and adjust document title when
+ * custom SEO fields are available.
  *
- * @package UiXpress\Rest
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest
+ * @author MeuMouse.com
  */
-class PostEditorSEO
-{
-  /**
-   * PostEditorSEO constructor.
-   * Registers hooks for outputting SEO meta tags
-   */
-  public function __construct()
-  {
-    // Output meta tags in head
-    add_action("wp_head", [__CLASS__, "output_seo_meta_tags"], 1);
-    
-    // Modify document title if custom meta title is set
-    add_filter("document_title_parts", [__CLASS__, "modify_document_title"], 10, 1);
-  }
+class PostEditorSEO {
+	/**
+	 * Meta key for custom title.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const META_TITLE = 'fd_meta_title';
 
-  /**
-   * Outputs SEO meta tags in the head section
-   *
-   * @return void
-   */
-  public static function output_seo_meta_tags()
-  {
-    // Only output on singular posts/pages
-    if (!is_singular()) {
-      return;
-    }
+	/**
+	 * Meta key for custom description.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const META_DESCRIPTION = 'fd_meta_description';
 
-    global $post;
-    if (!$post) {
-      return;
-    }
+	/**
+	 * Meta key for custom canonical URL.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const META_CANONICAL_URL = 'fd_canonical_url';
 
-    // Get meta fields
-    $meta_title = get_post_meta($post->ID, "fd_meta_title", true);
-    $meta_description = get_post_meta($post->ID, "fd_meta_description", true);
-    $canonical_url = get_post_meta($post->ID, "fd_canonical_url", true);
 
-    // Get post URL for canonical fallback
-    $post_url = get_permalink($post->ID);
-    
-    // Determine canonical URL (use custom if set, otherwise use post URL)
-    $final_canonical = !empty($canonical_url) ? $canonical_url : $post_url;
+	/**
+	 * Class constructor.
+	 *
+	 * Register hooks for SEO output.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'wp_head', array( __CLASS__, 'output_seo_meta_tags' ), 1 );
+		add_filter( 'document_title_parts', array( __CLASS__, 'modify_document_title' ), 10, 1 );
+	}
 
-    // Output meta description if set
-    if (!empty($meta_description)) {
-      echo '<meta name="description" content="' . esc_attr($meta_description) . '" />' . "\n";
-      
-      // Also output as Open Graph description
-      echo '<meta property="og:description" content="' . esc_attr($meta_description) . '" />' . "\n";
-      
-      // Also output as Twitter Card description
-      echo '<meta name="twitter:description" content="' . esc_attr($meta_description) . '" />' . "\n";
-    }
 
-    // Output canonical URL
-    echo '<link rel="canonical" href="' . esc_url($final_canonical) . '" />' . "\n";
+	/**
+	 * Output SEO meta tags in the frontend head.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function output_seo_meta_tags() {
+		$post = self::get_current_singular_post();
 
-    // Output Open Graph and Twitter Card tags if meta title is set
-    if (!empty($meta_title)) {
-      // Open Graph title
-      echo '<meta property="og:title" content="' . esc_attr($meta_title) . '" />' . "\n";
-      
-      // Twitter Card title
-      echo '<meta name="twitter:title" content="' . esc_attr($meta_title) . '" />' . "\n";
-    }
+		if ( ! $post ) {
+			return;
+		}
 
-    // Output Open Graph URL (use canonical URL)
-    echo '<meta property="og:url" content="' . esc_url($final_canonical) . '" />' . "\n";
+		$seo_data = self::get_post_seo_data( $post->ID );
 
-    // Output Open Graph type
-    echo '<meta property="og:type" content="article" />' . "\n";
+		if ( ! empty( $seo_data['meta_description'] ) ) {
+			echo '<meta name="description" content="' . esc_attr( $seo_data['meta_description'] ) . "\" />\n";
+			echo '<meta property="og:description" content="' . esc_attr( $seo_data['meta_description'] ) . "\" />\n";
+			echo '<meta name="twitter:description" content="' . esc_attr( $seo_data['meta_description'] ) . "\" />\n";
+		}
 
-    // Output site name for Open Graph
-    $site_name = get_bloginfo("name");
-    if (!empty($site_name)) {
-      echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '" />' . "\n";
-    }
+		echo '<link rel="canonical" href="' . esc_url( $seo_data['canonical_url'] ) . "\" />\n";
 
-    // Output Twitter Card type
-    echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+		if ( ! empty( $seo_data['meta_title'] ) ) {
+			echo '<meta property="og:title" content="' . esc_attr( $seo_data['meta_title'] ) . "\" />\n";
+			echo '<meta name="twitter:title" content="' . esc_attr( $seo_data['meta_title'] ) . "\" />\n";
+		}
 
-    // Output featured image for Open Graph and Twitter if available
-    $featured_image_id = get_post_thumbnail_id($post->ID);
-    if ($featured_image_id) {
-      $featured_image_url = wp_get_attachment_image_url($featured_image_id, "large");
-      if ($featured_image_url) {
-        echo '<meta property="og:image" content="' . esc_url($featured_image_url) . '" />' . "\n";
-        echo '<meta name="twitter:image" content="' . esc_url($featured_image_url) . '" />' . "\n";
-        
-        // Get image dimensions for Open Graph
-        $image_meta = wp_get_attachment_metadata($featured_image_id);
-        if (isset($image_meta["width"]) && isset($image_meta["height"])) {
-          echo '<meta property="og:image:width" content="' . esc_attr($image_meta["width"]) . '" />' . "\n";
-          echo '<meta property="og:image:height" content="' . esc_attr($image_meta["height"]) . '" />' . "\n";
-        }
-      }
-    }
-  }
+		echo '<meta property="og:url" content="' . esc_url( $seo_data['canonical_url'] ) . "\" />\n";
+		echo '<meta property="og:type" content="' . esc_attr( self::get_og_type( $post ) ) . "\" />\n";
+		echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
 
-  /**
-   * Modifies the document title if custom meta title is set
-   *
-   * @param array $title_parts The title parts array
-   * @return array Modified title parts
-   */
-  public static function modify_document_title($title_parts)
-  {
-    // Only modify on singular posts/pages
-    if (!is_singular()) {
-      return $title_parts;
-    }
+		$site_name = get_bloginfo( 'name' );
 
-    global $post;
-    if (!$post) {
-      return $title_parts;
-    }
+		if ( ! empty( $site_name ) ) {
+			echo '<meta property="og:site_name" content="' . esc_attr( $site_name ) . "\" />\n";
+		}
 
-    // Get custom meta title
-    $meta_title = get_post_meta($post->ID, "fd_meta_title", true);
+		self::output_featured_image_meta( $post->ID );
+	}
 
-    // If meta title is set, use it as the title
-    if (!empty($meta_title)) {
-      $title_parts["title"] = $meta_title;
-      // Remove site name from title if meta title is set (optional - you can keep it if preferred)
-      // Uncomment the next line if you want to remove site name:
-      // $title_parts["site"] = "";
-    }
 
-    return $title_parts;
-  }
+	/**
+	 * Modify the document title parts when a custom SEO title exists.
+	 *
+	 * @since 2.0.0
+	 * @param array $title_parts Document title parts.
+	 * @return array
+	 */
+	public static function modify_document_title( $title_parts ) {
+		$post = self::get_current_singular_post();
+
+		if ( ! $post ) {
+			return $title_parts;
+		}
+
+		$meta_title = get_post_meta( $post->ID, self::META_TITLE, true );
+
+		if ( ! empty( $meta_title ) ) {
+			$title_parts['title'] = sanitize_text_field( $meta_title );
+		}
+
+		return $title_parts;
+	}
+
+
+	/**
+	 * Get current singular post object when available.
+	 *
+	 * @since 2.0.0
+	 * @return \WP_Post|null
+	 */
+	private static function get_current_singular_post() {
+		if ( ! is_singular() ) {
+			return null;
+		}
+
+		$post = get_queried_object();
+
+		if ( ! $post instanceof \WP_Post ) {
+			return null;
+		}
+
+		return $post;
+	}
+
+
+	/**
+	 * Get SEO data for a post.
+	 *
+	 * @since 2.0.0
+	 * @param int $post_id Post ID.
+	 * @return array
+	 */
+	private static function get_post_seo_data( $post_id ) {
+		$meta_title = get_post_meta( $post_id, self::META_TITLE, true );
+		$meta_description = get_post_meta( $post_id, self::META_DESCRIPTION, true );
+		$canonical_url = get_post_meta( $post_id, self::META_CANONICAL_URL, true );
+		$post_url = get_permalink( $post_id );
+
+		return array(
+			'meta_title'       => ! empty( $meta_title ) ? sanitize_text_field( $meta_title ) : '',
+			'meta_description' => ! empty( $meta_description ) ? sanitize_textarea_field( $meta_description ) : '',
+			'canonical_url'    => ! empty( $canonical_url ) ? esc_url_raw( $canonical_url ) : $post_url,
+		);
+	}
+
+
+	/**
+	 * Output featured image SEO meta tags.
+	 *
+	 * @since 2.0.0
+	 * @param int $post_id Post ID.
+	 * @return void
+	 */
+	private static function output_featured_image_meta( $post_id ) {
+		$featured_image_id = get_post_thumbnail_id( $post_id );
+
+		if ( empty( $featured_image_id ) ) {
+			return;
+		}
+
+		$featured_image_url = wp_get_attachment_image_url( $featured_image_id, 'large' );
+
+		if ( empty( $featured_image_url ) ) {
+			return;
+		}
+
+		echo '<meta property="og:image" content="' . esc_url( $featured_image_url ) . "\" />\n";
+		echo '<meta name="twitter:image" content="' . esc_url( $featured_image_url ) . "\" />\n";
+
+		$image_meta = wp_get_attachment_metadata( $featured_image_id );
+
+		if ( empty( $image_meta ) || ! is_array( $image_meta ) ) {
+			return;
+		}
+
+		if ( isset( $image_meta['width'] ) ) {
+			echo '<meta property="og:image:width" content="' . esc_attr( absint( $image_meta['width'] ) ) . "\" />\n";
+		}
+
+		if ( isset( $image_meta['height'] ) ) {
+			echo '<meta property="og:image:height" content="' . esc_attr( absint( $image_meta['height'] ) ) . "\" />\n";
+		}
+	}
+
+
+	/**
+	 * Get the appropriate Open Graph type for the current post.
+	 *
+	 * @since 2.0.0
+	 * @param \WP_Post $post Post object.
+	 * @return string
+	 */
+	private static function get_og_type( $post ) {
+		if ( 'post' === get_post_type( $post ) ) {
+			return 'article';
+		}
+
+		return 'website';
+	}
 }
-

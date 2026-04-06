@@ -2,474 +2,686 @@
 
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
+use WP_Error;
+use WP_Query;
 use WP_REST_Request;
 use WP_REST_Response;
-use WP_Error;
+use ZipArchive;
 
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class MediaBulk
  *
- * Provides REST API endpoints for bulk media operations:
- * - Bulk download (ZIP creation)
- * - Media usage tracking
+ * Register REST API endpoints for bulk media operations.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest
+ * @author MeuMouse.com
  */
-class MediaBulk
-{
+class MediaBulk {
+
 	/**
-	 * Namespace for REST API endpoints
+	 * REST namespace.
 	 *
+	 * @since 2.0.0
 	 * @var string
 	 */
 	private const REST_NAMESPACE = 'flexify-dashboard/v1';
 
 	/**
-	 * Bootstrap hooks
+	 * Maximum allowed items for bulk download.
 	 *
-	 * @return void
+	 * @since 2.0.0
+	 * @var int
 	 */
-	public function __construct()
-	{
-		add_action('rest_api_init', [__CLASS__, 'register_rest_routes']);
-		add_action('flexify_dashboard_cleanup_zip', [__CLASS__, 'cleanup_zip_file'], 10, 1);
-	}
+	private const MAX_BULK_ITEMS = 100;
 
 	/**
-	 * Register REST API routes
+	 * Cleanup hook name.
 	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const CLEANUP_HOOK = 'flexify_dashboard_cleanup_zip';
+
+
+	/**
+	 * Constructor.
+	 *
+	 * @since 2.0.0
 	 * @return void
 	 */
-	public static function register_rest_routes(): void
-	{
-		// Bulk download endpoint
-		register_rest_route(
-			self::REST_NAMESPACE,
-			'/media/bulk-download',
-			[
-				'methods' => 'POST',
-				'callback' => [__CLASS__, 'bulk_download'],
-				'permission_callback' => [__CLASS__, 'check_permissions'],
-				'args' => [
-					'media_ids' => [
-						'required' => true,
-						'type' => 'array',
-						'items' => [
-							'type' => 'integer',
-						],
-						'validate_callback' => function ($param) {
-							return is_array($param) && !empty($param);
-						},
-						'sanitize_callback' => function ($param) {
-							return array_map('intval', array_filter($param));
-						},
-					],
-				],
-			]
-		);
+	public function __construct() {
+		add_action( 'rest_api_init', array( __CLASS__, 'register_rest_routes' ) );
+		add_action( self::CLEANUP_HOOK, array( __CLASS__, 'cleanup_zip_file' ), 10, 1 );
+	}
 
-		// Media usage tracking endpoint
-		register_rest_route(
-			self::REST_NAMESPACE,
-			'/media/(?P<id>\d+)/usage',
-			[
-				'methods' => 'GET',
-				'callback' => [__CLASS__, 'get_media_usage'],
-				'permission_callback' => [__CLASS__, 'check_permissions'],
-				'args' => [
-					'id' => [
-						'required' => true,
+
+	/**
+	 * Register REST API routes.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function register_rest_routes() {
+		register_rest_route( self::REST_NAMESPACE, '/media/bulk-download', array(
+			'methods' => 'POST',
+			'callback' => array( __CLASS__, 'bulk_download' ),
+			'permission_callback' => array( __CLASS__, 'check_permissions' ),
+			'args' => array(
+				'media_ids' => array(
+					'required' => true,
+					'type' => 'array',
+					'items' => array(
 						'type' => 'integer',
-						'validate_callback' => function ($param) {
-							return is_numeric($param) && $param > 0;
-						},
-						'sanitize_callback' => 'absint',
-					],
-				],
-			]
-		);
+					),
+					'validate_callback' => array( __CLASS__, 'validate_media_ids' ),
+					'sanitize_callback' => array( __CLASS__, 'sanitize_media_ids' ),
+				),
+			),
+		) );
+
+		register_rest_route( self::REST_NAMESPACE, '/media/(?P<id>\d+)/usage', array(
+			'methods' => 'GET',
+			'callback' => array( __CLASS__, 'get_media_usage' ),
+			'permission_callback' => array( __CLASS__, 'check_permissions' ),
+			'args' => array(
+				'id' => array(
+					'required' => true,
+					'type' => 'integer',
+					'validate_callback' => array( __CLASS__, 'validate_media_id' ),
+					'sanitize_callback' => 'absint',
+				),
+			),
+		) );
 	}
 
+
 	/**
-	 * Check if user has required permissions
+	 * Check user permissions for media endpoints.
 	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
 	 * @return bool|WP_Error
 	 */
-	public static function check_permissions($request = null)
-	{
-		if (!$request) {
-			return new \WP_Error('rest_forbidden', __('Invalid request.', 'flexify-dashboard'), ['status' => 400]);
-		}
-		
-		return RestPermissionChecker::check_permissions($request, 'upload_files');
+	public static function check_permissions( WP_REST_Request $request ) {
+		return RestPermissionChecker::check_permissions( $request, 'upload_files' );
 	}
 
+
 	/**
-	 * Handle bulk download request - creates ZIP file
+	 * Validate media IDs array.
 	 *
-	 * @param WP_REST_Request $request The request object
+	 * @since 2.0.0
+	 * @param mixed           $param Request parameter.
+	 * @param WP_REST_Request $request REST request object.
+	 * @param string          $key Argument key.
+	 * @return bool
+	 */
+	public static function validate_media_ids( $param, WP_REST_Request $request, $key ) {
+		unset( $request, $key );
+
+		return is_array( $param ) && ! empty( $param );
+	}
+
+
+	/**
+	 * Sanitize media IDs array.
+	 *
+	 * @since 2.0.0
+	 * @param mixed           $param Request parameter.
+	 * @param WP_REST_Request $request REST request object.
+	 * @param string          $key Argument key.
+	 * @return array
+	 */
+	public static function sanitize_media_ids( $param, WP_REST_Request $request, $key ) {
+		unset( $request, $key );
+
+		if ( ! is_array( $param ) ) {
+			return array();
+		}
+
+		$media_ids = array_map( 'absint', $param );
+		$media_ids = array_filter( $media_ids );
+
+		return array_values( array_unique( $media_ids ) );
+	}
+
+
+	/**
+	 * Validate a single media ID.
+	 *
+	 * @since 2.0.0
+	 * @param mixed           $param Request parameter.
+	 * @param WP_REST_Request $request REST request object.
+	 * @param string          $key Argument key.
+	 * @return bool
+	 */
+	public static function validate_media_id( $param, WP_REST_Request $request, $key ) {
+		unset( $request, $key );
+
+		return is_numeric( $param ) && absint( $param ) > 0;
+	}
+
+
+	/**
+	 * Handle bulk download request and create ZIP file.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
 	 * @return WP_REST_Response|WP_Error
 	 */
-	public static function bulk_download($request)
-	{
-		$media_ids = $request->get_param('media_ids');
+	public static function bulk_download( WP_REST_Request $request ) {
+		$media_ids = $request->get_param( 'media_ids' );
 
-		if (empty($media_ids) || !is_array($media_ids)) {
+		if ( empty( $media_ids ) || ! is_array( $media_ids ) ) {
 			return new WP_Error(
 				'rest_invalid_param',
-				__('Invalid media IDs provided.', 'flexify-dashboard'),
-				['status' => 400]
+				__( 'Invalid media IDs provided.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
 			);
 		}
 
-		// Limit to prevent abuse
-		if (count($media_ids) > 100) {
+		if ( count( $media_ids ) > self::MAX_BULK_ITEMS ) {
 			return new WP_Error(
 				'rest_too_many_items',
-				__('Maximum 100 items can be downloaded at once.', 'flexify-dashboard'),
-				['status' => 400]
+				__( 'Maximum 100 items can be downloaded at once.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
 			);
 		}
 
-		// Check if ZipArchive is available
-		if (!class_exists('ZipArchive')) {
+		if ( ! class_exists( 'ZipArchive' ) ) {
 			return new WP_Error(
 				'rest_zip_not_available',
-				__('ZIP functionality is not available on this server.', 'flexify-dashboard'),
-				['status' => 500]
+				__( 'ZIP functionality is not available on this server.', 'flexify-dashboard' ),
+				array( 'status' => 500 )
 			);
 		}
 
-		$zip = new \ZipArchive();
 		$upload_dir = wp_upload_dir();
-		$zip_filename = 'media-bulk-' . time() . '-' . wp_generate_password(8, false) . '.zip';
-		$zip_path = $upload_dir['basedir'] . '/' . $zip_filename;
 
-		if ($zip->open($zip_path, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) !== true) {
+		if ( empty( $upload_dir['basedir'] ) || empty( $upload_dir['baseurl'] ) ) {
+			return new WP_Error(
+				'rest_upload_dir_invalid',
+				__( 'Upload directory is not available.', 'flexify-dashboard' ),
+				array( 'status' => 500 )
+			);
+		}
+
+		$zip_filename = self::generate_zip_filename();
+		$zip_path = trailingslashit( $upload_dir['basedir'] ) . $zip_filename;
+
+		$zip = new ZipArchive();
+		$zip_status = $zip->open( $zip_path, ZipArchive::CREATE | ZipArchive::OVERWRITE );
+
+		if ( true !== $zip_status ) {
 			return new WP_Error(
 				'rest_zip_create_failed',
-				__('Failed to create ZIP file.', 'flexify-dashboard'),
-				['status' => 500]
+				__( 'Failed to create ZIP file.', 'flexify-dashboard' ),
+				array( 'status' => 500 )
 			);
 		}
 
-		$added_count = 0;
-		foreach ($media_ids as $media_id) {
-			$media_id = absint($media_id);
-			$file_path = get_attached_file($media_id);
-
-			if ($file_path && file_exists($file_path)) {
-				$file_info = get_post($media_id);
-				$file_name = $file_info ? basename($file_path) : 'media-' . $media_id;
-				$zip->addFile($file_path, $file_name);
-				$added_count++;
-			}
-		}
+		$added_count = self::add_files_to_zip( $zip, $media_ids );
 
 		$zip->close();
 
-		if ($added_count === 0) {
-			// Clean up empty ZIP
-			if (file_exists($zip_path)) {
-				unlink($zip_path);
-			}
+		if ( 0 === $added_count ) {
+			self::maybe_delete_file( $zip_path );
+
 			return new WP_Error(
 				'rest_no_files',
-				__('No valid files found to download.', 'flexify-dashboard'),
-				['status' => 404]
+				__( 'No valid files found to download.', 'flexify-dashboard' ),
+				array( 'status' => 404 )
 			);
 		}
 
-		// Return download URL - ensure HTTPS if site is HTTPS
-		// Use set_url_scheme to match the site URL scheme (respects WordPress site URL settings)
-		$base_url = $upload_dir['baseurl'] . '/' . $zip_filename;
-		// Get the scheme from site URL to ensure consistency
-		$site_url_scheme = parse_url(get_site_url(), PHP_URL_SCHEME);
-		$download_url = set_url_scheme($base_url, $site_url_scheme ?: 'https');
+		$download_url = self::get_zip_download_url( $upload_dir['baseurl'], $zip_filename );
 
-		// Schedule cleanup of ZIP file after 1 hour
-		wp_schedule_single_event(time() + HOUR_IN_SECONDS, 'flexify_dashboard_cleanup_zip', [$zip_path]);
+		wp_schedule_single_event( time() + HOUR_IN_SECONDS, self::CLEANUP_HOOK, array( $zip_path ) );
 
 		return new WP_REST_Response(
-			[
+			array(
 				'success' => true,
 				'download_url' => $download_url,
 				'filename' => $zip_filename,
 				'file_count' => $added_count,
-			],
+			),
 			200
 		);
 	}
 
-	/**
-	 * Cleanup ZIP file after download
-	 *
-	 * @param string $zip_path Path to ZIP file
-	 * @return void
-	 */
-	public static function cleanup_zip_file($zip_path)
-	{
-		if (file_exists($zip_path)) {
-			unlink($zip_path);
-		}
-	}
 
 	/**
-	 * Get media usage information - where media is being used
+	 * Add selected media files to ZIP.
 	 *
-	 * @param WP_REST_Request $request The request object
-	 * @return WP_REST_Response|WP_Error
+	 * @since 2.0.0
+	 * @param ZipArchive $zip ZIP archive instance.
+	 * @param array      $media_ids Media IDs.
+	 * @return int
 	 */
-	public static function get_media_usage($request)
-	{
-		$media_id = absint($request->get_param('id'));
+	private static function add_files_to_zip( ZipArchive $zip, array $media_ids ) {
+		$added_count = 0;
+		$used_names = array();
 
-		if (!$media_id) {
-			return new WP_REST_Response(
-				[
-					'success' => true,
-					'data' => [],
-					'count' => 0,
-				],
-				200
-			);
-		}
+		foreach ( $media_ids as $media_id ) {
+			$media_id = absint( $media_id );
+			$file_path = get_attached_file( $media_id );
 
-		// Verify media exists
-		$attachment = get_post($media_id);
-		if (!$attachment || $attachment->post_type !== 'attachment') {
-			return new WP_REST_Response(
-				[
-					'success' => true,
-					'data' => [],
-					'count' => 0,
-				],
-				200
-			);
-		}
-
-		$usage = [];
-		$seen_post_ids = [];
-
-		global $wpdb;
-
-		// Get media URL and all size variations
-		$media_url = wp_get_attachment_url($media_id);
-		if (!$media_url) {
-			return new WP_REST_Response(
-				[
-					'success' => true,
-					'data' => [],
-					'count' => 0,
-				],
-				200
-			);
-		}
-
-		$media_filename = basename($media_url);
-		
-		// Get all image sizes URLs to check
-		$image_urls = [];
-		if (wp_attachment_is_image($media_id)) {
-			$image_urls[] = $media_url;
-			$sizes = get_intermediate_image_sizes();
-			foreach ($sizes as $size) {
-				$image_data = wp_get_attachment_image_src($media_id, $size);
-				if ($image_data && !empty($image_data[0])) {
-					$image_urls[] = $image_data[0];
-				}
-			}
-		} else {
-			$image_urls[] = $media_url;
-		}
-
-		// Get post types to search - use WordPress query methods instead of raw SQL
-		$post_types = ['post', 'page'];
-		$custom_post_types = get_post_types(['public' => true, '_builtin' => false], 'names');
-		foreach ($custom_post_types as $cpt) {
-			if (post_type_supports($cpt, 'editor')) {
-				$post_types[] = $cpt;
-			}
-		}
-
-		// 1. Check if used as featured image using WP_Query
-		$featured_query = new \WP_Query([
-			'post_type' => $post_types,
-			'post_status' => ['publish', 'draft', 'pending', 'future', 'private'],
-			'posts_per_page' => -1,
-			'meta_query' => [
-				[
-					'key' => '_thumbnail_id',
-					'value' => $media_id,
-					'compare' => '=',
-				],
-			],
-			'fields' => 'ids',
-		]);
-
-		foreach ($featured_query->posts as $post_id) {
-			$post_id = (int) $post_id;
-			if (!in_array($post_id, $seen_post_ids)) {
-				$post = get_post($post_id);
-				if ($post) {
-					$seen_post_ids[] = $post_id;
-					$usage[] = [
-						'id' => $post_id,
-						'title' => !empty($post->post_title) ? $post->post_title : __('(Untitled)', 'flexify-dashboard'),
-						'type' => $post->post_type,
-						'status' => $post->post_status,
-						'edit_url' => get_edit_post_link($post_id, 'raw'),
-					];
-				}
-			}
-		}
-
-		// 2. Check if used in post content
-		// Use targeted search patterns with LIKE queries for better performance
-		// Build search patterns
-		$search_patterns = [];
-		
-		// Gutenberg block patterns
-		$search_patterns[] = $wpdb->esc_like('"id":' . $media_id);
-		$search_patterns[] = $wpdb->esc_like('"mediaId":' . $media_id);
-		$search_patterns[] = $wpdb->esc_like('wp-image-' . $media_id);
-		
-		// Gallery shortcode patterns
-		$search_patterns[] = $wpdb->esc_like('[gallery');
-		$search_patterns[] = $wpdb->esc_like('ids="');
-		$search_patterns[] = $wpdb->esc_like("ids='");
-		
-		// URL patterns for each image size
-		foreach ($image_urls as $url) {
-			$search_patterns[] = $wpdb->esc_like($url);
-		}
-		
-		// Use a single query with multiple LIKE conditions
-		$like_conditions = [];
-		$prepare_values = [];
-		
-		// Gutenberg block ID patterns
-		$like_conditions[] = "(post_content LIKE %s OR post_content LIKE %s)";
-		$prepare_values[] = '%"id":' . $media_id . '%';
-		$prepare_values[] = '%"mediaId":' . $media_id . '%';
-		
-		// Classic editor pattern
-		$like_conditions[] = "post_content LIKE %s";
-		$prepare_values[] = '%wp-image-' . $media_id . '%';
-		
-		// Gallery shortcode patterns - search for gallery with media ID in ids attribute
-		$like_conditions[] = "(post_content LIKE %s OR post_content LIKE %s)";
-		$prepare_values[] = '%[gallery%' . $media_id . '%]%';
-		$prepare_values[] = '%ids="%' . $media_id . '%"%';
-		
-		// URL patterns - check all image URLs
-		$url_like_conditions = [];
-		foreach ($image_urls as $url) {
-			$escaped_url = $wpdb->esc_like($url);
-			$url_like_conditions[] = "post_content LIKE %s";
-			$prepare_values[] = '%src="' . $escaped_url . '"%';
-			$url_like_conditions[] = "post_content LIKE %s";
-			$prepare_values[] = '%src=\'' . $escaped_url . '\'%';
-			$url_like_conditions[] = "post_content LIKE %s";
-			$prepare_values[] = '%href="' . $escaped_url . '"%';
-			$url_like_conditions[] = "post_content LIKE %s";
-			$prepare_values[] = '%href=\'' . $escaped_url . '\'%';
-		}
-		if (!empty($url_like_conditions)) {
-			$like_conditions[] = '(' . implode(' OR ', $url_like_conditions) . ')';
-		}
-		
-		// Build the query
-		$where_clause = '(' . implode(' OR ', $like_conditions) . ')';
-		$post_types_placeholders = implode(',', array_fill(0, count($post_types), '%s'));
-		
-		$query = "SELECT ID, post_title, post_type, post_status, post_content
-			FROM {$wpdb->posts}
-			WHERE post_type IN ($post_types_placeholders)
-			AND post_status IN ('publish', 'draft', 'pending', 'future', 'private')
-			AND post_content != ''
-			AND post_content IS NOT NULL
-			AND $where_clause";
-		
-		$prepare_args = array_merge($post_types, $prepare_values);
-		$content_posts = $wpdb->get_results(
-			$wpdb->prepare($query, $prepare_args),
-			ARRAY_A
-		);
-
-		// Verify matches with regex
-		foreach ($content_posts as $post) {
-			$post_id = (int) $post['ID'];
-			if (in_array($post_id, $seen_post_ids)) {
+			if ( empty( $file_path ) || ! file_exists( $file_path ) ) {
 				continue;
 			}
 
-			$content = $post['post_content'];
-			$is_used = false;
+			$filename = self::get_unique_zip_filename( basename( $file_path ), $used_names );
 
-			// Check for Gutenberg blocks with media ID
-			if (preg_match('/"(?:id|mediaId)"\s*:\s*' . $media_id . '\b/', $content)) {
-				$is_used = true;
-			}
-			// Check for classic editor image class
-			elseif (preg_match('/wp-image-' . $media_id . '\b/', $content)) {
-				$is_used = true;
-			}
-			// Check for gallery shortcode
-			elseif (preg_match('/\[gallery[^\]]*ids=["\']?[^"\']*' . $media_id . '[^"\']*["\']?/', $content)) {
-				$is_used = true;
-			}
-			// Check for media URL in src/href attributes
-			else {
-				foreach ($image_urls as $url) {
-					$escaped_url = preg_quote($url, '/');
-					if (preg_match('/src\s*=\s*["\']?' . $escaped_url . '["\']?/', $content) ||
-						preg_match('/href\s*=\s*["\']?' . $escaped_url . '["\']?/', $content)) {
-						$is_used = true;
-						break;
-					}
-				}
-			}
-
-			if ($is_used && in_array($post['post_type'], $post_types)) {
-				$seen_post_ids[] = $post_id;
-				$usage[] = [
-					'id' => $post_id,
-					'title' => !empty($post['post_title']) ? $post['post_title'] : __('(Untitled)', 'flexify-dashboard'),
-					'type' => $post['post_type'], // Ensure type is 'post' or 'page', not 'widget'
-					'status' => $post['post_status'],
-					'edit_url' => get_edit_post_link($post_id, 'raw'),
-				];
+			if ( $zip->addFile( $file_path, $filename ) ) {
+				$added_count++;
 			}
 		}
 
-		// 3. Check if attached to a post (post_parent)
-		if ($attachment->post_parent > 0) {
-			$parent_id = (int) $attachment->post_parent;
-			if (!in_array($parent_id, $seen_post_ids)) {
-				$parent = get_post($parent_id);
-				if ($parent && in_array($parent->post_type, $post_types)) {
-					$seen_post_ids[] = $parent_id;
-					$usage[] = [
-						'id' => $parent_id,
-						'title' => !empty($parent->post_title) ? $parent->post_title : __('(Untitled)', 'flexify-dashboard'),
-						'type' => $parent->post_type,
-						'status' => $parent->post_status,
-						'edit_url' => get_edit_post_link($parent_id, 'raw'),
-					];
-				}
-			}
+		return $added_count;
+	}
+
+
+	/**
+	 * Generate ZIP filename.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private static function generate_zip_filename() {
+		return 'media-bulk-' . time() . '-' . wp_generate_password( 8, false, false ) . '.zip';
+	}
+
+
+	/**
+	 * Get ZIP download URL.
+	 *
+	 * @since 2.0.0
+	 * @param string $baseurl Upload base URL.
+	 * @param string $zip_filename ZIP filename.
+	 * @return string
+	 */
+	private static function get_zip_download_url( $baseurl, $zip_filename ) {
+		$download_url = trailingslashit( $baseurl ) . $zip_filename;
+		$site_scheme = wp_parse_url( get_site_url(), PHP_URL_SCHEME );
+
+		return set_url_scheme( $download_url, $site_scheme ? $site_scheme : 'https' );
+	}
+
+
+	/**
+	 * Get a unique filename for ZIP entries.
+	 *
+	 * @since 2.0.0
+	 * @param string $filename Original filename.
+	 * @param array  $used_names Used filenames reference.
+	 * @return string
+	 */
+	private static function get_unique_zip_filename( $filename, array &$used_names ) {
+		$pathinfo = pathinfo( $filename );
+		$name = isset( $pathinfo['filename'] ) ? $pathinfo['filename'] : 'file';
+		$extension = isset( $pathinfo['extension'] ) ? '.' . $pathinfo['extension'] : '';
+		$unique_name = $filename;
+		$counter = 1;
+
+		while ( in_array( $unique_name, $used_names, true ) ) {
+			$unique_name = $name . '-' . $counter . $extension;
+			$counter++;
 		}
 
+		$used_names[] = $unique_name;
+
+		return $unique_name;
+	}
+
+
+	/**
+	 * Delete a file if it exists.
+	 *
+	 * @since 2.0.0
+	 * @param string $file_path File path.
+	 * @return void
+	 */
+	private static function maybe_delete_file( $file_path ) {
+		if ( ! empty( $file_path ) && file_exists( $file_path ) ) {
+			wp_delete_file( $file_path );
+		}
+	}
+
+
+	/**
+	 * Cleanup ZIP file after scheduled expiration.
+	 *
+	 * @since 2.0.0
+	 * @param string $zip_path ZIP file path.
+	 * @return void
+	 */
+	public static function cleanup_zip_file( $zip_path ) {
+		self::maybe_delete_file( $zip_path );
+	}
+
+
+	/**
+	 * Get media usage information.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public static function get_media_usage( WP_REST_Request $request ) {
+		$media_id = absint( $request->get_param( 'id' ) );
+
+		if ( ! $media_id ) {
+			return self::get_usage_response( array() );
+		}
+
+		$attachment = get_post( $media_id );
+
+		if ( ! $attachment || 'attachment' !== $attachment->post_type ) {
+			return self::get_usage_response( array() );
+		}
+
+		$media_url = wp_get_attachment_url( $media_id );
+
+		if ( empty( $media_url ) ) {
+			return self::get_usage_response( array() );
+		}
+
+		$post_types = self::get_searchable_post_types();
+		$image_urls = self::get_media_search_urls( $media_id, $media_url );
+		$usage = array();
+		$seen_post_ids = array();
+
+		self::collect_featured_image_usage( $media_id, $post_types, $usage, $seen_post_ids );
+		self::collect_content_usage( $media_id, $post_types, $image_urls, $usage, $seen_post_ids );
+		self::collect_parent_usage( $attachment, $post_types, $usage, $seen_post_ids );
+
+		return self::get_usage_response( $usage );
+	}
+
+
+	/**
+	 * Build standard usage response.
+	 *
+	 * @since 2.0.0
+	 * @param array $usage Usage data.
+	 * @return WP_REST_Response
+	 */
+	private static function get_usage_response( array $usage ) {
 		return new WP_REST_Response(
-			[
+			array(
 				'success' => true,
-				'data' => $usage,
-				'count' => count($usage),
-			],
+				'data' => array_values( $usage ),
+				'count' => count( $usage ),
+			),
 			200
 		);
 	}
-}
 
+
+	/**
+	 * Get searchable post types.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private static function get_searchable_post_types() {
+		$post_types = array( 'post', 'page' );
+		$custom_post_types = get_post_types(
+			array(
+				'public' => true,
+				'_builtin' => false,
+			),
+			'names'
+		);
+
+		foreach ( $custom_post_types as $post_type ) {
+			if ( post_type_supports( $post_type, 'editor' ) ) {
+				$post_types[] = $post_type;
+			}
+		}
+
+		return array_values( array_unique( $post_types ) );
+	}
+
+
+	/**
+	 * Get all URLs that should be checked for media usage.
+	 *
+	 * @since 2.0.0
+	 * @param int    $media_id Attachment ID.
+	 * @param string $media_url Original media URL.
+	 * @return array
+	 */
+	private static function get_media_search_urls( $media_id, $media_url ) {
+		$urls = array( $media_url );
+
+		if ( wp_attachment_is_image( $media_id ) ) {
+			$sizes = get_intermediate_image_sizes();
+
+			foreach ( $sizes as $size ) {
+				$image_data = wp_get_attachment_image_src( $media_id, $size );
+
+				if ( ! empty( $image_data[0] ) ) {
+					$urls[] = $image_data[0];
+				}
+			}
+		}
+
+		return array_values( array_unique( array_filter( $urls ) ) );
+	}
+
+
+	/**
+	 * Collect featured image usage.
+	 *
+	 * @since 2.0.0
+	 * @param int   $media_id Attachment ID.
+	 * @param array $post_types Post types.
+	 * @param array $usage Usage results reference.
+	 * @param array $seen_post_ids Seen post IDs reference.
+	 * @return void
+	 */
+	private static function collect_featured_image_usage( $media_id, array $post_types, array &$usage, array &$seen_post_ids ) {
+		$query = new WP_Query( array(
+			'post_type' => $post_types,
+			'post_status' => array( 'publish', 'draft', 'pending', 'future', 'private' ),
+			'posts_per_page' => -1,
+			'meta_query' => array(
+				array(
+					'key' => '_thumbnail_id',
+					'value' => $media_id,
+					'compare' => '=',
+				),
+			),
+			'fields' => 'ids',
+			'no_found_rows' => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+		) );
+
+		foreach ( $query->posts as $post_id ) {
+			self::add_usage_item( $usage, $seen_post_ids, get_post( $post_id ) );
+		}
+
+		wp_reset_postdata();
+	}
+
+
+	/**
+	 * Collect usage from post content.
+	 *
+	 * @since 2.0.0
+	 * @param int   $media_id Attachment ID.
+	 * @param array $post_types Post types.
+	 * @param array $image_urls Media URLs.
+	 * @param array $usage Usage results reference.
+	 * @param array $seen_post_ids Seen post IDs reference.
+	 * @return void
+	 */
+	private static function collect_content_usage( $media_id, array $post_types, array $image_urls, array &$usage, array &$seen_post_ids ) {
+		global $wpdb;
+
+		if ( empty( $post_types ) ) {
+			return;
+		}
+
+		$like_conditions = array(
+			'(post_content LIKE %s OR post_content LIKE %s)',
+			'post_content LIKE %s',
+			'(post_content LIKE %s OR post_content LIKE %s)',
+		);
+
+		$prepare_values = array(
+			'%"id":' . $media_id . '%',
+			'%"mediaId":' . $media_id . '%',
+			'%wp-image-' . $media_id . '%',
+			'%[gallery%' . $media_id . '%]%',
+			'%ids="%' . $media_id . '%"%',
+		);
+
+		foreach ( $image_urls as $url ) {
+			$prepare_values[] = '%src="' . $wpdb->esc_like( $url ) . '"%';
+			$like_conditions[] = 'post_content LIKE %s';
+
+			$prepare_values[] = "%src='" . $wpdb->esc_like( $url ) . "'%";
+			$like_conditions[] = 'post_content LIKE %s';
+
+			$prepare_values[] = '%href="' . $wpdb->esc_like( $url ) . '"%';
+			$like_conditions[] = 'post_content LIKE %s';
+
+			$prepare_values[] = "%href='" . $wpdb->esc_like( $url ) . "'%";
+			$like_conditions[] = 'post_content LIKE %s';
+		}
+
+		$post_type_placeholders = implode( ',', array_fill( 0, count( $post_types ), '%s' ) );
+		$where_clause = implode( ' OR ', $like_conditions );
+
+		$query = "SELECT ID, post_title, post_type, post_status, post_content
+			FROM {$wpdb->posts}
+			WHERE post_type IN ({$post_type_placeholders})
+			AND post_status IN ('publish', 'draft', 'pending', 'future', 'private')
+			AND post_content != ''
+			AND post_content IS NOT NULL
+			AND ({$where_clause})";
+
+		$prepared_query = $wpdb->prepare( $query, array_merge( $post_types, $prepare_values ) );
+		$results = $wpdb->get_results( $prepared_query );
+
+		if ( empty( $results ) ) {
+			return;
+		}
+
+		foreach ( $results as $post ) {
+			$post_id = isset( $post->ID ) ? absint( $post->ID ) : 0;
+
+			if ( ! $post_id || in_array( $post_id, $seen_post_ids, true ) ) {
+				continue;
+			}
+
+			$content = isset( $post->post_content ) ? (string) $post->post_content : '';
+
+			if ( self::is_media_used_in_content( $content, $media_id, $image_urls ) ) {
+				self::add_usage_item( $usage, $seen_post_ids, $post );
+			}
+		}
+	}
+
+
+	/**
+	 * Check if media is used in a content string.
+	 *
+	 * @since 2.0.0
+	 * @param string $content Post content.
+	 * @param int    $media_id Attachment ID.
+	 * @param array  $image_urls Media URLs.
+	 * @return bool
+	 */
+	private static function is_media_used_in_content( $content, $media_id, array $image_urls ) {
+		if ( preg_match( '/"(?:id|mediaId)"\s*:\s*' . preg_quote( (string) $media_id, '/' ) . '\b/', $content ) ) {
+			return true;
+		}
+
+		if ( preg_match( '/wp-image-' . preg_quote( (string) $media_id, '/' ) . '\b/', $content ) ) {
+			return true;
+		}
+
+		if ( preg_match( '/\[gallery[^\]]*ids=["\']?[^"\']*' . preg_quote( (string) $media_id, '/' ) . '[^"\']*["\']?/', $content ) ) {
+			return true;
+		}
+
+		foreach ( $image_urls as $url ) {
+			$escaped_url = preg_quote( $url, '/' );
+
+			if ( preg_match( '/src\s*=\s*["\']?' . $escaped_url . '["\']?/', $content ) ) {
+				return true;
+			}
+
+			if ( preg_match( '/href\s*=\s*["\']?' . $escaped_url . '["\']?/', $content ) ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+
+	/**
+	 * Collect attachment parent usage.
+	 *
+	 * @since 2.0.0
+	 * @param object $attachment Attachment post object.
+	 * @param array  $post_types Post types.
+	 * @param array  $usage Usage results reference.
+	 * @param array  $seen_post_ids Seen post IDs reference.
+	 * @return void
+	 */
+	private static function collect_parent_usage( $attachment, array $post_types, array &$usage, array &$seen_post_ids ) {
+		$parent_id = isset( $attachment->post_parent ) ? absint( $attachment->post_parent ) : 0;
+
+		if ( ! $parent_id || in_array( $parent_id, $seen_post_ids, true ) ) {
+			return;
+		}
+
+		$parent = get_post( $parent_id );
+
+		if ( ! $parent || ! in_array( $parent->post_type, $post_types, true ) ) {
+			return;
+		}
+
+		self::add_usage_item( $usage, $seen_post_ids, $parent );
+	}
+
+
+	/**
+	 * Add a usage item if not already included.
+	 *
+	 * @since 2.0.0
+	 * @param array       $usage Usage results reference.
+	 * @param array       $seen_post_ids Seen post IDs reference.
+	 * @param object|null $post Post object.
+	 * @return void
+	 */
+	private static function add_usage_item( array &$usage, array &$seen_post_ids, $post ) {
+		if ( ! $post || empty( $post->ID ) ) {
+			return;
+		}
+
+		$post_id = absint( $post->ID );
+
+		if ( in_array( $post_id, $seen_post_ids, true ) ) {
+			return;
+		}
+
+		$seen_post_ids[] = $post_id;
+		$usage[] = array(
+			'id' => $post_id,
+			'title' => ! empty( $post->post_title ) ? $post->post_title : __( '(Untitled)', 'flexify-dashboard' ),
+			'type' => isset( $post->post_type ) ? $post->post_type : '',
+			'status' => isset( $post->post_status ) ? $post->post_status : '',
+			'edit_url' => get_edit_post_link( $post_id, 'raw' ),
+		);
+	}
+}

@@ -1,416 +1,551 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Rest\CustomFields;
 
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class LocationDataProvider
  *
- * Provides location data for the UI (post types, taxonomies, users, etc.)
+ * Provides location data for the UI.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest\CustomFields
+ * @author MeuMouse.com
  */
-class LocationDataProvider
-{
-  /**
-   * Get available post types for location rules
-   *
-   * @return array Post types array
-   */
-  public function get_post_types()
-  {
-    $post_types = get_post_types(['public' => true], 'objects');
-    $result = [];
+class LocationDataProvider {
 
-    foreach ($post_types as $pt) {
-      $result[] = [
-        'name' => $pt->name,
-        'label' => $pt->label,
-        'singular' => $pt->labels->singular_name,
-      ];
-    }
+	/**
+	 * Custom post types JSON file path.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private $custom_post_types_file;
 
-    // Also add custom post types from our JSON
-    $custom_cpts_file = WP_CONTENT_DIR . '/flexify-dashboard-custom-post-types.json';
-    if (file_exists($custom_cpts_file)) {
-      $json_content = file_get_contents($custom_cpts_file);
-      $custom_cpts = json_decode($json_content, true);
-      if (is_array($custom_cpts)) {
-        foreach ($custom_cpts as $cpt) {
-          if (!empty($cpt['slug']) && !empty($cpt['active'])) {
-            // Check if not already in list
-            $exists = false;
-            foreach ($result as $existing) {
-              if ($existing['name'] === $cpt['slug']) {
-                $exists = true;
-                break;
-              }
-            }
-            if (!$exists) {
-              $result[] = [
-                'name' => $cpt['slug'],
-                'label' => $cpt['name'],
-                'singular' => $cpt['singular_name'] ?? $cpt['name'],
-              ];
-            }
-          }
-        }
-      }
-    }
+	/**
+	 * Options pages JSON file path.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private $options_pages_file;
 
-    return $result;
-  }
 
-  /**
-   * Get available templates for location rules
-   *
-   * @return array Templates array
-   */
-  public function get_templates()
-  {
-    $templates = wp_get_theme()->get_page_templates();
-    $result = [
-      ['value' => 'default', 'label' => __('Default Template', 'flexify-dashboard')],
-    ];
+	/**
+	 * Constructor.
+	 *
+	 * @since 2.0.0
+	 */
+	public function __construct() {
+		$this->custom_post_types_file = WP_CONTENT_DIR . '/flexify-dashboard-custom-post-types.json';
+		$this->options_pages_file     = WP_CONTENT_DIR . '/flexify-dashboard-options-pages.json';
+	}
 
-    foreach ($templates as $filename => $name) {
-      $result[] = [
-        'value' => $filename,
-        'label' => $name,
-      ];
-    }
 
-    return $result;
-  }
+	/**
+	 * Get available post types for location rules.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public function get_post_types() {
+		$post_types = get_post_types( array( 'public' => true ), 'objects' );
+		$result     = array();
 
-  /**
-   * Get all location rule data for the UI
-   *
-   * @return array Location data
-   */
-  public function get_location_data()
-  {
-    return [
-      'post_types' => $this->get_ui_post_types(),
-      'taxonomies' => $this->get_ui_taxonomies(),
-      'taxonomy_terms' => $this->get_ui_taxonomy_terms(),
-      'user_roles' => $this->get_ui_user_roles(),
-      'users' => $this->get_ui_users(),
-      'page_templates' => $this->get_ui_page_templates(),
-      'post_formats' => $this->get_ui_post_formats(),
-      'nav_menus' => $this->get_ui_nav_menus(),
-      'nav_menu_items' => $this->get_ui_nav_menu_items(),
-      'widgets' => $this->get_ui_widgets(),
-      'options_pages' => $this->get_ui_options_pages(),
-    ];
-  }
+		foreach ( $post_types as $post_type ) {
+			$result[] = array(
+				'name'     => $post_type->name,
+				'label'    => $post_type->label,
+				'singular' => isset( $post_type->labels->singular_name ) ? $post_type->labels->singular_name : $post_type->label,
+			);
+		}
 
-  /**
-   * Get post types for location rules UI
-   *
-   * @return array Post types
-   */
-  private function get_ui_post_types()
-  {
-    $post_types = get_post_types(['public' => true], 'objects');
-    $result = [
-      ['value' => 'all', 'label' => __('All', 'flexify-dashboard')],
-    ];
+		foreach ( $this->get_custom_post_types() as $custom_post_type ) {
+			if ( $this->item_exists_by_key( $result, 'name', $custom_post_type['slug'] ) ) {
+				continue;
+			}
 
-    foreach ($post_types as $pt) {
-      $result[] = [
-        'value' => $pt->name,
-        'label' => $pt->label,
-      ];
-    }
+			$result[] = array(
+				'name'     => $custom_post_type['slug'],
+				'label'    => $custom_post_type['name'],
+				'singular' => ! empty( $custom_post_type['singular_name'] ) ? $custom_post_type['singular_name'] : $custom_post_type['name'],
+			);
+		}
 
-    // Add custom post types from our JSON
-    $custom_cpts_file = WP_CONTENT_DIR . '/flexify-dashboard-custom-post-types.json';
-    if (file_exists($custom_cpts_file)) {
-      $json_content = file_get_contents($custom_cpts_file);
-      $custom_cpts = json_decode($json_content, true);
-      if (is_array($custom_cpts)) {
-        foreach ($custom_cpts as $cpt) {
-          if (!empty($cpt['slug']) && !empty($cpt['active'])) {
-            $exists = false;
-            foreach ($result as $existing) {
-              if ($existing['value'] === $cpt['slug']) {
-                $exists = true;
-                break;
-              }
-            }
-            if (!$exists) {
-              $result[] = [
-                'value' => $cpt['slug'],
-                'label' => $cpt['name'],
-              ];
-            }
-          }
-        }
-      }
-    }
+		return $result;
+	}
 
-    return $result;
-  }
 
-  /**
-   * Get taxonomies for location rules UI
-   *
-   * @return array Taxonomies
-   */
-  private function get_ui_taxonomies()
-  {
-    $taxonomies = get_taxonomies(['public' => true], 'objects');
-    $result = [
-      ['value' => 'all', 'label' => __('All', 'flexify-dashboard')],
-    ];
+	/**
+	 * Get available templates for location rules.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public function get_templates() {
+		$templates = wp_get_theme()->get_page_templates();
+		$result    = array(
+			array(
+				'value' => 'default',
+				'label' => __( 'Default Template', 'flexify-dashboard' ),
+			),
+		);
 
-    foreach ($taxonomies as $tax) {
-      $result[] = [
-        'value' => $tax->name,
-        'label' => $tax->label,
-      ];
-    }
+		foreach ( $templates as $filename => $name ) {
+			$result[] = array(
+				'value' => $filename,
+				'label' => $name,
+			);
+		}
 
-    return $result;
-  }
+		return $result;
+	}
 
-  /**
-   * Get taxonomy terms grouped by taxonomy for location rules UI
-   *
-   * @return array Taxonomy terms
-   */
-  private function get_ui_taxonomy_terms()
-  {
-    $taxonomies = get_taxonomies(['public' => true], 'objects');
-    $result = [];
 
-    foreach ($taxonomies as $tax) {
-      $terms = get_terms([
-        'taxonomy' => $tax->name,
-        'hide_empty' => false,
-        'number' => 100, // Limit to avoid performance issues
-      ]);
+	/**
+	 * Get all location rule data for the UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public function get_location_data() {
+		return array(
+			'post_types'     => $this->get_ui_post_types(),
+			'taxonomies'     => $this->get_ui_taxonomies(),
+			'taxonomy_terms' => $this->get_ui_taxonomy_terms(),
+			'user_roles'     => $this->get_ui_user_roles(),
+			'users'          => $this->get_ui_users(),
+			'page_templates' => $this->get_ui_page_templates(),
+			'post_formats'   => $this->get_ui_post_formats(),
+			'nav_menus'      => $this->get_ui_nav_menus(),
+			'nav_menu_items' => $this->get_ui_nav_menu_items(),
+			'widgets'        => $this->get_ui_widgets(),
+			'options_pages'  => $this->get_ui_options_pages(),
+		);
+	}
 
-      if (!is_wp_error($terms) && !empty($terms)) {
-        $tax_terms = [];
-        foreach ($terms as $term) {
-          $tax_terms[] = [
-            'value' => $term->term_id,
-            'label' => $term->name,
-            'slug' => $term->slug,
-          ];
-        }
-        $result[$tax->name] = [
-          'label' => $tax->label,
-          'terms' => $tax_terms,
-        ];
-      }
-    }
 
-    return $result;
-  }
+	/**
+	 * Get post types for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_post_types() {
+		$post_types = get_post_types( array( 'public' => true ), 'objects' );
+		$result     = array(
+			array(
+				'value' => 'all',
+				'label' => __( 'All', 'flexify-dashboard' ),
+			),
+		);
 
-  /**
-   * Get user roles for location rules UI
-   *
-   * @return array User roles
-   */
-  private function get_ui_user_roles()
-  {
-    global $wp_roles;
-    $result = [
-      ['value' => 'all', 'label' => __('All', 'flexify-dashboard')],
-    ];
+		foreach ( $post_types as $post_type ) {
+			$result[] = array(
+				'value' => $post_type->name,
+				'label' => $post_type->label,
+			);
+		}
 
-    if (!empty($wp_roles->roles)) {
-      foreach ($wp_roles->roles as $role_slug => $role) {
-        $result[] = [
-          'value' => $role_slug,
-          'label' => $role['name'],
-        ];
-      }
-    }
+		foreach ( $this->get_custom_post_types() as $custom_post_type ) {
+			if ( $this->item_exists_by_key( $result, 'value', $custom_post_type['slug'] ) ) {
+				continue;
+			}
 
-    return $result;
-  }
+			$result[] = array(
+				'value' => $custom_post_type['slug'],
+				'label' => $custom_post_type['name'],
+			);
+		}
 
-  /**
-   * Get users for location rules UI (limited for performance)
-   *
-   * @return array Users
-   */
-  private function get_ui_users()
-  {
-    $users = get_users([
-      'number' => 100,
-      'orderby' => 'display_name',
-      'order' => 'ASC',
-    ]);
+		return $result;
+	}
 
-    $result = [];
-    foreach ($users as $user) {
-      $result[] = [
-        'value' => $user->ID,
-        'label' => $user->display_name . ' (' . $user->user_login . ')',
-      ];
-    }
 
-    return $result;
-  }
+	/**
+	 * Get taxonomies for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_taxonomies() {
+		$taxonomies = get_taxonomies( array( 'public' => true ), 'objects' );
+		$result     = array(
+			array(
+				'value' => 'all',
+				'label' => __( 'All', 'flexify-dashboard' ),
+			),
+		);
 
-  /**
-   * Get page templates for location rules UI
-   *
-   * @return array Page templates
-   */
-  private function get_ui_page_templates()
-  {
-    $templates = wp_get_theme()->get_page_templates();
-    $result = [
-      ['value' => 'default', 'label' => __('Default Template', 'flexify-dashboard')],
-    ];
+		foreach ( $taxonomies as $taxonomy ) {
+			$result[] = array(
+				'value' => $taxonomy->name,
+				'label' => $taxonomy->label,
+			);
+		}
 
-    foreach ($templates as $filename => $name) {
-      $result[] = [
-        'value' => $filename,
-        'label' => $name,
-      ];
-    }
+		return $result;
+	}
 
-    return $result;
-  }
 
-  /**
-   * Get post formats for location rules UI
-   *
-   * @return array Post formats
-   */
-  private function get_ui_post_formats()
-  {
-    $result = [
-      ['value' => 'all', 'label' => __('All', 'flexify-dashboard')],
-      ['value' => 'standard', 'label' => __('Standard', 'flexify-dashboard')],
-    ];
+	/**
+	 * Get taxonomy terms grouped by taxonomy for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_taxonomy_terms() {
+		$taxonomies = get_taxonomies( array( 'public' => true ), 'objects' );
+		$result     = array();
 
-    if (current_theme_supports('post-formats')) {
-      $formats = get_theme_support('post-formats');
-      if (is_array($formats) && !empty($formats[0])) {
-        foreach ($formats[0] as $format) {
-          $result[] = [
-            'value' => $format,
-            'label' => ucfirst($format),
-          ];
-        }
-      }
-    }
+		foreach ( $taxonomies as $taxonomy ) {
+			$terms = get_terms(
+				array(
+					'taxonomy'   => $taxonomy->name,
+					'hide_empty' => false,
+					'number'     => 100,
+				)
+			);
 
-    return $result;
-  }
+			if ( is_wp_error( $terms ) || empty( $terms ) ) {
+				continue;
+			}
 
-  /**
-   * Get navigation menus for location rules UI
-   *
-   * @return array Navigation menus
-   */
-  private function get_ui_nav_menus()
-  {
-    $menus = wp_get_nav_menus();
-    $result = [
-      ['value' => 'all', 'label' => __('All', 'flexify-dashboard')],
-    ];
+			$taxonomy_terms = array();
 
-    foreach ($menus as $menu) {
-      $result[] = [
-        'value' => $menu->term_id,
-        'label' => $menu->name,
-      ];
-    }
+			foreach ( $terms as $term ) {
+				$taxonomy_terms[] = array(
+					'value' => $term->term_id,
+					'label' => $term->name,
+					'slug'  => $term->slug,
+				);
+			}
 
-    return $result;
-  }
+			$result[ $taxonomy->name ] = array(
+				'label' => $taxonomy->label,
+				'terms' => $taxonomy_terms,
+			);
+		}
 
-  /**
-   * Get navigation menu items for location rules UI
-   *
-   * @return array Navigation menu items
-   */
-  private function get_ui_nav_menu_items()
-  {
-    $menus = wp_get_nav_menus();
-    $result = [];
+		return $result;
+	}
 
-    foreach ($menus as $menu) {
-      $items = wp_get_nav_menu_items($menu->term_id);
-      if (!empty($items)) {
-        $menu_items = [];
-        foreach ($items as $item) {
-          $menu_items[] = [
-            'value' => $item->ID,
-            'label' => $item->title,
-          ];
-        }
-        $result[$menu->term_id] = [
-          'label' => $menu->name,
-          'items' => $menu_items,
-        ];
-      }
-    }
 
-    return $result;
-  }
+	/**
+	 * Get user roles for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_user_roles() {
+		global $wp_roles;
 
-  /**
-   * Get widget areas for location rules UI
-   *
-   * @return array Widget areas
-   */
-  private function get_ui_widgets()
-  {
-    global $wp_registered_sidebars;
-    $result = [
-      ['value' => 'all', 'label' => __('All', 'flexify-dashboard')],
-    ];
+		$result = array(
+			array(
+				'value' => 'all',
+				'label' => __( 'All', 'flexify-dashboard' ),
+			),
+		);
 
-    if (!empty($wp_registered_sidebars)) {
-      foreach ($wp_registered_sidebars as $sidebar_id => $sidebar) {
-        $result[] = [
-          'value' => $sidebar_id,
-          'label' => $sidebar['name'],
-        ];
-      }
-    }
+		if ( ! isset( $wp_roles ) || empty( $wp_roles->roles ) || ! is_array( $wp_roles->roles ) ) {
+			return $result;
+		}
 
-    return $result;
-  }
+		foreach ( $wp_roles->roles as $role_slug => $role ) {
+			$result[] = array(
+				'value' => $role_slug,
+				'label' => isset( $role['name'] ) ? $role['name'] : $role_slug,
+			);
+		}
 
-  /**
-   * Get options pages for location rules UI (from UiXpress)
-   *
-   * @return array Options pages
-   */
-  private function get_ui_options_pages()
-  {
-    $result = [];
+		return $result;
+	}
 
-    // Check if there are any registered options pages
-    // This could be extended to support custom options pages
-    $options_file = WP_CONTENT_DIR . '/flexify-dashboard-options-pages.json';
-    if (file_exists($options_file)) {
-      $json_content = file_get_contents($options_file);
-      $options_pages = json_decode($json_content, true);
-      if (is_array($options_pages)) {
-        foreach ($options_pages as $page) {
-          if (!empty($page['slug']) && !empty($page['active'])) {
-            $result[] = [
-              'value' => $page['slug'],
-              'label' => $page['title'] ?? $page['slug'],
-            ];
-          }
-        }
-      }
-    }
 
-    return $result;
-  }
+	/**
+	 * Get users for location rules UI.
+	 *
+	 * Limited for performance.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_users() {
+		$users = get_users(
+			array(
+				'number'  => 100,
+				'orderby' => 'display_name',
+				'order'   => 'ASC',
+			)
+		);
+
+		$result = array();
+
+		foreach ( $users as $user ) {
+			$result[] = array(
+				'value' => $user->ID,
+				'label' => $user->display_name . ' (' . $user->user_login . ')',
+			);
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Get page templates for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_page_templates() {
+		$templates = wp_get_theme()->get_page_templates();
+		$result    = array(
+			array(
+				'value' => 'default',
+				'label' => __( 'Default Template', 'flexify-dashboard' ),
+			),
+		);
+
+		foreach ( $templates as $filename => $name ) {
+			$result[] = array(
+				'value' => $filename,
+				'label' => $name,
+			);
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Get post formats for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_post_formats() {
+		$result = array(
+			array(
+				'value' => 'all',
+				'label' => __( 'All', 'flexify-dashboard' ),
+			),
+			array(
+				'value' => 'standard',
+				'label' => __( 'Standard', 'flexify-dashboard' ),
+			),
+		);
+
+		if ( ! current_theme_supports( 'post-formats' ) ) {
+			return $result;
+		}
+
+		$formats = get_theme_support( 'post-formats' );
+
+		if ( ! is_array( $formats ) || empty( $formats[0] ) ) {
+			return $result;
+		}
+
+		foreach ( $formats[0] as $format ) {
+			$result[] = array(
+				'value' => $format,
+				'label' => ucfirst( $format ),
+			);
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Get navigation menus for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_nav_menus() {
+		$menus  = wp_get_nav_menus();
+		$result = array(
+			array(
+				'value' => 'all',
+				'label' => __( 'All', 'flexify-dashboard' ),
+			),
+		);
+
+		foreach ( $menus as $menu ) {
+			$result[] = array(
+				'value' => $menu->term_id,
+				'label' => $menu->name,
+			);
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Get navigation menu items for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_nav_menu_items() {
+		$menus  = wp_get_nav_menus();
+		$result = array();
+
+		foreach ( $menus as $menu ) {
+			$items = wp_get_nav_menu_items( $menu->term_id );
+
+			if ( empty( $items ) ) {
+				continue;
+			}
+
+			$menu_items = array();
+
+			foreach ( $items as $item ) {
+				$menu_items[] = array(
+					'value' => $item->ID,
+					'label' => $item->title,
+				);
+			}
+
+			$result[ $menu->term_id ] = array(
+				'label' => $menu->name,
+				'items' => $menu_items,
+			);
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Get widget areas for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_widgets() {
+		global $wp_registered_sidebars;
+
+		$result = array(
+			array(
+				'value' => 'all',
+				'label' => __( 'All', 'flexify-dashboard' ),
+			),
+		);
+
+		if ( empty( $wp_registered_sidebars ) || ! is_array( $wp_registered_sidebars ) ) {
+			return $result;
+		}
+
+		foreach ( $wp_registered_sidebars as $sidebar_id => $sidebar ) {
+			$result[] = array(
+				'value' => $sidebar_id,
+				'label' => isset( $sidebar['name'] ) ? $sidebar['name'] : $sidebar_id,
+			);
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Get options pages for location rules UI.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_ui_options_pages() {
+		$result        = array();
+		$options_pages = $this->read_json_file( $this->options_pages_file );
+
+		if ( ! is_array( $options_pages ) ) {
+			return $result;
+		}
+
+		foreach ( $options_pages as $page ) {
+			if ( empty( $page['slug'] ) || empty( $page['active'] ) ) {
+				continue;
+			}
+
+			$result[] = array(
+				'value' => $page['slug'],
+				'label' => ! empty( $page['title'] ) ? $page['title'] : $page['slug'],
+			);
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Get custom post types from JSON file.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_custom_post_types() {
+		$custom_post_types = $this->read_json_file( $this->custom_post_types_file );
+		$result            = array();
+
+		if ( ! is_array( $custom_post_types ) ) {
+			return $result;
+		}
+
+		foreach ( $custom_post_types as $post_type ) {
+			if ( empty( $post_type['slug'] ) || empty( $post_type['active'] ) || empty( $post_type['name'] ) ) {
+				continue;
+			}
+
+			$result[] = $post_type;
+		}
+
+		return $result;
+	}
+
+
+	/**
+	 * Read and decode a JSON file.
+	 *
+	 * @since 2.0.0
+	 * @param string $file_path File path.
+	 * @return array
+	 */
+	private function read_json_file( $file_path ) {
+		if ( ! is_string( $file_path ) || '' === $file_path || ! file_exists( $file_path ) || ! is_readable( $file_path ) ) {
+			return array();
+		}
+
+		$json_content = file_get_contents( $file_path );
+
+		if ( false === $json_content || '' === $json_content ) {
+			return array();
+		}
+
+		$decoded = json_decode( $json_content, true );
+
+		return is_array( $decoded ) ? $decoded : array();
+	}
+
+
+	/**
+	 * Check if an item exists in an array by key and value.
+	 *
+	 * @since 2.0.0
+	 * @param array  $items Items array.
+	 * @param string $key Array key.
+	 * @param mixed  $value Value to compare.
+	 * @return bool
+	 */
+	private function item_exists_by_key( $items, $key, $value ) {
+		foreach ( $items as $item ) {
+			if ( isset( $item[ $key ] ) && $item[ $key ] === $value ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 }
-

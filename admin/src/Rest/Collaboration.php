@@ -2,417 +2,493 @@
 
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+use WP_Error;
+use WP_REST_Request;
+use WP_REST_Response;
+
+defined('ABSPATH') || exit;
 
 /**
  * Class Collaboration
  *
- * REST API endpoints for real-time collaboration
- * Provides authentication and document persistence for Hocuspocus server
- * 
- * @since 1.2.16
+ * REST API endpoints for real-time collaboration.
+ * Provides authentication and document persistence for Hocuspocus server.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest
+ * @author MeuMouse.com
  */
-class Collaboration
-{
-    /**
-     * Collaboration constructor.
-     */
-    public function __construct()
-    {
-        add_action("rest_api_init", [$this, "register_custom_endpoints"]);
-        add_action("wp_enqueue_scripts", [$this, "enqueue_collaboration_config"]);
-        add_action("admin_enqueue_scripts", [$this, "enqueue_collaboration_config"]);
-    }
+class Collaboration {
 
-    /**
-     * Registers custom REST API endpoints
-     * 
-     * @return void
-     * @since 1.2.16
-     */
-    public function register_custom_endpoints()
-    {
-        // Verify user can edit a post (called by Hocuspocus server)
-        register_rest_route('flexify-dashboard/v1', '/collab/verify', [
-            'methods' => 'POST',
-            'callback' => [$this, 'verify_user'],
-            'permission_callback' => '__return_true', // Public endpoint, authentication is done inside
-            'args' => [
-                'post_id' => [
-                    'required' => true,
-                    'sanitize_callback' => 'absint',
-                ],
-                'token' => [
-                    'required' => true,
-                    'sanitize_callback' => 'sanitize_text_field',
-                ],
-            ],
-        ]);
+	/**
+	 * REST namespace.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const REST_NAMESPACE = 'flexify-dashboard/v1';
 
-        // Get collaboration document state
-        register_rest_route('flexify-dashboard/v1', '/collab/document/(?P<post_id>\d+)', [
-            'methods' => 'GET',
-            'callback' => [$this, 'get_document'],
-            'permission_callback' => [$this, 'check_edit_permissions'],
-            'args' => [
-                'post_id' => [
-                    'required' => true,
-                    'validate_callback' => function ($param) {
-                        return is_numeric($param);
-                    },
-                    'sanitize_callback' => 'absint',
-                ],
-            ],
-        ]);
+	/**
+	 * Document meta key.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const DOCUMENT_META_KEY = '_fd_collab_document';
 
-        // Save collaboration document state
-        register_rest_route('flexify-dashboard/v1', '/collab/document/(?P<post_id>\d+)', [
-            'methods' => 'POST',
-            'callback' => [$this, 'save_document'],
-            'permission_callback' => [$this, 'check_edit_permissions'],
-            'args' => [
-                'post_id' => [
-                    'required' => true,
-                    'validate_callback' => function ($param) {
-                        return is_numeric($param);
-                    },
-                    'sanitize_callback' => 'absint',
-                ],
-                'document' => [
-                    'required' => true,
-                    'sanitize_callback' => 'sanitize_text_field',
-                ],
-            ],
-        ]);
+	/**
+	 * Default collaboration server URL.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const DEFAULT_SERVER_URL = 'ws://localhost:1234';
 
-        // Get collaboration settings
-        register_rest_route('flexify-dashboard/v1', '/collab/settings', [
-            'methods' => 'GET',
-            'callback' => [$this, 'get_settings'],
-            'permission_callback' => [$this, 'check_edit_permissions'],
-        ]);
+	/**
+	 * Default PartyKit host.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	const DEFAULT_PARTYKIT_HOST = 'flexify-dashboard-collab.wpuipress.partykit.dev';
 
-        // Get active collaborators for a post
-        register_rest_route('flexify-dashboard/v1', '/collab/users/(?P<post_id>\d+)', [
-            'methods' => 'GET',
-            'callback' => [$this, 'get_active_users'],
-            'permission_callback' => [$this, 'check_edit_permissions'],
-            'args' => [
-                'post_id' => [
-                    'required' => true,
-                    'validate_callback' => function ($param) {
-                        return is_numeric($param);
-                    },
-                    'sanitize_callback' => 'absint',
-                ],
-            ],
-        ]);
-    }
+	/**
+	 * Available user colors.
+	 *
+	 * @since 2.0.0
+	 * @var array
+	 */
+	private $user_colors = array(
+		'#F44336',
+		'#E91E63',
+		'#9C27B0',
+		'#673AB7',
+		'#3F51B5',
+		'#2196F3',
+		'#03A9F4',
+		'#00BCD4',
+		'#009688',
+		'#4CAF50',
+		'#8BC34A',
+		'#CDDC39',
+		'#FFC107',
+		'#FF9800',
+		'#FF5722',
+		'#795548',
+	);
 
-    /**
-     * Enqueues collaboration configuration for the frontend
-     *
-     * @return void
-     * @since 1.2.16
-     */
-    public function enqueue_collaboration_config()
-    {
-        if (!is_user_logged_in()) {
-            return;
-        }
 
-        $user = wp_get_current_user();
-        $collab_enabled = $this->is_collaboration_enabled();
+	/**
+	 * Class constructor.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'rest_api_init', array( $this, 'register_custom_endpoints' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_collaboration_config' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_collaboration_config' ) );
+	}
 
-        // Collaboration configuration
-        $collab_config = [
-            'enabled' => $collab_enabled,
-            'serverUrl' => $this->get_server_url(),
-            'partyKitHost' => $this->get_partykit_host(),
-            'mode' => $this->get_provider_mode(),
-            'siteId' => $this->get_site_id(),
-            'siteUrl' => get_site_url(),
-            'userId' => $user->ID,
-            'userName' => $user->display_name,
-            'userColor' => $this->generate_user_color($user->ID),
-            'userAvatar' => get_avatar_url($user->ID),
-        ];
 
-        // Output as global JavaScript variable
-        wp_add_inline_script(
-            'wp-api-fetch',
-            'window.flexifyDashboardCollab = ' . wp_json_encode($collab_config) . ';',
-            'before'
-        );
-    }
+	/**
+	 * Register custom REST API endpoints.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function register_custom_endpoints() {
+		register_rest_route( self::REST_NAMESPACE, '/collab/verify', array(
+			'methods' => 'POST',
+			'callback' => array( $this, 'verify_user' ),
+			'permission_callback' => '__return_true',
+			'args' => array(
+				'post_id' => array(
+					'required' => true,
+					'sanitize_callback' => 'absint',
+					'validate_callback' => array( $this, 'validate_post_id' ),
+				),
+				'token' => array(
+					'required' => true,
+					'sanitize_callback' => 'sanitize_text_field',
+				),
+			),
+		) );
 
-    /**
-     * Gets the provider mode
-     *
-     * @return string 'hosted', 'custom', or 'cloud'
-     * @since 1.2.16
-     */
-    private function get_provider_mode()
-    {
-        $custom_url = get_option('fd_collaboration_custom_server_url', '');
-        if (!empty($custom_url)) {
-            return 'custom';
-        }
-        return get_option('fd_collaboration_mode', 'hosted');
-    }
+		register_rest_route( self::REST_NAMESPACE, '/collab/document/(?P<post_id>\d+)', array(
+			'methods' => 'GET',
+			'callback' => array( $this, 'get_document' ),
+			'permission_callback' => array( $this, 'check_edit_permissions' ),
+			'args' => array(
+				'post_id' => array(
+					'required' => true,
+					'validate_callback' => array( $this, 'validate_post_id' ),
+					'sanitize_callback' => 'absint',
+				),
+			),
+		) );
 
-    /**
-     * Gets or generates a unique site identifier
-     * This ensures documents are isolated per WordPress installation
-     *
-     * @return string Unique site identifier
-     * @since 1.2.16
-     */
-    private function get_site_id()
-    {
-        $site_id = get_option('fd_collaboration_site_id', '');
-        
-        if (empty($site_id)) {
-            // Generate a unique site ID based on site URL
-            $site_url = get_site_url();
-            $site_id = substr(md5($site_url), 0, 12);
-            update_option('fd_collaboration_site_id', $site_id);
-        }
-        
-        return $site_id;
-    }
+		register_rest_route( self::REST_NAMESPACE, '/collab/document/(?P<post_id>\d+)', array(
+			'methods' => 'POST',
+			'callback' => array( $this, 'save_document' ),
+			'permission_callback' => array( $this, 'check_edit_permissions' ),
+			'args' => array(
+				'post_id' => array(
+					'required' => true,
+					'validate_callback' => array( $this, 'validate_post_id' ),
+					'sanitize_callback' => 'absint',
+				),
+				'document' => array(
+					'required' => true,
+					'sanitize_callback' => array( $this, 'sanitize_document' ),
+				),
+			),
+		) );
 
-    /**
-     * Checks if the user has permission to edit posts
-     *
-     * @param \WP_REST_Request $request The request object
-     * @return bool|\WP_Error True if the user has permission, WP_Error object otherwise
-     * @since 1.2.16
-     */
-    public function check_edit_permissions($request)
-    {
-        $post_id = $request->get_param('post_id');
-        
-        if ($post_id) {
-            return current_user_can('edit_post', $post_id);
-        }
-        
-        return current_user_can('edit_posts');
-    }
+		register_rest_route( self::REST_NAMESPACE, '/collab/settings', array(
+			'methods' => 'GET',
+			'callback' => array( $this, 'get_settings' ),
+			'permission_callback' => array( $this, 'check_edit_permissions' ),
+		) );
 
-    /**
-     * Verifies if a user can edit a specific post
-     * Called by Hocuspocus server for authentication
-     *
-     * @param \WP_REST_Request $request The request object
-     * @return \WP_REST_Response The response object
-     * @since 1.2.16
-     */
-    public function verify_user($request)
-    {
-        $post_id = $request->get_param('post_id');
-        $token = $request->get_param('token');
+		register_rest_route( self::REST_NAMESPACE, '/collab/users/(?P<post_id>\d+)', array(
+			'methods' => 'GET',
+			'callback' => array( $this, 'get_active_users' ),
+			'permission_callback' => array( $this, 'check_edit_permissions' ),
+			'args' => array(
+				'post_id' => array(
+					'required' => true,
+					'validate_callback' => array( $this, 'validate_post_id' ),
+					'sanitize_callback' => 'absint',
+				),
+			),
+		) );
+	}
 
-        // Verify nonce/token
-        if (!wp_verify_nonce($token, 'wp_rest')) {
-            // Try to authenticate via cookie
-            $user_id = wp_validate_auth_cookie('', 'logged_in');
-            
-            if (!$user_id) {
-                return new \WP_REST_Response([
-                    'can_edit' => false,
-                    'error' => __('Invalid authentication', 'flexify-dashboard'),
-                ], 401);
-            }
-        }
 
-        $user = wp_get_current_user();
-        
-        if (!$user || !$user->exists()) {
-            return new \WP_REST_Response([
-                'can_edit' => false,
-                'error' => __('User not found', 'flexify-dashboard'),
-            ], 401);
-        }
+	/**
+	 * Enqueue collaboration configuration for the frontend.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function enqueue_collaboration_config() {
+		if ( ! is_user_logged_in() ) {
+			return;
+		}
 
-        // Check if user can edit this specific post
-        $can_edit = current_user_can('edit_post', $post_id);
+		$user = wp_get_current_user();
 
-        if (!$can_edit) {
-            return new \WP_REST_Response([
-                'can_edit' => false,
-                'error' => __('User cannot edit this post', 'flexify-dashboard'),
-            ], 403);
-        }
+		if ( ! $user || ! $user->exists() ) {
+			return;
+		}
 
-        return new \WP_REST_Response([
-            'can_edit' => true,
-            'user' => [
-                'id' => $user->ID,
-                'name' => $user->display_name,
-                'email' => $user->user_email,
-                'avatar' => get_avatar_url($user->ID),
-                'color' => $this->generate_user_color($user->ID),
-            ],
-        ]);
-    }
+		$collab_config = array(
+			'enabled' => $this->is_collaboration_enabled(),
+			'serverUrl' => $this->get_server_url(),
+			'partyKitHost' => $this->get_partykit_host(),
+			'mode' => $this->get_provider_mode(),
+			'siteId' => $this->get_site_id(),
+			'siteUrl' => get_site_url(),
+			'userId' => $user->ID,
+			'userName' => $user->display_name,
+			'userColor' => $this->generate_user_color( $user->ID ),
+			'userAvatar' => get_avatar_url( $user->ID ),
+		);
 
-    /**
-     * Gets the collaboration document state for a post
-     *
-     * @param \WP_REST_Request $request The request object
-     * @return \WP_REST_Response The response object
-     * @since 1.2.16
-     */
-    public function get_document($request)
-    {
-        $post_id = $request->get_param('post_id');
-        
-        // Get stored Y.js document state
-        $document = get_post_meta($post_id, '_fd_collab_document', true);
+		wp_add_inline_script(
+			'wp-api-fetch',
+			'window.flexifyDashboardCollab = ' . wp_json_encode( $collab_config ) . ';',
+			'before'
+		);
+	}
 
-        return new \WP_REST_Response([
-            'post_id' => $post_id,
-            'document' => $document ?: null,
-            'has_document' => !empty($document),
-        ]);
-    }
 
-    /**
-     * Saves the collaboration document state for a post
-     *
-     * @param \WP_REST_Request $request The request object
-     * @return \WP_REST_Response The response object
-     * @since 1.2.16
-     */
-    public function save_document($request)
-    {
-        $post_id = $request->get_param('post_id');
-        $document = $request->get_param('document');
+	/**
+	 * Get the provider mode.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private function get_provider_mode() {
+		$custom_url = get_option( 'fd_collaboration_custom_server_url', '' );
 
-        // Store Y.js document state as post meta
-        $updated = update_post_meta($post_id, '_fd_collab_document', $document);
+		if ( ! empty( $custom_url ) ) {
+			return 'custom';
+		}
 
-        return new \WP_REST_Response([
-            'success' => true,
-            'post_id' => $post_id,
-            'updated' => $updated,
-        ]);
-    }
+		return get_option( 'fd_collaboration_mode', 'hosted' );
+	}
 
-    /**
-     * Gets collaboration settings
-     *
-     * @param \WP_REST_Request $request The request object
-     * @return \WP_REST_Response The response object
-     * @since 1.2.16
-     */
-    public function get_settings($request)
-    {
-        $user = wp_get_current_user();
 
-        return new \WP_REST_Response([
-            'enabled' => $this->is_collaboration_enabled(),
-            'serverUrl' => $this->get_server_url(),
-            'user' => [
-                'id' => $user->ID,
-                'name' => $user->display_name,
-                'color' => $this->generate_user_color($user->ID),
-                'avatar' => get_avatar_url($user->ID),
-            ],
-        ]);
-    }
+	/**
+	 * Get or generate a unique site identifier.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private function get_site_id() {
+		$site_id = get_option( 'fd_collaboration_site_id', '' );
 
-    /**
-     * Gets active collaborators for a post
-     * (This is a placeholder - in a real implementation, you'd query the Hocuspocus server)
-     *
-     * @param \WP_REST_Request $request The request object
-     * @return \WP_REST_Response The response object
-     * @since 1.2.16
-     */
-    public function get_active_users($request)
-    {
-        $post_id = $request->get_param('post_id');
+		if ( empty( $site_id ) ) {
+			$site_id = substr( md5( get_site_url() ), 0, 12 );
+			update_option( 'fd_collaboration_site_id', $site_id );
+		}
 
-        // In a full implementation, you would query the Hocuspocus server
-        // for active connections to this document
-        // For now, return an empty array
-        return new \WP_REST_Response([
-            'post_id' => $post_id,
-            'users' => [],
-        ]);
-    }
+		return $site_id;
+	}
 
-    /**
-     * Checks if collaboration is enabled
-     *
-     * @return bool
-     * @since 1.2.16
-     */
-    private function is_collaboration_enabled()
-    {
-        // Check flexify_dashboard_settings for enable_realtime_collaboration
-        $settings = get_option('flexify_dashboard_settings', []);
-        $enabled = isset($settings['enable_realtime_collaboration']) ? (bool) $settings['enable_realtime_collaboration'] : false;
-        
-        // Also check if modern post editor is enabled (collaboration requires it)
-        $modern_editor_enabled = isset($settings['use_modern_post_editor']) ? (bool) $settings['use_modern_post_editor'] : false;
-        
-        return $enabled && $modern_editor_enabled;
-    }
 
-    /**
-     * Gets the collaboration server URL (legacy, for backwards compatibility)
-     *
-     * @return string
-     * @since 1.2.16
-     */
-    private function get_server_url()
-    {
-        $url = get_option('fd_collaboration_server_url', '');
-        
-        // Default to localhost for development
-        if (empty($url)) {
-            $url = 'ws://localhost:1234';
-        }
-        
-        return $url;
-    }
+	/**
+	 * Check whether the current user has permission to edit posts.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return bool|WP_Error
+	 */
+	public function check_edit_permissions( $request ) {
+		$post_id = absint( $request->get_param( 'post_id' ) );
 
-    /**
-     * Gets the PartyKit host
-     *
-     * @return string PartyKit host (without protocol)
-     * @since 1.2.16
-     */
-    private function get_partykit_host()
-    {
-        // Allow override via option, otherwise use default production host
-        return get_option('fd_collaboration_partykit_host', 'flexify-dashboard-collab.wpuipress.partykit.dev');
-    }
+		if ( $post_id > 0 ) {
+			return current_user_can( 'edit_post', $post_id );
+		}
 
-    /**
-     * Generates a consistent color for a user based on their ID
-     *
-     * @param int $user_id The user ID
-     * @return string Hex color code
-     * @since 1.2.16
-     */
-    private function generate_user_color($user_id)
-    {
-        $colors = [
-            '#F44336', '#E91E63', '#9C27B0', '#673AB7',
-            '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4',
-            '#009688', '#4CAF50', '#8BC34A', '#CDDC39',
-            '#FFC107', '#FF9800', '#FF5722', '#795548',
-        ];
-        
-        // Use user ID to pick a consistent color
-        $index = $user_id % count($colors);
-        
-        return $colors[$index];
-    }
+		return current_user_can( 'edit_posts' );
+	}
+
+
+	/**
+	 * Verify whether a user can edit a specific post.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response
+	 */
+	public function verify_user( $request ) {
+		$post_id = absint( $request->get_param( 'post_id' ) );
+		$token = sanitize_text_field( $request->get_param( 'token' ) );
+
+		if ( ! wp_verify_nonce( $token, 'wp_rest' ) ) {
+			$user_id = wp_validate_auth_cookie( '', 'logged_in' );
+
+			if ( ! $user_id ) {
+				return new WP_REST_Response( array(
+					'can_edit' => false,
+					'error' => __( 'Invalid authentication', 'flexify-dashboard' ),
+				), 401 );
+			}
+		}
+
+		$user = wp_get_current_user();
+
+		if ( ! $user || ! $user->exists() ) {
+			return new WP_REST_Response( array(
+				'can_edit' => false,
+				'error' => __( 'User not found', 'flexify-dashboard' ),
+			), 401 );
+		}
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return new WP_REST_Response( array(
+				'can_edit' => false,
+				'error' => __( 'User cannot edit this post', 'flexify-dashboard' ),
+			), 403 );
+		}
+
+		return new WP_REST_Response( array(
+			'can_edit' => true,
+			'user' => array(
+				'id' => $user->ID,
+				'name' => $user->display_name,
+				'email' => $user->user_email,
+				'avatar' => get_avatar_url( $user->ID ),
+				'color' => $this->generate_user_color( $user->ID ),
+			),
+		) );
+	}
+
+
+	/**
+	 * Get the collaboration document state for a post.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response
+	 */
+	public function get_document( $request ) {
+		$post_id = absint( $request->get_param( 'post_id' ) );
+		$document = get_post_meta( $post_id, self::DOCUMENT_META_KEY, true );
+
+		return new WP_REST_Response( array(
+			'post_id' => $post_id,
+			'document' => ! empty( $document ) ? $document : null,
+			'has_document' => ! empty( $document ),
+		) );
+	}
+
+
+	/**
+	 * Save the collaboration document state for a post.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response|WP_Error
+	 */
+	public function save_document( $request ) {
+		$post_id = absint( $request->get_param( 'post_id' ) );
+		$document = $request->get_param( 'document' );
+
+		if ( empty( $document ) ) {
+			return new WP_Error(
+				'invalid_document',
+				__( 'Invalid document data.', 'flexify-dashboard' ),
+				array( 'status' => 400 )
+			);
+		}
+
+		$updated = update_post_meta( $post_id, self::DOCUMENT_META_KEY, $document );
+
+		return new WP_REST_Response( array(
+			'success' => true,
+			'post_id' => $post_id,
+			'updated' => (bool) $updated,
+		) );
+	}
+
+
+	/**
+	 * Get collaboration settings.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response
+	 */
+	public function get_settings( $request ) {
+		unset( $request );
+
+		$user = wp_get_current_user();
+
+		return new WP_REST_Response( array(
+			'enabled' => $this->is_collaboration_enabled(),
+			'serverUrl' => $this->get_server_url(),
+			'user' => array(
+				'id' => $user->ID,
+				'name' => $user->display_name,
+				'color' => $this->generate_user_color( $user->ID ),
+				'avatar' => get_avatar_url( $user->ID ),
+			),
+		) );
+	}
+
+
+	/**
+	 * Get active collaborators for a post.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request object.
+	 * @return WP_REST_Response
+	 */
+	public function get_active_users( $request ) {
+		$post_id = absint( $request->get_param( 'post_id' ) );
+
+		return new WP_REST_Response( array(
+			'post_id' => $post_id,
+			'users' => array(),
+		) );
+	}
+
+
+	/**
+	 * Check whether collaboration is enabled.
+	 *
+	 * @since 2.0.0
+	 * @return bool
+	 */
+	private function is_collaboration_enabled() {
+		$settings = get_option( 'flexify_dashboard_settings', array() );
+		$enabled = isset( $settings['enable_realtime_collaboration'] ) ? (bool) $settings['enable_realtime_collaboration'] : false;
+		$modern_editor_enabled = isset( $settings['use_modern_post_editor'] ) ? (bool) $settings['use_modern_post_editor'] : false;
+
+		return $enabled && $modern_editor_enabled;
+	}
+
+
+	/**
+	 * Get the collaboration server URL.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private function get_server_url() {
+		$url = get_option( 'fd_collaboration_server_url', '' );
+
+		if ( empty( $url ) ) {
+			$url = self::DEFAULT_SERVER_URL;
+		}
+
+		return esc_url_raw( $url );
+	}
+
+
+	/**
+	 * Get the PartyKit host.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private function get_partykit_host() {
+		return sanitize_text_field( get_option( 'fd_collaboration_partykit_host', self::DEFAULT_PARTYKIT_HOST ) );
+	}
+
+
+	/**
+	 * Generate a consistent color for a user.
+	 *
+	 * @since 2.0.0
+	 * @param int $user_id User ID.
+	 * @return string
+	 */
+	private function generate_user_color( $user_id ) {
+		$total_colors = count( $this->user_colors );
+
+		if ( 0 === $total_colors ) {
+			return '#2196F3';
+		}
+
+		$index = absint( $user_id ) % $total_colors;
+
+		return $this->user_colors[ $index ];
+	}
+
+
+	/**
+	 * Validate post ID parameter.
+	 *
+	 * @since 2.0.0
+	 * @param mixed            $param Route parameter value.
+	 * @param WP_REST_Request  $request REST request object.
+	 * @param string           $key Parameter key.
+	 * @return bool
+	 */
+	public function validate_post_id( $param, $request = null, $key = '' ) {
+		unset( $request, $key );
+
+		return is_numeric( $param ) && absint( $param ) > 0;
+	}
+
+
+	/**
+	 * Sanitize document payload.
+	 *
+	 * @since 2.0.0
+	 * @param mixed $document Document payload.
+	 * @return string
+	 */
+	public function sanitize_document( $document ) {
+		if ( is_array( $document ) || is_object( $document ) ) {
+			return wp_json_encode( $document );
+		}
+
+		return is_scalar( $document ) ? (string) $document : '';
+	}
 }
-

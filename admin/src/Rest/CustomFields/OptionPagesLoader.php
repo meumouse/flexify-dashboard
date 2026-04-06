@@ -1,254 +1,338 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Rest\CustomFields;
 
-use MeuMouse\Flexify_Dashboard\Rest\CustomFields\OptionPagesRepository;
-use MeuMouse\Flexify_Dashboard\Rest\CustomFields\OptionPageRenderer;
-use MeuMouse\Flexify_Dashboard\Rest\CustomFields\OptionPagesScriptLoader;
-
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class OptionPagesLoader
  *
- * Handles registering admin menu pages for custom option pages
+ * Handles registering admin menu pages for custom option pages.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest\CustomFields
+ * @author MeuMouse.com
  */
-class OptionPagesLoader
-{
-  /**
-   * @var OptionPagesRepository
-   */
-  private $repository;
+class OptionPagesLoader {
 
-  /**
-   * @var OptionPageRenderer
-   */
-  private $renderer;
+	/**
+	 * Option pages repository instance.
+	 *
+	 * @since 2.0.0
+	 * @var OptionPagesRepository
+	 */
+	private $repository;
 
-  /**
-   * @var array Registered page hooks for script enqueuing
-   */
-  private $page_hooks = [];
+	/**
+	 * Option page renderer instance.
+	 *
+	 * @since 2.0.0
+	 * @var OptionPageRenderer
+	 */
+	private $renderer;
 
-  /**
-   * Initialize the loader
-   */
-  public function __construct()
-  {
-    $this->repository = new OptionPagesRepository();
-    $this->renderer = new OptionPageRenderer();
-  }
+	/**
+	 * Registered page hooks for script enqueuing.
+	 *
+	 * @since 2.0.0
+	 * @var array
+	 */
+	private $page_hooks = array();
 
-  /**
-   * Initialize hooks
-   */
-  public function init()
-  {
-    add_action('admin_menu', [$this, 'register_option_pages'], 99);
-    add_action('admin_enqueue_scripts', [$this, 'enqueue_scripts']);
-    add_action('admin_footer', [$this, 'print_footer_scripts']);
-  }
 
-  /**
-   * Register all active option pages as admin menu pages
-   */
-  public function register_option_pages()
-  {
-    $option_pages = $this->repository->get_active_pages();
+	/**
+	 * Constructor.
+	 *
+	 * @since 2.0.0
+	 */
+	public function __construct() {
+		$this->repository = new OptionPagesRepository();
+		$this->renderer   = new OptionPageRenderer();
+	}
 
-    if (empty($option_pages)) {
-      return;
-    }
 
-    foreach ($option_pages as $page) {
-      $this->register_single_page($page);
-    }
-  }
+	/**
+	 * Initialize hooks.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function init() {
+		add_action( 'admin_menu', array( $this, 'register_option_pages' ), 99 );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'admin_footer', array( $this, 'print_footer_scripts' ) );
+	}
 
-  /**
-   * Register a single option page
-   *
-   * @param array $page Option page data
-   */
-  private function register_single_page($page)
-  {
-    if (empty($page['slug']) || empty($page['title'])) {
-      return;
-    }
 
-    $menu_slug = 'flexify-dashboard-options-' . $page['slug'];
-    $capability = !empty($page['capability']) ? $page['capability'] : 'manage_options';
-    $page_title = $page['title'];
-    $menu_title = $page['title'];
+	/**
+	 * Register all active option pages as admin menu pages.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function register_option_pages() {
+		$option_pages = $this->repository->get_active_pages();
 
-    if ($page['menu_type'] === 'top_level') {
-      // Register as top-level menu page
-      $icon_name = !empty($page['menu_icon']) ? $page['menu_icon'] : 'settings';
-      $icon = $this->get_menu_icon_url($icon_name);
-      $position = !empty($page['menu_position']) ? (int) $page['menu_position'] : 100;
+		if ( ! is_array( $option_pages ) || empty( $option_pages ) ) {
+			return;
+		}
 
-      $hook = add_menu_page(
-        $page_title,
-        $menu_title,
-        $capability,
-        $menu_slug,
-        [$this, 'render_option_page'],
-        $icon,
-        $position
-      );
-    } else {
-      // Register as submenu page
-      $parent_slug = !empty($page['parent_menu']) ? $page['parent_menu'] : 'options-general.php';
+		foreach ( $option_pages as $page ) {
+			$this->register_single_page( $page );
+		}
+	}
 
-      $hook = add_submenu_page(
-        $parent_slug,
-        $page_title,
-        $menu_title,
-        $capability,
-        $menu_slug,
-        [$this, 'render_option_page']
-      );
-    }
 
-    if ($hook) {
-      $this->page_hooks[$hook] = $page;
-    }
-  }
+	/**
+	 * Render the option page content.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function render_option_page() {
+		$page = $this->get_current_page_data();
 
-  /**
-   * Render the option page content
-   */
-  public function render_option_page()
-  {
-    // Get current screen to identify which page we're on
-    $screen = get_current_screen();
-    
-    if (!$screen) {
-      return;
-    }
+		if ( empty( $page ) ) {
+			echo '<div class="wrap"><h1>' . esc_html__( 'Option Page Not Found', 'flexify-dashboard' ) . '</h1></div>';
+			return;
+		}
 
-    // Find the page data for this screen
-    $page = null;
-    foreach ($this->page_hooks as $hook => $page_data) {
-      if ($screen->id === $hook) {
-        $page = $page_data;
-        break;
-      }
-    }
+		$this->renderer->render( $page );
+	}
 
-    if (!$page) {
-      echo '<div class="wrap"><h1>' . esc_html__('Option Page Not Found', 'flexify-dashboard') . '</h1></div>';
-      return;
-    }
 
-    // Render the page
-    $this->renderer->render($page);
-  }
+	/**
+	 * Enqueue scripts for option pages.
+	 *
+	 * @since 2.0.0
+	 * @param string $hook_suffix Current admin page hook suffix.
+	 * @return void
+	 */
+	public function enqueue_scripts( $hook_suffix ) {
+		if ( ! isset( $this->page_hooks[ $hook_suffix ] ) || ! is_array( $this->page_hooks[ $hook_suffix ] ) ) {
+			return;
+		}
 
-  /**
-   * Enqueue scripts for option pages
-   *
-   * @param string $hook_suffix The current admin page hook suffix
-   */
-  public function enqueue_scripts($hook_suffix)
-  {
-    // Check if we're on one of our option pages
-    if (!isset($this->page_hooks[$hook_suffix])) {
-      return;
-    }
+		OptionPagesScriptLoader::load_assets( $this->page_hooks[ $hook_suffix ] );
+	}
 
-    $page = $this->page_hooks[$hook_suffix];
 
-    // Use the script loader to load assets
-    OptionPagesScriptLoader::load_assets($page);
-  }
+	/**
+	 * Print footer scripts for option pages.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function print_footer_scripts() {
+		$page = $this->get_current_page_data();
 
-  /**
-   * Print footer scripts for option pages
-   */
-  public function print_footer_scripts()
-  {
-    $screen = get_current_screen();
-    
-    if (!$screen) {
-      return;
-    }
+		if ( empty( $page ) ) {
+			return;
+		}
 
-    // Find the page data for this screen
-    $page = null;
-    foreach ($this->page_hooks as $hook => $page_data) {
-      if ($screen->id === $hook) {
-        $page = $page_data;
-        break;
-      }
-    }
+		OptionPagesScriptLoader::print_option_page_context( $page );
+	}
 
-    if (!$page) {
-      return;
-    }
 
-    // Print option page context script
-    OptionPagesScriptLoader::print_option_page_context($page);
-  }
+	/**
+	 * Get registered page hooks.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public function get_page_hooks() {
+		return $this->page_hooks;
+	}
 
-  /**
-   * Get page hooks array
-   *
-   * @return array Page hooks
-   */
-  public function get_page_hooks()
-  {
-    return $this->page_hooks;
-  }
 
-  /**
-   * Check if current page is an option page
-   *
-   * @return bool|array False if not option page, page data if it is
-   */
-  public function is_option_page()
-  {
-    $screen = get_current_screen();
-    
-    if (!$screen) {
-      return false;
-    }
+	/**
+	 * Check if current page is an option page.
+	 *
+	 * @since 2.0.0
+	 * @return bool|array False if not an option page, page data otherwise.
+	 */
+	public function is_option_page() {
+		$page = $this->get_current_page_data();
 
-    foreach ($this->page_hooks as $hook => $page_data) {
-      if ($screen->id === $hook) {
-        return $page_data;
-      }
-    }
+		if ( empty( $page ) ) {
+			return false;
+		}
 
-    return false;
-  }
+		return $page;
+	}
 
-  /**
-   * Converts SVG icon name to a data URI for WordPress admin menu
-   *
-   * @param string $icon_name The icon name (without .svg extension)
-   * @return string The icon URL or data URI
-   */
-  private function get_menu_icon_url($icon_name)
-  {
-    // If it's already a dashicon, URL, or data URI, return as-is
-    if (strpos($icon_name, 'dashicons-') === 0 || strpos($icon_name, 'http') === 0 || strpos($icon_name, 'data:') === 0) {
-      return $icon_name;
-    }
 
-    // Build path to SVG file
-    $plugin_path = defined('UIXPRESS_PLUGIN_PATH') ? UIXPRESS_PLUGIN_PATH : plugin_dir_path(dirname(dirname(dirname(dirname(__FILE__)))));
-    $svg_path = $plugin_path . 'assets/icons/' . $icon_name . '.svg';
-    
-    if (file_exists($svg_path)) {
-      $svg_content = file_get_contents($svg_path);
-      if ($svg_content) {
-        // Encode as base64 data URI
-        return 'data:image/svg+xml;base64,' . base64_encode($svg_content);
-      }
-    }
+	/**
+	 * Register a single option page.
+	 *
+	 * @since 2.0.0
+	 * @param array $page Option page data.
+	 * @return void
+	 */
+	private function register_single_page( $page ) {
+		if ( ! $this->is_valid_page( $page ) ) {
+			return;
+		}
 
-    // Fallback to dashicons-admin-generic if icon not found
-    return 'dashicons-admin-generic';
-  }
+		$menu_slug  = 'flexify-dashboard-options-' . $page['slug'];
+		$capability = ! empty( $page['capability'] ) ? sanitize_text_field( $page['capability'] ) : 'manage_options';
+		$page_title = $page['title'];
+		$menu_title = $page['title'];
+		$menu_type  = ! empty( $page['menu_type'] ) ? $page['menu_type'] : 'submenu';
+		$hook       = false;
+
+		if ( 'top_level' === $menu_type ) {
+			$hook = $this->register_top_level_page( $page, $menu_slug, $page_title, $menu_title, $capability );
+		} else {
+			$hook = $this->register_submenu_page( $page, $menu_slug, $page_title, $menu_title, $capability );
+		}
+
+		if ( $hook ) {
+			$this->page_hooks[ $hook ] = $page;
+		}
+	}
+
+
+	/**
+	 * Register a top-level admin page.
+	 *
+	 * @since 2.0.0
+	 * @param array  $page Option page data.
+	 * @param string $menu_slug Menu slug.
+	 * @param string $page_title Page title.
+	 * @param string $menu_title Menu title.
+	 * @param string $capability Required capability.
+	 * @return string|false
+	 */
+	private function register_top_level_page( $page, $menu_slug, $page_title, $menu_title, $capability ) {
+		$icon_name = ! empty( $page['menu_icon'] ) ? sanitize_text_field( $page['menu_icon'] ) : 'settings';
+		$icon      = $this->get_menu_icon_url( $icon_name );
+		$position  = isset( $page['menu_position'] ) ? absint( $page['menu_position'] ) : 100;
+
+		return add_menu_page(
+			$page_title,
+			$menu_title,
+			$capability,
+			$menu_slug,
+			array( $this, 'render_option_page' ),
+			$icon,
+			$position
+		);
+	}
+
+
+	/**
+	 * Register a submenu admin page.
+	 *
+	 * @since 2.0.0
+	 * @param array  $page Option page data.
+	 * @param string $menu_slug Menu slug.
+	 * @param string $page_title Page title.
+	 * @param string $menu_title Menu title.
+	 * @param string $capability Required capability.
+	 * @return string|false
+	 */
+	private function register_submenu_page( $page, $menu_slug, $page_title, $menu_title, $capability ) {
+		$parent_slug = ! empty( $page['parent_menu'] ) ? sanitize_text_field( $page['parent_menu'] ) : 'options-general.php';
+
+		return add_submenu_page(
+			$parent_slug,
+			$page_title,
+			$menu_title,
+			$capability,
+			$menu_slug,
+			array( $this, 'render_option_page' )
+		);
+	}
+
+
+	/**
+	 * Check if option page data is valid.
+	 *
+	 * @since 2.0.0
+	 * @param mixed $page Option page data.
+	 * @return bool
+	 */
+	private function is_valid_page( $page ) {
+		if ( ! is_array( $page ) ) {
+			return false;
+		}
+
+		if ( empty( $page['slug'] ) || empty( $page['title'] ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
+
+	/**
+	 * Get current option page data from the current screen.
+	 *
+	 * @since 2.0.0
+	 * @return array
+	 */
+	private function get_current_page_data() {
+		$screen = get_current_screen();
+
+		if ( ! $screen || empty( $this->page_hooks ) ) {
+			return array();
+		}
+
+		foreach ( $this->page_hooks as $hook => $page_data ) {
+			if ( $screen->id === $hook ) {
+				return $page_data;
+			}
+		}
+
+		return array();
+	}
+
+
+	/**
+	 * Convert SVG icon name to a usable admin menu icon.
+	 *
+	 * @since 2.0.0
+	 * @param string $icon_name Icon name.
+	 * @return string
+	 */
+	private function get_menu_icon_url( $icon_name ) {
+		if ( ! is_string( $icon_name ) || '' === $icon_name ) {
+			return 'dashicons-admin-generic';
+		}
+
+		if ( 0 === strpos( $icon_name, 'dashicons-' ) || 0 === strpos( $icon_name, 'http' ) || 0 === strpos( $icon_name, 'data:' ) ) {
+			return $icon_name;
+		}
+
+		$plugin_path = $this->get_plugin_path();
+		$svg_path    = trailingslashit( $plugin_path ) . 'assets/icons/' . sanitize_file_name( $icon_name ) . '.svg';
+
+		if ( ! file_exists( $svg_path ) || ! is_readable( $svg_path ) ) {
+			return 'dashicons-admin-generic';
+		}
+
+		$svg_content = file_get_contents( $svg_path );
+
+		if ( false === $svg_content || '' === $svg_content ) {
+			return 'dashicons-admin-generic';
+		}
+
+		return 'data:image/svg+xml;base64,' . base64_encode( $svg_content );
+	}
+
+
+	/**
+	 * Get the plugin base path.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private function get_plugin_path() {
+		if ( defined( 'FLEXIFY_DASHBOARD_PLUGIN_PATH' ) ) {
+			return FLEXIFY_DASHBOARD_PLUGIN_PATH;
+		}
+
+		return plugin_dir_path( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) );
+	}
 }

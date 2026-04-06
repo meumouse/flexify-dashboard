@@ -1,79 +1,104 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+use WP_Error;
+use WP_REST_Request;
+use WP_REST_Response;
+
+defined('ABSPATH') || exit;
 
 /**
- * Class User_Roles_Endpoint
+ * Class UserRoles
  *
  * Adds a custom REST API endpoint to fetch all available user roles in WordPress.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest
+ * @author MeuMouse.com
  */
-class UserRoles
-{
-  /**
-   * The namespace for the REST API endpoint.
-   *
-   * @var string
-   */
-  private $namespace = "flexify-dashboard/v1";
+class UserRoles {
 
-  /**
-   * The base for the REST API endpoint.
-   *
-   * @var string
-   */
-  private $base = "user-roles";
+	/**
+	 * REST namespace.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const REST_NAMESPACE = 'flexify-dashboard/v1';
 
-  /**
-   * Initialize the class and set up REST API routes.
-   */
-  public function __construct()
-  {
-    add_action("rest_api_init", [$this, "register_routes"]);
-  }
+	/**
+	 * REST route base.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const REST_BASE = 'user-roles';
 
-  /**
-   * Register the REST API routes.
-   */
-  public function register_routes()
-  {
-    register_rest_route($this->namespace, "/" . $this->base, [
-      "methods" => "GET",
-      "callback" => [$this, "get_user_roles"],
-      "permission_callback" => [$this, "get_user_roles_permissions_check"],
-    ]);
-  }
+	/**
+	 * Initialize the class and set up REST API routes.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+	}
 
-  /**
-   * Check if the user has permission to access the endpoint.
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return bool|WP_Error True if the user has permission, WP_Error object otherwise.
-   */
-  public function get_user_roles_permissions_check($request)
-  {
-    return RestPermissionChecker::check_permissions($request, 'manage_options');
-  }
 
-  /**
-   * Get all available user roles.
-   *
-   * @param WP_REST_Request $request The request object.
-   * @return WP_REST_Response The response object.
-   */
-  public function get_user_roles($request)
-  {
-    $wp_roles = wp_roles();
-    $roles = [];
+	/**
+	 * Register the REST API routes.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function register_routes() {
+		register_rest_route(
+			self::REST_NAMESPACE,
+			'/' . self::REST_BASE,
+			array(
+				'methods' => 'GET',
+				'callback' => array( $this, 'get_user_roles' ),
+				'permission_callback' => array( $this, 'get_user_roles_permissions_check' ),
+			)
+		);
+	}
 
-    foreach ($wp_roles->roles as $role_slug => $role_info) {
-      $roles[] = [
-        "value" => $role_slug,
-        "label" => translate_user_role($role_info["name"]),
-      ];
-    }
 
-    return new \WP_REST_Response($roles, 200);
-  }
+	/**
+	 * Check if the user has permission to access the endpoint.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request The request object.
+	 * @return bool|WP_Error
+	 */
+	public function get_user_roles_permissions_check( WP_REST_Request $request ) {
+		return RestPermissionChecker::check_permissions( $request, 'manage_options' );
+	}
+
+
+	/**
+	 * Get all available user roles.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request The request object.
+	 * @return WP_REST_Response
+	 */
+	public function get_user_roles( WP_REST_Request $request ) {
+		$wp_roles = wp_roles();
+		$roles    = array();
+
+		if ( empty( $wp_roles->roles ) || ! is_array( $wp_roles->roles ) ) {
+			return new WP_REST_Response( $roles, 200 );
+		}
+
+		foreach ( $wp_roles->roles as $role_slug => $role_info ) {
+			$roles[] = array(
+				'value' => $role_slug,
+				'label' => isset( $role_info['name'] ) ? translate_user_role( $role_info['name'] ) : $role_slug,
+			);
+		}
+
+		return new WP_REST_Response( $roles, 200 );
+	}
 }

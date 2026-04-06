@@ -1,94 +1,113 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Rest\CustomFields;
 
-use MeuMouse\Flexify_Dashboard\Rest\CustomFields\CustomFieldsScriptLoader;
-
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+defined('ABSPATH') || exit;
 
 /**
  * Class OptionPagesScriptLoader
  *
- * Handles loading scripts and styles for option pages
- * Reuses the custom fields meta box scripts for field rendering
+ * Handles loading scripts and styles for option pages.
+ * Reuses the custom fields meta box scripts for field rendering.
+ *
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest\CustomFields
+ * @author MeuMouse.com
  */
-class OptionPagesScriptLoader
-{
-  /**
-   * @var bool Track if localized data has been output
-   */
-  private static $localized = false;
+class OptionPagesScriptLoader {
 
-  /**
-   * Load all assets needed for option pages
-   *
-   * @param array $page Option page data
-   * @return bool Whether assets were loaded
-   */
-  public static function load_assets($page)
-  {
-    // Load the custom fields meta box assets (Vue field components)
-    CustomFieldsScriptLoader::load_assets();
+	/**
+	 * Track if localized data has been output.
+	 *
+	 * @since 2.0.0
+	 * @var bool
+	 */
+	private static $localized = false;
 
-    // Output option page specific data if not already done
-    if (!self::$localized) {
-      self::output_localized_data($page);
-      self::$localized = true;
-    }
 
-    // Enqueue WordPress media library
-    wp_enqueue_media();
+	/**
+	 * Load all assets needed for option pages.
+	 *
+	 * @since 2.0.0
+	 * @param array $page Option page data.
+	 * @return bool
+	 */
+	public static function load_assets( $page ) {
+		CustomFieldsScriptLoader::load_assets();
+		wp_enqueue_media();
 
-    return true;
-  }
+		if ( ! self::$localized ) {
+			self::output_localized_data( $page );
+			self::$localized = true;
+		}
 
-  /**
-   * Output localized data for option page
-   *
-   * @param array $page Option page data
-   */
-  private static function output_localized_data($page)
-  {
-    $data = [
-      'pageSlug' => $page['slug'] ?? '',
-      'pageTitle' => $page['title'] ?? '',
-      'nonce' => wp_create_nonce('flexify_dashboard_option_page_' . ($page['slug'] ?? '')),
-      'ajaxUrl' => admin_url('admin-ajax.php'),
-      'restUrl' => rest_url('flexify-dashboard/v1/'),
-      'restNonce' => wp_create_nonce('wp_rest'),
-      'context' => 'option',
-    ];
+		return true;
+	}
 
-    wp_localize_script('flexify-dashboard-custom-fields-meta-box', 'flexify-dashboardOptionPage', $data);
-  }
 
-  /**
-   * Print inline script with option page context
-   * Called in the page footer
-   *
-   * @param array $page Option page data
-   */
-  public static function print_option_page_context($page)
-  {
-    ?>
-    <script>
-    if (typeof window.flexifyDashboardOptionPageContext === 'undefined') {
-      window.flexifyDashboardOptionPageContext = {
-        pageSlug: <?php echo wp_json_encode($page['slug'] ?? ''); ?>,
-        pageTitle: <?php echo wp_json_encode($page['title'] ?? ''); ?>,
-        context: 'option',
-        nonce: <?php echo wp_json_encode(wp_create_nonce('flexify_dashboard_option_page_' . ($page['slug'] ?? ''))); ?>
-      };
-    }
-    </script>
-    <?php
-  }
+	/**
+	 * Print inline script with option page context.
+	 *
+	 * Called in the page footer.
+	 *
+	 * @since 2.0.0
+	 * @param array $page Option page data.
+	 * @return void
+	 */
+	public static function print_option_page_context( $page ) {
+		$page_slug  = isset( $page['slug'] ) ? sanitize_key( $page['slug'] ) : '';
+		$page_title = isset( $page['title'] ) ? sanitize_text_field( $page['title'] ) : '';
+		$nonce      = wp_create_nonce( 'flexify_dashboard_option_page_' . $page_slug );
 
-  /**
-   * Reset localized state (useful for testing)
-   */
-  public static function reset()
-  {
-    self::$localized = false;
-  }
+		?>
+		<script>
+		if (typeof window.flexifyDashboardOptionPageContext === 'undefined') {
+			window.flexifyDashboardOptionPageContext = {
+				pageSlug: <?php echo wp_json_encode( $page_slug ); ?>,
+				pageTitle: <?php echo wp_json_encode( $page_title ); ?>,
+				context: 'option',
+				nonce: <?php echo wp_json_encode( $nonce ); ?>
+			};
+		}
+		</script>
+		<?php
+	}
+
+
+	/**
+	 * Reset localized state.
+	 *
+	 * Useful for testing.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public static function reset() {
+		self::$localized = false;
+	}
+
+
+	/**
+	 * Output localized data for option pages.
+	 *
+	 * @since 2.0.0
+	 * @param array $page Option page data.
+	 * @return void
+	 */
+	private static function output_localized_data( $page ) {
+		$page_slug  = isset( $page['slug'] ) ? sanitize_key( $page['slug'] ) : '';
+		$page_title = isset( $page['title'] ) ? sanitize_text_field( $page['title'] ) : '';
+
+		$data = array(
+			'pageSlug'  => $page_slug,
+			'pageTitle' => $page_title,
+			'nonce'     => wp_create_nonce( 'flexify_dashboard_option_page_' . $page_slug ),
+			'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
+			'restUrl'   => rest_url( 'flexify-dashboard/v1/' ),
+			'restNonce' => wp_create_nonce( 'wp_rest' ),
+			'context'   => 'option',
+		);
+
+		wp_localize_script( 'flexify-dashboard-custom-fields-meta-box', 'flexifyDashboardOptionPage', $data );
+	}
 }

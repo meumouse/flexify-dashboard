@@ -1,126 +1,163 @@
 <?php
+
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
-// Prevent direct access to this file
-defined('ABSPATH') || exit();
+use WP_Error;
+use WP_REST_Request;
+use WP_REST_Response;
+
+defined('ABSPATH') || exit;
 
 /**
  * Class MenuCache
  *
- * Handles menu cache key management and rotation
+ * Handles menu cache key management and rotation.
  *
- * @since 1.0.9
+ * @since 2.0.0
+ * @package MeuMouse\Flexify_Dashboard\Rest
+ * @author MeuMouse.com
  */
-class MenuCache
-{
-  /**
-   * Option name for storing the menu cache key
-   *
-   * @var string
-   */
-  private const CACHE_KEY_OPTION = 'flexify_dashboard_menu_cache_key';
+class MenuCache {
 
-  /**
-   * MenuCache constructor.
-   * Registers REST API endpoints
-   */
-  public function __construct()
-  {
-    add_action('rest_api_init', [$this, 'register_routes']);
-  }
+	/**
+	 * REST namespace.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const REST_NAMESPACE = 'flexify-dashboard/v1';
 
-  /**
-   * Register REST API routes
-   *
-   * @since 1.0.9
-   * @return void
-   */
-  public function register_routes()
-  {
-    register_rest_route('flexify-dashboard/v1', '/menu-cache/key', [
-      'methods' => 'GET',
-      'callback' => [$this, 'get_cache_key'],
-      'permission_callback' => [$this, 'check_permissions'],
-    ]);
+	/**
+	 * Option name used to store the menu cache key.
+	 *
+	 * @since 2.0.0
+	 * @var string
+	 */
+	private const CACHE_KEY_OPTION = 'flexify_dashboard_menu_cache_key';
 
-    register_rest_route('flexify-dashboard/v1', '/menu-cache/rotate', [
-      'methods' => 'POST',
-      'callback' => [$this, 'rotate_cache_key'],
-      'permission_callback' => [$this, 'check_permissions'],
-    ]);
-  }
 
-  /**
-   * Check if the user has permission to access the endpoint
-   *
-   * @param \WP_REST_Request $request The request object
-   * @return bool|WP_Error True if the user has permission, WP_Error object otherwise
-   * @since 1.0.9
-   */
-  public function check_permissions($request)
-  {
-    return RestPermissionChecker::check_permissions($request, 'manage_options');
-  }
+	/**
+	 * Register hooks.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+	}
 
-  /**
-   * Get the current menu cache key
-   *
-   * @param \WP_REST_Request $request The request object
-   * @return \WP_REST_Response The response object with cache key
-   * @since 1.0.9
-   */
-  public function get_cache_key($request)
-  {
-    $cache_key = self::get_or_create_cache_key();
-    return new \WP_REST_Response(['cache_key' => $cache_key], 200);
-  }
 
-  /**
-   * Rotate the menu cache key to invalidate all client-side caches
-   *
-   * @param \WP_REST_Request $request The request object
-   * @return \WP_REST_Response The response object with new cache key
-   * @since 1.0.9
-   */
-  public function rotate_cache_key($request)
-  {
-    $new_cache_key = self::generate_cache_key();
-    update_option(self::CACHE_KEY_OPTION, $new_cache_key);
-    
-    return new \WP_REST_Response([
-      'success' => true,
-      'cache_key' => $new_cache_key,
-      'message' => __('Menu cache key rotated successfully. All client caches have been invalidated.', 'flexify-dashboard'),
-    ], 200);
-  }
+	/**
+	 * Register REST API routes.
+	 *
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function register_routes() {
+		register_rest_route(
+			self::REST_NAMESPACE,
+			'/menu-cache/key',
+			array(
+				'methods' => 'GET',
+				'callback' => array( $this, 'get_cache_key' ),
+				'permission_callback' => array( $this, 'check_permissions' ),
+			)
+		);
 
-  /**
-   * Get or create the menu cache key
-   *
-   * @return string The cache key
-   * @since 1.0.9
-   */
-  public static function get_or_create_cache_key()
-  {
-    $cache_key = get_option(self::CACHE_KEY_OPTION);
-    
-    if (!$cache_key) {
-      $cache_key = self::generate_cache_key();
-      update_option(self::CACHE_KEY_OPTION, $cache_key);
-    }
-    
-    return $cache_key;
-  }
+		register_rest_route(
+			self::REST_NAMESPACE,
+			'/menu-cache/rotate',
+			array(
+				'methods' => 'POST',
+				'callback' => array( $this, 'rotate_cache_key' ),
+				'permission_callback' => array( $this, 'check_permissions' ),
+			)
+		);
+	}
 
-  /**
-   * Generate a new cache key
-   *
-   * @return string A unique cache key
-   * @since 1.0.9
-   */
-  private static function generate_cache_key()
-  {
-    return wp_generate_password(32, false);
-  }
+
+	/**
+	 * Check whether the current user can access the endpoint.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request instance.
+	 * @return bool|WP_Error
+	 */
+	public function check_permissions( WP_REST_Request $request ) {
+		return RestPermissionChecker::check_permissions( $request, 'manage_options' );
+	}
+
+
+	/**
+	 * Get the current menu cache key.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request instance.
+	 * @return WP_REST_Response
+	 */
+	public function get_cache_key( WP_REST_Request $request ) {
+		unset( $request );
+
+		return new WP_REST_Response(
+			array(
+				'cache_key' => self::get_or_create_cache_key(),
+			),
+			200
+		);
+	}
+
+
+	/**
+	 * Rotate the menu cache key to invalidate client-side caches.
+	 *
+	 * @since 2.0.0
+	 * @param WP_REST_Request $request REST request instance.
+	 * @return WP_REST_Response
+	 */
+	public function rotate_cache_key( WP_REST_Request $request ) {
+		unset( $request );
+
+		$new_cache_key = self::generate_cache_key();
+
+		update_option( self::CACHE_KEY_OPTION, $new_cache_key );
+
+		return new WP_REST_Response(
+			array(
+				'success' => true,
+				'cache_key' => $new_cache_key,
+				'message' => __( 'Menu cache key rotated successfully. All client caches have been invalidated.', 'flexify-dashboard' ),
+			),
+			200
+		);
+	}
+
+
+	/**
+	 * Get the current cache key or create a new one when missing.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	public static function get_or_create_cache_key() {
+		$cache_key = get_option( self::CACHE_KEY_OPTION, '' );
+
+		if ( empty( $cache_key ) || ! is_string( $cache_key ) ) {
+			$cache_key = self::generate_cache_key();
+
+			update_option( self::CACHE_KEY_OPTION, $cache_key );
+		}
+
+		return $cache_key;
+	}
+
+
+	/**
+	 * Generate a new cache key.
+	 *
+	 * @since 2.0.0
+	 * @return string
+	 */
+	private static function generate_cache_key() {
+		return wp_generate_password( 32, false );
+	}
 }
-
