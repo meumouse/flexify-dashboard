@@ -1,4 +1,6 @@
 $ErrorActionPreference = 'Stop'
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
 
 $pluginRoot = Split-Path -Parent $PSScriptRoot
 $pluginSlug = 'flexify-dashboard'
@@ -67,6 +69,55 @@ function Get-PluginVersion {
 	return ($versionLine -replace '^\s*\*\s*Version:\s*', '').Trim()
 }
 
+function New-ZipFromDirectory {
+	param (
+		[string] $SourceDirectory,
+		[string] $DestinationZip
+	)
+
+	if (Test-Path $DestinationZip) {
+		Remove-Item -Force $DestinationZip
+	}
+
+	$zipStream = [System.IO.File]::Open($DestinationZip, [System.IO.FileMode]::CreateNew)
+
+	try {
+		$zipArchive = New-Object System.IO.Compression.ZipArchive($zipStream, [System.IO.Compression.ZipArchiveMode]::Create, $false)
+
+		try {
+			$sourceRoot = (Resolve-Path $SourceDirectory).Path
+			$sourceParent = Split-Path -Parent $sourceRoot
+			$entries = Get-ChildItem -Path $SourceDirectory -Recurse -Force
+
+			foreach ($entry in $entries) {
+				$relativePath = $entry.FullName.Substring($sourceParent.Length + 1).Replace('\', '/')
+
+				if ($entry.PSIsContainer) {
+					if (-not $relativePath.EndsWith('/')) {
+						$relativePath = "$relativePath/"
+					}
+
+					$null = $zipArchive.CreateEntry($relativePath)
+					continue
+				}
+
+				[System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+					$zipArchive,
+					$entry.FullName,
+					$relativePath,
+					[System.IO.Compression.CompressionLevel]::Optimal
+				) | Out-Null
+			}
+		}
+		finally {
+			$zipArchive.Dispose()
+		}
+	}
+	finally {
+		$zipStream.Dispose()
+	}
+}
+
 New-CleanDirectory -Path $releaseRoot
 New-Item -ItemType Directory -Path $stagingRoot -Force | Out-Null
 
@@ -105,10 +156,6 @@ $manifest = [ordered]@{
 
 $manifest | ConvertTo-Json | Set-Content -Path (Join-Path $releaseRoot 'manifest.json')
 
-if (Test-Path $zipPath) {
-	Remove-Item -Force $zipPath
-}
-
-Compress-Archive -Path $stagingRoot -DestinationPath $zipPath -Force
+New-ZipFromDirectory -SourceDirectory $stagingRoot -DestinationZip $zipPath
 
 Write-Host "ZIP created: $zipPath"
