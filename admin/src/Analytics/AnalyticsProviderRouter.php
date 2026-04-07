@@ -3,7 +3,7 @@
 namespace MeuMouse\Flexify_Dashboard\Analytics;
 
 use MeuMouse\Flexify_Dashboard\Analytics\Providers\AnalyticsProviderInterface;
-use MeuMouse\Flexify_Dashboard\Analytics\Providers\flexifyDashboardAnalyticsProvider;
+use MeuMouse\Flexify_Dashboard\Analytics\Providers\FlexifyDashboardAnalyticsProvider;
 use MeuMouse\Flexify_Dashboard\Analytics\Providers\GoogleAnalyticsProvider;
 
 defined('ABSPATH') || exit;
@@ -50,7 +50,7 @@ class AnalyticsProviderRouter {
      * @var array
      */
     private static array $providers = array(
-        'flexify-dashboard' => flexifyDashboardAnalyticsProvider::class,
+        'flexify-dashboard' => FlexifyDashboardAnalyticsProvider::class,
         'google_analytics'  => GoogleAnalyticsProvider::class,
     );
 
@@ -68,6 +68,14 @@ class AnalyticsProviderRouter {
 
         $provider_id = self::get_active_provider_id();
         self::$provider = self::create_provider( $provider_id );
+
+        if ( ! self::$provider instanceof AnalyticsProviderInterface && self::DEFAULT_PROVIDER !== $provider_id ) {
+            self::$provider = self::create_provider( self::DEFAULT_PROVIDER );
+        }
+
+        if ( ! self::$provider instanceof AnalyticsProviderInterface ) {
+            throw new \RuntimeException( 'Unable to resolve a valid analytics provider.' );
+        }
 
         return self::$provider;
     }
@@ -239,7 +247,13 @@ class AnalyticsProviderRouter {
 
         $provider_class = self::get_provider_class( $provider_id );
 
-        if ( empty( $provider_class ) || ! class_exists( $provider_class ) ) {
+        if ( empty( $provider_class ) ) {
+            return null;
+        }
+
+        self::maybe_require_provider_class( $provider_class );
+
+        if ( ! class_exists( $provider_class ) ) {
             return null;
         }
 
@@ -252,6 +266,32 @@ class AnalyticsProviderRouter {
         self::$provider_instances[ $provider_id ] = $provider;
 
         return $provider;
+    }
+
+
+    /**
+     * Load provider class file manually when Composer authoritative classmap
+     * does not contain a valid entry for the provider.
+     *
+     * @since 2.0.0
+     * @param string $provider_class Provider class name.
+     * @return void
+     */
+    private static function maybe_require_provider_class( string $provider_class ): void {
+        if ( class_exists( $provider_class, false ) ) {
+            return;
+        }
+
+        $provider_files = array(
+            FlexifyDashboardAnalyticsProvider::class => __DIR__ . '/Providers/flexifyDashboardAnalyticsProvider.php',
+            GoogleAnalyticsProvider::class => __DIR__ . '/Providers/GoogleAnalyticsProvider.php',
+        );
+
+        $provider_file = $provider_files[ $provider_class ] ?? '';
+
+        if ( ! empty( $provider_file ) && file_exists( $provider_file ) ) {
+            require_once $provider_file;
+        }
     }
 
 

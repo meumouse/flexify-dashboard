@@ -1,6 +1,7 @@
 import { createApp, nextTick } from 'vue';
 import { createPinia } from 'pinia';
 import '@/apps/css/flexify-dashboard.css';
+import '@/assets/js/dashboard/registry.js';
 
 // Import store
 import { useAppStore } from '@/store/app/app.js';

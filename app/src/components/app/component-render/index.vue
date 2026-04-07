@@ -25,12 +25,11 @@ const attrs = useAttrs();
  * @returns {Boolean}
  */
 const userHasCapability = (capabilities) => {
-  if (!capabilities) return true;
-  if (!Array.isArray(capabilities)) return true;
-  if (!appStore.state.currentUser) return false;
+  if (!Array.isArray(capabilities) || capabilities.length === 0) return true;
+  if (!appStore.state.currentUser) return true;
 
   // Check if allcaps is available (may be loading asynchronously)
-  if (!appStore.state.currentUser.allcaps) return false;
+  if (!appStore.state.currentUser.allcaps) return true;
 
   for (let capability of capabilities) {
     const hasCap = appStore.state.currentUser.allcaps[capability];
@@ -51,7 +50,7 @@ const hasRequiredPlugins = (requiredPlugins) => {
     !appStore.state.activePlugins ||
     !Array.isArray(appStore.state.activePlugins)
   )
-    return false;
+    return true;
 
   const activePlugins = appStore.state.activePlugins;
 
@@ -83,7 +82,8 @@ const hasRequiredPlugins = (requiredPlugins) => {
  * @returns {Object} The component to render (Vue component or veaury-wrapped React component)
  */
 const itemComponent = computed(() => {
-  const language = props.item?.metadata?.language || 'vue';
+  const language =
+    props.item?.metadata?.framework || props.item?.metadata?.language || 'vue';
 
   // Don't process HTML items - they're handled separately
   if (language === 'html') {
@@ -104,7 +104,9 @@ const itemComponent = computed(() => {
  * @returns {boolean}
  */
 const isReactItem = computed(() => {
-  return props.item?.metadata?.language === 'react';
+  const framework =
+    props.item?.metadata?.framework || props.item?.metadata?.language;
+  return framework === 'react';
 });
 
 /**
@@ -112,7 +114,9 @@ const isReactItem = computed(() => {
  * @returns {boolean}
  */
 const isHtmlItem = computed(() => {
-  return props.item?.metadata?.language === 'html';
+  const framework =
+    props.item?.metadata?.framework || props.item?.metadata?.language;
+  return framework === 'html';
 });
 
 /**
@@ -123,13 +127,25 @@ const shouldStretchHeight = computed(() => {
   const classString = attrs.class || '';
   return typeof classString === 'string' && classString.includes('h-full');
 });
+
+const requiredCapabilities = computed(
+  () =>
+    props.item?.metadata?.requires_capabilities ??
+    props.item?.metadata?.requiresCapabilities
+);
+
+const requiredPlugins = computed(
+  () =>
+    props.item?.metadata?.requires_plugins ??
+    props.item?.metadata?.requiresPlugins
+);
 </script>
 
 <template>
   <template
     v-if="
-      userHasCapability(item?.metadata?.requires_capabilities) &&
-      hasRequiredPlugins(item?.metadata?.requires_plugins)
+      userHasCapability(requiredCapabilities) &&
+      hasRequiredPlugins(requiredPlugins)
     "
   >
     <!-- HTML Content -->

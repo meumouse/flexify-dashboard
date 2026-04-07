@@ -285,6 +285,7 @@ class ComposerStaticInitFlexify_Dashboard
         'MeuMouse\\Flexify_Dashboard\\Analytics\\AnalyticsProviderRouter' => __DIR__ . '/../..' . '/src/Analytics/AnalyticsProviderRouter.php',
         'MeuMouse\\Flexify_Dashboard\\Analytics\\DummyDataGenerator' => __DIR__ . '/../..' . '/src/Analytics/DummyDataGenerator.php',
         'MeuMouse\\Flexify_Dashboard\\Analytics\\Providers\\AnalyticsProviderInterface' => __DIR__ . '/../..' . '/src/Analytics/Providers/AnalyticsProviderInterface.php',
+        'MeuMouse\\Flexify_Dashboard\\Analytics\\Providers\\FlexifyDashboardAnalyticsProvider' => __DIR__ . '/../..' . '/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php',
         'MeuMouse\\Flexify_Dashboard\\Analytics\\Providers\\GoogleAnalyticsProvider' => __DIR__ . '/../..' . '/src/Analytics/Providers/GoogleAnalyticsProvider.php',
         'MeuMouse\\Flexify_Dashboard\\App\\Frontend' => __DIR__ . '/../..' . '/src/App/Frontend.php',
         'MeuMouse\\Flexify_Dashboard\\App\\Plugin' => __DIR__ . '/../..' . '/src/App/Plugin.php',

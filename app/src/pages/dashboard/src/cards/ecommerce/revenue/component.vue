@@ -3,7 +3,8 @@ import { computed, ref, watch } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
 import { getWooDashboardData, formatCurrency } from '../useWooCommerceDashboard.js';
 
-const props = defineProps({ dateRange: { type: Object, required: true } });
+const props = defineProps({ dateRange: { type: Array, required: true } });
+const translate = window.wp?.i18n?.__ ?? ((value) => value);
 
 const data = ref(null);
 const loading = ref(false);
@@ -41,7 +42,7 @@ const formattedSelectedRange = computed(() => {
     const [start, end] = props.dateRange || [];
 
     if (!start || !end) {
-        return __('Selected period', 'flexify-dashboard');
+        return translate('Selected period', 'flexify-dashboard');
     }
 
     const formatter = new Intl.DateTimeFormat(undefined, {
@@ -59,10 +60,10 @@ const dateRangeLabel = computed(() => {
     }
 
     if (chartInterval.value === 'week') {
-        return `${__('Weekly period', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
+        return `${translate('Weekly period', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
     }
 
-    return `${__('Monthly period', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
+    return `${translate('Monthly period', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
 });
 
 const chartOptions = computed(() => ({

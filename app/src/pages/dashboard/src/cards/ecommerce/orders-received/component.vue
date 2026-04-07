@@ -2,7 +2,7 @@
 import { ref, onMounted, watch } from 'vue';
 import { getWooDashboardData } from '../useWooCommerceDashboard.js';
 
-const props = defineProps({ dateRange: { type: Object, required: true } });
+const props = defineProps({ dateRange: { type: Array, required: true } });
 const value = ref(0);
 const loading = ref(false);
 

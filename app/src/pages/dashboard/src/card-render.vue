@@ -22,6 +22,10 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
+	isTopLevel: {
+		type: Boolean,
+		default: true,
+	},
 });
 
 const emit = defineEmits(['resize-start']);
@@ -94,15 +98,18 @@ const groupGridClassName = computed(() => {
 defineOptions({
   	name: 'CardRender',
 });
+
+const isContainer = computed(() => props.card?.type === 'container' || props.card?.isGroup);
+const isSingleCard = computed(() => !isContainer.value);
 </script>
 
 <template>
 	<!-- Single Card -->
-	<template v-if="!card.isGroup">
+	<template v-if="isSingleCard">
 		<div :class="cardClassName">
 			<div class="relative h-full flex flex-col fd-dashboard-card-shell">
 				<button
-					v-if="!isMobile"
+					v-if="!isMobile && isTopLevel"
 					type="button"
 					class="fd-card-drag-handle absolute right-2 top-2 z-20 inline-flex h-9 w-9 cursor-grab items-center justify-center text-zinc-500 transition hover:text-zinc-900 active:cursor-grabbing dark:text-zinc-300 dark:hover:text-zinc-50"
 					:aria-label="__('Reorder card', 'flexify-dashboard')"
@@ -111,7 +118,7 @@ defineOptions({
 					<AppIcon icon="drag_indicator" class="text-base" />
 				</button>
 				<button
-					v-if="!isMobile"
+					v-if="!isMobile && isTopLevel"
 					type="button"
 					class="fd-card-resize-handle absolute bottom-2 right-2 z-20 inline-flex h-9 w-9 cursor-col-resize items-center justify-center text-zinc-500 shadow-sm transition hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50"
 					:class="isResizing ? 'scale-105 text-brand-600 dark:text-brand-400' : ''"
@@ -127,10 +134,17 @@ defineOptions({
 	</template>
 
 	<!-- Group Card -->
-	<template v-else-if="card.isGroup">
+	<template v-else-if="isContainer">
 		<div :class="groupClassName">
       		<div :class="groupGridClassName">
-				<CardRender v-for="child in card.children" :key="child.metadata.id" :card="child" :date-range="dateRange" />
+				<CardRender
+					v-for="child in card.children"
+					:key="child.metadata.id"
+					:card="child"
+					:date-range="dateRange"
+					:is-mobile="isMobile"
+					:is-top-level="false"
+				/>
 			</div>
 		</div>
 	</template>

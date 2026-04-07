@@ -23,7 +23,7 @@ app.use(pinia);
 
 // Update app store
 const appStore = useAppStore();
-setGlobalProperties(appStore);
+setGlobalProperties(appStore, '#fd-script', '#fd-dashboard-script');
 
 /**
  * Fetches user capabilities from REST API and caches them in the store

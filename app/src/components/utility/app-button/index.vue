@@ -84,7 +84,7 @@ const focusRingColor = computed(() => {
 <template>
   <button
     :type="buttontype"
-    class="relative group whitespace-nowrap rounded-xl w-auto cursor-pointer disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center"
+    class="relative group whitespace-nowrap rounded-lg w-auto cursor-pointer disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center"
     :class="[returnButtonStyles, focusRingColor, paddingClasses]"
     v-bind="attrs"
     :disabled="isLoading"

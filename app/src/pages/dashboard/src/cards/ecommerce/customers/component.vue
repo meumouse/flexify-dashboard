@@ -2,7 +2,8 @@
 import { computed, ref, watch } from 'vue';
 import { getWooDashboardData } from '../useWooCommerceDashboard.js';
 
-const props = defineProps({ dateRange: { type: Object, required: true } });
+const props = defineProps({ dateRange: { type: Array, required: true } });
+const translate = window.wp?.i18n?.__ ?? ((value) => value);
 
 const customers = ref({
     total: 0,
@@ -54,14 +55,14 @@ const trendClasses = computed(() => {
 
 const trendLabel = computed(() => {
     if (trendIsPositive.value) {
-        return __('Growth compared to the previous period', 'flexify-dashboard');
+        return translate('Growth compared to the previous period', 'flexify-dashboard');
     }
 
     if (trendIsNegative.value) {
-        return __('Decline compared to the previous period', 'flexify-dashboard');
+        return translate('Decline compared to the previous period', 'flexify-dashboard');
     }
 
-    return __('No change compared to the previous period', 'flexify-dashboard');
+    return translate('No change compared to the previous period', 'flexify-dashboard');
 });
 
 watch(() => props.dateRange, loadData, { deep: true, immediate: true });

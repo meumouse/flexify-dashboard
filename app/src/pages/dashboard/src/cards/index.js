@@ -1,4 +1,4 @@
-import { addFilter } from '@/assets/js/functions/HooksSystem.js';
+import { dashboardRegistry } from '@/assets/js/dashboard/registry.js';
 
 // Cards
 import recentPosts from './recent-posts/index.js';
@@ -25,67 +25,31 @@ import wooOrdersReceived from './ecommerce/orders-received/index.js';
 //import testReactCard from './test-react-card/index.js';
 //import topEvents from './top-events/index.js';
 
-const analyticsGroup = {
-	metadata: {
-		id: 'analytics-group',
-		title: 'Analytics',
-		width: 6,
-		columns: 2,
-	},
-	isGroup: true,
-	children: [
-		recentPosts,
-		recentComments,
-		serverHealth,
-		mediaAnalytics,
-		usersChart,
-		scheduledPosts,
-		pageAnalytics,
-		deviceUsage,
-		activeUsers,
-		pageViewsChart,
-		topPages,
-		topCountries,
-		topReferrers,
-		bounceRateTime,
-		analyticsMap,
-	],
-};
+const internalCards = [
+	recentPosts,
+	scheduledPosts,
+	recentComments,
+	usersChart,
+	mediaAnalytics,
+	serverHealth,
+	pageAnalytics,
+	deviceUsage,
+	activeUsers,
+	pageViewsChart,
+	topPages,
+	topCountries,
+	topReferrers,
+	bounceRateTime,
+	analyticsMap,
+	wooCustomers,
+	wooRevenue,
+	wooAverageTicket,
+	wooSalesSummary,
+	wooTopProducts,
+	wooOrdersReceived,
+	/*testReactCard,*/
+];
 
-addFilter('flexify-dashboard/dashboard/categories/register', (categories) => {
-	return [
-		...categories,
-		{ value: 'site', label: __('Overview', 'flexify-dashboard') },
-		{ value: 'analytics', label: __('Analytics', 'flexify-dashboard') },
-		/*{ value: 'commerce', label: __('Commerce', 'flexify-dashboard') },*/
-	];
-});
-
-// Plugin 1: Add a new widget
-addFilter('flexify-dashboard/dashboard/cards/register', (widgets) => {
-	return [
-		...widgets,
-		/*testReactCard,*/
-		recentPosts,
-		scheduledPosts,
-		recentComments,
-		usersChart,
-		mediaAnalytics,
-		serverHealth,
-		pageAnalytics,
-		deviceUsage,
-		activeUsers,
-		pageViewsChart,
-		topPages,
-		topCountries,
-		topReferrers,
-		bounceRateTime,
-		analyticsMap,
-		wooCustomers,
-		wooRevenue,
-		wooAverageTicket,
-		wooSalesSummary,
-		wooTopProducts,
-		wooOrdersReceived,
-	];
+internalCards.forEach((card) => {
+	dashboardRegistry.registerLegacyItem(card, `internal:${card?.metadata?.id || 'unknown'}`);
 });

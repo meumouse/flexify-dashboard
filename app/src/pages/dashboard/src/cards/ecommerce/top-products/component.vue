@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue';
 import { getWooDashboardData, formatCurrency } from '../useWooCommerceDashboard.js';
 
-const props = defineProps({ dateRange: { type: Object, required: true } });
+const props = defineProps({ dateRange: { type: Array, required: true } });
 const items = ref([]);
 const currency = ref('USD');
 const loading = ref(false);

@@ -302,7 +302,7 @@ class Analytics {
 			$timezone = $request->get_param( 'timezone' );
 			$browser_time = $request->get_param( 'browser_time' );
 
-			$provider = AnalyticsProviderRouter::getProvider();
+			$provider = AnalyticsProviderRouter::get_provider();
 			$data = $provider->getActiveUsers( $timezone, $browser_time );
 
 			if ( ! is_array( $data ) ) {
@@ -345,7 +345,7 @@ class Analytics {
 		$stat_type = $request->get_param( 'stat_type' );
 
 		try {
-			$provider = AnalyticsProviderRouter::getProvider();
+			$provider = AnalyticsProviderRouter::get_provider();
 
 			switch ( $stat_type ) {
 				case 'overview':
@@ -583,7 +583,7 @@ class Analytics {
 				$start_date = gmdate( 'Y-m-d H:i:s', strtotime( '-30 days' ) );
 			}
 
-			$provider = AnalyticsProviderRouter::getProvider();
+			$provider = AnalyticsProviderRouter::get_provider();
 			$chart_data = $provider->getChart( $start_date, $end_date, $chart_type );
 
 			if ( ! is_array( $chart_data ) ) {

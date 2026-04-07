@@ -116,7 +116,7 @@ const getPredefinedRanges = () => {
 const selectPredefinedRange = (range) => {
   date.value = range;
   emit('updated', range);
-  contextmenu.value.hide();
+  contextmenu.value.close();
 };
 
 const returnDatePreview = computed(() => {

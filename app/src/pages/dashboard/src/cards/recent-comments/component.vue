@@ -127,6 +127,7 @@ const pendingCount = computed(
 const spamCount = computed(
   () => comments.value.filter((c) => c.status === 'spam').length
 );
+const adminUrl = computed(() => props.appData?.state?.adminUrl || '');
 
 // Watch for date range changes
 watch(
@@ -280,7 +281,7 @@ onMounted(() => {
     <div class="grow flex items-end justify-end">
       <a
         v-if="comments.length > 0"
-        href="{{ appStore.state.adminUrl }}comments.php"
+        :href="`${adminUrl}comments.php`"
         target="_blank"
         rel="noopener noreferrer"
         class="text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors duration-200 flex items-center gap-2"

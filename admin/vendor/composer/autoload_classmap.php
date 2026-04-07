@@ -248,6 +248,7 @@ return array(
     'MeuMouse\\Flexify_Dashboard\\Analytics\\AnalyticsProviderRouter' => $baseDir . '/src/Analytics/AnalyticsProviderRouter.php',
     'MeuMouse\\Flexify_Dashboard\\Analytics\\DummyDataGenerator' => $baseDir . '/src/Analytics/DummyDataGenerator.php',
     'MeuMouse\\Flexify_Dashboard\\Analytics\\Providers\\AnalyticsProviderInterface' => $baseDir . '/src/Analytics/Providers/AnalyticsProviderInterface.php',
+    'MeuMouse\\Flexify_Dashboard\\Analytics\\Providers\\FlexifyDashboardAnalyticsProvider' => $baseDir . '/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php',
     'MeuMouse\\Flexify_Dashboard\\Analytics\\Providers\\GoogleAnalyticsProvider' => $baseDir . '/src/Analytics/Providers/GoogleAnalyticsProvider.php',
     'MeuMouse\\Flexify_Dashboard\\App\\Frontend' => $baseDir . '/src/App/Frontend.php',
     'MeuMouse\\Flexify_Dashboard\\App\\Plugin' => $baseDir . '/src/App/Plugin.php',
