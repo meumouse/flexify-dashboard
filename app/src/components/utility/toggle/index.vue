@@ -8,8 +8,8 @@ const props = defineProps({
   options: {
     default: () => {
       return {
-        false: { label: "No", value: false },
-        true: { label: "Yes", value: true },
+        false: { label: __( 'No', 'flexify-dashboard' ), value: false },
+        true: { label: __( 'Yes', 'flexify-dashboard' ), value: true },
       };
     },
     type: Object,
