@@ -355,6 +355,7 @@ class ComposerStaticInitFlexify_Dashboard
         'MeuMouse\\Flexify_Dashboard\\Rest\\PostEditorMeta' => __DIR__ . '/../..' . '/src/Rest/PostEditorMeta.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\PostEditorSEO' => __DIR__ . '/../..' . '/src/Rest/PostEditorSEO.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\PostsTables' => __DIR__ . '/../..' . '/src/Rest/PostsTables.php',
+        'MeuMouse\\Flexify_Dashboard\\Rest\\RankMathDashboardWidget' => __DIR__ . '/../..' . '/src/Rest/RankMathDashboardWidget.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\RestLogout' => __DIR__ . '/../..' . '/src/Rest/RestLogout.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\RestPermissionChecker' => __DIR__ . '/../..' . '/src/Rest/RestPermissionChecker.php',
         'MeuMouse\\Flexify_Dashboard\\Rest\\RoleEditor' => __DIR__ . '/../..' . '/src/Rest/RoleEditor.php',

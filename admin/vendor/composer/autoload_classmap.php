@@ -318,6 +318,7 @@ return array(
     'MeuMouse\\Flexify_Dashboard\\Rest\\PostEditorMeta' => $baseDir . '/src/Rest/PostEditorMeta.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\PostEditorSEO' => $baseDir . '/src/Rest/PostEditorSEO.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\PostsTables' => $baseDir . '/src/Rest/PostsTables.php',
+    'MeuMouse\\Flexify_Dashboard\\Rest\\RankMathDashboardWidget' => $baseDir . '/src/Rest/RankMathDashboardWidget.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\RestLogout' => $baseDir . '/src/Rest/RestLogout.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\RestPermissionChecker' => $baseDir . '/src/Rest/RestPermissionChecker.php',
     'MeuMouse\\Flexify_Dashboard\\Rest\\RoleEditor' => $baseDir . '/src/Rest/RoleEditor.php',

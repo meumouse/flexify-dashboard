@@ -16,6 +16,7 @@ import topCountries from './top-countries/index.js';
 import topReferrers from './top-referrers/index.js';
 import bounceRateTime from './bounce-rate-time/index.js';
 import analyticsMap from './analytics-map/index.js';
+import rankMathOverview from './rank-math-overview/index.js';
 import wooCustomers from './ecommerce/customers/index.js';
 import wooRevenue from './ecommerce/revenue/index.js';
 import wooSalesSummary from './ecommerce/sales-summary/index.js';
@@ -41,6 +42,7 @@ const internalCards = [
 	topReferrers,
 	bounceRateTime,
 	analyticsMap,
+	rankMathOverview,
 	wooCustomers,
 	wooRevenue,
 	wooAverageTicket,

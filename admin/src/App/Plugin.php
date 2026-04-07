@@ -41,6 +41,7 @@ use MeuMouse\Flexify_Dashboard\Rest\PluginManager;
 use MeuMouse\Flexify_Dashboard\Rest\PostEditorMeta;
 use MeuMouse\Flexify_Dashboard\Rest\PostEditorSEO;
 use MeuMouse\Flexify_Dashboard\Rest\PostsTables;
+use MeuMouse\Flexify_Dashboard\Rest\RankMathDashboardWidget;
 use MeuMouse\Flexify_Dashboard\Rest\RestLogout;
 use MeuMouse\Flexify_Dashboard\Rest\RoleEditor;
 use MeuMouse\Flexify_Dashboard\Rest\SearchMeta;
@@ -207,6 +208,7 @@ class Plugin {
         new PostEditorMeta();
         new PostEditorSEO();
         new Collaboration();
+        new RankMathDashboardWidget();
     }
 
 
