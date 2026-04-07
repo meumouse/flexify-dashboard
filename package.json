@@ -1,0 +1,10 @@
+{
+	"name": "flexify-dashboard-plugin",
+	"private": true,
+	"version": "2.0.0",
+	"scripts": {
+		"build:app": "npm run build --prefix app",
+		"build:zip": "powershell -ExecutionPolicy Bypass -File scripts/build-plugin-zip.ps1",
+		"release": "npm run build:app && npm run build:zip"
+	}
+}

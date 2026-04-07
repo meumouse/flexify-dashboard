@@ -1,30 +1,58 @@
 # Flexify Dashboard
 
-Aprimore sua experiência administrativa no WordPress com uma interface elegante e de alto desempenho. O Flexify Dashboard oferece um tema administrativo moderno e intuitivo que combina beleza e funcionalidade.
+Aprimore sua experiencia administrativa no WordPress com uma interface elegante e de alto desempenho. O Flexify Dashboard oferece um tema administrativo moderno e intuitivo que combina beleza e funcionalidade.
 
-### Instalação:
+### Instalação
 
-#### Instalação via painel de administração:
+#### Instalação via painel administrativo
 
-Você pode instalar um plugin WordPress de duas maneiras: via o painel de administração do WordPress ou via FTP. Aqui estão as etapas para ambos os métodos:
+Voce pode instalar o plugin pelo painel do WordPress:
 
-* Acesse o painel de administração do seu site WordPress.
-* Vá para “Plugins” e clique em “Adicionar Novo”.
-* Digite o nome do plugin que você deseja instalar na barra de pesquisa ou carregue o arquivo ZIP do plugin baixado.
-* Clique em “Instalar Agora” e espere até que o plugin seja instalado.
-* Clique em “Ativar Plugin”.
+* Acesse o painel de administração do site
+* Siga para `Plugins > Adicionar novo`
+* Envie o arquivo ZIP do plugin
+* Clique em `Instalar agora`
+* Depois clique em `Ativar plugin`
 
-#### Instalação via FTP:
+#### Instalação via FTP
 
-* Baixe o arquivo ZIP do plugin que você deseja instalar.
-* Descompacte o arquivo ZIP em seu computador.
-* Conecte-se ao seu servidor via FTP.
-* Navegue até a pasta “wp-content/plugins”.
-* Envie a pasta do plugin descompactada para a pasta “plugins” no seu servidor.
-* Acesse o painel de administração do seu site WordPress.
-* Vá para “Plugins” e clique em “Plugins Instalados”.
-* Localize o plugin que você acabou de instalar e clique em “Ativar”.
-* Após seguir essas etapas, o plugin deve estar instalado e funcionando corretamente em seu site WordPress.
+Voce tambem pode instalar manualmente:
 
-### Compatibilidade:
+* Descompacte o arquivo ZIP em seu computador
+* Conecte-se ao servidor via FTP
+* Navegue ate `wp-content/plugins/`
+* Envie a pasta `flexify-dashboard`
+* Ative o plugin no painel do WordPress em `Plugins`
 
+### Compatibilidade
+
+Compativel com WordPress 6.0+ e PHP 7.4+.
+
+### Build de distribuição
+
+Para rodar a versão compilada do plugin, use o pacote gerado em `release/flexify-dashboard.zip`.
+
+#### Gerar o arquivo ZIP de distribuição
+
+Na raiz do plugin, execute:
+
+```bash
+npm run release
+```
+
+Esse comando:
+
+* Recompila os arquivos do frontend em `app/dist`
+* Monta um pacote de distribuicao somente com os arquivos necessarios do plugin
+* Gera o arquivo `release/flexify-dashboard.zip`
+
+Se o frontend já estiver compilado e você quiser apenas recriar o pacote final, execute:
+
+```bash
+npm run build:zip
+```
+
+Importante:
+
+* O arquivo ZIP de distribuição exclui arquivos de desenvolvimento como `node_modules`, `app/src`, `docs`, `examples` e scripts auxiliares
+* Para a versão compilada funcionar corretamente, instale o plugin a partir desse pacote final ou da pasta extraida dele
