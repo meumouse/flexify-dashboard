@@ -120,7 +120,7 @@ class Plugin {
         add_action( 'login_head', array( $this, 'output_custom_font_css' ), 2 );
         add_action( 'wp_head', array( $this, 'output_custom_font_css' ), 2 );
 
-        add_action( 'plugins_loaded', array( $this, 'languages_loader' ) );
+        add_action( 'init', array( $this, 'languages_loader' ), 1 );
 
         add_action( 'admin_init', array( $this, 'get_global_options' ), 0 );
         add_action( 'admin_enqueue_scripts', array( $this, 'get_screen' ), 0 );
@@ -362,7 +362,7 @@ class Plugin {
     /**
      * Add plugin handles to MailPoet whitelist.
      *
-     * @since 3.2.13
+     * @since 2.0.0
      * @param array $scripts Array of scripts or styles.
      * @return array Updated whitelist.
      */
@@ -426,7 +426,7 @@ class Plugin {
     /**
      * Remove conflicting assets from specific admin pages.
      *
-     * @since 3.2.13
+     * @since 2.0.0
      * @return void
      */
     public static function maybe_remove_assets() {
@@ -442,10 +442,10 @@ class Plugin {
     /**
      * Load translation files.
      *
-     * @since 1.0.8
+     * @since 2.0.0
      * @return void
      */
-    public static function languages_loader() {
+    public function languages_loader() {
         $domain = 'flexify-dashboard';
         $locale = function_exists( 'determine_locale' ) ? determine_locale() : get_locale();
         $mofile = WP_LANG_DIR . '/plugins/' . $domain . '-' . $locale . '.mo';
@@ -465,7 +465,7 @@ class Plugin {
     /**
      * Load the base application script.
      *
-     * @since 1.0.8
+     * @since 2.0.0
      * @return void
      */
     public static function load_base_script() {
@@ -522,6 +522,8 @@ class Plugin {
         if ( function_exists( 'wp_script_add_data' ) ) {
             wp_script_add_data( 'flexify-dashboard-app-js', 'type', 'module' );
         }
+
+        self::load_site_locale_script_translations( 'flexify-dashboard-app-js', 'flexify-dashboard' );
 
         wp_set_script_translations(
             'flexify-dashboard-app-js',
@@ -1094,5 +1096,68 @@ class Plugin {
         }
 
         return array_values( $available_statuses );
+    }
+
+
+    /**
+     * Load locale data for scripts using the site locale as a fallback.
+     *
+     * Vue interfaces in the admin should follow the site language selected in
+     * WordPress settings, even when the current admin locale differs.
+     *
+     * @since 2.0.0
+     * @param string $handle Script handle.
+     * @param string $domain Translation domain.
+     * @return void
+     */
+    private static function load_site_locale_script_translations( $handle, $domain ) {
+        if ( ! wp_script_is( 'wp-i18n', 'enqueued' ) ) {
+            return;
+        }
+
+        $locale = get_locale();
+
+        if ( empty( $locale ) ) {
+            return;
+        }
+
+        $candidates = array(
+            FLEXIFY_DASHBOARD_PLUGIN_PATH . 'languages/' . $domain . '-' . $locale . '-' . $handle . '.json',
+            FLEXIFY_DASHBOARD_PLUGIN_PATH . 'languages/' . $domain . '-' . $locale . '-' . $domain . '.json',
+        );
+
+        foreach ( $candidates as $json_file ) {
+            if ( ! is_readable( $json_file ) ) {
+                continue;
+            }
+
+            $contents = file_get_contents( $json_file );
+
+            if ( false === $contents ) {
+                continue;
+            }
+
+            $decoded = json_decode( $contents, true );
+            $messages = null;
+
+            if ( isset( $decoded['locale_data']['messages'] ) && is_array( $decoded['locale_data']['messages'] ) ) {
+                $messages = $decoded['locale_data']['messages'];
+            } elseif ( isset( $decoded['locale_data'][ $domain ] ) && is_array( $decoded['locale_data'][ $domain ] ) ) {
+                // Support custom-generated Jed files that use the domain as the locale_data key.
+                $messages = $decoded['locale_data'][ $domain ];
+            }
+
+            if ( empty( $messages ) ) {
+                continue;
+            }
+
+            wp_add_inline_script(
+                'wp-i18n',
+                'wp.i18n.setLocaleData(' . wp_json_encode( $messages ) . ', ' . wp_json_encode( $domain ) . ');',
+                'after'
+            );
+
+            break;
+        }
     }
 }

@@ -557,16 +557,13 @@ export const settingsConfig = [
     category: 'posts',
     type: 'toggle',
     label: __('Enable modern list view', 'flexify-dashboard'),
-    description: __(
-      'Use the modern posts list interface instead of the classic WordPress table layout.',
-      'flexify-dashboard'
-    ),
+    description: __( 'Use the modern posts list interface instead of the classic WordPress table layout.', 'flexify-dashboard' ),
     requiresActivation: false,
     componentProps: {
       class: 'max-w-[300px]',
       options: {
-        false: { label: 'No', value: false },
-        true: { label: 'Yes', value: true },
+        false: { label: __( 'No', 'flexify-dashboard' ), value: false },
+        true: { label: __( 'Yes', 'flexify-dashboard' ), value: true },
       },
     },
   },
