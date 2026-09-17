@@ -5,6 +5,13 @@
  * bootstrap overrides the palette variables with the user settings.
  */
 
+/*
+ * Cascade layer order. WordPress styles are imported into `wordpress-base` by
+ * Plugin::layer_wordpress_styles(); the native theme sits above the base reset
+ * and below the scoped Vue app styles (`fd-isolation`).
+ */
+@layer wordpress-base, base, fd-theme, properties, theme, components, utilities, fd-isolation;
+
 @import '@fontsource-variable/outfit/wght.css';
 
 :root {

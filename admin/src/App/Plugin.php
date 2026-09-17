@@ -264,7 +264,7 @@ class Plugin {
 
         ?>
         <style>
-            @layer wordpress-base, fd-theme;
+            @layer wordpress-base, base, fd-theme, properties, theme, components, utilities, fd-isolation;
         </style>
         <script>
             (function() {

@@ -9,6 +9,7 @@
 @import '../../assets/css/globals.css';
 @import 'tailwindcss/utilities.css' layer(fd-theme-scope) source(none);
 @import './theme/wp-admin-legacy.css';
+@import './theme/tailadmin-wp.css';
 
 @source '../../';
 

@@ -1,0 +1,742 @@
+/**
+ * TailAdmin refinements for native WordPress and WooCommerce screens.
+ *
+ * Loaded after wp-admin-legacy.css inside the same `fd-theme` layer, so rules
+ * with equal specificity override the legacy styles. Everything is scoped to
+ * `.fd-body-container` (the content area of the admin shell).
+ */
+
+@layer fd-theme {
+	/* ------------------------------------------------------------------ */
+	/* Layout and headings                                                */
+	/* ------------------------------------------------------------------ */
+
+	:where(.fd-body-container) #wpbody-content > .wrap:not(:where(.flexify-dashboard-isolation *)) {
+		margin: 0;
+		padding: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		:where(.fd-body-container) #wpbody-content > .wrap:not(:where(.flexify-dashboard-isolation *)) {
+			padding: 1.5rem;
+		}
+	}
+
+	:where(.fd-body-container) .wrap h1.wp-heading-inline:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .wrap > h1:not(:where(.flexify-dashboard-isolation *)) {
+		margin: 0 0 0.25rem;
+		padding: 0;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		font-weight: 600;
+		color: rgb(var(--fd-base-800));
+	}
+
+	:where(.fd-body-container) .wrap h1.wp-heading-inline:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) .wrap > h1:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		color: rgb(255 255 255 / 0.9);
+	}
+
+	:where(.fd-body-container) .wrap h2.title:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .wrap > h2:not(.nav-tab-wrapper):not(:where(.flexify-dashboard-isolation *)) {
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		font-weight: 600;
+		color: rgb(var(--fd-base-800));
+	}
+
+	:where(.fd-body-container) .wrap h2.title:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) .wrap > h2:not(.nav-tab-wrapper):not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		color: rgb(255 255 255 / 0.9);
+	}
+
+	:where(.fd-body-container) p.description:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .form-wrap p:not(:where(.flexify-dashboard-isolation *)) {
+		font-size: 0.75rem;
+		line-height: 1.125rem;
+		color: rgb(var(--fd-base-500));
+	}
+
+	:where(.fd-body-container) a:not(.button):not(.page-title-action):not(.nav-tab):not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-accent-500));
+	}
+
+	:where(.fd-body-container) a:not(.button):not(.page-title-action):not(.nav-tab):hover:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-accent-600));
+	}
+
+	/* ------------------------------------------------------------------ */
+	/* Buttons                                                            */
+	/* ------------------------------------------------------------------ */
+
+	:where(.fd-body-container) .wrap .page-title-action:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .button-primary:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .wp-core-ui .button-primary:not(:where(.flexify-dashboard-isolation *)) {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		min-height: 2.5rem;
+		margin-inline-start: 0.75rem;
+		padding: 0 1rem;
+		border: 1px solid rgb(var(--fd-accent-500));
+		border-radius: 0.5rem;
+		outline: none;
+		background-color: rgb(var(--fd-accent-500));
+		box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+		color: #fff;
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 1;
+		text-shadow: none;
+		vertical-align: middle;
+		cursor: pointer;
+		transition: background-color 0.15s ease;
+	}
+
+	:where(.fd-body-container) .button-primary:not(:where(.flexify-dashboard-isolation *)) {
+		margin-inline-start: 0;
+	}
+
+	:where(.fd-body-container) .wrap .page-title-action:hover:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .wrap .page-title-action:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .button-primary:hover:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .button-primary:focus:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: rgb(var(--fd-accent-600));
+		background-color: rgb(var(--fd-accent-600));
+		color: #fff;
+		box-shadow: 0px 0px 0px 4px rgb(var(--fd-accent-500) / 0.12);
+	}
+
+	:where(.fd-body-container) .button-primary:disabled:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .button-primary.disabled:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: rgb(var(--fd-accent-300)) !important;
+		background-color: rgb(var(--fd-accent-300)) !important;
+		color: #fff !important;
+		opacity: 1;
+	}
+
+	:where(.fd-body-container) .button:not(.button-primary):not(.components-button):not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .button-secondary:not(.button-primary):not(.components-button):not(:where(.flexify-dashboard-isolation *)) {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.375rem;
+		min-height: 2.5rem;
+		padding: 0 1rem;
+		border: 1px solid rgb(var(--fd-base-300));
+		border-radius: 0.5rem;
+		background-color: rgb(var(--fd-base-0));
+		box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+		color: rgb(var(--fd-base-700));
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 1;
+		vertical-align: middle;
+		transition: background-color 0.15s ease, color 0.15s ease;
+	}
+
+	:where(.fd-body-container) .button:not(.button-primary):not(.components-button):hover:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .button-secondary:not(.button-primary):not(.components-button):hover:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: rgb(var(--fd-base-50));
+		color: rgb(var(--fd-base-800));
+	}
+
+	:where(.fd-body-container) .button:not(.button-primary):not(.components-button):not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) .button-secondary:not(.button-primary):not(.components-button):not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-700));
+		background-color: rgb(var(--fd-base-800));
+		color: rgb(var(--fd-base-400));
+	}
+
+	:where(.fd-body-container) .button:not(.button-primary):not(.components-button):not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *):hover {
+		background-color: rgb(255 255 255 / 0.03);
+		color: rgb(var(--fd-base-300));
+	}
+
+	:where(.fd-body-container) .button.button-small:not(:where(.flexify-dashboard-isolation *)) {
+		min-height: 2rem;
+		padding: 0 0.75rem;
+		font-size: 0.75rem;
+	}
+
+	:where(.fd-body-container) .button.button-large:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .button-primary.button-large:not(:where(.flexify-dashboard-isolation *)) {
+		min-height: 2.75rem;
+		padding: 0 1.25rem;
+	}
+
+	:where(.fd-body-container) .submitdelete:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .button-link-delete:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .row-actions .trash a:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .row-actions .delete a:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-error-500, 240 68 56)) !important;
+	}
+
+	/* ------------------------------------------------------------------ */
+	/* Form controls                                                      */
+	/* ------------------------------------------------------------------ */
+
+	:where(.fd-body-container) input[type='text']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='search']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='email']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='url']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='password']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='number']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='tel']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='date']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='datetime-local']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='time']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) select:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) textarea:not(:where(.flexify-dashboard-isolation *)) {
+		min-height: 2.5rem;
+		padding: 0.5rem 0.875rem;
+		border: 1px solid rgb(var(--fd-base-300));
+		border-radius: 0.5rem;
+		background-color: transparent;
+		box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+		color: rgb(var(--fd-base-800));
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		transition: border-color 0.15s ease, box-shadow 0.15s ease;
+	}
+
+	:where(.fd-body-container) select:not(:where(.flexify-dashboard-isolation *)) {
+		padding-inline-end: 2rem;
+	}
+
+	:where(.fd-body-container) input[type='text']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='search']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='email']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='url']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='password']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='number']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='tel']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='date']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='datetime-local']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='time']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) select:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) textarea:focus:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: rgb(var(--fd-accent-300));
+		outline: none;
+		box-shadow: 0px 0px 0px 3px rgb(var(--fd-accent-500) / 0.1);
+	}
+
+	:where(.fd-body-container) input[type='text']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='search']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='email']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='url']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='password']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='number']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='tel']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='date']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='datetime-local']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='time']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) select:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) textarea:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-700));
+		background-color: rgb(var(--fd-base-900));
+		color: rgb(255 255 255 / 0.9);
+	}
+
+	:where(.fd-body-container) input[type='checkbox']:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='radio']:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: rgb(var(--fd-base-300));
+		accent-color: rgb(var(--fd-accent-500));
+	}
+
+	:where(.fd-body-container) input[type='checkbox']:not(:where(.flexify-dashboard-isolation *)) {
+		border-radius: 0.25rem;
+	}
+
+	:where(.fd-body-container) input[type='checkbox']:checked:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='radio']:checked:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: rgb(var(--fd-accent-500));
+	}
+
+	:where(.fd-body-container) input[type='checkbox']:checked:not(:where(.flexify-dashboard-isolation *))::before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		border-radius: 0.2rem;
+		background: rgb(var(--fd-accent-500)) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M11.6666 3.5L5.24992 9.91667L2.33325 7' stroke='white' stroke-width='1.94437' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 70% no-repeat;
+	}
+
+	:where(.fd-body-container) input[type='radio']:checked:not(:where(.flexify-dashboard-isolation *))::before {
+		background-color: rgb(var(--fd-accent-500));
+	}
+
+	:where(.fd-body-container) input[type='checkbox']:focus:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) input[type='radio']:focus:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: rgb(var(--fd-accent-300));
+		box-shadow: 0px 0px 0px 3px rgb(var(--fd-accent-500) / 0.12);
+	}
+
+	:where(.fd-body-container) .form-table th:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .form-wrap label:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-base-700));
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+
+	:where(.fd-body-container) .form-table th:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) .form-wrap label:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		color: rgb(var(--fd-base-400));
+	}
+
+	/* ------------------------------------------------------------------ */
+	/* Notices (TailAdmin alerts)                                         */
+	/* ------------------------------------------------------------------ */
+
+	:where(.fd-body-container) .notice:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) div.updated:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) div.error:not(:where(.flexify-dashboard-isolation *)) {
+		margin: 0 0 1rem;
+		padding: 0.75rem 1rem;
+		border: 1px solid rgb(var(--fd-accent-500));
+		border-radius: 0.75rem;
+		background-color: rgb(var(--fd-accent-50));
+		box-shadow: none;
+		color: rgb(var(--fd-base-700));
+	}
+
+	:where(.fd-body-container) .notice p:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) div.updated p:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) div.error p:not(:where(.flexify-dashboard-isolation *)) {
+		margin: 0;
+		padding: 0;
+		color: rgb(var(--fd-base-600));
+		font-size: 0.875rem;
+	}
+
+	:where(.fd-body-container) .notice.notice-success:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) div.updated:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: #12b76a;
+		background-color: #ecfdf3;
+	}
+
+	:where(.fd-body-container) .notice.notice-error:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) div.error:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: #f04438;
+		background-color: #fef3f2;
+	}
+
+	:where(.fd-body-container) .notice.notice-warning:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: #f79009;
+		background-color: #fffaeb;
+	}
+
+	:where(.fd-body-container) .notice.notice-info:not(:where(.flexify-dashboard-isolation *)) {
+		border-color: #0ba5ec;
+		background-color: #f0f9ff;
+	}
+
+	:where(.fd-body-container) .notice:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) div.updated:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) div.error:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(var(--fd-accent-500) / 0.15);
+		border-color: rgb(var(--fd-accent-500) / 0.3);
+	}
+
+	:where(.fd-body-container) .notice p:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) div.updated p:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) div.error p:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		color: rgb(var(--fd-base-400));
+	}
+
+	:where(.fd-body-container) .notice.notice-success:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) div.updated:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(18 183 106 / 0.15);
+		border-color: rgb(18 183 106 / 0.3);
+	}
+
+	:where(.fd-body-container) .notice.notice-error:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) div.error:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(240 68 56 / 0.15);
+		border-color: rgb(240 68 56 / 0.3);
+	}
+
+	:where(.fd-body-container) .notice.notice-warning:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(247 144 9 / 0.15);
+		border-color: rgb(247 144 9 / 0.3);
+	}
+
+	:where(.fd-body-container) .notice.notice-info:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(11 165 236 / 0.15);
+		border-color: rgb(11 165 236 / 0.3);
+	}
+
+	/* ------------------------------------------------------------------ */
+	/* Navigation tabs and views                                          */
+	/* ------------------------------------------------------------------ */
+
+	:where(.fd-body-container) .nav-tab-wrapper:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .wrap h2.nav-tab-wrapper:not(:where(.flexify-dashboard-isolation *)) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 0 0 1.25rem;
+		padding: 0;
+		border-bottom: 1px solid rgb(var(--fd-base-200));
+	}
+
+	:where(.fd-body-container) .nav-tab-wrapper:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-800));
+	}
+
+	:where(.fd-body-container) .nav-tab-wrapper .nav-tab:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .woo-nav-tab-wrapper a.nav-tab:not(:where(.flexify-dashboard-isolation *)) {
+		float: none;
+		margin: 0 0 -1px;
+		padding: 0.75rem 0.625rem;
+		border: 0;
+		border-bottom: 2px solid transparent;
+		background: transparent;
+		color: rgb(var(--fd-base-500));
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 1.25rem;
+		transition: color 0.15s ease, border-color 0.15s ease;
+	}
+
+	:where(.fd-body-container) .nav-tab-wrapper .nav-tab:hover:not(:where(.flexify-dashboard-isolation *)) {
+		background: transparent;
+		color: rgb(var(--fd-base-700));
+	}
+
+	:where(.fd-body-container) .nav-tab-wrapper .nav-tab.nav-tab-active:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .woo-nav-tab-wrapper a.nav-tab-active:not(:where(.flexify-dashboard-isolation *)) {
+		border-bottom-color: rgb(var(--fd-accent-500));
+		background: transparent;
+		color: rgb(var(--fd-accent-500));
+	}
+
+	:where(.fd-body-container) .woo-nav-tab-wrapper a.nav-tab-active:not(:where(.flexify-dashboard-isolation *))::after {
+		display: none;
+	}
+
+	:where(.fd-body-container) .nav-tab-wrapper .nav-tab:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		color: rgb(var(--fd-base-400));
+	}
+
+	:where(.fd-body-container) .nav-tab-wrapper .nav-tab.nav-tab-active:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-bottom-color: rgb(var(--fd-accent-400));
+		color: rgb(var(--fd-accent-400));
+	}
+
+	:where(.fd-body-container) .subsubsub li a.current:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-accent-500));
+		font-weight: 500;
+	}
+
+	:where(.fd-body-container) .subsubsub .count:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-base-400));
+	}
+
+	/* ------------------------------------------------------------------ */
+	/* List tables                                                        */
+	/* ------------------------------------------------------------------ */
+
+	:where(.fd-body-container) table.widefat:not(:where(.flexify-dashboard-isolation *)) {
+		border: 1px solid rgb(var(--fd-base-200));
+		border-collapse: separate;
+		border-spacing: 0;
+		border-radius: 0.75rem;
+		overflow: hidden;
+		background-color: rgb(var(--fd-base-0));
+		box-shadow: none;
+	}
+
+	:where(.fd-body-container) table.widefat:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-800));
+		background-color: rgb(255 255 255 / 0.03);
+	}
+
+	:where(.fd-body-container) table.widefat thead th:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat thead td:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat tfoot th:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat tfoot td:not(:where(.flexify-dashboard-isolation *)) {
+		padding: 0.75rem 1rem;
+		border-bottom: 1px solid rgb(var(--fd-base-100));
+		background-color: transparent;
+		color: rgb(var(--fd-base-500));
+		font-size: 0.75rem;
+		font-weight: 500;
+		line-height: 1.125rem;
+	}
+
+	:where(.fd-body-container) table.widefat tfoot th:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat tfoot td:not(:where(.flexify-dashboard-isolation *)) {
+		border-top: 1px solid rgb(var(--fd-base-100));
+		border-bottom: 0;
+	}
+
+	:where(.fd-body-container) table.widefat thead th a:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat tfoot th a:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-base-500)) !important;
+	}
+
+	:where(.fd-body-container) table.widefat tbody td:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat tbody th:not(:where(.flexify-dashboard-isolation *)) {
+		padding: 1rem;
+		border-top: 1px solid rgb(var(--fd-base-100));
+		color: rgb(var(--fd-base-500));
+		font-size: 0.875rem;
+		vertical-align: middle;
+	}
+
+	:where(.fd-body-container) table.widefat tbody tr:first-child td:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat tbody tr:first-child th:not(:where(.flexify-dashboard-isolation *)) {
+		border-top: 0;
+	}
+
+	:where(.fd-body-container) table.widefat thead th:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) table.widefat thead td:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) table.widefat tbody td:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) table.widefat tbody th:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) table.widefat tfoot th:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) table.widefat tfoot td:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-800));
+		color: rgb(var(--fd-base-400));
+	}
+
+	:where(.fd-body-container) table.widefat.striped > tbody > :nth-child(odd):not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat .alternate:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: transparent;
+	}
+
+	:where(.fd-body-container) table.widefat > tbody > tr:hover > td:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat > tbody > tr:hover > th:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: rgb(var(--fd-base-50));
+	}
+
+	:where(.fd-body-container) table.widefat > tbody > tr:hover > td:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) table.widefat > tbody > tr:hover > th:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(255 255 255 / 0.02);
+	}
+
+	:where(.fd-body-container) table.widefat .row-title:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) table.widefat td strong > a:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-base-800)) !important;
+		font-weight: 500;
+	}
+
+	:where(.fd-body-container) table.widefat .row-title:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) table.widefat td strong > a:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		color: rgb(255 255 255 / 0.9) !important;
+	}
+
+	:where(.fd-body-container) .tablenav:not(:where(.flexify-dashboard-isolation *)) {
+		margin: 0.75rem 0;
+	}
+
+	:where(.fd-body-container) .tablenav .displaying-num:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-base-500));
+		font-size: 0.875rem;
+	}
+
+	:where(.fd-body-container) .tablenav .tablenav-pages .button:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .tablenav .tablenav-pages .tablenav-pages-navspan:not(:where(.flexify-dashboard-isolation *)) {
+		min-width: 2.5rem;
+		min-height: 2.5rem;
+		padding: 0;
+	}
+
+	/* ------------------------------------------------------------------ */
+	/* Postboxes (cards)                                                  */
+	/* ------------------------------------------------------------------ */
+
+	:where(.fd-body-container) .postbox:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .stuffbox:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .card:not(:where(.flexify-dashboard-isolation *)) {
+		border: 1px solid rgb(var(--fd-base-200));
+		border-radius: 1rem;
+		background-color: rgb(var(--fd-base-0));
+		box-shadow: none;
+	}
+
+	:where(.fd-body-container) .postbox:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) .stuffbox:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) .card:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-800));
+		background-color: rgb(255 255 255 / 0.03);
+	}
+
+	:where(.fd-body-container) .postbox .postbox-header:not(:where(.flexify-dashboard-isolation *)) {
+		border-bottom: 1px solid rgb(var(--fd-base-100));
+	}
+
+	:where(.fd-body-container) .postbox .postbox-header:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-800));
+	}
+
+	:where(.fd-body-container) .postbox .postbox-header .hndle:not(:where(.flexify-dashboard-isolation *)) {
+		padding: 1rem 1.25rem;
+		color: rgb(var(--fd-base-800));
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	:where(.fd-body-container) .postbox .postbox-header .hndle:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		color: rgb(255 255 255 / 0.9);
+	}
+
+	:where(.fd-body-container) .postbox .inside:not(:where(.flexify-dashboard-isolation *)) {
+		padding: 0 1.25rem 1.25rem;
+	}
+
+	/* ------------------------------------------------------------------ */
+	/* WooCommerce                                                        */
+	/* ------------------------------------------------------------------ */
+
+	:where(.fd-body-container) mark.instock:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.outofstock:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.onbackorder:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.order-status:not(:where(.flexify-dashboard-isolation *)) {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		margin: 0;
+		padding: 0.125rem 0.625rem;
+		border-radius: 9999px;
+		font-size: 0.75rem;
+		font-weight: 500;
+		line-height: 1.125rem;
+	}
+
+	:where(.fd-body-container) mark.instock:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.order-status.status-completed:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: #ecfdf3;
+		color: #039855;
+	}
+
+	:where(.fd-body-container) mark.outofstock:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.order-status.status-failed:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.order-status.status-cancelled:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: #fef3f2;
+		color: #d92d20;
+	}
+
+	:where(.fd-body-container) mark.onbackorder:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.order-status.status-on-hold:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.order-status.status-pending:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: #fffaeb;
+		color: #dc6803;
+	}
+
+	:where(.fd-body-container) mark.order-status.status-processing:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: rgb(var(--fd-accent-50));
+		color: rgb(var(--fd-accent-500));
+	}
+
+	:where(.fd-body-container) mark.order-status.status-refunded:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.order-status.status-trash:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) mark.order-status.status-checkout-draft:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: rgb(var(--fd-base-100));
+		color: rgb(var(--fd-base-700));
+	}
+
+	:where(.fd-body-container) mark.order-status > span:not(:where(.flexify-dashboard-isolation *)) {
+		margin: 0;
+		line-height: inherit;
+	}
+
+	:where(.fd-body-container) mark.instock:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) mark.order-status.status-completed:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(18 183 106 / 0.15);
+		color: #12b76a;
+	}
+
+	:where(.fd-body-container) mark.outofstock:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) mark.order-status.status-failed:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) mark.order-status.status-cancelled:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(240 68 56 / 0.15);
+		color: #f04438;
+	}
+
+	:where(.fd-body-container) mark.onbackorder:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) mark.order-status.status-on-hold:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) mark.order-status.status-pending:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(247 144 9 / 0.15);
+		color: #fd853a;
+	}
+
+	:where(.fd-body-container) mark.order-status.status-processing:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(var(--fd-accent-500) / 0.15);
+		color: rgb(var(--fd-accent-400));
+	}
+
+	:where(.fd-body-container) mark.order-status.status-refunded:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) mark.order-status.status-trash:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(255 255 255 / 0.05);
+		color: rgb(255 255 255 / 0.8);
+	}
+
+	:where(.fd-body-container) .woocommerce-layout__header:not(:where(.flexify-dashboard-isolation *)) {
+		border-bottom: 1px solid rgb(var(--fd-base-200));
+		background-color: rgb(var(--fd-base-0));
+		box-shadow: none;
+	}
+
+	:where(.fd-body-container) .woocommerce-layout__header:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-800));
+		background-color: rgb(var(--fd-base-900));
+	}
+
+	:where(.fd-body-container) #woocommerce-product-data ul.wc-tabs:not(:where(.flexify-dashboard-isolation *)) {
+		border-inline-end: 1px solid rgb(var(--fd-base-100));
+		background-color: rgb(var(--fd-base-50));
+	}
+
+	:where(.fd-body-container) #woocommerce-product-data ul.wc-tabs:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-800));
+		background-color: rgb(255 255 255 / 0.02);
+	}
+
+	:where(.fd-body-container) #woocommerce-product-data ul.wc-tabs li a:not(:where(.flexify-dashboard-isolation *)) {
+		border-bottom: 0;
+		color: rgb(var(--fd-base-700));
+		font-weight: 500;
+	}
+
+	:where(.fd-body-container) #woocommerce-product-data ul.wc-tabs li.active a:not(:where(.flexify-dashboard-isolation *)) {
+		background-color: rgb(var(--fd-accent-50));
+		color: rgb(var(--fd-accent-500));
+	}
+
+	:where(.fd-body-container) #woocommerce-product-data ul.wc-tabs li.active a:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		background-color: rgb(var(--fd-accent-500) / 0.12);
+		color: rgb(var(--fd-accent-400));
+	}
+
+	:where(.fd-body-container) .woocommerce-help-tip:not(:where(.flexify-dashboard-isolation *)) {
+		color: rgb(var(--fd-base-400));
+	}
+
+	:where(.fd-body-container) .woocommerce-card:not(:where(.flexify-dashboard-isolation *)),
+	:where(.fd-body-container) .woocommerce-summary:not(:where(.flexify-dashboard-isolation *)) {
+		border: 1px solid rgb(var(--fd-base-200));
+		border-radius: 1rem;
+		box-shadow: none;
+	}
+
+	:where(.fd-body-container) .woocommerce-card:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) .woocommerce-summary:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-800));
+		background-color: rgb(255 255 255 / 0.03);
+	}
+
+	:where(.fd-body-container) .wc-backbone-modal .wc-backbone-modal-content:not(:where(.flexify-dashboard-isolation *)) {
+		border-radius: 1.5rem;
+		overflow: hidden;
+	}
+}
+
+@layer fd-theme {
+	:where(.fd-body-container) input[type='checkbox']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *),
+	:where(.fd-body-container) input[type='radio']:not(:where(.flexify-dashboard-isolation *)):where(.dark, .dark *) {
+		border-color: rgb(var(--fd-base-700));
+		background-color: rgb(var(--fd-base-900));
+	}
+}

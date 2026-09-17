@@ -81,3 +81,12 @@ As variáveis `--fd-accent-*`, `--fd-base-*` e `--fd-font-sans` são públicas e
 | Conteúdo | `components/app/wrapper` | Fundo `bg-gray-50 dark:bg-gray-900`. |
 
 > Classes utilitárias **não se aplicam ao próprio elemento** `.flexify-dashboard-isolation` (o escopo vale para descendentes). Use uma regra CSS dedicada, como `.fd-sidebar-container`.
+
+## Telas nativas do WordPress
+
+`app/src/apps/css/theme.css` é carregado em todo o wp-admin e estiliza as telas que não são Vue:
+
+- `theme/wp-admin-legacy.css` — regras herdadas (dashboard, site health, metaboxes, integrações de plugins).
+- `theme/tailadmin-wp.css` — receitas do TailAdmin para títulos, botões (`.button`, `.button-primary`, `.page-title-action`), campos, avisos (`.notice`), abas (`.nav-tab`), tabelas (`.wp-list-table`), metaboxes (`.postbox`) e WooCommerce (`mark.instock`, `mark.order-status`, abas de dados do produto).
+
+Todas as regras ficam na camada `fd-theme` e usam `:not(:where(.flexify-dashboard-isolation *))` para não afetar os apps Vue. A ordem das camadas é `wordpress-base < base < fd-theme < theme < components < utilities < fd-isolation`, declarada em `globals.css` e em `Plugin::layer_wordpress_styles()`.
