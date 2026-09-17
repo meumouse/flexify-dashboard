@@ -46,7 +46,8 @@ try {
 
 	echo "== Store data ==\n";
 	$js = \MeuMouse\Flexify_Dashboard\Integrations\WooCommerce\WooCommerce::get_js_data();
-	fd_check( 'js data active + hpos', $js['active'] && $js['hpos'] );
+	echo '  Order storage: ' . ( $js['hpos'] ? 'HPOS' : 'posts (legacy)' ) . "\n";
+	fd_check( 'js data active + storage mode', $js['active'] && \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled() === $js['hpos'] );
 	fd_check( 'order statuses have colors', ! empty( $js['order_statuses'] ) && isset( $js['order_statuses'][0]['color'] ), $js['order_statuses'][0] ?? null );
 	fd_check( 'currency symbol decoded', 'R$' === $js['currency']['symbol'], $js['currency'] );
 
