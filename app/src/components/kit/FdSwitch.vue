@@ -1,5 +1,5 @@
 <script setup>
-import { computed, useId } from 'vue';
+import { computed, useAttrs, useId } from 'vue';
 import { cn } from '@/lib/utils.js';
 
 const model = defineModel({ type: Boolean, default: false });
@@ -15,6 +15,16 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['change']);
+
+// Accessible names (aria-*) and other attributes belong to the input; class and style style the wrapper.
+defineOptions({ inheritAttrs: false });
+const attrs = useAttrs();
+const rootAttrs = computed(() => ({ class: attrs.class, style: attrs.style }));
+const controlAttrs = computed(() => {
+  const { class: _class, style: _style, ...rest } = attrs;
+  return rest;
+});
+
 const generatedId = useId();
 const small = computed(() => props.size === 'sm');
 
@@ -27,6 +37,7 @@ const toggle = () => {
 
 <template>
   <label
+    v-bind="rootAttrs"
     :for="generatedId"
     class="select-none items-center gap-3"
     :class="[
@@ -36,7 +47,7 @@ const toggle = () => {
     ]"
   >
     <span class="relative flex shrink-0">
-      <input :id="generatedId" type="checkbox" role="switch" class="peer sr-only" :checked="model" :aria-checked="model" :disabled="disabled" @change="toggle" />
+      <input :id="generatedId" type="checkbox" role="switch" class="peer sr-only" :checked="model" :aria-checked="model" :disabled="disabled" v-bind="controlAttrs" @change="toggle" />
       <span
         :class="
           cn(

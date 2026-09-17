@@ -32,13 +32,14 @@ const tones = {
       :is="item.clickable ? 'button' : 'div'"
       v-for="(item, index) in items"
       :key="item.key || index"
-      type="button"
+      :type="item.clickable ? 'button' : undefined"
+      :aria-pressed="item.clickable ? !!item.active : undefined"
       :class="
         cn(
           'border-gray-200 p-5 text-start dark:border-gray-800',
           'border-b sm:odd:border-e lg:border-b-0',
           items.length >= 4 ? 'lg:border-e lg:last:border-e-0' : 'lg:border-e lg:last:border-e-0',
-          item.clickable && 'transition-colors hover:bg-gray-50 dark:hover:bg-white/[0.03]',
+          item.clickable && 'transition-colors hover:bg-gray-50 focus-visible:relative focus-visible:shadow-focus-ring focus-visible:outline-hidden dark:hover:bg-white/[0.03]',
           item.active && 'bg-gray-50 dark:bg-white/[0.03]'
         )
       "

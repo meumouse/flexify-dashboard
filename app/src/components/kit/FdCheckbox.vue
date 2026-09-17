@@ -1,5 +1,5 @@
 <script setup>
-import { computed, useId } from 'vue';
+import { computed, useAttrs, useId } from 'vue';
 import { cn } from '@/lib/utils.js';
 
 /**
@@ -22,6 +22,16 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['change']);
+
+// Accessible names (aria-*) and other attributes belong to the input; class and style style the wrapper.
+defineOptions({ inheritAttrs: false });
+const attrs = useAttrs();
+const rootAttrs = computed(() => ({ class: attrs.class, style: attrs.style }));
+const controlAttrs = computed(() => {
+  const { class: _class, style: _style, ...rest } = attrs;
+  return rest;
+});
+
 const generatedId = useId();
 const inputId = computed(() => props.id || generatedId);
 
@@ -65,6 +75,7 @@ const boxClasses = computed(() =>
 
 <template>
   <label
+    v-bind="rootAttrs"
     :for="inputId"
     class="select-none items-start gap-3"
     :class="[disabled ? 'cursor-not-allowed' : 'cursor-pointer', label || description || $slots.default ? 'flex w-fit' : 'inline-flex']"
@@ -77,7 +88,8 @@ const boxClasses = computed(() =>
         class="peer sr-only"
         :checked="isChecked"
         :disabled="disabled"
-        :aria-checked="indeterminate ? 'mixed' : isChecked"
+        :indeterminate="indeterminate"
+        v-bind="controlAttrs"
         @change="toggle"
       />
       <span :class="boxClasses" class="peer-focus-visible:shadow-focus-ring">

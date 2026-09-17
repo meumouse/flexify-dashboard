@@ -152,7 +152,7 @@ onMounted(() => {
             v-for="term in terms[attribute.id] || []"
             :key="term.id"
             type="button"
-            class="rounded-full border px-3 py-1 text-theme-sm transition-colors"
+            class="rounded-full border px-3 py-1 text-theme-sm transition-colors focus-visible:shadow-focus-ring focus-visible:outline-hidden"
             :class="
               attribute.options.includes(term.name)
                 ? 'border-brand-500 bg-brand-50 text-brand-600 dark:border-brand-400 dark:bg-brand-500/15 dark:text-brand-400'

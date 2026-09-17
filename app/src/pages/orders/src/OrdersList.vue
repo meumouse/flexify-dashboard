@@ -570,7 +570,7 @@ onBeforeUnmount(() => window.clearInterval(pollTimer));
 
         <template #cell-order="{ row }">
           <div class="whitespace-nowrap">
-            <p class="font-medium text-gray-800 dark:text-white/90">#{{ row.number }}</p>
+            <RouterLink :to="{ name: 'order-details', params: { id: row.id } }" class="font-medium text-gray-800 hover:text-brand-500 dark:text-white/90 dark:hover:text-brand-400">#{{ row.number }}</RouterLink>
             <p class="text-theme-xs text-gray-500 dark:text-gray-400">{{ row.created_via === 'admin' ? __('Created in admin', 'flexify-dashboard') : __('Online store', 'flexify-dashboard') }}</p>
           </div>
         </template>
