@@ -146,6 +146,7 @@ const getActionIcon = (action) => {
     logout: 'logout',
     role_changed: 'admin_users',
     status_changed: 'flag',
+    refunded: 'undo',
     uploaded: 'upload',
   };
   return icons[action] || 'info';
@@ -168,6 +169,7 @@ const getActionColor = (action) => {
     logout: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
     role_changed: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400',
     status_changed: 'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
+    refunded: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400',
     uploaded: 'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
   };
   return colors[action] || 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400';

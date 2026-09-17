@@ -58,6 +58,7 @@ const addressModal = ref({ open: false, type: 'billing' });
 const confirmDialog = ref(null);
 const notesRef = ref(null);
 const extensionCards = shallowRef([]);
+const siblings = ref({ previous: null, next: null });
 
 const status = computed(() => orderStatus(order.value?.status));
 const refunded = computed(() => totalRefunded(order.value));
@@ -111,10 +112,33 @@ const load = async () => {
   loading.value = false;
 
   loadCountries();
+  loadSiblings();
 
   const cards = await applyFilters('flexify-dashboard/orders/detail/sidebar', [], { order: order.value, context: context.value });
   extensionCards.value = Array.isArray(cards) ? cards : [];
 };
+
+/**
+ * Find the newer and older orders around the current one.
+ */
+const loadSiblings = async () => {
+  if (!order.value?.date_created_gmt) return;
+
+  const base = { per_page: 1, orderby: 'date', status: 'any', exclude: String(props.id), dates_are_gmt: 'true', _fields: 'id,number' };
+  const date = order.value.date_created_gmt;
+
+  const [newer, older] = await Promise.all([
+    wc('orders', { params: { ...base, after: date, order: 'asc' } }),
+    wc('orders', { params: { ...base, before: date, order: 'desc' } }),
+  ]);
+
+  siblings.value = {
+    previous: Array.isArray(newer?.data) && newer.data[0] ? newer.data[0] : null,
+    next: Array.isArray(older?.data) && older.data[0] ? older.data[0] : null,
+  };
+};
+
+const goTo = (sibling) => sibling && router.push({ name: 'order-details', params: { id: sibling.id } });
 
 const reload = async () => {
   const [orderResponse, contextResponse] = await Promise.all([wc(`orders/${props.id}`), fd(`orders/${props.id}/context`)]);
@@ -242,6 +266,14 @@ onMounted(load);
           </span>
         </template>
         <template #actions>
+          <div class="flex items-center gap-1">
+            <FdTooltip :text="siblings.previous ? sprintf(__('Newer order #%s', 'flexify-dashboard'), siblings.previous.number) : __('No newer orders', 'flexify-dashboard')">
+              <FdButton variant="outline" icon="chevron_left" icon-only :disabled="!siblings.previous" :aria-label="__('Newer order', 'flexify-dashboard')" @click="goTo(siblings.previous)" />
+            </FdTooltip>
+            <FdTooltip :text="siblings.next ? sprintf(__('Older order #%s', 'flexify-dashboard'), siblings.next.number) : __('No older orders', 'flexify-dashboard')">
+              <FdButton variant="outline" icon="chevron_right" icon-only :disabled="!siblings.next" :aria-label="__('Older order', 'flexify-dashboard')" @click="goTo(siblings.next)" />
+            </FdTooltip>
+          </div>
           <FdDropdown :items="actionItems" width="w-64">
             <template #trigger>
               <FdButton variant="outline" icon-right="expand_more" :loading="actionRunning">{{ __('Actions', 'flexify-dashboard') }}</FdButton>

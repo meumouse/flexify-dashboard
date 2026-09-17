@@ -80,6 +80,9 @@ class ActivityHooks {
 
 		add_action( 'wp_login', array( $this, 'log_user_login' ), 10, 2 );
 		add_action( 'wp_logout', array( $this, 'log_user_logout' ) );
+
+		add_action( 'woocommerce_order_status_changed', array( $this, 'log_order_status_changed' ), 10, 4 );
+		add_action( 'woocommerce_order_refunded', array( $this, 'log_order_refunded' ), 10, 2 );
 	}
 
 
@@ -751,6 +754,64 @@ class ActivityHooks {
 			$user_id,
 			null,
 			null
+		);
+	}
+
+
+	/**
+	 * Log WooCommerce order status changes.
+	 *
+	 * @since 3.0.0
+	 * @param int $order_id Order ID.
+	 * @param string $from Previous status.
+	 * @param string $to New status.
+	 * @param \WC_Order $order Order object.
+	 * @return void
+	 */
+	public function log_order_status_changed( $order_id, $from, $to, $order ) {
+		ActivityLogger::log(
+			'status_changed',
+			'shop_order',
+			$order_id,
+			array(
+				'status' => $from,
+			),
+			array(
+				'status' => $to,
+			),
+			array(
+				/* translators: %s: order number */
+				'title' => sprintf( __( 'Order #%s', 'flexify-dashboard' ), is_callable( array( $order, 'get_order_number' ) ) ? $order->get_order_number() : $order_id ),
+			)
+		);
+	}
+
+
+	/**
+	 * Log WooCommerce order refunds.
+	 *
+	 * @since 3.0.0
+	 * @param int $order_id Order ID.
+	 * @param int $refund_id Refund ID.
+	 * @return void
+	 */
+	public function log_order_refunded( $order_id, $refund_id ) {
+		$order = function_exists( 'wc_get_order' ) ? wc_get_order( $order_id ) : null;
+		$refund = function_exists( 'wc_get_order' ) ? wc_get_order( $refund_id ) : null;
+
+		ActivityLogger::log(
+			'refunded',
+			'shop_order',
+			$order_id,
+			null,
+			array(
+				'amount' => $refund ? (float) $refund->get_amount() : null,
+				'reason' => $refund ? $refund->get_reason() : '',
+			),
+			array(
+				/* translators: %s: order number */
+				'title' => sprintf( __( 'Order #%s', 'flexify-dashboard' ), $order ? $order->get_order_number() : $order_id ),
+			)
 		);
 	}
 
