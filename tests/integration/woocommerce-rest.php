@@ -221,6 +221,10 @@ try {
 	list( $status, $bulk ) = fd_rest( 'POST', '/flexify-dashboard/v1/woocommerce/orders/bulk', array( 'ids' => array( $order2['id'] ), 'action' => 'status', 'value' => 'completed' ) );
 	fd_check( 'bulk status completed', 200 === $status && 'completed' === wc_get_order( $order2['id'] )->get_status(), $bulk );
 
+	// Analytics reports zero on stores that never imported historical data; the summary then sums the orders.
+	list( $status, $revenue ) = fd_rest( 'GET', '/flexify-dashboard/v1/woocommerce/orders/summary', array( 'date_from' => gmdate( 'Y-m-d', strtotime( '-1 day' ) ), 'date_to' => gmdate( 'Y-m-d' ) ) );
+	fd_check( 'period revenue is not zero while paid orders exist', (int) $revenue['period']['orders_count'] >= 1 && (float) $revenue['period']['net_revenue'] > 0, $revenue['period'] );
+
 	list( $status, $bulk ) = fd_rest( 'POST', '/flexify-dashboard/v1/woocommerce/orders/bulk', array( 'ids' => array( $order2['id'] ), 'action' => 'trash' ) );
 	fd_check( 'bulk trash', 200 === $status && 'trash' === wc_get_order( $order2['id'] )->get_status(), array( $bulk, wc_get_order( $order2['id'] ) ? wc_get_order( $order2['id'] )->get_status() : 'missing' ) );
 	list( $status, $bulk ) = fd_rest( 'POST', '/flexify-dashboard/v1/woocommerce/orders/bulk', array( 'ids' => array( $order2['id'] ), 'action' => 'restore' ) );

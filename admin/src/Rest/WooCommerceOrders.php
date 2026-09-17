@@ -341,6 +341,11 @@ class WooCommerceOrders {
 						'orders_count' => (int) ( $totals['orders_count'] ?? 0 ),
 						'source' => 'analytics',
 					);
+
+					// Stores that never imported historical data into Analytics report zero; sum the orders instead.
+					if ( 0 === $result['orders_count'] ) {
+						$result = null;
+					}
 				}
 			} catch ( \Throwable $exception ) {
 				$result = null;
