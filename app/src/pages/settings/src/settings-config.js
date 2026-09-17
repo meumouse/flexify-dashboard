@@ -741,6 +741,36 @@ export const settingsConfig = [
   },
 
   {
+    id: 'use_modern_products_page',
+    category: 'woocommerce',
+    type: 'toggle',
+    label: __('Modern Products Page', 'flexify-dashboard'),
+    description: __(
+      'Replace the WooCommerce products list with a modern page featuring counters, filters, quick edit and bulk actions. The classic editor is still used to create and fully edit products.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    componentProps: {
+      class: 'max-w-[300px]',
+    },
+  },
+
+  {
+    id: 'use_modern_orders_page',
+    category: 'woocommerce',
+    type: 'toggle',
+    label: __('Modern Orders Page', 'flexify-dashboard'),
+    description: __(
+      'Replace the WooCommerce orders list and order details with a modern page featuring filters, previews, status changes, notes and refunds. Works with HPOS and legacy order storage.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    componentProps: {
+      class: 'max-w-[300px]',
+    },
+  },
+
+  {
     id: 'use_modern_comments_page',
     category: 'comments',
     type: 'toggle',

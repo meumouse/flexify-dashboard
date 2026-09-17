@@ -410,13 +410,13 @@ class WooCommerceDashboard {
 			default:
 				$created_via = $order->get_created_via();
 				$fallback_map = array(
-					'admin'    => __( 'Administrador', 'flexify-dashboard' ),
-					'checkout' => __( 'Direto', 'flexify-dashboard' ),
-					'store-api'=> __( 'Direto', 'flexify-dashboard' ),
+					'admin'    => __( 'Administrator', 'flexify-dashboard' ),
+					'checkout' => __( 'Direct', 'flexify-dashboard' ),
+					'store-api'=> __( 'Direct', 'flexify-dashboard' ),
 					'rest-api' => __( 'API', 'flexify-dashboard' ),
 				);
 
-				$label       = isset( $fallback_map[ $created_via ] ) ? $fallback_map[ $created_via ] : ( $created_via ? ucfirst( $created_via ) : __( 'Loja', 'flexify-dashboard' ) );
+				$label       = isset( $fallback_map[ $created_via ] ) ? $fallback_map[ $created_via ] : ( $created_via ? ucfirst( $created_via ) : __( 'Store', 'flexify-dashboard' ) );
 				$source_type = $created_via ? $created_via : 'unknown';
 				break;
 		}
@@ -456,13 +456,13 @@ class WooCommerceDashboard {
 	 */
 	private function get_primary_category_name( $product_id ) {
 		if ( empty( $product_id ) ) {
-			return __( 'Sem categoria', 'flexify-dashboard' );
+			return __( 'Uncategorized', 'flexify-dashboard' );
 		}
 
 		$terms = get_the_terms( $product_id, 'product_cat' );
 
 		if ( empty( $terms ) || is_wp_error( $terms ) ) {
-			return __( 'Sem categoria', 'flexify-dashboard' );
+			return __( 'Uncategorized', 'flexify-dashboard' );
 		}
 
 		usort(
@@ -478,7 +478,7 @@ class WooCommerceDashboard {
 			}
 		);
 
-		return isset( $terms[0]->name ) ? $terms[0]->name : __( 'Sem categoria', 'flexify-dashboard' );
+		return isset( $terms[0]->name ) ? $terms[0]->name : __( 'Uncategorized', 'flexify-dashboard' );
 	}
 
 
@@ -510,9 +510,9 @@ class WooCommerceDashboard {
 
 		return array(
 			'id'       => 0,
-			'name'     => __( 'Pedido sem item', 'flexify-dashboard' ),
+			'name'     => __( 'Order without items', 'flexify-dashboard' ),
 			'image'    => '',
-			'category' => __( 'Sem categoria', 'flexify-dashboard' ),
+			'category' => __( 'Uncategorized', 'flexify-dashboard' ),
 		);
 	}
 
@@ -530,7 +530,7 @@ class WooCommerceDashboard {
 			array(
 				'limit'        => -1,
 				'status'       => array( 'wc-completed', 'wc-processing' ),
-				'date_created' => '>=' . gmdate( 'Y-m-d', $date_from ) . '...' . gmdate( 'Y-m-d', $date_to ),
+				'date_created' => gmdate( 'Y-m-d', $date_from ) . '...' . gmdate( 'Y-m-d', $date_to ),
 				'return'       => 'objects',
 			)
 		);
@@ -552,7 +552,7 @@ class WooCommerceDashboard {
 		}
 
 		if ( empty( $customer_name ) ) {
-			$customer_name = __( 'Cliente não identificado', 'flexify-dashboard' );
+			$customer_name = __( 'Unidentified customer', 'flexify-dashboard' );
 		}
 
 		return $customer_name;
@@ -789,12 +789,12 @@ class WooCommerceDashboard {
 							'labels'   => $chart_datasets['labels'],
 							'datasets' => array(
 								array(
-									'label'       => __( 'Faturamento bruto', 'flexify-dashboard' ),
+									'label'       => __( 'Gross revenue', 'flexify-dashboard' ),
 									'data'        => $chart_datasets['gross'],
 									'borderColor' => '#339AF0',
 								),
 								array(
-									'label'       => __( 'Faturamento líquido', 'flexify-dashboard' ),
+									'label'       => __( 'Net revenue', 'flexify-dashboard' ),
 									'data'        => $chart_datasets['net'],
 									'borderColor' => '#20C997',
 								),

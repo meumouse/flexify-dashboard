@@ -108,6 +108,7 @@ export const setGlobalProperties = ( appStore, scriptTagSelector = '#fd-script',
 	let supportsTags = null;
 	let postStatuses = null;
 	let pluginsList = null;
+	let woocommerceData = null;
 	let themeColors = getJsonAttribute(scriptTag, 'theme-colors', []);
 	let themeSpacing = getJsonAttribute(scriptTag, 'theme-spacing', []);
 
@@ -129,6 +130,7 @@ export const setGlobalProperties = ( appStore, scriptTagSelector = '#fd-script',
 		);
 		postStatuses = getJsonAttribute(secondaryScriptTag, 'post_statuses', null);
 		pluginsList = getJsonAttribute(secondaryScriptTag, 'plugins', null);
+		woocommerceData = getJsonAttribute(secondaryScriptTag, 'woocommerce-data', null);
 	}
 
 	// Update store properties (always update to match original behavior)
@@ -166,6 +168,7 @@ export const setGlobalProperties = ( appStore, scriptTagSelector = '#fd-script',
 		appStore.updateState('supports_tags', supportsTags);
 	if (postStatuses !== null) appStore.updateState('postStatuses', postStatuses);
 	if (pluginsList !== null) appStore.updateState('pluginsList', pluginsList);
+	if (woocommerceData !== null) appStore.updateState('woocommerce', woocommerceData);
 };
 
 /**

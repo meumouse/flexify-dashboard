@@ -127,6 +127,12 @@ const settingsCategories = [
     ),
   },
   {
+    value: 'woocommerce',
+    label: __('WooCommerce', 'flexify-dashboard'),
+    icon: 'storefront',
+    description: __('Products and orders management pages', 'flexify-dashboard'),
+  },
+  {
     value: 'security',
     label: __('Security', 'flexify-dashboard'),
     icon: 'security',

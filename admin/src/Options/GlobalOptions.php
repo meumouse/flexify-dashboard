@@ -244,6 +244,14 @@ class GlobalOptions {
                     'type'    => 'boolean',
                     'default' => false,
                 ),
+                'use_modern_products_page' => array(
+                    'type'    => 'boolean',
+                    'default' => true,
+                ),
+                'use_modern_orders_page' => array(
+                    'type'    => 'boolean',
+                    'default' => true,
+                ),
                 'use_modern_post_editor' => array(
                     'type'    => 'boolean',
                     'default' => false,
@@ -380,6 +388,8 @@ class GlobalOptions {
             'use_modern_media_page',
             'use_modern_users_page',
             'use_modern_comments_page',
+            'use_modern_products_page',
+            'use_modern_orders_page',
             'use_modern_post_editor',
             'enable_realtime_collaboration',
             'enable_svg_uploads',
