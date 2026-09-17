@@ -117,6 +117,8 @@ const loadOrder = async () => {
     sku: item.sku,
     image: item.image?.src || '',
     price: Number(item.price) || 0,
+    // Unit subtotal before discounts, used to send line totals when the quantity changes.
+    unitSubtotal: (Number(item.subtotal) || 0) / (Number(item.quantity) || 1),
     quantity: Number(item.quantity) || 1,
     removed: false,
   }));
@@ -284,21 +286,54 @@ const validate = () => {
   return true;
 };
 
-const buildLines = () => ({
-  line_items: lines.value
+const couponCodes = (list) =>
+  list
+    .filter((coupon) => !coupon.removed)
+    .map((coupon) => coupon.code.toLowerCase())
+    .sort()
+    .join('|');
+
+const buildLines = () => {
+  const decimals = currency.value.decimals ?? 2;
+  const originalCoupons = couponCodes((order.value?.coupon_lines || []).map((line) => ({ code: line.code })));
+  const couponsChanged = couponCodes(coupons.value) !== originalCoupons;
+
+  const lineItems = lines.value
     .map((line) => {
-      if (line.id) return { id: line.id, quantity: line.removed ? 0 : Number(line.quantity) || 1 };
-      return { product_id: line.product_id, ...(line.variation_id ? { variation_id: line.variation_id } : {}), quantity: Number(line.quantity) || 1 };
+      if (!line.id) {
+        return { product_id: line.product_id, ...(line.variation_id ? { variation_id: line.variation_id } : {}), quantity: Number(line.quantity) || 1 };
+      }
+
+      if (line.removed) return { id: line.id, quantity: 0 };
+
+      const quantity = Number(line.quantity) || 1;
+      const original = order.value?.line_items?.find((item) => item.id === line.id);
+
+      if (original && Number(original.quantity) === quantity) return null;
+
+      // WooCommerce keeps the line totals when only the quantity is sent, so send them explicitly.
+      // Coupons are re-applied below and recalculate the discounted total.
+      const subtotal = (line.unitSubtotal * quantity).toFixed(decimals);
+      return { id: line.id, quantity, subtotal, total: subtotal };
     })
-    .filter((line) => !(line.id && order.value?.line_items?.find((item) => item.id === line.id && Number(item.quantity) === line.quantity))),
-  shipping_lines: shippingLines.value.map((line) =>
-    line.id && line.removed ? { id: line.id, method_id: null } : { ...(line.id ? { id: line.id } : {}), method_id: line.method_id, method_title: line.method_title, total: toDecimal(line.total) || '0' }
-  ),
-  fee_lines: feeLines.value.map((line) =>
-    line.id && line.removed ? { id: line.id, name: null } : { ...(line.id ? { id: line.id } : {}), name: line.name.trim(), total: toDecimal(line.total) || '0', tax_status: 'none' }
-  ),
-  coupon_lines: coupons.value.filter((coupon) => !coupon.id || coupon.removed).map((coupon) => (coupon.id ? { id: coupon.id, code: null } : { code: coupon.code })),
-});
+    .filter(Boolean);
+
+  const hasCoupons = coupons.value.some((coupon) => !coupon.removed) || originalCoupons !== '';
+
+  return {
+    line_items: lineItems,
+    shipping_lines: shippingLines.value.map((line) =>
+      line.id && line.removed ? { id: line.id, method_id: null } : { ...(line.id ? { id: line.id } : {}), method_id: line.method_id, method_title: line.method_title, total: toDecimal(line.total) || '0' }
+    ),
+    fee_lines: feeLines.value.map((line) =>
+      line.id && line.removed ? { id: line.id, name: null } : { ...(line.id ? { id: line.id } : {}), name: line.name.trim(), total: toDecimal(line.total) || '0', tax_status: 'none' }
+    ),
+    // The v3 API replaces the whole coupon list; re-sending it also recalculates discounts after item changes.
+    ...(couponsChanged || (hasCoupons && lineItems.length)
+      ? { coupon_lines: coupons.value.filter((coupon) => !coupon.removed).map((coupon) => ({ code: coupon.code })) }
+      : {}),
+  };
+};
 
 const save = async () => {
   if (!validate()) return;

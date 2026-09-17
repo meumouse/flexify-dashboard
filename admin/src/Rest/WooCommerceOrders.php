@@ -57,7 +57,8 @@ class WooCommerceOrders {
 	 */
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
-		add_filter( 'woocommerce_rest_shop_order_object_query', array( $this, 'filter_orders_query' ), 10, 2 );
+		// Runs after WooCommerce finished building the orders query (status, customer, search), so nothing overrides these filters.
+		add_filter( 'woocommerce_rest_orders_prepare_object_query', array( $this, 'filter_orders_query' ), 10, 2 );
 	}
 
 
@@ -236,6 +237,11 @@ class WooCommerceOrders {
 			if ( ! in_array( $status['value'], array( 'trash', 'checkout-draft' ), true ) ) {
 				$total += $count;
 			}
+		}
+
+		// Trash is not a registered order status, but the list shows a tab for it.
+		if ( function_exists( 'wc_orders_count' ) ) {
+			$counts['trash'] = (int) wc_orders_count( 'trash' );
 		}
 
 		$date_to = $this->parse_date( $request->get_param( 'date_to' ), true );
@@ -498,7 +504,8 @@ class WooCommerceOrders {
 		if ( WooCommerce::is_hpos_enabled() ) {
 			$data_store = $order->get_data_store();
 
-			if ( is_object( $data_store ) && method_exists( $data_store, 'untrash_order' ) ) {
+			// WC_Data_Store forwards calls through __call, so method_exists() cannot be used here.
+			if ( is_object( $data_store ) && is_callable( array( $data_store, 'untrash_order' ) ) ) {
 				return (bool) $data_store->untrash_order( $order );
 			}
 		}

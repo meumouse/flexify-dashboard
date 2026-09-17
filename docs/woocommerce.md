@@ -52,7 +52,10 @@ As páginas usam a API `wc/v3` para CRUD e endpoints próprios em `flexify-dashb
 
 As configurações da loja (moeda, unidades, status, gateways, métodos de entrega, classes de imposto, permissões e URLs) chegam ao Vue pelo atributo `woocommerce-data` do script `#fd-woocommerce-script` e ficam em `appStore.state.woocommerce`. Use `useWooCommerce()` para acessá-las e para chamar as APIs (`wc()` e `fd()`).
 
-As funções puras de preço (`app/src/composables/wooPrice.js`) e de combinação de variações (`app/src/pages/products/src/editor/variationCombos.js`) têm testes em `app/tests` (`npm test` dentro de `app/`).
+## Testes
+
+- **Unitários (JS):** as funções puras de preço (`app/src/composables/wooPrice.js`) e de combinação de variações (`app/src/pages/products/src/editor/variationCombos.js`) têm testes em `app/tests` (`npm test` dentro de `app/`).
+- **Integração (WooCommerce real):** `tests/integration/woocommerce-rest.php` exercita produtos, variações, ações em massa, criação e edição de pedidos, filtros, contexto, notas, reembolsos, cupons, atributos e tags pela API; `tests/integration/woocommerce-redirects.php` cobre os redirecionamentos das telas nativas. Rode com `wp eval-file <arquivo>` num site de desenvolvimento com o WooCommerce ativo. Os testes rodam dentro de uma transação revertida no final (tabelas InnoDB) e bloqueiam o envio de e-mails.
 
 ## Pontos de extensão
 
