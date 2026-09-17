@@ -3,6 +3,7 @@ import { ref, computed, watch } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
 import AppIcon from '@/components/utility/icons/index.vue';
 import { lmnFetch } from '@/assets/js/functions/lmnFetch.js';
+import { useChartTheme } from '@/composables/useChartTheme.js';
 
 const props = defineProps({
 	dateRange: {
@@ -58,56 +59,32 @@ const chartSeries = computed(() => {
   ];
 });
 
-const chartOptions = computed(() => ({
-  chart: {
-    type: 'line',
-    toolbar: { show: false },
-    zoom: { enabled: false },
-  },
-  dataLabels: { enabled: false },
-  stroke: {
-    curve: 'smooth',
-    width: 2,
-  },
-  markers: {
-    size: 4,
-    hover: { size: 6 },
-  },
-  xaxis: {
-    categories: chartData.value?.labels || [],
-    labels: {
-      style: {
-        colors: 'rgb(113, 113, 122)',
-        fontSize: '12px',
+const { chartOptions: themedChartOptions } = useChartTheme();
+
+const chartOptions = computed(() =>
+  themedChartOptions({
+    chart: { type: 'area' },
+    fill: {
+      type: 'gradient',
+      gradient: { opacityFrom: 0.45, opacityTo: 0 },
+    },
+    xaxis: {
+      categories: chartData.value?.labels || [],
+    },
+    yaxis: {
+      min: 0,
+      forceNiceScale: true,
+      labels: {
+        formatter: (value) => (Number.isInteger(value) ? value : ''),
       },
     },
-    axisBorder: { show: false },
-    axisTicks: { show: false },
-  },
-  yaxis: {
-    min: 0,
-    forceNiceScale: true,
-    labels: {
-      formatter: (value) => (Number.isInteger(value) ? value : ''),
-      style: {
-        colors: 'rgb(113, 113, 122)',
-        fontSize: '12px',
+    tooltip: {
+      y: {
+        formatter: (value) => `${value} new users`,
       },
     },
-  },
-  grid: {
-    borderColor: 'rgba(113, 113, 122, 0.1)',
-    xaxis: { lines: { show: false } },
-  },
-  tooltip: {
-    theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
-    y: {
-      formatter: (value) => `${value} new users`,
-    },
-  },
-  legend: { show: false },
-  colors: [chartData.value?.datasets?.[0]?.borderColor || 'rgb(99, 102, 241)'],
-}));
+  })
+);
 
 watch(
   () => props.dateRange,
@@ -199,7 +176,7 @@ watch(
         <div class="h-48">
           <VueApexCharts
             height="100%"
-            type="line"
+            type="area"
             :options="chartOptions"
             :series="chartSeries"
           />

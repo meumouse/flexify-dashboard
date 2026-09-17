@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
+import { useChartTheme } from '@/composables/useChartTheme.js';
 import { getWooDashboardData, formatCurrency } from '../useWooCommerceDashboard.js';
 
 const props = defineProps({ dateRange: { type: Array, required: true } });
@@ -66,74 +67,41 @@ const dateRangeLabel = computed(() => {
     return `${translate('Monthly period', 'flexify-dashboard')} • ${formattedSelectedRange.value}`;
 });
 
-const chartOptions = computed(() => ({
-    chart: {
-        type: 'line',
-        toolbar: { show: false },
-        zoom: { enabled: false },
-        animations: { speed: 300 },
-    },
-    dataLabels: { enabled: false },
-    stroke: {
-        curve: 'smooth',
-        width: 4,
-    },
-    markers: {
-        size: 0,
-        hover: {
-            size: 5,
+const { chartOptions: themedChartOptions } = useChartTheme();
+
+const chartOptions = computed(() =>
+    themedChartOptions({
+        chart: { type: 'area' },
+        stroke: { width: 2 },
+        fill: {
+            type: 'gradient',
+            gradient: { opacityFrom: 0.45, opacityTo: 0 },
         },
-    },
-    legend: {
-        position: 'bottom',
-        horizontalAlign: 'center',
-        fontSize: '12px',
-        labels: {
-            colors: 'rgb(113, 113, 122)',
+        legend: {
+            show: true,
+            position: 'bottom',
+            horizontalAlign: 'center',
+            fontSize: '12px',
+            markers: { size: 5, shape: 'circle' },
         },
-        markers: {
-            width: 10,
-            height: 10,
-            radius: 999,
-        },
-    },
-    colors: chartData.value?.datasets?.map((dataset) => dataset.borderColor) || ['#339AF0', '#20C997'],
-    grid: {
-        borderColor: 'rgba(113, 113, 122, 0.14)',
         xaxis: {
-            lines: { show: false },
+            categories: chartData.value?.labels || [],
+            tooltip: { enabled: false },
         },
-    },
-    xaxis: {
-        categories: chartData.value?.labels || [],
-        labels: {
-            style: {
-                colors: 'rgb(113, 113, 122)',
-                fontSize: '12px',
+        yaxis: {
+            min: 0,
+            tickAmount: 6,
+            labels: {
+                formatter: (value) => formatCurrency(value, currency.value),
             },
         },
-        axisBorder: { show: false },
-        axisTicks: { show: false },
-        tooltip: { enabled: false },
-    },
-    yaxis: {
-        min: 0,
-        tickAmount: 6,
-        labels: {
-            formatter: (value) => formatCurrency(value, currency.value),
-            style: {
-                colors: 'rgb(113, 113, 122)',
-                fontSize: '12px',
+        tooltip: {
+            y: {
+                formatter: (value) => formatCurrency(value, currency.value),
             },
         },
-    },
-    tooltip: {
-        theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
-        y: {
-            formatter: (value) => formatCurrency(value, currency.value),
-        },
-    },
-}));
+    })
+);
 
 watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 </script>
@@ -196,7 +164,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
                 <div class="h-[360px] max-md:h-72">
                     <VueApexCharts
                         height="100%"
-                        type="line"
+                        type="area"
                         :options="chartOptions"
                         :series="chartSeries"
                     />

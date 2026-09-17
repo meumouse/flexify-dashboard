@@ -7,6 +7,7 @@ use MeuMouse\Flexify_Dashboard\Rest\RestPermissionChecker;
 use MeuMouse\Flexify_Dashboard\Security\TurnStyle;
 use MeuMouse\Flexify_Dashboard\Utility\Encryption;
 use MeuMouse\Flexify_Dashboard\Utility\Scripts;
+use MeuMouse\Flexify_Dashboard\Utility\ThemeTokens;
 
 use WP_Error;
 use WP_REST_Request;
@@ -1114,111 +1115,13 @@ class Login {
 	 * Output CSS custom properties.
 	 *
 	 * @since 2.0.0
+	 * @version 3.0.0
 	 * @return void
 	 */
 	private static function load_custom_properties() {
 		self::ensure_options_loaded();
 
-		$base_styles_scale = isset( self::$options['base_theme_scale'] ) && is_array( self::$options['base_theme_scale'] )
-			? self::$options['base_theme_scale']
-			: array();
-
-		$accent_styles_scale = isset( self::$options['accent_theme_scale'] ) && is_array( self::$options['accent_theme_scale'] )
-			? self::$options['accent_theme_scale']
-			: self::get_default_accent_scale();
-
-		if ( empty( $accent_styles_scale ) ) {
-			$accent_styles_scale = self::get_default_accent_scale();
-		}
-
-		$base_styles = self::build_custom_properties( $base_styles_scale, 'base' );
-		$accent_styles = self::build_custom_properties( $accent_styles_scale, 'accent' );
-
-		echo '<style type="text/css">' . wp_strip_all_tags( $base_styles . $accent_styles ) . '</style>';
-	}
-
-
-	/**
-	 * Get default accent scale.
-	 *
-	 * @since 2.0.0
-	 * @return array
-	 */
-	private static function get_default_accent_scale() {
-		return array(
-			array(
-				'step' => '50',
-				'color' => '#eff8ff',
-			),
-			array(
-				'step' => '100',
-				'color' => '#d9efff',
-			),
-			array(
-				'step' => '200',
-				'color' => '#bce2ff',
-			),
-			array(
-				'step' => '300',
-				'color' => '#8fd0ff',
-			),
-			array(
-				'step' => '400',
-				'color' => '#59b6ff',
-			),
-			array(
-				'step' => '500',
-				'color' => '#008aff',
-			),
-			array(
-				'step' => '600',
-				'color' => '#0070db',
-			),
-			array(
-				'step' => '700',
-				'color' => '#0059ad',
-			),
-			array(
-				'step' => '800',
-				'color' => '#004a8f',
-			),
-			array(
-				'step' => '900',
-				'color' => '#063f76',
-			),
-			array(
-				'step' => '950',
-				'color' => '#04284c',
-			),
-		);
-	}
-
-
-	/**
-	 * Build CSS custom properties from a color scale.
-	 *
-	 * @since 2.0.0
-	 * @param array  $scale Color scale.
-	 * @param string $color_name Color name prefix.
-	 * @return string
-	 */
-	private static function build_custom_properties( $scale, $color_name ) {
-		$styles = ':root{';
-
-		foreach ( $scale as $color ) {
-			if ( ! is_array( $color ) || empty( $color['color'] ) || ! isset( $color['step'] ) ) {
-				continue;
-			}
-
-			$hex_array = self::hex_to_rgb( $color['color'] );
-			$escaped_step = esc_html( (string) $color['step'] );
-			$color_value = is_array( $hex_array ) ? esc_html( implode( ' ', $hex_array ) ) : '';
-			$property_name = "--fd-{$color_name}-{$escaped_step}";
-
-			$styles .= "{$property_name}:{$color_value};";
-		}
-
-		return $styles . '}';
+		ThemeTokens::print_style_tag( is_array( self::$options ) ? self::$options : array() );
 	}
 
 

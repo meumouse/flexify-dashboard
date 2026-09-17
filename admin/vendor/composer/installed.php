@@ -1,10 +1,10 @@
 <?php return array(
     'root' => array(
-        'name' => 'flexify-dashboard/flexify-dashboard',
+        'name' => 'meumouse/flexify-dashboard',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'ca56212289600dc4e71e88dfb084987a63bfa5d6',
-        'type' => 'project',
+        'reference' => '220bd59f8e2b31042d4f4b731097ff4ab64c82ba',
+        'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
@@ -28,11 +28,11 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'flexify-dashboard/flexify-dashboard' => array(
+        'meumouse/flexify-dashboard' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'ca56212289600dc4e71e88dfb084987a63bfa5d6',
-            'type' => 'project',
+            'reference' => '220bd59f8e2b31042d4f4b731097ff4ab64c82ba',
+            'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,

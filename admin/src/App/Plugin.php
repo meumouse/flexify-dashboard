@@ -54,6 +54,7 @@ use MeuMouse\Flexify_Dashboard\Rest\WooCommerceCustomer;
 use MeuMouse\Flexify_Dashboard\Rest\WooCommerceDashboard;
 use MeuMouse\Flexify_Dashboard\Update\Updater;
 use MeuMouse\Flexify_Dashboard\Utility\Scripts;
+use MeuMouse\Flexify_Dashboard\Utility\ThemeTokens;
 
 defined('ABSPATH') || exit;
 
@@ -289,9 +290,10 @@ class Plugin {
 
 
     /**
-     * Output custom font CSS based on settings.
+     * Output design tokens and custom font CSS based on settings.
      *
      * @since 2.0.0
+     * @version 3.0.0
      * @return void
      */
     public function output_custom_font_css() {
@@ -306,6 +308,7 @@ class Plugin {
         $font_url = isset( $options['custom_font_url'] ) ? $options['custom_font_url'] : '';
         $font_files = isset( $options['custom_font_files'] ) ? $options['custom_font_files'] : array();
 
+        $default_fonts = '"Outfit Variable", "Outfit", ';
         $system_fonts = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif';
         $css_output = '';
 
@@ -350,10 +353,12 @@ class Plugin {
         if ( 'system' !== $font_source && ! empty( $font_family ) ) {
             $css_output .= '  --fd-font-sans: "' . esc_attr( $font_family ) . '", ' . $system_fonts . ";\n";
         } else {
-            $css_output .= '  --fd-font-sans: ' . $system_fonts . ";\n";
+            $css_output .= '  --fd-font-sans: ' . $default_fonts . $system_fonts . ";\n";
         }
 
         $css_output .= "}\n";
+
+        ThemeTokens::print_style_tag( is_array( $options ) ? $options : array() );
 
         echo '<style id="flexify-dashboard-custom-font">' . "\n" . $css_output . '</style>' . "\n";
     }

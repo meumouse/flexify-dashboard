@@ -29,7 +29,7 @@ export const generateColorScheme = (hexColor) => {
   const inputLuminance = luminance(r, g, b);
 
   // Generate colors for the entire scale
-  const scale = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+  const scale = [25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
   const colors = [];
 
   // Define the lightest and darkest colors

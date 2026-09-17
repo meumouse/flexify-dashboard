@@ -337,6 +337,7 @@ return array(
     'MeuMouse\\Flexify_Dashboard\\Utility\\Encryption' => $baseDir . '/src/Utility/Encryption.php',
     'MeuMouse\\Flexify_Dashboard\\Utility\\ExtendSearchToMeta' => $baseDir . '/src/Utility/ExtendSearchToMeta.php',
     'MeuMouse\\Flexify_Dashboard\\Utility\\Scripts' => $baseDir . '/src/Utility/Scripts.php',
+    'MeuMouse\\Flexify_Dashboard\\Utility\\ThemeTokens' => $baseDir . '/src/Utility/ThemeTokens.php',
     'enshrined\\svgSanitize\\ElementReference\\Resolver' => $vendorDir . '/enshrined/svg-sanitize/src/ElementReference/Resolver.php',
     'enshrined\\svgSanitize\\ElementReference\\Subject' => $vendorDir . '/enshrined/svg-sanitize/src/ElementReference/Subject.php',
     'enshrined\\svgSanitize\\ElementReference\\Usage' => $vendorDir . '/enshrined/svg-sanitize/src/ElementReference/Usage.php',

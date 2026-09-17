@@ -87,7 +87,7 @@ const fontWeights = [
 
 // Font source options
 const fontSourceOptions = {
-  system: { value: 'system', label: __('System Default', 'flexify-dashboard') },
+  system: { value: 'system', label: __('Default (Outfit)', 'flexify-dashboard') },
   google: { value: 'google', label: __('Google Fonts', 'flexify-dashboard') },
   url: { value: 'url', label: __('Custom URL', 'flexify-dashboard') },
   upload: { value: 'upload', label: __('Upload Font', 'flexify-dashboard') },
@@ -1072,7 +1072,7 @@ onUnmounted(() => {
         class="flex items-center gap-2 px-3 py-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors"
       >
         <AppIcon icon="refresh" class="text-base" />
-        {{ __('Reset to system default', 'flexify-dashboard') }}
+        {{ __('Reset to default font', 'flexify-dashboard') }}
       </button>
     </div>
 

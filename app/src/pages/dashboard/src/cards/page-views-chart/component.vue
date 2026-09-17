@@ -3,6 +3,7 @@ import { ref, computed, watch } from 'vue';
 import VueApexCharts from 'vue3-apexcharts';
 import AppIcon from '@/components/utility/icons/index.vue';
 import { useAnalyticsQueue } from '@/composables/useAnalyticsQueue.js';
+import { useChartTheme } from '@/composables/useChartTheme.js';
 
 // Initialize analytics queue
 const { analytics: analyticsQueue } = useAnalyticsQueue();
@@ -101,62 +102,34 @@ const chartSeries = computed(() => {
   }));
 });
 
-const chartOptions = computed(() => ({
-  chart: {
-    type: 'line',
-    toolbar: { show: false },
-    zoom: { enabled: false },
-    animations: { speed: 300 },
-  },
-  stroke: {
-    curve: 'smooth',
-    width: 2,
-  },
-  markers: {
-    size: 3,
-    hover: {
-      size: 5,
+const { chartOptions: themedChartOptions } = useChartTheme();
+
+const chartOptions = computed(() =>
+  themedChartOptions({
+    chart: { type: 'area' },
+    fill: {
+      type: 'gradient',
+      gradient: { opacityFrom: 0.45, opacityTo: 0 },
     },
-  },
-  dataLabels: { enabled: false },
-  legend: { show: false },
-  xaxis: {
-    categories: chartData.value?.labels || [],
-    labels: {
-      style: {
-        colors: 'rgb(113, 113, 122)',
-        fontSize: '11px',
+    xaxis: {
+      categories: chartData.value?.labels || [],
+      labels: { style: { fontSize: '11px' } },
+    },
+    yaxis: {
+      min: 0,
+      labels: {
+        formatter: (value) =>
+          Number.isInteger(value) ? value.toLocaleString() : '',
+        style: { fontSize: '11px' },
       },
     },
-    axisBorder: { show: false },
-    axisTicks: { show: false },
-  },
-  yaxis: {
-    min: 0,
-    labels: {
-      formatter: (value) =>
-        Number.isInteger(value) ? value.toLocaleString() : '',
-      style: {
-        colors: 'rgb(113, 113, 122)',
-        fontSize: '11px',
+    tooltip: {
+      y: {
+        formatter: (value) => value.toLocaleString(),
       },
     },
-  },
-  grid: {
-    borderColor: 'rgba(113, 113, 122, 0.1)',
-    xaxis: { lines: { show: false } },
-  },
-  colors: chartData.value?.datasets?.map((dataset) => dataset.borderColor) || [
-    'rgb(99, 102, 241)',
-    'rgb(16, 185, 129)',
-  ],
-  tooltip: {
-    theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
-    y: {
-      formatter: (value) => value.toLocaleString(),
-    },
-  },
-}));
+  })
+);
 
 watch(
   () => props.dateRange,
@@ -255,7 +228,7 @@ watch(
         <div class="h-full">
           <VueApexCharts
             height="100%"
-            type="line"
+            type="area"
             :options="chartOptions"
             :series="chartSeries"
           />

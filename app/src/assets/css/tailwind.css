@@ -17,10 +17,32 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline reference {
-	--font-sans: var(--fd-font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-sans: var(--fd-font-sans), 'Outfit Variable', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-outfit: 'Outfit Variable', 'Outfit', sans-serif;
 
-	/* Neutral palette (customizable) */
+	/* Breakpoints (TailAdmin) */
+	--breakpoint-2xsm: 375px;
+	--breakpoint-xsm: 425px;
+	--breakpoint-3xl: 2000px;
+
+	/* Neutral palette — customizable through --fd-base-* */
+	--color-gray-0: rgb(var(--fd-base-0) / 1);
+	--color-gray-25: rgb(var(--fd-base-25) / 1);
+	--color-gray-50: rgb(var(--fd-base-50) / 1);
+	--color-gray-100: rgb(var(--fd-base-100) / 1);
+	--color-gray-200: rgb(var(--fd-base-200) / 1);
+	--color-gray-300: rgb(var(--fd-base-300) / 1);
+	--color-gray-400: rgb(var(--fd-base-400) / 1);
+	--color-gray-500: rgb(var(--fd-base-500) / 1);
+	--color-gray-600: rgb(var(--fd-base-600) / 1);
+	--color-gray-700: rgb(var(--fd-base-700) / 1);
+	--color-gray-800: rgb(var(--fd-base-800) / 1);
+	--color-gray-900: rgb(var(--fd-base-900) / 1);
+	--color-gray-950: rgb(var(--fd-base-950) / 1);
+
+	/* Legacy alias: zinc follows the neutral palette */
 	--color-zinc-0: rgb(var(--fd-base-0) / 1);
+	--color-zinc-25: rgb(var(--fd-base-25) / 1);
 	--color-zinc-50: rgb(var(--fd-base-50) / 1);
 	--color-zinc-100: rgb(var(--fd-base-100) / 1);
 	--color-zinc-200: rgb(var(--fd-base-200) / 1);
@@ -33,7 +55,8 @@
 	--color-zinc-900: rgb(var(--fd-base-900) / 1);
 	--color-zinc-950: rgb(var(--fd-base-950) / 1);
 
-	/* Accent palette (customizable) */
+	/* Accent palette — customizable through --fd-accent-* */
+	--color-brand-25: rgb(var(--fd-accent-25) / 1);
 	--color-brand-50: rgb(var(--fd-accent-50) / 1);
 	--color-brand-100: rgb(var(--fd-accent-100) / 1);
 	--color-brand-200: rgb(var(--fd-accent-200) / 1);
@@ -47,6 +70,7 @@
 	--color-brand-950: rgb(var(--fd-accent-950) / 1);
 
 	/* Legacy alias: indigo follows the accent palette */
+	--color-indigo-25: rgb(var(--fd-accent-25) / 1);
 	--color-indigo-50: rgb(var(--fd-accent-50) / 1);
 	--color-indigo-100: rgb(var(--fd-accent-100) / 1);
 	--color-indigo-200: rgb(var(--fd-accent-200) / 1);
@@ -59,6 +83,80 @@
 	--color-indigo-900: rgb(var(--fd-accent-900) / 1);
 	--color-indigo-950: rgb(var(--fd-accent-950) / 1);
 
+	/* success (TailAdmin) */
+	--color-success-25: #f6fef9;
+	--color-success-50: #ecfdf3;
+	--color-success-100: #d1fadf;
+	--color-success-200: #a6f4c5;
+	--color-success-300: #6ce9a6;
+	--color-success-400: #32d583;
+	--color-success-500: #12b76a;
+	--color-success-600: #039855;
+	--color-success-700: #027a48;
+	--color-success-800: #05603a;
+	--color-success-900: #054f31;
+	--color-success-950: #053321;
+
+	/* error (TailAdmin) */
+	--color-error-25: #fffbfa;
+	--color-error-50: #fef3f2;
+	--color-error-100: #fee4e2;
+	--color-error-200: #fecdca;
+	--color-error-300: #fda29b;
+	--color-error-400: #f97066;
+	--color-error-500: #f04438;
+	--color-error-600: #d92d20;
+	--color-error-700: #b42318;
+	--color-error-800: #912018;
+	--color-error-900: #7a271a;
+	--color-error-950: #55160c;
+
+	/* warning (TailAdmin) */
+	--color-warning-25: #fffcf5;
+	--color-warning-50: #fffaeb;
+	--color-warning-100: #fef0c7;
+	--color-warning-200: #fedf89;
+	--color-warning-300: #fec84b;
+	--color-warning-400: #fdb022;
+	--color-warning-500: #f79009;
+	--color-warning-600: #dc6803;
+	--color-warning-700: #b54708;
+	--color-warning-800: #93370d;
+	--color-warning-900: #7a2e0e;
+	--color-warning-950: #4e1d09;
+
+	/* blue-light (TailAdmin) */
+	--color-blue-light-25: #f5fbff;
+	--color-blue-light-50: #f0f9ff;
+	--color-blue-light-100: #e0f2fe;
+	--color-blue-light-200: #b9e6fe;
+	--color-blue-light-300: #7cd4fd;
+	--color-blue-light-400: #36bffa;
+	--color-blue-light-500: #0ba5ec;
+	--color-blue-light-600: #0086c9;
+	--color-blue-light-700: #026aa2;
+	--color-blue-light-800: #065986;
+	--color-blue-light-900: #0b4a6f;
+	--color-blue-light-950: #062c41;
+
+	/* orange (TailAdmin) */
+	--color-orange-25: #fffaf5;
+	--color-orange-50: #fff6ed;
+	--color-orange-100: #ffead5;
+	--color-orange-200: #fddcab;
+	--color-orange-300: #feb273;
+	--color-orange-400: #fd853a;
+	--color-orange-500: #fb6514;
+	--color-orange-600: #ec4a0a;
+	--color-orange-700: #c4320a;
+	--color-orange-800: #9c2a10;
+	--color-orange-900: #7e2410;
+	--color-orange-950: #511c10;
+
+	--color-gray-dark: #1a2231;
+	--color-theme-pink-500: #ee46bc;
+	--color-theme-purple-500: #7a5af8;
+
 	/* Semantic tokens (shadcn-vue components) */
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
@@ -66,11 +164,8 @@
 	--color-card-foreground: var(--card-foreground);
 	--color-popover: var(--popover);
 	--color-popover-foreground: var(--popover-foreground);
-	--color-primary: #212529;
-	--color-primary-foreground: #ffffff;
-	--color-primary-hover: #1b1f23;
-	--color-primary-active: #16191d;
-	--color-primary-ring: #212529;
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
 	--color-secondary: var(--secondary);
 	--color-secondary-foreground: var(--secondary-foreground);
 	--color-muted: var(--muted);
@@ -94,12 +189,49 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+	--color-primary-hover: rgb(var(--fd-accent-600) / 1);
+	--color-primary-active: rgb(var(--fd-accent-700) / 1);
+	--color-primary-ring: rgb(var(--fd-accent-500) / 1);
 
-	/* Radius scale driven by --radius */
+	/* Typography scale (TailAdmin) */
+	--text-title-2xl: 72px;
+	--text-title-2xl--line-height: 90px;
+	--text-title-xl: 60px;
+	--text-title-xl--line-height: 72px;
+	--text-title-lg: 48px;
+	--text-title-lg--line-height: 60px;
+	--text-title-md: 36px;
+	--text-title-md--line-height: 44px;
+	--text-title-sm: 30px;
+	--text-title-sm--line-height: 38px;
+	--text-title-xs: 24px;
+	--text-title-xs--line-height: 32px;
+	--text-theme-xl: 20px;
+	--text-theme-xl--line-height: 30px;
+	--text-theme-sm: 14px;
+	--text-theme-sm--line-height: 20px;
+	--text-theme-xs: 12px;
+	--text-theme-xs--line-height: 18px;
+
+	/* Shadows (TailAdmin) */
+	--shadow-theme-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	--shadow-theme-sm: 0px 1px 3px 0px rgba(16, 24, 40, 0.1), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+	--shadow-theme-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+	--shadow-theme-lg: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+	--shadow-theme-xl: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+	--shadow-focus-ring: 0px 0px 0px 4px rgb(var(--fd-accent-500) / 0.12);
+	--shadow-slider-navigation: 0px 1px 2px 0px rgba(16, 24, 40, 0.1), 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
+	--shadow-tooltip: 0px 4px 6px -2px rgba(16, 24, 40, 0.05), -8px 0px 20px 8px rgba(16, 24, 40, 0.05);
+	--shadow-datepicker: -5px 0 0 #262d3c, 5px 0 0 #262d3c;
+	--drop-shadow-4xl: 0 35px 35px rgba(0, 0, 0, 0.25), 0 45px 65px rgba(0, 0, 0, 0.15);
+
+	/* Radius scale driven by --radius (0.5rem = Tailwind defaults) */
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) + 4px);
+	--radius-2xl: calc(var(--radius) + 8px);
+	--radius-3xl: calc(var(--radius) + 16px);
 }
 
 @utility custom-scrollbar {
@@ -137,5 +269,14 @@
 
 	&:where(.dark, .dark *)::-webkit-scrollbar-thumb:hover {
 		background-color: color-mix(in oklab, rgb(var(--fd-base-600) / 1) 60%, transparent);
+	}
+}
+
+@utility no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
 	}
 }

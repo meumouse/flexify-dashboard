@@ -11,31 +11,31 @@ class ComposerStaticInitFlexify_Dashboard
     );
 
     public static $prefixLengthsPsr4 = array (
-        'e' => 
+        'e' =>
         array (
             'enshrined\\svgSanitize\\' => 22,
         ),
-        'M' => 
+        'M' =>
         array (
             'MeuMouse\\Flexify_Dashboard\\' => 27,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'enshrined\\svgSanitize\\' => 
+        'enshrined\\svgSanitize\\' =>
         array (
             0 => __DIR__ . '/..' . '/enshrined/svg-sanitize/src',
         ),
-        'MeuMouse\\Flexify_Dashboard\\' => 
+        'MeuMouse\\Flexify_Dashboard\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'H' => 
+        'H' =>
         array (
-            'HTMLPurifier' => 
+            'HTMLPurifier' =>
             array (
                 0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
             ),
@@ -374,6 +374,7 @@ class ComposerStaticInitFlexify_Dashboard
         'MeuMouse\\Flexify_Dashboard\\Utility\\Encryption' => __DIR__ . '/../..' . '/src/Utility/Encryption.php',
         'MeuMouse\\Flexify_Dashboard\\Utility\\ExtendSearchToMeta' => __DIR__ . '/../..' . '/src/Utility/ExtendSearchToMeta.php',
         'MeuMouse\\Flexify_Dashboard\\Utility\\Scripts' => __DIR__ . '/../..' . '/src/Utility/Scripts.php',
+        'MeuMouse\\Flexify_Dashboard\\Utility\\ThemeTokens' => __DIR__ . '/../..' . '/src/Utility/ThemeTokens.php',
         'enshrined\\svgSanitize\\ElementReference\\Resolver' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/ElementReference/Resolver.php',
         'enshrined\\svgSanitize\\ElementReference\\Subject' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/ElementReference/Subject.php',
         'enshrined\\svgSanitize\\ElementReference\\Usage' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/ElementReference/Usage.php',

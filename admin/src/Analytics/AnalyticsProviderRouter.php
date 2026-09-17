@@ -283,7 +283,7 @@ class AnalyticsProviderRouter {
         }
 
         $provider_files = array(
-            FlexifyDashboardAnalyticsProvider::class => __DIR__ . '/Providers/flexifyDashboardAnalyticsProvider.php',
+            FlexifyDashboardAnalyticsProvider::class => __DIR__ . '/Providers/FlexifyDashboardAnalyticsProvider.php',
             GoogleAnalyticsProvider::class => __DIR__ . '/Providers/GoogleAnalyticsProvider.php',
         );
 
