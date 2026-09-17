@@ -1,7 +1,5 @@
 <script setup>
 import { ref, computed, watchEffect, nextTick, defineProps } from 'vue';
-import { ShadowRoot } from 'vue-shadow-dom';
-import { useShadowStyles } from '@/composables/useShadowStyles.js';
 import { useColorScheme } from '@/assets/js/functions/useColorScheme.js';
 
 const { prefersDark } = useColorScheme();
@@ -83,14 +81,14 @@ defineExpose({
       <div v-if="open" class="flexify-dashboard-isolation font-sans">
         <div
           @click="close"
-          class="fixed top-0 left-0 right-0 h-dvh max-h-dvh max-w-dvw bg-zinc-950/60 flex flex-row z-[99999] pointer-events-auto"
+          class="fixed top-0 left-0 right-0 h-dvh max-h-dvh max-w-dvw bg-gray-400/50 backdrop-blur-[32px] dark:bg-gray-950/60 flex flex-row p-4 z-99999 pointer-events-auto"
           :class="setPositionClass"
         >
           <Transition name="slide-up">
             <div
               v-if="innerOpen"
               ref="panel"
-              class="bg-white dark:bg-zinc-900 rounded-2xl h-auto border border-zinc-200/80 dark:border-zinc-700/40 shadow-sm max-w-screen"
+              class="bg-white dark:bg-gray-900 rounded-3xl h-auto shadow-theme-xl max-w-full max-h-[calc(100dvh-2rem)] overflow-y-auto custom-scrollbar"
             >
               <slot />
             </div>

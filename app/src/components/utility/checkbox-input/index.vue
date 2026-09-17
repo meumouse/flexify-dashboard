@@ -22,11 +22,11 @@ watchEffect(() => {
 <template>
   <div class="relative inline-flex">
     <input type="checkbox" v-model="model"
-      class="appearance-none w-4 h-4 text-brand-600 bg-zinc-100 border-zinc-300 rounded focus:ring-brand-500 dark:focus:ring-brand-600 dark:ring-offset-zinc-800 focus:ring-2 dark:bg-zinc-700 dark:border-zinc-600 checked:bg-brand-500"
+      class="peer h-4 w-4 cursor-pointer appearance-none rounded-sm border-[1.25px] border-gray-300 bg-transparent transition-colors checked:border-brand-500 checked:bg-brand-500 focus:outline-hidden focus-visible:shadow-focus-ring dark:border-gray-700 dark:checked:border-brand-500"
       v-bind="attrs" />
     <Transition>
       <div class="absolute inset-0 flex flex-col place-content-center pointer-events-none" v-if="model">
-        <AppIcon icon="tick" class="text-white mx-auto" />
+        <AppIcon icon="tick" class="mx-auto text-xs text-white" />
       </div>
     </Transition>
   </div>

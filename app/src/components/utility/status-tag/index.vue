@@ -3,32 +3,32 @@ import { ref, computed } from "vue";
 const props = defineProps(["status", "text"]);
 
 const returnStatusClasses = computed(() => {
-  if (props.status === "success") return "text-green-700 dark:text-green-300 bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800";
-  if (props.status === "warning") return "text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800";
-  if (props.status === "danger") return "text-red-700 dark:text-red-300 bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800";
-  return "text-zinc-600 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800";
+  if (props.status === "success") return "bg-success-50 text-success-600 dark:bg-success-500/15 dark:text-success-500";
+  if (props.status === "warning") return "bg-warning-50 text-warning-600 dark:bg-warning-500/15 dark:text-orange-400";
+  if (props.status === "danger") return "bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-500";
+  return "bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-white/80";
 });
 
 const returnStatusIndicatorClasses = computed(() => {
-  if (props.status === "success") return "bg-green-500 dark:bg-green-400";
-  if (props.status === "warning") return "bg-amber-500 dark:bg-amber-400";
-  if (props.status === "danger") return "bg-red-500 dark:bg-red-400";
-  return "bg-zinc-400 dark:bg-zinc-500";
+  if (props.status === "success") return "bg-success-500";
+  if (props.status === "warning") return "bg-warning-500";
+  if (props.status === "danger") return "bg-error-500";
+  return "bg-gray-400";
 });
 
 const returnStatusGlowClasses = computed(() => {
-  if (props.status === "success") return "bg-green-400 dark:bg-green-400";
-  if (props.status === "warning") return "bg-amber-400 dark:bg-amber-400";
-  if (props.status === "danger") return "bg-red-400 dark:bg-red-400";
-  return "bg-zinc-400 dark:bg-zinc-500";
+  if (props.status === "success") return "bg-success-400";
+  if (props.status === "warning") return "bg-warning-400";
+  if (props.status === "danger") return "bg-error-400";
+  return "bg-gray-400";
 });
 </script>
 
 <template>
-  <div class="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs font-medium border transition-all" :class="returnStatusClasses">
-    <span class="relative flex h-2 w-2">
+  <div class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-theme-xs font-medium" :class="returnStatusClasses">
+    <span class="relative flex h-1.5 w-1.5">
       <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" :class="returnStatusGlowClasses" style="animation-duration: 2s" />
-      <span class="relative inline-flex rounded-full h-2 w-2" :class="returnStatusIndicatorClasses" />
+      <span class="relative inline-flex h-1.5 w-1.5 rounded-full" :class="returnStatusIndicatorClasses" />
     </span>
     <span class="leading-none">{{ text }}</span>
   </div>

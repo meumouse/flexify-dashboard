@@ -10,7 +10,7 @@ const title = ref(undefined);
 const confirmBody = ref(undefined);
 const message = ref(undefined);
 const okButton = ref(undefined);
-const cancelButton = ref("Cancel");
+const cancelButton = ref(__("Cancel", "flexify-dashboard"));
 const icon = ref("report");
 const resolvePromise = ref(undefined);
 const rejectPromise = ref(undefined);
@@ -78,26 +78,26 @@ defineExpose({
 
 <template>
   <modal ref="popup">
-    <div ref="confirmBody" @keydown.escape="cancel()" @keydown.enter="confirm()" class="flex flex-col focus:outline-0 w-[400px] p-8 gap-6" tabindex="1" autofocus>
+    <div ref="confirmBody" @keydown.escape="cancel()" @keydown.enter="confirm()" class="flex flex-col focus:outline-0 w-[440px] max-w-full p-6 lg:p-8 gap-5" tabindex="1" autofocus>
       <div class="flex flex-row items-center place-content-between">
-        <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">{{ title }}</h2>
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white/90">{{ title }}</h2>
         <uiButton type="transparent" @click="cancel()"><AppIcon icon="close" /></uiButton>
       </div>
 
-      <div class="text-zinc-500 dark:text-zinc-400" v-html="message"></div>
+      <div class="text-sm text-gray-500 dark:text-gray-400" v-html="message"></div>
 
       <div class="flex flex-row gap-3 items-center place-content-end mt-2">
         <uiButton @click.stop="cancel()" type="default">
           <div class="flex flex-row gap-3 items-center place-content-center">
             <span>{{ cancelButton }}</span>
-            <span class="text-sm text-zinc-500">esc</span>
+            <span class="text-theme-xs text-gray-400">esc</span>
           </div>
         </uiButton>
 
         <uiButton @click.stop="confirm()" type="primary">
           <div class="flex flex-row gap-3 items-center place-content-center">
             <span>{{ okButton }}</span>
-            <span class="text-sm text-zinc-500"><AppIcon icon="return" /></span>
+            <span class="text-theme-xs text-white/70"><AppIcon icon="return" /></span>
           </div>
         </uiButton>
       </div>

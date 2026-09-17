@@ -4,7 +4,7 @@
     <label class="relative flex items-center rounded-full cursor-pointer" htmlFor="checkbox">
       <input
         type="checkbox"
-        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-zinc-300 dark:border-zinc-700 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-zinc-500 before:opacity-0 before:transition-opacity checked:border-zinc-900 checked:bg-zinc-900 checked:before:bg-zinc-900 hover:before:opacity-10"
+        class="peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border-[1.25px] border-gray-300 bg-transparent transition-colors checked:border-brand-500 checked:bg-brand-500 focus:outline-hidden focus-visible:shadow-focus-ring dark:border-gray-700"
         id="checkbox"
         v-model="dataValue"
       />

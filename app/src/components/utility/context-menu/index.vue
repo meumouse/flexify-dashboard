@@ -1,6 +1,5 @@
 <script setup>
 import { ref, defineProps, defineExpose } from 'vue';
-import ShadowContainer from '@/components/utility/shadow-container/index.vue';
 
 // setup props
 const props = defineProps({
@@ -164,7 +163,7 @@ defineExpose({
   <Teleport to="body">
     <Transition name="fade-in" class="flexify-dashboard-isolation">
       <div
-        class="flexify-dashboard-isolation text-zinc-700 dark:text-zinc-300"
+        class="flexify-dashboard-isolation text-gray-700 dark:text-gray-300"
         v-if="isVisible"
       >
         <div
@@ -172,7 +171,7 @@ defineExpose({
           ref="contextmenu"
           :style="returnPosition()"
           @click.prevent.stop
-          class="bg-white dark:bg-zinc-900 z-[9999] shadow-sm rounded-xl border border-zinc-600/10 dark:border-zinc-800 p-3 fixed text-sm"
+          class="fixed z-99999 rounded-2xl border border-gray-200 bg-white p-2 text-theme-sm shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
         >
           <slot></slot>
         </div>

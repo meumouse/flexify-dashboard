@@ -307,6 +307,7 @@ class ComposerStaticInitFlexify_Dashboard
         'MeuMouse\\Flexify_Dashboard\\Pages\\CustomPostTypesPage' => __DIR__ . '/../..' . '/src/Pages/CustomPostTypesPage.php',
         'MeuMouse\\Flexify_Dashboard\\Pages\\CustomUsersPage' => __DIR__ . '/../..' . '/src/Pages/CustomUsersPage.php',
         'MeuMouse\\Flexify_Dashboard\\Pages\\DatabaseExplorerPage' => __DIR__ . '/../..' . '/src/Pages/DatabaseExplorerPage.php',
+        'MeuMouse\\Flexify_Dashboard\\Pages\\DesignSystemPage' => __DIR__ . '/../..' . '/src/Pages/DesignSystemPage.php',
         'MeuMouse\\Flexify_Dashboard\\Pages\\DummyDataPage' => __DIR__ . '/../..' . '/src/Pages/DummyDataPage.php',
         'MeuMouse\\Flexify_Dashboard\\Pages\\Frontend' => __DIR__ . '/../..' . '/src/Pages/Frontend.php',
         'MeuMouse\\Flexify_Dashboard\\Pages\\Login' => __DIR__ . '/../..' . '/src/Pages/Login.php',

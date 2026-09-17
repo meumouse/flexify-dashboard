@@ -81,10 +81,10 @@ const mobileHeightClass = computed(() => {
 
 const desktopPanelClass = computed(() => {
   if (props.desktopMode === 'modal') {
-    return 'relative max-h-[min(90vh,56rem)] rounded-2xl bg-white dark:bg-zinc-950 overflow-hidden backdrop-blur-sm border border-zinc-200/60 dark:border-zinc-800 shadow-2xl flex flex-col';
+    return 'relative max-h-[min(90vh,56rem)] rounded-3xl bg-white dark:bg-gray-900 overflow-hidden border border-gray-200 dark:border-gray-800 shadow-theme-xl flex flex-col';
   }
 
-  return 'absolute right-6 top-6 bottom-6 rounded-2xl bg-white dark:bg-zinc-950 overflow-hidden backdrop-blur-sm border border-zinc-200/60 dark:border-zinc-800 shadow-2xl flex flex-col w-[40dvw]';
+  return 'absolute right-6 top-6 bottom-6 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden border border-gray-200 dark:border-gray-800 shadow-theme-xl flex flex-col w-[40dvw]';
 });
 
 const desktopContainerClass = computed(() => {
@@ -226,19 +226,19 @@ watch(
             <!-- Desktop Header -->
             <div
               v-if="showHeader"
-              class="flex-shrink-0 px-6 py-4 border-b border-zinc-200/60 dark:border-zinc-800/50"
+              class="flex-shrink-0 px-6 py-4 border-b border-gray-100 dark:border-gray-800"
             >
               <div class="flex items-center justify-between">
                 <div v-if="title || subtitle" class="flex-1 min-w-0">
                   <h3
                     v-if="title"
-                    class="text-lg font-semibold text-zinc-900 dark:text-white truncate leading-none"
+                    class="text-lg font-semibold text-gray-800 dark:text-white/90 truncate leading-none"
                   >
                     {{ title }}
                   </h3>
                   <p
                     v-if="subtitle"
-                    class="text-sm text-zinc-600 dark:text-zinc-400 mt-1 truncate leading-none"
+                    class="text-sm text-gray-500 dark:text-gray-400 mt-1 truncate leading-none"
                   >
                     {{ subtitle }}
                   </p>

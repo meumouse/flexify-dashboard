@@ -28,6 +28,7 @@ export default defineConfig({
 				comments: path.resolve(__dirname, 'src/apps/js/Comments.js'),
 				dashboard: path.resolve(__dirname, 'src/apps/js/Dashboard.js'),
 				database: path.resolve(__dirname, 'src/apps/js/Database.js'),
+				'design-system': path.resolve(__dirname, 'src/apps/js/DesignSystem.js'),
 				frontend: path.resolve(__dirname, 'src/apps/js/Frontend.js'),
 				login: path.resolve(__dirname, 'src/apps/js/Login.js'),
 				media: path.resolve(__dirname, 'src/apps/js/Media.js'),

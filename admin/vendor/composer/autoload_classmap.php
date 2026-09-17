@@ -270,6 +270,7 @@ return array(
     'MeuMouse\\Flexify_Dashboard\\Pages\\CustomPostTypesPage' => $baseDir . '/src/Pages/CustomPostTypesPage.php',
     'MeuMouse\\Flexify_Dashboard\\Pages\\CustomUsersPage' => $baseDir . '/src/Pages/CustomUsersPage.php',
     'MeuMouse\\Flexify_Dashboard\\Pages\\DatabaseExplorerPage' => $baseDir . '/src/Pages/DatabaseExplorerPage.php',
+    'MeuMouse\\Flexify_Dashboard\\Pages\\DesignSystemPage' => $baseDir . '/src/Pages/DesignSystemPage.php',
     'MeuMouse\\Flexify_Dashboard\\Pages\\DummyDataPage' => $baseDir . '/src/Pages/DummyDataPage.php',
     'MeuMouse\\Flexify_Dashboard\\Pages\\Frontend' => $baseDir . '/src/Pages/Frontend.php',
     'MeuMouse\\Flexify_Dashboard\\Pages\\Login' => $baseDir . '/src/Pages/Login.php',

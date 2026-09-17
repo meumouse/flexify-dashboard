@@ -14,8 +14,8 @@ if (props.value) model.value = props.value;
  */
 const returnInputClass = computed(() => {
   let classes = '';
-  if (props.icon) classes += 'pl-8';
-  if (props.copy) classes += ' pr-8';
+  if (props.icon) classes += 'ps-9';
+  if (props.copy) classes += ' pe-9';
   return classes;
 });
 
@@ -40,7 +40,7 @@ const copyInput = async () => {
   <div class="relative flex">
     <textarea
       v-model="model"
-      class="px-2 py-2 border border-zinc-200 dark:border-zinc-700/40 dark:bg-transparent rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm"
+      class="w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-sm text-gray-800 shadow-theme-xs transition-colors placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 disabled:cursor-not-allowed disabled:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800 dark:disabled:bg-white/[0.03]"
       rows="3"
       :class="returnInputClass"
       v-bind="attrs"
@@ -49,9 +49,9 @@ const copyInput = async () => {
     <!-- Icon-->
     <div
       v-if="icon"
-      class="absolute top-0 left-0 h-full flex flex-col place-content-center px-2 py-1"
+      class="pointer-events-none absolute top-0 start-0 h-full flex flex-col place-content-center ps-3 py-1"
     >
-      <AppIcon :icon="icon" class="text-lg text-zinc-400" />
+      <AppIcon :icon="icon" class="text-lg text-gray-500 dark:text-gray-400" />
     </div>
 
     <!-- Copy-->
@@ -60,7 +60,7 @@ const copyInput = async () => {
       class="absolute top-0 right-0 h-full flex flex-col place-content-center p-1"
     >
       <div
-        class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-zinc-900 cursor-pointer"
+        class="p-1 rounded-md text-gray-400 hover:bg-gray-100 hover:text-gray-700 cursor-pointer dark:hover:bg-white/5 dark:hover:text-white"
         @click="copyInput"
       >
         <AppIcon icon="duplicate" class="text-base" />

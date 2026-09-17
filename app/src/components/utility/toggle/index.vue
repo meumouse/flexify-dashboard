@@ -48,7 +48,7 @@ const setBgStyle = () => {
   let holder = {};
   bgStyle.value.width = `calc(calc(100%) / ${length})`;
   bgStyle.value.left = `calc(((100%) /  ${length}) * ${index})`;
-  bgStyle.value.height = "100%";
+  bgStyle.value.height = "calc(100% - 4px)";
 };
 
 /**
@@ -60,7 +60,7 @@ const returnItemStyle = computed(() => {
 });
 
 const returnActiveClass = (item) => {
-  return item.value === model.value ? "text-zinc-900 dark:text-zinc-100" : "text-zinc-400 dark:text-zinc-400 hover:text-inherit";
+  return item.value === model.value ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white";
 };
 
 const setActive = (value) => {
@@ -81,15 +81,15 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="relative rounded-lg flex text-sm w-full bg-zinc-100 dark:bg-zinc-800 grid" :style="`grid-template-columns: repeat(${Object.keys(props.options).length}, minmax(0, 1fr))`">
+  <div class="relative grid w-full rounded-lg bg-gray-100 p-0.5 text-theme-sm dark:bg-gray-900" :style="`grid-template-columns: repeat(${Object.keys(props.options).length}, minmax(0, 1fr))`">
     <div
       v-if="showBack"
-      class="absolute rounded-lg transition-all bg-white dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-800 dark:border-zinc-700 b-1 fd-border-rounder z-1"
+      class="absolute top-0.5 z-1 rounded-md bg-white shadow-theme-xs transition-all dark:bg-gray-800"
       :style="bgStyle"
     ></div>
 
     <template v-for="(item, index) in options">
-      <a type="button" class="z-[2] px-2 py-[4px] text-center cursor-pointer select-none" :class="returnActiveClass(item)" @click="setActive(item.value)">
+      <a type="button" class="z-[2] cursor-pointer select-none rounded-md px-3 py-1.5 text-center font-medium transition-colors" :class="returnActiveClass(item)" @click="setActive(item.value)">
         <div v-if="item.label" class="whitespace-nowrap" v-html="item.label"></div>
         <div v-if="item.icon" class="flex flex-row place-content-center">
           <AppIcon :icon="item.icon" class="text-lg" />

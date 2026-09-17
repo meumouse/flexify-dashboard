@@ -17,6 +17,7 @@ use MeuMouse\Flexify_Dashboard\Pages\CustomMediaPage;
 use MeuMouse\Flexify_Dashboard\Pages\CustomPluginsPage;
 use MeuMouse\Flexify_Dashboard\Pages\CustomUsersPage;
 use MeuMouse\Flexify_Dashboard\Pages\DatabaseExplorerPage;
+use MeuMouse\Flexify_Dashboard\Pages\DesignSystemPage;
 use MeuMouse\Flexify_Dashboard\Pages\Frontend;
 use MeuMouse\Flexify_Dashboard\Pages\Login;
 use MeuMouse\Flexify_Dashboard\Pages\MenuBuilder;
@@ -198,6 +199,7 @@ class Plugin {
         new CustomCommentsPage();
         new CustomActivityLogPage();
         new DatabaseExplorerPage();
+        new DesignSystemPage();
         new DatabaseExplorer();
         new ActivityDatabase();
         new ActivityLogger();

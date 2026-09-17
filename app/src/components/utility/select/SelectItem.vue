@@ -37,15 +37,15 @@ const itemTextValue = computed(() => props.textValue || stripHtml(props.html));
     :value="itemValue"
     :disabled="disabled"
     :text-value="itemTextValue"
-    class="relative flex w-full cursor-default select-none items-center rounded-lg py-2 pl-3 pr-9 text-sm text-zinc-700 outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-40 data-[highlighted]:bg-zinc-100 data-[highlighted]:text-zinc-900 dark:text-zinc-200 dark:data-[highlighted]:bg-zinc-800 dark:data-[highlighted]:text-zinc-50"
+    class="relative flex w-full cursor-default select-none items-center rounded-lg py-2 ps-3 pe-9 text-theme-sm font-medium text-gray-700 outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-40 data-[highlighted]:bg-gray-100 data-[highlighted]:text-gray-800 data-[state=checked]:text-brand-500 dark:text-gray-300 dark:data-[highlighted]:bg-white/5 dark:data-[highlighted]:text-white dark:data-[state=checked]:text-brand-400"
   >
     <SelectItemText>
       <span v-if="html" v-html="html"></span>
       <slot v-else />
     </SelectItemText>
 
-    <SelectItemIndicator class="absolute right-3 inline-flex items-center justify-center">
-      <AppIcon icon="check" class="text-sm text-brand-600 dark:text-brand-400" />
+    <SelectItemIndicator class="absolute end-3 inline-flex items-center justify-center">
+      <AppIcon icon="check" class="text-sm text-brand-500 dark:text-brand-400" />
     </SelectItemIndicator>
   </SelectItem>
 </template>
