@@ -6,6 +6,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "x-domain: flexify-dashboard\n"
 
+#: app/src/pages/products/src/AttributesView.vue:90
+msgid "“%s” and all of its values will be removed from every product."
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:156
+msgid "“%s” will be removed from every product that uses it."
+msgstr ""
+
 #: admin/src/Rest/CustomFields/CustomFields.php:535
 #: admin/src/Rest/CustomFields/OptionPages.php:350
 msgid "(Copy)"
@@ -13,6 +21,10 @@ msgstr ""
 
 #: admin/src/Rest/CustomFields/CustomFields.php:856
 #: admin/src/Rest/CustomFields/RelationshipSearch.php:529
+#: app/src/pages/products/src/editor/ProductEditor.vue:189
+#: app/src/pages/products/src/editor/ProductEditor.vue:538
+#: app/src/pages/products/src/editor/ProductEditor.vue:541
+#: app/src/pages/products/src/ProductsList.vue:582
 msgid "(no title)"
 msgstr ""
 
@@ -22,6 +34,14 @@ msgstr ""
 
 #: admin/src/Rest/MediaBulk.php:681
 msgid "(Untitled)"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:135
+msgid "%d available"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:164
+msgid "%d categories"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:234
@@ -46,6 +66,10 @@ msgstr ""
 msgid "%d hours ago"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:297
+msgid "%d item(s)"
+msgstr ""
+
 #: app/src/pages/media/src/media-list-view.vue:348
 msgid "%d items selected"
 msgstr ""
@@ -57,8 +81,56 @@ msgstr ""
 msgid "%d minutes ago"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:308
+msgid "%d order(s) could not be updated"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:304
+msgid "%d order(s) updated"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:321
+msgid "%d order(s) will be moved to the trash."
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:320
+msgid "%d order(s) will be permanently deleted. This action cannot be undone."
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:397
+msgid "%d product(s) could not be updated"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:393
+msgid "%d product(s) updated"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:410
+msgid "%d product(s) will be moved to the trash."
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:409
+msgid "%d product(s) will be permanently deleted. This action cannot be undone."
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:259
+msgid "%d products"
+msgstr ""
+
 #: app/src/pages/users/src/user-import.vue:112
 msgid "%d rows found"
+msgstr ""
+
+#: app/src/pages/products/src/BulkCategoryModal.vue:32
+msgid "%d selected product(s)."
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:43
+msgid "%d selected product(s). Variations of variable products are updated too."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:258
+msgid "%d used"
 msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:408
@@ -71,6 +143,14 @@ msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:242
 msgid "%d users selected"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:179
+msgid "%d variation(s) created"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:600
+msgid "%d variations"
 msgstr ""
 
 #: app/src/components/kit/FdPagination.vue:77
@@ -97,6 +177,11 @@ msgstr ""
 msgid "%s child items"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:290
+#: app/src/pages/products/src/ProductsList.vue:618
+msgid "%s in stock"
+msgstr ""
+
 #: admin/src/Rest/CustomPostTypes.php:857
 msgid "%s list"
 msgstr ""
@@ -105,12 +190,20 @@ msgstr ""
 msgid "%s list navigation"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:168
+msgid "%s orders"
+msgstr ""
+
 #: admin/src/Rest/CustomPostTypes.php:859
 msgid "%s published privately."
 msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:858
 msgid "%s published."
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:497
+msgid "%s refunded"
 msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:860
@@ -127,6 +220,10 @@ msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:862
 msgid "%s updated."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:178
+msgid "%s will be moved to the trash."
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:606
@@ -168,8 +265,20 @@ msgstr ""
 msgid "1 user selected"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:405
+msgid "30 days"
+msgstr ""
+
 #: admin/src/Rest/RankMathDashboardWidget.php:364
 msgid "404 Monitor"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:404
+msgid "7 days"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:406
+msgid "90 days"
 msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:305
@@ -180,6 +289,10 @@ msgstr ""
 msgid "A new version of the <strong>Flexify Dashboard</strong> plugin is available."
 msgstr ""
 
+#: app/src/pages/products/src/CouponsView.vue:141
+msgid "A percentage discount cannot be higher than 100."
+msgstr ""
+
 #: admin/src/Rest/RoleEditor.php:319
 msgid "A role with this slug already exists."
 msgstr ""
@@ -188,6 +301,10 @@ msgstr ""
 msgid ""
 "A screenshot of the page will be captured and analyzed. The AI will provide "
 "CSS fixes based on your description."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:586
+msgid "A short summary shown next to the product image…"
 msgstr ""
 
 #: app/src/components/user-details-form/user-details-form.vue:270
@@ -210,6 +327,13 @@ msgid "Action"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:956
+#: app/src/pages/orders/src/OrderDetails.vue:281
+#: app/src/pages/orders/src/OrdersList.vue:526
+#: app/src/pages/products/src/AttributesView.vue:220
+#: app/src/pages/products/src/CategoriesView.vue:192
+#: app/src/pages/products/src/CouponsView.vue:269
+#: app/src/pages/products/src/ProductsList.vue:634
+#: app/src/pages/products/src/ProductVariations.vue:126
 msgid "Actions"
 msgstr ""
 
@@ -235,6 +359,7 @@ msgstr ""
 #: app/src/pages/admin-notices/src/edit.vue:502
 #: app/src/pages/menu-creator/src/edit.vue:58
 #: app/src/pages/plugins/src/plugin-card.vue:284
+#: app/src/pages/products/src/CouponsView.vue:75
 msgid "Active"
 msgstr ""
 
@@ -253,8 +378,8 @@ msgstr ""
 msgid "Activity"
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:241
-#: app/src/pages/activity-log/src/activity-details-view.vue:299
+#: app/src/pages/activity-log/src/activity-details-view.vue:243
+#: app/src/pages/activity-log/src/activity-details-view.vue:301
 #: app/src/pages/activity-log/src/activity-list-view.vue:410
 msgid "Activity Details"
 msgstr ""
@@ -279,8 +404,65 @@ msgstr ""
 msgid "Activity logger is not enabled."
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:243
+#: app/src/pages/products/src/editor/ProductAttributes.vue:203
+msgid "Add"
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:915
 msgid "Add a caption"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:78
+msgid "Add a note about this order…"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:275
+msgid "Add at least one product to the order."
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:190
+#: app/src/pages/products/src/AttributesView.vue:227
+msgid "Add attribute"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:202
+msgid "Add attribute…"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:126
+msgid "Add attributes such as size or color to create variations."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:252
+msgid "Add attributes, mark them as “Used for variations” and save the product."
+msgstr ""
+
+#: app/src/pages/products/src/BulkCategoryModal.vue:31
+#: app/src/pages/products/src/BulkCategoryModal.vue:38
+#: app/src/pages/products/src/CategoriesView.vue:157
+#: app/src/pages/products/src/CategoriesView.vue:199
+#: app/src/pages/products/src/CategoriesView.vue:208
+#: app/src/pages/products/src/editor/ProductEditor.vue:750
+#: app/src/pages/products/src/ProductsList.vue:466
+msgid "Add category"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:222
+#: app/src/pages/products/src/CouponsView.vue:280
+msgid "Add coupon"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:484
+msgid "Add fee"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:725
+msgid "Add gallery images"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:260
+msgid "Add manually"
 msgstr ""
 
 #: app/src/pages/posts/index.vue:665
@@ -310,12 +492,35 @@ msgstr ""
 msgid "Add New Tag"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderNotes.vue:82
+msgid "Add note"
+msgstr ""
+
 #: admin/src/Rest/MediaTags.php:139
 msgid "Add or remove tags"
 msgstr ""
 
+#: app/src/apps/js/Orders.js:32
+#: app/src/pages/orders/src/OrderEditor.vue:349
+#: app/src/pages/orders/src/OrderEditor.vue:370
+#: app/src/pages/orders/src/OrdersList.vue:415
+msgid "Add order"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:384
+msgid "Add order in classic screen"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-repo.vue:154
 msgid "Add plugin"
+msgstr ""
+
+#: app/src/apps/js/Products.js:32
+#: app/src/pages/products/src/editor/ProductEditor.vue:189
+#: app/src/pages/products/src/editor/ProductEditor.vue:538
+#: app/src/pages/products/src/editor/ProductEditor.vue:541
+#: app/src/pages/products/src/ProductsList.vue:500
+msgid "Add product"
 msgstr ""
 
 #: app/src/components/user-details-form/user-details-form.vue:301
@@ -328,12 +533,20 @@ msgstr ""
 msgid "Add Row"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:483
+msgid "Add shipping"
+msgstr ""
+
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:188
 msgid "Add Site"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:931
 msgid "Add tags..."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:412
+msgid "Add to gallery"
 msgstr ""
 
 #: app/src/components/utility/rich-text/src/link-picker.vue:146
@@ -346,10 +559,31 @@ msgid ""
 "into the admin"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductAttributes.vue:170
+msgid "Add value"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:508
 msgid ""
 "Add your Mapbox API key in Settings > Integrations to enable the Analytics "
 "Map card."
+msgstr ""
+
+#: app/src/pages/orders/src/AddressFields.vue:41
+msgid "Address line 1"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressFields.vue:42
+msgid "Address line 2"
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:69
+msgid "Adjust by"
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:43
+#: app/src/pages/products/src/ProductsList.vue:559
+msgid "Adjust prices"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:631
@@ -380,18 +614,19 @@ msgid "Admin Role"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:413
-msgid "Administrador"
+msgid "Administrator"
 msgstr ""
 
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:329
 msgid "Administrator (manage_options)"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:143
+#: app/src/pages/products/src/editor/ProductEditor.vue:666
+#: app/src/pages/settings/index.vue:149
 msgid "Advanced"
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:353
+#: app/src/pages/activity-log/src/activity-details-view.vue:355
 msgid "After"
 msgstr ""
 
@@ -420,7 +655,9 @@ msgstr ""
 #: app/src/pages/comments/src/comment-list-view.vue:501
 #: app/src/pages/media/src/media-list-view.vue:1360
 #: app/src/pages/menu-creator/src/menu-list-view.vue:398
+#: app/src/pages/orders/src/OrdersList.vue:138
 #: app/src/pages/posts/src/constants.js:18
+#: app/src/pages/products/src/ProductsList.vue:115
 #: app/src/pages/users/src/user-list-view.vue:867
 msgid "All"
 msgstr ""
@@ -430,7 +667,7 @@ msgid "All %s"
 msgstr ""
 
 #: app/src/pages/activity-log/src/activity-list-view.vue:311
-#: app/src/pages/settings/src/settings-config.js:972
+#: app/src/pages/settings/src/settings-config.js:1017
 msgid "All Actions"
 msgstr ""
 
@@ -442,10 +679,18 @@ msgstr ""
 msgid "All Admin Notices"
 msgstr ""
 
+#: app/src/pages/products/src/ProductsList.vue:514
+msgid "All categories"
+msgstr ""
+
 #: app/src/components/utility/remote-site-select/index.vue:211
 msgid ""
 "All default WordPress pages (Posts, Pages, Comments, etc.) will continue to "
 "show local content."
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:520
+msgid "All products"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:774
@@ -456,8 +701,25 @@ msgstr ""
 msgid "All Tags"
 msgstr ""
 
+#: app/src/pages/products/src/ProductsList.vue:515
+msgid "All types"
+msgstr ""
+
 #: app/src/pages/activity-log/src/activity-list-view.vue:334
 msgid "All Types"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:162
+msgid "All variations already exist"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:130
+#: app/src/pages/products/src/ProductQuickEdit.vue:66
+msgid "Allow"
+msgstr ""
+
+#: app/src/pages/products/src/ProductQuickEdit.vue:252
+msgid "Allow backorders?"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:541
@@ -470,6 +732,10 @@ msgstr ""
 msgid ""
 "Allow font files (.woff2, .woff, .ttf, .otf) to be uploaded to the media "
 "library. This enables custom font support for your site."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:306
+msgid "Allow free shipping"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:698
@@ -487,6 +753,15 @@ msgstr ""
 msgid "Allow WordPress to update this plugin automatically"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:129
+#: app/src/pages/products/src/ProductQuickEdit.vue:65
+msgid "Allow, but notify customer"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:315
+msgid "Allowed emails"
+msgstr ""
+
 #: app/src/components/utility/media-library/index.vue:782
 msgid "Alt text"
 msgstr ""
@@ -498,6 +773,12 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:663
 msgid "Always show hidden update notifications for specific users/roles"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:478
+#: app/src/pages/products/src/BulkPriceModal.vue:81
+#: app/src/pages/products/src/CouponsView.vue:298
+msgid "Amount"
 msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:653
@@ -543,7 +824,7 @@ msgid ""
 "data."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:800
+#: app/src/pages/settings/src/settings-config.js:845
 msgid "Analytics Provider"
 msgstr ""
 
@@ -567,11 +848,28 @@ msgstr ""
 msgid "Anonymous"
 msgstr ""
 
+#: app/src/pages/products/src/ProductVariations.vue:26
+msgid "Any"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:96
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:306
+msgid "Any %s"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:428
+msgid "Any date"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:516
+msgid "Any stock status"
+msgstr ""
+
 #: admin/src/Rest/WooCommerceDashboard.php:416
 msgid "API"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:838
+#: app/src/pages/settings/src/settings-config.js:883
 msgid ""
 "API key used by the analytics map card. Store the token here instead of "
 "keeping it in source code."
@@ -592,6 +890,9 @@ msgid ""
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1359
+#: app/src/pages/orders/src/OrderEditor.vue:552
+#: app/src/pages/products/src/BulkPriceModal.vue:90
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:263
 msgid "Apply"
 msgstr ""
 
@@ -615,6 +916,10 @@ msgstr ""
 #: app/src/pages/comments/src/comment-list-view.vue:512
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:186
 msgid "Approved"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:35
+msgid "Archives"
 msgstr ""
 
 #: app/src/pages/posts/src/batch-edit.vue:45
@@ -703,6 +1008,43 @@ msgstr ""
 msgid "At least 8 characters"
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:82
+msgid "Attribute created"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:100
+msgid "Attribute deleted"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:141
+msgid "Attribute name"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:140
+msgid "Attribute name, e.g. Material"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:82
+msgid "Attribute updated"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:189
+msgid "Attribute values"
+msgstr ""
+
+#: app/src/apps/js/Products.js:51
+#: app/src/pages/products/src/AttributesView.vue:185
+#: app/src/pages/products/src/AttributesView.vue:187
+#: app/src/pages/products/src/AttributesView.vue:204
+#: app/src/pages/products/src/editor/ProductEditor.vue:655
+#: app/src/pages/products/src/ProductsList.vue:475
+msgid "Attributes"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:126
+msgid "Attributes show extra information such as material or size."
+msgstr ""
+
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:989
 msgid ""
 "Authentication failed. The access token is invalid or expired. Please try "
@@ -739,7 +1081,7 @@ msgstr ""
 msgid "author@example.com"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:983
+#: app/src/pages/settings/src/settings-config.js:1028
 msgid "Auto Cleanup"
 msgstr ""
 
@@ -763,10 +1105,14 @@ msgstr ""
 msgid "Automatic Updates"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:984
+#: app/src/pages/settings/src/settings-config.js:1029
 msgid ""
 "Automatically delete logs older than the retention period. Disable to keep "
 "logs indefinitely."
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:118
+msgid "Available to refund: %s"
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:491
@@ -806,8 +1152,16 @@ msgstr ""
 msgid "Back to menu"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:258
+msgid "Back to orders"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-inspect.vue:226
 msgid "Back to plugins"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:533
+msgid "Back to products"
 msgstr ""
 
 #: app/src/pages/login/src/login-recovery-panel.vue:77
@@ -816,6 +1170,10 @@ msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:24
 msgid "Backend performance"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:628
+msgid "Backorders"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:406
@@ -835,13 +1193,26 @@ msgstr ""
 msgid "Batch edit"
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:345
+#: app/src/pages/activity-log/src/activity-details-view.vue:347
 msgid "Before"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderPreview.vue:108
+msgid "Billing"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:462
+#: app/src/pages/orders/src/OrderEditor.vue:491
+msgid "Billing address"
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:595
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:595
 msgid "Billing Address"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressModal.vue:43
+msgid "Billing address updated"
 msgstr ""
 
 #: app/src/components/user-details-form/user-details-form.vue:266
@@ -910,8 +1281,20 @@ msgstr ""
 msgid "Bulk options"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:612
+msgid "Button text"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:612
+msgid "Buy product"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-performance.vue:325
 msgid "Callback"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceOrders.php:599
+msgid "Campaign"
 msgstr ""
 
 #: app/src/components/app/menu/components/FavoritesSection.vue:227
@@ -925,7 +1308,17 @@ msgstr ""
 #: app/src/components/utility/remote-site-select/index.vue:220
 #: app/src/pages/database/src/table-view.vue:781
 #: app/src/pages/media/src/media-list-view.vue:1977
+#: app/src/pages/orders/src/AddressModal.vue:57
+#: app/src/pages/orders/src/OrderEditor.vue:375
+#: app/src/pages/orders/src/RefundModal.vue:169
 #: app/src/pages/posts/src/batch-edit.vue:156
+#: app/src/pages/products/src/AttributesView.vue:235
+#: app/src/pages/products/src/AttributesView.vue:255
+#: app/src/pages/products/src/BulkCategoryModal.vue:36
+#: app/src/pages/products/src/BulkPriceModal.vue:89
+#: app/src/pages/products/src/CategoriesView.vue:207
+#: app/src/pages/products/src/CouponsView.vue:330
+#: app/src/pages/products/src/ProductQuickEdit.vue:299
 #: app/src/pages/role-editor/src/role-details-view.vue:377
 #: app/src/pages/role-editor/src/role-details-view.vue:476
 #: app/src/pages/role-editor/src/role-details-view.vue:624
@@ -982,19 +1375,50 @@ msgstr ""
 msgid "Card visibility is stored independently for each category."
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:682
+#: app/src/pages/products/src/ProductQuickEdit.vue:229
+msgid "Catalog visibility"
+msgstr ""
+
+#: app/src/apps/js/Products.js:45
 #: app/src/pages/posts/src/batch-edit.vue:108
 #: app/src/pages/posts/src/category-select.vue:287
 #: app/src/pages/posts/src/post-preview.vue:368
 #: app/src/pages/posts/src/table-filters.vue:144
+#: app/src/pages/products/src/CategoriesView.vue:153
+#: app/src/pages/products/src/editor/ProductEditor.vue:734
+#: app/src/pages/products/src/ProductQuickEdit.vue:280
+#: app/src/pages/products/src/ProductsList.vue:137
+#: app/src/pages/products/src/ProductsList.vue:473
 msgid "Categories"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:95
+#: app/src/pages/products/src/BulkCategoryModal.vue:34
 msgid "Category"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:123
+msgid "Category created"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:141
+msgid "Category deleted"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:123
+msgid "Category updated"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:493
 msgid "Change"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:288
+#: app/src/pages/orders/src/OrderPreview.vue:134
+#: app/src/pages/orders/src/OrdersList.vue:341
+#: app/src/pages/orders/src/OrdersList.vue:456
+msgid "Change status"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:1004
@@ -1011,7 +1435,7 @@ msgstr ""
 msgid "Changelog"
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:340
+#: app/src/pages/activity-log/src/activity-details-view.vue:342
 msgid "Changes"
 msgstr ""
 
@@ -1063,13 +1487,21 @@ msgstr ""
 msgid "Choose roles or usersnames to disable the theme for."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:964
+#: app/src/pages/orders/src/OrderEditor.vue:439
+msgid "Choose variation"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:276
+msgid "Choose variation image"
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:1009
 msgid ""
 "Choose which actions to log. \"All Actions\" logs everything, \"Important "
 "Only\" logs only critical actions like deletions and role changes."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:801
+#: app/src/pages/settings/src/settings-config.js:846
 msgid ""
 "Choose which analytics provider to use for dashboard data. Select Built-in "
 "Analytics to use the Flexify Dashboard tracking system, or Google Analytics "
@@ -1088,6 +1520,24 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:177
 msgid "Choose your prefered admin layout"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressFields.vue:59
+#: app/src/pages/orders/src/OrdersList.vue:354
+msgid "City"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:387
+msgid "Classic orders screen"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:481
+msgid "Classic products screen"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:156
+#: app/src/pages/products/src/CouponsView.vue:221
+msgid "Classic screen"
 msgstr ""
 
 #: admin/src/Rest/ActivityLog.php:218
@@ -1113,6 +1563,8 @@ msgid "Clear custom properties"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1699
+#: app/src/pages/orders/src/OrdersList.vue:430
+#: app/src/pages/products/src/ProductsList.vue:525
 msgid "Clear filters"
 msgstr ""
 
@@ -1160,10 +1612,6 @@ msgstr ""
 msgid "Client-side session ID"
 msgstr ""
 
-#: admin/src/Rest/WooCommerceDashboard.php:555
-msgid "Cliente não identificado"
-msgstr ""
-
 #: app/src/components/app/search/components/EmptyStateInitial.vue:112
 #: app/src/components/app/search/layout-fix-dialog.vue:1119
 #: app/src/components/kit/FdModal.vue:72
@@ -1173,6 +1621,10 @@ msgstr ""
 
 #: app/src/pages/plugins/src/plugin-repo.vue:160
 msgid "Close modal"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:59
+msgid "Code"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:145
@@ -1262,6 +1714,10 @@ msgstr ""
 msgid "Commerce"
 msgstr ""
 
+#: app/src/pages/orders/src/AddressFields.vue:40
+msgid "Company"
+msgstr ""
+
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:90
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:90
 msgid "Completed"
@@ -1275,7 +1731,7 @@ msgstr ""
 msgid "Configure remote WordPress sites for cross-site operations."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:855
+#: app/src/pages/settings/src/settings-config.js:900
 msgid ""
 "Configure the site key and secret key used by the modern administrative "
 "login and password recovery forms."
@@ -1305,7 +1761,7 @@ msgstr ""
 msgid "Connect Google Analytics"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:818
+#: app/src/pages/settings/src/settings-config.js:863
 msgid ""
 "Connect your Google Analytics 4 property to display analytics data in the "
 "dashboard. You will need to create OAuth credentials in Google Cloud "
@@ -1344,6 +1800,14 @@ msgstr ""
 msgid "Cool ← → Warm"
 msgstr ""
 
+#: app/src/pages/orders/src/AddressModal.vue:52
+msgid "Copy billing address"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:203
+msgid "Copy code"
+msgstr ""
+
 #: app/src/components/app/search/layout-fix-dialog.vue:1028
 msgid "Copy CSS"
 msgstr ""
@@ -1360,10 +1824,22 @@ msgstr ""
 msgid "Core plugin settings and license management"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:472
+msgid "Cost"
+msgstr ""
+
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:945
 msgid ""
 "Could not authenticate with Google Analytics. Please check your service "
 "account credentials."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:179
+msgid "Could not copy the code"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:313
+msgid "Could not delete the product."
 msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:666
@@ -1378,6 +1854,18 @@ msgid ""
 "manually below."
 msgstr ""
 
+#: admin/src/Rest/WooCommerceProducts.php:303
+msgid "Could not move the product to the trash."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceOrders.php:423
+msgid "Could not restore the order."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:321
+msgid "Could not restore the product."
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:468
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:241
 msgid "countries"
@@ -1387,12 +1875,78 @@ msgstr ""
 msgid "COUNTRY"
 msgstr ""
 
+#: app/src/pages/orders/src/AddressFields.vue:46
+msgid "Country / Region"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:334
 msgid "Country data will appear when visitors browse your site"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:551
+#: app/src/pages/products/src/CouponsView.vue:284
+msgid "Coupon code"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:177
+msgid "Coupon code copied"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:169
+msgid "Coupon created"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:196
+msgid "Coupon moved to the trash"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:169
+msgid "Coupon updated"
+msgstr ""
+
+#: app/src/apps/js/Products.js:57
+#: app/src/pages/orders/src/OrderDetails.vue:372
+#: app/src/pages/orders/src/OrderEditor.vue:549
+#: app/src/pages/products/src/CouponsView.vue:216
+#: app/src/pages/products/src/CouponsView.vue:218
+#: app/src/pages/products/src/CouponsView.vue:240
+#: app/src/pages/products/src/ProductsList.vue:476
+msgid "Coupons"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:583
+msgid "Coupons and taxes are applied by WooCommerce when the order is saved."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:239
+msgid "Coupons give customers a discount at checkout."
+msgstr ""
+
 #: admin/src/Pages/CustomDashboardPage.php:113
 msgid "Create a new post quickly from here."
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:232
+msgid "Create a page listing the products with each value."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:371
+msgid "Create an order manually, e.g. for phone or in-store sales."
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:778
+msgid ""
+"Create and edit products in a modern editor with pricing, inventory, "
+"images, attributes and variations. Keep it disabled if your extensions add "
+"fields to the classic product editor, which is always one click away."
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:203
+msgid "Create attributes to describe and vary your products."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:217
+msgid "Create discount codes for your customers."
 msgstr ""
 
 #: app/src/pages/admin-notices/src/table.vue:385
@@ -1411,6 +1965,10 @@ msgstr ""
 msgid "Create Notice"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:376
+msgid "Create order"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-list-view.vue:623
 msgid "Create Role"
 msgstr ""
@@ -1427,8 +1985,16 @@ msgstr ""
 msgid "Create Your First Notice"
 msgstr ""
 
+#: app/src/pages/products/src/ProductsList.vue:544
+msgid "Create your first product to start selling."
+msgstr ""
+
 #: app/src/pages/admin-notices/src/edit.vue:298
 msgid "Created"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:471
+msgid "Created in admin"
 msgstr ""
 
 #: admin/src/Rest/GoogleAnalyticsOAuth.php:192
@@ -1455,6 +2021,10 @@ msgstr ""
 msgid "Currently Active"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductAttributes.vue:28
+msgid "Custom attribute"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:432
 msgid "Custom css"
 msgstr ""
@@ -1463,7 +2033,7 @@ msgstr ""
 msgid "Custom css added here will only be added in the admin area and login page."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:766
+#: app/src/pages/settings/src/settings-config.js:811
 msgid "Custom Dashboard"
 msgstr ""
 
@@ -1489,6 +2059,10 @@ msgstr ""
 
 #: app/src/pages/users/src/user-import.vue:62
 msgid "Custom Meta Fields"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:40
+msgid "Custom ordering"
 msgstr ""
 
 #: admin/src/Pages/CustomPluginsPage.php:66
@@ -1522,6 +2096,10 @@ msgid "Custom URL"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:99
+#: app/src/pages/orders/src/OrderDetails.vue:422
+#: app/src/pages/orders/src/OrderEditor.vue:504
+#: app/src/pages/orders/src/OrdersList.vue:176
+#: app/src/pages/orders/src/OrdersList.vue:354
 msgid "Customer"
 msgstr ""
 
@@ -1530,12 +2108,19 @@ msgstr ""
 msgid "Customer Information"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:413
+#: app/src/pages/orders/src/OrderEditor.vue:545
+#: app/src/pages/orders/src/OrderPreview.vue:126
+msgid "Customer note"
+msgstr ""
+
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:732
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:732
 msgid "Customer Since"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/customers/component.vue:76
+#: app/src/pages/orders/src/OrdersList.vue:385
 msgid "Customers"
 msgstr ""
 
@@ -1590,7 +2175,7 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:137
+#: app/src/pages/settings/index.vue:143
 msgid "Database"
 msgstr ""
 
@@ -1602,13 +2187,16 @@ msgstr ""
 msgid "Database Explorer"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:139
+#: app/src/pages/settings/index.vue:145
 msgid "Database explorer and management settings"
 msgstr ""
 
 #: app/src/components/utility/media-library/index.vue:51
 #: app/src/pages/comments/src/comment-details-view.vue:376
 #: app/src/pages/comments/src/comment-details-view.vue:555
+#: app/src/pages/orders/src/OrdersList.vue:182
+#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/products/src/ProductsList.vue:141
 msgid "Date"
 msgstr ""
 
@@ -1637,6 +2225,10 @@ msgstr ""
 msgid "Deactivating..."
 msgstr ""
 
+#: app/src/pages/products/src/BulkPriceModal.vue:63
+msgid "Decrease"
+msgstr ""
+
 #: app/src/pages/database/src/table-view.vue:476
 #: app/src/pages/settings/src/custom-renders/layout-selector.vue:26
 msgid "Default"
@@ -1648,6 +2240,11 @@ msgstr ""
 
 #: app/src/pages/users/src/user-import.vue:530
 msgid "Default Password"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:34
+#: app/src/pages/products/src/AttributesView.vue:231
+msgid "Default sort order"
 msgstr ""
 
 #: admin/src/Rest/CustomFields/LocationDataProvider.php:91
@@ -1664,12 +2261,27 @@ msgstr ""
 #: app/src/pages/media/src/media-list.vue:418
 #: app/src/pages/menu-creator/src/edit.vue:582
 #: app/src/pages/menu-creator/src/menu-list.vue:143
+#: app/src/pages/orders/src/OrderNotes.vue:56
 #: app/src/pages/plugins/src/plugin-inspect.vue:324
 #: app/src/pages/posts/src/post-actions.vue:69
+#: app/src/pages/products/src/AttributesView.vue:91
+#: app/src/pages/products/src/AttributesView.vue:157
+#: app/src/pages/products/src/AttributesView.vue:174
+#: app/src/pages/products/src/CategoriesView.vue:132
+#: app/src/pages/products/src/CategoriesView.vue:188
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:203
 #: app/src/pages/role-editor/src/role-details-view.vue:475
 #: app/src/pages/users/src/user-list-view.vue:1491
 #: app/src/pages/users/src/user-list.vue:223
 msgid "Delete"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:89
+msgid "Delete attribute?"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:130
+msgid "Delete category?"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:350
@@ -1693,8 +2305,30 @@ msgstr ""
 msgid "Delete items"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderNotes.vue:120
+msgid "Delete note"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:54
+msgid "Delete note?"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:322
+#: app/src/pages/orders/src/OrdersList.vue:334
+#: app/src/pages/orders/src/OrdersList.vue:464
+#: app/src/pages/products/src/ProductsList.vue:411
+#: app/src/pages/products/src/ProductsList.vue:423
+#: app/src/pages/products/src/ProductsList.vue:569
+msgid "Delete permanently"
+msgstr ""
+
 #: app/src/pages/comments/src/comment-list-view.vue:787
 msgid "Delete Permanently"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:318
+#: app/src/pages/products/src/ProductsList.vue:407
+msgid "Delete permanently?"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:470
@@ -1713,6 +2347,22 @@ msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:267
 msgid "Delete Table?"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:261
+msgid "Delete value"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:155
+msgid "Delete value?"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:296
+msgid "Delete variation"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:201
+msgid "Delete variation?"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:223
@@ -1740,10 +2390,25 @@ msgstr ""
 msgid "Describe the layout or styling issue"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:585
+msgid "Describe the product in detail…"
+msgstr ""
+
 #: app/src/components/utility/media-library/index.vue:794
 #: app/src/pages/media/src/media-list-view.vue:1959
 #: app/src/pages/plugins/src/plugin-inspect.vue:274
+#: app/src/pages/products/src/CategoriesView.vue:204
+#: app/src/pages/products/src/editor/ProductEditor.vue:579
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:315
 msgid "Description"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:289
+msgid "Description (optional)"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:582
+msgid "Descriptions"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:789
@@ -1755,7 +2420,7 @@ msgid "Design System"
 msgstr ""
 
 #: app/src/components/index.js:14
-#: app/src/pages/activity-log/src/activity-details-view.vue:368
+#: app/src/pages/activity-log/src/activity-details-view.vue:370
 #: app/src/pages/media/src/media-details-view.vue:1027
 #: app/src/pages/users/src/components/index.js:14
 msgid "Details"
@@ -1763,6 +2428,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:164
 msgid "Development server detected, no need to activate your licence key."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:520
+msgid "Device"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:294
@@ -1783,7 +2452,8 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:414
 #: admin/src/Rest/WooCommerceDashboard.php:415
-msgid "Direto"
+#: admin/src/Rest/WooCommerceOrders.php:602
+msgid "Direct"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:164
@@ -1802,9 +2472,36 @@ msgstr ""
 msgid "Disable theme"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:294
+msgid "Disabled"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:341
+#: app/src/pages/products/src/editor/ProductEditor.vue:499
+msgid "Discard changes"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:339
+msgid "Discard this order?"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:497
+msgid "Discard unsaved changes?"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:518
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:159
 msgid "Disconnect"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderPreview.vue:88
+#: app/src/pages/products/src/CouponsView.vue:60
+#: app/src/pages/products/src/CouponsView.vue:293
+msgid "Discount"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:295
+msgid "Discount type"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:281
@@ -1844,6 +2541,11 @@ msgstr ""
 msgid "Display this notice to users"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:128
+#: app/src/pages/products/src/ProductQuickEdit.vue:64
+msgid "Do not allow"
+msgstr ""
+
 #: app/src/pages/media/src/media-list-view.vue:1396
 msgid "Docs"
 msgstr ""
@@ -1864,6 +2566,10 @@ msgstr ""
 msgid "Download the JSON key file"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:640
+msgid "Downloadable"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-repo.vue:44
 msgid "Downloaded"
 msgstr ""
@@ -1880,6 +2586,10 @@ msgstr ""
 #: app/src/pages/menu-creator/src/edit.vue:54
 #: app/src/pages/menu-creator/src/menu-list-view.vue:420
 #: app/src/pages/menu-creator/src/menu-list.vue:65
+#: app/src/pages/products/src/CouponsView.vue:72
+#: app/src/pages/products/src/editor/ProductEditor.vue:115
+#: app/src/pages/products/src/ProductQuickEdit.vue:51
+#: app/src/pages/products/src/ProductsList.vue:167
 msgid "Draft"
 msgstr ""
 
@@ -1892,6 +2602,7 @@ msgid "Draft notice"
 msgstr ""
 
 #: app/src/pages/posts/src/constants.js:19
+#: app/src/pages/products/src/ProductsList.vue:117
 msgid "Drafts"
 msgstr ""
 
@@ -1921,6 +2632,7 @@ msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1837
 #: app/src/pages/posts/src/post-actions.vue:44
+#: app/src/pages/products/src/ProductsList.vue:430
 msgid "Duplicate"
 msgstr ""
 
@@ -1963,6 +2675,10 @@ msgstr ""
 #: app/src/pages/media/src/media-details-view.vue:1149
 #: app/src/pages/posts/src/post-actions.vue:27
 #: app/src/pages/posts/src/post-preview.vue:320
+#: app/src/pages/products/src/AttributesView.vue:172
+#: app/src/pages/products/src/CategoriesView.vue:185
+#: app/src/pages/products/src/CouponsView.vue:202
+#: app/src/pages/products/src/ProductsList.vue:428
 msgid "Edit"
 msgstr ""
 
@@ -1978,6 +2694,23 @@ msgstr ""
 msgid "Edit Admin Notice"
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:227
+msgid "Edit attribute"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressModal.vue:50
+#: app/src/pages/orders/src/OrderDetails.vue:464
+msgid "Edit billing address"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:199
+msgid "Edit category"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:280
+msgid "Edit coupon"
+msgstr ""
+
 #: app/src/components/utility/code-editor/index.vue:195
 #: app/src/components/utility/code-editor/index.vue:202
 msgid "Edit CSS"
@@ -1989,8 +2722,25 @@ msgstr ""
 msgid "Edit Image"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:284
+#: app/src/pages/orders/src/OrderEditor.vue:349
+msgid "Edit items"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:370
+msgid "Edit items of %s"
+msgstr ""
+
 #: app/src/apps/js/AdminNotices.js:45
 msgid "Edit Notice"
+msgstr ""
+
+#: app/src/apps/js/Orders.js:39
+msgid "Edit order items"
+msgstr ""
+
+#: app/src/apps/js/Products.js:39
+msgid "Edit product"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:58
@@ -2005,8 +2755,17 @@ msgstr ""
 msgid "Edit role name"
 msgstr ""
 
+#: app/src/pages/orders/src/AddressModal.vue:50
+#: app/src/pages/orders/src/OrderDetails.vue:477
+msgid "Edit shipping address"
+msgstr ""
+
 #: admin/src/Rest/MediaTags.php:131
 msgid "Edit Tag"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:295
+msgid "Edit variation"
 msgstr ""
 
 #: app/src/components/utility/media-library/index.vue:757
@@ -2040,12 +2799,17 @@ msgstr ""
 #: app/src/components/user-details-form/user-details-form.vue:221
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:642
 #: app/src/pages/login/src/login-form-panel.vue:199
+#: app/src/pages/orders/src/OrdersList.vue:354
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:221
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:642
 #: app/src/pages/users/src/user-import.vue:54
 #: app/src/pages/users/src/user-list-view.vue:1131
 #: app/src/pages/users/src/user-list-view.vue:1562
 msgid "Email"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressFields.vue:61
+msgid "Email address"
 msgstr ""
 
 #: app/src/pages/login/src/login-recovery-panel.vue:42
@@ -2056,7 +2820,7 @@ msgstr ""
 msgid "Empty response."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:928
+#: app/src/pages/settings/src/settings-config.js:973
 msgid "Enable Activity Logger"
 msgstr ""
 
@@ -2074,21 +2838,25 @@ msgid ""
 "current user has access."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:786
+#: app/src/pages/products/src/AttributesView.vue:232
+msgid "Enable archives"
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:831
 msgid ""
 "Enable built-in analytics to track user behavior, page views, and "
 "performance metrics within your WordPress admin."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:909
+#: app/src/pages/settings/src/settings-config.js:954
 msgid "Enable Custom Post Types"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:871
+#: app/src/pages/settings/src/settings-config.js:916
 msgid "Enable Database Explorer"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:785
+#: app/src/pages/settings/src/settings-config.js:830
 msgid "Enable Flexify Dashboard Analytics"
 msgstr ""
 
@@ -2120,7 +2888,11 @@ msgid ""
 "changes."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:890
+#: app/src/pages/products/src/editor/ProductEditor.vue:672
+msgid "Enable reviews"
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:935
 msgid "Enable Role Editor"
 msgstr ""
 
@@ -2136,19 +2908,19 @@ msgstr ""
 msgid "Enable the"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:910
+#: app/src/pages/settings/src/settings-config.js:955
 msgid ""
 "Enable the custom post types creator to register and manage custom post "
 "types without code. Post types are stored in a JSON file for performance."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:872
+#: app/src/pages/settings/src/settings-config.js:917
 msgid ""
 "Enable the modern database explorer interface to browse tables, view data, "
 "and execute SQL queries safely."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:891
+#: app/src/pages/settings/src/settings-config.js:936
 msgid ""
 "Enable the modern role editor interface to manage WordPress user roles and "
 "capabilities."
@@ -2156,6 +2928,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:266
 msgid "Enable TurnStyle"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:317
+msgid "Enabled"
 msgstr ""
 
 #: admin/src/Rest/UserAnalytics.php:94
@@ -2176,6 +2952,18 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:397
 msgid "Engagement data will appear when users interact with your site"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:72
+msgid "Enter a refund amount greater than zero."
+msgstr ""
+
+#: app/src/pages/products/src/ProductQuickEdit.vue:142
+msgid "Enter a valid quantity."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:296
+msgid "Enter a valid URL starting with http:// or https://."
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:62
@@ -2226,7 +3014,7 @@ msgstr ""
 msgid "Enter your Google reCAPTCHA site key"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:845
+#: app/src/pages/settings/src/settings-config.js:890
 msgid "Enter your Mapbox token"
 msgstr ""
 
@@ -2298,12 +3086,16 @@ msgstr ""
 msgid "Error uploading menu"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:450
+#: app/src/pages/settings/index.vue:456
 msgid "Error uploading settings"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:374
 msgid "Errors"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:579
+msgid "Estimated total"
 msgstr ""
 
 #: admin/src/Analytics/AnalyticsCron.php:105
@@ -2316,6 +3108,10 @@ msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:913
 msgid "Exclude roles or users"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:317
+msgid "Exclude sale items"
 msgstr ""
 
 #: app/src/pages/database/src/query-editor.vue:186
@@ -2342,6 +3138,18 @@ msgstr ""
 msgid "Expand sidebar"
 msgstr ""
 
+#: app/src/pages/products/src/CouponsView.vue:73
+msgid "Expired"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:62
+msgid "Expires"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:304
+msgid "Expiry date"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:589
 msgid "Export"
 msgstr ""
@@ -2354,8 +3162,20 @@ msgstr ""
 msgid "Export completed"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:459
+msgid "Export CSV"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:382
+msgid "Export current page (CSV)"
+msgstr ""
+
 #: app/src/pages/users/src/user-list-view.vue:419
 msgid "Export failed"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:479
+msgid "Export products"
 msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:1731
@@ -2373,6 +3193,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:445
 msgid "External stylesheets"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:109
+msgid "External/Affiliate product"
 msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:624
@@ -2643,14 +3467,6 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: admin/src/Rest/WooCommerceDashboard.php:792
-msgid "Faturamento bruto"
-msgstr ""
-
-#: admin/src/Rest/WooCommerceDashboard.php:797
-msgid "Faturamento líquido"
-msgstr ""
-
 #: app/src/pages/settings/src/settings-config.js:482
 msgid "Favicon url"
 msgstr ""
@@ -2663,8 +3479,25 @@ msgstr ""
 msgid "Featured image updated"
 msgstr ""
 
+#: app/src/pages/products/src/ProductsList.vue:519
+msgid "Featured only"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:683
+#: app/src/pages/products/src/ProductQuickEdit.vue:231
+msgid "Featured product"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/license-key.vue:127
 msgid "Features:"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:477
+msgid "Fee name"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:575
+msgid "Fees"
 msgstr ""
 
 #: admin/src/Analytics/DummyDataGenerator.php:110
@@ -2824,6 +3657,10 @@ msgstr ""
 msgid "Filter by specific page URL"
 msgstr ""
 
+#: app/src/pages/products/src/ProductQuickEdit.vue:286
+msgid "Filter categories"
+msgstr ""
+
 #: admin/src/Rest/MediaTags.php:67
 msgid "Filter media items by tag IDs."
 msgstr ""
@@ -2854,12 +3691,28 @@ msgstr ""
 msgid "Finished"
 msgstr ""
 
+#: app/src/pages/orders/src/AddressFields.vue:38
+msgid "First name"
+msgstr ""
+
 #: app/src/pages/users/src/user-import.vue:57
 msgid "First Name"
 msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:929
 msgid "Fix Layout"
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:75
+msgid "Fixed amount"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:54
+msgid "Fixed cart discount"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:55
+msgid "Fixed product discount"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:148
@@ -2934,6 +3787,10 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
+#: app/src/pages/products/src/CouponsView.vue:253
+msgid "Free shipping"
+msgstr ""
+
 #: app/src/components/app/search/components/FrequentlyUsed.vue:30
 msgid "Frequently Used"
 msgstr ""
@@ -2946,9 +3803,20 @@ msgstr ""
 msgid "Function"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:709
+msgid "Gallery"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:569
+#: app/src/pages/products/src/ProductQuickEdit.vue:223
 #: app/src/pages/role-editor/src/role-details-view.vue:85
 #: app/src/pages/settings/index.vue:44
 msgid "General"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:285
+#: app/src/pages/products/src/CouponsView.vue:286
+msgid "Generate code"
 msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:75
@@ -2967,8 +3835,34 @@ msgstr ""
 msgid "Generate Test Data"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:258
+msgid "Generate variations"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:271
+msgid "Generate variations from the attributes or add them one by one."
+msgstr ""
+
 #: admin/src/Pages/DummyDataPage.php:126
 msgid "Geographic data from different countries and cities"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:300
+msgid "Give every custom attribute a name."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:280
+msgid "Give every fee a name."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:134
+msgid "Global"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:186
+msgid ""
+"Global attributes such as size or color can be reused across products and "
+"variations."
 msgstr ""
 
 #: admin/src/Rest/RankMathDashboardWidget.php:487
@@ -2989,7 +3883,7 @@ msgstr ""
 msgid "Google Analytics 4"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:817
+#: app/src/pages/settings/src/settings-config.js:862
 msgid "Google Analytics Connection"
 msgstr ""
 
@@ -3019,7 +3913,7 @@ msgstr ""
 msgid "Google Fonts"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:854
+#: app/src/pages/settings/src/settings-config.js:899
 msgid "Google reCAPTCHA"
 msgstr ""
 
@@ -3059,6 +3953,23 @@ msgstr ""
 msgid "Gross"
 msgstr ""
 
+#: admin/src/Rest/WooCommerceDashboard.php:792
+msgid "Gross revenue"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:108
+msgid "Grouped product"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:608
+msgid "Grouped products take their prices from the child products."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:434
+#: app/src/pages/orders/src/useOrderHelpers.js:99
+msgid "Guest"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-performance.vue:279
 #: app/src/pages/plugins/src/plugin-performance.vue:296
 msgid "Handle"
@@ -3089,6 +4000,8 @@ msgid "Heading 6"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1920
+#: app/src/pages/products/src/editor/ProductEditor.vue:648
+#: app/src/pages/products/src/ProductQuickEdit.vue:268
 msgid "Height"
 msgstr ""
 
@@ -3105,6 +4018,8 @@ msgstr ""
 
 #: app/src/pages/dashboard/index.vue:919
 #: app/src/pages/menu-creator/src/edit.vue:1075
+#: app/src/pages/products/src/editor/ProductEditor.vue:124
+#: app/src/pages/products/src/ProductQuickEdit.vue:60
 msgid "Hidden"
 msgstr ""
 
@@ -3175,7 +4090,7 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:944
+#: app/src/pages/settings/src/settings-config.js:989
 msgid ""
 "How many days to keep activity logs before automatic cleanup. Default is 90 "
 "days."
@@ -3257,6 +4172,7 @@ msgid "Image url"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1372
+#: app/src/pages/products/src/editor/ProductEditor.vue:690
 msgid "Images"
 msgstr ""
 
@@ -3277,9 +4193,13 @@ msgstr ""
 msgid "Import Errors"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:406
+#: app/src/pages/settings/index.vue:412
 #: app/src/pages/users/src/user-import.vue:369
 msgid "Import failed"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:478
+msgid "Import products"
 msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:813
@@ -3294,7 +4214,7 @@ msgstr ""
 msgid "Import validation failed."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:973
+#: app/src/pages/settings/src/settings-config.js:1018
 msgid "Important Only"
 msgstr ""
 
@@ -3320,6 +4240,13 @@ msgstr ""
 msgid "In Range"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:143
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:38
+#: app/src/pages/products/src/ProductsList.vue:195
+#: app/src/pages/products/src/ProductsList.vue:455
+msgid "In stock"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-card.vue:284
 msgid "Inactive"
 msgstr ""
@@ -3328,8 +4255,16 @@ msgstr ""
 msgid "Include Custom Fields"
 msgstr ""
 
+#: app/src/pages/products/src/BulkPriceModal.vue:62
+msgid "Increase"
+msgstr ""
+
 #: app/src/pages/database/src/table-view.vue:533
 msgid "Indexes"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:316
+msgid "Individual use only"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:286
@@ -3393,6 +4328,11 @@ msgstr ""
 msgid "Invalid"
 msgstr ""
 
+#: admin/src/Rest/WooCommerceOrders.php:426
+#: admin/src/Rest/WooCommerceProducts.php:399
+msgid "Invalid action."
+msgstr ""
+
 #: admin/src/Rest/Collaboration.php:277
 msgid "Invalid authentication"
 msgstr ""
@@ -3403,6 +4343,10 @@ msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:362
 msgid "Invalid capabilities format"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:384
+msgid "Invalid category."
 msgstr ""
 
 #: admin/src/Rest/UserAnalytics.php:147
@@ -3498,6 +4442,20 @@ msgstr ""
 msgid "Invalid or unauthorized function."
 msgstr ""
 
+#: admin/src/Rest/WooCommerceOrders.php:672
+msgid "Invalid order action."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceOrders.php:340
+msgid "Invalid order status."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceOrders.php:353
+#: admin/src/Rest/WooCommerceOrders.php:461
+#: admin/src/Rest/WooCommerceOrders.php:666
+msgid "Invalid order."
+msgstr ""
+
 #: app/src/pages/database/src/table-view.vue:289
 msgid "Invalid password"
 msgstr ""
@@ -3524,6 +4482,16 @@ msgstr ""
 
 #: admin/src/Rest/PostsTables.php:924
 msgid "Invalid post type."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:425
+msgid "Invalid price adjustment."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:294
+#: admin/src/Rest/WooCommerceProducts.php:327
+#: admin/src/Rest/WooCommerceProducts.php:487
+msgid "Invalid product."
 msgstr ""
 
 #: app/src/assets/js/functions/lmnFetch.js:88
@@ -3580,13 +4548,21 @@ msgstr ""
 msgid "Invalid session. Please reload the page and try again."
 msgstr ""
 
-#: app/src/pages/settings/index.vue:426
-#: app/src/pages/settings/index.vue:437
+#: app/src/pages/settings/index.vue:432
+#: app/src/pages/settings/index.vue:443
 msgid "Invalid settings: must be an object"
 msgstr ""
 
 #: admin/src/Rest/Analytics.php:378
 msgid "Invalid stat type"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:335
+msgid "Invalid status."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:349
+msgid "Invalid stock status."
 msgstr ""
 
 #: admin/src/Rest/DatabaseExplorer.php:489
@@ -3608,7 +4584,16 @@ msgstr ""
 msgid "Invalid username or password."
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:316
+#: app/src/pages/products/src/editor/ProductEditor.vue:622
+#: app/src/pages/products/src/ProductQuickEdit.vue:248
+msgid "Inventory"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:524
+msgid "IP address"
+msgstr ""
+
+#: app/src/pages/activity-log/src/activity-details-view.vue:318
 msgid "IP Address"
 msgstr ""
 
@@ -3616,6 +4601,10 @@ msgstr ""
 #: app/src/pages/media/src/media-list-view.vue:1626
 #: app/src/pages/posts/index.vue:599
 msgid "item"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:126
+msgid "Item"
 msgstr ""
 
 #: app/src/pages/posts/src/updatePostAuthor.js:20
@@ -3652,6 +4641,14 @@ msgstr ""
 msgid "items"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:303
+#: app/src/pages/orders/src/OrderEditor.vue:391
+#: app/src/pages/orders/src/OrderPreview.vue:65
+#: app/src/pages/orders/src/OrdersList.vue:178
+#: app/src/pages/orders/src/OrdersList.vue:354
+msgid "Items"
+msgstr ""
+
 #: app/src/pages/posts/src/batchDeletePosts.js:45
 msgid "Items deleted"
 msgstr ""
@@ -3675,6 +4672,11 @@ msgstr ""
 #: app/src/components/utility/multiselect-roles-and-users/index.vue:129
 #: app/src/components/utility/post-type-select/index.vue:80
 msgid "Items selected"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:368
+#: app/src/pages/orders/src/OrderEditor.vue:567
+msgid "Items subtotal"
 msgstr ""
 
 #: app/src/pages/posts/src/batch-edit.vue:76
@@ -3726,12 +4728,32 @@ msgstr ""
 msgid "Large Files"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:110
+msgid "Last 30 days"
+msgstr ""
+
 #: admin/src/Rest/RankMathDashboardWidget.php:318
 msgid "Last 30 Days"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/active-users/component.vue:186
 msgid "Last 5 minutes"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:109
+msgid "Last 7 days"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:112
+msgid "Last 90 days"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:685
+msgid "Last modified"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressFields.vue:39
+msgid "Last name"
 msgstr ""
 
 #: app/src/pages/users/src/user-import.vue:58
@@ -3788,6 +4810,14 @@ msgstr ""
 msgid "Leave blank to keep current password"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:515
+msgid "Leave empty to create a guest order."
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:202
+msgid "Leave empty to generate it from the name."
+msgstr ""
+
 #: app/src/pages/users/src/user-import.vue:535
 msgid "Leave empty to generate random passwords"
 msgstr ""
@@ -3805,6 +4835,11 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1973
 msgid "Left"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:646
+#: app/src/pages/products/src/ProductQuickEdit.vue:266
+msgid "Length"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:110
@@ -3902,6 +4937,10 @@ msgstr ""
 msgid "Light Mode"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:632
+msgid "Limit purchases to 1 item per order"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-performance.vue:361
 msgid "Line"
 msgstr ""
@@ -3990,11 +5029,11 @@ msgstr ""
 msgid "Loading scheduled posts..."
 msgstr ""
 
-#: app/src/pages/settings/index.vue:638
+#: app/src/pages/settings/index.vue:644
 msgid "Loading settings..."
 msgstr ""
 
-#: app/src/pages/settings/index.vue:744
+#: app/src/pages/settings/index.vue:750
 msgid "Loading Settings..."
 msgstr ""
 
@@ -4010,7 +5049,7 @@ msgstr ""
 msgid "Loading users..."
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:233
+#: app/src/pages/activity-log/src/activity-details-view.vue:235
 #: app/src/pages/comments/src/comment-details-view.vue:328
 #: app/src/pages/media/src/media-details-view.vue:675
 #: app/src/pages/media/src/media-edit-view.vue:178
@@ -4042,7 +5081,7 @@ msgstr ""
 msgid "Log entry not found."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:963
+#: app/src/pages/settings/src/settings-config.js:1008
 msgid "Log Level"
 msgstr ""
 
@@ -4076,12 +5115,17 @@ msgstr ""
 msgid "Logo url"
 msgstr ""
 
-#: admin/src/Rest/WooCommerceDashboard.php:419
-msgid "Loja"
-msgstr ""
-
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:608
 msgid "Low"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:131
+#: app/src/pages/products/src/ProductsList.vue:192
+msgid "Low stock"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:629
+msgid "Low stock threshold"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-list-view.vue:598
@@ -4108,8 +5152,24 @@ msgstr ""
 msgid "Manage Dashboard Cards"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:642
+msgid "Manage downloadable files in the classic editor."
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:273
 msgid "Manage Media"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:171
+msgid "Manage values"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:493
+msgid "Manage your catalog, prices and stock."
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:162
+msgid "Manual refund"
 msgstr ""
 
 #: app/src/pages/users/src/user-import.vue:499
@@ -4120,7 +5180,7 @@ msgstr ""
 msgid "Map CSV Columns to User Fields"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:837
+#: app/src/pages/settings/src/settings-config.js:882
 msgid "Mapbox API key"
 msgstr ""
 
@@ -4128,8 +5188,21 @@ msgstr ""
 msgid "Mapbox API key required"
 msgstr ""
 
+#: app/src/pages/products/src/ProductsList.vue:463
+#: app/src/pages/products/src/ProductsList.vue:589
+msgid "Mark as featured"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:544
+msgid "Mark as paid"
+msgstr ""
+
 #: app/src/pages/comments/src/comment-list-view.vue:769
 msgid "Mark as Spam"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:359
+msgid "Marked as featured"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-panel.vue:536
@@ -4142,6 +5215,10 @@ msgstr ""
 
 #: admin/src/Rest/MediaBulk.php:189
 msgid "Maximum 100 items can be downloaded at once."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:313
+msgid "Maximum spend"
 msgstr ""
 
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:297
@@ -4270,6 +5347,10 @@ msgstr ""
 msgid "Menu name"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:670
+msgid "Menu order"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:807
 msgid "Menu Settings"
 msgstr ""
@@ -4293,12 +5374,17 @@ msgid ""
 "..."
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:381
+#: app/src/pages/activity-log/src/activity-details-view.vue:383
 msgid "Metadata"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:492
 #: app/src/pages/plugins/src/plugin-performance.vue:344
 msgid "Method"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:312
+msgid "Minimum spend"
 msgstr ""
 
 #: app/src/components/app/search/utils/formatRelativeDate.js:20
@@ -4329,7 +5415,11 @@ msgstr ""
 msgid "Missing security token. Please refresh the page and try again."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:747
+#: admin/src/Rest/WooCommerceOrders.php:604
+msgid "Mobile app"
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:792
 msgid "Modern Comments Page"
 msgstr ""
 
@@ -4349,6 +5439,10 @@ msgstr ""
 msgid "Modern Media Page"
 msgstr ""
 
+#: app/src/pages/settings/src/settings-config.js:762
+msgid "Modern Orders Page"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:638
 msgid "Modern Plugin Manager"
 msgstr ""
@@ -4359,6 +5453,14 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:587
 msgid "Modern Post Editor"
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:777
+msgid "Modern Product Editor"
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:747
+msgid "Modern Products Page"
 msgstr ""
 
 #: app/src/components/utility/remote-site-select/index.vue:207
@@ -4375,6 +5477,16 @@ msgstr ""
 msgid "Modified"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:412
+#: app/src/pages/products/src/ProductsList.vue:497
+#: app/src/pages/products/src/ProductsList.vue:562
+msgid "More"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:548
+msgid "More actions"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:192
 msgid "Most traffic sources"
 msgstr ""
@@ -4387,6 +5499,30 @@ msgstr ""
 msgid "Most visitors by country"
 msgstr ""
 
+#: app/src/pages/products/src/CouponsView.vue:185
+msgid "Move coupon to trash?"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:179
+#: app/src/pages/orders/src/OrderDetails.vue:214
+#: app/src/pages/orders/src/OrdersList.vue:322
+#: app/src/pages/orders/src/OrdersList.vue:345
+#: app/src/pages/products/src/CouponsView.vue:187
+#: app/src/pages/products/src/CouponsView.vue:205
+#: app/src/pages/products/src/editor/ProductEditor.vue:454
+#: app/src/pages/products/src/editor/ProductEditor.vue:464
+#: app/src/pages/products/src/ProductsList.vue:411
+#: app/src/pages/products/src/ProductsList.vue:438
+msgid "Move to trash"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:177
+#: app/src/pages/orders/src/OrdersList.vue:318
+#: app/src/pages/products/src/editor/ProductEditor.vue:462
+#: app/src/pages/products/src/ProductsList.vue:407
+msgid "Move to trash?"
+msgstr ""
+
 #: admin/src/Rest/DatabaseExplorer.php:657
 msgid "Multiple statements are not allowed."
 msgstr ""
@@ -4397,14 +5533,28 @@ msgstr ""
 #: app/src/pages/database/src/table-view.vue:544
 #: app/src/pages/menu-creator/src/edit.vue:978
 #: app/src/pages/plugins/src/plugin-repo.vue:40
+#: app/src/pages/products/src/AttributesView.vue:32
+#: app/src/pages/products/src/AttributesView.vue:41
+#: app/src/pages/products/src/AttributesView.vue:229
+#: app/src/pages/products/src/CategoriesView.vue:88
+#: app/src/pages/products/src/CategoriesView.vue:201
+#: app/src/pages/products/src/ProductQuickEdit.vue:224
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:207
 #: app/src/pages/users/src/user-list-view.vue:1344
 #: app/src/pages/users/src/user-list-view.vue:1549
 msgid "Name"
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:42
+msgid "Name (numeric)"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:842
 msgid "Name of your custom menu."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:471
+msgid "Name shown to customer"
 msgstr ""
 
 #: app/src/components/app/menu/components/MenuSearch.vue:491
@@ -4418,6 +5568,18 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:152
 msgid "Net"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:393
+msgid "Net payment"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceDashboard.php:797
+msgid "Net revenue"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:166
+msgid "Net revenue (%s days)"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-card.vue:423
@@ -4449,6 +5611,10 @@ msgstr ""
 msgid "New Admin Menu"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:749
+msgid "New category"
+msgstr ""
+
 #: app/src/pages/settings/src/text-pairs.vue:30
 msgid "New item"
 msgstr ""
@@ -4459,6 +5625,10 @@ msgstr ""
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:502
 msgid "New menu"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:448
+msgid "New orders will appear here as soon as customers check out."
 msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:49
@@ -4497,6 +5667,19 @@ msgstr ""
 msgid "New Users"
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:242
+#: app/src/pages/products/src/editor/ProductAttributes.vue:169
+msgid "New value"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:273
+msgid "Newer order"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:272
+msgid "Newer order #%s"
+msgstr ""
+
 #: app/src/pages/activity-log/src/activity-list-view.vue:377
 #: app/src/pages/comments/src/comment-list-view.vue:627
 #: app/src/pages/menu-creator/src/menu-list-view.vue:459
@@ -4526,7 +5709,7 @@ msgstr ""
 msgid "No %s found in Trash"
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-list.vue:294
+#: app/src/pages/activity-log/src/activity-list.vue:296
 msgid "No activities found"
 msgstr ""
 
@@ -4547,12 +5730,34 @@ msgstr ""
 msgid "No analytics data available"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:251
+msgid "No attributes used for variations"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:202
+#: app/src/pages/products/src/editor/ProductAttributes.vue:125
+msgid "No attributes yet"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:469
+msgid "No billing address."
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-details-view.vue:734
 msgid "No capabilities found"
 msgstr ""
 
 #: app/src/pages/dashboard/index.vue:930
 msgid "No cards registered for this category yet."
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:167
+#: app/src/pages/products/src/ProductQuickEdit.vue:290
+msgid "No categories found"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:746
+msgid "No categories found."
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:659
@@ -4570,6 +5775,18 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:330
 msgid "No country data available"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:238
+msgid "No coupons match your search"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:238
+msgid "No coupons yet"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:521
+msgid "No customers found."
 msgstr ""
 
 #: app/src/pages/dashboard/index.vue:823
@@ -4618,6 +5835,10 @@ msgstr ""
 msgid "No items found"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:447
+msgid "No items yet"
+msgstr ""
+
 #: admin/src/License/LicenseService.php:159
 msgid "No license key found."
 msgstr ""
@@ -4662,16 +5883,44 @@ msgstr ""
 msgid "No new notifications"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:272
+msgid "No newer orders"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:97
+msgid "No notes yet."
+msgstr ""
+
 #: app/src/pages/admin-notices/src/table.vue:236
 msgid "No notices found"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:275
+msgid "No older orders"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:166
 msgid "No orders in the selected period."
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:447
+msgid "No orders match your filters"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceOrders.php:333
+msgid "No orders selected."
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:447
+msgid "No orders yet"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:294
 msgid "No page data available"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:80
+msgid "No payment method"
 msgstr ""
 
 #: admin/src/Rest/PluginManager.php:662
@@ -4691,11 +5940,31 @@ msgstr ""
 msgid "No posts found"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:288
+msgid "No price"
+msgstr ""
+
 #: app/src/pages/posts/src/category-select.vue:311
 #: app/src/pages/posts/src/category-select.vue:314
 #: app/src/pages/posts/src/tag-select.vue:311
 #: app/src/pages/posts/src/tag-select.vue:314
 msgid "No products found"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:420
+msgid "No products found."
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:543
+msgid "No products match your filters"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:249
+msgid "No products selected."
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:543
+msgid "No products yet"
 msgstr ""
 
 #: app/src/pages/database/src/query-editor.vue:217
@@ -4736,13 +6005,26 @@ msgstr ""
 msgid "No roles found"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:654
+#: app/src/pages/settings/index.vue:660
 #: app/src/pages/settings/src/settings-panel.vue:551
 msgid "No settings found"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-panel.vue:555
 msgid "No settings match your search in this category."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:482
+msgid "No shipping address set."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderPreview.vue:118
+msgid "No shipping address."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:650
+#: app/src/pages/products/src/ProductQuickEdit.vue:273
+msgid "No shipping class"
 msgstr ""
 
 #: app/src/components/utility/remote-site-select/index.vue:405
@@ -4798,6 +6080,14 @@ msgstr ""
 msgid "No valid files found to download."
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:249
+msgid "No values yet."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:271
+msgid "No variations yet"
+msgstr ""
+
 #: app/src/pages/dashboard/index.vue:799
 msgid "No visible cards in this category"
 msgstr ""
@@ -4805,6 +6095,11 @@ msgstr ""
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:756
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:756
 msgid "No WooCommerce customer data found for this user"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:203
+#: app/src/pages/products/src/editor/ProductEditor.vue:136
+msgid "None"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:59
@@ -4819,6 +6114,30 @@ msgstr ""
 
 #: admin/src/Rest/GoogleAnalyticsOAuth.php:274
 msgid "Not connected to Google Analytics"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:497
+msgid "Not paid"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:78
+msgid "Note"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:48
+msgid "Note added"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:67
+msgid "Note deleted"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:48
+msgid "Note sent to customer"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:29
+msgid "Note to customer"
 msgstr ""
 
 #: app/src/pages/posts/index.vue:786
@@ -4885,8 +6204,27 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:276
+msgid "Older order"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:275
+msgid "Older order #%s"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:249
 msgid "on"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:145
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:40
+#: app/src/pages/products/src/ProductsList.vue:188
+#: app/src/pages/products/src/ProductsList.vue:457
+msgid "On backorder"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:163
+msgid "On hold"
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:89
@@ -4910,6 +6248,10 @@ msgstr ""
 msgid "One uppercase letter"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:471
+msgid "Online store"
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:455
 #: app/src/pages/media/src/media-edit-view.vue:60
 msgid "Only images can be edited"
@@ -4919,12 +6261,32 @@ msgstr ""
 msgid "Only images can be optimized"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:385
+msgid ""
+"Only pending or on-hold orders can have their items changed. Change the "
+"status first."
+msgstr ""
+
 #: admin/src/Rest/DatabaseExplorer.php:622
 msgid "Only SELECT queries are allowed for safety."
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:167
+msgid "Only the first %d variations will be created."
+msgstr ""
+
 #: app/src/components/app/search/components/EmptyStateInitial.vue:121
 msgid "Open"
+msgstr ""
+
+#: app/src/pages/products/src/ProductQuickEdit.vue:217
+msgid "Open full editor"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:210
+#: app/src/pages/orders/src/OrdersList.vue:344
+#: app/src/pages/products/src/editor/ProductEditor.vue:451
+msgid "Open in classic editor"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:1054
@@ -4950,6 +6312,10 @@ msgstr ""
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:874
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:955
 msgid "Opening Media Library..."
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:57
+msgid "Operation"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:398
@@ -5041,12 +6407,61 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:98
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:123
+#: app/src/pages/orders/src/OrderEditor.vue:540
+#: app/src/pages/orders/src/OrdersList.vue:175
+#: app/src/pages/orders/src/OrdersList.vue:354
 #: app/src/pages/posts/src/table-filters.vue:164
 msgid "Order"
 msgstr ""
 
+#: admin/src/Activity/ActivityHooks.php:784
+#: admin/src/Activity/ActivityHooks.php:813
+#: app/src/pages/orders/src/useOrderHelpers.js:102
+msgid "Order #%s"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:330
+msgid "Order #%s created"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:171
+msgid "Order action applied"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:511
+msgid "Order attribution"
+msgstr ""
+
 #: app/src/pages/posts/src/table-filters.vue:188
 msgid "Order by"
+msgstr ""
+
+#: app/src/apps/js/Orders.js:46
+msgid "Order details"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:330
+msgid "Order items updated"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:160
+msgid "Order marked as %s"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:188
+msgid "Order moved to the trash"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:257
+msgid "Order not found"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:76
+msgid "Order notes"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:423
+msgid "Order status"
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:522
@@ -5054,8 +6469,26 @@ msgstr ""
 msgid "Order Status Breakdown"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderPreview.vue:44
+msgid "Order status updated"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:384
+msgid "Order total"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceDashboard.php:513
+msgid "Order without items"
+msgstr ""
+
+#: app/src/apps/js/Orders.js:26
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:469
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:53
+#: app/src/pages/orders/src/OrderDetails.vue:97
+#: app/src/pages/orders/src/OrderDetails.vue:441
+#: app/src/pages/orders/src/OrderEditor.vue:347
+#: app/src/pages/orders/src/OrdersList.vue:398
+#: app/src/pages/orders/src/OrdersList.vue:449
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:469
 msgid "Orders"
 msgstr ""
@@ -5064,12 +6497,35 @@ msgstr ""
 msgid "Orders received"
 msgstr ""
 
+#: admin/src/Rest/WooCommerceOrders.php:600
+msgid "Organic"
+msgstr ""
+
+#: app/src/pages/products/src/ProductQuickEdit.vue:279
+msgid "Organization"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:514
+msgid "Origin"
+msgstr ""
+
 #: admin/src/Rest/MediaReplace.php:188
 msgid "Original file not found."
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:82
 #: app/src/pages/role-editor/src/role-details-view.vue:93
 msgid "Other"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:415
+#: app/src/pages/orders/src/OrderEditor.vue:435
+#: app/src/pages/products/src/editor/ProductEditor.vue:144
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:39
+#: app/src/pages/products/src/ProductsList.vue:130
+#: app/src/pages/products/src/ProductsList.vue:184
+#: app/src/pages/products/src/ProductsList.vue:456
+msgid "Out of stock"
 msgstr ""
 
 #: app/src/pages/dashboard/index.vue:726
@@ -5134,12 +6590,24 @@ msgstr ""
 msgid "Pagination"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:496
+msgid "Paid on"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderPreview.vue:18
+msgid "Paid via %s"
+msgstr ""
+
 #: app/src/components/utility/rich-text/index.vue:226
 msgid "Paragraph"
 msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:844
 msgid "Parent %s:"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:203
+msgid "Parent category"
 msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:731
@@ -5187,8 +6655,18 @@ msgstr ""
 msgid "Paste your service account JSON key here..."
 msgstr ""
 
-#: admin/src/Rest/WooCommerceDashboard.php:513
-msgid "Pedido sem item"
+#: app/src/pages/orders/src/OrderDetails.vue:489
+#: app/src/pages/orders/src/OrdersList.vue:180
+#: app/src/pages/orders/src/OrdersList.vue:354
+msgid "Payment"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:543
+msgid "Payment method"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderPreview.vue:18
+msgid "Payment via %s"
 msgstr ""
 
 #: app/src/components/app/search/state/constants.js:93
@@ -5196,12 +6674,31 @@ msgstr ""
 #: app/src/pages/comments/src/comment-details-view.vue:54
 #: app/src/pages/comments/src/comment-list-view.vue:523
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:194
+#: app/src/pages/products/src/ProductsList.vue:118
+#: app/src/pages/products/src/ProductsList.vue:168
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:87
 msgid "Pending"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:161
+msgid "Pending payment"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:116
+#: app/src/pages/products/src/ProductQuickEdit.vue:52
+msgid "Pending review"
+msgstr ""
+
 #: app/src/pages/posts/src/table-filters.vue:159
 msgid "Per page"
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:74
+msgid "Percentage"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:53
+msgid "Percentage discount"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-card.vue:372
@@ -5225,6 +6722,8 @@ msgid "Persistent admin notices for Flexify Dashboard."
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:653
+#: app/src/pages/orders/src/AddressFields.vue:62
+#: app/src/pages/orders/src/OrdersList.vue:354
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:653
 msgid "Phone"
 msgstr ""
@@ -5271,7 +6770,7 @@ msgid "Please paste your service account JSON key"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:481
-#: app/src/pages/settings/index.vue:415
+#: app/src/pages/settings/index.vue:421
 msgid "Please provide a valid JSON file"
 msgstr ""
 
@@ -5281,6 +6780,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:81
 msgid "Please provide a valid site URL"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:379
+msgid "Please review the highlighted fields"
 msgstr ""
 
 #: app/src/pages/users/src/user-import.vue:86
@@ -5411,6 +6914,10 @@ msgstr ""
 msgid "Plugins"
 msgstr ""
 
+#: admin/src/Rest/WooCommerceOrders.php:605
+msgid "Point of sale"
+msgstr ""
+
 #: admin/src/Rest/MediaTags.php:137
 msgid "Popular Tags"
 msgstr ""
@@ -5469,6 +6976,10 @@ msgstr ""
 msgid "Post Types for Modern Editor"
 msgstr ""
 
+#: app/src/pages/orders/src/AddressFields.vue:60
+msgid "Postcode / ZIP"
+msgstr ""
+
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:305
 #: app/src/pages/posts/index.vue:513
 #: app/src/pages/posts/index.vue:706
@@ -5488,6 +6999,7 @@ msgstr ""
 
 #: app/src/pages/admin-notices/src/edit.vue:354
 #: app/src/pages/posts/src/post-preview.vue:421
+#: app/src/pages/products/src/editor/ProductEditor.vue:448
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:1007
 msgid "Preview"
 msgstr ""
@@ -5512,12 +7024,49 @@ msgstr ""
 msgid "Previous period:"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:309
+#: app/src/pages/products/src/BulkPriceModal.vue:46
+#: app/src/pages/products/src/ProductsList.vue:138
+msgid "Price"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:262
+msgid "Price for all"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:607
+msgid "Prices are set on each variation."
+msgstr ""
+
+#: app/src/pages/products/src/ProductQuickEdit.vue:239
+msgid ""
+"Prices of variable products are managed in each variation. Expand the "
+"product in the list to edit them."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:592
+#: app/src/pages/products/src/ProductQuickEdit.vue:235
+msgid "Pricing"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:209
+msgid "Print"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-performance.vue:327
 msgid "Priority"
 msgstr ""
 
 #: app/src/components/app/search/state/constants.js:94
+#: app/src/pages/products/src/editor/ProductEditor.vue:117
+#: app/src/pages/products/src/ProductQuickEdit.vue:53
+#: app/src/pages/products/src/ProductsList.vue:119
+#: app/src/pages/products/src/ProductsList.vue:169
 msgid "Private"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:30
+msgid "Private note"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:53
@@ -5525,6 +7074,7 @@ msgid "Pro"
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:88
+#: app/src/pages/orders/src/OrdersList.vue:162
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:88
 msgid "Processing"
 msgstr ""
@@ -5532,7 +7082,84 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:94
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:112
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:52
+#: app/src/pages/orders/src/OrderDetails.vue:308
+#: app/src/pages/products/src/ProductsList.vue:136
 msgid "Product"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:152
+msgid "Product categories"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:376
+msgid "Product duplicated"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:499
+msgid "Product duplication is not available."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:412
+msgid "Product gallery"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:407
+msgid "Product image"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:475
+msgid "Product moved to the trash"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:571
+msgid "Product name"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:532
+msgid "Product not found"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:398
+msgid "Product saved"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:398
+msgid "Product saved and published"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:508
+msgid "Product status"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:594
+msgid "Product type"
+msgstr ""
+
+#: app/src/pages/products/src/ProductQuickEdit.vue:198
+msgid "Product updated"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:611
+msgid "Product URL"
+msgstr ""
+
+#: app/src/apps/js/Products.js:26
+#: app/src/pages/products/src/AttributesView.vue:187
+#: app/src/pages/products/src/CategoriesView.vue:90
+#: app/src/pages/products/src/CategoriesView.vue:153
+#: app/src/pages/products/src/CouponsView.vue:218
+#: app/src/pages/products/src/editor/ProductEditor.vue:188
+#: app/src/pages/products/src/ProductsList.vue:493
+#: app/src/pages/products/src/ProductsList.vue:545
+msgid "Products"
+msgstr ""
+
+#: app/src/pages/settings/index.vue:133
+msgid "Products and orders management pages"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:131
+msgid "Products in this category will not be deleted."
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:482
@@ -5556,6 +7183,11 @@ msgstr ""
 msgid "Property saved successfully"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:482
+#: app/src/pages/products/src/editor/ProductEditor.vue:679
+msgid "Publish"
+msgstr ""
+
 #: app/src/pages/posts/src/batch-edit.vue:44
 msgid "Publish changes?"
 msgstr ""
@@ -5571,11 +7203,38 @@ msgstr ""
 #: app/src/pages/media/src/media-details-view.vue:1138
 #: app/src/pages/menu-creator/src/menu-list-view.vue:409
 #: app/src/pages/menu-creator/src/menu-list.vue:64
+#: app/src/pages/products/src/editor/ProductEditor.vue:114
+#: app/src/pages/products/src/ProductQuickEdit.vue:50
+#: app/src/pages/products/src/ProductsList.vue:116
+#: app/src/pages/products/src/ProductsList.vue:129
+#: app/src/pages/products/src/ProductsList.vue:166
 msgid "Published"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:668
+msgid "Purchase note"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:310
+msgid "Qty"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:128
+msgid "Qty to refund"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:459
+#: app/src/pages/products/src/editor/ProductEditor.vue:627
+#: app/src/pages/products/src/ProductQuickEdit.vue:251
+msgid "Quantity"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/orders-received/component.vue:27
 msgid "Quantity of orders from period"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:139
+msgid "Quantity to refund"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:310
@@ -5615,6 +7274,17 @@ msgstr ""
 msgid "Quick Draft"
 msgstr ""
 
+#: app/src/pages/products/src/ProductQuickEdit.vue:207
+#: app/src/pages/products/src/ProductsList.vue:429
+msgid "Quick edit"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:340
+#: app/src/pages/orders/src/OrdersList.vue:521
+#: app/src/pages/orders/src/OrdersList.vue:522
+msgid "Quick preview"
+msgstr ""
+
 #: app/src/components/app/search/components/SearchOnboarding.vue:36
 msgid ""
 "Quickly find posts, pages, users, and more. Here are some tips to get "
@@ -5641,6 +7311,10 @@ msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:125
 msgid "Realistic browser and operating system data"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:148
+msgid "Reason (optional)"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:64
@@ -5685,6 +7359,10 @@ msgstr ""
 msgid "Recently Accessed"
 msgstr ""
 
+#: app/src/pages/orders/src/RefundModal.vue:157
+msgid "Record the refund without sending it to the payment gateway."
+msgstr ""
+
 #: app/src/pages/login/src/login-form-panel.vue:148
 msgid "Recover Password"
 msgstr ""
@@ -5699,6 +7377,10 @@ msgstr ""
 
 #: admin/src/Rest/RankMathDashboardWidget.php:416
 msgid "Redirections"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceOrders.php:601
+msgid "Referral"
 msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:127
@@ -5717,9 +7399,50 @@ msgstr ""
 msgid "Referrer URL exceeds maximum length"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/pages/orders/src/OrdersList.vue:432
+#: app/src/pages/products/src/ProductsList.vue:526
+#: app/src/pages/products/src/ProductsList.vue:527
+msgid "Refresh"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:285
+#: app/src/pages/orders/src/RefundModal.vue:171
+msgid "Refund"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:405
+msgid "Refund #%s"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:171
+msgid "Refund %s"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:147
+msgid "Refund amount"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:111
+msgid "Refund created"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:156
+msgid "Refund manually"
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:118
+msgid "Refund order"
+msgstr ""
+
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:92
+#: app/src/pages/orders/src/OrderDetails.vue:389
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:92
 msgid "Refunded"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:401
+msgid "Refunds"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:755
@@ -5730,8 +7453,29 @@ msgstr ""
 msgid "Registered"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:434
+msgid "Registered customer"
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:51
+#: app/src/pages/products/src/editor/ProductEditor.vue:598
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:310
+#: app/src/pages/products/src/ProductQuickEdit.vue:242
+#: app/src/pages/products/src/ProductVariations.vue:123
+#: app/src/pages/products/src/ProductVariations.vue:148
+msgid "Regular price"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:262
+msgid "Regular price for all variations"
+msgstr ""
+
 #: app/src/pages/media/src/media-list-view.vue:1664
 msgid "Release to start uploading"
+msgstr ""
+
+#: app/src/pages/products/src/ProductVariations.vue:109
+msgid "Reload"
 msgstr ""
 
 #: app/src/assets/js/functions/lmnFetch.js:87
@@ -5767,12 +7511,48 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductAttributes.vue:145
+msgid "Remove attribute"
+msgstr ""
+
+#: app/src/pages/products/src/BulkCategoryModal.vue:31
+#: app/src/pages/products/src/BulkCategoryModal.vue:38
+#: app/src/pages/products/src/ProductsList.vue:467
+msgid "Remove category"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:557
+msgid "Remove coupon"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:511
+msgid "Remove customer"
+msgstr ""
+
 #: admin/src/Rest/CustomPostTypes.php:852
 msgid "Remove featured image"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:479
+msgid "Remove fee"
+msgstr ""
+
 #: app/src/components/app/search/layout-fix-dialog.vue:1065
 msgid "Remove Fix"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:464
+#: app/src/pages/products/src/ProductsList.vue:589
+msgid "Remove from featured"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:704
+#: app/src/pages/products/src/editor/ProductEditor.vue:717
+msgid "Remove image"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:461
+msgid "Remove item"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:116
@@ -5787,8 +7567,20 @@ msgstr ""
 msgid "Remove Remote Site?"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:473
+msgid "Remove shipping"
+msgstr ""
+
 #: app/src/components/utility/tag-input/index.vue:387
 msgid "Remove tag"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:180
+msgid "Remove value"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:359
+msgid "Removed from featured"
 msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:1068
@@ -5803,10 +7595,15 @@ msgstr ""
 msgid "Rename menu item"
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:260
+msgid "Rename value"
+msgstr ""
+
 #: app/src/pages/dashboard/src/card-render.vue:115
 msgid "Reorder card"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:703
 #: app/src/pages/settings/src/text-pairs.vue:25
 msgid "Replace"
 msgstr ""
@@ -5831,7 +7628,7 @@ msgid ""
 "profiling and improved features."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:748
+#: app/src/pages/settings/src/settings-config.js:793
 msgid ""
 "Replace the classic WordPress comments page with a modern, responsive "
 "comment manager with improved features and better organization."
@@ -5849,10 +7646,24 @@ msgid ""
 "manager with improved features and better organization."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:767
+#: app/src/pages/settings/src/settings-config.js:812
 msgid ""
 "Replace the default WordPress dashboard with a modern, customizable "
 "dashboard interface."
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:763
+msgid ""
+"Replace the WooCommerce orders list and order details with a modern page "
+"featuring filters, previews, status changes, notes and refunds. Works with "
+"HPOS and legacy order storage."
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:748
+msgid ""
+"Replace the WooCommerce products list with a modern page featuring "
+"counters, filters, quick edit and bulk actions. The classic editor is still "
+"used to create and fully edit products."
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:752
@@ -5865,6 +7676,10 @@ msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:870
 msgid "requests remaining"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:306
+msgid "Requires a free shipping method that accepts coupons."
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-card.vue:411
@@ -5888,7 +7703,7 @@ msgstr ""
 msgid "Reset item"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:145
+#: app/src/pages/settings/index.vue:151
 msgid "Reset plugin configuration and other advanced actions"
 msgstr ""
 
@@ -5920,7 +7735,15 @@ msgstr ""
 msgid "Resize card"
 msgstr ""
 
+#: app/src/pages/orders/src/RefundModal.vue:152
+msgid "Restock refunded items"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:332
+#: app/src/pages/orders/src/OrdersList.vue:463
 #: app/src/pages/posts/src/post-actions.vue:53
+#: app/src/pages/products/src/ProductsList.vue:421
+#: app/src/pages/products/src/ProductsList.vue:568
 msgid "Restore"
 msgstr ""
 
@@ -5940,7 +7763,7 @@ msgstr ""
 msgid "Results"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:943
+#: app/src/pages/settings/src/settings-config.js:988
 msgid "Retention Period (Days)"
 msgstr ""
 
@@ -5966,6 +7789,10 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:136
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:54
 msgid "Revenue"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:408
+msgid "Revenue period"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-inspect.vue:311
@@ -6103,8 +7930,29 @@ msgstr ""
 msgid "rows"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:604
+msgid "Sale ends"
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:52
+#: app/src/pages/products/src/editor/ProductEditor.vue:599
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:311
+#: app/src/pages/products/src/ProductQuickEdit.vue:243
+#: app/src/pages/products/src/ProductVariations.vue:124
+#: app/src/pages/products/src/ProductVariations.vue:154
+msgid "Sale price"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:603
+msgid "Sale starts"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:54
 msgid "Sales Summary"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:496
+msgid "Same as billing address"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1575
@@ -6113,10 +7961,25 @@ msgstr ""
 
 #: app/src/components/app/menu/components/FavoritesSection.vue:220
 #: app/src/components/utility/image-editor/index.vue:2046
+#: app/src/pages/products/src/AttributesView.vue:254
+#: app/src/pages/products/src/ProductVariations.vue:171
 #: app/src/pages/role-editor/src/role-details-view.vue:616
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:468
 #: app/src/pages/settings/src/settings-panel.vue:508
 msgid "Save"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressModal.vue:58
+msgid "Save address"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:236
+msgid "Save attribute"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:208
+#: app/src/pages/products/src/ProductQuickEdit.vue:300
+msgid "Save changes"
 msgstr ""
 
 #: admin/src/Rest/CustomFields/OptionPageRenderer.php:87
@@ -6127,12 +7990,32 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
+#: app/src/pages/products/src/CouponsView.vue:331
+msgid "Save coupon"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:204
 msgid "Save credentials"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:552
+msgid "Save draft"
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:182
 msgid "Save failed"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:376
+msgid "Save items"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:661
+msgid "Save the product to start adding variations."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:662
+msgid "Save the product to use the attribute changes in the variations."
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:175
@@ -6143,8 +8026,13 @@ msgstr ""
 msgid "Saves to custom CSS settings for persistence."
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:601
+msgid "Schedule sale"
+msgstr ""
+
 #: app/src/components/app/search/state/constants.js:95
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:188
+#: app/src/pages/products/src/ProductsList.vue:170
 msgid "Scheduled"
 msgstr ""
 
@@ -6196,12 +8084,29 @@ msgstr ""
 msgid "Search Admin Notices"
 msgstr ""
 
+#: app/src/pages/products/src/ProductsList.vue:512
+msgid "Search by name or SKU"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-details-view.vue:709
 msgid "Search capabilities..."
 msgstr ""
 
+#: app/src/pages/products/src/CategoriesView.vue:163
+#: app/src/pages/products/src/editor/ProductEditor.vue:735
+msgid "Search categories"
+msgstr ""
+
 #: app/src/pages/comments/src/comment-list-view.vue:478
 msgid "Search comments..."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:228
+msgid "Search coupons"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:514
+msgid "Search customers by name or email"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:579
@@ -6210,6 +8115,10 @@ msgstr ""
 
 #: app/src/components/app/search/components/EmptyStateInitial.vue:38
 msgid "Search for posts, pages, users, categories, or use quick actions."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:447
+msgid "Search for products above to add them to the order."
 msgstr ""
 
 #: app/src/components/utility/icon-select/index.vue:113
@@ -6252,6 +8161,10 @@ msgstr ""
 msgid "Search or type command..."
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:427
+msgid "Search order, customer or email"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-repo.vue:173
 msgid "Search plugins"
 msgstr ""
@@ -6277,11 +8190,20 @@ msgstr ""
 msgid "Search posts..."
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:393
+msgid "Search products by name or SKU to add"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:123
+#: app/src/pages/products/src/ProductQuickEdit.vue:59
+msgid "Search results only"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-list-view.vue:405
 msgid "Search roles..."
 msgstr ""
 
-#: app/src/pages/settings/index.vue:610
+#: app/src/pages/settings/index.vue:616
 msgid "Search settings..."
 msgstr ""
 
@@ -6317,7 +8239,7 @@ msgstr ""
 msgid "Secret key"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:131
+#: app/src/pages/settings/index.vue:137
 msgid "Security"
 msgstr ""
 
@@ -6330,7 +8252,7 @@ msgstr ""
 msgid "Security check failed. Please try again or contact the site administrator."
 msgstr ""
 
-#: app/src/pages/settings/index.vue:133
+#: app/src/pages/settings/index.vue:139
 msgid "Security settings and administration"
 msgstr ""
 
@@ -6344,12 +8266,20 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:767
+#: app/src/pages/products/src/BulkCategoryModal.vue:34
+msgid "Select a category"
+msgstr ""
+
+#: app/src/pages/settings/index.vue:773
 msgid "Select a category from the list to configure your settings."
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:695
 msgid "Select a comment from the list to view details and edit properties."
+msgstr ""
+
+#: app/src/pages/orders/src/AddressFields.vue:47
+msgid "Select a country"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1747
@@ -6386,6 +8316,10 @@ msgstr ""
 msgid "Select a role from the list to view and edit its capabilities."
 msgstr ""
 
+#: app/src/pages/orders/src/AddressFields.vue:55
+msgid "Select a state"
+msgstr ""
+
 #: app/src/pages/posts/src/batch-edit.vue:128
 msgid "Select a status"
 msgstr ""
@@ -6399,6 +8333,7 @@ msgid "Select a user from the list to view details and edit properties."
 msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:126
+#: app/src/pages/products/src/editor/ProductAttributes.vue:171
 msgid "Select all"
 msgstr ""
 
@@ -6434,6 +8369,10 @@ msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:110
 msgid "Select how many months of dummy data to generate."
+msgstr ""
+
+#: app/src/pages/products/src/editor/useWpMedia.js:21
+msgid "Select image"
 msgstr ""
 
 #: app/src/pages/posts/src/table-filters.vue:168
@@ -6478,13 +8417,6 @@ msgstr ""
 msgid "Selection deleted"
 msgstr ""
 
-#: admin/src/Rest/WooCommerceDashboard.php:459
-#: admin/src/Rest/WooCommerceDashboard.php:465
-#: admin/src/Rest/WooCommerceDashboard.php:481
-#: admin/src/Rest/WooCommerceDashboard.php:515
-msgid "Sem categoria"
-msgstr ""
-
 #: app/src/components/user-details-form/user-details-form.vue:317
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:317
 msgid "Send an email notification to the user about the changes."
@@ -6494,8 +8426,16 @@ msgstr ""
 msgid "Send an email notification to the user about their new account."
 msgstr ""
 
+#: app/src/pages/orders/src/OrderNotes.vue:82
+msgid "Send note"
+msgstr ""
+
 #: app/src/pages/login/src/login-recovery-panel.vue:69
 msgid "Send recovery link"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:80
+msgid "Send to customer"
 msgstr ""
 
 #: app/src/components/user-details-form/user-details-form.vue:313
@@ -6512,12 +8452,25 @@ msgstr ""
 msgid "Senha redefinida com sucesso. Faça login para continuar."
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:668
+msgid "Sent to the customer after purchase."
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/rank-math-overview/component.vue:118
 msgid "SEO insights mirrored from the Rank Math dashboard widget."
 msgstr ""
 
+#: app/src/pages/products/src/CouponsView.vue:315
+msgid "Separate emails with commas. Use * as a wildcard, e.g. *@example.com."
+msgstr ""
+
 #: admin/src/Rest/MediaTags.php:138
 msgid "Separate tags with commas"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:755
+#: app/src/pages/products/src/ProductQuickEdit.vue:294
+msgid "Separate tags with commas."
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:949
@@ -6574,12 +8527,29 @@ msgstr ""
 msgid "Set featured image"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:407
+#: app/src/pages/products/src/editor/ProductEditor.vue:698
+msgid "Set product image"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:892
 msgid "Set specific roles or users this menu applies to."
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:916
 msgid "Set specific roles or users this menu won't apply to."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:179
+msgid "Set their prices to make them purchasable."
+msgstr ""
+
+#: app/src/pages/products/src/BulkPriceModal.vue:64
+msgid "Set to"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:544
+msgid "Sets the payment date and moves the order to processing or completed."
 msgstr ""
 
 #: admin/src/Pages/Settings.php:64
@@ -6589,11 +8559,11 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-card.vue:433
 #: app/src/pages/posts/src/table-filters.vue:134
 #: app/src/pages/role-editor/src/role-details-view.vue:92
-#: app/src/pages/settings/index.vue:573
+#: app/src/pages/settings/index.vue:579
 msgid "Settings"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:404
+#: app/src/pages/settings/index.vue:410
 msgid "Settings imported"
 msgstr ""
 
@@ -6601,7 +8571,7 @@ msgstr ""
 msgid "Settings must be an object"
 msgstr ""
 
-#: app/src/pages/settings/index.vue:763
+#: app/src/pages/settings/index.vue:769
 msgid "Settings Panel"
 msgstr ""
 
@@ -6613,7 +8583,7 @@ msgstr ""
 msgid "Settings reset to defaults."
 msgstr ""
 
-#: app/src/pages/settings/index.vue:371
+#: app/src/pages/settings/index.vue:377
 #: app/src/pages/settings/src/settings-panel.vue:126
 msgid "Settings updated!"
 msgstr ""
@@ -6630,9 +8600,63 @@ msgstr ""
 msgid "Sharpness"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderEditor.vue:244
+#: app/src/pages/orders/src/OrderEditor.vue:571
+#: app/src/pages/orders/src/OrderPreview.vue:92
+#: app/src/pages/orders/src/OrderPreview.vue:114
+#: app/src/pages/orders/src/OrdersList.vue:181
+#: app/src/pages/products/src/editor/ProductEditor.vue:636
+#: app/src/pages/products/src/ProductQuickEdit.vue:263
+msgid "Shipping"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:472
+#: app/src/pages/orders/src/OrderEditor.vue:495
+msgid "Shipping address"
+msgstr ""
+
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:674
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:674
 msgid "Shipping Address"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressModal.vue:43
+msgid "Shipping address updated"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:467
+msgid "Shipping and fees"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:650
+#: app/src/pages/products/src/ProductQuickEdit.vue:272
+msgid "Shipping class"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:470
+msgid "Shipping method"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:135
+msgid "Shipping only"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:376
+msgid "Shipping: %s"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:121
+#: app/src/pages/products/src/ProductQuickEdit.vue:57
+msgid "Shop and search results"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:122
+#: app/src/pages/products/src/ProductQuickEdit.vue:58
+msgid "Shop only"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:580
+msgid "Short description"
 msgstr ""
 
 #: app/src/components/app/menu/components/FavoritesSection.vue:175
@@ -6693,6 +8717,10 @@ msgstr ""
 msgid "Sign Out"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:106
+msgid "Simple product"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:173
 msgid "Site key"
 msgstr ""
@@ -6736,9 +8764,32 @@ msgstr ""
 msgid "Skip first data row (if it contains headers)"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:331
+#: app/src/pages/products/src/editor/ProductEditor.vue:624
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:309
+#: app/src/pages/products/src/ProductQuickEdit.vue:227
+#: app/src/pages/products/src/ProductsList.vue:596
+#: app/src/pages/products/src/ProductVariations.vue:140
+msgid "SKU"
+msgstr ""
+
 #: app/src/components/utility/media-library/index.vue:54
 #: app/src/pages/plugins/src/plugin-repo.vue:41
+#: app/src/pages/products/src/AttributesView.vue:33
+#: app/src/pages/products/src/AttributesView.vue:230
+#: app/src/pages/products/src/CategoriesView.vue:89
+#: app/src/pages/products/src/CategoriesView.vue:202
+#: app/src/pages/products/src/editor/ProductEditor.vue:572
+#: app/src/pages/products/src/ProductQuickEdit.vue:226
 msgid "Slug"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:563
+msgid "Some fields may only be available in the classic editor."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:130
+msgid "Some variations could not be saved"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:569
@@ -6787,6 +8838,7 @@ msgstr ""
 msgid "SSL:"
 msgstr ""
 
+#: admin/src/Integrations/WooCommerce/WooCommerce.php:344
 #: admin/src/Rest/CustomFields/LocationDataProvider.php:336
 msgid "Standard"
 msgstr ""
@@ -6819,13 +8871,55 @@ msgstr ""
 msgid "Start searching"
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:354
+msgid "State"
+msgstr ""
+
+#: app/src/pages/orders/src/AddressFields.vue:54
+#: app/src/pages/orders/src/AddressFields.vue:58
+msgid "State / County"
+msgstr ""
+
 #: admin/src/Rest/PostsTables.php:418
 #: app/src/pages/comments/src/comment-details-view.vue:460
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:97
 #: app/src/pages/menu-creator/src/edit.vue:818
+#: app/src/pages/orders/src/OrderEditor.vue:542
+#: app/src/pages/orders/src/OrdersList.vue:177
+#: app/src/pages/orders/src/OrdersList.vue:354
 #: app/src/pages/posts/src/batch-edit.vue:123
 #: app/src/pages/posts/src/post-preview.vue:340
+#: app/src/pages/products/src/CouponsView.vue:63
+#: app/src/pages/products/src/editor/ProductEditor.vue:681
+#: app/src/pages/products/src/ProductQuickEdit.vue:228
+#: app/src/pages/products/src/ProductsList.vue:140
+#: app/src/pages/products/src/ProductsList.vue:551
 msgid "Status"
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:139
+#: app/src/pages/products/src/ProductsList.vue:556
+#: app/src/pages/products/src/ProductVariations.vue:125
+msgid "Stock"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:624
+msgid "Stock keeping unit, unique per product."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:313
+#: app/src/pages/products/src/ProductVariations.vue:165
+msgid "Stock quantity"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:631
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:314
+#: app/src/pages/products/src/ProductQuickEdit.vue:257
+msgid "Stock status"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceDashboard.php:419
+msgid "Store"
 msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:413
@@ -6848,9 +8942,17 @@ msgstr ""
 msgid "Subscriber (read)"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderPreview.vue:84
+msgid "Subtotal"
+msgstr ""
+
 #: app/src/pages/admin-notices/src/edit.vue:49
 #: app/src/pages/plugins/index.vue:156
 msgid "Success"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:564
+msgid "Summary"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:880
@@ -6859,6 +8961,7 @@ msgstr ""
 
 #: app/src/components/app/menu/components/UserDetails.vue:426
 #: app/src/components/app/toolbar/index.vue:72
+#: app/src/pages/orders/src/OrderNotes.vue:31
 msgid "System"
 msgstr ""
 
@@ -6925,6 +9028,10 @@ msgstr ""
 #: app/src/pages/posts/src/batch-edit.vue:116
 #: app/src/pages/posts/src/post-preview.vue:386
 #: app/src/pages/posts/src/tag-select.vue:287
+#: app/src/pages/products/src/editor/ProductEditor.vue:754
+#: app/src/pages/products/src/editor/ProductEditor.vue:755
+#: app/src/pages/products/src/ProductQuickEdit.vue:294
+#: app/src/pages/products/src/ProductsList.vue:474
 msgid "Tags"
 msgstr ""
 
@@ -6932,8 +9039,29 @@ msgstr ""
 msgid "Target Roles"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:617
+msgid "Tax class"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:616
+msgid "Tax status"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:134
+msgid "Taxable"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:380
+#: app/src/pages/orders/src/OrderPreview.vue:96
+msgid "Taxes"
+msgstr ""
+
 #: app/src/components/utility/image-editor/index.vue:1641
 msgid "Temperature"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:43
+msgid "Term ID"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-card.vue:417
@@ -6953,8 +9081,32 @@ msgstr ""
 msgid "The 5 best-selling products in your store"
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:67
+msgid "The attribute name is required."
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:110
+msgid "The category name is required."
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:376
+msgid "The copy was saved as a draft."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:316
+msgid "The coupon cannot be combined with other coupons."
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:140
+msgid "The coupon code is required."
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-list-view.vue:579
 msgid "The display name for this role"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:292
+msgid "The end date must be after the start date."
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:779
@@ -6969,14 +9121,37 @@ msgstr ""
 msgid "The item will not be shown if hidden"
 msgstr ""
 
+#: app/src/pages/products/src/editor/useWpMedia.js:15
+msgid "The media library is not available on this screen."
+msgstr ""
+
 #: app/src/pages/menu-creator/src/menu-list-view.vue:227
 msgid ""
 "The menu cache has been cleared successfully. All users will see fresh menu "
 "data."
 msgstr ""
 
+#: app/src/pages/orders/src/OrderDetails.vue:257
+msgid "The order may have been deleted or you do not have permission to view it."
+msgstr ""
+
+#: app/src/pages/orders/src/RefundModal.vue:163
+msgid ""
+"The payment method does not support automatic refunds. Remember to return "
+"the money to the customer manually."
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-details-view.vue:68
 msgid "The plugin you are looking for could not be found."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:532
+msgid "The product may have been deleted or you do not have permission to edit it."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:285
+#: app/src/pages/products/src/ProductQuickEdit.vue:131
+msgid "The product name is required."
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/rank-math-overview/component.vue:361
@@ -6987,8 +9162,18 @@ msgstr ""
 msgid "The Rank Math widget has no available modules for this user."
 msgstr ""
 
+#: app/src/pages/orders/src/RefundModal.vue:77
+msgid "The refund amount cannot exceed %s."
+msgstr ""
+
 #: admin/src/Pages/Login.php:1882
 msgid "The request could not be completed."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:288
+#: app/src/pages/products/src/ProductQuickEdit.vue:138
+#: app/src/pages/products/src/ProductVariations.vue:71
+msgid "The sale price must be lower than the regular price."
 msgstr ""
 
 #: admin/src/Options/MediaOptions.php:233
@@ -7065,6 +9250,10 @@ msgid ""
 "vary across different pages and user interactions."
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductAttributes.vue:166
+msgid "This attribute has no values yet."
+msgstr ""
+
 #: app/src/pages/comments/src/comment-list-view.vue:266
 msgid "this comment"
 msgstr ""
@@ -7101,12 +9290,33 @@ msgstr ""
 msgid "This menu will be applied to everyone if enabled."
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:111
+msgid "This month"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderNotes.vue:55
+msgid "This note will be permanently removed from the order."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:384
+msgid "This order can no longer be edited"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-card.vue:346
 msgid "This plugin requires the following plugins to be installed and active:"
 msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:294
 msgid "This post type slug is reserved by WordPress."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:405
+#: app/src/pages/products/src/ProductVariations.vue:116
+msgid "This product has no variations."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:562
+msgid "This product type is managed by an extension"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:96
@@ -7155,6 +9365,10 @@ msgid ""
 "it's settings link."
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:113
+msgid "This year"
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:797
 msgid "Thumbnails regenerated"
 msgstr ""
@@ -7163,7 +9377,7 @@ msgstr ""
 msgid "Timeframe for metrics (hour, day, week, month)"
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:304
+#: app/src/pages/activity-log/src/activity-details-view.vue:306
 msgid "Timestamp"
 msgstr ""
 
@@ -7213,6 +9427,10 @@ msgid ""
 "a new secret key."
 msgstr ""
 
+#: app/src/pages/orders/src/OrdersList.vue:108
+msgid "Today"
+msgstr ""
+
 #: app/src/components/app/toolbar/index.vue:201
 msgid "Toggle dark mode"
 msgstr ""
@@ -7259,6 +9477,10 @@ msgid "total"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:96
+#: app/src/pages/orders/src/OrderDetails.vue:311
+#: app/src/pages/orders/src/OrderPreview.vue:100
+#: app/src/pages/orders/src/OrdersList.vue:179
+#: app/src/pages/orders/src/OrdersList.vue:354
 msgid "Total"
 msgstr ""
 
@@ -7315,6 +9537,10 @@ msgstr ""
 msgid "Total page visits"
 msgstr ""
 
+#: app/src/pages/products/src/ProductsList.vue:128
+msgid "Total products"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-performance.vue:226
 msgid "Total Queries"
 msgstr ""
@@ -7325,6 +9551,10 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:187
 msgid "Total Size"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:445
+msgid "Total spent"
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:479
@@ -7340,10 +9570,31 @@ msgstr ""
 msgid "Total Users"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:929
+#: app/src/pages/settings/src/settings-config.js:974
 msgid ""
 "Track and log all admin actions including post changes, user updates, "
 "plugin activations, and more."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:318
+msgid "Track stock"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:625
+msgid "Track stock at product level"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:625
+#: app/src/pages/products/src/ProductQuickEdit.vue:249
+msgid "Track stock quantity"
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:398
+msgid "Track, fulfil and manage your store orders."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:500
+msgid "Transaction ID"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1954
@@ -7353,11 +9604,16 @@ msgstr ""
 #: app/src/pages/comments/src/comment-details-view.vue:70
 #: app/src/pages/comments/src/comment-list-view.vue:545
 #: app/src/pages/comments/src/comment-list-view.vue:778
+#: app/src/pages/orders/src/OrdersList.vue:150
+#: app/src/pages/orders/src/OrdersList.vue:460
+#: app/src/pages/products/src/ProductsList.vue:120
+#: app/src/pages/products/src/ProductsList.vue:171
+#: app/src/pages/products/src/ProductsList.vue:565
 msgid "Trash"
 msgstr ""
 
 #: app/src/components/app/menu/components/MenuSearch.vue:419
-#: app/src/pages/settings/index.vue:657
+#: app/src/pages/settings/index.vue:663
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:617
 msgid "Try a different search term"
 msgstr ""
@@ -7368,6 +9624,14 @@ msgstr ""
 
 #: app/src/components/app/search/components/EmptyStateNoResults.vue:30
 msgid "Try a different search term or use command syntax to filter results."
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:448
+msgid "Try adjusting the search or date range."
+msgstr ""
+
+#: app/src/pages/products/src/ProductsList.vue:544
+msgid "Try adjusting the search or filters."
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:737
@@ -7417,6 +9681,10 @@ msgstr ""
 msgid "Type of chart data to retrieve"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductAttributes.vue:188
+msgid "Type values separated by commas and press Enter"
+msgstr ""
+
 #: admin/src/Rest/MediaTags.php:348
 msgid "Unable to create tag"
 msgstr ""
@@ -7437,8 +9705,20 @@ msgstr ""
 msgid "Unable to upload menu"
 msgstr ""
 
+#: admin/src/Rest/WooCommerceDashboard.php:459
+#: admin/src/Rest/WooCommerceDashboard.php:465
+#: admin/src/Rest/WooCommerceDashboard.php:481
+#: admin/src/Rest/WooCommerceDashboard.php:515
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:129
 msgid "Uncategorized"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceDashboard.php:555
+msgid "Unidentified customer"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:230
+msgid "Unique identifier with up to 28 characters."
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:257
@@ -7451,9 +9731,14 @@ msgstr ""
 msgid "Unique Visitors"
 msgstr ""
 
+#: app/src/pages/orders/src/RefundModal.vue:127
+msgid "Unit price"
+msgstr ""
+
 #: admin/src/Rest/ActivityLog.php:373
-#: app/src/pages/activity-log/src/activity-details-view.vue:284
-#: app/src/pages/activity-log/src/activity-list.vue:259
+#: admin/src/Rest/WooCommerceOrders.php:617
+#: app/src/pages/activity-log/src/activity-details-view.vue:286
+#: app/src/pages/activity-log/src/activity-list.vue:261
 #: app/src/pages/media/src/media-list.vue:126
 msgid "Unknown"
 msgstr ""
@@ -7470,12 +9755,22 @@ msgstr ""
 msgid "Unknown user"
 msgstr ""
 
+#: app/src/pages/products/src/CouponsView.vue:323
+#: app/src/pages/products/src/CouponsView.vue:324
+msgid "Unlimited"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:120
 msgid "Unnamed product"
 msgstr ""
 
 #: app/src/components/app/admin-notices/NotificationsPanel.vue:199
 msgid "unread"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:542
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:284
+msgid "Unsaved changes"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:886
@@ -7505,6 +9800,7 @@ msgstr ""
 #: app/src/pages/menu-creator/src/edit.vue:619
 #: app/src/pages/plugins/src/plugin-card.vue:324
 #: app/src/pages/posts/src/batch-edit.vue:157
+#: app/src/pages/products/src/editor/ProductEditor.vue:481
 msgid "Update"
 msgstr ""
 
@@ -7620,14 +9916,46 @@ msgstr ""
 msgid "URL of the page being viewed"
 msgstr ""
 
+#: app/src/pages/products/src/CouponsView.vue:61
+msgid "Usage"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:323
+msgid "Usage limit per coupon"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:324
+msgid "Usage limit per user"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:321
+msgid "Usage limits"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:310
+msgid "Usage restrictions"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:478
+msgid "Use a negative value for a discount."
+msgstr ""
+
 #: admin/src/Rest/CustomPostTypes.php:853
 msgid "Use as featured image"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:714
+msgid "Use as product image"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:316
 msgid ""
 "Use Google reCAPTCHA v2 checkbox in the modern administrative login and "
 "password recovery forms. Credentials are configured in Integrations."
+msgstr ""
+
+#: app/src/pages/products/src/editor/useWpMedia.js:22
+msgid "Use image"
 msgstr ""
 
 #: app/src/pages/dashboard/index.vue:803
@@ -7646,8 +9974,16 @@ msgid ""
 "recovery forms with Google reCAPTCHA v2 checkbox."
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductAttributes.vue:197
+msgid "Used for variations"
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:1078
 msgid "Used In"
+msgstr ""
+
+#: app/src/pages/products/src/CouponsView.vue:74
+msgid "Used up"
 msgstr ""
 
 #: app/src/pages/users/src/user-import.vue:538
@@ -7660,7 +9996,7 @@ msgstr ""
 msgid "user"
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:325
+#: app/src/pages/activity-log/src/activity-details-view.vue:327
 msgid "User Agent"
 msgstr ""
 
@@ -7697,7 +10033,7 @@ msgstr ""
 msgid "User ID"
 msgstr ""
 
-#: app/src/pages/activity-log/src/activity-details-view.vue:266
+#: app/src/pages/activity-log/src/activity-details-view.vue:268
 msgid "User Information"
 msgstr ""
 
@@ -7791,6 +10127,40 @@ msgstr ""
 msgid "Valid option page is required."
 msgstr ""
 
+#: app/src/pages/products/src/AttributesView.vue:253
+msgid "Value name"
+msgstr ""
+
+#: app/src/pages/products/src/AttributesView.vue:240
+msgid "Values available for this attribute."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:107
+msgid "Variable product"
+msgstr ""
+
+#: app/src/pages/products/src/ProductVariations.vue:122
+msgid "Variation"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:414
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:97
+msgid "Variation #%s"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:231
+msgid "Variation image"
+msgstr ""
+
+#: app/src/pages/products/src/ProductVariations.vue:93
+msgid "Variation updated"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:660
+#: app/src/pages/products/src/ProductVariations.vue:108
+msgid "Variations"
+msgstr ""
+
 #: admin/src/Pages/Login.php:1612
 msgid "Verifique seu e-mail para ativar a conta."
 msgstr ""
@@ -7868,6 +10238,30 @@ msgstr ""
 msgid "View dashboard"
 msgstr ""
 
+#: app/src/pages/orders/src/OrderPreview.vue:137
+#: app/src/pages/orders/src/OrdersList.vue:339
+msgid "View details"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:448
+#: app/src/pages/products/src/ProductsList.vue:434
+msgid "View in store"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:474
+#: app/src/pages/orders/src/OrderDetails.vue:475
+msgid "View on map"
+msgstr ""
+
+#: app/src/pages/products/src/CategoriesView.vue:186
+msgid "View products"
+msgstr ""
+
+#: app/src/pages/orders/src/OrderDetails.vue:424
+#: app/src/pages/orders/src/OrderDetails.vue:425
+msgid "View profile"
+msgstr ""
+
 #: admin/src/Rest/RankMathDashboardWidget.php:321
 #: admin/src/Rest/RankMathDashboardWidget.php:367
 #: admin/src/Rest/RankMathDashboardWidget.php:419
@@ -7892,8 +10286,16 @@ msgstr ""
 msgid "Vignette"
 msgstr ""
 
+#: app/src/pages/products/src/editor/ProductEditor.vue:639
+msgid "Virtual product (no shipping)"
+msgstr ""
+
 #: app/src/pages/dashboard/index.vue:918
 msgid "Visible"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductAttributes.vue:196
+msgid "Visible on the product page"
 msgstr ""
 
 #: app/src/components/app/menu/components/UserDetails.vue:169
@@ -7950,6 +10352,10 @@ msgid ""
 "plugin."
 msgstr ""
 
+#: admin/src/Rest/WooCommerceOrders.php:603
+msgid "Web admin"
+msgstr ""
+
 #: app/src/components/user-details-form/user-details-form.vue:252
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:252
 #: app/src/pages/users/src/user-import.vue:59
@@ -7963,6 +10369,12 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:218
 msgid "Website traffic trends"
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:645
+#: app/src/pages/products/src/editor/ProductVariationsEditor.vue:312
+#: app/src/pages/products/src/ProductQuickEdit.vue:265
+msgid "Weight"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:1013
@@ -8032,11 +10444,26 @@ msgid "Widget"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1899
+#: app/src/pages/products/src/editor/ProductEditor.vue:647
+#: app/src/pages/products/src/ProductQuickEdit.vue:267
 msgid "Width"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:641
 msgid "with this role"
+msgstr ""
+
+#: app/src/pages/settings/index.vue:131
+msgid "WooCommerce"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceOrders.php:154
+#: admin/src/Rest/WooCommerceProducts.php:131
+msgid "WooCommerce is not active."
+msgstr ""
+
+#: app/src/pages/orders/src/OrdersList.vue:386
+msgid "WooCommerce settings"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:210
@@ -8132,6 +10559,27 @@ msgid ""
 "recommended to test changes on a staging site first."
 msgstr ""
 
+#: admin/src/Rest/WooCommerceOrders.php:409
+msgid "You are not allowed to delete this order."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:299
+msgid "You are not allowed to delete this product."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceOrders.php:396
+#: admin/src/Rest/WooCommerceOrders.php:418
+msgid "You are not allowed to edit this order."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:317
+msgid "You are not allowed to edit this product."
+msgstr ""
+
+#: admin/src/Rest/WooCommerceProducts.php:339
+msgid "You are not allowed to publish products."
+msgstr ""
+
 #: admin/src/Rest/MediaReplace.php:159
 msgid "You do not have permission to edit this media item."
 msgstr ""
@@ -8176,6 +10624,14 @@ msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:822
 msgid "Your browser does not support the video tag."
+msgstr ""
+
+#: app/src/pages/orders/src/OrderEditor.vue:340
+msgid "Your changes have not been saved."
+msgstr ""
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:498
+msgid "Your changes to this product have not been saved."
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:137

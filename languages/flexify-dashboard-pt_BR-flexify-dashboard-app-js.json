@@ -5530,6 +5530,1602 @@
       "User menu": [
         "Menu do usuário"
       ],
+      "“%s” and all of its values will be removed from every product.": [
+        "“%s” e todos os seus valores serão removidos de todos os produtos."
+      ],
+      "“%s” will be removed from every product that uses it.": [
+        "“%s” será removido de todos os produtos que o utilizam."
+      ],
+      "%d available": [
+        "%d disponível(is)"
+      ],
+      "%d categories": [
+        "%d categorias"
+      ],
+      "%d item(s)": [
+        "%d item(ns)"
+      ],
+      "%d order(s) could not be updated": [
+        "%d pedido(s) não puderam ser atualizados"
+      ],
+      "%d order(s) updated": [
+        "%d pedido(s) atualizado(s)"
+      ],
+      "%d order(s) will be moved to the trash.": [
+        "%d pedido(s) serão movidos para a lixeira."
+      ],
+      "%d order(s) will be permanently deleted. This action cannot be undone.": [
+        "%d pedido(s) serão excluídos permanentemente. Esta ação não pode ser desfeita."
+      ],
+      "%d product(s) could not be updated": [
+        "%d produto(s) não puderam ser atualizados"
+      ],
+      "%d product(s) updated": [
+        "%d produto(s) atualizado(s)"
+      ],
+      "%d product(s) will be moved to the trash.": [
+        "%d produto(s) serão movidos para a lixeira."
+      ],
+      "%d product(s) will be permanently deleted. This action cannot be undone.": [
+        "%d produto(s) serão excluídos permanentemente. Esta ação não pode ser desfeita."
+      ],
+      "%d products": [
+        "%d produtos"
+      ],
+      "%d selected product(s).": [
+        "%d produto(s) selecionado(s)."
+      ],
+      "%d selected product(s). Variations of variable products are updated too.": [
+        "%d produto(s) selecionado(s). As variações de produtos variáveis também serão atualizadas."
+      ],
+      "%d used": [
+        "%d usos"
+      ],
+      "%d variation(s) created": [
+        "%d variação(ões) criada(s)"
+      ],
+      "%d variations": [
+        "%d variações"
+      ],
+      "%s in stock": [
+        "%s em estoque"
+      ],
+      "%s orders": [
+        "%s pedidos"
+      ],
+      "%s refunded": [
+        "%s reembolsado"
+      ],
+      "%s will be moved to the trash.": [
+        "%s será movido para a lixeira."
+      ],
+      "30 days": [
+        "30 dias"
+      ],
+      "7 days": [
+        "7 dias"
+      ],
+      "90 days": [
+        "90 dias"
+      ],
+      "A percentage discount cannot be higher than 100.": [
+        "Um desconto percentual não pode ser maior que 100."
+      ],
+      "A short summary shown next to the product image…": [
+        "Um resumo curto exibido ao lado da imagem do produto…"
+      ],
+      "Add": [
+        "Adicionar"
+      ],
+      "Add a note about this order…": [
+        "Adicione uma nota sobre este pedido…"
+      ],
+      "Add at least one product to the order.": [
+        "Adicione pelo menos um produto ao pedido."
+      ],
+      "Add attribute": [
+        "Adicionar atributo"
+      ],
+      "Add attribute…": [
+        "Adicionar atributo…"
+      ],
+      "Add attributes such as size or color to create variations.": [
+        "Adicione atributos como tamanho ou cor para criar variações."
+      ],
+      "Add attributes, mark them as “Used for variations” and save the product.": [
+        "Adicione atributos, marque-os como “Usado para variações” e salve o produto."
+      ],
+      "Add category": [
+        "Adicionar categoria"
+      ],
+      "Add coupon": [
+        "Adicionar cupom"
+      ],
+      "Add fee": [
+        "Adicionar taxa"
+      ],
+      "Add gallery images": [
+        "Adicionar imagens à galeria"
+      ],
+      "Add manually": [
+        "Adicionar manualmente"
+      ],
+      "Add note": [
+        "Adicionar nota"
+      ],
+      "Add order": [
+        "Adicionar pedido"
+      ],
+      "Add order in classic screen": [
+        "Adicionar pedido na tela clássica"
+      ],
+      "Add product": [
+        "Adicionar produto"
+      ],
+      "Add shipping": [
+        "Adicionar entrega"
+      ],
+      "Add to gallery": [
+        "Adicionar à galeria"
+      ],
+      "Add value": [
+        "Adicionar valor"
+      ],
+      "Address line 1": [
+        "Endereço"
+      ],
+      "Address line 2": [
+        "Complemento"
+      ],
+      "Adjust by": [
+        "Ajustar em"
+      ],
+      "Adjust prices": [
+        "Ajustar preços"
+      ],
+      "Administrator": [
+        "Administrador"
+      ],
+      "All categories": [
+        "Todas as categorias"
+      ],
+      "All products": [
+        "Todos os produtos"
+      ],
+      "All types": [
+        "Todos os tipos"
+      ],
+      "All variations already exist": [
+        "Todas as variações já existem"
+      ],
+      "Allow": [
+        "Permitir"
+      ],
+      "Allow backorders?": [
+        "Permitir encomendas?"
+      ],
+      "Allow free shipping": [
+        "Permitir frete grátis"
+      ],
+      "Allow, but notify customer": [
+        "Permitir, mas avisar o cliente"
+      ],
+      "Allowed emails": [
+        "E-mails permitidos"
+      ],
+      "Amount": [
+        "Valor"
+      ],
+      "Any": [
+        "Qualquer"
+      ],
+      "Any %s": [
+        "Qualquer %s"
+      ],
+      "Any date": [
+        "Qualquer data"
+      ],
+      "Any stock status": [
+        "Qualquer status de estoque"
+      ],
+      "Archives": [
+        "Arquivos"
+      ],
+      "Attribute created": [
+        "Atributo criado"
+      ],
+      "Attribute deleted": [
+        "Atributo excluído"
+      ],
+      "Attribute name": [
+        "Nome do atributo"
+      ],
+      "Attribute name, e.g. Material": [
+        "Nome do atributo, ex.: Material"
+      ],
+      "Attribute updated": [
+        "Atributo atualizado"
+      ],
+      "Attribute values": [
+        "Valores do atributo"
+      ],
+      "Attributes": [
+        "Atributos"
+      ],
+      "Attributes show extra information such as material or size.": [
+        "Atributos exibem informações extras como material ou tamanho."
+      ],
+      "Available to refund: %s": [
+        "Disponível para reembolso: %s"
+      ],
+      "Back to orders": [
+        "Voltar para pedidos"
+      ],
+      "Back to products": [
+        "Voltar para produtos"
+      ],
+      "Backorders": [
+        "Encomendas"
+      ],
+      "Billing": [
+        "Cobrança"
+      ],
+      "Billing address": [
+        "Endereço de cobrança"
+      ],
+      "Billing address updated": [
+        "Endereço de cobrança atualizado"
+      ],
+      "Button text": [
+        "Texto do botão"
+      ],
+      "Buy product": [
+        "Comprar produto"
+      ],
+      "Campaign": [
+        "Campanha"
+      ],
+      "Catalog visibility": [
+        "Visibilidade no catálogo"
+      ],
+      "Category created": [
+        "Categoria criada"
+      ],
+      "Category deleted": [
+        "Categoria excluída"
+      ],
+      "Category updated": [
+        "Categoria atualizada"
+      ],
+      "Change status": [
+        "Alterar status"
+      ],
+      "Choose variation": [
+        "Escolher variação"
+      ],
+      "Choose variation image": [
+        "Escolher imagem da variação"
+      ],
+      "City": [
+        "Cidade"
+      ],
+      "Classic orders screen": [
+        "Tela clássica de pedidos"
+      ],
+      "Classic products screen": [
+        "Tela clássica de produtos"
+      ],
+      "Classic screen": [
+        "Tela clássica"
+      ],
+      "Code": [
+        "Código"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "Copy billing address": [
+        "Copiar endereço de cobrança"
+      ],
+      "Copy code": [
+        "Copiar código"
+      ],
+      "Cost": [
+        "Custo"
+      ],
+      "Could not copy the code": [
+        "Não foi possível copiar o código"
+      ],
+      "Could not delete the product.": [
+        "Não foi possível excluir o produto."
+      ],
+      "Could not move the product to the trash.": [
+        "Não foi possível mover o produto para a lixeira."
+      ],
+      "Could not restore the order.": [
+        "Não foi possível restaurar o pedido."
+      ],
+      "Could not restore the product.": [
+        "Não foi possível restaurar o produto."
+      ],
+      "Country / Region": [
+        "País / Região"
+      ],
+      "Coupon code": [
+        "Código do cupom"
+      ],
+      "Coupon code copied": [
+        "Código do cupom copiado"
+      ],
+      "Coupon created": [
+        "Cupom criado"
+      ],
+      "Coupon moved to the trash": [
+        "Cupom movido para a lixeira"
+      ],
+      "Coupon updated": [
+        "Cupom atualizado"
+      ],
+      "Coupons": [
+        "Cupons"
+      ],
+      "Coupons and taxes are applied by WooCommerce when the order is saved.": [
+        "Cupons e impostos são aplicados pelo WooCommerce quando o pedido é salvo."
+      ],
+      "Coupons give customers a discount at checkout.": [
+        "Cupons dão desconto aos clientes na finalização da compra."
+      ],
+      "Create a page listing the products with each value.": [
+        "Cria uma página listando os produtos de cada valor."
+      ],
+      "Create an order manually, e.g. for phone or in-store sales.": [
+        "Crie um pedido manualmente, por exemplo para vendas por telefone ou na loja física."
+      ],
+      "Create and edit products in a modern editor with pricing, inventory, images, attributes and variations. Keep it disabled if your extensions add fields to the classic product editor, which is always one click away.": [
+        "Crie e edite produtos em um editor moderno com preços, estoque, imagens, atributos e variações. Mantenha desativado se suas extensões adicionam campos ao editor clássico de produtos, que continua a um clique de distância."
+      ],
+      "Create attributes to describe and vary your products.": [
+        "Crie atributos para descrever e variar seus produtos."
+      ],
+      "Create discount codes for your customers.": [
+        "Crie códigos de desconto para seus clientes."
+      ],
+      "Create order": [
+        "Criar pedido"
+      ],
+      "Create your first product to start selling.": [
+        "Crie seu primeiro produto para começar a vender."
+      ],
+      "Created in admin": [
+        "Criado no painel"
+      ],
+      "Custom attribute": [
+        "Atributo personalizado"
+      ],
+      "Custom ordering": [
+        "Ordenação personalizada"
+      ],
+      "Customer note": [
+        "Nota do cliente"
+      ],
+      "Decrease": [
+        "Diminuir"
+      ],
+      "Default sort order": [
+        "Ordenação padrão"
+      ],
+      "Delete attribute?": [
+        "Excluir atributo?"
+      ],
+      "Delete category?": [
+        "Excluir categoria?"
+      ],
+      "Delete note": [
+        "Excluir nota"
+      ],
+      "Delete note?": [
+        "Excluir nota?"
+      ],
+      "Delete permanently": [
+        "Excluir permanentemente"
+      ],
+      "Delete permanently?": [
+        "Excluir permanentemente?"
+      ],
+      "Delete value": [
+        "Excluir valor"
+      ],
+      "Delete value?": [
+        "Excluir valor?"
+      ],
+      "Delete variation": [
+        "Excluir variação"
+      ],
+      "Delete variation?": [
+        "Excluir variação?"
+      ],
+      "Describe the product in detail…": [
+        "Descreva o produto em detalhes…"
+      ],
+      "Description (optional)": [
+        "Descrição (opcional)"
+      ],
+      "Descriptions": [
+        "Descrições"
+      ],
+      "Device": [
+        "Dispositivo"
+      ],
+      "Direct": [
+        "Direto"
+      ],
+      "Disabled": [
+        "Desativada"
+      ],
+      "Discard changes": [
+        "Descartar alterações"
+      ],
+      "Discard this order?": [
+        "Descartar este pedido?"
+      ],
+      "Discard unsaved changes?": [
+        "Descartar alterações não salvas?"
+      ],
+      "Discount": [
+        "Desconto"
+      ],
+      "Discount type": [
+        "Tipo de desconto"
+      ],
+      "Do not allow": [
+        "Não permitir"
+      ],
+      "Downloadable": [
+        "Baixável"
+      ],
+      "Edit attribute": [
+        "Editar atributo"
+      ],
+      "Edit billing address": [
+        "Editar endereço de cobrança"
+      ],
+      "Edit category": [
+        "Editar categoria"
+      ],
+      "Edit coupon": [
+        "Editar cupom"
+      ],
+      "Edit items": [
+        "Editar itens"
+      ],
+      "Edit items of %s": [
+        "Editar itens do %s"
+      ],
+      "Edit order items": [
+        "Editar itens do pedido"
+      ],
+      "Edit product": [
+        "Editar produto"
+      ],
+      "Edit shipping address": [
+        "Editar endereço de entrega"
+      ],
+      "Edit variation": [
+        "Editar variação"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
+      "Enable archives": [
+        "Ativar arquivos"
+      ],
+      "Enable reviews": [
+        "Ativar avaliações"
+      ],
+      "Enabled": [
+        "Ativada"
+      ],
+      "Enter a refund amount greater than zero.": [
+        "Informe um valor de reembolso maior que zero."
+      ],
+      "Enter a valid quantity.": [
+        "Informe uma quantidade válida."
+      ],
+      "Enter a valid URL starting with http:// or https://.": [
+        "Informe uma URL válida começando com http:// ou https://."
+      ],
+      "Estimated total": [
+        "Total estimado"
+      ],
+      "Exclude sale items": [
+        "Excluir itens em promoção"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expires": [
+        "Expira em"
+      ],
+      "Expiry date": [
+        "Data de expiração"
+      ],
+      "Export CSV": [
+        "Exportar CSV"
+      ],
+      "Export current page (CSV)": [
+        "Exportar página atual (CSV)"
+      ],
+      "Export products": [
+        "Exportar produtos"
+      ],
+      "External/Affiliate product": [
+        "Produto externo/afiliado"
+      ],
+      "Featured only": [
+        "Somente destaques"
+      ],
+      "Featured product": [
+        "Produto em destaque"
+      ],
+      "Fee name": [
+        "Nome da taxa"
+      ],
+      "Fees": [
+        "Taxas"
+      ],
+      "Filter categories": [
+        "Filtrar categorias"
+      ],
+      "First name": [
+        "Nome"
+      ],
+      "Fixed amount": [
+        "Valor fixo"
+      ],
+      "Fixed cart discount": [
+        "Desconto fixo no carrinho"
+      ],
+      "Fixed product discount": [
+        "Desconto fixo no produto"
+      ],
+      "Free shipping": [
+        "Frete grátis"
+      ],
+      "Gallery": [
+        "Galeria"
+      ],
+      "Generate code": [
+        "Gerar código"
+      ],
+      "Generate variations": [
+        "Gerar variações"
+      ],
+      "Generate variations from the attributes or add them one by one.": [
+        "Gere variações a partir dos atributos ou adicione uma a uma."
+      ],
+      "Give every custom attribute a name.": [
+        "Dê um nome a cada atributo personalizado."
+      ],
+      "Give every fee a name.": [
+        "Dê um nome a cada taxa."
+      ],
+      "Global": [
+        "Global"
+      ],
+      "Global attributes such as size or color can be reused across products and variations.": [
+        "Atributos globais, como tamanho ou cor, podem ser reutilizados em produtos e variações."
+      ],
+      "Gross revenue": [
+        "Receita bruta"
+      ],
+      "Grouped product": [
+        "Produto agrupado"
+      ],
+      "Grouped products take their prices from the child products.": [
+        "Produtos agrupados usam os preços dos produtos filhos."
+      ],
+      "Guest": [
+        "Visitante"
+      ],
+      "Import products": [
+        "Importar produtos"
+      ],
+      "In stock": [
+        "Em estoque"
+      ],
+      "Increase": [
+        "Aumentar"
+      ],
+      "Individual use only": [
+        "Somente uso individual"
+      ],
+      "Invalid action.": [
+        "Ação inválida."
+      ],
+      "Invalid category.": [
+        "Categoria inválida."
+      ],
+      "Invalid order action.": [
+        "Ação de pedido inválida."
+      ],
+      "Invalid order status.": [
+        "Status de pedido inválido."
+      ],
+      "Invalid order.": [
+        "Pedido inválido."
+      ],
+      "Invalid price adjustment.": [
+        "Ajuste de preço inválido."
+      ],
+      "Invalid product.": [
+        "Produto inválido."
+      ],
+      "Invalid status.": [
+        "Status inválido."
+      ],
+      "Invalid stock status.": [
+        "Status de estoque inválido."
+      ],
+      "Inventory": [
+        "Estoque"
+      ],
+      "IP address": [
+        "Endereço IP"
+      ],
+      "Item": [
+        "Item"
+      ],
+      "Items": [
+        "Itens"
+      ],
+      "Items subtotal": [
+        "Subtotal dos itens"
+      ],
+      "Last 30 days": [
+        "Últimos 30 dias"
+      ],
+      "Last 7 days": [
+        "Últimos 7 dias"
+      ],
+      "Last 90 days": [
+        "Últimos 90 dias"
+      ],
+      "Last modified": [
+        "Última modificação"
+      ],
+      "Last name": [
+        "Sobrenome"
+      ],
+      "Leave empty to create a guest order.": [
+        "Deixe em branco para criar um pedido de visitante."
+      ],
+      "Leave empty to generate it from the name.": [
+        "Deixe em branco para gerar a partir do nome."
+      ],
+      "Length": [
+        "Comprimento"
+      ],
+      "Limit purchases to 1 item per order": [
+        "Limitar compras a 1 item por pedido"
+      ],
+      "Low stock": [
+        "Estoque baixo"
+      ],
+      "Low stock threshold": [
+        "Limite de estoque baixo"
+      ],
+      "Manage downloadable files in the classic editor.": [
+        "Gerencie os arquivos para download no editor clássico."
+      ],
+      "Manage values": [
+        "Gerenciar valores"
+      ],
+      "Manage your catalog, prices and stock.": [
+        "Gerencie seu catálogo, preços e estoque."
+      ],
+      "Manual refund": [
+        "Reembolso manual"
+      ],
+      "Mark as featured": [
+        "Marcar como destaque"
+      ],
+      "Mark as paid": [
+        "Marcar como pago"
+      ],
+      "Marked as featured": [
+        "Marcado como destaque"
+      ],
+      "Maximum spend": [
+        "Gasto máximo"
+      ],
+      "Menu order": [
+        "Ordem no menu"
+      ],
+      "Minimum spend": [
+        "Gasto mínimo"
+      ],
+      "Mobile app": [
+        "Aplicativo móvel"
+      ],
+      "Modern Orders Page": [
+        "Página moderna de pedidos"
+      ],
+      "Modern Product Editor": [
+        "Editor moderno de produtos"
+      ],
+      "Modern Products Page": [
+        "Página moderna de produtos"
+      ],
+      "More": [
+        "Mais"
+      ],
+      "More actions": [
+        "Mais ações"
+      ],
+      "Move coupon to trash?": [
+        "Mover cupom para a lixeira?"
+      ],
+      "Move to trash": [
+        "Mover para a lixeira"
+      ],
+      "Move to trash?": [
+        "Mover para a lixeira?"
+      ],
+      "Name (numeric)": [
+        "Nome (numérico)"
+      ],
+      "Name shown to customer": [
+        "Nome exibido ao cliente"
+      ],
+      "Net payment": [
+        "Pagamento líquido"
+      ],
+      "Net revenue": [
+        "Receita líquida"
+      ],
+      "Net revenue (%s days)": [
+        "Receita líquida (%s dias)"
+      ],
+      "New category": [
+        "Nova categoria"
+      ],
+      "New orders will appear here as soon as customers check out.": [
+        "Novos pedidos aparecerão aqui assim que os clientes finalizarem a compra."
+      ],
+      "New value": [
+        "Novo valor"
+      ],
+      "Newer order": [
+        "Pedido mais recente"
+      ],
+      "Newer order #%s": [
+        "Pedido mais recente #%s"
+      ],
+      "No attributes used for variations": [
+        "Nenhum atributo usado para variações"
+      ],
+      "No attributes yet": [
+        "Nenhum atributo ainda"
+      ],
+      "No billing address.": [
+        "Sem endereço de cobrança."
+      ],
+      "No categories found": [
+        "Nenhuma categoria encontrada"
+      ],
+      "No categories found.": [
+        "Nenhuma categoria encontrada."
+      ],
+      "No coupons match your search": [
+        "Nenhum cupom corresponde à sua busca"
+      ],
+      "No coupons yet": [
+        "Nenhum cupom ainda"
+      ],
+      "No customers found.": [
+        "Nenhum cliente encontrado."
+      ],
+      "No items yet": [
+        "Nenhum item ainda"
+      ],
+      "No newer orders": [
+        "Nenhum pedido mais recente"
+      ],
+      "No notes yet.": [
+        "Nenhuma nota ainda."
+      ],
+      "No older orders": [
+        "Nenhum pedido mais antigo"
+      ],
+      "No orders match your filters": [
+        "Nenhum pedido corresponde aos filtros"
+      ],
+      "No orders selected.": [
+        "Nenhum pedido selecionado."
+      ],
+      "No orders yet": [
+        "Nenhum pedido ainda"
+      ],
+      "No payment method": [
+        "Sem método de pagamento"
+      ],
+      "No price": [
+        "Sem preço"
+      ],
+      "No products found.": [
+        "Nenhum produto encontrado."
+      ],
+      "No products match your filters": [
+        "Nenhum produto corresponde aos filtros"
+      ],
+      "No products selected.": [
+        "Nenhum produto selecionado."
+      ],
+      "No products yet": [
+        "Nenhum produto ainda"
+      ],
+      "No shipping address set.": [
+        "Nenhum endereço de entrega definido."
+      ],
+      "No shipping address.": [
+        "Sem endereço de entrega."
+      ],
+      "No shipping class": [
+        "Sem classe de entrega"
+      ],
+      "No values yet.": [
+        "Nenhum valor ainda."
+      ],
+      "No variations yet": [
+        "Nenhuma variação ainda"
+      ],
+      "None": [
+        "Nenhum"
+      ],
+      "Not paid": [
+        "Não pago"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "Note added": [
+        "Nota adicionada"
+      ],
+      "Note deleted": [
+        "Nota excluída"
+      ],
+      "Note sent to customer": [
+        "Nota enviada ao cliente"
+      ],
+      "Note to customer": [
+        "Nota para o cliente"
+      ],
+      "Older order": [
+        "Pedido mais antigo"
+      ],
+      "Older order #%s": [
+        "Pedido mais antigo #%s"
+      ],
+      "On backorder": [
+        "Sob encomenda"
+      ],
+      "On hold": [
+        "Aguardando"
+      ],
+      "Online store": [
+        "Loja virtual"
+      ],
+      "Only pending or on-hold orders can have their items changed. Change the status first.": [
+        "Somente pedidos pendentes ou aguardando podem ter os itens alterados. Altere o status primeiro."
+      ],
+      "Only the first %d variations will be created.": [
+        "Somente as primeiras %d variações serão criadas."
+      ],
+      "Open full editor": [
+        "Abrir editor completo"
+      ],
+      "Open in classic editor": [
+        "Abrir no editor clássico"
+      ],
+      "Operation": [
+        "Operação"
+      ],
+      "Order #%s": [
+        "Pedido #%s"
+      ],
+      "Order #%s created": [
+        "Pedido #%s criado"
+      ],
+      "Order action applied": [
+        "Ação do pedido aplicada"
+      ],
+      "Order attribution": [
+        "Origem do pedido"
+      ],
+      "Order details": [
+        "Detalhes do pedido"
+      ],
+      "Order items updated": [
+        "Itens do pedido atualizados"
+      ],
+      "Order marked as %s": [
+        "Pedido marcado como %s"
+      ],
+      "Order moved to the trash": [
+        "Pedido movido para a lixeira"
+      ],
+      "Order not found": [
+        "Pedido não encontrado"
+      ],
+      "Order notes": [
+        "Notas do pedido"
+      ],
+      "Order status": [
+        "Status do pedido"
+      ],
+      "Order status updated": [
+        "Status do pedido atualizado"
+      ],
+      "Order total": [
+        "Total do pedido"
+      ],
+      "Order without items": [
+        "Pedido sem itens"
+      ],
+      "Organic": [
+        "Orgânico"
+      ],
+      "Organization": [
+        "Organização"
+      ],
+      "Origin": [
+        "Origem"
+      ],
+      "Out of stock": [
+        "Sem estoque"
+      ],
+      "Paid on": [
+        "Pago em"
+      ],
+      "Paid via %s": [
+        "Pago via %s"
+      ],
+      "Parent category": [
+        "Categoria ascendente"
+      ],
+      "Payment": [
+        "Pagamento"
+      ],
+      "Payment method": [
+        "Método de pagamento"
+      ],
+      "Payment via %s": [
+        "Pagamento via %s"
+      ],
+      "Pending payment": [
+        "Pagamento pendente"
+      ],
+      "Pending review": [
+        "Revisão pendente"
+      ],
+      "Percentage": [
+        "Porcentagem"
+      ],
+      "Percentage discount": [
+        "Desconto percentual"
+      ],
+      "Please review the highlighted fields": [
+        "Revise os campos destacados"
+      ],
+      "Point of sale": [
+        "Ponto de venda"
+      ],
+      "Postcode / ZIP": [
+        "CEP"
+      ],
+      "Price": [
+        "Preço"
+      ],
+      "Price for all": [
+        "Preço para todas"
+      ],
+      "Prices are set on each variation.": [
+        "Os preços são definidos em cada variação."
+      ],
+      "Prices of variable products are managed in each variation. Expand the product in the list to edit them.": [
+        "Os preços de produtos variáveis são gerenciados em cada variação. Expanda o produto na lista para editá-los."
+      ],
+      "Pricing": [
+        "Preços"
+      ],
+      "Print": [
+        "Imprimir"
+      ],
+      "Private note": [
+        "Nota privada"
+      ],
+      "Product categories": [
+        "Categorias de produtos"
+      ],
+      "Product duplicated": [
+        "Produto duplicado"
+      ],
+      "Product duplication is not available.": [
+        "A duplicação de produtos não está disponível."
+      ],
+      "Product gallery": [
+        "Galeria do produto"
+      ],
+      "Product image": [
+        "Imagem do produto"
+      ],
+      "Product moved to the trash": [
+        "Produto movido para a lixeira"
+      ],
+      "Product name": [
+        "Nome do produto"
+      ],
+      "Product not found": [
+        "Produto não encontrado"
+      ],
+      "Product saved": [
+        "Produto salvo"
+      ],
+      "Product saved and published": [
+        "Produto salvo e publicado"
+      ],
+      "Product status": [
+        "Status do produto"
+      ],
+      "Product type": [
+        "Tipo de produto"
+      ],
+      "Product updated": [
+        "Produto atualizado"
+      ],
+      "Product URL": [
+        "URL do produto"
+      ],
+      "Products": [
+        "Produtos"
+      ],
+      "Products and orders management pages": [
+        "Páginas de gestão de produtos e pedidos"
+      ],
+      "Products in this category will not be deleted.": [
+        "Os produtos desta categoria não serão excluídos."
+      ],
+      "Publish": [
+        "Publicar"
+      ],
+      "Purchase note": [
+        "Nota de compra"
+      ],
+      "Qty": [
+        "Qtd."
+      ],
+      "Qty to refund": [
+        "Qtd. a reembolsar"
+      ],
+      "Quantity": [
+        "Quantidade"
+      ],
+      "Quantity to refund": [
+        "Quantidade a reembolsar"
+      ],
+      "Quick edit": [
+        "Edição rápida"
+      ],
+      "Quick preview": [
+        "Pré-visualização rápida"
+      ],
+      "Reason (optional)": [
+        "Motivo (opcional)"
+      ],
+      "Record the refund without sending it to the payment gateway.": [
+        "Registra o reembolso sem enviá-lo ao gateway de pagamento."
+      ],
+      "Referral": [
+        "Indicação"
+      ],
+      "Refresh": [
+        "Atualizar"
+      ],
+      "Refund": [
+        "Reembolsar"
+      ],
+      "Refund #%s": [
+        "Reembolso #%s"
+      ],
+      "Refund %s": [
+        "Reembolsar %s"
+      ],
+      "Refund amount": [
+        "Valor do reembolso"
+      ],
+      "Refund created": [
+        "Reembolso criado"
+      ],
+      "Refund manually": [
+        "Reembolsar manualmente"
+      ],
+      "Refund order": [
+        "Reembolsar pedido"
+      ],
+      "Refunds": [
+        "Reembolsos"
+      ],
+      "Registered customer": [
+        "Cliente cadastrado"
+      ],
+      "Regular price": [
+        "Preço normal"
+      ],
+      "Regular price for all variations": [
+        "Preço normal para todas as variações"
+      ],
+      "Reload": [
+        "Recarregar"
+      ],
+      "Remove attribute": [
+        "Remover atributo"
+      ],
+      "Remove category": [
+        "Remover categoria"
+      ],
+      "Remove coupon": [
+        "Remover cupom"
+      ],
+      "Remove customer": [
+        "Remover cliente"
+      ],
+      "Remove fee": [
+        "Remover taxa"
+      ],
+      "Remove from featured": [
+        "Remover dos destaques"
+      ],
+      "Remove image": [
+        "Remover imagem"
+      ],
+      "Remove item": [
+        "Remover item"
+      ],
+      "Remove shipping": [
+        "Remover entrega"
+      ],
+      "Remove value": [
+        "Remover valor"
+      ],
+      "Removed from featured": [
+        "Removido dos destaques"
+      ],
+      "Rename value": [
+        "Renomear valor"
+      ],
+      "Replace the WooCommerce orders list and order details with a modern page featuring filters, previews, status changes, notes and refunds. Works with HPOS and legacy order storage.": [
+        "Substitui a lista e os detalhes de pedidos do WooCommerce por uma página moderna com filtros, pré-visualizações, alteração de status, notas e reembolsos. Funciona com HPOS e com o armazenamento legado de pedidos."
+      ],
+      "Replace the WooCommerce products list with a modern page featuring counters, filters, quick edit and bulk actions. The classic editor is still used to create and fully edit products.": [
+        "Substitui a lista de produtos do WooCommerce por uma página moderna com contadores, filtros, edição rápida e ações em massa. O editor clássico continua sendo usado para criar e editar produtos por completo."
+      ],
+      "Requires a free shipping method that accepts coupons.": [
+        "Requer um método de frete grátis que aceite cupons."
+      ],
+      "Restock refunded items": [
+        "Repor itens reembolsados no estoque"
+      ],
+      "Revenue period": [
+        "Período da receita"
+      ],
+      "Sale ends": [
+        "Promoção termina"
+      ],
+      "Sale price": [
+        "Preço promocional"
+      ],
+      "Sale starts": [
+        "Promoção começa"
+      ],
+      "Same as billing address": [
+        "Igual ao endereço de cobrança"
+      ],
+      "Save address": [
+        "Salvar endereço"
+      ],
+      "Save attribute": [
+        "Salvar atributo"
+      ],
+      "Save changes": [
+        "Salvar alterações"
+      ],
+      "Save coupon": [
+        "Salvar cupom"
+      ],
+      "Save draft": [
+        "Salvar rascunho"
+      ],
+      "Save items": [
+        "Salvar itens"
+      ],
+      "Save the product to start adding variations.": [
+        "Salve o produto para começar a adicionar variações."
+      ],
+      "Save the product to use the attribute changes in the variations.": [
+        "Salve o produto para usar as alterações de atributos nas variações."
+      ],
+      "Schedule sale": [
+        "Agendar promoção"
+      ],
+      "Search by name or SKU": [
+        "Buscar por nome ou SKU"
+      ],
+      "Search categories": [
+        "Buscar categorias"
+      ],
+      "Search coupons": [
+        "Buscar cupons"
+      ],
+      "Search customers by name or email": [
+        "Buscar clientes por nome ou e-mail"
+      ],
+      "Search for products above to add them to the order.": [
+        "Busque produtos acima para adicioná-los ao pedido."
+      ],
+      "Search order, customer or email": [
+        "Buscar pedido, cliente ou e-mail"
+      ],
+      "Search products by name or SKU to add": [
+        "Buscar produtos por nome ou SKU para adicionar"
+      ],
+      "Search results only": [
+        "Somente nos resultados de busca"
+      ],
+      "Select a category": [
+        "Selecione uma categoria"
+      ],
+      "Select a country": [
+        "Selecione um país"
+      ],
+      "Select a state": [
+        "Selecione um estado"
+      ],
+      "Select image": [
+        "Selecionar imagem"
+      ],
+      "Send note": [
+        "Enviar nota"
+      ],
+      "Send to customer": [
+        "Enviar ao cliente"
+      ],
+      "Sent to the customer after purchase.": [
+        "Enviada ao cliente após a compra."
+      ],
+      "Separate emails with commas. Use * as a wildcard, e.g. *@example.com.": [
+        "Separe os e-mails com vírgulas. Use * como curinga, ex.: *@example.com."
+      ],
+      "Separate tags with commas.": [
+        "Separe as tags com vírgulas."
+      ],
+      "Set product image": [
+        "Definir imagem do produto"
+      ],
+      "Set their prices to make them purchasable.": [
+        "Defina os preços para que possam ser compradas."
+      ],
+      "Set to": [
+        "Definir como"
+      ],
+      "Sets the payment date and moves the order to processing or completed.": [
+        "Define a data de pagamento e move o pedido para processando ou concluído."
+      ],
+      "Shipping": [
+        "Entrega"
+      ],
+      "Shipping address": [
+        "Endereço de entrega"
+      ],
+      "Shipping address updated": [
+        "Endereço de entrega atualizado"
+      ],
+      "Shipping and fees": [
+        "Entrega e taxas"
+      ],
+      "Shipping class": [
+        "Classe de entrega"
+      ],
+      "Shipping method": [
+        "Método de entrega"
+      ],
+      "Shipping only": [
+        "Somente entrega"
+      ],
+      "Shipping: %s": [
+        "Entrega: %s"
+      ],
+      "Shop and search results": [
+        "Loja e resultados de busca"
+      ],
+      "Shop only": [
+        "Somente na loja"
+      ],
+      "Short description": [
+        "Descrição curta"
+      ],
+      "Simple product": [
+        "Produto simples"
+      ],
+      "SKU": [
+        "SKU"
+      ],
+      "Some fields may only be available in the classic editor.": [
+        "Alguns campos podem estar disponíveis somente no editor clássico."
+      ],
+      "Some variations could not be saved": [
+        "Algumas variações não puderam ser salvas"
+      ],
+      "State": [
+        "Estado"
+      ],
+      "State / County": [
+        "Estado"
+      ],
+      "Stock": [
+        "Estoque"
+      ],
+      "Stock keeping unit, unique per product.": [
+        "Código de controle de estoque, único por produto."
+      ],
+      "Stock quantity": [
+        "Quantidade em estoque"
+      ],
+      "Stock status": [
+        "Status do estoque"
+      ],
+      "Store": [
+        "Loja"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Summary": [
+        "Resumo"
+      ],
+      "Tax class": [
+        "Classe de imposto"
+      ],
+      "Tax status": [
+        "Status do imposto"
+      ],
+      "Taxable": [
+        "Tributável"
+      ],
+      "Taxes": [
+        "Impostos"
+      ],
+      "Term ID": [
+        "ID do termo"
+      ],
+      "The attribute name is required.": [
+        "O nome do atributo é obrigatório."
+      ],
+      "The category name is required.": [
+        "O nome da categoria é obrigatório."
+      ],
+      "The copy was saved as a draft.": [
+        "A cópia foi salva como rascunho."
+      ],
+      "The coupon cannot be combined with other coupons.": [
+        "O cupom não pode ser combinado com outros cupons."
+      ],
+      "The coupon code is required.": [
+        "O código do cupom é obrigatório."
+      ],
+      "The end date must be after the start date.": [
+        "A data final deve ser posterior à data inicial."
+      ],
+      "The media library is not available on this screen.": [
+        "A biblioteca de mídia não está disponível nesta tela."
+      ],
+      "The order may have been deleted or you do not have permission to view it.": [
+        "O pedido pode ter sido excluído ou você não tem permissão para visualizá-lo."
+      ],
+      "The payment method does not support automatic refunds. Remember to return the money to the customer manually.": [
+        "O método de pagamento não suporta reembolsos automáticos. Lembre-se de devolver o valor ao cliente manualmente."
+      ],
+      "The product may have been deleted or you do not have permission to edit it.": [
+        "O produto pode ter sido excluído ou você não tem permissão para editá-lo."
+      ],
+      "The product name is required.": [
+        "O nome do produto é obrigatório."
+      ],
+      "The refund amount cannot exceed %s.": [
+        "O valor do reembolso não pode ultrapassar %s."
+      ],
+      "The sale price must be lower than the regular price.": [
+        "O preço promocional deve ser menor que o preço normal."
+      ],
+      "This attribute has no values yet.": [
+        "Este atributo ainda não tem valores."
+      ],
+      "This month": [
+        "Este mês"
+      ],
+      "This note will be permanently removed from the order.": [
+        "Esta nota será removida permanentemente do pedido."
+      ],
+      "This order can no longer be edited": [
+        "Este pedido não pode mais ser editado"
+      ],
+      "This product has no variations.": [
+        "Este produto não tem variações."
+      ],
+      "This product type is managed by an extension": [
+        "Este tipo de produto é gerenciado por uma extensão"
+      ],
+      "This year": [
+        "Este ano"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "Total products": [
+        "Total de produtos"
+      ],
+      "Total spent": [
+        "Total gasto"
+      ],
+      "Track stock": [
+        "Controlar estoque"
+      ],
+      "Track stock at product level": [
+        "Controlar estoque no nível do produto"
+      ],
+      "Track stock quantity": [
+        "Controlar quantidade em estoque"
+      ],
+      "Track, fulfil and manage your store orders.": [
+        "Acompanhe, atenda e gerencie os pedidos da sua loja."
+      ],
+      "Transaction ID": [
+        "ID da transação"
+      ],
+      "Try adjusting the search or date range.": [
+        "Tente ajustar a busca ou o período."
+      ],
+      "Try adjusting the search or filters.": [
+        "Tente ajustar a busca ou os filtros."
+      ],
+      "Type values separated by commas and press Enter": [
+        "Digite valores separados por vírgulas e pressione Enter"
+      ],
+      "Unidentified customer": [
+        "Cliente não identificado"
+      ],
+      "Unique identifier with up to 28 characters.": [
+        "Identificador único com até 28 caracteres."
+      ],
+      "Unit price": [
+        "Preço unitário"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Unsaved changes": [
+        "Alterações não salvas"
+      ],
+      "Usage": [
+        "Uso"
+      ],
+      "Usage limit per coupon": [
+        "Limite de uso por cupom"
+      ],
+      "Usage limit per user": [
+        "Limite de uso por usuário"
+      ],
+      "Usage limits": [
+        "Limites de uso"
+      ],
+      "Usage restrictions": [
+        "Restrições de uso"
+      ],
+      "Use a negative value for a discount.": [
+        "Use um valor negativo para um desconto."
+      ],
+      "Use as product image": [
+        "Usar como imagem do produto"
+      ],
+      "Use image": [
+        "Usar imagem"
+      ],
+      "Used for variations": [
+        "Usado para variações"
+      ],
+      "Used up": [
+        "Esgotado"
+      ],
+      "Value name": [
+        "Nome do valor"
+      ],
+      "Values available for this attribute.": [
+        "Valores disponíveis para este atributo."
+      ],
+      "Variable product": [
+        "Produto variável"
+      ],
+      "Variation": [
+        "Variação"
+      ],
+      "Variation #%s": [
+        "Variação #%s"
+      ],
+      "Variation image": [
+        "Imagem da variação"
+      ],
+      "Variation updated": [
+        "Variação atualizada"
+      ],
+      "Variations": [
+        "Variações"
+      ],
+      "View details": [
+        "Ver detalhes"
+      ],
+      "View in store": [
+        "Ver na loja"
+      ],
+      "View on map": [
+        "Ver no mapa"
+      ],
+      "View products": [
+        "Ver produtos"
+      ],
+      "View profile": [
+        "Ver perfil"
+      ],
+      "Virtual product (no shipping)": [
+        "Produto virtual (sem entrega)"
+      ],
+      "Visible on the product page": [
+        "Visível na página do produto"
+      ],
+      "Web admin": [
+        "Painel administrativo"
+      ],
+      "Weight": [
+        "Peso"
+      ],
+      "WooCommerce": [
+        "WooCommerce"
+      ],
+      "WooCommerce is not active.": [
+        "O WooCommerce não está ativo."
+      ],
+      "WooCommerce settings": [
+        "Configurações do WooCommerce"
+      ],
+      "You are not allowed to delete this order.": [
+        "Você não tem permissão para excluir este pedido."
+      ],
+      "You are not allowed to delete this product.": [
+        "Você não tem permissão para excluir este produto."
+      ],
+      "You are not allowed to edit this order.": [
+        "Você não tem permissão para editar este pedido."
+      ],
+      "You are not allowed to edit this product.": [
+        "Você não tem permissão para editar este produto."
+      ],
+      "You are not allowed to publish products.": [
+        "Você não tem permissão para publicar produtos."
+      ],
+      "Your changes have not been saved.": [
+        "Suas alterações não foram salvas."
+      ],
+      "Your changes to this product have not been saved.": [
+        "As alterações neste produto não foram salvas."
+      ],
       "notice\u0004Add New": [
         "Adicionar novo"
       ],
