@@ -57,6 +57,66 @@ class WooCommerceOrders {
 	 */
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+		add_filter( 'woocommerce_rest_shop_order_object_query', array( $this, 'filter_orders_query' ), 10, 2 );
+	}
+
+
+	/**
+	 * Add the orders page filters (payment method, creation channel and origin) to `wc/v3/orders`.
+	 *
+	 * The parameters are prefixed with `fd_` so they never collide with WooCommerce arguments.
+	 *
+	 * @since 3.0.0
+	 * @param array $args Query arguments.
+	 * @param WP_REST_Request $request Request.
+	 * @return array
+	 */
+	public function filter_orders_query( $args, $request ) {
+		$payment_method = sanitize_text_field( (string) $request->get_param( 'fd_payment_method' ) );
+		$created_via = sanitize_key( (string) $request->get_param( 'fd_created_via' ) );
+		$origin = sanitize_key( (string) $request->get_param( 'fd_origin' ) );
+
+		if ( '' === $payment_method && '' === $created_via && '' === $origin ) {
+			return $args;
+		}
+
+		$meta_query = isset( $args['meta_query'] ) && is_array( $args['meta_query'] ) ? $args['meta_query'] : array(); // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+		$hpos = WooCommerce::is_hpos_enabled();
+
+		if ( '' !== $payment_method ) {
+			if ( $hpos ) {
+				$args['payment_method'] = $payment_method;
+			} else {
+				$meta_query[] = array(
+					'key' => '_payment_method',
+					'value' => $payment_method,
+				);
+			}
+		}
+
+		if ( '' !== $created_via ) {
+			if ( $hpos ) {
+				$args['created_via'] = $created_via;
+			} else {
+				$meta_query[] = array(
+					'key' => '_created_via',
+					'value' => $created_via,
+				);
+			}
+		}
+
+		if ( '' !== $origin ) {
+			$meta_query[] = array(
+				'key' => '_wc_order_attribution_source_type',
+				'value' => $origin,
+			);
+		}
+
+		if ( ! empty( $meta_query ) ) {
+			$args['meta_query'] = $meta_query; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+		}
+
+		return $args;
 	}
 
 
@@ -515,6 +575,7 @@ class WooCommerceOrders {
 					$order->get_shipping_methods()
 				)
 			),
+			'custom_fields' => $this->get_custom_fields( $order ),
 		);
 
 		/**
@@ -579,6 +640,48 @@ class WooCommerceOrders {
 		}
 
 		return $meta;
+	}
+
+
+	/**
+	 * Get public custom fields (meta keys not starting with an underscore) for read-only display.
+	 *
+	 * @since 3.0.0
+	 * @param WC_Order $order Order.
+	 * @return array
+	 */
+	private function get_custom_fields( WC_Order $order ) {
+		$fields = array();
+
+		foreach ( $order->get_meta_data() as $meta ) {
+			$data = $meta->get_data();
+			$key = isset( $data['key'] ) ? (string) $data['key'] : '';
+
+			if ( '' === $key || '_' === $key[0] || is_protected_meta( $key, 'post' ) ) {
+				continue;
+			}
+
+			$value = $data['value'] ?? '';
+			$value = is_scalar( $value ) ? (string) $value : wp_json_encode( $value );
+
+			$fields[] = array(
+				'key' => wp_strip_all_tags( $key ),
+				'value' => wp_html_excerpt( wp_strip_all_tags( (string) $value ), 500, '…' ),
+			);
+
+			if ( count( $fields ) >= 50 ) {
+				break;
+			}
+		}
+
+		/**
+		 * Filter the custom fields shown on the order details page.
+		 *
+		 * @since 3.0.0
+		 * @param array $fields List of { key, value }.
+		 * @param WC_Order $order Order.
+		 */
+		return apply_filters( 'flexify-dashboard/woocommerce/order-custom-fields', $fields, $order );
 	}
 
 

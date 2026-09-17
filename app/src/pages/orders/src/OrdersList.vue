@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, reactive, ref, watch } from 'vue';
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import {
   FdAvatar,
@@ -18,6 +18,7 @@ import {
   FdTooltip,
 } from '@/components/kit';
 import { notify } from '@/assets/js/functions/notify.js';
+import AppIcon from '@/components/utility/icons/index.vue';
 import { useOrderHelpers } from './useOrderHelpers.js';
 import OrderPreview from './OrderPreview.vue';
 
@@ -85,6 +86,10 @@ const readQuery = () => ({
   status: String(route.query.status || 'any'),
   search: String(route.query.search || ''),
   date: String(route.query.date || ''),
+  payment_method: String(route.query.payment_method || ''),
+  created_via: String(route.query.created_via || ''),
+  origin: String(route.query.origin || ''),
+  customer: String(route.query.customer || ''),
   page: Math.max(1, Number(route.query.page) || 1),
   per_page: Number(route.query.per_page) || 20,
   orderby: String(route.query.orderby || 'date'),
@@ -102,7 +107,63 @@ const sort = computed({
   },
 });
 
-const hasActiveFilters = computed(() => !!(filters.search || filters.date));
+const hasActiveFilters = computed(() => !!(filters.search || filters.date || filters.payment_method || filters.created_via || filters.origin || filters.customer));
+const showMoreFilters = ref(!!(filters.payment_method || filters.created_via || filters.origin));
+const customerLabel = ref(String(route.query.customer_name || ''));
+
+const paymentOptions = computed(() => store.value.payment_gateways.map((gateway) => ({ value: gateway.value, label: gateway.label })));
+
+const createdViaOptions = computed(() => [
+  { value: 'checkout', label: __('Classic checkout', 'flexify-dashboard') },
+  { value: 'store-api', label: __('Block checkout', 'flexify-dashboard') },
+  { value: 'admin', label: __('Created in admin', 'flexify-dashboard') },
+  { value: 'rest-api', label: __('REST API', 'flexify-dashboard') },
+]);
+
+const originOptions = computed(() => [
+  { value: 'organic', label: __('Organic', 'flexify-dashboard') },
+  { value: 'referral', label: __('Referral', 'flexify-dashboard') },
+  { value: 'utm', label: __('Campaign', 'flexify-dashboard') },
+  { value: 'typein', label: __('Direct', 'flexify-dashboard') },
+  { value: 'admin', label: __('Web admin', 'flexify-dashboard') },
+  { value: 'mobile_app', label: __('Mobile app', 'flexify-dashboard') },
+  { value: 'pos', label: __('Point of sale', 'flexify-dashboard') },
+]);
+
+const filterByCustomer = (order) => {
+  if (!order.customer_id) return;
+  customerLabel.value = customerName(order);
+  filters.customer = String(order.customer_id);
+};
+
+// Poll the counters to tell the user when new orders arrive.
+const POLL_INTERVAL = 60000;
+const newOrders = ref(0);
+let knownTotal = null;
+let pollTimer = null;
+
+const pollNewOrders = async () => {
+  if (document.visibilityState !== 'visible' || knownTotal === null) return;
+
+  const response = await fd('orders/summary');
+  const total = Number(response?.data?.total);
+
+  if (Number.isFinite(total) && total > knownTotal) {
+    newOrders.value = total - knownTotal;
+  }
+};
+
+const showNewOrders = () => {
+  newOrders.value = 0;
+  knownTotal = null;
+
+  if (filters.page !== 1 || filters.status !== 'any') {
+    filters.status = 'any';
+    filters.page = 1;
+  }
+
+  refresh();
+};
 
 const dateOptions = computed(() => [
   { value: 'today', label: __('Today', 'flexify-dashboard') },
@@ -196,6 +257,7 @@ const syncQuery = () => {
   });
 
   if (period.value !== '30') query.period = period.value;
+  if (filters.customer && customerLabel.value) query.customer_name = customerLabel.value;
 
   router.replace({ query });
 };
@@ -213,6 +275,10 @@ const loadOrders = async () => {
     orderby: filters.orderby,
     order: filters.order,
     search: filters.search,
+    customer: filters.customer,
+    fd_payment_method: filters.payment_method,
+    fd_created_via: filters.created_via,
+    fd_origin: filters.origin,
     _fields: ORDER_FIELDS,
     ...dateRange(filters.date),
   };
@@ -238,6 +304,11 @@ const loadSummary = async () => {
 
   summary.value = response?.data || null;
   summaryLoading.value = false;
+
+  if (Number.isFinite(Number(summary.value?.total))) {
+    knownTotal = Number(summary.value.total);
+    newOrders.value = 0;
+  }
 };
 
 const refresh = () => {
@@ -252,7 +323,7 @@ const reloadFromFilters = () => {
 };
 
 watch(
-  () => [filters.status, filters.search, filters.date, filters.per_page, filters.orderby, filters.order].join('|'),
+  () => [filters.status, filters.search, filters.date, filters.payment_method, filters.created_via, filters.origin, filters.customer, filters.per_page, filters.orderby, filters.order].join('|'),
   () => {
     selected.value = [];
 
@@ -280,6 +351,11 @@ const selectStat = (item) => {
 const clearFilters = () => {
   filters.search = '';
   filters.date = '';
+  filters.payment_method = '';
+  filters.created_via = '';
+  filters.origin = '';
+  filters.customer = '';
+  customerLabel.value = '';
 };
 
 const openDetails = (order) => router.push({ name: 'order-details', params: { id: order.id } });
@@ -337,6 +413,7 @@ const rowActions = (order) => {
 
   return [
     { label: __('View details', 'flexify-dashboard'), icon: 'receipt_long', onSelect: () => openDetails(order) },
+    ...(order.customer_id ? [{ label: __('Orders from this customer', 'flexify-dashboard'), icon: 'person', onSelect: () => filterByCustomer(order) }] : []),
     { label: __('Quick preview', 'flexify-dashboard'), icon: 'visibility', onSelect: () => openPreview(order) },
     { heading: __('Change status', 'flexify-dashboard') },
     ...statusActions((status) => runBulk('status', status, [order.id]), order.status),
@@ -390,7 +467,10 @@ const pageLinks = computed(() => [
 onMounted(() => {
   loadOrders();
   loadSummary();
+  pollTimer = window.setInterval(pollNewOrders, POLL_INTERVAL);
 });
+
+onBeforeUnmount(() => window.clearInterval(pollTimer));
 </script>
 
 <template>
@@ -426,12 +506,35 @@ onMounted(() => {
       <div class="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:flex-row sm:items-center sm:px-6">
         <FdSearchInput v-model="filters.search" class="w-full sm:w-80" :placeholder="__('Search order, customer or email', 'flexify-dashboard')" />
         <FdSelect v-model="filters.date" :options="dateOptions" :placeholder="__('Any date', 'flexify-dashboard')" class="sm:w-48" />
+        <FdButton variant="outline" icon="filter_alt" :aria-expanded="showMoreFilters" @click="showMoreFilters = !showMoreFilters">{{ __('Filters', 'flexify-dashboard') }}</FdButton>
         <div class="flex items-center gap-2 sm:ms-auto">
           <FdButton v-if="hasActiveFilters" variant="ghost" icon="close" @click="clearFilters">{{ __('Clear filters', 'flexify-dashboard') }}</FdButton>
           <FdTooltip :text="__('Refresh', 'flexify-dashboard')">
             <FdButton variant="outline" icon="refresh" icon-only :aria-label="__('Refresh', 'flexify-dashboard')" @click="refresh" />
           </FdTooltip>
         </div>
+      </div>
+
+      <div v-if="showMoreFilters || filters.customer" class="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:flex-row sm:flex-wrap sm:items-center sm:px-6">
+        <template v-if="showMoreFilters">
+          <FdSelect v-if="paymentOptions.length" v-model="filters.payment_method" :options="paymentOptions" :placeholder="__('Any payment method', 'flexify-dashboard')" class="sm:w-52" />
+          <FdSelect v-model="filters.created_via" :options="createdViaOptions" :placeholder="__('Any channel', 'flexify-dashboard')" class="sm:w-48" />
+          <FdSelect v-model="filters.origin" :options="originOptions" :placeholder="__('Any origin', 'flexify-dashboard')" class="sm:w-44" />
+        </template>
+        <span v-if="filters.customer" class="inline-flex items-center gap-1.5 self-start rounded-full bg-brand-50 py-1 ps-3 pe-1.5 text-theme-sm text-brand-600 dark:bg-brand-500/15 dark:text-brand-400 sm:self-auto">
+          {{ sprintf(__('Customer: %s', 'flexify-dashboard'), customerLabel || `#${filters.customer}`) }}
+          <button type="button" class="rounded-full p-0.5 hover:bg-brand-100 dark:hover:bg-brand-500/20" :aria-label="__('Remove customer filter', 'flexify-dashboard')" @click="filters.customer = ''">
+            <AppIcon icon="close" class="text-sm" />
+          </button>
+        </span>
+      </div>
+
+      <div v-if="newOrders" class="flex flex-wrap items-center justify-between gap-3 border-b border-brand-100 bg-brand-50 px-5 py-3 text-theme-sm text-brand-700 dark:border-brand-500/20 dark:bg-brand-500/10 dark:text-brand-300 sm:px-6" role="status">
+        <span class="flex items-center gap-2">
+          <AppIcon icon="notifications" class="text-lg" />
+          {{ sprintf(__('%d new order(s) received', 'flexify-dashboard'), newOrders) }}
+        </span>
+        <FdButton size="xs" @click="showNewOrders">{{ __('Show new orders', 'flexify-dashboard') }}</FdButton>
       </div>
 
       <FdDataTable

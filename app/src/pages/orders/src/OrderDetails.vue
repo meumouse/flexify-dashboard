@@ -527,6 +527,15 @@ onMounted(load);
             </dl>
           </FdCard>
 
+          <FdCard v-if="context?.custom_fields?.length" :title="__('Custom fields', 'flexify-dashboard')">
+            <dl class="space-y-3 text-theme-sm">
+              <div v-for="(field, index) in context.custom_fields" :key="`${field.key}-${index}`">
+                <dt class="text-theme-xs text-gray-500 dark:text-gray-400">{{ field.key }}</dt>
+                <dd class="break-words text-gray-800 dark:text-white/90">{{ field.value || '—' }}</dd>
+              </div>
+            </dl>
+          </FdCard>
+
           <FdCard v-for="(card, index) in extensionCards" :key="card.metadata?.id || `extension-${index}`" :title="card.title || ''">
             <ComponentRender :item="card" :order="order" :context="context" />
           </FdCard>
