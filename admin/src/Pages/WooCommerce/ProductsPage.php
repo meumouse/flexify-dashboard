@@ -30,6 +30,59 @@ class ProductsPage extends ModernScreen {
 		add_action( 'load-edit.php', array( $this, 'maybe_take_over' ) );
 		add_action( 'load-post.php', array( $this, 'maybe_redirect_to_editor' ) );
 		add_action( 'load-post-new.php', array( $this, 'maybe_redirect_to_editor' ) );
+		add_action( 'add_meta_boxes_product', array( $this, 'remember_extension_meta_boxes' ), PHP_INT_MAX );
+	}
+
+
+	/**
+	 * Remember meta boxes added by extensions to the classic product editor.
+	 *
+	 * The Vue product editor cannot render them, so it warns the user and links to the classic editor.
+	 *
+	 * @since 3.0.0
+	 * @return void
+	 */
+	public function remember_extension_meta_boxes() {
+		global $wp_meta_boxes;
+
+		$core = array(
+			'submitdiv',
+			'postexcerpt',
+			'postimagediv',
+			'product_catdiv',
+			'tagsdiv-product_tag',
+			'product_branddiv',
+			'woocommerce-product-data',
+			'woocommerce-product-images',
+			'commentsdiv',
+			'commentstatusdiv',
+			'slugdiv',
+			'authordiv',
+			'postcustom',
+			'pageparentdiv',
+			'revisionsdiv',
+			'trackbacksdiv',
+		);
+
+		$found = array();
+
+		foreach ( (array) ( $wp_meta_boxes['product'] ?? array() ) as $context ) {
+			foreach ( (array) $context as $priority ) {
+				foreach ( (array) $priority as $id => $box ) {
+					if ( empty( $box ) || in_array( $id, $core, true ) ) {
+						continue;
+					}
+
+					$found[ $id ] = wp_strip_all_tags( is_array( $box ) && isset( $box['title'] ) ? (string) $box['title'] : (string) $id );
+				}
+			}
+		}
+
+		ksort( $found );
+
+		if ( get_option( WooCommerce::EXTENSION_META_BOXES_OPTION ) !== $found ) {
+			update_option( WooCommerce::EXTENSION_META_BOXES_OPTION, $found, false );
+		}
 	}
 
 

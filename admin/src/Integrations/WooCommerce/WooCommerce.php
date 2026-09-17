@@ -18,6 +18,22 @@ defined('ABSPATH') || exit;
 class WooCommerce {
 
 	/**
+	 * Option that stores meta boxes added by extensions to the classic product editor.
+	 *
+	 * @since 3.0.0
+	 * @var string
+	 */
+	const EXTENSION_META_BOXES_OPTION = 'flexify_dashboard_product_extension_meta_boxes';
+
+	/**
+	 * Product data tabs registered by WooCommerce itself.
+	 *
+	 * @since 3.0.0
+	 * @var array
+	 */
+	const CORE_PRODUCT_DATA_TABS = array( 'general', 'inventory', 'shipping', 'linked_product', 'attribute', 'variations', 'advanced', 'get_more' );
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 3.0.0
@@ -267,6 +283,7 @@ class WooCommerce {
 			'manage_stock' => 'yes' === get_option( 'woocommerce_manage_stock', 'yes' ),
 			'low_stock_amount' => absint( get_option( 'woocommerce_notify_low_stock_amount', 2 ) ),
 			'product_editor' => self::is_product_editor_enabled(),
+			'product_editor_extensions' => self::is_product_editor_enabled() ? self::get_product_editor_extensions() : array(),
 			'tax_classes' => self::get_tax_classes(),
 			'taxes_enabled' => wc_tax_enabled(),
 			'coupons_enabled' => wc_coupons_enabled(),
@@ -328,6 +345,51 @@ class WooCommerce {
 		}
 
 		return $options;
+	}
+
+
+	/**
+	 * Get fields added by extensions to the classic product editor that the Vue editor cannot show.
+	 *
+	 * Meta boxes are recorded the last time the classic editor was opened; product data tabs are read from their filter.
+	 *
+	 * @since 3.0.0
+	 * @return array
+	 */
+	public static function get_product_editor_extensions() {
+		$extensions = array();
+
+		foreach ( (array) get_option( self::EXTENSION_META_BOXES_OPTION, array() ) as $id => $title ) {
+			$extensions[] = array(
+				'id' => sanitize_key( $id ),
+				'label' => wp_strip_all_tags( (string) $title ),
+				'type' => 'meta_box',
+			);
+		}
+
+		// Extra tabs in the "Product data" box are added through a filter, so they can be read at any time.
+		$core_tabs = array_fill_keys( self::CORE_PRODUCT_DATA_TABS, array( 'label' => '' ) );
+		$tabs = apply_filters( 'woocommerce_product_data_tabs', $core_tabs ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+
+		foreach ( (array) $tabs as $key => $tab ) {
+			if ( in_array( $key, self::CORE_PRODUCT_DATA_TABS, true ) ) {
+				continue;
+			}
+
+			$extensions[] = array(
+				'id' => sanitize_key( $key ),
+				'label' => wp_strip_all_tags( is_array( $tab ) && ! empty( $tab['label'] ) ? (string) $tab['label'] : (string) $key ),
+				'type' => 'product_data_tab',
+			);
+		}
+
+		/**
+		 * Filter the extension fields the Vue product editor warns about.
+		 *
+		 * @since 3.0.0
+		 * @param array $extensions List of { id, label, type }.
+		 */
+		return apply_filters( 'flexify-dashboard/woocommerce/product-editor-extensions', $extensions );
 	}
 
 

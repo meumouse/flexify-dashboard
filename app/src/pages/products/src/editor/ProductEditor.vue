@@ -604,6 +604,18 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
         :message="__('Some fields may only be available in the classic editor.', 'flexify-dashboard')"
       />
 
+      <FdAlert
+        v-if="store.product_editor_extensions?.length"
+        variant="info"
+        class="mb-6"
+        :title="__('Some extensions add fields only available in the classic editor', 'flexify-dashboard')"
+        :message="store.product_editor_extensions.map((extension) => extension.label).join(', ')"
+      >
+        <template #actions>
+          <FdButton size="xs" variant="outline" icon="edit_note" :href="classicUrl">{{ __('Open in classic editor', 'flexify-dashboard') }}</FdButton>
+        </template>
+      </FdAlert>
+
       <div class="grid gap-6 xl:grid-cols-3">
         <!-- Main column -->
         <div class="min-w-0 space-y-6 xl:col-span-2">
