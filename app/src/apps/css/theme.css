@@ -13,41 +13,44 @@
 
 @source '../../';
 
-* {
-	scrollbar-width: thin;
-	scrollbar-color: rgb(var(--fd-base-200)) transparent;
-}
+/* Layered so utilities such as no-scrollbar can override the defaults. */
+@layer base {
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: rgb(var(--fd-base-200)) transparent;
+	}
 
-*::-webkit-scrollbar {
-	width: 6px;
-	height: 6px;
-}
+	*::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
 
-*::-webkit-scrollbar-thumb {
-	background-color: rgb(var(--fd-base-200));
-	border-radius: 3px;
-	transition: background-color 0.2s;
-}
+	*::-webkit-scrollbar-thumb {
+		background-color: rgb(var(--fd-base-200));
+		border-radius: 3px;
+		transition: background-color 0.2s;
+	}
 
-*::-webkit-scrollbar-thumb:hover {
-	background-color: rgb(var(--fd-base-400) / 0.5);
-}
+	*::-webkit-scrollbar-thumb:hover {
+		background-color: rgb(var(--fd-base-400) / 0.5);
+	}
 
-*::-webkit-scrollbar-track {
-	background: transparent;
-	border-radius: 3px;
-}
+	*::-webkit-scrollbar-track {
+		background: transparent;
+		border-radius: 3px;
+	}
 
-*::-webkit-scrollbar-corner {
-	background: transparent;
-}
+	*::-webkit-scrollbar-corner {
+		background: transparent;
+	}
 
-.dark * {
-	scrollbar-color: rgb(var(--fd-base-700)) transparent;
-}
+	.dark * {
+		scrollbar-color: rgb(var(--fd-base-700)) transparent;
+	}
 
-.dark *::-webkit-scrollbar-thumb {
-	background-color: rgb(var(--fd-base-700));
+	.dark *::-webkit-scrollbar-thumb {
+		background-color: rgb(var(--fd-base-700));
+	}
 }
 
 #fd-menu .custom-scrollbar {

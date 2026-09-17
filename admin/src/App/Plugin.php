@@ -25,6 +25,7 @@ use MeuMouse\Flexify_Dashboard\Pages\MenuBuilder;
 use MeuMouse\Flexify_Dashboard\Pages\PostsList;
 use MeuMouse\Flexify_Dashboard\Pages\RoleEditorPage;
 use MeuMouse\Flexify_Dashboard\Pages\Settings as SettingsPage;
+use MeuMouse\Flexify_Dashboard\Pages\WooCommerce\OrdersPage as WooCommerceOrdersPage;
 use MeuMouse\Flexify_Dashboard\Pages\WooCommerce\ProductsPage as WooCommerceProductsPage;
 use MeuMouse\Flexify_Dashboard\Pages\Analytics as AnalyticsPage;
 use MeuMouse\Flexify_Dashboard\Rest\LicenseManager;
@@ -215,6 +216,7 @@ class Plugin {
         new WooCommerce();
         new WooCommerceProducts();
         new WooCommerceProductsPage();
+        new WooCommerceOrdersPage();
         new WooCommerceOrders();
         new PostEditorMeta();
         new PostEditorSEO();

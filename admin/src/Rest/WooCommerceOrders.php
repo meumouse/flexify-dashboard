@@ -474,6 +474,8 @@ class WooCommerceOrders {
 				'sku' => $product ? $product->get_sku() : '',
 				'edit_url' => $product ? get_edit_post_link( $product->get_parent_id() ? $product->get_parent_id() : $product->get_id(), 'raw' ) : '',
 				'meta' => $this->get_item_meta( $item ),
+				'refunded_qty' => absint( $order->get_qty_refunded_for_item( $item_id ) ),
+				'refunded_total' => (float) $order->get_total_refunded_for_item( $item_id ),
 			);
 		}
 
