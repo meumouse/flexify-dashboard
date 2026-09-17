@@ -16,7 +16,7 @@ Versão 3.0.0 (17/09/2026)
 * Recurso adicionado: Filtros de pedidos por pagamento, canal, origem e cliente, com aviso de novos pedidos
 * Recurso adicionado: Filtros de produtos por tag e faixa de preço e escolha de colunas visíveis
 * Melhorias de acessibilidade nos componentes (rótulos acessíveis e anel de foco)
-* Recurso adicionado: Registro de alterações de status e reembolsos de pedidos no Activity Log
+* Recurso adicionado: Registro de alterações de status e reembolsos de pedidos no Activity Log (incluídos no nível “importante”)
 * Recurso adicionado: Declaração de compatibilidade com HPOS do WooCommerce
 * Atualização das traduções pt_BR
 

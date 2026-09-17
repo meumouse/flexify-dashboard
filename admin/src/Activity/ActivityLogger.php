@@ -80,6 +80,16 @@ class ActivityLogger {
 		'permission_changed',
 	);
 
+	/**
+	 * Actions that are only important for some object types.
+	 *
+	 * @since 3.0.0
+	 * @var array
+	 */
+	private static $important_actions_by_type = array(
+		'shop_order' => array( 'status_changed', 'refunded' ),
+	);
+
 
 	/**
 	 * Class constructor.
@@ -419,9 +429,13 @@ class ActivityLogger {
 	 * @return bool
 	 */
 	private static function is_important_action( $action, $object_type ) {
-		unset( $object_type );
+		if ( in_array( $action, self::$important_actions, true ) ) {
+			return true;
+		}
 
-		return in_array( $action, self::$important_actions, true );
+		$by_type = self::$important_actions_by_type[ $object_type ] ?? array();
+
+		return in_array( $action, $by_type, true );
 	}
 
 

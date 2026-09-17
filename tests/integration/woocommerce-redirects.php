@@ -13,6 +13,18 @@ use MeuMouse\Flexify_Dashboard\Pages\WooCommerce\ProductsPage;
 
 global $wpdb;
 wp_set_current_user( 1 );
+
+// The Activity Log queue is written on shutdown, after the rollback, so keep it off during the test.
+add_filter(
+	'option_' . MeuMouse\Flexify_Dashboard\Activity\ActivityDatabase::SETTINGS_OPTION,
+	function ( $settings ) {
+		$settings = is_array( $settings ) ? $settings : array();
+		$settings['enable_activity_logger'] = false;
+
+		return $settings;
+	},
+	PHP_INT_MAX
+);
 $wpdb->query( 'START TRANSACTION' );
 
 class FD_Redirect_Captured extends Exception {}
