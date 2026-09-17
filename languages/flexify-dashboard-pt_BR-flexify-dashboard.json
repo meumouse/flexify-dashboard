@@ -7126,6 +7126,156 @@
       "Your changes to this product have not been saved.": [
         "As alterações neste produto não foram salvas."
       ],
+      "%d new order(s) received": [
+        "%d novo(s) pedido(s) recebido(s)"
+      ],
+      "%d tag(s) will be deleted. Products will not be deleted.": [
+        "%d tag(s) serão excluídas. Os produtos não serão excluídos."
+      ],
+      "Add file": [
+        "Adicionar arquivo"
+      ],
+      "Add tag": [
+        "Adicionar tag"
+      ],
+      "All tags": [
+        "Todas as tags"
+      ],
+      "Any channel": [
+        "Qualquer canal"
+      ],
+      "Any origin": [
+        "Qualquer origem"
+      ],
+      "Any payment method": [
+        "Qualquer método de pagamento"
+      ],
+      "Block checkout": [
+        "Checkout em blocos"
+      ],
+      "Choose file": [
+        "Escolher arquivo"
+      ],
+      "Classic checkout": [
+        "Checkout clássico"
+      ],
+      "Cross-sells": [
+        "Vendas cruzadas"
+      ],
+      "Custom fields": [
+        "Campos personalizados"
+      ],
+      "Customer: %s": [
+        "Cliente: %s"
+      ],
+      "Delete tags?": [
+        "Excluir tags?"
+      ],
+      "Download expiry (days)": [
+        "Expiração do download (dias)"
+      ],
+      "Download limit": [
+        "Limite de downloads"
+      ],
+      "Downloadable file": [
+        "Arquivo para download"
+      ],
+      "Downloadable files": [
+        "Arquivos para download"
+      ],
+      "Downloadable files of variable products are managed in the classic editor.": [
+        "Os arquivos para download de produtos variáveis são gerenciados no editor clássico."
+      ],
+      "Edit tag": [
+        "Editar tag"
+      ],
+      "File name": [
+        "Nome do arquivo"
+      ],
+      "Grouped products": [
+        "Produtos agrupados"
+      ],
+      "Linked products": [
+        "Produtos vinculados"
+      ],
+      "Max. price": [
+        "Preço máx."
+      ],
+      "Maximum price": [
+        "Preço máximo"
+      ],
+      "Min. price": [
+        "Preço mín."
+      ],
+      "Minimum price": [
+        "Preço mínimo"
+      ],
+      "More filters": [
+        "Mais filtros"
+      ],
+      "Never": [
+        "Nunca"
+      ],
+      "No tags match your search": [
+        "Nenhuma tag corresponde à sua busca"
+      ],
+      "No tags yet": [
+        "Nenhuma tag ainda"
+      ],
+      "Orders from this customer": [
+        "Pedidos deste cliente"
+      ],
+      "Product tags": [
+        "Tags de produtos"
+      ],
+      "Products promoted in the cart based on this product.": [
+        "Produtos promovidos no carrinho com base neste produto."
+      ],
+      "Products recommended instead of this one, usually more profitable or better quality.": [
+        "Produtos recomendados no lugar deste, geralmente mais lucrativos ou de melhor qualidade."
+      ],
+      "Remove customer filter": [
+        "Remover filtro de cliente"
+      ],
+      "Remove file": [
+        "Remover arquivo"
+      ],
+      "Remove product": [
+        "Remover produto"
+      ],
+      "REST API": [
+        "API REST"
+      ],
+      "Search products": [
+        "Buscar produtos"
+      ],
+      "Search tags": [
+        "Buscar tags"
+      ],
+      "Show new orders": [
+        "Mostrar novos pedidos"
+      ],
+      "Tag created": [
+        "Tag criada"
+      ],
+      "Tag updated": [
+        "Tag atualizada"
+      ],
+      "Tags deleted": [
+        "Tags excluídas"
+      ],
+      "The tag name is required.": [
+        "O nome da tag é obrigatório."
+      ],
+      "Upsells": [
+        "Upsells"
+      ],
+      "Use file": [
+        "Usar arquivo"
+      ],
+      "Visible columns": [
+        "Colunas visíveis"
+      ],
       "notice\u0004Add New": [
         "Adicionar novo"
       ],

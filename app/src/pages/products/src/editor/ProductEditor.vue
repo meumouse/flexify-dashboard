@@ -26,6 +26,7 @@ import { useWooCommerce } from '@/composables/useWooCommerce.js';
 import { openMediaFrame } from './useWpMedia.js';
 import ProductAttributes from './ProductAttributes.vue';
 import ProductVariationsEditor from './ProductVariationsEditor.vue';
+import ProductPicker from './ProductPicker.vue';
 
 const RichText = defineAsyncComponent(() => import('@/components/utility/rich-text/index.vue'));
 
@@ -93,6 +94,12 @@ const form = reactive({
   purchase_note: '',
   menu_order: 0,
   reviews_allowed: true,
+  upsell_ids: [],
+  cross_sell_ids: [],
+  grouped_products: [],
+  downloads: [],
+  download_limit: '',
+  download_expiry: '',
 });
 
 const snapshot = () => JSON.stringify(form);
@@ -149,6 +156,7 @@ const stockOptions = computed(() =>
 const isVariable = computed(() => form.type === 'variable');
 const isExternal = computed(() => form.type === 'external');
 const isGrouped = computed(() => form.type === 'grouped');
+const hasDownloads = computed(() => form.downloadable && form.type === 'simple');
 const hasPrice = computed(() => !isVariable.value && !isGrouped.value);
 const hasInventory = computed(() => !isExternal.value && !isGrouped.value);
 const hasShipping = computed(() => !form.virtual && !isExternal.value && !isGrouped.value);
@@ -233,6 +241,12 @@ const fillForm = (data) => {
     purchase_note: data.purchase_note || '',
     menu_order: data.menu_order ?? 0,
     reviews_allowed: data.reviews_allowed !== false,
+    upsell_ids: [...(data.upsell_ids || [])],
+    cross_sell_ids: [...(data.cross_sell_ids || [])],
+    grouped_products: [...(data.grouped_products || [])],
+    downloads: (data.downloads || []).map((file) => ({ id: file.id || '', name: file.name || '', file: file.file || '' })),
+    download_limit: data.download_limit === -1 || data.download_limit === undefined ? '' : String(data.download_limit),
+    download_expiry: data.download_expiry === -1 || data.download_expiry === undefined ? '' : String(data.download_expiry),
   });
 
   savedSnapshot.value = snapshot();
@@ -343,7 +357,19 @@ const buildPayload = (status) => {
     purchase_note: form.purchase_note,
     menu_order: Number(form.menu_order) || 0,
     reviews_allowed: form.reviews_allowed,
+    upsell_ids: form.upsell_ids,
+    cross_sell_ids: form.cross_sell_ids,
   };
+
+  if (isGrouped.value) payload.grouped_products = form.grouped_products;
+
+  if (hasDownloads.value) {
+    payload.downloads = form.downloads
+      .filter((file) => file.file.trim())
+      .map((file) => ({ ...(file.id ? { id: file.id } : {}), name: file.name.trim() || file.file.split('/').pop(), file: file.file.trim() }));
+    payload.download_limit = form.download_limit === '' ? -1 : Number(form.download_limit);
+    payload.download_expiry = form.download_expiry === '' ? -1 : Number(form.download_expiry);
+  }
 
   if (!isNew.value && form.slug.trim()) payload.slug = form.slug.trim();
 
@@ -406,6 +432,21 @@ const save = async (status = form.status) => {
 const chooseFeatured = async () => {
   const [image] = await openMediaFrame({ title: __('Product image', 'flexify-dashboard'), button: __('Set product image', 'flexify-dashboard') });
   if (image) form.images = [image, ...form.images.slice(1).filter((item) => item.id !== image.id)];
+};
+
+const addDownload = () => {
+  form.downloads = [...form.downloads, { id: '', name: '', file: '' }];
+};
+
+const chooseDownloadFile = async (index) => {
+  const [file] = await openMediaFrame({ title: __('Downloadable file', 'flexify-dashboard'), button: __('Use file', 'flexify-dashboard'), type: '' });
+  if (!file) return;
+
+  form.downloads = form.downloads.map((item, itemIndex) => (itemIndex === index ? { ...item, file: file.url, name: item.name || file.title } : item));
+};
+
+const removeDownload = (index) => {
+  form.downloads = form.downloads.filter((_, itemIndex) => itemIndex !== index);
 };
 
 const addGallery = async () => {
@@ -639,7 +680,23 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
                 <FdSwitch v-model="form.virtual" :label="__('Virtual product (no shipping)', 'flexify-dashboard')" />
                 <FdSwitch v-model="form.downloadable" :label="__('Downloadable', 'flexify-dashboard')" />
               </div>
-              <FdAlert v-if="form.downloadable" variant="info" :message="__('Manage downloadable files in the classic editor.', 'flexify-dashboard')" />
+              <FdAlert v-if="form.downloadable && isVariable" variant="info" :message="__('Downloadable files of variable products are managed in the classic editor.', 'flexify-dashboard')" />
+              <div v-if="hasDownloads" class="space-y-4 rounded-xl border border-gray-200 p-4 dark:border-gray-800">
+                <p class="text-theme-sm font-medium text-gray-800 dark:text-white/90">{{ __('Downloadable files', 'flexify-dashboard') }}</p>
+                <div v-for="(file, index) in form.downloads" :key="index" class="grid items-end gap-3 sm:grid-cols-[1fr_2fr_auto]">
+                  <FdInput v-model="file.name" :label="__('File name', 'flexify-dashboard')" />
+                  <FdInput v-model="file.file" type="url" :label="__('File URL', 'flexify-dashboard')" placeholder="https://" />
+                  <div class="flex gap-1">
+                    <FdButton variant="outline" icon="attach_file" icon-only :aria-label="__('Choose file', 'flexify-dashboard')" @click="chooseDownloadFile(index)" />
+                    <FdButton variant="ghost" icon="delete" icon-only :aria-label="__('Remove file', 'flexify-dashboard')" @click="removeDownload(index)" />
+                  </div>
+                </div>
+                <FdButton size="sm" variant="outline" icon="add" @click="addDownload">{{ __('Add file', 'flexify-dashboard') }}</FdButton>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <FdInput v-model="form.download_limit" type="number" min="0" step="1" :label="__('Download limit', 'flexify-dashboard')" :placeholder="__('Unlimited', 'flexify-dashboard')" />
+                  <FdInput v-model="form.download_expiry" type="number" min="0" step="1" :label="__('Download expiry (days)', 'flexify-dashboard')" :placeholder="__('Never', 'flexify-dashboard')" />
+                </div>
+              </div>
               <template v-if="hasShipping">
                 <div class="grid gap-4 sm:grid-cols-4">
                   <FdInput v-model="form.weight" :label="__('Weight', 'flexify-dashboard')" :suffix="store.weight_unit" inputmode="decimal" />
@@ -659,8 +716,27 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 
           <FdCard v-if="isVariable" :title="__('Variations', 'flexify-dashboard')">
             <FdAlert v-if="isNew || product?.type !== 'variable'" variant="info" :message="__('Save the product to start adding variations.', 'flexify-dashboard')" />
-            <FdAlert v-else-if="attributesDirty" variant="warning" class="mb-4" :message="__('Save the product to use the attribute changes in the variations.', 'flexify-dashboard')" />
-            <ProductVariationsEditor v-else ref="variationsRef" :product-id="product.id" :attributes="product.attributes" @dirty-change="(value) => (variationsDirty = value)" />
+            <FdAlert v-if="!isNew && product?.type === 'variable' && attributesDirty" variant="warning" class="mb-4" :message="__('Save the product to use the attribute changes in the variations.', 'flexify-dashboard')" />
+            <ProductVariationsEditor v-if="!isNew && product?.type === 'variable'" ref="variationsRef" :product-id="product.id" :attributes="product.attributes" @dirty-change="(value) => (variationsDirty = value)" />
+          </FdCard>
+
+          <FdCard :title="__('Linked products', 'flexify-dashboard')">
+            <div class="space-y-5">
+              <div v-if="isGrouped">
+                <p class="mb-2 text-theme-sm font-medium text-gray-700 dark:text-gray-300">{{ __('Grouped products', 'flexify-dashboard') }}</p>
+                <ProductPicker v-model="form.grouped_products" :exclude="id ? [id] : []" :types="['simple', 'variable', 'external']" />
+              </div>
+              <div>
+                <p class="mb-1 text-theme-sm font-medium text-gray-700 dark:text-gray-300">{{ __('Upsells', 'flexify-dashboard') }}</p>
+                <p class="mb-2 text-theme-xs text-gray-500 dark:text-gray-400">{{ __('Products recommended instead of this one, usually more profitable or better quality.', 'flexify-dashboard') }}</p>
+                <ProductPicker v-model="form.upsell_ids" :exclude="id ? [id] : []" />
+              </div>
+              <div>
+                <p class="mb-1 text-theme-sm font-medium text-gray-700 dark:text-gray-300">{{ __('Cross-sells', 'flexify-dashboard') }}</p>
+                <p class="mb-2 text-theme-xs text-gray-500 dark:text-gray-400">{{ __('Products promoted in the cart based on this product.', 'flexify-dashboard') }}</p>
+                <ProductPicker v-model="form.cross_sell_ids" :exclude="id ? [id] : []" />
+              </div>
+            </div>
           </FdCard>
 
           <FdCard :title="__('Advanced', 'flexify-dashboard')">
@@ -733,7 +809,7 @@ onBeforeUnmount(() => window.removeEventListener('beforeunload', onBeforeUnload)
 
           <FdCard :title="__('Categories', 'flexify-dashboard')">
             <FdSearchInput v-if="categories.length > 8" v-model="categorySearch" size="sm" class="mb-3" :placeholder="__('Search categories', 'flexify-dashboard')" />
-            <div class="max-h-64 space-y-2 overflow-y-auto pe-1 custom-scrollbar">
+            <div class="flex max-h-64 flex-col items-start gap-2 overflow-y-auto pe-1 custom-scrollbar">
               <FdCheckbox
                 v-for="category in categoryTree"
                 :key="category.id"

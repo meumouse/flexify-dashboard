@@ -9,7 +9,7 @@ import { notify } from '@/assets/js/functions/notify.js';
  * @param {boolean} options.multiple Allow selecting several images.
  * @returns {Promise<Array<{id:number, src:string, alt:string}>>}
  */
-export function openMediaFrame({ title, button, multiple = false } = {}) {
+export function openMediaFrame({ title, button, multiple = false, type = 'image' } = {}) {
   return new Promise((resolve) => {
     if (!window.wp?.media) {
       notify({ title: __('The media library is not available on this screen.', 'flexify-dashboard'), type: 'error' });
@@ -20,7 +20,7 @@ export function openMediaFrame({ title, button, multiple = false } = {}) {
     const frame = window.wp.media({
       title: title || __('Select image', 'flexify-dashboard'),
       button: { text: button || __('Use image', 'flexify-dashboard') },
-      library: { type: 'image' },
+      library: type ? { type } : {},
       multiple: multiple ? 'add' : false,
     });
 
@@ -35,6 +35,8 @@ export function openMediaFrame({ title, button, multiple = false } = {}) {
         .map((attachment) => ({
           id: attachment.id,
           src: attachment.sizes?.medium?.url || attachment.sizes?.thumbnail?.url || attachment.url,
+          url: attachment.url,
+          title: attachment.title || attachment.filename || '',
           alt: attachment.alt || '',
         }));
 

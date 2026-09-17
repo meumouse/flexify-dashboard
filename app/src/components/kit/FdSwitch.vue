@@ -28,8 +28,12 @@ const toggle = () => {
 <template>
   <label
     :for="generatedId"
-    class="inline-flex select-none items-center gap-3"
-    :class="[disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer', labelPosition === 'start' && 'flex-row-reverse justify-between']"
+    class="select-none items-center gap-3"
+    :class="[
+      disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer',
+      labelPosition === 'start' && 'flex-row-reverse justify-between',
+      label || description || $slots.default ? (labelPosition === 'start' ? 'flex' : 'flex w-fit') : 'inline-flex',
+    ]"
   >
     <span class="relative flex shrink-0">
       <input :id="generatedId" type="checkbox" role="switch" class="peer sr-only" :checked="model" :aria-checked="model" :disabled="disabled" @change="toggle" />

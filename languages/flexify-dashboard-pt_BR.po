@@ -13,10 +13,10 @@ msgstr "(Cópia)"
 
 #: admin/src/Rest/CustomFields/CustomFields.php:856
 #: admin/src/Rest/CustomFields/RelationshipSearch.php:529
-#: app/src/pages/products/src/editor/ProductEditor.vue:189
-#: app/src/pages/products/src/editor/ProductEditor.vue:538
-#: app/src/pages/products/src/editor/ProductEditor.vue:541
-#: app/src/pages/products/src/ProductsList.vue:582
+#: app/src/pages/products/src/editor/ProductEditor.vue:197
+#: app/src/pages/products/src/editor/ProductEditor.vue:579
+#: app/src/pages/products/src/editor/ProductEditor.vue:582
+#: app/src/pages/products/src/ProductsList.vue:678
 msgid "(no title)"
 msgstr "(sem título)"
 
@@ -213,12 +213,13 @@ msgstr "Ação"
 
 #: app/src/pages/media/src/media-details-view.vue:956
 #: app/src/pages/orders/src/OrderDetails.vue:281
-#: app/src/pages/orders/src/OrdersList.vue:526
+#: app/src/pages/orders/src/OrdersList.vue:629
 #: app/src/pages/products/src/AttributesView.vue:220
 #: app/src/pages/products/src/CategoriesView.vue:192
 #: app/src/pages/products/src/CouponsView.vue:269
-#: app/src/pages/products/src/ProductsList.vue:634
+#: app/src/pages/products/src/ProductsList.vue:730
 #: app/src/pages/products/src/ProductVariations.vue:126
+#: app/src/pages/products/src/TagsView.vue:174
 msgid "Actions"
 msgstr "Ações"
 
@@ -403,7 +404,7 @@ msgstr "Administrador"
 msgid "Administrator (manage_options)"
 msgstr "Administrador (gerenciar opções)"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:666
+#: app/src/pages/products/src/editor/ProductEditor.vue:742
 #: app/src/pages/settings/index.vue:149
 msgid "Advanced"
 msgstr "Avançado"
@@ -439,9 +440,9 @@ msgstr "atrás"
 #: app/src/pages/comments/src/comment-list-view.vue:501
 #: app/src/pages/media/src/media-list-view.vue:1360
 #: app/src/pages/menu-creator/src/menu-list-view.vue:398
-#: app/src/pages/orders/src/OrdersList.vue:138
+#: app/src/pages/orders/src/OrdersList.vue:199
 #: app/src/pages/posts/src/constants.js:18
-#: app/src/pages/products/src/ProductsList.vue:115
+#: app/src/pages/products/src/ProductsList.vue:161
 #: app/src/pages/users/src/user-list-view.vue:867
 msgid "All"
 msgstr "Todos"
@@ -989,6 +990,7 @@ msgstr "Ligar de volta"
 #: app/src/pages/products/src/CategoriesView.vue:207
 #: app/src/pages/products/src/CouponsView.vue:330
 #: app/src/pages/products/src/ProductQuickEdit.vue:299
+#: app/src/pages/products/src/TagsView.vue:192
 #: app/src/pages/role-editor/src/role-details-view.vue:377
 #: app/src/pages/role-editor/src/role-details-view.vue:476
 #: app/src/pages/role-editor/src/role-details-view.vue:624
@@ -1055,10 +1057,10 @@ msgstr ""
 #: app/src/pages/posts/src/post-preview.vue:368
 #: app/src/pages/posts/src/table-filters.vue:144
 #: app/src/pages/products/src/CategoriesView.vue:153
-#: app/src/pages/products/src/editor/ProductEditor.vue:734
+#: app/src/pages/products/src/editor/ProductEditor.vue:810
 #: app/src/pages/products/src/ProductQuickEdit.vue:280
-#: app/src/pages/products/src/ProductsList.vue:137
-#: app/src/pages/products/src/ProductsList.vue:473
+#: app/src/pages/products/src/ProductsList.vue:183
+#: app/src/pages/products/src/ProductsList.vue:542
 msgid "Categories"
 msgstr "Categorias"
 
@@ -1205,8 +1207,8 @@ msgid "Clear custom properties"
 msgstr "Limpar propriedades personalizadas"
 
 #: app/src/pages/media/src/media-list-view.vue:1699
-#: app/src/pages/orders/src/OrdersList.vue:430
-#: app/src/pages/products/src/ProductsList.vue:525
+#: app/src/pages/orders/src/OrdersList.vue:511
+#: app/src/pages/products/src/ProductsList.vue:585
 msgid "Clear filters"
 msgstr "Limpar filtros"
 
@@ -1628,8 +1630,8 @@ msgstr "URL personalizada"
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:99
 #: app/src/pages/orders/src/OrderDetails.vue:422
 #: app/src/pages/orders/src/OrderEditor.vue:504
-#: app/src/pages/orders/src/OrdersList.vue:176
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:237
+#: app/src/pages/orders/src/OrdersList.vue:431
 msgid "Customer"
 msgstr "Cliente"
 
@@ -1644,7 +1646,7 @@ msgid "Customer Since"
 msgstr "Cliente desde"
 
 #: app/src/pages/dashboard/src/cards/ecommerce/customers/component.vue:76
-#: app/src/pages/orders/src/OrdersList.vue:385
+#: app/src/pages/orders/src/OrdersList.vue:462
 msgid "Customers"
 msgstr "Clientes"
 
@@ -1721,9 +1723,9 @@ msgstr "Configurações do explorador e gerenciamento de banco de dados"
 #: app/src/components/utility/media-library/index.vue:51
 #: app/src/pages/comments/src/comment-details-view.vue:376
 #: app/src/pages/comments/src/comment-details-view.vue:555
-#: app/src/pages/orders/src/OrdersList.vue:182
-#: app/src/pages/orders/src/OrdersList.vue:354
-#: app/src/pages/products/src/ProductsList.vue:141
+#: app/src/pages/orders/src/OrdersList.vue:243
+#: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/pages/products/src/ProductsList.vue:187
 msgid "Date"
 msgstr "Data"
 
@@ -1784,6 +1786,9 @@ msgstr "Modelo padrão"
 #: app/src/pages/products/src/CategoriesView.vue:132
 #: app/src/pages/products/src/CategoriesView.vue:188
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:203
+#: app/src/pages/products/src/TagsView.vue:107
+#: app/src/pages/products/src/TagsView.vue:154
+#: app/src/pages/products/src/TagsView.vue:170
 #: app/src/pages/role-editor/src/role-details-view.vue:475
 #: app/src/pages/users/src/user-list-view.vue:1491
 #: app/src/pages/users/src/user-list.vue:223
@@ -1862,8 +1867,9 @@ msgstr "Descreva o problema de layout ou estilo."
 #: app/src/pages/media/src/media-list-view.vue:1959
 #: app/src/pages/plugins/src/plugin-inspect.vue:274
 #: app/src/pages/products/src/CategoriesView.vue:204
-#: app/src/pages/products/src/editor/ProductEditor.vue:579
+#: app/src/pages/products/src/editor/ProductEditor.vue:620
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:315
+#: app/src/pages/products/src/TagsView.vue:189
 msgid "Description"
 msgstr "Descrição"
 
@@ -1994,9 +2000,9 @@ msgstr "Downloads"
 #: app/src/pages/menu-creator/src/menu-list-view.vue:420
 #: app/src/pages/menu-creator/src/menu-list.vue:65
 #: app/src/pages/products/src/CouponsView.vue:72
-#: app/src/pages/products/src/editor/ProductEditor.vue:115
+#: app/src/pages/products/src/editor/ProductEditor.vue:122
 #: app/src/pages/products/src/ProductQuickEdit.vue:51
-#: app/src/pages/products/src/ProductsList.vue:167
+#: app/src/pages/products/src/ProductsList.vue:226
 msgid "Draft"
 msgstr "Rascunho"
 
@@ -2009,7 +2015,7 @@ msgid "Draft notice"
 msgstr "Aviso preliminar"
 
 #: app/src/pages/posts/src/constants.js:19
-#: app/src/pages/products/src/ProductsList.vue:117
+#: app/src/pages/products/src/ProductsList.vue:163
 msgid "Drafts"
 msgstr "Rascunhos"
 
@@ -2035,7 +2041,7 @@ msgstr "Dados analíticos fictícios gerados com sucesso para %d mês(es)."
 
 #: app/src/pages/media/src/media-list-view.vue:1837
 #: app/src/pages/posts/src/post-actions.vue:44
-#: app/src/pages/products/src/ProductsList.vue:430
+#: app/src/pages/products/src/ProductsList.vue:499
 msgid "Duplicate"
 msgstr "Duplicado"
 
@@ -2081,7 +2087,8 @@ msgstr "Por exemplo, o cabeçalho está sobrepondo a área de conteúdo."
 #: app/src/pages/products/src/AttributesView.vue:172
 #: app/src/pages/products/src/CategoriesView.vue:185
 #: app/src/pages/products/src/CouponsView.vue:202
-#: app/src/pages/products/src/ProductsList.vue:428
+#: app/src/pages/products/src/ProductsList.vue:497
+#: app/src/pages/products/src/TagsView.vue:167
 msgid "Edit"
 msgstr "Editar"
 
@@ -2161,7 +2168,7 @@ msgstr "Efeitos"
 #: app/src/components/user-details-form/user-details-form.vue:221
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:642
 #: app/src/pages/login/src/login-form-panel.vue:199
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:221
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:642
 #: app/src/pages/users/src/user-import.vue:54
@@ -2929,6 +2936,7 @@ msgid "File uploaded"
 msgstr "Arquivo enviado"
 
 #: app/src/pages/media/src/media-details-view.vue:942
+#: app/src/pages/products/src/editor/ProductEditor.vue:688
 msgid "File URL"
 msgstr "URL do arquivo"
 
@@ -2965,6 +2973,7 @@ msgstr "Filtrar por URL de página específica"
 msgid "Filter media items by tag IDs."
 msgstr "Filtre itens de mídia por IDs de tags."
 
+#: app/src/pages/orders/src/OrdersList.vue:509
 #: app/src/pages/posts/src/table-filters.vue:140
 msgid "Filters"
 msgstr "Filtros"
@@ -3088,7 +3097,7 @@ msgstr "Desempenho do front-end"
 msgid "Function"
 msgstr "Função"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:569
+#: app/src/pages/products/src/editor/ProductEditor.vue:610
 #: app/src/pages/products/src/ProductQuickEdit.vue:223
 #: app/src/pages/role-editor/src/role-details-view.vue:85
 #: app/src/pages/settings/index.vue:44
@@ -3233,7 +3242,7 @@ msgid "Heading 6"
 msgstr "Título 6"
 
 #: app/src/components/utility/image-editor/index.vue:1920
-#: app/src/pages/products/src/editor/ProductEditor.vue:648
+#: app/src/pages/products/src/editor/ProductEditor.vue:705
 #: app/src/pages/products/src/ProductQuickEdit.vue:268
 msgid "Height"
 msgstr "Altura"
@@ -3253,7 +3262,7 @@ msgstr ""
 
 #: app/src/pages/dashboard/index.vue:919
 #: app/src/pages/menu-creator/src/edit.vue:1075
-#: app/src/pages/products/src/editor/ProductEditor.vue:124
+#: app/src/pages/products/src/editor/ProductEditor.vue:131
 #: app/src/pages/products/src/ProductQuickEdit.vue:60
 msgid "Hidden"
 msgstr "Escondido"
@@ -3409,7 +3418,7 @@ msgid "Image url"
 msgstr "URL da imagem"
 
 #: app/src/pages/media/src/media-list-view.vue:1372
-#: app/src/pages/products/src/editor/ProductEditor.vue:690
+#: app/src/pages/products/src/editor/ProductEditor.vue:766
 msgid "Images"
 msgstr "Imagens"
 
@@ -4577,6 +4586,8 @@ msgstr "Não são permitidas múltiplas declarações."
 #: app/src/pages/products/src/CategoriesView.vue:88
 #: app/src/pages/products/src/CategoriesView.vue:201
 #: app/src/pages/products/src/ProductQuickEdit.vue:224
+#: app/src/pages/products/src/TagsView.vue:37
+#: app/src/pages/products/src/TagsView.vue:187
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:207
 #: app/src/pages/users/src/user-list-view.vue:1344
 #: app/src/pages/users/src/user-list-view.vue:1549
@@ -5215,8 +5226,8 @@ msgstr "Ou insira uma opção personalizada:"
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:98
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:123
 #: app/src/pages/orders/src/OrderEditor.vue:540
-#: app/src/pages/orders/src/OrdersList.vue:175
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:236
+#: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/posts/src/table-filters.vue:164
 msgid "Order"
 msgstr "Ordem"
@@ -5236,8 +5247,8 @@ msgstr "Detalhamento do status do pedido"
 #: app/src/pages/orders/src/OrderDetails.vue:97
 #: app/src/pages/orders/src/OrderDetails.vue:441
 #: app/src/pages/orders/src/OrderEditor.vue:347
-#: app/src/pages/orders/src/OrdersList.vue:398
-#: app/src/pages/orders/src/OrdersList.vue:449
+#: app/src/pages/orders/src/OrdersList.vue:478
+#: app/src/pages/orders/src/OrdersList.vue:552
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:469
 msgid "Orders"
 msgstr "Pedidos"
@@ -5385,8 +5396,8 @@ msgstr "Pedido sem item"
 #: app/src/pages/comments/src/comment-details-view.vue:54
 #: app/src/pages/comments/src/comment-list-view.vue:523
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:194
-#: app/src/pages/products/src/ProductsList.vue:118
-#: app/src/pages/products/src/ProductsList.vue:168
+#: app/src/pages/products/src/ProductsList.vue:164
+#: app/src/pages/products/src/ProductsList.vue:227
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:87
 msgid "Pending"
 msgstr "Pendente"
@@ -5422,7 +5433,7 @@ msgstr "Avisos administrativos persistentes para o painel Flexify."
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:653
 #: app/src/pages/orders/src/AddressFields.vue:62
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:653
 msgid "Phone"
 msgstr "Telefone"
@@ -5694,7 +5705,7 @@ msgstr "Imprensa"
 
 #: app/src/pages/admin-notices/src/edit.vue:354
 #: app/src/pages/posts/src/post-preview.vue:421
-#: app/src/pages/products/src/editor/ProductEditor.vue:448
+#: app/src/pages/products/src/editor/ProductEditor.vue:489
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:1007
 msgid "Preview"
 msgstr "Pré-visualização"
@@ -5720,10 +5731,10 @@ msgid "Priority"
 msgstr "Prioridade"
 
 #: app/src/components/app/search/state/constants.js:94
-#: app/src/pages/products/src/editor/ProductEditor.vue:117
+#: app/src/pages/products/src/editor/ProductEditor.vue:124
 #: app/src/pages/products/src/ProductQuickEdit.vue:53
-#: app/src/pages/products/src/ProductsList.vue:119
-#: app/src/pages/products/src/ProductsList.vue:169
+#: app/src/pages/products/src/ProductsList.vue:165
+#: app/src/pages/products/src/ProductsList.vue:228
 msgid "Private"
 msgstr "Privado"
 
@@ -5732,7 +5743,7 @@ msgid "Pro"
 msgstr "Pró"
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:88
-#: app/src/pages/orders/src/OrdersList.vue:162
+#: app/src/pages/orders/src/OrdersList.vue:223
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:88
 msgid "Processing"
 msgstr "Processamento"
@@ -5741,7 +5752,7 @@ msgstr "Processamento"
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:112
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:52
 #: app/src/pages/orders/src/OrderDetails.vue:308
-#: app/src/pages/products/src/ProductsList.vue:136
+#: app/src/pages/products/src/ProductsList.vue:182
 msgid "Product"
 msgstr "Produto"
 
@@ -5781,11 +5792,11 @@ msgstr "Publicar itens"
 #: app/src/pages/media/src/media-details-view.vue:1138
 #: app/src/pages/menu-creator/src/menu-list-view.vue:409
 #: app/src/pages/menu-creator/src/menu-list.vue:64
-#: app/src/pages/products/src/editor/ProductEditor.vue:114
+#: app/src/pages/products/src/editor/ProductEditor.vue:121
 #: app/src/pages/products/src/ProductQuickEdit.vue:50
-#: app/src/pages/products/src/ProductsList.vue:116
-#: app/src/pages/products/src/ProductsList.vue:129
-#: app/src/pages/products/src/ProductsList.vue:166
+#: app/src/pages/products/src/ProductsList.vue:162
+#: app/src/pages/products/src/ProductsList.vue:175
+#: app/src/pages/products/src/ProductsList.vue:225
 msgid "Published"
 msgstr "Publicado"
 
@@ -6027,7 +6038,7 @@ msgstr "Renomear item do menu"
 msgid "Reorder card"
 msgstr "Cartão de pedido"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:703
+#: app/src/pages/products/src/editor/ProductEditor.vue:779
 #: app/src/pages/settings/src/text-pairs.vue:25
 msgid "Replace"
 msgstr "Substituir"
@@ -6153,11 +6164,11 @@ msgstr "Redimensionar"
 msgid "Resize card"
 msgstr "Redimensionar cartão"
 
-#: app/src/pages/orders/src/OrdersList.vue:332
-#: app/src/pages/orders/src/OrdersList.vue:463
+#: app/src/pages/orders/src/OrdersList.vue:408
+#: app/src/pages/orders/src/OrdersList.vue:566
 #: app/src/pages/posts/src/post-actions.vue:53
-#: app/src/pages/products/src/ProductsList.vue:421
-#: app/src/pages/products/src/ProductsList.vue:568
+#: app/src/pages/products/src/ProductsList.vue:490
+#: app/src/pages/products/src/ProductsList.vue:664
 msgid "Restore"
 msgstr "Restaurar"
 
@@ -6388,7 +6399,7 @@ msgstr "Salva as configurações CSS personalizadas para fins de persistência."
 
 #: app/src/components/app/search/state/constants.js:95
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:188
-#: app/src/pages/products/src/ProductsList.vue:170
+#: app/src/pages/products/src/ProductsList.vue:229
 msgid "Scheduled"
 msgstr "Agendado"
 
@@ -6986,8 +6997,10 @@ msgstr "Ignorar a primeira linha de dados (se ela contiver cabeçalhos)"
 #: app/src/pages/products/src/AttributesView.vue:230
 #: app/src/pages/products/src/CategoriesView.vue:89
 #: app/src/pages/products/src/CategoriesView.vue:202
-#: app/src/pages/products/src/editor/ProductEditor.vue:572
+#: app/src/pages/products/src/editor/ProductEditor.vue:613
 #: app/src/pages/products/src/ProductQuickEdit.vue:226
+#: app/src/pages/products/src/TagsView.vue:38
+#: app/src/pages/products/src/TagsView.vue:188
 msgid "Slug"
 msgstr "Lesma"
 
@@ -7077,15 +7090,15 @@ msgstr "Comece a pesquisar"
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:97
 #: app/src/pages/menu-creator/src/edit.vue:818
 #: app/src/pages/orders/src/OrderEditor.vue:542
-#: app/src/pages/orders/src/OrdersList.vue:177
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:238
+#: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/posts/src/batch-edit.vue:123
 #: app/src/pages/posts/src/post-preview.vue:340
 #: app/src/pages/products/src/CouponsView.vue:63
-#: app/src/pages/products/src/editor/ProductEditor.vue:681
+#: app/src/pages/products/src/editor/ProductEditor.vue:757
 #: app/src/pages/products/src/ProductQuickEdit.vue:228
-#: app/src/pages/products/src/ProductsList.vue:140
-#: app/src/pages/products/src/ProductsList.vue:551
+#: app/src/pages/products/src/ProductsList.vue:186
+#: app/src/pages/products/src/ProductsList.vue:647
 msgid "Status"
 msgstr "Status"
 
@@ -7187,15 +7200,17 @@ msgid "Tag name is required"
 msgstr "O nome da tag é obrigatório."
 
 #: admin/src/Rest/MediaTags.php:129
+#: app/src/apps/js/Products.js:51
 #: app/src/pages/media/src/media-details-view.vue:924
 #: app/src/pages/media/src/media-list-view.vue:1547
 #: app/src/pages/posts/src/batch-edit.vue:116
 #: app/src/pages/posts/src/post-preview.vue:386
 #: app/src/pages/posts/src/tag-select.vue:287
-#: app/src/pages/products/src/editor/ProductEditor.vue:754
-#: app/src/pages/products/src/editor/ProductEditor.vue:755
+#: app/src/pages/products/src/editor/ProductEditor.vue:830
+#: app/src/pages/products/src/editor/ProductEditor.vue:831
 #: app/src/pages/products/src/ProductQuickEdit.vue:294
-#: app/src/pages/products/src/ProductsList.vue:474
+#: app/src/pages/products/src/ProductsList.vue:543
+#: app/src/pages/products/src/TagsView.vue:130
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -7557,8 +7572,8 @@ msgstr "total"
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:96
 #: app/src/pages/orders/src/OrderDetails.vue:311
 #: app/src/pages/orders/src/OrderPreview.vue:100
-#: app/src/pages/orders/src/OrdersList.vue:179
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:240
+#: app/src/pages/orders/src/OrdersList.vue:431
 msgid "Total"
 msgstr "Total"
 
@@ -7657,11 +7672,11 @@ msgstr "Transformar"
 #: app/src/pages/comments/src/comment-details-view.vue:70
 #: app/src/pages/comments/src/comment-list-view.vue:545
 #: app/src/pages/comments/src/comment-list-view.vue:778
-#: app/src/pages/orders/src/OrdersList.vue:150
-#: app/src/pages/orders/src/OrdersList.vue:460
-#: app/src/pages/products/src/ProductsList.vue:120
-#: app/src/pages/products/src/ProductsList.vue:171
-#: app/src/pages/products/src/ProductsList.vue:565
+#: app/src/pages/orders/src/OrdersList.vue:211
+#: app/src/pages/orders/src/OrdersList.vue:563
+#: app/src/pages/products/src/ProductsList.vue:166
+#: app/src/pages/products/src/ProductsList.vue:230
+#: app/src/pages/products/src/ProductsList.vue:661
 msgid "Trash"
 msgstr "Lixo"
 
@@ -7767,7 +7782,7 @@ msgid "Unique Visitors"
 msgstr "Visitantes únicos"
 
 #: admin/src/Rest/ActivityLog.php:373
-#: admin/src/Rest/WooCommerceOrders.php:617
+#: admin/src/Rest/WooCommerceOrders.php:720
 #: app/src/pages/activity-log/src/activity-details-view.vue:286
 #: app/src/pages/activity-log/src/activity-list.vue:261
 #: app/src/pages/media/src/media-list.vue:126
@@ -7823,7 +7838,7 @@ msgstr "Mídia não utilizada apenas"
 #: app/src/pages/menu-creator/src/edit.vue:619
 #: app/src/pages/plugins/src/plugin-card.vue:324
 #: app/src/pages/posts/src/batch-edit.vue:157
-#: app/src/pages/products/src/editor/ProductEditor.vue:481
+#: app/src/pages/products/src/editor/ProductEditor.vue:522
 msgid "Update"
 msgstr "Atualizar"
 
@@ -8368,7 +8383,7 @@ msgid "Widget"
 msgstr "Widget"
 
 #: app/src/components/utility/image-editor/index.vue:1899
-#: app/src/pages/products/src/editor/ProductEditor.vue:647
+#: app/src/pages/products/src/editor/ProductEditor.vue:704
 #: app/src/pages/products/src/ProductQuickEdit.vue:267
 msgid "Width"
 msgstr "Largura"
@@ -8693,37 +8708,37 @@ msgstr "%d categorias"
 msgid "%d item(s)"
 msgstr "%d item(ns)"
 
-#: app/src/pages/orders/src/OrdersList.vue:308
+#: app/src/pages/orders/src/OrdersList.vue:384
 msgid "%d order(s) could not be updated"
 msgstr "%d pedido(s) não puderam ser atualizados"
 
-#: app/src/pages/orders/src/OrdersList.vue:304
+#: app/src/pages/orders/src/OrdersList.vue:380
 msgid "%d order(s) updated"
 msgstr "%d pedido(s) atualizado(s)"
 
-#: app/src/pages/orders/src/OrdersList.vue:321
+#: app/src/pages/orders/src/OrdersList.vue:397
 msgid "%d order(s) will be moved to the trash."
 msgstr "%d pedido(s) serão movidos para a lixeira."
 
-#: app/src/pages/orders/src/OrdersList.vue:320
+#: app/src/pages/orders/src/OrdersList.vue:396
 msgid "%d order(s) will be permanently deleted. This action cannot be undone."
 msgstr ""
 "%d pedido(s) serão excluídos permanentemente. Esta ação não pode ser "
 "desfeita."
 
-#: app/src/pages/products/src/ProductsList.vue:397
+#: app/src/pages/products/src/ProductsList.vue:466
 msgid "%d product(s) could not be updated"
 msgstr "%d produto(s) não puderam ser atualizados"
 
-#: app/src/pages/products/src/ProductsList.vue:393
+#: app/src/pages/products/src/ProductsList.vue:462
 msgid "%d product(s) updated"
 msgstr "%d produto(s) atualizado(s)"
 
-#: app/src/pages/products/src/ProductsList.vue:410
+#: app/src/pages/products/src/ProductsList.vue:479
 msgid "%d product(s) will be moved to the trash."
 msgstr "%d produto(s) serão movidos para a lixeira."
 
-#: app/src/pages/products/src/ProductsList.vue:409
+#: app/src/pages/products/src/ProductsList.vue:478
 msgid "%d product(s) will be permanently deleted. This action cannot be undone."
 msgstr ""
 "%d produto(s) serão excluídos permanentemente. Esta ação não pode ser "
@@ -8751,20 +8766,20 @@ msgstr "%d usos"
 msgid "%d variation(s) created"
 msgstr "%d variação(ões) criada(s)"
 
-#: app/src/pages/products/src/ProductsList.vue:600
+#: app/src/pages/products/src/ProductsList.vue:696
 msgid "%d variations"
 msgstr "%d variações"
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:290
-#: app/src/pages/products/src/ProductsList.vue:618
+#: app/src/pages/products/src/ProductsList.vue:714
 msgid "%s in stock"
 msgstr "%s em estoque"
 
-#: app/src/pages/orders/src/OrdersList.vue:168
+#: app/src/pages/orders/src/OrdersList.vue:229
 msgid "%s orders"
 msgstr "%s pedidos"
 
-#: app/src/pages/orders/src/OrdersList.vue:497
+#: app/src/pages/orders/src/OrdersList.vue:600
 msgid "%s refunded"
 msgstr "%s reembolsado"
 
@@ -8772,15 +8787,15 @@ msgstr "%s reembolsado"
 msgid "%s will be moved to the trash."
 msgstr "%s será movido para a lixeira."
 
-#: app/src/pages/orders/src/OrdersList.vue:405
+#: app/src/pages/orders/src/OrdersList.vue:485
 msgid "30 days"
 msgstr "30 dias"
 
-#: app/src/pages/orders/src/OrdersList.vue:404
+#: app/src/pages/orders/src/OrdersList.vue:484
 msgid "7 days"
 msgstr "7 dias"
 
-#: app/src/pages/orders/src/OrdersList.vue:406
+#: app/src/pages/orders/src/OrdersList.vue:486
 msgid "90 days"
 msgstr "90 dias"
 
@@ -8788,7 +8803,7 @@ msgstr "90 dias"
 msgid "A percentage discount cannot be higher than 100."
 msgstr "Um desconto percentual não pode ser maior que 100."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:586
+#: app/src/pages/products/src/editor/ProductEditor.vue:627
 msgid "A short summary shown next to the product image…"
 msgstr "Um resumo curto exibido ao lado da imagem do produto…"
 
@@ -8827,8 +8842,8 @@ msgstr "Adicione atributos, marque-os como “Usado para variações” e salve 
 #: app/src/pages/products/src/CategoriesView.vue:157
 #: app/src/pages/products/src/CategoriesView.vue:199
 #: app/src/pages/products/src/CategoriesView.vue:208
-#: app/src/pages/products/src/editor/ProductEditor.vue:750
-#: app/src/pages/products/src/ProductsList.vue:466
+#: app/src/pages/products/src/editor/ProductEditor.vue:826
+#: app/src/pages/products/src/ProductsList.vue:535
 msgid "Add category"
 msgstr "Adicionar categoria"
 
@@ -8841,7 +8856,7 @@ msgstr "Adicionar cupom"
 msgid "Add fee"
 msgstr "Adicionar taxa"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:725
+#: app/src/pages/products/src/editor/ProductEditor.vue:801
 msgid "Add gallery images"
 msgstr "Adicionar imagens à galeria"
 
@@ -8856,19 +8871,19 @@ msgstr "Adicionar nota"
 #: app/src/apps/js/Orders.js:32
 #: app/src/pages/orders/src/OrderEditor.vue:349
 #: app/src/pages/orders/src/OrderEditor.vue:370
-#: app/src/pages/orders/src/OrdersList.vue:415
+#: app/src/pages/orders/src/OrdersList.vue:495
 msgid "Add order"
 msgstr "Adicionar pedido"
 
-#: app/src/pages/orders/src/OrdersList.vue:384
+#: app/src/pages/orders/src/OrdersList.vue:461
 msgid "Add order in classic screen"
 msgstr "Adicionar pedido na tela clássica"
 
 #: app/src/apps/js/Products.js:32
-#: app/src/pages/products/src/editor/ProductEditor.vue:189
-#: app/src/pages/products/src/editor/ProductEditor.vue:538
-#: app/src/pages/products/src/editor/ProductEditor.vue:541
-#: app/src/pages/products/src/ProductsList.vue:500
+#: app/src/pages/products/src/editor/ProductEditor.vue:197
+#: app/src/pages/products/src/editor/ProductEditor.vue:579
+#: app/src/pages/products/src/editor/ProductEditor.vue:582
+#: app/src/pages/products/src/ProductsList.vue:570
 msgid "Add product"
 msgstr "Adicionar produto"
 
@@ -8876,7 +8891,7 @@ msgstr "Adicionar produto"
 msgid "Add shipping"
 msgstr "Adicionar entrega"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:412
+#: app/src/pages/products/src/editor/ProductEditor.vue:453
 msgid "Add to gallery"
 msgstr "Adicionar à galeria"
 
@@ -8897,7 +8912,7 @@ msgid "Adjust by"
 msgstr "Ajustar em"
 
 #: app/src/pages/products/src/BulkPriceModal.vue:43
-#: app/src/pages/products/src/ProductsList.vue:559
+#: app/src/pages/products/src/ProductsList.vue:655
 msgid "Adjust prices"
 msgstr "Ajustar preços"
 
@@ -8905,15 +8920,15 @@ msgstr "Ajustar preços"
 msgid "Administrator"
 msgstr "Administrador"
 
-#: app/src/pages/products/src/ProductsList.vue:514
+#: app/src/pages/products/src/ProductsList.vue:600
 msgid "All categories"
 msgstr "Todas as categorias"
 
-#: app/src/pages/products/src/ProductsList.vue:520
+#: app/src/pages/products/src/ProductsList.vue:603
 msgid "All products"
 msgstr "Todos os produtos"
 
-#: app/src/pages/products/src/ProductsList.vue:515
+#: app/src/pages/products/src/ProductsList.vue:601
 msgid "All types"
 msgstr "Todos os tipos"
 
@@ -8921,7 +8936,7 @@ msgstr "Todos os tipos"
 msgid "All variations already exist"
 msgstr "Todas as variações já existem"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:130
+#: app/src/pages/products/src/editor/ProductEditor.vue:137
 #: app/src/pages/products/src/ProductQuickEdit.vue:66
 msgid "Allow"
 msgstr "Permitir"
@@ -8934,7 +8949,7 @@ msgstr "Permitir encomendas?"
 msgid "Allow free shipping"
 msgstr "Permitir frete grátis"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:129
+#: app/src/pages/products/src/editor/ProductEditor.vue:136
 #: app/src/pages/products/src/ProductQuickEdit.vue:65
 msgid "Allow, but notify customer"
 msgstr "Permitir, mas avisar o cliente"
@@ -8958,11 +8973,11 @@ msgstr "Qualquer"
 msgid "Any %s"
 msgstr "Qualquer %s"
 
-#: app/src/pages/orders/src/OrdersList.vue:428
+#: app/src/pages/orders/src/OrdersList.vue:508
 msgid "Any date"
 msgstr "Qualquer data"
 
-#: app/src/pages/products/src/ProductsList.vue:516
+#: app/src/pages/products/src/ProductsList.vue:602
 msgid "Any stock status"
 msgstr "Qualquer status de estoque"
 
@@ -8994,12 +9009,12 @@ msgstr "Atributo atualizado"
 msgid "Attribute values"
 msgstr "Valores do atributo"
 
-#: app/src/apps/js/Products.js:51
+#: app/src/apps/js/Products.js:57
 #: app/src/pages/products/src/AttributesView.vue:185
 #: app/src/pages/products/src/AttributesView.vue:187
 #: app/src/pages/products/src/AttributesView.vue:204
-#: app/src/pages/products/src/editor/ProductEditor.vue:655
-#: app/src/pages/products/src/ProductsList.vue:475
+#: app/src/pages/products/src/editor/ProductEditor.vue:712
+#: app/src/pages/products/src/ProductsList.vue:544
 msgid "Attributes"
 msgstr "Atributos"
 
@@ -9015,11 +9030,11 @@ msgstr "Disponível para reembolso: %s"
 msgid "Back to orders"
 msgstr "Voltar para pedidos"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:533
+#: app/src/pages/products/src/editor/ProductEditor.vue:574
 msgid "Back to products"
 msgstr "Voltar para produtos"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:628
+#: app/src/pages/products/src/editor/ProductEditor.vue:669
 msgid "Backorders"
 msgstr "Encomendas"
 
@@ -9036,19 +9051,20 @@ msgstr "Endereço de cobrança"
 msgid "Billing address updated"
 msgstr "Endereço de cobrança atualizado"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:612
+#: app/src/pages/products/src/editor/ProductEditor.vue:653
 msgid "Button text"
 msgstr "Texto do botão"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:612
+#: app/src/pages/products/src/editor/ProductEditor.vue:653
 msgid "Buy product"
 msgstr "Comprar produto"
 
-#: admin/src/Rest/WooCommerceOrders.php:599
+#: admin/src/Rest/WooCommerceOrders.php:702
+#: app/src/pages/orders/src/OrdersList.vue:126
 msgid "Campaign"
 msgstr "Campanha"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:682
+#: app/src/pages/products/src/editor/ProductEditor.vue:758
 #: app/src/pages/products/src/ProductQuickEdit.vue:229
 msgid "Catalog visibility"
 msgstr "Visibilidade no catálogo"
@@ -9067,8 +9083,8 @@ msgstr "Categoria atualizada"
 
 #: app/src/pages/orders/src/OrderDetails.vue:288
 #: app/src/pages/orders/src/OrderPreview.vue:134
-#: app/src/pages/orders/src/OrdersList.vue:341
-#: app/src/pages/orders/src/OrdersList.vue:456
+#: app/src/pages/orders/src/OrdersList.vue:418
+#: app/src/pages/orders/src/OrdersList.vue:559
 msgid "Change status"
 msgstr "Alterar status"
 
@@ -9081,20 +9097,21 @@ msgid "Choose variation image"
 msgstr "Escolher imagem da variação"
 
 #: app/src/pages/orders/src/AddressFields.vue:59
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:431
 msgid "City"
 msgstr "Cidade"
 
-#: app/src/pages/orders/src/OrdersList.vue:387
+#: app/src/pages/orders/src/OrdersList.vue:464
 msgid "Classic orders screen"
 msgstr "Tela clássica de pedidos"
 
-#: app/src/pages/products/src/ProductsList.vue:481
+#: app/src/pages/products/src/ProductsList.vue:550
 msgid "Classic products screen"
 msgstr "Tela clássica de produtos"
 
 #: app/src/pages/products/src/CategoriesView.vue:156
 #: app/src/pages/products/src/CouponsView.vue:221
+#: app/src/pages/products/src/TagsView.vue:133
 msgid "Classic screen"
 msgstr "Tela clássica"
 
@@ -9130,7 +9147,7 @@ msgstr "Não foi possível excluir o produto."
 msgid "Could not move the product to the trash."
 msgstr "Não foi possível mover o produto para a lixeira."
 
-#: admin/src/Rest/WooCommerceOrders.php:423
+#: admin/src/Rest/WooCommerceOrders.php:483
 msgid "Could not restore the order."
 msgstr "Não foi possível restaurar o pedido."
 
@@ -9163,13 +9180,13 @@ msgstr "Cupom movido para a lixeira"
 msgid "Coupon updated"
 msgstr "Cupom atualizado"
 
-#: app/src/apps/js/Products.js:57
+#: app/src/apps/js/Products.js:63
 #: app/src/pages/orders/src/OrderDetails.vue:372
 #: app/src/pages/orders/src/OrderEditor.vue:549
 #: app/src/pages/products/src/CouponsView.vue:216
 #: app/src/pages/products/src/CouponsView.vue:218
 #: app/src/pages/products/src/CouponsView.vue:240
-#: app/src/pages/products/src/ProductsList.vue:476
+#: app/src/pages/products/src/ProductsList.vue:545
 msgid "Coupons"
 msgstr "Cupons"
 
@@ -9214,11 +9231,12 @@ msgstr "Crie códigos de desconto para seus clientes."
 msgid "Create order"
 msgstr "Criar pedido"
 
-#: app/src/pages/products/src/ProductsList.vue:544
+#: app/src/pages/products/src/ProductsList.vue:640
 msgid "Create your first product to start selling."
 msgstr "Crie seu primeiro produto para começar a vender."
 
-#: app/src/pages/orders/src/OrdersList.vue:471
+#: app/src/pages/orders/src/OrdersList.vue:119
+#: app/src/pages/orders/src/OrdersList.vue:574
 msgid "Created in admin"
 msgstr "Criado no painel"
 
@@ -9261,17 +9279,17 @@ msgstr "Excluir nota"
 msgid "Delete note?"
 msgstr "Excluir nota?"
 
-#: app/src/pages/orders/src/OrdersList.vue:322
-#: app/src/pages/orders/src/OrdersList.vue:334
-#: app/src/pages/orders/src/OrdersList.vue:464
-#: app/src/pages/products/src/ProductsList.vue:411
-#: app/src/pages/products/src/ProductsList.vue:423
-#: app/src/pages/products/src/ProductsList.vue:569
+#: app/src/pages/orders/src/OrdersList.vue:398
+#: app/src/pages/orders/src/OrdersList.vue:410
+#: app/src/pages/orders/src/OrdersList.vue:567
+#: app/src/pages/products/src/ProductsList.vue:480
+#: app/src/pages/products/src/ProductsList.vue:492
+#: app/src/pages/products/src/ProductsList.vue:665
 msgid "Delete permanently"
 msgstr "Excluir permanentemente"
 
-#: app/src/pages/orders/src/OrdersList.vue:318
-#: app/src/pages/products/src/ProductsList.vue:407
+#: app/src/pages/orders/src/OrdersList.vue:394
+#: app/src/pages/products/src/ProductsList.vue:476
 msgid "Delete permanently?"
 msgstr "Excluir permanentemente?"
 
@@ -9291,7 +9309,7 @@ msgstr "Excluir variação"
 msgid "Delete variation?"
 msgstr "Excluir variação?"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:585
+#: app/src/pages/products/src/editor/ProductEditor.vue:626
 msgid "Describe the product in detail…"
 msgstr "Descreva o produto em detalhes…"
 
@@ -9299,7 +9317,7 @@ msgstr "Descreva o produto em detalhes…"
 msgid "Description (optional)"
 msgstr "Descrição (opcional)"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:582
+#: app/src/pages/products/src/editor/ProductEditor.vue:623
 msgid "Descriptions"
 msgstr "Descrições"
 
@@ -9309,7 +9327,8 @@ msgstr "Dispositivo"
 
 #: admin/src/Rest/WooCommerceDashboard.php:414
 #: admin/src/Rest/WooCommerceDashboard.php:415
-#: admin/src/Rest/WooCommerceOrders.php:602
+#: admin/src/Rest/WooCommerceOrders.php:705
+#: app/src/pages/orders/src/OrdersList.vue:127
 msgid "Direct"
 msgstr "Direto"
 
@@ -9318,7 +9337,7 @@ msgid "Disabled"
 msgstr "Desativada"
 
 #: app/src/pages/orders/src/OrderEditor.vue:341
-#: app/src/pages/products/src/editor/ProductEditor.vue:499
+#: app/src/pages/products/src/editor/ProductEditor.vue:540
 msgid "Discard changes"
 msgstr "Descartar alterações"
 
@@ -9326,7 +9345,7 @@ msgstr "Descartar alterações"
 msgid "Discard this order?"
 msgstr "Descartar este pedido?"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:497
+#: app/src/pages/products/src/editor/ProductEditor.vue:538
 msgid "Discard unsaved changes?"
 msgstr "Descartar alterações não salvas?"
 
@@ -9340,12 +9359,12 @@ msgstr "Desconto"
 msgid "Discount type"
 msgstr "Tipo de desconto"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:128
+#: app/src/pages/products/src/editor/ProductEditor.vue:135
 #: app/src/pages/products/src/ProductQuickEdit.vue:64
 msgid "Do not allow"
 msgstr "Não permitir"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:640
+#: app/src/pages/products/src/editor/ProductEditor.vue:681
 msgid "Downloadable"
 msgstr "Baixável"
 
@@ -9400,7 +9419,7 @@ msgstr "Endereço de e-mail"
 msgid "Enable archives"
 msgstr "Ativar arquivos"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:672
+#: app/src/pages/products/src/editor/ProductEditor.vue:748
 msgid "Enable reviews"
 msgstr "Ativar avaliações"
 
@@ -9416,7 +9435,7 @@ msgstr "Informe um valor de reembolso maior que zero."
 msgid "Enter a valid quantity."
 msgstr "Informe uma quantidade válida."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:296
+#: app/src/pages/products/src/editor/ProductEditor.vue:310
 msgid "Enter a valid URL starting with http:// or https://."
 msgstr "Informe uma URL válida começando com http:// ou https://."
 
@@ -9440,27 +9459,27 @@ msgstr "Expira em"
 msgid "Expiry date"
 msgstr "Data de expiração"
 
-#: app/src/pages/orders/src/OrdersList.vue:459
+#: app/src/pages/orders/src/OrdersList.vue:562
 msgid "Export CSV"
 msgstr "Exportar CSV"
 
-#: app/src/pages/orders/src/OrdersList.vue:382
+#: app/src/pages/orders/src/OrdersList.vue:459
 msgid "Export current page (CSV)"
 msgstr "Exportar página atual (CSV)"
 
-#: app/src/pages/products/src/ProductsList.vue:479
+#: app/src/pages/products/src/ProductsList.vue:548
 msgid "Export products"
 msgstr "Exportar produtos"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:109
+#: app/src/pages/products/src/editor/ProductEditor.vue:116
 msgid "External/Affiliate product"
 msgstr "Produto externo/afiliado"
 
-#: app/src/pages/products/src/ProductsList.vue:519
+#: app/src/pages/products/src/ProductsList.vue:603
 msgid "Featured only"
 msgstr "Somente destaques"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:683
+#: app/src/pages/products/src/editor/ProductEditor.vue:759
 #: app/src/pages/products/src/ProductQuickEdit.vue:231
 msgid "Featured product"
 msgstr "Produto em destaque"
@@ -9497,7 +9516,7 @@ msgstr "Desconto fixo no produto"
 msgid "Free shipping"
 msgstr "Frete grátis"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:709
+#: app/src/pages/products/src/editor/ProductEditor.vue:785
 msgid "Gallery"
 msgstr "Galeria"
 
@@ -9514,7 +9533,7 @@ msgstr "Gerar variações"
 msgid "Generate variations from the attributes or add them one by one."
 msgstr "Gere variações a partir dos atributos ou adicione uma a uma."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:300
+#: app/src/pages/products/src/editor/ProductEditor.vue:314
 msgid "Give every custom attribute a name."
 msgstr "Dê um nome a cada atributo personalizado."
 
@@ -9538,11 +9557,11 @@ msgstr ""
 msgid "Gross revenue"
 msgstr "Receita bruta"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:108
+#: app/src/pages/products/src/editor/ProductEditor.vue:115
 msgid "Grouped product"
 msgstr "Produto agrupado"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:608
+#: app/src/pages/products/src/editor/ProductEditor.vue:649
 msgid "Grouped products take their prices from the child products."
 msgstr "Produtos agrupados usam os preços dos produtos filhos."
 
@@ -9551,14 +9570,14 @@ msgstr "Produtos agrupados usam os preços dos produtos filhos."
 msgid "Guest"
 msgstr "Visitante"
 
-#: app/src/pages/products/src/ProductsList.vue:478
+#: app/src/pages/products/src/ProductsList.vue:547
 msgid "Import products"
 msgstr "Importar produtos"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:143
+#: app/src/pages/products/src/editor/ProductEditor.vue:150
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:38
-#: app/src/pages/products/src/ProductsList.vue:195
-#: app/src/pages/products/src/ProductsList.vue:455
+#: app/src/pages/products/src/ProductsList.vue:254
+#: app/src/pages/products/src/ProductsList.vue:524
 msgid "In stock"
 msgstr "Em estoque"
 
@@ -9570,7 +9589,7 @@ msgstr "Aumentar"
 msgid "Individual use only"
 msgstr "Somente uso individual"
 
-#: admin/src/Rest/WooCommerceOrders.php:426
+#: admin/src/Rest/WooCommerceOrders.php:486
 #: admin/src/Rest/WooCommerceProducts.php:399
 msgid "Invalid action."
 msgstr "Ação inválida."
@@ -9579,17 +9598,17 @@ msgstr "Ação inválida."
 msgid "Invalid category."
 msgstr "Categoria inválida."
 
-#: admin/src/Rest/WooCommerceOrders.php:672
+#: admin/src/Rest/WooCommerceOrders.php:775
 msgid "Invalid order action."
 msgstr "Ação de pedido inválida."
 
-#: admin/src/Rest/WooCommerceOrders.php:340
+#: admin/src/Rest/WooCommerceOrders.php:400
 msgid "Invalid order status."
 msgstr "Status de pedido inválido."
 
-#: admin/src/Rest/WooCommerceOrders.php:353
-#: admin/src/Rest/WooCommerceOrders.php:461
-#: admin/src/Rest/WooCommerceOrders.php:666
+#: admin/src/Rest/WooCommerceOrders.php:413
+#: admin/src/Rest/WooCommerceOrders.php:521
+#: admin/src/Rest/WooCommerceOrders.php:769
 msgid "Invalid order."
 msgstr "Pedido inválido."
 
@@ -9611,7 +9630,7 @@ msgstr "Status inválido."
 msgid "Invalid stock status."
 msgstr "Status de estoque inválido."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:622
+#: app/src/pages/products/src/editor/ProductEditor.vue:663
 #: app/src/pages/products/src/ProductQuickEdit.vue:248
 msgid "Inventory"
 msgstr "Estoque"
@@ -9627,8 +9646,8 @@ msgstr "Item"
 #: app/src/pages/orders/src/OrderDetails.vue:303
 #: app/src/pages/orders/src/OrderEditor.vue:391
 #: app/src/pages/orders/src/OrderPreview.vue:65
-#: app/src/pages/orders/src/OrdersList.vue:178
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:239
+#: app/src/pages/orders/src/OrdersList.vue:431
 msgid "Items"
 msgstr "Itens"
 
@@ -9637,19 +9656,19 @@ msgstr "Itens"
 msgid "Items subtotal"
 msgstr "Subtotal dos itens"
 
-#: app/src/pages/orders/src/OrdersList.vue:110
+#: app/src/pages/orders/src/OrdersList.vue:171
 msgid "Last 30 days"
 msgstr "Últimos 30 dias"
 
-#: app/src/pages/orders/src/OrdersList.vue:109
+#: app/src/pages/orders/src/OrdersList.vue:170
 msgid "Last 7 days"
 msgstr "Últimos 7 dias"
 
-#: app/src/pages/orders/src/OrdersList.vue:112
+#: app/src/pages/orders/src/OrdersList.vue:173
 msgid "Last 90 days"
 msgstr "Últimos 90 dias"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:685
+#: app/src/pages/products/src/editor/ProductEditor.vue:761
 msgid "Last modified"
 msgstr "Última modificação"
 
@@ -9662,24 +9681,25 @@ msgid "Leave empty to create a guest order."
 msgstr "Deixe em branco para criar um pedido de visitante."
 
 #: app/src/pages/products/src/CategoriesView.vue:202
+#: app/src/pages/products/src/TagsView.vue:188
 msgid "Leave empty to generate it from the name."
 msgstr "Deixe em branco para gerar a partir do nome."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:646
+#: app/src/pages/products/src/editor/ProductEditor.vue:703
 #: app/src/pages/products/src/ProductQuickEdit.vue:266
 msgid "Length"
 msgstr "Comprimento"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:632
+#: app/src/pages/products/src/editor/ProductEditor.vue:673
 msgid "Limit purchases to 1 item per order"
 msgstr "Limitar compras a 1 item por pedido"
 
-#: app/src/pages/products/src/ProductsList.vue:131
-#: app/src/pages/products/src/ProductsList.vue:192
+#: app/src/pages/products/src/ProductsList.vue:177
+#: app/src/pages/products/src/ProductsList.vue:251
 msgid "Low stock"
 msgstr "Estoque baixo"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:629
+#: app/src/pages/products/src/editor/ProductEditor.vue:670
 msgid "Low stock threshold"
 msgstr "Limite de estoque baixo"
 
@@ -9691,7 +9711,7 @@ msgstr "Gerencie os arquivos para download no editor clássico."
 msgid "Manage values"
 msgstr "Gerenciar valores"
 
-#: app/src/pages/products/src/ProductsList.vue:493
+#: app/src/pages/products/src/ProductsList.vue:563
 msgid "Manage your catalog, prices and stock."
 msgstr "Gerencie seu catálogo, preços e estoque."
 
@@ -9699,8 +9719,8 @@ msgstr "Gerencie seu catálogo, preços e estoque."
 msgid "Manual refund"
 msgstr "Reembolso manual"
 
-#: app/src/pages/products/src/ProductsList.vue:463
-#: app/src/pages/products/src/ProductsList.vue:589
+#: app/src/pages/products/src/ProductsList.vue:532
+#: app/src/pages/products/src/ProductsList.vue:685
 msgid "Mark as featured"
 msgstr "Marcar como destaque"
 
@@ -9708,7 +9728,7 @@ msgstr "Marcar como destaque"
 msgid "Mark as paid"
 msgstr "Marcar como pago"
 
-#: app/src/pages/products/src/ProductsList.vue:359
+#: app/src/pages/products/src/ProductsList.vue:428
 msgid "Marked as featured"
 msgstr "Marcado como destaque"
 
@@ -9716,7 +9736,7 @@ msgstr "Marcado como destaque"
 msgid "Maximum spend"
 msgstr "Gasto máximo"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:670
+#: app/src/pages/products/src/editor/ProductEditor.vue:746
 msgid "Menu order"
 msgstr "Ordem no menu"
 
@@ -9724,7 +9744,8 @@ msgstr "Ordem no menu"
 msgid "Minimum spend"
 msgstr "Gasto mínimo"
 
-#: admin/src/Rest/WooCommerceOrders.php:604
+#: admin/src/Rest/WooCommerceOrders.php:707
+#: app/src/pages/orders/src/OrdersList.vue:129
 msgid "Mobile app"
 msgstr "Aplicativo móvel"
 
@@ -9740,13 +9761,13 @@ msgstr "Editor moderno de produtos"
 msgid "Modern Products Page"
 msgstr "Página moderna de produtos"
 
-#: app/src/pages/orders/src/OrdersList.vue:412
-#: app/src/pages/products/src/ProductsList.vue:497
-#: app/src/pages/products/src/ProductsList.vue:562
+#: app/src/pages/orders/src/OrdersList.vue:492
+#: app/src/pages/products/src/ProductsList.vue:567
+#: app/src/pages/products/src/ProductsList.vue:658
 msgid "More"
 msgstr "Mais"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:548
+#: app/src/pages/products/src/editor/ProductEditor.vue:589
 msgid "More actions"
 msgstr "Mais ações"
 
@@ -9756,21 +9777,21 @@ msgstr "Mover cupom para a lixeira?"
 
 #: app/src/pages/orders/src/OrderDetails.vue:179
 #: app/src/pages/orders/src/OrderDetails.vue:214
-#: app/src/pages/orders/src/OrdersList.vue:322
-#: app/src/pages/orders/src/OrdersList.vue:345
+#: app/src/pages/orders/src/OrdersList.vue:398
+#: app/src/pages/orders/src/OrdersList.vue:422
 #: app/src/pages/products/src/CouponsView.vue:187
 #: app/src/pages/products/src/CouponsView.vue:205
-#: app/src/pages/products/src/editor/ProductEditor.vue:454
-#: app/src/pages/products/src/editor/ProductEditor.vue:464
-#: app/src/pages/products/src/ProductsList.vue:411
-#: app/src/pages/products/src/ProductsList.vue:438
+#: app/src/pages/products/src/editor/ProductEditor.vue:495
+#: app/src/pages/products/src/editor/ProductEditor.vue:505
+#: app/src/pages/products/src/ProductsList.vue:480
+#: app/src/pages/products/src/ProductsList.vue:507
 msgid "Move to trash"
 msgstr "Mover para a lixeira"
 
 #: app/src/pages/orders/src/OrderDetails.vue:177
-#: app/src/pages/orders/src/OrdersList.vue:318
-#: app/src/pages/products/src/editor/ProductEditor.vue:462
-#: app/src/pages/products/src/ProductsList.vue:407
+#: app/src/pages/orders/src/OrdersList.vue:394
+#: app/src/pages/products/src/editor/ProductEditor.vue:503
+#: app/src/pages/products/src/ProductsList.vue:476
 msgid "Move to trash?"
 msgstr "Mover para a lixeira?"
 
@@ -9790,15 +9811,15 @@ msgstr "Pagamento líquido"
 msgid "Net revenue"
 msgstr "Receita líquida"
 
-#: app/src/pages/orders/src/OrdersList.vue:166
+#: app/src/pages/orders/src/OrdersList.vue:227
 msgid "Net revenue (%s days)"
 msgstr "Receita líquida (%s dias)"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:749
+#: app/src/pages/products/src/editor/ProductEditor.vue:825
 msgid "New category"
 msgstr "Nova categoria"
 
-#: app/src/pages/orders/src/OrdersList.vue:448
+#: app/src/pages/orders/src/OrdersList.vue:551
 msgid "New orders will appear here as soon as customers check out."
 msgstr "Novos pedidos aparecerão aqui assim que os clientes finalizarem a compra."
 
@@ -9833,7 +9854,7 @@ msgstr "Sem endereço de cobrança."
 msgid "No categories found"
 msgstr "Nenhuma categoria encontrada"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:746
+#: app/src/pages/products/src/editor/ProductEditor.vue:822
 msgid "No categories found."
 msgstr "Nenhuma categoria encontrada."
 
@@ -9865,15 +9886,15 @@ msgstr "Nenhuma nota ainda."
 msgid "No older orders"
 msgstr "Nenhum pedido mais antigo"
 
-#: app/src/pages/orders/src/OrdersList.vue:447
+#: app/src/pages/orders/src/OrdersList.vue:550
 msgid "No orders match your filters"
 msgstr "Nenhum pedido corresponde aos filtros"
 
-#: admin/src/Rest/WooCommerceOrders.php:333
+#: admin/src/Rest/WooCommerceOrders.php:393
 msgid "No orders selected."
 msgstr "Nenhum pedido selecionado."
 
-#: app/src/pages/orders/src/OrdersList.vue:447
+#: app/src/pages/orders/src/OrdersList.vue:550
 msgid "No orders yet"
 msgstr "Nenhum pedido ainda"
 
@@ -9886,10 +9907,11 @@ msgid "No price"
 msgstr "Sem preço"
 
 #: app/src/pages/orders/src/OrderEditor.vue:420
+#: app/src/pages/products/src/editor/ProductPicker.vue:83
 msgid "No products found."
 msgstr "Nenhum produto encontrado."
 
-#: app/src/pages/products/src/ProductsList.vue:543
+#: app/src/pages/products/src/ProductsList.vue:639
 msgid "No products match your filters"
 msgstr "Nenhum produto corresponde aos filtros"
 
@@ -9897,7 +9919,7 @@ msgstr "Nenhum produto corresponde aos filtros"
 msgid "No products selected."
 msgstr "Nenhum produto selecionado."
 
-#: app/src/pages/products/src/ProductsList.vue:543
+#: app/src/pages/products/src/ProductsList.vue:639
 msgid "No products yet"
 msgstr "Nenhum produto ainda"
 
@@ -9909,7 +9931,7 @@ msgstr "Nenhum endereço de entrega definido."
 msgid "No shipping address."
 msgstr "Sem endereço de entrega."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:650
+#: app/src/pages/products/src/editor/ProductEditor.vue:707
 #: app/src/pages/products/src/ProductQuickEdit.vue:273
 msgid "No shipping class"
 msgstr "Sem classe de entrega"
@@ -9923,7 +9945,7 @@ msgid "No variations yet"
 msgstr "Nenhuma variação ainda"
 
 #: app/src/pages/products/src/CategoriesView.vue:203
-#: app/src/pages/products/src/editor/ProductEditor.vue:136
+#: app/src/pages/products/src/editor/ProductEditor.vue:143
 msgid "None"
 msgstr "Nenhum"
 
@@ -9959,18 +9981,18 @@ msgstr "Pedido mais antigo"
 msgid "Older order #%s"
 msgstr "Pedido mais antigo #%s"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:145
+#: app/src/pages/products/src/editor/ProductEditor.vue:152
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:40
-#: app/src/pages/products/src/ProductsList.vue:188
-#: app/src/pages/products/src/ProductsList.vue:457
+#: app/src/pages/products/src/ProductsList.vue:247
+#: app/src/pages/products/src/ProductsList.vue:526
 msgid "On backorder"
 msgstr "Sob encomenda"
 
-#: app/src/pages/orders/src/OrdersList.vue:163
+#: app/src/pages/orders/src/OrdersList.vue:224
 msgid "On hold"
 msgstr "Aguardando"
 
-#: app/src/pages/orders/src/OrdersList.vue:471
+#: app/src/pages/orders/src/OrdersList.vue:574
 msgid "Online store"
 msgstr "Loja virtual"
 
@@ -9991,8 +10013,8 @@ msgid "Open full editor"
 msgstr "Abrir editor completo"
 
 #: app/src/pages/orders/src/OrderDetails.vue:210
-#: app/src/pages/orders/src/OrdersList.vue:344
-#: app/src/pages/products/src/editor/ProductEditor.vue:451
+#: app/src/pages/orders/src/OrdersList.vue:421
+#: app/src/pages/products/src/editor/ProductEditor.vue:492
 msgid "Open in classic editor"
 msgstr "Abrir no editor clássico"
 
@@ -10042,7 +10064,7 @@ msgstr "Pedido não encontrado"
 msgid "Order notes"
 msgstr "Notas do pedido"
 
-#: app/src/pages/orders/src/OrdersList.vue:423
+#: app/src/pages/orders/src/OrdersList.vue:503
 msgid "Order status"
 msgstr "Status do pedido"
 
@@ -10058,7 +10080,8 @@ msgstr "Total do pedido"
 msgid "Order without items"
 msgstr "Pedido sem itens"
 
-#: admin/src/Rest/WooCommerceOrders.php:600
+#: admin/src/Rest/WooCommerceOrders.php:703
+#: app/src/pages/orders/src/OrdersList.vue:124
 msgid "Organic"
 msgstr "Orgânico"
 
@@ -10072,11 +10095,11 @@ msgstr "Origem"
 
 #: app/src/pages/orders/src/OrderEditor.vue:415
 #: app/src/pages/orders/src/OrderEditor.vue:435
-#: app/src/pages/products/src/editor/ProductEditor.vue:144
+#: app/src/pages/products/src/editor/ProductEditor.vue:151
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:39
-#: app/src/pages/products/src/ProductsList.vue:130
-#: app/src/pages/products/src/ProductsList.vue:184
-#: app/src/pages/products/src/ProductsList.vue:456
+#: app/src/pages/products/src/ProductsList.vue:176
+#: app/src/pages/products/src/ProductsList.vue:243
+#: app/src/pages/products/src/ProductsList.vue:525
 msgid "Out of stock"
 msgstr "Sem estoque"
 
@@ -10093,8 +10116,8 @@ msgid "Parent category"
 msgstr "Categoria ascendente"
 
 #: app/src/pages/orders/src/OrderDetails.vue:489
-#: app/src/pages/orders/src/OrdersList.vue:180
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:241
+#: app/src/pages/orders/src/OrdersList.vue:431
 msgid "Payment"
 msgstr "Pagamento"
 
@@ -10106,11 +10129,11 @@ msgstr "Método de pagamento"
 msgid "Payment via %s"
 msgstr "Pagamento via %s"
 
-#: app/src/pages/orders/src/OrdersList.vue:161
+#: app/src/pages/orders/src/OrdersList.vue:222
 msgid "Pending payment"
 msgstr "Pagamento pendente"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:116
+#: app/src/pages/products/src/editor/ProductEditor.vue:123
 #: app/src/pages/products/src/ProductQuickEdit.vue:52
 msgid "Pending review"
 msgstr "Revisão pendente"
@@ -10123,11 +10146,12 @@ msgstr "Porcentagem"
 msgid "Percentage discount"
 msgstr "Desconto percentual"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:379
+#: app/src/pages/products/src/editor/ProductEditor.vue:405
 msgid "Please review the highlighted fields"
 msgstr "Revise os campos destacados"
 
-#: admin/src/Rest/WooCommerceOrders.php:605
+#: admin/src/Rest/WooCommerceOrders.php:708
+#: app/src/pages/orders/src/OrdersList.vue:130
 msgid "Point of sale"
 msgstr "Ponto de venda"
 
@@ -10137,7 +10161,7 @@ msgstr "CEP"
 
 #: app/src/pages/orders/src/OrderDetails.vue:309
 #: app/src/pages/products/src/BulkPriceModal.vue:46
-#: app/src/pages/products/src/ProductsList.vue:138
+#: app/src/pages/products/src/ProductsList.vue:184
 msgid "Price"
 msgstr "Preço"
 
@@ -10145,7 +10169,7 @@ msgstr "Preço"
 msgid "Price for all"
 msgstr "Preço para todas"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:607
+#: app/src/pages/products/src/editor/ProductEditor.vue:648
 msgid "Prices are set on each variation."
 msgstr "Os preços são definidos em cada variação."
 
@@ -10157,7 +10181,7 @@ msgstr ""
 "Os preços de produtos variáveis são gerenciados em cada variação. Expanda o "
 "produto na lista para editá-los."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:592
+#: app/src/pages/products/src/editor/ProductEditor.vue:633
 #: app/src/pages/products/src/ProductQuickEdit.vue:235
 msgid "Pricing"
 msgstr "Preços"
@@ -10174,7 +10198,7 @@ msgstr "Nota privada"
 msgid "Product categories"
 msgstr "Categorias de produtos"
 
-#: app/src/pages/products/src/ProductsList.vue:376
+#: app/src/pages/products/src/ProductsList.vue:445
 msgid "Product duplicated"
 msgstr "Produto duplicado"
 
@@ -10182,39 +10206,39 @@ msgstr "Produto duplicado"
 msgid "Product duplication is not available."
 msgstr "A duplicação de produtos não está disponível."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:412
+#: app/src/pages/products/src/editor/ProductEditor.vue:453
 msgid "Product gallery"
 msgstr "Galeria do produto"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:407
+#: app/src/pages/products/src/editor/ProductEditor.vue:433
 msgid "Product image"
 msgstr "Imagem do produto"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:475
+#: app/src/pages/products/src/editor/ProductEditor.vue:516
 msgid "Product moved to the trash"
 msgstr "Produto movido para a lixeira"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:571
+#: app/src/pages/products/src/editor/ProductEditor.vue:612
 msgid "Product name"
 msgstr "Nome do produto"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:532
+#: app/src/pages/products/src/editor/ProductEditor.vue:573
 msgid "Product not found"
 msgstr "Produto não encontrado"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:398
+#: app/src/pages/products/src/editor/ProductEditor.vue:424
 msgid "Product saved"
 msgstr "Produto salvo"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:398
+#: app/src/pages/products/src/editor/ProductEditor.vue:424
 msgid "Product saved and published"
 msgstr "Produto salvo e publicado"
 
-#: app/src/pages/products/src/ProductsList.vue:508
+#: app/src/pages/products/src/ProductsList.vue:578
 msgid "Product status"
 msgstr "Status do produto"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:594
+#: app/src/pages/products/src/editor/ProductEditor.vue:635
 msgid "Product type"
 msgstr "Tipo de produto"
 
@@ -10222,7 +10246,7 @@ msgstr "Tipo de produto"
 msgid "Product updated"
 msgstr "Produto atualizado"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:611
+#: app/src/pages/products/src/editor/ProductEditor.vue:652
 msgid "Product URL"
 msgstr "URL do produto"
 
@@ -10231,9 +10255,11 @@ msgstr "URL do produto"
 #: app/src/pages/products/src/CategoriesView.vue:90
 #: app/src/pages/products/src/CategoriesView.vue:153
 #: app/src/pages/products/src/CouponsView.vue:218
-#: app/src/pages/products/src/editor/ProductEditor.vue:188
-#: app/src/pages/products/src/ProductsList.vue:493
-#: app/src/pages/products/src/ProductsList.vue:545
+#: app/src/pages/products/src/editor/ProductEditor.vue:196
+#: app/src/pages/products/src/ProductsList.vue:563
+#: app/src/pages/products/src/ProductsList.vue:641
+#: app/src/pages/products/src/TagsView.vue:39
+#: app/src/pages/products/src/TagsView.vue:130
 msgid "Products"
 msgstr "Produtos"
 
@@ -10245,12 +10271,12 @@ msgstr "Páginas de gestão de produtos e pedidos"
 msgid "Products in this category will not be deleted."
 msgstr "Os produtos desta categoria não serão excluídos."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:482
-#: app/src/pages/products/src/editor/ProductEditor.vue:679
+#: app/src/pages/products/src/editor/ProductEditor.vue:523
+#: app/src/pages/products/src/editor/ProductEditor.vue:755
 msgid "Publish"
 msgstr "Publicar"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:668
+#: app/src/pages/products/src/editor/ProductEditor.vue:744
 msgid "Purchase note"
 msgstr "Nota de compra"
 
@@ -10263,7 +10289,7 @@ msgid "Qty to refund"
 msgstr "Qtd. a reembolsar"
 
 #: app/src/pages/orders/src/OrderEditor.vue:459
-#: app/src/pages/products/src/editor/ProductEditor.vue:627
+#: app/src/pages/products/src/editor/ProductEditor.vue:668
 #: app/src/pages/products/src/ProductQuickEdit.vue:251
 msgid "Quantity"
 msgstr "Quantidade"
@@ -10273,13 +10299,13 @@ msgid "Quantity to refund"
 msgstr "Quantidade a reembolsar"
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:207
-#: app/src/pages/products/src/ProductsList.vue:429
+#: app/src/pages/products/src/ProductsList.vue:498
 msgid "Quick edit"
 msgstr "Edição rápida"
 
-#: app/src/pages/orders/src/OrdersList.vue:340
-#: app/src/pages/orders/src/OrdersList.vue:521
-#: app/src/pages/orders/src/OrdersList.vue:522
+#: app/src/pages/orders/src/OrdersList.vue:417
+#: app/src/pages/orders/src/OrdersList.vue:624
+#: app/src/pages/orders/src/OrdersList.vue:625
 msgid "Quick preview"
 msgstr "Pré-visualização rápida"
 
@@ -10291,14 +10317,15 @@ msgstr "Motivo (opcional)"
 msgid "Record the refund without sending it to the payment gateway."
 msgstr "Registra o reembolso sem enviá-lo ao gateway de pagamento."
 
-#: admin/src/Rest/WooCommerceOrders.php:601
+#: admin/src/Rest/WooCommerceOrders.php:704
+#: app/src/pages/orders/src/OrdersList.vue:125
 msgid "Referral"
 msgstr "Indicação"
 
-#: app/src/pages/orders/src/OrdersList.vue:431
-#: app/src/pages/orders/src/OrdersList.vue:432
-#: app/src/pages/products/src/ProductsList.vue:526
-#: app/src/pages/products/src/ProductsList.vue:527
+#: app/src/pages/orders/src/OrdersList.vue:512
+#: app/src/pages/orders/src/OrdersList.vue:513
+#: app/src/pages/products/src/ProductsList.vue:594
+#: app/src/pages/products/src/ProductsList.vue:595
 msgid "Refresh"
 msgstr "Atualizar"
 
@@ -10340,7 +10367,7 @@ msgid "Registered customer"
 msgstr "Cliente cadastrado"
 
 #: app/src/pages/products/src/BulkPriceModal.vue:51
-#: app/src/pages/products/src/editor/ProductEditor.vue:598
+#: app/src/pages/products/src/editor/ProductEditor.vue:639
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:310
 #: app/src/pages/products/src/ProductQuickEdit.vue:242
 #: app/src/pages/products/src/ProductVariations.vue:123
@@ -10362,7 +10389,7 @@ msgstr "Remover atributo"
 
 #: app/src/pages/products/src/BulkCategoryModal.vue:31
 #: app/src/pages/products/src/BulkCategoryModal.vue:38
-#: app/src/pages/products/src/ProductsList.vue:467
+#: app/src/pages/products/src/ProductsList.vue:536
 msgid "Remove category"
 msgstr "Remover categoria"
 
@@ -10378,13 +10405,13 @@ msgstr "Remover cliente"
 msgid "Remove fee"
 msgstr "Remover taxa"
 
-#: app/src/pages/products/src/ProductsList.vue:464
-#: app/src/pages/products/src/ProductsList.vue:589
+#: app/src/pages/products/src/ProductsList.vue:533
+#: app/src/pages/products/src/ProductsList.vue:685
 msgid "Remove from featured"
 msgstr "Remover dos destaques"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:704
-#: app/src/pages/products/src/editor/ProductEditor.vue:717
+#: app/src/pages/products/src/editor/ProductEditor.vue:780
+#: app/src/pages/products/src/editor/ProductEditor.vue:793
 msgid "Remove image"
 msgstr "Remover imagem"
 
@@ -10400,7 +10427,7 @@ msgstr "Remover entrega"
 msgid "Remove value"
 msgstr "Remover valor"
 
-#: app/src/pages/products/src/ProductsList.vue:359
+#: app/src/pages/products/src/ProductsList.vue:428
 msgid "Removed from featured"
 msgstr "Removido dos destaques"
 
@@ -10436,16 +10463,16 @@ msgstr "Requer um método de frete grátis que aceite cupons."
 msgid "Restock refunded items"
 msgstr "Repor itens reembolsados no estoque"
 
-#: app/src/pages/orders/src/OrdersList.vue:408
+#: app/src/pages/orders/src/OrdersList.vue:488
 msgid "Revenue period"
 msgstr "Período da receita"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:604
+#: app/src/pages/products/src/editor/ProductEditor.vue:645
 msgid "Sale ends"
 msgstr "Promoção termina"
 
 #: app/src/pages/products/src/BulkPriceModal.vue:52
-#: app/src/pages/products/src/editor/ProductEditor.vue:599
+#: app/src/pages/products/src/editor/ProductEditor.vue:640
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:311
 #: app/src/pages/products/src/ProductQuickEdit.vue:243
 #: app/src/pages/products/src/ProductVariations.vue:124
@@ -10453,7 +10480,7 @@ msgstr "Promoção termina"
 msgid "Sale price"
 msgstr "Preço promocional"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:603
+#: app/src/pages/products/src/editor/ProductEditor.vue:644
 msgid "Sale starts"
 msgstr "Promoção começa"
 
@@ -10471,6 +10498,7 @@ msgstr "Salvar atributo"
 
 #: app/src/pages/products/src/CategoriesView.vue:208
 #: app/src/pages/products/src/ProductQuickEdit.vue:300
+#: app/src/pages/products/src/TagsView.vue:193
 msgid "Save changes"
 msgstr "Salvar alterações"
 
@@ -10478,7 +10506,7 @@ msgstr "Salvar alterações"
 msgid "Save coupon"
 msgstr "Salvar cupom"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:552
+#: app/src/pages/products/src/editor/ProductEditor.vue:593
 msgid "Save draft"
 msgstr "Salvar rascunho"
 
@@ -10486,24 +10514,24 @@ msgstr "Salvar rascunho"
 msgid "Save items"
 msgstr "Salvar itens"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:661
+#: app/src/pages/products/src/editor/ProductEditor.vue:718
 msgid "Save the product to start adding variations."
 msgstr "Salve o produto para começar a adicionar variações."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:662
+#: app/src/pages/products/src/editor/ProductEditor.vue:719
 msgid "Save the product to use the attribute changes in the variations."
 msgstr "Salve o produto para usar as alterações de atributos nas variações."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:601
+#: app/src/pages/products/src/editor/ProductEditor.vue:642
 msgid "Schedule sale"
 msgstr "Agendar promoção"
 
-#: app/src/pages/products/src/ProductsList.vue:512
+#: app/src/pages/products/src/ProductsList.vue:583
 msgid "Search by name or SKU"
 msgstr "Buscar por nome ou SKU"
 
 #: app/src/pages/products/src/CategoriesView.vue:163
-#: app/src/pages/products/src/editor/ProductEditor.vue:735
+#: app/src/pages/products/src/editor/ProductEditor.vue:811
 msgid "Search categories"
 msgstr "Buscar categorias"
 
@@ -10519,7 +10547,7 @@ msgstr "Buscar clientes por nome ou e-mail"
 msgid "Search for products above to add them to the order."
 msgstr "Busque produtos acima para adicioná-los ao pedido."
 
-#: app/src/pages/orders/src/OrdersList.vue:427
+#: app/src/pages/orders/src/OrdersList.vue:507
 msgid "Search order, customer or email"
 msgstr "Buscar pedido, cliente ou e-mail"
 
@@ -10527,7 +10555,7 @@ msgstr "Buscar pedido, cliente ou e-mail"
 msgid "Search products by name or SKU to add"
 msgstr "Buscar produtos por nome ou SKU para adicionar"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:123
+#: app/src/pages/products/src/editor/ProductEditor.vue:130
 #: app/src/pages/products/src/ProductQuickEdit.vue:59
 msgid "Search results only"
 msgstr "Somente nos resultados de busca"
@@ -10556,7 +10584,7 @@ msgstr "Enviar nota"
 msgid "Send to customer"
 msgstr "Enviar ao cliente"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:668
+#: app/src/pages/products/src/editor/ProductEditor.vue:744
 msgid "Sent to the customer after purchase."
 msgstr "Enviada ao cliente após a compra."
 
@@ -10564,13 +10592,13 @@ msgstr "Enviada ao cliente após a compra."
 msgid "Separate emails with commas. Use * as a wildcard, e.g. *@example.com."
 msgstr "Separe os e-mails com vírgulas. Use * como curinga, ex.: *@example.com."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:755
+#: app/src/pages/products/src/editor/ProductEditor.vue:831
 #: app/src/pages/products/src/ProductQuickEdit.vue:294
 msgid "Separate tags with commas."
 msgstr "Separe as tags com vírgulas."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:407
-#: app/src/pages/products/src/editor/ProductEditor.vue:698
+#: app/src/pages/products/src/editor/ProductEditor.vue:433
+#: app/src/pages/products/src/editor/ProductEditor.vue:774
 msgid "Set product image"
 msgstr "Definir imagem do produto"
 
@@ -10590,8 +10618,8 @@ msgstr "Define a data de pagamento e move o pedido para processando ou concluíd
 #: app/src/pages/orders/src/OrderEditor.vue:571
 #: app/src/pages/orders/src/OrderPreview.vue:92
 #: app/src/pages/orders/src/OrderPreview.vue:114
-#: app/src/pages/orders/src/OrdersList.vue:181
-#: app/src/pages/products/src/editor/ProductEditor.vue:636
+#: app/src/pages/orders/src/OrdersList.vue:242
+#: app/src/pages/products/src/editor/ProductEditor.vue:677
 #: app/src/pages/products/src/ProductQuickEdit.vue:263
 msgid "Shipping"
 msgstr "Entrega"
@@ -10609,7 +10637,7 @@ msgstr "Endereço de entrega atualizado"
 msgid "Shipping and fees"
 msgstr "Entrega e taxas"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:650
+#: app/src/pages/products/src/editor/ProductEditor.vue:707
 #: app/src/pages/products/src/ProductQuickEdit.vue:272
 msgid "Shipping class"
 msgstr "Classe de entrega"
@@ -10618,7 +10646,7 @@ msgstr "Classe de entrega"
 msgid "Shipping method"
 msgstr "Método de entrega"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:135
+#: app/src/pages/products/src/editor/ProductEditor.vue:142
 msgid "Shipping only"
 msgstr "Somente entrega"
 
@@ -10626,34 +10654,34 @@ msgstr "Somente entrega"
 msgid "Shipping: %s"
 msgstr "Entrega: %s"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:121
+#: app/src/pages/products/src/editor/ProductEditor.vue:128
 #: app/src/pages/products/src/ProductQuickEdit.vue:57
 msgid "Shop and search results"
 msgstr "Loja e resultados de busca"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:122
+#: app/src/pages/products/src/editor/ProductEditor.vue:129
 #: app/src/pages/products/src/ProductQuickEdit.vue:58
 msgid "Shop only"
 msgstr "Somente na loja"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:580
+#: app/src/pages/products/src/editor/ProductEditor.vue:621
 msgid "Short description"
 msgstr "Descrição curta"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:106
+#: app/src/pages/products/src/editor/ProductEditor.vue:113
 msgid "Simple product"
 msgstr "Produto simples"
 
 #: app/src/pages/orders/src/OrderDetails.vue:331
-#: app/src/pages/products/src/editor/ProductEditor.vue:624
+#: app/src/pages/products/src/editor/ProductEditor.vue:665
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:309
 #: app/src/pages/products/src/ProductQuickEdit.vue:227
-#: app/src/pages/products/src/ProductsList.vue:596
+#: app/src/pages/products/src/ProductsList.vue:692
 #: app/src/pages/products/src/ProductVariations.vue:140
 msgid "SKU"
 msgstr "SKU"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:563
+#: app/src/pages/products/src/editor/ProductEditor.vue:604
 msgid "Some fields may only be available in the classic editor."
 msgstr "Alguns campos podem estar disponíveis somente no editor clássico."
 
@@ -10661,7 +10689,7 @@ msgstr "Alguns campos podem estar disponíveis somente no editor clássico."
 msgid "Some variations could not be saved"
 msgstr "Algumas variações não puderam ser salvas"
 
-#: app/src/pages/orders/src/OrdersList.vue:354
+#: app/src/pages/orders/src/OrdersList.vue:431
 msgid "State"
 msgstr "Estado"
 
@@ -10670,13 +10698,13 @@ msgstr "Estado"
 msgid "State / County"
 msgstr "Estado"
 
-#: app/src/pages/products/src/ProductsList.vue:139
-#: app/src/pages/products/src/ProductsList.vue:556
+#: app/src/pages/products/src/ProductsList.vue:185
+#: app/src/pages/products/src/ProductsList.vue:652
 #: app/src/pages/products/src/ProductVariations.vue:125
 msgid "Stock"
 msgstr "Estoque"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:624
+#: app/src/pages/products/src/editor/ProductEditor.vue:665
 msgid "Stock keeping unit, unique per product."
 msgstr "Código de controle de estoque, único por produto."
 
@@ -10685,7 +10713,7 @@ msgstr "Código de controle de estoque, único por produto."
 msgid "Stock quantity"
 msgstr "Quantidade em estoque"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:631
+#: app/src/pages/products/src/editor/ProductEditor.vue:672
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:314
 #: app/src/pages/products/src/ProductQuickEdit.vue:257
 msgid "Stock status"
@@ -10703,15 +10731,15 @@ msgstr "Subtotal"
 msgid "Summary"
 msgstr "Resumo"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:617
+#: app/src/pages/products/src/editor/ProductEditor.vue:658
 msgid "Tax class"
 msgstr "Classe de imposto"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:616
+#: app/src/pages/products/src/editor/ProductEditor.vue:657
 msgid "Tax status"
 msgstr "Status do imposto"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:134
+#: app/src/pages/products/src/editor/ProductEditor.vue:141
 msgid "Taxable"
 msgstr "Tributável"
 
@@ -10732,7 +10760,7 @@ msgstr "O nome do atributo é obrigatório."
 msgid "The category name is required."
 msgstr "O nome da categoria é obrigatório."
 
-#: app/src/pages/products/src/ProductsList.vue:376
+#: app/src/pages/products/src/ProductsList.vue:445
 msgid "The copy was saved as a draft."
 msgstr "A cópia foi salva como rascunho."
 
@@ -10744,7 +10772,7 @@ msgstr "O cupom não pode ser combinado com outros cupons."
 msgid "The coupon code is required."
 msgstr "O código do cupom é obrigatório."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:292
+#: app/src/pages/products/src/editor/ProductEditor.vue:306
 msgid "The end date must be after the start date."
 msgstr "A data final deve ser posterior à data inicial."
 
@@ -10764,11 +10792,11 @@ msgstr ""
 "O método de pagamento não suporta reembolsos automáticos. Lembre-se de "
 "devolver o valor ao cliente manualmente."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:532
+#: app/src/pages/products/src/editor/ProductEditor.vue:573
 msgid "The product may have been deleted or you do not have permission to edit it."
 msgstr "O produto pode ter sido excluído ou você não tem permissão para editá-lo."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:285
+#: app/src/pages/products/src/editor/ProductEditor.vue:299
 #: app/src/pages/products/src/ProductQuickEdit.vue:131
 msgid "The product name is required."
 msgstr "O nome do produto é obrigatório."
@@ -10777,7 +10805,7 @@ msgstr "O nome do produto é obrigatório."
 msgid "The refund amount cannot exceed %s."
 msgstr "O valor do reembolso não pode ultrapassar %s."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:288
+#: app/src/pages/products/src/editor/ProductEditor.vue:302
 #: app/src/pages/products/src/ProductQuickEdit.vue:138
 #: app/src/pages/products/src/ProductVariations.vue:71
 msgid "The sale price must be lower than the regular price."
@@ -10787,7 +10815,7 @@ msgstr "O preço promocional deve ser menor que o preço normal."
 msgid "This attribute has no values yet."
 msgstr "Este atributo ainda não tem valores."
 
-#: app/src/pages/orders/src/OrdersList.vue:111
+#: app/src/pages/orders/src/OrdersList.vue:172
 msgid "This month"
 msgstr "Este mês"
 
@@ -10804,19 +10832,19 @@ msgstr "Este pedido não pode mais ser editado"
 msgid "This product has no variations."
 msgstr "Este produto não tem variações."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:562
+#: app/src/pages/products/src/editor/ProductEditor.vue:603
 msgid "This product type is managed by an extension"
 msgstr "Este tipo de produto é gerenciado por uma extensão"
 
-#: app/src/pages/orders/src/OrdersList.vue:113
+#: app/src/pages/orders/src/OrdersList.vue:174
 msgid "This year"
 msgstr "Este ano"
 
-#: app/src/pages/orders/src/OrdersList.vue:108
+#: app/src/pages/orders/src/OrdersList.vue:169
 msgid "Today"
 msgstr "Hoje"
 
-#: app/src/pages/products/src/ProductsList.vue:128
+#: app/src/pages/products/src/ProductsList.vue:174
 msgid "Total products"
 msgstr "Total de produtos"
 
@@ -10828,16 +10856,16 @@ msgstr "Total gasto"
 msgid "Track stock"
 msgstr "Controlar estoque"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:625
+#: app/src/pages/products/src/editor/ProductEditor.vue:666
 msgid "Track stock at product level"
 msgstr "Controlar estoque no nível do produto"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:625
+#: app/src/pages/products/src/editor/ProductEditor.vue:666
 #: app/src/pages/products/src/ProductQuickEdit.vue:249
 msgid "Track stock quantity"
 msgstr "Controlar quantidade em estoque"
 
-#: app/src/pages/orders/src/OrdersList.vue:398
+#: app/src/pages/orders/src/OrdersList.vue:478
 msgid "Track, fulfil and manage your store orders."
 msgstr "Acompanhe, atenda e gerencie os pedidos da sua loja."
 
@@ -10845,11 +10873,11 @@ msgstr "Acompanhe, atenda e gerencie os pedidos da sua loja."
 msgid "Transaction ID"
 msgstr "ID da transação"
 
-#: app/src/pages/orders/src/OrdersList.vue:448
+#: app/src/pages/orders/src/OrdersList.vue:551
 msgid "Try adjusting the search or date range."
 msgstr "Tente ajustar a busca ou o período."
 
-#: app/src/pages/products/src/ProductsList.vue:544
+#: app/src/pages/products/src/ProductsList.vue:640
 msgid "Try adjusting the search or filters."
 msgstr "Tente ajustar a busca ou os filtros."
 
@@ -10871,10 +10899,11 @@ msgstr "Preço unitário"
 
 #: app/src/pages/products/src/CouponsView.vue:323
 #: app/src/pages/products/src/CouponsView.vue:324
+#: app/src/pages/products/src/editor/ProductEditor.vue:696
 msgid "Unlimited"
 msgstr "Ilimitado"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:542
+#: app/src/pages/products/src/editor/ProductEditor.vue:583
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:284
 msgid "Unsaved changes"
 msgstr "Alterações não salvas"
@@ -10903,7 +10932,7 @@ msgstr "Restrições de uso"
 msgid "Use a negative value for a discount."
 msgstr "Use um valor negativo para um desconto."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:714
+#: app/src/pages/products/src/editor/ProductEditor.vue:790
 msgid "Use as product image"
 msgstr "Usar como imagem do produto"
 
@@ -10927,7 +10956,7 @@ msgstr "Nome do valor"
 msgid "Values available for this attribute."
 msgstr "Valores disponíveis para este atributo."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:107
+#: app/src/pages/products/src/editor/ProductEditor.vue:114
 msgid "Variable product"
 msgstr "Produto variável"
 
@@ -10948,18 +10977,18 @@ msgstr "Imagem da variação"
 msgid "Variation updated"
 msgstr "Variação atualizada"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:660
+#: app/src/pages/products/src/editor/ProductEditor.vue:717
 #: app/src/pages/products/src/ProductVariations.vue:108
 msgid "Variations"
 msgstr "Variações"
 
 #: app/src/pages/orders/src/OrderPreview.vue:137
-#: app/src/pages/orders/src/OrdersList.vue:339
+#: app/src/pages/orders/src/OrdersList.vue:415
 msgid "View details"
 msgstr "Ver detalhes"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:448
-#: app/src/pages/products/src/ProductsList.vue:434
+#: app/src/pages/products/src/editor/ProductEditor.vue:489
+#: app/src/pages/products/src/ProductsList.vue:503
 msgid "View in store"
 msgstr "Ver na loja"
 
@@ -10969,6 +10998,7 @@ msgid "View on map"
 msgstr "Ver no mapa"
 
 #: app/src/pages/products/src/CategoriesView.vue:186
+#: app/src/pages/products/src/TagsView.vue:168
 msgid "View products"
 msgstr "Ver produtos"
 
@@ -10977,7 +11007,7 @@ msgstr "Ver produtos"
 msgid "View profile"
 msgstr "Ver perfil"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:639
+#: app/src/pages/products/src/editor/ProductEditor.vue:680
 msgid "Virtual product (no shipping)"
 msgstr "Produto virtual (sem entrega)"
 
@@ -10985,11 +11015,12 @@ msgstr "Produto virtual (sem entrega)"
 msgid "Visible on the product page"
 msgstr "Visível na página do produto"
 
-#: admin/src/Rest/WooCommerceOrders.php:603
+#: admin/src/Rest/WooCommerceOrders.php:706
+#: app/src/pages/orders/src/OrdersList.vue:128
 msgid "Web admin"
 msgstr "Painel administrativo"
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:645
+#: app/src/pages/products/src/editor/ProductEditor.vue:702
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:312
 #: app/src/pages/products/src/ProductQuickEdit.vue:265
 msgid "Weight"
@@ -10999,16 +11030,16 @@ msgstr "Peso"
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: admin/src/Rest/WooCommerceOrders.php:154
+#: admin/src/Rest/WooCommerceOrders.php:214
 #: admin/src/Rest/WooCommerceProducts.php:131
 msgid "WooCommerce is not active."
 msgstr "O WooCommerce não está ativo."
 
-#: app/src/pages/orders/src/OrdersList.vue:386
+#: app/src/pages/orders/src/OrdersList.vue:463
 msgid "WooCommerce settings"
 msgstr "Configurações do WooCommerce"
 
-#: admin/src/Rest/WooCommerceOrders.php:409
+#: admin/src/Rest/WooCommerceOrders.php:469
 msgid "You are not allowed to delete this order."
 msgstr "Você não tem permissão para excluir este pedido."
 
@@ -11016,8 +11047,8 @@ msgstr "Você não tem permissão para excluir este pedido."
 msgid "You are not allowed to delete this product."
 msgstr "Você não tem permissão para excluir este produto."
 
-#: admin/src/Rest/WooCommerceOrders.php:396
-#: admin/src/Rest/WooCommerceOrders.php:418
+#: admin/src/Rest/WooCommerceOrders.php:456
+#: admin/src/Rest/WooCommerceOrders.php:478
 msgid "You are not allowed to edit this order."
 msgstr "Você não tem permissão para editar este pedido."
 
@@ -11033,9 +11064,220 @@ msgstr "Você não tem permissão para publicar produtos."
 msgid "Your changes have not been saved."
 msgstr "Suas alterações não foram salvas."
 
-#: app/src/pages/products/src/editor/ProductEditor.vue:498
+#: app/src/pages/products/src/editor/ProductEditor.vue:539
 msgid "Your changes to this product have not been saved."
 msgstr "As alterações neste produto não foram salvas."
+
+#: app/src/pages/orders/src/OrdersList.vue:535
+msgid "%d new order(s) received"
+msgstr "%d novo(s) pedido(s) recebido(s)"
+
+#: app/src/pages/products/src/TagsView.vue:106
+msgid "%d tag(s) will be deleted. Products will not be deleted."
+msgstr "%d tag(s) serão excluídas. Os produtos não serão excluídos."
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:694
+msgid "Add file"
+msgstr "Adicionar arquivo"
+
+#: app/src/pages/products/src/TagsView.vue:134
+#: app/src/pages/products/src/TagsView.vue:185
+#: app/src/pages/products/src/TagsView.vue:193
+msgid "Add tag"
+msgstr "Adicionar tag"
+
+#: app/src/pages/products/src/ProductsList.vue:607
+msgid "All tags"
+msgstr "Todas as tags"
+
+#: app/src/pages/orders/src/OrdersList.vue:521
+msgid "Any channel"
+msgstr "Qualquer canal"
+
+#: app/src/pages/orders/src/OrdersList.vue:522
+msgid "Any origin"
+msgstr "Qualquer origem"
+
+#: app/src/pages/orders/src/OrdersList.vue:520
+msgid "Any payment method"
+msgstr "Qualquer método de pagamento"
+
+#: app/src/pages/orders/src/OrdersList.vue:118
+msgid "Block checkout"
+msgstr "Checkout em blocos"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:690
+msgid "Choose file"
+msgstr "Escolher arquivo"
+
+#: app/src/pages/orders/src/OrdersList.vue:117
+msgid "Classic checkout"
+msgstr "Checkout clássico"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:735
+msgid "Cross-sells"
+msgstr "Vendas cruzadas"
+
+#: app/src/pages/orders/src/OrderDetails.vue:530
+msgid "Custom fields"
+msgstr "Campos personalizados"
+
+#: app/src/pages/orders/src/OrdersList.vue:525
+msgid "Customer: %s"
+msgstr "Cliente: %s"
+
+#: app/src/pages/products/src/TagsView.vue:105
+msgid "Delete tags?"
+msgstr "Excluir tags?"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:697
+msgid "Download expiry (days)"
+msgstr "Expiração do download (dias)"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:696
+msgid "Download limit"
+msgstr "Limite de downloads"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:442
+msgid "Downloadable file"
+msgstr "Arquivo para download"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:685
+msgid "Downloadable files"
+msgstr "Arquivos para download"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:683
+msgid "Downloadable files of variable products are managed in the classic editor."
+msgstr ""
+"Os arquivos para download de produtos variáveis são gerenciados no editor "
+"clássico."
+
+#: app/src/pages/products/src/TagsView.vue:185
+msgid "Edit tag"
+msgstr "Editar tag"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:687
+msgid "File name"
+msgstr "Nome do arquivo"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:726
+msgid "Grouped products"
+msgstr "Produtos agrupados"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:723
+msgid "Linked products"
+msgstr "Produtos vinculados"
+
+#: app/src/pages/products/src/ProductsList.vue:622
+msgid "Max. price"
+msgstr "Preço máx."
+
+#: app/src/pages/products/src/ProductsList.vue:623
+msgid "Maximum price"
+msgstr "Preço máximo"
+
+#: app/src/pages/products/src/ProductsList.vue:613
+msgid "Min. price"
+msgstr "Preço mín."
+
+#: app/src/pages/products/src/ProductsList.vue:614
+msgid "Minimum price"
+msgstr "Preço mínimo"
+
+#: app/src/pages/products/src/ProductsList.vue:586
+#: app/src/pages/products/src/ProductsList.vue:587
+msgid "More filters"
+msgstr "Mais filtros"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:697
+msgid "Never"
+msgstr "Nunca"
+
+#: app/src/pages/products/src/TagsView.vue:150
+msgid "No tags match your search"
+msgstr "Nenhuma tag corresponde à sua busca"
+
+#: app/src/pages/products/src/TagsView.vue:150
+msgid "No tags yet"
+msgstr "Nenhuma tag ainda"
+
+#: app/src/pages/orders/src/OrdersList.vue:416
+msgid "Orders from this customer"
+msgstr "Pedidos deste cliente"
+
+#: app/src/pages/products/src/TagsView.vue:129
+#: app/src/pages/products/src/TagsView.vue:151
+msgid "Product tags"
+msgstr "Tags de produtos"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:736
+msgid "Products promoted in the cart based on this product."
+msgstr "Produtos promovidos no carrinho com base neste produto."
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:731
+msgid ""
+"Products recommended instead of this one, usually more profitable or better "
+"quality."
+msgstr ""
+"Produtos recomendados no lugar deste, geralmente mais lucrativos ou de "
+"melhor qualidade."
+
+#: app/src/pages/orders/src/OrdersList.vue:526
+msgid "Remove customer filter"
+msgstr "Remover filtro de cliente"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:691
+msgid "Remove file"
+msgstr "Remover arquivo"
+
+#: app/src/pages/products/src/editor/ProductPicker.vue:106
+msgid "Remove product"
+msgstr "Remover produto"
+
+#: app/src/pages/orders/src/OrdersList.vue:120
+msgid "REST API"
+msgstr "API REST"
+
+#: app/src/pages/products/src/editor/ProductPicker.vue:80
+msgid "Search products"
+msgstr "Buscar produtos"
+
+#: app/src/pages/products/src/TagsView.vue:140
+msgid "Search tags"
+msgstr "Buscar tags"
+
+#: app/src/pages/orders/src/OrdersList.vue:537
+msgid "Show new orders"
+msgstr "Mostrar novos pedidos"
+
+#: app/src/pages/products/src/TagsView.vue:98
+msgid "Tag created"
+msgstr "Tag criada"
+
+#: app/src/pages/products/src/TagsView.vue:98
+msgid "Tag updated"
+msgstr "Tag atualizada"
+
+#: app/src/pages/products/src/TagsView.vue:116
+msgid "Tags deleted"
+msgstr "Tags excluídas"
+
+#: app/src/pages/products/src/TagsView.vue:87
+msgid "The tag name is required."
+msgstr "O nome da tag é obrigatório."
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:730
+msgid "Upsells"
+msgstr "Upsells"
+
+#: app/src/pages/products/src/editor/ProductEditor.vue:442
+msgid "Use file"
+msgstr "Usar arquivo"
+
+#: app/src/pages/products/src/ProductsList.vue:194
+#: app/src/pages/products/src/ProductsList.vue:591
+msgid "Visible columns"
+msgstr "Colunas visíveis"
 
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"

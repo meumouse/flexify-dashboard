@@ -66,8 +66,8 @@ const boxClasses = computed(() =>
 <template>
   <label
     :for="inputId"
-    class="inline-flex select-none items-start gap-3"
-    :class="disabled ? 'cursor-not-allowed' : 'cursor-pointer'"
+    class="select-none items-start gap-3"
+    :class="[disabled ? 'cursor-not-allowed' : 'cursor-pointer', label || description || $slots.default ? 'flex w-fit' : 'inline-flex']"
     @click.stop
   >
     <span class="relative mt-px flex">
