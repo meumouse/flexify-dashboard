@@ -1,3 +1,22 @@
+Versão 3.0.0 (17/09/2026)
+* Correção de bugs
+* Otimizações
+* Novo design system inspirado no TailAdmin (tokens de cor, tipografia Outfit, sombras, raios e receitas de componentes), mantendo #008aff como cor de destaque padrão
+* Migração do build de estilos para Tailwind CSS v4 com camadas de cascata isoladas
+* Novo kit de componentes Vue (botões, campos, tabelas de dados, modais, painéis laterais, abas, paginação, badges, alertas, etc)
+* Novo layout do painel: barra lateral de 290 px com modo recolhido e expansão ao passar o mouse, barra superior com busca, modo escuro e menu do usuário
+* Redimensionamento da barra lateral mantido como opção
+* Telas nativas do WordPress e do WooCommerce estilizadas com o novo visual
+* Páginas existentes migradas para as novas paletas
+* Recurso adicionado: Página moderna de produtos do WooCommerce (contadores, filtros, variações, edição rápida e ações em massa)
+* Recurso adicionado: Página moderna de pedidos do WooCommerce com suporte a HPOS e armazenamento legado (pré-visualização, notas, reembolsos, edição de endereços, ações do pedido e exportação CSV)
+* Recurso adicionado: Criação manual de pedidos e edição de itens de pedidos pendentes
+* Recurso adicionado: Editor moderno de produtos com atributos e gerador de variações (opcional)
+* Recurso adicionado: Gerenciamento de categorias, atributos globais e cupons
+* Recurso adicionado: Registro de alterações de status e reembolsos de pedidos no Activity Log
+* Recurso adicionado: Declaração de compatibilidade com HPOS do WooCommerce
+* Atualização das traduções pt_BR
+
 Versão 2.0.0 (06/04/2026)
 * Correção de bugs
 * Otimizações

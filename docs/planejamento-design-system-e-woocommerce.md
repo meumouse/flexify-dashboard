@@ -3,6 +3,36 @@
 > Documento de planejamento. Versão alvo sugerida: **3.0.0** (mudança visual ampla).
 > Referências: [TailAdmin Vue (MIT)](https://github.com/TailAdmin/vue-tailwind-admin-dashboard), [demo](https://demo.tailadmin.com/).
 
+## Status de execução (17/09/2026)
+
+Decisões confirmadas: Tailwind v4 · cor de destaque `#008aff` · redimensionamento da sidebar como opção · editor completo de produto e criação de pedido na Fase 9 · versão 3.0.0.
+
+| Fase | Status | Commits |
+|---|---|---|
+| 0 — Fundação de build | Concluída | `7a708f7` |
+| 1 — Tokens | Concluída | `5743d35` |
+| 2 — Componentes | Concluída | `ec8ece0` |
+| 3 — Layout | Concluída | `55ef0d6` |
+| 4 — Migração das páginas | Concluída | `bfe454a` |
+| 5 — Telas nativas | Concluída | `78f215b` |
+| 6 — Fundação WooCommerce | Concluída | `7a6cd97` |
+| 7 — Produtos | Concluída | `512d230` |
+| 8 — Pedidos | Concluída | `c3d88da`, `e1feadd` |
+| 9 — Editores avançados | Concluída | `a221212` |
+| 10 — QA e lançamento | Parcial | `fdda7da`, `edd5e55` e bump para 3.0.0 |
+
+Documentação: [arquitetura-css.md](arquitetura-css.md), [design-system.md](design-system.md), [componentes.md](componentes.md), [woocommerce.md](woocommerce.md).
+
+**Validado:** build de produção, 15 testes unitários (`npm test` em `app/`), lint PHP, smoke test das rotas REST no WordPress local (sem WooCommerce), verificação visual das páginas no harness com dados simulados (claro/escuro, desktop/mobile).
+
+**Pendente / fora do escopo entregue:**
+- Testes com o WooCommerce instalado (HPOS ligado/desligado/sincronizando, gateways reais, reembolsos pelo gateway) e a matriz completa de navegadores, RTL, papéis e PHP 7.4.
+- Auditoria de acessibilidade (contraste AA, leitores de tela) e medição de performance com 10 mil pedidos.
+- Produtos: rota de tags (usa a tela nativa), filtro por faixa de preço e colunas visíveis salvas por usuário.
+- Pedidos: filtros por método de pagamento/envio/cliente/origem, atualização periódica com badge no menu e metadados personalizados somente leitura.
+- Editor de produto: arquivos para download, produtos vinculados (upsell/cross-sell) e detecção automática de metaboxes de terceiros (hoje o editor é opcional por configuração).
+- Geração do pacote de release (`npm run release`).
+
 ---
 
 ## 1. Diagnóstico do estado atual
