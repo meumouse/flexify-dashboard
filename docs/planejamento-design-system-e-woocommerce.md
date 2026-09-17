@@ -27,11 +27,13 @@ Documentação: [arquitetura-css.md](arquitetura-css.md), [design-system.md](des
 
 **Complementos entregues após a 3.0.0 inicial:** filtros de pedidos por método de pagamento, canal, origem e cliente; aviso de novos pedidos (verificação a cada 60 s); campos personalizados do pedido; tela de tags; filtros por tag e faixa de preço; colunas visíveis (preferência salva no navegador); produtos vinculados, produtos agrupados e arquivos para download no editor; revisão de acessibilidade do kit (nome acessível em checkboxes/switches, anel de foco mais visível, `aria-pressed` nos contadores, número do pedido como link).
 
+**Testes com WooCommerce 11.1 real (API, sem navegador):** `tests/integration/woocommerce-rest.php` — 54/54 com HPOS e 54/54 com armazenamento legado; `tests/integration/woocommerce-redirects.php` — 12/12 (redirecionamentos legados verificados à parte). Os testes encontraram e corrigiram: restauração de pedido da lixeira no HPOS, contagem da lixeira no resumo, gancho dos filtros extras de pedidos e totais de itens ao editar quantidades/cupons. Desempenho com 3.000 pedidos: resumo 9–35 ms (14 consultas); lista paginada/filtrada 145–183 ms (a maior parte vem da própria `wc/v3`). Também foram verificados celular (375 px, sem estouro horizontal), modo escuro e RTL.
+
 **Pendente:**
-- Testes com o WooCommerce instalado (HPOS ligado/desligado/sincronizando, gateways reais, reembolsos pelo gateway) e a matriz completa de navegadores, RTL, papéis e PHP 7.4.
-- Auditoria com leitor de tela real e medição de performance com 10 mil pedidos.
+- Uso das telas no navegador logado com dados reais (login não automatizado), gateways com reembolso automático, HPOS em modo de sincronização, PHP 7.4 e navegadores Firefox/Safari.
+- Auditoria com leitor de tela real.
 - Filtro de pedidos por método de envio (não há consulta eficiente no WooCommerce) e contador no menu (o WooCommerce já mostra os pedidos em processamento).
-- Detecção automática de metaboxes de terceiros no editor de produto (hoje o editor é opcional por configuração) e arquivos para download de variações.
+- Arquivos para download de variações no editor Vue. (Os campos de extensões agora são detectados: metaboxes registrados na última abertura do editor clássico e abas extras de "Dados do produto" geram um aviso com link para o editor clássico.)
 - Geração do pacote de release (`npm run release`), que depende do `admin/vendor` instalado via Composer.
 
 ---
