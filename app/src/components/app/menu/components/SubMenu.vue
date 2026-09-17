@@ -36,7 +36,7 @@ watchEffect(() => {
     <Teleport to="body">
       <div class="flexify-dashboard-isolation">
         <div
-          class="fd-submenu fixed bg-[rgba(28,36,52,0.9)] backdrop-blur-md z-[9999] shadow-xl rounded-xl border border-white/10 p-3 text-sm translate-x-0 fd-normalize"
+          class="fd-submenu fixed z-[9999] flex min-w-52 translate-x-2 flex-col gap-1 rounded-2xl border border-gray-200 bg-white p-2 text-theme-sm shadow-theme-lg fd-normalize dark:border-gray-800 dark:bg-gray-dark"
           :style="position"
           @mouseenter="mouseenter()"
           @mouseleave="mouseleave()"

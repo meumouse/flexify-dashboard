@@ -319,17 +319,17 @@ onUnmounted(() => {
             v-if="isDropdownVisible"
             ref="userDropdownRef"
             :style="`top: ${dropdownPosition.top}px; left: ${dropdownPosition.left}px;`"
-            class="bg-[#313d4a] rounded-lg shadow-lg border border-[#444e59] min-w-[240px] fixed z-[9999] text-zinc-100"
+            class="fixed z-[9999] min-w-[260px] rounded-2xl border border-gray-200 bg-white p-2 text-gray-700 shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark dark:text-gray-300"
             @mouseenter="onDropdownMouseEnter"
             @mouseleave="onDropdownMouseLeave"
           >
             <!-- User info header -->
             <div
-              class="px-4 py-3 border-b border-[#444e59]"
+              class="px-4 py-3 border-b border-gray-200 dark:border-gray-800"
             >
               <div class="flex items-center gap-3">
                 <div
-                  class="w-8 h-8 bg-zinc-700 dark:bg-zinc-600 text-white rounded-full font-medium flex items-center justify-center relative overflow-hidden"
+                  class="w-10 h-10 bg-brand-50 text-brand-500 dark:bg-brand-500/15 dark:text-brand-400 rounded-full font-medium flex items-center justify-center relative overflow-hidden"
                 >
                   <span
                     class="lowercase text-sm"
@@ -344,11 +344,11 @@ onUnmounted(() => {
                 </div>
                 <div class="flex flex-col leading-tight grow min-w-0">
                   <span
-                    class="font-medium text-zinc-100 truncate text-sm"
+                    class="font-medium text-gray-800 dark:text-white/90 truncate text-sm"
                     >{{ appStore.state.userName }}</span
                   >
                   <span
-                    class="text-xs text-zinc-400 truncate"
+                    class="text-xs text-gray-500 dark:text-gray-400 truncate"
                     >{{ appStore.state.userEmail }}</span
                   >
                 </div>
@@ -360,11 +360,11 @@ onUnmounted(() => {
               <template v-for="item in userMenuItems" :key="item.id">
                 <button
                   @click="handleUserMenuAction(item)"
-                  class="w-full px-4 py-2.5 text-left flex items-center gap-3 hover:bg-[#1c2434] transition-colors"
+                  class="w-full rounded-lg px-3 py-2 text-start flex items-center gap-3 text-theme-sm font-medium hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
                   :class="
                     item.destructive
-                      ? 'text-red-300 hover:text-red-200'
-                      : 'text-zinc-100'
+                      ? 'text-error-500 hover:text-error-600'
+                      : 'text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white'
                   "
                 >
                   <AppIcon :icon="item.icon" class="text-sm opacity-70" />
@@ -372,32 +372,32 @@ onUnmounted(() => {
                 </button>
                 <div
                   v-if="item.divider"
-                  class="h-px bg-[#444e59] my-1 mx-4"
+                  class="h-px bg-gray-100 dark:bg-gray-800 my-1 mx-4"
                 ></div>
               </template>
             </div>
 
             <!-- Quick actions footer -->
             <div
-              class="px-4 py-3 border-t border-[#444e59]"
+              class="px-4 py-3 border-t border-gray-200 dark:border-gray-800"
             >
               <div class="space-y-3">
                 <!-- Theme selector -->
                 <div class="flex items-center justify-between">
                   <span
-                    class="text-xs font-medium text-zinc-300"
+                    class="text-xs font-medium text-gray-700 dark:text-gray-300"
                     >{{ __('Theme', 'flexify-dashboard') }}</span
                   >
                   <div
-                    class="flex bg-[#1c2434] rounded-lg p-0.5"
+                    class="flex rounded-lg bg-gray-100 p-0.5 dark:bg-gray-900"
                   >
                     <button
                       @click="setColorScheme('light')"
                       class="px-2 py-1 text-xs rounded-md transition-colors"
                       :class="
                         userPreference === 'light'
-                          ? 'bg-[#313d4a] text-zinc-100 shadow-sm'
-                          : 'text-zinc-400 hover:bg-[#1c2434] hover:text-zinc-100'
+                          ? 'bg-white text-gray-900 shadow-theme-xs dark:bg-gray-800 dark:text-white'
+                          : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
                       "
                       :title="__('Light Mode', 'flexify-dashboard')"
                     >
@@ -408,8 +408,8 @@ onUnmounted(() => {
                       class="px-2 py-1 text-xs rounded-md transition-colors"
                       :class="
                         userPreference === 'dark'
-                          ? 'bg-[#313d4a] text-zinc-100 shadow-sm'
-                          : 'text-zinc-400 hover:bg-[#1c2434] hover:text-zinc-100'
+                          ? 'bg-white text-gray-900 shadow-theme-xs dark:bg-gray-800 dark:text-white'
+                          : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
                       "
                       :title="__('Dark Mode', 'flexify-dashboard')"
                     >
@@ -420,8 +420,8 @@ onUnmounted(() => {
                       class="px-2 py-1 text-xs rounded-md transition-colors"
                       :class="
                         userPreference === 'system'
-                          ? 'bg-[#313d4a] text-zinc-100 shadow-sm'
-                          : 'text-zinc-400 hover:bg-[#1c2434] hover:text-zinc-100'
+                          ? 'bg-white text-gray-900 shadow-theme-xs dark:bg-gray-800 dark:text-white'
+                          : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
                       "
                       :title="__('System', 'flexify-dashboard')"
                     >
@@ -435,7 +435,7 @@ onUnmounted(() => {
                   v-if="openSearch"
                   class="flex items-center justify-between"
                 >
-                  <span class="text-xs text-zinc-400">{{
+                  <span class="text-xs text-gray-500 dark:text-gray-400">{{
                     __('Quick Actions', 'flexify-dashboard')
                   }}</span>
                   <button
@@ -449,12 +449,12 @@ onUnmounted(() => {
                         showUserDropdown = false;
                       }
                     "
-                    class="p-1.5 rounded hover:bg-[#1c2434] transition-colors"
+                    class="p-1.5 rounded hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
                     :title="__('Focus Search', 'flexify-dashboard')"
                   >
                     <AppIcon
                       icon="search"
-                      class="text-sm text-zinc-300"
+                      class="text-sm text-gray-700 dark:text-gray-300"
                     />
                   </button>
                 </div>
@@ -469,7 +469,7 @@ onUnmounted(() => {
     <div
       v-if="minimized"
       ref="triggerRef"
-      class="w-7 aspect-square bg-zinc-700 dark:bg-brand-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden cursor-pointer hover:ring-2 hover:ring-brand-300 dark:hover:ring-brand-600"
+      class="w-10 aspect-square bg-brand-50 text-brand-500 dark:bg-brand-500/15 dark:text-brand-400 rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden cursor-pointer hover:ring-2 hover:ring-brand-300 dark:hover:ring-brand-600"
     >
       <span class="uppercase">{{ appStore.state.userName.charAt(0) }}</span>
       <img
@@ -483,15 +483,15 @@ onUnmounted(() => {
     <div
       v-else
       ref="triggerRef"
-      class="group w-full p-2 rounded-xl flex flex-row items-center gap-3 border border-[#444e59] bg-[#313d4a] cursor-pointer transition-colors"
+      class="group w-full p-2 rounded-xl flex flex-row items-center gap-3 border border-gray-200 bg-white cursor-pointer transition-colors dark:border-gray-800 dark:bg-white/[0.03]"
       :class="
         showUserDropdown
-          ? 'bg-[#1c2434] border-[#55606d]'
-          : 'hover:bg-[#1c2434] hover:border-[#55606d]'
+          ? 'bg-gray-50 dark:bg-white/5'
+          : 'hover:bg-gray-50 dark:hover:bg-white/5'
       "
     >
       <div
-        class="w-8 aspect-square bg-zinc-700 dark:bg-zinc-600 text-white rounded-full font-medium flex items-center justify-center shrink-0 relative overflow-hidden transition-colors group-hover:bg-zinc-600 dark:group-hover:bg-zinc-500"
+        class="w-10 aspect-square bg-brand-50 text-brand-500 dark:bg-brand-500/15 dark:text-brand-400 rounded-full font-medium flex items-center justify-center shrink-0 relative overflow-hidden"
       >
         <span
           class="lowercase relative text-sm"
@@ -509,16 +509,16 @@ onUnmounted(() => {
       >
         <div class="flex items-center justify-between">
           <span
-            class="truncate font-medium text-zinc-100 text-sm"
+            class="truncate font-medium text-gray-800 dark:text-white/90 text-sm"
             >{{ appStore.state.userName }}</span
           >
           <AppIcon
             :icon="showUserDropdown ? 'keyboard_arrow_up' : 'expand_more'"
-            class="text-sm text-zinc-300 transition-transform"
+            class="text-sm text-gray-700 dark:text-gray-300 transition-transform"
             :class="showUserDropdown ? 'rotate-0' : 'rotate-0'"
           />
         </div>
-        <span class="text-xs text-zinc-400 truncate">{{
+        <span class="text-xs text-gray-500 dark:text-gray-400 truncate">{{
           appStore.state.userEmail
         }}</span>
       </div>

@@ -534,6 +534,18 @@ export const settingsConfig = [
   },
 
   {
+    id: 'sidebar_resizable',
+    category: 'menu',
+    type: 'toggle',
+    label: __('Resizable sidebar', 'flexify-dashboard'),
+    description: __(
+      'Allow dragging the sidebar edge to change its width. When disabled the sidebar uses the default width.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+  },
+
+  {
     id: 'enable_admin_menu_search',
     category: 'menu',
     type: 'toggle',

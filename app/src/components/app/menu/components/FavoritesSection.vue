@@ -130,7 +130,7 @@ onBeforeUnmount(() => {
     <template v-if="favorites.length">
       <div
         v-if="favorites.length"
-        class="text-sm py-3 font-medium mt-2 text-zinc-500 dark:text-zinc-400"
+        class="mt-4 mb-2 px-3 text-xs uppercase leading-5 text-gray-400"
       >
         {{ __('Shortcuts', 'flexify-dashboard') }}
       </div>
@@ -159,7 +159,7 @@ onBeforeUnmount(() => {
                   link.type != 'separator' &&
                   editingShortcut?.url === link.url
                 "
-                class="p-2 bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 mb-1"
+                class="mb-1 rounded-xl border border-gray-200 bg-gray-50 p-3 dark:border-gray-800 dark:bg-white/[0.03]"
               >
                 <div class="flex flex-col gap-3">
                   <div class="flex flex-col gap-1">
@@ -244,14 +244,14 @@ onBeforeUnmount(() => {
                 v-else-if="link.type != 'separator'"
                 @mouseenter="handleItemEnter(link)"
                 @mouseleave="handleItemLeave(link)"
-                class="relative group-parent p-1"
+                class="relative group-parent"
               >
                 <MenuItemLink
                   :link="link"
                   :isActive="getIsActive(link)"
-                  class="p-1 pr-4 pl-1 group"
+                  class="py-2 pe-3 group"
                 >
-                  <div class="absolute px-4 left-0">
+                  <div class="absolute start-0 flex items-center px-3">
                     <MenuIcon :link="link" />
                   </div>
 
@@ -278,13 +278,9 @@ onBeforeUnmount(() => {
                       appStore.state.flexify_dashboard_settings?.submenu_style !=
                         'hover'
                     "
-                    :icon="
-                      getIsActive(link) || link.active || link.open
-                        ? 'expand_more'
-                        : 'chevron_left'
-                    "
-                    :class="getIsActive(link) ? 'opacity-100' : ''"
-                    class="opacity-0 max-md:opacity-100 group-hover:opacity-100 text-base transition-opacity"
+                    icon="expand_more"
+                    :class="getIsActive(link) || link.active || link.open ? 'rotate-180 text-brand-500 dark:text-brand-400' : 'text-gray-500 dark:text-gray-400'"
+                    class="shrink-0 text-lg transition-transform duration-200"
                     @click.prevent.stop="toggleMenuOpen(link)"
                   />
 
@@ -297,13 +293,12 @@ onBeforeUnmount(() => {
                 </MenuItemLink>
 
                 <Transition v-if="getShouldShowSubMenu(link)">
-                  <div class="mt-2 mb-4 pl-1">
+                  <div class="mt-1 mb-2 ms-9 flex flex-col gap-1">
                     <template v-for="sublink in link.submenu" :key="sublink.id">
                       <SubMenuItem
                         :isActive="getIsActive(sublink)"
                         :sublink="sublink"
                         :isFavorite="isFavorite(sublink.url)"
-                        class="pl-12"
                       />
                     </template>
                   </div>
@@ -347,7 +342,7 @@ onBeforeUnmount(() => {
   </TransitionGroup>
 
   <div
-    class="border-t border-zinc-200/40 dark:border-white/20 my-6"
+    class="my-4 border-t border-gray-100 dark:border-gray-800"
     v-if="favorites.length"
   ></div>
 </template>

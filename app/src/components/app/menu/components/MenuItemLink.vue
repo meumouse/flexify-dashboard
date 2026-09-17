@@ -28,11 +28,11 @@ const formattedUrl = computed(() => formatUrl(props.link?.url));
   <a
     :href="formattedUrl"
     :id="link.id"
-    class="flex flex-row rounded-xl items-center cursor-pointer gap-1 group transition-colors duration-150 relative border border-transparent"
+    class="group relative flex min-h-10 w-full cursor-pointer flex-row items-center gap-1 rounded-lg text-theme-sm font-medium transition-colors duration-150"
     :class="
       isActive || isFocused
-        ? 'text-white active bg-white/8 shadow-sm border-white/15'
-        : 'text-[rgba(255,255,255,0.75)] hover:text-white hover:bg-white/8 hover:shadow-sm hover:border-white/15'
+        ? 'active bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400'
+        : 'text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-gray-300'
     "
     :target="link.settings?.open_new ? '_BLANK' : ''"
   >

@@ -63,16 +63,16 @@ const formattedUrl = computed(() => formatUrl(props.sublink?.url));
   <a
     :href="formattedUrl"
     :id="sublink.sub_id"
-    class="flex flex-row p-1.5 px-4 rounded-lg items-center cursor-pointer gap-1 group transition-colors duration-150"
+    class="group relative flex cursor-pointer flex-row items-center gap-1 rounded-lg px-3 py-2 text-theme-sm font-medium transition-colors duration-150"
     :class="
       isActive || isFocused
-        ? 'text-white bg-white/8'
-        : 'text-[rgba(255,255,255,0.75)] hover:text-white hover:bg-white/8'
+        ? 'bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400'
+        : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5'
     "
     @click="triggerBaseNode($event)"
   >
     <div
-      class="transition-color grow text-base truncate flex flex-row items-center gap-4"
+      class="transition-color grow truncate flex flex-row items-center justify-between gap-3"
     >
       <div
         v-html="

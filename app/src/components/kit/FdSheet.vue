@@ -19,6 +19,8 @@ const props = defineProps({
   /** sm | md | lg | xl */
   size: { type: String, default: 'md' },
   persistent: { type: Boolean, default: false },
+  /** Render only the default slot (no header, padding or footer) */
+  bare: { type: Boolean, default: false },
 });
 
 const emit = defineEmits(['close']);
@@ -53,7 +55,9 @@ const preventWhenPersistent = (event) => {
     <DialogPortal :to="portalTarget">
       <DialogOverlay class="fixed inset-0 z-99999 bg-gray-900/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
       <DialogContent :class="panelClass" @escape-key-down="preventWhenPersistent" @pointer-down-outside="preventWhenPersistent" @interact-outside="preventWhenPersistent">
-        <div class="flex items-start justify-between gap-4 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6">
+        <DialogTitle v-if="bare" class="sr-only">{{ title }}</DialogTitle>
+        <slot v-if="bare" />
+        <div v-if="!bare" class="flex items-start justify-between gap-4 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6">
           <slot name="header">
             <div class="min-w-0">
               <DialogTitle class="truncate text-lg font-semibold text-gray-800 dark:text-white/90">{{ title }}</DialogTitle>
@@ -68,11 +72,11 @@ const preventWhenPersistent = (event) => {
           </DialogClose>
         </div>
 
-        <div class="min-h-0 flex-1 overflow-y-auto px-5 py-5 custom-scrollbar sm:px-6">
+        <div v-if="!bare" class="min-h-0 flex-1 overflow-y-auto px-5 py-5 custom-scrollbar sm:px-6">
           <slot />
         </div>
 
-        <div v-if="$slots.footer" class="flex flex-wrap items-center justify-end gap-3 border-t border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6">
+        <div v-if="!bare && $slots.footer" class="flex flex-wrap items-center justify-end gap-3 border-t border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6">
           <slot name="footer" />
         </div>
       </DialogContent>

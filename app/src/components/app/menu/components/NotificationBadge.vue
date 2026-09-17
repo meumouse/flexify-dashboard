@@ -38,29 +38,27 @@ const badgeClasses = computed(() => {
     'inline-flex',
     'items-center',
     'justify-center',
-    'font-semibold',
+    'font-medium',
     'leading-none',
-    'bg-white/10',
-    'dark:bg-white/10',
-    'text-white',
-    'dark:text-white',
+    'bg-brand-50',
+    'text-brand-500',
+    'dark:bg-brand-500/15',
+    'dark:text-brand-400',
+    'group-[.active]:bg-brand-100',
+    'dark:group-[.active]:bg-brand-500/20',
     'rounded-full',
-    'transition-all',
+    'transition-colors',
     'duration-200',
-    'group-hover:scale-105',
-    'border',
-    'border-white/20',
-    'dark:border-white/20',
   ];
 
   if (props.size === 'small') {
-    base.push('min-w-[1.125rem]', 'h-4', 'px-1', 'text-xs');
+    base.push('min-w-[1.125rem]', 'h-5', 'px-1.5', 'text-theme-xs');
 
     if (formattedCount.value && formattedCount.value.length > 2) {
       base.push('px-1.5');
     }
   } else {
-    base.push('min-w-[1.5rem]', 'h-6', 'px-1.5', 'text-xs');
+    base.push('min-w-[1.5rem]', 'h-5', 'px-2', 'text-theme-xs');
 
     if (formattedCount.value && formattedCount.value.length > 2) {
       base.push('px-2');

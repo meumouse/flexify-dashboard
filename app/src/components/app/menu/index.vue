@@ -17,7 +17,6 @@ import AppButton from '@/components/utility/app-button/index.vue';
 import ResizerHandler from '@/components/app/panel-resizer/index.vue';
 import AdminNotices from '@/components/app/admin-notices/index.vue';
 import NotificationsPanel from '@/components/app/admin-notices/NotificationsPanel.vue';
-import UserDetails from './components/UserDetails.vue';
 import ComponentRender from '@/components/app/component-render/index.vue';
 import RemoteSiteSelect from '@/components/utility/remote-site-select/index.vue';
 import MenuSearch from './components/MenuSearch.vue';
@@ -46,9 +45,15 @@ const {
   filterMenuForRemoteSite,
 } = useRemoteFiltering();
 
+// Sidebar sizes (TailAdmin)
+const SIDEBAR_WIDTH = 290;
+const SIDEBAR_COLLAPSED_WIDTH = 90;
+
 // Local refs
 const menupanel = ref(null);
-const panelWidth = ref(240);
+const panelWidth = ref(SIDEBAR_WIDTH);
+const hoverExpanded = ref(false);
+let hoverTimer = null;
 const menus = ref([]);
 const showNotifications = ref(false);
 const props = defineProps(['mobile']);
@@ -92,12 +97,57 @@ const returnMenuItems = computed(() => {
 });
 
 /**
- * Computed property that returns whether the menu is minimised
+ * Whether the sidebar is collapsed by the user (desktop only)
  */
-const isMenuMinified = computed(() => {
+const isCollapsed = computed(() => {
   if (props.mobile) return false;
   return appStore.state.menu_minimised;
 });
+
+/**
+ * Whether the minimised menu should render (collapsed and not hover-expanded)
+ */
+const isMenuMinified = computed(() => isCollapsed.value && !hoverExpanded.value);
+
+/**
+ * Whether the sidebar can be resized by dragging (optional setting)
+ */
+const isResizable = computed(() => {
+  return appStore.state?.flexify_dashboard_settings?.sidebar_resizable === true;
+});
+
+/**
+ * Width reserved in the layout for the sidebar
+ */
+const layoutWidth = computed(() => {
+  if (props.mobile) return '100%';
+  if (isCollapsed.value) return `${SIDEBAR_COLLAPSED_WIDTH}px`;
+  if (showNotifications.value) return `${Math.max(360, panelWidth.value)}px`;
+  return `${panelWidth.value}px`;
+});
+
+/**
+ * Width of the visible panel (expands over the content on hover when collapsed)
+ */
+const panelStyleWidth = computed(() => {
+  if (props.mobile) return '100%';
+  if (isCollapsed.value) return `${hoverExpanded.value ? SIDEBAR_WIDTH : SIDEBAR_COLLAPSED_WIDTH}px`;
+  return layoutWidth.value;
+});
+
+const canHover = () => typeof window !== 'undefined' && window.matchMedia?.('(hover: hover)').matches;
+
+const handleSidebarEnter = () => {
+  if (!isCollapsed.value || !canHover()) return;
+  clearTimeout(hoverTimer);
+  hoverTimer = setTimeout(() => (hoverExpanded.value = true), 120);
+};
+
+const handleSidebarLeave = () => {
+  clearTimeout(hoverTimer);
+  if (!hoverExpanded.value) return;
+  hoverTimer = setTimeout(() => (hoverExpanded.value = false), 200);
+};
 
 /**
  * Computed property that returns whether admin menu search is enabled
@@ -379,20 +429,14 @@ const setMenuWidthProperty = (width, extra = '1px') => {
 watchEffect(() => {
   const extra = '1px';
 
-  if (isMenuMinified.value && menupanel.value) {
-    setTimeout(() => {
-      const rect = menupanel.value.getBoundingClientRect();
-      const widther = rect.width;
-      setMenuWidthProperty(widther, extra);
-    }, 0);
+  if (isCollapsed.value) {
+    setMenuWidthProperty(SIDEBAR_COLLAPSED_WIDTH, extra);
   } else if (showNotifications.value) {
     // Use wider width when notifications panel is open
     const widther = Math.max(360, panelWidth.value);
     setMenuWidthProperty(widther, extra);
   } else {
-    let widther = 240;
-    widther = panelWidth.value;
-    setMenuWidthProperty(widther, extra);
+    setMenuWidthProperty(panelWidth.value, extra);
   }
 });
 
@@ -410,6 +454,27 @@ watch(isMenuMinified, (minimized) => {
     showNotifications.value = false;
   }
 });
+
+// Reset hover expansion when the user toggles the sidebar
+watch(isCollapsed, () => {
+  clearTimeout(hoverTimer);
+  hoverExpanded.value = false;
+});
+
+// Fixed width unless resizing is enabled
+watch(
+  isResizable,
+  (resizable) => {
+    if (!resizable) {
+      panelWidth.value = SIDEBAR_WIDTH;
+      return;
+    }
+
+    const saved = parseInt(localStorage.getItem('uipc_panel_width'), 10);
+    if (saved) panelWidth.value = Math.max(220, saved);
+  },
+  { immediate: true }
+);
 
 /**
  * Loads sidebar render components via filter hooks
@@ -514,31 +579,34 @@ setMenuWidthProperty(panelWidth.value);
 
 <template>
   <div
-    class="flex flex-col gap-1 w-full h-full relative max-h-full overflow-hidden bg-[#1c2434] dark:bg-[#24303f] border-r border-white/10"
-    ref="menupanel"
-    :class="isMenuMinified ? 'py-4' : 'p-4 px-6 pt-2 pb-3'"
-    :style="
-      isMenuMinified
-        ? 'width:auto'
-        : showNotifications
-        ? `width:${Math.max(360, panelWidth)}px; max-width:100%`
-        : `width:${mobile ? '100%' : panelWidth}px`
-    "
     v-if="OGmenu"
+    class="relative h-full shrink-0"
+    :style="{ width: layoutWidth }"
+    @mouseenter="handleSidebarEnter"
+    @mouseleave="handleSidebarLeave"
+  >
+  <div
+    class="flex flex-col gap-1 h-full max-h-full overflow-hidden bg-white dark:bg-gray-900 border-e border-gray-200 dark:border-gray-800 transition-[width] duration-300 ease-in-out"
+    ref="menupanel"
+    :class="[
+      isMenuMinified ? 'items-stretch px-4 pb-4' : 'px-5 pb-4',
+      isCollapsed && hoverExpanded ? 'absolute inset-y-0 start-0 z-50 shadow-theme-xl' : 'relative',
+    ]"
+    :style="{ width: panelStyleWidth, maxWidth: isCollapsed && hoverExpanded ? 'none' : '100%' }"
   >
     <div
-      class="flex flex-row items-center pb-2 border-b border-white/10"
+      class="flex flex-row items-center pt-6 pb-5"
       :class="
-        isMenuMinified ? 'place-content-center mb-3' : 'place-content-between'
+        isMenuMinified ? 'flex-col gap-3 place-content-center' : 'place-content-between'
       "
     >
       <template v-if="!isMenuMinified">
         <a
           :href="appStore.state.adminUrl"
-          class="pt-2 place-self-start"
+          class="flex items-center"
           v-if="!appStore.state?.flexify_dashboard_settings?.logo"
         >
-          <AppIcon icon="flexify-dashboard" class="text-5xl text-white" />
+          <AppIcon icon="flexify-dashboard" class="text-4xl text-brand-500" />
         </a>
 
         <a :href="appStore.state.adminUrl" v-else class="h-10">
@@ -553,28 +621,24 @@ setMenuWidthProperty(panelWidth.value);
         </a>
       </template>
 
+      <a v-else :href="appStore.state.adminUrl" class="flex items-center justify-center">
+        <img
+          v-if="appStore.state?.flexify_dashboard_settings?.logo"
+          :src="
+            prefersDark && appStore.state?.flexify_dashboard_settings?.dark_logo
+              ? appStore.state.flexify_dashboard_settings.dark_logo
+              : appStore.state.flexify_dashboard_settings.logo
+          "
+          class="h-8 w-8 object-contain object-left"
+        />
+        <AppIcon v-else icon="flexify-dashboard" class="text-3xl text-brand-500" />
+      </a>
+
       <div
-        class="flex items-center -mr-1"
+        class="flex items-center -me-1"
         :class="isMenuMinified ? 'flex-col-reverse' : 'flex-row'"
       >
         <AdminNotices v-model="showNotifications" :disabled="isMenuMinified" />
-
-        <AppButton
-          v-if="!mobile"
-          type="transparent"
-          :title="__('Minify menu', 'flexify-dashboard')"
-          @click="appStore.state.menu_minimised = !appStore.state.menu_minimised"
-          class="hidden md:block"
-        >
-          <AppIcon
-            :icon="
-              appStore.state.menu_minimised
-                ? 'right_panel_close'
-                : 'left_panel_close'
-            "
-            class="text-xl text-slate-400 transition-colors"
-          />
-        </AppButton>
       </div>
     </div>
 
@@ -596,18 +660,18 @@ setMenuWidthProperty(panelWidth.value);
     >
       <div v-for="index in 4" class="flex flex-col gap-3">
         <div
-          class="h-6 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"
+          class="h-6 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"
         ></div>
         <div
-          class="h-4 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"
+          class="h-4 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"
           :class="!isMenuMinified ? 'ml-8 w-2/3' : 'w-full'"
         ></div>
         <div
-          class="h-4 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"
+          class="h-4 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"
           :class="!isMenuMinified ? 'ml-8 w-1/4' : 'w-full'"
         ></div>
         <div
-          class="h-4 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"
+          class="h-4 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"
           :class="!isMenuMinified ? 'ml-8 w-1/3' : 'w-full'"
         ></div>
       </div>
@@ -673,14 +737,14 @@ setMenuWidthProperty(panelWidth.value);
         />
       </template>
 
-      <!-- USER DETAILS with Dropdown -->
-      <UserDetails v-if="!isMenuMinified" />
     </div>
     <ResizerHandler
+      v-if="isResizable && !isCollapsed && !mobile"
       @resize="updatePanelWidth"
-      :minWidth="160"
+      :minWidth="220"
       :panelRef="menupanel"
     />
+  </div>
   </div>
 </template>
 
@@ -728,13 +792,6 @@ setMenuWidthProperty(panelWidth.value);
   filter: contrast(0.5);
 }
 
-.flexify-dashboard-sidebar-panel {
-  background: linear-gradient(180deg, #0f172a 0%, #0b1326 55%, #08101f 100%);
-  color: #e2e8f0;
-  border-right: 1px solid rgba(148, 163, 184, 0.18);
-  box-shadow: inset -1px 0 0 rgba(15, 23, 42, 0.4);
-}
-
 .active .wp-menu-image.svg {
   filter: contrast(0);
 }
@@ -774,8 +831,12 @@ body.is-fullscreen-mode.learndash-post-type #sfwd-header {
 
 <style>
 #fd-menu .custom-scrollbar {
-  scrollbar-color: #313d4a transparent !important;
+  scrollbar-color: rgb(var(--fd-base-200)) transparent !important;
   scrollbar-width: thin !important;
+}
+
+.dark #fd-menu .custom-scrollbar {
+  scrollbar-color: rgb(var(--fd-base-700)) transparent !important;
 }
 
 #fd-menu .custom-scrollbar::-webkit-scrollbar {
@@ -783,7 +844,7 @@ body.is-fullscreen-mode.learndash-post-type #sfwd-header {
 }
 
 #fd-menu .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #313d4a !important;
+  background-color: rgb(var(--fd-base-200)) !important;
   border-radius: 9999px;
 }
 

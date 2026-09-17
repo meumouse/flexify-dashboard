@@ -56,6 +56,7 @@ class Default_Options {
             'force_global_theme'                         => 'off',
             'submenu_style'                              => 'click',
             'enable_admin_menu_search'                   => false,
+            'sidebar_resizable'                          => false,
             'hide_language_selector'                     => false,
             'use_classic_post_tables'                    => false,
             'use_modern_plugin_page'                     => false,

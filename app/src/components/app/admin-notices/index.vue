@@ -101,8 +101,8 @@ onMounted(() => {
     <div class="relative" :class="{ 'animate-jiggle': isJiggling }">
       <AppIcon
         :icon="modelValue ? 'bolt_fill' : 'bolt_fill'"
-        class="text-xl text-slate-400 transition-colors"
-        :class="modelValue ? 'text-zinc-900 dark:text-zinc-100' : ''"
+        class="text-xl text-gray-500 transition-colors dark:text-gray-400"
+        :class="modelValue ? 'text-brand-500 dark:text-brand-400' : ''"
       />
       <Transition>
         <span

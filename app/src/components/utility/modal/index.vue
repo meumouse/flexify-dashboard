@@ -5,7 +5,7 @@ import { useColorScheme } from '@/assets/js/functions/useColorScheme.js';
 const { prefersDark } = useColorScheme();
 const open = ref(false);
 const innerOpen = ref(false);
-const props = defineProps({ position: { type: 'string', default: 'center' } });
+const props = defineProps({ position: { type: String, default: 'center' } });
 
 // Store
 import { useAppStore } from '@/store/app/app.js';

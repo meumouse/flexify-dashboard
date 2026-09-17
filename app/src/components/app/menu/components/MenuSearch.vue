@@ -365,7 +365,7 @@ onUnmounted(() => {
       >
         <AppIcon
           icon="search"
-          class="text-zinc-400 dark:text-zinc-500 text-lg"
+          class="text-gray-500 dark:text-gray-400 text-lg"
         />
       </div>
       <input
@@ -373,7 +373,7 @@ onUnmounted(() => {
         v-model="searchQuery"
         type="text"
         :placeholder="__('Search menu...', 'flexify-dashboard')"
-        class="w-full pl-9 pr-8 py-2 text-sm border rounded-lg transition-all outline outline-transparent outline-offset-[-2px] text-white bg-[#313d4a] border-[#444e59] placeholder:text-zinc-400 focus:bg-[#1c2434] focus:border-[#1c2434] focus:outline-transparent focus:shadow-none"
+        class="h-10 w-full rounded-lg border border-gray-200 bg-gray-50 py-2 ps-9 pe-8 text-theme-sm text-gray-800 transition-colors placeholder:text-gray-400 focus:border-brand-300 focus:bg-white focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-800 dark:bg-white/[0.03] dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
         @focus="isOpen = true"
         @input="isOpen = true"
 		    @blur="handleInputBlur"
@@ -382,7 +382,7 @@ onUnmounted(() => {
       <button
         v-if="searchQuery"
         @click="closeSearch"
-        class="absolute top-0 right-0 h-full flex items-center px-3 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+        class="absolute top-0 right-0 h-full flex items-center px-3 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
       >
         <AppIcon icon="close" class="text-sm" />
       </button>
@@ -401,7 +401,7 @@ onUnmounted(() => {
         v-if="isOpen && (searchQuery || filteredResults.length > 0)"
         ref="resultsContainerRef"
         @mousedown.prevent
-        class="absolute top-full left-0 right-0 mt-2 bg-[#313d4a] rounded-xl shadow-xl border border-[#444e59] z-50"
+        class="absolute top-full left-0 right-0 mt-2 rounded-2xl border border-gray-200 bg-white shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark z-50"
       >
         <!-- No Results -->
         <div
@@ -410,12 +410,12 @@ onUnmounted(() => {
         >
           <AppIcon
             icon="search"
-            class="text-3xl text-zinc-400 dark:text-zinc-500 mx-auto mb-2"
+            class="text-3xl text-gray-500 dark:text-gray-400 mx-auto mb-2"
           />
-          <p class="text-sm text-zinc-300">
+          <p class="text-sm text-gray-700 dark:text-gray-300">
             {{ __('No menu items found', 'flexify-dashboard') }}
           </p>
-          <p class="text-xs text-zinc-400 mt-1">
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
             {{ __('Try a different search term', 'flexify-dashboard') }}
           </p>
         </div>
@@ -432,8 +432,8 @@ onUnmounted(() => {
               class="w-full px-4 py-2.5 text-left flex items-center gap-3 transition-colors group rounded-lg"
               :class="
                 focusedIndex === index
-                  ? 'bg-[#1c2434] text-white'
-                  : 'text-zinc-100 hover:bg-[#1c2434]' 
+                  ? 'bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400'
+                  : 'text-gray-800 dark:text-white/90 hover:bg-gray-100 dark:hover:bg-white/5' 
               "
             >
               <!-- Icon -->
@@ -444,12 +444,12 @@ onUnmounted(() => {
               <!-- Item Info -->
               <div class="flex-1 min-w-0">
                 <div
-                  class="text-sm font-medium text-zinc-100 truncate"
+                  class="text-sm font-medium text-gray-800 dark:text-white/90 truncate"
                   v-html="highlightMatch(getItemName(item), searchQuery)"
                 ></div>
                 <div
                   v-if="item.level === 'sub' && item.parent"
-                  class="text-xs text-zinc-400 truncate mt-0.5"
+                  class="text-xs text-gray-500 dark:text-gray-400 truncate mt-0.5"
                 >
                   {{ getItemName(item.parent) }}
                 </div>
@@ -458,7 +458,7 @@ onUnmounted(() => {
               <!-- Level Indicator -->
               <div
                 v-if="item.level === 'sub'"
-                class="flex-shrink-0 text-xs text-zinc-400 dark:text-zinc-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                class="flex-shrink-0 text-xs text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity"
               >
                 <AppIcon icon="subdirectory_arrow_right" class="text-base" />
               </div>
@@ -469,10 +469,10 @@ onUnmounted(() => {
         <!-- Results Footer -->
         <div
           v-if="filteredResults.length > 0"
-          class="px-4 py-2 border-t border-[#444e59] bg-[#313d4a] rounded-b-xl"
+          class="rounded-b-2xl border-t border-gray-100 px-4 py-2 dark:border-gray-800"
         >
           <div
-            class="flex items-center justify-between text-xs text-zinc-300"
+            class="flex items-center justify-between text-xs text-gray-700 dark:text-gray-300"
           >
             <span>
               {{ filteredResults.length }}
@@ -484,13 +484,13 @@ onUnmounted(() => {
             </span>
             <div class="flex items-center gap-2">
               <kbd
-                class="px-1.5 py-0.5 bg-[#1c2434] border border-[#444e59] rounded text-xs text-zinc-200"
+                class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded text-xs text-gray-700 dark:text-gray-300"
               >
                 ↑↓
               </kbd>
               <span>{{ __('Navigate', 'flexify-dashboard') }}</span>
               <kbd
-                class="px-1.5 py-0.5 bg-[#1c2434] border border-[#444e59] rounded text-xs text-zinc-200"
+                class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded text-xs text-gray-700 dark:text-gray-300"
               >
                 ↵
               </kbd>

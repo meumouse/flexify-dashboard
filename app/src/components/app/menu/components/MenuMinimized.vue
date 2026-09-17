@@ -5,7 +5,6 @@ import MenuItemLink from './MenuItemLink.vue';
 import MenuIcon from './MenuIcon.vue';
 import SubMenu from './SubMenu.vue';
 import SubMenuItem from './SubMenuItem.vue';
-import UserDetails from './UserDetails.vue';
 
 // Composables
 import { useFavorites } from '../composables/useFavorites.js';
@@ -103,25 +102,25 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="relative grow flex overflow-hidden min-h-0 px-3">
+  <div class="relative grow flex overflow-hidden min-h-0">
     <div
       ref="scrollContainer"
-      class="flex flex-col grow gap-1.5 custom-scrollbar pb-16 min-h-0 overflow-auto"
+      class="flex flex-col grow items-center gap-1 custom-scrollbar pb-16 min-h-0 overflow-auto"
       :class="!favorites.length ? 'mt-6' : ''"
     >
       <template v-for="(link, index) in menuItems" :key="link.id || index">
         <div
           v-if="link.type != 'separator'"
-          class="relative group-parent p-1"
+          class="relative group-parent"
           @mouseenter="handleItemEnter(link)"
           @mouseleave="handleItemLeave(link)"
         >
-          <MenuItemLink :link="link" :isActive="getIsActive(link)" class="p-2">
+          <MenuItemLink :link="link" :isActive="getIsActive(link)" class="h-11 w-11 justify-center">
             <MenuIcon :link="link" />
 
             <div
               v-if="getNotificationCount(link)"
-              class="absolute top-0 right-[-2px] text-xs bg-brand-500/80 rounded border border-brand-300/40 px-1 text-white"
+              class="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-500 px-1 text-[10px] font-medium leading-none text-white"
             >
               {{ getNotificationCount(link) }}
             </div>
@@ -151,14 +150,13 @@ onBeforeUnmount(() => {
           </div>
         </div>
 
-        <div v-else class="w-full my-2"></div>
+        <div v-else class="my-2 w-8 border-t border-gray-100 dark:border-gray-800"></div>
       </template>
     </div>
     <div
-      class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-100/95 to-transparent dark:from-[#061022] pointer-events-none"
+      class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent dark:from-gray-900 pointer-events-none"
       id="fd-menu-overlay"
     ></div>
   </div>
 
-  <UserDetails :minimized="true" />
 </template>

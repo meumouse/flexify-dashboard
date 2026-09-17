@@ -70,3 +70,14 @@ const options = computed(() => chartOptions({ xaxis: { categories: labels.value 
 ## Extensões (React/Vue)
 
 As variáveis `--fd-accent-*`, `--fd-base-*` e `--fd-font-sans` são públicas e podem ser usadas por cards e componentes de terceiros: `color: rgb(var(--fd-accent-500))`. O filtro PHP `flexify-dashboard/theme/tokens` permite ajustar as declarações.
+
+## Layout
+
+| Área | Implementação | Regras |
+|---|---|---|
+| Sidebar | `components/app/menu` | 290 px expandida / 90 px recolhida; recolhida expande ao passar o mouse (sobrepõe o conteúdo). Abaixo de `lg` vira painel lateral (`FdSheet`) aberto pelo botão de menu. Redimensionamento opcional em **Configurações → Menu → Resizable sidebar** (`sidebar_resizable`). |
+| Itens de menu | `MenuItemLink`, `SubMenuItem` | Ativo `bg-brand-50 text-brand-500`, inativo `text-gray-700 hover:bg-gray-100`; submenu recuado `ms-9`; contadores em badge `brand`. |
+| Header | `components/app/toolbar` | `bg-white border-b`, botão para recolher a sidebar, busca (`Ctrl/⌘ K`), barra do WP, alternância claro/escuro e menu do usuário (perfil, site, configurações, tema, sair). |
+| Conteúdo | `components/app/wrapper` | Fundo `bg-gray-50 dark:bg-gray-900`. |
+
+> Classes utilitárias **não se aplicam ao próprio elemento** `.flexify-dashboard-isolation` (o escopo vale para descendentes). Use uma regra CSS dedicada, como `.fd-sidebar-container`.

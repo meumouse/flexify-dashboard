@@ -114,7 +114,7 @@ onBeforeUnmount(() => {
   <div class="relative grow overflow-hidden flex min-h-0">
     <div
       ref="scrollContainer"
-      class="flex flex-col grow gap-1.5 custom-scrollbar pb-16 min-h-0 overflow-auto"
+      class="flex flex-col grow gap-1 custom-scrollbar pb-16 min-h-0 overflow-auto"
       :class="!favorites.length ? 'mt-6' : ''"
     >
       <template v-for="(link, index) in menuItems" :key="link.id || index">
@@ -122,14 +122,14 @@ onBeforeUnmount(() => {
           v-if="link.type != 'separator'"
           @mouseenter="handleItemEnter(link)"
           @mouseleave="handleItemLeave(link)"
-          class="relative group-parent p-1"
+          class="relative group-parent"
         >
           <MenuItemLink
             :link="link"
             :isActive="getIsActive(link)"
-            class="p-1.5 pr-4 pl-1.5 text-[rgba(255,255,255,0.75)] hover:text-white"
+            class="py-2 pe-3"
           >
-            <div class="absolute px-4 left-0">
+            <div class="absolute start-0 flex items-center px-3">
               <MenuIcon :link="link" />
             </div>
 
@@ -138,7 +138,7 @@ onBeforeUnmount(() => {
             <AppIcon
               v-if="!isFavorite(link.url)"
               icon="star"
-              class="opacity-0 group-hover:opacity-100 text-base transition-opacity"
+              class="shrink-0 text-base text-gray-400 opacity-0 transition-opacity hover:text-warning-500 group-hover:opacity-100"
               @click.prevent.stop="addFavorite(link)"
             />
 
@@ -148,13 +148,9 @@ onBeforeUnmount(() => {
                 link.submenu.length &&
                 appStore.state.flexify_dashboard_settings?.submenu_style != 'hover'
               "
-              :icon="
-                getIsActive(link) || link.active || link.open
-                  ? 'expand_more'
-                  : 'chevron_left'
-              "
-              :class="getIsActive(link) ? 'opacity-100' : ''"
-              class="opacity-0 max-md:opacity-100 group-hover:opacity-100 text-base transition-opacity"
+              icon="expand_more"
+              :class="getIsActive(link) || link.active || link.open ? 'rotate-180 text-brand-500 dark:text-brand-400' : 'text-gray-500 dark:text-gray-400'"
+              class="shrink-0 text-lg transition-transform duration-200"
               @click.prevent.stop="toggleMenuOpen(link)"
             />
 
@@ -167,13 +163,12 @@ onBeforeUnmount(() => {
           </MenuItemLink>
 
           <Transition v-if="getShouldShowSubMenu(link)">
-            <div class="mt-2 mb-4 border-l border-zinc-200/20 dark:border-white/20 ml-5">
+            <div class="mt-1 mb-2 ms-9 flex flex-col gap-1">
               <template v-for="sublink in link.submenu" :key="sublink.id">
                 <SubMenuItem
                   :isActive="getIsActive(sublink)"
                   :sublink="sublink"
                   :isFavorite="isFavorite(sublink.url)"
-                  class="pl-8"
                 />
               </template>
             </div>
@@ -215,7 +210,7 @@ onBeforeUnmount(() => {
             !link.settings?.hidden &&
             !link.settings?.name
           "
-          class="w-full my-2"
+          class="my-2 w-full border-t border-gray-100 dark:border-gray-800"
           :id="link.id || link.settings?.id"
         ></div>
 
@@ -225,14 +220,14 @@ onBeforeUnmount(() => {
             !link.settings?.hidden &&
             link.settings?.name
           "
-          class="text-[11px] py-2 px-2 font-semibold mt-3 rounded-md uppercase tracking-wider text-zinc-400 dark:text-zinc-500"
+          class="mt-4 mb-2 px-3 text-xs uppercase leading-5 text-gray-400"
           v-html="link.settings.name"
           :id="link.id"
         ></div>
       </template>
     </div>
     <div
-      class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-100/95 to-transparent dark:from-[#061022] pointer-events-none"
+      class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent dark:from-gray-900 pointer-events-none"
       id="fd-menu-overlay"
     ></div>
   </div>

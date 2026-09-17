@@ -184,6 +184,10 @@ class GlobalOptions {
                     'type'    => 'boolean',
                     'default' => false,
                 ),
+                'sidebar_resizable' => array(
+                    'type'    => 'boolean',
+                    'default' => false,
+                ),
                 'hide_language_selector' => array(
                     'type'    => 'boolean',
                     'default' => false,
@@ -367,6 +371,7 @@ class GlobalOptions {
 
         $boolean_fields = array(
             'enable_admin_menu_search',
+            'sidebar_resizable',
             'auto_dark',
             'use_classic_post_tables',
             'use_modern_plugin_page',

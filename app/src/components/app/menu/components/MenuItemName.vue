@@ -34,11 +34,10 @@ const menuName = computed(() => {
 </script>
 
 <template>
-  <div class="pl-12 flex-grow flex items-center justify-between gap-3 min-w-0">
+  <div class="ps-9 flex-grow flex items-center justify-between gap-3 min-w-0">
     <!-- Menu name with improved typography -->
     <div
-      class="flex-1 min-w-0 font-medium group-hover:text-white transition-colors duration-200 leading-relaxed text-[13px]"
-      :class=" active ? 'text-white' : 'text-[rgba(255,255,255,0.75)]'"
+      class="flex-1 min-w-0 font-medium leading-5 text-theme-sm transition-colors duration-150"
       v-html="menuName"
     />
 
