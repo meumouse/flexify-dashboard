@@ -1,4 +1,5 @@
 import { useWooCommerce } from '@/composables/useWooCommerce.js';
+import { formatPrice } from '@/composables/wooPrice.js';
 import { ref } from 'vue';
 import { useAppStore } from '@/store/app/app.js';
 
@@ -131,29 +132,7 @@ export function useOrderHelpers() {
 
     const currency = order?.currency_symbol ? { ...woo.currency.value, symbol: decode(order.currency_symbol) } : woo.currency.value;
 
-    return formatWith(value, currency);
-  };
-
-  const formatWith = (value, currency) => {
-    const base = woo.currency.value;
-    const merged = { ...base, ...currency };
-    const decimals = Number.isInteger(merged.decimals) ? merged.decimals : 2;
-    const number = Number(value) || 0;
-    const [integer, fraction] = Math.abs(number).toFixed(decimals).split('.');
-    const grouped = integer.replace(/\B(?=(\d{3})+(?!\d))/g, merged.thousand_separator ?? '.');
-    const amount = fraction ? `${grouped}${merged.decimal_separator ?? ','}${fraction}` : grouped;
-    const sign = number < 0 ? '-' : '';
-
-    switch (merged.position) {
-      case 'right':
-        return `${sign}${amount}${merged.symbol}`;
-      case 'right_space':
-        return `${sign}${amount} ${merged.symbol}`;
-      case 'left':
-        return `${sign}${merged.symbol}${amount}`;
-      default:
-        return `${sign}${merged.symbol} ${amount}`;
-    }
+    return formatPrice(value, currency);
   };
 
   const itemsCount = (order) => (order?.line_items || []).reduce((total, item) => total + (Number(item.quantity) || 0), 0);

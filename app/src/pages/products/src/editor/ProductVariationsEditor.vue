@@ -5,6 +5,7 @@ import AppIcon from '@/components/utility/icons/index.vue';
 import { notify } from '@/assets/js/functions/notify.js';
 import { useWooCommerce } from '@/composables/useWooCommerce.js';
 import { openMediaFrame } from './useWpMedia.js';
+import { missingCombos, sameAttribute } from './variationCombos.js';
 
 const props = defineProps({
   productId: { type: Number, required: true },
@@ -80,14 +81,6 @@ const markDirty = (variation) => {
   dirtyIds.value = new Set([...dirtyIds.value, variation.id]);
 };
 
-/**
- * Match a variation attribute with a parent attribute (global by id, custom by name).
- */
-const sameAttribute = (item, attribute) => {
-  if (attribute.id && item.id) return item.id === attribute.id;
-  return String(item.name).toLowerCase() === String(attribute.name).toLowerCase();
-};
-
 const attributeValue = (variation, attribute) => {
   const match = variation.attributes.find((item) => sameAttribute(item, attribute));
   return match?.option || '';
@@ -102,14 +95,6 @@ const setAttributeValue = (variation, attribute, option) => {
 const variationTitle = (variation) =>
   variationAttributes.value.map((attribute) => attributeValue(variation, attribute) || sprintf(__('Any %s', 'flexify-dashboard'), attribute.name)).join(' · ') ||
   sprintf(__('Variation #%s', 'flexify-dashboard'), variation.id);
-
-const comboKey = (attributes) =>
-  variationAttributes.value
-    .map((attribute) => {
-      const match = attributes.find((item) => sameAttribute(item, attribute));
-      return `${attribute.id || attribute.name}:${match?.option || ''}`;
-    })
-    .join('|');
 
 const toPayload = (variation) => {
   const payload = {
@@ -171,13 +156,7 @@ const save = async () => {
 const generate = async () => {
   if (!variationAttributes.value.length) return;
 
-  const combos = variationAttributes.value.reduce(
-    (list, attribute) => list.flatMap((combo) => attribute.options.map((option) => [...combo, { id: attribute.id, name: attribute.name, option }])),
-    [[]]
-  );
-
-  const existing = new Set(variations.value.map((variation) => comboKey(variation.attributes)));
-  const missing = combos.filter((combo) => !existing.has(comboKey(combo)));
+  const missing = missingCombos(variationAttributes.value, variations.value);
 
   if (!missing.length) {
     notify({ title: __('All variations already exist', 'flexify-dashboard'), type: 'info' });
