@@ -25,13 +25,14 @@ Documentação: [arquitetura-css.md](arquitetura-css.md), [design-system.md](des
 
 **Validado:** build de produção, 15 testes unitários (`npm test` em `app/`), lint PHP, smoke test das rotas REST no WordPress local (sem WooCommerce), verificação visual das páginas no harness com dados simulados (claro/escuro, desktop/mobile).
 
-**Pendente / fora do escopo entregue:**
+**Complementos entregues após a 3.0.0 inicial:** filtros de pedidos por método de pagamento, canal, origem e cliente; aviso de novos pedidos (verificação a cada 60 s); campos personalizados do pedido; tela de tags; filtros por tag e faixa de preço; colunas visíveis (preferência salva no navegador); produtos vinculados, produtos agrupados e arquivos para download no editor; revisão de acessibilidade do kit (nome acessível em checkboxes/switches, anel de foco mais visível, `aria-pressed` nos contadores, número do pedido como link).
+
+**Pendente:**
 - Testes com o WooCommerce instalado (HPOS ligado/desligado/sincronizando, gateways reais, reembolsos pelo gateway) e a matriz completa de navegadores, RTL, papéis e PHP 7.4.
-- Auditoria de acessibilidade (contraste AA, leitores de tela) e medição de performance com 10 mil pedidos.
-- Produtos: rota de tags (usa a tela nativa), filtro por faixa de preço e colunas visíveis salvas por usuário.
-- Pedidos: filtros por método de pagamento/envio/cliente/origem, atualização periódica com badge no menu e metadados personalizados somente leitura.
-- Editor de produto: arquivos para download, produtos vinculados (upsell/cross-sell) e detecção automática de metaboxes de terceiros (hoje o editor é opcional por configuração).
-- Geração do pacote de release (`npm run release`).
+- Auditoria com leitor de tela real e medição de performance com 10 mil pedidos.
+- Filtro de pedidos por método de envio (não há consulta eficiente no WooCommerce) e contador no menu (o WooCommerce já mostra os pedidos em processamento).
+- Detecção automática de metaboxes de terceiros no editor de produto (hoje o editor é opcional por configuração) e arquivos para download de variações.
+- Geração do pacote de release (`npm run release`), que depende do `admin/vendor` instalado via Composer.
 
 ---
 

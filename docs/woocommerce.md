@@ -18,9 +18,10 @@ Em **Flexify Dashboard → Configurações → WooCommerce**:
 
 | Rota | Tela |
 |---|---|
-| `#/` | Lista com contadores, abas de status, filtros na URL, variações expansíveis, edição rápida e ações em massa (status, estoque, preço, categorias, destaque, lixeira). |
-| `#/new`, `#/product/:id` | Editor de produto: geral, preços (com agendamento), estoque, entrega, atributos, variações, avançado, imagens (biblioteca de mídia do WordPress), categorias e tags. Avisa sobre alterações não salvas. |
+| `#/` | Lista com contadores, abas de status, filtros na URL (categoria, tipo, estoque, destaque, tag e faixa de preço), colunas visíveis, variações expansíveis, edição rápida e ações em massa (status, estoque, preço, categorias, destaque, lixeira). |
+| `#/new`, `#/product/:id` | Editor de produto: geral, preços (com agendamento), estoque, entrega, arquivos para download, atributos, variações, produtos vinculados (upsell, cross-sell e agrupados), avançado, imagens (biblioteca de mídia do WordPress), categorias e tags. Avisa sobre alterações não salvas. |
 | `#/categories` | Categorias hierárquicas. |
+| `#/tags` | Tags de produtos com exclusão em massa. |
 | `#/attributes` | Atributos globais e seus valores. |
 | `#/coupons` | Lista e editor de cupons. |
 
@@ -28,7 +29,7 @@ Em **Flexify Dashboard → Configurações → WooCommerce**:
 
 | Rota | Tela |
 |---|---|
-| `#/` | Lista com contadores por status, receita líquida do período (7/30/90 dias), filtros, pré-visualização rápida, ações em massa e exportação CSV. |
+| `#/` | Lista com contadores por status, receita líquida do período (7/30/90 dias), filtros (período, método de pagamento, canal, origem e cliente), aviso de novos pedidos, pré-visualização rápida, ações em massa e exportação CSV. |
 | `#/order/:id` | Detalhes: itens, totais, reembolsos, linha do tempo de notas, cliente, endereços editáveis, pagamento, origem, ações do pedido, navegação para o pedido mais recente/antigo. |
 | `#/new` | Criação manual: busca de produtos e variações, cliente (ou visitante), entrega, taxas, cupons, endereços, status e pagamento. |
 | `#/order/:id/edit` | Edição de itens, entrega, taxas e cupons de pedidos pendentes ou aguardando. O WooCommerce recalcula os totais ao salvar. |
@@ -64,6 +65,9 @@ As funções puras de preço (`app/src/composables/wooPrice.js`) e de combinaç�
 | `flexify-dashboard/woocommerce/order-statuses` | Lista de status (`value`, `label`, `color`) usada nos badges. Use para definir cores de status personalizados. |
 | `flexify-dashboard/woocommerce/js-data` | Dados da loja enviados ao Vue. |
 | `flexify-dashboard/woocommerce/order-context` | `( array $context, WC_Order $order )` — dados extras exibidos no detalhe do pedido. |
+| `flexify-dashboard/woocommerce/order-custom-fields` | `( array $fields, WC_Order $order )` — campos personalizados (meta sem `_`) exibidos somente leitura no detalhe do pedido. |
+
+Os filtros extras da lista de pedidos são enviados à `wc/v3/orders` como `fd_payment_method`, `fd_created_via` e `fd_origin` e aplicados pelo filtro `woocommerce_rest_shop_order_object_query` (colunas do HPOS ou meta no armazenamento legado).
 | `woocommerce_order_actions` | As ações registradas por extensões aparecem no menu **Ações** do pedido. |
 
 Alterações de status e reembolsos de pedidos são registrados no Activity Log quando ele está ativo.

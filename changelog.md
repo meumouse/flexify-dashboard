@@ -12,7 +12,10 @@ Versão 3.0.0 (17/09/2026)
 * Recurso adicionado: Página moderna de pedidos do WooCommerce com suporte a HPOS e armazenamento legado (pré-visualização, notas, reembolsos, edição de endereços, ações do pedido e exportação CSV)
 * Recurso adicionado: Criação manual de pedidos e edição de itens de pedidos pendentes
 * Recurso adicionado: Editor moderno de produtos com atributos e gerador de variações (opcional)
-* Recurso adicionado: Gerenciamento de categorias, atributos globais e cupons
+* Recurso adicionado: Gerenciamento de categorias, tags, atributos globais e cupons
+* Recurso adicionado: Filtros de pedidos por pagamento, canal, origem e cliente, com aviso de novos pedidos
+* Recurso adicionado: Filtros de produtos por tag e faixa de preço e escolha de colunas visíveis
+* Melhorias de acessibilidade nos componentes (rótulos acessíveis e anel de foco)
 * Recurso adicionado: Registro de alterações de status e reembolsos de pedidos no Activity Log
 * Recurso adicionado: Declaração de compatibilidade com HPOS do WooCommerce
 * Atualização das traduções pt_BR
