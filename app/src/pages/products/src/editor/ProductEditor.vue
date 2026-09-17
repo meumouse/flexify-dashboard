@@ -348,7 +348,8 @@ const buildPayload = (status) => {
         return existing ? { id: existing.id } : { name };
       }),
     attributes: form.attributes.map((attribute, position) => ({
-      ...(attribute.id ? { id: attribute.id } : { name: String(attribute.name).trim() }),
+      ...(attribute.id ? { id: attribute.id } : {}),
+      name: String(attribute.name || '').trim(),
       position,
       visible: !!attribute.visible,
       variation: isVariable.value && !!attribute.variation,

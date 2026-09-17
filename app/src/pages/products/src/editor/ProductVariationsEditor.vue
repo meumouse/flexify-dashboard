@@ -27,6 +27,8 @@ const dirtyIds = ref(new Set());
 const bulkPrice = ref('');
 const confirmDialog = ref(null);
 
+const attributeLabel = (attribute) => attribute.name || attribute.slug || `#${attribute.id}`;
+
 const variationAttributes = computed(() => props.attributes.filter((attribute) => attribute.variation && attribute.options?.length));
 
 const localPrice = (value) => (value === '' || value === null || value === undefined ? '' : String(value).replace('.', currency.value.decimal_separator || ','));
@@ -54,6 +56,11 @@ const toForm = (variation) => ({
   weight: variation.weight || '',
   description: variation.description || '',
   image: variation.image || null,
+  virtual: !!variation.virtual,
+  downloadable: !!variation.downloadable,
+  downloads: (variation.downloads || []).map((file) => ({ id: file.id || '', name: file.name || '', file: file.file || '' })),
+  download_limit: variation.download_limit === -1 || variation.download_limit === undefined ? '' : String(variation.download_limit),
+  download_expiry: variation.download_expiry === -1 || variation.download_expiry === undefined ? '' : String(variation.download_expiry),
 });
 
 const load = async () => {
@@ -93,7 +100,7 @@ const setAttributeValue = (variation, attribute, option) => {
 };
 
 const variationTitle = (variation) =>
-  variationAttributes.value.map((attribute) => attributeValue(variation, attribute) || sprintf(__('Any %s', 'flexify-dashboard'), attribute.name)).join(' · ') ||
+  variationAttributes.value.map((attribute) => attributeValue(variation, attribute) || sprintf(__('Any %s', 'flexify-dashboard'), attributeLabel(attribute))).join(' · ') ||
   sprintf(__('Variation #%s', 'flexify-dashboard'), variation.id);
 
 const toPayload = (variation) => {
@@ -108,7 +115,17 @@ const toPayload = (variation) => {
     weight: String(variation.weight || ''),
     description: variation.description,
     image: variation.image?.id ? { id: variation.image.id } : null,
+    virtual: variation.virtual,
+    downloadable: variation.downloadable,
   };
+
+  if (variation.downloadable) {
+    payload.downloads = variation.downloads
+      .filter((file) => file.file.trim())
+      .map((file) => ({ ...(file.id ? { id: file.id } : {}), name: file.name.trim() || file.file.split('/').pop(), file: file.file.trim() }));
+    payload.download_limit = variation.download_limit === '' ? -1 : Number(variation.download_limit);
+    payload.download_expiry = variation.download_expiry === '' ? -1 : Number(variation.download_expiry);
+  }
 
   if (variation.manage_stock) {
     payload.stock_quantity = variation.stock_quantity === '' ? null : Number(variation.stock_quantity);
@@ -227,6 +244,24 @@ const applyBulkPrice = () => {
   bulkPrice.value = '';
 };
 
+const addDownload = (variation) => {
+  variation.downloads = [...variation.downloads, { id: '', name: '', file: '' }];
+  markDirty(variation);
+};
+
+const chooseDownloadFile = async (variation, index) => {
+  const [file] = await openMediaFrame({ title: __('Downloadable file', 'flexify-dashboard'), button: __('Use file', 'flexify-dashboard'), type: '' });
+  if (!file) return;
+
+  variation.downloads = variation.downloads.map((item, itemIndex) => (itemIndex === index ? { ...item, file: file.url, name: item.name || file.title } : item));
+  markDirty(variation);
+};
+
+const removeDownload = (variation, index) => {
+  variation.downloads = variation.downloads.filter((_, itemIndex) => itemIndex !== index);
+  markDirty(variation);
+};
+
 const chooseImage = async (variation) => {
   const [image] = await openMediaFrame({ title: __('Variation image', 'flexify-dashboard') });
 
@@ -301,9 +336,9 @@ onMounted(load);
             v-for="attribute in variationAttributes"
             :key="attribute.id || attribute.name"
             :model-value="attributeValue(variation, attribute)"
-            :label="attribute.name"
+            :label="attributeLabel(attribute)"
             :options="attribute.options.map((option) => ({ value: option, label: option }))"
-            :placeholder="sprintf(__('Any %s', 'flexify-dashboard'), attribute.name)"
+            :placeholder="sprintf(__('Any %s', 'flexify-dashboard'), attributeLabel(attribute))"
             @update:model-value="(value) => setAttributeValue(variation, attribute, value)"
           />
           <FdInput v-model="variation.sku" :label="__('SKU', 'flexify-dashboard')" />
@@ -316,6 +351,25 @@ onMounted(load);
           <div class="flex flex-wrap gap-6 sm:col-span-2 lg:col-span-3">
             <FdSwitch v-model="variation.enabled" :label="__('Enabled', 'flexify-dashboard')" @update:model-value="markDirty(variation)" />
             <FdSwitch v-model="variation.manage_stock" :label="__('Track stock', 'flexify-dashboard')" @update:model-value="markDirty(variation)" />
+            <FdSwitch v-model="variation.virtual" :label="__('Virtual', 'flexify-dashboard')" @update:model-value="markDirty(variation)" />
+            <FdSwitch v-model="variation.downloadable" :label="__('Downloadable', 'flexify-dashboard')" @update:model-value="markDirty(variation)" />
+          </div>
+
+          <div v-if="variation.downloadable" class="space-y-3 rounded-xl border border-gray-200 p-4 sm:col-span-2 lg:col-span-3 dark:border-gray-800">
+            <p class="text-theme-sm font-medium text-gray-800 dark:text-white/90">{{ __('Downloadable files', 'flexify-dashboard') }}</p>
+            <div v-for="(file, fileIndex) in variation.downloads" :key="fileIndex" class="grid items-end gap-3 sm:grid-cols-[1fr_2fr_auto]">
+              <FdInput v-model="file.name" size="sm" :label="__('File name', 'flexify-dashboard')" />
+              <FdInput v-model="file.file" size="sm" type="url" :label="__('File URL', 'flexify-dashboard')" placeholder="https://" />
+              <div class="flex gap-1">
+                <FdButton size="sm" variant="outline" icon="attach_file" icon-only :aria-label="__('Choose file', 'flexify-dashboard')" @click="chooseDownloadFile(variation, fileIndex)" />
+                <FdButton size="sm" variant="ghost" icon="delete" icon-only :aria-label="__('Remove file', 'flexify-dashboard')" @click="removeDownload(variation, fileIndex)" />
+              </div>
+            </div>
+            <div class="flex flex-wrap items-end gap-3">
+              <FdButton size="xs" variant="outline" icon="add" @click="addDownload(variation)">{{ __('Add file', 'flexify-dashboard') }}</FdButton>
+              <FdInput v-model="variation.download_limit" size="sm" type="number" min="0" step="1" class="w-40" :label="__('Download limit', 'flexify-dashboard')" :placeholder="__('Unlimited', 'flexify-dashboard')" />
+              <FdInput v-model="variation.download_expiry" size="sm" type="number" min="0" step="1" class="w-44" :label="__('Download expiry (days)', 'flexify-dashboard')" :placeholder="__('Never', 'flexify-dashboard')" />
+            </div>
           </div>
         </div>
       </li>

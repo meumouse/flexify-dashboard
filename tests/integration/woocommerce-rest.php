@@ -80,6 +80,24 @@ try {
 	fd_check( 'batch create variations', 200 === $status && 2 === count( array_filter( $batch['create'], function ( $item ) { return empty( $item['error'] ); } ) ), $batch );
 	$variation_id = $batch['create'][0]['id'];
 
+	list( $status, $variationUpdate ) = fd_rest(
+		'POST',
+		"/wc/v3/products/{$variable['id']}/variations/batch",
+		array(
+			'update' => array(
+				array(
+					'id' => $variation_id,
+					'virtual' => true,
+					'downloadable' => true,
+					'downloads' => array( array( 'name' => 'Guia', 'file' => home_url( '/wp-content/uploads/guia.pdf' ) ) ),
+					'download_limit' => 3,
+					'download_expiry' => -1,
+				),
+			),
+		)
+	);
+	$saved_variation = $variationUpdate['update'][0] ?? array();
+	fd_check( 'variation downloads saved', 200 === $status && ! empty( $saved_variation['downloadable'] ) && 1 === count( $saved_variation['downloads'] ) && 3 === (int) $saved_variation['download_limit'], $saved_variation );
 	list( $status, $summary ) = fd_rest( 'GET', '/flexify-dashboard/v1/woocommerce/products/summary' );
 	fd_check( 'products summary', 200 === $status && (int) $summary['publish'] >= 2, $summary );
 	fd_check( 'summary low stock counts simple product', (int) $summary['lowstock'] >= 1, $summary );
