@@ -8,6 +8,7 @@ import {
   FdConfirmDialog,
   FdDataTable,
   FdDropdown,
+  FdInput,
   FdPageHeader,
   FdPagination,
   FdSearchInput,
@@ -29,7 +30,7 @@ import BulkCategoryModal from './BulkCategoryModal.vue';
 const route = useRoute();
 const router = useRouter();
 const appStore = useAppStore();
-const { store, price, wc, fd, can } = useWooCommerce();
+const { store, price, wc, fd, can, currency, toDecimal } = useWooCommerce();
 
 const PRODUCT_FIELDS = [
   'id',
@@ -87,6 +88,9 @@ const readQuery = () => ({
   stock_status: String(route.query.stock_status || ''),
   featured: String(route.query.featured || ''),
   low_stock: String(route.query.low_stock || ''),
+  tag: String(route.query.tag || ''),
+  min_price: String(route.query.min_price || ''),
+  max_price: String(route.query.max_price || ''),
   page: Math.max(1, Number(route.query.page) || 1),
   per_page: Number(route.query.per_page) || 20,
   orderby: String(route.query.orderby || 'date'),
@@ -105,8 +109,50 @@ const sort = computed({
 });
 
 const hasActiveFilters = computed(
-  () => !!(filters.search || filters.category || filters.type || filters.stock_status || filters.featured || filters.low_stock)
+  () => !!(filters.search || filters.category || filters.type || filters.stock_status || filters.featured || filters.low_stock || filters.tag || filters.min_price || filters.max_price)
 );
+
+const showMoreFilters = ref(!!(filters.tag || filters.min_price || filters.max_price));
+const tags = ref([]);
+
+const tagOptions = computed(() => tags.value.map((tag) => ({ value: String(tag.id), label: decodeHtml(tag.name) })));
+
+const loadTags = async () => {
+  const response = await wc('products/tags', { params: { per_page: 100, orderby: 'count', order: 'desc', _fields: 'id,name' } });
+  tags.value = Array.isArray(response?.data) ? response.data : [];
+};
+
+/**
+ * Apply a price bound when the field loses focus or Enter is pressed (avoids a request per keystroke).
+ */
+const setPriceFilter = (key, event) => {
+  filters[key] = toDecimal(event.target.value);
+};
+
+// Column visibility is a per-browser preference.
+const COLUMNS_STORAGE_KEY = 'fd-products-hidden-columns';
+const TOGGLEABLE_COLUMNS = ['categories', 'price', 'stock', 'status', 'date'];
+
+const readHiddenColumns = () => {
+  try {
+    const stored = JSON.parse(window.localStorage.getItem(COLUMNS_STORAGE_KEY) || '[]');
+    return Array.isArray(stored) ? stored.filter((key) => TOGGLEABLE_COLUMNS.includes(key)) : [];
+  } catch (error) {
+    return [];
+  }
+};
+
+const hiddenColumns = ref(readHiddenColumns());
+
+const toggleColumn = (key) => {
+  hiddenColumns.value = hiddenColumns.value.includes(key) ? hiddenColumns.value.filter((item) => item !== key) : [...hiddenColumns.value, key];
+
+  try {
+    window.localStorage.setItem(COLUMNS_STORAGE_KEY, JSON.stringify(hiddenColumns.value));
+  } catch (error) {
+    // Storage may be unavailable (private mode); the choice lasts for this visit.
+  }
+};
 
 const statusTabs = computed(() => {
   const counts = summary.value || {};
@@ -132,7 +178,7 @@ const statItems = computed(() => {
   ];
 });
 
-const columns = computed(() => [
+const allColumns = computed(() => [
   { key: 'name', label: __('Product', 'flexify-dashboard'), sortable: true },
   { key: 'categories', label: __('Categories', 'flexify-dashboard'), class: 'max-w-56' },
   { key: 'price', label: __('Price', 'flexify-dashboard'), sortable: true },
@@ -140,6 +186,19 @@ const columns = computed(() => [
   { key: 'status', label: __('Status', 'flexify-dashboard') },
   { key: 'date', label: __('Date', 'flexify-dashboard'), sortable: true },
   { key: 'actions', label: '', align: 'end', width: '56px' },
+]);
+
+const columns = computed(() => allColumns.value.filter((column) => !hiddenColumns.value.includes(column.key)));
+
+const columnItems = computed(() => [
+  { heading: __('Visible columns', 'flexify-dashboard') },
+  ...allColumns.value
+    .filter((column) => TOGGLEABLE_COLUMNS.includes(column.key))
+    .map((column) => ({
+      label: column.label,
+      icon: hiddenColumns.value.includes(column.key) ? 'check_box_outline_blank' : 'check_box',
+      onSelect: () => toggleColumn(column.key),
+    })),
 ]);
 
 const categoryOptions = computed(() => {
@@ -232,6 +291,9 @@ const loadProducts = async () => {
     category: filters.category,
     type: filters.type,
     stock_status: filters.stock_status,
+    tag: filters.tag,
+    min_price: filters.min_price,
+    max_price: filters.max_price,
   };
 
   if (filters.featured === '1') {
@@ -291,7 +353,8 @@ const reloadFromFilters = () => {
 };
 
 watch(
-  () => [filters.status, filters.search, filters.category, filters.type, filters.stock_status, filters.featured, filters.low_stock, filters.per_page, filters.orderby, filters.order].join('|'),
+  () =>
+    [filters.status, filters.search, filters.category, filters.type, filters.stock_status, filters.featured, filters.low_stock, filters.tag, filters.min_price, filters.max_price, filters.per_page, filters.orderby, filters.order].join('|'),
   () => {
     if (filters.page !== 1) {
       filters.page = 1;
@@ -318,6 +381,9 @@ const selectStat = (item) => {
   filters.featured = '';
   filters.stock_status = '';
   filters.low_stock = '';
+  filters.tag = '';
+  filters.min_price = '';
+  filters.max_price = '';
   filters.page = 1;
 
   if (item.key === 'total') filters.status = 'any';
@@ -339,6 +405,9 @@ const clearFilters = () => {
   filters.stock_status = '';
   filters.featured = '';
   filters.low_stock = '';
+  filters.tag = '';
+  filters.min_price = '';
+  filters.max_price = '';
   filters.page = 1;
 };
 
@@ -471,7 +540,7 @@ const sprintf = (format, ...args) => (window.wp?.i18n?.sprintf ? window.wp.i18n.
 
 const pageLinks = computed(() => [
   { label: __('Categories', 'flexify-dashboard'), icon: 'category', onSelect: () => router.push({ name: 'product-categories' }) },
-  { label: __('Tags', 'flexify-dashboard'), icon: 'label', href: store.value.urls.product_tags },
+  { label: __('Tags', 'flexify-dashboard'), icon: 'label', onSelect: () => router.push({ name: 'product-tags' }) },
   { label: __('Attributes', 'flexify-dashboard'), icon: 'layers', onSelect: () => router.push({ name: 'product-attributes' }) },
   ...(store.value.coupons_enabled !== false ? [{ label: __('Coupons', 'flexify-dashboard'), icon: 'sell', onSelect: () => router.push({ name: 'coupons' }) }] : []),
   { separator: true },
@@ -485,6 +554,7 @@ onMounted(() => {
   loadProducts();
   loadSummary();
   loadCategories();
+  loadTags();
 });
 </script>
 
@@ -508,25 +578,51 @@ onMounted(() => {
         <FdTabs v-model="filters.status" :items="statusTabs" :aria-label="__('Product status', 'flexify-dashboard')" />
       </div>
 
-      <div class="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6 xl:flex-row xl:items-center">
-        <FdSearchInput v-model="filters.search" class="w-full xl:w-80" :placeholder="__('Search by name or SKU', 'flexify-dashboard')" />
-        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:flex xl:flex-1 xl:items-center">
-          <FdSelect v-model="filters.category" :options="categoryOptions" :placeholder="__('All categories', 'flexify-dashboard')" class="xl:w-48" />
-          <FdSelect v-model="filters.type" :options="store.product_types" :placeholder="__('All types', 'flexify-dashboard')" class="xl:w-44" />
-          <FdSelect v-model="filters.stock_status" :options="store.stock_statuses" :placeholder="__('Any stock status', 'flexify-dashboard')" class="xl:w-44" />
-          <FdSelect
-            v-model="filters.featured"
-            :options="[{ value: '1', label: __('Featured only', 'flexify-dashboard') }]"
-            :placeholder="__('All products', 'flexify-dashboard')"
-            class="xl:w-40"
-          />
+      <div class="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6 2xl:flex-row 2xl:items-center">
+        <div class="flex min-w-0 items-center gap-2 2xl:contents">
+          <FdSearchInput v-model="filters.search" class="min-w-0 flex-1 sm:max-w-80 2xl:w-72 2xl:flex-none" :placeholder="__('Search by name or SKU', 'flexify-dashboard')" />
+          <div class="ms-auto flex shrink-0 items-center gap-2 2xl:order-last">
+            <FdButton v-if="hasActiveFilters" variant="ghost" icon="close" @click="clearFilters">{{ __('Clear filters', 'flexify-dashboard') }}</FdButton>
+            <FdTooltip :text="__('More filters', 'flexify-dashboard')">
+              <FdButton variant="outline" icon="filter_alt" icon-only :aria-label="__('More filters', 'flexify-dashboard')" :aria-expanded="showMoreFilters" @click="showMoreFilters = !showMoreFilters" />
+            </FdTooltip>
+            <FdDropdown :items="columnItems" width="w-52">
+              <template #trigger>
+                <FdButton variant="outline" icon="view_column" icon-only :aria-label="__('Visible columns', 'flexify-dashboard')" />
+              </template>
+            </FdDropdown>
+            <FdTooltip :text="__('Refresh', 'flexify-dashboard')">
+              <FdButton variant="outline" icon="refresh" icon-only :aria-label="__('Refresh', 'flexify-dashboard')" @click="refresh" />
+            </FdTooltip>
+          </div>
         </div>
-        <div class="flex items-center gap-2 xl:ms-auto">
-          <FdButton v-if="hasActiveFilters" variant="ghost" icon="close" @click="clearFilters">{{ __('Clear filters', 'flexify-dashboard') }}</FdButton>
-          <FdTooltip :text="__('Refresh', 'flexify-dashboard')">
-            <FdButton variant="outline" icon="refresh" icon-only :aria-label="__('Refresh', 'flexify-dashboard')" @click="refresh" />
-          </FdTooltip>
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 2xl:flex-1">
+          <FdSelect v-model="filters.category" :options="categoryOptions" :placeholder="__('All categories', 'flexify-dashboard')" />
+          <FdSelect v-model="filters.type" :options="store.product_types" :placeholder="__('All types', 'flexify-dashboard')" />
+          <FdSelect v-model="filters.stock_status" :options="store.stock_statuses" :placeholder="__('Any stock status', 'flexify-dashboard')" />
+          <FdSelect v-model="filters.featured" :options="[{ value: '1', label: __('Featured only', 'flexify-dashboard') }]" :placeholder="__('All products', 'flexify-dashboard')" />
         </div>
+      </div>
+      <div v-if="showMoreFilters" class="grid grid-cols-1 gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:grid-cols-3 sm:px-6 xl:flex xl:items-center">
+        <FdSelect v-model="filters.tag" :options="tagOptions" :placeholder="__('All tags', 'flexify-dashboard')" class="xl:w-48" />
+        <FdInput
+          :model-value="filters.min_price"
+          :prefix="currency.symbol"
+          inputmode="decimal"
+          class="xl:w-40"
+          :placeholder="__('Min. price', 'flexify-dashboard')"
+          :aria-label="__('Minimum price', 'flexify-dashboard')"
+          @change="(event) => setPriceFilter('min_price', event)"
+        />
+        <FdInput
+          :model-value="filters.max_price"
+          :prefix="currency.symbol"
+          inputmode="decimal"
+          class="xl:w-40"
+          :placeholder="__('Max. price', 'flexify-dashboard')"
+          :aria-label="__('Maximum price', 'flexify-dashboard')"
+          @change="(event) => setPriceFilter('max_price', event)"
+        />
       </div>
 
       <FdDataTable

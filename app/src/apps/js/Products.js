@@ -45,6 +45,12 @@ const routes = [
     meta: { name: __('Categories', 'flexify-dashboard') },
   },
   {
+    path: '/tags',
+    component: () => import('@/pages/products/src/TagsView.vue'),
+    name: 'product-tags',
+    meta: { name: __('Tags', 'flexify-dashboard') },
+  },
+  {
     path: '/attributes',
     component: () => import('@/pages/products/src/AttributesView.vue'),
     name: 'product-attributes',
