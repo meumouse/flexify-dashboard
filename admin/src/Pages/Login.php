@@ -1246,7 +1246,7 @@ class Login {
 		} elseif ( file_exists( $plugin_path . '/app/dist/assets/styles/login.css' ) ) {
 			$style = $url . 'app/dist/assets/styles/login.css';
 		} else {
-			$style = $url . 'app/src/apps/styles/login.css';
+			return;
 		}
 
 		wp_enqueue_style( 'flexify-dashboard-login', $style, array(), FLEXIFY_DASHBOARD_VERSION );

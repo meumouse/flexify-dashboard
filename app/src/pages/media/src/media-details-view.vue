@@ -9,7 +9,7 @@ const appStore = useAppStore();
 // Funcs
 import { lmnFetch } from '@/assets/js/functions/lmnFetch.js';
 import { notify } from '@/assets/js/functions/notify.js';
-import { useDarkMode } from './useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 import { useImageOptimization } from '@/composables/useImageOptimization.js';
 const { isDark } = useDarkMode();
 const {

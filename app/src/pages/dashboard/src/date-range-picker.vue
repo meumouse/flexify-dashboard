@@ -5,7 +5,7 @@ import { ref, onMounted, watch, computed, useAttrs } from 'vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
 
 // Import dark mode composable
-import { useDarkMode } from './useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 const { isDark } = useDarkMode();
 
 // Emits and props

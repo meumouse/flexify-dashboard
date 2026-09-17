@@ -11,7 +11,7 @@ import {
 } from 'vue';
 import { createRouter, createMemoryHistory, RouterView } from 'vue-router';
 import { createPinia } from 'pinia';
-import { useDarkMode } from '@/pages/media/src/useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 import MediaListView from '@/pages/media/src/media-list-view.vue';
 import MediaDetailsView from '@/pages/media/src/media-details-view.vue';
 import MediaEditView from '@/pages/media/src/media-edit-view.vue';

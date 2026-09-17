@@ -1,6 +1,6 @@
 <script setup>
 // Funcs
-import { useDarkMode } from './useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 const { isDark } = useDarkMode();
 
 // Comps

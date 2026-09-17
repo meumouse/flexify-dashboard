@@ -16,7 +16,7 @@ import { useAppStore } from '@/store/app/app.js';
 const appStore = useAppStore();
 
 // Funcs
-import { useDarkMode } from './src/useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 import { fetchPostsData } from './src/fetchPostsData.js';
 import { batchDuplicatePosts, duplicating } from './src/batchDuplicatePosts.js';
 import { batchDeletePosts, deleting } from './src/batchDeletePosts.js';

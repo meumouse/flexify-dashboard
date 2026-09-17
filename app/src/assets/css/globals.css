@@ -1,0 +1,122 @@
+/**
+ * Flexify Dashboard — global tokens and base rules.
+ *
+ * Shared by every CSS entry point. Values set here are defaults; the PHP
+ * bootstrap overrides the palette variables with the user settings.
+ */
+
+:root {
+	/* Neutral palette (RGB channels) */
+	--fd-base-0: 255 255 255;
+	--fd-base-50: 250 250 250;
+	--fd-base-100: 244 244 245;
+	--fd-base-200: 228 228 231;
+	--fd-base-300: 212 212 216;
+	--fd-base-400: 161 161 170;
+	--fd-base-500: 113 113 122;
+	--fd-base-600: 82 82 91;
+	--fd-base-700: 63 63 70;
+	--fd-base-800: 39 39 42;
+	--fd-base-900: 24 24 27;
+	--fd-base-950: 9 9 11;
+
+	/* Accent palette (RGB channels) */
+	--fd-accent-50: 228 238 246;
+	--fd-accent-100: 211 230 246;
+	--fd-accent-200: 177 215 248;
+	--fd-accent-300: 143 201 249;
+	--fd-accent-400: 110 186 251;
+	--fd-accent-500: 76 171 252;
+	--fd-accent-600: 42 156 253;
+	--fd-accent-700: 8 142 255;
+	--fd-accent-800: 2 102 187;
+	--fd-accent-900: 5 55 97;
+	--fd-accent-950: 7 32 53;
+
+	--fd-body-height: calc(100vh - var(--fd-toolbar-height) - 1rem);
+}
+
+:root {
+	--radius: 0.625rem;
+	--background: oklch(100% 0 0);
+	--foreground: oklch(14.1% 0.005 285.823);
+	--card: oklch(100% 0 0);
+	--card-foreground: oklch(14.1% 0.005 285.823);
+	--popover: oklch(100% 0 0);
+	--popover-foreground: oklch(14.1% 0.005 285.823);
+	--primary: oklch(21% 0.006 285.885);
+	--primary-foreground: oklch(98.5% 0 0);
+	--secondary: oklch(96.7% 0.001 286.375);
+	--secondary-foreground: oklch(21% 0.006 285.885);
+	--muted: oklch(96.7% 0.001 286.375);
+	--muted-foreground: oklch(55.2% 0.016 285.938);
+	--accent: oklch(96.7% 0.001 286.375);
+	--accent-foreground: oklch(21% 0.006 285.885);
+	--destructive: oklch(57.7% 0.245 27.325);
+	--border: oklch(92% 0.004 286.32);
+	--input: oklch(92% 0.004 286.32);
+	--ring: oklch(70.5% 0.015 286.067);
+	--chart-1: oklch(64.6% 0.222 41.116);
+	--chart-2: oklch(60% 0.118 184.704);
+	--chart-3: oklch(39.8% 0.07 227.392);
+	--chart-4: oklch(82.8% 0.189 84.429);
+	--chart-5: oklch(76.9% 0.188 70.08);
+	--sidebar: oklch(98.5% 0 0);
+	--sidebar-foreground: oklch(14.1% 0.005 285.823);
+	--sidebar-primary: oklch(21% 0.006 285.885);
+	--sidebar-primary-foreground: oklch(98.5% 0 0);
+	--sidebar-accent: oklch(96.7% 0.001 286.375);
+	--sidebar-accent-foreground: oklch(21% 0.006 285.885);
+	--sidebar-border: oklch(92% 0.004 286.32);
+	--sidebar-ring: oklch(70.5% 0.015 286.067);
+}
+
+.dark {
+	--background: oklch(14.1% 0.005 285.823);
+	--foreground: oklch(98.5% 0 0);
+	--card: oklch(21% 0.006 285.885);
+	--card-foreground: oklch(98.5% 0 0);
+	--popover: oklch(21% 0.006 285.885);
+	--popover-foreground: oklch(98.5% 0 0);
+	--primary: oklch(92% 0.004 286.32);
+	--primary-foreground: oklch(21% 0.006 285.885);
+	--secondary: oklch(27.4% 0.006 286.033);
+	--secondary-foreground: oklch(98.5% 0 0);
+	--muted: oklch(27.4% 0.006 286.033);
+	--muted-foreground: oklch(70.5% 0.015 286.067);
+	--accent: oklch(27.4% 0.006 286.033);
+	--accent-foreground: oklch(98.5% 0 0);
+	--destructive: oklch(70.4% 0.191 22.216);
+	--border: oklch(100% 0 0 / 0.1);
+	--input: oklch(100% 0 0 / 0.15);
+	--ring: oklch(55.2% 0.016 285.938);
+	--chart-1: oklch(48.8% 0.243 264.376);
+	--chart-2: oklch(69.6% 0.17 162.48);
+	--chart-3: oklch(76.9% 0.188 70.08);
+	--chart-4: oklch(62.7% 0.265 303.9);
+	--chart-5: oklch(64.5% 0.246 16.439);
+	--sidebar: oklch(21% 0.006 285.885);
+	--sidebar-foreground: oklch(98.5% 0 0);
+	--sidebar-primary: oklch(48.8% 0.243 264.376);
+	--sidebar-primary-foreground: oklch(98.5% 0 0);
+	--sidebar-accent: oklch(27.4% 0.006 286.033);
+	--sidebar-accent-foreground: oklch(98.5% 0 0);
+	--sidebar-border: oklch(100% 0 0 / 0.1);
+	--sidebar-ring: oklch(55.2% 0.016 285.938);
+}
+
+.unset-all {
+	all: unset;
+}
+
+@layer base {
+	* {
+		border-color: var(--border);
+		outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
+	}
+
+	body {
+		background-color: var(--background);
+		color: var(--foreground);
+	}
+}

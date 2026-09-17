@@ -1,7 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/**
+ * Base stylesheet shared by every Vue app entry point.
+ *
+ * Tailwind preflight and utilities are emitted inside the `fd-isolation-scope`
+ * layer and scoped to `.flexify-dashboard-isolation` by
+ * `build/postcss-scope-layers.js`.
+ */
 
+@import '../../assets/css/tailwind.css';
+@import '../../assets/css/globals.css';
+@import './isolation/scope.css' layer(fd-isolation);
+@import 'tailwindcss/preflight.css' layer(fd-isolation-scope);
+@import 'tailwindcss/utilities.css' layer(fd-isolation-scope) source(none);
+@import './isolation/after.css' layer(fd-isolation);
+
+@source '../../';
+
+html,
 body {
-  margin: 0;
+	font-family: var(--fd-font-sans);
 }

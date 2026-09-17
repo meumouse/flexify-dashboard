@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref, watch, nextTick } from 'vue';
 import { VueDraggableNext } from 'vue-draggable-next';
-import { useDarkMode } from './src/useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 import { setVeauryOptions } from 'veaury';
 import { createRoot } from 'react-dom/client';
 import { applyFilters } from '@/assets/js/functions/HooksSystem.js';

@@ -1,0 +1,132 @@
+/**
+ * Theme stylesheet loaded on every wp-admin screen.
+ *
+ * Utilities are scoped to `#fd-body-holder` (see build/postcss-scope-layers.js)
+ * and native WordPress screens are styled inside the `fd-theme` layer.
+ */
+
+@import '../../assets/css/tailwind.css';
+@import '../../assets/css/globals.css';
+@import 'tailwindcss/utilities.css' layer(fd-theme-scope) source(none);
+@import './theme/wp-admin-legacy.css';
+
+@source '../../';
+
+.dark {
+	--background: #1a222c;
+	--card: #24303f;
+	--popover: #24303f;
+	--secondary: #24303f;
+	--muted: #24303f;
+	--accent: #24303f;
+	--border: #2e3a47;
+	--input: #2e3a47;
+	--sidebar: #24303f;
+	--sidebar-accent: #24303f;
+	--sidebar-border: #2e3a47;
+}
+
+.dark\:bg-zinc-800\/20:is(.dark *),
+.dark\:bg-zinc-800\/30:is(.dark *),
+.dark\:bg-zinc-800\/40:is(.dark *),
+.dark\:bg-zinc-800\/50:is(.dark *),
+.dark\:bg-zinc-800\/60:is(.dark *),
+.dark\:bg-zinc-800:is(.dark *),
+.dark\:bg-zinc-900\/50:is(.dark *),
+.dark\:bg-zinc-900:is(.dark *) {
+	background-color: #24303f !important;
+}
+
+.dark\:border-zinc-800\/60:is(.dark *),
+.dark\:border-zinc-800\/50:is(.dark *),
+.dark\:border-zinc-800\/30:is(.dark *),
+.dark\:border-zinc-800:is(.dark *),
+.dark\:border-zinc-700\/60:is(.dark *),
+.dark\:border-zinc-700\/50:is(.dark *),
+.dark\:border-zinc-700\/30:is(.dark *),
+.dark\:border-zinc-700:is(.dark *) {
+	border-color: #2e3a47 !important;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: hsl(256 1.3% 92.9%) transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: hsl(256 1.3% 92.9%);
+	border-radius: 3px;
+	transition: background-color 0.2s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: hsl(257 4.6% 55.4% / 0.5);
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: 3px;
+}
+
+*::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+#fd-menu .custom-scrollbar {
+	scrollbar-color: #313d4a transparent;
+}
+
+#fd-menu .custom-scrollbar::-webkit-scrollbar-thumb {
+	background-color: #313d4a;
+}
+
+#fd-menu .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	background-color: #313d4a;
+}
+
+.woocommerce-layout__header {
+	position: relative;
+}
+
+html {
+	--wp-admin--admin-bar--height: 50px;
+}
+
+.fd-body .inline:not(.hidden),
+.fd-body .inline:not([aria-hidden='true']) {
+	display: inherit;
+}
+
+.fd-body .inline.hidden,
+.fd-body .inline[aria-hidden='true'] {
+	display: none;
+}
+
+.dark\:important\:text-zinc-300:where(.dark, .dark *) {
+	transition: color 0.3s ease-in-out;
+	color: rgb(var(--fd-base-300) / 1) !important;
+}
+
+.dark\:important\:bg-zinc-800:where(.dark, .dark *) {
+	transition: background 0.3s ease-in-out;
+	background-color: rgb(var(--fd-base-800) / 1) !important;
+}
+
+.dark\:important\:bg-zinc-900:where(.dark, .dark *) {
+	transition: background 0.3s ease-in-out;
+	background-color: rgb(var(--fd-base-900) / 1) !important;
+}
+
+.dark\:important\:border-zinc-700:where(.dark, .dark *) {
+	transition: border 0.3s ease-in-out;
+	border-color: rgb(var(--fd-base-700) / 1) !important;
+}
+
+.flexify-dashboard-custom-page #wpbody-content {
+	padding-bottom: 0 !important;
+}

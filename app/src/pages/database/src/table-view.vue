@@ -815,10 +815,18 @@ watch(viewMode, () => {
 }
 
 .overflow-auto::-webkit-scrollbar-thumb {
-  @apply bg-zinc-300 dark:bg-zinc-700 rounded-full;
+  @apply bg-zinc-300 rounded-full;
+}
+
+.dark .overflow-auto::-webkit-scrollbar-thumb {
+  @apply bg-zinc-700;
 }
 
 .overflow-auto::-webkit-scrollbar-thumb:hover {
-  @apply bg-zinc-400 dark:bg-zinc-600;
+  @apply bg-zinc-400;
+}
+
+.dark .overflow-auto::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-600;
 }
 </style>

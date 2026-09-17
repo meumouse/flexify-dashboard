@@ -1,0 +1,29 @@
+/**
+ * Isolation container used by the Vue apps.
+ *
+ * Everything rendered inside `.flexify-dashboard-isolation` receives the
+ * Tailwind preflight and utilities, while native WordPress markup outside of
+ * it keeps its own styles.
+ */
+
+:where(.flexify-dashboard-isolation) {
+	all: initial;
+	contain: style;
+	color: rgb(var(--fd-base-700) / 1);
+	display: block;
+	position: relative;
+}
+
+:where(.flexify-dashboard-isolation):where(.dark, .dark *) {
+	color: rgb(var(--fd-base-300) / 1);
+}
+
+:where(.flexify-dashboard-isolation) :where(*) {
+	display: revert;
+	box-sizing: border-box;
+	font-family: var(--fd-font-sans);
+}
+
+:where(.flexify-dashboard-isolation) #wpadminbar {
+	all: unset;
+}

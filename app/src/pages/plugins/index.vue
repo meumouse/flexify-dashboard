@@ -19,7 +19,7 @@ const appStore = useAppStore();
 // Funcs
 import { inSearch } from '@/assets/js/functions/inSearch.js';
 import { lmnFetch } from '@/assets/js/functions/lmnFetch.js';
-import { useDarkMode } from './src/useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 const { isDark } = useDarkMode();
 
 // Comps

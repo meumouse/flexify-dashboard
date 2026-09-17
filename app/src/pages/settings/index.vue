@@ -13,7 +13,7 @@ import { isObject } from '@/assets/js/functions/isObject.js';
 import { notify } from '@/assets/js/functions/notify.js';
 import { hexToRgb } from '@/assets/js/functions/hexToRgb.js';
 import { isNonProduction } from '@/assets/js/functions/isNonProduction.js';
-import { useDarkMode } from './src/useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 import { generateColorScheme } from './src/generateColorScheme.js';
 import { settingsConfig } from './src/settings-config.js';
 const { isDark } = useDarkMode();

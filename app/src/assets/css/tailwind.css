@@ -1,0 +1,141 @@
+/**
+ * Flexify Dashboard — Tailwind CSS configuration.
+ *
+ * This file only declares theme tokens, variants and custom utilities. It does
+ * not emit CSS on its own, so it is safe to use with `@reference` inside Vue
+ * single file components and to import from the CSS entry points.
+ *
+ * Runtime tokens (set by PHP/JS on :root):
+ * - --fd-base-{0..950}   space separated RGB channels of the neutral palette
+ * - --fd-accent-{50..950} space separated RGB channels of the accent palette
+ * - --fd-font-sans        font family chosen in the settings
+ */
+
+@import 'tailwindcss/theme.css' theme(reference);
+@import 'tw-animate-css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline reference {
+	--font-sans: var(--fd-font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+	/* Neutral palette (customizable) */
+	--color-zinc-0: rgb(var(--fd-base-0) / 1);
+	--color-zinc-50: rgb(var(--fd-base-50) / 1);
+	--color-zinc-100: rgb(var(--fd-base-100) / 1);
+	--color-zinc-200: rgb(var(--fd-base-200) / 1);
+	--color-zinc-300: rgb(var(--fd-base-300) / 1);
+	--color-zinc-400: rgb(var(--fd-base-400) / 1);
+	--color-zinc-500: rgb(var(--fd-base-500) / 1);
+	--color-zinc-600: rgb(var(--fd-base-600) / 1);
+	--color-zinc-700: rgb(var(--fd-base-700) / 1);
+	--color-zinc-800: rgb(var(--fd-base-800) / 1);
+	--color-zinc-900: rgb(var(--fd-base-900) / 1);
+	--color-zinc-950: rgb(var(--fd-base-950) / 1);
+
+	/* Accent palette (customizable) */
+	--color-brand-50: rgb(var(--fd-accent-50) / 1);
+	--color-brand-100: rgb(var(--fd-accent-100) / 1);
+	--color-brand-200: rgb(var(--fd-accent-200) / 1);
+	--color-brand-300: rgb(var(--fd-accent-300) / 1);
+	--color-brand-400: rgb(var(--fd-accent-400) / 1);
+	--color-brand-500: rgb(var(--fd-accent-500) / 1);
+	--color-brand-600: rgb(var(--fd-accent-600) / 1);
+	--color-brand-700: rgb(var(--fd-accent-700) / 1);
+	--color-brand-800: rgb(var(--fd-accent-800) / 1);
+	--color-brand-900: rgb(var(--fd-accent-900) / 1);
+	--color-brand-950: rgb(var(--fd-accent-950) / 1);
+
+	/* Legacy alias: indigo follows the accent palette */
+	--color-indigo-50: rgb(var(--fd-accent-50) / 1);
+	--color-indigo-100: rgb(var(--fd-accent-100) / 1);
+	--color-indigo-200: rgb(var(--fd-accent-200) / 1);
+	--color-indigo-300: rgb(var(--fd-accent-300) / 1);
+	--color-indigo-400: rgb(var(--fd-accent-400) / 1);
+	--color-indigo-500: rgb(var(--fd-accent-500) / 1);
+	--color-indigo-600: rgb(var(--fd-accent-600) / 1);
+	--color-indigo-700: rgb(var(--fd-accent-700) / 1);
+	--color-indigo-800: rgb(var(--fd-accent-800) / 1);
+	--color-indigo-900: rgb(var(--fd-accent-900) / 1);
+	--color-indigo-950: rgb(var(--fd-accent-950) / 1);
+
+	/* Semantic tokens (shadcn-vue components) */
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: #212529;
+	--color-primary-foreground: #ffffff;
+	--color-primary-hover: #1b1f23;
+	--color-primary-active: #16191d;
+	--color-primary-ring: #212529;
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
+
+	/* Radius scale driven by --radius */
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+}
+
+@utility custom-scrollbar {
+	scrollbar-gutter: stable;
+	scrollbar-width: thin;
+	scrollbar-color: #a1a1aa4d transparent;
+	overflow: hidden auto;
+
+	&:where(.dark, .dark *) {
+		scrollbar-color: #52525b66 transparent;
+	}
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+		border-radius: 3px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: color-mix(in oklab, rgb(var(--fd-base-400) / 1) 30%, transparent);
+		border-radius: 3px;
+		transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: color-mix(in oklab, rgb(var(--fd-base-400) / 1) 50%, transparent);
+	}
+
+	&:where(.dark, .dark *)::-webkit-scrollbar-thumb {
+		background-color: color-mix(in oklab, rgb(var(--fd-base-600) / 1) 40%, transparent);
+	}
+
+	&:where(.dark, .dark *)::-webkit-scrollbar-thumb:hover {
+		background-color: color-mix(in oklab, rgb(var(--fd-base-600) / 1) 60%, transparent);
+	}
+}

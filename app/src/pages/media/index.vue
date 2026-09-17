@@ -2,7 +2,7 @@
 
 
 // Funcs
-import { useDarkMode } from './src/useDarkMode.js';
+import { useDarkMode } from '@/composables/useDarkMode.js';
 const { isDark } = useDarkMode();
 
 // Comps
