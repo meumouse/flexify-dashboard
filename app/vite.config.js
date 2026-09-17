@@ -35,6 +35,7 @@ export default defineConfig({
 				'menu-creator': path.resolve(__dirname, 'src/apps/js/MenuCreator.js'),
 				plugins: path.resolve(__dirname, 'src/apps/js/Plugins.js'),
 				posts: path.resolve(__dirname, 'src/apps/js/Posts.js'),
+				products: path.resolve(__dirname, 'src/apps/js/Products.js'),
 				'role-editor': path.resolve(__dirname, 'src/apps/js/RoleEditor.js'),
 				settings: path.resolve(__dirname, 'src/apps/js/Settings.js'),
 				users: path.resolve(__dirname, 'src/apps/js/Users.js'),

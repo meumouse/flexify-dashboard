@@ -7,6 +7,59 @@ const _n = window.wp?.i18n?._n ?? ((single, plural, number) =>
 const sprintfFn = window.wp?.i18n?.sprintf ?? window.sprintf ?? ((s) => s);
 
 /**
+ * Applies page specific data from a secondary script tag.
+ *
+ * @since 3.0.0
+ * @param {Object} appStore - The Pinia app store instance
+ * @param {string|null} selector - Secondary script tag selector
+ * @returns {void}
+ */
+const applySecondaryScriptData = (appStore, selector) => {
+	const tag = selector ? document.querySelector(selector) : null;
+
+	if (!tag) {
+		return;
+	}
+
+	const readJson = (name) => {
+		const value = tag.getAttribute(name);
+
+		if (!value) {
+			return null;
+		}
+
+		try {
+			return JSON.parse(value);
+		} catch (e) {
+			return null;
+		}
+	};
+
+	const mappings = {
+		'dashboard-data': 'dashboard_data',
+		post_statuses: 'postStatuses',
+		plugins: 'pluginsList',
+		'woocommerce-data': 'woocommerce',
+	};
+
+	Object.entries(mappings).forEach(([attribute, key]) => {
+		const value = readJson(attribute);
+
+		if (value !== null) {
+			appStore.updateState(key, value);
+		}
+	});
+
+	['supports_categories', 'supports_tags'].forEach((attribute) => {
+		const value = tag.getAttribute(attribute);
+
+		if (value !== null) {
+			appStore.updateState(attribute, value === 'true' || value === '1');
+		}
+	});
+};
+
+/**
  * Sets global properties from script tag data attributes into the app store
  *
  * @since 2.0.0
@@ -25,6 +78,9 @@ export const setGlobalProperties = ( appStore, scriptTagSelector = '#fd-script',
 	}
 
 	if (appStore.state.initialised) {
+		// The store is shared between the admin shell and page apps, so page
+		// specific data from the secondary tag must still be applied.
+		applySecondaryScriptData(appStore, secondaryScriptTagSelector);
 		return;
 	}
 
