@@ -165,7 +165,7 @@ watch(
 
 <template>
   <div
-    class="relative flex items-center w-full min-w-56 px-3 py-2 pl-8 pr-3 bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-800/50 rounded-lg transition-all duration-200 hover:border-zinc-300 dark:hover:border-zinc-600 focus-within:ring-1 focus-within:ring-brand-500/20 focus-within:border-brand-500 dark:focus-within:ring-brand-400/20 dark:focus-within:border-brand-400 cursor-pointer"
+    class="relative flex items-center w-full min-w-56 px-3 py-2 pl-8 pr-3 bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-800 rounded-lg transition-all duration-200 hover:border-gray-300 dark:hover:border-gray-600 focus-within:ring-1 focus-within:ring-brand-500/20 focus-within:border-brand-500 dark:focus-within:ring-brand-400/20 dark:focus-within:border-brand-400 cursor-pointer"
     @click="showPicker"
     v-bind="attrs"
   >
@@ -175,7 +175,7 @@ watch(
     >
       <AppIcon
         icon="calendar_today"
-        class="text-lg text-zinc-400 dark:text-zinc-500"
+        class="text-lg text-gray-400 dark:text-gray-500"
       />
     </div>
 
@@ -184,7 +184,7 @@ watch(
       <!-- Start Date Pill -->
       <div
         v-if="startDate"
-        class="inline-flex items-center px-2 py-1 bg-zinc-100 dark:bg-zinc-700/50 text-zinc-700 dark:text-zinc-300 text-xs font-medium rounded-md"
+        class="inline-flex items-center px-2 py-1 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-md"
       >
         {{ startDate }}
       </div>
@@ -192,7 +192,7 @@ watch(
       <!-- Separator -->
       <div
         v-if="startDate && endDate"
-        class="text-xs text-zinc-400 dark:text-zinc-500"
+        class="text-xs text-gray-400 dark:text-gray-500"
       >
         –
       </div>
@@ -200,7 +200,7 @@ watch(
       <!-- End Date Pill -->
       <div
         v-if="endDate"
-        class="inline-flex items-center px-2 py-1 bg-zinc-100 dark:bg-zinc-700/50 text-zinc-700 dark:text-zinc-300 text-xs font-medium rounded-md"
+        class="inline-flex items-center px-2 py-1 bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-md"
       >
         {{ endDate }}
       </div>
@@ -208,7 +208,7 @@ watch(
       <!-- Placeholder when no dates selected -->
       <div
         v-if="!startDate && !endDate"
-        class="text-xs text-zinc-400 dark:text-zinc-500 font-medium"
+        class="text-xs text-gray-400 dark:text-gray-500 font-medium"
       >
         Select date range
       </div>
@@ -224,7 +224,7 @@ watch(
             v-for="range in getPredefinedRanges()"
             :key="range.label"
             @click="selectPredefinedRange(range.value)"
-            class="w-full text-left px-3 py-2 text-sm text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-all duration-200 font-sans cursor-pointer"
+            class="w-full text-left px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-200 font-sans cursor-pointer"
           >
             {{ range.label }}
           </button>

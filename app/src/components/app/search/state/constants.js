@@ -71,12 +71,12 @@ export const QUICK_ACTION_IDS = {
  */
 export const STATUS_BADGE_CLASSES = {
   publish:
-    'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
+    'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
   draft:
-    'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
+    'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
   pending:
     'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400',
-  private: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400',
+  private: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
   future:
     'bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400',
 };

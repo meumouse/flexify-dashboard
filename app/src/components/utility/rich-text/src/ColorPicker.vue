@@ -2,14 +2,14 @@
   <div class="flex items-center gap-2">
     <input
       type="color"
-      class="h-8 w-10 cursor-pointer rounded border border-zinc-200 dark:border-zinc-700 bg-transparent"
+      class="h-8 w-10 cursor-pointer rounded border border-gray-200 dark:border-gray-700 bg-transparent"
       :value="modelValue || defaultColor"
       @input="handleInput"
     />
 
     <input
       type="text"
-      class="h-8 w-28 rounded border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-2 text-xs text-zinc-900 dark:text-zinc-100"
+      class="h-8 w-28 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-2 text-xs text-gray-900 dark:text-gray-100"
       :value="modelValue || ''"
       placeholder="#000000"
       @input="handleText"

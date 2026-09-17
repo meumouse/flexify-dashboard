@@ -253,7 +253,7 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
   <div class="flex-1 flex flex-col" v-if="plugin">
     <!-- Banner Header -->
     <div class="p-8">
-      <div class="relative h-48 bg-zinc-100 dark:bg-zinc-800 overflow-hidden rounded-xl pb-0 border border-zinc-200 dark:border-zinc-700">
+      <div class="relative h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden rounded-xl pb-0 border border-gray-200 dark:border-gray-700">
         <img v-if="getPluginBanner" :src="getPluginBanner" class="w-full h-full object-cover filter-sharp" />
         <PluginCardBanner v-else />
 
@@ -262,7 +262,7 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
 
         <!-- Plugin Icon -->
         <div class="absolute bottom-6 left-6">
-          <div class="w-16 h-16 rounded-xl overflow-hidden bg-white dark:bg-zinc-800 border-2 border-white dark:border-zinc-600 shadow-lg">
+          <div class="w-16 h-16 rounded-xl overflow-hidden bg-white dark:bg-gray-800 border-2 border-white dark:border-gray-600 shadow-lg">
             <img :src="getPluginIcon" class="w-full h-full object-cover" />
           </div>
         </div>
@@ -274,13 +274,13 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
       <div class="flex items-start justify-between">
         <div class="flex-1">
           <div class="flex items-center gap-3 mb-3">
-            <h2 class="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
+            <h2 class="text-2xl font-medium text-gray-900 dark:text-gray-100">
               {{ plugin.Name }}
             </h2>
             <div class="flex items-center gap-2 grow">
               <div class="px-2 py-1 rounded text-xs font-medium" :class="plugin.active
-                ? 'bg-green-50 text-green-700 dark:bg-green-950/50 dark:text-green-400'
-                : 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400'">
+                ? 'bg-success-50 text-success-700 dark:bg-success-950/50 dark:text-success-400'
+                : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'">
                 {{ plugin.active ? __("Active", "flexify-dashboard") : __("Inactive", "flexify-dashboard") }}
               </div>
               <div v-if="plugin.has_update" class="px-2 py-1 bg-orange-50 text-orange-700 dark:bg-orange-950/50 dark:text-orange-400 rounded text-xs font-medium">
@@ -291,7 +291,7 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
 
             <!-- Actions -->
             <div class="flex items-center gap-2 ml-6">
-              <button v-if="!plugin.active" @click="activatePluginBySlug" :disabled="activating || !hasRequiredPlugins" class="px-4 py-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors disabled:opacity-50">
+              <button v-if="!plugin.active" @click="activatePluginBySlug" :disabled="activating || !hasRequiredPlugins" class="px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors disabled:opacity-50">
                 <span v-if="activating" class="inline-flex items-center gap-2">
                   <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -302,7 +302,7 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
                 <span v-else>{{ __("Activate", "flexify-dashboard") }}</span>
               </button>
 
-              <button v-if="plugin.active" @click="deactivatePluginBySlug" :disabled="deactivating" class="px-4 py-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-lg text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors disabled:opacity-50">
+              <button v-if="plugin.active" @click="deactivatePluginBySlug" :disabled="deactivating" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors disabled:opacity-50">
                 <span v-if="deactivating" class="inline-flex items-center gap-2">
                   <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -313,7 +313,7 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
                 <span v-else>{{ __("Deactivate", "flexify-dashboard") }}</span>
               </button>
 
-              <button v-if="plugin.has_update" @click="updatePluginBySlug" :disabled="updating" class="px-4 py-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-lg text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors disabled:opacity-50">
+              <button v-if="plugin.has_update" @click="updatePluginBySlug" :disabled="updating" class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors disabled:opacity-50">
                 <span v-if="updating" class="inline-flex items-center gap-2">
                   <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -324,27 +324,27 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
                 <span v-else>{{ __("Update", "flexify-dashboard") }}</span>
               </button>
 
-              <button @click="deletePluginBySlug" :disabled="deleting" class="p-2 text-zinc-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/50 rounded-lg transition-colors disabled:opacity-50">
+              <button @click="deletePluginBySlug" :disabled="deleting" class="p-2 text-gray-400 hover:text-error-600 dark:hover:text-error-400 hover:bg-error-50 dark:hover:bg-error-950/50 rounded-lg transition-colors disabled:opacity-50">
                 <AppIcon icon="delete" class="text-base" />
               </button>
             </div>
           </div>
 
-          <div class="flex items-center gap-6 text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+          <div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-4">
             <span>{{ __("Version", "flexify-dashboard") }} {{ plugin.Version }}</span>
             <span v-if="plugin.Author" v-html="plugin.Author"></span>
           </div>
 
-          <p v-if="plugin.Description" class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6" v-html="plugin.Description"></p>
+          <p v-if="plugin.Description" class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6" v-html="plugin.Description"></p>
 
           <!-- Requirements Warning -->
-          <div v-if="!hasRequiredPlugins" class="bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-6">
+          <div v-if="!hasRequiredPlugins" class="bg-error-50 dark:bg-error-950/50 border border-error-200 dark:border-error-800 rounded-lg p-4 mb-6">
             <div class="flex items-start gap-3">
-              <AppIcon icon="warning" class="text-red-500 mt-0.5 flex-shrink-0" />
+              <AppIcon icon="warning" class="text-error-500 mt-0.5 flex-shrink-0" />
               <div>
-                <div class="font-medium text-red-700 dark:text-red-400 mb-2">{{ __("Missing Required Plugins", "flexify-dashboard") }}</div>
-                <div class="text-sm text-red-600 dark:text-red-400 mb-2">{{ __("This plugin requires the following plugins to be installed and active:", "flexify-dashboard") }}</div>
-                <ul class="list-disc pl-4 text-sm text-red-600 dark:text-red-400">
+                <div class="font-medium text-error-700 dark:text-error-400 mb-2">{{ __("Missing Required Plugins", "flexify-dashboard") }}</div>
+                <div class="text-sm text-error-600 dark:text-error-400 mb-2">{{ __("This plugin requires the following plugins to be installed and active:", "flexify-dashboard") }}</div>
+                <ul class="list-disc pl-4 text-sm text-error-600 dark:text-error-400">
                   <li v-for="sub in (plugin.RequiresPlugins || '').split(',')" :key="sub">{{ sub.trim() }}</li>
                 </ul>
               </div>
@@ -355,31 +355,31 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
           <div class="flex flex-wrap gap-3">
             <!-- Plugin Action Links (Settings, etc) -->
             <template v-if="plugin.action_links && plugin.action_links.length">
-              <a v-for="link in plugin.action_links" :key="link.url" :href="link.url" class="inline-flex items-center gap-2 px-3 py-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors text-sm font-medium">
+              <a v-for="link in plugin.action_links" :key="link.url" :href="link.url" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors text-sm font-medium">
                 <AppIcon icon="link" class="text-sm" />
                 <span v-html="link.text"></span>
               </a>
             </template>
 
             <!-- Repository Links -->
-            <RouterLink v-if="!plugin.notInRepository && plugin.slug" :to="`/plugin-search/${plugin.slug.split('/')[0]}`" class="inline-flex items-center gap-2 px-3 py-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors text-sm">
+            <RouterLink v-if="!plugin.notInRepository && plugin.slug" :to="`/plugin-search/${plugin.slug.split('/')[0]}`" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-sm">
               <AppIcon icon="info" class="text-sm" />
               {{ __("Plugin Info", "flexify-dashboard") }}
             </RouterLink>
 
-            <RouterLink v-if="plugin.active && plugin.slug" :to="`/plugin-performance/${plugin.slug.split('/')[0]}`" class="inline-flex items-center gap-2 px-3 py-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors text-sm">
+            <RouterLink v-if="plugin.active && plugin.slug" :to="`/plugin-performance/${plugin.slug.split('/')[0]}`" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-sm">
               <AppIcon icon="speed" class="text-sm" />
               {{ __("Performance", "flexify-dashboard") }}
             </RouterLink>
 
             <!-- External Links -->
-            <a v-if="plugin.PluginURI" :href="plugin.PluginURI" target="_blank" class="inline-flex items-center gap-2 px-3 py-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors text-sm">
+            <a v-if="plugin.PluginURI" :href="plugin.PluginURI" target="_blank" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-sm">
               <AppIcon icon="link" class="text-sm" />
               {{ __("Plugin Page", "flexify-dashboard") }}
               <AppIcon icon="open_new" class="text-xs opacity-60" />
             </a>
 
-            <a v-if="plugin.AuthorURI" :href="plugin.AuthorURI" target="_blank" class="inline-flex items-center gap-2 px-3 py-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors text-sm">
+            <a v-if="plugin.AuthorURI" :href="plugin.AuthorURI" target="_blank" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-sm">
               <AppIcon icon="person" class="text-sm" />
               {{ __("Author", "flexify-dashboard") }}
               <AppIcon icon="open_new" class="text-xs opacity-60" />
@@ -396,55 +396,55 @@ defineExpose({ updatePluginBySlug, activatePluginBySlug, deactivatePluginBySlug,
       <div class="space-y-8">
         <!-- Plugin Information -->
         <div v-if="plugin.RequiresWP || plugin.TestedUpTo || plugin.Network">
-          <h3 class="text-base font-medium text-zinc-900 dark:text-zinc-100 mb-4">
+          <h3 class="text-base font-medium text-gray-900 dark:text-gray-100 mb-4">
             {{ __("Plugin Information", "flexify-dashboard") }}
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             <div v-if="plugin.RequiresWP">
-              <div class="text-zinc-500 dark:text-zinc-500 text-xs uppercase tracking-wide font-medium mb-1">
+              <div class="text-gray-500 dark:text-gray-500 text-xs uppercase tracking-wide font-medium mb-1">
                 {{ __("Requires WordPress", "flexify-dashboard") }}
               </div>
-              <div class="text-zinc-900 dark:text-zinc-100">{{ plugin.RequiresWP }}+</div>
+              <div class="text-gray-900 dark:text-gray-100">{{ plugin.RequiresWP }}+</div>
             </div>
             <div v-if="plugin.RequiresPHP">
-              <div class="text-zinc-500 dark:text-zinc-500 text-xs uppercase tracking-wide font-medium mb-1">
+              <div class="text-gray-500 dark:text-gray-500 text-xs uppercase tracking-wide font-medium mb-1">
                 {{ __("Requires PHP", "flexify-dashboard") }}
               </div>
-              <div class="text-zinc-900 dark:text-zinc-100">{{ plugin.RequiresPHP }}+</div>
+              <div class="text-gray-900 dark:text-gray-100">{{ plugin.RequiresPHP }}+</div>
             </div>
             <div v-if="plugin.TestedUpTo">
-              <div class="text-zinc-500 dark:text-zinc-500 text-xs uppercase tracking-wide font-medium mb-1">
+              <div class="text-gray-500 dark:text-gray-500 text-xs uppercase tracking-wide font-medium mb-1">
                 {{ __("Tested up to", "flexify-dashboard") }}
               </div>
-              <div class="text-zinc-900 dark:text-zinc-100">{{ plugin.TestedUpTo }}</div>
+              <div class="text-gray-900 dark:text-gray-100">{{ plugin.TestedUpTo }}</div>
             </div>
             <div>
-              <div class="text-zinc-500 dark:text-zinc-500 text-xs uppercase tracking-wide font-medium mb-1">
+              <div class="text-gray-500 dark:text-gray-500 text-xs uppercase tracking-wide font-medium mb-1">
                 {{ __("Network", "flexify-dashboard") }}
               </div>
-              <div class="text-zinc-900 dark:text-zinc-100">{{ plugin.Network ? __("Yes", "flexify-dashboard") : __("No", "flexify-dashboard") }}</div>
+              <div class="text-gray-900 dark:text-gray-100">{{ plugin.Network ? __("Yes", "flexify-dashboard") : __("No", "flexify-dashboard") }}</div>
             </div>
           </div>
         </div>
 
         <!-- Settings -->
         <div>
-          <h3 class="text-base font-medium text-zinc-900 dark:text-zinc-100 mb-4">
+          <h3 class="text-base font-medium text-gray-900 dark:text-gray-100 mb-4">
             {{ __("Settings", "flexify-dashboard") }}
           </h3>
-          <div class="bg-zinc-50 dark:bg-zinc-800/50 rounded-xl p-4">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4">
             <div class="flex items-center justify-between">
               <div>
-                <div class="font-medium text-sm text-zinc-900 dark:text-zinc-100">
+                <div class="font-medium text-sm text-gray-900 dark:text-gray-100">
                   {{ __("Automatic Updates", "flexify-dashboard") }}
                 </div>
-                <div class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+                <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   {{ __("Allow WordPress to update this plugin automatically", "flexify-dashboard") }}
                 </div>
               </div>
               <label class="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" :checked="plugin.auto_update_enabled" @change="toggleAutoUpdate" :disabled="autoUpdating" class="sr-only peer">
-                <div class="w-10 h-5 bg-zinc-200 peer-focus:outline-none rounded-full peer dark:bg-zinc-700 peer-checked:after:translate-x-5 peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-zinc-600 peer-disabled:opacity-50"></div>
+                <div class="w-10 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-5 peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gray-600 peer-disabled:opacity-50"></div>
               </label>
             </div>
           </div>

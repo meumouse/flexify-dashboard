@@ -98,10 +98,10 @@ const formatDate = (dateString) => {
  */
 const getStatusColor = (status) => {
   const colors = {
-    approved: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    pending: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
-    spam: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400',
-    trash: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400',
+    approved: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    pending: 'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
+    spam: 'bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-400',
+    trash: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
   };
   return colors[status] || colors.approved;
 };
@@ -138,10 +138,10 @@ document.addEventListener('click', hideContextMenu);
         :key="item.id"
         @click="handleCommentClick(item, $event)"
         @contextmenu="showItemContextMenu($event, item)"
-        class="flex items-start gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group -mx-3 relative"
+        class="flex items-start gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all group -mx-3 relative"
         :class="
           route.params.commentId == item.id
-            ? 'bg-zinc-100 dark:bg-zinc-800/60'
+            ? 'bg-gray-100 dark:bg-gray-800/60'
             : ''
         "
       >
@@ -161,7 +161,7 @@ document.addEventListener('click', hideContextMenu);
           </div>
 
           <div
-            class="w-10 h-10 bg-zinc-200 dark:bg-zinc-700 rounded-full overflow-hidden"
+            class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"
           >
             <img
               v-if="item.author_avatar_urls?.['96']"
@@ -170,7 +170,7 @@ document.addEventListener('click', hideContextMenu);
               class="w-full h-full object-cover"
             />
             <div v-else class="w-full h-full flex items-center justify-center">
-              <AppIcon icon="person" class="text-zinc-500 dark:text-zinc-400" />
+              <AppIcon icon="person" class="text-gray-500 dark:text-gray-400" />
             </div>
           </div>
         </div>
@@ -179,12 +179,12 @@ document.addEventListener('click', hideContextMenu);
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 mb-1">
             <span
-              class="font-medium text-sm text-zinc-900 dark:text-zinc-200 truncate"
+              class="font-medium text-sm text-gray-900 dark:text-gray-200 truncate"
               :title="item.author_name"
               :class="
                 route.params.commentId == item.id
-                  ? 'text-zinc-900 dark:text-white'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-600 dark:text-gray-400'
               "
             >
               {{ item.author_name }}
@@ -198,10 +198,10 @@ document.addEventListener('click', hideContextMenu);
               {{ item.status }}
             </span>
           </div>
-          <div class="text-xs text-zinc-500 dark:text-zinc-400 mb-1 line-clamp-2">
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-1 line-clamp-2">
             {{ truncate(stripHtml(item.content)) }}
           </div>
-          <div class="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+          <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
             <span>{{ formatDate(item.date) }}</span>
             <span v-if="item.postData || item.post_title">•</span>
             <a
@@ -209,7 +209,7 @@ document.addEventListener('click', hideContextMenu);
               :href="item.postData.edit_link"
               @click.stop
               target="_blank"
-              class="truncate hover:text-zinc-900 dark:hover:text-zinc-200 hover:underline transition-colors flex items-center gap-1"
+              class="truncate hover:text-gray-900 dark:hover:text-gray-200 hover:underline transition-colors flex items-center gap-1"
               :title="item.postData.title"
             >
               <AppIcon icon="open_in_new" class="text-[10px]" />
@@ -230,12 +230,12 @@ document.addEventListener('click', hideContextMenu);
         left: contextMenuPosition.x + 'px',
         top: contextMenuPosition.y + 'px',
       }"
-      class="fixed z-50 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg py-1 min-w-32"
+      class="fixed z-50 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 min-w-32"
       @click.stop
     >
       <button
         @click="handleDeleteItem(contextCommentItem)"
-        class="w-full px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 flex items-center gap-2"
+        class="w-full px-3 py-2 text-left text-sm text-error-600 hover:bg-error-50 dark:hover:bg-error-900/20 flex items-center gap-2"
       >
         <AppIcon icon="delete" class="text-sm" />
         {{ __('Delete', 'flexify-dashboard') }}

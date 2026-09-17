@@ -131,7 +131,7 @@ onMounted(() => {
 <template>
   <div class="col-span-2">
     <div
-      class="rounded-2xl border border-zinc-200 dark:border-zinc-700/40 bg-zinc-50 dark:bg-zinc-900/40 p-5 space-y-4"
+      class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40 p-5 space-y-4"
     >
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div class="space-y-1">
@@ -139,7 +139,7 @@ onMounted(() => {
             :status="configured ? 'success' : 'warning'"
             :text="statusText"
           />
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">
+          <p class="text-xs text-gray-500 dark:text-gray-400">
             {{
               __(
                 'Use these credentials in the modern administrative login and password recovery forms with Google reCAPTCHA v2 checkbox.',
@@ -162,14 +162,14 @@ onMounted(() => {
 
       <div
         v-if="loading"
-        class="text-sm text-zinc-500 dark:text-zinc-400"
+        class="text-sm text-gray-500 dark:text-gray-400"
       >
         {{ __('Loading integration status...', 'flexify-dashboard') }}
       </div>
 
       <template v-else>
         <div class="space-y-2">
-          <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
             {{ __('Site key', 'flexify-dashboard') }}
           </label>
           <AppInput
@@ -181,7 +181,7 @@ onMounted(() => {
         </div>
 
         <div class="space-y-2">
-          <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
             {{ configured ? __('Replace secret key', 'flexify-dashboard') : __('Secret key', 'flexify-dashboard') }}
           </label>
           <AppInput
@@ -190,7 +190,7 @@ onMounted(() => {
             :placeholder="__('Enter your Google reCAPTCHA secret key', 'flexify-dashboard')"
             autocomplete="new-password"
           />
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">
+          <p class="text-xs text-gray-500 dark:text-gray-400">
             {{
               configured
                 ? __('To update the integration, enter the current site key you want to keep and a new secret key.', 'flexify-dashboard')
@@ -203,7 +203,7 @@ onMounted(() => {
           <AppButton type="primary" @click="saveCredentials" :loading="saving">
             {{ configured ? __('Update credentials', 'flexify-dashboard') : __('Save credentials', 'flexify-dashboard') }}
           </AppButton>
-          <span class="text-xs text-zinc-500 dark:text-zinc-400">
+          <span class="text-xs text-gray-500 dark:text-gray-400">
             {{
               __(
                 'After saving, enable Google reCAPTCHA in Settings > Login to require it on the administrative login and password recovery forms.',

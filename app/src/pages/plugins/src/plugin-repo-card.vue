@@ -95,28 +95,28 @@ const installPluginBySlug = async () => {
 </script>
 
 <template>
-  <div class="rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 flex flex-col overflow-hidden shadow relative group cursor-pointer">
-    <div class="w-full aspect-[3.089] bg-zinc-100 border-b border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 overflow-hidden relative">
+  <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 flex flex-col overflow-hidden shadow relative group cursor-pointer">
+    <div class="w-full aspect-[3.089] bg-gray-100 border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800 overflow-hidden relative">
       <!-- Show banner if available -->
       <img v-if="getPluginBanner" :src="getPluginBanner" class="w-full h-full object-cover object-center" />
 
       <PluginCardBanner v-else />
 
-      <div class="absolute bottom-0 right-0 left-0 h-2/3 bg-gradient-to-t from-zinc-900/20 to-transparent"></div>
+      <div class="absolute bottom-0 right-0 left-0 h-2/3 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
     </div>
     <div class="p-4 pt-0 -mt-3 flex flex-col gap-2 items-start grow z-[1]">
-      <div class="rounded-lg bg-white dark:bg-zinc-900 p-1 -ml-1 -mt-1">
+      <div class="rounded-lg bg-white dark:bg-gray-900 p-1 -ml-1 -mt-1">
         <div class="rounded-md bg-brand-600 aspect-square h-10 overflow-hidden">
           <img :src="getPluginIcon" class="w-full h-full object-cover" />
         </div>
       </div>
-      <div class="text-zinc-900 dark:text-zinc-100 font-semibold" v-html="plugin.name"></div>
-      <div class="text-zinc-500 dark:text-zinc-400 grow line-clamp-3" v-html="plugin.short_description"></div>
+      <div class="text-gray-900 dark:text-gray-100 font-semibold" v-html="plugin.name"></div>
+      <div class="text-gray-500 dark:text-gray-400 grow line-clamp-3" v-html="plugin.short_description"></div>
     </div>
-    <div class="border-t border-zinc-200 dark:border-zinc-700 p-4 flex flex-row place-content-between items-center" @click.prevent.stop>
+    <div class="border-t border-gray-200 dark:border-gray-700 p-4 flex flex-row place-content-between items-center" @click.prevent.stop>
       <div>
         <AppButton v-if="!isInstalled" type="default" class="text-sm" :loading="installing" @click="installPluginBySlug">{{ __("Install", "flexify-dashboard") }}</AppButton>
-        <div v-else class="px-3 py-2 bg-green-50 text-green-700 dark:bg-green-950/50 dark:text-green-400 rounded-lg text-sm font-medium">
+        <div v-else class="px-3 py-2 bg-success-50 text-success-700 dark:bg-success-950/50 dark:text-success-400 rounded-lg text-sm font-medium">
           {{ __("Installed", "flexify-dashboard") }}
         </div>
       </div>
@@ -126,14 +126,14 @@ const installPluginBySlug = async () => {
           <AppIcon v-for="icon in ratingToStars(plugin.rating)" :icon="icon" :class="icon == 'star_empty' ? 'opacity-50' : ''" />
         </div>
 
-        <div class="text-zinc-500 text-xs">
+        <div class="text-gray-500 text-xs">
           <strong>{{ Intl.NumberFormat().format(plugin.active_installs) }}</strong>
           {{ __("Active installs", "flexify-dashboard") }}
         </div>
       </div>
     </div>
 
-    <div class="absolute top-0 left-0 right-0 bottom-0 bg-zinc-900/50 flex flex-col items-center place-content-center justify-center z-[100]" v-if="deleting || autoUpdating">
+    <div class="absolute top-0 left-0 right-0 bottom-0 bg-gray-900/50 flex flex-col items-center place-content-center justify-center z-[100]" v-if="deleting || autoUpdating">
       <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>

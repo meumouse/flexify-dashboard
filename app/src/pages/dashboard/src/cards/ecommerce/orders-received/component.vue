@@ -22,15 +22,15 @@ onMounted(loadData);
 </script>
 
 <template>
-  <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl py-6 px-8 h-full">
-    <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Orders received', 'flexify-dashboard') }}</h3>
-    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">{{ __('Quantity of orders from period', 'flexify-dashboard') }}</p>
+  <div class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl py-6 px-8 h-full">
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">{{ __('Orders received', 'flexify-dashboard') }}</h3>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">{{ __('Quantity of orders from period', 'flexify-dashboard') }}</p>
     
     <div
       v-if="loading"
-      class="h-9 w-20 rounded-lg bg-zinc-200 dark:bg-zinc-700 animate-pulse"
+      class="h-9 w-20 rounded-lg bg-gray-200 dark:bg-gray-700 animate-pulse"
     ></div>
 
-    <div v-else class="text-3xl font-bold text-zinc-900 dark:text-zinc-100">{{ value }}</div>
+    <div v-else class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ value }}</div>
   </div>
 </template>

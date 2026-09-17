@@ -60,14 +60,14 @@ const getMetricData = (metric) => {
 
 const getTrendClass = (trend) => {
   if (trend === 'up') {
-    return 'text-emerald-600 dark:text-emerald-400';
+    return 'text-success-600 dark:text-success-400';
   }
 
   if (trend === 'down') {
-    return 'text-rose-600 dark:text-rose-400';
+    return 'text-error-600 dark:text-error-400';
   }
 
-  return 'text-zinc-400 dark:text-zinc-500';
+  return 'text-gray-400 dark:text-gray-500';
 };
 
 const getTrendIcon = (trend) => {
@@ -102,19 +102,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="h-full rounded-3xl border border-zinc-200/60 bg-white p-6 dark:border-[#2e3a47] dark:bg-[#24303f]">
+  <div class="h-full rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03]">
     <div class="mb-6 flex items-start justify-between gap-4">
       <div class="min-w-0">
         <div class="flex items-center gap-3">
           <div
-            class="flex h-11 w-11 items-center justify-center rounded-2xl bg-zinc-100 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100"
+            class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100"
             v-html="widgetMeta.icon"
           />
           <div>
-            <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
               {{ __('Rank Math Overview', 'flexify-dashboard') }}
             </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400">
+            <p class="text-sm text-gray-500 dark:text-gray-400">
               {{ __('SEO insights mirrored from the Rank Math dashboard widget.', 'flexify-dashboard') }}
             </p>
           </div>
@@ -124,13 +124,13 @@ onMounted(() => {
       <div class="flex items-center gap-2">
         <span
           v-if="plugin.version"
-          class="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"
+          class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300"
         >
           v{{ plugin.version }}
         </span>
         <span
           v-if="plugin.pro_active"
-          class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"
+          class="rounded-full bg-success-100 px-3 py-1 text-xs font-medium text-success-700 dark:bg-success-900/40 dark:text-success-300"
         >
           PRO
         </span>
@@ -141,22 +141,22 @@ onMounted(() => {
       <div
         v-for="index in 4"
         :key="index"
-        class="animate-pulse rounded-2xl border border-zinc-200/60 bg-zinc-50 p-4 dark:border-zinc-700/40 dark:bg-zinc-800/40"
+        class="animate-pulse rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-white/[0.03]"
       >
-        <div class="mb-3 h-3 w-24 rounded bg-zinc-200 dark:bg-zinc-700" />
-        <div class="mb-2 h-8 w-20 rounded bg-zinc-200 dark:bg-zinc-700" />
-        <div class="h-3 w-16 rounded bg-zinc-200 dark:bg-zinc-700" />
+        <div class="mb-3 h-3 w-24 rounded bg-gray-200 dark:bg-gray-700" />
+        <div class="mb-2 h-8 w-20 rounded bg-gray-200 dark:bg-gray-700" />
+        <div class="h-3 w-16 rounded bg-gray-200 dark:bg-gray-700" />
       </div>
     </div>
 
-    <div v-else-if="error" class="rounded-2xl border border-rose-200 bg-rose-50 p-5 dark:border-rose-900/50 dark:bg-rose-900/20">
+    <div v-else-if="error" class="rounded-2xl border border-error-200 bg-error-50 p-5 dark:border-error-900/50 dark:bg-error-900/20">
       <div class="flex items-start gap-3">
-        <AppIcon icon="error" class="mt-0.5 text-xl text-rose-500" />
+        <AppIcon icon="error" class="mt-0.5 text-xl text-error-500" />
         <div>
-          <p class="font-medium text-rose-800 dark:text-rose-200">
+          <p class="font-medium text-error-800 dark:text-error-200">
             {{ __('Unable to load Rank Math data', 'flexify-dashboard') }}
           </p>
-          <p class="mt-1 text-sm text-rose-700 dark:text-rose-300">{{ error }}</p>
+          <p class="mt-1 text-sm text-error-700 dark:text-error-300">{{ error }}</p>
           <div class="mt-4">
             <AppButton buttontype="button" @click="loadWidget">
               {{ __('Try Again', 'flexify-dashboard') }}
@@ -168,26 +168,26 @@ onMounted(() => {
 
     <div
       v-else-if="!plugin.active"
-      class="rounded-2xl border border-dashed border-zinc-200 p-6 text-center dark:border-zinc-700"
+      class="rounded-2xl border border-dashed border-gray-200 p-6 text-center dark:border-gray-700"
     >
-      <AppIcon icon="extension_off" class="mx-auto mb-3 text-4xl text-zinc-400" />
-      <p class="font-medium text-zinc-900 dark:text-zinc-100">
+      <AppIcon icon="extension_off" class="mx-auto mb-3 text-4xl text-gray-400" />
+      <p class="font-medium text-gray-900 dark:text-gray-100">
         {{ __('Rank Math SEO is not active on this site.', 'flexify-dashboard') }}
       </p>
-      <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
         {{ __('Activate the plugin to display the Rank Math overview widget in Analytics.', 'flexify-dashboard') }}
       </p>
     </div>
 
     <div
       v-else-if="!widgetMeta.available"
-      class="rounded-2xl border border-dashed border-zinc-200 p-6 text-center dark:border-zinc-700"
+      class="rounded-2xl border border-dashed border-gray-200 p-6 text-center dark:border-gray-700"
     >
-      <AppIcon icon="insights" class="mx-auto mb-3 text-4xl text-zinc-400" />
-      <p class="font-medium text-zinc-900 dark:text-zinc-100">
+      <AppIcon icon="insights" class="mx-auto mb-3 text-4xl text-gray-400" />
+      <p class="font-medium text-gray-900 dark:text-gray-100">
         {{ __('The Rank Math widget has no available modules for this user.', 'flexify-dashboard') }}
       </p>
-      <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
         {{ __('Enable Analytics, 404 Monitor or Redirections in Rank Math and confirm the current user has access.', 'flexify-dashboard') }}
       </p>
     </div>
@@ -195,14 +195,14 @@ onMounted(() => {
     <div v-else class="space-y-6">
       <section
         v-if="sections.analytics?.enabled"
-        class="rounded-3xl border border-zinc-200/60 bg-zinc-50/80 p-5 dark:border-zinc-700/40 dark:bg-zinc-900/20"
+        class="rounded-2xl border border-gray-200 bg-gray-50/80 p-5 dark:border-gray-800 dark:bg-white/[0.02]"
       >
         <div class="mb-4 flex items-center justify-between gap-4">
           <div>
-            <h4 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+            <h4 class="text-base font-semibold text-gray-900 dark:text-gray-100">
               {{ __(sections.analytics.title, 'flexify-dashboard') }}
             </h4>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400">
+            <p class="text-sm text-gray-500 dark:text-gray-400">
               {{ __(sections.analytics.subtitle, 'flexify-dashboard') }}
             </p>
           </div>
@@ -220,14 +220,14 @@ onMounted(() => {
           <article
             v-for="item in analyticsItems"
             :key="item.key"
-            class="rounded-2xl border border-zinc-200/60 bg-white p-4 dark:border-zinc-700/50 dark:bg-[#24303f]"
+            class="rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
               <div class="min-w-0">
-                <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
                   {{ __(item.label, 'flexify-dashboard') }}
                 </p>
-                <p class="mt-1 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+                <p class="mt-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
                   {{ __(item.description, 'flexify-dashboard') }}
                 </p>
               </div>
@@ -238,10 +238,10 @@ onMounted(() => {
               </div>
             </div>
 
-            <div class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+            <div class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
               {{ getMetricData(item).total }}
             </div>
-            <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
               {{ __('Previous period:', 'flexify-dashboard') }} {{ getMetricData(item).previous }}
             </p>
           </article>
@@ -251,10 +251,10 @@ onMounted(() => {
       <div class="grid gap-6 xl:grid-cols-2">
         <section
           v-if="sections['404-monitor']?.enabled"
-          class="rounded-3xl border border-zinc-200/60 bg-zinc-50/80 p-5 dark:border-zinc-700/40 dark:bg-zinc-900/20"
+          class="rounded-2xl border border-gray-200 bg-gray-50/80 p-5 dark:border-gray-800 dark:bg-white/[0.02]"
         >
           <div class="mb-4 flex items-center justify-between gap-4">
-            <h4 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+            <h4 class="text-base font-semibold text-gray-900 dark:text-gray-100">
               {{ __(sections['404-monitor'].title, 'flexify-dashboard') }}
             </h4>
             <a
@@ -270,15 +270,15 @@ onMounted(() => {
             <article
               v-for="item in monitorItems"
               :key="item.key"
-              class="rounded-2xl border border-zinc-200/60 bg-white p-4 dark:border-zinc-700/50 dark:bg-[#24303f]"
+              class="rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]"
             >
-              <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
                 {{ __(item.label, 'flexify-dashboard') }}
               </p>
-              <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+              <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
                 {{ __(item.description, 'flexify-dashboard') }}
               </p>
-              <div class="mt-4 text-3xl font-semibold text-zinc-900 dark:text-zinc-100">
+              <div class="mt-4 text-3xl font-semibold text-gray-900 dark:text-gray-100">
                 {{ item.formatted_total }}
               </div>
             </article>
@@ -287,10 +287,10 @@ onMounted(() => {
 
         <section
           v-if="sections.redirections?.enabled"
-          class="rounded-3xl border border-zinc-200/60 bg-zinc-50/80 p-5 dark:border-zinc-700/40 dark:bg-zinc-900/20"
+          class="rounded-2xl border border-gray-200 bg-gray-50/80 p-5 dark:border-gray-800 dark:bg-white/[0.02]"
         >
           <div class="mb-4 flex items-center justify-between gap-4">
-            <h4 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+            <h4 class="text-base font-semibold text-gray-900 dark:text-gray-100">
               {{ __(sections.redirections.title, 'flexify-dashboard') }}
             </h4>
             <a
@@ -306,15 +306,15 @@ onMounted(() => {
             <article
               v-for="item in redirectionItems"
               :key="item.key"
-              class="rounded-2xl border border-zinc-200/60 bg-white p-4 dark:border-zinc-700/50 dark:bg-[#24303f]"
+              class="rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]"
             >
-              <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
                 {{ __(item.label, 'flexify-dashboard') }}
               </p>
-              <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+              <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
                 {{ __(item.description, 'flexify-dashboard') }}
               </p>
-              <div class="mt-4 text-3xl font-semibold text-zinc-900 dark:text-zinc-100">
+              <div class="mt-4 text-3xl font-semibold text-gray-900 dark:text-gray-100">
                 {{ item.formatted_total }}
               </div>
             </article>
@@ -324,9 +324,9 @@ onMounted(() => {
 
       <section
         v-if="sections.feed?.enabled"
-        class="rounded-3xl border border-zinc-200/60 bg-zinc-50/80 p-5 dark:border-zinc-700/40 dark:bg-zinc-900/20"
+        class="rounded-2xl border border-gray-200 bg-gray-50/80 p-5 dark:border-gray-800 dark:bg-white/[0.02]"
       >
-        <h4 class="mb-4 text-base font-semibold text-zinc-900 dark:text-zinc-100">
+        <h4 class="mb-4 text-base font-semibold text-gray-900 dark:text-gray-100">
           {{ __(sections.feed.title, 'flexify-dashboard') }}
         </h4>
 
@@ -337,7 +337,7 @@ onMounted(() => {
             :href="post.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="rounded-2xl border border-zinc-200/60 bg-white p-4 transition hover:border-zinc-300 dark:border-zinc-700/50 dark:bg-[#24303f] dark:hover:border-zinc-600"
+            class="rounded-2xl border border-gray-200 bg-white p-4 transition hover:border-gray-300 dark:border-gray-800 dark:bg-white/[0.03] dark:hover:border-gray-600"
           >
             <div class="mb-3 flex items-center gap-2">
               <span
@@ -346,9 +346,9 @@ onMounted(() => {
               >
                 {{ post.label }}
               </span>
-              <span class="text-xs text-zinc-500 dark:text-zinc-400">{{ formatDate(post.date) }}</span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">{{ formatDate(post.date) }}</span>
             </div>
-            <p class="text-sm font-medium leading-relaxed text-zinc-900 dark:text-zinc-100">
+            <p class="text-sm font-medium leading-relaxed text-gray-900 dark:text-gray-100">
               {{ post.title }}
             </p>
           </a>
@@ -356,7 +356,7 @@ onMounted(() => {
 
         <div
           v-else
-          class="rounded-2xl border border-dashed border-zinc-200 p-5 text-sm text-zinc-500 dark:border-zinc-700 dark:text-zinc-400"
+          class="rounded-2xl border border-dashed border-gray-200 p-5 text-sm text-gray-500 dark:border-gray-700 dark:text-gray-400"
         >
           {{ __('The Rank Math blog feed is temporarily unavailable.', 'flexify-dashboard') }}
         </div>
@@ -364,7 +364,7 @@ onMounted(() => {
 
       <footer
         v-if="footerLinks.length > 0"
-        class="flex flex-wrap items-center gap-3 border-t border-zinc-200/70 pt-5 text-sm dark:border-zinc-700/50"
+        class="flex flex-wrap items-center gap-3 border-t border-gray-200 pt-5 text-sm dark:border-gray-800"
       >
         <a
           v-for="link in footerLinks"
@@ -372,7 +372,7 @@ onMounted(() => {
           :href="link.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3 py-2 font-medium text-zinc-700 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
+          class="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-2 font-medium text-gray-700 transition hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
         >
           {{ __(link.label, 'flexify-dashboard') }}
           <AppIcon icon="open_in_new" class="text-sm" />

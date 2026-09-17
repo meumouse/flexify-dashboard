@@ -101,10 +101,10 @@ const getStatusLabel = (post) => {
  */
 const getStatusClasses = (statusValue) => {
   const statusMap = {
-    publish: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300',
-    draft: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300',
-    pending: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300',
-    trash: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300',
+    publish: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-300',
+    draft: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300',
+    pending: 'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-300',
+    trash: 'bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-300',
     private: 'bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300',
   };
   return statusMap[statusValue] || statusMap.draft;
@@ -241,16 +241,16 @@ watch(
   >
     <div class="text-center">
       <div
-        class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+        class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
       >
-        <AppIcon icon="article" class="text-2xl text-zinc-400" />
+        <AppIcon icon="article" class="text-2xl text-gray-400" />
       </div>
       <h3
-        class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+        class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
       >
         {{ __('Post Details', 'flexify-dashboard') }}
       </h3>
-      <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
         {{
           __(
             'Select a post from the list to view details and edit properties.',
@@ -268,7 +268,7 @@ watch(
     <!-- Featured Image -->
     <div
       v-if="getFeaturedImage"
-      class="mb-6 rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800"
+      class="mb-6 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800"
     >
       <img
         :src="getFeaturedImage"
@@ -281,7 +281,7 @@ watch(
     <div class="mb-6">
       <div class="flex items-start justify-between gap-4 mb-4">
         <h1
-          class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 flex-1"
+          class="text-2xl font-semibold text-gray-900 dark:text-gray-100 flex-1"
         >
           {{ getTitleText || __('Untitled', 'flexify-dashboard') }}
         </h1>
@@ -289,7 +289,7 @@ watch(
       </div>
 
       <!-- Meta Info -->
-      <div class="flex flex-wrap items-center gap-3 text-sm text-zinc-500 dark:text-zinc-400">
+      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
         <div class="flex items-center gap-1.5">
           <AppIcon icon="schedule" class="text-base" />
           <span>{{ formatDate(post.date) }}</span>
@@ -309,7 +309,7 @@ watch(
     </div>
 
     <!-- Quick Actions -->
-    <div class="flex items-center gap-2 mb-6 pb-6 border-b border-zinc-200 dark:border-zinc-700">
+    <div class="flex items-center gap-2 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
       <AppButton
         v-if="post.is_editable"
         type="primary"
@@ -335,7 +335,7 @@ watch(
       <!-- Status -->
       <div v-if="post.status !== undefined">
         <label
-          class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-2"
+          class="block text-xs uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-2"
         >
           {{ __('Status', 'flexify-dashboard') }}
         </label>
@@ -349,7 +349,7 @@ watch(
       <!-- Author -->
       <div v-if="post.author !== undefined">
         <label
-          class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-2"
+          class="block text-xs uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-2"
         >
           {{ __('Author', 'flexify-dashboard') }}
         </label>
@@ -363,7 +363,7 @@ watch(
       <!-- Categories -->
       <div v-if="post.categories && Array.isArray(post.categories) && post.categories.length > 0">
         <label
-          class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-2"
+          class="block text-xs uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-2"
         >
           {{ __('Categories', 'flexify-dashboard') }}
         </label>
@@ -381,7 +381,7 @@ watch(
       <!-- Tags -->
       <div v-if="post.tags && Array.isArray(post.tags) && post.tags.length > 0">
         <label
-          class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-2"
+          class="block text-xs uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-2"
         >
           {{ __('Tags', 'flexify-dashboard') }}
         </label>
@@ -399,7 +399,7 @@ watch(
       <!-- URL -->
       <div v-if="post.view_url">
         <label
-          class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-2"
+          class="block text-xs uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-2"
         >
           {{ __('URL', 'flexify-dashboard') }}
         </label>
@@ -414,13 +414,13 @@ watch(
     </div>
 
     <!-- Preview Section -->
-    <div v-if="post.view_url" class="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-700">
+    <div v-if="post.view_url" class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
       <label
-        class="block text-xs uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-4"
+        class="block text-xs uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-4"
       >
         {{ __('Preview', 'flexify-dashboard') }}
       </label>
-      <div class="relative rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+      <div class="relative rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
         <iframe
           :src="post.view_url"
           class="w-full h-[600px] border-0"

@@ -627,8 +627,8 @@ defineExpose({
 
 <template>
   <Transition>
-    <div class="fixed top-0 left-0 right-0 h-dvh max-h-dvh max-w-dvw bg-zinc-900/40 flex flex-row z-[99999] items-center place-content-center" v-if="open" @click="maybeClose">
-      <div class="w-[900px] max-w-full rounded-xl shadow-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 flex flex-col h-[700px] max-h-[100dvh]" ref="mediapanel">
+    <div class="fixed top-0 left-0 right-0 h-dvh max-h-dvh max-w-dvw bg-gray-900/40 flex flex-row z-[99999] items-center place-content-center" v-if="open" @click="maybeClose">
+      <div class="w-[900px] max-w-full rounded-xl shadow-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 flex flex-col h-[700px] max-h-[100dvh]" ref="mediapanel">
         <!-- Title block -->
         <div class="flex flex-row items-center place-content-between p-6 pb-0">
           <div class="font-semibold">{{ __("Media Library", "flexify-dashboard") }}</div>
@@ -636,7 +636,7 @@ defineExpose({
         </div>
 
         <!-- Filters -->
-        <div class="flex flex-row gap-3 p-6 border-b border-zinc-200 dark:border-zinc-700 items-center">
+        <div class="flex flex-row gap-3 p-6 border-b border-gray-200 dark:border-gray-700 items-center">
           <div class="grow flex place-items-start gap-3">
             <AppInput type="text" v-model="pagination.search" icon="search" :placeholder="__('Search', 'flexify-dashboard')" />
           </div>
@@ -701,23 +701,23 @@ defineExpose({
             >
               <!-- Loading -->
               <div class="flex flex-col gap-3 items-center p-3" v-for="index in 24" v-if="loading">
-                <div class="w-full aspect-square rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"></div>
-                <div class="w-2/3 h-6 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"></div>
+                <div class="w-full aspect-square rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"></div>
+                <div class="w-2/3 h-6 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"></div>
               </div>
 
               <!-- Not Loading -->
               <div
                 v-else
-                class="flex flex-col gap-3 items-center p-3 rounded hover:bg-zinc-100 hover:dark:bg-zinc-800 transition-colors rounded-lg cursor-pointer group/media"
-                :class="isSelected(image) ? 'bg-zinc-100 dark:bg-zinc-800' : ''"
+                class="flex flex-col gap-3 items-center p-3 rounded hover:bg-gray-100 hover:dark:bg-gray-800 transition-colors rounded-lg cursor-pointer group/media"
+                :class="isSelected(image) ? 'bg-gray-100 dark:bg-gray-800' : ''"
                 v-for="(image, index) in media"
                 @click="toggleImage(image, $event)"
                 :key="index"
               >
-                <div class="w-full h-full aspect-square rounded-lg overflow-hidden relative border border-zinc-200 dark:border-zinc-700 p-1 bg-white dark:bg-zinc-900">
-                  <div class="bg-zinc-100 dark:bg-zinc-800 rounded-lg relative max-h-full overflow-hidden max-w-full h-full">
+                <div class="w-full h-full aspect-square rounded-lg overflow-hidden relative border border-gray-200 dark:border-gray-700 p-1 bg-white dark:bg-gray-900">
+                  <div class="bg-gray-100 dark:bg-gray-800 rounded-lg relative max-h-full overflow-hidden max-w-full h-full">
                     <img :src="extractMediaLink(image)" class="w-full object-contain object-center h-full rounded-lg" />
-                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-zinc-900/30 opacity-0 group-hover/media:opacity-100 transition-opacity pointer-events-none rounded-lg"></div>
+                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-gray-900/30 opacity-0 group-hover/media:opacity-100 transition-opacity pointer-events-none rounded-lg"></div>
                   </div>
 
                   <div class="absolute p-3 top-0 left-0 group-hover/media:opacity-100 transition-opacity" :class="isSelected(image) ? 'opacity-100' : 'opacity-0'" v-if="!image.uploading">
@@ -726,7 +726,7 @@ defineExpose({
 
                   <div
                     v-if="image.uploading"
-                    class="absolute top-0 left-0 right-0 bottom-0 bg-zinc-900/30 pointer-events-none rounded-lg flex flex-col place-content-center justify-center items-center"
+                    class="absolute top-0 left-0 right-0 bottom-0 bg-gray-900/30 pointer-events-none rounded-lg flex flex-col place-content-center justify-center items-center"
                   >
                     <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-brand-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -753,14 +753,14 @@ defineExpose({
             <div v-if="!loading && !media.length" class="flex flex-col place-content-center justify-center items-center gap-2 text-center h-full">
               <AppIcon icon="search" class="text-4xl" />
               <div class="font-semibold text-xl">{{ __("No results found", "flexify-dashboard") }}</div>
-              <div class="text-zinc-500">
+              <div class="text-gray-500">
                 {{ __("Edit your search criteria, or upload a new file.", "flexify-dashboard") }}
               </div>
             </div>
           </div>
 
           <!-- Image inspect -->
-          <div v-if="imageInspect" class="bg-zinc-100 dark:bg-zinc-800 h-full max-h-full overflow-hidden flex flex-col p-6" :class="imageInspect ? 'w-1/2 flex-shrink-0' : ''">
+          <div v-if="imageInspect" class="bg-gray-100 dark:bg-gray-800 h-full max-h-full overflow-hidden flex flex-col p-6" :class="imageInspect ? 'w-1/2 flex-shrink-0' : ''">
             <!-- Header -->
             <div class="flex flex-row items-center place-content-between">
               <AppToggle :options="previewOptions" v-model="previewToggle" style="width: auto" />
@@ -772,31 +772,31 @@ defineExpose({
             <!-- Image details -->
             <div v-if="previewToggle == 'details'" class="grid grid-cols-3 pl-3 pt-6 gap-3">
               <!-- Title -->
-              <div class="text-zinc-500 pt-2">
+              <div class="text-gray-500 pt-2">
                 <span>{{ __("Title", "flexify-dashboard") }}</span>
               </div>
               <div class="col-span-2"><AppInput type="text" v-model="imageInspect.title.raw" @change="updateImageDetails" /></div>
 
               <!-- Alt text -->
-              <div class="text-zinc-500 pt-2">
+              <div class="text-gray-500 pt-2">
                 <span>{{ __("Alt text", "flexify-dashboard") }}</span>
               </div>
               <div class="col-span-2"><AppTextarea type="text" v-model="imageInspect.alt_text" @change="updateImageDetails" /></div>
 
               <!-- Caption -->
-              <div class="text-zinc-500 pt-2">
+              <div class="text-gray-500 pt-2">
                 <span>{{ __("Caption", "flexify-dashboard") }}</span>
               </div>
               <div class="col-span-2"><AppTextarea type="text" v-model="imageInspect.caption.raw" @change="updateImageDetails" /></div>
 
               <!-- Description -->
-              <div class="text-zinc-500 pt-2">
+              <div class="text-gray-500 pt-2">
                 <span>{{ __("Description", "flexify-dashboard") }}</span>
               </div>
               <div class="col-span-2"><AppTextarea type="text" v-model="imageInspect.description.raw" @change="updateImageDetails" /></div>
 
               <!-- Title -->
-              <div class="text-zinc-500 pt-2">
+              <div class="text-gray-500 pt-2">
                 <span>{{ __("URL", "flexify-dashboard") }}</span>
               </div>
               <div class="col-span-2"><AppInput type="text" v-model="imageInspect.link" :disabled="true" :copy="true" /></div>
@@ -816,8 +816,8 @@ defineExpose({
                 </AppButton>
 
                 <!-- Preview -->
-                <div class="h-fit w-fit rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-700 p-2 bg-white dark:bg-zinc-900">
-                  <div class="bg-zinc-100 dark:bg-zinc-800 rounded-xl">
+                <div class="h-fit w-fit rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 p-2 bg-white dark:bg-gray-900">
+                  <div class="bg-gray-100 dark:bg-gray-800 rounded-xl">
                     <img :src="extractMediaLink(imageInspect, 'large')" class="max-w-full max-h-[240px] object-contain object-center rounded-lg" />
                   </div>
                 </div>
@@ -832,11 +832,11 @@ defineExpose({
               <div class="flex-none flex flex-col">
                 <div class="font-semibold" v-html="imageInspect.title.rendered"></div>
                 <div class="flex flex-row gap-2">
-                  <div class="text-sm text-zinc-500">{{ formatDateString(imageInspect.date) }}</div>
-                  <div class="text-sm text-zinc-500" v-if="imageInspect.media_details?.width">|</div>
-                  <div class="text-sm text-zinc-500" v-if="imageInspect.media_details?.width">{{ imageInspect.media_details?.width }} x {{ imageInspect.media_details?.height }}</div>
-                  <div class="text-sm text-zinc-500">|</div>
-                  <div class="text-sm text-zinc-500">ID: {{ imageInspect.id }}</div>
+                  <div class="text-sm text-gray-500">{{ formatDateString(imageInspect.date) }}</div>
+                  <div class="text-sm text-gray-500" v-if="imageInspect.media_details?.width">|</div>
+                  <div class="text-sm text-gray-500" v-if="imageInspect.media_details?.width">{{ imageInspect.media_details?.width }} x {{ imageInspect.media_details?.height }}</div>
+                  <div class="text-sm text-gray-500">|</div>
+                  <div class="text-sm text-gray-500">ID: {{ imageInspect.id }}</div>
                 </div>
               </div>
             </template>
@@ -844,7 +844,7 @@ defineExpose({
         </div>
 
         <!-- Actions -->
-        <div class="flex flex-row items-center place-content-between gap-3 p-6 border-t border-zinc-200 dark:border-zinc-700">
+        <div class="flex flex-row items-center place-content-between gap-3 p-6 border-t border-gray-200 dark:border-gray-700">
           <div class="grow flex flex-row items-center gap-3 text-sm">
             <AppButton type="danger" v-if="hasSelection" @click.stop="batchDelete" :loading="deleting">{{ __("Delete selected", "flexify-dashboard") }}</AppButton>
             <AppButton type="default" v-if="hasSelection" @click.stop="batchDuplicate" :loading="duplicating">{{ __("Duplicate selected", "flexify-dashboard") }}</AppButton>

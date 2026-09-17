@@ -43,14 +43,14 @@ const formattedChange = computed(() => {
 
 const trendClasses = computed(() => {
     if (trendIsPositive.value) {
-        return 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-400';
+        return 'bg-success-50 text-success-600 dark:bg-success-500/15 dark:text-success-400';
     }
 
     if (trendIsNegative.value) {
-        return 'bg-red-50 text-red-600 dark:bg-red-500/15 dark:text-red-400';
+        return 'bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-400';
     }
 
-    return 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300';
+    return 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300';
 });
 
 const trendLabel = computed(() => {
@@ -69,13 +69,13 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 </script>
 
 <template>
-    <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl py-6 px-8 h-full flex flex-col">
+    <div class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl py-6 px-8 h-full flex flex-col">
         <div class="mb-5 flex items-center gap-4">
             <div>
-                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
                     {{ __('Customers', 'flexify-dashboard') }}
                 </h3>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                <p class="text-sm text-gray-500 dark:text-gray-400">
                     {{ __('Number of customers in the selected period', 'flexify-dashboard') }}
                 </p>
             </div>
@@ -85,11 +85,11 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
             <div class="min-w-0">
                 <div
                     v-if="loading"
-                    class="h-10 w-28 rounded-lg bg-zinc-200 dark:bg-zinc-700 animate-pulse"
+                    class="h-10 w-28 rounded-lg bg-gray-200 dark:bg-gray-700 animate-pulse"
                 ></div>
                 <h4
                     v-else
-                    class="text-3xl font-bold text-zinc-900 dark:text-zinc-100"
+                    class="text-3xl font-bold text-gray-900 dark:text-gray-100"
                 >
                     {{ formattedTotal }}
                 </h4>

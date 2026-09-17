@@ -774,13 +774,13 @@ const statusIcon = computed(() => {
  */
 const statusColor = computed(() => {
   const colors = {
-    idle: 'text-zinc-400',
+    idle: 'text-gray-400',
     capturing: 'text-brand-400',
     analyzing: 'text-brand-400',
-    success: 'text-green-400',
-    error: 'text-red-400',
+    success: 'text-success-400',
+    error: 'text-error-400',
   };
-  return colors[status.value] || 'text-zinc-400';
+  return colors[status.value] || 'text-gray-400';
 });
 
 /**
@@ -788,13 +788,13 @@ const statusColor = computed(() => {
  */
 const statusBgColor = computed(() => {
   const colors = {
-    idle: 'bg-zinc-100 dark:bg-zinc-800',
+    idle: 'bg-gray-100 dark:bg-gray-800',
     capturing: 'bg-brand-100 dark:bg-brand-900/30',
     analyzing: 'bg-brand-100 dark:bg-brand-900/30',
-    success: 'bg-green-100 dark:bg-green-900/30',
-    error: 'bg-red-100 dark:bg-red-900/30',
+    success: 'bg-success-100 dark:bg-success-900/30',
+    error: 'bg-error-100 dark:bg-error-900/30',
   };
-  return colors[status.value] || 'bg-zinc-100 dark:bg-zinc-800';
+  return colors[status.value] || 'bg-gray-100 dark:bg-gray-800';
 });
 
 /**
@@ -838,11 +838,11 @@ watch(
       class="fixed top-6 right-6 z-[99999] w-[420px] max-w-[calc(100vw-3rem)]"
     >
       <div
-        class="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-700 shadow-lg flex flex-col overflow-hidden"
+        class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg flex flex-col overflow-hidden"
       >
         <!-- Header -->
         <div
-          class="flex flex-row items-center justify-between p-4 border-b border-zinc-200 dark:border-zinc-700"
+          class="flex flex-row items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700"
         >
           <div class="flex flex-row items-center gap-3">
             <div
@@ -858,13 +858,13 @@ watch(
             </div>
             <div>
               <h3
-                class="text-base font-semibold text-zinc-900 dark:text-zinc-100"
+                class="text-base font-semibold text-gray-900 dark:text-gray-100"
               >
                 {{ __('Layout and Styling', 'flexify-dashboard') }}
               </h3>
               <p
                 v-if="status === 'success' && remainingRequests > 0"
-                class="text-xs text-zinc-500 dark:text-zinc-400"
+                class="text-xs text-gray-500 dark:text-gray-400"
               >
                 {{ remainingRequests }}
                 {{ __('requests remaining', 'flexify-dashboard') }}
@@ -873,7 +873,7 @@ watch(
           </div>
           <button
             @click="closeDialog"
-            class="p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+            class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             :disabled="isFixingLayout || isSavingCSS"
           >
             <AppIcon icon="close" class="text-lg" />
@@ -886,7 +886,7 @@ watch(
           <div v-if="status === 'idle'" class="flex flex-col gap-4">
             <div>
               <label
-                class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 {{ __('Describe the layout or styling issue', 'flexify-dashboard') }}
               </label>
@@ -904,7 +904,7 @@ watch(
               />
             </div>
 
-            <div class="text-xs text-zinc-500 dark:text-zinc-400">
+            <div class="text-xs text-gray-500 dark:text-gray-400">
               {{
                 __(
                   'A screenshot of the page will be captured and analyzed. The AI will provide CSS fixes based on your description.',
@@ -950,7 +950,7 @@ watch(
                 />
               </div>
               <div class="flex-1">
-                <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
                   {{ statusMessage }}
                 </p>
               </div>
@@ -973,7 +973,7 @@ watch(
               </div>
               <div class="flex-1">
                 <p
-                  class="text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+                  class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2"
                 >
                   {{
                     __(
@@ -982,7 +982,7 @@ watch(
                     )
                   }}
                 </p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-3">
+                <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">
                   {{
                     __(
                       'Would you like to keep this fix permanently or remove it?',
@@ -1017,21 +1017,21 @@ watch(
                   <Transition name="slide-down">
                     <div v-if="showCSS && appliedCSSFix" class="mt-2">
                       <div
-                        class="relative bg-zinc-900 dark:bg-zinc-950 rounded-lg border border-zinc-700 dark:border-zinc-800 overflow-hidden"
+                        class="relative bg-gray-900 dark:bg-gray-950 rounded-lg border border-gray-700 dark:border-gray-800 overflow-hidden"
                       >
                         <div
                           class="absolute top-2 right-2 z-10 flex flex-row gap-2"
                         >
                           <button
                             @click="copyCSS"
-                            class="p-1.5 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white transition-colors"
+                            class="p-1.5 rounded bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-colors"
                             :title="__('Copy CSS', 'flexify-dashboard')"
                           >
                             <AppIcon icon="duplicate" class="text-sm" />
                           </button>
                         </div>
                         <pre
-                          class="p-4 text-xs text-zinc-300 font-mono overflow-x-auto max-h-[200px] overflow-y-auto"
+                          class="p-4 text-xs text-gray-300 font-mono overflow-x-auto max-h-[200px] overflow-y-auto"
                         ><code>{{ appliedCSSFix }}</code></pre>
                       </div>
                     </div>
@@ -1040,14 +1040,14 @@ watch(
 
                 <div class="flex flex-col gap-2">
                   <div
-                    class="p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg border border-zinc-200 dark:border-zinc-700"
+                    class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700"
                   >
                     <p
-                      class="text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1"
+                      class="text-xs font-medium text-gray-600 dark:text-gray-400 mb-1"
                     >
                       {{ __('Keep Fix', 'flexify-dashboard') }}
                     </p>
-                    <p class="text-xs text-zinc-500 dark:text-zinc-500">
+                    <p class="text-xs text-gray-500 dark:text-gray-500">
                       {{
                         __(
                           'Saves to custom CSS settings for persistence.',
@@ -1057,14 +1057,14 @@ watch(
                     </p>
                   </div>
                   <div
-                    class="p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg border border-zinc-200 dark:border-zinc-700"
+                    class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700"
                   >
                     <p
-                      class="text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1"
+                      class="text-xs font-medium text-gray-600 dark:text-gray-400 mb-1"
                     >
                       {{ __('Remove Fix', 'flexify-dashboard') }}
                     </p>
-                    <p class="text-xs text-zinc-500 dark:text-zinc-500">
+                    <p class="text-xs text-gray-500 dark:text-gray-500">
                       {{ __('Removes the fix immediately.', 'flexify-dashboard') }}
                     </p>
                   </div>
@@ -1107,11 +1107,11 @@ watch(
               </div>
               <div class="flex-1">
                 <p
-                  class="text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-1"
+                  class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-1"
                 >
                   {{ __('Failed to fix layout and styling', 'flexify-dashboard') }}
                 </p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400">
+                <p class="text-xs text-gray-500 dark:text-gray-400">
                   {{ statusMessage }}
                 </p>
                 <div class="flex flex-row gap-2 items-center justify-end pt-3">

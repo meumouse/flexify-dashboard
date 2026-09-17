@@ -109,13 +109,13 @@ const typeStyles = {
     dotColor: 'bg-brand-500',
   },
   success: {
-    dotColor: 'bg-green-500',
+    dotColor: 'bg-success-500',
   },
   warning: {
-    dotColor: 'bg-amber-500',
+    dotColor: 'bg-warning-500',
   },
   error: {
-    dotColor: 'bg-red-500',
+    dotColor: 'bg-error-500',
   },
 };
 
@@ -180,12 +180,12 @@ onMounted(() => {
           >
             <AppIcon
               icon="arrow_back"
-              class="text-lg text-zinc-500 dark:text-zinc-400"
+              class="text-lg text-gray-500 dark:text-gray-400"
             />
           </AppButton>
           <div>
             <h1
-              class="text-base font-semibold text-zinc-900 dark:text-zinc-100"
+              class="text-base font-semibold text-gray-900 dark:text-gray-100"
               style="margin: 0"
             >
               {{ __('Notifications', 'flexify-dashboard') }}
@@ -194,7 +194,7 @@ onMounted(() => {
         </div>
         <span
           v-if="totalNotificationsCount > 0"
-          class="text-xs text-zinc-500 dark:text-zinc-400"
+          class="text-xs text-gray-500 dark:text-gray-400"
         >
           {{ totalNotificationsCount }} {{ __('unread', 'flexify-dashboard') }}
         </span>
@@ -206,14 +206,14 @@ onMounted(() => {
       <!-- Loading State -->
       <div v-if="loading" class="flex items-center justify-center py-12">
         <div
-          class="animate-spin rounded-full h-6 w-6 border-2 border-zinc-300 dark:border-zinc-600 border-t-zinc-900 dark:border-t-zinc-100"
+          class="animate-spin rounded-full h-6 w-6 border-2 border-gray-300 dark:border-gray-600 border-t-gray-900 dark:border-t-gray-100"
         ></div>
       </div>
 
       <!-- WordPress Notifications Section -->
       <div
         v-if="notificationsCount > 0"
-        class="border-b border-zinc-200 dark:border-zinc-800 pb-4 mb-4"
+        class="border-b border-gray-200 dark:border-gray-800 pb-4 mb-4"
       >
         <WpNotifications :is-open="isOpen" />
       </div>
@@ -226,14 +226,14 @@ onMounted(() => {
         class="flex flex-col items-center justify-center py-16 px-6 text-center"
       >
         <div
-          class="w-12 h-12 bg-zinc-200 dark:bg-zinc-700 rounded-lg flex items-center justify-center mb-3"
+          class="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-3"
         >
-          <AppIcon icon="notifications" class="text-xl text-zinc-700" />
+          <AppIcon icon="notifications" class="text-xl text-gray-700" />
         </div>
         <p class="text-sm text-white font-medium mb-1">
           {{ __("You're all caught up", 'flexify-dashboard') }}
         </p>
-        <p class="text-xs text-zinc-200">
+        <p class="text-xs text-gray-200">
           {{ __('No new notifications', 'flexify-dashboard') }}
         </p>
       </div>
@@ -241,13 +241,13 @@ onMounted(() => {
       <!-- Custom Admin Notices List -->
       <div
         v-if="filteredNotices.length > 0"
-        class="divide-y divide-zinc-200 dark:divide-zinc-800 -mx-6"
+        class="divide-y divide-gray-200 dark:divide-gray-800 -mx-6"
       >
         <TransitionGroup name="notice">
           <div
             v-for="notice in filteredNotices"
             :key="notice.id"
-            class="group relative hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+            class="group relative hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
           >
             <div class="px-6 py-4">
               <div class="flex gap-3">
@@ -265,13 +265,13 @@ onMounted(() => {
                 <div class="flex-1 min-w-0">
                   <!-- Title -->
                   <div
-                    class="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-5 mb-1"
+                    class="text-sm font-medium text-gray-900 dark:text-gray-100 leading-5 mb-1"
                     v-html="notice.title.rendered"
                   ></div>
 
                   <!-- Content -->
                   <div
-                    class="text-sm text-zinc-600 dark:text-zinc-400 leading-5"
+                    class="text-sm text-gray-600 dark:text-gray-400 leading-5"
                   >
                     <div
                       v-if="!isLongContent(notice.content.rendered)"
@@ -292,7 +292,7 @@ onMounted(() => {
 
                       <button
                         @click="toggleExpanded(notice.id)"
-                        class="inline-flex items-center text-xs text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300 mt-1 font-medium transition-colors"
+                        class="inline-flex items-center text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 mt-1 font-medium transition-colors"
                       >
                         {{
                           expandedNotices.has(notice.id)
@@ -310,7 +310,7 @@ onMounted(() => {
                     v-if="notice.meta?.dismissible"
                     @click="dismissNotice(notice)"
                     :disabled="dismissing[notice.id]"
-                    class="p-1.5 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
+                    class="p-1.5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
                   >
                     <AppIcon
                       :icon="dismissing[notice.id] ? 'hourglass_empty' : 'close'"

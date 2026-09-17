@@ -162,11 +162,11 @@ getNotices();
 
 <template>
   <div
-    class="flex h-full text-zinc-900 dark:text-zinc-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0"
+    class="flex h-full text-gray-900 dark:text-gray-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0"
   >
     <!-- Left Sidebar -->
     <div
-      class="md:w-96 w-full flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-auto"
+      class="md:w-96 w-full flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-auto"
     >
       <!-- Header -->
       <div class="p-6">
@@ -196,13 +196,13 @@ getNotices();
         <div class="relative flex items-center">
           <AppIcon
             icon="search"
-            class="absolute left-3 text-zinc-400 text-lg"
+            class="absolute left-3 text-gray-400 text-lg"
           />
           <input
             v-model="search"
             type="text"
             :placeholder="__('Search notices...', 'flexify-dashboard')"
-            class="w-full bg-transparent border border-zinc-200 dark:border-zinc-700 rounded-lg pl-9 pr-3 py-2.5 text-sm placeholder-zinc-500 focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors"
+            class="w-full bg-transparent border border-gray-200 dark:border-gray-700 rounded-lg pl-9 pr-3 py-2.5 text-sm placeholder-gray-500 focus:outline-none focus:border-gray-400 dark:focus:border-gray-600 transition-colors"
           />
         </div>
       </div>
@@ -211,14 +211,14 @@ getNotices();
       <div class="flex-1 overflow-auto">
         <div v-if="loading && !notices.length" class="p-8 text-center">
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
             <AppIcon
               icon="notifications"
-              class="text-zinc-400 text-xl animate-pulse"
+              class="text-gray-400 text-xl animate-pulse"
             />
           </div>
-          <p class="text-sm text-zinc-500">
+          <p class="text-sm text-gray-500">
             {{ __('Loading notices...', 'flexify-dashboard') }}
           </p>
         </div>
@@ -228,11 +228,11 @@ getNotices();
           class="p-8 text-center flex flex-col items-center justify-center"
         >
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
-            <AppIcon icon="folder_open" class="text-zinc-400 text-xl" />
+            <AppIcon icon="folder_open" class="text-gray-400 text-xl" />
           </div>
-          <p class="text-sm text-zinc-500">
+          <p class="text-sm text-gray-500">
             {{ __('No notices found', 'flexify-dashboard') }}
           </p>
           <AppButton
@@ -250,10 +250,10 @@ getNotices();
             v-for="notice in filteredNotices"
             :key="notice.id"
             @click="openNotice(notice)"
-            class="flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group"
+            class="flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all group"
             :class="
               route.params.noticeid == notice.id
-                ? 'bg-zinc-100 dark:bg-zinc-800'
+                ? 'bg-gray-100 dark:bg-gray-800'
                 : ''
             "
           >
@@ -262,7 +262,7 @@ getNotices();
               <div
                 class="w-2 h-2 rounded-full"
                 :class="
-                  notice.status === 'publish' ? 'bg-green-500' : 'bg-orange-400'
+                  notice.status === 'publish' ? 'bg-success-500' : 'bg-orange-400'
                 "
               />
             </div>
@@ -271,11 +271,11 @@ getNotices();
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-2 mb-0.5">
                 <span
-                  class="font-medium text-sm text-zinc-900 dark:text-zinc-100 truncate"
+                  class="font-medium text-sm text-gray-900 dark:text-gray-100 truncate"
                   v-html="notice.title.rendered"
                 />
               </div>
-              <div class="text-xs text-zinc-500 dark:text-zinc-400 truncate">
+              <div class="text-xs text-gray-500 dark:text-gray-400 truncate">
                 {{ returnStatusFormatted(notice.status) }} •
                 {{ formatDateString(notice.modified) }} •
                 {{ __('Seen by', 'flexify-dashboard') }}:
@@ -287,7 +287,7 @@ getNotices();
             <div
               class="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <AppIcon icon="chevron_right" class="text-zinc-400 text-sm" />
+              <AppIcon icon="chevron_right" class="text-gray-400 text-sm" />
             </div>
           </div>
         </div>
@@ -296,10 +296,10 @@ getNotices();
       <!-- Pagination -->
       <div
         v-if="pagination.pages > 1"
-        class="p-6 border-t border-zinc-200 dark:border-zinc-700"
+        class="p-6 border-t border-gray-200 dark:border-gray-700"
       >
         <div class="flex items-center justify-between text-sm">
-          <span class="text-zinc-500">
+          <span class="text-gray-500">
             {{ __('Page', 'flexify-dashboard') }} {{ pagination.page }}
             {{ __('of', 'flexify-dashboard') }} {{ pagination.pages }}
           </span>
@@ -310,7 +310,7 @@ getNotices();
                 getNotices(true);
               "
               :disabled="pagination.page === 1"
-              class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <AppIcon icon="first_page" class="text-sm" />
             </button>
@@ -320,7 +320,7 @@ getNotices();
                 getNotices(true);
               "
               :disabled="pagination.page === 1"
-              class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <AppIcon icon="chevron_left" class="text-sm" />
             </button>
@@ -330,7 +330,7 @@ getNotices();
                 getNotices(true);
               "
               :disabled="pagination.page === pagination.pages"
-              class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <AppIcon icon="chevron_right" class="text-sm" />
             </button>
@@ -340,7 +340,7 @@ getNotices();
                 getNotices(true);
               "
               :disabled="pagination.page === pagination.pages"
-              class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <AppIcon icon="last_page" class="text-sm" />
             </button>
@@ -351,7 +351,7 @@ getNotices();
 
     <!-- Right Content Area -->
     <div
-      class="flex-1 flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-auto"
+      class="flex-1 flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-auto"
     >
       <!-- Empty State -->
       <div
@@ -360,14 +360,14 @@ getNotices();
       >
         <div class="text-center flex flex-col items-center justify-center">
           <div
-            class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
           >
-            <AppIcon icon="notifications" class="text-2xl text-zinc-400" />
+            <AppIcon icon="notifications" class="text-2xl text-gray-400" />
           </div>
-          <h3 class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2">
+          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
             {{ __('Notice Editor', 'flexify-dashboard') }}
           </h3>
-          <p class="text-sm text-zinc-500 mb-4">
+          <p class="text-sm text-gray-500 mb-4">
             {{
               __(
                 'Select a notice from the list to edit it, or create a new one to get started.',

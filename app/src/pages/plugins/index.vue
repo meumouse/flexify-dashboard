@@ -292,16 +292,16 @@ watchEffect(() => {
         class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 max-w-md w-full px-6"
       >
         <div
-          class="bg-zinc-900/95 backdrop-blur-sm border border-zinc-800/50 rounded-xl p-4 shadow-xl"
+          class="bg-gray-900/95 backdrop-blur-sm border border-gray-800/50 rounded-xl p-4 shadow-xl"
         >
           <div class="flex items-center gap-3 mb-3">
             <div class="flex-shrink-0">
               <div
-                class="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center"
+                class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center"
               >
                 <AppIcon
                   icon="upload"
-                  class="text-zinc-400 text-sm animate-pulse"
+                  class="text-gray-400 text-sm animate-pulse"
                 />
               </div>
             </div>
@@ -310,16 +310,16 @@ watchEffect(() => {
                 {{ __('Uploading Plugin', 'flexify-dashboard') }}
               </p>
               <p
-                class="text-xs text-zinc-400 truncate"
+                class="text-xs text-gray-400 truncate"
                 :title="uploadingFileName"
               >
                 {{ uploadingFileName }}
               </p>
             </div>
           </div>
-          <div class="relative h-1 bg-zinc-800 rounded-full overflow-hidden">
+          <div class="relative h-1 bg-gray-800 rounded-full overflow-hidden">
             <div
-              class="absolute inset-0 bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 rounded-full"
+              class="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 rounded-full"
               style="
                 background-size: 200% 100%;
                 animation: progress-shimmer 1.5s ease-in-out infinite;
@@ -331,12 +331,12 @@ watchEffect(() => {
     </Transition>
 
     <div
-      class="flex text-zinc-900 dark:text-zinc-100 font-sans overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize h-[var(--fd-body-height)] max-h-[var(--fd-body-height)]"
+      class="flex text-gray-900 dark:text-gray-100 font-sans overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize h-[var(--fd-body-height)] max-h-[var(--fd-body-height)]"
       :class="isDark ? 'dark' : ''"
     >
       <!-- Left Sidebar -->
       <div
-        class="md:w-96 w-full flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-hidden"
+        class="md:w-96 w-full flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-hidden"
       >
         <!-- Header -->
         <div class="p-6">
@@ -353,7 +353,7 @@ watchEffect(() => {
               >
                 <AppIcon
                   icon="upload"
-                  class="text-xl text-zinc-600 dark:text-zinc-400"
+                  class="text-xl text-gray-600 dark:text-gray-400"
                 />
                 <input
                   type="file"
@@ -365,11 +365,11 @@ watchEffect(() => {
               </AppButton>
               <RouterLink
                 to="/plugin-search"
-                class="ml-auto p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors"
+                class="ml-auto p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
               >
                 <AppIcon
                   icon="category_search"
-                  class="text-xl text-zinc-600 dark:text-zinc-400"
+                  class="text-xl text-gray-600 dark:text-gray-400"
                 />
               </RouterLink>
             </div>
@@ -379,13 +379,13 @@ watchEffect(() => {
           <div class="relative flex items-center">
             <AppIcon
               icon="search"
-              class="absolute left-3 text-zinc-400 text-lg"
+              class="absolute left-3 text-gray-400 text-lg"
             />
             <input
               v-model="search"
               type="text"
               :placeholder="__('Search plugins...', 'flexify-dashboard')"
-              class="w-full bg-transparent border border-zinc-200 dark:border-zinc-700 rounded-lg pl-9 pr-3 py-2.5 text-sm placeholder-zinc-500 focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors"
+              class="w-full bg-transparent border border-gray-200 dark:border-gray-700 rounded-lg pl-9 pr-3 py-2.5 text-sm placeholder-gray-500 focus:outline-none focus:border-gray-400 dark:focus:border-gray-600 transition-colors"
             />
           </div>
         </div>
@@ -394,25 +394,25 @@ watchEffect(() => {
         <div class="flex-1 overflow-auto">
           <div v-if="loadingPlugins" class="p-8 text-center">
             <div
-              class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
             >
               <AppIcon
                 icon="extension"
-                class="text-zinc-400 text-xl animate-pulse"
+                class="text-gray-400 text-xl animate-pulse"
               />
             </div>
-            <p class="text-sm text-zinc-500">
+            <p class="text-sm text-gray-500">
               {{ __('Loading plugins...', 'flexify-dashboard') }}
             </p>
           </div>
 
           <div v-else-if="!filteredPlugins.length" class="p-8 text-center">
             <div
-              class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
             >
-              <AppIcon icon="folder_open" class="text-zinc-400 text-xl" />
+              <AppIcon icon="folder_open" class="text-gray-400 text-xl" />
             </div>
-            <p class="text-sm text-zinc-500">
+            <p class="text-sm text-gray-500">
               {{ __('No plugins found', 'flexify-dashboard') }}
             </p>
           </div>
@@ -422,10 +422,10 @@ watchEffect(() => {
               v-for="plugin in filteredPlugins"
               :key="plugin.slug"
               @click="selectPlugin(plugin.slug)"
-              class="flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all"
+              class="flex items-center gap-3 px-3 py-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all"
               :class="
                 selectedPluginSlug === plugin.slug
-                  ? 'bg-zinc-100 dark:bg-zinc-800'
+                  ? 'bg-gray-100 dark:bg-gray-800'
                   : ''
               "
             >
@@ -435,8 +435,8 @@ watchEffect(() => {
                   class="w-2 h-2 rounded-full"
                   :class="
                     plugin.active
-                      ? 'bg-green-500'
-                      : 'bg-zinc-300 dark:bg-zinc-600'
+                      ? 'bg-success-500'
+                      : 'bg-gray-300 dark:bg-gray-600'
                   "
                 />
               </div>
@@ -445,7 +445,7 @@ watchEffect(() => {
               <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-2 mb-0.5">
                   <span
-                    class="font-medium text-sm text-zinc-900 dark:text-zinc-100 truncate"
+                    class="font-medium text-sm text-gray-900 dark:text-gray-100 truncate"
                   >
                     {{ plugin.Name }}
                   </span>
@@ -454,7 +454,7 @@ watchEffect(() => {
                     class="w-1 h-1 bg-orange-500 rounded-full flex-shrink-0"
                   ></span>
                 </div>
-                <div class="text-xs text-zinc-500 dark:text-zinc-400 truncate plugin-author-line">
+                <div class="text-xs text-gray-500 dark:text-gray-400 truncate plugin-author-line">
                   <span v-if="plugin.Author" v-html="plugin.Author"></span>
                   <span v-if="plugin.Author"> • </span>
                   <span>v{{ plugin.Version }}</span>
@@ -467,7 +467,7 @@ watchEffect(() => {
 
       <!-- Right Content Area -->
       <div
-        class="flex-1 flex flex-col rounded-l-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-auto"
+        class="flex-1 flex flex-col rounded-l-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-auto"
       >
         <RouterView key="plugin-details-content" v-slot="{ Component }">
           <div
@@ -476,16 +476,16 @@ watchEffect(() => {
           >
             <div class="text-center">
               <div
-                class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
               >
-                <AppIcon icon="extension" class="text-2xl text-zinc-400" />
+                <AppIcon icon="extension" class="text-2xl text-gray-400" />
               </div>
               <h3
-                class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+                class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
               >
                 {{ __('Plugin Details', 'flexify-dashboard') }}
               </h3>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
                 {{
                   __(
                     'Select a plugin from the list to view its details and manage settings.',

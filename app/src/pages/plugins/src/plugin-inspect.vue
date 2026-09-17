@@ -191,24 +191,24 @@ watchEffect(() => {
   <Transition>
     <!-- Loading indicator -->
     <div class="flex flex-col translate-x-0 h-screen min-h-screen max-h-screen overflow-hidden" v-if="loading">
-      <div class="w-full aspect-[3.089] bg-zinc-100 border-b border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 overflow-hidden relative shrink-0 animate-pulse"></div>
+      <div class="w-full aspect-[3.089] bg-gray-100 border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800 overflow-hidden relative shrink-0 animate-pulse"></div>
 
       <div class="p-8 py-0 -mt-8 flex flex-col gap-2 items-start z-[1] shrink-0 animate-pulse">
-        <div class="rounded-lg bg-white dark:bg-zinc-900 p-1 -ml-1 -mt-1">
+        <div class="rounded-lg bg-white dark:bg-gray-900 p-1 -ml-1 -mt-1">
           <div class="rounded-md bg-brand-600 aspect-square h-16 overflow-hidden"></div>
         </div>
-        <div class="rounded-lg h-10 bg-zinc-100 dark:bg-zinc-800 animate-pulse w-2/3"></div>
-        <div class="rounded-lg h-16 bg-zinc-100 dark:bg-zinc-800 animate-pulse w-full"></div>
+        <div class="rounded-lg h-10 bg-gray-100 dark:bg-gray-800 animate-pulse w-2/3"></div>
+        <div class="rounded-lg h-16 bg-gray-100 dark:bg-gray-800 animate-pulse w-full"></div>
       </div>
     </div>
     <!-- End Loading indicator -->
 
     <div v-else-if="!loading && error" class="p-8">
-      <div class="bg-rose-500/30 rounded-lg p-4">{{ __("There was an error fetching this plugins information", "flexify-dashboard") }}</div>
+      <div class="bg-error-500/30 rounded-lg p-4">{{ __("There was an error fetching this plugins information", "flexify-dashboard") }}</div>
     </div>
 
     <div class="flex flex-col translate-x-0 h-screen min-h-screen max-h-screen overflow-hidden" v-else-if="currentPlugin && !loading">
-      <div class="w-full aspect-[3.089] bg-zinc-100 border-b border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 overflow-hidden relative shrink-0">
+      <div class="w-full aspect-[3.089] bg-gray-100 border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800 overflow-hidden relative shrink-0">
         <!-- Show banner if available -->
         <img v-if="getPluginBanner" :src="getPluginBanner" class="w-full h-full object-cover object-center" />
 
@@ -218,7 +218,7 @@ watchEffect(() => {
 
         <div class="absolute top-0 left-0 p-3 pl-8 z-[99]">
           <button
-            class="p-1 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
+            class="p-1 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"
             @click.prevent.stop="currentPlugin = null"
           >
             <RouterLink to="/plugin-search" class="flex flex-row items-center gap-1">
@@ -228,54 +228,54 @@ watchEffect(() => {
           </button>
         </div>
 
-        <div class="absolute bottom-0 right-0 left-0 h-2/3 bg-gradient-to-t from-zinc-900/20 to-transparent"></div>
+        <div class="absolute bottom-0 right-0 left-0 h-2/3 bg-gradient-to-t from-gray-900/20 to-transparent"></div>
       </div>
       <div class="p-8 py-0 -mt-8 flex flex-col gap-2 items-start z-[1] shrink-0">
-        <div class="rounded-lg bg-white dark:bg-zinc-900 p-1 -ml-1 -mt-1">
+        <div class="rounded-lg bg-white dark:bg-gray-900 p-1 -ml-1 -mt-1">
           <div class="rounded-md bg-brand-600 aspect-square h-16 overflow-hidden">
             <img :src="getPluginIcon" class="w-full h-full object-cover" />
           </div>
         </div>
-        <div class="text-zinc-900 dark:text-zinc-100 font-semibold text-xl" v-html="currentPlugin.name"></div>
-        <div class="text-zinc-500 dark:text-zinc-400 grow line-clamp-3" v-html="currentPlugin.short_description"></div>
+        <div class="text-gray-900 dark:text-gray-100 font-semibold text-xl" v-html="currentPlugin.name"></div>
+        <div class="text-gray-500 dark:text-gray-400 grow line-clamp-3" v-html="currentPlugin.short_description"></div>
       </div>
 
       <div class="p-8 py-6 grid grid-cols-5 gap-2 shrink-0">
-        <div class="flex flex-col items-center h-full bg-zinc-100 dark:bg-zinc-800 rounded-lg p-2">
+        <div class="flex flex-col items-center h-full bg-gray-100 dark:bg-gray-800 rounded-lg p-2">
           <div class="flex flex-row items-center text-orange-600 dark:text-orange-400 text-sm grow">
             <AppIcon v-for="icon in ratingToStars(currentPlugin.rating)" :icon="icon" :class="icon == 'star_empty' ? 'opacity-50' : ''" />
           </div>
-          <span class="text-xs text-zinc-500">{{ __("Rating", "flexify-dashboard") }}</span>
+          <span class="text-xs text-gray-500">{{ __("Rating", "flexify-dashboard") }}</span>
         </div>
 
-        <div class="flex flex-col items-center bg-zinc-100 dark:bg-zinc-800 rounded-lg p-2">
+        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-2">
           <span>{{ Intl.NumberFormat().format(currentPlugin.active_installs) }}</span>
-          <span class="text-xs text-zinc-500">{{ __("Installs", "flexify-dashboard") }}</span>
+          <span class="text-xs text-gray-500">{{ __("Installs", "flexify-dashboard") }}</span>
         </div>
 
-        <div class="flex flex-col items-center bg-zinc-100 dark:bg-zinc-800 rounded-lg p-2">
+        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-2">
           <span>{{ Intl.NumberFormat().format(currentPlugin.downloaded) }}</span>
-          <span class="text-xs text-zinc-500">{{ __("Downloads", "flexify-dashboard") }}</span>
+          <span class="text-xs text-gray-500">{{ __("Downloads", "flexify-dashboard") }}</span>
         </div>
 
-        <div class="flex flex-col items-center bg-zinc-100 dark:bg-zinc-800 rounded-lg p-2">
+        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-2">
           <span>{{ currentPlugin.version }}</span>
-          <span class="text-xs text-zinc-500">{{ __("Version", "flexify-dashboard") }}</span>
+          <span class="text-xs text-gray-500">{{ __("Version", "flexify-dashboard") }}</span>
         </div>
 
-        <div class="flex flex-col items-center bg-zinc-100 dark:bg-zinc-800 rounded-lg p-2">
+        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-2">
           <span>{{ dayjs(currentPlugin.last_updated).fromNow() }}</span>
-          <span class="text-xs text-zinc-500">{{ __("Last updated", "flexify-dashboard") }}</span>
+          <span class="text-xs text-gray-500">{{ __("Last updated", "flexify-dashboard") }}</span>
         </div>
       </div>
 
       <div class="px-8 flex flex-col gap-6 grow overflow-auto">
-        <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3"></div>
+        <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3"></div>
         <Accordion :title="__('Description', 'flexify-dashboard')">
           <div class="max-w-full fd-plugin-description" v-html="currentPlugin.description"></div>
         </Accordion>
 
-        <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3"></div>
+        <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3"></div>
 
         <Accordion :title="__('Screenshots', 'flexify-dashboard')">
           <div class="grid grid-cols-2 gap-6">
@@ -294,32 +294,32 @@ watchEffect(() => {
           </div>
         </Accordion>
 
-        <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3"></div>
+        <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3"></div>
 
         <Accordion :title="__('Installation', 'flexify-dashboard')">
           <div class="max-w-full fd-plugin-description" v-html="currentPlugin.sections.installation"></div>
         </Accordion>
 
-        <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3"></div>
+        <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3"></div>
 
         <Accordion :title="__('FAQ', 'flexify-dashboard')">
           <div class="max-w-full fd-plugin-description" v-html="currentPlugin.sections.faq"></div>
         </Accordion>
 
-        <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3"></div>
+        <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3"></div>
 
         <Accordion :title="__('Reviews', 'flexify-dashboard')">
           <div class="max-w-full fd-plugin-description flex flex-col gap-3" v-html="currentPlugin.sections.reviews"></div>
         </Accordion>
 
-        <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3"></div>
+        <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3"></div>
 
         <Accordion :title="__('Changelog', 'flexify-dashboard')">
           <div class="max-w-full fd-plugin-description" v-html="currentPlugin.sections.changelog"></div>
         </Accordion>
       </div>
 
-      <div class="sticky bottom-0 left-0 right-0 p-8 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-700 flex flex-row place-content-end gap-2">
+      <div class="sticky bottom-0 left-0 right-0 p-8 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 flex flex-row place-content-end gap-2">
         <AppButton v-if="!isPluginInstalled" type="primary" @click.stop.prevent="installPluginBySlug(currentPlugin)" :loading="installing">{{ __("Install plugin", "flexify-dashboard") }}</AppButton>
         <AppButton v-if="isPluginInstalled && !isPluginActive" type="danger" @click.stop.prevent="deletePlugin(basePlugin)" :loading="deleting">{{ __("Delete", "flexify-dashboard") }}</AppButton>
         <AppButton v-if="isPluginInstalled && isPluginActive" type="primary" @click.stop.prevent="deactivatePlugin(basePlugin)" :loading="deactivating">{{ __("Deactivate", "flexify-dashboard") }}</AppButton>
@@ -329,25 +329,25 @@ watchEffect(() => {
   </Transition>
 
   <!-- Lightbox -->
-  <div v-if="currentPlugin && !loading && lightboxVisible" class="fixed top-0 left-0 right-0 h-screen bg-zinc-900/30 z-99 flex flex-col place-items-center justify-center items-center p-24">
+  <div v-if="currentPlugin && !loading && lightboxVisible" class="fixed top-0 left-0 right-0 h-screen bg-gray-900/30 z-99 flex flex-col place-items-center justify-center items-center p-24">
     <Transition name="slide-fade">
       <img :src="currentPlugin.screenshots[lightboxIndex].src" class="rounded-xl object-contain max-w-full max-h-full" />
     </Transition>
 
     <div class="absolute top-0 right-0 p-6">
-      <button class="rounded-full p-2 text-zinc-200 hover:text-white transition-colors bg-zinc-900/50 hover:bg-zinc-900/80 cursor-pointer" @click.stop.prevent="lightboxVisible = false">
+      <button class="rounded-full p-2 text-gray-200 hover:text-white transition-colors bg-gray-900/50 hover:bg-gray-900/80 cursor-pointer" @click.stop.prevent="lightboxVisible = false">
         <AppIcon icon="close" class="text-2xl" />
       </button>
     </div>
 
     <div class="absolute top-1/2 -translate-y-1/2 left-0 p-6" v-if="screenshotLength">
-      <button class="rounded-full p-2 text-zinc-200 hover:text-white transition-colors bg-zinc-900/50 hover:bg-zinc-900/80 cursor-pointer" @click="lightBoxBack">
+      <button class="rounded-full p-2 text-gray-200 hover:text-white transition-colors bg-gray-900/50 hover:bg-gray-900/80 cursor-pointer" @click="lightBoxBack">
         <AppIcon icon="chevron_left" class="text-2xl" />
       </button>
     </div>
 
     <div class="absolute top-1/2 -translate-y-1/2 right-0 p-6" v-if="screenshotLength">
-      <button class="rounded-full p-2 text-zinc-200 hover:text-white transition-colors bg-zinc-900/50 hover:bg-zinc-900/80 cursor-pointer" @click="lightBoxForward">
+      <button class="rounded-full p-2 text-gray-200 hover:text-white transition-colors bg-gray-900/50 hover:bg-gray-900/80 cursor-pointer" @click="lightBoxForward">
         <AppIcon icon="chevron_right" class="text-2xl" />
       </button>
     </div>
@@ -371,7 +371,7 @@ watchEffect(() => {
   opacity: 0;
 }
 .review {
-  @apply p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900;
+  @apply p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900;
 }
 
 .reviewer-info {
@@ -391,7 +391,7 @@ watchEffect(() => {
 }
 
 .reviewer-info > p.reviewer {
-  @apply text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-2 m-0;
+  @apply text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2 m-0;
   margin: 0 !important;
 }
 
@@ -404,11 +404,11 @@ watchEffect(() => {
 }
 
 .review-date {
-  @apply text-zinc-500;
+  @apply text-gray-500;
 }
 
 .review-body {
-  @apply mt-3 text-zinc-500 dark:text-zinc-400;
+  @apply mt-3 text-gray-500 dark:text-gray-400;
 }
 .review-body p:last-of-type {
   @apply mb-0;
@@ -431,6 +431,6 @@ watchEffect(() => {
 }
 
 .wporg-ratings .star.dashicons-star-empty {
-  @apply ![background-color:theme(colors.zinc.300)] dark:![background-color:theme(colors.zinc.600)];
+  @apply ![background-color:theme(colors.gray.300)] dark:![background-color:theme(colors.gray.600)];
 }
 </style>

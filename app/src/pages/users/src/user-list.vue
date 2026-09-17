@@ -142,10 +142,10 @@ document.addEventListener('click', hideContextMenu);
         :key="item.id"
         @click="handleUserClick(item, $event)"
         @contextmenu="showItemContextMenu($event, item)"
-        class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group -mx-3 relative"
+        class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all group -mx-3 relative"
         :class="
           route.params.userId == item.id
-            ? 'bg-zinc-100 dark:bg-zinc-800/60'
+            ? 'bg-gray-100 dark:bg-gray-800/60'
             : ''
         "
       >
@@ -165,11 +165,11 @@ document.addEventListener('click', hideContextMenu);
           </div>
 
           <div
-            class="w-10 h-10 bg-zinc-300 dark:bg-zinc-800 rounded-full overflow-hidden flex items-center justify-center relative"
+            class="w-10 h-10 bg-gray-300 dark:bg-gray-800 rounded-full overflow-hidden flex items-center justify-center relative"
           >
             <!-- User initials on muted circle (background) -->
             <div
-              class="absolute inset-0 flex items-center justify-center text-zinc-600 dark:text-zinc-300 text-sm font-medium"
+              class="absolute inset-0 flex items-center justify-center text-gray-600 dark:text-gray-300 text-sm font-medium"
             >
               {{ getUserInitials(item) }}
             </div>
@@ -187,18 +187,18 @@ document.addEventListener('click', hideContextMenu);
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 mb-0.5">
             <span
-              class="font-medium text-sm text-zinc-900 dark:text-zinc-200 truncate"
+              class="font-medium text-sm text-gray-900 dark:text-gray-200 truncate"
               :title="item.name || item.username"
               :class="
                 route.params.userId == item.id
-                  ? 'text-zinc-900 dark:text-white'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-600 dark:text-gray-400'
               "
             >
               {{ item.name || item.username }}
             </span>
           </div>
-          <div class="text-xs text-zinc-500 dark:text-zinc-400 truncate">
+          <div class="text-xs text-gray-500 dark:text-gray-400 truncate">
             {{ item.email }} • {{ getRoleDisplayName(item.roles) }}
           </div>
         </div>
@@ -212,12 +212,12 @@ document.addEventListener('click', hideContextMenu);
         left: contextMenuPosition.x + 'px',
         top: contextMenuPosition.y + 'px',
       }"
-      class="fixed z-50 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg py-1 min-w-32"
+      class="fixed z-50 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 min-w-32"
       @click.stop
     >
       <button
         @click="handleDeleteItem(contextUserItem)"
-        class="w-full px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 flex items-center gap-2"
+        class="w-full px-3 py-2 text-left text-sm text-error-600 hover:bg-error-50 dark:hover:bg-error-900/20 flex items-center gap-2"
       >
         <AppIcon icon="delete" class="text-sm" />
         {{ __('Delete', 'flexify-dashboard') }}

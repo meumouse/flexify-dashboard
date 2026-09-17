@@ -140,13 +140,13 @@ const openFilterPanel = (event) => {
       <div class="font-semibold">{{ __("Filters", "flexify-dashboard") }}</div>
       <div class="w-[340px] grid grid-cols-3 gap-3 pl-3">
         <template v-if="appStore.state.supports_categories">
-          <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
+          <div class="text-gray-400 dark:text-gray-400 flex flex-col place-content-center">
             <span>{{ __("Categories", "flexify-dashboard") }}</span>
           </div>
           <CategorySelect v-model="pagination.categories" class="col-span-2 w-full" :placeholder="__('Search', 'flexify-dashboard')" />
         </template>
 
-        <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
+        <div class="text-gray-400 dark:text-gray-400 flex flex-col place-content-center">
           <span>{{ __("Date range", "flexify-dashboard") }}</span>
         </div>
         <DateRangePicker :value="pagination.dateRange" @updated="(d) => (pagination.dateRange = d)" class="col-span-2 w-full" />
@@ -155,12 +155,12 @@ const openFilterPanel = (event) => {
       <!-- Pagination -->
       <div class="font-semibold">{{ __("Table settings", "flexify-dashboard") }}</div>
       <div class="w-[340px] grid grid-cols-3 gap-2 pl-3">
-        <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
+        <div class="text-gray-400 dark:text-gray-400 flex flex-col place-content-center">
           <span>{{ __("Per page", "flexify-dashboard") }}</span>
         </div>
         <AppInput type="number" :min="1" :max="100" v-model="pagination.per_page" class="col-span-2" />
 
-        <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
+        <div class="text-gray-400 dark:text-gray-400 flex flex-col place-content-center">
           <span>{{ __("Order", "flexify-dashboard") }}</span>
         </div>
         <Select
@@ -184,7 +184,7 @@ const openFilterPanel = (event) => {
           </SelectContent>
         </Select>
 
-        <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
+        <div class="text-gray-400 dark:text-gray-400 flex flex-col place-content-center">
           <span>{{ __("Order by", "flexify-dashboard") }}</span>
         </div>
         <Select
@@ -208,14 +208,14 @@ const openFilterPanel = (event) => {
           </SelectContent>
         </Select>
 
-        <div class="text-zinc-400 dark:text-zinc-400 flex flex-col place-content-center">
+        <div class="text-gray-400 dark:text-gray-400 flex flex-col place-content-center">
           <span>{{ __("Expand all posts", "flexify-dashboard") }}</span>
         </div>
         <div class="col-span-2">
           <AppToggle v-model="expandAllChildren" />
         </div>
 
-        <div class="text-zinc-400 dark:text-zinc-400 flex flex-col pt-1">
+        <div class="text-gray-400 dark:text-gray-400 flex flex-col pt-1">
           <span>{{ __("Columns", "flexify-dashboard") }}</span>
         </div>
         <div class="col-span-2 flex flex-col gap-2 pl-2 pt-2">

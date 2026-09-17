@@ -264,7 +264,7 @@ watch(
             <!-- Desktop Footer -->
             <div
               v-if="$slots.footer"
-              class="flex-shrink-0 border-t border-zinc-200/60 dark:border-zinc-800/50 bg-zinc-50 dark:bg-zinc-900/50"
+              class="flex-shrink-0 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50"
             >
               <slot name="footer" />
             </div>
@@ -284,33 +284,33 @@ watch(
         <div
           v-if="isMobile"
           ref="panelRef"
-          class="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl border-t border-zinc-200/60 dark:border-zinc-700/50 rounded-t-3xl shadow-2xl flex flex-col overflow-hidden"
+          class="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-200 dark:border-gray-800 rounded-t-3xl shadow-2xl flex flex-col overflow-hidden"
           :class="mobileHeightClass"
           @click.stop
         >
           <!-- Mobile Handle -->
           <div class="flex-shrink-0 flex justify-center pt-4 pb-2">
             <div
-              class="w-12 h-1 bg-zinc-300 dark:bg-zinc-600 rounded-full"
+              class="w-12 h-1 bg-gray-300 dark:bg-gray-600 rounded-full"
             ></div>
           </div>
 
           <!-- Mobile Header -->
           <div
             v-if="showHeader"
-            class="flex-shrink-0 px-4 py-3 border-b border-zinc-200/60 dark:border-zinc-800/50"
+            class="flex-shrink-0 px-4 py-3 border-b border-gray-200 dark:border-gray-800"
           >
             <div class="flex items-center justify-between">
               <div v-if="title || subtitle" class="flex-1 min-w-0">
                 <h3
                   v-if="title"
-                  class="font-medium text-zinc-900 dark:text-white truncate text-base"
+                  class="font-medium text-gray-900 dark:text-white truncate text-base"
                 >
                   {{ title }}
                 </h3>
                 <p
                   v-if="subtitle"
-                  class="text-xs text-zinc-600 dark:text-zinc-400 mt-1 truncate"
+                  class="text-xs text-gray-600 dark:text-gray-400 mt-1 truncate"
                 >
                   {{ subtitle }}
                 </p>
@@ -321,7 +321,7 @@ watch(
               <button
                 v-if="showCloseButton"
                 @click="close"
-                class="flex-shrink-0 p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-white transition-colors ml-4"
+                class="flex-shrink-0 p-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors ml-4"
                 aria-label="Close drawer"
               >
                 <AppIcon icon="close" class="w-4 h-4" />
@@ -337,7 +337,7 @@ watch(
           <!-- Mobile Footer -->
           <div
             v-if="$slots.footer"
-            class="flex-shrink-0 border-t border-zinc-200/60 dark:border-zinc-800/50 bg-zinc-50 dark:bg-zinc-900/50"
+            class="flex-shrink-0 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50"
           >
             <slot name="footer" />
           </div>

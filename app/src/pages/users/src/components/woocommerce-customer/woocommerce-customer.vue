@@ -103,16 +103,16 @@ const getStatusLabel = (status) => {
  */
 const getStatusBadgeClass = (status) => {
   const statusClasses = {
-    pending: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-    processing: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+    pending: 'bg-warning-500/20 text-warning-400 border-warning-500/30',
+    processing: 'bg-blue-light-500/20 text-blue-light-400 border-blue-light-500/30',
     'on-hold': 'bg-orange-500/20 text-orange-400 border-orange-500/30',
-    completed: 'bg-green-500/20 text-green-400 border-green-500/30',
-    cancelled: 'bg-red-500/20 text-red-400 border-red-500/30',
-    refunded: 'bg-zinc-500/20 text-zinc-400 border-zinc-500/30',
-    failed: 'bg-red-500/20 text-red-400 border-red-500/30',
+    completed: 'bg-success-500/20 text-success-400 border-success-500/30',
+    cancelled: 'bg-error-500/20 text-error-400 border-error-500/30',
+    refunded: 'bg-gray-500/20 text-gray-400 border-gray-500/30',
+    failed: 'bg-error-500/20 text-error-400 border-error-500/30',
   };
   return (
-    statusClasses[status] || 'bg-zinc-500/20 text-zinc-400 border-zinc-500/30'
+    statusClasses[status] || 'bg-gray-500/20 text-gray-400 border-gray-500/30'
   );
 };
 
@@ -454,7 +454,7 @@ watch(
     >
       <AppIcon
         icon="refresh"
-        class="text-xl text-zinc-400 dark:text-zinc-500 animate-spin"
+        class="text-xl text-gray-400 dark:text-gray-500 animate-spin"
       />
     </div>
 
@@ -463,9 +463,9 @@ watch(
       <!-- Customer Stats -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
         <div
-          class="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800/50 hover:border-zinc-700/50 transition-all duration-200"
+          class="bg-gray-900/50 rounded-xl p-4 border border-gray-800/50 hover:border-gray-700/50 transition-all duration-200"
         >
-          <div class="text-xs text-zinc-400 mb-1.5">
+          <div class="text-xs text-gray-400 mb-1.5">
             {{ __('Orders', 'flexify-dashboard') }}
           </div>
           <div class="text-2xl font-bold text-white">
@@ -473,9 +473,9 @@ watch(
           </div>
         </div>
         <div
-          class="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800/50 hover:border-zinc-700/50 transition-all duration-200"
+          class="bg-gray-900/50 rounded-xl p-4 border border-gray-800/50 hover:border-gray-700/50 transition-all duration-200"
         >
-          <div class="text-xs text-zinc-400 mb-1.5">
+          <div class="text-xs text-gray-400 mb-1.5">
             {{ __('Total Spent', 'flexify-dashboard') }}
           </div>
           <div class="text-2xl font-bold text-white">
@@ -485,9 +485,9 @@ watch(
           </div>
         </div>
         <div
-          class="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800/50 hover:border-zinc-700/50 transition-all duration-200"
+          class="bg-gray-900/50 rounded-xl p-4 border border-gray-800/50 hover:border-gray-700/50 transition-all duration-200"
         >
-          <div class="text-xs text-zinc-400 mb-1.5">
+          <div class="text-xs text-gray-400 mb-1.5">
             {{ __('Average Order', 'flexify-dashboard') }}
           </div>
           <div class="text-2xl font-bold text-white">
@@ -500,9 +500,9 @@ watch(
           </div>
         </div>
         <div
-          class="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800/50 hover:border-zinc-700/50 transition-all duration-200"
+          class="bg-gray-900/50 rounded-xl p-4 border border-gray-800/50 hover:border-gray-700/50 transition-all duration-200"
         >
-          <div class="text-xs text-zinc-400 mb-1.5">
+          <div class="text-xs text-gray-400 mb-1.5">
             {{ __('Total Items', 'flexify-dashboard') }}
           </div>
           <div class="text-2xl font-bold text-white">
@@ -514,10 +514,10 @@ watch(
       <!-- Order Status Breakdown -->
       <div
         v-if="Object.keys(orderAnalytics.statusBreakdown).length > 0"
-        class="bg-zinc-900/50 rounded-xl p-5 border border-zinc-800/50"
+        class="bg-gray-900/50 rounded-xl p-5 border border-gray-800/50"
       >
         <div
-          class="text-xs font-semibold text-zinc-300 mb-4 uppercase tracking-wider"
+          class="text-xs font-semibold text-gray-300 mb-4 uppercase tracking-wider"
         >
           {{ __('Order Status Breakdown', 'flexify-dashboard') }}
         </div>
@@ -538,10 +538,10 @@ watch(
       <!-- Recent Orders -->
       <div
         v-if="orderAnalytics.recentOrders.length > 0"
-        class="bg-zinc-900/50 rounded-xl p-5 border border-zinc-800/50"
+        class="bg-gray-900/50 rounded-xl p-5 border border-gray-800/50"
       >
         <div
-          class="text-xs font-semibold text-zinc-300 mb-4 uppercase tracking-wider"
+          class="text-xs font-semibold text-gray-300 mb-4 uppercase tracking-wider"
         >
           {{ __('Recent Orders', 'flexify-dashboard') }}
         </div>
@@ -551,12 +551,12 @@ watch(
             :key="order.id"
             :href="getOrderEditUrl(order.id)"
             target="_blank"
-            class="flex items-center justify-between p-3 bg-zinc-950/50 rounded-lg border border-zinc-800/30 hover:border-zinc-700/50 transition-all duration-200 group cursor-pointer"
+            class="flex items-center justify-between p-3 bg-gray-950/50 rounded-lg border border-gray-800/30 hover:border-gray-700/50 transition-all duration-200 group cursor-pointer"
           >
             <div class="flex-1">
               <div class="flex items-center gap-2 mb-1.5">
                 <span
-                  class="text-sm font-semibold text-white group-hover:text-zinc-100 transition-colors"
+                  class="text-sm font-semibold text-white group-hover:text-gray-100 transition-colors"
                 >
                   #{{ order.number || order.id }}
                 </span>
@@ -569,7 +569,7 @@ watch(
                   {{ getStatusLabel(order.status) }}
                 </span>
               </div>
-              <div class="text-xs text-zinc-400">
+              <div class="text-xs text-gray-400">
                 {{ formatDate(order.date_created) }}
               </div>
             </div>
@@ -587,14 +587,14 @@ watch(
           (wooCommerceCustomer.billing.address_1 ||
             wooCommerceCustomer.billing.city)
         "
-        class="bg-zinc-900/50 rounded-xl p-5 border border-zinc-800/50"
+        class="bg-gray-900/50 rounded-xl p-5 border border-gray-800/50"
       >
         <div
-          class="text-xs font-semibold text-zinc-300 mb-4 uppercase tracking-wider"
+          class="text-xs font-semibold text-gray-300 mb-4 uppercase tracking-wider"
         >
           {{ __('Billing Address', 'flexify-dashboard') }}
         </div>
-        <div class="text-sm text-zinc-400 space-y-2 leading-relaxed">
+        <div class="text-sm text-gray-400 space-y-2 leading-relaxed">
           <div
             v-if="
               wooCommerceCustomer.billing.first_name ||
@@ -636,9 +636,9 @@ watch(
           </div>
           <div
             v-if="wooCommerceCustomer.billing.email"
-            class="pt-2 mt-2 border-t border-zinc-800/50"
+            class="pt-2 mt-2 border-t border-gray-800/50"
           >
-            <span class="text-zinc-500 text-xs uppercase tracking-wider"
+            <span class="text-gray-500 text-xs uppercase tracking-wider"
               >{{ __('Email', 'flexify-dashboard') }}:</span
             >
             <div class="text-white mt-1">
@@ -647,9 +647,9 @@ watch(
           </div>
           <div
             v-if="wooCommerceCustomer.billing.phone"
-            class="pt-2 mt-2 border-t border-zinc-800/50"
+            class="pt-2 mt-2 border-t border-gray-800/50"
           >
-            <span class="text-zinc-500 text-xs uppercase tracking-wider"
+            <span class="text-gray-500 text-xs uppercase tracking-wider"
               >{{ __('Phone', 'flexify-dashboard') }}:</span
             >
             <div class="text-white mt-1">
@@ -666,14 +666,14 @@ watch(
           (wooCommerceCustomer.shipping.address_1 ||
             wooCommerceCustomer.shipping.city)
         "
-        class="bg-zinc-900/50 rounded-xl p-5 border border-zinc-800/50"
+        class="bg-gray-900/50 rounded-xl p-5 border border-gray-800/50"
       >
         <div
-          class="text-xs font-semibold text-zinc-300 mb-4 uppercase tracking-wider"
+          class="text-xs font-semibold text-gray-300 mb-4 uppercase tracking-wider"
         >
           {{ __('Shipping Address', 'flexify-dashboard') }}
         </div>
-        <div class="text-sm text-zinc-400 space-y-2 leading-relaxed">
+        <div class="text-sm text-gray-400 space-y-2 leading-relaxed">
           <div
             v-if="
               wooCommerceCustomer.shipping.first_name ||
@@ -719,16 +719,16 @@ watch(
       <!-- Customer Dates -->
       <div
         v-if="wooCommerceCustomer.date_created"
-        class="bg-zinc-900/50 rounded-xl p-5 border border-zinc-800/50"
+        class="bg-gray-900/50 rounded-xl p-5 border border-gray-800/50"
       >
         <div
-          class="text-xs font-semibold text-zinc-300 mb-3 uppercase tracking-wider"
+          class="text-xs font-semibold text-gray-300 mb-3 uppercase tracking-wider"
         >
           {{ __('Customer Information', 'flexify-dashboard') }}
         </div>
         <div class="space-y-2 text-sm">
           <div class="flex items-center justify-between">
-            <span class="text-zinc-400">{{
+            <span class="text-gray-400">{{
               __('Customer Since', 'flexify-dashboard')
             }}</span>
             <span class="text-white font-medium">{{
@@ -737,9 +737,9 @@ watch(
           </div>
           <div
             v-if="wooCommerceCustomer.date_modified"
-            class="flex items-center justify-between pt-2 border-t border-zinc-800/50"
+            class="flex items-center justify-between pt-2 border-t border-gray-800/50"
           >
-            <span class="text-zinc-400">{{
+            <span class="text-gray-400">{{
               __('Last Updated', 'flexify-dashboard')
             }}</span>
             <span class="text-white font-medium">{{
@@ -752,7 +752,7 @@ watch(
 
     <!-- No Customer Found -->
     <div v-else class="py-12 text-center">
-      <div class="text-sm text-zinc-400">
+      <div class="text-sm text-gray-400">
         {{ __('No WooCommerce customer data found for this user', 'flexify-dashboard') }}
       </div>
     </div>

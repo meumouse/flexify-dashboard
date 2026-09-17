@@ -240,7 +240,7 @@ watch(
         <div class="flex-1">
           <div class="flex flex-row items-center justify-between">
             <div class="flex flex-row items-center gap-2 grow">
-              <h2 class="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
+              <h2 class="text-2xl font-medium text-gray-900 dark:text-gray-100">
                 {{ notice.title || __('Untitled Notice', 'flexify-dashboard') }}
               </h2>
               <div class="flex items-center gap-2">
@@ -248,8 +248,8 @@ watch(
                   class="px-2 py-1 rounded text-xs font-medium"
                   :class="
                     notice.meta.active
-                      ? 'bg-green-50 text-green-700 dark:bg-green-950/50 dark:text-green-400'
-                      : 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400'
+                      ? 'bg-success-50 text-success-700 dark:bg-success-950/50 dark:text-success-400'
+                      : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
                   "
                 >
                   {{
@@ -285,14 +285,14 @@ watch(
               >
                 <AppIcon
                   icon="delete"
-                  class="text-lg mr-1 text-red-600 dark:text-red-400"
+                  class="text-lg mr-1 text-error-600 dark:text-error-400"
                 />
               </AppButton>
             </div>
           </div>
 
           <div
-            class="flex items-center gap-6 text-sm text-zinc-500 dark:text-zinc-400 mb-4"
+            class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-4"
           >
             <span v-if="notice.created"
               >{{ __('Created', 'flexify-dashboard') }}:
@@ -309,9 +309,9 @@ watch(
         <!-- Main Content Column -->
         <div class="lg:col-span-2 space-y-6">
           <!-- Basic Information -->
-          <div class="bg-zinc-50 dark:bg-zinc-800/50 rounded-xl p-6">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6">
             <h3
-              class="text-base font-medium text-zinc-900 dark:text-zinc-100 mb-4"
+              class="text-base font-medium text-gray-900 dark:text-gray-100 mb-4"
             >
               {{ __('Basic Information', 'flexify-dashboard') }}
             </h3>
@@ -319,7 +319,7 @@ watch(
             <div class="space-y-4">
               <div>
                 <label
-                  class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   {{ __('Title', 'flexify-dashboard') }}
                 </label>
@@ -333,7 +333,7 @@ watch(
 
               <div>
                 <label
-                  class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   {{ __('Content', 'flexify-dashboard') }}
                 </label>
@@ -347,23 +347,23 @@ watch(
           </div>
 
           <!-- Preview -->
-          <div class="bg-zinc-50 dark:bg-zinc-800/50 rounded-xl p-6">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6">
             <h3
-              class="text-base font-medium text-zinc-900 dark:text-zinc-100 mb-4"
+              class="text-base font-medium text-gray-900 dark:text-gray-100 mb-4"
             >
               {{ __('Preview', 'flexify-dashboard') }}
             </h3>
 
             <div
-              class="border rounded-lg p-4 bg-white dark:bg-zinc-900"
+              class="border rounded-lg p-4 bg-white dark:bg-gray-900"
               :class="{
                 'border-brand-200 bg-brand-50 dark:bg-brand-950/20 dark:border-brand-800':
                   notice.meta.notice_type === 'info',
-                'border-green-200 bg-green-50 dark:bg-green-950/20 dark:border-green-800':
+                'border-success-200 bg-success-50 dark:bg-success-950/20 dark:border-success-800':
                   notice.meta.notice_type === 'success',
                 'border-orange-200 bg-orange-50 dark:bg-orange-950/20 dark:border-orange-800':
                   notice.meta.notice_type === 'warning',
-                'border-red-200 bg-red-50 dark:bg-red-950/20 dark:border-red-800':
+                'border-error-200 bg-error-50 dark:bg-error-950/20 dark:border-error-800':
                   notice.meta.notice_type === 'error',
               }"
             >
@@ -374,11 +374,11 @@ watch(
                   :class="{
                     'text-brand-600 dark:text-brand-400':
                       notice.meta.notice_type === 'info',
-                    'text-green-600 dark:text-green-400':
+                    'text-success-600 dark:text-success-400':
                       notice.meta.notice_type === 'success',
                     'text-orange-600 dark:text-orange-400':
                       notice.meta.notice_type === 'warning',
-                    'text-red-600 dark:text-red-400':
+                    'text-error-600 dark:text-error-400':
                       notice.meta.notice_type === 'error',
                   }"
                 />
@@ -388,11 +388,11 @@ watch(
                     :class="{
                       'text-brand-800 dark:text-brand-200':
                         notice.meta.notice_type === 'info',
-                      'text-green-800 dark:text-green-200':
+                      'text-success-800 dark:text-success-200':
                         notice.meta.notice_type === 'success',
                       'text-orange-800 dark:text-orange-200':
                         notice.meta.notice_type === 'warning',
-                      'text-red-800 dark:text-red-200':
+                      'text-error-800 dark:text-error-200':
                         notice.meta.notice_type === 'error',
                     }"
                   >
@@ -403,11 +403,11 @@ watch(
                     :class="{
                       'text-brand-700 dark:text-brand-300':
                         notice.meta.notice_type === 'info',
-                      'text-green-700 dark:text-green-300':
+                      'text-success-700 dark:text-success-300':
                         notice.meta.notice_type === 'success',
                       'text-orange-700 dark:text-orange-300':
                         notice.meta.notice_type === 'warning',
-                      'text-red-700 dark:text-red-300':
+                      'text-error-700 dark:text-error-300':
                         notice.meta.notice_type === 'error',
                     }"
                     v-html="
@@ -418,7 +418,7 @@ watch(
                 </div>
                 <button
                   v-if="notice.meta.dismissible"
-                  class="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors p-1"
+                  class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1"
                 >
                   <AppIcon icon="close" class="text-sm" />
                 </button>
@@ -430,9 +430,9 @@ watch(
         <!-- Sidebar Column -->
         <div class="space-y-6">
           <!-- Display Settings -->
-          <div class="bg-zinc-50 dark:bg-zinc-800/50 rounded-xl p-6">
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6">
             <h3
-              class="text-base font-medium text-zinc-900 dark:text-zinc-100 mb-4"
+              class="text-base font-medium text-gray-900 dark:text-gray-100 mb-4"
             >
               {{ __('Display Settings', 'flexify-dashboard') }}
             </h3>
@@ -440,7 +440,7 @@ watch(
             <div class="flex flex-col gap-6">
               <div class="grid grid-cols-3 gap-2">
                 <label
-                  class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   {{ __('Notice Type', 'flexify-dashboard') }}
                 </label>
@@ -468,7 +468,7 @@ watch(
 
               <div class="grid grid-cols-3 gap-2">
                 <label
-                  class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+                  class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   {{ __('Target Roles', 'flexify-dashboard') }}
                 </label>
@@ -478,11 +478,11 @@ watch(
               <div class="grid grid-cols-3 gap-2">
                 <div>
                   <div
-                    class="font-medium text-sm text-zinc-900 dark:text-zinc-100"
+                    class="font-medium text-sm text-gray-900 dark:text-gray-100"
                   >
                     {{ __('Dismissible', 'flexify-dashboard') }}
                   </div>
-                  <div class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+                  <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
                     {{ __('Allow users to dismiss this notice', 'flexify-dashboard') }}
                   </div>
                 </div>
@@ -497,11 +497,11 @@ watch(
               <div class="grid grid-cols-3 gap-2">
                 <div>
                   <div
-                    class="font-medium text-sm text-zinc-900 dark:text-zinc-100"
+                    class="font-medium text-sm text-gray-900 dark:text-gray-100"
                   >
                     {{ __('Active', 'flexify-dashboard') }}
                   </div>
-                  <div class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+                  <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
                     {{ __('Display this notice to users', 'flexify-dashboard') }}
                   </div>
                 </div>
@@ -515,10 +515,10 @@ watch(
           <!-- Users Who Dismissed -->
           <div
             v-if="isEdit && seenUsers.length > 0"
-            class="bg-zinc-50 dark:bg-zinc-800/50 rounded-xl p-6"
+            class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6"
           >
             <h3
-              class="text-base font-medium text-zinc-900 dark:text-zinc-100 mb-4"
+              class="text-base font-medium text-gray-900 dark:text-gray-100 mb-4"
             >
               {{ __('Dismissed By', 'flexify-dashboard') }} ({{ seenUsers.length }})
             </h3>
@@ -527,22 +527,22 @@ watch(
               <div
                 v-for="user in seenUsers"
                 :key="user.id"
-                class="flex items-center gap-3 p-3 bg-white dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700"
+                class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
               >
                 <img
                   :src="user.avatar"
-                  class="w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-600"
+                  class="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-600"
                   :alt="user.name"
                 />
                 <div class="flex-1">
                   <div
-                    class="text-sm font-medium text-zinc-900 dark:text-zinc-100"
+                    class="text-sm font-medium text-gray-900 dark:text-gray-100"
                   >
                     {{ user.name }}
                   </div>
                   <div
                     v-if="user.email"
-                    class="text-xs text-zinc-500 dark:text-zinc-400"
+                    class="text-xs text-gray-500 dark:text-gray-400"
                   >
                     {{ user.email }}
                   </div>
@@ -554,20 +554,20 @@ watch(
           <!-- Empty State for Dismissed Users -->
           <div
             v-else-if="isEdit"
-            class="bg-zinc-50 dark:bg-zinc-800/50 rounded-xl p-6"
+            class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6"
           >
             <h3
-              class="text-base font-medium text-zinc-900 dark:text-zinc-100 mb-4"
+              class="text-base font-medium text-gray-900 dark:text-gray-100 mb-4"
             >
               {{ __('Dismissed By', 'flexify-dashboard') }}
             </h3>
             <div class="text-center py-8">
               <div
-                class="w-12 h-12 bg-zinc-100 dark:bg-zinc-700 rounded-full flex items-center justify-center mx-auto mb-3"
+                class="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-3"
               >
-                <AppIcon icon="visibility_off" class="text-zinc-400 text-xl" />
+                <AppIcon icon="visibility_off" class="text-gray-400 text-xl" />
               </div>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400">
+              <p class="text-sm text-gray-500 dark:text-gray-400">
                 {{ __('No users have dismissed this notice yet', 'flexify-dashboard') }}
               </p>
             </div>
@@ -581,14 +581,14 @@ watch(
   <div v-else class="flex-1 flex items-center justify-center">
     <div class="text-center">
       <div
-        class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+        class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
       >
         <AppIcon
           icon="notifications"
-          class="text-2xl text-zinc-400 animate-pulse"
+          class="text-2xl text-gray-400 animate-pulse"
         />
       </div>
-      <h3 class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2">
+      <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
         {{ __('Loading Notice...', 'flexify-dashboard') }}
       </h3>
     </div>

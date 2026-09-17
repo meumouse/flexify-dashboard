@@ -335,17 +335,17 @@ watch(
 
 <template>
   <div
-    class="flex h-full text-zinc-900 dark:text-zinc-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize"
+    class="flex h-full text-gray-900 dark:text-gray-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize"
     :class="isDark ? 'dark' : ''"
   >
     <!-- Menu List Sidebar -->
     <div
-      class="md:w-96 w-full flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-hidden"
+      class="md:w-96 w-full flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-hidden"
     >
       <!-- Header -->
       <div class="px-6 pt-6 pb-4">
         <div class="flex items-center justify-between mb-4">
-          <h1 class="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+          <h1 class="text-xl font-medium text-gray-900 dark:text-gray-100">
             {{ __('Menu Creator', 'flexify-dashboard') }}
           </h1>
           <div class="flex items-center gap-2">
@@ -372,13 +372,13 @@ watch(
         <div class="relative flex items-center">
           <AppIcon
             icon="search"
-            class="absolute left-3 text-lg text-zinc-400 dark:text-zinc-500 pointer-events-none"
+            class="absolute left-3 text-lg text-gray-400 dark:text-gray-500 pointer-events-none"
           />
           <input
             v-model="searchQuery"
             type="text"
             :placeholder="__('Search menus...', 'flexify-dashboard')"
-            class="w-full bg-zinc-50 dark:bg-zinc-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 transition-shadow"
+            class="w-full bg-gray-50 dark:bg-gray-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition-shadow"
           />
         </div>
       </div>
@@ -391,8 +391,8 @@ watch(
             :class="[
               'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
               statusFilter === 'any'
-                ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
             ]"
           >
             {{ __('All', 'flexify-dashboard') }}
@@ -402,8 +402,8 @@ watch(
             :class="[
               'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
               statusFilter === 'publish'
-                ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
             ]"
           >
             {{ __('Published', 'flexify-dashboard') }}
@@ -413,8 +413,8 @@ watch(
             :class="[
               'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
               statusFilter === 'draft'
-                ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
             ]"
           >
             {{ __('Draft', 'flexify-dashboard') }}
@@ -425,7 +425,7 @@ watch(
       <!-- Results Count -->
       <div class="flex flex-row place-content-between items-center px-6 pr-4">
         <div
-          class="py-2 text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500"
+          class="py-2 text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500"
         >
           {{ pagination.total }}
           {{
@@ -436,7 +436,7 @@ watch(
         </div>
 
         <div class="flex flex-row items-center">
-          <div class="text-xs text-zinc-500 dark:text-zinc-500 mr-2">
+          <div class="text-xs text-gray-500 dark:text-gray-500 mr-2">
             {{ __('Page', 'flexify-dashboard') }} {{ pagination.page }}
             <span v-if="pagination.totalPages > 0">
               / {{ pagination.totalPages }}
@@ -467,11 +467,11 @@ watch(
       <div class="flex-1 overflow-auto px-6 pb-6 custom-scrollbar">
         <div v-if="loading && !menus.length" class="p-8 text-center">
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
-            <AppIcon icon="menu" class="text-zinc-400 text-xl animate-pulse" />
+            <AppIcon icon="menu" class="text-gray-400 text-xl animate-pulse" />
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('Loading menus...', 'flexify-dashboard') }}
           </p>
         </div>
@@ -481,11 +481,11 @@ watch(
           class="p-8 text-center flex flex-col items-center justify-center"
         >
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
-            <AppIcon icon="menu" class="text-zinc-400 text-xl" />
+            <AppIcon icon="menu" class="text-gray-400 text-xl" />
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
             {{
               searchQuery || statusFilter !== 'any'
                 ? __('No menus found', 'flexify-dashboard')
@@ -514,22 +514,22 @@ watch(
 
     <!-- Right Content Area -->
     <div
-      class="flex-1 flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-auto"
+      class="flex-1 flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-auto"
     >
       <RouterView key="menu-editor-content" v-slot="{ Component }">
         <div class="flex-1 flex items-center justify-center" v-if="!Component">
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
             >
-              <AppIcon icon="menu" class="text-2xl text-zinc-400" />
+              <AppIcon icon="menu" class="text-2xl text-gray-400" />
             </div>
             <h3
-              class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+              class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
             >
               {{ __('Menu Editor', 'flexify-dashboard') }}
             </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
               {{
                 __(
                   'Select a menu from the list to edit its structure and settings.',

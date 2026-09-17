@@ -192,11 +192,11 @@ const removeRemoteSite = async (index) => {
 
       <!-- List of existing sites -->
       <div
-        class="max-h-80 overflow-y-auto border border-zinc-200 dark:border-zinc-700 rounded-lg">
+        class="max-h-80 overflow-y-auto border border-gray-200 dark:border-gray-700 rounded-lg">
         <table
           class="w-full"
           v-if="settings.remote_sites && settings.remote_sites.length > 0">
-          <thead class="bg-zinc-100 dark:bg-zinc-800">
+          <thead class="bg-gray-100 dark:bg-gray-800">
             <tr>
               <th class="text-left p-3">
                 {{ __('Site URL', 'flexify-dashboard') }}
@@ -212,7 +212,7 @@ const removeRemoteSite = async (index) => {
             <tr
               v-for="(site, index) in settings.remote_sites"
               :key="index"
-              class="border-t border-zinc-200 dark:border-zinc-700">
+              class="border-t border-gray-200 dark:border-gray-700">
               <td class="p-3 text-sm">{{ site.url }}</td>
               <td class="p-3 text-sm">{{ site.username }}</td>
               <td class="p-3 text-sm font-mono">
@@ -221,18 +221,18 @@ const removeRemoteSite = async (index) => {
               <td class="p-3 text-right">
                 <button
                   @click="removeRemoteSite(index)"
-                  class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition-colors">
+                  class="text-error-500 hover:text-error-700 dark:text-error-400 dark:hover:text-error-300 transition-colors">
                   <AppIcon icon="trash" class="w-5 h-5" />
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
-        <div v-else class="p-6 text-center text-zinc-500 dark:text-zinc-400">
+        <div v-else class="p-6 text-center text-gray-500 dark:text-gray-400">
           {{ __('No remote sites configured yet', 'flexify-dashboard') }}
         </div>
       </div>
-      <div class="text-sm mt-2 text-zinc-500 dark:text-zinc-400">
+      <div class="text-sm mt-2 text-gray-500 dark:text-gray-400">
         {{
           __(
             'Application passwords can be created in WordPress under Users > Profile > Application Passwords',

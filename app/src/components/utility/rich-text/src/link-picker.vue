@@ -85,8 +85,8 @@ watch(search, async (newValue) => {
       @click.prevent.stop="setLink"
       :class="
         editor.isActive('link')
-          ? 'text-zinc-900 dark:text-zinc-100'
-          : 'text-zinc-400 dark:text-zinc-500'
+          ? 'text-gray-900 dark:text-gray-100'
+          : 'text-gray-400 dark:text-gray-500'
       "
     >
       <AppIcon icon="link" class="text-xl" />
@@ -94,7 +94,7 @@ watch(search, async (newValue) => {
     <AppButton v-else type="transparent" @click.prevent.stop="removeLink">
       <AppIcon
         icon="link_off"
-        class="text-xl text-zinc-400 dark:text-zinc-500"
+        class="text-xl text-gray-400 dark:text-gray-500"
       />
     </AppButton>
   </template>
@@ -109,16 +109,16 @@ watch(search, async (newValue) => {
 
       <template v-if="loading">
         <div
-          class="h-4 w-2/3 rounded-lg bg-zinc-100 dark:bg-zinc-700 animate-pulse"
+          class="h-4 w-2/3 rounded-lg bg-gray-100 dark:bg-gray-700 animate-pulse"
         ></div>
         <div
-          class="h-4 w-3/4 rounded-lg bg-zinc-100 dark:bg-zinc-700 animate-pulse"
+          class="h-4 w-3/4 rounded-lg bg-gray-100 dark:bg-gray-700 animate-pulse"
         ></div>
         <div
-          class="h-4 w-full rounded-lg bg-zinc-100 dark:bg-zinc-700 animate-pulse"
+          class="h-4 w-full rounded-lg bg-gray-100 dark:bg-gray-700 animate-pulse"
         ></div>
         <div
-          class="h-4 w-2/3 rounded-lg bg-zinc-100 dark:bg-zinc-700 animate-pulse"
+          class="h-4 w-2/3 rounded-lg bg-gray-100 dark:bg-gray-700 animate-pulse"
         ></div>
       </template>
 

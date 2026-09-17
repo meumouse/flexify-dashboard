@@ -120,7 +120,7 @@ defineEmits([
         >
           <span
             v-if="siteInfoLoading"
-            class="block h-8 w-32 animate-pulse rounded-md bg-slate-200"
+            class="block h-8 w-32 animate-pulse rounded-md bg-gray-200"
           ></span>
           <img
             v-else
@@ -236,7 +236,7 @@ defineEmits([
               <div :ref="setRecaptchaContainer" class="fd-recaptcha-holder"></div>
               <p
                 v-if="recaptchaError"
-                class="text-sm text-rose-600 dark:text-rose-300"
+                class="text-sm text-error-600 dark:text-error-300"
               >
                 {{ recaptchaError }}
               </p>

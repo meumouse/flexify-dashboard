@@ -711,18 +711,18 @@ onUnmounted(() => {
 
     <div
       :class="isDark ? 'dark' : ''"
-      class="border border-solid border-zinc-200/50 dark:border-zinc-700/30 rounded-l-3xl max-h-[var(--fd-body-height)] overflow-auto bg-zinc-50 dark:bg-[#1a222c]"
+      class="border border-solid border-gray-200 dark:border-gray-800 rounded-l-2xl max-h-[var(--fd-body-height)] overflow-auto bg-gray-50 dark:bg-gray-900"
     >
       <div
-        class="@container flexify-dashboard-normalize font-sans p-8 flex flex-col gap-6 text-zinc-500 dark:text-zinc-400"
+        class="@container flexify-dashboard-normalize font-sans p-8 flex flex-col gap-6 text-gray-500 dark:text-gray-400"
         style="min-height: calc(100dvh - var(--wp-admin--admin-bar--height))"
       >
         <div class="flex flex-row justify-between items-center mb-3">
           <div>
-            <h1 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+            <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
               {{ __('Dashboard', 'flexify-dashboard') }}
             </h1>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
               {{ __('Overview of your site activity', 'flexify-dashboard') }}
             </p>
           </div>
@@ -789,16 +789,16 @@ onUnmounted(() => {
 
         <div
           v-else-if="hasRegisteredCards"
-          class="bg-zinc-50 dark:bg-zinc-800/50 rounded-lg p-8 text-center flex flex-col items-center"
+          class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-8 text-center flex flex-col items-center"
         >
           <AppIcon
             icon="visibility_off"
-            class="text-4xl text-zinc-400 mx-auto mb-4"
+            class="text-4xl text-gray-400 mx-auto mb-4"
           />
-          <h3 class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2">
+          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
             {{ __('No visible cards in this category', 'flexify-dashboard') }}
           </h3>
-          <p class="text-zinc-500 dark:text-zinc-400 mb-4">
+          <p class="text-gray-500 dark:text-gray-400 mb-4">
             {{
               __(
                 'Use Manage Cards to show the cards you want for this category.',
@@ -813,16 +813,16 @@ onUnmounted(() => {
 
         <div
           v-else
-          class="bg-zinc-50 dark:bg-zinc-800/50 rounded-lg p-8 text-center"
+          class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-8 text-center"
         >
           <AppIcon
             icon="dashboard"
-            class="text-4xl text-zinc-400 mx-auto mb-4"
+            class="text-4xl text-gray-400 mx-auto mb-4"
           />
-          <h3 class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2">
+          <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
             {{ __('No Dashboard Cards', 'flexify-dashboard') }}
           </h3>
-          <p class="text-zinc-500 dark:text-zinc-400">
+          <p class="text-gray-500 dark:text-gray-400">
             {{
               __(
                 'Install plugins or extensions to add dashboard cards here.',
@@ -842,10 +842,10 @@ onUnmounted(() => {
       >
         <div class="flex items-start justify-between gap-4">
           <div>
-            <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               {{ __('Manage Dashboard Cards', 'flexify-dashboard') }}
             </h2>
-            <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
               {{
                 __(
                   'Card visibility is stored independently for each category.',
@@ -877,24 +877,24 @@ onUnmounted(() => {
             v-for="item in modalItemsForActiveCategory"
             :key="item.metadata.id"
             type="button"
-            class="w-full text-left rounded-2xl border border-zinc-200 dark:border-zinc-700/50 bg-white dark:bg-zinc-900/60 px-4 py-4 flex items-start justify-between gap-4 transition hover:border-zinc-300 dark:hover:border-zinc-600"
+            class="w-full text-left rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/60 px-4 py-4 flex items-start justify-between gap-4 transition hover:border-gray-300 dark:hover:border-gray-600"
             @click="toggleItemVisibility(item.metadata.id)"
           >
             <div class="min-w-0">
               <div class="flex items-center gap-2">
-                <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                <span class="text-sm font-medium text-gray-900 dark:text-gray-100">
                   {{ __(item.metadata.title, 'flexify-dashboard') }}
                 </span>
                 <span
                   v-if="item.type === 'container' || item.isGroup"
-                  class="inline-flex items-center rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-300"
+                  class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-gray-500 dark:text-gray-300"
                 >
                   {{ __('Container', 'flexify-dashboard') }}
                 </span>
               </div>
               <p
                 v-if="item.metadata.description"
-                class="mt-1 text-sm text-zinc-500 dark:text-zinc-400"
+                class="mt-1 text-sm text-gray-500 dark:text-gray-400"
               >
                 {{ __(item.metadata.description, 'flexify-dashboard') }}
               </p>
@@ -904,8 +904,8 @@ onUnmounted(() => {
               class="shrink-0 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium"
               :class="
                 isItemVisible(item.metadata.id)
-                  ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
-                  : 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300'
+                  ? 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300'
+                  : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300'
               "
             >
               <AppIcon
@@ -925,7 +925,7 @@ onUnmounted(() => {
 
         <div
           v-else
-          class="rounded-2xl border border-dashed border-zinc-200 dark:border-zinc-700 p-8 text-center text-sm text-zinc-500 dark:text-zinc-400"
+          class="rounded-2xl border border-dashed border-gray-200 dark:border-gray-700 p-8 text-center text-sm text-gray-500 dark:text-gray-400"
         >
           {{ __('No cards registered for this category yet.', 'flexify-dashboard') }}
         </div>

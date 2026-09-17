@@ -367,7 +367,7 @@ const highlightMatch = (text, search) => {
   const regex = new RegExp(`(${search})`, 'gi');
   return text.replace(
     regex,
-    '<mark class="bg-amber-200 dark:bg-amber-700/50 text-inherit rounded px-0.5">$1</mark>'
+    '<mark class="bg-warning-200 dark:bg-warning-700/50 text-inherit rounded px-0.5">$1</mark>'
   );
 };
 
@@ -500,7 +500,7 @@ onUnmounted(() => {
 
     <!-- Font Source Selector -->
     <div class="flex flex-col gap-2">
-      <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+      <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
         {{ __('Font Source', 'flexify-dashboard') }}
       </label>
       <div class="flex flex-wrap gap-2">
@@ -512,7 +512,7 @@ onUnmounted(() => {
           :class="
             fontSource === option.value
               ? 'bg-brand-50 dark:bg-brand-950/50 border-brand-400 dark:border-brand-600 text-brand-700 dark:text-brand-300 shadow-sm'
-              : 'bg-white dark:bg-zinc-800/50 border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:border-zinc-300 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-800'
+              : 'bg-white dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'
           "
         >
           <span class="flex items-center gap-2">
@@ -538,7 +538,7 @@ onUnmounted(() => {
     <div v-if="fontSource === 'google'" class="flex flex-col gap-5">
       <!-- Font Search/Select -->
       <div class="flex flex-col gap-2">
-        <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
           {{ __('Select Font', 'flexify-dashboard') }}
         </label>
 
@@ -547,23 +547,23 @@ onUnmounted(() => {
           <!-- Selected Font Chip -->
           <div
             v-if="fontFamily && !isDropdownOpen"
-            class="flex items-center gap-3 px-4 py-2.5 bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 rounded-xl cursor-pointer hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors"
+            class="flex items-center gap-3 px-4 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl cursor-pointer hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
             @click="handleInputFocus"
           >
             <div class="flex-1">
               <p
-                class="text-base font-medium text-zinc-900 dark:text-zinc-100"
+                class="text-base font-medium text-gray-900 dark:text-gray-100"
                 :style="{ fontFamily: `'${fontFamily}', sans-serif` }"
               >
                 {{ fontFamily }}
               </p>
-              <p class="text-xs text-zinc-400 dark:text-zinc-500">
+              <p class="text-xs text-gray-400 dark:text-gray-500">
                 {{ __('Click to change', 'flexify-dashboard') }}
               </p>
             </div>
             <button
               @click.stop="clearFontSelection"
-              class="p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+              class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               :title="__('Clear selection', 'flexify-dashboard')"
             >
               <AppIcon icon="close" class="text-lg" />
@@ -577,14 +577,14 @@ onUnmounted(() => {
               v-model="googleFontSearch"
               type="text"
               :placeholder="__('Search fonts...', 'flexify-dashboard')"
-              class="w-full px-4 py-2.5 pl-10 bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 rounded-xl text-sm transition-all outline-none focus:border-brand-400 dark:focus:border-brand-600 focus:ring-2 focus:ring-brand-100 dark:focus:ring-brand-900/30"
+              class="w-full px-4 py-2.5 pl-10 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl text-sm transition-all outline-none focus:border-brand-400 dark:focus:border-brand-600 focus:ring-2 focus:ring-brand-100 dark:focus:ring-brand-900/30"
               @focus="handleInputFocus"
               @blur="handleInputBlur"
               @keydown="handleKeydown"
             />
             <AppIcon
               icon="search"
-              class="absolute left-3.5 top-1/2 -translate-y-1/2 text-lg text-zinc-400"
+              class="absolute left-3.5 top-1/2 -translate-y-1/2 text-lg text-gray-400"
             />
           </div>
 
@@ -599,7 +599,7 @@ onUnmounted(() => {
           >
             <div
               v-if="isDropdownOpen"
-              class="absolute z-50 top-full left-0 right-0 mt-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-xl shadow-zinc-900/10 dark:shadow-zinc-950/50 max-h-[360px] overflow-y-auto overflow-x-hidden"
+              class="absolute z-50 top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl shadow-gray-900/10 dark:shadow-gray-950/50 max-h-[360px] overflow-y-auto overflow-x-hidden"
             >
               <!-- Empty State -->
               <div
@@ -608,12 +608,12 @@ onUnmounted(() => {
               >
                 <AppIcon
                   icon="search"
-                  class="text-3xl text-zinc-300 dark:text-zinc-600 mb-2"
+                  class="text-3xl text-gray-300 dark:text-gray-600 mb-2"
                 />
-                <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                <p class="text-sm text-gray-500 dark:text-gray-400">
                   {{ __('No fonts found', 'flexify-dashboard') }}
                 </p>
-                <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
+                <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
                   {{ __('Try a different search term', 'flexify-dashboard') }}
                 </p>
               </div>
@@ -625,7 +625,7 @@ onUnmounted(() => {
                   :key="category"
                 >
                   <div
-                    class="px-3 py-1.5 text-[10px] font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider bg-zinc-50 dark:bg-zinc-900/50 sticky top-0"
+                    class="px-3 py-1.5 text-[10px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider bg-gray-50 dark:bg-gray-900/50 sticky top-0"
                   >
                     {{ category }}
                   </div>
@@ -649,14 +649,14 @@ onUnmounted(() => {
                         : flatFontList.findIndex(
                             (f) => f.value === font.value
                           ) === highlightedIndex
-                        ? 'bg-zinc-100 dark:bg-zinc-700/50'
-                        : 'hover:bg-zinc-50 dark:hover:bg-zinc-700/30',
+                        ? 'bg-gray-100 dark:bg-gray-700/50'
+                        : 'hover:bg-gray-50 dark:hover:bg-gray-700/30',
                     ]"
                   >
                     <!-- Font Preview -->
                     <link rel="stylesheet" :href="getPreviewUrl(font.value)" />
                     <span
-                      class="text-lg text-zinc-700 dark:text-zinc-200 flex-1 truncate"
+                      class="text-lg text-gray-700 dark:text-gray-200 flex-1 truncate"
                       :style="{ fontFamily: `'${font.value}', sans-serif` }"
                       v-html="highlightMatch(font.label, googleFontSearch)"
                     />
@@ -677,21 +677,21 @@ onUnmounted(() => {
 
         <!-- Custom Font Name Input -->
         <div
-          class="flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500 mt-1"
+          class="flex items-center gap-2 text-xs text-gray-400 dark:text-gray-500 mt-1"
         >
           <span>{{ __('Or enter custom:', 'flexify-dashboard') }}</span>
           <input
             v-model="fontFamily"
             type="text"
             :placeholder="__('Font name...', 'flexify-dashboard')"
-            class="px-2 py-1 bg-transparent border-b border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 text-xs focus:border-brand-400 dark:focus:border-brand-600 outline-none transition-colors w-40"
+            class="px-2 py-1 bg-transparent border-b border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 text-xs focus:border-brand-400 dark:focus:border-brand-600 outline-none transition-colors w-40"
           />
         </div>
       </div>
 
       <!-- Font Weights -->
       <div v-if="fontFamily" class="flex flex-col gap-3">
-        <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
           {{ __('Font Weights', 'flexify-dashboard') }}
         </label>
         <div class="flex flex-wrap gap-1.5">
@@ -703,7 +703,7 @@ onUnmounted(() => {
             :class="
               selectedGoogleWeights.includes(weight.value)
                 ? 'bg-brand-50 dark:bg-brand-950/50 border-brand-400 dark:border-brand-600 text-brand-700 dark:text-brand-300'
-                : 'bg-white dark:bg-zinc-800/50 border-zinc-200 dark:border-zinc-700 text-zinc-500 dark:text-zinc-500 hover:border-zinc-300 dark:hover:border-zinc-600'
+                : 'bg-white dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-500 hover:border-gray-300 dark:hover:border-gray-600'
             "
           >
             <span
@@ -717,13 +717,13 @@ onUnmounted(() => {
             </span>
             <!-- Tooltip -->
             <span
-              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-zinc-900 dark:bg-zinc-700 text-white text-[10px] rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-700 text-white text-[10px] rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
             >
               {{ weight.label }}
             </span>
           </button>
         </div>
-        <p class="text-xs text-zinc-400 dark:text-zinc-500">
+        <p class="text-xs text-gray-400 dark:text-gray-500">
           {{
             __(
               'Select weights to include. At least one is required.',
@@ -737,7 +737,7 @@ onUnmounted(() => {
     <!-- Custom URL Section -->
     <div v-if="fontSource === 'url'" class="flex flex-col gap-5">
       <div class="flex flex-col gap-2">
-        <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
           {{ __('Font Stylesheet URL', 'flexify-dashboard') }}
         </label>
         <div class="relative max-w-[500px]">
@@ -747,14 +747,14 @@ onUnmounted(() => {
             :placeholder="
               __('https://fonts.googleapis.com/css2?family=...', 'flexify-dashboard')
             "
-            class="w-full px-4 py-2.5 pl-10 bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 rounded-xl text-sm transition-all outline-none focus:border-brand-400 dark:focus:border-brand-600"
+            class="w-full px-4 py-2.5 pl-10 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl text-sm transition-all outline-none focus:border-brand-400 dark:focus:border-brand-600"
           />
           <AppIcon
             icon="link"
-            class="absolute left-3.5 top-1/2 -translate-y-1/2 text-lg text-zinc-400"
+            class="absolute left-3.5 top-1/2 -translate-y-1/2 text-lg text-gray-400"
           />
         </div>
-        <p class="text-xs text-zinc-400 dark:text-zinc-500">
+        <p class="text-xs text-gray-400 dark:text-gray-500">
           {{
             __(
               'Enter the URL to an external font stylesheet (CSS file)',
@@ -765,16 +765,16 @@ onUnmounted(() => {
       </div>
 
       <div class="flex flex-col gap-2">
-        <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
           {{ __('Font Family Name', 'flexify-dashboard') }}
         </label>
         <input
           v-model="fontFamily"
           type="text"
           :placeholder="__('e.g., Inter, Roboto, Custom Font', 'flexify-dashboard')"
-          class="max-w-[300px] px-4 py-2.5 bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 rounded-xl text-sm transition-all outline-none focus:border-brand-400 dark:focus:border-brand-600"
+          class="max-w-[300px] px-4 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl text-sm transition-all outline-none focus:border-brand-400 dark:focus:border-brand-600"
         />
-        <p class="text-xs text-zinc-400 dark:text-zinc-500">
+        <p class="text-xs text-gray-400 dark:text-gray-500">
           {{
             __(
               'The exact font-family name as defined in the stylesheet',
@@ -790,21 +790,21 @@ onUnmounted(() => {
       <!-- Notice when font uploads is disabled -->
       <div
         v-if="!isFontUploadsEnabled"
-        class="flex items-start gap-4 p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 rounded-xl"
+        class="flex items-start gap-4 p-4 bg-warning-50 dark:bg-warning-950/30 border border-warning-200 dark:border-warning-800/50 rounded-xl"
       >
         <div
-          class="flex-shrink-0 w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center"
+          class="flex-shrink-0 w-10 h-10 rounded-full bg-warning-100 dark:bg-warning-900/50 flex items-center justify-center"
         >
           <AppIcon
             icon="warning"
-            class="text-xl text-amber-600 dark:text-amber-400"
+            class="text-xl text-warning-600 dark:text-warning-400"
           />
         </div>
         <div class="flex-1">
-          <h4 class="text-sm font-semibold text-amber-800 dark:text-amber-200">
+          <h4 class="text-sm font-semibold text-warning-800 dark:text-warning-200">
             {{ __('Font Uploads Disabled', 'flexify-dashboard') }}
           </h4>
-          <p class="text-sm text-amber-700 dark:text-amber-300 mt-1">
+          <p class="text-sm text-warning-700 dark:text-warning-300 mt-1">
             {{
               __(
                 'Font file uploads are currently disabled. Enable font uploads in the Media settings to upload custom font files (.woff2, .woff, .ttf, .otf).',
@@ -814,7 +814,7 @@ onUnmounted(() => {
           </p>
           <button
             @click="enableFontUploads"
-            class="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg transition-colors"
+            class="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-warning-600 hover:bg-warning-700 text-white text-sm font-medium rounded-lg transition-colors"
           >
             <AppIcon icon="check" class="text-base" />
             {{ __('Enable Font Uploads', 'flexify-dashboard') }}
@@ -823,23 +823,23 @@ onUnmounted(() => {
       </div>
 
       <div class="flex flex-col gap-2">
-        <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
           {{ __('Font Family Name', 'flexify-dashboard') }}
         </label>
         <input
           v-model="fontFamily"
           type="text"
           :placeholder="__('e.g., My Custom Font', 'flexify-dashboard')"
-          class="max-w-[300px] px-4 py-2.5 bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 rounded-xl text-sm transition-all outline-none focus:border-brand-400 dark:focus:border-brand-600"
+          class="max-w-[300px] px-4 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl text-sm transition-all outline-none focus:border-brand-400 dark:focus:border-brand-600"
         />
-        <p class="text-xs text-zinc-400 dark:text-zinc-500">
+        <p class="text-xs text-gray-400 dark:text-gray-500">
           {{ __('Choose a name for your custom font family', 'flexify-dashboard') }}
         </p>
       </div>
 
       <!-- Uploaded Font Files -->
       <div class="flex flex-col gap-3">
-        <label class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+        <label class="text-sm font-medium text-gray-700 dark:text-gray-300">
           {{ __('Font Files', 'flexify-dashboard') }}
         </label>
 
@@ -848,10 +848,10 @@ onUnmounted(() => {
           v-if="fontFiles.length === 0 && isFontUploadsEnabled"
           @click="uploadFontFile"
           :disabled="isUploading"
-          class="group flex flex-col items-center justify-center gap-3 p-8 border-2 border-dashed border-zinc-200 dark:border-zinc-700 rounded-xl text-center cursor-pointer hover:border-brand-400 dark:hover:border-brand-600 hover:bg-brand-50/50 dark:hover:bg-brand-950/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          class="group flex flex-col items-center justify-center gap-3 p-8 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl text-center cursor-pointer hover:border-brand-400 dark:hover:border-brand-600 hover:bg-brand-50/50 dark:hover:bg-brand-950/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <div
-            class="w-14 h-14 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center group-hover:bg-brand-100 dark:group-hover:bg-brand-900/30 transition-colors"
+            class="w-14 h-14 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:bg-brand-100 dark:group-hover:bg-brand-900/30 transition-colors"
           >
             <template v-if="isUploading">
               <div
@@ -861,13 +861,13 @@ onUnmounted(() => {
             <template v-else>
               <AppIcon
                 icon="upload"
-                class="text-2xl text-zinc-400 group-hover:text-brand-500 transition-colors"
+                class="text-2xl text-gray-400 group-hover:text-brand-500 transition-colors"
               />
             </template>
           </div>
           <div>
             <p
-              class="text-sm font-medium text-zinc-600 dark:text-zinc-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors"
+              class="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors"
             >
               {{
                 isUploading
@@ -875,7 +875,7 @@ onUnmounted(() => {
                   : __('Click to select font files', 'flexify-dashboard')
               }}
             </p>
-            <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
+            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
               {{
                 __('Supported formats: .woff2, .woff, .ttf, .otf', 'flexify-dashboard')
               }}
@@ -886,15 +886,15 @@ onUnmounted(() => {
         <!-- Empty state when font uploads disabled -->
         <div
           v-if="fontFiles.length === 0 && !isFontUploadsEnabled"
-          class="flex flex-col items-center justify-center gap-3 p-8 border-2 border-dashed border-zinc-200 dark:border-zinc-700 rounded-xl text-center opacity-50"
+          class="flex flex-col items-center justify-center gap-3 p-8 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl text-center opacity-50"
         >
           <div
-            class="w-14 h-14 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center"
+            class="w-14 h-14 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center"
           >
-            <AppIcon icon="upload" class="text-2xl text-zinc-400" />
+            <AppIcon icon="upload" class="text-2xl text-gray-400" />
           </div>
           <div>
-            <p class="text-sm font-medium text-zinc-500 dark:text-zinc-500">
+            <p class="text-sm font-medium text-gray-500 dark:text-gray-500">
               {{ __('Enable font uploads to add font files', 'flexify-dashboard') }}
             </p>
           </div>
@@ -904,7 +904,7 @@ onUnmounted(() => {
         <div
           v-for="(file, index) in fontFiles"
           :key="index"
-          class="flex items-center gap-3 p-3 bg-white dark:bg-zinc-800/50 rounded-xl border border-zinc-200 dark:border-zinc-700"
+          class="flex items-center gap-3 p-3 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700"
         >
           <div
             class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center flex-shrink-0"
@@ -916,7 +916,7 @@ onUnmounted(() => {
           </div>
           <div class="flex-1 min-w-0">
             <p
-              class="text-sm text-zinc-700 dark:text-zinc-300 truncate font-medium"
+              class="text-sm text-gray-700 dark:text-gray-300 truncate font-medium"
             >
               {{ file.url.split('/').pop() }}
             </p>
@@ -924,7 +924,7 @@ onUnmounted(() => {
           <select
             :value="file.weight"
             @change="updateFontFileWeight(index, $event.target.value)"
-            class="px-3 py-1.5 text-sm bg-zinc-50 dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 rounded-lg focus:outline-none focus:border-brand-400"
+            class="px-3 py-1.5 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:border-brand-400"
           >
             <option
               v-for="weight in fontWeights"
@@ -936,7 +936,7 @@ onUnmounted(() => {
           </select>
           <button
             @click="removeFontFile(index)"
-            class="p-1.5 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-zinc-400 hover:text-red-500 transition-colors"
+            class="p-1.5 rounded-lg hover:bg-error-50 dark:hover:bg-error-900/20 text-gray-400 hover:text-error-500 transition-colors"
           >
             <AppIcon icon="delete" class="text-lg" />
           </button>
@@ -946,7 +946,7 @@ onUnmounted(() => {
           v-if="isFontUploadsEnabled"
           @click="uploadFontFile"
           :disabled="isUploading"
-          class="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-zinc-800 border-2 border-dashed border-zinc-300 dark:border-zinc-600 rounded-xl text-sm text-zinc-600 dark:text-zinc-400 hover:border-brand-400 dark:hover:border-brand-600 hover:text-brand-600 dark:hover:text-brand-400 transition-colors w-fit disabled:opacity-50 disabled:cursor-not-allowed"
+          class="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-gray-800 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl text-sm text-gray-600 dark:text-gray-400 hover:border-brand-400 dark:hover:border-brand-600 hover:text-brand-600 dark:hover:text-brand-400 transition-colors w-fit disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <template v-if="isUploading">
             <div
@@ -961,7 +961,7 @@ onUnmounted(() => {
         </button>
 
         <p
-          class="text-xs text-zinc-400 dark:text-zinc-500 flex items-center gap-1.5"
+          class="text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1.5"
         >
           <AppIcon icon="info" class="text-sm" />
           {{
@@ -985,14 +985,14 @@ onUnmounted(() => {
     >
       <div
         v-if="fontSource !== 'system' && fontFamily"
-        class="relative flex flex-col gap-4 p-5 bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-800/50 dark:to-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-700 overflow-hidden"
+        class="relative flex flex-col gap-4 p-5 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800/50 dark:to-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
       >
         <!-- Loading overlay -->
         <div
           v-if="isFontLoading"
-          class="absolute inset-0 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm flex items-center justify-center z-10"
+          class="absolute inset-0 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm flex items-center justify-center z-10"
         >
-          <div class="flex items-center gap-2 text-sm text-zinc-500">
+          <div class="flex items-center gap-2 text-sm text-gray-500">
             <div
               class="w-4 h-4 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"
             ></div>
@@ -1002,19 +1002,19 @@ onUnmounted(() => {
 
         <div class="flex items-center justify-between gap-4">
           <label
-            class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider"
+            class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
           >
             {{ __('Preview', 'flexify-dashboard') }}
           </label>
 
           <!-- Weight selector for preview -->
           <div class="flex items-center gap-2">
-            <span class="text-xs text-zinc-400">{{
+            <span class="text-xs text-gray-400">{{
               __('Weight:', 'flexify-dashboard')
             }}</span>
             <select
               v-model="previewWeight"
-              class="px-2 py-1 text-xs bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-md"
+              class="px-2 py-1 text-xs bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md"
             >
               <option
                 v-for="weight in selectedGoogleWeights"
@@ -1029,19 +1029,19 @@ onUnmounted(() => {
 
         <div class="space-y-3">
           <p
-            class="text-3xl text-zinc-900 dark:text-zinc-100 leading-tight"
+            class="text-3xl text-gray-900 dark:text-gray-100 leading-tight"
             :style="previewFontStyle"
           >
             The quick brown fox jumps over the lazy dog
           </p>
           <p
-            class="text-lg text-zinc-600 dark:text-zinc-400"
+            class="text-lg text-gray-600 dark:text-gray-400"
             :style="previewFontStyle"
           >
             ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
           </p>
           <p
-            class="text-base text-zinc-500 dark:text-zinc-500 font-mono"
+            class="text-base text-gray-500 dark:text-gray-500 font-mono"
             :style="previewFontStyle"
           >
             0123456789 !@#$%^&*() {}[]|;:'",.<>?/
@@ -1049,15 +1049,15 @@ onUnmounted(() => {
         </div>
 
         <div
-          class="flex items-center justify-between pt-3 border-t border-zinc-200 dark:border-zinc-700"
+          class="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700"
         >
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400">
+            <span class="w-2 h-2 rounded-full bg-success-500"></span>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
               {{ fontFamily }}
             </p>
           </div>
-          <p class="text-xs text-zinc-400 dark:text-zinc-500">
+          <p class="text-xs text-gray-400 dark:text-gray-500">
             {{ selectedGoogleWeights.length }}
             {{ __('weights loaded', 'flexify-dashboard') }}
           </p>
@@ -1069,7 +1069,7 @@ onUnmounted(() => {
     <div v-if="fontSource !== 'system'" class="flex">
       <button
         @click="resetToSystem"
-        class="flex items-center gap-2 px-3 py-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors"
+        class="flex items-center gap-2 px-3 py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
       >
         <AppIcon icon="refresh" class="text-base" />
         {{ __('Reset to default font', 'flexify-dashboard') }}

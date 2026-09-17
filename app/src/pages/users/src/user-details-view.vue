@@ -299,11 +299,11 @@ watch(
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center mx-auto mb-3"
+          class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mx-auto mb-3"
         >
-          <AppIcon icon="person" class="text-xl text-zinc-400 animate-pulse" />
+          <AppIcon icon="person" class="text-xl text-gray-400 animate-pulse" />
         </div>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Loading...', 'flexify-dashboard') }}
         </p>
       </div>
@@ -313,16 +313,16 @@ watch(
     <template v-else-if="userItem">
       <!-- Header Section with Avatar and Basic Info -->
       <div
-        class="flex-shrink-0 px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-800/30"
+        class="flex-shrink-0 px-6 py-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-white/[0.03]"
       >
         <div class="flex items-center gap-4">
           <!-- Avatar -->
           <div
-            class="w-12 h-12 bg-zinc-300 dark:bg-zinc-800 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center relative"
+            class="w-12 h-12 bg-gray-300 dark:bg-gray-800 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center relative"
           >
             <!-- User initials on muted circle (background) -->
             <div
-              class="absolute inset-0 flex items-center justify-center text-zinc-600 dark:text-zinc-300 text-sm font-medium"
+              class="absolute inset-0 flex items-center justify-center text-gray-600 dark:text-gray-300 text-sm font-medium"
             >
               {{ getUserInitials(userItem) }}
             </div>
@@ -338,18 +338,18 @@ watch(
           <!-- User Info -->
           <div class="flex-1 min-w-0">
             <h2
-              class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-1 truncate"
+              class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1 truncate"
             >
               {{ userItem.name || userItem.slug }}
             </h2>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 truncate">
+            <p class="text-sm text-gray-500 dark:text-gray-400 truncate">
               {{ userItem.email }}
             </p>
           </div>
 
           <!-- Meta Info -->
           <div
-            class="flex-shrink-0 text-right text-xs text-zinc-500 dark:text-zinc-400"
+            class="flex-shrink-0 text-right text-xs text-gray-500 dark:text-gray-400"
           >
             <div>{{ __('User ID', 'flexify-dashboard') }}: {{ userItem.id }}</div>
             <div class="mt-1">
@@ -362,7 +362,7 @@ watch(
 
       <!-- Tabs Navigation -->
       <div
-        class="flex-shrink-0 px-6 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-800/30"
+        class="flex-shrink-0 px-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-white/[0.03]"
       >
         <Tabs v-model="activeTab" :options="tabOptions" />
       </div>
@@ -391,7 +391,7 @@ watch(
           "
           class="p-6 max-w-2xl"
         >
-          <div class="text-center py-8 text-zinc-500 dark:text-zinc-400">
+          <div class="text-center py-8 text-gray-500 dark:text-gray-400">
             {{ __('No components available for this tab', 'flexify-dashboard') }}
           </div>
         </div>

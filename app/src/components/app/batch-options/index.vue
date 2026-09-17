@@ -74,7 +74,7 @@ const batchDelete = async (evt) => {
   <ContextMenu ref="contextmenu">
     <div class="flex flex-col w-60 gap-3 p-2">
       <slot />
-      <div class="border-t border-zinc-200 dark:border-zinc-700" v-if="slots.default"></div>
+      <div class="border-t border-gray-200 dark:border-gray-700" v-if="slots.default"></div>
 
       <AppButton type="danger" @click="batchDelete">
         <span>{{ __("Delete selected", "flexify-dashboard") }}</span>

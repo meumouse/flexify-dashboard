@@ -18,14 +18,14 @@ const handleClearSearch = () => {
       class="flex flex-col items-center justify-center py-12 px-6 text-center"
     >
       <div
-        class="w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mb-4"
+        class="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4"
       >
-        <AppIcon icon="search" class="text-2xl text-zinc-400" />
+        <AppIcon icon="search" class="text-2xl text-gray-400" />
       </div>
-      <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
         {{ __('No results found', 'flexify-dashboard') }}
       </h3>
-      <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-6 max-w-sm">
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 max-w-sm">
         {{
           __(
             'Try a different search term or use command syntax to filter results.',
@@ -36,13 +36,13 @@ const handleClearSearch = () => {
       <div class="flex flex-wrap gap-2 justify-center">
         <button
           @click.prevent="handleViewCommands"
-          class="px-3 py-1.5 text-xs bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-lg transition-colors"
+          class="px-3 py-1.5 text-xs bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg transition-colors"
         >
           {{ __('View Commands', 'flexify-dashboard') }}
         </button>
         <button
           @click.prevent="handleClearSearch"
-          class="px-3 py-1.5 text-xs bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-lg transition-colors"
+          class="px-3 py-1.5 text-xs bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg transition-colors"
         >
           {{ __('Clear Search', 'flexify-dashboard') }}
         </button>

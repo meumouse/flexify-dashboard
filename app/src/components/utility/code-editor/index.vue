@@ -191,19 +191,19 @@ onBeforeUnmount(() => {
   <div class="inline-flex">
     <AppButton type="default" @click="openEditor">
       <div class="flex flex-row items-center gap-2">
-        <AppIcon icon="code" class="text-zinc-500 dark:text-zinc-400" />
+        <AppIcon icon="code" class="text-gray-500 dark:text-gray-400" />
         <span>{{ __("Edit CSS", "flexify-dashboard") }}</span>
       </div>
     </AppButton>
   </div>
   <OffCanvas ref="offcanvas">
     <div class="w-[660px] max-w-full h-screen overflow-hidden flex flex-col">
-      <div class="flex flex-row items-center justify-between p-4 border-b border-zinc-100 dark:border-zinc-800">
+      <div class="flex flex-row items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800">
         <h3 class="text-lg font-medium">{{ __("Edit CSS", "flexify-dashboard") }}</h3>
         <div class="flex gap-2">
           <AppButton type="default" @click="showSearch">
             <div class="flex flex-row items-center gap-2">
-              <AppIcon icon="search" class="text-zinc-500 dark:text-zinc-400" />
+              <AppIcon icon="search" class="text-gray-500 dark:text-gray-400" />
               <span>{{ __("Search", "flexify-dashboard") }}</span>
             </div>
           </AppButton>

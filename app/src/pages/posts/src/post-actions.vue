@@ -211,10 +211,10 @@ defineExpose({ show });
             v-if="item.type == 'link' && item.condition()"
             :href="item.url"
             @click.stop
-            class="px-2 py-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100 flex flex-row place-content-between gap-6 items-center cursor-pointer whitespace-nowrap"
+            class="px-2 py-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hover:text-gray-900 dark:hover:text-gray-100 flex flex-row place-content-between gap-6 items-center cursor-pointer whitespace-nowrap"
             :class="
               item.danger
-                ? 'text-rose-500 hover:text-rose-700 dark:hover:text-rose-300'
+                ? 'text-error-500 hover:text-error-700 dark:hover:text-error-300'
                 : ''
             "
           >
@@ -224,10 +224,10 @@ defineExpose({ show });
 
           <div
             v-else-if="item.type != 'divider' && item.condition()"
-            class="px-2 py-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100 flex flex-row place-content-between gap-6 items-center cursor-pointer whitespace-nowrap"
+            class="px-2 py-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hover:text-gray-900 dark:hover:text-gray-100 flex flex-row place-content-between gap-6 items-center cursor-pointer whitespace-nowrap"
             :class="
               item.danger
-                ? 'text-rose-500 hover:text-rose-700 dark:hover:text-rose-300'
+                ? 'text-error-500 hover:text-error-700 dark:hover:text-error-300'
                 : ''
             "
             @click.stop="item.action"
@@ -238,7 +238,7 @@ defineExpose({ show });
 
           <div
             v-else-if="item.type == 'divider' && item.condition()"
-            class="border-t border-zinc-200 dark:border-zinc-700 w-full my-1"
+            class="border-t border-gray-200 dark:border-gray-700 w-full my-1"
           ></div>
         </template>
       </div>

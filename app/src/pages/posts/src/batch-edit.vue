@@ -99,7 +99,7 @@ const closeModal = () => {
 
   <Modal ref="batchmodal" position="top">
     <div class="p-6 flex flex-col gap-6 w-[500px] max-w-full">
-      <div class="font-semibold text-zinc-900 dark:text-zinc-100">{{ __("Batch edit", "flexify-dashboard") }}</div>
+      <div class="font-semibold text-gray-900 dark:text-gray-100">{{ __("Batch edit", "flexify-dashboard") }}</div>
 
       <div class="grid grid-cols-3 gap-4 pl-3">
         <!-- Categories -->

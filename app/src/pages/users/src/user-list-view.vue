@@ -792,17 +792,17 @@ watch(
 
 <template>
   <div
-    class="flex h-full text-zinc-900 dark:text-zinc-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize"
+    class="flex h-full text-gray-900 dark:text-gray-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize"
     :class="isDark ? 'dark' : ''"
   >
     <!-- User List Sidebar -->
     <div
-      class="md:w-96 w-full flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-hidden"
+      class="md:w-96 w-full flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-hidden"
     >
       <!-- Header -->
       <div class="px-6 pt-6 pb-4">
         <div class="flex items-center justify-between mb-4">
-          <h1 class="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+          <h1 class="text-xl font-medium text-gray-900 dark:text-gray-100">
             {{ __('Users', 'flexify-dashboard') }}
           </h1>
           <div class="flex items-center gap-2">
@@ -836,14 +836,14 @@ watch(
         <div class="relative flex items-center">
           <AppIcon
             icon="search"
-            class="absolute left-3 text-zinc-400 dark:text-zinc-500 text-lg pointer-events-none"
+            class="absolute left-3 text-gray-400 dark:text-gray-500 text-lg pointer-events-none"
           />
           <input
             v-model="searchQuery"
             type="text"
             :placeholder="__('Search users...', 'flexify-dashboard')"
             autocomplete="off"
-            class="w-full bg-zinc-50 dark:bg-zinc-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 transition-shadow"
+            class="w-full bg-gray-50 dark:bg-gray-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition-shadow"
           />
         </div>
       </div>
@@ -860,8 +860,8 @@ watch(
               :class="[
                 'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
                 roleFilter === 'all'
-                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               {{ __('All', 'flexify-dashboard') }}
@@ -873,8 +873,8 @@ watch(
               :class="[
                 'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
                 roleFilter === role.slug
-                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               {{ role.label }}
@@ -885,12 +885,12 @@ watch(
           <div class="flex items-center gap-1.5">
             <button
               @click="sortOrder = sortOrder === 'asc' ? 'desc' : 'asc'"
-              class="p-2 bg-zinc-100 dark:bg-zinc-800 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+              class="p-2 bg-gray-100 dark:bg-gray-800 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               :title="sortOrder === 'asc' ? 'Ascending' : 'Descending'"
             >
               <AppIcon
                 :icon="sortOrder === 'asc' ? 'arrow_upward' : 'arrow_downward'"
-                class="text-sm text-zinc-600 dark:text-zinc-400"
+                class="text-sm text-gray-600 dark:text-gray-400"
               />
             </button>
 
@@ -899,8 +899,8 @@ watch(
               :class="[
                 'relative p-2 rounded-md transition-colors',
                 activeFiltersCount > 0 || filtersExpanded
-                  ? 'bg-zinc-900 dark:bg-zinc-100'
-                  : 'bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100'
+                  : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               <AppIcon
@@ -908,8 +908,8 @@ watch(
                 :class="[
                   'text-sm',
                   activeFiltersCount > 0 || filtersExpanded
-                    ? 'text-white dark:text-zinc-900'
-                    : 'text-zinc-600 dark:text-zinc-400',
+                    ? 'text-white dark:text-gray-900'
+                    : 'text-gray-600 dark:text-gray-400',
                 ]"
               />
               <span
@@ -935,7 +935,7 @@ watch(
             <!-- Sort By Options -->
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-1.5"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-1.5"
               >
                 {{ __('Sort By', 'flexify-dashboard') }}
               </label>
@@ -956,8 +956,8 @@ watch(
                   :class="[
                     'flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-md transition-colors',
                     sortBy === option.value
-                      ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                      : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                      ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
                   ]"
                 >
                   <AppIcon :icon="option.icon" class="text-sm" />
@@ -972,7 +972,7 @@ watch(
       <!-- Results Count -->
       <div class="flex flex-row place-content-between items-center px-6 pr-4">
         <div
-          class="py-2 text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500"
+          class="py-2 text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500"
         >
           {{ pagination.total }}
           {{
@@ -983,7 +983,7 @@ watch(
         </div>
 
         <div class="flex flex-row items-center">
-          <div class="text-xs text-zinc-500 dark:text-zinc-500 mr-2">
+          <div class="text-xs text-gray-500 dark:text-gray-500 mr-2">
             {{ __('Page', 'flexify-dashboard') }} {{ pagination.page }}
             <span v-if="pagination.totalPages > 0">
               / {{ pagination.totalPages }}
@@ -1014,25 +1014,25 @@ watch(
       <div class="flex-1 overflow-auto px-6 pb-6 custom-scrollbar">
         <div v-if="loading && !users.length" class="p-8 text-center">
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
             <AppIcon
               icon="people"
-              class="text-zinc-400 text-xl animate-pulse"
+              class="text-gray-400 text-xl animate-pulse"
             />
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('Loading users...', 'flexify-dashboard') }}
           </p>
         </div>
 
         <div v-else-if="filteredUsers.length === 0" class="p-8 text-center">
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
-            <AppIcon icon="people" class="text-zinc-400 text-xl" />
+            <AppIcon icon="people" class="text-gray-400 text-xl" />
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
             {{
               searchQuery || roleFilter !== 'all'
                 ? __('No users found', 'flexify-dashboard')
@@ -1054,22 +1054,22 @@ watch(
 
     <!-- Right Content Area -->
     <div
-      class="flex-1 flex flex-col rounded-l-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-auto"
+      class="flex-1 flex flex-col rounded-l-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-auto"
     >
       <RouterView key="user-details-content" v-slot="{ Component }">
         <div class="flex-1 flex items-center justify-center" v-if="!Component">
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
             >
-              <AppIcon icon="people" class="text-2xl text-zinc-400" />
+              <AppIcon icon="people" class="text-2xl text-gray-400" />
             </div>
             <h3
-              class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+              class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
             >
               {{ __('User Details', 'flexify-dashboard') }}
             </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
               {{
                 __(
                   'Select a user from the list to view details and edit properties.',
@@ -1111,9 +1111,9 @@ watch(
         <!-- Username -->
         <div>
           <label
-            class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+            class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
           >
-            {{ __('Username', 'flexify-dashboard') }} <span class="text-red-500">*</span>
+            {{ __('Username', 'flexify-dashboard') }} <span class="text-error-500">*</span>
           </label>
           <AppInput
             v-model="newUser.username"
@@ -1126,9 +1126,9 @@ watch(
         <!-- Email -->
         <div>
           <label
-            class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+            class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
           >
-            {{ __('Email', 'flexify-dashboard') }} <span class="text-red-500">*</span>
+            {{ __('Email', 'flexify-dashboard') }} <span class="text-error-500">*</span>
           </label>
           <AppInput
             v-model="newUser.email"
@@ -1142,9 +1142,9 @@ watch(
         <!-- Password -->
         <div class="relative">
           <label
-            class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+            class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
           >
-            {{ __('Password', 'flexify-dashboard') }} <span class="text-red-500">*</span>
+            {{ __('Password', 'flexify-dashboard') }} <span class="text-error-500">*</span>
           </label>
 
           <!-- Password Validation Dropdown -->
@@ -1159,11 +1159,11 @@ watch(
             <div
               v-if="passwordFocused && newUser.password"
               ref="passwordValidationDropdownRef"
-              class="absolute bottom-full left-0 mb-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg p-3 z-50 min-w-[280px]"
+              class="absolute bottom-full left-0 mb-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-3 z-50 min-w-[280px]"
               @mousedown.prevent
             >
               <div
-                class="text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-2"
+                class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2"
               >
                 {{ __('Password Requirements', 'flexify-dashboard') }}
               </div>
@@ -1175,16 +1175,16 @@ watch(
                     :class="[
                       'text-sm flex-shrink-0',
                       passwordValidation.checks.length
-                        ? 'text-green-500'
-                        : 'text-zinc-400',
+                        ? 'text-success-500'
+                        : 'text-gray-400',
                     ]"
                   />
                   <span
                     :class="[
                       'text-xs',
                       passwordValidation.checks.length
-                        ? 'text-zinc-700 dark:text-zinc-300'
-                        : 'text-zinc-500 dark:text-zinc-400',
+                        ? 'text-gray-700 dark:text-gray-300'
+                        : 'text-gray-500 dark:text-gray-400',
                     ]"
                   >
                     {{ __('At least 8 characters', 'flexify-dashboard') }}
@@ -1200,16 +1200,16 @@ watch(
                     :class="[
                       'text-sm flex-shrink-0',
                       passwordValidation.checks.uppercase
-                        ? 'text-green-500'
-                        : 'text-zinc-400',
+                        ? 'text-success-500'
+                        : 'text-gray-400',
                     ]"
                   />
                   <span
                     :class="[
                       'text-xs',
                       passwordValidation.checks.uppercase
-                        ? 'text-zinc-700 dark:text-zinc-300'
-                        : 'text-zinc-500 dark:text-zinc-400',
+                        ? 'text-gray-700 dark:text-gray-300'
+                        : 'text-gray-500 dark:text-gray-400',
                     ]"
                   >
                     {{ __('One uppercase letter', 'flexify-dashboard') }}
@@ -1225,16 +1225,16 @@ watch(
                     :class="[
                       'text-sm flex-shrink-0',
                       passwordValidation.checks.lowercase
-                        ? 'text-green-500'
-                        : 'text-zinc-400',
+                        ? 'text-success-500'
+                        : 'text-gray-400',
                     ]"
                   />
                   <span
                     :class="[
                       'text-xs',
                       passwordValidation.checks.lowercase
-                        ? 'text-zinc-700 dark:text-zinc-300'
-                        : 'text-zinc-500 dark:text-zinc-400',
+                        ? 'text-gray-700 dark:text-gray-300'
+                        : 'text-gray-500 dark:text-gray-400',
                     ]"
                   >
                     {{ __('One lowercase letter', 'flexify-dashboard') }}
@@ -1248,16 +1248,16 @@ watch(
                     :class="[
                       'text-sm flex-shrink-0',
                       passwordValidation.checks.number
-                        ? 'text-green-500'
-                        : 'text-zinc-400',
+                        ? 'text-success-500'
+                        : 'text-gray-400',
                     ]"
                   />
                   <span
                     :class="[
                       'text-xs',
                       passwordValidation.checks.number
-                        ? 'text-zinc-700 dark:text-zinc-300'
-                        : 'text-zinc-500 dark:text-zinc-400',
+                        ? 'text-gray-700 dark:text-gray-300'
+                        : 'text-gray-500 dark:text-gray-400',
                     ]"
                   >
                     {{ __('One number', 'flexify-dashboard') }}
@@ -1271,16 +1271,16 @@ watch(
                     :class="[
                       'text-sm flex-shrink-0',
                       passwordValidation.checks.special
-                        ? 'text-green-500'
-                        : 'text-zinc-400',
+                        ? 'text-success-500'
+                        : 'text-gray-400',
                     ]"
                   />
                   <span
                     :class="[
                       'text-xs',
                       passwordValidation.checks.special
-                        ? 'text-zinc-700 dark:text-zinc-300'
-                        : 'text-zinc-500 dark:text-zinc-400',
+                        ? 'text-gray-700 dark:text-gray-300'
+                        : 'text-gray-500 dark:text-gray-400',
                     ]"
                   >
                     {{ __('One special character', 'flexify-dashboard') }}
@@ -1299,7 +1299,7 @@ watch(
               :placeholder="__('Password', 'flexify-dashboard')"
               autocomplete="new-password"
               required
-              class="px-2 py-2 pr-20 border border-zinc-200 dark:border-zinc-700/40 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm bg-transparent"
+              class="px-2 py-2 pr-20 border border-gray-200 dark:border-gray-800 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm bg-transparent"
               @focus="handlePasswordFocus"
               @blur="handlePasswordBlur"
             />
@@ -1311,7 +1311,7 @@ watch(
               <button
                 type="button"
                 @click="handleGeneratePassword"
-                class="flex items-center justify-center p-1.5 text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors rounded"
+                class="flex items-center justify-center p-1.5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded"
                 :title="__('Generate strong password', 'flexify-dashboard')"
               >
                 <AppIcon icon="refresh" class="text-lg" />
@@ -1320,7 +1320,7 @@ watch(
               <button
                 type="button"
                 @click="togglePasswordVisibility"
-                class="flex items-center justify-center p-1.5 text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors rounded"
+                class="flex items-center justify-center p-1.5 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded"
                 :title="
                   showPassword
                     ? __('Hide password', 'flexify-dashboard')
@@ -1339,7 +1339,7 @@ watch(
         <!-- Name -->
         <div>
           <label
-            class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+            class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
           >
             {{ __('Name', 'flexify-dashboard') }}
           </label>
@@ -1353,7 +1353,7 @@ watch(
         <!-- Website -->
         <div>
           <label
-            class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+            class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
           >
             {{ __('Website', 'flexify-dashboard') }}
           </label>
@@ -1368,7 +1368,7 @@ watch(
         <!-- Biographical Info -->
         <div>
           <label
-            class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+            class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
           >
             {{ __('Biographical Info', 'flexify-dashboard') }}
           </label>
@@ -1383,7 +1383,7 @@ watch(
         <!-- Roles -->
         <div>
           <label
-            class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+            class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
           >
             {{ __('Roles', 'flexify-dashboard') }}
           </label>
@@ -1397,17 +1397,17 @@ watch(
         </div>
 
         <!-- Send User Notification -->
-        <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800">
+        <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
           <div class="flex items-center gap-2">
             <AppToggle v-model="newUser.sendUserNotification" />
             <label
-              class="text-sm text-zinc-600 dark:text-zinc-400"
+              class="text-sm text-gray-600 dark:text-gray-400"
               for="send-notification"
             >
               {{ __('Send user notification', 'flexify-dashboard') }}
             </label>
           </div>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
             {{
               __(
                 'Send an email notification to the user about their new account.',
@@ -1420,7 +1420,7 @@ watch(
 
       <template #footer>
         <div
-          class="p-6 flex items-center justify-end gap-3 border-t border-zinc-200 dark:border-zinc-800"
+          class="p-6 flex items-center justify-end gap-3 border-t border-gray-200 dark:border-gray-800"
         >
           <AppButton
             type="transparent"
@@ -1452,24 +1452,24 @@ watch(
     >
       <div
         v-if="hasSelection"
-        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-lg px-4 py-3 flex items-center gap-4"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-lg px-4 py-3 flex items-center gap-4"
       >
         <!-- Selection Count -->
         <div
-          class="text-sm font-medium text-zinc-700 dark:text-zinc-300 whitespace-nowrap"
+          class="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
         >
           {{ selectedCountText }}
         </div>
 
         <!-- Divider -->
-        <div class="h-6 w-px bg-zinc-200 dark:bg-zinc-700"></div>
+        <div class="h-6 w-px bg-gray-200 dark:bg-gray-700"></div>
 
         <!-- Action Buttons -->
         <div class="flex items-center gap-2">
           <!-- View Button -->
           <button
             @click="viewSelectedUser"
-            class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
             :title="__('View', 'flexify-dashboard')"
           >
             <AppIcon icon="visibility" class="text-lg" />
@@ -1478,7 +1478,7 @@ watch(
           <!-- Bulk Edit Button -->
           <button
             @click="openBulkEdit"
-            class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
             :title="__('Bulk Edit', 'flexify-dashboard')"
           >
             <AppIcon icon="edit" class="text-lg" />
@@ -1487,7 +1487,7 @@ watch(
           <!-- Delete Button -->
           <button
             @click="handleBatchDelete"
-            class="p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
+            class="p-2 rounded-lg hover:bg-error-50 dark:hover:bg-error-900/20 transition-colors text-error-600 dark:text-error-400 hover:text-error-700 dark:hover:text-error-300"
             :title="__('Delete', 'flexify-dashboard')"
           >
             <AppIcon icon="delete" class="text-lg" />
@@ -1496,7 +1496,7 @@ watch(
           <!-- Clear Selection Button -->
           <button
             @click="clearSelection"
-            class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
             :title="__('Clear selection', 'flexify-dashboard')"
           >
             <AppIcon icon="close" class="text-lg" />
@@ -1526,7 +1526,7 @@ watch(
 
       <div class="space-y-6 p-6">
         <div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
             {{
               selectedUsers.length === 1
                 ? __(
@@ -1544,7 +1544,7 @@ watch(
         <!-- Name -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Name', 'flexify-dashboard') }}
           </label>
@@ -1557,7 +1557,7 @@ watch(
         <!-- Email -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Email', 'flexify-dashboard') }}
           </label>
@@ -1571,7 +1571,7 @@ watch(
         <!-- Roles -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Roles', 'flexify-dashboard') }}
           </label>
@@ -1587,7 +1587,7 @@ watch(
         <!-- Description -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Biographical Info', 'flexify-dashboard') }}
           </label>
@@ -1600,7 +1600,7 @@ watch(
 
         <!-- Actions -->
         <div
-          class="flex items-center gap-3 pt-4 border-t border-zinc-200 dark:border-zinc-700"
+          class="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-700"
         >
           <AppButton
             @click="bulkEditDrawerOpen = false"
@@ -1646,7 +1646,7 @@ watch(
 
       <div class="space-y-6 p-6">
         <div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
             {{
               __('Export %d filtered users to CSV file', 'flexify-dashboard').replace(
                 '%d',
@@ -1659,12 +1659,12 @@ watch(
         <!-- Export Options -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-3"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
           >
             {{ __('Include Custom Fields', 'flexify-dashboard') }}
           </label>
           <div class="space-y-2">
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-2">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">
               {{
                 __('Enter custom meta field keys (one per line)', 'flexify-dashboard')
               }}
@@ -1674,7 +1674,7 @@ watch(
               :placeholder="__('meta_key_1\nmeta_key_2\n...', 'flexify-dashboard')"
               rows="6"
             />
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
               {{
                 __(
                   'Standard fields (ID, username, email, name, roles, etc.) are always included',
@@ -1686,21 +1686,21 @@ watch(
         </div>
 
         <!-- Export Info -->
-        <div class="pt-4 border-t border-zinc-200 dark:border-zinc-700">
-          <div class="bg-zinc-50 dark:bg-zinc-900/50 rounded-lg p-4 space-y-2">
+        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+          <div class="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4 space-y-2">
             <div class="flex items-center justify-between text-sm">
-              <span class="text-zinc-600 dark:text-zinc-400">
+              <span class="text-gray-600 dark:text-gray-400">
                 {{ __('Users to export:', 'flexify-dashboard') }}
               </span>
-              <span class="font-medium text-zinc-900 dark:text-zinc-100">
+              <span class="font-medium text-gray-900 dark:text-gray-100">
                 {{ filteredUsers.length }}
               </span>
             </div>
             <div class="flex items-center justify-between text-sm">
-              <span class="text-zinc-600 dark:text-zinc-400">
+              <span class="text-gray-600 dark:text-gray-400">
                 {{ __('Custom fields:', 'flexify-dashboard') }}
               </span>
-              <span class="font-medium text-zinc-900 dark:text-zinc-100">
+              <span class="font-medium text-gray-900 dark:text-gray-100">
                 {{
                   exportCustomFieldsText.split('\n').filter((f) => f.trim())
                     .length
@@ -1712,7 +1712,7 @@ watch(
 
         <!-- Actions -->
         <div
-          class="flex items-center gap-3 pt-4 border-t border-zinc-200 dark:border-zinc-700"
+          class="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-700"
         >
           <AppButton
             @click="exportDrawerOpen = false"

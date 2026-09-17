@@ -333,7 +333,7 @@ onMounted(() => {
       <div
         class="w-4 h-4 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"
       ></div>
-      <span class="text-sm text-zinc-500">{{
+      <span class="text-sm text-gray-500">{{
         __('Checking connection...', 'flexify-dashboard')
       }}</span>
     </div>
@@ -350,15 +350,15 @@ onMounted(() => {
       <!-- Connection Error Alert -->
       <div
         v-if="connectionError"
-        class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4"
+        class="bg-warning-50 dark:bg-warning-900/20 border border-warning-200 dark:border-warning-800 rounded-lg p-4"
       >
         <div class="flex items-start gap-3">
-          <AppIcon icon="warning" class="text-xl text-amber-500 flex-shrink-0 mt-0.5" />
+          <AppIcon icon="warning" class="text-xl text-warning-500 flex-shrink-0 mt-0.5" />
           <div class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-amber-800 dark:text-amber-200 mb-1">
+            <p class="text-sm font-medium text-warning-800 dark:text-warning-200 mb-1">
               {{ __('Permission Issue Detected', 'flexify-dashboard') }}
             </p>
-            <p class="text-xs text-amber-700 dark:text-amber-300 leading-relaxed mb-2">
+            <p class="text-xs text-warning-700 dark:text-warning-300 leading-relaxed mb-2">
               {{ connectionError.message }}
             </p>
             <div class="flex flex-wrap items-center gap-3">
@@ -367,14 +367,14 @@ onMounted(() => {
                 :href="connectionError.help_url"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-1 text-xs font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300"
+                class="inline-flex items-center gap-1 text-xs font-medium text-warning-600 dark:text-warning-400 hover:text-warning-700 dark:hover:text-warning-300"
               >
                 {{ __('Learn more', 'flexify-dashboard') }}
                 <AppIcon icon="open_in_new" class="text-xs" />
               </a>
               <button
                 @click="testConnection"
-                class="text-xs font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300"
+                class="text-xs font-medium text-warning-600 dark:text-warning-400 hover:text-warning-700 dark:hover:text-warning-300"
               >
                 {{ __('Retest Connection', 'flexify-dashboard') }}
               </button>
@@ -386,7 +386,7 @@ onMounted(() => {
       <!-- Service Account Info -->
       <div
         v-if="status?.client_email"
-        class="text-sm text-zinc-500 dark:text-zinc-400"
+        class="text-sm text-gray-500 dark:text-gray-400"
       >
         {{ __('Service Account:', 'flexify-dashboard') }}
         <span class="font-mono text-xs">{{ status.client_email }}</span>
@@ -395,14 +395,14 @@ onMounted(() => {
       <!-- Property Selector (when properties loaded successfully) -->
       <div v-if="properties.length > 0 && !showManualEntry" class="space-y-2">
         <label
-          class="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
           {{ __('Select Property', 'flexify-dashboard') }}
         </label>
         <div class="flex gap-2">
           <select
             v-model="selectedProperty"
-            class="flex-1 px-3 py-2 text-sm border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-brand-500"
+            class="flex-1 px-3 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-brand-500"
             :disabled="loadingProperties"
           >
             <option value="">
@@ -415,7 +415,7 @@ onMounted(() => {
         </div>
         <p
           v-if="selectedProperty"
-          class="text-xs text-zinc-500 dark:text-zinc-400"
+          class="text-xs text-gray-500 dark:text-gray-400"
         >
           {{ __('Property ID:', 'flexify-dashboard') }} {{ selectedProperty }}
         </p>
@@ -429,9 +429,9 @@ onMounted(() => {
         <!-- Error message if any -->
         <div
           v-if="propertiesError"
-          class="p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg"
+          class="p-3 bg-warning-50 dark:bg-warning-900/20 border border-warning-200 dark:border-warning-800 rounded-lg"
         >
-          <p class="text-sm text-amber-800 dark:text-amber-200">
+          <p class="text-sm text-warning-800 dark:text-warning-200">
             {{ propertiesError }}
           </p>
         </div>
@@ -439,11 +439,11 @@ onMounted(() => {
         <!-- Manual entry form -->
         <div class="space-y-2">
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300"
           >
             {{ __('Enter Property ID', 'flexify-dashboard') }}
           </label>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">
+          <p class="text-xs text-gray-500 dark:text-gray-400">
             {{
               __(
                 'Find your Property ID in Google Analytics: Admin → Property Settings → Property ID (a number like 123456789)',
@@ -456,7 +456,7 @@ onMounted(() => {
               v-model="manualPropertyId"
               type="text"
               :placeholder="__('e.g. 123456789', 'flexify-dashboard')"
-              class="flex-1 px-3 py-2 text-sm border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
+              class="flex-1 px-3 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
               autocomplete="off"
             />
             <AppButton
@@ -477,12 +477,12 @@ onMounted(() => {
         class="space-y-2"
       >
         <label
-          class="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
           {{ __('Property ID', 'flexify-dashboard') }}
         </label>
         <div class="flex items-center gap-2">
-          <span class="text-sm font-mono text-zinc-600 dark:text-zinc-400">
+          <span class="text-sm font-mono text-gray-600 dark:text-gray-400">
             {{ selectedProperty }}
           </span>
           <AppButton
@@ -498,7 +498,7 @@ onMounted(() => {
       <!-- Loading Properties -->
       <div
         v-if="loadingProperties"
-        class="flex items-center gap-2 text-sm text-zinc-500"
+        class="flex items-center gap-2 text-sm text-gray-500"
       >
         <div
           class="w-4 h-4 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"
@@ -539,13 +539,13 @@ onMounted(() => {
       <!-- Instructions Panel -->
       <div
         v-if="showInstructions"
-        class="p-4 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg space-y-3 text-sm"
+        class="p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg space-y-3 text-sm"
       >
-        <h4 class="font-medium text-zinc-900 dark:text-zinc-100">
+        <h4 class="font-medium text-gray-900 dark:text-gray-100">
           {{ __('How to connect Google Analytics 4', 'flexify-dashboard') }}
         </h4>
 
-        <ol class="list-decimal list-inside space-y-2 text-zinc-600 dark:text-zinc-400">
+        <ol class="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-400">
           <li>
             {{ __('Go to', 'flexify-dashboard') }}
             <a
@@ -620,9 +620,9 @@ onMounted(() => {
         </ol>
 
         <div
-          class="p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg"
+          class="p-3 bg-blue-light-50 dark:bg-blue-light-900/20 border border-blue-light-200 dark:border-blue-light-800 rounded-lg"
         >
-          <p class="text-xs text-blue-800 dark:text-blue-200">
+          <p class="text-xs text-blue-light-800 dark:text-blue-light-200">
             <strong>{{ __('Finding your Property ID:', 'flexify-dashboard') }}</strong>
             {{
               __(
@@ -634,9 +634,9 @@ onMounted(() => {
         </div>
 
         <div
-          class="p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg"
+          class="p-3 bg-warning-50 dark:bg-warning-900/20 border border-warning-200 dark:border-warning-800 rounded-lg"
         >
-          <p class="text-xs text-amber-800 dark:text-amber-200">
+          <p class="text-xs text-warning-800 dark:text-warning-200">
             <strong>{{ __('Important:', 'flexify-dashboard') }}</strong>
             {{
               __(
@@ -650,8 +650,8 @@ onMounted(() => {
 
       <!-- Credentials Form -->
       <div v-if="showCredentialsForm" class="space-y-3">
-        <div class="p-4 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg space-y-3">
-          <p class="text-sm text-zinc-600 dark:text-zinc-400">
+        <div class="p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg space-y-3">
+          <p class="text-sm text-gray-600 dark:text-gray-400">
             {{
               __(
                 'Paste the contents of your service account JSON key file:',
@@ -663,7 +663,7 @@ onMounted(() => {
           <textarea
             v-model="serviceAccountJson"
             :placeholder="__('Paste your service account JSON key here...', 'flexify-dashboard')"
-            class="w-full h-40 px-3 py-2 text-sm font-mono border border-zinc-200 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none"
+            class="w-full h-40 px-3 py-2 text-sm font-mono border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none"
             autocomplete="off"
             spellcheck="false"
           ></textarea>

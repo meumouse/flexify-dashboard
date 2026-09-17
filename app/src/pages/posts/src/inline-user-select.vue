@@ -92,10 +92,10 @@ const nextPage = () => {
     @click.stop="showOptions"
     v-bind="attrs"
     ref="parent"
-    class="flex flex-row items-center gap-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer"
+    class="flex flex-row items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors cursor-pointer"
   >
     <div
-      class="w-5 aspect-square bg-zinc-700 dark:bg-brand-700 text-white rounded-full font-semibold flex items-center justify-center shrink-0 relative overflow-hidden border border-zinc-200 dark:border-zinc-700"
+      class="w-5 aspect-square bg-gray-700 dark:bg-brand-700 text-white rounded-full font-semibold flex items-center justify-center shrink-0 relative overflow-hidden border border-gray-200 dark:border-gray-700"
     >
       <span class="lowercase relative text-sm font-medium leading-none mb-0.5">{{ model.name ? model.name.charAt(0) : "u" }}</span>
       <img v-if="model.gravatar" :src="model.gravatar" class="absolute w-full h-full" />
@@ -110,28 +110,28 @@ const nextPage = () => {
       <div class="relative flex">
         <input
           v-model="search"
-          class="px-2 py-2 pl-8 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm dark:bg-transparent"
+          class="px-2 py-2 pl-8 border border-gray-200 dark:border-gray-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm dark:bg-transparent"
           :placeholder="__('Search', 'flexify-dashboard')"
           @keyup.enter="getUsers"
         />
 
         <!-- Icon-->
         <div class="absolute top-0 left-0 h-full flex flex-col place-content-center px-2 py-1">
-          <AppIcon icon="search" class="text-lg text-zinc-400" />
+          <AppIcon icon="search" class="text-lg text-gray-400" />
         </div>
       </div>
 
       <!-- Loop users -->
       <div class="flex flex-col max-h-80 overflow-auto">
         <div class="flex flex-col gap-2 animate-pulse p-2" v-if="loading">
-          <div class="rounded-lg h-4 w-2/3 bg-zinc-100 dark:bg-zinc-800"></div>
-          <div class="rounded-lg h-4 w-3/4 bg-zinc-100 dark:bg-zinc-800"></div>
-          <div class="rounded-lg h-4 w-1/2 bg-zinc-100 dark:bg-zinc-800"></div>
-          <div class="rounded-lg h-4 w-2/3 bg-zinc-100 dark:bg-zinc-800"></div>
+          <div class="rounded-lg h-4 w-2/3 bg-gray-100 dark:bg-gray-800"></div>
+          <div class="rounded-lg h-4 w-3/4 bg-gray-100 dark:bg-gray-800"></div>
+          <div class="rounded-lg h-4 w-1/2 bg-gray-100 dark:bg-gray-800"></div>
+          <div class="rounded-lg h-4 w-2/3 bg-gray-100 dark:bg-gray-800"></div>
         </div>
 
         <template v-for="option in users" v-else>
-          <div class="flex flex-row items-center gap-3 p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors rounded-lg cursor-pointer" @click="toggleUserItem(option)">
+          <div class="flex flex-row items-center gap-3 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors rounded-lg cursor-pointer" @click="toggleUserItem(option)">
             <AppCheckBox :checked="isUserSelected(option) ? true : false" />
             <div>{{ option.slug }}</div>
           </div>

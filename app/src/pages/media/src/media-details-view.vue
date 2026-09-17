@@ -667,11 +667,11 @@ watch(
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center mx-auto mb-3"
+          class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mx-auto mb-3"
         >
-          <AppIcon icon="image" class="text-xl text-zinc-400 animate-pulse" />
+          <AppIcon icon="image" class="text-xl text-gray-400 animate-pulse" />
         </div>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Loading...', 'flexify-dashboard') }}
         </p>
       </div>
@@ -681,12 +681,12 @@ watch(
     <template v-else-if="mediaItem">
       <!-- Main Preview Area (60% width) -->
       <div
-        class="flex-1 flex flex-col border-b lg:border-b-0 lg:border-r border-zinc-200 dark:border-zinc-800 max-h-full overflow-hidden min-h-0"
+        class="flex-1 flex flex-col border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-gray-800 max-h-full overflow-hidden min-h-0"
       >
         <!-- Minimal Header -->
         <div
           v-if="imageSizes.length > 0"
-          class="px-4 py-3 flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800"
+          class="px-4 py-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800"
         >
           <div class="flex items-center gap-1 justify-between w-full">
             <!-- Size Selector (only for images) -->
@@ -698,8 +698,8 @@ watch(
                 :class="[
                   'px-2 py-1 text-xs rounded-md transition-colors',
                   selectedSize === size.key
-                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-medium'
-                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100',
+                    ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-medium'
+                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100',
                 ]"
               >
                 {{ size.label }}
@@ -716,21 +716,21 @@ watch(
           @drop="handleDrop"
           :class="[
             dragOver
-              ? 'bg-zinc-50 dark:bg-zinc-900/50 border-2 border-dashed border-zinc-300 dark:border-zinc-600'
+              ? 'bg-gray-50 dark:bg-gray-900/50 border-2 border-dashed border-gray-300 dark:border-gray-600'
               : '',
           ]"
         >
           <!-- Drag Overlay -->
           <div
             v-if="dragOver"
-            class="absolute inset-0 bg-zinc-900/80 dark:bg-zinc-950/80 flex items-center justify-center z-10 rounded-lg"
+            class="absolute inset-0 bg-gray-900/80 dark:bg-gray-950/80 flex items-center justify-center z-10 rounded-lg"
           >
             <div class="text-center text-white">
               <AppIcon icon="cloud_upload" class="text-6xl mb-4 mx-auto" />
               <p class="text-xl font-medium">
                 {{ __('Drop file to replace', 'flexify-dashboard') }}
               </p>
-              <p class="text-sm text-zinc-300 mt-2">
+              <p class="text-sm text-gray-300 mt-2">
                 {{
                   __('Keep the same ID and regenerate thumbnails', 'flexify-dashboard')
                 }}
@@ -741,7 +741,7 @@ watch(
           <!-- Loading Overlay -->
           <div
             v-if="isReplacingFile"
-            class="absolute inset-0 bg-zinc-900/80 dark:bg-zinc-950/80 flex items-center justify-center z-10 rounded-lg"
+            class="absolute inset-0 bg-gray-900/80 dark:bg-gray-950/80 flex items-center justify-center z-10 rounded-lg"
           >
             <div class="text-center text-white">
               <AppIcon
@@ -751,7 +751,7 @@ watch(
               <p class="text-xl font-medium">
                 {{ __('Replacing file...', 'flexify-dashboard') }}
               </p>
-              <p class="text-sm text-zinc-300 mt-2">
+              <p class="text-sm text-gray-300 mt-2">
                 {{ __('Regenerating thumbnails', 'flexify-dashboard') }}
               </p>
             </div>
@@ -760,7 +760,7 @@ watch(
           <!-- Optimization Overlay -->
           <div
             v-if="isOptimizing"
-            class="absolute inset-0 bg-zinc-900/80 dark:bg-zinc-950/80 flex items-center justify-center z-10 rounded-lg"
+            class="absolute inset-0 bg-gray-900/80 dark:bg-gray-950/80 flex items-center justify-center z-10 rounded-lg"
           >
             <div class="text-center text-white">
               <AppIcon
@@ -770,11 +770,11 @@ watch(
               <p class="text-xl font-medium">
                 {{ __('Optimizing image...', 'flexify-dashboard') }}
               </p>
-              <p class="text-sm text-zinc-300 mt-2">
+              <p class="text-sm text-gray-300 mt-2">
                 {{ optimizationStatus.message }}
               </p>
               <!-- Progress bar -->
-              <div class="w-48 bg-zinc-700 rounded-full h-2 mt-4">
+              <div class="w-48 bg-gray-700 rounded-full h-2 mt-4">
                 <div
                   class="bg-white h-2 rounded-full transition-all duration-300"
                   :style="{ width: `${optimizationProgress}%` }"
@@ -786,14 +786,14 @@ watch(
           <!-- Success Overlay -->
           <div
             v-if="showSuccessMessage"
-            class="absolute inset-0 bg-green-600/90 dark:bg-green-700/90 flex items-center justify-center z-10 rounded-lg"
+            class="absolute inset-0 bg-success-600/90 dark:bg-success-700/90 flex items-center justify-center z-10 rounded-lg"
           >
             <div class="text-center text-white">
               <AppIcon icon="check_circle" class="text-6xl mb-4 mx-auto" />
               <p class="text-xl font-medium">
                 {{ __('File replaced successfully!', 'flexify-dashboard') }}
               </p>
-              <p class="text-sm text-green-100 mt-2">
+              <p class="text-sm text-success-100 mt-2">
                 {{ __('Thumbnails regenerated', 'flexify-dashboard') }}
               </p>
             </div>
@@ -825,17 +825,17 @@ watch(
           </div>
           <div v-else class="text-center">
             <div
-              class="w-32 h-32 bg-zinc-200 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              class="w-32 h-32 bg-gray-200 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
             >
               <AppIcon
                 :icon="getFileTypeIcon(mediaItem.mime_type)"
-                class="text-5xl text-zinc-500 dark:text-zinc-400"
+                class="text-5xl text-gray-500 dark:text-gray-400"
               />
             </div>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 font-medium">
+            <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">
               {{ mediaItem.mime_type.split('/')[1].toUpperCase() }}
             </p>
-            <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
+            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
               {{ formatFileSize(mediaItem.media_details?.filesize) }}
             </p>
           </div>
@@ -843,7 +843,7 @@ watch(
 
         <!-- Image Info Bar -->
         <div
-          class="px-6 py-3 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400"
+          class="px-6 py-3 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400"
         >
           <div class="flex items-center gap-4">
             <span
@@ -867,7 +867,7 @@ watch(
 
       <!-- Sidebar Panel (40% width) -->
       <div
-        class="w-full lg:w-[400px] flex flex-col min-h-0 lg:max-h-full overflow-hidden bg-white dark:bg-zinc-800/30"
+        class="w-full lg:w-[400px] flex flex-col min-h-0 lg:max-h-full overflow-hidden bg-white dark:bg-white/[0.03]"
       >
         <!-- Scrollable Content -->
         <div class="flex-1 overflow-auto">
@@ -875,7 +875,7 @@ watch(
             <!-- Editable Fields -->
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
               >
                 {{ __('Title', 'flexify-dashboard') }}
               </label>
@@ -889,7 +889,7 @@ watch(
 
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
               >
                 {{ __('Alt Text', 'flexify-dashboard') }}
               </label>
@@ -904,7 +904,7 @@ watch(
 
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
               >
                 {{ __('Caption', 'flexify-dashboard') }}
               </label>
@@ -919,7 +919,7 @@ watch(
             <!-- Tags Section -->
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
               >
                 {{ __('Tags', 'flexify-dashboard') }}
               </label>
@@ -935,9 +935,9 @@ watch(
               />
             </div>
 
-            <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800">
+            <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-3"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-3"
               >
                 {{ __('File URL', 'flexify-dashboard') }}
               </label>
@@ -949,9 +949,9 @@ watch(
             </div>
 
             <!-- Quick Actions -->
-            <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800">
+            <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-3"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-3"
               >
                 {{ __('Actions', 'flexify-dashboard') }}
               </label>
@@ -1020,49 +1020,49 @@ watch(
             </div>
 
             <!-- Metadata -->
-            <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800">
+            <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-3"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-3"
               >
                 {{ __('Details', 'flexify-dashboard') }}
               </label>
               <dl class="space-y-2 text-sm">
                 <div class="flex justify-between gap-4 items-center">
-                  <dt class="text-zinc-500 dark:text-zinc-400">
+                  <dt class="text-gray-500 dark:text-gray-400">
                     {{ __('Filename', 'flexify-dashboard') }}
                   </dt>
                   <dd
-                    class="text-zinc-700 dark:text-zinc-300 font-mono text-xs text-right overflow-hidden text-ellipsis whitespace-nowrap"
+                    class="text-gray-700 dark:text-gray-300 font-mono text-xs text-right overflow-hidden text-ellipsis whitespace-nowrap"
                   >
                     {{ mediaItem.media_details?.file || '—' }}
                   </dd>
                 </div>
                 <div class="flex justify-between gap-4 items-center">
-                  <dt class="text-zinc-500 dark:text-zinc-400">
+                  <dt class="text-gray-500 dark:text-gray-400">
                     {{ __('ID', 'flexify-dashboard') }}
                   </dt>
                   <dd
-                    class="text-zinc-700 dark:text-zinc-300 font-mono text-xs text-right overflow-hidden text-ellipsis whitespace-nowrap"
+                    class="text-gray-700 dark:text-gray-300 font-mono text-xs text-right overflow-hidden text-ellipsis whitespace-nowrap"
                   >
                     {{ mediaItem.id }}
                   </dd>
                 </div>
                 <div class="flex justify-between gap-4 items-center">
-                  <dt class="text-zinc-500 dark:text-zinc-400">
+                  <dt class="text-gray-500 dark:text-gray-400">
                     {{ __('Modified', 'flexify-dashboard') }}
                   </dt>
                   <dd
-                    class="text-zinc-700 dark:text-zinc-300 text-xs text-right overflow-hidden text-ellipsis whitespace-nowrap"
+                    class="text-gray-700 dark:text-gray-300 text-xs text-right overflow-hidden text-ellipsis whitespace-nowrap"
                   >
                     {{ formatDate(mediaItem.modified) }}
                   </dd>
                 </div>
                 <div class="flex justify-between gap-4 items-center">
-                  <dt class="text-zinc-500 dark:text-zinc-400">
+                  <dt class="text-gray-500 dark:text-gray-400">
                     {{ __('File size', 'flexify-dashboard') }}
                   </dt>
                   <dd
-                    class="text-zinc-700 dark:text-zinc-300 text-xs text-right overflow-hidden text-ellipsis whitespace-nowrap"
+                    class="text-gray-700 dark:text-gray-300 text-xs text-right overflow-hidden text-ellipsis whitespace-nowrap"
                   >
                     {{ formatFileSize(mediaItem.media_details?.filesize) }}
                   </dd>
@@ -1071,9 +1071,9 @@ watch(
             </div>
 
             <!-- Media Usage -->
-            <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800">
+            <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-3"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-3"
               >
                 {{ __('Used In', 'flexify-dashboard') }}
               </label>
@@ -1084,13 +1084,13 @@ watch(
               >
                 <AppIcon
                   icon="refresh"
-                  class="text-lg animate-spin text-zinc-400"
+                  class="text-lg animate-spin text-gray-400"
                 />
               </div>
 
               <div
                 v-else-if="mediaUsage.length === 0"
-                class="text-sm text-zinc-500 dark:text-zinc-400 py-2"
+                class="text-sm text-gray-500 dark:text-gray-400 py-2"
               >
                 {{
                   __('This media is not currently used anywhere.', 'flexify-dashboard')
@@ -1101,7 +1101,7 @@ watch(
                 <div
                   v-for="usage in mediaUsage"
                   :key="usage.id"
-                  class="flex items-center justify-between p-2 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors group"
+                  class="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group"
                 >
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 mb-1">
@@ -1113,16 +1113,16 @@ watch(
                             ? 'description'
                             : 'widgets'
                         "
-                        class="text-sm text-zinc-400 dark:text-zinc-500 flex-shrink-0"
+                        class="text-sm text-gray-400 dark:text-gray-500 flex-shrink-0"
                       />
                       <span
-                        class="text-sm font-medium text-zinc-700 dark:text-zinc-300 truncate"
+                        class="text-sm font-medium text-gray-700 dark:text-gray-300 truncate"
                       >
                         {{ usage.title }}
                       </span>
                     </div>
                     <div
-                      class="text-xs text-zinc-500 dark:text-zinc-400 truncate ml-6"
+                      class="text-xs text-gray-500 dark:text-gray-400 truncate ml-6"
                     >
                       {{
                         usage.type === 'post'
@@ -1145,12 +1145,12 @@ watch(
                     v-if="usage.edit_url"
                     :href="usage.edit_url"
                     target="_blank"
-                    class="ml-2 p-1.5 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors opacity-0 group-hover:opacity-100"
+                    class="ml-2 p-1.5 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors opacity-0 group-hover:opacity-100"
                     :title="__('Edit', 'flexify-dashboard')"
                   >
                     <AppIcon
                       icon="open_in_new"
-                      class="text-sm text-zinc-500 dark:text-zinc-400"
+                      class="text-sm text-gray-500 dark:text-gray-400"
                     />
                   </a>
                 </div>

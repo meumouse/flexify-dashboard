@@ -94,13 +94,13 @@ const getDeviceColor = (deviceType) => {
     desktop:
       'bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400',
     mobile:
-      'bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400',
+      'bg-success-100 dark:bg-success-900/50 text-success-600 dark:text-success-400',
     tablet:
       'bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400',
   };
   return (
     colors[deviceType] ||
-    'bg-zinc-100 dark:bg-zinc-900/50 text-zinc-600 dark:text-zinc-400'
+    'bg-gray-100 dark:bg-gray-900/50 text-gray-600 dark:text-gray-400'
   );
 };
 
@@ -190,21 +190,21 @@ onMounted(() => {
 
 <template>
   <div
-    class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 flex flex-col h-full"
+    class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl p-6 flex flex-col h-full"
   >
     <!-- Card Header -->
     <div class="flex items-center justify-between mb-6">
       <div>
-        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {{ __('Device Usage', 'flexify-dashboard') }}
         </h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Device type distribution', 'flexify-dashboard') }}
         </p>
       </div>
       <div class="flex items-center gap-2">
         <div class="w-2 h-2 rounded-full bg-brand-500"></div>
-        <span class="text-xs text-zinc-500 dark:text-zinc-400">
+        <span class="text-xs text-gray-500 dark:text-gray-400">
           {{ formatNumber(totalViews) }} {{ __('views', 'flexify-dashboard') }}
         </span>
       </div>
@@ -215,21 +215,21 @@ onMounted(() => {
       <div v-for="i in 3" :key="i" class="animate-pulse">
         <div class="flex items-center justify-between p-3">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-zinc-200 dark:bg-zinc-700 rounded-xl"></div>
+            <div class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-xl"></div>
             <div class="flex-1 space-y-2">
-              <div class="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-20"></div>
-              <div class="h-3 bg-zinc-200 dark:bg-zinc-700 rounded w-16"></div>
+              <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-20"></div>
+              <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-16"></div>
             </div>
           </div>
-          <div class="h-6 bg-zinc-200 dark:bg-zinc-700 rounded w-16"></div>
+          <div class="h-6 bg-gray-200 dark:bg-gray-700 rounded w-16"></div>
         </div>
       </div>
     </div>
 
     <!-- Error State -->
     <div v-else-if="error" class="text-center py-8">
-      <AppIcon icon="error" class="text-3xl text-zinc-400 mx-auto mb-3" />
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ error }}</p>
+      <AppIcon icon="error" class="text-3xl text-gray-400 mx-auto mb-3" />
+      <p class="text-sm text-gray-500 dark:text-gray-400">{{ error }}</p>
       <button
         @click="loadDeviceData"
         class="mt-2 text-brand-600 dark:text-brand-400 text-sm hover:underline"
@@ -249,20 +249,20 @@ onMounted(() => {
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
             <div>
-              <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {{ getDeviceLabel(device.device_type) }}
               </p>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400">
+              <p class="text-xs text-gray-500 dark:text-gray-400">
                 {{ formatNumber(device.unique_visitors) }}
                 {{ __('unique visitors', 'flexify-dashboard') }}
               </p>
             </div>
           </div>
           <div class="text-right">
-            <span class="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+            <span class="text-lg font-bold text-gray-900 dark:text-gray-100">
               {{ formatNumber(device.views) }}
             </span>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400">
+            <p class="text-xs text-gray-500 dark:text-gray-400">
               {{ getDevicePercentage(device.views) }}%
             </p>
           </div>
@@ -270,7 +270,7 @@ onMounted(() => {
 
         <!-- Progress Bar -->
         <div
-          class="mt-2 w-full bg-zinc-200 dark:bg-zinc-700 rounded-full h-1.5"
+          class="mt-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5"
         >
           <div
             class="h-1.5 rounded-full transition-all duration-300 bg-brand-500 dark:bg-brand-500/60"
@@ -284,12 +284,12 @@ onMounted(() => {
     <div v-else class="text-center py-8">
       <AppIcon
         icon="devices"
-        class="text-3xl text-zinc-300 dark:text-zinc-600 mx-auto mb-3"
+        class="text-3xl text-gray-300 dark:text-gray-600 mx-auto mb-3"
       />
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
         {{ __('No device data available', 'flexify-dashboard') }}
       </p>
-      <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
+      <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
         {{
           __(
             'Device data will appear when visitors browse your site',

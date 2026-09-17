@@ -34,15 +34,15 @@ const handleClick = () => {
     :class="[
       'p-2 rounded-lg transition-all cursor-pointer pl-3',
       isActive
-        ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-950 dark:text-zinc-100'
-        : 'hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100',
+        ? 'bg-gray-100 dark:bg-gray-800 text-gray-950 dark:text-gray-100'
+        : 'hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-100',
     ]"
   >
     <a :href="link" class="flex flex-row items-center gap-3" @click="handleClick">
       <!-- User Avatar -->
       <div
         v-if="category === 'user'"
-        class="w-8 aspect-square bg-zinc-700 dark:bg-brand-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden"
+        class="w-8 aspect-square bg-gray-700 dark:bg-brand-700 text-white rounded-full font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden"
       >
         <span class="uppercase text-xs">{{
           (result.slug || result.name || result.email || '').charAt(0)
@@ -52,20 +52,20 @@ const handleClick = () => {
       <!-- Attachment Thumbnail -->
       <div
         v-if="category === 'attachment'"
-        class="w-8 aspect-square bg-zinc-200 dark:bg-zinc-700 rounded font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden"
+        class="w-8 aspect-square bg-gray-200 dark:bg-gray-700 rounded font-semibold flex place-content-center items-center justify-center shrink-0 relative overflow-hidden"
       >
         <img
           v-if="result.mime_type && result.mime_type.includes('image')"
           :src="result.source_url"
           class="w-8 h-8 object-cover rounded"
         />
-        <AppIcon v-else icon="description" class="text-zinc-400" />
+        <AppIcon v-else icon="description" class="text-gray-400" />
       </div>
 
       <!-- Post Thumbnail -->
       <div
         v-if="(category === 'post' || category === 'page') && result.featured_media"
-        class="w-8 aspect-square bg-zinc-200 dark:bg-zinc-700 rounded flex place-content-center items-center justify-center shrink-0 relative overflow-hidden"
+        class="w-8 aspect-square bg-gray-200 dark:bg-gray-700 rounded flex place-content-center items-center justify-center shrink-0 relative overflow-hidden"
       >
         <img
           v-if="
@@ -76,7 +76,7 @@ const handleClick = () => {
           :src="result._embedded['wp:featuredmedia'][0].source_url"
           class="w-8 h-8 object-cover rounded"
         />
-        <AppIcon v-else icon="description" class="text-zinc-400 text-sm" />
+        <AppIcon v-else icon="description" class="text-gray-400 text-sm" />
       </div>
 
       <!-- Default Icon -->
@@ -86,7 +86,7 @@ const handleClick = () => {
           category !== 'attachment' &&
           (!result.featured_media || (category !== 'post' && category !== 'page'))
         "
-        class="w-8 aspect-square bg-zinc-200 dark:bg-zinc-700 rounded flex place-content-center items-center justify-center shrink-0"
+        class="w-8 aspect-square bg-gray-200 dark:bg-gray-700 rounded flex place-content-center items-center justify-center shrink-0"
       >
         <AppIcon
           :icon="
@@ -96,14 +96,14 @@ const handleClick = () => {
               ? 'menu'
               : 'description'
           "
-          class="text-zinc-400 text-sm"
+          class="text-gray-400 text-sm"
         />
       </div>
 
       <div class="grow min-w-0 flex flex-col gap-1">
         <div class="flex items-center gap-2">
           <span
-            class="truncate font-medium text-zinc-900 dark:text-zinc-100"
+            class="truncate font-medium text-gray-900 dark:text-gray-100"
             v-html="result.name || result.title?.rendered || result.email"
           ></span>
           <!-- Status Badge -->
@@ -118,7 +118,7 @@ const handleClick = () => {
           </span>
         </div>
         <!-- Metadata -->
-        <div class="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+        <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
           <span v-if="result.date && (category === 'post' || category === 'page')">{{
             formatRelativeDate(result.date)
           }}</span>
@@ -140,7 +140,7 @@ const handleClick = () => {
           </span>
         </div>
       </div>
-      <AppIcon icon="chevron_right" class="text-zinc-400 shrink-0" />
+      <AppIcon icon="chevron_right" class="text-gray-400 shrink-0" />
     </a>
   </li>
 </template>

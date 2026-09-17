@@ -500,16 +500,16 @@ fetchPostsData();
       id="flexify-dashboard-posts-wrap"
     >
       <div
-        class="flex h-full text-zinc-900 dark:text-zinc-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0"
+        class="flex h-full text-gray-900 dark:text-gray-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0"
       >
         <!-- Posts List Sidebar -->
         <div
-          class="md:w-96 w-full flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-hidden"
+          class="md:w-96 w-full flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-hidden"
         >
           <!-- Header -->
           <div class="px-6 pt-6 pb-4">
             <div class="flex items-center justify-between mb-4">
-              <h1 class="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+              <h1 class="text-xl font-medium text-gray-900 dark:text-gray-100">
                 {{ currentPostType?.labels?.name || __('Posts', 'flexify-dashboard') }}
               </h1>
               <div class="flex items-center gap-2">
@@ -518,13 +518,13 @@ fetchPostsData();
                   @click="handleViewModeChange('table')"
                   :class="[
                     'p-2 rounded-md transition-colors',
-                    'bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                    'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700',
                   ]"
                   :title="__('Table View', 'flexify-dashboard')"
                 >
                   <AppIcon
                     icon="table_chart"
-                    class="text-sm text-zinc-600 dark:text-zinc-400"
+                    class="text-sm text-gray-600 dark:text-gray-400"
                   />
                 </button>
                 <a
@@ -542,7 +542,7 @@ fetchPostsData();
             <div class="relative">
               <AppIcon
                 icon="search"
-                class="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400 dark:text-zinc-500 text-base pointer-events-none"
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 text-base pointer-events-none"
               />
               <input
                 :value="pagination.search"
@@ -557,7 +557,7 @@ fetchPostsData();
                   currentPostType?.labels?.search_items ||
                   __('Search posts...', 'flexify-dashboard')
                 "
-                class="w-full bg-zinc-50 dark:bg-zinc-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 transition-shadow"
+                class="w-full bg-gray-50 dark:bg-gray-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition-shadow"
               />
             </div>
           </div>
@@ -576,8 +576,8 @@ fetchPostsData();
                   :class="[
                     'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
                     activeFilter === key
-                      ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                      : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                      ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
                   ]"
                 >
                   {{ option.label }}
@@ -591,7 +591,7 @@ fetchPostsData();
             class="flex flex-row place-content-between items-center px-6 pr-4 pb-3"
           >
             <div
-              class="py-2 text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500"
+              class="py-2 text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500"
             >
               {{ pagination.total }}
               {{
@@ -602,7 +602,7 @@ fetchPostsData();
             </div>
 
             <div class="flex flex-row items-center">
-              <div class="text-xs text-zinc-500 dark:text-zinc-500 mr-2">
+              <div class="text-xs text-gray-500 dark:text-gray-500 mr-2">
                 {{ __('Page', 'flexify-dashboard') }} {{ pagination.page }}
                 <span v-if="pagination.pages > 0">
                   / {{ pagination.pages }}
@@ -631,14 +631,14 @@ fetchPostsData();
           <div class="flex-1 overflow-auto px-6 pb-6 custom-scrollbar relative">
             <div v-if="loading && !posts.length" class="p-8 text-center">
               <div
-                class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+                class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
               >
                 <AppIcon
                   icon="article"
-                  class="text-zinc-400 text-xl animate-pulse"
+                  class="text-gray-400 text-xl animate-pulse"
                 />
               </div>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400">
+              <p class="text-sm text-gray-500 dark:text-gray-400">
                 {{ __('Loading posts...', 'flexify-dashboard') }}
               </p>
             </div>
@@ -648,11 +648,11 @@ fetchPostsData();
               class="p-8 text-center"
             >
               <div
-                class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+                class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
               >
-                <AppIcon icon="article" class="text-zinc-400 text-xl" />
+                <AppIcon icon="article" class="text-gray-400 text-xl" />
               </div>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
                 {{ __('No posts found', 'flexify-dashboard') }}
               </p>
               <a
@@ -681,7 +681,7 @@ fetchPostsData();
 
         <!-- Right Content Area -->
         <div
-          class="flex-1 flex flex-col rounded-l-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-hidden"
+          class="flex-1 flex flex-col rounded-l-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-hidden"
         >
           <PostPreview
             :post="returnPostData.find((p) => p.id === selectedPostId) || null"
@@ -694,7 +694,7 @@ fetchPostsData();
     <!-- Table View -->
     <div
       v-else
-      class="@container flexify-dashboard-normalize font-sans dark:bg-zinc-900 bg-white p-6 flex flex-col gap-6 text-zinc-500 dark:text-zinc-400"
+      class="@container flexify-dashboard-normalize font-sans dark:bg-gray-900 bg-white p-6 flex flex-col gap-6 text-gray-500 dark:text-gray-400"
       style="min-height: calc(100dvh - var(--wp-admin--admin-bar--height))"
       :class="isDark ? 'dark' : ''"
       id="flexify-dashboard-posts-wrap"
@@ -702,7 +702,7 @@ fetchPostsData();
       <div
         class="flex flex-row place-content-between col-span-3 items-center mb-6"
       >
-        <div class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+        <div class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
           {{ currentPostType?.labels?.name || __('Posts', 'flexify-dashboard') }}
         </div>
       </div>
@@ -722,7 +722,7 @@ fetchPostsData();
             "
             :class="[
               'p-2 rounded-md transition-colors',
-              'bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+              'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700',
             ]"
             :title="
               viewMode === 'table'
@@ -732,7 +732,7 @@ fetchPostsData();
           >
             <AppIcon
               :icon="viewMode === 'table' ? 'view_list' : 'table_chart'"
-              class="text-sm text-zinc-600 dark:text-zinc-400"
+              class="text-sm text-gray-600 dark:text-gray-400"
             />
           </button>
         </div>
@@ -782,10 +782,10 @@ fetchPostsData();
         <template v-slot:empty>
           <div class="flex flex-col gap-2 p-12 items-center">
             <AppIcon icon="folder_open" style="font-size: 60px" />
-            <div class="font-bold text-xl text-zinc-900 dark:text-zinc-100">
+            <div class="font-bold text-xl text-gray-900 dark:text-gray-100">
               {{ __('Nothing found', 'flexify-dashboard') }}
             </div>
-            <div class="text-zinc-400 mb-6">
+            <div class="text-gray-400 mb-6">
               {{
                 __(
                   'When you create new items they will show up here.',
@@ -864,7 +864,7 @@ fetchPostsData();
 
             <div
               v-if="row.depth && !row.children.length"
-              class="h-full border-r border-zinc-200 dark:border-zinc-700 absolute translate-x-6"
+              class="h-full border-r border-gray-200 dark:border-gray-700 absolute translate-x-6"
             ></div>
             <InlineImageSelect
               v-model="row[item.key]"
@@ -882,7 +882,7 @@ fetchPostsData();
               ></div>
               <div
                 v-if="returnChildLength(row) > 1"
-                class="text-sm text-zinc-500 font-normal"
+                class="text-sm text-gray-500 font-normal"
               >
                 {{
                   sprintf(
@@ -893,7 +893,7 @@ fetchPostsData();
               </div>
               <div
                 v-if="returnChildLength(row) === 1"
-                class="text-sm text-zinc-500 font-normal"
+                class="text-sm text-gray-500 font-normal"
               >
                 {{
                   sprintf(
@@ -946,10 +946,10 @@ fetchPostsData();
     >
       <div v-if="selected.length" :class="isDark ? 'dark' : ''">
         <div
-          class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[101] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-xl shadow-lg px-4 py-3 flex items-center gap-4"
+          class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[101] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg px-4 py-3 flex items-center gap-4"
         >
           <div
-            class="text-sm font-medium text-zinc-700 dark:text-zinc-300 whitespace-nowrap"
+            class="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
           >
             {{ selected.length }}
             {{
@@ -959,7 +959,7 @@ fetchPostsData();
             }}
           </div>
 
-          <div class="h-6 w-px bg-zinc-200 dark:bg-zinc-700"></div>
+          <div class="h-6 w-px bg-gray-200 dark:bg-gray-700"></div>
 
           <div class="flex items-center gap-2">
             <AppButton
@@ -986,7 +986,7 @@ fetchPostsData();
               :loading="deleting"
               :title="__('Delete items', 'flexify-dashboard')"
             >
-              <AppIcon icon="delete" class="text-rose-600 text-lg" />
+              <AppIcon icon="delete" class="text-error-600 text-lg" />
             </AppButton>
 
             <AppButton type="transparent" @click="selected = []">
@@ -1003,11 +1003,11 @@ fetchPostsData();
 @reference "@/assets/css/tailwind.css";
 
 tbody .column-title {
-  @apply text-zinc-900 dark:text-zinc-100 font-semibold;
+  @apply text-gray-900 dark:text-gray-100 font-semibold;
 }
 
 .fd-comment-count {
-  @apply text-sm bg-brand-500 dark:bg-brand-600/30 rounded border border-brand-600 px-1 text-zinc-100;
+  @apply text-sm bg-brand-500 dark:bg-brand-600/30 rounded border border-brand-600 px-1 text-gray-100;
 }
 
 html {

@@ -98,14 +98,14 @@ watch(
 
 <template>
   <div
-    class="bg-white dark:bg-[#24303f] rounded-3xl p-6 h-full flex flex-col border border-zinc-200/40 dark:border-[#2e3a47] pb-2"
+    class="bg-white dark:bg-white/[0.03] rounded-2xl p-6 h-full flex flex-col border border-gray-200 dark:border-gray-800 pb-2"
   >
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"
+          class="w-8 h-8 border-2 border-gray-300 dark:border-gray-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"
         ></div>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Loading user analytics...', 'flexify-dashboard') }}
         </p>
       </div>
@@ -113,8 +113,8 @@ watch(
 
     <div v-else-if="error" class="flex-1 flex items-center justify-center">
       <div class="text-center">
-        <AppIcon icon="error" class="text-4xl text-red-500 mx-auto mb-3" />
-        <p class="text-sm text-red-600 dark:text-red-400 mb-2">
+        <AppIcon icon="error" class="text-4xl text-error-500 mx-auto mb-3" />
+        <p class="text-sm text-error-600 dark:text-error-400 mb-2">
           {{ __('Failed to load user analytics', 'flexify-dashboard') }}
         </p>
         <button
@@ -130,10 +130,10 @@ watch(
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
           <div>
-            <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
               {{ __('User Analytics', 'flexify-dashboard') }}
             </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400">
+            <p class="text-sm text-gray-500 dark:text-gray-400">
               {{ __('User registration trends', 'flexify-dashboard') }}
             </p>
           </div>
@@ -142,28 +142,28 @@ watch(
 
       <div class="grid grid-cols-3 gap-4 py-4">
         <div class="text-center">
-          <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
             {{ totalUsers.toLocaleString() }}
           </div>
-          <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          <div class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('Total Users', 'flexify-dashboard') }}
           </div>
         </div>
 
         <div class="text-center">
-          <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
             {{ usersInRange.toLocaleString() }}
           </div>
-          <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          <div class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('In Range', 'flexify-dashboard') }}
           </div>
         </div>
 
         <div class="text-center">
-          <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
             {{ recentUsers.toLocaleString() }}
           </div>
-          <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          <div class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('Recent (7d)', 'flexify-dashboard') }}
           </div>
         </div>
@@ -171,7 +171,7 @@ watch(
 
       <div
         v-if="chartData"
-        class="bg-white dark:bg-[#24303f] rounded-xl p-4 -mx-3 -mb-3 border border-zinc-200/40 dark:border-zinc-700/20"
+        class="bg-white dark:bg-white/[0.03] rounded-xl p-4 -mx-3 -mb-3 border border-gray-200 dark:border-gray-800"
       >
         <div class="h-48">
           <VueApexCharts
@@ -186,8 +186,8 @@ watch(
 
     <div v-else class="flex-1 flex items-center justify-center">
       <div class="text-center">
-        <AppIcon icon="people" class="text-4xl text-zinc-400 mx-auto mb-3" />
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <AppIcon icon="people" class="text-4xl text-gray-400 mx-auto mb-3" />
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('No user data available', 'flexify-dashboard') }}
         </p>
       </div>

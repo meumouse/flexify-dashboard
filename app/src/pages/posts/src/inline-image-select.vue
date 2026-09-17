@@ -55,7 +55,7 @@ const updatePostImage = async () => {
 <template>
   <div
     @click.stop="openMediaView"
-    class="h-10 w-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col items-center justify-center shrink-0"
+    class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col items-center justify-center shrink-0"
   >
     <img
       v-if="model.image_url"

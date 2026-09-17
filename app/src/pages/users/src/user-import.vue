@@ -426,10 +426,10 @@ watch(() => props.modelValue, (newVal) => {
     @click.self="closeDrawer"
   >
     <div
-      class="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl max-w-4xl w-full max-h-[90vh] flex flex-col"
+      class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-4xl w-full max-h-[90vh] flex flex-col"
     >
       <!-- Header -->
-      <div class="px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+      <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
         <div class="flex items-center gap-2">
           <AppIcon icon="upload_file" class="text-lg" />
           <h2 class="text-lg font-semibold">
@@ -438,7 +438,7 @@ watch(() => props.modelValue, (newVal) => {
         </div>
         <button
           @click="closeDrawer"
-          class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
           <AppIcon icon="close" class="text-lg" />
         </button>
@@ -449,19 +449,19 @@ watch(() => props.modelValue, (newVal) => {
         <!-- File Selection -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Select CSV File', 'flexify-dashboard') }}
           </label>
           <div
             @click="triggerFileInput"
-            class="border-2 border-dashed border-zinc-300 dark:border-zinc-700 rounded-lg p-8 text-center cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
+            class="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg p-8 text-center cursor-pointer hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
           >
-            <AppIcon icon="cloud_upload" class="text-4xl text-zinc-400 mb-2 mx-auto" />
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-1">
+            <AppIcon icon="cloud_upload" class="text-4xl text-gray-400 mb-2 mx-auto" />
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">
               {{ __('Click to select file or drag and drop', 'flexify-dashboard') }}
             </p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-500">
+            <p class="text-xs text-gray-500 dark:text-gray-500">
               CSV, XLSX ({{ __('max 10MB', 'flexify-dashboard') }})
             </p>
             <input
@@ -472,7 +472,7 @@ watch(() => props.modelValue, (newVal) => {
               class="hidden"
             />
           </div>
-          <p v-if="selectedFile" class="text-sm text-zinc-600 dark:text-zinc-400 mt-2">
+          <p v-if="selectedFile" class="text-sm text-gray-600 dark:text-gray-400 mt-2">
             {{ __('Selected:', 'flexify-dashboard') }} {{ selectedFile.name }}
             ({{ csvRows.length }} {{ __('rows', 'flexify-dashboard') }})
           </p>
@@ -481,7 +481,7 @@ watch(() => props.modelValue, (newVal) => {
         <!-- Field Mapping -->
         <div v-if="csvHeaders.length > 0">
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-3"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
           >
             {{ __('Map CSV Columns to User Fields', 'flexify-dashboard') }}
           </label>
@@ -491,7 +491,7 @@ watch(() => props.modelValue, (newVal) => {
               :key="header"
               class="flex items-center gap-3"
             >
-              <div class="flex-1 text-sm text-zinc-600 dark:text-zinc-400">
+              <div class="flex-1 text-sm text-gray-600 dark:text-gray-400">
                 {{ header }}
               </div>
               <Select
@@ -522,10 +522,10 @@ watch(() => props.modelValue, (newVal) => {
         </div>
 
         <!-- Options -->
-        <div v-if="csvHeaders.length > 0" class="space-y-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+        <div v-if="csvHeaders.length > 0" class="space-y-4 pt-4 border-t border-gray-200 dark:border-gray-800">
           <div>
             <label
-              class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             >
               {{ __('Default Password', 'flexify-dashboard') }}
             </label>
@@ -534,7 +534,7 @@ watch(() => props.modelValue, (newVal) => {
               type="password"
               :placeholder="__('Leave empty to generate random passwords', 'flexify-dashboard')"
             />
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
               {{ __('Used when password column is not mapped or empty', 'flexify-dashboard') }}
             </p>
           </div>
@@ -546,7 +546,7 @@ watch(() => props.modelValue, (newVal) => {
               id="skip-first-row"
               class="rounded"
             />
-            <label for="skip-first-row" class="text-sm text-zinc-600 dark:text-zinc-400">
+            <label for="skip-first-row" class="text-sm text-gray-600 dark:text-gray-400">
               {{ __('Skip first data row (if it contains headers)', 'flexify-dashboard') }}
             </label>
           </div>
@@ -558,27 +558,27 @@ watch(() => props.modelValue, (newVal) => {
               id="send-notification"
               class="rounded"
             />
-            <label for="send-notification" class="text-sm text-zinc-600 dark:text-zinc-400">
+            <label for="send-notification" class="text-sm text-gray-600 dark:text-gray-400">
               {{ __('Send welcome email to new users', 'flexify-dashboard') }}
             </label>
           </div>
         </div>
 
         <!-- Preview -->
-        <div v-if="previewData.length > 0" class="pt-4 border-t border-zinc-200 dark:border-zinc-800">
+        <div v-if="previewData.length > 0" class="pt-4 border-t border-gray-200 dark:border-gray-800">
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-3"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3"
           >
             {{ __('Preview (first 5 rows)', 'flexify-dashboard') }}
           </label>
           <div class="overflow-x-auto">
             <table class="w-full text-sm">
               <thead>
-                <tr class="border-b border-zinc-200 dark:border-zinc-800">
+                <tr class="border-b border-gray-200 dark:border-gray-800">
                   <th
                     v-for="field in Object.keys(previewData[0] || {})"
                     :key="field"
-                    class="text-left py-2 px-3 text-zinc-600 dark:text-zinc-400"
+                    class="text-left py-2 px-3 text-gray-600 dark:text-gray-400"
                   >
                     {{ field }}
                   </th>
@@ -588,12 +588,12 @@ watch(() => props.modelValue, (newVal) => {
                 <tr
                   v-for="(row, index) in previewData"
                   :key="index"
-                  class="border-b border-zinc-100 dark:border-zinc-800/50"
+                  class="border-b border-gray-100 dark:border-gray-800"
                 >
                   <td
                     v-for="(value, field) in row"
                     :key="field"
-                    class="py-2 px-3 text-zinc-700 dark:text-zinc-300"
+                    class="py-2 px-3 text-gray-700 dark:text-gray-300"
                   >
                     {{ value }}
                   </td>
@@ -604,27 +604,27 @@ watch(() => props.modelValue, (newVal) => {
         </div>
 
         <!-- Import Progress -->
-        <div v-if="isImporting" class="pt-4 border-t border-zinc-200 dark:border-zinc-800">
+        <div v-if="isImporting" class="pt-4 border-t border-gray-200 dark:border-gray-800">
           <div class="flex items-center justify-between mb-2">
-            <span class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
               {{ __('Importing...', 'flexify-dashboard') }}
             </span>
-            <span class="text-sm text-zinc-500 dark:text-zinc-400">
+            <span class="text-sm text-gray-500 dark:text-gray-400">
               {{ importProgress.current }} / {{ importProgress.total }}
             </span>
           </div>
-          <div class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-2">
+          <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2">
             <div
-              class="bg-zinc-900 dark:bg-zinc-100 h-2 rounded-full transition-all duration-300"
+              class="bg-gray-900 dark:bg-gray-100 h-2 rounded-full transition-all duration-300"
               :style="{ width: `${importProgress.percentage}%` }"
             ></div>
           </div>
         </div>
 
         <!-- Import Errors -->
-        <div v-if="importErrors.length > 0" class="pt-4 border-t border-zinc-200 dark:border-zinc-800">
+        <div v-if="importErrors.length > 0" class="pt-4 border-t border-gray-200 dark:border-gray-800">
           <label
-            class="block text-sm font-medium text-red-600 dark:text-red-400 mb-2"
+            class="block text-sm font-medium text-error-600 dark:text-error-400 mb-2"
           >
             {{ __('Import Errors', 'flexify-dashboard') }} ({{ importErrors.length }})
           </label>
@@ -632,7 +632,7 @@ watch(() => props.modelValue, (newVal) => {
             <div
               v-for="(error, index) in importErrors"
               :key="index"
-              class="text-sm text-red-600 dark:text-red-400 p-2 bg-red-50 dark:bg-red-900/20 rounded"
+              class="text-sm text-error-600 dark:text-error-400 p-2 bg-error-50 dark:bg-error-900/20 rounded"
             >
               {{ __('Row', 'flexify-dashboard') }} {{ error.row }}: {{ error.error }}
             </div>
@@ -642,7 +642,7 @@ watch(() => props.modelValue, (newVal) => {
 
       <!-- Footer -->
       <div
-        class="px-6 py-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-end gap-3"
+        class="px-6 py-4 border-t border-gray-200 dark:border-gray-800 flex items-center justify-end gap-3"
       >
         <AppButton type="default" @click="closeDrawer" :disabled="isImporting">
           {{ __('Cancel', 'flexify-dashboard') }}

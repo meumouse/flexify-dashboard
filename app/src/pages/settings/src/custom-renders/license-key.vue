@@ -116,8 +116,8 @@ const maskedLicenseKey = computed(() => {
           {{ __('Remove key', 'flexify-dashboard') }}
         </AppButton>
       </div>
-      <div class="mt-3 text-sm text-zinc-500 dark:text-zinc-400 space-y-1">
-        <p class="font-medium text-zinc-900 dark:text-zinc-100">
+      <div class="mt-3 text-sm text-gray-500 dark:text-gray-400 space-y-1">
+        <p class="font-medium text-gray-900 dark:text-gray-100">
           {{ __('License information:', 'flexify-dashboard') }}
         </p>
         <p>
@@ -158,7 +158,7 @@ const maskedLicenseKey = computed(() => {
       </div>
       <div
         v-if="isNonProduction()"
-        class="bg-emerald-100 dark:bg-emerald-600/20 border border-emerald-400 dark:border-emerald-700 p-2 rounded-lg text-sm mt-3"
+        class="bg-success-100 dark:bg-success-600/20 border border-success-400 dark:border-success-700 p-2 rounded-lg text-sm mt-3"
       >
         {{
           __(

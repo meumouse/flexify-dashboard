@@ -79,10 +79,10 @@ document.addEventListener('click', hideContextMenu);
         :key="item.id"
         :to="`/edit/${item.id}`"
         @contextmenu="showItemContextMenu($event, item)"
-        class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group -mx-3"
+        class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all group -mx-3"
         :class="
           route.params.menuid == item.id
-            ? 'bg-zinc-100 dark:bg-zinc-800/60'
+            ? 'bg-gray-100 dark:bg-gray-800/60'
             : ''
         "
       >
@@ -90,7 +90,7 @@ document.addEventListener('click', hideContextMenu);
         <div class="flex-shrink-0 mr-2">
           <div
             class="w-2 h-2 flex items-center justify-center rounded-full"
-            :class="item.status == 'publish' ? 'bg-green-500' : 'bg-orange-500'"
+            :class="item.status == 'publish' ? 'bg-success-500' : 'bg-orange-500'"
           ></div>
         </div>
 
@@ -98,7 +98,7 @@ document.addEventListener('click', hideContextMenu);
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 mb-0.5">
             <span
-              class="font-medium text-sm text-zinc-900 dark:text-zinc-200 truncate"
+              class="font-medium text-sm text-gray-900 dark:text-gray-200 truncate"
               :title="
                 item.title?.rendered ||
                 item.title?.raw ||
@@ -106,8 +106,8 @@ document.addEventListener('click', hideContextMenu);
               "
               :class="
                 route.params.menuid == item.id
-                  ? 'text-zinc-900 dark:text-white'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-600 dark:text-gray-400'
               "
             >
               {{
@@ -117,7 +117,7 @@ document.addEventListener('click', hideContextMenu);
               }}
             </span>
           </div>
-          <div class="text-xs text-zinc-500 dark:text-zinc-400 truncate">
+          <div class="text-xs text-gray-500 dark:text-gray-400 truncate">
             {{ returnStatusFormatted(item.status) }} •
             {{ formatDateString(item.modified) }}
           </div>
@@ -132,12 +132,12 @@ document.addEventListener('click', hideContextMenu);
         left: contextMenuPosition.x + 'px',
         top: contextMenuPosition.y + 'px',
       }"
-      class="fixed z-50 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg py-1 min-w-32"
+      class="fixed z-50 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 min-w-32"
       @click.stop
     >
       <button
         @click="handleDeleteItem(contextMenuItem)"
-        class="w-full px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 flex items-center gap-2"
+        class="w-full px-3 py-2 text-left text-sm text-error-600 hover:bg-error-50 dark:hover:bg-error-900/20 flex items-center gap-2"
       >
         <AppIcon icon="delete" class="text-sm" />
         {{ __('Delete', 'flexify-dashboard') }}

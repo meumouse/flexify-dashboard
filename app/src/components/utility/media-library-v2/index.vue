@@ -405,12 +405,12 @@ defineExpose({
     >
       <div class="flexify-dashboard-isolation" v-if="open">
         <div
-          class="fixed top-0 left-0 right-0 bottom-0 h-dvh max-h-dvh max-w-dvw bg-zinc-900/40 flex flex-row z-[99999] items-stretch flexify-dashboard-normalize"
+          class="fixed top-0 left-0 right-0 bottom-0 h-dvh max-h-dvh max-w-dvw bg-gray-900/40 flex flex-row z-[99999] items-stretch flexify-dashboard-normalize"
           @click="maybeClose"
           :class="isDark ? 'dark' : ''"
         >
           <div
-            class="w-full h-full bg-white dark:bg-zinc-900 flex flex-col overflow-hidden p-6"
+            class="w-full h-full bg-white dark:bg-gray-900 flex flex-col overflow-hidden p-6"
             @click.stop
           >
             <!-- Header -->

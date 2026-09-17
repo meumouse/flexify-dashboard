@@ -56,7 +56,7 @@ defineEmits(['submitRecovery', 'showLogin']);
       <div :ref="setRecaptchaContainer" class="fd-recaptcha-holder"></div>
       <p
         v-if="recaptchaError"
-        class="text-sm text-rose-600 dark:text-rose-300"
+        class="text-sm text-error-600 dark:text-error-300"
       >
         {{ recaptchaError }}
       </p>

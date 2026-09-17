@@ -374,17 +374,17 @@ onUnmounted(() => {
 
 <template>
   <div
-    class="flex h-full text-zinc-900 dark:text-zinc-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize"
+    class="flex h-full text-gray-900 dark:text-gray-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize"
     :class="isDark ? 'dark' : ''"
   >
     <!-- Roles List Sidebar -->
     <div
-      class="md:w-96 w-full flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-hidden"
+      class="md:w-96 w-full flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-hidden"
     >
       <!-- Header -->
       <div class="px-6 pt-6 pb-4">
         <div class="flex items-center justify-between mb-4">
-          <h1 class="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+          <h1 class="text-xl font-medium text-gray-900 dark:text-gray-100">
             {{ __('Role Editor', 'flexify-dashboard') }}
           </h1>
           <AppButton @click="openCreateModal" type="primary" class="text-sm">
@@ -397,13 +397,13 @@ onUnmounted(() => {
         <div class="relative flex items-center">
           <AppIcon
             icon="search"
-            class="absolute left-3 text-lg text-zinc-400 dark:text-zinc-500 pointer-events-none"
+            class="absolute left-3 text-lg text-gray-400 dark:text-gray-500 pointer-events-none"
           />
           <input
             v-model="searchQuery"
             type="text"
             :placeholder="__('Search roles...', 'flexify-dashboard')"
-            class="w-full bg-zinc-50 dark:bg-zinc-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 transition-shadow"
+            class="w-full bg-gray-50 dark:bg-gray-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition-shadow"
           />
         </div>
       </div>
@@ -411,7 +411,7 @@ onUnmounted(() => {
       <!-- Results Count -->
       <div class="flex flex-row place-content-between items-center px-6 pr-4">
         <div
-          class="py-2 text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500"
+          class="py-2 text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500"
         >
           {{ filteredRoles.length }}
           {{
@@ -426,25 +426,25 @@ onUnmounted(() => {
       <div class="flex-1 overflow-auto px-6 pb-6 custom-scrollbar relative">
         <div v-if="loading && !roles.length" class="p-8 text-center">
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
             <AppIcon
               icon="people"
-              class="text-zinc-400 text-xl animate-pulse"
+              class="text-gray-400 text-xl animate-pulse"
             />
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('Loading roles...', 'flexify-dashboard') }}
           </p>
         </div>
 
         <div v-else-if="filteredRoles.length === 0" class="p-8 text-center">
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
-            <AppIcon icon="people" class="text-zinc-400 text-xl" />
+            <AppIcon icon="people" class="text-gray-400 text-xl" />
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
             {{
               searchQuery
                 ? __('No roles found', 'flexify-dashboard')
@@ -461,8 +461,8 @@ onUnmounted(() => {
             :class="[
               'flex items-center justify-between p-3 rounded-xl transition-all duration-200 text-left group -mx-3 cursor-pointer',
               route.params.roleSlug === role.slug
-                ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100'
-                : 'hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200',
+                ? 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100'
+                : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200',
             ]"
           >
             <div class="flex-1 min-w-0">
@@ -473,8 +473,8 @@ onUnmounted(() => {
                 :class="[
                   'text-xs',
                   route.params.roleSlug === role.slug
-                    ? 'text-zinc-500 dark:text-zinc-400'
-                    : 'text-zinc-500 dark:text-zinc-400',
+                    ? 'text-gray-500 dark:text-gray-400'
+                    : 'text-gray-500 dark:text-gray-400',
                 ]"
               >
                 {{ role.userCount }}
@@ -490,8 +490,8 @@ onUnmounted(() => {
               :class="[
                 'text-base flex-shrink-0 ml-2 transition-transform duration-200 opacity-0 group-hover:opacity-100',
                 route.params.roleSlug === role.slug
-                  ? 'text-zinc-900 dark:text-white opacity-100'
-                  : 'text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 group-hover:translate-x-1',
+                  ? 'text-gray-900 dark:text-white opacity-100'
+                  : 'text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300 group-hover:translate-x-1',
               ]"
             />
           </div>
@@ -501,22 +501,22 @@ onUnmounted(() => {
 
     <!-- Right Content Area -->
     <div
-      class="flex-1 flex flex-col rounded-l-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-auto"
+      class="flex-1 flex flex-col rounded-l-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-auto"
     >
       <RouterView key="role-details-content" v-slot="{ Component }">
         <div class="flex-1 flex items-center justify-center" v-if="!Component">
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
             >
-              <AppIcon icon="people" class="text-2xl text-zinc-400" />
+              <AppIcon icon="people" class="text-2xl text-gray-400" />
             </div>
             <h3
-              class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+              class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
             >
               {{ __('Role Details', 'flexify-dashboard') }}
             </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
               {{
                 __(
                   'Select a role from the list to view and edit its capabilities.',
@@ -554,7 +554,7 @@ onUnmounted(() => {
     <Modal ref="createRoleModal">
       <div class="w-[500px] max-w-[90vw] p-6">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
             {{ __('Create New Role', 'flexify-dashboard') }}
           </h2>
           <AppButton type="transparent" @click="closeCreateModal">
@@ -565,7 +565,7 @@ onUnmounted(() => {
         <div class="space-y-4">
           <div>
             <label
-              class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             >
               {{ __('Role Name', 'flexify-dashboard') }}
             </label>
@@ -575,14 +575,14 @@ onUnmounted(() => {
               @keyup.enter="createRole"
               :disabled="isCreatingRole"
             />
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
               {{ __('The display name for this role', 'flexify-dashboard') }}
             </p>
           </div>
 
           <div>
             <label
-              class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             >
               {{ __('Role Slug', 'flexify-dashboard') }}
             </label>
@@ -593,7 +593,7 @@ onUnmounted(() => {
               @input="onSlugInput"
               :disabled="isCreatingRole"
             />
-            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
               {{
                 __(
                   'Lowercase letters, numbers, hyphens, and underscores only',
@@ -604,7 +604,7 @@ onUnmounted(() => {
           </div>
 
           <div
-            class="flex items-center gap-3 pt-4 border-t border-zinc-200/50 dark:border-zinc-700/30"
+            class="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-800"
           >
             <AppButton
               @click="closeCreateModal"

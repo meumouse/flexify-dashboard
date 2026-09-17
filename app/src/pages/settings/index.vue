@@ -559,12 +559,12 @@ getSettings();
     <Notifications />
 
     <div
-      class="flex h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans flexify-dashboard-normalize max-h-[var(--fd-body-height)] overflow-hidden gap-6 p-[1.5px]"
+      class="flex h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans flexify-dashboard-normalize max-h-[var(--fd-body-height)] overflow-hidden gap-6 p-[1.5px]"
       :class="isDark ? 'dark' : ''"
     >
       <!-- Left Sidebar -->
       <div
-        class="md:w-96 w-full flex flex-col bg-white dark:bg-zinc-800/30 rounded-2xl border border-zinc-200 dark:border-zinc-700/20 overflow-hidden max-h-full"
+        class="md:w-96 w-full flex flex-col bg-white dark:bg-white/[0.03] rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden max-h-full"
       >
         <!-- Header -->
         <div class="p-6">
@@ -602,18 +602,18 @@ getSettings();
             <div
               class="absolute top-0 left-0 h-full flex items-center px-3 pointer-events-none"
             >
-              <AppIcon icon="search" class="text-zinc-400 text-sm" />
+              <AppIcon icon="search" class="text-gray-400 text-sm" />
             </div>
             <input
               v-model="searchQuery"
               type="text"
               :placeholder="__('Search settings...', 'flexify-dashboard')"
-              class="w-full pl-9 pr-3 py-2.5 text-sm border border-zinc-200 dark:border-zinc-700/40 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs focus:bg-white dark:focus:bg-zinc-800"
+              class="w-full pl-9 pr-3 py-2.5 text-sm border border-gray-200 dark:border-gray-800 rounded-xl bg-gray-50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs focus:bg-white dark:focus:bg-gray-800"
             />
             <button
               v-if="searchQuery"
               @click="searchQuery = ''"
-              class="absolute top-0 right-0 h-full flex items-center px-3 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+              class="absolute top-0 right-0 h-full flex items-center px-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
             >
               <AppIcon icon="close" class="text-sm" />
             </button>
@@ -627,14 +627,14 @@ getSettings();
             class="p-8 text-center"
           >
             <div
-              class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
             >
               <AppIcon
                 icon="settings"
-                class="text-zinc-400 text-xl animate-pulse"
+                class="text-gray-400 text-xl animate-pulse"
               />
             </div>
-            <p class="text-sm text-zinc-500">
+            <p class="text-sm text-gray-500">
               {{ __('Loading settings...', 'flexify-dashboard') }}
             </p>
           </div>
@@ -646,14 +646,14 @@ getSettings();
               class="py-8 text-center"
             >
               <div
-                class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+                class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
               >
-                <AppIcon icon="search" class="text-zinc-400 text-xl" />
+                <AppIcon icon="search" class="text-gray-400 text-xl" />
               </div>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400">
+              <p class="text-sm text-gray-500 dark:text-gray-400">
                 {{ __('No settings found', 'flexify-dashboard') }}
               </p>
-              <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
+              <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
                 {{ __('Try a different search term', 'flexify-dashboard') }}
               </p>
             </div>
@@ -666,10 +666,10 @@ getSettings();
                 selectedCategory = category.value;
                 drawer = true;
               "
-              class="flex items-center gap-3 px-3 py-3 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all cursor-pointer group"
+              class="flex items-center gap-3 px-3 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all cursor-pointer group"
               :class="
                 selectedCategory === category.value
-                  ? 'bg-zinc-100 dark:bg-zinc-800/60'
+                  ? 'bg-gray-100 dark:bg-gray-800/60'
                   : ''
               "
             >
@@ -680,7 +680,7 @@ getSettings();
                   :class="
                     selectedCategory === category.value
                       ? 'bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400'
-                      : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
                   "
                 >
                   <AppIcon :icon="category.icon" class="text-lg" />
@@ -694,8 +694,8 @@ getSettings();
                     class="font-medium text-sm truncate"
                     :class="
                       selectedCategory === category.value
-                        ? 'text-zinc-900 dark:text-white'
-                        : 'text-zinc-500 dark:text-zinc-400'
+                        ? 'text-gray-900 dark:text-white'
+                        : 'text-gray-500 dark:text-gray-400'
                     "
                   >
                     {{ category.label }}
@@ -707,7 +707,7 @@ getSettings();
                     {{ category.matchCount }}
                   </span>
                 </div>
-                <div class="text-xs text-zinc-500 dark:text-zinc-400 truncate">
+                <div class="text-xs text-gray-500 dark:text-gray-400 truncate">
                   {{ category.description }}
                 </div>
               </div>
@@ -716,7 +716,7 @@ getSettings();
               <div
                 class="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
               >
-                <AppIcon icon="chevron_right" class="text-zinc-400 text-sm" />
+                <AppIcon icon="chevron_right" class="text-gray-400 text-sm" />
               </div>
             </div>
           </div>
@@ -725,21 +725,21 @@ getSettings();
 
       <!-- Right Content Area -->
       <div
-        class="flex-1 flex flex-col bg-white dark:bg-zinc-800/30 rounded-2xl border border-zinc-200 dark:border-zinc-700/20"
+        class="flex-1 flex flex-col bg-white dark:bg-white/[0.03] rounded-2xl border border-gray-200 dark:border-gray-800"
       >
         <!-- Loading State -->
         <div v-if="loading" class="flex-1 flex items-center justify-center">
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
             >
               <AppIcon
                 icon="settings"
-                class="text-2xl text-zinc-400 animate-pulse"
+                class="text-2xl text-gray-400 animate-pulse"
               />
             </div>
             <h3
-              class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+              class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
             >
               {{ __('Loading Settings...', 'flexify-dashboard') }}
             </h3>
@@ -753,16 +753,16 @@ getSettings();
         >
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
             >
-              <AppIcon icon="settings" class="text-2xl text-zinc-400" />
+              <AppIcon icon="settings" class="text-2xl text-gray-400" />
             </div>
             <h3
-              class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+              class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
             >
               {{ __('Settings Panel', 'flexify-dashboard') }}
             </h3>
-            <p class="text-sm text-zinc-500 mb-4">
+            <p class="text-sm text-gray-500 mb-4">
               {{
                 __(
                   'Select a category from the list to configure your settings.',

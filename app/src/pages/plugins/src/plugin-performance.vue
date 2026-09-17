@@ -183,10 +183,10 @@ watch(() => tab.value, getPluginPerformance);
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 right-0 bottom-0 bg-zinc-900/20 dark:bg-zinc-900/60 flex flex-row place-content-end z-[99999]" @click="maybeClose">
+  <div class="fixed top-0 left-0 right-0 bottom-0 bg-gray-900/20 dark:bg-gray-900/60 flex flex-row place-content-end z-[99999]" @click="maybeClose">
     <div
       ref="panel"
-      class="h-screen max-h-screen overflow-auto bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-700 max-w-full relative shadow-lg rounded-tl-lg rounded-bl-lg relative max-w-full dark:shadow-zinc-950"
+      class="h-screen max-h-screen overflow-auto bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 max-w-full relative shadow-lg rounded-tl-lg rounded-bl-lg relative max-w-full dark:shadow-gray-950"
     >
       <div class="w-[600px] max-w-screen p-6">
         <div class="flex flex-col gap-6">
@@ -195,7 +195,7 @@ watch(() => tab.value, getPluginPerformance);
               <img :src="getPluginIcon" class="w-full h-full object-cover" />
             </div>
 
-            <div class="text-xl text-zinc-900 dark:text-zinc-100 grow" v-html="returnActualPlugin.Title"></div>
+            <div class="text-xl text-gray-900 dark:text-gray-100 grow" v-html="returnActualPlugin.Title"></div>
 
             <RouterLink to="/">
               <AppButton type="transparent"><AppIcon icon="close" class="text-lg" /></AppButton>
@@ -204,81 +204,81 @@ watch(() => tab.value, getPluginPerformance);
 
           <AppToggle :options="toggleOptions" v-model="tab" @click.stop />
 
-          <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          <div class="text-sm text-gray-500 dark:text-gray-400">
             {{ tab == "frontend" ? frontEndDescription : backEndDescription }}
           </div>
 
           <div class="grid grid-cols-3 gap-3 animate-pulse" v-if="loading">
-            <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800 h-[66.5px]" v-for="index in 9"></div>
+            <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800 h-[66.5px]" v-for="index in 9"></div>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3 col-span-3"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3 col-span-3"></div>
 
-            <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800 h-[66.5px] col-span-3"></div>
+            <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800 h-[66.5px] col-span-3"></div>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3 col-span-3"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3 col-span-3"></div>
 
-            <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800 h-[66.5px] col-span-3"></div>
+            <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800 h-[66.5px] col-span-3"></div>
           </div>
 
           <template v-else-if="returnActualPlugin && returnPluginMetrics">
             <div class="grid grid-cols-3 gap-3">
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total Queries", "flexify-dashboard") }}</div>
                 <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.metrics.query_count || 0 }}</div>
               </div>
 
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Query time", "flexify-dashboard") }}</div>
                 <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ formatExecutionTime(returnPluginMetrics.metrics.query_time) }}</div>
               </div>
 
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total hooks", "flexify-dashboard") }}</div>
                 <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.metrics.hook_count || 0 }}</div>
               </div>
 
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Execution time", "flexify-dashboard") }}</div>
                 <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ formatExecutionTime(returnPluginMetrics.metrics.execution_time) }}</div>
               </div>
 
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Memory usage", "flexify-dashboard") }}</div>
                 <div class="">
                   <span class="font-semibold text-xl text-brand-500 dark:text-brand-400 mr-1">{{ formatMemoryUsage(returnPluginMetrics.metrics.total_memory_allocated) }}</span>
-                  <span class="text-zinc-500">({{ returnMemoryPercentage }})</span>
+                  <span class="text-gray-500">({{ returnMemoryPercentage }})</span>
                 </div>
               </div>
 
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total scripts", "flexify-dashboard") }}</div>
                 <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.assets.scripts.length }}</div>
               </div>
 
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total styles", "flexify-dashboard") }}</div>
                 <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.assets.styles.length }}</div>
               </div>
 
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("Total asset size", "flexify-dashboard") }}</div>
                 <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginAssetSize }}</div>
               </div>
 
-              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-zinc-100 dark:bg-zinc-800">
+              <div class="p-3 rounded-lg flex flex-col gap-1 grow transition-all bg-gray-100 dark:bg-gray-800">
                 <div class="text-sm whitespace-nowrap">{{ __("HTTP requests", "flexify-dashboard") }}</div>
                 <div class="font-semibold text-xl text-brand-500 dark:text-brand-400">{{ returnPluginMetrics.http_requests.length }}</div>
               </div>
             </div>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3"></div>
 
             <Accordion :title="`${__('Scripts', 'flexify-dashboard')} (${returnPluginMetrics.assets.scripts.length})`" v-if="returnPluginMetrics.assets.scripts.length">
               <div class="flex flex-col gap-2 pl-3">
                 <div class="grid grid-cols-4 max-w-full gap-3 font-semibold mb-3">
-                  <div class="text-sm text-zinc-500">{{ __("Handle", "flexify-dashboard") }}</div>
-                  <div class="text-sm text-zinc-500">{{ __("Size", "flexify-dashboard") }}</div>
-                  <div class="text-sm col-span-2 text-zinc-500">{{ __("File", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Handle", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Size", "flexify-dashboard") }}</div>
+                  <div class="text-sm col-span-2 text-gray-500">{{ __("File", "flexify-dashboard") }}</div>
                 </div>
                 <div v-for="script in returnPluginMetrics.assets.scripts" class="grid grid-cols-4 max-w-full gap-3">
                   <div class="truncate">{{ script.handle }}</div>
@@ -288,14 +288,14 @@ watch(() => tab.value, getPluginPerformance);
               </div>
             </Accordion>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3" v-if="returnPluginMetrics.assets.scripts.length"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3" v-if="returnPluginMetrics.assets.scripts.length"></div>
 
             <Accordion :title="`${__('Styles', 'flexify-dashboard')} (${returnPluginMetrics.assets.styles.length})`" v-if="returnPluginMetrics.assets.styles.length">
               <div class="flex flex-col gap-2 pl-3">
                 <div class="grid grid-cols-4 max-w-full gap-3 font-semibold mb-3">
-                  <div class="text-sm text-zinc-500">{{ __("Handle", "flexify-dashboard") }}</div>
-                  <div class="text-sm text-zinc-500">{{ __("Size", "flexify-dashboard") }}</div>
-                  <div class="text-sm col-span-2 text-zinc-500">{{ __("File", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Handle", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Size", "flexify-dashboard") }}</div>
+                  <div class="text-sm col-span-2 text-gray-500">{{ __("File", "flexify-dashboard") }}</div>
                 </div>
                 <div v-for="style in returnPluginMetrics.assets.styles" class="grid grid-cols-4 max-w-full gap-3">
                   <div class="truncate">{{ style.handle }}</div>
@@ -305,18 +305,18 @@ watch(() => tab.value, getPluginPerformance);
               </div>
             </Accordion>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3" v-if="returnPluginMetrics.assets.styles.length"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3" v-if="returnPluginMetrics.assets.styles.length"></div>
 
             <Accordion :title="`${__('Queries', 'flexify-dashboard')} (${returnPluginMetrics.queries.length})`" v-if="returnPluginMetrics.queries.length">
               <div class="flex flex-col gap-2 pl-3">
                 <div v-for="query in returnPluginMetrics.queries">
-                  <pre class="rounded-lg bg-zinc-100 p-2 overflow-auto"><code>{{query.query}}</code></pre>
-                  <div class="text-sm text-zinc-500 pl-2 mb-2">{{ formatExecutionTime(query.time) }}</div>
+                  <pre class="rounded-lg bg-gray-100 p-2 overflow-auto"><code>{{query.query}}</code></pre>
+                  <div class="text-sm text-gray-500 pl-2 mb-2">{{ formatExecutionTime(query.time) }}</div>
                 </div>
               </div>
             </Accordion>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3" v-if="returnPluginMetrics.queries.length"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3" v-if="returnPluginMetrics.queries.length"></div>
 
             <Accordion :title="`${__('Hooks', 'flexify-dashboard')} (${returnPluginMetrics.hooks.length})`" v-if="returnPluginMetrics.hooks.length">
               <div class="flex flex-col gap-2 pl-3">
@@ -327,22 +327,22 @@ watch(() => tab.value, getPluginPerformance);
                   <div class="text-sm truncate text-right">{{ __("Priority", "flexify-dashboard") }}</div>
                 </div>
                 <div v-for="hook in returnPluginMetrics.hooks" class="grid grid-cols-8 max-w-full gap-3">
-                  <div class="text-sm text-zinc-500 truncate col-span-2">{{ hook.name }}</div>
-                  <div class="text-sm text-zinc-500 truncate col-span-2">{{ hook.callback }}</div>
-                  <div class="text-sm text-zinc-500 truncate col-span-3">{{ hook.file }}</div>
-                  <div class="text-sm text-zinc-500 truncate text-right">{{ hook.priority }}</div>
+                  <div class="text-sm text-gray-500 truncate col-span-2">{{ hook.name }}</div>
+                  <div class="text-sm text-gray-500 truncate col-span-2">{{ hook.callback }}</div>
+                  <div class="text-sm text-gray-500 truncate col-span-3">{{ hook.file }}</div>
+                  <div class="text-sm text-gray-500 truncate text-right">{{ hook.priority }}</div>
                 </div>
               </div>
             </Accordion>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3" v-if="returnPluginMetrics.hooks.length"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3" v-if="returnPluginMetrics.hooks.length"></div>
 
             <Accordion :title="`${__('HTTP requests', 'flexify-dashboard')} (${returnPluginMetrics.http_requests.length})`" v-if="returnPluginMetrics.http_requests.length">
               <div class="flex flex-col gap-2 pl-3">
                 <div class="grid grid-cols-4 max-w-full gap-3 font-semibold mb-3">
-                  <div class="text-sm text-zinc-500">{{ __("Hook", "flexify-dashboard") }}</div>
-                  <div class="text-sm text-zinc-500">{{ __("Method", "flexify-dashboard") }}</div>
-                  <div class="text-sm col-span-2 text-zinc-500">{{ __("URL", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Hook", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Method", "flexify-dashboard") }}</div>
+                  <div class="text-sm col-span-2 text-gray-500">{{ __("URL", "flexify-dashboard") }}</div>
                 </div>
                 <div v-for="request in returnPluginMetrics.http_requests" class="grid grid-cols-4 max-w-full gap-3">
                   <div class="">{{ request.hook }}</div>
@@ -352,14 +352,14 @@ watch(() => tab.value, getPluginPerformance);
               </div>
             </Accordion>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3" v-if="returnPluginMetrics.http_requests.length"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3" v-if="returnPluginMetrics.http_requests.length"></div>
 
             <Accordion :title="`${__('Depreciated functions', 'flexify-dashboard')} (${returnPluginMetrics.deprecated_calls.length})`" v-if="returnPluginMetrics.deprecated_calls.length">
               <div class="flex flex-col gap-2 pl-3">
                 <div class="grid grid-cols-4 max-w-full gap-3 font-semibold mb-3">
-                  <div class="text-sm text-zinc-500">{{ __("Function", "flexify-dashboard") }}</div>
-                  <div class="text-sm text-zinc-500">{{ __("Line", "flexify-dashboard") }}</div>
-                  <div class="text-sm col-span-2 text-zinc-500">{{ __("File", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Function", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Line", "flexify-dashboard") }}</div>
+                  <div class="text-sm col-span-2 text-gray-500">{{ __("File", "flexify-dashboard") }}</div>
                 </div>
                 <div v-for="request in returnPluginMetrics.deprecated_calls" class="grid grid-cols-4 max-w-full gap-3">
                   <div class="">{{ request.function }}</div>
@@ -369,14 +369,14 @@ watch(() => tab.value, getPluginPerformance);
               </div>
             </Accordion>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3" v-if="returnPluginMetrics.deprecated_calls.length"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3" v-if="returnPluginMetrics.deprecated_calls.length"></div>
 
             <Accordion :title="`${__('Errors', 'flexify-dashboard')} (${returnPluginMetrics.errors.length})`" v-if="returnPluginMetrics.errors.length">
               <div class="flex flex-col gap-2 pl-3">
                 <div class="grid grid-cols-4 max-w-full gap-3 font-semibold mb-3">
-                  <div class="text-sm text-zinc-500">{{ __("Type", "flexify-dashboard") }}</div>
-                  <div class="text-sm col-span-2 text-zinc-500">{{ __("Message", "flexify-dashboard") }}</div>
-                  <div class="text-sm text-zinc-500 text-right">{{ __("File", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500">{{ __("Type", "flexify-dashboard") }}</div>
+                  <div class="text-sm col-span-2 text-gray-500">{{ __("Message", "flexify-dashboard") }}</div>
+                  <div class="text-sm text-gray-500 text-right">{{ __("File", "flexify-dashboard") }}</div>
                 </div>
                 <div v-for="error in returnPluginMetrics.errors" class="grid grid-cols-4 max-w-full gap-3">
                   <div class="">{{ error.type }}</div>
@@ -386,7 +386,7 @@ watch(() => tab.value, getPluginPerformance);
               </div>
             </Accordion>
 
-            <div class="w-full border-t border-zinc-200 dark:border-zinc-700 my-3" v-if="returnPluginMetrics.errors.length"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700 my-3" v-if="returnPluginMetrics.errors.length"></div>
           </template>
         </div>
       </div>

@@ -561,11 +561,11 @@ setOGmenu();
 <template>
   <div class="w-full max-w-full flex flex flex-col h-full">
     <div
-      class="border-b border-zinc-200 dark:border-zinc-800 p-3 px-10 pr-6 w-full flex flex-row items-center place-content-between sticky top-0 bg-white dark:bg-zinc-900 z-[1]"
+      class="border-b border-gray-200 dark:border-gray-800 p-3 px-10 pr-6 w-full flex flex-row items-center place-content-between sticky top-0 bg-white dark:bg-gray-900 z-[1]"
     >
       <div>
         <a
-          class="flex flex-row gap-4 items-center text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 cursor-pointer"
+          class="flex flex-row gap-4 items-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 cursor-pointer"
           @click="goBack"
         >
           <AppIcon icon="chevron_left" class="text-xl" />
@@ -626,7 +626,7 @@ setOGmenu();
         <component is="style"> {{ returnDashIconClasses }}</component>
         <!-- menu preview -->
         <div
-          class="w-1/3 max-w-[300px] border-r border-zinc-200 dark:border-zinc-800 p-6 h-full shrink-0"
+          class="w-1/3 max-w-[300px] border-r border-gray-200 dark:border-gray-800 p-6 h-full shrink-0"
         >
           <!--standard links-->
           <div class="flex flex-col gap-3 mb-6">
@@ -662,11 +662,11 @@ setOGmenu();
                   "
                 >
                   <div
-                    class="flex flex-row p-1 pr-4 pl-1 rounded-lg items-center cursor-pointer gap-1 group transition-all relative hover:bg-zinc-100 hover:dark:bg-zinc-800"
+                    class="flex flex-row p-1 pr-4 pl-1 rounded-lg items-center cursor-pointer gap-1 group transition-all relative hover:bg-gray-100 hover:dark:bg-gray-800"
                     :class="
                       isActive(link)
-                        ? 'text-zinc-900 dark:text-zinc-100 active bg-zinc-100 dark:bg-zinc-800 active'
-                        : ' hover:bg-zinc-100 hover:dark:bg-zinc-800'
+                        ? 'text-gray-900 dark:text-gray-100 active bg-gray-100 dark:bg-gray-800 active'
+                        : ' hover:bg-gray-100 hover:dark:bg-gray-800'
                     "
                     @click="setActiveItem(link)"
                   >
@@ -674,7 +674,7 @@ setOGmenu();
                     <div class="absolute px-4 left-0">
                       <div
                         v-if="!link.settings?.icon"
-                        class="icon text-2xl text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 group-[.active]:text-zinc-900 dark:group-[.active]:text-zinc-100 w-[1.2rem]"
+                        class="icon text-2xl text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 group-[.active]:text-gray-900 dark:group-[.active]:text-gray-100 w-[1.2rem]"
                         :class="link.imageClasses"
                         :style="link.iconStyles"
                       ></div>
@@ -682,13 +682,13 @@ setOGmenu();
                       <AppIcon
                         v-else
                         :icon="link.settings.icon"
-                        class="text-xl text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 group-[.active]:text-zinc-900 dark:group-[.active]:text-zinc-100"
+                        class="text-xl text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 group-[.active]:text-gray-900 dark:group-[.active]:text-gray-100"
                       />
                     </div>
 
                     <!-- Item name -->
                     <div
-                      class="pl-12 group-hover:text-zinc-950 dark:group-hover:text-zinc-100 transition-color flex-grow text-base grow truncate flex flex-row items-center gap-4"
+                      class="pl-12 group-hover:text-gray-950 dark:group-hover:text-gray-100 transition-color flex-grow text-base grow truncate flex flex-row items-center gap-4"
                     >
                       <div
                         v-html="link.settings?.name || link.name"
@@ -732,16 +732,16 @@ setOGmenu();
                         :index="index"
                       >
                         <div
-                          class="flex flex-row p-1 px-4 pl-12 rounded-lg items-center cursor-pointer gap-4 group transition-all hover:bg-zinc-100 hover:dark:bg-zinc-800"
+                          class="flex flex-row p-1 px-4 pl-12 rounded-lg items-center cursor-pointer gap-4 group transition-all hover:bg-gray-100 hover:dark:bg-gray-800"
                           :class="
                             isActive(sublink)
-                              ? 'text-zinc-900 dark:text-zinc-100 active bg-zinc-100 dark:bg-zinc-800 active'
-                              : ' hover:bg-zinc-100 hover:dark:bg-zinc-800'
+                              ? 'text-gray-900 dark:text-gray-100 active bg-gray-100 dark:bg-gray-800 active'
+                              : ' hover:bg-gray-100 hover:dark:bg-gray-800'
                           "
                           @click="setActiveItem(sublink)"
                         >
                           <div
-                            class="group-hover:text-zinc-950 dark:group-hover:text-zinc-100 transition-color flex-grow text-base grow truncate flex flex-row items-center gap-4"
+                            class="group-hover:text-gray-950 dark:group-hover:text-gray-100 transition-color flex-grow text-base grow truncate flex flex-row items-center gap-4"
                             :class="
                               sublink.settings?.hidden
                                 ? 'opacity-30 line-through'
@@ -768,11 +768,11 @@ setOGmenu();
                 <div
                   v-else-if="!link.settings?.name"
                   @click="setActiveItem(link)"
-                  class="w-full h-4 cursor-pointer rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                  class="w-full h-4 cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   :class="
                     isActive(link)
-                      ? 'text-zinc-900 dark:text-zinc-100 active bg-zinc-100 dark:bg-zinc-800 active'
-                      : 'hover:bg-zinc-100 hover:dark:bg-zinc-800'
+                      ? 'text-gray-900 dark:text-gray-100 active bg-gray-100 dark:bg-gray-800 active'
+                      : 'hover:bg-gray-100 hover:dark:bg-gray-800'
                   "
                 ></div>
 
@@ -782,8 +782,8 @@ setOGmenu();
                   class="text-sm py-3 font-medium mt-2 rounded-lg"
                   :class="
                     isActive(link)
-                      ? 'text-zinc-900 dark:text-zinc-100 active bg-zinc-100 dark:bg-zinc-800 active'
-                      : 'hover:bg-zinc-100 hover:dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400'
+                      ? 'text-gray-900 dark:text-gray-100 active bg-gray-100 dark:bg-gray-800 active'
+                      : 'hover:bg-gray-100 hover:dark:bg-gray-800 text-gray-500 dark:text-gray-400'
                   "
                 >
                   {{ link.settings.name }}
@@ -802,22 +802,22 @@ setOGmenu();
             >
               <div class="flex flex-row place-content-between col-span-3">
                 <div
-                  class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100"
+                  class="text-2xl font-semibold text-gray-900 dark:text-gray-100"
                 >
                   {{ __('Menu Settings', 'flexify-dashboard') }}
                 </div>
               </div>
 
               <div
-                class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                class="border-t border-gray-200 dark:border-gray-700 col-span-3"
               ></div>
 
               <!-- Status -->
               <div class="flex flex-col pt-2 gap-2">
-                <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+                <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
                   __('Status', 'flexify-dashboard')
                 }}</span>
-                <span class="text-zinc-500 dark:text-zinc-400">{{
+                <span class="text-gray-500 dark:text-gray-400">{{
                   __('Whether this menu is active or not', 'flexify-dashboard')
                 }}</span>
               </div>
@@ -830,15 +830,15 @@ setOGmenu();
               </div>
 
               <div
-                class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                class="border-t border-gray-200 dark:border-gray-700 col-span-3"
               ></div>
 
               <!-- Title -->
               <div class="flex flex-col pt-2 gap-2">
-                <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+                <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
                   __('Menu name', 'flexify-dashboard')
                 }}</span>
-                <span class="text-zinc-500 dark:text-zinc-400">{{
+                <span class="text-gray-500 dark:text-gray-400">{{
                   __('Name of your custom menu.', 'flexify-dashboard')
                 }}</span>
               </div>
@@ -851,15 +851,15 @@ setOGmenu();
               </div>
 
               <div
-                class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                class="border-t border-gray-200 dark:border-gray-700 col-span-3"
               ></div>
 
               <!-- Apply to everyone -->
               <div class="flex flex-col pt-2 gap-2">
-                <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+                <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
                   __('Apply menu to everyone', 'flexify-dashboard')
                 }}</span>
-                <span class="text-zinc-500 dark:text-zinc-400">{{
+                <span class="text-gray-500 dark:text-gray-400">{{
                   __(
                     'This menu will be applied to everyone if enabled.',
                     'flexify-dashboard'
@@ -874,7 +874,7 @@ setOGmenu();
               </div>
 
               <div
-                class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                class="border-t border-gray-200 dark:border-gray-700 col-span-3"
               ></div>
 
               <Transition>
@@ -885,10 +885,10 @@ setOGmenu();
                   <!-- Apply to roles or users -->
                   <div class="flex flex-col pt-2 gap-2">
                     <span
-                      class="text-zinc-900 dark:text-zinc-100 font-semibold"
+                      class="text-gray-900 dark:text-gray-100 font-semibold"
                       >{{ __('Apply to roles or users', 'flexify-dashboard') }}</span
                     >
-                    <span class="text-zinc-500 dark:text-zinc-400">{{
+                    <span class="text-gray-500 dark:text-gray-400">{{
                       __(
                         'Set specific roles or users this menu applies to.',
                         'flexify-dashboard'
@@ -903,16 +903,16 @@ setOGmenu();
                   </div>
 
                   <div
-                    class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                    class="border-t border-gray-200 dark:border-gray-700 col-span-3"
                   ></div>
 
                   <!-- Exclude roles or users -->
                   <div class="flex flex-col pt-2 gap-2">
                     <span
-                      class="text-zinc-900 dark:text-zinc-100 font-semibold"
+                      class="text-gray-900 dark:text-gray-100 font-semibold"
                       >{{ __('Exclude roles or users', 'flexify-dashboard') }}</span
                     >
-                    <span class="text-zinc-500 dark:text-zinc-400">{{
+                    <span class="text-gray-500 dark:text-gray-400">{{
                       __(
                         "Set specific roles or users this menu won't apply to.",
                         'flexify-dashboard'
@@ -927,7 +927,7 @@ setOGmenu();
                   </div>
 
                   <div
-                    class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                    class="border-t border-gray-200 dark:border-gray-700 col-span-3"
                   ></div>
                 </div>
               </Transition>
@@ -942,14 +942,14 @@ setOGmenu();
               <div class="flex flex-row col-span-3 items-center gap-3">
                 <div class="flex flex-col grow">
                   <div
-                    class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100"
+                    class="text-2xl font-semibold text-gray-900 dark:text-gray-100"
                     v-html="
                       activeMenuItem.name ||
                       activeMenuItem.settings?.name ||
                       __('Separator', 'flexify-dashboard')
                     "
                   ></div>
-                  <div class="text-zinc-500 dark:text-zinc-400">
+                  <div class="text-gray-500 dark:text-gray-400">
                     #{{ activeMenuItem.id }}
                   </div>
                 </div>
@@ -969,15 +969,15 @@ setOGmenu();
               </div>
 
               <div
-                class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                class="border-t border-gray-200 dark:border-gray-700 col-span-3"
               ></div>
 
               <!-- Title -->
               <div class="flex flex-col pt-2 gap-2">
-                <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+                <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
                   __('Name', 'flexify-dashboard')
                 }}</span>
-                <span class="text-zinc-500 dark:text-zinc-400">{{
+                <span class="text-gray-500 dark:text-gray-400">{{
                   __('Rename menu item', 'flexify-dashboard')
                 }}</span>
               </div>
@@ -990,17 +990,17 @@ setOGmenu();
               </div>
 
               <div
-                class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                class="border-t border-gray-200 dark:border-gray-700 col-span-3"
               ></div>
 
               <!-- URL -->
               <template v-if="activeMenuItem.type != 'separator'">
                 <div class="flex flex-col pt-2 gap-2">
                   <span
-                    class="text-zinc-900 dark:text-zinc-100 font-semibold"
+                    class="text-gray-900 dark:text-gray-100 font-semibold"
                     >{{ __('URL', 'flexify-dashboard') }}</span
                   >
-                  <span class="text-zinc-500 dark:text-zinc-400">{{
+                  <span class="text-gray-500 dark:text-gray-400">{{
                     __('Change the link of the URL', 'flexify-dashboard')
                   }}</span>
                 </div>
@@ -1013,16 +1013,16 @@ setOGmenu();
                 </div>
 
                 <div
-                  class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                  class="border-t border-gray-200 dark:border-gray-700 col-span-3"
                 ></div>
 
                 <!-- Icon -->
                 <div class="flex flex-col pt-2 gap-2">
                   <span
-                    class="text-zinc-900 dark:text-zinc-100 font-semibold"
+                    class="text-gray-900 dark:text-gray-100 font-semibold"
                     >{{ __('Icon', 'flexify-dashboard') }}</span
                   >
-                  <span class="text-zinc-500 dark:text-zinc-400">{{
+                  <span class="text-gray-500 dark:text-gray-400">{{
                     __(
                       'Choose custom icon from the list or add a Base64 encoded Data URI. Icons only show for top level items. ',
                       'flexify-dashboard'
@@ -1044,16 +1044,16 @@ setOGmenu();
                 </div>
 
                 <div
-                  class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                  class="border-t border-gray-200 dark:border-gray-700 col-span-3"
                 ></div>
 
                 <!-- URL -->
                 <div class="flex flex-col pt-2 gap-2">
                   <span
-                    class="text-zinc-900 dark:text-zinc-100 font-semibold"
+                    class="text-gray-900 dark:text-gray-100 font-semibold"
                     >{{ __('Open in new tab', 'flexify-dashboard') }}</span
                   >
-                  <span class="text-zinc-500 dark:text-zinc-400">{{
+                  <span class="text-gray-500 dark:text-gray-400">{{
                     __('This link will open in a new tab', 'flexify-dashboard')
                   }}</span>
                 </div>
@@ -1065,16 +1065,16 @@ setOGmenu();
                 </div>
 
                 <div
-                  class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                  class="border-t border-gray-200 dark:border-gray-700 col-span-3"
                 ></div>
               </template>
 
               <!-- URL -->
               <div class="flex flex-col pt-2 gap-2">
-                <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+                <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
                   __('Hidden', 'flexify-dashboard')
                 }}</span>
-                <span class="text-zinc-500 dark:text-zinc-400">{{
+                <span class="text-gray-500 dark:text-gray-400">{{
                   __('The item will not be shown if hidden', 'flexify-dashboard')
                 }}</span>
               </div>
@@ -1086,7 +1086,7 @@ setOGmenu();
               </div>
 
               <div
-                class="border-t border-zinc-200 dark:border-zinc-700 col-span-3"
+                class="border-t border-gray-200 dark:border-gray-700 col-span-3"
               ></div>
             </div>
           </Transition>

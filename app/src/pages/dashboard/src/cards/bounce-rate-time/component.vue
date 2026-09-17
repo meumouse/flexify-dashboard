@@ -111,7 +111,7 @@ const getComparisonData = (current, previous, metricType = 'normal') => {
   return {
     percentage: Math.abs(change),
     isPositive,
-    color: isPositive ? 'text-green-500' : 'text-red-500',
+    color: isPositive ? 'text-success-500' : 'text-error-500',
     icon: isPositive ? 'arrow_up' : 'arrow_down',
     showComparison: previous > 0, // Only show if we have comparison data
   };
@@ -182,9 +182,9 @@ const avgPagesPerSession = computed(() => {
  */
 const getBounceRateColor = () => {
   const rate = bounceRate.value;
-  if (rate < 40) return 'text-green-600 dark:text-green-400';
-  if (rate < 60) return 'text-yellow-600 dark:text-yellow-400';
-  return 'text-red-600 dark:text-red-400';
+  if (rate < 40) return 'text-success-600 dark:text-success-400';
+  if (rate < 60) return 'text-warning-600 dark:text-warning-400';
+  return 'text-error-600 dark:text-error-400';
 };
 
 /**
@@ -202,9 +202,9 @@ const getBounceRateStatus = () => {
  */
 const getTimeOnSiteColor = () => {
   const time = avgTimeOnSite.value;
-  if (time > 180) return 'text-green-600 dark:text-green-400'; // > 3 minutes
-  if (time > 60) return 'text-yellow-600 dark:text-yellow-400'; // > 1 minute
-  return 'text-red-600 dark:text-red-400';
+  if (time > 180) return 'text-success-600 dark:text-success-400'; // > 3 minutes
+  if (time > 60) return 'text-warning-600 dark:text-warning-400'; // > 1 minute
+  return 'text-error-600 dark:text-error-400';
 };
 
 /**
@@ -242,15 +242,15 @@ onMounted(() => {
 
 <template>
   <div
-    class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 flex flex-col h-full"
+    class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl p-6 flex flex-col h-full"
   >
     <!-- Card Header -->
     <div class="flex items-center justify-between mb-6">
       <div>
-        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {{ __('Engagement', 'flexify-dashboard') }}
         </h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('User behavior metrics', 'flexify-dashboard') }}
         </p>
       </div>
@@ -261,18 +261,18 @@ onMounted(() => {
       <div v-for="i in 2" :key="i" class="animate-pulse">
         <div class="flex items-center justify-between p-3">
           <div class="flex-1 space-y-2">
-            <div class="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-1/3"></div>
-            <div class="h-3 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2"></div>
+            <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/3"></div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
           </div>
-          <div class="h-6 bg-zinc-200 dark:bg-zinc-700 rounded w-16"></div>
+          <div class="h-6 bg-gray-200 dark:bg-gray-700 rounded w-16"></div>
         </div>
       </div>
     </div>
 
     <!-- Error State -->
     <div v-else-if="error" class="text-center py-8">
-      <AppIcon icon="error" class="text-3xl text-zinc-400 mx-auto mb-3" />
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ error }}</p>
+      <AppIcon icon="error" class="text-3xl text-gray-400 mx-auto mb-3" />
+      <p class="text-sm text-gray-500 dark:text-gray-400">{{ error }}</p>
       <button
         @click="loadEngagementData"
         class="mt-2 text-brand-600 dark:text-brand-400 text-sm hover:underline"
@@ -288,21 +288,21 @@ onMounted(() => {
     >
       <!-- Bounce Rate -->
       <div
-        class="flex items-center justify-between p-3 bg-white dark:bg-zinc-700/20 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 -mx-3 px-4"
+        class="flex items-center justify-between p-3 bg-white dark:bg-white/[0.03] rounded-2xl border border-gray-200 dark:border-gray-800 -mx-3 px-4"
       >
         <div class="flex items-center gap-3">
           <div>
-            <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
               {{ __('Bounce Rate', 'flexify-dashboard') }}
             </p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400">
+            <p class="text-xs text-gray-500 dark:text-gray-400">
               {{ getBounceRateStatus() }}
             </p>
           </div>
         </div>
         <div class="text-right">
           <span
-            class="text-xl text-zinc-900 dark:text-white flex flex-row items-end justify-end gap-2"
+            class="text-xl text-gray-900 dark:text-white flex flex-row items-end justify-end gap-2"
           >
             <!-- Comparison indicator -->
             <div
@@ -336,21 +336,21 @@ onMounted(() => {
 
       <!-- Average Time on Site -->
       <div
-        class="flex items-center justify-between p-3 bg-white dark:bg-zinc-700/20 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 -mx-3 px-4"
+        class="flex items-center justify-between p-3 bg-white dark:bg-white/[0.03] rounded-2xl border border-gray-200 dark:border-gray-800 -mx-3 px-4"
       >
         <div class="flex items-center gap-3">
           <div>
-            <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
               {{ __('Avg. Time on Site', 'flexify-dashboard') }}
             </p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400">
+            <p class="text-xs text-gray-500 dark:text-gray-400">
               {{ getTimeOnSiteStatus() }}
             </p>
           </div>
         </div>
         <div class="text-right">
           <span
-            class="text-xl text-zinc-900 dark:text-white flex flex-row items-end justify-end gap-2"
+            class="text-xl text-gray-900 dark:text-white flex flex-row items-end justify-end gap-2"
           >
             <!-- Comparison indicator -->
             <div
@@ -387,12 +387,12 @@ onMounted(() => {
     <div v-else class="text-center py-8">
       <AppIcon
         icon="analytics"
-        class="text-3xl text-zinc-300 dark:text-zinc-600 mx-auto mb-3"
+        class="text-3xl text-gray-300 dark:text-gray-600 mx-auto mb-3"
       />
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
         {{ __('No engagement data available', 'flexify-dashboard') }}
       </p>
-      <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
+      <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
         {{
           __(
             'Engagement data will appear when users interact with your site',
@@ -405,7 +405,7 @@ onMounted(() => {
     <!-- Comparison Popover -->
     <div
       v-if="showPopover"
-      class="fixed z-50 px-2 py-1 text-xs bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-md shadow-lg pointer-events-none"
+      class="fixed z-50 px-2 py-1 text-xs bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-md shadow-lg pointer-events-none"
       :style="{
         left: popoverPosition.x + 'px',
         top: popoverPosition.y + 'px',
@@ -415,7 +415,7 @@ onMounted(() => {
       {{ popoverContent }}
       <!-- Arrow -->
       <div
-        class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-zinc-900 dark:border-t-zinc-100"
+        class="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900 dark:border-t-gray-100"
       ></div>
     </div>
   </div>

@@ -156,21 +156,21 @@ const getActionIcon = (action) => {
  */
 const getActionColor = (action) => {
   const colors = {
-    created: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    updated: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
-    deleted: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400',
+    created: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    updated: 'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
+    deleted: 'bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-400',
     trashed: 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400',
-    restored: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    activated: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    deactivated: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
-    installed: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
-    login: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    logout: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400',
+    restored: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    activated: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    deactivated: 'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
+    installed: 'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
+    login: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    logout: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
     role_changed: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400',
-    status_changed: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
-    uploaded: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
+    status_changed: 'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
+    uploaded: 'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
   };
-  return colors[action] || 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400';
+  return colors[action] || 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400';
 };
 
 /**
@@ -207,10 +207,10 @@ document.addEventListener('click', () => {
         v-for="item in activities"
         :key="item.id"
         @click="handleActivityClick(item, $event)"
-        class="flex items-center gap-2.5 px-4 py-2 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group -mx-3 relative"
+        class="flex items-center gap-2.5 px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all group -mx-3 relative"
         :class="
           route.params.logId == item.id
-            ? 'bg-zinc-100 dark:bg-zinc-800/60'
+            ? 'bg-gray-100 dark:bg-gray-800/60'
             : ''
         "
       >
@@ -230,7 +230,7 @@ document.addEventListener('click', () => {
           </div>
 
           <div
-            class="w-8 h-8 bg-zinc-200 dark:bg-zinc-700 rounded-full overflow-hidden"
+            class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"
           >
             <img
               v-if="item.user?.avatar"
@@ -239,7 +239,7 @@ document.addEventListener('click', () => {
               class="w-full h-full object-cover"
             />
             <div v-else class="w-full h-full flex items-center justify-center">
-              <AppIcon icon="person" class="text-zinc-500 dark:text-zinc-400 text-sm" />
+              <AppIcon icon="person" class="text-gray-500 dark:text-gray-400 text-sm" />
             </div>
           </div>
         </div>
@@ -248,12 +248,12 @@ document.addEventListener('click', () => {
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 flex-wrap">
             <span
-              class="font-medium text-sm text-zinc-900 dark:text-zinc-200 truncate"
+              class="font-medium text-sm text-gray-900 dark:text-gray-200 truncate"
               :title="item.user?.name"
               :class="
                 route.params.logId == item.id
-                  ? 'text-zinc-900 dark:text-white'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-600 dark:text-gray-400'
               "
             >
               {{ item.user?.name || __('Unknown', 'flexify-dashboard') }}
@@ -267,14 +267,14 @@ document.addEventListener('click', () => {
               <AppIcon :icon="getActionIcon(item.action)" class="text-[10px]" />
               {{ item.action }}
             </span>
-            <span class="text-xs text-zinc-500 dark:text-zinc-400">
+            <span class="text-xs text-gray-500 dark:text-gray-400">
               {{ item.object_type }}
               <span v-if="item.object_id"> #{{ item.object_id }}</span>
               <span v-if="getObjectTitle(item) && getObjectTitle(item) !== item.object_type">
                 : {{ getObjectTitle(item) }}
               </span>
             </span>
-            <span class="text-xs text-zinc-500 dark:text-zinc-400">
+            <span class="text-xs text-gray-500 dark:text-gray-400">
               {{ formatRelativeTime(item.created_at) }}
             </span>
           </div>
@@ -288,9 +288,9 @@ document.addEventListener('click', () => {
       >
         <AppIcon
           icon="history"
-          class="w-12 h-12 text-zinc-400 dark:text-zinc-600 mb-4"
+          class="w-12 h-12 text-gray-400 dark:text-gray-600 mb-4"
         />
-        <p class="text-sm text-zinc-600 dark:text-zinc-400">
+        <p class="text-sm text-gray-600 dark:text-gray-400">
           {{ __('No activities found', 'flexify-dashboard') }}
         </p>
       </div>

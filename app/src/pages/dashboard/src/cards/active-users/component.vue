@@ -69,8 +69,8 @@ const formatNumber = (num) => {
  */
 const getStatusColor = () => {
   if (activeUsers.value === 0) return 'bg-gray-400';
-  if (activeUsers.value < 5) return 'bg-green-500';
-  if (activeUsers.value < 20) return 'bg-green-500';
+  if (activeUsers.value < 5) return 'bg-success-500';
+  if (activeUsers.value < 20) return 'bg-success-500';
   return 'bg-brand-500';
 };
 
@@ -109,15 +109,15 @@ onUnmounted(() => {
 
 <template>
   <div
-    class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 flex flex-col h-full"
+    class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl p-6 flex flex-col h-full"
   >
     <!-- Card Header -->
     <div class="flex items-center justify-between mb-6">
       <div>
-        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {{ __('Active Users', 'flexify-dashboard') }}
         </h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Users currently browsing', 'flexify-dashboard') }}
         </p>
       </div>
@@ -126,7 +126,7 @@ onUnmounted(() => {
           class="w-2 h-2 rounded-full animate-pulse"
           :class="getStatusColor()"
         ></div>
-        <span class="text-xs text-zinc-500 dark:text-zinc-400">
+        <span class="text-xs text-gray-500 dark:text-gray-400">
           {{ getStatusText() }}
         </span>
       </div>
@@ -137,18 +137,18 @@ onUnmounted(() => {
       <div class="animate-pulse">
         <div class="flex items-center justify-between p-3">
           <div class="flex-1 space-y-2">
-            <div class="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-1/3"></div>
-            <div class="h-3 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2"></div>
+            <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/3"></div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
           </div>
-          <div class="h-6 bg-zinc-200 dark:bg-zinc-700 rounded w-16"></div>
+          <div class="h-6 bg-gray-200 dark:bg-gray-700 rounded w-16"></div>
         </div>
       </div>
     </div>
 
     <!-- Error State -->
     <div v-else-if="error" class="text-center py-8">
-      <AppIcon icon="error" class="text-3xl text-zinc-400 mx-auto mb-3" />
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ error }}</p>
+      <AppIcon icon="error" class="text-3xl text-gray-400 mx-auto mb-3" />
+      <p class="text-sm text-gray-500 dark:text-gray-400">{{ error }}</p>
       <button
         @click="loadActiveUsers"
         class="mt-2 text-brand-600 dark:text-brand-400 text-sm hover:underline"
@@ -159,11 +159,11 @@ onUnmounted(() => {
     
     <!-- Provider Error State (e.g., permission denied) -->
     <div v-else-if="providerError" class="py-2">
-      <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-3">
+      <div class="bg-warning-50 dark:bg-warning-900/20 border border-warning-200 dark:border-warning-800 rounded-xl p-3">
         <div class="flex items-start gap-2">
-          <AppIcon icon="warning" class="text-base text-amber-500 flex-shrink-0 mt-0.5" />
+          <AppIcon icon="warning" class="text-base text-warning-500 flex-shrink-0 mt-0.5" />
           <div class="flex-1 min-w-0">
-            <p class="text-xs text-amber-700 dark:text-amber-300 leading-relaxed">
+            <p class="text-xs text-warning-700 dark:text-warning-300 leading-relaxed">
               {{ providerError.message }}
             </p>
           </div>
@@ -175,19 +175,19 @@ onUnmounted(() => {
     <div v-else class="space-y-4">
       <!-- Active Users Count -->
       <div
-        class="flex items-center justify-between p-3 bg-white dark:bg-zinc-700/20 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 -mx-3 px-4"
+        class="flex items-center justify-between p-3 bg-white dark:bg-white/[0.03] rounded-2xl border border-gray-200 dark:border-gray-800 -mx-3 px-4"
       >
         <div class="flex items-center gap-3">
           <div>
-            <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
               {{ __('Currently Active', 'flexify-dashboard') }}
             </p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-400">
+            <p class="text-xs text-gray-500 dark:text-gray-400">
               {{ __('Last 5 minutes', 'flexify-dashboard') }}
             </p>
           </div>
         </div>
-        <span class="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+        <span class="text-xl font-bold text-gray-900 dark:text-gray-100">
           {{ formatNumber(activeUsers) }}
         </span>
       </div>

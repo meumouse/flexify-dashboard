@@ -14,7 +14,7 @@ if (props.startOpen) {
   <div class="flex flex-col gap-4">
     <!--Title-->
     <div class="flex flex-row place-content-between cursor-pointer" @click="open = !open">
-      <div class="text-zinc-900 dark:text-zinc-100 font-semibold text-sm">{{ title }}</div>
+      <div class="text-gray-900 dark:text-gray-100 font-semibold text-sm">{{ title }}</div>
       <AppIcon :icon="open ? 'remove' : 'add'" />
     </div>
 

@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
                 <div class="flex flex-col gap-3">
                   <div class="flex flex-col gap-1">
                     <label
-                      class="text-xs font-medium text-zinc-700 dark:text-zinc-300"
+                      class="text-xs font-medium text-gray-700 dark:text-gray-300"
                     >
                       {{ __('Name', 'flexify-dashboard') }}
                     </label>
@@ -178,7 +178,7 @@ onBeforeUnmount(() => {
 
                   <div class="flex flex-col gap-1">
                     <label
-                      class="text-xs font-medium text-zinc-700 dark:text-zinc-300"
+                      class="text-xs font-medium text-gray-700 dark:text-gray-300"
                     >
                       {{ __('URL', 'flexify-dashboard') }}
                     </label>
@@ -192,7 +192,7 @@ onBeforeUnmount(() => {
 
                   <div class="flex flex-col gap-1">
                     <label
-                      class="text-xs font-medium text-zinc-700 dark:text-zinc-300"
+                      class="text-xs font-medium text-gray-700 dark:text-gray-300"
                     >
                       {{ __('Icon', 'flexify-dashboard') }}
                     </label>

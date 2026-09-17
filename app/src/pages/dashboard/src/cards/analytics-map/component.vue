@@ -439,22 +439,22 @@ onUnmounted(() => {
 
 <template>
   <div
-    class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 flex flex-col pb-3 h-full"
+    class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl p-6 flex flex-col pb-3 h-full"
   >
     <!-- Card Header -->
     <div class="flex items-center justify-between mb-6">
       <div>
-        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {{ __('Analytics Map', 'flexify-dashboard') }}
         </h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Visitor locations worldwide', 'flexify-dashboard') }}
         </p>
       </div>
       <div class="flex items-center gap-4">
         <!-- Stats -->
         <div
-          class="flex items-center gap-4 text-xs text-zinc-500 dark:text-zinc-400"
+          class="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400"
         >
           <div class="flex items-center gap-1">
             <div class="w-2 h-2 rounded-full bg-brand-500"></div>
@@ -475,9 +475,9 @@ onUnmounted(() => {
     <div v-if="loading" class="flex-1 flex items-center justify-center h-80">
       <div class="text-center">
         <div
-          class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"
+          class="w-8 h-8 border-2 border-gray-300 dark:border-gray-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"
         ></div>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Loading map data...', 'flexify-dashboard') }}
         </p>
       </div>
@@ -488,21 +488,21 @@ onUnmounted(() => {
       class="flex-1 flex items-center justify-center p-4"
     >
       <div
-        class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-5 max-w-md"
+        class="bg-warning-50 dark:bg-warning-900/20 border border-warning-200 dark:border-warning-800 rounded-xl p-5 max-w-md"
       >
         <div class="flex items-start gap-3">
           <AppIcon
             icon="vpn_key"
-            class="text-2xl text-amber-500 flex-shrink-0"
+            class="text-2xl text-warning-500 flex-shrink-0"
           />
           <div class="flex-1 min-w-0">
             <p
-              class="text-sm font-medium text-amber-800 dark:text-amber-200 mb-2"
+              class="text-sm font-medium text-warning-800 dark:text-warning-200 mb-2"
             >
               {{ __('Mapbox API key required', 'flexify-dashboard') }}
             </p>
             <p
-              class="text-xs text-amber-700 dark:text-amber-300 leading-relaxed mb-3"
+              class="text-xs text-warning-700 dark:text-warning-300 leading-relaxed mb-3"
             >
               {{
                 __(
@@ -513,7 +513,7 @@ onUnmounted(() => {
             </p>
             <a
               :href="mapboxSettingsUrl"
-              class="inline-flex items-center gap-1 text-xs font-medium text-amber-700 dark:text-amber-300 hover:text-amber-800 dark:hover:text-amber-200"
+              class="inline-flex items-center gap-1 text-xs font-medium text-warning-700 dark:text-warning-300 hover:text-warning-800 dark:hover:text-warning-200"
             >
               {{ __('Open Integrations settings', 'flexify-dashboard') }}
               <AppIcon icon="open_in_new" class="text-xs" />
@@ -526,8 +526,8 @@ onUnmounted(() => {
     <!-- Error State -->
     <div v-else-if="error" class="flex-1 flex items-center justify-center h-80">
       <div class="text-center">
-        <AppIcon icon="error" class="text-4xl text-red-500 mx-auto mb-3" />
-        <p class="text-sm text-red-600 dark:text-red-400 mb-2">
+        <AppIcon icon="error" class="text-4xl text-error-500 mx-auto mb-3" />
+        <p class="text-sm text-error-600 dark:text-error-400 mb-2">
           {{ error }}
         </p>
         <button
@@ -545,21 +545,21 @@ onUnmounted(() => {
       class="flex-1 flex items-center justify-center p-4"
     >
       <div
-        class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-5 max-w-md"
+        class="bg-warning-50 dark:bg-warning-900/20 border border-warning-200 dark:border-warning-800 rounded-xl p-5 max-w-md"
       >
         <div class="flex items-start gap-3">
           <AppIcon
             icon="warning"
-            class="text-2xl text-amber-500 flex-shrink-0"
+            class="text-2xl text-warning-500 flex-shrink-0"
           />
           <div class="flex-1 min-w-0">
             <p
-              class="text-sm font-medium text-amber-800 dark:text-amber-200 mb-2"
+              class="text-sm font-medium text-warning-800 dark:text-warning-200 mb-2"
             >
               {{ __('Google Analytics Connection Issue', 'flexify-dashboard') }}
             </p>
             <p
-              class="text-xs text-amber-700 dark:text-amber-300 leading-relaxed mb-3"
+              class="text-xs text-warning-700 dark:text-warning-300 leading-relaxed mb-3"
             >
               {{ providerError.message }}
             </p>
@@ -569,14 +569,14 @@ onUnmounted(() => {
                 :href="providerError.help_url"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-1 text-xs font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300"
+                class="inline-flex items-center gap-1 text-xs font-medium text-warning-600 dark:text-warning-400 hover:text-warning-700 dark:hover:text-warning-300"
               >
                 {{ __('Learn more', 'flexify-dashboard') }}
                 <AppIcon icon="open_in_new" class="text-xs" />
               </a>
               <button
                 @click="loadGeoData"
-                class="text-xs font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300"
+                class="text-xs font-medium text-warning-600 dark:text-warning-400 hover:text-warning-700 dark:hover:text-warning-300"
               >
                 {{ __('Retry', 'flexify-dashboard') }}
               </button>
@@ -590,39 +590,39 @@ onUnmounted(() => {
     <div v-else class="flex-1 relative -mx-3">
       <div
         ref="mapContainer"
-        class="w-full rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-700/40 aspect-video"
+        class="w-full rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 aspect-video"
       ></div>
 
       <!-- Map Legend -->
       <div
-        class="absolute bottom-4 left-4 bg-white dark:bg-zinc-800 rounded-lg p-3 border border-zinc-200 dark:border-zinc-700 shadow-lg"
+        class="absolute bottom-4 left-4 bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-700 shadow-lg"
       >
-        <div class="text-xs font-medium text-zinc-700 dark:text-zinc-300 mb-2">
+        <div class="text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">
           {{ __('Visit Volume', 'flexify-dashboard') }}
         </div>
         <div class="space-y-1">
           <div
-            class="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400"
+            class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400"
           >
             <div class="w-3 h-3 rounded-full bg-brand-500"></div>
             <span>{{ __('Low', 'flexify-dashboard') }}</span>
           </div>
           <div
-            class="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400"
+            class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400"
           >
             <div class="w-4 h-4 rounded-full bg-purple-500"></div>
             <span>{{ __('Medium', 'flexify-dashboard') }}</span>
           </div>
           <div
-            class="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400"
+            class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400"
           >
             <div class="w-5 h-5 rounded-full bg-orange-500"></div>
             <span>{{ __('High', 'flexify-dashboard') }}</span>
           </div>
           <div
-            class="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400"
+            class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400"
           >
-            <div class="w-6 h-6 rounded-full bg-red-500"></div>
+            <div class="w-6 h-6 rounded-full bg-error-500"></div>
             <span>{{ __('Very High', 'flexify-dashboard') }}</span>
           </div>
         </div>
@@ -637,12 +637,12 @@ onUnmounted(() => {
       <div class="text-center">
         <AppIcon
           icon="public"
-          class="text-4xl text-zinc-300 dark:text-zinc-600 mx-auto mb-3"
+          class="text-4xl text-gray-300 dark:text-gray-600 mx-auto mb-3"
         />
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('No location data available', 'flexify-dashboard') }}
         </p>
-        <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
+        <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
           {{
             __(
               'Location data will appear when visitors browse your site',

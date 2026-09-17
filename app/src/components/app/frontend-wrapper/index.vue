@@ -195,7 +195,7 @@ document.addEventListener('flexify-dashboard-settings-update', (event) => {
   >
     <div class="flexify-dashboard-isolation">
       <div
-        class="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 flexify-dashboard-normalize absolute left-0 top-0 right-0 text-base text-zinc-700 dark:text-zinc-300"
+        class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 flexify-dashboard-normalize absolute left-0 top-0 right-0 text-base text-gray-700 dark:text-gray-300"
         style="z-index: 99999"
         :class="prefersDark ? 'dark' : ''"
       >

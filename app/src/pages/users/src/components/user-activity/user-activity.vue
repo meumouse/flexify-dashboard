@@ -135,32 +135,32 @@ const getActionIcon = (action) => {
 const getActionColor = (action) => {
   const colors = {
     created:
-      'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    updated: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
-    deleted: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400',
+      'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    updated: 'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
+    deleted: 'bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-400',
     trashed:
       'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400',
     restored:
-      'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
+      'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
     activated:
-      'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
+      'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
     deactivated:
-      'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
+      'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
     installed:
-      'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
+      'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
     login:
-      'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    logout: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400',
+      'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    logout: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
     role_changed:
       'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400',
     status_changed:
-      'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
+      'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
     uploaded:
-      'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
+      'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
   };
   return (
     colors[action] ||
-    'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400'
+    'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400'
   );
 };
 
@@ -253,7 +253,7 @@ onMounted(async () => {
   <div>
     <div class="flex items-center justify-between mb-4">
       <label
-        class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500"
+        class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500"
       >
         {{ __('Recent Activity', 'flexify-dashboard') }}
       </label>
@@ -263,7 +263,7 @@ onMounted(async () => {
     <div v-if="loadingActivities" class="py-4 text-center">
       <AppIcon
         icon="refresh"
-        class="text-lg text-zinc-400 dark:text-zinc-500 animate-spin mx-auto"
+        class="text-lg text-gray-400 dark:text-gray-500 animate-spin mx-auto"
       />
     </div>
 
@@ -273,7 +273,7 @@ onMounted(async () => {
         v-for="activity in userActivities"
         :key="activity.id"
         @click="handleActivityClick(activity)"
-        class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors cursor-pointer"
+        class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer"
       >
         <!-- Action Badge -->
         <span
@@ -287,7 +287,7 @@ onMounted(async () => {
         </span>
 
         <!-- Activity Info -->
-        <div class="flex-1 min-w-0 text-xs text-zinc-600 dark:text-zinc-400">
+        <div class="flex-1 min-w-0 text-xs text-gray-600 dark:text-gray-400">
           <span class="font-medium">{{ activity.object_type }}</span>
           <span v-if="activity.object_id"> #{{ activity.object_id }}</span>
           <span
@@ -295,14 +295,14 @@ onMounted(async () => {
               getObjectTitle(activity) &&
               getObjectTitle(activity) !== activity.object_type
             "
-            class="text-zinc-500 dark:text-zinc-500"
+            class="text-gray-500 dark:text-gray-500"
           >
             : {{ getObjectTitle(activity) }}
           </span>
         </div>
 
         <!-- Timestamp -->
-        <span class="text-xs text-zinc-500 dark:text-zinc-500 flex-shrink-0">
+        <span class="text-xs text-gray-500 dark:text-gray-500 flex-shrink-0">
           {{ formatRelativeTime(activity.created_at) }}
         </span>
       </div>
@@ -311,7 +311,7 @@ onMounted(async () => {
     <!-- Empty State -->
     <div
       v-else
-      class="py-4 text-center text-sm text-zinc-500 dark:text-zinc-400"
+      class="py-4 text-center text-sm text-gray-500 dark:text-gray-400"
     >
       {{ __('No recent activity', 'flexify-dashboard') }}
     </div>

@@ -526,11 +526,11 @@ watch(
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center mx-auto mb-3"
+          class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mx-auto mb-3"
         >
-          <AppIcon icon="people" class="text-xl text-zinc-400 animate-pulse" />
+          <AppIcon icon="people" class="text-xl text-gray-400 animate-pulse" />
         </div>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Loading...', 'flexify-dashboard') }}
         </p>
       </div>
@@ -546,21 +546,21 @@ watch(
       >
         <div
           v-if="isAdministrator"
-          class="mx-6 mt-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200/50 dark:border-red-800/30 rounded-xl flex items-start gap-3"
+          class="mx-6 mt-6 p-4 bg-error-50 dark:bg-error-900/20 border border-error-200/50 dark:border-error-800/30 rounded-xl flex items-start gap-3"
         >
           <div class="flex-shrink-0 mt-0.5">
             <AppIcon
               icon="warning"
-              class="text-red-600 dark:text-red-400 text-xl"
+              class="text-error-600 dark:text-error-400 text-xl"
             />
           </div>
           <div class="flex-1 min-w-0">
             <h3
-              class="text-sm font-semibold text-red-900 dark:text-red-100 mb-1"
+              class="text-sm font-semibold text-error-900 dark:text-error-100 mb-1"
             >
               {{ __('Extreme Caution Required', 'flexify-dashboard') }}
             </h3>
-            <p class="text-sm text-red-800 dark:text-red-200 leading-relaxed">
+            <p class="text-sm text-error-800 dark:text-error-200 leading-relaxed">
               {{
                 __(
                   'You are editing the Administrator role. Modifying capabilities incorrectly could permanently lock you out of your WordPress site. Only make changes if you are absolutely certain of what you are doing. It is strongly recommended to test changes on a staging site first.',
@@ -574,7 +574,7 @@ watch(
 
       <!-- Header -->
       <div
-        class="px-6 pt-6 pb-4 border-b border-zinc-200/50 dark:border-zinc-700/30"
+        class="px-6 pt-6 pb-4 border-b border-gray-200 dark:border-gray-800"
       >
         <div class="flex items-start justify-between mb-4">
           <div class="flex-1">
@@ -584,18 +584,18 @@ watch(
                 class="flex items-center gap-2 group"
               >
                 <h2
-                  class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100"
+                  class="text-2xl font-semibold text-gray-900 dark:text-gray-100"
                 >
                   {{ roleData.name }}
                 </h2>
                 <button
                   @click="startEditingRoleName"
-                  class="opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                  class="opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
                   :title="__('Edit role name', 'flexify-dashboard')"
                 >
                   <AppIcon
                     icon="edit"
-                    class="text-sm text-zinc-500 dark:text-zinc-400"
+                    class="text-sm text-gray-500 dark:text-gray-400"
                   />
                 </button>
               </div>
@@ -626,12 +626,12 @@ watch(
               </div>
               <span
                 v-if="isAdministrator"
-                class="px-2 py-0.5 text-xs font-medium bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-md"
+                class="px-2 py-0.5 text-xs font-medium bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-300 rounded-md"
               >
                 {{ __('Admin', 'flexify-dashboard') }}
               </span>
             </div>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400">
+            <p class="text-sm text-gray-500 dark:text-gray-400">
               {{ roleData.userCount }}
               {{
                 roleData.userCount === 1
@@ -659,7 +659,7 @@ watch(
               :loading="isSaving"
               type="primary"
               :class="
-                isAdministrator ? 'border-red-300 dark:border-red-700' : ''
+                isAdministrator ? 'border-error-300 dark:border-error-700' : ''
               "
             >
               {{ __('Save Changes', 'flexify-dashboard') }}
@@ -669,24 +669,24 @@ watch(
 
         <!-- Capabilities Summary -->
         <div
-          class="flex items-center gap-6 pt-4 border-t border-zinc-200/50 dark:border-zinc-700/30"
+          class="flex items-center gap-6 pt-4 border-t border-gray-200 dark:border-gray-800"
         >
           <div class="flex items-center gap-2">
             <div
               class="w-2 h-2 rounded-full"
               :class="
-                hasChanges ? 'bg-amber-500 animate-pulse' : 'bg-green-500'
+                hasChanges ? 'bg-warning-500 animate-pulse' : 'bg-success-500'
               "
             ></div>
-            <span class="text-xs font-medium text-zinc-600 dark:text-zinc-400">
+            <span class="text-xs font-medium text-gray-600 dark:text-gray-400">
               {{ selectedCount }} / {{ totalCapabilitiesCount }}
               {{ __('capabilities selected', 'flexify-dashboard') }}
             </span>
           </div>
           <div class="flex-1 max-w-xs">
-            <div class="w-full bg-zinc-200 dark:bg-zinc-700 rounded-full h-1.5">
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
               <div
-                class="bg-zinc-900 dark:bg-zinc-100 h-1.5 rounded-full transition-all duration-300"
+                class="bg-gray-900 dark:bg-gray-100 h-1.5 rounded-full transition-all duration-300"
                 :style="{ width: `${selectedPercentage}%` }"
               ></div>
             </div>
@@ -696,23 +696,23 @@ watch(
 
       <!-- Search Bar -->
       <div
-        class="px-6 py-4 border-b border-zinc-200/50 dark:border-zinc-700/30 bg-zinc-50/50 dark:bg-zinc-900/20"
+        class="px-6 py-4 border-b border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-white/[0.02]"
       >
         <div class="relative">
           <AppIcon
             icon="search"
-            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400 dark:text-zinc-500 text-base pointer-events-none"
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 text-base pointer-events-none"
           />
           <input
             v-model="searchQuery"
             type="text"
             :placeholder="__('Search capabilities...', 'flexify-dashboard')"
-            class="w-full bg-white dark:bg-zinc-800 border border-zinc-200/50 dark:border-zinc-700/30 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 focus:border-transparent transition-all"
+            class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-800 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 focus:border-transparent transition-all"
           />
           <button
             v-if="searchQuery"
             @click="searchQuery = ''"
-            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"
           >
             <AppIcon icon="close" class="text-sm" />
           </button>
@@ -726,14 +726,14 @@ watch(
           class="text-center py-12"
         >
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
-            <AppIcon icon="search" class="text-zinc-400 text-xl" />
+            <AppIcon icon="search" class="text-gray-400 text-xl" />
           </div>
-          <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-1">
+          <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-1">
             {{ __('No capabilities found', 'flexify-dashboard') }}
           </p>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">
+          <p class="text-xs text-gray-500 dark:text-gray-400">
             {{ __('Try adjusting your search terms', 'flexify-dashboard') }}
           </p>
         </div>
@@ -742,33 +742,33 @@ watch(
           <div
             v-for="(capabilities, category) in filteredCapabilities"
             :key="category"
-            class="border border-zinc-200/50 dark:border-zinc-700/30 rounded-xl overflow-hidden bg-white dark:bg-zinc-800/30"
+            class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden bg-white dark:bg-white/[0.03]"
           >
             <!-- Category Header -->
             <button
               @click="toggleCategory(category)"
-              class="w-full px-4 py-3.5 bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-between hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors group"
+              class="w-full px-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 flex items-center justify-between hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group"
             >
               <div class="flex items-center gap-3">
                 <AppIcon
                   :icon="
                     isCategoryExpanded(category) ? 'expand_less' : 'expand_more'
                   "
-                  class="text-zinc-400 dark:text-zinc-500 transition-transform group-hover:text-zinc-600 dark:group-hover:text-zinc-400"
+                  class="text-gray-400 dark:text-gray-500 transition-transform group-hover:text-gray-600 dark:group-hover:text-gray-400"
                 />
                 <span
-                  class="font-semibold text-sm text-zinc-900 dark:text-zinc-100"
+                  class="font-semibold text-sm text-gray-900 dark:text-gray-100"
                 >
                   {{ categoryLabels[category] || category }}
                 </span>
                 <span
-                  class="text-xs font-medium text-zinc-500 dark:text-zinc-400 bg-zinc-200 dark:bg-zinc-700 px-2 py-0.5 rounded"
+                  class="text-xs font-medium text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded"
                 >
                   {{ capabilities.length }}
                 </span>
                 <span
                   v-if="areAllSelectedInCategory(category)"
-                  class="text-xs font-medium text-green-600 dark:text-green-400 flex items-center gap-1"
+                  class="text-xs font-medium text-success-600 dark:text-success-400 flex items-center gap-1"
                 >
                   <AppIcon icon="check_circle" class="text-xs" />
                   {{ __('All selected', 'flexify-dashboard') }}
@@ -778,13 +778,13 @@ watch(
                 <button
                   @click.stop="selectAllInCategory(category)"
                   :disabled="areAllSelectedInCategory(category)"
-                  class="text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 px-2.5 py-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  class="text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 px-2.5 py-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {{ __('Select All', 'flexify-dashboard') }}
                 </button>
                 <button
                   @click.stop="deselectAllInCategory(category)"
-                  class="text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 px-2.5 py-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                  class="text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 px-2.5 py-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 >
                   {{ __('Deselect All', 'flexify-dashboard') }}
                 </button>
@@ -802,12 +802,12 @@ watch(
             >
               <div
                 v-if="isCategoryExpanded(category)"
-                class="divide-y divide-zinc-100/50 dark:divide-zinc-800/30"
+                class="divide-y divide-gray-100 dark:divide-gray-800/30"
               >
                 <label
                   v-for="capability in capabilities"
                   :key="capability"
-                  class="flex items-center gap-3 px-4 py-3 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors cursor-pointer group"
+                  class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer group"
                   @click="toggleCapability(capability)"
                 >
                   <AppCheckbox
@@ -816,12 +816,12 @@ watch(
                   />
                   <div class="flex-1 min-w-0">
                     <div
-                      class="text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors"
+                      class="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors"
                     >
                       {{ formatCapabilityName(capability) }}
                     </div>
                     <div
-                      class="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 opacity-70"
+                      class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-1 opacity-70"
                     >
                       {{ capability }}
                     </div>
@@ -829,7 +829,7 @@ watch(
                   <AppIcon
                     v-if="isCapabilitySelected(capability)"
                     icon="check_circle"
-                    class="text-green-500 dark:text-green-400 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                    class="text-success-500 dark:text-success-400 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
                   />
                 </label>
               </div>
@@ -849,16 +849,16 @@ watch(
       >
         <div
           v-if="hasChanges"
-          class="px-6 py-4 border-t border-zinc-200/50 dark:border-zinc-700/30 bg-zinc-50 dark:bg-zinc-900/50 flex items-center justify-between shadow-lg"
+          class="px-6 py-4 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50 flex items-center justify-between shadow-lg"
         >
           <div class="flex items-center gap-3">
-            <div class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-            <p class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <div class="w-2 h-2 bg-warning-500 rounded-full animate-pulse"></div>
+            <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
               {{ __('You have unsaved changes', 'flexify-dashboard') }}
             </p>
             <span
               v-if="isAdministrator"
-              class="px-2 py-0.5 text-xs font-medium bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded"
+              class="px-2 py-0.5 text-xs font-medium bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-300 rounded"
             >
               {{ __('Admin Role', 'flexify-dashboard') }}
             </span>
@@ -877,7 +877,7 @@ watch(
               :loading="isSaving"
               :class="
                 isAdministrator
-                  ? 'bg-red-600 hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800'
+                  ? 'bg-error-600 hover:bg-error-700 dark:bg-error-700 dark:hover:bg-error-800'
                   : ''
               "
             >

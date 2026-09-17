@@ -77,9 +77,9 @@ const handleSave = async () => {
       <template #fallback>
         <div class="flex items-center gap-2">
           <div
-            class="animate-spin rounded-full h-4 w-4 border-b-2 border-zinc-400"
+            class="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-400"
           ></div>
-          <span class="text-sm text-zinc-500 dark:text-zinc-400">{{
+          <span class="text-sm text-gray-500 dark:text-gray-400">{{
             __('Loading editor...', 'flexify-dashboard')
           }}</span>
         </div>

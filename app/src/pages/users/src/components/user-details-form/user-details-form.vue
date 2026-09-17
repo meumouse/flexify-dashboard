@@ -195,14 +195,14 @@ onMounted(async () => {
     <!-- Editable Fields -->
     <div>
       <!-- Save Button -->
-      <div class="pt-4 dark:border-zinc-800 mb-6">
+      <div class="pt-4 dark:border-gray-800 mb-6">
         <AppButton type="primary" @click="handleSave" :loading="isSaving">
           {{ __('Update User', 'flexify-dashboard') }}
         </AppButton>
       </div>
 
       <label
-        class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+        class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
       >
         {{ __('Name', 'flexify-dashboard') }}
       </label>
@@ -216,7 +216,7 @@ onMounted(async () => {
 
     <div>
       <label
-        class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+        class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
       >
         {{ __('Email', 'flexify-dashboard') }}
       </label>
@@ -230,7 +230,7 @@ onMounted(async () => {
 
     <div>
       <label
-        class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+        class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
       >
         {{ __('Username', 'flexify-dashboard') }}
       </label>
@@ -240,14 +240,14 @@ onMounted(async () => {
         :placeholder="__('Username', 'flexify-dashboard')"
         autocomplete="off"
       />
-      <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+      <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
         {{ __('Username cannot be changed', 'flexify-dashboard') }}
       </p>
     </div>
 
     <div>
       <label
-        class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+        class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
       >
         {{ __('Website', 'flexify-dashboard') }}
       </label>
@@ -261,7 +261,7 @@ onMounted(async () => {
 
     <div>
       <label
-        class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+        class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
       >
         {{ __('Biographical Info', 'flexify-dashboard') }}
       </label>
@@ -275,7 +275,7 @@ onMounted(async () => {
 
     <div>
       <label
-        class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+        class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
       >
         {{ __('New Password', 'flexify-dashboard') }}
       </label>
@@ -290,7 +290,7 @@ onMounted(async () => {
     <!-- Roles Section -->
     <div>
       <label
-        class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+        class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
       >
         {{ __('Roles', 'flexify-dashboard') }}
       </label>
@@ -303,16 +303,16 @@ onMounted(async () => {
       />
     </div>
 
-    <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800">
+    <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
       <div class="flex flex-col gap-3">
         <div class="flex-1">
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
             for="send-notification"
           >
             {{ __('Send user notification', 'flexify-dashboard') }}
           </label>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">
+          <p class="text-xs text-gray-500 dark:text-gray-400">
             {{
               __(
                 'Send an email notification to the user about the changes.',

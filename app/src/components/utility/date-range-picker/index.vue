@@ -88,14 +88,14 @@ const displayFormat = (date) => {
     <input
       type="text"
       :value="returnDatePreview"
-      class="px-2 py-2 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm col-span-2 pl-8 min-w-60 dark:bg-transparent"
+      class="px-2 py-2 border border-gray-200 dark:border-gray-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm col-span-2 pl-8 min-w-60 dark:bg-transparent"
       @click="showPicker"
       v-bind="attrs"
       :placeholder="__('Select date', 'flexify-dashboard')"
     />
 
     <div class="absolute p-2 left-0 top-0 bottom-0 flex flex-col justify-center place-content-center items-center">
-      <AppIcon icon="calendar_today" class="text-lg text-zinc-500 dark:text-zinc-400" />
+      <AppIcon icon="calendar_today" class="text-lg text-gray-500 dark:text-gray-400" />
     </div>
   </div>
 

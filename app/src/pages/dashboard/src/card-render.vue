@@ -111,7 +111,7 @@ const isSingleCard = computed(() => !isContainer.value);
 				<button
 					v-if="!isMobile && isTopLevel"
 					type="button"
-					class="fd-card-drag-handle absolute right-2 top-2 z-20 inline-flex h-9 w-9 cursor-grab items-center justify-center text-zinc-500 transition hover:text-zinc-900 active:cursor-grabbing dark:text-zinc-300 dark:hover:text-zinc-50"
+					class="fd-card-drag-handle absolute right-2 top-2 z-20 inline-flex h-9 w-9 cursor-grab items-center justify-center text-gray-500 transition hover:text-gray-900 active:cursor-grabbing dark:text-gray-300 dark:hover:text-gray-50"
 					:aria-label="__('Reorder card', 'flexify-dashboard')"
 					:title="__('Drag to reorder', 'flexify-dashboard')"
 				>
@@ -120,7 +120,7 @@ const isSingleCard = computed(() => !isContainer.value);
 				<button
 					v-if="!isMobile && isTopLevel"
 					type="button"
-					class="fd-card-resize-handle absolute bottom-2 right-2 z-20 inline-flex h-9 w-9 cursor-col-resize items-center justify-center text-zinc-500 shadow-sm transition hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50"
+					class="fd-card-resize-handle absolute bottom-2 right-2 z-20 inline-flex h-9 w-9 cursor-col-resize items-center justify-center text-gray-500 shadow-sm transition hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
 					:class="isResizing ? 'scale-105 text-brand-600 dark:text-brand-400' : ''"
 					:aria-label="__('Resize card', 'flexify-dashboard')"
 					:title="__('Drag to resize', 'flexify-dashboard')"

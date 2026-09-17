@@ -189,21 +189,21 @@ onMounted(() => {
 
 <template>
   <div
-    class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 flex flex-col h-full"
+    class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl p-6 flex flex-col h-full"
   >
     <!-- Card Header -->
     <div class="flex items-center justify-between mb-6">
       <div>
-        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {{ __('Top Pages', 'flexify-dashboard') }}
         </h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Most visited pages', 'flexify-dashboard') }}
         </p>
       </div>
       <div class="flex items-center gap-2">
         <div class="w-2 h-2 rounded-full bg-brand-500"></div>
-        <span class="text-xs text-zinc-500 dark:text-zinc-400">
+        <span class="text-xs text-gray-500 dark:text-gray-400">
           {{ topPages.length }} {{ __('pages', 'flexify-dashboard') }}
         </span>
       </div>
@@ -214,18 +214,18 @@ onMounted(() => {
       <div v-for="i in 5" :key="i" class="animate-pulse">
         <div class="flex items-center justify-between py-2">
           <div class="flex-1 space-y-2">
-            <div class="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-3/4"></div>
-            <div class="h-3 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2"></div>
+            <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
           </div>
-          <div class="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-12"></div>
+          <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-12"></div>
         </div>
       </div>
     </div>
 
     <!-- Error State -->
     <div v-else-if="error" class="text-center py-8">
-      <AppIcon icon="error" class="text-3xl text-zinc-400 mx-auto mb-3" />
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ error }}</p>
+      <AppIcon icon="error" class="text-3xl text-gray-400 mx-auto mb-3" />
+      <p class="text-sm text-gray-500 dark:text-gray-400">{{ error }}</p>
       <button
         @click="loadPagesData"
         class="mt-2 text-brand-600 dark:text-brand-400 text-sm hover:underline"
@@ -238,7 +238,7 @@ onMounted(() => {
     <div v-else-if="topPages && topPages.length > 0" class="space-y-1">
       <!-- Header Row -->
       <div
-        class="flex items-center justify-between py-2 px-0 text-xs font-medium text-zinc-500 dark:text-zinc-400"
+        class="flex items-center justify-between py-2 px-0 text-xs font-medium text-gray-500 dark:text-gray-400"
       >
         <span>{{ __('PAGE', 'flexify-dashboard') }}</span>
         <span>{{ __('VISITORS', 'flexify-dashboard') }}</span>
@@ -253,7 +253,7 @@ onMounted(() => {
         >
           <!-- Progress Bar Background -->
           <div
-            class="absolute inset-0 bg-zinc-200 dark:bg-zinc-700/20 transition-all duration-300"
+            class="absolute inset-0 bg-gray-200 dark:bg-white/[0.03] transition-all duration-300"
             :style="{
               width: getPercentageWidth(page.total_views) + '%',
             }"
@@ -261,13 +261,13 @@ onMounted(() => {
 
           <!-- Content -->
           <div
-            class="relative flex items-center justify-between py-2 px-4 transition-colors hover:bg-zinc-100/50 dark:hover:bg-zinc-700/20"
+            class="relative flex items-center justify-between py-2 px-4 transition-colors hover:bg-gray-50 dark:hover:bg-white/5"
           >
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-2">
                 <div class="flex-1 min-w-0">
                   <div
-                    class="text-xs text-zinc-600 dark:text-zinc-300 truncate font-medium"
+                    class="text-xs text-gray-600 dark:text-gray-300 truncate font-medium"
                   >
                     {{ getPagePath(page.page_url) }}
                   </div>
@@ -275,7 +275,7 @@ onMounted(() => {
               </div>
             </div>
             <div
-              class="text-sm font-bold text-zinc-900 dark:text-zinc-100 ml-4"
+              class="text-sm font-bold text-gray-900 dark:text-gray-100 ml-4"
             >
               {{ formatNumber(page.total_views) }}
             </div>
@@ -288,12 +288,12 @@ onMounted(() => {
     <div v-else class="text-center py-8">
       <AppIcon
         icon="analytics"
-        class="text-3xl text-zinc-300 dark:text-zinc-600 mx-auto mb-3"
+        class="text-3xl text-gray-300 dark:text-gray-600 mx-auto mb-3"
       />
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
         {{ __('No page data available', 'flexify-dashboard') }}
       </p>
-      <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
+      <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">
         {{
           __('Page data will appear when visitors browse your site', 'flexify-dashboard')
         }}

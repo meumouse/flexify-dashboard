@@ -1310,19 +1310,19 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col h-full bg-white dark:bg-zinc-950">
+  <div class="flex-1 flex flex-col h-full bg-white dark:bg-gray-950">
     <!-- Loading State -->
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mx-auto mb-3"
+          class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mx-auto mb-3"
         >
           <AppIcon
             icon="image"
-            class="text-xl text-zinc-400 dark:text-zinc-500 animate-pulse"
+            class="text-xl text-gray-400 dark:text-gray-500 animate-pulse"
           />
         </div>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Loading image...', 'flexify-dashboard') }}
         </p>
       </div>
@@ -1333,7 +1333,7 @@ onUnmounted(() => {
       <!-- Canvas Area -->
       <div
         ref="containerRef"
-        class="flex-1 flex items-center justify-center overflow-auto bg-white dark:bg-zinc-950 relative min-h-0"
+        class="flex-1 flex items-center justify-center overflow-auto bg-white dark:bg-gray-950 relative min-h-0"
       >
         <canvas
           ref="canvasRef"
@@ -1361,7 +1361,7 @@ onUnmounted(() => {
           <AppButton
             @click="cancelCrop"
             type="transparent"
-            class="text-xs py-2 px-4 shadow-lg bg-white/95 dark:bg-zinc-900/95 backdrop-blur-sm"
+            class="text-xs py-2 px-4 shadow-lg bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm"
           >
             {{ __('Cancel', 'flexify-dashboard') }}
           </AppButton>
@@ -1370,13 +1370,13 @@ onUnmounted(() => {
 
       <!-- Controls Panel -->
       <div
-        class="w-full lg:w-80 bg-white dark:bg-zinc-900 border-t lg:border-t-0 lg:border-l border-zinc-200 dark:border-zinc-800 flex flex-col min-h-0 lg:max-h-full overflow-hidden"
+        class="w-full lg:w-80 bg-white dark:bg-gray-900 border-t lg:border-t-0 lg:border-l border-gray-200 dark:border-gray-800 flex flex-col min-h-0 lg:max-h-full overflow-hidden"
       >
         <!-- Header -->
         <div
-          class="px-4 py-3 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between"
+          class="px-4 py-3 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between"
         >
-          <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-200">
+          <h2 class="text-sm font-semibold text-gray-900 dark:text-gray-200">
             {{ __('Image Editor', 'flexify-dashboard') }}
           </h2>
           <div class="flex items-center gap-2">
@@ -1388,7 +1388,7 @@ onUnmounted(() => {
                 'text-xs py-1.5 px-2',
                 showOriginal
                   ? 'bg-brand-500/20 text-brand-400'
-                  : 'text-zinc-500 dark:text-zinc-400',
+                  : 'text-gray-500 dark:text-gray-400',
               ]"
             >
               <AppIcon icon="compare" class="text-sm" />
@@ -1419,20 +1419,20 @@ onUnmounted(() => {
         <!-- Scrollable Content -->
         <div class="flex-1 overflow-y-auto">
           <!-- Luminosity Section -->
-          <div class="border-b border-zinc-200 dark:border-zinc-800">
+          <div class="border-b border-gray-200 dark:border-gray-800">
             <button
               @click="toggleSection('luminosity')"
-              class="w-full px-4 py-3 flex items-center justify-between hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+              class="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
             >
               <span
-                class="text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                class="text-sm font-medium text-gray-900 dark:text-gray-200"
                 >{{ __('Luminosity', 'flexify-dashboard') }}</span
               >
               <AppIcon
                 :icon="
                   expandedSections.luminosity ? 'expand_less' : 'expand_more'
                 "
-                class="text-zinc-500 dark:text-zinc-400 text-base"
+                class="text-gray-500 dark:text-gray-400 text-base"
               />
             </button>
 
@@ -1441,11 +1441,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Brightness', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     brightness
                   }}</span>
                 </div>
@@ -1455,7 +1455,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1463,11 +1463,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Exposure', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     exposure
                   }}</span>
                 </div>
@@ -1477,7 +1477,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1485,11 +1485,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Highlights', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     highlights
                   }}</span>
                 </div>
@@ -1499,7 +1499,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1507,11 +1507,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Shadows', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     shadows
                   }}</span>
                 </div>
@@ -1521,7 +1521,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1529,11 +1529,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Contrast', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     contrast
                   }}</span>
                 </div>
@@ -1543,25 +1543,25 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
             </div>
           </div>
 
           <!-- Color Section -->
-          <div class="border-b border-zinc-200 dark:border-zinc-800">
+          <div class="border-b border-gray-200 dark:border-gray-800">
             <button
               @click="toggleSection('color')"
-              class="w-full px-4 py-3 flex items-center justify-between hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+              class="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
             >
               <span
-                class="text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                class="text-sm font-medium text-gray-900 dark:text-gray-200"
                 >{{ __('Color', 'flexify-dashboard') }}</span
               >
               <AppIcon
                 :icon="expandedSections.color ? 'expand_less' : 'expand_more'"
-                class="text-zinc-500 dark:text-zinc-400 text-base"
+                class="text-gray-500 dark:text-gray-400 text-base"
               />
             </button>
 
@@ -1570,11 +1570,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Saturation', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     saturation
                   }}</span>
                 </div>
@@ -1584,7 +1584,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1592,11 +1592,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Vibrance', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     vibrance
                   }}</span>
                 </div>
@@ -1606,7 +1606,7 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1614,11 +1614,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Hue', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono"
+                  <span class="text-xs text-gray-500 font-mono"
                     >{{ hue }}°</span
                   >
                 </div>
@@ -1628,7 +1628,7 @@ onUnmounted(() => {
                   min="-180"
                   max="180"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1636,11 +1636,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Temperature', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     temperature
                   }}</span>
                 </div>
@@ -1650,9 +1650,9 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
-                <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">
+                <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">
                   {{ __('Cool ← → Warm', 'flexify-dashboard') }}
                 </p>
               </div>
@@ -1661,11 +1661,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Tint', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     tint
                   }}</span>
                 </div>
@@ -1675,9 +1675,9 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
-                <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">
+                <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">
                   {{ __('Green ← → Magenta', 'flexify-dashboard') }}
                 </p>
               </div>
@@ -1685,18 +1685,18 @@ onUnmounted(() => {
           </div>
 
           <!-- Effects Section -->
-          <div class="border-b border-zinc-200 dark:border-zinc-800">
+          <div class="border-b border-gray-200 dark:border-gray-800">
             <button
               @click="toggleSection('effects')"
-              class="w-full px-4 py-3 flex items-center justify-between hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+              class="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
             >
               <span
-                class="text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                class="text-sm font-medium text-gray-900 dark:text-gray-200"
                 >{{ __('Effects', 'flexify-dashboard') }}</span
               >
               <AppIcon
                 :icon="expandedSections.effects ? 'expand_less' : 'expand_more'"
-                class="text-zinc-500 dark:text-zinc-400 text-base"
+                class="text-gray-500 dark:text-gray-400 text-base"
               />
             </button>
 
@@ -1705,11 +1705,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Sharpness', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     sharpness
                   }}</span>
                 </div>
@@ -1719,9 +1719,9 @@ onUnmounted(() => {
                   min="-100"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
-                <p class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">
+                <p class="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">
                   {{ __('Negative = blur, positive = sharpen', 'flexify-dashboard') }}
                 </p>
               </div>
@@ -1730,11 +1730,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Blur', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     blur
                   }}</span>
                 </div>
@@ -1744,7 +1744,7 @@ onUnmounted(() => {
                   min="0"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1752,11 +1752,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Grain', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     grain
                   }}</span>
                 </div>
@@ -1766,7 +1766,7 @@ onUnmounted(() => {
                   min="0"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
 
@@ -1774,11 +1774,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Vignette', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono">{{
+                  <span class="text-xs text-gray-500 font-mono">{{
                     vignette
                   }}</span>
                 </div>
@@ -1788,30 +1788,30 @@ onUnmounted(() => {
                   min="0"
                   max="100"
                   step="1"
-                  class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                  class="w-full h-1.5 bg-gray-200 dark:bg-gray-800 rounded-lg appearance-none cursor-pointer accent-brand-500"
                 />
               </div>
             </div>
           </div>
 
           <!-- Crop Section -->
-          <div class="border-b border-zinc-200 dark:border-zinc-800">
+          <div class="border-b border-gray-200 dark:border-gray-800">
             <button
               @click="toggleSection('crop')"
-              class="w-full px-4 py-3 flex items-center justify-between hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+              class="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
             >
               <span
-                class="text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                class="text-sm font-medium text-gray-900 dark:text-gray-200"
                 >{{ __('Crop', 'flexify-dashboard') }}</span
               >
               <AppIcon
                 :icon="expandedSections.crop ? 'expand_less' : 'expand_more'"
-                class="text-zinc-500 dark:text-zinc-400 text-base"
+                class="text-gray-500 dark:text-gray-400 text-base"
               />
             </button>
 
             <div v-if="expandedSections.crop" class="px-4 pb-4 space-y-3">
-              <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-2">
+              <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">
                 {{
                   __(
                     'Click and drag on the image to select crop area',
@@ -1823,7 +1823,7 @@ onUnmounted(() => {
               <!-- Aspect Ratio Presets -->
               <div>
                 <label
-                  class="text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-2 block"
+                  class="text-xs font-medium text-gray-500 dark:text-gray-400 mb-2 block"
                 >
                   {{ __('Aspect Ratio', 'flexify-dashboard') }}
                 </label>
@@ -1836,7 +1836,7 @@ onUnmounted(() => {
                       'px-2 py-1.5 text-xs rounded-md transition-colors',
                       cropAspectRatio === preset.value
                         ? 'bg-brand-500 text-white'
-                        : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                        : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700',
                     ]"
                   >
                     {{ preset.label }}
@@ -1858,18 +1858,18 @@ onUnmounted(() => {
           </div>
 
           <!-- Resize Section -->
-          <div class="border-b border-zinc-200 dark:border-zinc-800">
+          <div class="border-b border-gray-200 dark:border-gray-800">
             <button
               @click="toggleSection('resize')"
-              class="w-full px-4 py-3 flex items-center justify-between hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+              class="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
             >
               <span
-                class="text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                class="text-sm font-medium text-gray-900 dark:text-gray-200"
                 >{{ __('Resize', 'flexify-dashboard') }}</span
               >
               <AppIcon
                 :icon="expandedSections.resize ? 'expand_less' : 'expand_more'"
-                class="text-zinc-500 dark:text-zinc-400 text-base"
+                class="text-gray-500 dark:text-gray-400 text-base"
               />
             </button>
 
@@ -1880,11 +1880,11 @@ onUnmounted(() => {
                   v-model="lockAspectRatio"
                   type="checkbox"
                   id="lockAspectRatio"
-                  class="w-4 h-4 rounded border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-brand-500 focus:ring-brand-500"
+                  class="w-4 h-4 rounded border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-brand-500 focus:ring-brand-500"
                 />
                 <label
                   for="lockAspectRatio"
-                  class="text-xs text-zinc-500 dark:text-zinc-400"
+                  class="text-xs text-gray-500 dark:text-gray-400"
                 >
                   {{ __('Lock aspect ratio', 'flexify-dashboard') }}
                 </label>
@@ -1894,11 +1894,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Width', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono"
+                  <span class="text-xs text-gray-500 font-mono"
                     >{{ resizeWidth }}px</span
                   >
                 </div>
@@ -1907,7 +1907,7 @@ onUnmounted(() => {
                   @input="handleResizeWidthChangeWrapper"
                   type="number"
                   min="1"
-                  class="w-full px-2 py-1.5 text-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded text-zinc-900 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                  class="w-full px-2 py-1.5 text-xs bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-brand-500"
                 />
               </div>
 
@@ -1915,11 +1915,11 @@ onUnmounted(() => {
               <div>
                 <div class="flex items-center justify-between mb-1.5">
                   <label
-                    class="text-xs font-medium text-zinc-500 dark:text-zinc-400"
+                    class="text-xs font-medium text-gray-500 dark:text-gray-400"
                   >
                     {{ __('Height', 'flexify-dashboard') }}
                   </label>
-                  <span class="text-xs text-zinc-500 font-mono"
+                  <span class="text-xs text-gray-500 font-mono"
                     >{{ resizeHeight }}px</span
                   >
                 </div>
@@ -1928,7 +1928,7 @@ onUnmounted(() => {
                   @input="handleResizeHeightChangeWrapper"
                   type="number"
                   min="1"
-                  class="w-full px-2 py-1.5 text-xs bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded text-zinc-900 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                  class="w-full px-2 py-1.5 text-xs bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-brand-500"
                 />
               </div>
 
@@ -1944,20 +1944,20 @@ onUnmounted(() => {
           </div>
 
           <!-- Transform Section -->
-          <div class="border-b border-zinc-200 dark:border-zinc-800">
+          <div class="border-b border-gray-200 dark:border-gray-800">
             <button
               @click="toggleSection('transform')"
-              class="w-full px-4 py-3 flex items-center justify-between hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+              class="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
             >
               <span
-                class="text-sm font-medium text-zinc-900 dark:text-zinc-200"
+                class="text-sm font-medium text-gray-900 dark:text-gray-200"
                 >{{ __('Transform', 'flexify-dashboard') }}</span
               >
               <AppIcon
                 :icon="
                   expandedSections.transform ? 'expand_less' : 'expand_more'
                 "
-                class="text-zinc-500 dark:text-zinc-400 text-base"
+                class="text-gray-500 dark:text-gray-400 text-base"
               />
             </button>
 
@@ -2024,7 +2024,7 @@ onUnmounted(() => {
 
         <!-- Panel Footer -->
         <div
-          class="px-4 py-3 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-end gap-2 bg-white dark:bg-zinc-900"
+          class="px-4 py-3 border-t border-gray-200 dark:border-gray-800 flex items-center justify-end gap-2 bg-white dark:bg-gray-900"
         >
           <!-- Reset Button -->
           <AppButton

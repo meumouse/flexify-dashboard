@@ -114,7 +114,7 @@ const escapeHtml = (text) => {
  */
 const getDisplayValue = (value) => {
   if (value === null || value === undefined) {
-    return '<span class="text-zinc-400 italic">NULL</span>';
+    return '<span class="text-gray-400 italic">NULL</span>';
   }
   if (typeof value === 'object') {
     return escapeHtml(JSON.stringify(value));
@@ -141,10 +141,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col h-full bg-white dark:bg-zinc-900">
+  <div class="flex flex-col h-full bg-white dark:bg-gray-900">
     <!-- Header -->
     <div
-      class="flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-zinc-800"
+      class="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-800"
     >
       <div class="flex items-center gap-4">
         <AppButton
@@ -155,10 +155,10 @@ onMounted(() => {
           <AppIcon icon="arrow_back" class="text-base" />
         </AppButton>
         <div>
-          <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
             {{ __('SQL Query Editor', 'flexify-dashboard') }}
           </h2>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('Execute SELECT queries only (read-only for safety)', 'flexify-dashboard') }}
           </p>
         </div>
@@ -193,11 +193,11 @@ onMounted(() => {
     <Transition>
       <div
         v-if="showHistory"
-        class="absolute right-0 top-0 bottom-0 w-80 bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-800 z-10 overflow-y-auto"
+        class="absolute right-0 top-0 bottom-0 w-80 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 z-10 overflow-y-auto"
       >
-        <div class="p-4 border-b border-zinc-200 dark:border-zinc-800">
+        <div class="p-4 border-b border-gray-200 dark:border-gray-800">
           <div class="flex items-center justify-between">
-            <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100">
               {{ __('Query History', 'flexify-dashboard') }}
             </h3>
             <AppButton
@@ -212,7 +212,7 @@ onMounted(() => {
         <div class="p-2">
           <div
             v-if="queryHistory.length === 0"
-            class="p-4 text-center text-sm text-zinc-500 dark:text-zinc-400"
+            class="p-4 text-center text-sm text-gray-500 dark:text-gray-400"
           >
             {{ __('No query history', 'flexify-dashboard') }}
           </div>
@@ -220,15 +220,15 @@ onMounted(() => {
             v-for="(item, index) in queryHistory"
             :key="index"
             @click="loadFromHistory(item)"
-            class="p-3 rounded-lg cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 mb-2 transition-colors"
+            class="p-3 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 mb-2 transition-colors"
           >
-            <div class="text-xs text-zinc-500 dark:text-zinc-400 mb-1">
+            <div class="text-xs text-gray-500 dark:text-gray-400 mb-1">
               {{ new Date(item.timestamp).toLocaleString() }}
             </div>
-            <div class="text-sm text-zinc-900 dark:text-zinc-100 font-mono truncate">
+            <div class="text-sm text-gray-900 dark:text-gray-100 font-mono truncate">
               {{ item.query }}
             </div>
-            <div class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+            <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
               {{ item.rows }} {{ __('rows', 'flexify-dashboard') }}
             </div>
           </div>
@@ -239,24 +239,24 @@ onMounted(() => {
     <!-- Main Content -->
     <div class="flex flex-1 overflow-hidden">
       <!-- Query Editor -->
-      <div class="flex-1 flex flex-col border-r border-zinc-200 dark:border-zinc-800">
-        <div class="px-4 py-2 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800">
-          <span class="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+      <div class="flex-1 flex flex-col border-r border-gray-200 dark:border-gray-800">
+        <div class="px-4 py-2 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800">
+          <span class="text-xs font-medium text-gray-500 dark:text-gray-400">
             {{ __('SQL Query', 'flexify-dashboard') }}
           </span>
         </div>
         <textarea
           v-model="query"
           @keydown="handleKeyDown"
-          class="flex-1 p-4 font-mono text-sm bg-transparent text-zinc-900 dark:text-zinc-100 resize-none focus:outline-none"
+          class="flex-1 p-4 font-mono text-sm bg-transparent text-gray-900 dark:text-gray-100 resize-none focus:outline-none"
           :placeholder="__('Enter your SELECT query here...', 'flexify-dashboard')"
         ></textarea>
       </div>
 
       <!-- Results -->
       <div class="flex-1 flex flex-col overflow-hidden">
-        <div class="px-4 py-2 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800">
-          <span class="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+        <div class="px-4 py-2 border-b border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800">
+          <span class="text-xs font-medium text-gray-500 dark:text-gray-400">
             {{ __('Results', 'flexify-dashboard') }}
             <span v-if="results.length > 0" class="ml-2">
               ({{ results.length }} {{ __('rows', 'flexify-dashboard') }})
@@ -268,43 +268,43 @@ onMounted(() => {
             <div
               v-for="i in 5"
               :key="i"
-              class="h-12 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"
+              class="h-12 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"
             ></div>
           </div>
 
           <div v-else-if="results.length === 0" class="text-center py-12">
             <AppIcon
               icon="database"
-              class="text-4xl text-zinc-300 dark:text-zinc-700 mx-auto mb-4"
+              class="text-4xl text-gray-300 dark:text-gray-700 mx-auto mb-4"
             />
-            <p class="text-sm text-zinc-500 dark:text-zinc-400">
+            <p class="text-sm text-gray-500 dark:text-gray-400">
               {{ __('No results yet. Execute a query to see results.', 'flexify-dashboard') }}
             </p>
           </div>
 
           <div v-else class="overflow-x-auto">
             <table class="w-full">
-              <thead class="bg-zinc-50 dark:bg-zinc-800 sticky top-0">
+              <thead class="bg-gray-50 dark:bg-gray-800 sticky top-0">
                 <tr>
                   <th
                     v-for="column in Object.keys(results[0] || {})"
                     :key="column"
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ column }}
                   </th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-zinc-200 dark:divide-zinc-800">
+              <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
                 <tr
                   v-for="(row, index) in results"
                   :key="index"
-                  class="hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                  class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 >
                   <td
                     v-for="(value, column) in row"
                     :key="column"
-                    class="px-4 py-3 text-sm text-zinc-900 dark:text-zinc-100 max-w-xs truncate"
+                    class="px-4 py-3 text-sm text-gray-900 dark:text-gray-100 max-w-xs truncate"
                     :title="getDisplayValue(value)"
                   >
                     <span v-html="getDisplayValue(value)"></span>
@@ -333,19 +333,19 @@ onMounted(() => {
 }
 
 .overflow-auto::-webkit-scrollbar-thumb {
-  @apply bg-zinc-300 rounded-full;
+  @apply bg-gray-300 rounded-full;
 }
 
 .dark .overflow-auto::-webkit-scrollbar-thumb {
-  @apply bg-zinc-700;
+  @apply bg-gray-700;
 }
 
 .overflow-auto::-webkit-scrollbar-thumb:hover {
-  @apply bg-zinc-400;
+  @apply bg-gray-400;
 }
 
 .dark .overflow-auto::-webkit-scrollbar-thumb:hover {
-  @apply bg-zinc-600;
+  @apply bg-gray-600;
 }
 
 /* Transition for history sidebar */

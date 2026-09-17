@@ -46,7 +46,7 @@ defineProps({
       :for="id"
       class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400"
     >
-      {{ label }}<span v-if="requiredLabel" class="text-red-500">{{ requiredLabel }}</span>
+      {{ label }}<span v-if="requiredLabel" class="text-error-500">{{ requiredLabel }}</span>
     </label>
 
     <input

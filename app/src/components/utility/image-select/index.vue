@@ -53,11 +53,11 @@ const openMediaSelector = async () => {
 <template>
   <div class="flex flex-col w-48">
     <div
-      class="relative group border border-zinc-200 dark:border-zinc-700 cursor-pointer rounded-tl-xl rounded-tr-xl w-48 h-32 flex flex-col place-content-center bg-zinc-50 dark:bg-zinc-800 overflow-hidden border-b-0"
+      class="relative group border border-gray-200 dark:border-gray-700 cursor-pointer rounded-tl-xl rounded-tr-xl w-48 h-32 flex flex-col place-content-center bg-gray-50 dark:bg-gray-800 overflow-hidden border-b-0"
       @click="openMediaSelector()"
     >
       <img v-if="image" :src="image" class="rounded-xl w-48 h-32 object-contain" />
-      <AppIcon v-else icon="image" class="text-4xl my-auto mx-auto text-zinc-500 group-hover:text-zinc-900 group-hover:dark:text-zinc-100 transition-colors" />
+      <AppIcon v-else icon="image" class="text-4xl my-auto mx-auto text-gray-500 group-hover:text-gray-900 group-hover:dark:text-gray-100 transition-colors" />
       <div class="absolute opacity-0 group-hover:opacity-100 pt-1 pr-1 top-0 right-0" v-if="image">
         <AppButton type="transparent" @click.stop.prevent="image = ''">
           <AppIcon icon="close" />

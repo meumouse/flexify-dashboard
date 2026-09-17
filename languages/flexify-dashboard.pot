@@ -73,6 +73,10 @@ msgstr ""
 msgid "%d users selected"
 msgstr ""
 
+#: app/src/components/kit/FdPagination.vue:77
+msgid "%s / page"
+msgstr ""
+
 #: admin/src/Rest/PostsTables.php:745
 msgid "%s ago"
 msgstr ""
@@ -117,11 +121,14 @@ msgstr ""
 msgid "%s scheduled."
 msgstr ""
 
+#: app/src/components/kit/FdDataTable.vue:95
+msgid "%s selected"
+msgstr ""
+
 #: admin/src/Rest/CustomPostTypes.php:862
 msgid "%s updated."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:606
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:606
 msgid ""
 "→ Admin → Property Access Management, add the service account email as a "
@@ -199,7 +206,6 @@ msgstr ""
 
 #: app/src/pages/activity-log/src/activity-list-view.vue:304
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:207
-#: app/src/sections/RemoteSitesSection.vue:207
 msgid "Action"
 msgstr ""
 
@@ -207,7 +213,6 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: app/src/custom-renders/license-key.vue:67
 #: app/src/pages/plugins/src/plugin-card.vue:302
 #: app/src/pages/plugins/src/plugin-inspect.vue:326
 #: app/src/pages/settings/src/custom-renders/license-key.vue:156
@@ -238,7 +243,6 @@ msgstr ""
 msgid "Active installs"
 msgstr ""
 
-#: app/src/cards/active-users/component.vue:118
 #: app/src/pages/dashboard/src/cards/active-users/component.vue:118
 msgid "Active Users"
 msgstr ""
@@ -279,7 +283,6 @@ msgstr ""
 msgid "Add a caption"
 msgstr ""
 
-#: app/src/custom-renders/external-stylesheets.vue:72
 #: app/src/pages/posts/index.vue:665
 #: app/src/pages/posts/index.vue:775
 #: app/src/pages/posts/index.vue:801
@@ -326,7 +329,6 @@ msgid "Add Row"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:188
-#: app/src/sections/RemoteSitesSection.vue:188
 msgid "Add Site"
 msgstr ""
 
@@ -344,7 +346,6 @@ msgid ""
 "into the admin"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:505
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:508
 msgid ""
 "Add your Mapbox API key in Settings > Integrations to enable the Analytics "
@@ -429,7 +430,7 @@ msgid "All %s"
 msgstr ""
 
 #: app/src/pages/activity-log/src/activity-list-view.vue:311
-#: app/src/pages/settings/src/settings-config.js:963
+#: app/src/pages/settings/src/settings-config.js:972
 msgid "All Actions"
 msgstr ""
 
@@ -459,13 +460,19 @@ msgstr ""
 msgid "All Types"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:704
+#: app/src/pages/settings/src/settings-config.js:541
+msgid ""
+"Allow dragging the sidebar edge to change its width. When disabled the "
+"sidebar uses the default width."
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:713
 msgid ""
 "Allow font files (.woff2, .woff, .ttf, .otf) to be uploaded to the media "
 "library. This enables custom font support for your site."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:689
+#: app/src/pages/settings/src/settings-config.js:698
 msgid ""
 "Allow SVG (Scalable Vector Graphics) files to be uploaded to the media "
 "library. All SVG files are automatically sanitized before upload to remove "
@@ -489,7 +496,7 @@ msgstr ""
 msgid "Alt Text"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:654
+#: app/src/pages/settings/src/settings-config.js:663
 msgid "Always show hidden update notifications for specific users/roles"
 msgstr ""
 
@@ -510,7 +517,6 @@ msgid "An unexpected error occurred during upload"
 msgstr ""
 
 #: admin/src/Rest/RankMathDashboardWidget.php:317
-#: app/src/cards/index.js:58
 #: app/src/pages/settings/index.vue:98
 msgid "Analytics"
 msgstr ""
@@ -527,7 +533,6 @@ msgstr ""
 msgid "Analytics is not enabled. Please enable the feature in the settings first."
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:445
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:448
 msgid "Analytics Map"
 msgstr ""
@@ -538,7 +543,7 @@ msgid ""
 "data."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:791
+#: app/src/pages/settings/src/settings-config.js:800
 msgid "Analytics Provider"
 msgstr ""
 
@@ -550,12 +555,10 @@ msgstr ""
 msgid "Analyzing layout issues..."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:559
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:559
 msgid "and create a new project (or select existing)"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:582
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:582
 msgid "and create a new service account"
 msgstr ""
@@ -568,7 +571,7 @@ msgstr ""
 msgid "API"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:829
+#: app/src/pages/settings/src/settings-config.js:838
 msgid ""
 "API key used by the analytics map card. Store the token here instead of "
 "keeping it in source code."
@@ -579,12 +582,10 @@ msgid "Appearance"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:181
-#: app/src/sections/RemoteSitesSection.vue:181
 msgid "Application Password"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:237
-#: app/src/sections/RemoteSitesSection.vue:237
 msgid ""
 "Application passwords can be created in WordPress under Users > Profile > "
 "Application Passwords"
@@ -610,7 +611,6 @@ msgstr ""
 msgid "Approve"
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:185
 #: app/src/pages/comments/src/comment-details-view.vue:46
 #: app/src/pages/comments/src/comment-list-view.vue:512
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:186
@@ -666,13 +666,13 @@ msgid "Are you sure you want to publish these items?"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:131
-#: app/src/sections/RemoteSitesSection.vue:131
 msgid ""
 "Are you sure you want to remove this remote site? This action cannot be "
 "undone."
 msgstr ""
 
 #: app/src/components/app/batch-options/index.vue:42
+#: app/src/components/kit/FdConfirmDialog.vue:21
 #: app/src/components/utility/media-library/index.vue:286
 #: app/src/components/utility/media-library/index.vue:376
 #: app/src/pages/comments/src/comment-list-view.vue:270
@@ -739,7 +739,7 @@ msgstr ""
 msgid "author@example.com"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:974
+#: app/src/pages/settings/src/settings-config.js:983
 msgid "Auto Cleanup"
 msgstr ""
 
@@ -763,7 +763,7 @@ msgstr ""
 msgid "Automatic Updates"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:975
+#: app/src/pages/settings/src/settings-config.js:984
 msgid ""
 "Automatically delete logs older than the retention period. Disable to keep "
 "logs indefinitely."
@@ -790,7 +790,6 @@ msgstr ""
 msgid "Average value per order in the selected period"
 msgstr ""
 
-#: app/src/cards/bounce-rate-time/component.vue:344
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:344
 msgid "Avg. Time on Site"
 msgstr ""
@@ -861,9 +860,12 @@ msgstr ""
 msgid "Blur"
 msgstr ""
 
-#: app/src/cards/bounce-rate-time/component.vue:296
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:296
 msgid "Bounce Rate"
+msgstr ""
+
+#: app/src/components/kit/FdPageHeader.vue:19
+msgid "Breadcrumb"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1446
@@ -878,7 +880,6 @@ msgstr ""
 msgid "Browser timezone for accurate time calculations"
 msgstr ""
 
-#: app/src/custom-renders/layout-selector.vue:34
 #: app/src/pages/settings/src/custom-renders/layout-selector.vue:34
 msgid "Bubble"
 msgstr ""
@@ -915,12 +916,13 @@ msgstr ""
 
 #: app/src/components/app/menu/components/FavoritesSection.vue:227
 #: app/src/components/app/search/layout-fix-dialog.vue:922
+#: app/src/components/kit/FdConfirmDialog.vue:24
+#: app/src/components/utility/confirm/index.vue:13
 #: app/src/components/utility/date-range-picker/index.vue:107
 #: app/src/components/utility/image-editor/index.vue:1366
 #: app/src/components/utility/image-editor/index.vue:2043
 #: app/src/components/utility/media-library/index.vue:854
 #: app/src/components/utility/remote-site-select/index.vue:220
-#: app/src/custom-renders/google-analytics-connection.vue:688
 #: app/src/pages/database/src/table-view.vue:781
 #: app/src/pages/media/src/media-list-view.vue:1977
 #: app/src/pages/posts/src/batch-edit.vue:156
@@ -991,7 +993,6 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:493
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:493
 msgid "Change"
 msgstr ""
@@ -1018,11 +1019,10 @@ msgstr ""
 msgid "Check updates"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1965
+#: admin/src/Pages/Login.php:1868
 msgid "Check your email to continue the password recovery process."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:337
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:337
 msgid "Checking connection..."
 msgstr ""
@@ -1041,7 +1041,6 @@ msgid ""
 "enter a custom font URL, or upload your own font files."
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:836
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:836
 msgid "Choose a name for your custom font family"
 msgstr ""
@@ -1064,13 +1063,13 @@ msgstr ""
 msgid "Choose roles or usersnames to disable the theme for."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:955
+#: app/src/pages/settings/src/settings-config.js:964
 msgid ""
 "Choose which actions to log. \"All Actions\" logs everything, \"Important "
 "Only\" logs only critical actions like deletions and role changes."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:792
+#: app/src/pages/settings/src/settings-config.js:801
 msgid ""
 "Choose which analytics provider to use for dashboard data. Select Built-in "
 "Analytics to use the Flexify Dashboard tracking system, or Google Analytics "
@@ -1081,7 +1080,7 @@ msgstr ""
 msgid "Choose which post types are available in the global search"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:594
+#: app/src/pages/settings/src/settings-config.js:603
 msgid ""
 "Choose which post types should use the modern post editor. Defaults to "
 "posts."
@@ -1096,6 +1095,7 @@ msgid "Cleaned up %d old log entries."
 msgstr ""
 
 #: app/src/components/app/search/components/SearchHistory.vue:33
+#: app/src/components/kit/FdInput.vue:96
 #: app/src/pages/database/src/query-editor.vue:177
 msgid "Clear"
 msgstr ""
@@ -1108,7 +1108,6 @@ msgstr ""
 msgid "Clear Cache"
 msgstr ""
 
-#: app/src/custom-renders/color-scale.vue:85
 #: app/src/pages/settings/src/custom-renders/color-scale.vue:85
 msgid "Clear custom properties"
 msgstr ""
@@ -1121,8 +1120,8 @@ msgstr ""
 msgid "Clear Search"
 msgstr ""
 
+#: app/src/components/kit/FdDataTable.vue:115
 #: app/src/components/utility/media-library/index.vue:851
-#: app/src/custom-renders/font-selector.vue:567
 #: app/src/pages/comments/src/comment-list-view.vue:796
 #: app/src/pages/media/src/media-list-view.vue:1858
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:567
@@ -1139,14 +1138,12 @@ msgstr ""
 msgid "Click and drag on the image to select crop area"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:586
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:586
 msgid ""
 "Click the service account, go to \"Keys\" tab, click \"Add Key\" → \"Create "
 "new key\" → JSON"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:561
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:561
 msgid "Click to change"
 msgstr ""
@@ -1155,7 +1152,6 @@ msgstr ""
 msgid "Click to select file or drag and drop"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:875
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:875
 msgid "Click to select font files"
 msgstr ""
@@ -1170,11 +1166,17 @@ msgstr ""
 
 #: app/src/components/app/search/components/EmptyStateInitial.vue:112
 #: app/src/components/app/search/layout-fix-dialog.vue:1119
+#: app/src/components/kit/FdModal.vue:72
+#: app/src/components/kit/FdSheet.vue:69
 msgid "Close"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-repo.vue:160
 msgid "Close modal"
+msgstr ""
+
+#: app/src/components/app/toolbar/index.vue:145
+msgid "Collapse sidebar"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1560
@@ -1255,7 +1257,6 @@ msgstr ""
 msgid "Comments updated successfully"
 msgstr ""
 
-#: app/src/cards/index.js:59
 #: app/src/components/index.js:16
 #: app/src/pages/users/src/components/index.js:16
 msgid "Commerce"
@@ -1274,7 +1275,7 @@ msgstr ""
 msgid "Configure remote WordPress sites for cross-site operations."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:846
+#: app/src/pages/settings/src/settings-config.js:855
 msgid ""
 "Configure the site key and secret key used by the modern administrative "
 "login and password recovery forms."
@@ -1284,37 +1285,37 @@ msgstr ""
 msgid "Configured"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1702
+#: admin/src/Pages/Login.php:1605
 msgid "Confira seu e-mail para continuar o processo de recuperação de senha."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1739
+#: app/src/components/kit/FdConfirmDialog.vue:23
+msgid "Confirm"
+msgstr ""
+
+#: admin/src/Pages/Login.php:1642
 msgid "Confirm the Google reCAPTCHA to continue."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:679
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:679
 msgid "Connect"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:704
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:704
 msgid "Connect Google Analytics"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:809
+#: app/src/pages/settings/src/settings-config.js:818
 msgid ""
 "Connect your Google Analytics 4 property to display analytics data in the "
 "dashboard. You will need to create OAuth credentials in Google Cloud "
 "Console."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:346
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:346
 msgid "Connected to Google Analytics"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:346
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:346
 msgid "Connection Issue"
 msgstr ""
@@ -1351,7 +1352,6 @@ msgstr ""
 msgid "Copy failed"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:347
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:347
 msgid "Core"
 msgstr ""
@@ -1372,26 +1372,21 @@ msgid ""
 "page."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:179
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:179
 msgid ""
 "Could not load properties automatically. You can enter your Property ID "
 "manually below."
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:465
-#: app/src/cards/top-countries/component.vue:241
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:468
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:241
 msgid "countries"
 msgstr ""
 
-#: app/src/cards/top-countries/component.vue:276
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:276
 msgid "COUNTRY"
 msgstr ""
 
-#: app/src/cards/top-countries/component.vue:334
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:334
 msgid "Country data will appear when visitors browse your site"
 msgstr ""
@@ -1456,7 +1451,6 @@ msgstr ""
 msgid "Current Analytics Status"
 msgstr ""
 
-#: app/src/cards/active-users/component.vue:183
 #: app/src/pages/dashboard/src/cards/active-users/component.vue:183
 msgid "Currently Active"
 msgstr ""
@@ -1469,7 +1463,7 @@ msgstr ""
 msgid "Custom css added here will only be added in the admin area and login page."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:757
+#: app/src/pages/settings/src/settings-config.js:766
 msgid "Custom Dashboard"
 msgstr ""
 
@@ -1523,7 +1517,6 @@ msgstr ""
 msgid "Custom Separator"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:92
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:92
 msgid "Custom URL"
 msgstr ""
@@ -1560,7 +1553,7 @@ msgstr ""
 msgid "Daily limit exceeded. Please try again tomorrow."
 msgstr ""
 
-#: app/src/components/app/toolbar/index.vue:261
+#: app/src/components/app/toolbar/index.vue:71
 #: app/src/pages/settings/src/settings-config.js:36
 #: app/src/pages/settings/src/settings-panel.vue:68
 msgid "Dark"
@@ -1571,6 +1564,7 @@ msgid "Dark Logo url"
 msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:74
+#: app/src/components/app/toolbar/index.vue:200
 msgid "Dark mode"
 msgstr ""
 
@@ -1643,10 +1637,13 @@ msgstr ""
 msgid "Deactivating..."
 msgstr ""
 
-#: app/src/custom-renders/layout-selector.vue:26
 #: app/src/pages/database/src/table-view.vue:476
 #: app/src/pages/settings/src/custom-renders/layout-selector.vue:26
 msgid "Default"
+msgstr ""
+
+#: app/src/pages/settings/src/custom-renders/font-selector.vue:90
+msgid "Default (Outfit)"
 msgstr ""
 
 #: app/src/pages/users/src/user-import.vue:530
@@ -1753,6 +1750,10 @@ msgstr ""
 msgid "Deselect All"
 msgstr ""
 
+#: admin/src/Pages/DesignSystemPage.php:70
+msgid "Design System"
+msgstr ""
+
 #: app/src/components/index.js:14
 #: app/src/pages/activity-log/src/activity-details-view.vue:368
 #: app/src/pages/media/src/media-details-view.vue:1027
@@ -1760,24 +1761,24 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: app/src/custom-renders/license-key.vue:75
 #: app/src/pages/settings/src/custom-renders/license-key.vue:164
 msgid "Development server detected, no need to activate your licence key."
 msgstr ""
 
-#: app/src/cards/device-usage/component.vue:294
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:294
 msgid "Device data will appear when visitors browse your site"
 msgstr ""
 
-#: app/src/cards/device-usage/component.vue:202
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:202
 msgid "Device type distribution"
 msgstr ""
 
-#: app/src/cards/device-usage/component.vue:199
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:199
 msgid "Device Usage"
+msgstr ""
+
+#: app/src/components/kit/FdModal.vue:77
+msgid "Dialog"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:414
@@ -1801,20 +1802,21 @@ msgstr ""
 msgid "Disable theme"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:518
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:518
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:159
 msgid "Disconnect"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:281
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:281
 msgid "Disk Space"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:262
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:262
 msgid "Disk Usage"
+msgstr ""
+
+#: app/src/components/kit/FdAlert.vue:36
+msgid "Dismiss"
 msgstr ""
 
 #: app/src/pages/admin-notices/src/edit.vue:523
@@ -1858,7 +1860,6 @@ msgstr ""
 msgid "Download started"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:593
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:593
 msgid "Download the JSON key file"
 msgstr ""
@@ -1871,7 +1872,6 @@ msgstr ""
 msgid "Downloads"
 msgstr ""
 
-#: app/src/cards/recent-posts/component.vue:179
 #: app/src/components/app/search/state/constants.js:92
 #: app/src/pages/admin-notices/src/edit.vue:258
 #: app/src/pages/admin-notices/src/table.vue:121
@@ -1893,6 +1893,10 @@ msgstr ""
 
 #: app/src/pages/posts/src/constants.js:19
 msgid "Drafts"
+msgstr ""
+
+#: app/src/components/kit/FdDropzone.vue:67
+msgid "Drag & drop files here"
 msgstr ""
 
 #: app/src/pages/dashboard/src/card-render.vue:116
@@ -1929,16 +1933,13 @@ msgid "Duplicate selected"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:95
-#: app/src/sections/RemoteSitesSection.vue:95
 msgid "Duplicate Site"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:458
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:458
 msgid "e.g. 123456789"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:774
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:774
 msgid "e.g., Inter, Roboto, Custom Font"
 msgstr ""
@@ -1951,7 +1952,6 @@ msgstr ""
 msgid "e.g., Manager"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:832
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:832
 msgid "e.g., My Custom Font"
 msgstr ""
@@ -1991,6 +1991,10 @@ msgstr ""
 
 #: app/src/apps/js/AdminNotices.js:45
 msgid "Edit Notice"
+msgstr ""
+
+#: app/src/components/app/toolbar/index.vue:58
+msgid "Edit profile"
 msgstr ""
 
 #: app/src/components/app/menu/components/UserDetails.vue:162
@@ -2052,15 +2056,14 @@ msgstr ""
 msgid "Empty response."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:919
+#: app/src/pages/settings/src/settings-config.js:928
 msgid "Enable Activity Logger"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:540
+#: app/src/pages/settings/src/settings-config.js:552
 msgid "Enable Admin Menu Search"
 msgstr ""
 
-#: app/src/cards/page-analytics/component.vue:332
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:332
 msgid "Enable analytics in settings to view data"
 msgstr ""
@@ -2071,31 +2074,29 @@ msgid ""
 "current user has access."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:777
+#: app/src/pages/settings/src/settings-config.js:786
 msgid ""
 "Enable built-in analytics to track user behavior, page views, and "
 "performance metrics within your WordPress admin."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:900
+#: app/src/pages/settings/src/settings-config.js:909
 msgid "Enable Custom Post Types"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:862
+#: app/src/pages/settings/src/settings-config.js:871
 msgid "Enable Database Explorer"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:776
+#: app/src/pages/settings/src/settings-config.js:785
 msgid "Enable Flexify Dashboard Analytics"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:820
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:820
-#: app/src/pages/settings/src/settings-config.js:703
+#: app/src/pages/settings/src/settings-config.js:712
 msgid "Enable Font Uploads"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:898
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:898
 msgid "Enable font uploads to add font files"
 msgstr ""
@@ -2108,47 +2109,46 @@ msgstr ""
 msgid "Enable magic dark mode for this page"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:559
+#: app/src/pages/settings/src/settings-config.js:571
 msgid "Enable modern list view"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:610
+#: app/src/pages/settings/src/settings-config.js:619
 msgid ""
 "Enable real-time collaboration in the modern post editor. Multiple users "
 "can edit the same post simultaneously with live cursor tracking and synced "
 "changes."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:881
+#: app/src/pages/settings/src/settings-config.js:890
 msgid "Enable Role Editor"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:541
+#: app/src/pages/settings/src/settings-config.js:553
 msgid "Enable search functionality in the admin menu to quickly find menu items."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:688
+#: app/src/pages/settings/src/settings-config.js:697
 msgid "Enable SVG Uploads"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:562
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:562
 msgid "Enable the"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:901
+#: app/src/pages/settings/src/settings-config.js:910
 msgid ""
 "Enable the custom post types creator to register and manage custom post "
 "types without code. Post types are stored in a JSON file for performance."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:863
+#: app/src/pages/settings/src/settings-config.js:872
 msgid ""
 "Enable the modern database explorer interface to browse tables, view data, "
 "and execute SQL queries safely."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:882
+#: app/src/pages/settings/src/settings-config.js:891
 msgid ""
 "Enable the modern role editor interface to manage WordPress user roles and "
 "capabilities."
@@ -2170,12 +2170,10 @@ msgstr ""
 msgid "End date for chart data (ISO 8601 format)"
 msgstr ""
 
-#: app/src/cards/bounce-rate-time/component.vue:251
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:251
 msgid "Engagement"
 msgstr ""
 
-#: app/src/cards/bounce-rate-time/component.vue:397
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:397
 msgid "Engagement data will appear when users interact with your site"
 msgstr ""
@@ -2196,16 +2194,14 @@ msgstr ""
 msgid "Enter notice title"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:444
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:444
 msgid "Enter Property ID"
 msgstr ""
 
-#: admin/src/Pages/Login.php:430
+#: admin/src/Pages/Login.php:431
 msgid "Enter the Google reCAPTCHA site key and secret key."
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:759
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:759
 msgid "Enter the URL to an external font stylesheet (CSS file)"
 msgstr ""
@@ -2218,7 +2214,7 @@ msgstr ""
 msgid "Enter your email or username and we will send you a recovery link."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1939
+#: admin/src/Pages/Login.php:1842
 msgid "Enter your email or username to recover your password."
 msgstr ""
 
@@ -2230,7 +2226,7 @@ msgstr ""
 msgid "Enter your Google reCAPTCHA site key"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:836
+#: app/src/pages/settings/src/settings-config.js:845
 msgid "Enter your Mapbox token"
 msgstr ""
 
@@ -2243,8 +2239,8 @@ msgstr ""
 msgid "Enter your SELECT query here..."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1801
-#: admin/src/Pages/Login.php:1849
+#: admin/src/Pages/Login.php:1704
+#: admin/src/Pages/Login.php:1752
 msgid "Enter your username and password to continue."
 msgstr ""
 
@@ -2334,8 +2330,16 @@ msgstr ""
 msgid "Execution time"
 msgstr ""
 
+#: app/src/components/kit/FdDataTable.vue:128
+msgid "Expand"
+msgstr ""
+
 #: app/src/pages/posts/src/table-filters.vue:212
 msgid "Expand all posts"
+msgstr ""
+
+#: app/src/components/app/toolbar/index.vue:145
+msgid "Expand sidebar"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:589
@@ -2466,7 +2470,6 @@ msgstr ""
 msgid "Failed to disable magic dark mode"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:308
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:308
 msgid "Failed to disconnect"
 msgstr ""
@@ -2501,12 +2504,10 @@ msgstr ""
 msgid "Failed to fix layout and styling. Please try again later."
 msgstr ""
 
-#: app/src/cards/page-views-chart/component.vue:214
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:192
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:165
 msgid "Failed to load analytics"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:144
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:144
 msgid "Failed to load media analytics"
 msgstr ""
@@ -2516,7 +2517,7 @@ msgstr ""
 msgid "Failed to load plugins"
 msgstr ""
 
-#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:155
+#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:123
 msgid "Failed to load revenue"
 msgstr ""
 
@@ -2528,13 +2529,11 @@ msgstr ""
 msgid "Failed to load roles"
 msgstr ""
 
-#: app/src/cards/scheduled-posts/component.vue:178
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:178
 msgid "Failed to load scheduled posts"
 msgstr ""
 
-#: app/src/cards/users-chart/component.vue:141
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:141
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:118
 msgid "Failed to load user analytics"
 msgstr ""
 
@@ -2566,8 +2565,6 @@ msgstr ""
 msgid "Failed to retrieve chart data"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:141
-#: app/src/custom-renders/google-analytics-connection.vue:148
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:141
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:148
 msgid "Failed to save credentials"
@@ -2604,8 +2601,6 @@ msgstr ""
 msgid "Failed to save option page."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:231
-#: app/src/custom-renders/google-analytics-connection.vue:269
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:231
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:269
 msgid "Failed to save property"
@@ -2780,7 +2775,6 @@ msgstr ""
 msgid "File type not allowed."
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:195
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:195
 msgid "File Types"
 msgstr ""
@@ -2846,14 +2840,12 @@ msgstr ""
 msgid "Find users"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:448
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:448
 msgid ""
 "Find your Property ID in Google Analytics: Admin → Property Settings → "
 "Property ID (a number like 123456789)"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:626
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:626
 msgid "Finding your Property ID:"
 msgstr ""
@@ -2870,7 +2862,6 @@ msgstr ""
 msgid "Fix Layout"
 msgstr ""
 
-#: app/src/custom-renders/license-key.vue:59
 #: app/src/pages/settings/src/custom-renders/license-key.vue:148
 msgid "Flexify Dashboard licence key"
 msgstr ""
@@ -2887,46 +2878,37 @@ msgstr ""
 msgid "Focus Search"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:769
-#: app/src/custom-renders/font-selector.vue:827
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:769
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:827
 msgid "Font Family Name"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:809
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:809
 msgid ""
 "Font file uploads are currently disabled. Enable font uploads in the Media "
 "settings to upload custom font files (.woff2, .woff, .ttf, .otf)."
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:843
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:843
 msgid "Font Files"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:686
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:686
 msgid "Font name..."
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:504
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:504
 msgid "Font Source"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:741
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:741
 msgid "Font Stylesheet URL"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:805
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:805
 msgid "Font Uploads Disabled"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:695
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:695
 msgid "Font Weights"
 msgstr ""
@@ -2993,14 +2975,11 @@ msgstr ""
 msgid "Go Pro"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:550
-#: app/src/custom-renders/google-analytics-connection.vue:573
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:550
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:573
 msgid "Go to"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:603
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:603
 msgid "Google Analytics"
 msgstr ""
@@ -3010,44 +2989,37 @@ msgstr ""
 msgid "Google Analytics 4"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:808
+#: app/src/pages/settings/src/settings-config.js:817
 msgid "Google Analytics Connection"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:556
-#: app/src/cards/page-views-chart/component.vue:232
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:559
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:209
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:182
 msgid "Google Analytics Connection Issue"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:569
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:569
 msgid "Google Analytics Data API"
 msgstr ""
 
 #: admin/src/Rest/GoogleAnalyticsOAuth.php:256
-#: app/src/custom-renders/google-analytics-connection.vue:290
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:290
 msgid "Google Analytics disconnected"
 msgstr ""
 
-#: app/src/cards/page-analytics/component.vue:206
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:206
 msgid "Google Analytics Error"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:557
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:557
 msgid "Google Cloud Console"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:91
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:91
 msgid "Google Fonts"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:845
+#: app/src/pages/settings/src/settings-config.js:854
 msgid "Google reCAPTCHA"
 msgstr ""
 
@@ -3055,7 +3027,7 @@ msgstr ""
 msgid "Google reCAPTCHA credentials saved"
 msgstr ""
 
-#: admin/src/Pages/Login.php:457
+#: admin/src/Pages/Login.php:458
 msgid "Google reCAPTCHA credentials saved successfully."
 msgstr ""
 
@@ -3063,7 +3035,7 @@ msgstr ""
 msgid "Google reCAPTCHA disconnected"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1773
+#: admin/src/Pages/Login.php:1676
 msgid "Google reCAPTCHA validation failed. Please try again."
 msgstr ""
 
@@ -3083,7 +3055,7 @@ msgstr ""
 msgid "Grid View"
 msgstr ""
 
-#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:175
+#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:143
 msgid "Gross"
 msgstr ""
 
@@ -3153,7 +3125,7 @@ msgstr ""
 msgid "Hide password"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:643
+#: app/src/pages/settings/src/settings-config.js:652
 msgid "Hide plugin update notifications for selected plugins"
 msgstr ""
 
@@ -3169,7 +3141,6 @@ msgstr ""
 msgid "Hide the screen options toggle in the toolbar"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:617
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:620
 msgid "High"
 msgstr ""
@@ -3204,7 +3175,7 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:935
+#: app/src/pages/settings/src/settings-config.js:944
 msgid ""
 "How many days to keep activity logs before automatic cleanup. Default is 90 "
 "days."
@@ -3218,7 +3189,6 @@ msgstr ""
 msgid "How many times your site was clicked on in the search results."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:545
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:545
 msgid "How to connect Google Analytics 4"
 msgstr ""
@@ -3240,7 +3210,6 @@ msgstr ""
 msgid "https://example.com"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:748
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:748
 msgid "https://fonts.googleapis.com/css2?family=..."
 msgstr ""
@@ -3325,11 +3294,10 @@ msgstr ""
 msgid "Import validation failed."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:964
+#: app/src/pages/settings/src/settings-config.js:973
 msgid "Important Only"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:640
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:640
 msgid "Important:"
 msgstr ""
@@ -3338,20 +3306,17 @@ msgstr ""
 msgid "Importing..."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:596
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:596
 msgid "In"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:628
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:628
 msgid ""
 "In Google Analytics, go to Admin → Property Settings. Your Property ID is "
 "the number shown (e.g. 123456789)."
 msgstr ""
 
-#: app/src/cards/users-chart/component.vue:181
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:181
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:158
 msgid "In Range"
 msgstr ""
 
@@ -3367,7 +3332,6 @@ msgstr ""
 msgid "Indexes"
 msgstr ""
 
-#: app/src/cards/page-analytics/component.vue:286
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:286
 msgid "Individual visitors"
 msgstr ""
@@ -3417,7 +3381,7 @@ msgstr ""
 msgid "Instance removed"
 msgstr ""
 
-#: admin/src/Pages/Login.php:482
+#: admin/src/Pages/Login.php:483
 msgid "Integration with Google reCAPTCHA removed."
 msgstr ""
 
@@ -3486,7 +3450,6 @@ msgid "Invalid import mode. Use \"merge\" or \"replace\"."
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:66
-#: app/src/sections/RemoteSitesSection.vue:66
 msgid "Invalid Input"
 msgstr ""
 
@@ -3613,7 +3576,7 @@ msgstr ""
 msgid "Invalid security token. Please refresh the page and try again."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1824
+#: admin/src/Pages/Login.php:1727
 msgid "Invalid session. Please reload the page and try again."
 msgstr ""
 
@@ -3638,11 +3601,10 @@ msgid "Invalid uploaded file."
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:80
-#: app/src/sections/RemoteSitesSection.vue:80
 msgid "Invalid URL"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1797
+#: admin/src/Pages/Login.php:1700
 msgid "Invalid username or password."
 msgstr ""
 
@@ -3696,6 +3658,10 @@ msgstr ""
 
 #: app/src/pages/posts/src/batchDuplicatePosts.js:47
 msgid "Items duplicated"
+msgstr ""
+
+#: app/src/components/kit/FdPagination.vue:70
+msgid "Items per page"
 msgstr ""
 
 #: app/src/pages/posts/src/batchPublishPosts.js:45
@@ -3756,7 +3722,6 @@ msgstr ""
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:253
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:253
 msgid "Large Files"
 msgstr ""
@@ -3765,7 +3730,6 @@ msgstr ""
 msgid "Last 30 Days"
 msgstr ""
 
-#: app/src/cards/active-users/component.vue:186
 #: app/src/pages/dashboard/src/cards/active-users/component.vue:186
 msgid "Last 5 minutes"
 msgstr ""
@@ -3792,12 +3756,10 @@ msgstr ""
 msgid "Latest Blog Posts from Rank Math"
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:165
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:166
 msgid "Latest comments and discussions"
 msgstr ""
 
-#: app/src/cards/recent-posts/component.vue:151
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:152
 msgid "Latest content activity"
 msgstr ""
@@ -3814,13 +3776,9 @@ msgstr ""
 msgid "Layout fix removed"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:571
-#: app/src/cards/page-analytics/component.vue:218
-#: app/src/cards/page-views-chart/component.vue:245
-#: app/src/custom-renders/google-analytics-connection.vue:372
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:574
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:218
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:222
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:195
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:372
 msgid "Learn more"
 msgstr ""
@@ -3849,7 +3807,6 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: app/src/custom-renders/license-key.vue:40
 #: app/src/pages/settings/src/custom-renders/license-key.vue:110
 msgid "Licence Active"
 msgstr ""
@@ -3930,13 +3887,14 @@ msgid ""
 "temporarily."
 msgstr ""
 
-#: app/src/components/app/toolbar/index.vue:249
+#: app/src/components/app/toolbar/index.vue:70
 #: app/src/pages/settings/src/settings-config.js:35
 #: app/src/pages/settings/src/settings-panel.vue:67
 msgid "Light"
 msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:81
+#: app/src/components/app/toolbar/index.vue:200
 msgid "Light mode"
 msgstr ""
 
@@ -3952,8 +3910,7 @@ msgstr ""
 msgid "List View"
 msgstr ""
 
-#: app/src/cards/page-views-chart/component.vue:204
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:182
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:155
 msgid "Loading analytics..."
 msgstr ""
 
@@ -3961,12 +3918,10 @@ msgstr ""
 msgid "Loading comments..."
 msgstr ""
 
-#: app/src/custom-renders/code-editor.vue:83
 #: app/src/pages/settings/src/custom-renders/code-editor.vue:83
 msgid "Loading editor..."
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:999
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:999
 msgid "Loading font..."
 msgstr ""
@@ -3979,12 +3934,10 @@ msgstr ""
 msgid "Loading integration status..."
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:478
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:481
 msgid "Loading map data..."
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:134
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:134
 msgid "Loading media analytics..."
 msgstr ""
@@ -4021,12 +3974,11 @@ msgstr ""
 msgid "Loading posts..."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:506
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:506
 msgid "Loading properties..."
 msgstr ""
 
-#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:147
+#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:115
 msgid "Loading revenue..."
 msgstr ""
 
@@ -4034,7 +3986,6 @@ msgstr ""
 msgid "Loading roles..."
 msgstr ""
 
-#: app/src/cards/scheduled-posts/component.vue:168
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:168
 msgid "Loading scheduled posts..."
 msgstr ""
@@ -4051,8 +4002,7 @@ msgstr ""
 msgid "Loading tables..."
 msgstr ""
 
-#: app/src/cards/users-chart/component.vue:132
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:132
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:109
 msgid "Loading user analytics..."
 msgstr ""
 
@@ -4076,7 +4026,6 @@ msgstr ""
 msgid "Local"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:644
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:647
 msgid "Location data will appear when visitors browse your site"
 msgstr ""
@@ -4093,7 +4042,7 @@ msgstr ""
 msgid "Log entry not found."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:954
+#: app/src/pages/settings/src/settings-config.js:963
 msgid "Log Level"
 msgstr ""
 
@@ -4113,7 +4062,7 @@ msgstr ""
 msgid "Login path"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1920
+#: admin/src/Pages/Login.php:1823
 msgid "Login successful."
 msgstr ""
 
@@ -4127,16 +4076,10 @@ msgstr ""
 msgid "Logo url"
 msgstr ""
 
-#: app/src/components/app/toolbar/index.vue:276
-#: app/src/components/app/toolbar/index.vue:281
-msgid "Logout"
-msgstr ""
-
 #: admin/src/Rest/WooCommerceDashboard.php:419
 msgid "Loja"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:605
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:608
 msgid "Low"
 msgstr ""
@@ -4165,7 +4108,6 @@ msgstr ""
 msgid "Manage Dashboard Cards"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:273
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:273
 msgid "Manage Media"
 msgstr ""
@@ -4178,11 +4120,10 @@ msgstr ""
 msgid "Map CSV Columns to User Fields"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:828
+#: app/src/pages/settings/src/settings-config.js:837
 msgid "Mapbox API key"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:499
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:502
 msgid "Mapbox API key required"
 msgstr ""
@@ -4209,7 +4150,6 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:162
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:162
 msgid "Media Analytics"
 msgstr ""
@@ -4248,7 +4188,6 @@ msgstr ""
 msgid "Media library and upload management settings"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:165
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:165
 msgid "Media library overview"
 msgstr ""
@@ -4265,7 +4204,6 @@ msgstr ""
 msgid "Media updated successfully"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:611
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:614
 msgid "Medium"
 msgstr ""
@@ -4274,7 +4212,6 @@ msgstr ""
 msgid "Memory usage"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:244
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:244
 msgid "Memory Usage"
 msgstr ""
@@ -4283,6 +4220,7 @@ msgstr ""
 msgid "menu"
 msgstr ""
 
+#: app/src/components/app/toolbar/index.vue:156
 #: app/src/pages/settings/index.vue:71
 msgid "Menu"
 msgstr ""
@@ -4363,10 +4301,6 @@ msgstr ""
 msgid "Method"
 msgstr ""
 
-#: app/src/components/app/menu/index.vue:565
-msgid "Minify menu"
-msgstr ""
-
 #: app/src/components/app/search/utils/formatRelativeDate.js:20
 msgid "minute"
 msgstr ""
@@ -4375,7 +4309,6 @@ msgstr ""
 msgid "minutes"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:241
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:242
 msgid "Missing Mapbox access token"
 msgstr ""
@@ -4396,7 +4329,7 @@ msgstr ""
 msgid "Missing security token. Please refresh the page and try again."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:738
+#: app/src/pages/settings/src/settings-config.js:747
 msgid "Modern Comments Page"
 msgstr ""
 
@@ -4408,7 +4341,7 @@ msgstr ""
 msgid "Modern login logo"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:673
+#: app/src/pages/settings/src/settings-config.js:682
 msgid "Modern Media Library"
 msgstr ""
 
@@ -4416,7 +4349,7 @@ msgstr ""
 msgid "Modern Media Page"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:629
+#: app/src/pages/settings/src/settings-config.js:638
 msgid "Modern Plugin Manager"
 msgstr ""
 
@@ -4424,12 +4357,12 @@ msgstr ""
 msgid "Modern Plugins Page"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:578
+#: app/src/pages/settings/src/settings-config.js:587
 msgid "Modern Post Editor"
 msgstr ""
 
 #: app/src/components/utility/remote-site-select/index.vue:207
-#: app/src/pages/settings/src/settings-config.js:723
+#: app/src/pages/settings/src/settings-config.js:732
 msgid "Modern Users Page"
 msgstr ""
 
@@ -4442,17 +4375,14 @@ msgstr ""
 msgid "Modified"
 msgstr ""
 
-#: app/src/cards/top-referrers/component.vue:192
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:192
 msgid "Most traffic sources"
 msgstr ""
 
-#: app/src/cards/top-pages/component.vue:201
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:201
 msgid "Most visited pages"
 msgstr ""
 
-#: app/src/cards/top-countries/component.vue:235
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:235
 msgid "Most visitors by country"
 msgstr ""
@@ -4486,7 +4416,7 @@ msgstr ""
 msgid "Negative = blur, positive = sharpen"
 msgstr ""
 
-#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:184
+#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:152
 msgid "Net"
 msgstr ""
 
@@ -4575,9 +4505,15 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#: app/src/components/kit/FdPagination.vue:106
+msgid "Next page"
+msgstr ""
+
+#: app/src/components/utility/toggle/index.vue:11
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:212
 #: app/src/pages/database/src/table-view.vue:504
 #: app/src/pages/plugins/src/plugin-card.vue:425
+#: app/src/pages/settings/src/settings-config.js:577
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:212
 msgid "No"
 msgstr ""
@@ -4606,10 +4542,8 @@ msgstr ""
 msgid "No Admin Notices found."
 msgstr ""
 
-#: app/src/cards/page-analytics/component.vue:329
-#: app/src/cards/page-views-chart/component.vue:297
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:329
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:271
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:244
 msgid "No analytics data available"
 msgstr ""
 
@@ -4621,7 +4555,6 @@ msgstr ""
 msgid "No cards registered for this category yet."
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:275
 #: app/src/pages/comments/src/comment-list-view.vue:659
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:276
 msgid "No comments found"
@@ -4635,7 +4568,6 @@ msgstr ""
 msgid "No components available for this tab"
 msgstr ""
 
-#: app/src/cards/top-countries/component.vue:330
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:330
 msgid "No country data available"
 msgstr ""
@@ -4656,12 +4588,10 @@ msgstr ""
 msgid "No data to import"
 msgstr ""
 
-#: app/src/cards/device-usage/component.vue:290
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:290
 msgid "No device data available"
 msgstr ""
 
-#: app/src/cards/bounce-rate-time/component.vue:393
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:393
 msgid "No engagement data available"
 msgstr ""
@@ -4676,26 +4606,26 @@ msgstr ""
 msgid "No file was uploaded."
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:614
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:614
 msgid "No fonts found"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:381
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:381
 msgid "No health data available"
+msgstr ""
+
+#: app/src/components/kit/FdDataTable.vue:170
+msgid "No items found"
 msgstr ""
 
 #: admin/src/License/LicenseService.php:159
 msgid "No license key found."
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:640
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:643
 msgid "No location data available"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:290
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:290
 msgid "No media data available"
 msgstr ""
@@ -4740,7 +4670,6 @@ msgstr ""
 msgid "No orders in the selected period."
 msgstr ""
 
-#: app/src/cards/top-pages/component.vue:294
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:294
 msgid "No page data available"
 msgstr ""
@@ -4757,7 +4686,6 @@ msgstr ""
 msgid "No plugins found."
 msgstr ""
 
-#: app/src/cards/recent-posts/component.vue:289
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:290
 #: app/src/pages/posts/index.vue:656
 msgid "No posts found"
@@ -4779,13 +4707,11 @@ msgstr ""
 msgid "No recent activity"
 msgstr ""
 
-#: app/src/cards/top-referrers/component.vue:300
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:300
 msgid "No referrer data available"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:232
-#: app/src/sections/RemoteSitesSection.vue:232
 msgid "No remote sites configured yet"
 msgstr ""
 
@@ -4848,8 +4774,7 @@ msgstr ""
 msgid "No update available for this plugin"
 msgstr ""
 
-#: app/src/cards/users-chart/component.vue:214
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:214
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:191
 msgid "No user data available"
 msgstr ""
 
@@ -4960,7 +4885,6 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:248
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:249
 msgid "on"
 msgstr ""
@@ -5007,7 +4931,6 @@ msgstr ""
 msgid "Open in new tab"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:515
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:518
 msgid "Open Integrations settings"
 msgstr ""
@@ -5016,12 +4939,14 @@ msgstr ""
 msgid "Open Manage Cards"
 msgstr ""
 
+#: app/src/components/app/search/components/SearchTriggerButton.vue:18
+msgid "Open search"
+msgstr ""
+
 #: app/src/pages/database/src/layout.vue:423
 msgid "Open SQL Editor"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:874
-#: app/src/custom-renders/font-selector.vue:955
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:874
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:955
 msgid "Opening Media Library..."
@@ -5078,7 +5003,7 @@ msgstr ""
 msgid "Option page updated successfully."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:655
+#: app/src/pages/settings/src/settings-config.js:664
 msgid ""
 "Optional allow list. Selected users or roles (for example, Editor) will "
 "still see update notifications for hidden plugins."
@@ -5106,7 +5031,10 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:682
+#: app/src/components/kit/FdDropzone.vue:68
+msgid "or click to browse"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:682
 msgid "Or enter custom:"
 msgstr ""
@@ -5144,10 +5072,6 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
-#: app/src/cards/index.js:57
-msgid "Overview"
-msgstr ""
-
 #: app/src/pages/dashboard/index.vue:726
 msgid "Overview of your site activity"
 msgstr ""
@@ -5163,17 +5087,14 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: app/src/cards/top-pages/component.vue:243
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:243
 msgid "PAGE"
 msgstr ""
 
-#: app/src/cards/page-analytics/component.vue:166
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:166
 msgid "Page Analytics"
 msgstr ""
 
-#: app/src/cards/top-pages/component.vue:298
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:298
 msgid "Page data will appear when visitors browse your site"
 msgstr ""
@@ -5188,13 +5109,11 @@ msgstr ""
 
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:587
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:628
-#: app/src/cards/page-analytics/component.vue:238
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:238
 msgid "Page Views"
 msgstr ""
 
-#: app/src/cards/page-views-chart/component.vue:267
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:242
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:215
 msgid "Page Views Analytics"
 msgstr ""
 
@@ -5202,7 +5121,6 @@ msgstr ""
 msgid "Page views from various devices (desktop, mobile, tablet)"
 msgstr ""
 
-#: app/src/cards/top-pages/component.vue:207
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:207
 msgid "pages"
 msgstr ""
@@ -5210,6 +5128,10 @@ msgstr ""
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:309
 #: app/src/pages/role-editor/src/role-details-view.vue:87
 msgid "Pages"
+msgstr ""
+
+#: app/src/components/kit/FdPagination.vue:82
+msgid "Pagination"
 msgstr ""
 
 #: app/src/components/utility/rich-text/index.vue:226
@@ -5226,7 +5148,6 @@ msgstr ""
 #: app/src/pages/users/src/user-import.vue:55
 #: app/src/pages/users/src/user-list-view.vue:1147
 #: app/src/pages/users/src/user-list-view.vue:1299
-#: app/src/sections/RemoteSitesSection.vue:205
 msgid "Password"
 msgstr ""
 
@@ -5250,12 +5171,10 @@ msgstr ""
 msgid "Password verification failed"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:614
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:614
 msgid "Paste the contents of the JSON key file below and enter your Property ID"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:656
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:656
 msgid "Paste the contents of your service account JSON key file:"
 msgstr ""
@@ -5264,7 +5183,6 @@ msgstr ""
 msgid "Paste URL or search"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:665
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:665
 msgid "Paste your service account JSON key here..."
 msgstr ""
@@ -5273,7 +5191,6 @@ msgstr ""
 msgid "Pedido sem item"
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:193
 #: app/src/components/app/search/state/constants.js:93
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:87
 #: app/src/pages/comments/src/comment-details-view.vue:54
@@ -5299,7 +5216,6 @@ msgid ""
 "Access Management and add the service account email."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:359
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:359
 msgid "Permission Issue Detected"
 msgstr ""
@@ -5313,7 +5229,6 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:225
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:225
 msgid "PHP"
 msgstr ""
@@ -5331,7 +5246,6 @@ msgstr ""
 msgid "Please describe the layout issue"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:192
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:192
 msgid "Please enter a Property ID"
 msgstr ""
@@ -5352,7 +5266,6 @@ msgstr ""
 msgid "Please map all required fields"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:114
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:114
 msgid "Please paste your service account JSON key"
 msgstr ""
@@ -5367,7 +5280,6 @@ msgid "Please provide a valid license key."
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:81
-#: app/src/sections/RemoteSitesSection.vue:81
 msgid "Please provide a valid site URL"
 msgstr ""
 
@@ -5493,7 +5405,6 @@ msgstr ""
 #: admin/src/Pages/CustomPluginsPage.php:55
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:289
 #: app/src/apps/js/Plugins.js:29
-#: app/src/cards/server-health/component.vue:317
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:317
 #: app/src/pages/role-editor/src/role-details-view.vue:90
 #: app/src/pages/settings/index.vue:83
@@ -5554,7 +5465,7 @@ msgstr ""
 msgid "Post Types"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:593
+#: app/src/pages/settings/src/settings-config.js:602
 msgid "Post Types for Modern Editor"
 msgstr ""
 
@@ -5575,7 +5486,6 @@ msgstr ""
 msgid "Press"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:1007
 #: app/src/pages/admin-notices/src/edit.vue:354
 #: app/src/pages/posts/src/post-preview.vue:421
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:1007
@@ -5592,6 +5502,10 @@ msgstr ""
 #: app/src/pages/posts/index.vue:615
 #: app/src/pages/users/src/user-list-view.vue:997
 msgid "Previous"
+msgstr ""
+
+#: app/src/components/kit/FdPagination.vue:83
+msgid "Previous page"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/rank-math-overview/component.vue:245
@@ -5621,7 +5535,6 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:482
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:482
 msgid "Property ID"
 msgstr ""
@@ -5630,13 +5543,10 @@ msgstr ""
 msgid "Property ID is required"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:420
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:420
 msgid "Property ID:"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:214
-#: app/src/custom-renders/google-analytics-connection.vue:255
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:214
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:255
 msgid "Property saved"
@@ -5655,7 +5565,6 @@ msgid "Publish items"
 msgstr ""
 
 #: admin/src/Rest/PostsTables.php:439
-#: app/src/cards/recent-posts/component.vue:171
 #: app/src/components/app/search/state/constants.js:91
 #: app/src/pages/admin-notices/src/table.vue:120
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:172
@@ -5726,7 +5635,7 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:609
+#: app/src/pages/settings/src/settings-config.js:618
 msgid "Real-time Collaboration"
 msgstr ""
 
@@ -5738,13 +5647,11 @@ msgstr ""
 msgid "Rebrand and customize interface text and icons"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:235
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:235
 msgid "Recent (30d)"
 msgstr ""
 
-#: app/src/cards/users-chart/component.vue:190
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:190
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:167
 msgid "Recent (7d)"
 msgstr ""
 
@@ -5757,7 +5664,6 @@ msgstr ""
 msgid "Recent activity on your site."
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:162
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:163
 msgid "Recent Comments"
 msgstr ""
@@ -5767,7 +5673,6 @@ msgstr ""
 msgid "Recent Orders"
 msgstr ""
 
-#: app/src/cards/recent-posts/component.vue:148
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:149
 msgid "Recent Posts"
 msgstr ""
@@ -5800,7 +5705,6 @@ msgstr ""
 msgid "Referrer data from search engines and social media"
 msgstr ""
 
-#: app/src/cards/top-referrers/component.vue:304
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:304
 msgid "Referrer data will appear when visitors arrive from external sources"
 msgstr ""
@@ -5835,7 +5739,6 @@ msgid "Remote Site Error"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:151
-#: app/src/sections/RemoteSitesSection.vue:151
 msgid "Remote site has been removed successfully"
 msgstr ""
 
@@ -5872,7 +5775,6 @@ msgstr ""
 msgid "Remove Fix"
 msgstr ""
 
-#: app/src/custom-renders/license-key.vue:48
 #: app/src/pages/settings/src/custom-renders/license-key.vue:116
 msgid "Remove key"
 msgstr ""
@@ -5882,7 +5784,6 @@ msgid "Remove license?"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:130
-#: app/src/sections/RemoteSitesSection.vue:130
 msgid "Remove Remote Site?"
 msgstr ""
 
@@ -5918,37 +5819,37 @@ msgstr ""
 msgid "Replace secret key"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:579
+#: app/src/pages/settings/src/settings-config.js:588
 msgid ""
 "Replace the built-in WordPress editor with a modern, enhanced post editor "
 "interface."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:630
+#: app/src/pages/settings/src/settings-config.js:639
 msgid ""
 "Replace the classic plugins page with a modern plugin manager with plugin "
 "profiling and improved features."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:739
+#: app/src/pages/settings/src/settings-config.js:748
 msgid ""
 "Replace the classic WordPress comments page with a modern, responsive "
 "comment manager with improved features and better organization."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:674
+#: app/src/pages/settings/src/settings-config.js:683
 msgid ""
 "Replace the classic WordPress media library with a modern, responsive media "
 "manager with improved upload and organization features."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:724
+#: app/src/pages/settings/src/settings-config.js:733
 msgid ""
 "Replace the classic WordPress users page with a modern, responsive user "
 "manager with improved features and better organization."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:758
+#: app/src/pages/settings/src/settings-config.js:767
 msgid ""
 "Replace the default WordPress dashboard with a modern, customizable "
 "dashboard interface."
@@ -5999,13 +5900,16 @@ msgstr ""
 msgid "Reset settings?"
 msgstr ""
 
+#: app/src/pages/settings/src/custom-renders/font-selector.vue:1075
+msgid "Reset to default font"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-panel.vue:655
 msgid "Reset to defaults"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:1075
-#: app/src/pages/settings/src/custom-renders/font-selector.vue:1075
-msgid "Reset to system default"
+#: app/src/pages/settings/src/settings-config.js:540
+msgid "Resizable sidebar"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1868
@@ -6036,28 +5940,19 @@ msgstr ""
 msgid "Results"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:934
+#: app/src/pages/settings/src/settings-config.js:943
 msgid "Retention Period (Days)"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:379
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:379
 msgid "Retest Connection"
 msgstr ""
 
-#: app/src/cards/active-users/component.vue:156
-#: app/src/cards/analytics-map/component.vue:578
-#: app/src/cards/bounce-rate-time/component.vue:280
-#: app/src/cards/device-usage/component.vue:237
-#: app/src/cards/page-views-chart/component.vue:252
-#: app/src/cards/top-countries/component.vue:266
-#: app/src/cards/top-pages/component.vue:233
-#: app/src/cards/top-referrers/component.vue:223
 #: app/src/pages/dashboard/src/cards/active-users/component.vue:156
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:581
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:280
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:237
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:229
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:202
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:266
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:233
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:223
@@ -6068,7 +5963,7 @@ msgstr ""
 msgid "Return only unused media items (unattached and not used as featured image)."
 msgstr ""
 
-#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:168
+#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:136
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:54
 msgid "Revenue"
 msgstr ""
@@ -6192,7 +6087,6 @@ msgstr ""
 msgid "Roles"
 msgstr ""
 
-#: app/src/custom-renders/layout-selector.vue:30
 #: app/src/pages/settings/src/custom-renders/layout-selector.vue:30
 msgid "Rounded"
 msgstr ""
@@ -6219,7 +6113,6 @@ msgstr ""
 
 #: app/src/components/app/menu/components/FavoritesSection.vue:220
 #: app/src/components/utility/image-editor/index.vue:2046
-#: app/src/custom-renders/google-analytics-connection.vue:468
 #: app/src/pages/role-editor/src/role-details-view.vue:616
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:468
 #: app/src/pages/settings/src/settings-panel.vue:508
@@ -6250,7 +6143,6 @@ msgstr ""
 msgid "Saves to custom CSS settings for persistence."
 msgstr ""
 
-#: app/src/cards/recent-posts/component.vue:187
 #: app/src/components/app/search/state/constants.js:95
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:188
 msgid "Scheduled"
@@ -6260,9 +6152,6 @@ msgstr ""
 msgid "Scheduled for %s from now"
 msgstr ""
 
-#: app/src/cards/scheduled-posts/component.vue:196
-#: app/src/cards/scheduled-posts/component.vue:233
-#: app/src/cards/scheduled-posts/component.vue:313
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:196
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:233
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:313
@@ -6281,6 +6170,7 @@ msgstr ""
 msgid "Scripts"
 msgstr ""
 
+#: app/src/components/kit/FdSearchInput.vue:45
 #: app/src/components/utility/code-editor/index.vue:207
 #: app/src/components/utility/media-library/index.vue:641
 #: app/src/components/utility/multiselect-roles-and-users/index.vue:144
@@ -6314,7 +6204,6 @@ msgstr ""
 msgid "Search comments..."
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:579
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:579
 msgid "Search fonts..."
 msgstr ""
@@ -6357,6 +6246,10 @@ msgstr ""
 
 #: app/src/components/app/search/components/CommandHelp.vue:31
 msgid "Search only users"
+msgstr ""
+
+#: app/src/components/app/search/components/SearchTriggerButton.vue:23
+msgid "Search or type command..."
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-repo.vue:173
@@ -6414,6 +6307,10 @@ msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:844
 msgid "Search users..."
+msgstr ""
+
+#: app/src/components/kit/FdSearchInput.vue:44
+msgid "Search..."
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:185
@@ -6481,7 +6378,6 @@ msgstr ""
 msgid "Select a post from the list to view details and edit properties."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:409
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:409
 msgid "Select a property..."
 msgstr ""
@@ -6502,6 +6398,10 @@ msgstr ""
 msgid "Select a user from the list to view details and edit properties."
 msgstr ""
 
+#: app/src/components/kit/FdDataTable.vue:126
+msgid "Select all"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-details-view.vue:783
 msgid "Select All"
 msgstr ""
@@ -6518,17 +6418,14 @@ msgstr ""
 msgid "Select date"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:542
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:542
 msgid "Select Font"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:959
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:959
 msgid "Select Font File"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:968
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:968
 msgid ""
 "Select font files from your media library. Supported: .woff2, .woff, .ttf, "
@@ -6551,12 +6448,15 @@ msgstr ""
 msgid "Select post types"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:400
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:400
 msgid "Select Property"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:644
+#: app/src/components/kit/FdDataTable.vue:189
+msgid "Select row"
+msgstr ""
+
+#: app/src/pages/settings/src/settings-config.js:653
 msgid ""
 "Select the plugins that should not display available update notices in the "
 "Plugins table."
@@ -6566,7 +6466,6 @@ msgstr ""
 msgid "Select users or roles"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:728
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:728
 msgid "Select weights to include. At least one is required."
 msgstr ""
@@ -6609,7 +6508,7 @@ msgstr ""
 msgid "Send welcome email to new users"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1695
+#: admin/src/Pages/Login.php:1598
 msgid "Senha redefinida com sucesso. Faça login para continuar."
 msgstr ""
 
@@ -6625,12 +6524,10 @@ msgstr ""
 msgid "Separator"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:160
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:160
 msgid "Server Health"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:132
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:132
 msgid "Service account connected successfully"
 msgstr ""
@@ -6639,12 +6536,10 @@ msgstr ""
 msgid "Service account credentials saved successfully"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:391
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:391
 msgid "Service Account:"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:580
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:580
 msgid "Service Accounts"
 msgstr ""
@@ -6723,7 +6618,6 @@ msgstr ""
 msgid "Settings updated!"
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:535
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:535
 msgid "Setup Instructions"
 msgstr ""
@@ -6778,6 +6672,10 @@ msgstr ""
 msgid "Showing"
 msgstr ""
 
+#: app/src/components/kit/FdPagination.vue:59
+msgid "Showing %1$s to %2$s of %3$s"
+msgstr ""
+
 #: app/src/pages/posts/index.vue:729
 msgid "Sidebar View"
 msgstr ""
@@ -6785,6 +6683,10 @@ msgstr ""
 #: app/src/pages/login/src/login-form-panel.vue:139
 #: app/src/pages/login/src/login-submit-button.vue:20
 msgid "Sign In"
+msgstr ""
+
+#: app/src/components/app/toolbar/index.vue:261
+msgid "Sign out"
 msgstr ""
 
 #: app/src/components/app/menu/components/UserDetails.vue:183
@@ -6796,11 +6698,11 @@ msgid "Site key"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:150
-#: app/src/sections/RemoteSitesSection.vue:150
 msgid "Site Removed"
 msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:67
+#: app/src/components/app/toolbar/index.vue:63
 msgid "Site settings"
 msgstr ""
 
@@ -6809,17 +6711,14 @@ msgid "Site Settings"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:202
-#: app/src/sections/RemoteSitesSection.vue:202
 msgid "Site URL"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:165
-#: app/src/sections/RemoteSitesSection.vue:165
 msgid "Site URL (e.g., https://example.com)"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:67
-#: app/src/sections/RemoteSitesSection.vue:67
 msgid "Site URL, username, and application password are required"
 msgstr ""
 
@@ -6857,17 +6756,14 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: app/src/cards/top-referrers/component.vue:233
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:233
 msgid "SOURCE"
 msgstr ""
 
-#: app/src/cards/top-referrers/component.vue:198
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:198
 msgid "sources"
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:201
 #: app/src/pages/comments/src/comment-details-view.vue:62
 #: app/src/pages/comments/src/comment-list-view.vue:534
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:202
@@ -6887,7 +6783,6 @@ msgstr ""
 msgid "SQL Query Editor"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:359
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:359
 msgid "SSL:"
 msgstr ""
@@ -6941,7 +6836,7 @@ msgstr ""
 msgid "Styles"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1688
+#: admin/src/Pages/Login.php:1591
 msgid "Sua sessão foi encerrada."
 msgstr ""
 
@@ -6958,22 +6853,15 @@ msgstr ""
 msgid "Success"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:880
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:880
 msgid "Supported formats: .woff2, .woff, .ttf, .otf"
 msgstr ""
 
 #: app/src/components/app/menu/components/UserDetails.vue:426
-#: app/src/components/app/toolbar/index.vue:237
+#: app/src/components/app/toolbar/index.vue:72
 msgid "System"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:90
-#: app/src/pages/settings/src/custom-renders/font-selector.vue:90
-msgid "System Default"
-msgstr ""
-
-#: app/src/cards/server-health/component.vue:163
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:163
 msgid "System performance and updates"
 msgstr ""
@@ -7069,7 +6957,6 @@ msgstr ""
 msgid "The display name for this role"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:779
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:779
 msgid "The exact font-family name as defined in the stylesheet"
 msgstr ""
@@ -7100,7 +6987,7 @@ msgstr ""
 msgid "The Rank Math widget has no available modules for this user."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1979
+#: admin/src/Pages/Login.php:1882
 msgid "The request could not be completed."
 msgstr ""
 
@@ -7114,7 +7001,6 @@ msgid ""
 "payload."
 msgstr ""
 
-#: app/src/custom-renders/google-analytics-connection.vue:642
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:642
 msgid ""
 "The service account email (found in the JSON file) must be added to your "
@@ -7138,12 +7024,12 @@ msgid ""
 msgstr ""
 
 #: app/src/components/app/menu/components/UserDetails.vue:389
-#: app/src/components/app/toolbar/index.vue:227
+#: app/src/components/app/toolbar/index.vue:234
+#: app/src/components/app/toolbar/index.vue:235
 #: app/src/pages/settings/index.vue:56
 msgid "Theme"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:332
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:332
 #: app/src/pages/role-editor/src/role-details-view.vue:91
 msgid "Themes"
@@ -7224,7 +7110,6 @@ msgid "This post type slug is reserved by WordPress."
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:96
-#: app/src/sections/RemoteSitesSection.vue:96
 msgid "This site URL already exists"
 msgstr ""
 
@@ -7282,7 +7167,6 @@ msgstr ""
 msgid "Timestamp"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:366
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:366
 msgid "Timezone:"
 msgstr ""
@@ -7329,8 +7213,20 @@ msgid ""
 "a new secret key."
 msgstr ""
 
-#: app/src/components/app/toolbar/index.vue:139
+#: app/src/components/app/toolbar/index.vue:201
+msgid "Toggle dark mode"
+msgstr ""
+
+#: app/src/components/kit/FdDataTable.vue:197
+msgid "Toggle details"
+msgstr ""
+
+#: app/src/components/app/toolbar/index.vue:152
 msgid "Toggle menu"
+msgstr ""
+
+#: app/src/components/app/toolbar/index.vue:146
+msgid "Toggle sidebar"
 msgstr ""
 
 #: admin/src/Rest/Analytics.php:765
@@ -7341,17 +7237,14 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
-#: app/src/cards/top-countries/component.vue:232
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:232
 msgid "Top Countries"
 msgstr ""
 
-#: app/src/cards/top-pages/component.vue:198
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:198
 msgid "Top Pages"
 msgstr ""
 
-#: app/src/cards/top-referrers/component.vue:189
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:189
 msgid "Top Referrers"
 msgstr ""
@@ -7360,8 +7253,6 @@ msgstr ""
 msgid "Top Selling Products"
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:171
-#: app/src/cards/recent-posts/component.vue:157
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:172
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:158
 msgid "total"
@@ -7379,7 +7270,6 @@ msgstr ""
 msgid "Total Clicks"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:178
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:178
 msgid "Total Files"
 msgstr ""
@@ -7421,7 +7311,6 @@ msgstr ""
 msgid "Total number visits received on all the 404 pages."
 msgstr ""
 
-#: app/src/cards/page-analytics/component.vue:241
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:241
 msgid "Total page visits"
 msgstr ""
@@ -7434,7 +7323,6 @@ msgstr ""
 msgid "Total scripts"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:187
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:187
 msgid "Total Size"
 msgstr ""
@@ -7448,12 +7336,11 @@ msgstr ""
 msgid "Total styles"
 msgstr ""
 
-#: app/src/cards/users-chart/component.vue:172
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:172
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:149
 msgid "Total Users"
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:920
+#: app/src/pages/settings/src/settings-config.js:929
 msgid ""
 "Track and log all admin actions including post changes, user updates, "
 "plugin activations, and more."
@@ -7470,7 +7357,6 @@ msgid "Trash"
 msgstr ""
 
 #: app/src/components/app/menu/components/MenuSearch.vue:419
-#: app/src/custom-renders/font-selector.vue:617
 #: app/src/pages/settings/index.vue:657
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:617
 msgid "Try a different search term"
@@ -7488,17 +7374,12 @@ msgstr ""
 msgid "Try adjusting your search terms"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:534
-#: app/src/cards/media-analytics/component.vue:150
-#: app/src/cards/page-views-chart/component.vue:220
-#: app/src/cards/scheduled-posts/component.vue:184
-#: app/src/cards/users-chart/component.vue:147
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:537
-#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:161
+#: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:129
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:150
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:198
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:171
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:184
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:147
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:124
 msgid "Try again"
 msgstr ""
 
@@ -7560,14 +7441,12 @@ msgstr ""
 msgid "Uncategorized"
 msgstr ""
 
-#: app/src/cards/device-usage/component.vue:257
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:257
 msgid "unique visitors"
 msgstr ""
 
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:594
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:628
-#: app/src/cards/page-analytics/component.vue:283
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:283
 msgid "Unique Visitors"
 msgstr ""
@@ -7611,7 +7490,6 @@ msgstr ""
 msgid "Untitled Notice"
 msgstr ""
 
-#: app/src/cards/media-analytics/component.vue:244
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:244
 msgid "Unused"
 msgstr ""
@@ -7650,7 +7528,6 @@ msgstr ""
 msgid "Update Notice"
 msgstr ""
 
-#: app/src/custom-renders/code-editor.vue:73
 #: app/src/pages/settings/src/custom-renders/code-editor.vue:73
 msgid "Update settings"
 msgstr ""
@@ -7668,7 +7545,6 @@ msgstr ""
 msgid "Update User"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:172
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:172
 msgid "updates"
 msgstr ""
@@ -7702,7 +7578,6 @@ msgstr ""
 msgid "Upload failed. Please try again."
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:93
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:93
 msgid "Upload Font"
 msgstr ""
@@ -7726,7 +7601,6 @@ msgstr ""
 #: app/src/components/app/menu/components/FavoritesSection.vue:183
 #: app/src/components/utility/media-library/index.vue:800
 #: app/src/components/utility/rich-text/index.vue:125
-#: app/src/custom-renders/external-stylesheets.vue:58
 #: app/src/pages/menu-creator/src/edit.vue:1001
 #: app/src/pages/plugins/src/plugin-performance.vue:345
 #: app/src/pages/posts/src/post-preview.vue:404
@@ -7760,7 +7634,7 @@ msgstr ""
 msgid "Use Manage Cards to show the cards you want for this category."
 msgstr ""
 
-#: app/src/pages/settings/src/settings-config.js:560
+#: app/src/pages/settings/src/settings-config.js:572
 msgid ""
 "Use the modern posts list interface instead of the classic WordPress table "
 "layout."
@@ -7794,12 +7668,10 @@ msgstr ""
 msgid "User agent string"
 msgstr ""
 
-#: app/src/cards/users-chart/component.vue:157
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:157
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:134
 msgid "User Analytics"
 msgstr ""
 
-#: app/src/cards/bounce-rate-time/component.vue:254
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:254
 msgid "User behavior metrics"
 msgstr ""
@@ -7833,6 +7705,10 @@ msgstr ""
 msgid "User management and administration settings"
 msgstr ""
 
+#: app/src/components/app/toolbar/index.vue:209
+msgid "User menu"
+msgstr ""
+
 #: app/src/components/user-details-form/user-details-form.vue:212
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:212
 msgid "User name"
@@ -7843,8 +7719,7 @@ msgstr ""
 msgid "User not found"
 msgstr ""
 
-#: app/src/cards/users-chart/component.vue:160
-#: app/src/pages/dashboard/src/cards/users-chart/component.vue:160
+#: app/src/pages/dashboard/src/cards/users-chart/component.vue:137
 msgid "User registration trends"
 msgstr ""
 
@@ -7868,8 +7743,6 @@ msgstr ""
 #: app/src/pages/users/src/user-import.vue:53
 #: app/src/pages/users/src/user-list-view.vue:1116
 #: app/src/pages/users/src/user-list-view.vue:1120
-#: app/src/sections/RemoteSitesSection.vue:173
-#: app/src/sections/RemoteSitesSection.vue:204
 msgid "Username"
 msgstr ""
 
@@ -7894,7 +7767,6 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: app/src/cards/active-users/component.vue:121
 #: app/src/pages/dashboard/src/cards/active-users/component.vue:121
 msgid "Users currently browsing"
 msgstr ""
@@ -7919,7 +7791,7 @@ msgstr ""
 msgid "Valid option page is required."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1709
+#: admin/src/Pages/Login.php:1612
 msgid "Verifique seu e-mail para ativar a conta."
 msgstr ""
 
@@ -7940,7 +7812,6 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:623
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:626
 msgid "Very High"
 msgstr ""
@@ -7974,8 +7845,6 @@ msgstr ""
 msgid "View Admin Notice"
 msgstr ""
 
-#: app/src/cards/recent-comments/component.vue:287
-#: app/src/cards/recent-posts/component.vue:301
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:63
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:288
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:302
@@ -8014,8 +7883,6 @@ msgstr ""
 msgid "View Tag"
 msgstr ""
 
-#: app/src/cards/device-usage/component.vue:208
-#: app/src/cards/page-analytics/component.vue:175
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:208
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:175
 msgid "views"
@@ -8030,29 +7897,24 @@ msgid "Visible"
 msgstr ""
 
 #: app/src/components/app/menu/components/UserDetails.vue:169
+#: app/src/components/app/toolbar/index.vue:59
 msgid "Visit site"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:598
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:601
 msgid "Visit Volume"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:448
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:451
 msgid "Visitor locations worldwide"
 msgstr ""
 
-#: app/src/cards/top-countries/component.vue:277
-#: app/src/cards/top-pages/component.vue:244
-#: app/src/cards/top-referrers/component.vue:234
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:277
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:244
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:234
 msgid "VISITORS"
 msgstr ""
 
-#: app/src/cards/analytics-map/component.vue:460
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:463
 msgid "visits"
 msgstr ""
@@ -8069,16 +7931,16 @@ msgstr ""
 msgid "Warning: Administrator Role"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1791
-#: admin/src/Pages/Login.php:1806
+#: admin/src/Pages/Login.php:1694
+#: admin/src/Pages/Login.php:1709
 msgid "We were unable to authenticate right now. Please try again."
 msgstr ""
 
-#: admin/src/Pages/Login.php:440
+#: admin/src/Pages/Login.php:441
 msgid "We were unable to save the Google reCAPTCHA secret key."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1763
+#: admin/src/Pages/Login.php:1666
 msgid "We were unable to validate Google reCAPTCHA at this time. Please try again."
 msgstr ""
 
@@ -8095,22 +7957,18 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: app/src/cards/page-analytics/component.vue:169
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:169
 msgid "Website traffic and engagement"
 msgstr ""
 
-#: app/src/cards/page-views-chart/component.vue:270
-#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:245
+#: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:218
 msgid "Website traffic trends"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:1013
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:1013
 msgid "Weight:"
 msgstr ""
 
-#: app/src/custom-renders/font-selector.vue:1062
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:1062
 msgid "weights loaded"
 msgstr ""
@@ -8181,7 +8039,6 @@ msgstr ""
 msgid "with this role"
 msgstr ""
 
-#: app/src/cards/server-health/component.vue:210
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:210
 msgid "WordPress"
 msgstr ""
@@ -8209,9 +8066,11 @@ msgstr ""
 msgid "Write something..."
 msgstr ""
 
+#: app/src/components/utility/toggle/index.vue:12
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:212
 #: app/src/pages/database/src/table-view.vue:503
 #: app/src/pages/plugins/src/plugin-card.vue:425
+#: app/src/pages/settings/src/settings-config.js:578
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:212
 msgid "Yes"
 msgstr ""
@@ -8255,7 +8114,6 @@ msgid "Yes, I understand the risk"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:135
-#: app/src/sections/RemoteSitesSection.vue:135
 msgid "Yes, remove site"
 msgstr ""
 
@@ -8310,7 +8168,7 @@ msgstr ""
 msgid "You're all caught up"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1913
+#: admin/src/Pages/Login.php:1816
 msgid ""
 "Your account is valid, but you do not have access to the administrative "
 "panel."

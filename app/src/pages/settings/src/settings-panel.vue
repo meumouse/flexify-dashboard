@@ -494,13 +494,13 @@ const resetSettingsToDefaults = async () => {
 <template>
   <div class="grid grid-cols-3 gap-12 p-6">
     <div
-      class="col-span-3 p-6 bg-zinc-100 dark:bg-zinc-800/40 rounded-xl flex flex-row justify-between items-center"
+      class="col-span-3 p-6 bg-gray-100 dark:bg-white/[0.03] rounded-xl flex flex-row justify-between items-center"
     >
       <div class="">
-        <h1 class="text-zinc-900 dark:text-zinc-100 font-semibold text-2xl">
+        <h1 class="text-gray-900 dark:text-gray-100 font-semibold text-2xl">
           {{ categories.find((category) => category.value == tab).label }}
         </h1>
-        <p class="text-zinc-500 dark:text-zinc-400">
+        <p class="text-gray-500 dark:text-gray-400">
           {{ categories.find((category) => category.value == tab).description }}
         </p>
       </div>
@@ -513,7 +513,7 @@ const resetSettingsToDefaults = async () => {
       <!-- License activation notice -->
       <div
         v-if="!isActivated && tab !== 'general'"
-        class="bg-emerald-100 dark:bg-emerald-600/20 border border-emerald-400 dark:border-emerald-700 p-2 rounded-lg text-sm mt-3 col-span-3"
+        class="bg-success-100 dark:bg-success-600/20 border border-success-400 dark:border-success-700 p-2 rounded-lg text-sm mt-3 col-span-3"
       >
         {{
           __(
@@ -528,9 +528,9 @@ const resetSettingsToDefaults = async () => {
         v-if="searchQuery && searchQuery.trim() && currentSettings.length > 0"
         class="col-span-3 mb-4 px-2"
       >
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Found', 'flexify-dashboard') }}
-          <span class="font-medium text-zinc-900 dark:text-zinc-100">
+          <span class="font-medium text-gray-900 dark:text-gray-100">
             {{ currentSettings.length }}
           </span>
           {{ __('matching setting(s)', 'flexify-dashboard') }}
@@ -543,19 +543,19 @@ const resetSettingsToDefaults = async () => {
         class="col-span-3 py-12 text-center"
       >
         <div
-          class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
         >
-          <AppIcon icon="search" class="text-2xl text-zinc-400" />
+          <AppIcon icon="search" class="text-2xl text-gray-400" />
         </div>
-        <h3 class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2">
+        <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">
           {{ __('No settings found', 'flexify-dashboard') }}
         </h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-1">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
           {{
             __('No settings match your search in this category.', 'flexify-dashboard')
           }}
         </p>
-        <p class="text-xs text-zinc-400 dark:text-zinc-500">
+        <p class="text-xs text-gray-400 dark:text-gray-500">
           {{
             __(
               'Try a different search term or check another category.',
@@ -570,10 +570,10 @@ const resetSettingsToDefaults = async () => {
         <!-- License Key - Special handling -->
         <template v-if="setting.customRender === 'license-key'">
           <div class="flex flex-col pt-2 gap-2">
-            <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+            <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
               setting.label
             }}</span>
-            <span class="text-zinc-500 dark:text-zinc-400 leading-snug">{{
+            <span class="text-gray-500 dark:text-gray-400 leading-snug">{{
               setting.description
             }}</span>
           </div>
@@ -587,17 +587,17 @@ const resetSettingsToDefaults = async () => {
             class="col-span-2"
           />
           <div
-            class="border-t border-zinc-200 dark:border-zinc-800 col-span-3"
+            class="border-t border-gray-200 dark:border-gray-800 col-span-3"
           ></div>
         </template>
 
         <!-- Code Editor - Special handling with save button -->
         <template v-else-if="setting.customRender === 'code-editor'">
           <div class="flex flex-col pt-2 gap-2">
-            <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+            <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
               setting.label
             }}</span>
-            <span class="text-zinc-500 dark:text-zinc-400 leading-snug">{{
+            <span class="text-gray-500 dark:text-gray-400 leading-snug">{{
               setting.description
             }}</span>
           </div>
@@ -610,17 +610,17 @@ const resetSettingsToDefaults = async () => {
             @update:model-value="flexify_dashboard_settings = $event"
           />
           <div
-            class="border-t border-zinc-200 dark:border-zinc-800 col-span-3"
+            class="border-t border-gray-200 dark:border-gray-800 col-span-3"
           ></div>
         </template>
 
         <!-- Remote Sites - Special handling -->
         <template v-else-if="setting.customRender === 'remote-sites'">
           <div class="flex flex-col pt-2 gap-2">
-            <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+            <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
               setting.label
             }}</span>
-            <span class="text-zinc-500 dark:text-zinc-400 leading-snug">{{
+            <span class="text-gray-500 dark:text-gray-400 leading-snug">{{
               setting.description
             }}</span>
           </div>
@@ -632,23 +632,23 @@ const resetSettingsToDefaults = async () => {
             class="col-span-2"
           />
           <div
-            class="border-t border-zinc-200 dark:border-zinc-800 col-span-3"
+            class="border-t border-gray-200 dark:border-gray-800 col-span-3"
           ></div>
         </template>
 
         <template v-else-if="setting.customRender === 'reset-settings'">
           <div class="flex flex-col pt-2 gap-2">
-            <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+            <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
               setting.label
             }}</span>
-            <span class="text-zinc-500 dark:text-zinc-400 leading-snug">{{
+            <span class="text-gray-500 dark:text-gray-400 leading-snug">{{
               setting.description
             }}</span>
           </div>
           <div class="col-span-2 flex items-start justify-end">
             <AppButton
               type="default"
-              class="bg-red-600! hover:bg-red-700! text-white!"
+              class="bg-error-600! hover:bg-error-700! text-white!"
               :loading="saving"
               @click="resetSettingsToDefaults"
             >
@@ -656,7 +656,7 @@ const resetSettingsToDefaults = async () => {
             </AppButton>
           </div>
           <div
-            class="border-t border-zinc-200 dark:border-zinc-800 col-span-3"
+            class="border-t border-gray-200 dark:border-gray-800 col-span-3"
           ></div>
         </template>
 

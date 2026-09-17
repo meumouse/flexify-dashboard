@@ -166,16 +166,16 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex-1 flex h-full max-h-full overflow-hidden bg-white dark:bg-zinc-950">
+  <div class="flex-1 flex h-full max-h-full overflow-hidden bg-white dark:bg-gray-950">
     <!-- Loading State -->
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center mx-auto mb-3"
+          class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mx-auto mb-3"
         >
-          <AppIcon icon="image" class="text-xl text-zinc-400 animate-pulse" />
+          <AppIcon icon="image" class="text-xl text-gray-400 animate-pulse" />
         </div>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ __('Loading...', 'flexify-dashboard') }}</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('Loading...', 'flexify-dashboard') }}</p>
       </div>
     </div>
 
@@ -183,12 +183,12 @@ onMounted(async () => {
     <div v-else-if="mediaItem" class="flex-1 flex flex-col h-full">
       <!-- Header -->
       <div
-        class="flex items-center justify-between px-6 py-2 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900"
+        class="flex items-center justify-between px-6 py-2 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
       >
         <div class="flex items-center gap-4">
           <button
             @click="handleCancel"
-            class="flex items-center gap-2 px-3 py-2 rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             <AppIcon icon="arrow_back" class="text-base" />
             <span class="text-sm">{{ __('Back', 'flexify-dashboard') }}</span>
@@ -196,7 +196,7 @@ onMounted(async () => {
 
           <div class="flex items-center gap-3">
             <div>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400">
+              <p class="text-sm text-gray-500 dark:text-gray-400">
                 {{ mediaItem.media_details?.file || 'image.jpg' }}
               </p>
             </div>
@@ -205,7 +205,7 @@ onMounted(async () => {
 
         <div class="flex items-center gap-3">
           <!-- Image Info -->
-          <div class="text-sm text-zinc-500 dark:text-zinc-400">
+          <div class="text-sm text-gray-500 dark:text-gray-400">
             <span
               v-if="
                 mediaItem.media_details?.width &&

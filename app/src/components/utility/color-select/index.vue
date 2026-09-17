@@ -15,7 +15,7 @@ if (props.value) model.value = props.value;
   <label class="relative flex group">
     <input
       v-model="model"
-      class="px-2 py-2 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-900 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm pl-10 bg-transparent"
+      class="px-2 py-2 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm pl-10 bg-transparent"
       placeholder="#ffffff"
       v-bind="attrs"
       type="text"
@@ -23,7 +23,7 @@ if (props.value) model.value = props.value;
 
     <div class="absolute top-0 left-0 h-full flex flex-col place-content-center px-2 py-1">
       <label class="relative">
-        <div class="rounded-full w-6 h-6 border border-zinc-200 dark:border-zinc-700 cursor-pointer" :style="`background-color:${model || 'transparent'}`" :class="!model ? 'checkered' : ''"></div>
+        <div class="rounded-full w-6 h-6 border border-gray-200 dark:border-gray-700 cursor-pointer" :style="`background-color:${model || 'transparent'}`" :class="!model ? 'checkered' : ''"></div>
         <input v-model="model" class="absolute opacity-0 appearance-none" type="color" />
       </label>
     </div>

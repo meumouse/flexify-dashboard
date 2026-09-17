@@ -101,7 +101,7 @@ const returnTdClass = (data, index, row) => {
   }
 
   if (props.hasBorders) {
-    classes = [...classes, 'border-b', 'border-zinc-200 dark:border-zinc-700'];
+    classes = [...classes, 'border-b', 'border-gray-200 dark:border-gray-700'];
   }
 
   if (index === 0) {
@@ -128,11 +128,11 @@ const returnTdClass = (data, index, row) => {
       'via-white',
       'via-white',
       'via-white',
-      'dark:from-zinc-900',
-      'dark:via-zinc-900',
-      'dark:via-zinc-900',
-      'dark:via-zinc-900',
-      'dark:via-zinc-900',
+      'dark:from-gray-900',
+      'dark:via-gray-900',
+      'dark:via-gray-900',
+      'dark:via-gray-900',
+      'dark:via-gray-900',
     ];
   }
 
@@ -264,7 +264,7 @@ defineExpose({
         <div class="relative max-w-[50%]">
           <AppIcon
             icon="search"
-            class="text-zinc-400 absolute left-4 top-1/2 translate-y-[-50%] text-lg"
+            class="text-gray-400 absolute left-4 top-1/2 translate-y-[-50%] text-lg"
           ></AppIcon>
           <input
             v-model="pagination.search"
@@ -276,9 +276,9 @@ defineExpose({
           <Transition>
             <div
               v-if="pagination.search"
-              class="p-1 rounded-lg border border-zinc-200 dark:border-zinc-700 dark:border-zinc-700 absolute right-2 top-1/2 translate-y-[-50%]"
+              class="p-1 rounded-lg border border-gray-200 dark:border-gray-700 dark:border-gray-700 absolute right-2 top-1/2 translate-y-[-50%]"
             >
-              <AppIcon icon="return" class="text-zinc-400 text-lg" />
+              <AppIcon icon="return" class="text-gray-400 text-lg" />
             </div>
           </Transition>
         </div>
@@ -308,7 +308,7 @@ defineExpose({
           <tr class="text-left font-medium">
             <th
               v-if="!hideSelect"
-              class="font-normal text-zinc-400 w-1 p-4 border-t border-b border-zinc-200 dark:border-zinc-700/80 sticky left-0 bg-white dark:bg-zinc-900 z-[1]"
+              class="font-normal text-gray-400 w-1 p-4 border-t border-b border-gray-200 dark:border-gray-700/80 sticky left-0 bg-white dark:bg-gray-900 z-[1]"
             >
               <uiCheckbox
                 @click="toggleSelection"
@@ -320,14 +320,14 @@ defineExpose({
             <th
               v-for="(column, index) in returnColumns"
               :key="column.key"
-              class="font-normal text-zinc-400 p-4 border-t border-b border-zinc-200 dark:border-zinc-700 text-sm"
+              class="font-normal text-gray-400 p-4 border-t border-b border-gray-200 dark:border-gray-700 text-sm"
               :class="[
                 {
-                  'sticky left-[42px] z-[1] bg-gradient-to-r from-white via-white via-white via-white via-white dark:from-zinc-900 dark:from-zinc-900 dark:via-zinc-900 dark:via-zinc-900':
+                  'sticky left-[42px] z-[1] bg-gradient-to-r from-white via-white via-white via-white via-white dark:from-gray-900 dark:from-gray-900 dark:via-gray-900 dark:via-gray-900':
                     index === 0,
                 },
                 {
-                  'cursor-pointer hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors':
+                  'cursor-pointer hover:text-gray-900 dark:hover:text-gray-100 transition-colors':
                     column.sort_key,
                 },
                 column.column_classes,
@@ -343,7 +343,7 @@ defineExpose({
                     class="whitespace-nowrap transition-colors"
                     :class="
                       column.sort_key && pagination.orderby == column.sort_key
-                        ? 'text-zinc-900 dark:text-zinc-100'
+                        ? 'text-gray-900 dark:text-gray-100'
                         : ''
                     "
                   >
@@ -438,25 +438,25 @@ defineExpose({
           >
             <td
               v-if="!hideSelect"
-              class="px-4 py-3 group-hover:bg-zinc-100 dark:group-hover:bg-zinc-800 transition-all cursor-pointer group-hover:rounded-l-xl sticky left-0 z-[1] bg-white border-b border-zinc-100 dark:border-zinc-800"
+              class="px-4 py-3 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 transition-all cursor-pointer group-hover:rounded-l-xl sticky left-0 z-[1] bg-white border-b border-gray-100 dark:border-gray-800"
               :class="
                 selected.includes(row.id)
-                  ? 'bg-zinc-100 dark:bg-zinc-800 rounded-l-xl'
-                  : 'dark:bg-zinc-900'
+                  ? 'bg-gray-100 dark:bg-gray-800 rounded-l-xl'
+                  : 'dark:bg-gray-900'
               "
             >
               <uiCheckboxModern :value="row.id" v-model="selected" />
             </td>
             <td
               @click="handleClick($event, index)"
-              class="px-4 py-3 group-hover:bg-zinc-100 dark:group-hover:bg-zinc-800 transition-all cursor-pointer border-b border-zinc-100 dark:border-zinc-800"
+              class="px-4 py-3 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 transition-all cursor-pointer border-b border-gray-100 dark:border-gray-800"
               v-for="(column, colindex) in returnColumns"
               :key="column.key"
               :class="[
                 `${returnTdClass(column, colindex, row)} ${
                   column.classes
                 } ${row?.cell_classes?.[column.key].join(' ')}`,
-                selected.includes(row.id) ? 'bg-zinc-100 dark:bg-zinc-800' : '',
+                selected.includes(row.id) ? 'bg-gray-100 dark:bg-gray-800' : '',
               ]"
             >
               <!-- Use scoped slot for custom cell rendering -->
@@ -477,12 +477,12 @@ defineExpose({
       v-if="pagination && data.length && pagination.pages > 1"
       class="flex flex-row gap-6 place-content-between items-center p-4 w-full"
     >
-      <span class="text-zinc-400 text-sm">
+      <span class="text-gray-400 text-sm">
         {{ itemRangeStart }} - {{ itemRangeEnd }} of
         {{ pagination.total }}</span
       >
       <div class="flex gap-2 items-center">
-        <span class="text-zinc-400 text-sm"
+        <span class="text-gray-400 text-sm"
           >{{ pagination.page }} of {{ pagination.pages }}</span
         >
         <uiButton

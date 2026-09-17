@@ -146,7 +146,7 @@ export const useSearchQuery = () => {
 
         formatted.push({
           url: subitem.url,
-          name: `<span class="text-zinc-400 dark:text-zinc-400">${
+          name: `<span class="text-gray-400 dark:text-gray-400">${
             parent?.settings?.name || parent.name
           } ></span> ${subitem?.settings?.name || subitem.name}`,
           id: `${subitem.url}-${subitem.name}`,

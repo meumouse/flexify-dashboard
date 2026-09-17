@@ -38,7 +38,7 @@ defineExpose({ close, show, forceClose });
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 right-0 bottom-0 bg-zinc-900/20 dark:bg-zinc-900/60 flex flex-row place-content-end z-[99999]" @click="close" v-if="open">
+  <div class="fixed top-0 left-0 right-0 bottom-0 bg-gray-900/20 dark:bg-gray-900/60 flex flex-row place-content-end z-[99999]" @click="close" v-if="open">
     <Transition
       enter-active-class="transition duration-200 ease-out"
       enter-from-class="transform translate-x-full"
@@ -50,7 +50,7 @@ defineExpose({ close, show, forceClose });
       <div
         v-if="parentOpen"
         ref="panel"
-        class="h-screen max-h-screen overflow-auto bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-700 max-w-full relative shadow-lg rounded-tl-lg rounded-bl-lg relative max-w-full dark:shadow-zinc-950"
+        class="h-screen max-h-screen overflow-auto bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 max-w-full relative shadow-lg rounded-tl-lg rounded-bl-lg relative max-w-full dark:shadow-gray-950"
       >
         <slot />
       </div>

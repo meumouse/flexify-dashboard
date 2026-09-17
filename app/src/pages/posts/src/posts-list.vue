@@ -96,10 +96,10 @@ const getStatusLabel = (post) => {
  */
 const getStatusClasses = (statusValue) => {
   const statusMap = {
-    publish: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300',
-    draft: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300',
-    pending: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300',
-    trash: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300',
+    publish: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-300',
+    draft: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300',
+    pending: 'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-300',
+    trash: 'bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-300',
     private: 'bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300',
   };
   return statusMap[statusValue] || statusMap.draft;
@@ -155,10 +155,10 @@ const getTitleText = (post) => {
       v-for="post in posts"
       :key="post.id"
       @click="handlePostClick(post, $event)"
-      class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group -mx-3 relative"
+      class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all group -mx-3 relative"
       :class="
         selectedPostId == post.id
-          ? 'bg-zinc-100 dark:bg-zinc-800/60'
+          ? 'bg-gray-100 dark:bg-gray-800/60'
           : ''
       "
     >
@@ -178,20 +178,20 @@ const getTitleText = (post) => {
             class="w-5 h-5 rounded border-2 flex items-center justify-center transition-colors"
             :class="
               isSelected(post)
-                ? 'bg-zinc-900 dark:bg-zinc-100 border-zinc-900 dark:border-zinc-100'
-                : 'bg-white dark:bg-zinc-800 border-zinc-300 dark:border-zinc-600'
+                ? 'bg-gray-900 dark:bg-gray-100 border-gray-900 dark:border-gray-100'
+                : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600'
             "
           >
             <AppIcon
               v-if="isSelected(post)"
               icon="check"
-              class="text-xs text-white dark:text-zinc-900"
+              class="text-xs text-white dark:text-gray-900"
             />
           </div>
         </div>
 
         <div
-          class="w-10 h-10 bg-zinc-200 dark:bg-zinc-700 rounded-lg overflow-hidden flex items-center justify-center"
+          class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden flex items-center justify-center"
         >
           <img
             v-if="getFeaturedImage(post)"
@@ -202,7 +202,7 @@ const getTitleText = (post) => {
           <AppIcon
             v-else
             icon="article"
-            class="text-zinc-500 dark:text-zinc-400"
+            class="text-gray-500 dark:text-gray-400"
           />
         </div>
       </div>
@@ -211,12 +211,12 @@ const getTitleText = (post) => {
       <div class="flex-1 min-w-0">
         <div class="flex items-center gap-2 mb-0.5">
           <span
-            class="font-medium text-sm text-zinc-900 dark:text-zinc-200 truncate"
+            class="font-medium text-sm text-gray-900 dark:text-gray-200 truncate"
             :title="getTitleText(post)"
             :class="
               selectedPostId == post.id
-                ? 'text-zinc-900 dark:text-white'
-                : 'text-zinc-600 dark:text-zinc-400'
+                ? 'text-gray-900 dark:text-white'
+                : 'text-gray-600 dark:text-gray-400'
             "
           >
             {{ getTitleText(post) || __('Untitled', 'flexify-dashboard') }}
@@ -229,13 +229,13 @@ const getTitleText = (post) => {
             {{ getStatusLabel(post) }}
           </span>
         </div>
-        <div class="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400 truncate">
+        <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 truncate">
           <span v-if="getAuthorName(post)">{{ getAuthorName(post) }}</span>
           <span v-if="post.date && getAuthorName(post)">•</span>
           <span v-if="post.date">{{ formatDate(post.date) }}</span>
           <span
             v-if="post.children && post.children.length > 0"
-            class="ml-1 text-zinc-400 dark:text-zinc-500"
+            class="ml-1 text-gray-400 dark:text-gray-500"
           >
             • {{ post.children.length }}
             {{
@@ -251,7 +251,7 @@ const getTitleText = (post) => {
       <div class="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
         <AppIcon
           icon="more_vert"
-          class="text-zinc-400 dark:text-zinc-500 text-sm"
+          class="text-gray-400 dark:text-gray-500 text-sm"
         />
       </div>
     </div>

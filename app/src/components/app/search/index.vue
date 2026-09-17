@@ -360,7 +360,7 @@ onUnmounted(() => {
 
         <!-- Gradient fade for long lists -->
         <div
-          class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white dark:from-zinc-900 to-transparent pointer-events-none"
+          class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white dark:from-gray-900 to-transparent pointer-events-none"
           v-if="!isLoading && flattenedResults.length > 20"
         />
       </div>

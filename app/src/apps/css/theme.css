@@ -79,22 +79,22 @@ html {
 	display: none;
 }
 
-.dark\:important\:text-zinc-300:where(.dark, .dark *) {
+.dark\:important\:text-gray-300:where(.dark, .dark *) {
 	transition: color 0.3s ease-in-out;
 	color: rgb(var(--fd-base-300) / 1) !important;
 }
 
-.dark\:important\:bg-zinc-800:where(.dark, .dark *) {
+.dark\:important\:bg-gray-800:where(.dark, .dark *) {
 	transition: background 0.3s ease-in-out;
 	background-color: rgb(var(--fd-base-800) / 1) !important;
 }
 
-.dark\:important\:bg-zinc-900:where(.dark, .dark *) {
+.dark\:important\:bg-gray-900:where(.dark, .dark *) {
 	transition: background 0.3s ease-in-out;
 	background-color: rgb(var(--fd-base-900) / 1) !important;
 }
 
-.dark\:important\:border-zinc-700:where(.dark, .dark *) {
+.dark\:important\:border-gray-700:where(.dark, .dark *) {
 	transition: border 0.3s ease-in-out;
 	border-color: rgb(var(--fd-base-700) / 1) !important;
 }

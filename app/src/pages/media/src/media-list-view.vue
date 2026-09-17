@@ -1258,17 +1258,17 @@ watch(
 
 <template>
   <div
-    class="flex h-full text-zinc-900 dark:text-zinc-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize"
+    class="flex h-full text-gray-900 dark:text-gray-100 font-sans max-h-full overflow-hidden gap-6 max-md:gap-0 flexify-dashboard-normalize"
     :class="isDark ? 'dark' : ''"
   >
     <!-- Media List Sidebar -->
     <div
-      class="md:w-96 w-full flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-hidden"
+      class="md:w-96 w-full flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-hidden"
     >
       <!-- Header -->
       <div class="px-6 pt-6 pb-4">
         <div class="flex items-center justify-between mb-4">
-          <h1 class="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+          <h1 class="text-xl font-medium text-gray-900 dark:text-gray-100">
             {{ __('Media Library', 'flexify-dashboard') }}
           </h1>
           <AppButton
@@ -1293,32 +1293,32 @@ watch(
         >
           <div
             v-if="isUploading && uploadProgress.total > 0"
-            class="mt-3 p-3 bg-zinc-50 dark:bg-zinc-900/50 rounded-lg border border-zinc-200 dark:border-zinc-800 mb-3"
+            class="mt-3 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-800 mb-3"
           >
             <div class="flex items-center justify-between mb-2">
               <div class="flex items-center gap-2 min-w-0 flex-1">
                 <AppIcon
                   icon="cloud_upload"
-                  class="text-sm text-zinc-500 dark:text-zinc-400 flex-shrink-0"
+                  class="text-sm text-gray-500 dark:text-gray-400 flex-shrink-0"
                 />
                 <span
-                  class="text-xs font-medium text-zinc-700 dark:text-zinc-300 truncate"
+                  class="text-xs font-medium text-gray-700 dark:text-gray-300 truncate"
                 >
                   {{ uploadProgress.currentFileName }}
                 </span>
               </div>
               <span
-                class="text-xs text-zinc-500 dark:text-zinc-400 flex-shrink-0 ml-2"
+                class="text-xs text-gray-500 dark:text-gray-400 flex-shrink-0 ml-2"
               >
                 {{ uploadProgress.current }} / {{ uploadProgress.total }}
               </span>
             </div>
             <!-- Progress Bar -->
             <div
-              class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-1.5 overflow-hidden"
+              class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden"
             >
               <div
-                class="h-full bg-zinc-900 dark:bg-zinc-100 rounded-full transition-all duration-300 ease-out"
+                class="h-full bg-gray-900 dark:bg-gray-100 rounded-full transition-all duration-300 ease-out"
                 :style="{ width: `${uploadProgress.percentage}%` }"
               ></div>
             </div>
@@ -1329,13 +1329,13 @@ watch(
         <div class="relative flex items-center">
           <AppIcon
             icon="search"
-            class="absolute left-3 text-zinc-400 dark:text-zinc-500 text-lg pointer-events-none"
+            class="absolute left-3 text-gray-400 dark:text-gray-500 text-lg pointer-events-none"
           />
           <input
             v-model="searchQuery"
             type="text"
             :placeholder="__('Search media...', 'flexify-dashboard')"
-            class="w-full bg-zinc-50 dark:bg-zinc-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 transition-shadow"
+            class="w-full bg-gray-50 dark:bg-gray-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition-shadow"
           />
         </div>
       </div>
@@ -1353,8 +1353,8 @@ watch(
               :class="[
                 'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
                 selectedType === 'all'
-                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               {{ __('All', 'flexify-dashboard') }}
@@ -1365,8 +1365,8 @@ watch(
               :class="[
                 'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
                 selectedType === 'image'
-                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               {{ __('Images', 'flexify-dashboard') }}
@@ -1377,8 +1377,8 @@ watch(
               :class="[
                 'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
                 selectedType === 'video'
-                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               {{ __('Videos', 'flexify-dashboard') }}
@@ -1389,8 +1389,8 @@ watch(
               :class="[
                 'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
                 selectedType === 'document'
-                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               {{ __('Docs', 'flexify-dashboard') }}
@@ -1401,8 +1401,8 @@ watch(
               :class="[
                 'px-3 py-1.5 text-xs font-medium rounded-md whitespace-nowrap transition-colors',
                 selectedType === 'font'
-                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               {{ __('Fonts', 'flexify-dashboard') }}
@@ -1413,12 +1413,12 @@ watch(
           <div class="flex items-center gap-1.5">
             <button
               @click="sortOrder = sortOrder === 'asc' ? 'desc' : 'asc'"
-              class="p-2 bg-zinc-100 dark:bg-zinc-800 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+              class="p-2 bg-gray-100 dark:bg-gray-800 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               :title="sortOrder === 'asc' ? 'Ascending' : 'Descending'"
             >
               <AppIcon
                 :icon="sortOrder === 'asc' ? 'arrow_upward' : 'arrow_downward'"
-                class="text-sm text-zinc-600 dark:text-zinc-400"
+                class="text-sm text-gray-600 dark:text-gray-400"
               />
             </button>
 
@@ -1427,7 +1427,7 @@ watch(
               @click="viewMode = viewMode === 'list' ? 'grid' : 'list'"
               :class="[
                 'p-2 rounded-md transition-colors',
-                'bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
               :title="
                 viewMode === 'list'
@@ -1437,7 +1437,7 @@ watch(
             >
               <AppIcon
                 :icon="viewMode === 'list' ? 'grid_view' : 'view_list'"
-                class="text-sm text-zinc-600 dark:text-zinc-400"
+                class="text-sm text-gray-600 dark:text-gray-400"
               />
             </button>
 
@@ -1446,8 +1446,8 @@ watch(
               :class="[
                 'relative p-2 rounded-md transition-colors',
                 activeFiltersCount > 0 || filtersExpanded
-                  ? 'bg-zinc-900 dark:bg-zinc-100'
-                  : 'bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                  ? 'bg-gray-900 dark:bg-gray-100'
+                  : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700',
               ]"
             >
               <AppIcon
@@ -1455,8 +1455,8 @@ watch(
                 :class="[
                   'text-sm',
                   activeFiltersCount > 0 || filtersExpanded
-                    ? 'text-white dark:text-zinc-900'
-                    : 'text-zinc-600 dark:text-zinc-400',
+                    ? 'text-white dark:text-gray-900'
+                    : 'text-gray-600 dark:text-gray-400',
                 ]"
               />
               <span
@@ -1482,7 +1482,7 @@ watch(
             <!-- Sort By -->
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-1.5"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-1.5"
               >
                 {{ __('Sort By', 'flexify-dashboard') }}
               </label>
@@ -1499,8 +1499,8 @@ watch(
                   :class="[
                     'flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-md transition-colors',
                     sortBy === option.value
-                      ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                      : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                      ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
                   ]"
                 >
                   <AppIcon :icon="option.icon" class="text-sm" />
@@ -1512,7 +1512,7 @@ watch(
             <!-- Date Filter -->
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-1.5"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-1.5"
               >
                 {{ __('Date Range', 'flexify-dashboard') }}
               </label>
@@ -1530,8 +1530,8 @@ watch(
                   :class="[
                     'px-3 py-2 text-xs font-medium rounded-md transition-colors',
                     dateFilter === option.value
-                      ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                      : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                      ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
                   ]"
                 >
                   {{ __(option.label, 'flexify-dashboard') }}
@@ -1542,7 +1542,7 @@ watch(
             <!-- Tag Filter -->
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-1.5"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-1.5"
               >
                 {{ __('Tags', 'flexify-dashboard') }}
               </label>
@@ -1555,8 +1555,8 @@ watch(
                     :class="[
                       'inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors whitespace-nowrap',
                       isTagSelected(tag.id)
-                        ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                        : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                        ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                        : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
                     ]"
                   >
                     <span>{{ tag.name }}</span>
@@ -1572,7 +1572,7 @@ watch(
                 </div>
                 <p
                   v-if="allTags.length === 0"
-                  class="text-xs text-zinc-500 dark:text-zinc-400 px-3 py-2 mt-2"
+                  class="text-xs text-gray-500 dark:text-gray-400 px-3 py-2 mt-2"
                 >
                   {{ __('No tags available', 'flexify-dashboard') }}
                 </p>
@@ -1582,7 +1582,7 @@ watch(
             <!-- Additional Filters -->
             <div>
               <label
-                class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 mb-1.5"
+                class="block text-[10px] uppercase tracking-wider font-semibold text-gray-500 dark:text-gray-400 mb-1.5"
               >
                 {{ __('Options', 'flexify-dashboard') }}
               </label>
@@ -1591,8 +1591,8 @@ watch(
                 :class="[
                   'w-full flex items-center justify-between px-3 py-2 text-xs font-medium rounded-md transition-colors',
                   showUnusedOnly
-                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+                    ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
                 ]"
               >
                 <span class="flex items-center gap-2">
@@ -1607,7 +1607,7 @@ watch(
             <button
               v-if="activeFiltersCount > 0"
               @click="clearFilters"
-              class="w-full px-3 py-2 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              class="w-full px-3 py-2 text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
             >
               {{ __('Clear All Filters', 'flexify-dashboard') }}
             </button>
@@ -1618,7 +1618,7 @@ watch(
       <!-- Results Count -->
       <div class="flex flex-row place-content-between items-center px-6 pr-4">
         <div
-          class="py-2 text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500"
+          class="py-2 text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500"
         >
           {{ pagination.total }}
           {{
@@ -1638,7 +1638,7 @@ watch(
         @drop="handleDrop"
         :class="[
           dragOver
-            ? 'bg-zinc-50 dark:bg-zinc-900/50 border-2 border-dashed border-zinc-300 dark:border-zinc-600'
+            ? 'bg-gray-50 dark:bg-gray-900/50 border-2 border-dashed border-gray-300 dark:border-gray-600'
             : '',
         ]"
       >
@@ -1653,14 +1653,14 @@ watch(
         >
           <div
             v-if="dragOver"
-            class="absolute inset-0 bg-zinc-900/80 dark:bg-zinc-950/80 flex items-center justify-center z-50 rounded-lg"
+            class="absolute inset-0 bg-gray-900/80 dark:bg-gray-950/80 flex items-center justify-center z-50 rounded-lg"
           >
             <div class="text-center text-white">
               <AppIcon icon="cloud_upload" class="text-6xl mb-4 mx-auto" />
               <p class="text-xl font-medium">
                 {{ __('Drop files to upload', 'flexify-dashboard') }}
               </p>
-              <p class="text-sm text-zinc-300 mt-2">
+              <p class="text-sm text-gray-300 mt-2">
                 {{ __('Release to start uploading', 'flexify-dashboard') }}
               </p>
             </div>
@@ -1669,22 +1669,22 @@ watch(
 
         <div v-if="loading && !mediaItems.length" class="p-8 text-center">
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
-            <AppIcon icon="image" class="text-zinc-400 text-xl animate-pulse" />
+            <AppIcon icon="image" class="text-gray-400 text-xl animate-pulse" />
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('Loading media...', 'flexify-dashboard') }}
           </p>
         </div>
 
         <div v-else-if="filteredMedia.length === 0" class="p-8 text-center">
           <div
-            class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mx-auto mb-3"
+            class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-3"
           >
-            <AppIcon icon="image" class="text-zinc-400 text-xl" />
+            <AppIcon icon="image" class="text-gray-400 text-xl" />
           </div>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
             {{
               searchQuery || activeFiltersCount > 0
                 ? __('No media found', 'flexify-dashboard')
@@ -1694,7 +1694,7 @@ watch(
           <button
             v-if="activeFiltersCount > 0"
             @click="clearFilters"
-            class="text-xs text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline"
+            class="text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 underline"
           >
             {{ __('Clear filters', 'flexify-dashboard') }}
           </button>
@@ -1727,22 +1727,22 @@ watch(
 
     <!-- Right Content Area -->
     <div
-      class="flex-1 flex flex-col rounded-3xl bg-white dark:bg-zinc-800/30 border border-zinc-200/40 dark:border-zinc-700/30 h-full max-h-full overflow-auto"
+      class="flex-1 flex flex-col rounded-2xl bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 h-full max-h-full overflow-auto"
     >
       <RouterView key="media-details-content" v-slot="{ Component }">
         <div class="flex-1 flex items-center justify-center" v-if="!Component">
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
             >
-              <AppIcon icon="image" class="text-2xl text-zinc-400" />
+              <AppIcon icon="image" class="text-2xl text-gray-400" />
             </div>
             <h3
-              class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+              class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
             >
               {{ __('Media Details', 'flexify-dashboard') }}
             </h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
               {{
                 __(
                   'Select a media file from the list to view details and edit properties.',
@@ -1784,24 +1784,24 @@ watch(
     >
       <div
         v-if="hasSelection"
-        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-lg px-4 py-3 flex items-center gap-4"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-lg px-4 py-3 flex items-center gap-4"
       >
         <!-- Selection Count -->
         <div
-          class="text-sm font-medium text-zinc-700 dark:text-zinc-300 whitespace-nowrap"
+          class="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap"
         >
           {{ selectedCountText }}
         </div>
 
         <!-- Divider -->
-        <div class="h-6 w-px bg-zinc-200 dark:bg-zinc-700"></div>
+        <div class="h-6 w-px bg-gray-200 dark:bg-gray-700"></div>
 
         <!-- Action Buttons -->
         <div class="flex items-center gap-2">
           <!-- View Button -->
           <button
             @click="viewSelectedMedia"
-            class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
             :title="__('View', 'flexify-dashboard')"
           >
             <AppIcon icon="visibility" class="text-lg" />
@@ -1810,7 +1810,7 @@ watch(
           <!-- Bulk Edit Button -->
           <button
             @click="openBulkEdit"
-            class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
             :title="__('Bulk Edit', 'flexify-dashboard')"
           >
             <AppIcon icon="edit" class="text-lg" />
@@ -1820,7 +1820,7 @@ watch(
           <button
             @click="bulkDownload"
             :disabled="isDownloading"
-            class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             :title="__('Download', 'flexify-dashboard')"
           >
             <AppIcon
@@ -1833,7 +1833,7 @@ watch(
           <button
             @click="batchDuplicateMedia"
             :disabled="isDuplicating"
-            class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             :title="__('Duplicate', 'flexify-dashboard')"
           >
             <AppIcon
@@ -1845,7 +1845,7 @@ watch(
           <!-- Delete Button -->
           <button
             @click="handleBatchDelete"
-            class="p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
+            class="p-2 rounded-lg hover:bg-error-50 dark:hover:bg-error-900/20 transition-colors text-error-600 dark:text-error-400 hover:text-error-700 dark:hover:text-error-300"
             :title="__('Delete', 'flexify-dashboard')"
           >
             <AppIcon icon="delete" class="text-lg" />
@@ -1854,7 +1854,7 @@ watch(
           <!-- Clear Selection Button -->
           <button
             @click="clearSelection"
-            class="p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
             :title="__('Clear selection', 'flexify-dashboard')"
           >
             <AppIcon icon="close" class="text-lg" />
@@ -1862,7 +1862,7 @@ watch(
 
           <!-- Select Button (only in selection mode) -->
           <template v-if="isInSelectionMode">
-            <div class="h-6 w-px bg-zinc-200 dark:bg-zinc-700"></div>
+            <div class="h-6 w-px bg-gray-200 dark:bg-gray-700"></div>
             <AppButton
               type="primary"
               @click="handleSelectInSelectionMode"
@@ -1896,7 +1896,7 @@ watch(
 
       <div class="space-y-6 p-6">
         <div>
-          <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
             {{
               selectedMedia.length === 1
                 ? __(
@@ -1914,7 +1914,7 @@ watch(
         <!-- Title -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Title', 'flexify-dashboard') }}
           </label>
@@ -1927,7 +1927,7 @@ watch(
         <!-- Alt Text -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Alt Text', 'flexify-dashboard') }}
           </label>
@@ -1940,7 +1940,7 @@ watch(
         <!-- Caption -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Caption', 'flexify-dashboard') }}
           </label>
@@ -1954,7 +1954,7 @@ watch(
         <!-- Description -->
         <div>
           <label
-            class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
             {{ __('Description', 'flexify-dashboard') }}
           </label>
@@ -1967,7 +1967,7 @@ watch(
 
         <!-- Actions -->
         <div
-          class="flex items-center gap-3 pt-4 border-t border-zinc-200 dark:border-zinc-700"
+          class="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-700"
         >
           <AppButton
             @click="bulkEditDrawerOpen = false"

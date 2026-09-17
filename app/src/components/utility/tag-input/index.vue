@@ -366,10 +366,10 @@ onUnmounted(() => {
   <div ref="containerRef" class="relative w-full">
     <!-- Input Container with Tags -->
     <div
-      class="flex flex-wrap items-center gap-1.5 min-h-[42px] px-2 py-1.5 bg-transparent border border-zinc-200 dark:border-zinc-700/40 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus-within:outline-brand-300 dark:focus-within:outline-brand-700 focus-within:shadow-xs text-sm"
+      class="flex flex-wrap items-center gap-1.5 min-h-[42px] px-2 py-1.5 bg-transparent border border-gray-200 dark:border-gray-800 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus-within:outline-brand-300 dark:focus-within:outline-brand-700 focus-within:shadow-xs text-sm"
       :class="{
         'opacity-50 cursor-not-allowed': disabled,
-        'bg-zinc-50 dark:bg-zinc-900/50': !disabled,
+        'bg-gray-50 dark:bg-gray-900/50': !disabled,
       }"
       @click="inputRef?.focus()"
     >
@@ -377,13 +377,13 @@ onUnmounted(() => {
       <div
         v-for="tag in modelValue"
         :key="tag.id"
-        class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-md text-xs text-zinc-700 dark:text-zinc-300 group"
+        class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 dark:bg-gray-800 rounded-md text-xs text-gray-700 dark:text-gray-300 group"
       >
         <span>{{ tag.name }}</span>
         <button
           v-if="!disabled"
           @click.stop="removeTag(tag.id)"
-          class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors ml-0.5"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors ml-0.5"
           :title="__('Remove tag', 'flexify-dashboard')"
           type="button"
         >
@@ -405,7 +405,7 @@ onUnmounted(() => {
         @input="handleInput"
         @compositionstart="handleCompositionStart"
         @compositionend="handleCompositionEnd"
-        class="flex-1 min-w-[120px] bg-transparent border-0 outline-0 text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500"
+        class="flex-1 min-w-[120px] bg-transparent border-0 outline-0 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
       />
     </div>
 
@@ -421,7 +421,7 @@ onUnmounted(() => {
       <div
         v-if="showDropdown && !disabled"
         ref="dropdownRef"
-        class="absolute z-50 w-full mt-1 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg max-h-64 overflow-auto tag-dropdown"
+        class="absolute z-50 w-full mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-64 overflow-auto tag-dropdown"
         @mousedown.prevent
       >
         <!-- Available Tags -->
@@ -432,14 +432,14 @@ onUnmounted(() => {
           type="button"
           tabindex="-1"
           :class="[
-            'w-full px-3 py-2 text-left text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors flex items-center justify-between',
-            highlightedIndex === index ? 'bg-zinc-100 dark:bg-zinc-700' : '',
+            'w-full px-3 py-2 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center justify-between',
+            highlightedIndex === index ? 'bg-gray-100 dark:bg-gray-700' : '',
           ]"
         >
           <span>{{ tag.name }}</span>
           <span
             v-if="tag.count !== undefined"
-            class="text-[10px] text-zinc-500 dark:text-zinc-400"
+            class="text-[10px] text-gray-500 dark:text-gray-400"
           >
             ({{ tag.count }})
           </span>
@@ -457,7 +457,7 @@ onUnmounted(() => {
           @click="handleCreateClick($event)"
           type="button"
           tabindex="-1"
-          class="w-full px-3 py-2 text-left text-sm text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-900/20 transition-colors flex items-center gap-2 border-t border-zinc-200 dark:border-zinc-700"
+          class="w-full px-3 py-2 text-left text-sm text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-900/20 transition-colors flex items-center gap-2 border-t border-gray-200 dark:border-gray-700"
         >
           <AppIcon icon="add" class="text-sm" />
           <span
@@ -468,7 +468,7 @@ onUnmounted(() => {
         <!-- No Results -->
         <div
           v-if="filteredTags.length === 0 && !inputValue.trim()"
-          class="px-3 py-2 text-xs text-zinc-500 dark:text-zinc-400 text-center"
+          class="px-3 py-2 text-xs text-gray-500 dark:text-gray-400 text-center"
         >
           {{ __('No tags available', 'flexify-dashboard') }}
         </div>

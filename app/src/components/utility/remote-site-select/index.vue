@@ -188,14 +188,14 @@ const showExplanationDialog = async () => {
 
   const message = `
     <div class="flex flex-col gap-4">
-      <p class="text-zinc-700 dark:text-zinc-300">
+      <p class="text-gray-700 dark:text-gray-300">
         ${__('When you switch to a remote site, all API requests will be sent to that site instead of the local site.', 'flexify-dashboard')}
       </p>
-      <div class="bg-zinc-100 dark:bg-zinc-800 rounded-lg p-4">
-        <p class="font-semibold text-sm text-zinc-900 dark:text-zinc-100 mb-2">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+        <p class="font-semibold text-sm text-gray-900 dark:text-gray-100 mb-2">
           ${__('Remote site switching works on:', 'flexify-dashboard')}
         </p>
-        <ul class="text-sm text-zinc-700 dark:text-zinc-300 space-y-1 list-disc list-inside">
+        <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1 list-disc list-inside">
           <li>${__('Modern Media Page', 'flexify-dashboard')}</li>
           <li>${__('Modern Plugins Page', 'flexify-dashboard')}</li>
           <li>${__('Menu Creator', 'flexify-dashboard')}</li>
@@ -207,7 +207,7 @@ const showExplanationDialog = async () => {
           <li>${__('Modern Users Page', 'flexify-dashboard')}</li>
         </ul>
       </div>
-      <p class="text-zinc-700 dark:text-zinc-300">
+      <p class="text-gray-700 dark:text-gray-300">
         ${__('All default WordPress pages (Posts, Pages, Comments, etc.) will continue to show local content.', 'flexify-dashboard')}
       </p>
     </div>
@@ -309,7 +309,7 @@ onBeforeUnmount(() => {
     <button
       @click.stop="toggleDropdown"
       type="button"
-      class="w-full flex items-center gap-2 px-4 py-2.5 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors text-sm font-medium text-zinc-900 dark:text-zinc-100">
+      class="w-full flex items-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-sm font-medium text-gray-900 dark:text-gray-100">
       <!-- Favicon or Icon -->
       <div class="w-5 h-5 flex items-center justify-center shrink-0">
         <img
@@ -321,14 +321,14 @@ onBeforeUnmount(() => {
         <AppIcon
           v-else
           icon="computer"
-          class="w-5 h-5 text-zinc-600 dark:text-zinc-300" />
+          class="w-5 h-5 text-gray-600 dark:text-gray-300" />
       </div>
       <!-- Site Name -->
       <span class="max-w-[120px] truncate">{{ currentSite?.name || __('Local', 'flexify-dashboard') }}</span>
       <!-- Dropdown Arrow -->
       <AppIcon
         icon="unfold"
-        class="w-4 h-4 text-zinc-600 dark:text-zinc-300 transition-transform ml-auto"
+        class="w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform ml-auto"
         :class="{ 'rotate-180': isOpen }" />
     </button>
 
@@ -343,9 +343,9 @@ onBeforeUnmount(() => {
       <div
         v-if="isOpen"
         @click.stop
-        class="absolute top-full left-0 mt-2 w-full bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-lg z-50 overflow-hidden">
+        class="absolute top-full left-0 mt-2 w-full bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg z-50 overflow-hidden">
         <!-- Search Input -->
-        <div class="p-3 border-b border-zinc-200 dark:border-zinc-800">
+        <div class="p-3 border-b border-gray-200 dark:border-gray-800">
           <AppInput
             v-model="searchQuery"
             :placeholder="__('Search sites...', 'flexify-dashboard')"
@@ -363,9 +363,9 @@ onBeforeUnmount(() => {
             :key="site.id"
             @click="selectSite(site)"
             type="button"
-            class="w-full flex items-center gap-3 px-3 py-2.5 text-left hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+            class="w-full flex items-center gap-3 px-3 py-2.5 text-left hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
             :class="{
-              'bg-zinc-100 dark:bg-zinc-900': modelValue === site.id,
+              'bg-gray-100 dark:bg-gray-900': modelValue === site.id,
             }">
             <!-- Favicon or Icon -->
             <div class="w-5 h-5 flex items-center justify-center shrink-0">
@@ -378,16 +378,16 @@ onBeforeUnmount(() => {
               <AppIcon
                 v-else
                 icon="computer"
-                class="w-5 h-5 text-zinc-600 dark:text-zinc-300" />
+                class="w-5 h-5 text-gray-600 dark:text-gray-300" />
             </div>
             <!-- Site Info -->
             <div class="flex-1 min-w-0">
-              <div class="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate">
+              <div class="text-sm font-medium text-gray-900 dark:text-gray-100 truncate">
                 {{ site.name }}
               </div>
               <div
                 v-if="site.url !== 'local'"
-                class="text-xs text-zinc-500 dark:text-zinc-400 truncate">
+                class="text-xs text-gray-500 dark:text-gray-400 truncate">
                 {{ site.url }}
               </div>
             </div>
@@ -401,7 +401,7 @@ onBeforeUnmount(() => {
           <!-- Empty State -->
           <div
             v-if="filteredSites.length === 0"
-            class="px-3 py-6 text-center text-sm text-zinc-500 dark:text-zinc-500">
+            class="px-3 py-6 text-center text-sm text-gray-500 dark:text-gray-500">
             {{ __('No sites found', 'flexify-dashboard') }}
           </div>
         </div>

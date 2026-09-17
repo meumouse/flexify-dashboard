@@ -243,10 +243,10 @@ document.addEventListener('click', hideContextMenu);
         :to="`/details/${item.id}`"
         @click="handleMediaClick(item, $event)"
         @contextmenu="showItemContextMenu($event, item)"
-        class="group relative aspect-square bg-zinc-100 dark:bg-zinc-800 rounded-xl overflow-hidden cursor-pointer transition-all hover:shadow-lg"
+        class="group relative aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden cursor-pointer transition-all hover:shadow-lg"
         :class="
           route.params.mediaId == item.id
-            ? 'ring-2 ring-zinc-900 dark:ring-zinc-100'
+            ? 'ring-2 ring-gray-900 dark:ring-gray-100'
             : ''
         "
       >
@@ -281,10 +281,10 @@ document.addEventListener('click', hideContextMenu);
           >
             <AppIcon
               :icon="getFileTypeIcon(item.mime_type)"
-              class="text-3xl text-zinc-400 dark:text-zinc-500 mb-2"
+              class="text-3xl text-gray-400 dark:text-gray-500 mb-2"
             />
             <span
-              class="text-xs text-zinc-500 dark:text-zinc-400 text-center truncate w-full"
+              class="text-xs text-gray-500 dark:text-gray-400 text-center truncate w-full"
             >
               {{ item.filename }}
             </span>
@@ -293,7 +293,7 @@ document.addEventListener('click', hideContextMenu);
 
         <!-- Overlay Info -->
         <div
-          class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-zinc-900/80 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity"
+          class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/80 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity"
         >
           <div
             class="text-white text-xs font-medium truncate mb-1"
@@ -316,10 +316,10 @@ document.addEventListener('click', hideContextMenu);
         :to="`/details/${item.id}`"
         @click="handleMediaClick(item, $event)"
         @contextmenu="showItemContextMenu($event, item)"
-        class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-all group -mx-3 relative"
+        class="flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all group -mx-3 relative"
         :class="
           route.params.mediaId == item.id
-            ? 'bg-zinc-100 dark:bg-zinc-800/60'
+            ? 'bg-gray-100 dark:bg-gray-800/60'
             : ''
         "
       >
@@ -339,7 +339,7 @@ document.addEventListener('click', hideContextMenu);
           </div>
 
           <div
-            class="w-10 h-10 bg-zinc-200 dark:bg-zinc-700 rounded-lg overflow-hidden"
+            class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden"
           >
             <img
               v-if="item.mime_type.startsWith('image/') && item.thumbnail"
@@ -351,7 +351,7 @@ document.addEventListener('click', hideContextMenu);
             <div v-else class="w-full h-full flex items-center justify-center">
               <AppIcon
                 :icon="getFileTypeIcon(item.mime_type)"
-                class="text-zinc-500 dark:text-zinc-400"
+                class="text-gray-500 dark:text-gray-400"
               />
             </div>
           </div>
@@ -361,18 +361,18 @@ document.addEventListener('click', hideContextMenu);
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2 mb-0.5">
             <span
-              class="font-medium text-sm text-zinc-900 dark:text-zinc-200 truncate"
+              class="font-medium text-sm text-gray-900 dark:text-gray-200 truncate"
               :title="item.title || item.filename"
               :class="
                 route.params.mediaId == item.id
-                  ? 'text-zinc-900 dark:text-white'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-600 dark:text-gray-400'
               "
             >
               {{ item.title || item.filename }}
             </span>
           </div>
-          <div class="text-xs text-zinc-500 dark:text-zinc-400 truncate">
+          <div class="text-xs text-gray-500 dark:text-gray-400 truncate">
             {{ formatFileSize(item.file_size) }} •
             {{ formatDate(item.date_created) }} •
             {{ item.author }}
@@ -385,16 +385,16 @@ document.addEventListener('click', hideContextMenu);
     <div ref="sentinel" class="w-full py-4 flex items-center justify-center">
       <div
         v-if="loadingMore"
-        class="flex items-center gap-2 text-zinc-500 dark:text-zinc-400"
+        class="flex items-center gap-2 text-gray-500 dark:text-gray-400"
       >
         <div
-          class="w-5 h-5 border-2 border-zinc-300 dark:border-zinc-600 border-t-zinc-900 dark:border-t-zinc-100 rounded-full animate-spin"
+          class="w-5 h-5 border-2 border-gray-300 dark:border-gray-600 border-t-gray-900 dark:border-t-gray-100 rounded-full animate-spin"
         ></div>
         <span class="text-xs">{{ __('Loading more...', 'flexify-dashboard') }}</span>
       </div>
       <div
         v-else-if="!hasMore && media.length > 0"
-        class="text-xs text-zinc-400 dark:text-zinc-500"
+        class="text-xs text-gray-400 dark:text-gray-500"
       >
         {{ __('No more items', 'flexify-dashboard') }}
       </div>
@@ -407,12 +407,12 @@ document.addEventListener('click', hideContextMenu);
         left: contextMenuPosition.x + 'px',
         top: contextMenuPosition.y + 'px',
       }"
-      class="fixed z-50 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg py-1 min-w-32"
+      class="fixed z-50 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1 min-w-32"
       @click.stop
     >
       <button
         @click="handleDeleteItem(contextMenuItem)"
-        class="w-full px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 flex items-center gap-2"
+        class="w-full px-3 py-2 text-left text-sm text-error-600 hover:bg-error-50 dark:hover:bg-error-900/20 flex items-center gap-2"
       >
         <AppIcon icon="delete" class="text-sm" />
         {{ __('Delete', 'flexify-dashboard') }}

@@ -46,32 +46,32 @@ const statusOptions = [
     label: __('Approved', 'flexify-dashboard'),
     color: 'green',
     classes:
-      'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800',
-    dot: 'bg-green-500',
+      'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400 border-success-200 dark:border-success-800',
+    dot: 'bg-success-500',
   },
   {
     value: 'pending',
     label: __('Pending', 'flexify-dashboard'),
     color: 'yellow',
     classes:
-      'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800',
-    dot: 'bg-yellow-500',
+      'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400 border-warning-200 dark:border-warning-800',
+    dot: 'bg-warning-500',
   },
   {
     value: 'spam',
     label: __('Spam', 'flexify-dashboard'),
     color: 'red',
     classes:
-      'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800',
-    dot: 'bg-red-500',
+      'bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-400 border-error-200 dark:border-error-800',
+    dot: 'bg-error-500',
   },
   {
     value: 'trash',
     label: __('Trash', 'flexify-dashboard'),
     color: 'zinc',
     classes:
-      'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700',
-    dot: 'bg-zinc-500',
+      'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-gray-700',
+    dot: 'bg-gray-500',
   },
 ];
 
@@ -320,11 +320,11 @@ watch(
     <div v-if="loading" class="flex-1 flex items-center justify-center">
       <div class="text-center">
         <div
-          class="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center mx-auto mb-3"
+          class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center mx-auto mb-3"
         >
-          <AppIcon icon="comment" class="text-xl text-zinc-400 animate-pulse" />
+          <AppIcon icon="comment" class="text-xl text-gray-400 animate-pulse" />
         </div>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Loading...', 'flexify-dashboard') }}
         </p>
       </div>
@@ -334,12 +334,12 @@ watch(
     <template v-else-if="commentItem">
       <!-- Header Section with Avatar and Basic Info -->
       <div
-        class="flex-shrink-0 px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-800/30"
+        class="flex-shrink-0 px-6 py-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-white/[0.03]"
       >
         <div class="flex items-center gap-4">
           <!-- Avatar -->
           <div
-            class="w-10 h-10 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden flex-shrink-0"
+            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden flex-shrink-0"
           >
             <img
               v-if="commentItem.author_avatar_urls?.['96']"
@@ -350,7 +350,7 @@ watch(
             <div v-else class="w-full h-full flex items-center justify-center">
               <AppIcon
                 icon="person"
-                class="text-2xl text-zinc-500 dark:text-zinc-400"
+                class="text-2xl text-gray-500 dark:text-gray-400"
               />
             </div>
           </div>
@@ -358,18 +358,18 @@ watch(
           <!-- Comment Info -->
           <div class="flex-1 min-w-0">
             <h2
-              class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 truncate"
+              class="text-lg font-semibold text-gray-900 dark:text-gray-100 truncate"
             >
               {{ authorName || __('Anonymous', 'flexify-dashboard') }}
             </h2>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 truncate">
+            <p class="text-sm text-gray-500 dark:text-gray-400 truncate">
               {{ authorEmail }}
             </p>
           </div>
 
           <!-- Meta Info -->
           <div
-            class="flex-shrink-0 text-right text-xs text-zinc-500 dark:text-zinc-400"
+            class="flex-shrink-0 text-right text-xs text-gray-500 dark:text-gray-400"
           >
             <div>{{ __('Comment ID', 'flexify-dashboard') }}: {{ commentItem.id }}</div>
             <div class="mt-1">
@@ -385,7 +385,7 @@ watch(
           <!-- Author Name -->
           <div>
             <label
-              class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+              class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
             >
               {{ __('Author Name', 'flexify-dashboard') }}
             </label>
@@ -399,7 +399,7 @@ watch(
           <!-- Author Email -->
           <div>
             <label
-              class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+              class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
             >
               {{ __('Author Email', 'flexify-dashboard') }}
             </label>
@@ -414,7 +414,7 @@ watch(
           <!-- Author URL -->
           <div>
             <label
-              class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+              class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
             >
               {{ __('Author URL', 'flexify-dashboard') }}
             </label>
@@ -429,7 +429,7 @@ watch(
           <!-- Post Reference -->
           <div v-if="postData || postTitle">
             <label
-              class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+              class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
             >
               {{ __('Post', 'flexify-dashboard') }}
             </label>
@@ -438,7 +438,7 @@ watch(
                 v-if="postData?.edit_link"
                 :href="postData.edit_link"
                 target="_blank"
-                class="flex-1 px-3 py-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg text-sm text-zinc-900 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex items-center gap-2"
+                class="flex-1 px-3 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center gap-2"
               >
                 <span class="truncate flex-1">{{ postData.title }}</span>
                 <AppIcon icon="open_in_new" class="text-base flex-shrink-0" />
@@ -455,7 +455,7 @@ watch(
           <!-- Status -->
           <div class="relative" data-status-select>
             <label
-              class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+              class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
             >
               {{ __('Status', 'flexify-dashboard') }}
             </label>
@@ -467,7 +467,7 @@ watch(
                 :class="[
                   currentStatusOption.classes,
                   statusSelectOpen
-                    ? 'ring-2 ring-zinc-900 dark:ring-zinc-100'
+                    ? 'ring-2 ring-gray-900 dark:ring-gray-100'
                     : 'hover:opacity-80',
                 ]"
               >
@@ -498,7 +498,7 @@ watch(
               >
                 <div
                   v-if="statusSelectOpen"
-                  class="absolute z-50 w-full mt-1 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-lg overflow-hidden"
+                  class="absolute z-50 w-full mt-1 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden"
                 >
                   <div class="py-1">
                     <button
@@ -508,10 +508,10 @@ watch(
                         status = option.value;
                         statusSelectOpen = false;
                       "
-                      class="w-full px-3 py-2.5 text-left flex items-center gap-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                      class="w-full px-3 py-2.5 text-left flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                       :class="
                         status === option.value
-                          ? 'bg-zinc-50 dark:bg-zinc-800'
+                          ? 'bg-gray-50 dark:bg-gray-800'
                           : ''
                       "
                     >
@@ -525,7 +525,7 @@ watch(
                       <AppIcon
                         v-if="status === option.value"
                         icon="check"
-                        class="text-base text-zinc-600 dark:text-zinc-400 flex-shrink-0"
+                        class="text-base text-gray-600 dark:text-gray-400 flex-shrink-0"
                       />
                     </button>
                   </div>
@@ -537,7 +537,7 @@ watch(
           <!-- Comment Content -->
           <div>
             <label
-              class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+              class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
             >
               {{ __('Comment', 'flexify-dashboard') }}
             </label>
@@ -550,7 +550,7 @@ watch(
           <!-- Date -->
           <div>
             <label
-              class="block text-[10px] uppercase tracking-wider font-semibold text-zinc-400 dark:text-zinc-500 mb-2"
+              class="block text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 mb-2"
             >
               {{ __('Date', 'flexify-dashboard') }}
             </label>
@@ -563,7 +563,7 @@ watch(
 
           <!-- Action Buttons -->
           <div
-            class="pt-4 border-t border-zinc-100 dark:border-zinc-800 flex items-center gap-3"
+            class="pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center gap-3"
           >
             <AppButton type="primary" @click="handleSave" :loading="isSaving">
               {{ __('Update Comment', 'flexify-dashboard') }}
@@ -572,7 +572,7 @@ watch(
               type="default"
               @click="handleDelete"
               :disabled="isSaving"
-              class="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
+              class="text-error-600 dark:text-error-400 hover:text-error-700 dark:hover:text-error-300"
             >
               {{ __('Delete', 'flexify-dashboard') }}
             </AppButton>

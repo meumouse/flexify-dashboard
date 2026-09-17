@@ -164,7 +164,7 @@ const escapeHtml = (text) => {
  */
 const getDisplayValue = (value) => {
   if (value === null || value === undefined) {
-    return '<span class="text-zinc-400 italic">NULL</span>';
+    return '<span class="text-gray-400 italic">NULL</span>';
   }
   if (typeof value === 'object') {
     return escapeHtml(JSON.stringify(value));
@@ -372,16 +372,16 @@ watch(viewMode, () => {
   <div class="flex flex-col h-full overflow-hidden">
     <!-- Header -->
     <div
-      class="px-6 pt-6 pb-4 border-b border-zinc-200/40 dark:border-zinc-700/30"
+      class="px-6 pt-6 pb-4 border-b border-gray-200 dark:border-gray-800"
     >
       <div class="flex items-center justify-between mb-4">
         <div>
-          <h2 class="text-xl font-medium text-zinc-900 dark:text-zinc-100 mb-1">
+          <h2 class="text-xl font-medium text-gray-900 dark:text-gray-100 mb-1">
             {{ tableName }}
           </h2>
           <p
             v-if="pagination.total > 0"
-            class="text-sm text-zinc-500 dark:text-zinc-400"
+            class="text-sm text-gray-500 dark:text-gray-400"
           >
             {{ pagination.total.toLocaleString() }}
             {{ __('rows', 'flexify-dashboard') }}
@@ -391,7 +391,7 @@ watch(viewMode, () => {
           <AppButton
             @click="openDeleteModal"
             type="transparent"
-            class="text-sm text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
+            class="text-sm text-error-600 dark:text-error-400 hover:text-error-700 dark:hover:text-error-300"
           >
             <AppIcon icon="delete" class="text-base mr-2" />
             {{ __('Delete Table', 'flexify-dashboard') }}
@@ -406,8 +406,8 @@ watch(viewMode, () => {
           :class="[
             'px-4 py-2 text-sm font-medium rounded-lg transition-colors',
             viewMode === 'structure'
-              ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-              : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+              ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+              : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
           ]"
         >
           {{ __('Structure', 'flexify-dashboard') }}
@@ -417,8 +417,8 @@ watch(viewMode, () => {
           :class="[
             'px-4 py-2 text-sm font-medium rounded-lg transition-colors',
             viewMode === 'data'
-              ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900'
-              : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+              ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
+              : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700',
           ]"
         >
           {{ __('Data', 'flexify-dashboard') }}
@@ -432,7 +432,7 @@ watch(viewMode, () => {
         <div
           v-for="i in 5"
           :key="i"
-          class="h-16 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"
+          class="h-16 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"
         ></div>
       </div>
 
@@ -440,63 +440,63 @@ watch(viewMode, () => {
         <!-- Columns -->
         <div class="mb-8">
           <h3
-            class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-4 uppercase tracking-wider text-[10px] text-zinc-500 dark:text-zinc-400"
+            class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider text-[10px] text-gray-500 dark:text-gray-400"
           >
             {{ __('Columns', 'flexify-dashboard') }}
           </h3>
           <div
-            class="border border-zinc-200/40 dark:border-zinc-700/30 rounded-xl overflow-hidden"
+            class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden"
           >
             <table class="w-full">
-              <thead class="bg-zinc-50 dark:bg-zinc-900/50">
+              <thead class="bg-gray-50 dark:bg-gray-900/50">
                 <tr>
                   <th
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ __('Name', 'flexify-dashboard') }}
                   </th>
                   <th
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ __('Type', 'flexify-dashboard') }}
                   </th>
                   <th
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ __('Null', 'flexify-dashboard') }}
                   </th>
                   <th
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ __('Key', 'flexify-dashboard') }}
                   </th>
                   <th
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ __('Default', 'flexify-dashboard') }}
                   </th>
                 </tr>
               </thead>
               <tbody
-                class="divide-y divide-zinc-200/40 dark:divide-zinc-700/30"
+                class="divide-y divide-gray-100 dark:divide-gray-800"
               >
                 <tr
                   v-for="column in tableStructure.columns"
                   :key="column.Field"
-                  class="hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+                  class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
                 >
                   <td
-                    class="px-4 py-3 text-sm font-medium text-zinc-900 dark:text-zinc-100"
+                    class="px-4 py-3 text-sm font-medium text-gray-900 dark:text-gray-100"
                   >
                     {{ column.Field }}
                   </td>
                   <td
-                    class="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400"
+                    class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400"
                   >
                     {{ formatColumnType(column.Type) }}
                   </td>
                   <td
-                    class="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400"
+                    class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400"
                   >
                     {{
                       column.Null === 'YES'
@@ -505,7 +505,7 @@ watch(viewMode, () => {
                     }}
                   </td>
                   <td
-                    class="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400"
+                    class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400"
                   >
                     <span
                       v-if="column.Key"
@@ -515,7 +515,7 @@ watch(viewMode, () => {
                     </span>
                   </td>
                   <td
-                    class="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400"
+                    class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400"
                   >
                     {{ column.Default || '-' }}
                   </td>
@@ -528,53 +528,53 @@ watch(viewMode, () => {
         <!-- Indexes -->
         <div v-if="tableStructure.indexes && tableStructure.indexes.length > 0">
           <h3
-            class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-4 uppercase tracking-wider text-[10px] text-zinc-500 dark:text-zinc-400"
+            class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider text-[10px] text-gray-500 dark:text-gray-400"
           >
             {{ __('Indexes', 'flexify-dashboard') }}
           </h3>
           <div
-            class="border border-zinc-200/40 dark:border-zinc-700/30 rounded-xl overflow-hidden"
+            class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden"
           >
             <table class="w-full">
-              <thead class="bg-zinc-50 dark:bg-zinc-900/50">
+              <thead class="bg-gray-50 dark:bg-gray-900/50">
                 <tr>
                   <th
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ __('Name', 'flexify-dashboard') }}
                   </th>
                   <th
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ __('Column', 'flexify-dashboard') }}
                   </th>
                   <th
-                    class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase"
+                    class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase"
                   >
                     {{ __('Type', 'flexify-dashboard') }}
                   </th>
                 </tr>
               </thead>
               <tbody
-                class="divide-y divide-zinc-200/40 dark:divide-zinc-700/30"
+                class="divide-y divide-gray-100 dark:divide-gray-800"
               >
                 <tr
                   v-for="index in tableStructure.indexes"
                   :key="`${index.Key_name}-${index.Column_name}`"
-                  class="hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+                  class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
                 >
                   <td
-                    class="px-4 py-3 text-sm font-medium text-zinc-900 dark:text-zinc-100"
+                    class="px-4 py-3 text-sm font-medium text-gray-900 dark:text-gray-100"
                   >
                     {{ index.Key_name }}
                   </td>
                   <td
-                    class="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400"
+                    class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400"
                   >
                     {{ index.Column_name }}
                   </td>
                   <td
-                    class="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400"
+                    class="px-4 py-3 text-sm text-gray-600 dark:text-gray-400"
                   >
                     {{ index.Index_type }}
                   </td>
@@ -590,18 +590,18 @@ watch(viewMode, () => {
     <div v-else class="flex flex-col flex-1 overflow-hidden">
       <!-- Search Bar -->
       <div
-        class="px-6 py-4 border-b border-zinc-200/40 dark:border-zinc-700/30"
+        class="px-6 py-4 border-b border-gray-200 dark:border-gray-800"
       >
         <div class="relative max-w-md">
           <AppIcon
             icon="search"
-            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-zinc-400 dark:text-zinc-500 text-base pointer-events-none"
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 text-base pointer-events-none"
           />
           <input
             v-model="searchQuery"
             type="text"
             :placeholder="__('Search table data...', 'flexify-dashboard')"
-            class="w-full bg-zinc-50 dark:bg-zinc-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 transition-shadow"
+            class="w-full bg-gray-50 dark:bg-gray-900 border-0 rounded-lg pl-10 pr-3 py-2.5 text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 transition-shadow"
           />
         </div>
       </div>
@@ -612,25 +612,25 @@ watch(viewMode, () => {
           <div
             v-for="i in 10"
             :key="i"
-            class="h-12 rounded-lg bg-zinc-100 dark:bg-zinc-800 animate-pulse"
+            class="h-12 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"
           ></div>
         </div>
 
         <div v-else-if="tableData.length === 0" class="p-6 text-center">
-          <p class="text-sm text-zinc-500 dark:text-zinc-400">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
             {{ __('No data found', 'flexify-dashboard') }}
           </p>
         </div>
 
         <div v-else class="overflow-x-auto">
           <table class="w-full">
-            <thead class="bg-zinc-50 dark:bg-zinc-900/50 sticky top-0">
+            <thead class="bg-gray-50 dark:bg-gray-900/50 sticky top-0">
               <tr>
                 <th
                   v-for="column in Object.keys(tableData[0] || {})"
                   :key="column"
                   @click="handleSort(column)"
-                  class="px-4 py-3 text-left text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                  class="px-4 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   <div class="flex items-center gap-2">
                     {{ column }}
@@ -645,16 +645,16 @@ watch(viewMode, () => {
                 </th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-zinc-200/40 dark:divide-zinc-700/30">
+            <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
               <tr
                 v-for="(row, index) in tableData"
                 :key="index"
-                class="hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+                class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
               >
                 <td
                   v-for="(value, column) in row"
                   :key="column"
-                  class="px-4 py-3 text-sm text-zinc-900 dark:text-zinc-100 max-w-xs truncate"
+                  class="px-4 py-3 text-sm text-gray-900 dark:text-gray-100 max-w-xs truncate"
                   :title="getDisplayValue(value)"
                 >
                   <span v-html="getDisplayValue(value)"></span>
@@ -668,9 +668,9 @@ watch(viewMode, () => {
       <!-- Pagination -->
       <div
         v-if="pagination.total_pages > 1"
-        class="flex items-center justify-between px-6 py-4 border-t border-zinc-200/40 dark:border-zinc-700/30"
+        class="flex items-center justify-between px-6 py-4 border-t border-gray-200 dark:border-gray-800"
       >
-        <div class="text-sm text-zinc-500 dark:text-zinc-400">
+        <div class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Showing', 'flexify-dashboard') }}
           {{ (pagination.page - 1) * pagination.per_page + 1 }} -
           {{
@@ -687,7 +687,7 @@ watch(viewMode, () => {
           >
             <AppIcon icon="chevron_left" />
           </AppButton>
-          <span class="text-sm text-zinc-600 dark:text-zinc-400">
+          <span class="text-sm text-gray-600 dark:text-gray-400">
             {{ __('Page', 'flexify-dashboard') }} {{ pagination.page }} /
             {{ pagination.total_pages }}
           </span>
@@ -707,7 +707,7 @@ watch(viewMode, () => {
     <Modal ref="passwordModal">
       <div class="flex flex-col w-[400px] p-8 gap-6">
         <div class="flex items-center justify-between">
-          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
             {{ __('Verify Password', 'flexify-dashboard') }}
           </h2>
           <AppButton type="transparent" @click="passwordModal?.close()">
@@ -715,7 +715,7 @@ watch(viewMode, () => {
           </AppButton>
         </div>
 
-        <div class="text-zinc-500 dark:text-zinc-400">
+        <div class="text-gray-500 dark:text-gray-400">
           <p class="mb-4">
             {{
               __(
@@ -726,7 +726,7 @@ watch(viewMode, () => {
           </p>
           <div class="space-y-2">
             <label
-              class="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               {{ __('Password', 'flexify-dashboard') }}
             </label>
@@ -765,7 +765,7 @@ watch(viewMode, () => {
               @keydown.enter="verifyPassword"
               @focus="handlePasswordFocus"
               autocomplete="new-password"
-              class="w-full px-4 py-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100 disabled:opacity-50"
+              class="w-full px-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 disabled:opacity-50"
               :placeholder="__('Enter your password', 'flexify-dashboard')"
               autofocus
             />
@@ -815,18 +815,18 @@ watch(viewMode, () => {
 }
 
 .overflow-auto::-webkit-scrollbar-thumb {
-  @apply bg-zinc-300 rounded-full;
+  @apply bg-gray-300 rounded-full;
 }
 
 .dark .overflow-auto::-webkit-scrollbar-thumb {
-  @apply bg-zinc-700;
+  @apply bg-gray-700;
 }
 
 .overflow-auto::-webkit-scrollbar-thumb:hover {
-  @apply bg-zinc-400;
+  @apply bg-gray-400;
 }
 
 .dark .overflow-auto::-webkit-scrollbar-thumb:hover {
-  @apply bg-zinc-600;
+  @apply bg-gray-600;
 }
 </style>

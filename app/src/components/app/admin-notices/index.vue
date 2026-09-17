@@ -107,7 +107,7 @@ onMounted(() => {
       <Transition>
         <span
           v-if="totalNotificationsCount > 0 && !modelValue"
-          class="absolute top-0 right-0 inline-flex items-center justify-center text-xs font-bold leading-none text-rose-100 transform bg-rose-600 dark:bg-rose-700 rounded-full aspect-square h-2"
+          class="absolute top-0 right-0 inline-flex items-center justify-center text-xs font-bold leading-none text-error-100 transform bg-error-600 dark:bg-error-700 rounded-full aspect-square h-2"
         >
         </span>
       </Transition>

@@ -56,24 +56,24 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col gap-2 max-w-[560px]">
-    <div class="max-h-[220px] overflow-auto border border-zinc-200 dark:border-zinc-700 rounded-lg p-1">
+    <div class="max-h-[220px] overflow-auto border border-gray-200 dark:border-gray-700 rounded-lg p-1">
       <button
         v-for="option in options"
         :key="option.value"
         type="button"
-        class="w-full flex items-center gap-3 p-2 rounded-lg text-left hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+        class="w-full flex items-center gap-3 p-2 rounded-lg text-left hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         @click="toggleOption(option.value)"
       >
         <AppCheckBox :checked="isSelected(option.value)" />
         <span class="text-sm">{{ option.label }}</span>
       </button>
 
-      <span v-if="!loading && !options.length" class="block text-sm text-zinc-500 dark:text-zinc-400 p-2">
+      <span v-if="!loading && !options.length" class="block text-sm text-gray-500 dark:text-gray-400 p-2">
         {{ __('No plugins found.', 'flexify-dashboard') }}
       </span>
     </div>
     
-    <span v-if="loading" class="text-sm text-zinc-500 dark:text-zinc-400">
+    <span v-if="loading" class="text-sm text-gray-500 dark:text-gray-400">
       {{ __('Loading plugins…', 'flexify-dashboard') }}
     </span>
   </div>

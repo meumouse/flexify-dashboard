@@ -107,11 +107,11 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 </script>
 
 <template>
-    <div class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl py-6 px-8 h-full flex flex-col">
+    <div class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl py-6 px-8 h-full flex flex-col">
         <div v-if="loading" class="flex-1 flex items-center justify-center">
             <div class="text-center">
-                <div class="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"></div>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                <div class="w-8 h-8 border-2 border-gray-300 dark:border-gray-600 border-t-brand-600 rounded-full animate-spin mx-auto mb-3"></div>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
                     {{ __('Loading revenue...', 'flexify-dashboard') }}
                 </p>
             </div>
@@ -119,7 +119,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 
         <div v-else-if="error" class="flex-1 flex items-center justify-center">
             <div class="text-center">
-                <p class="text-sm text-red-600 dark:text-red-400 mb-2">
+                <p class="text-sm text-error-600 dark:text-error-400 mb-2">
                     {{ __('Failed to load revenue', 'flexify-dashboard') }}
                 </p>
                 <button
@@ -133,25 +133,25 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 
         <div v-else class="h-full flex flex-col gap-5">
             <div>
-                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Revenue', 'flexify-dashboard') }}</h3>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ dateRangeLabel }}</p>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">{{ __('Revenue', 'flexify-dashboard') }}</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ dateRangeLabel }}</p>
             </div>
 
             <div class="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
-                <div class="rounded-2xl bg-white/70 dark:bg-[#24303f] border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
-                    <div class="text-xs font-medium uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
+                <div class="rounded-2xl bg-white/70 dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 px-4 py-3">
+                    <div class="text-xs font-medium uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400">
                         {{ __('Gross', 'flexify-dashboard') }}
                     </div>
-                    <div class="mt-2 text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+                    <div class="mt-2 text-xl font-semibold text-gray-900 dark:text-gray-100">
                         {{ formatCurrency(data?.revenue?.gross, currency) }}
                     </div>
                 </div>
 
-                <div class="rounded-2xl bg-white/70 dark:bg-[#24303f] border border-zinc-200/60 dark:border-zinc-700/30 px-4 py-3">
-                    <div class="text-xs font-medium uppercase tracking-[0.12em] text-zinc-500 dark:text-zinc-400">
+                <div class="rounded-2xl bg-white/70 dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 px-4 py-3">
+                    <div class="text-xs font-medium uppercase tracking-[0.12em] text-gray-500 dark:text-gray-400">
                         {{ __('Net', 'flexify-dashboard') }}
                     </div>
-                    <div class="mt-2 text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+                    <div class="mt-2 text-xl font-semibold text-gray-900 dark:text-gray-100">
                         {{ formatCurrency(data?.revenue?.net, currency) }}
                     </div>
                 </div>
@@ -159,7 +159,7 @@ watch(() => props.dateRange, loadData, { deep: true, immediate: true });
 
             <div
                 v-if="chartSeries.length"
-                class="bg-white dark:bg-[#24303f] -mx-2 flex-1"
+                class="bg-white dark:bg-white/[0.03] -mx-2 flex-1"
             >
                 <div class="h-[360px] max-md:h-72">
                     <VueApexCharts

@@ -136,12 +136,12 @@ const removeLink = () => {
 <template>
   <!-- Editor -->
   <div
-    class="editor-wrapper grow flex flex-col overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-lg"
+    class="editor-wrapper grow flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700 rounded-lg"
     key="editorWrapper"
   >
     <div
       v-if="editor"
-      class="editor-menu flex flex-row items-center py-3 px-4 border-b border-zinc-200 dark:border-zinc-700 shadow-sm"
+      class="editor-menu flex flex-row items-center py-3 px-4 border-b border-gray-200 dark:border-gray-700 shadow-sm"
     >
       <AppButton
         type="transparent"
@@ -152,14 +152,14 @@ const removeLink = () => {
         <AppIcon icon="text_fields" class="text-xl" />
         <div
           v-if="headingList"
-          class="absolute top-full left-0 bg-white dark:bg-zinc-900 rounded-xl shadow p-3 flex flex-col"
+          class="absolute top-full left-0 bg-white dark:bg-gray-900 rounded-xl shadow p-3 flex flex-col"
         >
           <AppButton
             type="transparent"
             :class="
               editor.isActive('heading', { level: 1 })
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-400 dark:text-zinc-500'
+                ? 'text-gray-900 dark:text-gray-100'
+                : 'text-gray-400 dark:text-gray-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
             >{{ __('Heading 1', 'flexify-dashboard') }}</AppButton
@@ -168,8 +168,8 @@ const removeLink = () => {
             type="transparent"
             :class="
               editor.isActive('heading', { level: 2 })
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-400 dark:text-zinc-500'
+                ? 'text-gray-900 dark:text-gray-100'
+                : 'text-gray-400 dark:text-gray-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
             >{{ __('Heading 2', 'flexify-dashboard') }}</AppButton
@@ -178,8 +178,8 @@ const removeLink = () => {
             type="transparent"
             :class="
               editor.isActive('heading', { level: 3 })
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-400 dark:text-zinc-500'
+                ? 'text-gray-900 dark:text-gray-100'
+                : 'text-gray-400 dark:text-gray-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
             >{{ __('Heading 3', 'flexify-dashboard') }}</AppButton
@@ -188,8 +188,8 @@ const removeLink = () => {
             type="transparent"
             :class="
               editor.isActive('heading', { level: 4 })
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-400 dark:text-zinc-500'
+                ? 'text-gray-900 dark:text-gray-100'
+                : 'text-gray-400 dark:text-gray-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
             >{{ __('Heading 4', 'flexify-dashboard') }}</AppButton
@@ -198,8 +198,8 @@ const removeLink = () => {
             type="transparent"
             :class="
               editor.isActive('heading', { level: 5 })
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-400 dark:text-zinc-500'
+                ? 'text-gray-900 dark:text-gray-100'
+                : 'text-gray-400 dark:text-gray-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
             >{{ __('Heading 5', 'flexify-dashboard') }}</AppButton
@@ -208,8 +208,8 @@ const removeLink = () => {
             type="transparent"
             :class="
               editor.isActive('heading', { level: 6 })
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-400 dark:text-zinc-500'
+                ? 'text-gray-900 dark:text-gray-100'
+                : 'text-gray-400 dark:text-gray-500'
             "
             @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
             >{{ __('Heading 6', 'flexify-dashboard') }}</AppButton
@@ -219,8 +219,8 @@ const removeLink = () => {
             type="transparent"
             :class="
               editor.isActive('paragraph')
-                ? 'text-zinc-900 dark:text-zinc-100'
-                : 'text-zinc-400 dark:text-zinc-500'
+                ? 'text-gray-900 dark:text-gray-100'
+                : 'text-gray-400 dark:text-gray-500'
             "
             @click="editor.chain().focus().setParagraph().run()"
             >{{ __('Paragraph', 'flexify-dashboard') }}</AppButton
@@ -237,8 +237,8 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive('bold')
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
@@ -252,8 +252,8 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive('italic')
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
@@ -267,13 +267,13 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive('strike')
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
 
-      <div class="h-6 border-l border-zinc-200 dark:border-zinc-700 mx-2"></div>
+      <div class="h-6 border-l border-gray-200 dark:border-gray-700 mx-2"></div>
 
       <AppButton
         type="transparent"
@@ -284,8 +284,8 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive('bulletList')
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
@@ -299,8 +299,8 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive('orderedList')
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
@@ -312,14 +312,14 @@ const removeLink = () => {
         @click="editor.chain().focus().toggleCode().run()"
         :class="
           editor.isActive('code')
-            ? 'text-zinc-900 dark:text-zinc-100'
-            : 'text-zinc-400 dark:text-zinc-500'
+            ? 'text-gray-900 dark:text-gray-100'
+            : 'text-gray-400 dark:text-gray-500'
         "
       >
         <AppIcon icon="code" class="text-xl" />
       </AppButton>
 
-      <div class="h-6 border-l border-zinc-200 dark:border-zinc-700 mx-2"></div>
+      <div class="h-6 border-l border-gray-200 dark:border-gray-700 mx-2"></div>
 
       <!-- Alignments -->
       <AppButton
@@ -331,8 +331,8 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive({ textAlign: 'left' })
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
@@ -345,8 +345,8 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive({ textAlign: 'center' })
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
@@ -359,8 +359,8 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive({ textAlign: 'right' })
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
@@ -373,26 +373,26 @@ const removeLink = () => {
           class="text-xl"
           :class="
             editor.isActive({ textAlign: 'justify' })
-              ? 'text-zinc-900 dark:text-zinc-100'
-              : 'text-zinc-400 dark:text-zinc-500'
+              ? 'text-gray-900 dark:text-gray-100'
+              : 'text-gray-400 dark:text-gray-500'
           "
         />
       </AppButton>
 
-      <div class="h-6 border-l border-zinc-200 dark:border-zinc-700 mx-2"></div>
+      <div class="h-6 border-l border-gray-200 dark:border-gray-700 mx-2"></div>
 
       <AppButton type="transparent" @click="addImage">
         <AppIcon icon="image" class="text-xl" />
       </AppButton>
 
-      <div class="h-6 border-l border-zinc-200 dark:border-zinc-700 mx-2"></div>
+      <div class="h-6 border-l border-gray-200 dark:border-gray-700 mx-2"></div>
 
       <AppButton
         type="transparent"
         @click="editor.chain().focus().undo().run()"
         :disabled="!editor.can().undo()"
       >
-        <AppIcon icon="undo" class="text-xl text-zinc-400 dark:text-zinc-500" />
+        <AppIcon icon="undo" class="text-xl text-gray-400 dark:text-gray-500" />
       </AppButton>
 
       <AppButton
@@ -400,7 +400,7 @@ const removeLink = () => {
         @click="editor.chain().focus().redo().run()"
         :disabled="!editor.can().redo()"
       >
-        <AppIcon icon="redo" class="text-xl text-zinc-400 dark:text-zinc-500" />
+        <AppIcon icon="redo" class="text-xl text-gray-400 dark:text-gray-500" />
       </AppButton>
     </div>
 

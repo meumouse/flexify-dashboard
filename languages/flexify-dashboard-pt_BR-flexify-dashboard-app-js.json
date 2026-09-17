@@ -5430,6 +5430,132 @@
       ],
       "ZIP functionality is not available on this server.": [
         "A funcionalidade ZIP não está disponível neste servidor."
+      ],
+      "%s / page": [
+        "%s / página"
+      ],
+      "%s selected": [
+        "%s selecionado(s)"
+      ],
+      "Allow dragging the sidebar edge to change its width. When disabled the sidebar uses the default width.": [
+        "Permite arrastar a borda da barra lateral para alterar a largura. Quando desativado, a barra lateral usa a largura padrão."
+      ],
+      "Breadcrumb": [
+        "Trilha de navegação"
+      ],
+      "Collapse sidebar": [
+        "Recolher barra lateral"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Default (Outfit)": [
+        "Padrão (Outfit)"
+      ],
+      "Design System": [
+        "Design System"
+      ],
+      "Dialog": [
+        "Diálogo"
+      ],
+      "Dismiss": [
+        "Dispensar"
+      ],
+      "Drag & drop files here": [
+        "Arraste e solte arquivos aqui"
+      ],
+      "Edit profile": [
+        "Editar perfil"
+      ],
+      "Expand": [
+        "Expandir"
+      ],
+      "Expand sidebar": [
+        "Expandir barra lateral"
+      ],
+      "Items per page": [
+        "Itens por página"
+      ],
+      "Next page": [
+        "Próxima página"
+      ],
+      "No items found": [
+        "Nenhum item encontrado"
+      ],
+      "Open search": [
+        "Abrir busca"
+      ],
+      "or click to browse": [
+        "ou clique para selecionar"
+      ],
+      "Pagination": [
+        "Paginação"
+      ],
+      "Previous page": [
+        "Página anterior"
+      ],
+      "Reset to default font": [
+        "Restaurar fonte padrão"
+      ],
+      "Resizable sidebar": [
+        "Barra lateral redimensionável"
+      ],
+      "Search or type command...": [
+        "Buscar ou digitar comando..."
+      ],
+      "Search...": [
+        "Buscar..."
+      ],
+      "Select all": [
+        "Selecionar todos"
+      ],
+      "Select row": [
+        "Selecionar linha"
+      ],
+      "Showing %1$s to %2$s of %3$s": [
+        "Mostrando %1$s a %2$s de %3$s"
+      ],
+      "Sign out": [
+        "Sair"
+      ],
+      "Toggle dark mode": [
+        "Alternar modo escuro"
+      ],
+      "Toggle details": [
+        "Mostrar ou ocultar detalhes"
+      ],
+      "Toggle sidebar": [
+        "Mostrar ou ocultar barra lateral"
+      ],
+      "User menu": [
+        "Menu do usuário"
+      ],
+      "notice\u0004Add New": [
+        "Adicionar novo"
+      ],
+      "Template\u0004Add New": [
+        "Adicionar novo"
+      ],
+      "add new on admin bar\u0004Admin Menu": [
+        "Menu de administração"
+      ],
+      "post type general name\u0004Admin Menu": [
+        "Menus de administração"
+      ],
+      "post type general name\u0004Admin Notices": [
+        "Avisos do administrador"
+      ],
+      "post type singular name\u0004Admin Menu": [
+        "Menu de administração"
+      ],
+      "post type singular name\u0004Admin Notice": [
+        "Aviso do administrador"
+      ],
+      "admin menu\u0004Admin Menus": [
+        "Menus de administração"
+      ],
+      "admin menu\u0004Admin Notices": [
+        "Avisos do administrador"
       ]
     }
   }

@@ -88,8 +88,8 @@ const formatDate = (dateString) => {
  */
 const getStatusColor = (status) => {
   const colors = {
-    publish: 'text-green-600 dark:text-green-500/80',
-    draft: 'text-amber-600 dark:text-amber-400',
+    publish: 'text-success-600 dark:text-success-500/80',
+    draft: 'text-warning-600 dark:text-warning-400',
     scheduled: 'text-brand-600 dark:text-brand-400',
   };
   return colors[status] || colors.draft;
@@ -140,21 +140,21 @@ onMounted(() => {
 
 <template>
   <div
-    class="bg-white dark:bg-[#24303f] border border-zinc-200/40 dark:border-[#2e3a47] rounded-3xl p-6 flex flex-col h-full"
+    class="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-2xl p-6 flex flex-col h-full"
   >
     <!-- Card Header -->
     <div class="flex items-center justify-between mb-6">
       <div>
-        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {{ __('Recent Posts', 'flexify-dashboard') }}
         </h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
           {{ __('Latest content activity', 'flexify-dashboard') }}
         </p>
       </div>
       <div class="flex items-center gap-2">
         <div class="w-2 h-2 bg-brand-500 rounded-full"></div>
-        <span class="text-xs text-zinc-500 dark:text-zinc-400"
+        <span class="text-xs text-gray-500 dark:text-gray-400"
           >{{ totalPosts }} {{ __('total', 'flexify-dashboard') }}</span
         >
       </div>
@@ -162,29 +162,29 @@ onMounted(() => {
 
     <!-- Stats Overview -->
     <div
-      class="grid grid-cols-3 gap-4 mb-6 rounded-2xl bg-white dark:bg-zinc-800/40 py-4"
+      class="grid grid-cols-3 gap-4 mb-6 rounded-2xl bg-white dark:bg-white/[0.03] py-4"
     >
       <div class="text-center">
-        <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+        <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
           {{ publishedCount }}
         </div>
-        <div class="text-xs text-zinc-500 dark:text-zinc-400">
+        <div class="text-xs text-gray-500 dark:text-gray-400">
           {{ __('Published', 'flexify-dashboard') }}
         </div>
       </div>
       <div class="text-center">
-        <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+        <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
           {{ draftCount }}
         </div>
-        <div class="text-xs text-zinc-500 dark:text-zinc-400">
+        <div class="text-xs text-gray-500 dark:text-gray-400">
           {{ __('Draft', 'flexify-dashboard') }}
         </div>
       </div>
       <div class="text-center">
-        <div class="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+        <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
           {{ totalPosts - publishedCount - draftCount }}
         </div>
-        <div class="text-xs text-zinc-500 dark:text-zinc-400">
+        <div class="text-xs text-gray-500 dark:text-gray-400">
           {{ __('Scheduled', 'flexify-dashboard') }}
         </div>
       </div>
@@ -194,10 +194,10 @@ onMounted(() => {
     <div v-if="loading" class="space-y-3">
       <div v-for="i in 3" :key="i" class="animate-pulse">
         <div class="flex items-center gap-3 p-3">
-          <div class="w-2 h-2 bg-zinc-200 dark:bg-zinc-700 rounded-full"></div>
+          <div class="w-2 h-2 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
           <div class="flex-1 space-y-2">
-            <div class="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-3/4"></div>
-            <div class="h-3 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2"></div>
+            <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
+            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
           </div>
         </div>
       </div>
@@ -205,8 +205,8 @@ onMounted(() => {
 
     <!-- Error State -->
     <div v-else-if="error" class="text-center py-8">
-      <AppIcon icon="error" class="text-3xl text-zinc-400 mx-auto mb-3" />
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">{{ error }}</p>
+      <AppIcon icon="error" class="text-3xl text-gray-400 mx-auto mb-3" />
+      <p class="text-sm text-gray-500 dark:text-gray-400">{{ error }}</p>
     </div>
 
     <!-- Posts List -->
@@ -214,7 +214,7 @@ onMounted(() => {
       <div
         v-for="post in posts"
         :key="post.id"
-        class="group flex items-center gap-3 p-3 rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800/30 transition-all duration-200"
+        class="group flex items-center gap-3 p-3 rounded-2xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200"
       >
         <!-- Post Content -->
         <div class="flex-1 min-w-0">
@@ -225,17 +225,17 @@ onMounted(() => {
             class="block"
           >
             <h4
-              class="text-sm font-medium text-zinc-900 dark:text-zinc-100 truncate group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors duration-200"
+              class="text-sm font-medium text-gray-900 dark:text-gray-100 truncate group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors duration-200"
             >
               {{ post.title }}
             </h4>
           </a>
           <div class="flex items-center gap-2 mt-1">
-            <span class="text-xs text-zinc-500 dark:text-zinc-400">{{
+            <span class="text-xs text-gray-500 dark:text-gray-400">{{
               post.author
             }}</span>
-            <span class="text-xs text-zinc-400 dark:text-zinc-500">•</span>
-            <span class="text-xs text-zinc-500 dark:text-zinc-400">{{
+            <span class="text-xs text-gray-400 dark:text-gray-500">•</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400">{{
               formatDate(post.date)
             }}</span>
           </div>
@@ -243,7 +243,7 @@ onMounted(() => {
 
         <!-- Post Stats -->
         <div
-          class="flex-shrink-0 flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400"
+          class="flex-shrink-0 flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400"
         >
           <div v-if="post.views > 0" class="flex items-center gap-1">
             <AppIcon icon="visibility" class="text-xs" />
@@ -263,10 +263,10 @@ onMounted(() => {
               getStatusColor(post.status),
               'bg-opacity-10',
               post.status === 'publish'
-                ? 'bg-green-100 dark:bg-green-900/15'
+                ? 'bg-success-100 dark:bg-success-900/15'
                 : '',
               post.status === 'draft'
-                ? 'bg-amber-100 dark:bg-amber-900/20'
+                ? 'bg-warning-100 dark:bg-warning-900/20'
                 : '',
               post.status === 'scheduled'
                 ? 'bg-brand-100 dark:bg-brand-900/20'
@@ -282,11 +282,11 @@ onMounted(() => {
     <!-- Empty State -->
     <div v-else class="text-center py-8">
       <div
-        class="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center mx-auto mb-3"
+        class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-3"
       >
-        <AppIcon icon="article" class="text-xl text-zinc-400" />
+        <AppIcon icon="article" class="text-xl text-gray-400" />
       </div>
-      <p class="text-sm text-zinc-500 dark:text-zinc-400">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
         {{ __('No posts found', 'flexify-dashboard') }}
       </p>
     </div>
@@ -298,7 +298,7 @@ onMounted(() => {
         :href="`${adminUrl}edit.php`"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors duration-200 flex items-center gap-2"
+        class="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 flex items-center gap-2"
         ><span>{{ __('View all', 'flexify-dashboard') }}</span>
         <AppIcon
           icon="chevron_right"

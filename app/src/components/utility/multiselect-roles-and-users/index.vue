@@ -124,10 +124,10 @@ watchEffect(() => {
     @click="showOptions"
     v-bind="attrs"
     ref="parent"
-    class="px-2 py-2 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm col-span-2 flex flex-row gap-3 items-center"
+    class="px-2 py-2 border border-gray-200 dark:border-gray-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm col-span-2 flex flex-row gap-3 items-center"
   >
     <span v-if="model.length" class="grow">{{ `${model.length} ${__("Items selected", "flexify-dashboard")}` }}</span>
-    <span v-else class="text-zinc-500 grow">{{ __("Select users or roles", "flexify-dashboard") }}</span>
+    <span v-else class="text-gray-500 grow">{{ __("Select users or roles", "flexify-dashboard") }}</span>
     <AppButton type="transparent" v-if="model.length" @click.stop.prevent="model = []"><AppIcon icon="close" /></AppButton>
     <AppIcon icon="unfold" />
   </div>
@@ -140,21 +140,21 @@ watchEffect(() => {
       <div class="relative flex">
         <input
           v-model="search"
-          class="px-2 py-2 pl-8 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm dark:bg-transparent"
+          class="px-2 py-2 pl-8 border border-gray-200 dark:border-gray-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 dark:focus:outline-brand-700 focus:shadow-xs text-sm dark:bg-transparent"
           :placeholder="__('Search')"
           @keyup.enter="getUsers"
         />
 
         <!-- Icon-->
         <div class="absolute top-0 left-0 h-full flex flex-col place-content-center px-2 py-1">
-          <AppIcon icon="search" class="text-lg text-zinc-400" />
+          <AppIcon icon="search" class="text-lg text-gray-400" />
         </div>
       </div>
 
       <!-- Loop users -->
       <div v-if="tab === 'users'" class="flex flex-col max-h-80 overflow-auto">
         <template v-for="option in users">
-          <div class="flex flex-row items-center gap-3 p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors rounded-lg cursor-pointer" @click="toggleUserItem(option)">
+          <div class="flex flex-row items-center gap-3 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors rounded-lg cursor-pointer" @click="toggleUserItem(option)">
             <AppCheckBox :checked="isUserSelected(option) ? true : false" />
             <div>{{ option.slug }}</div>
           </div>
@@ -164,7 +164,7 @@ watchEffect(() => {
       <!-- Loop roles -->
       <div v-if="tab === 'roles'" class="flex flex-col max-h-80 overflow-auto">
         <template v-for="option in roles">
-          <div class="flex flex-row items-center gap-3 p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors rounded-lg cursor-pointer" @click="toggleRoleItem(option)">
+          <div class="flex flex-row items-center gap-3 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors rounded-lg cursor-pointer" @click="toggleRoleItem(option)">
             <AppCheckBox :checked="isRoleSelected(option) ? true : false" />
             <div>{{ option.value }}</div>
           </div>

@@ -2,12 +2,12 @@
   <label class="inline-flex items-center gap-2 select-none cursor-pointer">
     <input
       type="checkbox"
-      class="h-4 w-4 rounded border-zinc-300 dark:border-zinc-700"
+      class="h-4 w-4 rounded border-gray-300 dark:border-gray-700"
       :checked="isChecked"
       :disabled="disabled"
       @change="onChange"
     />
-    <span v-if="label" class="text-xs text-zinc-700 dark:text-zinc-300">
+    <span v-if="label" class="text-xs text-gray-700 dark:text-gray-300">
       {{ label }}
     </span>
   </label>

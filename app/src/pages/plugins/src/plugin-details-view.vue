@@ -54,16 +54,16 @@ watch(
     >
       <div class="text-center">
         <div
-          class="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4"
         >
-          <AppIcon icon="extension" class="text-2xl text-zinc-400" />
+          <AppIcon icon="extension" class="text-2xl text-gray-400" />
         </div>
         <h3
-          class="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-2"
+          class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2"
         >
           {{ __('Plugin not found', 'flexify-dashboard') }}
         </h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
           {{
             __(
               'The plugin you are looking for could not be found.',

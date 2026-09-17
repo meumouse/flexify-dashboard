@@ -67,10 +67,10 @@ const componentProps = computed(() => {
 <template>
   <!-- Label and Description -->
   <div class="flex flex-col pt-2 gap-2">
-    <span class="text-zinc-900 dark:text-zinc-100 font-semibold">{{
+    <span class="text-gray-900 dark:text-gray-100 font-semibold">{{
       setting.label
     }}</span>
-    <span class="text-zinc-500 dark:text-zinc-400 leading-snug">{{
+    <span class="text-gray-500 dark:text-gray-400 leading-snug">{{
       setting.description
     }}</span>
   </div>
@@ -103,7 +103,7 @@ const componentProps = computed(() => {
 
   <!-- Divider -->
   <div
-    class="border-t border-zinc-200 dark:border-zinc-800 col-span-3"
+    class="border-t border-gray-200 dark:border-gray-800 col-span-3"
   ></div>
 </template>
 

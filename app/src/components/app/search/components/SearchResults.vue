@@ -36,7 +36,7 @@ const handleItemClick = (result, category) => {
     <div v-if="results && Object.keys(results).length > 0" class="flex flex-col gap-6">
       <template v-for="(categoryResults, category) in results" :key="category">
         <div v-if="categoryResults && categoryResults.length > 0">
-          <div class="mb-2 capitalize text-zinc-400 dark:text-zinc-200">
+          <div class="mb-2 capitalize text-gray-400 dark:text-gray-200">
             {{ getCategoryName(category) }}
           </div>
           <ul class="flex flex-col">

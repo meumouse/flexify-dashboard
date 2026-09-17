@@ -134,10 +134,10 @@ const handledownArrow = () => {
  *
  */
 const returnTermClasses = (term, index) => {
-  let classes = term.id === term.slug ? "bg-zinc-100" : "";
+  let classes = term.id === term.slug ? "bg-gray-100" : "";
 
   if (index === currentIndex.value) {
-    classes += " bg-zinc-100 text-zinc-900  dark:bg-zinc-800 dark:text-zinc-100";
+    classes += " bg-gray-100 text-gray-900  dark:bg-gray-800 dark:text-gray-100";
   }
 
   return classes;
@@ -255,10 +255,10 @@ getSelectedTags();
   <div
     ref="trigger"
     @click.prevent.stop="openTags($event)"
-    class="flex flex-row gap-2 w-full cursor-pointer p-1 border border-zinc-200 dark:border-zinc-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 focus:shadow-xs"
+    class="flex flex-row gap-2 w-full cursor-pointer p-1 border border-gray-200 dark:border-gray-700 rounded-lg w-full transition-all outline outline-transparent outline-offset-[-2px] focus:outline-brand-300 focus:shadow-xs"
   >
     <div class="flex flex-row flex-wrap gap-1 flex-grow">
-      <div v-for="(term, index) in returnCurrentTags" class="text-sm rounded-lg pl-2 pr-1 border border-zinc-200 dark:border-zinc-700 flex gap-1 items-center bg-zinc-50 dark:bg-zinc-800">
+      <div v-for="(term, index) in returnCurrentTags" class="text-sm rounded-lg pl-2 pr-1 border border-gray-200 dark:border-gray-700 flex gap-1 items-center bg-gray-50 dark:bg-gray-800">
         <span>{{ term.name }}</span>
         <AppButton @click.prevent.stop="removeTag(term.id)" type="transparent" class="text-xs"><AppIcon icon="close" /></AppButton>
       </div>
@@ -284,14 +284,14 @@ getSelectedTags();
     <ContextMenu ref="contextmenu">
       <div class="flex flex-col w-80 min-h-[100px] max-h-[400px] overflow-auto">
         <div class="flex flex-row place-content-between mb-3">
-          <div class="font-semibold text-zinc-900 dark:text-zinc-100">{{ __("Tags", "flexify-dashboard") }}</div>
+          <div class="font-semibold text-gray-900 dark:text-gray-100">{{ __("Tags", "flexify-dashboard") }}</div>
           <AppButton type="transparent" @click.stop="contextmenu.close"><AppIcon icon="close" /></AppButton>
         </div>
 
         <div v-if="loading" class="w-full flex flex-col gap-2">
-          <div class="rounded-lg bg-zinc-100 dark:bg-zinc-800 h-4 w-2/3"></div>
-          <div class="rounded-lg bg-zinc-100 dark:bg-zinc-800 h-4 w-3/4"></div>
-          <div class="rounded-lg bg-zinc-100 dark:bg-zinc-800 h-4 w-1/2"></div>
+          <div class="rounded-lg bg-gray-100 dark:bg-gray-800 h-4 w-2/3"></div>
+          <div class="rounded-lg bg-gray-100 dark:bg-gray-800 h-4 w-3/4"></div>
+          <div class="rounded-lg bg-gray-100 dark:bg-gray-800 h-4 w-1/2"></div>
         </div>
         <!--Status list-->
         <template v-else v-for="(term, index) in returnRemoteTags">
@@ -301,16 +301,16 @@ getSelectedTags();
               <span class="flex-grow overflow-hidden text-ellipsis whitespace-nowrap">{{ term.name }}</span>
 
               <template v-if="index == currentIndex">
-                <AppIcon icon="arrow_upward" class="text-zinc-400" />
-                <AppIcon icon="arrow_downward" class="text-zinc-400" />
+                <AppIcon icon="arrow_upward" class="text-gray-400" />
+                <AppIcon icon="arrow_downward" class="text-gray-400" />
               </template>
             </div>
           </AppButton>
         </template>
-        <div class="px-3 py-2 bg-zinc-100 text-sm rounded-lg w-full text-zinc-500" v-if="!returnRemoteTags.length && !loading && searchTerm.length">
+        <div class="px-3 py-2 bg-gray-100 text-sm rounded-lg w-full text-gray-500" v-if="!returnRemoteTags.length && !loading && searchTerm.length">
           {{ __("No products found", "flexify-dashboard") }}
         </div>
-        <div class="px-3 py-2 bg-zinc-100 text-sm rounded-lg w-full text-zinc-500" v-if="!returnRemoteTags.length && !loading && !searchTerm.length">
+        <div class="px-3 py-2 bg-gray-100 text-sm rounded-lg w-full text-gray-500" v-if="!returnRemoteTags.length && !loading && !searchTerm.length">
           {{ __("No products found", "flexify-dashboard") }}
         </div>
       </div>

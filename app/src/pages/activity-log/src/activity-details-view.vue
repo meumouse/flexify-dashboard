@@ -168,21 +168,21 @@ const getActionIcon = (action) => {
  */
 const getActionColor = (action) => {
   const colors = {
-    created: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    updated: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
-    deleted: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400',
+    created: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    updated: 'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
+    deleted: 'bg-error-100 dark:bg-error-900/30 text-error-700 dark:text-error-400',
     trashed: 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400',
-    restored: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    activated: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    deactivated: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
-    installed: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
-    login: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400',
-    logout: 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400',
+    restored: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    activated: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    deactivated: 'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
+    installed: 'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
+    login: 'bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-400',
+    logout: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
     role_changed: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400',
-    status_changed: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400',
-    uploaded: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400',
+    status_changed: 'bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-400',
+    uploaded: 'bg-blue-light-100 dark:bg-blue-light-900/30 text-blue-light-700 dark:text-blue-light-400',
   };
-  return colors[action] || 'bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-400';
+  return colors[action] || 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-400';
 };
 
 /**
@@ -230,14 +230,14 @@ onMounted(() => {
 <template>
   <div class="h-full overflow-y-auto">
     <div v-if="loading" class="p-8 text-center">
-      <p class="text-zinc-600 dark:text-zinc-400">{{ __('Loading...', 'flexify-dashboard') }}</p>
+      <p class="text-gray-600 dark:text-gray-400">{{ __('Loading...', 'flexify-dashboard') }}</p>
     </div>
 
     <div v-else-if="logItem" class="p-6 lg:p-8">
       <!-- Header -->
-      <div class="mb-6 pb-6 border-b border-zinc-200 dark:border-zinc-700">
+      <div class="mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
         <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
             {{ __('Activity Details', 'flexify-dashboard') }}
           </h2>
         </div>
@@ -253,7 +253,7 @@ onMounted(() => {
             <AppIcon :icon="getActionIcon(logItem.action)" class="text-base" />
             {{ logItem.action }}
           </span>
-          <span class="text-sm text-zinc-600 dark:text-zinc-400">
+          <span class="text-sm text-gray-600 dark:text-gray-400">
             {{ logItem.object_type }}
             <span v-if="logItem.object_id"> #{{ logItem.object_id }}</span>
           </span>
@@ -262,12 +262,12 @@ onMounted(() => {
 
       <!-- User Information -->
       <div class="mb-6">
-        <h3 class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-4">
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
           {{ __('User Information', 'flexify-dashboard') }}
         </h3>
         <div class="flex items-center gap-4">
           <div
-            class="w-16 h-16 bg-zinc-200 dark:bg-zinc-700 rounded-full overflow-hidden"
+            class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"
           >
             <img
               v-if="logItem.user?.avatar"
@@ -276,17 +276,17 @@ onMounted(() => {
               class="w-full h-full object-cover"
             />
             <div v-else class="w-full h-full flex items-center justify-center">
-              <AppIcon icon="person" class="text-zinc-500 dark:text-zinc-400 text-2xl" />
+              <AppIcon icon="person" class="text-gray-500 dark:text-gray-400 text-2xl" />
             </div>
           </div>
           <div>
-            <p class="font-medium text-zinc-900 dark:text-zinc-100">
+            <p class="font-medium text-gray-900 dark:text-gray-100">
               {{ logItem.user?.name || __('Unknown', 'flexify-dashboard') }}
             </p>
-            <p class="text-sm text-zinc-600 dark:text-zinc-400">
+            <p class="text-sm text-gray-600 dark:text-gray-400">
               {{ logItem.user?.email || '—' }}
             </p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-500 mt-1">
+            <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
               User ID: {{ logItem.user_id }}
             </p>
           </div>
@@ -295,36 +295,36 @@ onMounted(() => {
 
       <!-- Activity Details -->
       <div class="mb-6">
-        <h3 class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-4">
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
           {{ __('Activity Details', 'flexify-dashboard') }}
         </h3>
         <div class="space-y-4">
           <div>
-            <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">
+            <label class="block text-xs font-medium text-gray-600 dark:text-gray-400 mb-1">
               {{ __('Timestamp', 'flexify-dashboard') }}
             </label>
-            <p class="text-sm text-zinc-900 dark:text-zinc-100">
+            <p class="text-sm text-gray-900 dark:text-gray-100">
               {{ formatDate(logItem.created_at) }}
             </p>
-            <p class="text-xs text-zinc-500 dark:text-zinc-500 mt-1">
+            <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
               {{ formatRelativeTime(logItem.created_at) }}
             </p>
           </div>
 
           <div v-if="logItem.ip_address">
-            <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">
+            <label class="block text-xs font-medium text-gray-600 dark:text-gray-400 mb-1">
               {{ __('IP Address', 'flexify-dashboard') }}
             </label>
-            <p class="text-sm text-zinc-900 dark:text-zinc-100 font-mono">
+            <p class="text-sm text-gray-900 dark:text-gray-100 font-mono">
               {{ logItem.ip_address }}
             </p>
           </div>
 
           <div v-if="logItem.user_agent">
-            <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1">
+            <label class="block text-xs font-medium text-gray-600 dark:text-gray-400 mb-1">
               {{ __('User Agent', 'flexify-dashboard') }}
             </label>
-            <p class="text-sm text-zinc-900 dark:text-zinc-100 font-mono break-all">
+            <p class="text-sm text-gray-900 dark:text-gray-100 font-mono break-all">
               {{ logItem.user_agent }}
             </p>
           </div>
@@ -336,24 +336,24 @@ onMounted(() => {
         v-if="hasChanges"
         class="mb-6"
       >
-        <h3 class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-4">
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
           {{ __('Changes', 'flexify-dashboard') }}
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-2">
+            <label class="block text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">
               {{ __('Before', 'flexify-dashboard') }}
             </label>
             <pre
-              class="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 text-xs font-mono text-zinc-900 dark:text-zinc-100 overflow-auto max-h-96"
+              class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-xs font-mono text-gray-900 dark:text-gray-100 overflow-auto max-h-96"
             >{{ formatJson(logItem.old_value) }}</pre>
           </div>
           <div>
-            <label class="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-2">
+            <label class="block text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">
               {{ __('After', 'flexify-dashboard') }}
             </label>
             <pre
-              class="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 text-xs font-mono text-zinc-900 dark:text-zinc-100 overflow-auto max-h-96"
+              class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-xs font-mono text-gray-900 dark:text-gray-100 overflow-auto max-h-96"
             >{{ formatJson(logItem.new_value) }}</pre>
           </div>
         </div>
@@ -364,11 +364,11 @@ onMounted(() => {
         v-else-if="logItem.new_value"
         class="mb-6"
       >
-        <h3 class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-4">
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
           {{ __('Details', 'flexify-dashboard') }}
         </h3>
         <pre
-          class="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 text-xs font-mono text-zinc-900 dark:text-zinc-100 overflow-auto max-h-96"
+          class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-xs font-mono text-gray-900 dark:text-gray-100 overflow-auto max-h-96"
         >{{ formatJson(logItem.new_value) }}</pre>
       </div>
 
@@ -377,11 +377,11 @@ onMounted(() => {
         v-if="logItem.metadata"
         class="mb-6"
       >
-        <h3 class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-4">
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">
           {{ __('Metadata', 'flexify-dashboard') }}
         </h3>
         <pre
-          class="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 text-xs font-mono text-zinc-900 dark:text-zinc-100 overflow-auto max-h-96"
+          class="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-xs font-mono text-gray-900 dark:text-gray-100 overflow-auto max-h-96"
         >{{ formatJson(logItem.metadata) }}</pre>
       </div>
     </div>
