@@ -26,6 +26,19 @@ const routes = [
     meta: { name: __('Orders', 'flexify-dashboard') },
   },
   {
+    path: '/new',
+    component: () => import('@/pages/orders/src/OrderEditor.vue'),
+    name: 'order-new',
+    meta: { name: __('Add order', 'flexify-dashboard') },
+  },
+  {
+    path: '/order/:id(\\d+)/edit',
+    component: () => import('@/pages/orders/src/OrderEditor.vue'),
+    name: 'order-edit',
+    props: (route) => ({ id: Number(route.params.id) }),
+    meta: { name: __('Edit order items', 'flexify-dashboard') },
+  },
+  {
     path: '/order/:id(\\d+)',
     component: () => import('@/pages/orders/src/OrderDetails.vue'),
     name: 'order-details',

@@ -771,6 +771,21 @@ export const settingsConfig = [
   },
 
   {
+    id: 'use_modern_product_editor',
+    category: 'woocommerce',
+    type: 'toggle',
+    label: __('Modern Product Editor', 'flexify-dashboard'),
+    description: __(
+      'Create and edit products in a modern editor with pricing, inventory, images, attributes and variations. Keep it disabled if your extensions add fields to the classic product editor, which is always one click away.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    componentProps: {
+      class: 'max-w-[300px]',
+    },
+  },
+
+  {
     id: 'use_modern_comments_page',
     category: 'comments',
     type: 'toggle',

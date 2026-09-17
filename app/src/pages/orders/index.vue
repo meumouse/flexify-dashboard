@@ -5,7 +5,7 @@ import WooPageWrapper from '@/components/woocommerce/WooPageWrapper.vue';
 <template>
   <WooPageWrapper>
     <RouterView v-slot="{ Component, route }">
-      <component :is="Component" :key="route.fullPath.startsWith('/order/') ? route.params.id : 'list'" />
+      <component :is="Component" :key="route.name === 'orders' ? 'list' : route.path" />
     </RouterView>
   </WooPageWrapper>
 </template>

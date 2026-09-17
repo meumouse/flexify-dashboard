@@ -72,6 +72,8 @@ const canRefund = computed(() => {
   return (Number(order.value.total) || 0) - refunded.value > 0;
 });
 
+const canEditItems = computed(() => can('edit_shop_orders') && ['pending', 'on-hold', 'checkout-draft'].includes(order.value?.status));
+
 const addressLines = (address = {}) =>
   [
     [address.first_name, address.last_name].filter(Boolean).join(' '),
@@ -279,6 +281,7 @@ onMounted(load);
               <FdButton variant="outline" icon-right="expand_more" :loading="actionRunning">{{ __('Actions', 'flexify-dashboard') }}</FdButton>
             </template>
           </FdDropdown>
+          <FdButton v-if="canEditItems" variant="outline" icon="edit" @click="router.push({ name: 'order-edit', params: { id: order.id } })">{{ __('Edit items', 'flexify-dashboard') }}</FdButton>
           <FdButton v-if="canRefund" variant="outline" icon="undo" @click="refundOpen = true">{{ __('Refund', 'flexify-dashboard') }}</FdButton>
           <FdDropdown :items="statusActions(changeStatus, order.status)" width="w-52">
             <template #trigger>

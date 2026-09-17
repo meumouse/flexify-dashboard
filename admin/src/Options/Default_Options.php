@@ -73,6 +73,7 @@ class Default_Options {
             'use_modern_comments_page'                   => false,
             'use_modern_products_page'                   => true,
             'use_modern_orders_page'                     => true,
+            'use_modern_product_editor'                  => false,
             'use_modern_post_editor'                     => false,
             'modern_post_editor_post_types'              => array(),
             'enable_realtime_collaboration'              => false,

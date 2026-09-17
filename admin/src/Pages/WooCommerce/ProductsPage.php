@@ -28,6 +28,43 @@ class ProductsPage extends ModernScreen {
 	 */
 	public function __construct() {
 		add_action( 'load-edit.php', array( $this, 'maybe_take_over' ) );
+		add_action( 'load-post.php', array( $this, 'maybe_redirect_to_editor' ) );
+		add_action( 'load-post-new.php', array( $this, 'maybe_redirect_to_editor' ) );
+	}
+
+
+	/**
+	 * Send product edit/create screens to the Vue product editor when it is enabled.
+	 *
+	 * @since 3.0.0
+	 * @return void
+	 */
+	public function maybe_redirect_to_editor() {
+		if ( $this->is_classic_requested() || ! WooCommerce::is_product_editor_enabled() || ! current_user_can( 'edit_products' ) ) {
+			return;
+		}
+
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended
+		$post_id = isset( $_GET['post'] ) ? absint( $_GET['post'] ) : 0;
+		$action = isset( $_GET['action'] ) ? sanitize_key( wp_unslash( $_GET['action'] ) ) : '';
+		$post_type = isset( $_GET['post_type'] ) ? sanitize_key( wp_unslash( $_GET['post_type'] ) ) : '';
+		// phpcs:enable
+
+		if ( isset( $_SERVER['REQUEST_METHOD'] ) && 'GET' !== $_SERVER['REQUEST_METHOD'] ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			return;
+		}
+
+		$base = admin_url( 'edit.php?post_type=product' );
+
+		if ( $post_id && 'edit' === $action && 'product' === get_post_type( $post_id ) ) {
+			wp_safe_redirect( $base . '#/product/' . $post_id );
+			exit;
+		}
+
+		if ( ! $post_id && 'product' === $post_type && false !== strpos( (string) $GLOBALS['pagenow'], 'post-new.php' ) ) {
+			wp_safe_redirect( $base . '#/new' );
+			exit;
+		}
 	}
 
 

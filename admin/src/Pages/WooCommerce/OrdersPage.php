@@ -32,6 +32,29 @@ class OrdersPage extends ModernScreen {
 		add_action( 'load-woocommerce_page_wc-orders', array( $this, 'maybe_take_over_hpos' ), 5 );
 		add_action( 'load-edit.php', array( $this, 'maybe_take_over_legacy' ) );
 		add_action( 'load-post.php', array( $this, 'maybe_redirect_legacy_edit' ) );
+		add_action( 'load-post-new.php', array( $this, 'maybe_redirect_legacy_new' ) );
+	}
+
+
+	/**
+	 * Redirect the legacy "Add order" screen to the Vue order editor.
+	 *
+	 * @since 3.0.0
+	 * @return void
+	 */
+	public function maybe_redirect_legacy_new() {
+		if ( WooCommerce::is_hpos_enabled() || ! $this->can_take_over() ) {
+			return;
+		}
+
+		$post_type = isset( $_GET['post_type'] ) ? sanitize_key( wp_unslash( $_GET['post_type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		if ( 'shop_order' !== $post_type ) {
+			return;
+		}
+
+		wp_safe_redirect( $this->get_modern_url( '/new' ) );
+		exit;
 	}
 
 
@@ -79,7 +102,8 @@ class OrdersPage extends ModernScreen {
 		// phpcs:enable
 
 		if ( 'new' === $action ) {
-			return;
+			wp_safe_redirect( $this->get_modern_url( '/new' ) );
+			exit;
 		}
 
 		if ( 'edit' === $action && $order_id ) {

@@ -26,16 +26,42 @@ const routes = [
     meta: { name: __('Products', 'flexify-dashboard') },
   },
   {
+    path: '/new',
+    component: () => import('@/pages/products/src/editor/ProductEditor.vue'),
+    name: 'product-new',
+    meta: { name: __('Add product', 'flexify-dashboard') },
+  },
+  {
+    path: '/product/:id(\\d+)',
+    component: () => import('@/pages/products/src/editor/ProductEditor.vue'),
+    name: 'product-edit',
+    props: (route) => ({ id: Number(route.params.id) }),
+    meta: { name: __('Edit product', 'flexify-dashboard') },
+  },
+  {
     path: '/categories',
     component: () => import('@/pages/products/src/CategoriesView.vue'),
     name: 'product-categories',
     meta: { name: __('Categories', 'flexify-dashboard') },
+  },
+  {
+    path: '/attributes',
+    component: () => import('@/pages/products/src/AttributesView.vue'),
+    name: 'product-attributes',
+    meta: { name: __('Attributes', 'flexify-dashboard') },
+  },
+  {
+    path: '/coupons',
+    component: () => import('@/pages/products/src/CouponsView.vue'),
+    name: 'coupons',
+    meta: { name: __('Coupons', 'flexify-dashboard') },
   },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior: () => ({ top: 0 }),
 });
 
 app.use(router);

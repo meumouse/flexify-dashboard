@@ -2,6 +2,10 @@ import { useWooCommerce } from '@/composables/useWooCommerce.js';
 import { ref } from 'vue';
 import { useAppStore } from '@/store/app/app.js';
 
+export const ADDRESS_FIELDS = ['first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'country', 'email', 'phone'];
+
+export const emptyAddress = () => Object.fromEntries(ADDRESS_FIELDS.map((field) => [field, '']));
+
 // Countries list shared by every address form on the page.
 const countries = ref([]);
 let countriesRequest = null;

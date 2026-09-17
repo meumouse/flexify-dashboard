@@ -1,9 +1,10 @@
 <script setup>
-import { computed, reactive, ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useWooCommerce } from '@/composables/useWooCommerce.js';
-import { FdButton, FdInput, FdModal, FdSelect } from '@/components/kit';
+import { FdButton, FdModal } from '@/components/kit';
 import { notify } from '@/assets/js/functions/notify.js';
-import { useCountries } from './useOrderHelpers.js';
+import { ADDRESS_FIELDS, emptyAddress } from './useOrderHelpers.js';
+import AddressFields from './AddressFields.vue';
 
 const open = defineModel('open', { type: Boolean, default: false });
 
@@ -15,42 +16,23 @@ const props = defineProps({
 
 const emit = defineEmits(['saved']);
 
-const { countries, loadCountries } = useCountries();
 const { wc } = useWooCommerce();
 const saving = ref(false);
-
-const FIELDS = ['first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'country', 'email', 'phone'];
-const form = reactive(Object.fromEntries(FIELDS.map((field) => [field, ''])));
+const address = ref(emptyAddress());
 
 const isBilling = computed(() => props.type === 'billing');
 
-const countryOptions = computed(() => countries.value.map((country) => ({ value: country.code, label: country.name })));
-
-const stateOptions = computed(() => {
-  const country = countries.value.find((item) => item.code === form.country);
-  return (country?.states || []).map((state) => ({ value: state.code, label: state.name }));
-});
-
 watch(open, (value) => {
-  if (!value) return;
-
-  const source = props.order?.[props.type] || {};
-  FIELDS.forEach((field) => {
-    form[field] = source[field] ?? '';
-  });
-
-  loadCountries();
+  if (value) address.value = { ...emptyAddress(), ...(props.order?.[props.type] || {}) };
 });
 
 const copyFromBilling = () => {
-  const billing = props.order?.billing || {};
-  FIELDS.filter((field) => !['email'].includes(field)).forEach((field) => {
-    if (billing[field] !== undefined) form[field] = billing[field];
-  });
+  const { email, ...billing } = props.order?.billing || {};
+  address.value = { ...address.value, ...billing };
 };
 
 const submit = async () => {
-  const data = Object.fromEntries(FIELDS.filter((field) => isBilling.value || field !== 'email').map((field) => [field, form[field] ?? '']));
+  const data = Object.fromEntries(ADDRESS_FIELDS.filter((field) => isBilling.value || field !== 'email').map((field) => [field, address.value[field] ?? '']));
 
   saving.value = true;
   const response = await wc(`orders/${props.order.id}`, { type: 'PUT', data: { [props.type]: data } });
@@ -66,22 +48,9 @@ const submit = async () => {
 
 <template>
   <FdModal v-model:open="open" size="lg" :title="isBilling ? __('Edit billing address', 'flexify-dashboard') : __('Edit shipping address', 'flexify-dashboard')">
-    <form class="grid gap-4 sm:grid-cols-2" @submit.prevent="submit">
-      <div v-if="!isBilling" class="sm:col-span-2">
-        <FdButton variant="link" size="sm" icon="content_copy" type="button" @click="copyFromBilling">{{ __('Copy billing address', 'flexify-dashboard') }}</FdButton>
-      </div>
-      <FdInput v-model="form.first_name" :label="__('First name', 'flexify-dashboard')" autocomplete="off" />
-      <FdInput v-model="form.last_name" :label="__('Last name', 'flexify-dashboard')" autocomplete="off" />
-      <FdInput v-model="form.company" class="sm:col-span-2" :label="__('Company', 'flexify-dashboard')" autocomplete="off" />
-      <FdInput v-model="form.address_1" class="sm:col-span-2" :label="__('Address line 1', 'flexify-dashboard')" autocomplete="off" />
-      <FdInput v-model="form.address_2" class="sm:col-span-2" :label="__('Address line 2', 'flexify-dashboard')" autocomplete="off" />
-      <FdSelect v-model="form.country" :options="countryOptions" :label="__('Country / Region', 'flexify-dashboard')" :placeholder="__('Select a country', 'flexify-dashboard')" />
-      <FdSelect v-if="stateOptions.length" v-model="form.state" :options="stateOptions" :label="__('State / County', 'flexify-dashboard')" :placeholder="__('Select a state', 'flexify-dashboard')" />
-      <FdInput v-else v-model="form.state" :label="__('State / County', 'flexify-dashboard')" autocomplete="off" />
-      <FdInput v-model="form.city" :label="__('City', 'flexify-dashboard')" autocomplete="off" />
-      <FdInput v-model="form.postcode" :label="__('Postcode / ZIP', 'flexify-dashboard')" autocomplete="off" />
-      <FdInput v-if="isBilling" v-model="form.email" type="email" :label="__('Email address', 'flexify-dashboard')" autocomplete="off" />
-      <FdInput v-model="form.phone" type="tel" :label="__('Phone', 'flexify-dashboard')" autocomplete="off" />
+    <form @submit.prevent="submit">
+      <FdButton v-if="!isBilling" class="mb-4" variant="link" size="sm" icon="content_copy" type="button" @click="copyFromBilling">{{ __('Copy billing address', 'flexify-dashboard') }}</FdButton>
+      <AddressFields v-model="address" :type="type" />
     </form>
 
     <template #footer>

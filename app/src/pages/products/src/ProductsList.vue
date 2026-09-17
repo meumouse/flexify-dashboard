@@ -200,7 +200,7 @@ const formatDate = (value) => {
   return new Intl.DateTimeFormat(undefined, { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(value));
 };
 
-const editUrl = (product) => `${appStore.state.adminUrl}post.php?post=${product.id}&action=edit`;
+const editUrl = (product) => (store.value.product_editor ? `#/product/${product.id}` : `${appStore.state.adminUrl}post.php?post=${product.id}&action=edit`);
 
 const syncQuery = () => {
   const query = {};
@@ -472,7 +472,8 @@ const sprintf = (format, ...args) => (window.wp?.i18n?.sprintf ? window.wp.i18n.
 const pageLinks = computed(() => [
   { label: __('Categories', 'flexify-dashboard'), icon: 'category', onSelect: () => router.push({ name: 'product-categories' }) },
   { label: __('Tags', 'flexify-dashboard'), icon: 'label', href: store.value.urls.product_tags },
-  { label: __('Attributes', 'flexify-dashboard'), icon: 'layers', href: `${appStore.state.adminUrl}edit.php?post_type=product&page=product_attributes` },
+  { label: __('Attributes', 'flexify-dashboard'), icon: 'layers', onSelect: () => router.push({ name: 'product-attributes' }) },
+  ...(store.value.coupons_enabled !== false ? [{ label: __('Coupons', 'flexify-dashboard'), icon: 'sell', onSelect: () => router.push({ name: 'coupons' }) }] : []),
   { separator: true },
   { label: __('Import products', 'flexify-dashboard'), icon: 'upload', href: store.value.urls.product_import },
   { label: __('Export products', 'flexify-dashboard'), icon: 'download', href: store.value.urls.product_export },
@@ -496,7 +497,7 @@ onMounted(() => {
             <FdButton variant="outline" icon-right="expand_more">{{ __('More', 'flexify-dashboard') }}</FdButton>
           </template>
         </FdDropdown>
-        <FdButton v-if="can('edit_products')" icon="add" :href="store.urls.new_product">{{ __('Add product', 'flexify-dashboard') }}</FdButton>
+        <FdButton v-if="can('edit_products')" icon="add" :href="store.product_editor ? '#/new' : store.urls.new_product">{{ __('Add product', 'flexify-dashboard') }}</FdButton>
       </template>
     </FdPageHeader>
 

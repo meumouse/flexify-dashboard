@@ -381,6 +381,7 @@ const exportCsv = () => {
 const pageLinks = computed(() => [
   { label: __('Export current page (CSV)', 'flexify-dashboard'), icon: 'download', onSelect: exportCsv },
   { separator: true },
+  { label: __('Add order in classic screen', 'flexify-dashboard'), icon: 'open_in_new', href: store.value.urls.new_order },
   { label: __('Customers', 'flexify-dashboard'), icon: 'person', href: `${store.value.urls.users}?role=customer` },
   { label: __('WooCommerce settings', 'flexify-dashboard'), icon: 'settings', href: store.value.urls.settings },
   { label: __('Classic orders screen', 'flexify-dashboard'), icon: 'open_in_new', href: store.value.urls.classic_orders },
@@ -411,7 +412,7 @@ onMounted(() => {
             <FdButton variant="outline" icon-right="expand_more">{{ __('More', 'flexify-dashboard') }}</FdButton>
           </template>
         </FdDropdown>
-        <FdButton icon="add" :href="store.urls.new_order">{{ __('Add order', 'flexify-dashboard') }}</FdButton>
+        <FdButton v-if="can('edit_shop_orders')" icon="add" @click="router.push({ name: 'order-new' })">{{ __('Add order', 'flexify-dashboard') }}</FdButton>
       </template>
     </FdPageHeader>
 

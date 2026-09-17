@@ -98,6 +98,27 @@ class WooCommerce {
 
 
 	/**
+	 * Check whether products should be created and edited in the Vue product editor.
+	 *
+	 * The native editor stays the default because many extensions add metaboxes to it.
+	 *
+	 * @since 3.0.0
+	 * @return bool
+	 */
+	public static function is_product_editor_enabled() {
+		$enabled = self::is_page_enabled( 'products' ) && true === Settings::get_setting( 'use_modern_product_editor', false );
+
+		/**
+		 * Filter whether the Vue product editor is enabled.
+		 *
+		 * @since 3.0.0
+		 * @param bool $enabled Whether the editor is enabled.
+		 */
+		return (bool) apply_filters( 'flexify-dashboard/woocommerce/product-editor-enabled', $enabled );
+	}
+
+
+	/**
 	 * Get the URL of the native orders screen.
 	 *
 	 * @since 3.0.0
@@ -245,6 +266,8 @@ class WooCommerce {
 			'dimension_unit' => get_option( 'woocommerce_dimension_unit', 'cm' ),
 			'manage_stock' => 'yes' === get_option( 'woocommerce_manage_stock', 'yes' ),
 			'low_stock_amount' => absint( get_option( 'woocommerce_notify_low_stock_amount', 2 ) ),
+			'product_editor' => self::is_product_editor_enabled(),
+			'tax_classes' => self::get_tax_classes(),
 			'taxes_enabled' => wc_tax_enabled(),
 			'coupons_enabled' => wc_coupons_enabled(),
 			'product_types' => self::to_options( $product_types ),
@@ -269,9 +292,11 @@ class WooCommerce {
 				'product_tags' => admin_url( 'edit-tags.php?taxonomy=product_tag&post_type=product' ),
 				'orders' => self::is_hpos_enabled() ? admin_url( 'admin.php?page=wc-orders' ) : admin_url( 'edit.php?post_type=shop_order' ),
 				'classic_orders' => self::get_native_orders_url(),
-				'new_order' => self::is_hpos_enabled() ? admin_url( 'admin.php?page=wc-orders&action=new' ) : admin_url( 'post-new.php?post_type=shop_order' ),
+				'new_order' => self::is_hpos_enabled() ? admin_url( 'admin.php?page=wc-orders&action=new&fd_classic=1' ) : admin_url( 'post-new.php?post_type=shop_order&fd_classic=1' ),
 				'settings' => admin_url( 'admin.php?page=wc-settings' ),
 				'users' => admin_url( 'users.php' ),
+				'coupons' => admin_url( 'edit.php?post_type=shop_coupon' ),
+				'product_attributes' => admin_url( 'edit.php?post_type=product&page=product_attributes' ),
 			),
 		);
 
@@ -299,6 +324,35 @@ class WooCommerce {
 			$options[] = array(
 				'value' => (string) $value,
 				'label' => wp_strip_all_tags( (string) $label ),
+			);
+		}
+
+		return $options;
+	}
+
+
+	/**
+	 * Get tax classes as select options (the standard class has an empty slug).
+	 *
+	 * @since 3.0.0
+	 * @return array
+	 */
+	private static function get_tax_classes() {
+		$options = array(
+			array(
+				'value' => '',
+				'label' => __( 'Standard', 'flexify-dashboard' ),
+			),
+		);
+
+		if ( ! class_exists( '\WC_Tax' ) ) {
+			return $options;
+		}
+
+		foreach ( \WC_Tax::get_tax_classes() as $class ) {
+			$options[] = array(
+				'value' => sanitize_title( $class ),
+				'label' => wp_strip_all_tags( $class ),
 			);
 		}
 
