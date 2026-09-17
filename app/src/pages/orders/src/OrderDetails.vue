@@ -341,7 +341,7 @@ onMounted(load);
                     <td class="whitespace-nowrap px-4 py-4 text-end text-gray-500 dark:text-gray-400">{{ orderPrice(item.price, order) }}</td>
                     <td class="px-4 py-4 text-center text-gray-800 dark:text-white/90">
                       × {{ item.quantity }}
-                      <span v-if="itemRefundedQty(item)" class="block text-theme-xs text-error-500">-{{ itemRefundedQty(item) }}</span>
+                      <span v-if="itemRefundedQty(item)" class="block text-theme-xs text-error-500"><bdi>-{{ itemRefundedQty(item) }}</bdi></span>
                     </td>
                     <td class="whitespace-nowrap px-5 py-4 text-end font-medium text-gray-800 dark:text-white/90 sm:px-6">
                       <span v-if="Number(item.subtotal) > Number(item.total)" class="me-1 text-theme-xs font-normal text-gray-400 line-through">{{ orderPrice(item.subtotal, order) }}</span>
@@ -370,7 +370,7 @@ onMounted(load);
                 </div>
                 <div v-if="Number(order.discount_total)" class="flex justify-between gap-4 text-gray-500 dark:text-gray-400">
                   <dt>{{ __('Coupons', 'flexify-dashboard') }}</dt>
-                  <dd class="text-success-600 dark:text-success-500">-{{ orderPrice(order.discount_total, order) }}</dd>
+                  <dd class="text-success-600 dark:text-success-500"><bdi>-{{ orderPrice(order.discount_total, order) }}</bdi></dd>
                 </div>
                 <div v-for="line in order.shipping_lines" :key="`ship-${line.id}`" class="flex justify-between gap-4 text-gray-500 dark:text-gray-400">
                   <dt class="truncate">{{ sprintf(__('Shipping: %s', 'flexify-dashboard'), decode(line.method_title)) }}</dt>
@@ -387,7 +387,7 @@ onMounted(load);
                 <template v-if="refunded">
                   <div class="flex justify-between gap-4 text-error-600 dark:text-error-500">
                     <dt>{{ __('Refunded', 'flexify-dashboard') }}</dt>
-                    <dd>-{{ orderPrice(refunded, order) }}</dd>
+                    <dd><bdi>-{{ orderPrice(refunded, order) }}</bdi></dd>
                   </div>
                   <div class="flex justify-between gap-4 font-semibold text-gray-800 dark:text-white/90">
                     <dt>{{ __('Net payment', 'flexify-dashboard') }}</dt>
@@ -450,11 +450,11 @@ onMounted(load);
             <ul class="mt-4 space-y-2 text-theme-sm">
               <li v-if="order.billing?.email" class="flex items-center gap-2">
                 <AppIcon icon="email" class="shrink-0 text-base text-gray-400" />
-                <a :href="`mailto:${order.billing.email}`" class="truncate text-brand-500 hover:text-brand-600 dark:text-brand-400">{{ order.billing.email }}</a>
+                <a :href="`mailto:${order.billing.email}`" dir="ltr" class="truncate text-brand-500 hover:text-brand-600 dark:text-brand-400">{{ order.billing.email }}</a>
               </li>
               <li v-if="order.billing?.phone" class="flex items-center gap-2">
                 <AppIcon icon="mobile" class="shrink-0 text-base text-gray-400" />
-                <a :href="`tel:${order.billing.phone}`" class="text-brand-500 hover:text-brand-600 dark:text-brand-400">{{ order.billing.phone }}</a>
+                <a :href="`tel:${order.billing.phone}`" dir="ltr" class="text-brand-500 hover:text-brand-600 dark:text-brand-400">{{ order.billing.phone }}</a>
               </li>
             </ul>
           </FdCard>

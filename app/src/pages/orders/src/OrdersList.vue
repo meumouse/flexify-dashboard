@@ -503,15 +503,17 @@ onBeforeUnmount(() => window.clearInterval(pollTimer));
         <FdTabs v-model="filters.status" :items="statusTabs" :aria-label="__('Order status', 'flexify-dashboard')" />
       </div>
 
-      <div class="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:flex-row sm:items-center sm:px-6">
+      <div class="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:flex-row sm:flex-wrap sm:items-center sm:px-6">
         <FdSearchInput v-model="filters.search" class="w-full sm:w-80" :placeholder="__('Search order, customer or email', 'flexify-dashboard')" />
-        <FdSelect v-model="filters.date" :options="dateOptions" :placeholder="__('Any date', 'flexify-dashboard')" class="sm:w-48" />
-        <FdButton variant="outline" icon="filter_alt" :aria-expanded="showMoreFilters" @click="showMoreFilters = !showMoreFilters">{{ __('Filters', 'flexify-dashboard') }}</FdButton>
-        <div class="flex items-center gap-2 sm:ms-auto">
-          <FdButton v-if="hasActiveFilters" variant="ghost" icon="close" @click="clearFilters">{{ __('Clear filters', 'flexify-dashboard') }}</FdButton>
-          <FdTooltip :text="__('Refresh', 'flexify-dashboard')">
-            <FdButton variant="outline" icon="refresh" icon-only :aria-label="__('Refresh', 'flexify-dashboard')" @click="refresh" />
-          </FdTooltip>
+        <div class="flex flex-wrap items-center gap-2 sm:contents">
+          <FdSelect v-model="filters.date" :options="dateOptions" :placeholder="__('Any date', 'flexify-dashboard')" class="min-w-0 flex-1 sm:w-48 sm:flex-none" />
+          <FdButton variant="outline" icon="filter_alt" :aria-expanded="showMoreFilters" @click="showMoreFilters = !showMoreFilters">{{ __('Filters', 'flexify-dashboard') }}</FdButton>
+          <div class="flex items-center gap-2 sm:ms-auto">
+            <FdButton v-if="hasActiveFilters" variant="ghost" icon="close" @click="clearFilters">{{ __('Clear filters', 'flexify-dashboard') }}</FdButton>
+            <FdTooltip :text="__('Refresh', 'flexify-dashboard')">
+              <FdButton variant="outline" icon="refresh" icon-only :aria-label="__('Refresh', 'flexify-dashboard')" @click="refresh" />
+            </FdTooltip>
+          </div>
         </div>
       </div>
 

@@ -33,7 +33,7 @@ defineProps({
             >
               {{ crumb.label }}
             </component>
-            <AppIcon v-if="index < breadcrumbs.length - 1" icon="chevron_right" class="text-sm text-gray-400" />
+            <AppIcon v-if="index < breadcrumbs.length - 1" icon="chevron_right" class="text-sm text-gray-400 rtl:rotate-180" />
           </li>
         </ol>
       </nav>

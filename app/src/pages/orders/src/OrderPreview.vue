@@ -86,7 +86,7 @@ const goToDetails = () => {
           </div>
           <div v-if="Number(current.discount_total)" class="flex justify-between text-gray-500 dark:text-gray-400">
             <dt>{{ __('Discount', 'flexify-dashboard') }}</dt>
-            <dd>-{{ orderPrice(current.discount_total, current) }}</dd>
+            <dd><bdi>-{{ orderPrice(current.discount_total, current) }}</bdi></dd>
           </div>
           <div v-if="current.shipping_lines?.length" class="flex justify-between text-gray-500 dark:text-gray-400">
             <dt>{{ __('Shipping', 'flexify-dashboard') }}</dt>
@@ -107,8 +107,8 @@ const goToDetails = () => {
         <div class="rounded-xl border border-gray-200 p-4 dark:border-gray-800">
           <h3 class="mb-2 text-theme-sm font-semibold text-gray-800 dark:text-white/90">{{ __('Billing', 'flexify-dashboard') }}</h3>
           <p v-for="line in billingLines" :key="line" class="text-theme-sm text-gray-500 dark:text-gray-400">{{ line }}</p>
-          <a v-if="current.billing?.email" :href="`mailto:${current.billing.email}`" class="mt-2 block truncate text-theme-sm text-brand-500 hover:text-brand-600">{{ current.billing.email }}</a>
-          <a v-if="current.billing?.phone" :href="`tel:${current.billing.phone}`" class="block text-theme-sm text-brand-500 hover:text-brand-600">{{ current.billing.phone }}</a>
+          <a v-if="current.billing?.email" :href="`mailto:${current.billing.email}`" dir="ltr" class="mt-2 block truncate text-theme-sm text-brand-500 hover:text-brand-600">{{ current.billing.email }}</a>
+          <a v-if="current.billing?.phone" :href="`tel:${current.billing.phone}`" dir="ltr" class="block text-theme-sm text-brand-500 hover:text-brand-600">{{ current.billing.phone }}</a>
         </div>
         <div class="rounded-xl border border-gray-200 p-4 dark:border-gray-800">
           <h3 class="mb-2 text-theme-sm font-semibold text-gray-800 dark:text-white/90">{{ __('Shipping', 'flexify-dashboard') }}</h3>

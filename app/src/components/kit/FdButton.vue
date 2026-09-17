@@ -34,6 +34,10 @@ const classes = computed(() =>
 );
 
 const iconSize = computed(() => (props.size === 'xs' ? 'text-base' : 'text-lg'));
+
+// Directional icons point the other way in right-to-left languages.
+const DIRECTIONAL_ICONS = ['chevron_left', 'chevron_right', 'arrow_back', 'arrow_forward', 'arrow_left_alt', 'arrow_right', 'first_page', 'last_page'];
+const iconClass = (name) => [iconSize.value, DIRECTIONAL_ICONS.includes(name) && 'rtl:rotate-180'];
 </script>
 
 <template>
@@ -47,8 +51,8 @@ const iconSize = computed(() => (props.size === 'xs' ? 'text-base' : 'text-lg'))
     :class="classes"
   >
     <FdSpinner v-if="loading" class="h-4 w-4" />
-    <AppIcon v-else-if="icon" :icon="icon" :class="iconSize" />
+    <AppIcon v-else-if="icon" :icon="icon" :class="iconClass(icon)" />
     <slot />
-    <AppIcon v-if="iconRight && !loading" :icon="iconRight" :class="iconSize" />
+    <AppIcon v-if="iconRight && !loading" :icon="iconRight" :class="iconClass(iconRight)" />
   </component>
 </template>
