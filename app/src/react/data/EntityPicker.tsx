@@ -36,9 +36,11 @@ type Props = {
 	disabled?: boolean;
 	/** Replaces the default button, for cells that open the list from the value itself */
 	trigger?: ReactNode;
+	/** The chosen items, when the caller already has them and the endpoint cannot be asked by id */
+	chosen?: PickerItem[];
 };
 
-export const EntityPicker = ({ endpoint, toItem, value, onChange, multiple = true, placeholder, searchPlaceholder, params = {}, className, disabled, trigger }: Props) => {
+export const EntityPicker = ({ endpoint, toItem, value, onChange, multiple = true, placeholder, searchPlaceholder, params = {}, className, disabled, trigger, chosen: given }: Props) => {
 	const rest = useRest();
 	const [search, setSearch] = useState('');
 
@@ -54,9 +56,9 @@ export const EntityPicker = ({ endpoint, toItem, value, onChange, multiple = tru
 
 	// A chosen item can sit outside the current page of results, so the chosen ones are
 	// asked for by id and kept apart from what the search returns.
-	const { data: chosen = [] } = useQuery({
+	const { data: fetched = [] } = useQuery({
 		queryKey: ['picker-selected', endpoint, value],
-		enabled: value.length > 0,
+		enabled: value.length > 0 && !given,
 		staleTime: 60_000,
 		queryFn: async ({ signal }) => {
 			const result = await rest.list<Record<string, unknown>>(endpoint, { include: value, per_page: value.length, ...params }, signal);
@@ -64,6 +66,8 @@ export const EntityPicker = ({ endpoint, toItem, value, onChange, multiple = tru
 			return (result.data ?? []).map(toItem);
 		},
 	});
+
+	const chosen = given ?? fetched;
 
 	const toggle = (id: number) => {
 		if (!multiple) {

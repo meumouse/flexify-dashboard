@@ -38,6 +38,8 @@ export default defineConfig({
 				frontend: path.resolve(__dirname, 'src/apps/js/Frontend.js'),
 				login: path.resolve(__dirname, 'src/apps/js/Login.js'),
 				media: path.resolve(__dirname, 'src/apps/js/Media.js'),
+				// React media screen; the Vue entry stays as the fallback behind the filter.
+				'media-react': path.resolve(__dirname, 'src/react/main/media.tsx'),
 				'menu-creator': path.resolve(__dirname, 'src/apps/js/MenuCreator.js'),
 				plugins: path.resolve(__dirname, 'src/apps/js/Plugins.js'),
 				posts: path.resolve(__dirname, 'src/apps/js/Posts.js'),

@@ -49,6 +49,10 @@ msgstr ""
 msgid "%1$s (#%2$s)"
 msgstr ""
 
+#: app/src/react/features/media/MediaLibrary.tsx:318
+msgid "%1$s of %2$s"
+msgstr ""
+
 #: app/src/react/features/posts/usePostMutations.ts:55
 msgid "%1$s of %2$s failed."
 msgstr ""
@@ -84,6 +88,14 @@ msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1022
 msgid "%d file(s) uploaded"
+msgstr ""
+
+#: app/src/react/features/media/MediaBulkEdit.tsx:44
+msgid "%d file(s) will be changed. Fields left empty stay as they are."
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:117
+msgid "%d file(s) will be deleted for good. The media library has no trash."
 msgstr ""
 
 #: app/src/components/user-activity/user-activity.vue:93
@@ -257,6 +269,10 @@ msgstr ""
 msgid "%s days"
 msgstr ""
 
+#: app/src/react/features/media/MediaLibrary.tsx:171
+msgid "%s file(s)"
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:325
 #: app/src/pages/products/src/ProductsList.vue:714
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:401
@@ -305,6 +321,7 @@ msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:95
 #: app/src/react/data/DataTable.tsx:135
+#: app/src/react/features/media/MediaLibrary.tsx:285
 #: app/src/react/features/posts/PostsList.tsx:196
 msgid "%s selected"
 msgstr ""
@@ -730,6 +747,10 @@ msgstr ""
 msgid "Add tag"
 msgstr ""
 
+#: app/src/react/features/media/MediaDetails.tsx:221
+msgid "Add tags"
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:931
 msgid "Add tags..."
 msgstr ""
@@ -786,6 +807,10 @@ msgstr ""
 #: app/src/react/features/products/BulkPriceModal.tsx:48
 #: app/src/react/features/products/ProductsList.tsx:592
 msgid "Adjust prices"
+msgstr ""
+
+#: app/src/react/features/media/ImageEditor.tsx:328
+msgid "Adjustments"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:631
@@ -884,6 +909,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:161
 #: app/src/pages/users/src/user-list-view.vue:867
 #: app/src/react/features/comments/CommentsList.tsx:79
+#: app/src/react/features/media/MediaLibrary.tsx:23
 #: app/src/react/features/orders/OrdersList.tsx:159
 #: app/src/react/features/products/ProductsList.tsx:113
 msgid "All"
@@ -1018,6 +1044,11 @@ msgstr ""
 msgid "Alt Text"
 msgstr ""
 
+#: app/src/react/features/media/MediaBulkEdit.tsx:60
+#: app/src/react/features/media/MediaDetails.tsx:189
+msgid "Alternative text"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:663
 msgid "Always show hidden update notifications for specific users/roles"
 msgstr ""
@@ -1123,6 +1154,7 @@ msgid "Any channel"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:509
+#: app/src/react/features/media/MediaLibrary.tsx:218
 #: app/src/react/features/orders/OrdersList.tsx:517
 msgid "Any date"
 msgstr ""
@@ -1140,6 +1172,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:602
 #: app/src/react/features/products/ProductsList.tsx:493
 msgid "Any stock status"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:250
+msgid "Any tag"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:416
@@ -1175,6 +1211,10 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:356
 #: app/src/react/ui/RichText.tsx:221
 msgid "Apply"
+msgstr ""
+
+#: app/src/react/features/media/ImageEditor.tsx:219
+msgid "Apply crop"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:860
@@ -1344,6 +1384,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductAttributes.vue:126
 #: app/src/react/features/products/editor/ProductAttributes.tsx:153
 msgid "Attributes show extra information such as material or size."
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:26
+msgid "Audio"
 msgstr ""
 
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:989
@@ -1558,6 +1602,7 @@ msgid "Blog"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1735
+#: app/src/react/features/media/ImageEditor.tsx:31
 msgid "Blur"
 msgstr ""
 
@@ -1579,6 +1624,7 @@ msgid "Breadcrumb"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1446
+#: app/src/react/features/media/ImageEditor.tsx:20
 msgid "Brightness"
 msgstr ""
 
@@ -1693,6 +1739,9 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:1723
 #: app/src/react/app/ConfirmProvider.tsx:59
 #: app/src/react/features/design-system/Showcase.tsx:370
+#: app/src/react/features/media/ImageEditor.tsx:229
+#: app/src/react/features/media/ImageEditor.tsx:365
+#: app/src/react/features/media/MediaBulkEdit.tsx:48
 #: app/src/react/features/orders/AddressModal.tsx:56
 #: app/src/react/features/orders/OrderEditor.tsx:480
 #: app/src/react/features/orders/RefundModal.tsx:145
@@ -1740,6 +1789,8 @@ msgstr ""
 #: app/src/components/utility/media-library/index.vue:788
 #: app/src/pages/media/src/media-details-view.vue:909
 #: app/src/pages/media/src/media-list-view.vue:1945
+#: app/src/react/features/media/MediaBulkEdit.tsx:63
+#: app/src/react/features/media/MediaDetails.tsx:193
 msgid "Caption"
 msgstr ""
 
@@ -2017,6 +2068,7 @@ msgstr ""
 #: app/src/pages/media/src/media-list-view.vue:1699
 #: app/src/pages/orders/src/OrdersList.vue:512
 #: app/src/pages/products/src/ProductsList.vue:585
+#: app/src/react/features/media/MediaLibrary.tsx:258
 #: app/src/react/features/orders/OrdersList.tsx:531
 #: app/src/react/features/products/ProductsList.tsx:467
 msgid "Clear filters"
@@ -2033,7 +2085,8 @@ msgstr ""
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:567
 #: app/src/pages/users/src/user-list-view.vue:1500
 #: app/src/react/data/DataTable.tsx:142
-#: app/src/react/data/EntityPicker.tsx:96
+#: app/src/react/data/EntityPicker.tsx:100
+#: app/src/react/features/media/MediaLibrary.tsx:296
 #: app/src/react/features/posts/PostsList.tsx:200
 msgid "Clear selection"
 msgstr ""
@@ -2239,6 +2292,10 @@ msgstr ""
 msgid "Company"
 msgstr ""
 
+#: app/src/react/features/media/ImageEditor.tsx:262
+msgid "Compare"
+msgstr ""
+
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:90
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:90
 msgid "Completed"
@@ -2315,6 +2372,7 @@ msgid "Content"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1534
+#: app/src/react/features/media/ImageEditor.tsx:21
 msgid "Contrast"
 msgstr ""
 
@@ -2327,7 +2385,12 @@ msgid "Convert"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1656
+#: app/src/react/features/media/ImageEditor.tsx:28
 msgid "Cool ← → Warm"
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:82
+msgid "Copied to the clipboard"
 msgstr ""
 
 #: app/src/react/features/posts/usePostMutations.ts:85
@@ -2350,6 +2413,10 @@ msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:285
 msgid "Copy failed"
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:156
+msgid "Copy URL"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:347
@@ -2581,6 +2648,7 @@ msgid "Credentials are valid"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1805
+#: app/src/react/features/media/ImageEditor.tsx:249
 msgid "Crop"
 msgstr ""
 
@@ -2820,6 +2888,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:187
 #: app/src/react/features/comments/CommentDetails.tsx:161
 #: app/src/react/features/comments/CommentsList.tsx:141
+#: app/src/react/features/media/MediaLibrary.tsx:225
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:392
 #: app/src/react/features/orders/OrdersList.tsx:519
@@ -2910,6 +2979,8 @@ msgstr ""
 #: app/src/pages/users/src/user-list.vue:223
 #: app/src/react/features/design-system/Showcase.tsx:279
 #: app/src/react/features/design-system/Showcase.tsx:294
+#: app/src/react/features/media/MediaDetails.tsx:114
+#: app/src/react/features/media/MediaLibrary.tsx:294
 #: app/src/react/features/orders/OrderNotes.tsx:67
 #: app/src/react/features/posts/PostsList.tsx:163
 #: app/src/react/features/products/AttributesView.tsx:102
@@ -2975,6 +3046,8 @@ msgstr ""
 #: app/src/react/features/comments/CommentDetails.tsx:95
 #: app/src/react/features/comments/CommentsList.tsx:66
 #: app/src/react/features/comments/CommentsList.tsx:189
+#: app/src/react/features/media/MediaDetails.tsx:92
+#: app/src/react/features/media/MediaLibrary.tsx:118
 #: app/src/react/features/orders/OrdersList.tsx:248
 #: app/src/react/features/orders/OrdersList.tsx:270
 #: app/src/react/features/orders/OrdersList.tsx:627
@@ -3022,6 +3095,14 @@ msgstr ""
 #: app/src/pages/products/src/TagsView.vue:105
 #: app/src/react/features/products/TagsView.tsx:71
 msgid "Delete tags?"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:116
+msgid "Delete these files?"
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:90
+msgid "Delete this file?"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:261
@@ -3084,6 +3165,8 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:350
 #: app/src/pages/products/src/TagsView.vue:189
 #: app/src/react/features/design-system/Showcase.tsx:243
+#: app/src/react/features/media/MediaBulkEdit.tsx:66
+#: app/src/react/features/media/MediaDetails.tsx:196
 #: app/src/react/features/products/CategoriesView.tsx:240
 #: app/src/react/features/products/editor/ProductEditor.tsx:685
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:460
@@ -3119,6 +3202,7 @@ msgstr ""
 #: app/src/pages/activity-log/src/activity-details-view.vue:370
 #: app/src/pages/media/src/media-details-view.vue:1027
 #: app/src/pages/users/src/components/index.js:14
+#: app/src/react/features/media/MediaDetails.tsx:183
 msgid "Details"
 msgstr ""
 
@@ -3153,6 +3237,10 @@ msgstr ""
 
 #: app/src/components/kit/FdModal.vue:77
 msgid "Dialog"
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:209
+msgid "Dimensions"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:414
@@ -3274,11 +3362,17 @@ msgstr ""
 msgid "Docs"
 msgstr ""
 
+#: app/src/react/features/media/MediaLibrary.tsx:27
+msgid "Documents"
+msgstr ""
+
 #: app/src/components/utility/media-library/index.vue:855
 msgid "Done"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1824
+#: app/src/react/features/media/MediaDetails.tsx:159
+#: app/src/react/features/media/MediaLibrary.tsx:291
 msgid "Download"
 msgstr ""
 
@@ -3301,6 +3395,7 @@ msgid "Download limit"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:690
+#: app/src/react/features/media/MediaLibrary.tsx:143
 msgid "Download started"
 msgstr ""
 
@@ -3400,6 +3495,10 @@ msgstr ""
 msgid "Drop files to upload"
 msgstr ""
 
+#: app/src/react/features/media/MediaLibrary.tsx:304
+msgid "Drop the files to upload them"
+msgstr ""
+
 #: app/src/react/features/design-system/Showcase.tsx:298
 msgid "Dropdown"
 msgstr ""
@@ -3465,6 +3564,8 @@ msgstr ""
 #: app/src/pages/products/src/CouponsView.vue:202
 #: app/src/pages/products/src/ProductsList.vue:497
 #: app/src/pages/products/src/TagsView.vue:167
+#: app/src/react/features/media/MediaEditScreen.tsx:64
+#: app/src/react/features/media/MediaLibrary.tsx:288
 #: app/src/react/features/posts/PostPreview.tsx:61
 #: app/src/react/features/posts/PostRowMenu.tsx:33
 #: app/src/react/features/posts/PostsList.tsx:154
@@ -3513,6 +3614,15 @@ msgstr ""
 #: app/src/components/utility/code-editor/index.vue:195
 #: app/src/components/utility/code-editor/index.vue:202
 msgid "Edit CSS"
+msgstr ""
+
+#: app/src/react/features/media/MediaBulkEdit.tsx:43
+msgid "Edit files"
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:110
+#: app/src/react/features/media/MediaEditScreen.tsx:63
+msgid "Edit image"
 msgstr ""
 
 #: app/src/apps/js/Media.js:50
@@ -4051,6 +4161,7 @@ msgid "Export Users"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1468
+#: app/src/react/features/media/ImageEditor.tsx:22
 msgid "Exposure"
 msgstr ""
 
@@ -4440,6 +4551,8 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-performance.vue:326
 #: app/src/pages/plugins/src/plugin-performance.vue:362
 #: app/src/pages/plugins/src/plugin-performance.vue:379
+#: app/src/react/features/media/MediaDetails.tsx:105
+#: app/src/react/features/media/MediaDetails.tsx:204
 msgid "File"
 msgstr ""
 
@@ -4448,6 +4561,7 @@ msgid "File content does not match file type."
 msgstr ""
 
 #: app/src/components/utility/media-library/index.vue:300
+#: app/src/react/features/media/MediaDetails.tsx:97
 msgid "File deleted"
 msgstr ""
 
@@ -4457,6 +4571,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:700
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:361
+#: app/src/react/features/media/MediaDetails.tsx:206
 #: app/src/react/features/products/editor/ProductEditor.tsx:841
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:474
 msgid "File name"
@@ -4464,6 +4579,10 @@ msgstr ""
 
 #: admin/src/Rest/MediaReplace.php:311
 msgid "File name contains invalid characters."
+msgstr ""
+
+#: app/src/react/features/media/queries.ts:236
+msgid "File replaced"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:317
@@ -4507,6 +4626,7 @@ msgid "File Types"
 msgstr ""
 
 #: app/src/components/utility/media-library/index.vue:275
+#: app/src/react/features/media/queries.ts:164
 msgid "File updated"
 msgstr ""
 
@@ -4535,6 +4655,7 @@ msgid "Files"
 msgstr ""
 
 #: app/src/components/utility/media-library/index.vue:394
+#: app/src/react/features/media/MediaLibrary.tsx:123
 msgid "Files deleted"
 msgstr ""
 
@@ -4545,6 +4666,14 @@ msgstr ""
 #: app/src/components/utility/media-library/index.vue:365
 #: app/src/pages/media/src/media-list-view.vue:555
 msgid "Files duplicated"
+msgstr ""
+
+#: app/src/react/features/media/MediaBulkEdit.tsx:29
+msgid "Files updated"
+msgstr ""
+
+#: app/src/react/features/media/queries.ts:199
+msgid "Files uploaded"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1021
@@ -4636,10 +4765,12 @@ msgid "Flexify Dashboard licence key"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1996
+#: app/src/react/features/media/ImageEditor.tsx:208
 msgid "Flip H"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:2009
+#: app/src/react/features/media/ImageEditor.tsx:211
 msgid "Flip V"
 msgstr ""
 
@@ -4683,6 +4814,7 @@ msgid "Font Weights"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1408
+#: app/src/react/features/media/MediaLibrary.tsx:28
 msgid "Fonts"
 msgstr ""
 
@@ -4708,6 +4840,7 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:124
 #: app/src/pages/settings/src/custom-renders/license-key.vue:54
+#: app/src/react/features/media/ImageEditor.tsx:37
 msgid "Free"
 msgstr ""
 
@@ -4734,6 +4867,10 @@ msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:23
 msgid "Frontend performance"
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:147
+msgid "Full (%1$s × %2$s)"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:360
@@ -4890,11 +5027,17 @@ msgid "Got it, thanks!"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1757
+#: app/src/react/features/media/ImageEditor.tsx:32
 msgid "Grain"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1681
+#: app/src/react/features/media/ImageEditor.tsx:29
 msgid "Green ← → Magenta"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:180
+msgid "Grid view"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1434
@@ -4968,6 +5111,7 @@ msgstr ""
 #: app/src/components/utility/image-editor/index.vue:1920
 #: app/src/pages/products/src/editor/ProductEditor.vue:718
 #: app/src/pages/products/src/ProductQuickEdit.vue:268
+#: app/src/react/features/media/ImageEditor.tsx:316
 #: app/src/react/features/products/editor/ProductEditor.tsx:893
 #: app/src/react/features/products/ProductQuickEdit.tsx:333
 msgid "Height"
@@ -5035,6 +5179,7 @@ msgid "Highlight color"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1490
+#: app/src/react/features/media/ImageEditor.tsx:23
 msgid "Highlights"
 msgstr ""
 
@@ -5104,6 +5249,7 @@ msgid "https://fonts.googleapis.com/css2?family=..."
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1619
+#: app/src/react/features/media/ImageEditor.tsx:27
 msgid "Hue"
 msgstr ""
 
@@ -5155,6 +5301,7 @@ msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1372
 #: app/src/pages/products/src/editor/ProductEditor.vue:779
+#: app/src/react/features/media/MediaLibrary.tsx:24
 #: app/src/react/features/products/editor/ProductEditor.tsx:1009
 msgid "Images"
 msgstr ""
@@ -5804,6 +5951,7 @@ msgid "Last %s days"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:171
+#: app/src/react/features/media/MediaLibrary.tsx:221
 #: app/src/react/features/orders/OrdersList.tsx:432
 msgid "Last 30 days"
 msgstr ""
@@ -5817,6 +5965,7 @@ msgid "Last 5 minutes"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:170
+#: app/src/react/features/media/MediaLibrary.tsx:220
 #: app/src/react/features/orders/OrdersList.tsx:431
 msgid "Last 7 days"
 msgstr ""
@@ -5848,6 +5997,10 @@ msgstr ""
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:743
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:743
 msgid "Last Updated"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:222
+msgid "Last year"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:55
@@ -5934,6 +6087,7 @@ msgid "Leave unchanged"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1973
+#: app/src/react/features/media/ImageEditor.tsx:202
 msgid "Left"
 msgstr ""
 
@@ -6058,6 +6212,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:736
 #: app/src/react/features/products/editor/ProductEditor.tsx:932
 msgid "Linked products"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:180
+msgid "List view"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1435
@@ -6198,6 +6356,7 @@ msgid "Location data will appear when visitors browse your site"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1889
+#: app/src/react/features/media/ImageEditor.tsx:324
 msgid "Lock aspect ratio"
 msgstr ""
 
@@ -6373,6 +6532,9 @@ msgstr ""
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:297
 #: app/src/pages/role-editor/src/role-details-view.vue:88
 #: app/src/pages/settings/index.vue:110
+#: app/src/react/features/media/MediaDetails.tsx:105
+#: app/src/react/features/media/MediaEditScreen.tsx:64
+#: app/src/react/features/media/MediaLibrary.tsx:170
 msgid "Media"
 msgstr ""
 
@@ -6799,6 +6961,10 @@ msgstr ""
 msgid "Name (numeric)"
 msgstr ""
 
+#: app/src/react/features/media/MediaLibrary.tsx:234
+msgid "Name A–Z"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:842
 msgid "Name of your custom menu."
 msgstr ""
@@ -6808,6 +6974,10 @@ msgstr ""
 msgid "Name shown to customer"
 msgstr ""
 
+#: app/src/react/features/media/MediaLibrary.tsx:235
+msgid "Name Z–A"
+msgstr ""
+
 #: app/src/components/app/menu/components/MenuSearch.vue:491
 #: app/src/components/app/search/components/EmptyStateInitial.vue:94
 msgid "Navigate"
@@ -6815,6 +6985,10 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1725
 msgid "Negative = blur, positive = sharpen"
+msgstr ""
+
+#: app/src/react/features/media/ImageEditor.tsx:30
+msgid "Negative blurs, positive sharpens"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:152
@@ -6951,6 +7125,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrderDetails.vue:272
 #: app/src/react/features/orders/OrderDetails.tsx:220
 msgid "Newer order #%s"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:232
+msgid "Newest first"
 msgstr ""
 
 #: app/src/pages/activity-log/src/activity-list-view.vue:377
@@ -7526,8 +7704,16 @@ msgstr ""
 msgid "Nothing found for “%s”."
 msgstr ""
 
-#: app/src/react/data/EntityPicker.tsx:106
+#: app/src/react/data/EntityPicker.tsx:110
 msgid "Nothing found."
+msgstr ""
+
+#: app/src/react/features/media/MediaGrid.tsx:58
+msgid "Nothing in the library matches this."
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:229
+msgid "Nothing on the site uses this file."
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/content.tsx:117
@@ -7629,6 +7815,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrderDetails.vue:275
 #: app/src/react/features/orders/OrderDetails.tsx:230
 msgid "Older order #%s"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:233
+msgid "Oldest first"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:249
@@ -9420,6 +9610,10 @@ msgstr ""
 msgid "Replace"
 msgstr ""
 
+#: app/src/react/features/media/MediaDetails.tsx:162
+msgid "Replace file"
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:997
 msgid "Replace Image"
 msgstr ""
@@ -9505,6 +9699,7 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:2019
 #: app/src/pages/settings/src/settings-panel.vue:455
+#: app/src/react/features/media/ImageEditor.tsx:362
 msgid "Reset"
 msgstr ""
 
@@ -9636,6 +9831,7 @@ msgid "Reviews"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1983
+#: app/src/react/features/media/ImageEditor.tsx:205
 msgid "Right"
 msgstr ""
 
@@ -9805,6 +10001,7 @@ msgid "Same as billing address"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1575
+#: app/src/react/features/media/ImageEditor.tsx:25
 msgid "Saturation"
 msgstr ""
 
@@ -9815,6 +10012,7 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:616
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:468
 #: app/src/pages/settings/src/settings-panel.vue:508
+#: app/src/react/features/media/ImageEditor.tsx:368
 #: app/src/react/features/products/AttributesView.tsx:329
 #: app/src/react/features/products/ProductVariations.tsx:208
 msgid "Save"
@@ -9834,6 +10032,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:300
 #: app/src/pages/products/src/TagsView.vue:193
 #: app/src/react/features/comments/CommentDetails.tsx:103
+#: app/src/react/features/media/MediaBulkEdit.tsx:51
+#: app/src/react/features/media/MediaDetails.tsx:117
 #: app/src/react/features/posts/BatchEditModal.tsx:75
 #: app/src/react/features/products/CategoriesView.tsx:214
 #: app/src/react/features/products/ProductQuickEdit.tsx:237
@@ -9935,7 +10135,7 @@ msgstr ""
 #: app/src/pages/posts/src/inline-status-select.vue:70
 #: app/src/pages/posts/src/inline-user-select.vue:114
 #: app/src/pages/posts/src/table-filters.vue:146
-#: app/src/react/data/EntityPicker.tsx:92
+#: app/src/react/data/EntityPicker.tsx:96
 #: app/src/react/form/SearchInput.tsx:57
 #: app/src/react/shell/search/CommandPalette.tsx:167
 msgid "Search"
@@ -10126,6 +10326,11 @@ msgstr ""
 
 #: admin/src/Rest/MediaTags.php:136
 msgid "Search Tags"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:209
+#: app/src/react/features/media/MediaLibrary.tsx:210
+msgid "Search the library"
 msgstr ""
 
 #: admin/src/Rest/RankMathDashboardWidget.php:222
@@ -10545,10 +10750,12 @@ msgid "Setup Instructions"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1512
+#: app/src/react/features/media/ImageEditor.tsx:24
 msgid "Shadows"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1710
+#: app/src/react/features/media/ImageEditor.tsx:30
 msgid "Sharpness"
 msgstr ""
 
@@ -10756,6 +10963,9 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-performance.vue:280
 #: app/src/pages/plugins/src/plugin-performance.vue:297
 #: app/src/react/features/dashboard/cards/site.tsx:40
+#: app/src/react/features/media/ImageEditor.tsx:299
+#: app/src/react/features/media/MediaDetails.tsx:151
+#: app/src/react/features/media/MediaDetails.tsx:208
 msgid "Size"
 msgstr ""
 
@@ -10831,6 +11041,10 @@ msgstr ""
 msgid "Some fields may only be available in the classic editor."
 msgstr ""
 
+#: app/src/react/features/media/queries.ts:221
+msgid "Some files could not be updated."
+msgstr ""
+
 #: app/src/react/features/posts/usePostMutations.ts:55
 msgid "Some items could not be updated."
 msgstr ""
@@ -10842,6 +11056,10 @@ msgstr ""
 
 #: app/src/react/app/ErrorBoundary.tsx:31
 msgid "Something went wrong on this screen"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:241
+msgid "Sort"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:569
@@ -11162,6 +11380,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:294
 #: app/src/pages/products/src/ProductsList.vue:543
 #: app/src/pages/products/src/TagsView.vue:130
+#: app/src/react/features/media/MediaDetails.tsx:214
 #: app/src/react/features/posts/BatchEditModal.tsx:101
 #: app/src/react/features/posts/PostPreview.tsx:93
 #: app/src/react/features/products/editor/ProductEditor.tsx:1114
@@ -11176,6 +11395,10 @@ msgstr ""
 #: app/src/pages/products/src/TagsView.vue:116
 #: app/src/react/features/products/TagsView.tsx:82
 msgid "Tags deleted"
+msgstr ""
+
+#: app/src/react/features/media/queries.ts:245
+msgid "Tags updated"
 msgstr ""
 
 #: app/src/pages/admin-notices/src/edit.vue:473
@@ -11205,6 +11428,7 @@ msgid "Taxes"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1641
+#: app/src/react/features/media/ImageEditor.tsx:28
 msgid "Temperature"
 msgstr ""
 
@@ -11256,6 +11480,10 @@ msgstr ""
 msgid "The chosen tags replace the current ones."
 msgstr ""
 
+#: app/src/react/features/media/MediaDetails.tsx:84
+msgid "The clipboard is not available here."
+msgstr ""
+
 #: app/src/pages/products/src/ProductsList.vue:445
 #: app/src/react/features/products/ProductsList.tsx:224
 msgid "The copy was saved as a draft."
@@ -11275,6 +11503,10 @@ msgstr ""
 msgid "The display name for this role"
 msgstr ""
 
+#: app/src/react/features/media/MediaLibrary.tsx:132
+msgid "The download could not be prepared."
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:306
 #: app/src/react/features/products/editor/ProductEditor.tsx:329
 msgid "The end date must be after the start date."
@@ -11282,6 +11514,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:779
 msgid "The exact font-family name as defined in the stylesheet"
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:91
+msgid "The file will be deleted for good. The media library has no trash."
 msgstr ""
 
 #: admin/src/Update/Updater.php:395
@@ -11474,6 +11710,14 @@ msgstr ""
 msgid "this file"
 msgstr ""
 
+#: app/src/react/features/media/MediaDetails.tsx:69
+msgid "This file could not be loaded."
+msgstr ""
+
+#: app/src/react/features/media/MediaEditScreen.tsx:53
+msgid "This image could not be opened for editing."
+msgstr ""
+
 #: admin/src/Rest/RankMathDashboardWidget.php:223
 msgid "This is the number of pageviews carried out by visitors from Search Engines."
 msgstr ""
@@ -11621,6 +11865,7 @@ msgid "Timezone:"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1666
+#: app/src/react/features/media/ImageEditor.tsx:29
 msgid "Tint"
 msgstr ""
 
@@ -11629,6 +11874,8 @@ msgstr ""
 #: app/src/pages/admin-notices/src/edit.vue:324
 #: app/src/pages/media/src/media-details-view.vue:880
 #: app/src/pages/media/src/media-list-view.vue:1919
+#: app/src/react/features/media/MediaBulkEdit.tsx:57
+#: app/src/react/features/media/MediaDetails.tsx:185
 msgid "Title"
 msgstr ""
 
@@ -11671,6 +11918,7 @@ msgid "today"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:169
+#: app/src/react/features/media/MediaLibrary.tsx:219
 #: app/src/react/features/orders/OrdersList.tsx:430
 msgid "Today"
 msgstr ""
@@ -11972,6 +12220,7 @@ msgstr ""
 #: app/src/pages/database/src/table-view.vue:461
 #: app/src/pages/database/src/table-view.vue:554
 #: app/src/pages/plugins/src/plugin-performance.vue:377
+#: app/src/react/features/media/MediaDetails.tsx:207
 #: app/src/react/features/products/ProductsList.tsx:488
 msgid "Type"
 msgstr ""
@@ -12138,6 +12387,10 @@ msgstr ""
 msgid "Unused Media Only"
 msgstr ""
 
+#: app/src/react/features/media/MediaLibrary.tsx:254
+msgid "Unused only"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:619
 #: app/src/pages/plugins/src/plugin-card.vue:324
 #: app/src/pages/posts/src/batch-edit.vue:157
@@ -12193,6 +12446,7 @@ msgid "Updating..."
 msgstr ""
 
 #: app/src/components/utility/media-library/index.vue:684
+#: app/src/react/features/media/MediaLibrary.tsx:183
 msgid "Upload"
 msgstr ""
 
@@ -12202,6 +12456,7 @@ msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1003
 #: app/src/pages/media/src/media-list-view.vue:1029
+#: app/src/react/features/media/queries.ts:189
 msgid "Upload failed"
 msgstr ""
 
@@ -12222,11 +12477,16 @@ msgid "Upload Font"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:862
+#: app/src/react/features/media/MediaDetails.tsx:210
 msgid "Uploaded"
 msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:849
 msgid "Uploaded to this %s"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:309
+msgid "Uploading"
 msgstr ""
 
 #: app/src/pages/plugins/index.vue:310
@@ -12343,6 +12603,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductAttributes.vue:197
 #: app/src/react/features/products/editor/ProductAttributes.tsx:268
 msgid "Used for variations"
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:225
+msgid "Used in"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:1078
@@ -12568,7 +12832,12 @@ msgid "Very High"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1597
+#: app/src/react/features/media/ImageEditor.tsx:26
 msgid "Vibrance"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:25
+msgid "Video"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1384
@@ -12698,6 +12967,7 @@ msgid "Views"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1779
+#: app/src/react/features/media/ImageEditor.tsx:33
 msgid "Vignette"
 msgstr ""
 
@@ -12842,6 +13112,14 @@ msgstr ""
 msgid "What is queued to go out"
 msgstr ""
 
+#: app/src/react/features/media/MediaBulkEdit.tsx:60
+msgid "What the file shows, for people who cannot see it."
+msgstr ""
+
+#: app/src/react/features/media/MediaDetails.tsx:189
+msgid "What the image shows, for people who cannot see it."
+msgstr ""
+
 #: admin/src/Pages/DummyDataPage.php:122
 msgid "What This Generates"
 msgstr ""
@@ -12892,6 +13170,7 @@ msgstr ""
 #: app/src/components/utility/image-editor/index.vue:1899
 #: app/src/pages/products/src/editor/ProductEditor.vue:717
 #: app/src/pages/products/src/ProductQuickEdit.vue:267
+#: app/src/react/features/media/ImageEditor.tsx:305
 #: app/src/react/features/products/editor/ProductEditor.tsx:892
 #: app/src/react/features/products/ProductQuickEdit.tsx:332
 msgid "Width"

@@ -10,6 +10,9 @@
       "%1$s (#%2$s)": [
         "%1$s (#%2$s)"
       ],
+      "%1$s of %2$s": [
+        "%1$s de %2$s"
+      ],
       "%1$s of %2$s failed.": [
         "%1$s de %2$s falharam."
       ],
@@ -33,6 +36,12 @@
       ],
       "%d file(s) uploaded": [
         "%d arquivo(s) enviado(s)"
+      ],
+      "%d file(s) will be changed. Fields left empty stay as they are.": [
+        "%d arquivo(s) serão alterados. Os campos deixados em branco permanecem como estão."
+      ],
+      "%d file(s) will be deleted for good. The media library has no trash.": [
+        "%d arquivo(s) serão excluídos definitivamente. A biblioteca de mídia não tem lixeira."
       ],
       "%d hours ago": [
         "%d horas atrás"
@@ -141,6 +150,9 @@
       ],
       "%s days": [
         "%s dias"
+      ],
+      "%s file(s)": [
+        "%s arquivo(s)"
       ],
       "%s in stock": [
         "%s em estoque"
@@ -424,6 +436,9 @@
       "Add tag": [
         "Adicionar tag"
       ],
+      "Add tags": [
+        "Adicionar tags"
+      ],
       "Add tags...": [
         "Adicionar etiquetas..."
       ],
@@ -450,6 +465,9 @@
       ],
       "Adjust prices": [
         "Ajustar preços"
+      ],
+      "Adjustments": [
+        "Ajustes"
       ],
       "Admin": [
         "Administrador"
@@ -583,6 +601,9 @@
       "Alt text": [
         "Texto alternativo"
       ],
+      "Alternative text": [
+        "Texto alternativo"
+      ],
       "Always show hidden update notifications for specific users/roles": [
         "Exibir sempre as notificações de atualização ocultas para usuários/funções específicos."
       ],
@@ -655,6 +676,9 @@
       "Any stock status": [
         "Qualquer status de estoque"
       ],
+      "Any tag": [
+        "Qualquer tag"
+      ],
       "Appearance": [
         "Aparência"
       ],
@@ -669,6 +693,9 @@
       ],
       "Apply Resize": [
         "Aplicar redimensionamento"
+      ],
+      "Apply crop": [
+        "Aplicar corte"
       ],
       "Apply menu to everyone": [
         "Aplicar o menu a todos"
@@ -759,6 +786,9 @@
       ],
       "Attributes show extra information such as material or size.": [
         "Atributos exibem informações extras como material ou tamanho."
+      ],
+      "Audio": [
+        "Áudio"
       ],
       "Authentication failed. The access token is invalid or expired. Please try reconnecting your Google Analytics account.": [
         "A autenticação falhou. O token de acesso é inválido ou expirou. Tente reconectar sua conta do Google Analytics."
@@ -1276,6 +1306,9 @@
       "Company": [
         "Empresa"
       ],
+      "Compare": [
+        "Comparar"
+      ],
       "Completed": [
         "Concluído"
       ],
@@ -1339,8 +1372,14 @@
       "Cool ← → Warm": [
         "Frio ← → Quente"
       ],
+      "Copied to the clipboard": [
+        "Copiado para a área de transferência"
+      ],
       "Copy CSS": [
         "Copiar CSS"
+      ],
+      "Copy URL": [
+        "Copiar URL"
       ],
       "Copy billing address": [
         "Copiar endereço de cobrança"
@@ -1702,6 +1741,12 @@
       "Delete tags?": [
         "Excluir tags?"
       ],
+      "Delete these files?": [
+        "Excluir estes arquivos?"
+      ],
+      "Delete this file?": [
+        "Excluir este arquivo?"
+      ],
       "Delete value": [
         "Excluir valor"
       ],
@@ -1780,6 +1825,9 @@
       "Dialog": [
         "Diálogo"
       ],
+      "Dimensions": [
+        "Dimensões"
+      ],
       "Direct": [
         "Direto"
       ],
@@ -1852,6 +1900,9 @@
       "Docs": [
         "Documentos"
       ],
+      "Documents": [
+        "Documentos"
+      ],
       "Done": [
         "Feito"
       ],
@@ -1918,6 +1969,9 @@
       "Drop files to upload": [
         "Arraste e solte os arquivos para fazer o upload."
       ],
+      "Drop the files to upload them": [
+        "Solte os arquivos para enviá-los"
+      ],
       "Dropdown": [
         "Menu suspenso"
       ],
@@ -1974,6 +2028,12 @@
       ],
       "Edit coupon": [
         "Editar cupom"
+      ],
+      "Edit files": [
+        "Editar arquivos"
+      ],
+      "Edit image": [
+        "Editar imagem"
       ],
       "Edit items": [
         "Editar itens"
@@ -2611,6 +2671,9 @@
       "File name contains invalid characters.": [
         "O nome do arquivo contém caracteres inválidos."
       ],
+      "File replaced": [
+        "Arquivo substituído"
+      ],
       "File replaced successfully": [
         "Arquivo substituído com sucesso"
       ],
@@ -2658,6 +2721,12 @@
       ],
       "Files duplicated": [
         "Arquivos duplicados"
+      ],
+      "Files updated": [
+        "Arquivos atualizados"
+      ],
+      "Files uploaded": [
+        "Arquivos enviados"
       ],
       "Files uploaded successfully!": [
         "Arquivos enviados com sucesso!"
@@ -2788,6 +2857,9 @@
       "Frontend performance": [
         "Desempenho do front-end"
       ],
+      "Full (%1$s × %2$s)": [
+        "Completo (%1$s × %2$s)"
+      ],
       "Function": [
         "Função"
       ],
@@ -2894,6 +2966,9 @@
         "Verde ← → Magenta"
       ],
       "Grid View": [
+        "Visualização em grade"
+      ],
+      "Grid view": [
         "Visualização em grade"
       ],
       "Gross": [
@@ -3481,6 +3556,9 @@
       "Last updated": [
         "Última atualização"
       ],
+      "Last year": [
+        "Último ano"
+      ],
       "Latest 5 orders": [
         "Últimos 5 pedidos"
       ],
@@ -3614,6 +3692,9 @@
         "Produtos vinculados"
       ],
       "List View": [
+        "Visualização em lista"
+      ],
+      "List view": [
         "Visualização em lista"
       ],
       "Live": [
@@ -4051,6 +4132,12 @@
       "Name (numeric)": [
         "Nome (numérico)"
       ],
+      "Name A–Z": [
+        "Nome A–Z"
+      ],
+      "Name Z–A": [
+        "Nome Z–A"
+      ],
       "Name of your custom menu.": [
         "Nome do seu menu personalizado."
       ],
@@ -4062,6 +4149,9 @@
       ],
       "Negative = blur, positive = sharpen": [
         "Negativo = desfoque, positivo = nitidez"
+      ],
+      "Negative blurs, positive sharpens": [
+        "Negativo desfoca, positivo aumenta a nitidez"
       ],
       "Net": [
         "Líquido"
@@ -4143,6 +4233,9 @@
       ],
       "Newer order #%s": [
         "Pedido mais recente #%s"
+      ],
+      "Newest first": [
+        "Mais recentes primeiro"
       ],
       "Next": [
         "Próximo"
@@ -4519,6 +4612,12 @@
       "Nothing found.": [
         "Nada encontrado."
       ],
+      "Nothing in the library matches this.": [
+        "Nada na biblioteca corresponde a isso."
+      ],
+      "Nothing on the site uses this file.": [
+        "Nada no site usa este arquivo."
+      ],
       "Nothing scheduled for this period.": [
         "Nada agendado para este período."
       ],
@@ -4581,6 +4680,9 @@
       ],
       "Older order #%s": [
         "Pedido mais antigo #%s"
+      ],
+      "Oldest first": [
+        "Mais antigos primeiro"
       ],
       "On Hold": [
         "Em espera"
@@ -5620,6 +5722,9 @@
       "Replace Image": [
         "Substituir imagem"
       ],
+      "Replace file": [
+        "Substituir arquivo"
+      ],
       "Replace secret key": [
         "Substituir chave secreta"
       ],
@@ -6036,6 +6141,9 @@
       ],
       "Search tags": [
         "Buscar tags"
+      ],
+      "Search the library": [
+        "Pesquisar na biblioteca"
       ],
       "Search users": [
         "Pesquisar usuários"
@@ -6460,6 +6568,9 @@
       "Some fields may only be available in the classic editor.": [
         "Alguns campos podem estar disponíveis somente no editor clássico."
       ],
+      "Some files could not be updated.": [
+        "Alguns arquivos não puderam ser atualizados."
+      ],
       "Some items could not be updated.": [
         "Alguns itens não puderam ser atualizados."
       ],
@@ -6468,6 +6579,9 @@
       ],
       "Something went wrong on this screen": [
         "Algo deu errado nesta tela"
+      ],
+      "Sort": [
+        "Ordenar"
       ],
       "Sort By": [
         "Ordenar por"
@@ -6628,6 +6742,9 @@
       "Tags deleted": [
         "Tags excluídas"
       ],
+      "Tags updated": [
+        "Tags atualizadas"
+      ],
       "Target Roles": [
         "Funções-alvo"
       ],
@@ -6697,6 +6814,9 @@
       "The chosen tags replace the current ones.": [
         "As tags escolhidas substituem as atuais."
       ],
+      "The clipboard is not available here.": [
+        "A área de transferência não está disponível aqui."
+      ],
       "The copy was saved as a draft.": [
         "A cópia foi salva como rascunho."
       ],
@@ -6709,11 +6829,17 @@
       "The display name for this role": [
         "O nome de exibição para esta função"
       ],
+      "The download could not be prepared.": [
+        "Não foi possível preparar o download."
+      ],
       "The end date must be after the start date.": [
         "A data final deve ser posterior à data inicial."
       ],
       "The exact font-family name as defined in the stylesheet": [
         "O nome exato da família de fontes, conforme definido na folha de estilo."
+      ],
+      "The file will be deleted for good. The media library has no trash.": [
+        "O arquivo será excluído definitivamente. A biblioteca de mídia não tem lixeira."
       ],
       "The gateway refused the charge.": [
         "O gateway recusou a cobrança."
@@ -6801,6 +6927,12 @@
       ],
       "This comment will be deleted for good. There is no undo.": [
         "Este comentário será excluído definitivamente. Não há como desfazer."
+      ],
+      "This file could not be loaded.": [
+        "Não foi possível carregar este arquivo."
+      ],
+      "This image could not be opened for editing.": [
+        "Não foi possível abrir esta imagem para edição."
       ],
       "This is the number of pageviews carried out by visitors from Search Engines.": [
         "Este é o número de visualizações de página realizadas por visitantes provenientes de mecanismos de busca."
@@ -7195,6 +7327,9 @@
       "Unused media": [
         "Mídia não utilizada"
       ],
+      "Unused only": [
+        "Somente não utilizados"
+      ],
       "Update": [
         "Atualizar"
       ],
@@ -7255,6 +7390,9 @@
       "Uploaded to this %s": [
         "Carregado neste %s"
       ],
+      "Uploading": [
+        "Enviando"
+      ],
       "Uploading Plugin": [
         "Plugin de upload"
       ],
@@ -7308,6 +7446,9 @@
       ],
       "Used for variations": [
         "Usado para variações"
+      ],
+      "Used in": [
+        "Usado em"
       ],
       "Used up": [
         "Esgotado"
@@ -7437,6 +7578,9 @@
       ],
       "Vibrance": [
         "Vibração"
+      ],
+      "Video": [
+        "Vídeo"
       ],
       "Videos": [
         "Vídeos"
@@ -7587,6 +7731,12 @@
       ],
       "What is queued to go out": [
         "O que está na fila para publicar"
+      ],
+      "What the file shows, for people who cannot see it.": [
+        "O que o arquivo mostra, para quem não pode vê-lo."
+      ],
+      "What the image shows, for people who cannot see it.": [
+        "O que a imagem mostra, para quem não pode vê-la."
       ],
       "When enabled, Flexify Dashboard will modernise the default login page.": [
         "Quando ativado, o Painel de Controle do Flexify modernizará a página de login padrão."

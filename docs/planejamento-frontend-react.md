@@ -423,6 +423,14 @@ Posts, mídia, comentários e usuários.
 - O corpo editado é o `raw` — o que foi escrito —, não o `rendered`, que é o que o site fez dele.
 - A tela React fica atrás do filtro `flexify-dashboard/react-comments`, **ligado** por padrão.
 
+**Parte 3 — mídia (concluída em 07/10/2026):** a biblioteca em React, com grade e lista, envio arrastando, filtros, ações em lote, a tela de um arquivo e o editor de imagem.
+
+- A biblioteca carrega por páginas que se acumulam, pedidas quando o fim da lista aparece na tela — é assim que se olha uma biblioteca, rolando, e não é o que uma tabela faz.
+- Os envios vão um de cada vez, com o andamento à vista: uma dúzia de arquivos ao mesmo tempo é uma dúzia de corpos inteiros em trânsito, e o primeiro a ceder é o limite de upload da hospedagem.
+- O editor de imagem **reaproveita as rotinas de pixel do editor Vue** (`components/utility/image-editor/src/*.js`, JavaScript puro — só os filtros são seiscentas linhas). O que foi escrito em React é a superfície: a tela, o ponteiro e os controles. `imageEdits.ts` guarda a aritmética (onde a imagem cai na tela, o que um retângulo desenhado sobre ela significa nos pixels dela), separada para poder ser testada sozinha.
+- A imagem é pedida com `crossOrigin`: sem isso a tela recusa a devolver os pixels depois que algo de outra origem foi desenhado nela, e salvar falharia só em sites que servem os uploads de um CDN.
+- A tela React fica atrás do filtro `flexify-dashboard/react-media`, **ligado** por padrão.
+
 ### Fase 7 — Sistema (GG)
 Plugins, configurações, activity log, database explorer, editor de papéis, construtor de menus, avisos e analytics.
 
