@@ -60,6 +60,26 @@ class CustomCommentsPage {
 
 
     /**
+     * Get the Vite entry of the comments screen.
+     *
+     * Both screens moderate through the same core REST routes, so a site that needs the Vue
+     * one back can have it from the filter.
+     *
+     * @since 4.0.0
+     * @return string
+     */
+    private function get_entry() {
+        /**
+         * Filter whether the React comments screen is used.
+         *
+         * @since 4.0.0
+         * @param bool $enabled Whether the React screen is used.
+         */
+        return (bool) apply_filters( 'flexify-dashboard/react-comments', true ) ? 'react/main/comments.tsx' : 'Comments.js';
+    }
+
+
+    /**
      * Loads comments page styles and scripts.
      *
      * @since 2.0.0
@@ -67,8 +87,10 @@ class CustomCommentsPage {
      */
     public function load_styles_and_scripts() {
         $base_url = plugins_url( 'flexify-dashboard/' );
-        $style_src = $base_url . 'app/dist/assets/styles/comments.css';
-        $script_name = Scripts::get_base_script_path( 'Comments.js' );
+        $entry = $this->get_entry();
+        $stylesheet = Scripts::get_stylesheet_path( $entry );
+        $style_src = $base_url . 'app/dist/' . ( $stylesheet ? $stylesheet : 'assets/styles/comments.css' );
+        $script_name = Scripts::get_base_script_path( $entry );
 
         wp_enqueue_style(
             'flexify-dashboard-comments',

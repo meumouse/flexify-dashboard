@@ -19,6 +19,12 @@
       "%d categories": [
         "%d categorias"
       ],
+      "%d comment(s) will be deleted for good. There is no undo.": [
+        "%d comentário(s) serão excluídos definitivamente. Não há como desfazer."
+      ],
+      "%d comment(s) will be moved to the trash.": [
+        "%d comentário(s) serão movidos para a lixeira."
+      ],
       "%d comments selected": [
         "%d comentários selecionados"
       ],
@@ -129,6 +135,9 @@
       ],
       "%s child items": [
         "%s itens filhos"
+      ],
+      "%s comment(s)": [
+        "%s comentário(s)"
       ],
       "%s days": [
         "%s dias"
@@ -1213,6 +1222,9 @@
       "Comment content...": [
         "Conteúdo do comentário..."
       ],
+      "Comment deleted": [
+        "Comentário excluído"
+      ],
       "Comment deleted successfully": [
         "Comentário excluído com sucesso"
       ],
@@ -1222,14 +1234,38 @@
       "Comment management and administration settings": [
         "Configurações de gerenciamento e administração de comentários"
       ],
+      "Comment moved to the trash": [
+        "Comentário movido para a lixeira"
+      ],
       "Comment not found": [
         "Comentário não encontrado"
+      ],
+      "Comment updated": [
+        "Comentário atualizado"
       ],
       "Comment updated successfully": [
         "Comentário atualizado com sucesso"
       ],
       "Comments": [
         "Comentários"
+      ],
+      "Comments approved": [
+        "Comentários aprovados"
+      ],
+      "Comments deleted": [
+        "Comentários excluídos"
+      ],
+      "Comments held for moderation": [
+        "Comentários enviados para moderação"
+      ],
+      "Comments left on this site show up here.": [
+        "Os comentários deixados neste site aparecem aqui."
+      ],
+      "Comments marked as spam": [
+        "Comentários marcados como spam"
+      ],
+      "Comments moved to the trash": [
+        "Comentários movidos para a lixeira"
       ],
       "Comments updated successfully": [
         "Comentários atualizados com sucesso"
@@ -3067,6 +3103,9 @@
       "In period": [
         "No período"
       ],
+      "In reply to": [
+        "Em resposta a"
+      ],
       "In stock": [
         "Em estoque"
       ],
@@ -3916,6 +3955,9 @@
       "Mobile app": [
         "Aplicativo móvel"
       ],
+      "Moderation": [
+        "Moderação"
+      ],
       "Modern Comments Page": [
         "Página de comentários moderna"
       ],
@@ -4170,6 +4212,9 @@
       ],
       "No comments found": [
         "Nenhum comentário encontrado"
+      ],
+      "No comments here": [
+        "Nenhum comentário aqui"
       ],
       "No comments in this period.": [
         "Nenhum comentário neste período."
@@ -5890,6 +5935,9 @@
       "Search categories": [
         "Buscar categorias"
       ],
+      "Search comments": [
+        "Pesquisar comentários"
+      ],
       "Search comments...": [
         "Pesquisar comentários..."
       ],
@@ -6403,6 +6451,9 @@
       "Solid": [
         "Sólido"
       ],
+      "Some comments could not be updated.": [
+        "Alguns comentários não puderam ser atualizados."
+      ],
       "Some extensions add fields only available in the classic editor": [
         "Algumas extensões adicionam campos disponíveis apenas no editor clássico"
       ],
@@ -6744,6 +6795,12 @@
       ],
       "This attribute has no values yet.": [
         "Este atributo ainda não tem valores."
+      ],
+      "This comment could not be loaded.": [
+        "Não foi possível carregar este comentário."
+      ],
+      "This comment will be deleted for good. There is no undo.": [
+        "Este comentário será excluído definitivamente. Não há como desfazer."
       ],
       "This is the number of pageviews carried out by visitors from Search Engines.": [
         "Este é o número de visualizações de página realizadas por visitantes provenientes de mecanismos de busca."
@@ -7428,6 +7485,9 @@
       ],
       "View on map": [
         "Ver no mapa"
+      ],
+      "View on the site": [
+        "Ver no site"
       ],
       "View products": [
         "Ver produtos"

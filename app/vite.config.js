@@ -29,6 +29,8 @@ export default defineConfig({
 				'admin-notices': path.resolve(__dirname, 'src/apps/js/AdminNotices.js'),
 				analytics: path.resolve(__dirname, 'src/apps/js/Analytics.js'),
 				comments: path.resolve(__dirname, 'src/apps/js/Comments.js'),
+				// React comments screen; the Vue entry stays as the fallback behind the filter.
+				'comments-react': path.resolve(__dirname, 'src/react/main/comments.tsx'),
 				dashboard: path.resolve(__dirname, 'src/apps/js/Dashboard.js'),
 				'dashboard-react': path.resolve(__dirname, 'src/react/main/dashboard.tsx'),
 				database: path.resolve(__dirname, 'src/apps/js/Database.js'),

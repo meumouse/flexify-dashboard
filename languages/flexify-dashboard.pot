@@ -33,6 +33,8 @@ msgid "(no title)"
 msgstr ""
 
 #: admin/src/Rest/PostsTables.php:716
+#: app/src/react/features/comments/CommentDetails.tsx:153
+#: app/src/react/features/comments/CommentsList.tsx:127
 #: app/src/react/features/posts/PostCells.tsx:194
 #: app/src/react/features/posts/PostPreview.tsx:31
 #: app/src/react/features/posts/PostsSidebar.tsx:152
@@ -59,6 +61,14 @@ msgstr ""
 #: app/src/pages/products/src/CategoriesView.vue:164
 #: app/src/react/features/products/CategoriesView.tsx:198
 msgid "%d categories"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:64
+msgid "%d comment(s) will be deleted for good. There is no undo."
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:65
+msgid "%d comment(s) will be moved to the trash."
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:234
@@ -237,6 +247,10 @@ msgstr ""
 #: app/src/pages/posts/index.vue:889
 #: app/src/react/features/posts/PostCells.tsx:200
 msgid "%s child items"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:146
+msgid "%s comment(s)"
 msgstr ""
 
 #: app/src/react/features/dashboard/DashboardPage.tsx:87
@@ -869,6 +883,7 @@ msgstr ""
 #: app/src/pages/posts/src/constants.js:18
 #: app/src/pages/products/src/ProductsList.vue:161
 #: app/src/pages/users/src/user-list-view.vue:867
+#: app/src/react/features/comments/CommentsList.tsx:79
 #: app/src/react/features/orders/OrdersList.tsx:159
 #: app/src/react/features/products/ProductsList.tsx:113
 msgid "All"
@@ -1080,6 +1095,9 @@ msgid "and create a new service account"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-details-view.vue:363
+#: app/src/react/features/comments/CommentDetails.tsx:90
+#: app/src/react/features/comments/CommentDetails.tsx:121
+#: app/src/react/features/comments/CommentsList.tsx:96
 msgid "Anonymous"
 msgstr ""
 
@@ -1172,12 +1190,14 @@ msgid "Apply to roles or users"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:760
+#: app/src/react/features/comments/CommentsList.tsx:180
 msgid "Approve"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-details-view.vue:46
 #: app/src/pages/comments/src/comment-list-view.vue:512
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:186
+#: app/src/react/features/comments/queries.ts:44
 msgid "Approved"
 msgstr ""
 
@@ -1335,6 +1355,8 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-card.vue:384
 #: app/src/pages/posts/src/batch-edit.vue:150
 #: app/src/pages/posts/src/post-preview.vue:354
+#: app/src/react/features/comments/CommentDetails.tsx:117
+#: app/src/react/features/comments/CommentsList.tsx:91
 #: app/src/react/features/posts/BatchEditModal.tsx:90
 #: app/src/react/features/posts/PostPreview.tsx:79
 msgid "Author"
@@ -2113,11 +2135,18 @@ msgid "comment"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-details-view.vue:542
+#: app/src/react/features/comments/CommentDetails.tsx:91
+#: app/src/react/features/comments/CommentDetails.tsx:111
+#: app/src/react/features/comments/CommentsList.tsx:104
 msgid "Comment"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-details-view.vue:546
 msgid "Comment content..."
+msgstr ""
+
+#: app/src/react/features/comments/CommentDetails.tsx:81
+msgid "Comment deleted"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-details-view.vue:241
@@ -2141,8 +2170,17 @@ msgstr ""
 msgid "Comment management and administration settings"
 msgstr ""
 
+#: app/src/react/features/comments/CommentDetails.tsx:81
+msgid "Comment moved to the trash"
+msgstr ""
+
 #: app/src/pages/comments/src/comment-details-view.vue:112
 msgid "Comment not found"
+msgstr ""
+
+#: app/src/react/features/comments/CommentDetails.tsx:101
+#: app/src/react/features/comments/queries.ts:123
+msgid "Comment updated"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-details-view.vue:195
@@ -2158,7 +2196,33 @@ msgstr ""
 #: app/src/apps/js/Comments.js:37
 #: app/src/pages/comments/src/comment-list-view.vue:465
 #: app/src/pages/settings/index.vue:122
+#: app/src/react/features/comments/CommentDetails.tsx:91
+#: app/src/react/features/comments/CommentsList.tsx:146
 msgid "Comments"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:179
+msgid "Comments approved"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:71
+msgid "Comments deleted"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:182
+msgid "Comments held for moderation"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:176
+msgid "Comments left on this site show up here."
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:185
+msgid "Comments marked as spam"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:71
+msgid "Comments moved to the trash"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:307
@@ -2754,6 +2818,8 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:243
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/products/src/ProductsList.vue:187
+#: app/src/react/features/comments/CommentDetails.tsx:161
+#: app/src/react/features/comments/CommentsList.tsx:141
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:392
 #: app/src/react/features/orders/OrdersList.tsx:519
@@ -2905,6 +2971,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:480
 #: app/src/pages/products/src/ProductsList.vue:492
 #: app/src/pages/products/src/ProductsList.vue:665
+#: app/src/react/features/comments/CommentDetails.tsx:75
+#: app/src/react/features/comments/CommentDetails.tsx:95
+#: app/src/react/features/comments/CommentsList.tsx:66
+#: app/src/react/features/comments/CommentsList.tsx:189
 #: app/src/react/features/orders/OrdersList.tsx:248
 #: app/src/react/features/orders/OrdersList.tsx:270
 #: app/src/react/features/orders/OrdersList.tsx:627
@@ -2922,6 +2992,8 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:394
 #: app/src/pages/products/src/ProductsList.vue:476
+#: app/src/react/features/comments/CommentDetails.tsx:73
+#: app/src/react/features/comments/CommentsList.tsx:62
 #: app/src/react/features/design-system/Showcase.tsx:277
 #: app/src/react/features/orders/OrdersList.tsx:244
 #: app/src/react/features/posts/PostRowMenu.tsx:21
@@ -3545,6 +3617,7 @@ msgstr ""
 #: app/src/pages/users/src/user-import.vue:54
 #: app/src/pages/users/src/user-list-view.vue:1131
 #: app/src/pages/users/src/user-list-view.vue:1562
+#: app/src/react/features/comments/CommentDetails.tsx:130
 #: app/src/react/features/orders/OrdersList.tsx:290
 msgid "Email"
 msgstr ""
@@ -5159,6 +5232,11 @@ msgstr ""
 msgid "In Range"
 msgstr ""
 
+#: app/src/react/features/comments/CommentDetails.tsx:150
+#: app/src/react/features/comments/CommentsList.tsx:111
+msgid "In reply to"
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:150
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:40
 #: app/src/pages/products/src/ProductsList.vue:254
@@ -6522,6 +6600,10 @@ msgstr ""
 msgid "Mobile app"
 msgstr ""
 
+#: app/src/react/features/comments/CommentDetails.tsx:139
+msgid "Moderation"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:792
 msgid "Modern Comments Page"
 msgstr ""
@@ -6622,12 +6704,18 @@ msgstr ""
 msgid "Move down"
 msgstr ""
 
+#: app/src/react/features/comments/CommentDetails.tsx:75
+#: app/src/react/features/comments/CommentDetails.tsx:95
+#: app/src/react/features/comments/CommentsList.tsx:66
+#: app/src/react/features/comments/CommentsList.tsx:189
 #: app/src/react/features/posts/PostRowMenu.tsx:23
 #: app/src/react/features/posts/PostRowMenu.tsx:39
 #: app/src/react/features/posts/PostsList.tsx:89
 msgid "Move to the trash"
 msgstr ""
 
+#: app/src/react/features/comments/CommentDetails.tsx:73
+#: app/src/react/features/comments/CommentsList.tsx:62
 #: app/src/react/features/posts/PostRowMenu.tsx:21
 #: app/src/react/features/posts/PostsList.tsx:87
 msgid "Move to the trash?"
@@ -6693,6 +6781,7 @@ msgstr ""
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:207
 #: app/src/pages/users/src/user-list-view.vue:1344
 #: app/src/pages/users/src/user-list-view.vue:1549
+#: app/src/react/features/comments/CommentDetails.tsx:127
 #: app/src/react/features/design-system/Showcase.tsx:386
 #: app/src/react/features/products/AttributesView.tsx:51
 #: app/src/react/features/products/AttributesView.tsx:183
@@ -6964,6 +7053,10 @@ msgstr ""
 #: app/src/pages/comments/src/comment-list-view.vue:659
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:276
 msgid "No comments found"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:175
+msgid "No comments here"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/content.tsx:177
@@ -8123,6 +8216,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:164
 #: app/src/pages/products/src/ProductsList.vue:227
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:87
+#: app/src/react/features/comments/CommentsList.tsx:183
+#: app/src/react/features/comments/queries.ts:45
 #: app/src/react/features/products/productFormat.ts:13
 #: app/src/react/features/products/ProductsList.tsx:116
 #: app/src/react/shell/search/commands.ts:63
@@ -9738,6 +9833,7 @@ msgstr ""
 #: app/src/pages/products/src/CategoriesView.vue:208
 #: app/src/pages/products/src/ProductQuickEdit.vue:300
 #: app/src/pages/products/src/TagsView.vue:193
+#: app/src/react/features/comments/CommentDetails.tsx:103
 #: app/src/react/features/posts/BatchEditModal.tsx:75
 #: app/src/react/features/products/CategoriesView.tsx:214
 #: app/src/react/features/products/ProductQuickEdit.tsx:237
@@ -9875,6 +9971,11 @@ msgstr ""
 #: app/src/react/features/products/CategoriesView.tsx:197
 #: app/src/react/features/products/editor/ProductEditor.tsx:1078
 msgid "Search categories"
+msgstr ""
+
+#: app/src/react/features/comments/CommentsList.tsx:155
+#: app/src/react/features/comments/CommentsList.tsx:156
+msgid "Search comments"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:478
@@ -10716,6 +10817,10 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
+#: app/src/react/features/comments/queries.ts:148
+msgid "Some comments could not be updated."
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:612
 #: app/src/react/features/products/editor/ProductEditor.tsx:661
 msgid "Some extensions add fields only available in the classic editor"
@@ -10765,6 +10870,8 @@ msgstr ""
 #: app/src/pages/comments/src/comment-details-view.vue:62
 #: app/src/pages/comments/src/comment-list-view.vue:534
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:202
+#: app/src/react/features/comments/CommentsList.tsx:186
+#: app/src/react/features/comments/queries.ts:46
 msgid "Spam"
 msgstr ""
 
@@ -10856,6 +10963,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:228
 #: app/src/pages/products/src/ProductsList.vue:186
 #: app/src/pages/products/src/ProductsList.vue:647
+#: app/src/react/features/comments/CommentDetails.tsx:141
+#: app/src/react/features/comments/CommentsList.tsx:134
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:127
 #: app/src/react/features/design-system/Showcase.tsx:90
 #: app/src/react/features/design-system/Showcase.tsx:233
@@ -11353,6 +11462,14 @@ msgstr ""
 msgid "this comment"
 msgstr ""
 
+#: app/src/react/features/comments/CommentDetails.tsx:62
+msgid "This comment could not be loaded."
+msgstr ""
+
+#: app/src/react/features/comments/CommentDetails.tsx:74
+msgid "This comment will be deleted for good. There is no undo."
+msgstr ""
+
 #: app/src/pages/media/src/media-list-view.vue:735
 msgid "this file"
 msgstr ""
@@ -11780,6 +11897,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:166
 #: app/src/pages/products/src/ProductsList.vue:230
 #: app/src/pages/products/src/ProductsList.vue:661
+#: app/src/react/features/comments/queries.ts:47
 #: app/src/react/features/design-system/Showcase.tsx:330
 #: app/src/react/features/orders/OrdersList.tsx:172
 #: app/src/react/features/orders/OrdersList.tsx:647
@@ -12532,6 +12650,10 @@ msgstr ""
 msgid "View on map"
 msgstr ""
 
+#: app/src/react/features/comments/CommentDetails.tsx:168
+msgid "View on the site"
+msgstr ""
+
 #: app/src/pages/products/src/CategoriesView.vue:186
 #: app/src/pages/products/src/TagsView.vue:168
 #: app/src/react/features/products/CategoriesView.tsx:168
@@ -12675,6 +12797,7 @@ msgstr ""
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:252
 #: app/src/pages/users/src/user-import.vue:59
 #: app/src/pages/users/src/user-list-view.vue:1358
+#: app/src/react/features/comments/CommentDetails.tsx:133
 msgid "Website"
 msgstr ""
 
@@ -12928,6 +13051,7 @@ msgstr ""
 msgid "You are not allowed to publish products."
 msgstr ""
 
+#: app/src/react/features/comments/CommentDetails.tsx:74
 #: app/src/react/features/posts/PostRowMenu.tsx:22
 msgid "You can restore it from the trash later."
 msgstr ""

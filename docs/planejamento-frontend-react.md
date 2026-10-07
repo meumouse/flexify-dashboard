@@ -416,6 +416,13 @@ Posts, mídia, comentários e usuários.
 - `EntityPicker` entrou no kit (`react/data/`): escolher categorias, tags ou autores é a mesma coisa três vezes, e a busca acontece no servidor porque um blog com oitocentas categorias nunca mostraria a procurada filtrando no navegador.
 - A tela React fica atrás do filtro `flexify-dashboard/react-posts`, **ligado** por padrão.
 
+**Parte 2 — comentários (concluída em 07/10/2026):** a tela de comentários em React, com a lista, a moderação em lote e a edição de um comentário.
+
+- Cada comentário traz o post junto (`_embed=up`): a tela Vue pedia o tipo de post e o post de cada um, o que seriam sessenta requisições por página de trinta — e, como o endpoint do WordPress não devolve `post_type` no comentário, a condição nunca era verdadeira e o título do post nunca aparecia.
+- Não existe endpoint que conte comentários por status, então cada status é pedido com `per_page=1` e o total vem no cabeçalho: quatro requisições minúsculas em vez de quatro páginas inteiras.
+- O corpo editado é o `raw` — o que foi escrito —, não o `rendered`, que é o que o site fez dele.
+- A tela React fica atrás do filtro `flexify-dashboard/react-comments`, **ligado** por padrão.
+
 ### Fase 7 — Sistema (GG)
 Plugins, configurações, activity log, database explorer, editor de papéis, construtor de menus, avisos e analytics.
 
