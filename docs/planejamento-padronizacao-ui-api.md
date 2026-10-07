@@ -23,13 +23,13 @@ Levantamento em 07/10/2026, sobre `app/src/react`:
 Declaradas porque mudam o resultado. Corrija-me onde estiver errado.
 
 1. **"Seletor" = qualquer controle de escolha**, não só o dropdown: select, checkbox, radio, switch, slider, color, date. Todos devem ser componentes do kit.
-2. **A padronização de fonte por tag vale dentro do `.flexify-dashboard-isolation`**, não no `<body>` do wp-admin inteiro — senão reestiliza telas de terceiros que não controlamos.
+2. **A padronização de fonte por tag vale no wp-admin inteiro** (decisão do projeto, contra a recomendação inicial de limitar ao container isolado). Para reduzir o risco de quebrar telas de terceiros, as regras ficam numa camada de baixa especificidade (`@layer base`, seletor de elemento puro), de modo que qualquer CSS de plugin que defina o próprio tamanho continua ganhando.
 3. **"Ocultar a seção legada e refazer"** vale para markup do WordPress dentro das nossas páginas. A barra `#wpadminbar` é exceção: outros plugins dependem dos seletores dela, então ela continua sendo movida, não recriada.
 4. **Responsividade "máxima"** = três alvos verificados: 375px (celular), 768px (tablet), 1440px (desktop). Não é um breakpoint por tamanho de tela existente.
 
-## 3. Tradeoffs que precisam de decisão sua
+## 3. Decisões tomadas
 
-Estes não dá para decidir sozinho porque custam coisas diferentes.
+Registradas com o que custam, porque daqui a seis meses ninguém lembra.
 
 ### 3.1 Lista de posts: REST estruturada × colunas de terceiros
 
@@ -38,7 +38,7 @@ Hoje a lista roda a `WP_List_Table` de verdade numa página escondida e devolve 
 - **(A) Rota REST que continua renderizando as células** — API First de verdade (sem raspagem de HTML da página), colunas de terceiros continuam funcionando, mas o valor de cada célula continua sendo HTML opaco.
 - **(B) Rota REST com dados estruturados** — mais limpa, ordenável e filtrável do lado do cliente, **mas perde toda coluna de terceiro**, porque elas só existem como `echo`.
 
-Minha recomendação: **(A)**. Ela resolve o que o requisito pede (nada de raspar HTML, rota no namespace interno) sem quebrar integrações.
+**Decidido: (A).** Resolve o que o requisito pede — nada de raspar HTML da página, rota no namespace interno — sem quebrar integrações. O custo aceito é que o conteúdo da célula continua sendo HTML, então ordenar e filtrar por essas colunas segue sendo trabalho do servidor.
 
 ### 3.2 Dropdown nativo × Radix
 
@@ -47,13 +47,13 @@ O `<select>` nativo abre o seletor do sistema — que no celular é melhor que q
 - **(A) Radix em tudo** — consistência visual completa.
 - **(B) Radix no desktop, nativo no toque** — melhor UX, mais código.
 
-Minha recomendação: **(A)**, pela exigência explícita de "todos os seletores são componentes React", mas registrando que (B) é melhor para celular.
+**Decidido: (A).** O custo aceito é perder o seletor nativo do sistema no celular, que é melhor que qualquer dropdown construído. Se isso incomodar no uso real, (B) continua disponível sem refazer os call sites, porque a API do componente não muda.
 
 ### 3.3 Menu lateral: DOM × REST
 
 O menu é construído pelos globais `$menu`/`$submenu` do PHP. Uma rota REST os expõe bem. O custo: hoje o menu é lido do HTML que já está na página, então aparece sem piscar; vindo de REST ele chega depois da primeira pintura.
 
-Mitigação: imprimir o menu como JSON no `<script>` da página (mesmo custo de hoje, sem raspagem de DOM) **e** expor a rota REST para quem precisar dela. Recomendo isso.
+**Decidido:** imprimir o menu como JSON no `<script>` da página — mesmo custo de hoje, sem raspar DOM — **e** expor a rota REST para quem precisar dela.
 
 ## 4. Fases
 

@@ -1,48 +1,65 @@
 # Kit de componentes
 
-Componentes Vue com as receitas do design system (TailAdmin). Ficam em `app/src/components/kit` e são importados de um único ponto:
+Componentes React com as receitas do design system (TailAdmin). Ficam em `app/src/react/ui` e `app/src/react/form`, e são importados de um ponto só:
 
-```js
-import { FdButton, FdCard, FdDataTable } from '@/components/kit';
+```tsx
+import { Button, Card, DataTable } from '@/react/ui';
 ```
 
-Uma vitrine com todos os componentes fica em **Flexify Dashboard → Design System** (`admin.php?page=flexify-dashboard-design-system`), disponível quando `WP_DEBUG` está ativo ou pelo filtro `flexify-dashboard/design-system/enabled`.
+Uma vitrine com todos eles fica em **Flexify Dashboard → Design System** (`admin.php?page=flexify-dashboard-design-system`), disponível quando `WP_DEBUG` está ativo ou pelo filtro `flexify-dashboard/design-system/enabled`.
+
+> Código de tela usa estes componentes, nunca controle HTML cru. A regra e a lista do que é proibido estão em [AGENTS.md](../AGENTS.md).
 
 ## Referência rápida
 
 | Componente | Principais props | Observações |
 |---|---|---|
-| `FdButton` | `variant` (primary, outline, secondary, danger, danger-outline, warning, success, ghost, link), `size` (xs, sm, md, lg), `icon`, `iconRight`, `iconOnly`, `loading`, `block`, `href` | Renderiza `<a>` quando `href` é informado. |
-| `FdInput` | `v-model`, `label`, `hint`, `error`, `success`, `icon`, `prefix`, `suffix`, `size`, `clearable` | Atributos extras vão para o `<input>`. |
-| `FdTextarea` | `v-model`, `label`, `hint`, `error`, `rows` | |
-| `FdSelect` | `v-model`, `options` (`{ value, label }` ou grupos `{ label, options }`), `placeholder`, `label`, `size` | `<select>` nativo estilizado. Para busca/multiseleção use `components/utility/select`. |
-| `FdSearchInput` | `v-model` (valor com debounce), `debounce`, `placeholder` | |
-| `FdCheckbox` | `v-model` (boolean ou array + `value`), `label`, `description`, `indeterminate`, `size` (sm, md) | |
-| `FdRadio` | `v-model`, `value`, `label`, `name` | |
-| `FdSwitch` | `v-model`, `label`, `description`, `size` | |
-| `FdField` | `label`, `hint`, `error`, `success`, `required` | Wrapper para controles personalizados. |
-| `FdBadge` | `color` (primary, success, error, warning, info, orange, purple, light, dark), `variant` (light, solid), `size`, `icon`, `dot`, `pulse` | |
-| `FdAlert` | `variant` (success, error, warning, info), `title`, `message`, `dismissible` | Slot `actions`. |
-| `FdAvatar` | `src`, `name` (iniciais), `size`, `status` | |
-| `FdCard` | `title`, `description`, `padding` (none, sm, md), `divided` | Slots `header`, `actions`, `footer`. |
-| `FdPageHeader` | `title`, `description`, `breadcrumbs` | Slot `actions`. |
-| `FdMetricCard` | `label`, `value`, `icon`, `tone`, `trend`, `loading` | |
-| `FdStatStrip` | `items` (`{ key, label, value, hint, tone, clickable, active }`), `loading` | Evento `select`. |
-| `FdTabs` | `v-model`, `items` (`{ value, label, count, icon }`), `variant` (underline, segmented) | Navegação por setas. |
-| `FdDataTable` | `columns`, `rows`, `rowKey`, `loading`, `selectable` + `v-model:selected`, `v-model:sort`, `expandable` + `v-model:expanded`, `clickableRows` | Slots `cell-{key}`, `header-{key}`, `expanded`, `bulk-actions`, `empty`. |
-| `FdPagination` | `v-model:page`, `v-model:per-page`, `total`, `perPageOptions` | Evento `change`. |
-| `FdDropdown` | `items` (`{ label, icon, onSelect, danger, href }`, `{ separator }`, `{ heading }`), `align`, `side` | Slot `trigger` (use um botão). |
-| `FdModal` | `v-model:open`, `title`, `description`, `size` (sm, md, lg, xl, full), `persistent` | Slots `header`, `footer`. |
-| `FdSheet` | `v-model:open`, `title`, `description`, `side`, `size` | Painel lateral para edição rápida. |
-| `FdConfirmDialog` | — | `await ref.value.show({ title, message, confirmLabel, variant })` retorna `true/false`. |
-| `FdTooltip` | `text`, `side` | Slot `content`. |
-| `FdDropzone` | `accept`, `multiple`, `pickerOnly` | Eventos `files` e `click`. |
-| `FdEmptyState` | `icon`, `title`, `description`, `compact` | |
-| `FdSkeleton`, `FdSpinner` | — | Controlados por classes. |
+| `Button` | `variant` (primary, outline, secondary, danger, danger-outline, warning, success, ghost, link), `size` (xs, sm, md, lg), `icon`, `iconRight`, `iconOnly`, `loading`, `block`, `href` | Renderiza `<a>` quando `href` é informado. Com `iconOnly`, passe `aria-label`. |
+| `Input` | `value`, `onChange`, `label`, `hint`, `error`, `success`, `icon`, `prefix`, `suffix`, `size`, `clearable`, `onClear` | O resto das props vai para o `<input>`. Use `label` — é ele que associa o rótulo ao campo. |
+| `Textarea` | `value`, `onChange`, `label`, `hint`, `error`, `rows` | |
+| `Select` | `value`, `onChange`, `options` (`{ value, label }` ou grupos `{ label, options }`), `placeholder`, `label`, `size` | |
+| `SearchInput` | `value`, `onChange` (reporta depois da pausa), `debounce`, `placeholder`, `size` | Passe `aria-label`. |
+| `Checkbox` | `checked`, `onCheckedChange`, `label`, `description`, `indeterminate`, `size` (sm, md) | |
+| `Radio` | `checked`, `onSelect`, `label`, `description`, `name`, `value` | |
+| `Switch` | `checked`, `onCheckedChange`, `label`, `description`, `size`, `labelPosition` | |
+| `Field` | `label`, `htmlFor`, `hint`, `error`, `success`, `required` | Só para o que **não** é campo do kit. O controle interno precisa de `aria-label`. |
+| `EntityPicker` | `endpoint`, `toItem`, `value`, `onChange`, `multiple`, `placeholder`, `params`, `chosen`, `trigger` | Em `@/react/data`. Busca no servidor. |
+| `Badge` | `color` (primary, success, error, warning, info, orange, purple, light, dark), `variant` (light, solid), `size`, `icon`, `dot`, `pulse` | |
+| `Alert` | `variant` (success, error, warning, info), `title`, `message`, `dismissible`, `actions` | |
+| `Avatar` | `src`, `alt`, `name` (iniciais), `size`, `status`, `rounded` | |
+| `Card` | `title`, `description`, `padding` (none, sm, md), `divided`, `actions`, `header`, `footer` | |
+| `PageHeader` | `title`, `description`, `breadcrumbs`, `actions` | |
+| `MetricCard` | `label`, `value`, `icon`, `tone`, `trend`, `trendLabel`, `loading` | Ícone em quadrado, rótulo, número, badge de variação. |
+| `StatStrip` | `items` (`{ key, label, value, hint, tone, clickable, active }`), `loading`, `onSelect` | |
+| `Tabs` | `value`, `items` (`{ value, label, count, icon, disabled }`), `onChange`, `variant` (underline, segmented), `ariaLabel` | Navegação por setas. |
+| `DataTable` | `columns`, `rows`, `rowKey`, `loading`, `selectable` + `selected`/`onSelectedChange`, `sort`/`onSortChange`, `expandable` + `expanded`/`onExpandedChange`, `clickableRows`/`onRowClick`, `bulkActions` | `columns[].cell` desenha a célula; `renderExpanded` desenha a linha aberta. |
+| `Pagination` | `page`, `perPage`, `total`, `onPageChange`, `onPerPageChange`, `perPageOptions`, `showPerPage` | |
+| `DropdownMenu` | `items` (`{ label, icon, onSelect, danger, href }`, `{ separator }`, `{ heading }`), `trigger`, `align`, `side`, `width` | `trigger` deve ser um botão. |
+| `Popover` | `trigger`, `align`, `side`, `className` | Para conteúdo que não é menu. |
+| `Modal` | `open`, `onOpenChange`, `title`, `description`, `size` (sm, md, lg, xl), `persistent`, `hideClose`, `footer` | |
+| `Sheet` | `open`, `onOpenChange`, `title`, `description`, `side`, `size`, `persistent`, `bare`, `header`, `footer` | Painel lateral. |
+| `Tooltip` | `text`, `side`, `delay` | Envolve o elemento. |
+| `RichText` | `value`, `onChange`, `placeholder`, `minHeight` | Tiptap. |
+| `EmptyState` | `icon`, `title`, `description`, `compact` | |
+| `Skeleton`, `Spinner` | `className` | |
+| `Icon` | `name`, `className`, `title` | `name` é o arquivo em `assets/icons` sem a extensão — um nome sem arquivo desenha um quadrado vazio, e há teste para isso. |
+| `CardRender` | `card`, `props` | Desenha cartão de terceiro (HTML ou React). |
+
+## Confirmação e avisos
+
+Não são componentes, são hooks de contexto:
+
+```tsx
+const confirm = useConfirm();            // @/react/app/ConfirmProvider
+const { notify } = useNotify();          // @/react/app/ToastProvider
+
+if (await confirm({ title, message, confirmLabel, variant: 'danger' })) { … }
+notify({ tone: 'success', title: __('Pronto') });
+```
 
 ## Regras
 
-- **Sobreposições** (modal, dropdown, tooltip, sheet) são renderizadas em `#fd-kit-portal`, um contêiner com `.flexify-dashboard-isolation` para receber os utilitários do Tailwind fora da raiz do app.
-- **Classes compartilhadas** ficam em `recipes.js`. Os componentes legados de `components/utility` (app-button, text-input, toggle, checkboxes, modal, confirm, context-menu, notifications, tabs, select) usam as mesmas receitas e mantêm a API antiga.
-- Use `cn()` de `@/lib/utils.js` para combinar classes — ele conhece os tokens do design system (`text-theme-sm`, `shadow-theme-xs`).
-- Strings visíveis usam `__('Texto', 'flexify-dashboard')`.
+- **Sobreposições** (modal, dropdown, tooltip, popover, sheet) são renderizadas em `#fd-kit-portal`, um contêiner dentro de `.flexify-dashboard-isolation`, para receberem os utilitários do Tailwind fora da raiz do app.
+- **Classes compartilhadas** ficam em `app/src/react/ui/recipes.ts`, que reexporta `app/src/shared/recipes.js`.
+- Use `cn()` de `@/react/lib/cn` para combinar classes — ele conhece os tokens do design system (`text-theme-sm`, `shadow-theme-xs`).
+- Strings visíveis usam `__('Texto')` de `@/react/lib/i18n` (o domínio já é o do plugin).

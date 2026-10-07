@@ -1,8 +1,8 @@
 /**
  * Single source of truth for the design system classes.
  *
- * The recipes live in plain JavaScript so the Vue kit and the React kit render identical
- * styles while both exist. When the Vue kit is removed this file becomes the recipes themselves.
+ * The recipes themselves are plain JavaScript in `shared/`, which is where they stayed when
+ * the Vue kit went: they are strings of class names and belong to no framework.
  */
 export {
 	buttonBase,

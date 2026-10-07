@@ -28,6 +28,8 @@ Voce tambem pode instalar manualmente:
 
 Para trabalhar no plugin a partir de um clone, veja [docs/desenvolvimento.md](docs/desenvolvimento.md).
 
+As diretrizes e os padrões do projeto — arquitetura, componentes, visual, responsividade — estão em [AGENTS.md](AGENTS.md).
+
 ### Compatibilidade
 
 Compativel com WordPress 6.0+ e PHP 7.4+.
