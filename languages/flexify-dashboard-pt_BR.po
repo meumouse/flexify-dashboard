@@ -11156,6 +11156,35 @@ msgstr "Desfazer"
 msgid "Write something…"
 msgstr "Escreva alguma coisa…"
 
+#: app/src/react/shell/SidebarItem.tsx:87
+#: app/src/react/shell/SidebarItem.tsx:129
+msgid "Add to favourites"
+msgstr "Adicionar aos favoritos"
+
+#: app/src/react/shell/AppSidebar.tsx:116
+msgid "Admin menu"
+msgstr "Menu do admin"
+
+#: app/src/react/shell/SidebarItem.tsx:102
+msgid "Collapse submenu"
+msgstr "Recolher submenu"
+
+#: app/src/react/shell/SidebarItem.tsx:102
+msgid "Expand submenu"
+msgstr "Expandir submenu"
+
+#: app/src/react/shell/AppSidebar.tsx:89
+msgid "Favourites"
+msgstr "Favoritos"
+
+#: app/src/react/shell/AppToolbar.tsx:61
+msgid "Log out"
+msgstr "Sair"
+
+#: app/src/react/shell/AppSidebar.tsx:102
+msgid "Remove from favourites"
+msgstr "Remover dos favoritos"
+
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"
 msgid "Add New"

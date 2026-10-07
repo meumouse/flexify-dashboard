@@ -23,6 +23,8 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				app: path.resolve(__dirname, 'src/apps/js/flexify-dashboard.js'),
+				// React shell; the Vue entry stays until the search and the notifications move over.
+				'app-react': path.resolve(__dirname, 'src/react/main/app.tsx'),
 				theme: path.resolve(__dirname, 'src/apps/js/Theme.js'),
 				'activity-log': path.resolve(__dirname, 'src/apps/js/ActivityLog.js'),
 				'admin-notices': path.resolve(__dirname, 'src/apps/js/AdminNotices.js'),

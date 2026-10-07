@@ -1,0 +1,174 @@
+/**
+ * Layout of the admin shell: the sidebar column, the top bar and the slot the native WordPress
+ * page is moved into.
+ *
+ * Lives here, and not inside a component, because the Vue shell and the React shell both render
+ * this structure and have to agree on it.
+ */
+
+@reference "@/assets/css/tailwind.css";
+
+body,
+html {
+  @apply text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900;
+}
+
+#wpfooter {
+  display: none !important;
+}
+
+.flexify-dashboard-container {
+  @apply bg-gray-50 dark:bg-gray-900 min-h-full w-full max-w-full text-gray-700 dark:text-gray-300;
+}
+
+.flexify-dashboard-layout {
+  @apply shrink-0 bg-gray-50 dark:bg-gray-900 flex flex-row flex-nowrap;
+}
+
+.fd-sidebar-container {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+@media (max-width: 1023.98px) {
+  .fd-sidebar-container {
+    display: none;
+  }
+}
+
+.fd-body-container {
+  @apply grow w-full min-w-0;
+}
+
+.fd-right-column {
+  @apply grow flex flex-col relative top-0 min-w-0;
+}
+
+#fd-toolbar {
+  @apply sticky top-0 z-[9];
+}
+
+.is-fullscreen-mode #fd-toolbar {
+  @apply hidden pointer-events-none;
+}
+
+.flexify-dashboard-loading-indicator {
+  @apply fixed top-0 left-0 right-0 z-[999];
+}
+
+html.fd-rounded {
+  padding-top: 0;
+}
+
+html.fd-rounded #fd-body-holder table.fixed {
+  position: static;
+}
+
+html.fd-rounded #adminmenu,
+html.fd-rounded #adminmenuback,
+html.fd-rounded #wpwrap {
+  z-index: -1;
+  display: none !important;
+}
+
+#fd-wpadminbar #wpadminbar {
+  display: flex !important;
+  position: relative;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+#fd-wpadminbar #wpadminbar .ab-empty-item,
+#fd-wpadminbar #wpadminbar a.ab-item,
+#fd-wpadminbar #wpadminbar > #wp-toolbar span.ab-label,
+#fd-wpadminbar #wpadminbar > #wp-toolbar span.noticon {
+  color: rgb(var(--fd-base-500)) !important;
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+#fd-wpadminbar #wpadminbar .ab-empty-item:hover,
+#fd-wpadminbar #wpadminbar a.ab-item:hover,
+#fd-wpadminbar #wpadminbar a.ab-item:hover span.ab-label,
+#fd-wpadminbar #wpadminbar a.ab-item:hover span.noticon {
+  color: rgb(var(--fd-base-800)) !important;
+}
+
+#fd-wpadminbar #wpadminbar a.ab-item:hover #adminbarsearch:before,
+#fd-wpadminbar #wpadminbar a.ab-item:hover .ab-icon:before,
+#fd-wpadminbar #wpadminbar a.ab-item:hover .ab-item:before {
+  color: rgb(var(--fd-base-800)) !important;
+}
+
+#fd-wpadminbar #wpadminbar #adminbarsearch:before,
+#fd-wpadminbar #wpadminbar .ab-icon:before,
+#fd-wpadminbar #wpadminbar .ab-item:before {
+  color: rgb(var(--fd-base-400)) !important;
+}
+
+#fd-wpadminbar #wpadminbar .menupop .ab-sub-wrapper,
+#fd-wpadminbar #wpadminbar .shortlink-input {
+  background: unset;
+  background-color: rgb(var(--fd-base-0));
+  border-radius: 1rem;
+  border: 1px solid rgb(var(--fd-base-200));
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  padding: 0.5rem;
+}
+
+.dark #fd-wpadminbar #wpadminbar .menupop .ab-sub-wrapper,
+.dark #fd-wpadminbar #wpadminbar .shortlink-input {
+  background-color: #1a2231;
+  border-color: rgb(var(--fd-base-800));
+}
+
+#fd-wpadminbar #wpadminbar .ab-submenu a.ab-item {
+  color: rgb(var(--fd-base-700)) !important;
+}
+
+#fd-wpadminbar #wpadminbar .ab-submenu a.ab-item:hover {
+  color: rgb(var(--fd-base-800)) !important;
+}
+
+.dark #fd-wpadminbar #wpadminbar .ab-empty-item,
+.dark #fd-wpadminbar #wpadminbar a.ab-item,
+.dark #fd-wpadminbar #wpadminbar > #wp-toolbar span.ab-label,
+.dark #fd-wpadminbar #wpadminbar > #wp-toolbar span.noticon,
+body.dark #fd-wpadminbar #wpadminbar .ab-empty-item,
+body.dark #fd-wpadminbar #wpadminbar a.ab-item,
+body.dark #fd-wpadminbar #wpadminbar > #wp-toolbar span.ab-label,
+body.dark #fd-wpadminbar #wpadminbar > #wp-toolbar span.noticon {
+  color: rgb(var(--fd-base-400)) !important;
+}
+
+.dark #fd-wpadminbar #wpadminbar a.ab-item:hover,
+.dark #fd-wpadminbar #wpadminbar a.ab-item:hover span.ab-label,
+body.dark #fd-wpadminbar #wpadminbar a.ab-item:hover,
+body.dark #fd-wpadminbar #wpadminbar a.ab-item:hover span.ab-label {
+  color: rgb(255 255 255 / 0.9) !important;
+}
+
+html.fd-rounded #adminmenuwrap {
+  z-index: -1;
+  display: block !important;
+}
+
+html.fd-rounded body.is-fullscreen-mode .block-editor__container {
+  z-index: 3 !important;
+}
+
+#wpcontent,
+#wpfooter {
+  margin-left: 0;
+}

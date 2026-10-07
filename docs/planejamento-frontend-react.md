@@ -360,9 +360,19 @@ Detalhes úteis para as próximas fases:
 - `useUnsavedChanges()` avisa antes de fechar a aba; a navegação dentro do app é confirmada pelas próprias telas. O bloqueio do botão "voltar" do navegador exigiria trocar o `HashRouter` por um data router — ficou de fora.
 - Falta portar da seção 4.7: `CodeEditor` (Ace), `ImageEditor`, `ImageSelect` e `SortableList`. Nenhum é usado pelas telas do WooCommerce; entram com as páginas de conteúdo.
 
-### Fase 5 — Shell e painel (G)
+### Fase 5 — Shell e painel (G) · **em andamento**
 Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o painel com os widgets de e-commerce do TailAdmin.
 **Aceite:** o shell React carrega em todas as telas do wp-admin; páginas ainda em Vue continuam funcionando dentro dele.
+
+**Parte 1 — casca (concluída em 07/10/2026):** sidebar, toolbar, modo escuro e menu do usuário.
+
+- O menu continua sendo lido do DOM do WordPress (`shell/menu/parse.ts`), porque o WordPress imprime o menu como marcação, não como dados. Os ícones vivem em pseudo-elementos `:before` da folha nativa, então o shell regrava essas regras para as classes novas (`shell/menu/iconStyles.ts`).
+- `useAdminMenu()` junta o menu nativo com o menu personalizado publicado para o usuário, com cache por usuário em local storage; `reconcileMenu()` descarta o que o site não tem mais e acrescenta o que ganhou.
+- `useColorScheme()` compartilha a chave `uipc_theme` e o evento `flexify-dashboard-theme-update` com o shell Vue, então os dois concordam sobre o tema enquanto coexistirem.
+- Os estilos de layout da casca saíram do `<style>` do componente Vue para `apps/css/theme/admin-shell.css`, que as duas cascas importam — eles descrevem a mesma estrutura e precisavam estar em um lugar só.
+- A casca React fica atrás do filtro `flexify-dashboard/react-shell` (desligado por padrão) até a busca e o painel de notificações irem junto.
+
+**Parte 2 — pendente:** busca (Ctrl/⌘K), painel de notificações, barra do WordPress embutida e o painel com os widgets de e-commerce.
 
 ### Fase 6 — Conteúdo (GG)
 Posts, mídia, comentários e usuários.

@@ -376,6 +376,9 @@
       "Add tags...": [
         "Adicionar etiquetas..."
       ],
+      "Add to favourites": [
+        "Adicionar aos favoritos"
+      ],
       "Add to gallery": [
         "Adicionar à galeria"
       ],
@@ -411,6 +414,9 @@
       ],
       "Admin layout": [
         "Layout administrativo"
+      ],
+      "Admin menu": [
+        "Menu do admin"
       ],
       "Admin menu behavior and interaction settings": [
         "Configurações de comportamento e interação do menu de administração"
@@ -1098,6 +1104,9 @@
       ],
       "Collapse sidebar": [
         "Recolher barra lateral"
+      ],
+      "Collapse submenu": [
+        "Recolher submenu"
       ],
       "Color": [
         "Cor"
@@ -2134,6 +2143,9 @@
       "Expand sidebar": [
         "Expandir barra lateral"
       ],
+      "Expand submenu": [
+        "Expandir submenu"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -2382,6 +2394,9 @@
       ],
       "Favicon url": [
         "URL do favicon"
+      ],
+      "Favourites": [
+        "Favoritos"
       ],
       "Featured": [
         "Destaque"
@@ -3531,6 +3546,9 @@
       ],
       "Log entry not found.": [
         "Registro de log não encontrado."
+      ],
+      "Log out": [
+        "Sair"
       ],
       "Logged out successfully": [
         "Sessão encerrada com sucesso"
@@ -5277,6 +5295,9 @@
       ],
       "Remove file": [
         "Remover arquivo"
+      ],
+      "Remove from favourites": [
+        "Remover dos favoritos"
       ],
       "Remove from featured": [
         "Remover dos destaques"

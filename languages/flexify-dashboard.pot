@@ -652,6 +652,11 @@ msgstr ""
 msgid "Add tags..."
 msgstr ""
 
+#: app/src/react/shell/SidebarItem.tsx:87
+#: app/src/react/shell/SidebarItem.tsx:129
+msgid "Add to favourites"
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:454
 #: app/src/react/features/products/editor/ProductEditor.tsx:482
 msgid "Add to gallery"
@@ -711,6 +716,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:176
 msgid "Admin layout"
+msgstr ""
+
+#: app/src/react/shell/AppSidebar.tsx:116
+msgid "Admin menu"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:73
@@ -1933,7 +1942,12 @@ msgid "Code"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:145
+#: app/src/react/shell/AppToolbar.tsx:69
 msgid "Collapse sidebar"
+msgstr ""
+
+#: app/src/react/shell/SidebarItem.tsx:102
+msgid "Collapse submenu"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1560
@@ -2534,6 +2548,7 @@ msgstr ""
 #: app/src/components/app/search/composables/useQuickActions.js:74
 #: app/src/components/app/toolbar/index.vue:200
 #: app/src/react/features/design-system/FoundationCheck.tsx:52
+#: app/src/react/shell/AppToolbar.tsx:82
 msgid "Dark mode"
 msgstr ""
 
@@ -2548,6 +2563,7 @@ msgstr ""
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:313
 #: app/src/pages/dashboard/index.vue:723
 #: app/src/pages/settings/index.vue:89
+#: app/src/react/shell/AppSidebar.tsx:83
 msgid "Dashboard"
 msgstr ""
 
@@ -3278,6 +3294,7 @@ msgid "Edit product"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:58
+#: app/src/react/shell/AppToolbar.tsx:57
 msgid "Edit profile"
 msgstr ""
 
@@ -3696,7 +3713,12 @@ msgid "Expand all posts"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:145
+#: app/src/react/shell/AppToolbar.tsx:69
 msgid "Expand sidebar"
+msgstr ""
+
+#: app/src/react/shell/SidebarItem.tsx:102
+msgid "Expand submenu"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:73
@@ -4047,6 +4069,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:482
 msgid "Favicon url"
+msgstr ""
+
+#: app/src/react/shell/AppSidebar.tsx:89
+msgid "Favourites"
 msgstr ""
 
 #: app/src/react/features/products/ProductsList.tsx:501
@@ -5651,6 +5677,7 @@ msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:81
 #: app/src/components/app/toolbar/index.vue:200
+#: app/src/react/shell/AppToolbar.tsx:82
 msgid "Light mode"
 msgstr ""
 
@@ -5828,6 +5855,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:1008
 msgid "Log Level"
+msgstr ""
+
+#: app/src/react/shell/AppToolbar.tsx:61
+msgid "Log out"
 msgstr ""
 
 #: admin/src/Rest/RestLogout.php:87
@@ -6061,6 +6092,7 @@ msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:156
 #: app/src/pages/settings/index.vue:71
+#: app/src/react/shell/AppShell.tsx:107
 msgid "Menu"
 msgstr ""
 
@@ -8749,6 +8781,10 @@ msgstr ""
 msgid "Remove Fix"
 msgstr ""
 
+#: app/src/react/shell/AppSidebar.tsx:102
+msgid "Remove from favourites"
+msgstr ""
+
 #: app/src/pages/products/src/ProductsList.vue:533
 #: app/src/pages/products/src/ProductsList.vue:685
 #: app/src/react/features/products/ProductsList.tsx:277
@@ -10087,6 +10123,7 @@ msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:67
 #: app/src/components/app/toolbar/index.vue:63
+#: app/src/react/shell/AppToolbar.tsx:59
 msgid "Site settings"
 msgstr ""
 
@@ -10950,6 +10987,7 @@ msgid "Today"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:201
+#: app/src/react/shell/AppToolbar.tsx:83
 msgid "Toggle dark mode"
 msgstr ""
 
@@ -10959,10 +10997,12 @@ msgid "Toggle details"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:152
+#: app/src/react/shell/AppToolbar.tsx:75
 msgid "Toggle menu"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:146
+#: app/src/react/shell/AppToolbar.tsx:70
 msgid "Toggle sidebar"
 msgstr ""
 
@@ -11637,6 +11677,7 @@ msgid "User management and administration settings"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:209
+#: app/src/react/shell/AppToolbar.tsx:94
 msgid "User menu"
 msgstr ""
 
@@ -11931,6 +11972,8 @@ msgstr ""
 
 #: app/src/components/app/menu/components/UserDetails.vue:169
 #: app/src/components/app/toolbar/index.vue:59
+#: app/src/react/shell/AppSidebar.tsx:195
+#: app/src/react/shell/AppToolbar.tsx:58
 msgid "Visit site"
 msgstr ""
 

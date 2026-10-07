@@ -480,6 +480,28 @@ class Plugin {
 
 
     /**
+     * Get the Vite entry of the admin shell.
+     *
+     * The Vue shell is kept behind the filter until the search and the notifications panel
+     * move over to React.
+     *
+     * @since 4.0.0
+     * @return string
+     */
+    public static function get_shell_entry() {
+        /**
+         * Filter whether the React admin shell is used.
+         *
+         * @since 4.0.0
+         * @param bool $enabled Whether the React shell is used.
+         */
+        $react = (bool) apply_filters( 'flexify-dashboard/react-shell', false );
+
+        return $react ? 'react/main/app.tsx' : 'flexify-dashboard.js';
+    }
+
+
+    /**
      * Load the base application script.
      *
      * @since 2.0.0
@@ -491,7 +513,7 @@ class Plugin {
         }
 
         self::$plugin_url = plugins_url( 'flexify-dashboard/' );
-        self::$script_name = Scripts::get_base_script_path( 'flexify-dashboard.js' );
+        self::$script_name = Scripts::get_base_script_path( self::get_shell_entry() );
 
         if ( ! self::$script_name ) {
             return;
@@ -792,7 +814,7 @@ class Plugin {
         }
 
         $plugin_url = plugins_url( 'flexify-dashboard/' );
-        $stylesheet_path = Scripts::get_stylesheet_path( 'flexify-dashboard.js' );
+        $stylesheet_path = Scripts::get_stylesheet_path( self::get_shell_entry() );
         $main_style = $stylesheet_path
             ? $plugin_url . 'app/dist/' . $stylesheet_path
             : $plugin_url . 'app/dist/assets/styles/app.css';
