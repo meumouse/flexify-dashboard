@@ -9,7 +9,10 @@
 		"compile:mo:lang": "node compile-mo-cli.js --lang",
 		"pretranslate": "npm run pot",
 		"translate": "node translate-cli.js",
-		"translate:lang": "node translate-cli.js --lang"
+		"translate:lang": "node translate-cli.js --lang",
+		"compile:json": "node generate-json-cli.js",
+		"compile:json:lang": "node generate-json-cli.js --lang",
+		"compile": "npm run compile:mo && npm run compile:json"
 	},
 	"dependencies": {
 		"@google-cloud/translate": "^8.5.0",

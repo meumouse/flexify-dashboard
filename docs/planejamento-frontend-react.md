@@ -310,9 +310,19 @@ Detalhes úteis para as próximas fases:
 - `@vitejs/plugin-react` está na linha 4 porque o Vite do projeto é a versão 5; a versão 6 do plugin exige Vite 8. Atualizar o Vite é um item à parte.
 - Comandos: `npm run build`, `npm run typecheck`, `npm run test:react` (Vitest) e `npm test` (testes puros + Vitest).
 
-### Fase 1 — Kit de UI (G)
+### Fase 1 — Kit de UI (G) · **concluída em 07/10/2026**
 Seções 4.1 a 4.3 e 4.5: primitivos, formulários, tabela de dados e sobreposições, com a página de Design System reescrita em React como vitrine e teste visual.
 **Aceite:** paridade visual com o kit atual; navegação por teclado e nomes acessíveis preservados.
+
+Detalhes úteis para as próximas fases:
+
+- Tudo sai de `@/react/ui` (barril único): primitivos, formulários e `DataTable`.
+- As classes continuam vindo do kit atual através de `src/react/ui/recipes.ts`, que reexporta `components/kit/recipes.js` com os tipos (`ButtonVariant`, `ControlSize`, `FieldState`, `BadgeColor`, `AlertVariant`).
+- Sobreposições usam Radix e são renderizadas no portal `#fd-kit-portal` do `PageShell` via `usePortalTarget()`, para herdar o tema dentro do contêiner de isolamento.
+- Confirmações destrutivas usam `useConfirm()` (`ConfirmProvider`), que devolve `Promise<boolean>` — não há mais `window.confirm`.
+- A página de Design System (`src/react/features/design-system/`) é a vitrine do kit; os arquivos Vue equivalentes foram removidos.
+- Testes: `src/react/ui/kit.test.tsx` cobre teclado, nomes acessíveis, portal, debounce e a `DataTable` (seleção, ordenação, expansão). O `afterEach` global restaura os temporizadores reais, senão um teste que falha com `vi.useFakeTimers()` travaria todos os seguintes.
+- Traduções: `languages/convert-cli.js` foi substituído por `generate-json-cli.js` (ESM, usa o `gettext-parser` já instalado e não depende mais do `i18next-conv`); gere com `npm run compile` dentro de `languages/`.
 
 ### Fase 2 — WooCommerce: Produtos (G)
 Lista, filtros, variações expansíveis, edição rápida, ações em massa, categorias, tags, atributos e cupons.

@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ConfirmProvider } from '@/react/app/ConfirmProvider';
 import { ErrorBoundary } from '@/react/app/ErrorBoundary';
 import { ThemeProvider } from '@/react/app/ThemeProvider';
 import { ToastProvider, useNotify } from '@/react/app/ToastProvider';
@@ -59,7 +60,9 @@ export const AppProviders = ({ children, pageScript, wpData }: Props) => (
 		<WpDataProvider pageScript={pageScript} value={wpData}>
 			<ThemeProvider>
 				<ToastProvider>
-					<QueryProvider>{children}</QueryProvider>
+					<QueryProvider>
+						<ConfirmProvider>{children}</ConfirmProvider>
+					</QueryProvider>
 				</ToastProvider>
 			</ThemeProvider>
 		</WpDataProvider>

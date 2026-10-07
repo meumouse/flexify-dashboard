@@ -166,6 +166,7 @@ msgid "%d variations"
 msgstr ""
 
 #: app/src/components/kit/FdPagination.vue:77
+#: app/src/react/ui/Pagination.tsx:87
 msgid "%s / page"
 msgstr ""
 
@@ -227,6 +228,7 @@ msgid "%s scheduled."
 msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:95
+#: app/src/react/data/DataTable.tsx:135
 msgid "%s selected"
 msgstr ""
 
@@ -275,6 +277,10 @@ msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:241
 msgid "1 user selected"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:220
+msgid "162 orders"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:485
@@ -347,6 +353,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:730
 #: app/src/pages/products/src/ProductVariations.vue:126
 #: app/src/pages/products/src/TagsView.vue:174
+#: app/src/react/features/design-system/Showcase.tsx:104
 msgid "Actions"
 msgstr ""
 
@@ -522,6 +529,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:384
 #: app/src/pages/orders/src/OrderEditor.vue:405
 #: app/src/pages/orders/src/OrdersList.vue:495
+#: app/src/react/features/design-system/Showcase.tsx:348
 msgid "Add order"
 msgstr ""
 
@@ -668,6 +676,10 @@ msgstr ""
 #: app/src/components/app/search/utils/formatRelativeDate.js:25
 #: app/src/components/app/search/utils/formatRelativeDate.js:29
 msgid "ago"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:190
+msgid "Alerts"
 msgstr ""
 
 #: admin/src/Rest/CustomFields/LocationDataProvider.php:140
@@ -1035,6 +1047,10 @@ msgstr ""
 msgid "Are you sure? This will delete all existing analytics data."
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:254
+msgid "Arrives in 1 day."
+msgstr ""
+
 #: app/src/pages/database/src/layout.vue:199
 #: app/src/pages/posts/src/table-filters.vue:34
 msgid "Ascending"
@@ -1155,6 +1171,10 @@ msgstr ""
 msgid "Available to refund: %s"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:366
+msgid "Available to refund: R$ 85,80"
+msgstr ""
+
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:491
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:491
 msgid "Average Order"
@@ -1214,6 +1234,10 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:682
 msgid "Backorders"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:169
+msgid "Badges"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:406
@@ -1280,6 +1304,7 @@ msgid "Bounce Rate"
 msgstr ""
 
 #: app/src/components/kit/FdPageHeader.vue:19
+#: app/src/react/ui/PageHeader.tsx:24
 msgid "Breadcrumb"
 msgstr ""
 
@@ -1329,12 +1354,20 @@ msgstr ""
 msgid "Button text"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:142
+msgid "Buttons"
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:666
 msgid "Buy product"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:325
 msgid "Callback"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:384
+msgid "Camiseta Básica Algodão"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:714
@@ -1377,11 +1410,14 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:1430
 #: app/src/pages/users/src/user-list-view.vue:1610
 #: app/src/pages/users/src/user-list-view.vue:1723
+#: app/src/react/app/ConfirmProvider.tsx:59
+#: app/src/react/features/design-system/Showcase.tsx:370
 msgid "Cancel"
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:91
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:91
+#: app/src/react/features/design-system/Showcase.tsx:283
 msgid "Cancelled"
 msgstr ""
 
@@ -1483,6 +1519,10 @@ msgstr ""
 
 #: app/src/pages/activity-log/src/activity-details-view.vue:342
 msgid "Changes"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:193
+msgid "Check the stock"
 msgstr ""
 
 #: admin/src/Update/Updater.php:332
@@ -1603,6 +1643,7 @@ msgstr ""
 #: app/src/components/app/search/components/SearchHistory.vue:33
 #: app/src/components/kit/FdInput.vue:96
 #: app/src/pages/database/src/query-editor.vue:177
+#: app/src/react/form/Input.tsx:81
 msgid "Clear"
 msgstr ""
 
@@ -1634,6 +1675,7 @@ msgstr ""
 #: app/src/pages/media/src/media-list-view.vue:1858
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:567
 #: app/src/pages/users/src/user-list-view.vue:1500
+#: app/src/react/data/DataTable.tsx:142
 msgid "Clear selection"
 msgstr ""
 
@@ -1672,6 +1714,8 @@ msgstr ""
 #: app/src/components/app/search/layout-fix-dialog.vue:1119
 #: app/src/components/kit/FdModal.vue:72
 #: app/src/components/kit/FdSheet.vue:69
+#: app/src/react/ui/Modal.tsx:59
+#: app/src/react/ui/Sheet.tsx:72
 msgid "Close"
 msgstr ""
 
@@ -1779,6 +1823,10 @@ msgstr ""
 msgid "Completed"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:132
+msgid "Components"
+msgstr ""
+
 #: app/src/pages/settings/index.vue:106
 msgid "Configure external services and API keys"
 msgstr ""
@@ -1802,7 +1850,12 @@ msgid "Confira seu e-mail para continuar o processo de recuperação de senha."
 msgstr ""
 
 #: app/src/components/kit/FdConfirmDialog.vue:23
+#: app/src/react/app/ConfirmProvider.tsx:62
 msgid "Confirm"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:286
+msgid "Confirm dialog"
 msgstr ""
 
 #: admin/src/Pages/Login.php:1642
@@ -1910,7 +1963,7 @@ msgid ""
 "manually below."
 msgstr ""
 
-#: app/src/react/app/AppProviders.tsx:46
+#: app/src/react/app/AppProviders.tsx:47
 msgid "Could not load the data"
 msgstr ""
 
@@ -1930,7 +1983,7 @@ msgstr ""
 msgid "Could not restore the product."
 msgstr ""
 
-#: app/src/react/app/AppProviders.tsx:49
+#: app/src/react/app/AppProviders.tsx:50
 msgid "Could not save the changes"
 msgstr ""
 
@@ -2177,6 +2230,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:539
 #: app/src/pages/orders/src/OrdersList.vue:237
 #: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/react/features/design-system/Showcase.tsx:82
 msgid "Customer"
 msgstr ""
 
@@ -2202,6 +2256,7 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/customers/component.vue:76
 #: app/src/pages/orders/src/OrdersList.vue:462
+#: app/src/react/features/design-system/Showcase.tsx:211
 msgid "Customers"
 msgstr ""
 
@@ -2257,6 +2312,10 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:307
+msgid "Data table"
+msgstr ""
+
 #: app/src/pages/settings/index.vue:143
 msgid "Database"
 msgstr ""
@@ -2295,6 +2354,7 @@ msgid "day"
 msgstr ""
 
 #: app/src/components/app/search/utils/formatRelativeDate.js:28
+#: app/src/react/features/design-system/Showcase.tsx:302
 msgid "days"
 msgstr ""
 
@@ -2358,6 +2418,8 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:475
 #: app/src/pages/users/src/user-list-view.vue:1491
 #: app/src/pages/users/src/user-list.vue:223
+#: app/src/react/features/design-system/Showcase.tsx:279
+#: app/src/react/features/design-system/Showcase.tsx:294
 msgid "Delete"
 msgstr ""
 
@@ -2413,6 +2475,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:394
 #: app/src/pages/products/src/ProductsList.vue:476
+#: app/src/react/features/design-system/Showcase.tsx:277
 msgid "Delete permanently?"
 msgstr ""
 
@@ -2455,6 +2518,7 @@ msgid "Delete variation?"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:223
+#: app/src/react/features/design-system/Showcase.tsx:283
 msgid "Deleted"
 msgstr ""
 
@@ -2490,6 +2554,7 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:633
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:350
 #: app/src/pages/products/src/TagsView.vue:189
+#: app/src/react/features/design-system/Showcase.tsx:243
 msgid "Description"
 msgstr ""
 
@@ -2506,7 +2571,13 @@ msgid "Deselect All"
 msgstr ""
 
 #: admin/src/Pages/DesignSystemPage.php:70
+#: app/src/react/features/design-system/Showcase.tsx:113
+#: app/src/react/features/design-system/Showcase.tsx:115
 msgid "Design System"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:135
+msgid "Design system sections"
 msgstr ""
 
 #: app/src/components/index.js:14
@@ -2514,6 +2585,10 @@ msgstr ""
 #: app/src/pages/media/src/media-details-view.vue:1027
 #: app/src/pages/users/src/components/index.js:14
 msgid "Details"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:319
+msgid "Details of"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:164
@@ -2564,6 +2639,7 @@ msgid "Disable theme"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:329
+#: app/src/react/features/design-system/Showcase.tsx:159
 msgid "Disabled"
 msgstr ""
 
@@ -2605,6 +2681,7 @@ msgstr ""
 
 #: app/src/components/kit/FdAlert.vue:36
 #: app/src/react/app/ToastProvider.tsx:96
+#: app/src/react/ui/Alert.tsx:40
 msgid "Dismiss"
 msgstr ""
 
@@ -2648,6 +2725,10 @@ msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1824
 msgid "Download"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:291
+msgid "Download CSV"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:710
@@ -2707,6 +2788,7 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:122
 #: app/src/pages/products/src/ProductQuickEdit.vue:51
 #: app/src/pages/products/src/ProductsList.vue:226
+#: app/src/react/features/design-system/Showcase.tsx:239
 msgid "Draft"
 msgstr ""
 
@@ -2741,6 +2823,10 @@ msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1661
 msgid "Drop files to upload"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:298
+msgid "Dropdown"
 msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:225
@@ -2936,6 +3022,10 @@ msgstr ""
 
 #: app/src/pages/login/src/login-recovery-panel.vue:42
 msgid "Email or username"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:338
+msgid "Empty and loading states"
 msgstr ""
 
 #: admin/src/License/LicenseService.php:410
@@ -3228,6 +3318,10 @@ msgstr ""
 msgid "Every 30 Seconds"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:312
+msgid "Example orders"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:913
 msgid "Exclude roles or users"
 msgstr ""
@@ -3249,6 +3343,7 @@ msgid "Execution time"
 msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:128
+#: app/src/react/data/DataTable.tsx:166
 msgid "Expand"
 msgstr ""
 
@@ -3273,6 +3368,8 @@ msgid "Expiry date"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:589
+#: app/src/react/features/design-system/Showcase.tsx:290
+#: app/src/react/features/design-system/Showcase.tsx:327
 msgid "Export"
 msgstr ""
 
@@ -3311,6 +3408,10 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1468
 msgid "Exposure"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:254
+msgid "Express shipping"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:445
@@ -3611,6 +3712,8 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:772
 #: app/src/pages/products/src/ProductQuickEdit.vue:231
+#: app/src/react/features/design-system/Showcase.tsx:248
+#: app/src/react/features/design-system/Showcase.tsx:388
 msgid "Featured product"
 msgstr ""
 
@@ -3849,6 +3952,10 @@ msgstr ""
 msgid "Fixed product discount"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:115
+msgid "Flexify Dashboard"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/license-key.vue:148
 msgid "Flexify Dashboard licence key"
 msgstr ""
@@ -3912,8 +4019,16 @@ msgstr ""
 msgid "Forgot password?"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:226
+msgid "Form controls"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-panel.vue:532
 msgid "Found"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:133
+msgid "Foundation"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:124
@@ -4284,8 +4399,16 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:157
+msgid "Icon after"
+msgstr ""
+
 #: app/src/components/app/menu/components/FavoritesSection.vue:209
 msgid "icon name"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:160
+msgid "Icon only button"
 msgstr ""
 
 #: app/src/components/utility/media-library/index.vue:52
@@ -4399,6 +4522,10 @@ msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:62
 msgid "Increase"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:250
+msgid "Indeterminate"
 msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:533
@@ -4800,6 +4927,7 @@ msgid "Items duplicated"
 msgstr ""
 
 #: app/src/components/kit/FdPagination.vue:70
+#: app/src/react/ui/Pagination.tsx:78
 msgid "Items per page"
 msgstr ""
 
@@ -5094,6 +5222,15 @@ msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1435
 msgid "List View"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:182
+msgid "Live"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:158
+#: app/src/react/features/design-system/Showcase.tsx:213
+msgid "Loading"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:155
@@ -5538,6 +5675,10 @@ msgstr ""
 msgid "Method"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:209
+msgid "Metrics"
+msgstr ""
+
 #: app/src/pages/products/src/ProductsList.vue:613
 msgid "Min. price"
 msgstr ""
@@ -5686,6 +5827,7 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:506
 #: app/src/pages/products/src/ProductsList.vue:480
 #: app/src/pages/products/src/ProductsList.vue:507
+#: app/src/react/features/design-system/Showcase.tsx:102
 msgid "Move to trash"
 msgstr ""
 
@@ -5717,6 +5859,7 @@ msgstr ""
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:207
 #: app/src/pages/users/src/user-list-view.vue:1344
 #: app/src/pages/users/src/user-list-view.vue:1549
+#: app/src/react/features/design-system/Showcase.tsx:386
 msgid "Name"
 msgstr ""
 
@@ -5750,6 +5893,7 @@ msgid "Net payment"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:797
+#: app/src/react/features/design-system/Showcase.tsx:220
 msgid "Net revenue"
 msgstr ""
 
@@ -5808,6 +5952,7 @@ msgid "New menu"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:553
+#: app/src/react/features/design-system/Showcase.tsx:344
 msgid "New orders will appear here as soon as customers check out."
 msgstr ""
 
@@ -5869,6 +6014,7 @@ msgid "Next"
 msgstr ""
 
 #: app/src/components/kit/FdPagination.vue:106
+#: app/src/react/ui/Pagination.tsx:122
 msgid "Next page"
 msgstr ""
 
@@ -6012,6 +6158,7 @@ msgid "No health data available"
 msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:170
+#: app/src/react/data/DataTable.tsx:225
 msgid "No items found"
 msgstr ""
 
@@ -6092,6 +6239,7 @@ msgid "No orders selected."
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:552
+#: app/src/react/features/design-system/Showcase.tsx:343
 msgid "No orders yet"
 msgstr ""
 
@@ -6423,6 +6571,7 @@ msgid "On backorder"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:224
+#: app/src/react/features/design-system/Showcase.tsx:219
 msgid "On hold"
 msgstr ""
 
@@ -6489,6 +6638,10 @@ msgstr ""
 msgid "Open in classic editor"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:292
+msgid "Open in classic screen"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:1054
 msgid "Open in new tab"
 msgstr ""
@@ -6501,8 +6654,16 @@ msgstr ""
 msgid "Open Manage Cards"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:268
+msgid "Open modal"
+msgstr ""
+
 #: app/src/components/app/search/components/SearchTriggerButton.vue:18
 msgid "Open search"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:271
+msgid "Open sheet"
 msgstr ""
 
 #: app/src/pages/database/src/layout.vue:423
@@ -6611,6 +6772,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:236
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/posts/src/table-filters.vue:164
+#: app/src/react/features/design-system/Showcase.tsx:79
 msgid "Order"
 msgstr ""
 
@@ -6690,6 +6852,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:478
 #: app/src/pages/orders/src/OrdersList.vue:554
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:469
+#: app/src/react/features/design-system/Showcase.tsx:212
 msgid "Orders"
 msgstr ""
 
@@ -6731,6 +6894,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:243
 #: app/src/pages/products/src/ProductsList.vue:525
 msgid "Out of stock"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:264
+msgid "Overlays"
 msgstr ""
 
 #: app/src/pages/dashboard/index.vue:726
@@ -6796,6 +6963,7 @@ msgid "Pages"
 msgstr ""
 
 #: app/src/components/kit/FdPagination.vue:82
+#: app/src/react/ui/Pagination.tsx:95
 msgid "Pagination"
 msgstr ""
 
@@ -6870,6 +7038,10 @@ msgstr ""
 msgid "Payment"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:196
+msgid "Payment failed"
+msgstr ""
+
 #: app/src/pages/orders/src/OrderEditor.vue:578
 msgid "Payment method"
 msgstr ""
@@ -6890,6 +7062,7 @@ msgid "Pending"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:222
+#: app/src/react/features/design-system/Showcase.tsx:217
 msgid "Pending payment"
 msgstr ""
 
@@ -7213,6 +7386,10 @@ msgstr ""
 msgid "Posts Data"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:230
+msgid "Prefix and hint"
+msgstr ""
+
 #: app/src/react/features/design-system/FoundationCheck.tsx:50
 msgid "present"
 msgstr ""
@@ -7241,6 +7418,7 @@ msgid "Previous"
 msgstr ""
 
 #: app/src/components/kit/FdPagination.vue:83
+#: app/src/react/ui/Pagination.tsx:96
 msgid "Previous page"
 msgstr ""
 
@@ -7251,6 +7429,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderDetails.vue:309
 #: app/src/pages/products/src/BulkPriceModal.vue:46
 #: app/src/pages/products/src/ProductsList.vue:184
+#: app/src/react/features/design-system/Showcase.tsx:230
 msgid "Price"
 msgstr ""
 
@@ -7271,6 +7450,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:646
 #: app/src/pages/products/src/ProductQuickEdit.vue:235
 msgid "Pricing"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:122
+msgid "Primary action"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:209
@@ -7300,6 +7483,7 @@ msgstr ""
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:88
 #: app/src/pages/orders/src/OrdersList.vue:223
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:88
+#: app/src/react/features/design-system/Showcase.tsx:218
 msgid "Processing"
 msgstr ""
 
@@ -7336,6 +7520,7 @@ msgid "Product moved to the trash"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:625
+#: app/src/react/features/design-system/Showcase.tsx:229
 msgid "Product name"
 msgstr ""
 
@@ -7449,6 +7634,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:162
 #: app/src/pages/products/src/ProductsList.vue:175
 #: app/src/pages/products/src/ProductsList.vue:225
+#: app/src/react/features/design-system/Showcase.tsx:238
 msgid "Published"
 msgstr ""
 
@@ -7517,6 +7703,7 @@ msgstr ""
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:207
 #: app/src/pages/products/src/ProductsList.vue:498
+#: app/src/react/features/design-system/Showcase.tsx:384
 msgid "Quick edit"
 msgstr ""
 
@@ -7546,8 +7733,16 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:114
+msgid "React component kit of the plugin, based on TailAdmin."
+msgstr ""
+
 #: app/src/react/features/design-system/FoundationCheck.tsx:40
 msgid "React foundation"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:121
+msgid "Ready to build screens"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:618
@@ -7559,6 +7754,7 @@ msgid "Realistic browser and operating system data"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:148
+#: app/src/react/features/design-system/Showcase.tsx:380
 msgid "Reason (optional)"
 msgstr ""
 
@@ -7649,11 +7845,13 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:514
 #: app/src/pages/products/src/ProductsList.vue:594
 #: app/src/pages/products/src/ProductsList.vue:595
+#: app/src/react/features/design-system/Showcase.tsx:119
 msgid "Refresh"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:285
 #: app/src/pages/orders/src/RefundModal.vue:171
+#: app/src/react/features/design-system/Showcase.tsx:373
 msgid "Refund"
 msgstr ""
 
@@ -7666,6 +7864,7 @@ msgid "Refund %s"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:147
+#: app/src/react/features/design-system/Showcase.tsx:379
 msgid "Refund amount"
 msgstr ""
 
@@ -7678,6 +7877,7 @@ msgid "Refund manually"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:118
+#: app/src/react/features/design-system/Showcase.tsx:365
 msgid "Refund order"
 msgstr ""
 
@@ -8301,6 +8501,7 @@ msgid "Save the product to use the attribute changes in the variations."
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:175
+#: app/src/react/features/design-system/Showcase.tsx:192
 msgid "Saved"
 msgstr ""
 
@@ -8347,6 +8548,7 @@ msgstr ""
 #: app/src/pages/posts/src/inline-status-select.vue:70
 #: app/src/pages/posts/src/inline-user-select.vue:114
 #: app/src/pages/posts/src/table-filters.vue:146
+#: app/src/react/form/SearchInput.tsx:57
 msgid "Search"
 msgstr ""
 
@@ -8473,6 +8675,7 @@ msgid "Search posts..."
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductPicker.vue:80
+#: app/src/react/features/design-system/Showcase.tsx:242
 msgid "Search products"
 msgstr ""
 
@@ -8522,6 +8725,7 @@ msgid "Search users..."
 msgstr ""
 
 #: app/src/components/kit/FdSearchInput.vue:44
+#: app/src/react/form/SearchInput.tsx:56
 msgid "Search..."
 msgstr ""
 
@@ -8615,6 +8819,7 @@ msgid "Select a state"
 msgstr ""
 
 #: app/src/pages/posts/src/batch-edit.vue:128
+#: app/src/react/features/design-system/Showcase.tsx:236
 msgid "Select a status"
 msgstr ""
 
@@ -8628,6 +8833,7 @@ msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:126
 #: app/src/pages/products/src/editor/ProductAttributes.vue:171
+#: app/src/react/data/DataTable.tsx:159
 msgid "Select all"
 msgstr ""
 
@@ -8686,6 +8892,7 @@ msgid "Select Property"
 msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:189
+#: app/src/react/data/DataTable.tsx:248
 msgid "Select row"
 msgstr ""
 
@@ -8854,6 +9061,7 @@ msgstr ""
 #: app/src/pages/posts/src/table-filters.vue:134
 #: app/src/pages/role-editor/src/role-details-view.vue:92
 #: app/src/pages/settings/index.vue:579
+#: app/src/react/features/design-system/Showcase.tsx:161
 msgid "Settings"
 msgstr ""
 
@@ -8953,6 +9161,10 @@ msgstr ""
 msgid "Short description"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:243
+msgid "Short description of the product."
+msgstr ""
+
 #: app/src/components/app/menu/components/FavoritesSection.vue:175
 msgid "Shortcut name"
 msgstr ""
@@ -8995,7 +9207,12 @@ msgid "Showing"
 msgstr ""
 
 #: app/src/components/kit/FdPagination.vue:59
+#: app/src/react/ui/Pagination.tsx:75
 msgid "Showing %1$s to %2$s of %3$s"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:248
+msgid "Shows first in the catalog."
 msgstr ""
 
 #: app/src/pages/posts/index.vue:729
@@ -9057,6 +9274,10 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:352
+msgid "Skeletons"
+msgstr ""
+
 #: app/src/pages/users/src/user-import.vue:507
 #: app/src/pages/users/src/user-import.vue:508
 msgid "Skip"
@@ -9072,6 +9293,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:227
 #: app/src/pages/products/src/ProductsList.vue:692
 #: app/src/pages/products/src/ProductVariations.vue:140
+#: app/src/react/features/design-system/Showcase.tsx:387
 msgid "SKU"
 msgstr ""
 
@@ -9086,6 +9308,14 @@ msgstr ""
 #: app/src/pages/products/src/TagsView.vue:38
 #: app/src/pages/products/src/TagsView.vue:188
 msgid "Slug"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:258
+msgid "Small switch"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:179
+msgid "Solid"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:612
@@ -9159,6 +9389,10 @@ msgstr ""
 msgid "Standard fields (ID, username, email, name, roles, etc.) are always included"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:253
+msgid "Standard shipping"
+msgstr ""
+
 #: app/src/components/utility/image-editor/index.vue:1855
 msgid "Start Crop"
 msgstr ""
@@ -9206,7 +9440,13 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:228
 #: app/src/pages/products/src/ProductsList.vue:186
 #: app/src/pages/products/src/ProductsList.vue:647
+#: app/src/react/features/design-system/Showcase.tsx:90
+#: app/src/react/features/design-system/Showcase.tsx:233
 msgid "Status"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:167
+msgid "Status and feedback"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:185
@@ -9447,6 +9687,10 @@ msgstr ""
 msgid "The Flexify Dashboard plugin version is the latest."
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:197
+msgid "The gateway refused the charge."
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:1078
 msgid "The item will not be shown if hidden"
 msgstr ""
@@ -9500,7 +9744,7 @@ msgstr ""
 msgid "The request could not be completed."
 msgstr ""
 
-#: app/src/react/app/AppProviders.tsx:29
+#: app/src/react/app/AppProviders.tsx:30
 #: app/src/react/lib/rest.ts:102
 msgid "The request failed. Please try again."
 msgstr ""
@@ -9589,6 +9833,10 @@ msgid ""
 "vary across different pages and user interactions."
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:278
+msgid "This action cannot be undone."
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductAttributes.vue:166
 msgid "This attribute has no values yet."
 msgstr ""
@@ -9660,6 +9908,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:96
 msgid "This site URL already exists"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:231
+msgid "This SKU is already in use."
 msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:92
@@ -9775,6 +10027,7 @@ msgid "Toggle dark mode"
 msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:197
+#: app/src/react/data/DataTable.tsx:259
 msgid "Toggle details"
 msgstr ""
 
@@ -9820,6 +10073,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderPreview.vue:100
 #: app/src/pages/orders/src/OrdersList.vue:240
 #: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/react/features/design-system/Showcase.tsx:91
 msgid "Total"
 msgstr ""
 
@@ -9916,6 +10170,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:353
+#: app/src/react/features/design-system/Showcase.tsx:257
 msgid "Track stock"
 msgstr ""
 
@@ -9952,6 +10207,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:166
 #: app/src/pages/products/src/ProductsList.vue:230
 #: app/src/pages/products/src/ProductsList.vue:661
+#: app/src/react/features/design-system/Showcase.tsx:330
 msgid "Trash"
 msgstr ""
 
@@ -9987,6 +10243,7 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/page-views-chart/component.vue:171
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:184
 #: app/src/pages/dashboard/src/cards/users-chart/component.vue:124
+#: app/src/react/features/design-system/Showcase.tsx:200
 msgid "Try again"
 msgstr ""
 
@@ -10008,6 +10265,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:281
 msgid "Turnstyle site key"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:193
+msgid "Two products are running low."
 msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:461
@@ -10054,6 +10315,10 @@ msgstr ""
 #: admin/src/Rest/WooCommerceDashboard.php:515
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:129
 msgid "Uncategorized"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:249
+msgid "Unchecked"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:555
@@ -10594,6 +10859,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderPreview.vue:137
 #: app/src/pages/orders/src/OrdersList.vue:415
+#: app/src/react/features/design-system/Showcase.tsx:100
 msgid "View details"
 msgstr ""
 
@@ -10814,6 +11080,15 @@ msgstr ""
 msgid "Width"
 msgstr ""
 
+#: app/src/react/features/design-system/Showcase.tsx:231
+msgid "With error"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:156
+#: app/src/react/features/design-system/Showcase.tsx:185
+msgid "With icon"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-details-view.vue:641
 msgid "with this role"
 msgstr ""
@@ -10993,6 +11268,10 @@ msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:822
 msgid "Your browser does not support the video tag."
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:192
+msgid "Your changes are live."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderEditor.vue:375

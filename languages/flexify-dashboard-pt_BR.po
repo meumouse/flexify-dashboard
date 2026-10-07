@@ -126,12 +126,8 @@ msgid "%s updated."
 msgstr "%s atualizado."
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:606
-msgid ""
-"→ Admin → Property Access Management, add the service account email as a "
-"Viewer"
-msgstr ""
-"→ Administração → Gestão de Acesso à Propriedade, adicione o e-mail da "
-"conta de serviço como visualizador."
+msgid "→ Admin → Property Access Management, add the service account email as a Viewer"
+msgstr "→ Administração → Gestão de Acesso à Propriedade, adicione o e-mail da conta de serviço como visualizador."
 
 #: app/src/pages/comments/src/comment-list-view.vue:233
 msgid "1 comment selected"
@@ -176,21 +172,15 @@ msgstr "Já existe um tipo de postagem personalizado com esse slug."
 
 #: admin/src/Update/Updater.php:378
 msgid "A new version of the <strong>Flexify Dashboard</strong> plugin is available."
-msgstr ""
-"Uma nova versão do plugin <strong>Flexify Dashboard</strong> está "
-"disponível."
+msgstr "Uma nova versão do plugin <strong>Flexify Dashboard</strong> está disponível."
 
 #: admin/src/Rest/RoleEditor.php:319
 msgid "A role with this slug already exists."
 msgstr "Já existe uma vaga para esse tipo de personagem."
 
 #: app/src/components/app/search/layout-fix-dialog.vue:909
-msgid ""
-"A screenshot of the page will be captured and analyzed. The AI will provide "
-"CSS fixes based on your description."
-msgstr ""
-"Uma captura de tela da página será feita e analisada. A IA fornecerá "
-"correções de CSS com base na sua descrição."
+msgid "A screenshot of the page will be captured and analyzed. The AI will provide CSS fixes based on your description."
+msgstr "Uma captura de tela da página será feita e analisada. A IA fornecerá correções de CSS com base na sua descrição."
 
 #: app/src/components/user-details-form/user-details-form.vue:270
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:270
@@ -231,9 +221,7 @@ msgstr "Ativar"
 
 #: app/src/pages/dashboard/src/cards/rank-math-overview/component.vue:178
 msgid "Activate the plugin to display the Rank Math overview widget in Analytics."
-msgstr ""
-"Ative o plugin para exibir o widget de visão geral do Rank Math no "
-"Analytics."
+msgstr "Ative o plugin para exibir o widget de visão geral do Rank Math no Analytics."
 
 #: app/src/pages/settings/src/settings-config.js:63
 msgid "Activating Flexify Dashboard enables updates and features"
@@ -354,20 +342,12 @@ msgid "Add URL"
 msgstr "Adicionar URL"
 
 #: app/src/pages/settings/src/settings-config.js:446
-msgid ""
-"Add URLs to any external stylesheets you want Flexify Dashboard to load "
-"into the admin"
-msgstr ""
-"Adicione URLs para quaisquer folhas de estilo externas que você queira que "
-"o Painel Flexify carregue no painel administrativo."
+msgid "Add URLs to any external stylesheets you want Flexify Dashboard to load into the admin"
+msgstr "Adicione URLs para quaisquer folhas de estilo externas que você queira que o Painel Flexify carregue no painel administrativo."
 
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:508
-msgid ""
-"Add your Mapbox API key in Settings > Integrations to enable the Analytics "
-"Map card."
-msgstr ""
-"Adicione sua chave de API do Mapbox em Configurações > Integrações para "
-"ativar o cartão de mapa do Analytics."
+msgid "Add your Mapbox API key in Settings > Integrations to enable the Analytics Map card."
+msgstr "Adicione sua chave de API do Mapbox em Configurações > Integrações para ativar o cartão de mapa do Analytics."
 
 #: app/src/pages/role-editor/src/role-details-view.vue:631
 msgid "Admin"
@@ -414,12 +394,8 @@ msgid "After"
 msgstr "Depois"
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:208
-msgid ""
-"After saving, enable Google reCAPTCHA in Settings > Login to require it on "
-"the administrative login and password recovery forms."
-msgstr ""
-"Após salvar, ative o Google reCAPTCHA em Configurações > Login para que ele "
-"seja exigido nos formulários de login administrativo e recuperação de senha."
+msgid "After saving, enable Google reCAPTCHA in Settings > Login to require it on the administrative login and password recovery forms."
+msgstr "Após salvar, ative o Google reCAPTCHA em Configurações > Login para que ele seja exigido nos formulários de login administrativo e recuperação de senha."
 
 #: admin/src/Pages/DummyDataPage.php:129
 msgid "Aggregated daily statistics"
@@ -465,12 +441,8 @@ msgid "All Admin Notices"
 msgstr "Todos os avisos administrativos"
 
 #: app/src/components/utility/remote-site-select/index.vue:211
-msgid ""
-"All default WordPress pages (Posts, Pages, Comments, etc.) will continue to "
-"show local content."
-msgstr ""
-"Todas as páginas padrão do WordPress (Posts, Páginas, Comentários, etc.) "
-"continuarão exibindo conteúdo local."
+msgid "All default WordPress pages (Posts, Pages, Comments, etc.) will continue to show local content."
+msgstr "Todas as páginas padrão do WordPress (Posts, Páginas, Comentários, etc.) continuarão exibindo conteúdo local."
 
 #: app/src/pages/role-editor/src/role-details-view.vue:774
 msgid "All selected"
@@ -485,24 +457,12 @@ msgid "All Types"
 msgstr "Todos os tipos"
 
 #: app/src/pages/settings/src/settings-config.js:713
-msgid ""
-"Allow font files (.woff2, .woff, .ttf, .otf) to be uploaded to the media "
-"library. This enables custom font support for your site."
-msgstr ""
-"Permita o carregamento de arquivos de fonte (.woff2, .woff, .ttf, .otf) "
-"para a biblioteca de mídia. Isso habilita o suporte a fontes personalizadas "
-"para o seu site."
+msgid "Allow font files (.woff2, .woff, .ttf, .otf) to be uploaded to the media library. This enables custom font support for your site."
+msgstr "Permita o carregamento de arquivos de fonte (.woff2, .woff, .ttf, .otf) para a biblioteca de mídia. Isso habilita o suporte a fontes personalizadas para o seu site."
 
 #: app/src/pages/settings/src/settings-config.js:698
-msgid ""
-"Allow SVG (Scalable Vector Graphics) files to be uploaded to the media "
-"library. All SVG files are automatically sanitized before upload to remove "
-"potentially malicious code, ensuring safe handling of SVG files."
-msgstr ""
-"Permitir o carregamento de arquivos SVG (Scalable Vector Graphics) para a "
-"biblioteca de mídia. Todos os arquivos SVG são automaticamente higienizados "
-"antes do carregamento para remover códigos potencialmente maliciosos, "
-"garantindo o manuseio seguro desses arquivos."
+msgid "Allow SVG (Scalable Vector Graphics) files to be uploaded to the media library. All SVG files are automatically sanitized before upload to remove potentially malicious code, ensuring safe handling of SVG files."
+msgstr "Permitir o carregamento de arquivos SVG (Scalable Vector Graphics) para a biblioteca de mídia. Todos os arquivos SVG são automaticamente higienizados antes do carregamento para remover códigos potencialmente maliciosos, garantindo o manuseio seguro desses arquivos."
 
 #: app/src/pages/admin-notices/src/edit.vue:486
 msgid "Allow users to dismiss this notice"
@@ -523,9 +483,7 @@ msgstr "Texto alternativo"
 
 #: app/src/pages/settings/src/settings-config.js:663
 msgid "Always show hidden update notifications for specific users/roles"
-msgstr ""
-"Exibir sempre as notificações de atualização ocultas para usuários/funções "
-"específicos."
+msgstr "Exibir sempre as notificações de atualização ocultas para usuários/funções específicos."
 
 #: app/src/pages/users/src/user-list-view.vue:653
 msgid "An error occurred"
@@ -565,12 +523,8 @@ msgid "Analytics Map"
 msgstr "Mapa analítico"
 
 #: admin/src/Pages/DummyDataPage.php:147
-msgid ""
-"Analytics must be enabled in the UiXpress settings before generating dummy "
-"data."
-msgstr ""
-"A análise deve estar ativada nas configurações do UiXpress antes de gerar "
-"dados fictícios."
+msgid "Analytics must be enabled in the UiXpress settings before generating dummy data."
+msgstr "A análise deve estar ativada nas configurações do UiXpress antes de gerar dados fictícios."
 
 #: app/src/pages/settings/src/settings-config.js:845
 msgid "Analytics Provider"
@@ -601,12 +555,8 @@ msgid "API"
 msgstr "API"
 
 #: app/src/pages/settings/src/settings-config.js:883
-msgid ""
-"API key used by the analytics map card. Store the token here instead of "
-"keeping it in source code."
-msgstr ""
-"Chave de API usada pelo cartão de mapa de análise. Armazene o token aqui em "
-"vez de mantê-lo no código-fonte."
+msgid "API key used by the analytics map card. Store the token here instead of keeping it in source code."
+msgstr "Chave de API usada pelo cartão de mapa de análise. Armazene o token aqui em vez de mantê-lo no código-fonte."
 
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:285
 msgid "Appearance"
@@ -617,12 +567,8 @@ msgid "Application Password"
 msgstr "Senha do aplicativo"
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:237
-msgid ""
-"Application passwords can be created in WordPress under Users > Profile > "
-"Application Passwords"
-msgstr ""
-"As senhas de aplicativos podem ser criadas no WordPress em Usuários > "
-"Perfil > Senhas de Aplicativos."
+msgid "Application passwords can be created in WordPress under Users > Profile > Application Passwords"
+msgstr "As senhas de aplicativos podem ser criadas no WordPress em Usuários > Perfil > Senhas de Aplicativos."
 
 #: app/src/components/utility/image-editor/index.vue:1359
 #: app/src/pages/orders/src/OrderEditor.vue:587
@@ -664,64 +610,42 @@ msgid "Are you sure you want to delete %s? This action cannot be undone."
 msgstr "Tem certeza de que deseja excluir %s? Esta ação não pode ser desfeita."
 
 #: app/src/pages/role-editor/src/role-details-view.vue:471
-msgid ""
-"Are you sure you want to delete the role \"%s\"? This action cannot be "
-"undone."
-msgstr ""
-"Tem certeza de que deseja excluir a função \"%s\"? Esta ação não pode ser "
-"desfeita."
+msgid "Are you sure you want to delete the role \"%s\"? This action cannot be undone."
+msgstr "Tem certeza de que deseja excluir a função \"%s\"? Esta ação não pode ser desfeita."
 
 #: app/src/pages/database/src/table-view.vue:269
-msgid ""
-"Are you sure you want to delete the table \"%s\"? This action cannot be "
-"undone."
-msgstr ""
-"Tem certeza de que deseja excluir a tabela \"%s\"? Esta ação não pode ser "
-"desfeita."
+msgid "Are you sure you want to delete the table \"%s\"? This action cannot be undone."
+msgstr "Tem certeza de que deseja excluir a tabela \"%s\"? Esta ação não pode ser desfeita."
 
 #: app/src/components/utility/media-library/index.vue:377
 msgid "Are you sure you want to delete these files? This action cannot be undone."
-msgstr ""
-"Tem certeza de que deseja excluir esses arquivos? Esta ação não pode ser "
-"desfeita."
+msgstr "Tem certeza de que deseja excluir esses arquivos? Esta ação não pode ser desfeita."
 
 #: app/src/components/app/batch-options/index.vue:43
 #: app/src/pages/posts/src/batchDeletePosts.js:22
 msgid "Are you sure you want to delete these items? This action cannot be undone."
-msgstr ""
-"Tem certeza de que deseja excluir esses itens? Esta ação não pode ser "
-"desfeita."
+msgstr "Tem certeza de que deseja excluir esses itens? Esta ação não pode ser desfeita."
 
 #: app/src/pages/comments/src/comment-details-view.vue:220
 msgid "Are you sure you want to delete this comment? This action cannot be undone."
-msgstr ""
-"Tem certeza de que deseja excluir este comentário? Esta ação não pode ser "
-"desfeita."
+msgstr "Tem certeza de que deseja excluir este comentário? Esta ação não pode ser desfeita."
 
 #: app/src/components/utility/media-library/index.vue:287
 #: app/src/pages/posts/src/post-actions.vue:150
 msgid "Are you sure you want to delete this item? This action cannot be undone."
-msgstr ""
-"Tem certeza de que deseja excluir este item? Esta ação não pode ser "
-"desfeita."
+msgstr "Tem certeza de que deseja excluir este item? Esta ação não pode ser desfeita."
 
 #: app/src/pages/plugins/src/plugin-card.vue:230
 msgid "Are you sure you want to delete this plugin? This action cannot be undone."
-msgstr ""
-"Tem certeza de que deseja excluir este plugin? Esta ação não pode ser "
-"desfeita."
+msgstr "Tem certeza de que deseja excluir este plugin? Esta ação não pode ser desfeita."
 
 #: app/src/pages/posts/src/batchPublishPosts.js:22
 msgid "Are you sure you want to publish these items?"
 msgstr "Tem certeza de que deseja publicar esses itens?"
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:131
-msgid ""
-"Are you sure you want to remove this remote site? This action cannot be "
-"undone."
-msgstr ""
-"Tem certeza de que deseja remover este site remoto? Esta ação não pode ser "
-"desfeita."
+msgid "Are you sure you want to remove this remote site? This action cannot be undone."
+msgstr "Tem certeza de que deseja remover este site remoto? Esta ação não pode ser desfeita."
 
 #: app/src/components/app/batch-options/index.vue:42
 #: app/src/components/kit/FdConfirmDialog.vue:21
@@ -756,12 +680,8 @@ msgid "At least 8 characters"
 msgstr "Pelo menos 8 caracteres"
 
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:989
-msgid ""
-"Authentication failed. The access token is invalid or expired. Please try "
-"reconnecting your Google Analytics account."
-msgstr ""
-"A autenticação falhou. O token de acesso é inválido ou expirou. Tente "
-"reconectar sua conta do Google Analytics."
+msgid "Authentication failed. The access token is invalid or expired. Please try reconnecting your Google Analytics account."
+msgstr "A autenticação falhou. O token de acesso é inválido ou expirou. Tente reconectar sua conta do Google Analytics."
 
 #: app/src/pages/plugins/src/plugin-card.vue:384
 #: app/src/pages/posts/src/batch-edit.vue:150
@@ -818,12 +738,8 @@ msgid "Automatic Updates"
 msgstr "Atualizações automáticas"
 
 #: app/src/pages/settings/src/settings-config.js:1029
-msgid ""
-"Automatically delete logs older than the retention period. Disable to keep "
-"logs indefinitely."
-msgstr ""
-"Exclui automaticamente os registros mais antigos que o período de retenção. "
-"Desative para manter os registros indefinidamente."
+msgid "Automatically delete logs older than the retention period. Disable to keep logs indefinitely."
+msgstr "Exclui automaticamente os registros mais antigos que o período de retenção. Desative para manter os registros indefinidamente."
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:491
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:491
@@ -840,9 +756,7 @@ msgstr "Posição média"
 
 #: admin/src/Rest/RankMathDashboardWidget.php:271
 msgid "Average position of all the keywords ranking within top 100 positions."
-msgstr ""
-"Posição média de todas as palavras-chave classificadas entre as 100 "
-"primeiras posições."
+msgstr "Posição média de todas as palavras-chave classificadas entre as 100 primeiras posições."
 
 #: app/src/pages/dashboard/src/cards/ecommerce/average-ticket/component.vue:32
 msgid "Average value per order in the selected period"
@@ -1016,12 +930,8 @@ msgid "Cannot delete default WordPress roles."
 msgstr "Não é possível excluir funções padrão do WordPress."
 
 #: admin/src/Rest/RoleEditor.php:391
-msgid ""
-"Cannot delete role. There are %d user(s) with this role. Please reassign "
-"users to another role first."
-msgstr ""
-"Não é possível excluir a função. Existem %d usuários com essa função. Por "
-"favor, reatribua os usuários a outra função primeiro."
+msgid "Cannot delete role. There are %d user(s) with this role. Please reassign users to another role first."
+msgstr "Não é possível excluir a função. Existem %d usuários com essa função. Por favor, reatribua os usuários a outra função primeiro."
 
 #: admin/src/Rest/RoleEditor.php:186
 msgid "Capabilities must be an array."
@@ -1047,9 +957,7 @@ msgstr "Capturando uma imagem da tela..."
 
 #: app/src/pages/dashboard/index.vue:850
 msgid "Card visibility is stored independently for each category."
-msgstr ""
-"A visibilidade dos cartões é armazenada independentemente para cada "
-"categoria."
+msgstr "A visibilidade dos cartões é armazenada independentemente para cada categoria."
 
 #: app/src/apps/js/Products.js:45
 #: app/src/pages/posts/src/batch-edit.vue:108
@@ -1078,12 +986,8 @@ msgid "Change the link of the URL"
 msgstr "Alterar o link da URL"
 
 #: app/src/pages/settings/src/settings-config.js:235
-msgid ""
-"Change the login url from wp-login.php to a custom slug. Ensure you "
-"remember what you change this to."
-msgstr ""
-"Altere o URL de login de wp-login.php para um slug personalizado. "
-"Certifique-se de lembrar qual slug você definiu."
+msgid "Change the login url from wp-login.php to a custom slug. Ensure you remember what you change this to."
+msgstr "Altere o URL de login de wp-login.php para um slug personalizado. Certifique-se de lembrar qual slug você definiu."
 
 #: app/src/pages/plugins/src/plugin-inspect.vue:317
 msgid "Changelog"
@@ -1114,26 +1018,16 @@ msgid "children"
 msgstr "crianças"
 
 #: app/src/pages/settings/src/settings-config.js:459
-msgid ""
-"Choose a custom font for the admin interface. Select from Google Fonts, "
-"enter a custom font URL, or upload your own font files."
-msgstr ""
-"Escolha uma fonte personalizada para a interface administrativa. Selecione "
-"uma fonte do Google Fonts, insira um URL de fonte personalizada ou carregue "
-"seus próprios arquivos de fonte."
+msgid "Choose a custom font for the admin interface. Select from Google Fonts, enter a custom font URL, or upload your own font files."
+msgstr "Escolha uma fonte personalizada para a interface administrativa. Selecione uma fonte do Google Fonts, insira um URL de fonte personalizada ou carregue seus próprios arquivos de fonte."
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:836
 msgid "Choose a name for your custom font family"
 msgstr "Escolha um nome para sua família de fontes personalizada."
 
 #: app/src/pages/menu-creator/src/edit.vue:1026
-msgid ""
-"Choose custom icon from the list or add a Base64 encoded Data URI. Icons "
-"only show for top level items. "
-msgstr ""
-"Escolha um ícone personalizado na lista ou adicione um URI de dados "
-"codificado em Base64. Os ícones são exibidos apenas para itens de nível "
-"superior."
+msgid "Choose custom icon from the list or add a Base64 encoded Data URI. Icons only show for top level items. "
+msgstr "Escolha um ícone personalizado na lista ou adicione um URI de dados codificado em Base64. Os ícones são exibidos apenas para itens de nível superior."
 
 #: admin/src/Rest/MediaTags.php:140
 msgid "Choose from the most used tags"
@@ -1145,40 +1039,23 @@ msgstr "Escolha se o submenu será aberto ao clicar ou ao passar o cursor sobre 
 
 #: app/src/pages/settings/src/settings-config.js:135
 msgid "Choose roles or usersnames to disable the theme for."
-msgstr ""
-"Selecione as funções ou nomes de usuário para os quais deseja desativar o "
-"tema."
+msgstr "Selecione as funções ou nomes de usuário para os quais deseja desativar o tema."
 
 #: app/src/pages/settings/src/settings-config.js:1009
-msgid ""
-"Choose which actions to log. \"All Actions\" logs everything, \"Important "
-"Only\" logs only critical actions like deletions and role changes."
-msgstr ""
-"Escolha quais ações registrar. \"Todas as ações\" registra tudo, enquanto "
-"\"Somente importantes\" registra apenas ações críticas, como exclusões e "
-"alterações de função."
+msgid "Choose which actions to log. \"All Actions\" logs everything, \"Important Only\" logs only critical actions like deletions and role changes."
+msgstr "Escolha quais ações registrar. \"Todas as ações\" registra tudo, enquanto \"Somente importantes\" registra apenas ações críticas, como exclusões e alterações de função."
 
 #: app/src/pages/settings/src/settings-config.js:846
-msgid ""
-"Choose which analytics provider to use for dashboard data. Select Built-in "
-"Analytics to use the Flexify Dashboard tracking system, or Google Analytics "
-"to display data from your GA4 property."
-msgstr ""
-"Escolha qual provedor de análise usar para os dados do painel. Selecione "
-"\"Análise integrada\" para usar o sistema de rastreamento do painel Flexify "
-"ou o Google Analytics para exibir os dados da sua propriedade do GA4."
+msgid "Choose which analytics provider to use for dashboard data. Select Built-in Analytics to use the Flexify Dashboard tracking system, or Google Analytics to display data from your GA4 property."
+msgstr "Escolha qual provedor de análise usar para os dados do painel. Selecione \"Análise integrada\" para usar o sistema de rastreamento do painel Flexify ou o Google Analytics para exibir os dados da sua propriedade do GA4."
 
 #: app/src/pages/settings/src/settings-config.js:150
 msgid "Choose which post types are available in the global search"
 msgstr "Escolha quais tipos de postagem estão disponíveis na pesquisa global."
 
 #: app/src/pages/settings/src/settings-config.js:603
-msgid ""
-"Choose which post types should use the modern post editor. Defaults to "
-"posts."
-msgstr ""
-"Escolha quais tipos de postagem devem usar o editor de postagens moderno. O "
-"padrão é usar postagens."
+msgid "Choose which post types should use the modern post editor. Defaults to posts."
+msgstr "Escolha quais tipos de postagem devem usar o editor de postagens moderno. O padrão é usar postagens."
 
 #: app/src/pages/settings/src/settings-config.js:177
 msgid "Choose your prefered admin layout"
@@ -1235,12 +1112,8 @@ msgid "Click and drag on the image to select crop area"
 msgstr "Clique e arraste na imagem para selecionar a área de recorte."
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:586
-msgid ""
-"Click the service account, go to \"Keys\" tab, click \"Add Key\" → \"Create "
-"new key\" → JSON"
-msgstr ""
-"Clique na conta de serviço, acesse a guia \"Chaves\", clique em \"Adicionar "
-"chave\" → \"Criar nova chave\" → JSON"
+msgid "Click the service account, go to \"Keys\" tab, click \"Add Key\" → \"Create new key\" → JSON"
+msgstr "Clique na conta de serviço, acesse a guia \"Chaves\", clique em \"Adicionar chave\" → \"Criar nova chave\" → JSON"
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:561
 msgid "Click to change"
@@ -1370,12 +1243,8 @@ msgid "Configure remote WordPress sites for cross-site operations."
 msgstr "Configure sites WordPress remotos para operações entre sites."
 
 #: app/src/pages/settings/src/settings-config.js:900
-msgid ""
-"Configure the site key and secret key used by the modern administrative "
-"login and password recovery forms."
-msgstr ""
-"Configure a chave do site e a chave secreta usadas pelos formulários "
-"modernos de login administrativo e recuperação de senha."
+msgid "Configure the site key and secret key used by the modern administrative login and password recovery forms."
+msgstr "Configure a chave do site e a chave secreta usadas pelos formulários modernos de login administrativo e recuperação de senha."
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:27
 msgid "Configured"
@@ -1398,13 +1267,8 @@ msgid "Connect Google Analytics"
 msgstr "Conectar o Google Analytics"
 
 #: app/src/pages/settings/src/settings-config.js:863
-msgid ""
-"Connect your Google Analytics 4 property to display analytics data in the "
-"dashboard. You will need to create OAuth credentials in Google Cloud "
-"Console."
-msgstr ""
-"Conecte sua propriedade do Google Analytics 4 para exibir dados analíticos "
-"no painel. Você precisará criar credenciais OAuth no Google Cloud Console."
+msgid "Connect your Google Analytics 4 property to display analytics data in the dashboard. You will need to create OAuth credentials in Google Cloud Console."
+msgstr "Conecte sua propriedade do Google Analytics 4 para exibir dados analíticos no painel. Você precisará criar credenciais OAuth no Google Cloud Console."
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:346
 msgid "Connected to Google Analytics"
@@ -1455,28 +1319,16 @@ msgid "Core plugin settings and license management"
 msgstr "Configurações principais do plugin e gerenciamento de licenças"
 
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:945
-msgid ""
-"Could not authenticate with Google Analytics. Please check your service "
-"account credentials."
-msgstr ""
-"Não foi possível autenticar com o Google Analytics. Verifique as "
-"credenciais da sua conta de serviço."
+msgid "Could not authenticate with Google Analytics. Please check your service account credentials."
+msgstr "Não foi possível autenticar com o Google Analytics. Verifique as credenciais da sua conta de serviço."
 
 #: app/src/components/app/search/layout-fix-dialog.vue:666
-msgid ""
-"Could not find wpbody element. Please ensure you are on a WordPress admin "
-"page."
-msgstr ""
-"Não foi possível encontrar o elemento wpbody. Certifique-se de estar em uma "
-"página administrativa do WordPress."
+msgid "Could not find wpbody element. Please ensure you are on a WordPress admin page."
+msgstr "Não foi possível encontrar o elemento wpbody. Certifique-se de estar em uma página administrativa do WordPress."
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:179
-msgid ""
-"Could not load properties automatically. You can enter your Property ID "
-"manually below."
-msgstr ""
-"Não foi possível carregar as propriedades automaticamente. Você pode "
-"inserir o ID da sua propriedade manualmente abaixo."
+msgid "Could not load properties automatically. You can enter your Property ID manually below."
+msgstr "Não foi possível carregar as propriedades automaticamente. Você pode inserir o ID da sua propriedade manualmente abaixo."
 
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:468
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:241
@@ -1489,9 +1341,7 @@ msgstr "PAÍS"
 
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:334
 msgid "Country data will appear when visitors browse your site"
-msgstr ""
-"Os dados do país serão exibidos quando os visitantes navegarem pelo seu "
-"site."
+msgstr "Os dados do país serão exibidos quando os visitantes navegarem pelo seu site."
 
 #: admin/src/Pages/CustomDashboardPage.php:113
 msgid "Create a new post quickly from here."
@@ -1563,9 +1413,7 @@ msgstr "CSS personalizado"
 
 #: app/src/pages/settings/src/settings-config.js:433
 msgid "Custom css added here will only be added in the admin area and login page."
-msgstr ""
-"O CSS personalizado adicionado aqui será aplicado somente na área "
-"administrativa e na página de login."
+msgstr "O CSS personalizado adicionado aqui será aplicado somente na área administrativa e na página de login."
 
 #: app/src/pages/settings/src/settings-config.js:811
 msgid "Custom Dashboard"
@@ -1573,9 +1421,7 @@ msgstr "Painel de controle personalizado"
 
 #: app/src/pages/settings/index.vue:91
 msgid "Custom dashboard and admin interface settings"
-msgstr ""
-"Configurações personalizadas do painel de controle e da interface "
-"administrativa"
+msgstr "Configurações personalizadas do painel de controle e da interface administrativa"
 
 #: admin/src/Rest/CustomFields/UserMetaBoxManager.php:230
 msgid "Custom Fields"
@@ -1655,13 +1501,8 @@ msgid "Customize login page appearance and security"
 msgstr "Personalize a aparência e a segurança da página de login."
 
 #: app/src/pages/settings/src/settings-config.js:508
-msgid ""
-"Customize the text displayed in the WordPress admin area. Enter original "
-"words or phrases and their replacements to white-label the admin interface."
-msgstr ""
-"Personalize o texto exibido na área administrativa do WordPress. Insira "
-"palavras ou frases originais e suas substituições para personalizar a "
-"interface administrativa com a sua marca."
+msgid "Customize the text displayed in the WordPress admin area. Enter original words or phrases and their replacements to white-label the admin interface."
+msgstr "Personalize o texto exibido na área administrativa do WordPress. Insira palavras ou frases originais e suas substituições para personalizar a interface administrativa com a sua marca."
 
 #: app/src/components/app/search/layout-fix-dialog.vue:656
 msgid "Daily limit exceeded. Please try again tomorrow."
@@ -1887,15 +1728,11 @@ msgstr "Detalhes"
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:164
 msgid "Development server detected, no need to activate your licence key."
-msgstr ""
-"Servidor de desenvolvimento detectado, não é necessário ativar sua chave de "
-"licença."
+msgstr "Servidor de desenvolvimento detectado, não é necessário ativar sua chave de licença."
 
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:294
 msgid "Device data will appear when visitors browse your site"
-msgstr ""
-"Os dados do dispositivo serão exibidos quando os visitantes navegarem em "
-"seu site."
+msgstr "Os dados do dispositivo serão exibidos quando os visitantes navegarem em seu site."
 
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:202
 msgid "Device type distribution"
@@ -2142,21 +1979,15 @@ msgstr "Editando %d itens. Deixe os campos vazios para manter os valores existen
 
 #: app/src/pages/users/src/user-list-view.vue:1536
 msgid "Editing %d users. Leave fields empty to keep existing values."
-msgstr ""
-"Editando %d usuários. Deixe os campos vazios para manter os valores "
-"existentes."
+msgstr "Editando %d usuários. Deixe os campos vazios para manter os valores existentes."
 
 #: app/src/pages/media/src/media-list-view.vue:1902
 msgid "Editing 1 item. Leave fields empty to keep existing values."
-msgstr ""
-"Editando 1 item. Deixe os campos em branco para manter os valores "
-"existentes."
+msgstr "Editando 1 item. Deixe os campos em branco para manter os valores existentes."
 
 #: app/src/pages/users/src/user-list-view.vue:1532
 msgid "Editing 1 user. Leave fields empty to keep existing values."
-msgstr ""
-"Editando 1 usuário. Deixe os campos em branco para manter os valores "
-"existentes."
+msgstr "Editando 1 usuário. Deixe os campos em branco para manter os valores existentes."
 
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:333
 msgid "Editor (edit_others_posts)"
@@ -2199,21 +2030,12 @@ msgid "Enable analytics in settings to view data"
 msgstr "Ative a função de análise nas configurações para visualizar os dados."
 
 #: app/src/pages/dashboard/src/cards/rank-math-overview/component.vue:191
-msgid ""
-"Enable Analytics, 404 Monitor or Redirections in Rank Math and confirm the "
-"current user has access."
-msgstr ""
-"Ative o Analytics, o Monitor de Erro 404 ou os Redirecionamentos no Rank "
-"Math e confirme se o usuário atual tem acesso."
+msgid "Enable Analytics, 404 Monitor or Redirections in Rank Math and confirm the current user has access."
+msgstr "Ative o Analytics, o Monitor de Erro 404 ou os Redirecionamentos no Rank Math e confirme se o usuário atual tem acesso."
 
 #: app/src/pages/settings/src/settings-config.js:831
-msgid ""
-"Enable built-in analytics to track user behavior, page views, and "
-"performance metrics within your WordPress admin."
-msgstr ""
-"Ative as ferramentas de análise integradas para acompanhar o comportamento "
-"do usuário, as visualizações de página e as métricas de desempenho no "
-"painel de administração do WordPress."
+msgid "Enable built-in analytics to track user behavior, page views, and performance metrics within your WordPress admin."
+msgstr "Ative as ferramentas de análise integradas para acompanhar o comportamento do usuário, as visualizações de página e as métricas de desempenho no painel de administração do WordPress."
 
 #: app/src/pages/settings/src/settings-config.js:954
 msgid "Enable Custom Post Types"
@@ -2249,14 +2071,8 @@ msgid "Enable modern list view"
 msgstr "Ativar visualização de lista moderna"
 
 #: app/src/pages/settings/src/settings-config.js:619
-msgid ""
-"Enable real-time collaboration in the modern post editor. Multiple users "
-"can edit the same post simultaneously with live cursor tracking and synced "
-"changes."
-msgstr ""
-"Habilite a colaboração em tempo real no editor de posts moderno. Vários "
-"usuários podem editar o mesmo post simultaneamente, com rastreamento de "
-"cursor ao vivo e alterações sincronizadas."
+msgid "Enable real-time collaboration in the modern post editor. Multiple users can edit the same post simultaneously with live cursor tracking and synced changes."
+msgstr "Habilite a colaboração em tempo real no editor de posts moderno. Vários usuários podem editar o mesmo post simultaneamente, com rastreamento de cursor ao vivo e alterações sincronizadas."
 
 #: app/src/pages/settings/src/settings-config.js:935
 msgid "Enable Role Editor"
@@ -2264,9 +2080,7 @@ msgstr "Ativar o Editor de Funções"
 
 #: app/src/pages/settings/src/settings-config.js:553
 msgid "Enable search functionality in the admin menu to quickly find menu items."
-msgstr ""
-"Ative a função de busca no menu de administração para encontrar itens do "
-"menu rapidamente."
+msgstr "Ative a função de busca no menu de administração para encontrar itens do menu rapidamente."
 
 #: app/src/pages/settings/src/settings-config.js:697
 msgid "Enable SVG Uploads"
@@ -2277,29 +2091,16 @@ msgid "Enable the"
 msgstr "Ative o"
 
 #: app/src/pages/settings/src/settings-config.js:955
-msgid ""
-"Enable the custom post types creator to register and manage custom post "
-"types without code. Post types are stored in a JSON file for performance."
-msgstr ""
-"Habilite o criador de tipos de postagem personalizados para registrar e "
-"gerenciar tipos de postagem personalizados sem código. Os tipos de postagem "
-"são armazenados em um arquivo JSON para melhor desempenho."
+msgid "Enable the custom post types creator to register and manage custom post types without code. Post types are stored in a JSON file for performance."
+msgstr "Habilite o criador de tipos de postagem personalizados para registrar e gerenciar tipos de postagem personalizados sem código. Os tipos de postagem são armazenados em um arquivo JSON para melhor desempenho."
 
 #: app/src/pages/settings/src/settings-config.js:917
-msgid ""
-"Enable the modern database explorer interface to browse tables, view data, "
-"and execute SQL queries safely."
-msgstr ""
-"Habilite a interface moderna do explorador de banco de dados para navegar "
-"pelas tabelas, visualizar dados e executar consultas SQL com segurança."
+msgid "Enable the modern database explorer interface to browse tables, view data, and execute SQL queries safely."
+msgstr "Habilite a interface moderna do explorador de banco de dados para navegar pelas tabelas, visualizar dados e executar consultas SQL com segurança."
 
 #: app/src/pages/settings/src/settings-config.js:936
-msgid ""
-"Enable the modern role editor interface to manage WordPress user roles and "
-"capabilities."
-msgstr ""
-"Ative a interface moderna do editor de funções para gerenciar as funções e "
-"permissões de usuário do WordPress."
+msgid "Enable the modern role editor interface to manage WordPress user roles and capabilities."
+msgstr "Ative a interface moderna do editor de funções para gerenciar as funções e permissões de usuário do WordPress."
 
 #: app/src/pages/settings/src/settings-config.js:266
 msgid "Enable TurnStyle"
@@ -2323,9 +2124,7 @@ msgstr "Noivado"
 
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:397
 msgid "Engagement data will appear when users interact with your site"
-msgstr ""
-"Os dados de engajamento serão exibidos quando os usuários interagirem com "
-"seu site."
+msgstr "Os dados de engajamento serão exibidos quando os usuários interagirem com seu site."
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:62
 msgid "Enter both keys before saving"
@@ -2540,9 +2339,7 @@ msgstr "Falha ao adicionar a tag"
 #: admin/src/Rest/GoogleAnalyticsOAuth.php:185
 #: admin/src/Rest/GoogleAnalyticsOAuth.php:219
 msgid "Failed to authenticate with Google. Please check your service account key."
-msgstr ""
-"Falha na autenticação com o Google. Verifique a chave da sua conta de "
-"serviço."
+msgstr "Falha na autenticação com o Google. Verifique a chave da sua conta de serviço."
 
 #: admin/src/Rest/PluginManager.php:992
 msgid "Failed to collect metrics"
@@ -2634,12 +2431,8 @@ msgid "Failed to extract plugin ZIP: %s"
 msgstr "Falha ao extrair o arquivo ZIP do plugin: %s"
 
 #: admin/src/Rest/GoogleAnalyticsOAuth.php:302
-msgid ""
-"Failed to fetch properties. Make sure the service account has been added to "
-"your GA4 property."
-msgstr ""
-"Não foi possível obter as propriedades. Certifique-se de que a conta de "
-"serviço foi adicionada à sua propriedade GA4."
+msgid "Failed to fetch properties. Make sure the service account has been added to your GA4 property."
+msgstr "Não foi possível obter as propriedades. Certifique-se de que a conta de serviço foi adicionada à sua propriedade GA4."
 
 #: app/src/components/app/search/layout-fix-dialog.vue:1112
 msgid "Failed to fix layout and styling"
@@ -2989,12 +2782,8 @@ msgid "Find users"
 msgstr "Encontrar usuários"
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:448
-msgid ""
-"Find your Property ID in Google Analytics: Admin → Property Settings → "
-"Property ID (a number like 123456789)"
-msgstr ""
-"Encontre o ID da sua propriedade no Google Analytics: Administrador → "
-"Configurações da propriedade → ID da propriedade (um número como 123456789)"
+msgid "Find your Property ID in Google Analytics: Admin → Property Settings → Property ID (a number like 123456789)"
+msgstr "Encontre o ID da sua propriedade no Google Analytics: Administrador → Configurações da propriedade → ID da propriedade (um número como 123456789)"
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:626
 msgid "Finding your Property ID:"
@@ -3034,13 +2823,8 @@ msgid "Font Family Name"
 msgstr "Nome da família de fontes"
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:809
-msgid ""
-"Font file uploads are currently disabled. Enable font uploads in the Media "
-"settings to upload custom font files (.woff2, .woff, .ttf, .otf)."
-msgstr ""
-"O envio de arquivos de fontes está desativado no momento. Ative o envio de "
-"fontes nas configurações de mídia para enviar arquivos de fontes "
-"personalizados (.woff2, .woff, .ttf, .otf)."
+msgid "Font file uploads are currently disabled. Enable font uploads in the Media settings to upload custom font files (.woff2, .woff, .ttf, .otf)."
+msgstr "O envio de arquivos de fontes está desativado no momento. Ative o envio de fontes nas configurações de mídia para enviar arquivos de fontes personalizados (.woff2, .woff, .ttf, .otf)."
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:843
 msgid "Font Files"
@@ -3255,12 +3039,8 @@ msgid "Help"
 msgstr "Ajuda"
 
 #: admin/src/Rest/CustomFields/CustomFields.php:772
-msgid ""
-"Helper function not available. Please ensure the plugin is properly "
-"initialized."
-msgstr ""
-"Função auxiliar não disponível. Certifique-se de que o plugin esteja "
-"inicializado corretamente."
+msgid "Helper function not available. Please ensure the plugin is properly initialized."
+msgstr "Função auxiliar não disponível. Certifique-se de que o plugin esteja inicializado corretamente."
 
 #: app/src/pages/dashboard/index.vue:919
 #: app/src/pages/menu-creator/src/edit.vue:1075
@@ -3337,12 +3117,8 @@ msgid "Hover"
 msgstr "Passar o cursor"
 
 #: app/src/pages/settings/src/settings-config.js:989
-msgid ""
-"How many days to keep activity logs before automatic cleanup. Default is 90 "
-"days."
-msgstr ""
-"Por quantos dias os registros de atividades devem ser mantidos antes da "
-"limpeza automática? O padrão é 90 dias."
+msgid "How many days to keep activity logs before automatic cleanup. Default is 90 days."
+msgstr "Por quantos dias os registros de atividades devem ser mantidos antes da limpeza automática? O padrão é 90 dias."
 
 #: admin/src/Rest/RankMathDashboardWidget.php:235
 msgid "How many times your site showed up in the search results."
@@ -3475,12 +3251,8 @@ msgid "In"
 msgstr "Em"
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:628
-msgid ""
-"In Google Analytics, go to Admin → Property Settings. Your Property ID is "
-"the number shown (e.g. 123456789)."
-msgstr ""
-"No Google Analytics, acesse Administrador → Configurações da propriedade. O "
-"ID da sua propriedade é o número exibido (por exemplo, 123456789)."
+msgid "In Google Analytics, go to Admin → Property Settings. Your Property ID is the number shown (e.g. 123456789)."
+msgstr "No Google Analytics, acesse Administrador → Configurações da propriedade. O ID da sua propriedade é o número exibido (por exemplo, 123456789)."
 
 #: app/src/pages/dashboard/src/cards/users-chart/component.vue:158
 msgid "In Range"
@@ -3683,12 +3455,8 @@ msgid "Invalid post type slug."
 msgstr "Slug de tipo de postagem inválido."
 
 #: admin/src/Rest/CustomPostTypes.php:286
-msgid ""
-"Invalid post type slug. Use only lowercase letters, numbers, and "
-"underscores. Maximum 20 characters."
-msgstr ""
-"Slug de tipo de postagem inválido. Use apenas letras minúsculas, números e "
-"sublinhados. Máximo de 20 caracteres."
+msgid "Invalid post type slug. Use only lowercase letters, numbers, and underscores. Maximum 20 characters."
+msgstr "Slug de tipo de postagem inválido. Use apenas letras minúsculas, números e sublinhados. Máximo de 20 caracteres."
 
 #: admin/src/Rest/PostsTables.php:924
 msgid "Invalid post type."
@@ -3851,9 +3619,7 @@ msgstr "Erro JSON: %s"
 
 #: admin/src/Rest/GoogleAnalyticsOAuth.php:574
 msgid "JSON must be a service account key (type should be \"service_account\")"
-msgstr ""
-"O JSON deve ser uma chave de conta de serviço (o tipo deve ser "
-"\"service_account\")."
+msgstr "O JSON deve ser uma chave de conta de serviço (o tipo deve ser \"service_account\")."
 
 #: app/src/components/app/search/utils/formatRelativeDate.js:17
 #: app/src/components/user-activity/user-activity.vue:79
@@ -4048,12 +3814,8 @@ msgid "License validated successfully."
 msgstr "Licença validada com sucesso."
 
 #: admin/src/License/LicenseService.php:199
-msgid ""
-"License validation failed remotely. Using the last valid local response "
-"temporarily."
-msgstr ""
-"A validação remota da licença falhou. Usando temporariamente a última "
-"resposta local válida."
+msgid "License validation failed remotely. Using the last valid local response temporarily."
+msgstr "A validação remota da licença falhou. Usando temporariamente a última resposta local válida."
 
 #: app/src/components/app/toolbar/index.vue:70
 #: app/src/pages/settings/src/settings-config.js:35
@@ -4196,9 +3958,7 @@ msgstr "Local"
 
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:647
 msgid "Location data will appear when visitors browse your site"
-msgstr ""
-"Os dados de localização serão exibidos quando os visitantes navegarem pelo "
-"seu site."
+msgstr "Os dados de localização serão exibidos quando os visitantes navegarem pelo seu site."
 
 #: app/src/components/utility/image-editor/index.vue:1889
 msgid "Lock aspect ratio"
@@ -4405,12 +4165,8 @@ msgid "Menu cache cleared"
 msgstr "Cache do menu limpo"
 
 #: admin/src/Rest/MenuCache.php:128
-msgid ""
-"Menu cache key rotated successfully. All client caches have been "
-"invalidated."
-msgstr ""
-"A chave de cache do menu foi rotacionada com sucesso. Todos os caches do "
-"cliente foram invalidados."
+msgid "Menu cache key rotated successfully. All client caches have been invalidated."
+msgstr "A chave de cache do menu foi rotacionada com sucesso. Todos os caches do cliente foram invalidados."
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:178
 msgid "Menu created"
@@ -4786,12 +4542,8 @@ msgid "No engagement data available"
 msgstr "Não há dados de engajamento disponíveis."
 
 #: admin/src/Rest/CustomFields/OptionPageRenderer.php:248
-msgid ""
-"No field groups are assigned to this option page. Create a field group and "
-"set its location to this option page."
-msgstr ""
-"Nenhum grupo de campos está atribuído a esta página de opções. Crie um "
-"grupo de campos e defina sua localização para esta página de opções."
+msgid "No field groups are assigned to this option page. Create a field group and set its location to this option page."
+msgstr "Nenhum grupo de campos está atribuído a esta página de opções. Crie um grupo de campos e defina sua localização para esta página de opções."
 
 #: admin/src/Rest/MediaReplace.php:169
 msgid "No file was uploaded."
@@ -5189,31 +4941,20 @@ msgid "Option page updated successfully."
 msgstr "Página de opções atualizada com sucesso."
 
 #: app/src/pages/settings/src/settings-config.js:664
-msgid ""
-"Optional allow list. Selected users or roles (for example, Editor) will "
-"still see update notifications for hidden plugins."
-msgstr ""
-"Lista de permissões opcional. Usuários ou funções selecionados (por "
-"exemplo, Editor) ainda verão notificações de atualização para plugins "
-"ocultos."
+msgid "Optional allow list. Selected users or roles (for example, Editor) will still see update notifications for hidden plugins."
+msgstr "Lista de permissões opcional. Usuários ou funções selecionados (por exemplo, Editor) ainda verão notificações de atualização para plugins ocultos."
 
 #: app/src/pages/settings/src/settings-config.js:476
 msgid "Optional favicon to replace the WordPress favicon in the admin."
-msgstr ""
-"Ícone opcional para substituir o ícone padrão do WordPress no painel de "
-"administração."
+msgstr "Ícone opcional para substituir o ícone padrão do WordPress no painel de administração."
 
 #: app/src/pages/settings/src/settings-config.js:206
 msgid "Optional image that will be added to the empty panel in the login page"
 msgstr "Imagem opcional que será adicionada ao painel vazio na página de login."
 
 #: app/src/pages/settings/src/settings-config.js:220
-msgid ""
-"Optional logo displayed in the modern login screen. When empty, the default "
-"dashboard logo will be used."
-msgstr ""
-"Logotipo opcional exibido na tela de login moderna. Quando vazio, o "
-"logotipo padrão do painel será usado."
+msgid "Optional logo displayed in the modern login screen. When empty, the default dashboard logo will be used."
+msgstr "Logotipo opcional exibido na tela de login moderna. Quando vazio, o logotipo padrão do painel será usado."
 
 #: app/src/pages/settings/src/settings-config.js:76
 msgid "Optional logo for to be displayed in the menu"
@@ -5299,9 +5040,7 @@ msgstr "Análise da página"
 
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:298
 msgid "Page data will appear when visitors browse your site"
-msgstr ""
-"Os dados da página serão exibidos quando os visitantes navegarem pelo seu "
-"site."
+msgstr "Os dados da página serão exibidos quando os visitantes navegarem pelo seu site."
 
 #: admin/src/Rest/Analytics.php:733
 msgid "Page title exceeds maximum length"
@@ -5323,9 +5062,7 @@ msgstr "Análise de visualizações de página"
 
 #: admin/src/Pages/DummyDataPage.php:124
 msgid "Page views from various devices (desktop, mobile, tablet)"
-msgstr ""
-"Visualizações de página a partir de vários dispositivos (desktop, celular, "
-"tablet)"
+msgstr "Visualizações de página a partir de vários dispositivos (desktop, celular, tablet)"
 
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:207
 msgid "pages"
@@ -5375,9 +5112,7 @@ msgstr "Falha na verificação da senha"
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:614
 msgid "Paste the contents of the JSON key file below and enter your Property ID"
-msgstr ""
-"Cole o conteúdo do arquivo de chave JSON abaixo e insira o ID da sua "
-"propriedade."
+msgstr "Cole o conteúdo do arquivo de chave JSON abaixo e insira o ID da sua propriedade."
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:656
 msgid "Paste the contents of your service account JSON key file:"
@@ -5415,17 +5150,8 @@ msgid "Performance"
 msgstr "Desempenho"
 
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:980
-msgid ""
-"Permission denied: The service account does not have access to this Google "
-"Analytics property. Please add the service account email to your GA4 "
-"property with Viewer access. Go to Google Analytics → Admin → Property "
-"Access Management and add the service account email."
-msgstr ""
-"Permissão negada: a conta de serviço não tem acesso a esta propriedade do "
-"Google Analytics. Adicione o e-mail da conta de serviço à sua propriedade "
-"do GA4 com acesso de visualizador. Acesse Google Analytics → Administrador "
-"→ Gerenciamento de acesso à propriedade e adicione o e-mail da conta de "
-"serviço."
+msgid "Permission denied: The service account does not have access to this Google Analytics property. Please add the service account email to your GA4 property with Viewer access. Go to Google Analytics → Admin → Property Access Management and add the service account email."
+msgstr "Permissão negada: a conta de serviço não tem acesso a esta propriedade do Google Analytics. Adicione o e-mail da conta de serviço à sua propriedade do GA4 com acesso de visualizador. Acesse Google Analytics → Administrador → Gerenciamento de acesso à propriedade e adicione o e-mail da conta de serviço."
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:359
 msgid "Permission Issue Detected"
@@ -5448,9 +5174,7 @@ msgstr "PHP"
 
 #: app/src/pages/settings/src/settings-panel.vue:519
 msgid "Please add your licence key to unlock the plugin settings"
-msgstr ""
-"Por favor, insira sua chave de licença para desbloquear as configurações do "
-"plugin."
+msgstr "Por favor, insira sua chave de licença para desbloquear as configurações do plugin."
 
 #: admin/src/Security/TurnStyle.php:224
 msgid "Please complete the Turnstile challenge."
@@ -5555,9 +5279,7 @@ msgstr "Plugin instalado com sucesso e reativado."
 
 #: admin/src/Rest/PluginManager.php:785
 msgid "Plugin installed successfully but could not determine the plugin file"
-msgstr ""
-"O plugin foi instalado com sucesso, mas não foi possível determinar o "
-"arquivo do plugin."
+msgstr "O plugin foi instalado com sucesso, mas não foi possível determinar o arquivo do plugin."
 
 #: admin/src/Rest/PluginManager.php:805
 msgid "Plugin installed successfully but reactivation failed: %s"
@@ -5608,9 +5330,7 @@ msgstr "Plugin atualizado e reativado com sucesso."
 
 #: admin/src/Rest/PluginManager.php:784
 msgid "Plugin updated successfully but could not determine the plugin file"
-msgstr ""
-"O plugin foi atualizado com sucesso, mas não foi possível determinar o "
-"arquivo do plugin."
+msgstr "O plugin foi atualizado com sucesso, mas não foi possível determinar o arquivo do plugin."
 
 #: admin/src/Rest/PluginManager.php:575
 #: admin/src/Rest/PluginManager.php:801
@@ -5666,9 +5386,7 @@ msgstr "O tipo de postagem \"%s\" usa um slug reservado: %s"
 #: admin/src/Rest/CustomPostTypes.php:570
 #: admin/src/Rest/CustomPostTypes.php:579
 msgid "Post type at index %d is missing required fields (slug or name)."
-msgstr ""
-"O tipo de postagem no índice %d não possui os campos obrigatórios (slug ou "
-"nome)."
+msgstr "O tipo de postagem no índice %d não possui os campos obrigatórios (slug ou nome)."
 
 #: admin/src/Rest/CustomPostTypes.php:278
 msgid "Post type name is required."
@@ -5846,12 +5564,8 @@ msgid "Quick Draft"
 msgstr "Rascunho rápido"
 
 #: app/src/components/app/search/components/SearchOnboarding.vue:36
-msgid ""
-"Quickly find posts, pages, users, and more. Here are some tips to get "
-"started:"
-msgstr ""
-"Encontre rapidamente publicações, páginas, usuários e muito mais. Aqui "
-"estão algumas dicas para começar:"
+msgid "Quickly find posts, pages, users, and more. Here are some tips to get started:"
+msgstr "Encontre rapidamente publicações, páginas, usuários e muito mais. Aqui estão algumas dicas para começar:"
 
 #: admin/src/Rest/RankMathDashboardWidget.php:164
 #: app/src/pages/dashboard/src/cards/rank-math-overview/component.vue:115
@@ -5939,9 +5653,7 @@ msgstr "Dados de referência de mecanismos de busca e mídias sociais"
 
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:304
 msgid "Referrer data will appear when visitors arrive from external sources"
-msgstr ""
-"Os dados de referência aparecerão quando os visitantes chegarem de fontes "
-"externas."
+msgstr "Os dados de referência aparecerão quando os visitantes chegarem de fontes externas."
 
 #: admin/src/Rest/Analytics.php:174
 msgid "Referrer URL"
@@ -6056,55 +5768,28 @@ msgid "Replace secret key"
 msgstr "Substituir chave secreta"
 
 #: app/src/pages/settings/src/settings-config.js:588
-msgid ""
-"Replace the built-in WordPress editor with a modern, enhanced post editor "
-"interface."
-msgstr ""
-"Substitua o editor padrão do WordPress por uma interface de edição de posts "
-"moderna e aprimorada."
+msgid "Replace the built-in WordPress editor with a modern, enhanced post editor interface."
+msgstr "Substitua o editor padrão do WordPress por uma interface de edição de posts moderna e aprimorada."
 
 #: app/src/pages/settings/src/settings-config.js:639
-msgid ""
-"Replace the classic plugins page with a modern plugin manager with plugin "
-"profiling and improved features."
-msgstr ""
-"Substitua a página clássica de plugins por um gerenciador de plugins "
-"moderno com criação de perfis de plugins e recursos aprimorados."
+msgid "Replace the classic plugins page with a modern plugin manager with plugin profiling and improved features."
+msgstr "Substitua a página clássica de plugins por um gerenciador de plugins moderno com criação de perfis de plugins e recursos aprimorados."
 
 #: app/src/pages/settings/src/settings-config.js:793
-msgid ""
-"Replace the classic WordPress comments page with a modern, responsive "
-"comment manager with improved features and better organization."
-msgstr ""
-"Substitua a página de comentários clássica do WordPress por um gerenciador "
-"de comentários moderno e responsivo, com recursos aprimorados e melhor "
-"organização."
+msgid "Replace the classic WordPress comments page with a modern, responsive comment manager with improved features and better organization."
+msgstr "Substitua a página de comentários clássica do WordPress por um gerenciador de comentários moderno e responsivo, com recursos aprimorados e melhor organização."
 
 #: app/src/pages/settings/src/settings-config.js:683
-msgid ""
-"Replace the classic WordPress media library with a modern, responsive media "
-"manager with improved upload and organization features."
-msgstr ""
-"Substitua a biblioteca de mídia clássica do WordPress por um gerenciador de "
-"mídia moderno e responsivo, com recursos aprimorados de upload e "
-"organização."
+msgid "Replace the classic WordPress media library with a modern, responsive media manager with improved upload and organization features."
+msgstr "Substitua a biblioteca de mídia clássica do WordPress por um gerenciador de mídia moderno e responsivo, com recursos aprimorados de upload e organização."
 
 #: app/src/pages/settings/src/settings-config.js:733
-msgid ""
-"Replace the classic WordPress users page with a modern, responsive user "
-"manager with improved features and better organization."
-msgstr ""
-"Substitua a página de usuários clássica do WordPress por um gerenciador de "
-"usuários moderno e responsivo, com recursos aprimorados e melhor "
-"organização."
+msgid "Replace the classic WordPress users page with a modern, responsive user manager with improved features and better organization."
+msgstr "Substitua a página de usuários clássica do WordPress por um gerenciador de usuários moderno e responsivo, com recursos aprimorados e melhor organização."
 
 #: app/src/pages/settings/src/settings-config.js:812
-msgid ""
-"Replace the default WordPress dashboard with a modern, customizable "
-"dashboard interface."
-msgstr ""
-"Substitua o painel de controle padrão do WordPress por uma interface "
-"moderna e personalizável."
+msgid "Replace the default WordPress dashboard with a modern, customizable dashboard interface."
+msgstr "Substitua o painel de controle padrão do WordPress por uma interface moderna e personalizável."
 
 #: app/src/pages/media/src/media-details-view.vue:752
 msgid "Replacing file..."
@@ -6213,9 +5898,7 @@ msgstr "Tentar novamente"
 
 #: admin/src/Rest/Media.php:82
 msgid "Return only unused media items (unattached and not used as featured image)."
-msgstr ""
-"Devolva apenas itens de mídia não utilizados (desvinculados e não usados "
-"como imagem principal)."
+msgstr "Devolva apenas itens de mídia não utilizados (desvinculados e não usados como imagem principal)."
 
 #: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:136
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:54
@@ -6310,12 +5993,8 @@ msgstr "Função Slug"
 #: admin/src/Rest/RoleEditor.php:522
 #: admin/src/Rest/RoleEditor.php:530
 #: app/src/pages/role-editor/src/role-list-view.vue:250
-msgid ""
-"Role slug can only contain lowercase letters, numbers, hyphens, and "
-"underscores."
-msgstr ""
-"O cabeçalho da função só pode conter letras minúsculas, números, hífens e "
-"sublinhados."
+msgid "Role slug can only contain lowercase letters, numbers, hyphens, and underscores."
+msgstr "O cabeçalho da função só pode conter letras minúsculas, números, hífens e sublinhados."
 
 #: admin/src/Rest/RoleEditor.php:538
 msgid "Role slug is too long."
@@ -6469,9 +6148,7 @@ msgstr "Pesquisar fontes..."
 
 #: app/src/components/app/search/components/EmptyStateInitial.vue:38
 msgid "Search for posts, pages, users, categories, or use quick actions."
-msgstr ""
-"Pesquise publicações, páginas, usuários, categorias ou utilize ações "
-"rápidas."
+msgstr "Pesquise publicações, páginas, usuários, categorias ou utilize ações rápidas."
 
 #: app/src/components/utility/icon-select/index.vue:113
 msgid "Search icons"
@@ -6581,9 +6258,7 @@ msgstr "A verificação de segurança falhou."
 
 #: admin/src/Security/TurnStyle.php:258
 msgid "Security check failed. Please try again or contact the site administrator."
-msgstr ""
-"A verificação de segurança falhou. Tente novamente ou entre em contato com "
-"o administrador do site."
+msgstr "A verificação de segurança falhou. Tente novamente ou entre em contato com o administrador do site."
 
 #: app/src/pages/settings/index.vue:139
 msgid "Security settings and administration"
@@ -6605,24 +6280,18 @@ msgstr "Selecione uma categoria da lista para configurar suas preferências."
 
 #: app/src/pages/comments/src/comment-list-view.vue:695
 msgid "Select a comment from the list to view details and edit properties."
-msgstr ""
-"Selecione um comentário da lista para visualizar os detalhes e editar as "
-"propriedades."
+msgstr "Selecione um comentário da lista para visualizar os detalhes e editar as propriedades."
 
 #: app/src/pages/media/src/media-list-view.vue:1747
 msgid "Select a media file from the list to view details and edit properties."
-msgstr ""
-"Selecione um arquivo de mídia da lista para visualizar detalhes e editar "
-"propriedades."
+msgstr "Selecione um arquivo de mídia da lista para visualizar detalhes e editar propriedades."
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:534
 msgid "Select a menu from the list to edit its structure and settings."
 msgstr "Selecione um menu da lista para editar sua estrutura e configurações."
 
 #: app/src/pages/admin-notices/src/table.vue:372
-msgid ""
-"Select a notice from the list to edit it, or create a new one to get "
-"started."
+msgid "Select a notice from the list to edit it, or create a new one to get started."
 msgstr "Selecione um aviso da lista para editá-lo ou crie um novo para começar."
 
 #: app/src/pages/admin-notices/src/edit.vue:449
@@ -6631,15 +6300,11 @@ msgstr "Selecione um tipo de notificação"
 
 #: app/src/pages/plugins/index.vue:490
 msgid "Select a plugin from the list to view its details and manage settings."
-msgstr ""
-"Selecione um plugin da lista para visualizar seus detalhes e gerenciar as "
-"configurações."
+msgstr "Selecione um plugin da lista para visualizar seus detalhes e gerenciar as configurações."
 
 #: app/src/pages/posts/src/post-preview.vue:255
 msgid "Select a post from the list to view details and edit properties."
-msgstr ""
-"Selecione uma publicação da lista para visualizar detalhes e editar "
-"propriedades."
+msgstr "Selecione uma publicação da lista para visualizar detalhes e editar propriedades."
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:409
 msgid "Select a property..."
@@ -6659,9 +6324,7 @@ msgstr "Selecione uma tabela da lista para visualizar sua estrutura e dados."
 
 #: app/src/pages/users/src/user-list-view.vue:1074
 msgid "Select a user from the list to view details and edit properties."
-msgstr ""
-"Selecione um usuário da lista para visualizar detalhes e editar "
-"propriedades."
+msgstr "Selecione um usuário da lista para visualizar detalhes e editar propriedades."
 
 #: app/src/pages/role-editor/src/role-details-view.vue:783
 msgid "Select All"
@@ -6688,12 +6351,8 @@ msgid "Select Font File"
 msgstr "Selecione o arquivo de fonte"
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:968
-msgid ""
-"Select font files from your media library. Supported: .woff2, .woff, .ttf, "
-".otf"
-msgstr ""
-"Selecione arquivos de fonte da sua biblioteca de mídia. Formatos "
-"suportados: .woff2, .woff, .ttf, .otf"
+msgid "Select font files from your media library. Supported: .woff2, .woff, .ttf, .otf"
+msgstr "Selecione arquivos de fonte da sua biblioteca de mídia. Formatos suportados: .woff2, .woff, .ttf, .otf"
 
 #: admin/src/Pages/DummyDataPage.php:110
 msgid "Select how many months of dummy data to generate."
@@ -6716,12 +6375,8 @@ msgid "Select Property"
 msgstr "Selecione o imóvel"
 
 #: app/src/pages/settings/src/settings-config.js:653
-msgid ""
-"Select the plugins that should not display available update notices in the "
-"Plugins table."
-msgstr ""
-"Selecione os plugins que não devem exibir avisos de atualização disponíveis "
-"na tabela Plugins."
+msgid "Select the plugins that should not display available update notices in the Plugins table."
+msgstr "Selecione os plugins que não devem exibir avisos de atualização disponíveis na tabela Plugins."
 
 #: app/src/components/utility/multiselect-roles-and-users/index.vue:130
 msgid "Select users or roles"
@@ -6810,28 +6465,16 @@ msgid "Session tracking and unique visitor data"
 msgstr "Rastreamento de sessão e dados de visitantes únicos"
 
 #: app/src/pages/settings/src/settings-config.js:415
-msgid ""
-"Set a accent color and Flexify Dashboard will automatically create a color "
-"scale for you."
-msgstr ""
-"Defina uma cor de destaque e o Flexify Dashboard criará automaticamente uma "
-"escala de cores para você."
+msgid "Set a accent color and Flexify Dashboard will automatically create a color scale for you."
+msgstr "Defina uma cor de destaque e o Flexify Dashboard criará automaticamente uma escala de cores para você."
 
 #: app/src/pages/settings/src/settings-config.js:397
-msgid ""
-"Set a base color and Flexify Dashboard will automatically create a color "
-"scale for you."
-msgstr ""
-"Defina uma cor base e o Flexify Dashboard criará automaticamente uma escala "
-"de cores para você."
+msgid "Set a base color and Flexify Dashboard will automatically create a color scale for you."
+msgstr "Defina uma cor base e o Flexify Dashboard criará automaticamente uma escala de cores para você."
 
 #: app/src/pages/settings/src/settings-config.js:91
-msgid ""
-"Set an alternative logo to use in dark mode. If one isn't set it will fall "
-"back to the standard logo."
-msgstr ""
-"Defina um logotipo alternativo para usar no modo escuro. Se nenhum for "
-"definido, o logotipo padrão será usado."
+msgid "Set an alternative logo to use in dark mode. If one isn't set it will fall back to the standard logo."
+msgstr "Defina um logotipo alternativo para usar no modo escuro. Se nenhum for definido, o logotipo padrão será usado."
 
 #: app/src/components/utility/date-range-picker/index.vue:116
 msgid "Set date"
@@ -7061,9 +6704,7 @@ msgstr "Padrão"
 
 #: app/src/pages/users/src/user-list-view.vue:1679
 msgid "Standard fields (ID, username, email, name, roles, etc.) are always included"
-msgstr ""
-"Os campos padrão (ID, nome de usuário, e-mail, nome, funções, etc.) estão "
-"sempre incluídos."
+msgstr "Os campos padrão (ID, nome de usuário, e-mail, nome, funções, etc.) estão sempre incluídos."
 
 #: app/src/components/utility/image-editor/index.vue:1855
 msgid "Start Crop"
@@ -7260,12 +6901,8 @@ msgid "The item will not be shown if hidden"
 msgstr "O item não será exibido se estiver oculto."
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:227
-msgid ""
-"The menu cache has been cleared successfully. All users will see fresh menu "
-"data."
-msgstr ""
-"O cache do menu foi limpo com sucesso. Todos os usuários verão os dados "
-"atualizados do menu."
+msgid "The menu cache has been cleared successfully. All users will see fresh menu data."
+msgstr "O cache do menu foi limpo com sucesso. Todos os usuários verão os dados atualizados do menu."
 
 #: app/src/pages/plugins/src/plugin-details-view.vue:68
 msgid "The plugin you are looking for could not be found."
@@ -7288,41 +6925,24 @@ msgid "The sanitized SVG file could not be saved."
 msgstr "O arquivo SVG higienizado não pôde ser salvo."
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:197
-msgid ""
-"The secret key is stored securely and never exposed in the generic settings "
-"payload."
-msgstr ""
-"A chave secreta é armazenada com segurança e nunca é exposta no conteúdo "
-"das configurações genéricas."
+msgid "The secret key is stored securely and never exposed in the generic settings payload."
+msgstr "A chave secreta é armazenada com segurança e nunca é exposta no conteúdo das configurações genéricas."
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:642
-msgid ""
-"The service account email (found in the JSON file) must be added to your "
-"GA4 property with at least Viewer access for data to be retrieved."
-msgstr ""
-"O endereço de e-mail da conta de serviço (encontrado no arquivo JSON) deve "
-"ser adicionado à sua propriedade do GA4 com, no mínimo, acesso de "
-"Visualizador para que os dados possam ser recuperados."
+msgid "The service account email (found in the JSON file) must be added to your GA4 property with at least Viewer access for data to be retrieved."
+msgstr "O endereço de e-mail da conta de serviço (encontrado no arquivo JSON) deve ser adicionado à sua propriedade do GA4 com, no mínimo, acesso de Visualizador para que os dados possam ser recuperados."
 
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:996
-msgid ""
-"The specified Google Analytics property was not found. Please check that "
-"the Property ID is correct."
-msgstr ""
-"A propriedade do Google Analytics especificada não foi encontrada. "
-"Verifique se o ID da propriedade está correto."
+msgid "The specified Google Analytics property was not found. Please check that the Property ID is correct."
+msgstr "A propriedade do Google Analytics especificada não foi encontrada. Verifique se o ID da propriedade está correto."
 
 #: admin/src/Options/MediaOptions.php:213
 msgid "The SVG file could not be read for sanitization."
 msgstr "O arquivo SVG não pôde ser lido para sanitização."
 
 #: admin/src/Options/MediaOptions.php:224
-msgid ""
-"The SVG file could not be sanitized. The file may be corrupted or contain "
-"invalid content."
-msgstr ""
-"O arquivo SVG não pôde ser higienizado. O arquivo pode estar corrompido ou "
-"conter conteúdo inválido."
+msgid "The SVG file could not be sanitized. The file may be corrupted or contain invalid content."
+msgstr "O arquivo SVG não pôde ser higienizado. O arquivo pode estar corrompido ou conter conteúdo inválido."
 
 #: app/src/components/app/menu/components/UserDetails.vue:389
 #: app/src/components/app/toolbar/index.vue:234
@@ -7353,26 +6973,12 @@ msgid "these %d users"
 msgstr "esses %d usuários"
 
 #: app/src/pages/plugins/src/plugin-performance.vue:30
-msgid ""
-"These metrics represent plugin performance during a admin dashboard page "
-"load. While this provides valuable insight into plugin behavior, actual "
-"performance may vary across different pages and user interactions."
-msgstr ""
-"Essas métricas representam o desempenho do plugin durante o carregamento de "
-"uma página do painel de administração. Embora isso forneça informações "
-"valiosas sobre o comportamento do plugin, o desempenho real pode variar "
-"entre diferentes páginas e interações do usuário."
+msgid "These metrics represent plugin performance during a admin dashboard page load. While this provides valuable insight into plugin behavior, actual performance may vary across different pages and user interactions."
+msgstr "Essas métricas representam o desempenho do plugin durante o carregamento de uma página do painel de administração. Embora isso forneça informações valiosas sobre o comportamento do plugin, o desempenho real pode variar entre diferentes páginas e interações do usuário."
 
 #: app/src/pages/plugins/src/plugin-performance.vue:26
-msgid ""
-"These metrics represent plugin performance during a home page load. While "
-"this provides valuable insight into plugin behavior, actual performance may "
-"vary across different pages and user interactions."
-msgstr ""
-"Essas métricas representam o desempenho do plugin durante o carregamento da "
-"página inicial. Embora isso forneça informações valiosas sobre o "
-"comportamento do plugin, o desempenho real pode variar entre diferentes "
-"páginas e interações do usuário."
+msgid "These metrics represent plugin performance during a home page load. While this provides valuable insight into plugin behavior, actual performance may vary across different pages and user interactions."
+msgstr "Essas métricas representam o desempenho do plugin durante o carregamento da página inicial. Embora isso forneça informações valiosas sobre o comportamento do plugin, o desempenho real pode variar entre diferentes páginas e interações do usuário."
 
 #: app/src/pages/comments/src/comment-list-view.vue:266
 msgid "this comment"
@@ -7384,25 +6990,15 @@ msgstr "este arquivo"
 
 #: admin/src/Rest/RankMathDashboardWidget.php:223
 msgid "This is the number of pageviews carried out by visitors from Search Engines."
-msgstr ""
-"Este é o número de visualizações de página realizadas por visitantes "
-"provenientes de mecanismos de busca."
+msgstr "Este é o número de visualizações de página realizadas por visitantes provenientes de mecanismos de busca."
 
 #: app/src/pages/settings/src/settings-config.js:332
-msgid ""
-"This is the secret key for your turnstyle which can be created from your "
-"cloudflare dashboard."
-msgstr ""
-"Esta é a chave secreta para a sua catraca, que pode ser criada no seu "
-"painel de controle do Cloudflare."
+msgid "This is the secret key for your turnstyle which can be created from your cloudflare dashboard."
+msgstr "Esta é a chave secreta para a sua catraca, que pode ser criada no seu painel de controle do Cloudflare."
 
 #: app/src/pages/settings/src/settings-config.js:282
-msgid ""
-"This is the site key for your turnstyle which can be created from your "
-"cloudflare dashboard."
-msgstr ""
-"Esta é a chave do seu torniquete, que pode ser criada no painel de controle "
-"do Cloudflare."
+msgid "This is the site key for your turnstyle which can be created from your cloudflare dashboard."
+msgstr "Esta é a chave do seu torniquete, que pode ser criada no painel de controle do Cloudflare."
 
 #: app/src/pages/menu-creator/src/edit.vue:1057
 msgid "This link will open in a new tab"
@@ -7429,40 +7025,24 @@ msgid "This site URL already exists"
 msgstr "Este site já existe."
 
 #: admin/src/Pages/DummyDataPage.php:92
-msgid ""
-"This tool will generate realistic dummy analytics data for the last 2 "
-"months to help you test the analytics features."
-msgstr ""
-"Esta ferramenta irá gerar dados analíticos fictícios realistas para os "
-"últimos 2 meses, para ajudar você a testar os recursos analíticos."
+msgid "This tool will generate realistic dummy analytics data for the last 2 months to help you test the analytics features."
+msgstr "Esta ferramenta irá gerar dados analíticos fictícios realistas para os últimos 2 meses, para ajudar você a testar os recursos analíticos."
 
 #: app/src/pages/users/src/user-list-view.vue:436
 msgid "this user"
 msgstr "este usuário"
 
 #: app/src/pages/settings/src/settings-panel.vue:296
-msgid ""
-"This will deactivate the current license for this site and remove the local "
-"license data. This action cannot be undone from here."
-msgstr ""
-"Isso desativará a licença atual deste site e removerá os dados da licença "
-"local. Esta ação não pode ser desfeita a partir daqui."
+msgid "This will deactivate the current license for this site and remove the local license data. This action cannot be undone from here."
+msgstr "Isso desativará a licença atual deste site e removerá os dados da licença local. Esta ação não pode ser desfeita a partir daqui."
 
 #: admin/src/Pages/DummyDataPage.php:86
-msgid ""
-"This will delete all existing analytics data and replace it with dummy data "
-"for testing purposes."
-msgstr ""
-"Isso excluirá todos os dados analíticos existentes e os substituirá por "
-"dados fictícios para fins de teste."
+msgid "This will delete all existing analytics data and replace it with dummy data for testing purposes."
+msgstr "Isso excluirá todos os dados analíticos existentes e os substituirá por dados fictícios para fins de teste."
 
 #: app/src/pages/settings/src/settings-panel.vue:451
-msgid ""
-"This will delete your current Flexify Dashboard configuration and restore "
-"the default settings. This action cannot be undone."
-msgstr ""
-"Isso apagará sua configuração atual do Painel Flexify e restaurará as "
-"configurações padrão. Essa ação não pode ser desfeita."
+msgid "This will delete your current Flexify Dashboard configuration and restore the default settings. This action cannot be undone."
+msgstr "Isso apagará sua configuração atual do Painel Flexify e restaurará as configurações padrão. Essa ação não pode ser desfeita."
 
 #: app/src/pages/media/src/media-details-view.vue:205
 msgid "This will permantantly delete the file. Proceed?"
@@ -7473,12 +7053,8 @@ msgid "This will permantantly optimise the image and convert to webp format."
 msgstr "Isso otimizará permanentemente a imagem e a converterá para o formato webp."
 
 #: app/src/pages/settings/src/settings-config.js:491
-msgid ""
-"This will rename Flexify Dashboard in the plugins list as well as renaming "
-"it's settings link."
-msgstr ""
-"Isso renomeará o Painel de Controle do Flexify na lista de plugins, bem "
-"como o link de suas configurações."
+msgid "This will rename Flexify Dashboard in the plugins list as well as renaming it's settings link."
+msgstr "Isso renomeará o Painel de Controle do Flexify na lista de plugins, bem como o link de suas configurações."
 
 #: app/src/pages/media/src/media-details-view.vue:797
 msgid "Thumbnails regenerated"
@@ -7533,12 +7109,8 @@ msgid "to select"
 msgstr "para selecionar"
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:196
-msgid ""
-"To update the integration, enter the current site key you want to keep and "
-"a new secret key."
-msgstr ""
-"Para atualizar a integração, insira a chave do site atual que deseja manter "
-"e uma nova chave secreta."
+msgid "To update the integration, enter the current site key you want to keep and a new secret key."
+msgstr "Para atualizar a integração, insira a chave do site atual que deseja manter e uma nova chave secreta."
 
 #: app/src/components/app/toolbar/index.vue:152
 msgid "Toggle menu"
@@ -7620,9 +7192,7 @@ msgstr "Número total de acessos recebidos por todos os redirecionamentos."
 
 #: admin/src/Rest/RankMathDashboardWidget.php:259
 msgid "Total number of keywords your site ranks for within top 100 positions."
-msgstr ""
-"Número total de palavras-chave para as quais seu site está classificado "
-"entre as 100 primeiras posições."
+msgstr "Número total de palavras-chave para as quais seu site está classificado entre as 100 primeiras posições."
 
 #: admin/src/Rest/RankMathDashboardWidget.php:426
 msgid "Total number of Redirections created in Rank Math."
@@ -7662,12 +7232,8 @@ msgid "Total Users"
 msgstr "Total de usuários"
 
 #: app/src/pages/settings/src/settings-config.js:974
-msgid ""
-"Track and log all admin actions including post changes, user updates, "
-"plugin activations, and more."
-msgstr ""
-"Acompanhe e registre todas as ações administrativas, incluindo alterações "
-"em posts, atualizações de usuários, ativações de plugins e muito mais."
+msgid "Track and log all admin actions including post changes, user updates, plugin activations, and more."
+msgstr "Acompanhe e registre todas as ações administrativas, incluindo alterações em posts, atualizações de usuários, ativações de plugins e muito mais."
 
 #: app/src/components/utility/image-editor/index.vue:1954
 msgid "Transform"
@@ -7696,9 +7262,7 @@ msgstr "Tente um termo de pesquisa diferente ou verifique outra categoria."
 
 #: app/src/components/app/search/components/EmptyStateNoResults.vue:30
 msgid "Try a different search term or use command syntax to filter results."
-msgstr ""
-"Tente um termo de pesquisa diferente ou use a sintaxe de comando para "
-"filtrar os resultados."
+msgstr "Tente um termo de pesquisa diferente ou use a sintaxe de comando para filtrar os resultados."
 
 #: app/src/pages/role-editor/src/role-details-view.vue:737
 msgid "Try adjusting your search terms"
@@ -7831,9 +7395,7 @@ msgstr "Não utilizado"
 
 #: admin/src/Rest/Media.php:88
 msgid "Unused detection mode: shallow (default) or deep (scans post_content)."
-msgstr ""
-"Modo de detecção não utilizado: superficial (padrão) ou profundo (analisa "
-"post_content)."
+msgstr "Modo de detecção não utilizado: superficial (padrão) ou profundo (analisa post_content)."
 
 #: app/src/pages/media/src/media-list-view.vue:1600
 msgid "Unused Media Only"
@@ -7963,35 +7525,20 @@ msgid "Use as featured image"
 msgstr "Usar como imagem principal"
 
 #: app/src/pages/settings/src/settings-config.js:316
-msgid ""
-"Use Google reCAPTCHA v2 checkbox in the modern administrative login and "
-"password recovery forms. Credentials are configured in Integrations."
-msgstr ""
-"Utilize a caixa de seleção do Google reCAPTCHA v2 nos formulários modernos "
-"de login administrativo e recuperação de senha. As credenciais são "
-"configuradas em Integrações."
+msgid "Use Google reCAPTCHA v2 checkbox in the modern administrative login and password recovery forms. Credentials are configured in Integrations."
+msgstr "Utilize a caixa de seleção do Google reCAPTCHA v2 nos formulários modernos de login administrativo e recuperação de senha. As credenciais são configuradas em Integrações."
 
 #: app/src/pages/dashboard/index.vue:803
 msgid "Use Manage Cards to show the cards you want for this category."
-msgstr ""
-"Use a opção \"Gerenciar cartões\" para exibir os cartões desejados para "
-"esta categoria."
+msgstr "Use a opção \"Gerenciar cartões\" para exibir os cartões desejados para esta categoria."
 
 #: app/src/pages/settings/src/settings-config.js:572
-msgid ""
-"Use the modern posts list interface instead of the classic WordPress table "
-"layout."
-msgstr ""
-"Utilize a interface moderna de lista de posts em vez do layout clássico de "
-"tabela do WordPress."
+msgid "Use the modern posts list interface instead of the classic WordPress table layout."
+msgstr "Utilize a interface moderna de lista de posts em vez do layout clássico de tabela do WordPress."
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:144
-msgid ""
-"Use these credentials in the modern administrative login and password "
-"recovery forms with Google reCAPTCHA v2 checkbox."
-msgstr ""
-"Utilize essas credenciais nos formulários modernos de login administrativo "
-"e recuperação de senha com a caixa de seleção do Google reCAPTCHA v2."
+msgid "Use these credentials in the modern administrative login and password recovery forms with Google reCAPTCHA v2 checkbox."
+msgstr "Utilize essas credenciais nos formulários modernos de login administrativo e recuperação de senha com a caixa de seleção do Google reCAPTCHA v2."
 
 #: app/src/pages/media/src/media-details-view.vue:1078
 msgid "Used In"
@@ -8288,12 +7835,8 @@ msgid "We were unable to validate Google reCAPTCHA at this time. Please try agai
 msgstr "Não foi possível validar o Google reCAPTCHA neste momento. Tente novamente."
 
 #: admin/src/Update/Updater.php:365
-msgid ""
-"We were unable to verify updates for the <strong>Flexify Dashboard</strong> "
-"plugin."
-msgstr ""
-"Não foi possível verificar atualizações para o plugin <strong>Flexify "
-"Dashboard</strong>."
+msgid "We were unable to verify updates for the <strong>Flexify Dashboard</strong> plugin."
+msgstr "Não foi possível verificar atualizações para o plugin <strong>Flexify Dashboard</strong>."
 
 #: app/src/components/user-details-form/user-details-form.vue:252
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:252
@@ -8328,35 +7871,23 @@ msgstr "Bem-vindo ao WordPress"
 
 #: admin/src/Pages/CustomDashboardPage.php:108
 msgid "Welcome to your WordPress dashboard! This is your site management hub."
-msgstr ""
-"Bem-vindo ao seu painel de controle do WordPress! Este é o seu centro de "
-"gerenciamento do site."
+msgstr "Bem-vindo ao seu painel de controle do WordPress! Este é o seu centro de gerenciamento do site."
 
 #: admin/src/Pages/DummyDataPage.php:122
 msgid "What This Generates"
 msgstr "O que isso gera"
 
 #: app/src/pages/settings/src/settings-config.js:267
-msgid ""
-"When enabled, a cloudflare turnstyle challenge will be displayed on the "
-"login page to enhance security. Cloudflare account is required"
-msgstr ""
-"Quando ativado, um desafio de segurança Cloudflare será exibido na página "
-"de login para aumentar a segurança. É necessário ter uma conta Cloudflare."
+msgid "When enabled, a cloudflare turnstyle challenge will be displayed on the login page to enhance security. Cloudflare account is required"
+msgstr "Quando ativado, um desafio de segurança Cloudflare será exibido na página de login para aumentar a segurança. É necessário ter uma conta Cloudflare."
 
 #: app/src/pages/settings/src/settings-config.js:191
 msgid "When enabled, Flexify Dashboard will modernise the default login page."
-msgstr ""
-"Quando ativado, o Painel de Controle do Flexify modernizará a página de "
-"login padrão."
+msgstr "Quando ativado, o Painel de Controle do Flexify modernizará a página de login padrão."
 
 #: app/src/pages/settings/src/settings-config.js:354
-msgid ""
-"When enabled, the light / dark toggle will be removed and the selected "
-"theme set for all users."
-msgstr ""
-"Quando ativada, a opção de alternar entre claro e escuro será removida e o "
-"tema selecionado será aplicado a todos os usuários."
+msgid "When enabled, the light / dark toggle will be removed and the selected theme set for all users."
+msgstr "Quando ativada, a opção de alternar entre claro e escuro será removida e o tema selecionado será aplicado a todos os usuários."
 
 #: app/src/pages/settings/src/settings-config.js:252
 msgid "When hidden the language selector on the login page will not be displayed"
@@ -8367,12 +7898,8 @@ msgid "When you create new items they will show up here."
 msgstr "Ao criar novos itens, eles aparecerão aqui."
 
 #: app/src/components/utility/remote-site-select/index.vue:192
-msgid ""
-"When you switch to a remote site, all API requests will be sent to that "
-"site instead of the local site."
-msgstr ""
-"Ao mudar para um site remoto, todas as solicitações de API serão enviadas "
-"para esse site em vez do site local."
+msgid "When you switch to a remote site, all API requests will be sent to that site instead of the local site."
+msgstr "Ao mudar para um site remoto, todas as solicitações de API serão enviadas para esse site em vez do site local."
 
 #: app/src/pages/menu-creator/src/edit.vue:821
 msgid "Whether this menu is active or not"
@@ -8401,15 +7928,8 @@ msgid "WordPress"
 msgstr "WordPress"
 
 #: app/src/pages/settings/src/settings-config.js:119
-msgid ""
-"WordPress capability required to see the remote site switcher in the "
-"toolbar. Defaults to \"manage_options\" (admin users). Users with this "
-"capability or below will see the switcher."
-msgstr ""
-"É necessário ter a permissão \"manage_options\" do WordPress para "
-"visualizar o seletor de sites remotos na barra de ferramentas. O padrão é "
-"\"manage_options\" (usuários administradores). Usuários com essa permissão "
-"ou inferior verão o seletor."
+msgid "WordPress capability required to see the remote site switcher in the toolbar. Defaults to \"manage_options\" (admin users). Users with this capability or below will see the switcher."
+msgstr "É necessário ter a permissão \"manage_options\" do WordPress para visualizar o seletor de sites remotos na barra de ferramentas. O padrão é \"manage_options\" (usuários administradores). Usuários com essa permissão ou inferior verão o seletor."
 
 #: admin/src/Rest/DatabaseExplorer.php:764
 msgid "WordPress core tables cannot be deleted."
@@ -8479,27 +7999,12 @@ msgid "Yes, remove site"
 msgstr "Sim, remova o site."
 
 #: app/src/pages/role-editor/src/role-details-view.vue:372
-msgid ""
-"You are about to modify the administrator role capabilities. This is "
-"extremely dangerous and could lock you out of your site permanently. Are "
-"you absolutely sure you want to proceed?"
-msgstr ""
-"Você está prestes a modificar as permissões da função de administrador. "
-"Isso é extremamente perigoso e pode bloquear seu acesso ao site "
-"permanentemente. Tem certeza absoluta de que deseja prosseguir?"
+msgid "You are about to modify the administrator role capabilities. This is extremely dangerous and could lock you out of your site permanently. Are you absolutely sure you want to proceed?"
+msgstr "Você está prestes a modificar as permissões da função de administrador. Isso é extremamente perigoso e pode bloquear seu acesso ao site permanentemente. Tem certeza absoluta de que deseja prosseguir?"
 
 #: app/src/pages/role-editor/src/role-details-view.vue:565
-msgid ""
-"You are editing the Administrator role. Modifying capabilities incorrectly "
-"could permanently lock you out of your WordPress site. Only make changes if "
-"you are absolutely certain of what you are doing. It is strongly "
-"recommended to test changes on a staging site first."
-msgstr ""
-"Você está editando a função de Administrador. Modificar as permissões "
-"incorretamente pode bloquear permanentemente o seu acesso ao seu site "
-"WordPress. Faça alterações somente se tiver absoluta certeza do que está "
-"fazendo. É altamente recomendável testar as alterações em um ambiente de "
-"teste primeiro."
+msgid "You are editing the Administrator role. Modifying capabilities incorrectly could permanently lock you out of your WordPress site. Only make changes if you are absolutely certain of what you are doing. It is strongly recommended to test changes on a staging site first."
+msgstr "Você está editando a função de Administrador. Modificar as permissões incorretamente pode bloquear permanentemente o seu acesso ao seu site WordPress. Faça alterações somente se tiver absoluta certeza do que está fazendo. É altamente recomendável testar as alterações em um ambiente de teste primeiro."
 
 #: admin/src/Rest/MediaReplace.php:159
 msgid "You do not have permission to edit this media item."
@@ -8538,9 +8043,7 @@ msgid "You're all caught up"
 msgstr "Você já está por dentro de tudo."
 
 #: admin/src/Pages/Login.php:1816
-msgid ""
-"Your account is valid, but you do not have access to the administrative "
-"panel."
+msgid "Your account is valid, but you do not have access to the administrative panel."
 msgstr "Sua conta é válida, mas você não tem acesso ao painel administrativo."
 
 #: app/src/pages/media/src/media-details-view.vue:822
@@ -8564,12 +8067,8 @@ msgid "%s selected"
 msgstr "%s selecionado(s)"
 
 #: app/src/pages/settings/src/settings-config.js:541
-msgid ""
-"Allow dragging the sidebar edge to change its width. When disabled the "
-"sidebar uses the default width."
-msgstr ""
-"Permite arrastar a borda da barra lateral para alterar a largura. Quando "
-"desativado, a barra lateral usa a largura padrão."
+msgid "Allow dragging the sidebar edge to change its width. When disabled the sidebar uses the default width."
+msgstr "Permite arrastar a borda da barra lateral para alterar a largura. Quando desativado, a barra lateral usa a largura padrão."
 
 #: app/src/components/kit/FdPageHeader.vue:19
 msgid "Breadcrumb"
@@ -8727,9 +8226,7 @@ msgstr "%d pedido(s) serão movidos para a lixeira."
 
 #: app/src/pages/orders/src/OrdersList.vue:396
 msgid "%d order(s) will be permanently deleted. This action cannot be undone."
-msgstr ""
-"%d pedido(s) serão excluídos permanentemente. Esta ação não pode ser "
-"desfeita."
+msgstr "%d pedido(s) serão excluídos permanentemente. Esta ação não pode ser desfeita."
 
 #: app/src/pages/products/src/ProductsList.vue:466
 msgid "%d product(s) could not be updated"
@@ -8745,9 +8242,7 @@ msgstr "%d produto(s) serão movidos para a lixeira."
 
 #: app/src/pages/products/src/ProductsList.vue:478
 msgid "%d product(s) will be permanently deleted. This action cannot be undone."
-msgstr ""
-"%d produto(s) serão excluídos permanentemente. Esta ação não pode ser "
-"desfeita."
+msgstr "%d produto(s) serão excluídos permanentemente. Esta ação não pode ser desfeita."
 
 #: app/src/pages/products/src/AttributesView.vue:259
 msgid "%d products"
@@ -8759,9 +8254,7 @@ msgstr "%d produto(s) selecionado(s)."
 
 #: app/src/pages/products/src/BulkPriceModal.vue:43
 msgid "%d selected product(s). Variations of variable products are updated too."
-msgstr ""
-"%d produto(s) selecionado(s). As variações de produtos variáveis também "
-"serão atualizadas."
+msgstr "%d produto(s) selecionado(s). As variações de produtos variáveis também serão atualizadas."
 
 #: app/src/pages/products/src/CouponsView.vue:258
 msgid "%d used"
@@ -9209,20 +8702,11 @@ msgstr "Cria uma página listando os produtos de cada valor."
 
 #: app/src/pages/orders/src/OrderEditor.vue:406
 msgid "Create an order manually, e.g. for phone or in-store sales."
-msgstr ""
-"Crie um pedido manualmente, por exemplo para vendas por telefone ou na loja "
-"física."
+msgstr "Crie um pedido manualmente, por exemplo para vendas por telefone ou na loja física."
 
 #: app/src/pages/settings/src/settings-config.js:778
-msgid ""
-"Create and edit products in a modern editor with pricing, inventory, "
-"images, attributes and variations. Keep it disabled if your extensions add "
-"fields to the classic product editor, which is always one click away."
-msgstr ""
-"Crie e edite produtos em um editor moderno com preços, estoque, imagens, "
-"atributos e variações. Mantenha desativado se suas extensões adicionam "
-"campos ao editor clássico de produtos, que continua a um clique de "
-"distância."
+msgid "Create and edit products in a modern editor with pricing, inventory, images, attributes and variations. Keep it disabled if your extensions add fields to the classic product editor, which is always one click away."
+msgstr "Crie e edite produtos em um editor moderno com preços, estoque, imagens, atributos e variações. Mantenha desativado se suas extensões adicionam campos ao editor clássico de produtos, que continua a um clique de distância."
 
 #: app/src/pages/products/src/AttributesView.vue:203
 msgid "Create attributes to describe and vary your products."
@@ -9552,12 +9036,8 @@ msgid "Global"
 msgstr "Global"
 
 #: app/src/pages/products/src/AttributesView.vue:186
-msgid ""
-"Global attributes such as size or color can be reused across products and "
-"variations."
-msgstr ""
-"Atributos globais, como tamanho ou cor, podem ser reutilizados em produtos "
-"e variações."
+msgid "Global attributes such as size or color can be reused across products and variations."
+msgstr "Atributos globais, como tamanho ou cor, podem ser reutilizados em produtos e variações."
 
 #: admin/src/Rest/WooCommerceDashboard.php:792
 msgid "Gross revenue"
@@ -10003,12 +9483,8 @@ msgid "Online store"
 msgstr "Loja virtual"
 
 #: app/src/pages/orders/src/OrderEditor.vue:420
-msgid ""
-"Only pending or on-hold orders can have their items changed. Change the "
-"status first."
-msgstr ""
-"Somente pedidos pendentes ou aguardando podem ter os itens alterados. "
-"Altere o status primeiro."
+msgid "Only pending or on-hold orders can have their items changed. Change the status first."
+msgstr "Somente pedidos pendentes ou aguardando podem ter os itens alterados. Altere o status primeiro."
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:184
 msgid "Only the first %d variations will be created."
@@ -10181,12 +9657,8 @@ msgid "Prices are set on each variation."
 msgstr "Os preços são definidos em cada variação."
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:239
-msgid ""
-"Prices of variable products are managed in each variation. Expand the "
-"product in the list to edit them."
-msgstr ""
-"Os preços de produtos variáveis são gerenciados em cada variação. Expanda o "
-"produto na lista para editá-los."
+msgid "Prices of variable products are managed in each variation. Expand the product in the list to edit them."
+msgstr "Os preços de produtos variáveis são gerenciados em cada variação. Expanda o produto na lista para editá-los."
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:646
 #: app/src/pages/products/src/ProductQuickEdit.vue:235
@@ -10443,24 +9915,12 @@ msgid "Rename value"
 msgstr "Renomear valor"
 
 #: app/src/pages/settings/src/settings-config.js:763
-msgid ""
-"Replace the WooCommerce orders list and order details with a modern page "
-"featuring filters, previews, status changes, notes and refunds. Works with "
-"HPOS and legacy order storage."
-msgstr ""
-"Substitui a lista e os detalhes de pedidos do WooCommerce por uma página "
-"moderna com filtros, pré-visualizações, alteração de status, notas e "
-"reembolsos. Funciona com HPOS e com o armazenamento legado de pedidos."
+msgid "Replace the WooCommerce orders list and order details with a modern page featuring filters, previews, status changes, notes and refunds. Works with HPOS and legacy order storage."
+msgstr "Substitui a lista e os detalhes de pedidos do WooCommerce por uma página moderna com filtros, pré-visualizações, alteração de status, notas e reembolsos. Funciona com HPOS e com o armazenamento legado de pedidos."
 
 #: app/src/pages/settings/src/settings-config.js:748
-msgid ""
-"Replace the WooCommerce products list with a modern page featuring "
-"counters, filters, quick edit and bulk actions. The classic editor is still "
-"used to create and fully edit products."
-msgstr ""
-"Substitui a lista de produtos do WooCommerce por uma página moderna com "
-"contadores, filtros, edição rápida e ações em massa. O editor clássico "
-"continua sendo usado para criar e editar produtos por completo."
+msgid "Replace the WooCommerce products list with a modern page featuring counters, filters, quick edit and bulk actions. The classic editor is still used to create and fully edit products."
+msgstr "Substitui a lista de produtos do WooCommerce por uma página moderna com contadores, filtros, edição rápida e ações em massa. O editor clássico continua sendo usado para criar e editar produtos por completo."
 
 #: app/src/pages/products/src/CouponsView.vue:306
 msgid "Requires a free shipping method that accepts coupons."
@@ -10792,12 +10252,8 @@ msgid "The order may have been deleted or you do not have permission to view it.
 msgstr "O pedido pode ter sido excluído ou você não tem permissão para visualizá-lo."
 
 #: app/src/pages/orders/src/RefundModal.vue:163
-msgid ""
-"The payment method does not support automatic refunds. Remember to return "
-"the money to the customer manually."
-msgstr ""
-"O método de pagamento não suporta reembolsos automáticos. Lembre-se de "
-"devolver o valor ao cliente manualmente."
+msgid "The payment method does not support automatic refunds. Remember to return the money to the customer manually."
+msgstr "O método de pagamento não suporta reembolsos automáticos. Lembre-se de devolver o valor ao cliente manualmente."
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:574
 msgid "The product may have been deleted or you do not have permission to edit it."
@@ -11162,9 +10618,7 @@ msgstr "Arquivos para download"
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:696
 msgid "Downloadable files of variable products are managed in the classic editor."
-msgstr ""
-"Os arquivos para download de produtos variáveis são gerenciados no editor "
-"clássico."
+msgstr "Os arquivos para download de produtos variáveis são gerenciados no editor clássico."
 
 #: app/src/pages/products/src/TagsView.vue:185
 msgid "Edit tag"
@@ -11231,12 +10685,8 @@ msgid "Products promoted in the cart based on this product."
 msgstr "Produtos promovidos no carrinho com base neste produto."
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:744
-msgid ""
-"Products recommended instead of this one, usually more profitable or better "
-"quality."
-msgstr ""
-"Produtos recomendados no lugar deste, geralmente mais lucrativos ou de "
-"melhor qualidade."
+msgid "Products recommended instead of this one, usually more profitable or better quality."
+msgstr "Produtos recomendados no lugar deste, geralmente mais lucrativos ou de melhor qualidade."
 
 #: app/src/pages/orders/src/OrdersList.vue:528
 msgid "Remove customer filter"
@@ -11350,12 +10800,8 @@ msgid "Page data"
 msgstr "Dados da página"
 
 #: app/src/react/features/design-system/FoundationCheck.tsx:42
-msgid ""
-"Phase 0 of the React migration: data, REST, translations, dark mode and "
-"notifications."
-msgstr ""
-"Fase 0 da migração para React: dados, REST, traduções, modo escuro e "
-"notificações."
+msgid "Phase 0 of the React migration: data, REST, translations, dark mode and notifications."
+msgstr "Fase 0 da migração para React: dados, REST, traduções, modo escuro e notificações."
 
 #: app/src/react/features/design-system/FoundationCheck.tsx:51
 msgid "Plugin folder"
@@ -11374,12 +10820,8 @@ msgid "Reload page"
 msgstr "Recarregar página"
 
 #: app/src/react/app/ErrorBoundary.tsx:33
-msgid ""
-"Reload the page to try again. If it keeps happening, share the details "
-"below with support."
-msgstr ""
-"Recarregue a página para tentar de novo. Se continuar acontecendo, envie os "
-"detalhes abaixo para o suporte."
+msgid "Reload the page to try again. If it keeps happening, share the details below with support."
+msgstr "Recarregue a página para tentar de novo. Se continuar acontecendo, envie os detalhes abaixo para o suporte."
 
 #: app/src/react/features/design-system/FoundationCheck.tsx:60
 msgid "REST request"
@@ -11417,6 +10859,212 @@ msgstr "Traduções"
 #: app/src/react/features/design-system/FoundationCheck.tsx:55
 msgid "wp.i18n loaded"
 msgstr "wp.i18n carregado"
+
+#: app/src/react/features/design-system/Showcase.tsx:220
+msgid "162 orders"
+msgstr "162 pedidos"
+
+#: app/src/react/features/design-system/Showcase.tsx:190
+msgid "Alerts"
+msgstr "Alertas"
+
+#: app/src/react/features/design-system/Showcase.tsx:254
+msgid "Arrives in 1 day."
+msgstr "Chega em 1 dia."
+
+#: app/src/react/features/design-system/Showcase.tsx:366
+msgid "Available to refund: R$ 85,80"
+msgstr "Disponível para reembolso: R$ 85,80"
+
+#: app/src/react/features/design-system/Showcase.tsx:169
+msgid "Badges"
+msgstr "Selos"
+
+#: app/src/react/features/design-system/Showcase.tsx:142
+msgid "Buttons"
+msgstr "Botões"
+
+#: app/src/react/features/design-system/Showcase.tsx:384
+msgid "Camiseta Básica Algodão"
+msgstr "Camiseta Básica Algodão"
+
+#: app/src/react/features/design-system/Showcase.tsx:193
+msgid "Check the stock"
+msgstr "Conferir o estoque"
+
+#: app/src/react/features/design-system/Showcase.tsx:132
+msgid "Components"
+msgstr "Componentes"
+
+#: app/src/react/features/design-system/Showcase.tsx:286
+msgid "Confirm dialog"
+msgstr "Diálogo de confirmação"
+
+#: app/src/react/features/design-system/Showcase.tsx:307
+msgid "Data table"
+msgstr "Tabela de dados"
+
+#: app/src/react/features/design-system/Showcase.tsx:135
+msgid "Design system sections"
+msgstr "Seções do design system"
+
+#: app/src/react/features/design-system/Showcase.tsx:319
+msgid "Details of"
+msgstr "Detalhes de"
+
+#: app/src/react/features/design-system/Showcase.tsx:291
+msgid "Download CSV"
+msgstr "Baixar CSV"
+
+#: app/src/react/features/design-system/Showcase.tsx:298
+msgid "Dropdown"
+msgstr "Menu suspenso"
+
+#: app/src/react/features/design-system/Showcase.tsx:338
+msgid "Empty and loading states"
+msgstr "Estados vazio e de carregamento"
+
+#: app/src/react/features/design-system/Showcase.tsx:312
+msgid "Example orders"
+msgstr "Pedidos de exemplo"
+
+#: app/src/react/features/design-system/Showcase.tsx:254
+msgid "Express shipping"
+msgstr "Entrega expressa"
+
+#: app/src/react/features/design-system/Showcase.tsx:115
+msgid "Flexify Dashboard"
+msgstr "Flexify Dashboard"
+
+#: app/src/react/features/design-system/Showcase.tsx:226
+msgid "Form controls"
+msgstr "Controles de formulário"
+
+#: app/src/react/features/design-system/Showcase.tsx:133
+msgid "Foundation"
+msgstr "Fundação"
+
+#: app/src/react/features/design-system/Showcase.tsx:157
+msgid "Icon after"
+msgstr "Ícone depois"
+
+#: app/src/react/features/design-system/Showcase.tsx:160
+msgid "Icon only button"
+msgstr "Botão apenas com ícone"
+
+#: app/src/react/features/design-system/Showcase.tsx:250
+msgid "Indeterminate"
+msgstr "Indeterminado"
+
+#: app/src/react/features/design-system/Showcase.tsx:182
+msgid "Live"
+msgstr "No ar"
+
+#: app/src/react/features/design-system/Showcase.tsx:158
+#: app/src/react/features/design-system/Showcase.tsx:213
+msgid "Loading"
+msgstr "Carregando"
+
+#: app/src/react/features/design-system/Showcase.tsx:209
+msgid "Metrics"
+msgstr "Métricas"
+
+#: app/src/react/features/design-system/Showcase.tsx:292
+msgid "Open in classic screen"
+msgstr "Abrir na tela clássica"
+
+#: app/src/react/features/design-system/Showcase.tsx:268
+msgid "Open modal"
+msgstr "Abrir modal"
+
+#: app/src/react/features/design-system/Showcase.tsx:271
+msgid "Open sheet"
+msgstr "Abrir painel lateral"
+
+#: app/src/react/features/design-system/Showcase.tsx:264
+msgid "Overlays"
+msgstr "Sobreposições"
+
+#: app/src/react/features/design-system/Showcase.tsx:196
+msgid "Payment failed"
+msgstr "Pagamento recusado"
+
+#: app/src/react/features/design-system/Showcase.tsx:230
+msgid "Prefix and hint"
+msgstr "Prefixo e dica"
+
+#: app/src/react/features/design-system/Showcase.tsx:122
+msgid "Primary action"
+msgstr "Ação principal"
+
+#: app/src/react/features/design-system/Showcase.tsx:114
+msgid "React component kit of the plugin, based on TailAdmin."
+msgstr "Kit de componentes React do plugin, baseado no TailAdmin."
+
+#: app/src/react/features/design-system/Showcase.tsx:121
+msgid "Ready to build screens"
+msgstr "Pronto para construir telas"
+
+#: app/src/react/features/design-system/Showcase.tsx:243
+msgid "Short description of the product."
+msgstr "Descrição curta do produto."
+
+#: app/src/react/features/design-system/Showcase.tsx:248
+msgid "Shows first in the catalog."
+msgstr "Aparece primeiro no catálogo."
+
+#: app/src/react/features/design-system/Showcase.tsx:352
+msgid "Skeletons"
+msgstr "Esqueletos"
+
+#: app/src/react/features/design-system/Showcase.tsx:258
+msgid "Small switch"
+msgstr "Interruptor pequeno"
+
+#: app/src/react/features/design-system/Showcase.tsx:179
+msgid "Solid"
+msgstr "Sólido"
+
+#: app/src/react/features/design-system/Showcase.tsx:253
+msgid "Standard shipping"
+msgstr "Entrega padrão"
+
+#: app/src/react/features/design-system/Showcase.tsx:167
+msgid "Status and feedback"
+msgstr "Status e retorno"
+
+#: app/src/react/features/design-system/Showcase.tsx:197
+msgid "The gateway refused the charge."
+msgstr "O gateway recusou a cobrança."
+
+#: app/src/react/features/design-system/Showcase.tsx:278
+msgid "This action cannot be undone."
+msgstr "Esta ação não pode ser desfeita."
+
+#: app/src/react/features/design-system/Showcase.tsx:231
+msgid "This SKU is already in use."
+msgstr "Este SKU já está em uso."
+
+#: app/src/react/features/design-system/Showcase.tsx:193
+msgid "Two products are running low."
+msgstr "Dois produtos estão com estoque baixo."
+
+#: app/src/react/features/design-system/Showcase.tsx:249
+msgid "Unchecked"
+msgstr "Desmarcado"
+
+#: app/src/react/features/design-system/Showcase.tsx:231
+msgid "With error"
+msgstr "Com erro"
+
+#: app/src/react/features/design-system/Showcase.tsx:156
+#: app/src/react/features/design-system/Showcase.tsx:185
+msgid "With icon"
+msgstr "Com ícone"
+
+#: app/src/react/features/design-system/Showcase.tsx:192
+msgid "Your changes are live."
+msgstr "Suas alterações estão no ar."
 
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"

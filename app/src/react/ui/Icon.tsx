@@ -27,9 +27,13 @@ export const Icon = ({ name, className, title }: Props) => {
 				minHeight: '1em',
 				minWidth: '1em',
 				backgroundColor: 'currentColor',
-				WebkitMask: `url(${source}) no-repeat center`,
+				WebkitMaskImage: `url(${source})`,
+				WebkitMaskRepeat: 'no-repeat',
+				WebkitMaskPosition: 'center',
 				WebkitMaskSize: 'contain',
-				mask: `url(${source}) no-repeat center`,
+				maskImage: `url(${source})`,
+				maskRepeat: 'no-repeat',
+				maskPosition: 'center',
 				maskSize: 'contain',
 			}}
 		/>
