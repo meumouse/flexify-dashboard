@@ -57,6 +57,26 @@ class CustomDashboardPage {
 
 
     /**
+     * Get the Vite entry of the dashboard.
+     *
+     * The React overview shows the store metrics; the Vue dashboard still owns the card
+     * registry, so it stays the default until the cards move over.
+     *
+     * @since 4.0.0
+     * @return string
+     */
+    protected function get_entry() {
+        /**
+         * Filter whether the React store overview is used as the dashboard.
+         *
+         * @since 4.0.0
+         * @param bool $enabled Whether the React dashboard is used.
+         */
+        return (bool) apply_filters( 'flexify-dashboard/react-dashboard', false ) ? 'react/main/dashboard.tsx' : 'Dashboard.js';
+    }
+
+
+    /**
      * Loads dashboard styles and scripts.
      *
      * @since 2.0.0
@@ -64,8 +84,10 @@ class CustomDashboardPage {
      */
     public function load_styles_and_scripts() {
         $base_url = plugins_url( 'flexify-dashboard/' );
-        $style_src = $base_url . 'app/dist/assets/styles/dashboard.css';
-        $script_name = Scripts::get_base_script_path( 'Dashboard.js' );
+        $entry = $this->get_entry();
+        $script_name = Scripts::get_base_script_path( $entry );
+        $style_path = Scripts::get_stylesheet_path( $entry );
+        $style_src = $style_path ? $base_url . 'app/dist/' . $style_path : $base_url . 'app/dist/assets/styles/dashboard.css';
 
         wp_enqueue_style(
             'flexify-dashboard-dashboard',

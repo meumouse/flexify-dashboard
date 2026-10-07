@@ -31,6 +31,8 @@ export default defineConfig({
 				analytics: path.resolve(__dirname, 'src/apps/js/Analytics.js'),
 				comments: path.resolve(__dirname, 'src/apps/js/Comments.js'),
 				dashboard: path.resolve(__dirname, 'src/apps/js/Dashboard.js'),
+				// React store overview; the Vue dashboard keeps the card registry until it moves over.
+				'dashboard-react': path.resolve(__dirname, 'src/react/main/dashboard.tsx'),
 				database: path.resolve(__dirname, 'src/apps/js/Database.js'),
 				'design-system': path.resolve(__dirname, 'src/react/main/design-system.tsx'),
 				frontend: path.resolve(__dirname, 'src/apps/js/Frontend.js'),

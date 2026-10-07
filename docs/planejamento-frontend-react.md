@@ -386,7 +386,12 @@ Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o paine
 - `WpToolbar` move a `#wpadminbar` para dentro da barra do shell, também sem recriá-la, para os seletores do núcleo continuarem valendo para outros plugins.
 - A contagem usa `textContent` em vez de `innerText`: a resposta é a mesma para um aviso e não depende de layout, o que deixa o comportamento testável.
 
-**Parte 4 — pendente:** o painel com os widgets de e-commerce (seção 4.11) e os cartões atuais do painel.
+**Parte 4 — painel de e-commerce (concluída em 07/10/2026):** visão geral da loja com receita, pedidos, clientes e ticket médio, gráfico de receita, produtos mais vendidos e pedidos recentes, tudo pelo endpoint `woocommerce-dashboard` que já existia.
+
+- O ApexCharts entra por import dinâmico: é a dependência mais pesada da tela e só o gráfico precisa dela. O gráfico é remontado quando o tema muda, que é o que faz o Apex adotar as cores novas.
+- O painel React fica atrás do filtro `flexify-dashboard/react-dashboard` (desligado por padrão), porque **o painel Vue ainda é dono do registro de cartões** — os 18 grupos de cartões e a API de cartões de terceiros continuam lá.
+
+**Parte 5 — pendente:** o registro de cartões (`assets/js/dashboard/registry.js` é JavaScript puro e pode ser reaproveitado), a grade redimensionável, o seletor de período e os 18 grupos de cartões atuais.
 
 ### Fase 6 — Conteúdo (GG)
 Posts, mídia, comentários e usuários.

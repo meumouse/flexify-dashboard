@@ -118,6 +118,9 @@
       "%s child items": [
         "%s itens filhos"
       ],
+      "%s days": [
+        "%s dias"
+      ],
       "%s in stock": [
         "%s em estoque"
       ],
@@ -147,6 +150,9 @@
       ],
       "%s selected": [
         "%s selecionado(s)"
+      ],
+      "%s sold": [
+        "%s vendidos"
       ],
       "%s updated.": [
         "%s atualizado."
@@ -240,6 +246,9 @@
       ],
       "Activate": [
         "Ativar"
+      ],
+      "Activate WooCommerce to see the store metrics here.": [
+        "Ative o WooCommerce para ver as métricas da loja aqui."
       ],
       "Activate the plugin to display the Rank Math overview widget in Analytics.": [
         "Ative o plugin para exibir o widget de visão geral do Rank Math no Analytics."
@@ -771,6 +780,9 @@
       ],
       "Average position of all the keywords ranking within top 100 positions.": [
         "Posição média de todas as palavras-chave classificadas entre as 100 primeiras posições."
+      ],
+      "Average ticket": [
+        "Ticket médio"
       ],
       "Average value per order in the selected period": [
         "Valor médio por pedido no período selecionado"
@@ -1461,6 +1473,12 @@
       ],
       "Customers": [
         "Clientes"
+      ],
+      "Customers fell compared with the previous period.": [
+        "O número de clientes caiu em relação ao período anterior."
+      ],
+      "Customers grew compared with the previous period.": [
+        "O número de clientes cresceu em relação ao período anterior."
       ],
       "Customize login page appearance and security": [
         "Personalize a aparência e a segurança da página de login."
@@ -3298,6 +3316,9 @@
       "Large Files": [
         "Arquivos grandes"
       ],
+      "Last %s days": [
+        "Últimos %s dias"
+      ],
       "Last 30 Days": [
         "Últimos 30 dias"
       ],
@@ -4138,6 +4159,9 @@
       "No orders in the selected period.": [
         "Não há pedidos no período selecionado."
       ],
+      "No orders in this period.": [
+        "Nenhum pedido neste período."
+      ],
       "No orders match your filters": [
         "Nenhum pedido corresponde aos filtros"
       ],
@@ -4200,6 +4224,9 @@
       ],
       "No results yet. Execute a query to see results.": [
         "Ainda não há resultados. Execute uma consulta para ver os resultados."
+      ],
+      "No revenue in this period.": [
+        "Nenhuma receita neste período."
       ],
       "No role": [
         "Sem função"
@@ -4314,6 +4341,9 @@
       ],
       "Nothing found for “%s”.": [
         "Nada encontrado para “%s”."
+      ],
+      "Nothing sold in this period.": [
+        "Nada vendido neste período."
       ],
       "Nothing waiting": [
         "Nada esperando"
@@ -4716,6 +4746,9 @@
       ],
       "Performance": [
         "Desempenho"
+      ],
+      "Period": [
+        "Período"
       ],
       "Permission Issue Detected": [
         "Problema de permissão detectado"
@@ -5181,6 +5214,9 @@
       ],
       "Recent activity on your site.": [
         "Atividade recente em seu site."
+      ],
+      "Recent orders": [
+        "Pedidos recentes"
       ],
       "Recent searches": [
         "Buscas recentes"
@@ -5830,6 +5866,9 @@
       "Security token": [
         "Token de segurança"
       ],
+      "See all": [
+        "Ver todos"
+      ],
       "Seen by": [
         "Visto por"
       ],
@@ -6283,6 +6322,9 @@
       "Store": [
         "Loja"
       ],
+      "Store overview": [
+        "Visão geral da loja"
+      ],
       "Strikethrough": [
         "Tachado"
       ],
@@ -6647,6 +6689,9 @@
         "Principais fontes de referência"
       ],
       "Top Selling Products": [
+        "Produtos mais vendidos"
+      ],
+      "Top products": [
         "Produtos mais vendidos"
       ],
       "Total": [
@@ -7294,6 +7339,9 @@
       "WooCommerce": [
         "WooCommerce"
       ],
+      "WooCommerce is not active": [
+        "O WooCommerce não está ativo"
+      ],
       "WooCommerce is not active.": [
         "O WooCommerce não está ativo."
       ],
@@ -7653,6 +7701,9 @@
       ],
       "visits": [
         "visitas"
+      ],
+      "vs previous %s days": [
+        "vs %s dias anteriores"
       ],
       "weights loaded": [
         "pesos carregados"

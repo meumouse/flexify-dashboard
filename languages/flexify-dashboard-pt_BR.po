@@ -11249,6 +11249,75 @@ msgstr "Notificações (%d)"
 msgid "Read more"
 msgstr "Ler mais"
 
+#: app/src/react/features/dashboard/StoreDashboard.tsx:57
+msgid "%s days"
+msgstr "%s dias"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:101
+msgid "%s sold"
+msgstr "%s vendidos"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:33
+msgid "Activate WooCommerce to see the store metrics here."
+msgstr "Ative o WooCommerce para ver as métricas da loja aqui."
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:75
+msgid "Average ticket"
+msgstr "Ticket médio"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:167
+msgid "Customers fell compared with the previous period."
+msgstr "O número de clientes caiu em relação ao período anterior."
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:167
+msgid "Customers grew compared with the previous period."
+msgstr "O número de clientes cresceu em relação ao período anterior."
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:26
+msgid "Last %s days"
+msgstr "Últimos %s dias"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:128
+msgid "No orders in this period."
+msgstr "Nenhum pedido neste período."
+
+#: app/src/react/features/dashboard/RevenueChart.tsx:63
+msgid "No revenue in this period."
+msgstr "Nenhuma receita neste período."
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:91
+msgid "Nothing sold in this period."
+msgstr "Nada vendido neste período."
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:56
+msgid "Period"
+msgstr "Período"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:113
+msgid "Recent orders"
+msgstr "Pedidos recentes"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:116
+msgid "See all"
+msgstr "Ver todos"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:31
+#: app/src/react/features/dashboard/StoreDashboard.tsx:48
+msgid "Store overview"
+msgstr "Visão geral da loja"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:83
+msgid "Top products"
+msgstr "Produtos mais vendidos"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:72
+msgid "vs previous %s days"
+msgstr "vs %s dias anteriores"
+
+#: app/src/react/features/dashboard/StoreDashboard.tsx:33
+msgid "WooCommerce is not active"
+msgstr "O WooCommerce não está ativo"
+
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"
 msgid "Add New"
