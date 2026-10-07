@@ -1123,6 +1123,9 @@
       "Command Syntax": [
         "Sintaxe do comando"
       ],
+      "Commands": [
+        "Comandos"
+      ],
       "Comment": [
         "Comentário"
       ],
@@ -2643,6 +2646,9 @@
       ],
       "Frequently Used": [
         "Frequentemente usado"
+      ],
+      "Frequently used": [
+        "Mais usados"
       ],
       "Frontend performance": [
         "Desempenho do front-end"
@@ -4294,6 +4300,9 @@
       "Nothing found": [
         "Nada encontrado"
       ],
+      "Nothing found for “%s”.": [
+        "Nada encontrado para “%s”."
+      ],
       "Notice Editor": [
         "Editor de Avisos"
       ],
@@ -4368,6 +4377,9 @@
       ],
       "Online store": [
         "Loja virtual"
+      ],
+      "Only %s": [
+        "Somente %s"
       ],
       "Only SELECT queries are allowed for safety.": [
         "Somente consultas SELECT são permitidas por motivos de segurança."
@@ -5149,8 +5161,14 @@
       "Recent activity on your site.": [
         "Atividade recente em seu site."
       ],
+      "Recent searches": [
+        "Buscas recentes"
+      ],
       "Recently Accessed": [
         "Acessado recentemente"
+      ],
+      "Recently opened": [
+        "Abertos recentemente"
       ],
       "Record the refund without sending it to the payment gateway.": [
         "Registra o reembolso sem enviá-lo ao gateway de pagamento."
@@ -5668,6 +5686,9 @@
       "Search comments...": [
         "Pesquisar comentários..."
       ],
+      "Search content, menus and actions…": [
+        "Busque conteúdo, menus e ações…"
+      ],
       "Search coupons": [
         "Buscar cupons"
       ],
@@ -5766,6 +5787,9 @@
       ],
       "Search...": [
         "Buscar..."
+      ],
+      "Search…": [
+        "Buscar…"
       ],
       "Secret key": [
         "Chave secreta"
@@ -6744,6 +6768,9 @@
       ],
       "Type of chart data to retrieve": [
         "Tipo de dados do gráfico a serem recuperados"
+      ],
+      "Type to search, or start with a command:": [
+        "Digite para buscar, ou comece com um comando:"
       ],
       "Type values separated by commas and press Enter": [
         "Digite valores separados por vírgulas e pressione Enter"

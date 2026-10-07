@@ -6,6 +6,8 @@ import { dashIconStyles, iconOverrideStyles } from '@/react/shell/menu/iconStyle
 import { useAdminMenu } from '@/react/shell/menu/useAdminMenu';
 import { AppSidebar, SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '@/react/shell/AppSidebar';
 import { AppToolbar } from '@/react/shell/AppToolbar';
+import { PORTAL_ID } from '@/react/app/PageShell';
+import { CommandPalette } from '@/react/shell/search/CommandPalette';
 import { useColorScheme } from '@/react/shell/useColorScheme';
 import { Sheet } from '@/react/ui';
 
@@ -34,6 +36,7 @@ export const AppShell = () => {
 
 	const [collapsed, setCollapsed] = useState(readCollapsed);
 	const [drawerOpen, setDrawerOpen] = useState(false);
+	const [searchOpen, setSearchOpen] = useState(false);
 	const bodyHolder = useRef<HTMLDivElement>(null);
 	const moved = useRef(false);
 
@@ -57,6 +60,20 @@ export const AppShell = () => {
 		document.documentElement.classList.add('fd-rounded', 'uixp');
 	}, []);
 
+	// Ctrl/⌘K opens the palette from anywhere in the admin.
+	useEffect(() => {
+		const onKeyDown = (event: KeyboardEvent) => {
+			if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+				event.preventDefault();
+				setSearchOpen((current) => !current);
+			}
+		};
+
+		window.addEventListener('keydown', onKeyDown);
+
+		return () => window.removeEventListener('keydown', onKeyDown);
+	}, []);
+
 	const toggleSidebar = () => {
 		setCollapsed((current) => {
 			const next = !current;
@@ -71,6 +88,7 @@ export const AppShell = () => {
 		});
 	};
 
+	const searchEnabled = !(settings as { disable_search?: boolean }).disable_search;
 	const customCss = (settings as { custom_css?: string }).custom_css ?? '';
 	const externalStylesheets = (settings as { external_stylesheets?: string[] }).external_stylesheets;
 
@@ -94,7 +112,12 @@ export const AppShell = () => {
 
 				<div className="fd-right-column">
 					<div className={cn('flexify-dashboard-isolation sticky top-0 z-[2]', isDark && 'dark')}>
-						<AppToolbar collapsed={collapsed} onToggleSidebar={toggleSidebar} onOpenMenu={() => setDrawerOpen(true)} />
+						<AppToolbar
+							collapsed={collapsed}
+							onToggleSidebar={toggleSidebar}
+							onOpenMenu={() => setDrawerOpen(true)}
+							onOpenSearch={searchEnabled ? () => setSearchOpen(true) : undefined}
+						/>
 					</div>
 
 					<div className="fd-body-container font-sans">
@@ -109,6 +132,11 @@ export const AppShell = () => {
 						<AppSidebar menu={menu} loading={loading} collapsed={false} mobile onToggleOpen={toggleOpen} />
 					</div>
 				</Sheet>
+
+				{searchEnabled ? <CommandPalette open={searchOpen} onOpenChange={setSearchOpen} menu={menu} /> : null}
+
+				{/* Overlays of the shell render here, inside the isolated container. */}
+				<div id={PORTAL_ID} />
 			</div>
 		</div>
 	);

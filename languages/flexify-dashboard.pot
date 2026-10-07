@@ -395,6 +395,7 @@ msgstr ""
 #: app/src/react/features/products/ProductsList.tsx:354
 #: app/src/react/features/products/ProductVariations.tsx:130
 #: app/src/react/features/products/TagsView.tsx:117
+#: app/src/react/shell/search/CommandPalette.tsx:32
 msgid "Actions"
 msgstr ""
 
@@ -719,6 +720,7 @@ msgid "Admin layout"
 msgstr ""
 
 #: app/src/react/shell/AppSidebar.tsx:116
+#: app/src/react/shell/search/CommandPalette.tsx:29
 msgid "Admin menu"
 msgstr ""
 
@@ -1659,6 +1661,7 @@ msgstr ""
 #: app/src/react/features/products/ProductsList.tsx:307
 #: app/src/react/features/products/ProductsList.tsx:396
 #: app/src/react/features/products/ProductsList.tsx:487
+#: app/src/react/shell/search/useGlobalSearch.ts:61
 msgid "Categories"
 msgstr ""
 
@@ -1855,6 +1858,7 @@ msgstr ""
 #: app/src/components/kit/FdInput.vue:96
 #: app/src/pages/database/src/query-editor.vue:177
 #: app/src/react/form/Input.tsx:81
+#: app/src/react/shell/search/CommandPalette.tsx:203
 msgid "Clear"
 msgstr ""
 
@@ -1942,7 +1946,7 @@ msgid "Code"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:145
-#: app/src/react/shell/AppToolbar.tsx:69
+#: app/src/react/shell/AppToolbar.tsx:73
 msgid "Collapse sidebar"
 msgstr ""
 
@@ -1969,6 +1973,10 @@ msgstr ""
 
 #: app/src/components/app/search/components/CommandHelp.vue:7
 msgid "Command Syntax"
+msgstr ""
+
+#: app/src/react/shell/search/CommandPalette.tsx:176
+msgid "Commands"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:601
@@ -2548,7 +2556,8 @@ msgstr ""
 #: app/src/components/app/search/composables/useQuickActions.js:74
 #: app/src/components/app/toolbar/index.vue:200
 #: app/src/react/features/design-system/FoundationCheck.tsx:52
-#: app/src/react/shell/AppToolbar.tsx:82
+#: app/src/react/shell/AppToolbar.tsx:98
+#: app/src/react/shell/search/useQuickActions.ts:43
 msgid "Dark mode"
 msgstr ""
 
@@ -3120,6 +3129,7 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductEditor.tsx:983
 #: app/src/react/features/products/productFormat.ts:12
 #: app/src/react/features/products/ProductQuickEdit.tsx:115
+#: app/src/react/shell/search/commands.ts:62
 msgid "Draft"
 msgstr ""
 
@@ -3294,7 +3304,7 @@ msgid "Edit product"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:58
-#: app/src/react/shell/AppToolbar.tsx:57
+#: app/src/react/shell/AppToolbar.tsx:61
 msgid "Edit profile"
 msgstr ""
 
@@ -3713,7 +3723,7 @@ msgid "Expand all posts"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:145
-#: app/src/react/shell/AppToolbar.tsx:69
+#: app/src/react/shell/AppToolbar.tsx:73
 msgid "Expand sidebar"
 msgstr ""
 
@@ -4304,6 +4314,7 @@ msgid "Find"
 msgstr ""
 
 #: app/src/components/app/search/state/constants.js:33
+#: app/src/react/shell/search/commands.ts:46
 msgid "Find users"
 msgstr ""
 
@@ -4436,6 +4447,10 @@ msgstr ""
 #: app/src/pages/products/src/CouponsView.vue:253
 #: app/src/react/features/products/CouponsView.tsx:229
 msgid "Free shipping"
+msgstr ""
+
+#: app/src/react/shell/search/CommandPalette.tsx:31
+msgid "Frequently used"
 msgstr ""
 
 #: app/src/components/app/search/components/FrequentlyUsed.vue:30
@@ -5677,7 +5692,8 @@ msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:81
 #: app/src/components/app/toolbar/index.vue:200
-#: app/src/react/shell/AppToolbar.tsx:82
+#: app/src/react/shell/AppToolbar.tsx:98
+#: app/src/react/shell/search/useQuickActions.ts:42
 msgid "Light mode"
 msgstr ""
 
@@ -5857,7 +5873,7 @@ msgstr ""
 msgid "Log Level"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:61
+#: app/src/react/shell/AppToolbar.tsx:65
 msgid "Log out"
 msgstr ""
 
@@ -6092,7 +6108,7 @@ msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:156
 #: app/src/pages/settings/index.vue:71
-#: app/src/react/shell/AppShell.tsx:107
+#: app/src/react/shell/AppShell.tsx:130
 msgid "Menu"
 msgstr ""
 
@@ -6503,6 +6519,7 @@ msgid "New orders will appear here as soon as customers check out."
 msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:49
+#: app/src/react/shell/search/useQuickActions.ts:29
 msgid "New Page"
 msgstr ""
 
@@ -6519,6 +6536,7 @@ msgid "New post"
 msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:43
+#: app/src/react/shell/search/useQuickActions.ts:28
 msgid "New Post"
 msgstr ""
 
@@ -7071,6 +7089,10 @@ msgstr ""
 msgid "Nothing found"
 msgstr ""
 
+#: app/src/react/shell/search/CommandPalette.tsx:226
+msgid "Nothing found for “%s”."
+msgstr ""
+
 #: app/src/pages/admin-notices/src/edit.vue:415
 msgid "Notice content will appear here..."
 msgstr ""
@@ -7200,6 +7222,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:576
 #: app/src/react/features/orders/OrdersList.tsx:336
 msgid "Online store"
+msgstr ""
+
+#: app/src/react/shell/search/CommandPalette.tsx:181
+msgid "Only %s"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:455
@@ -7603,6 +7629,7 @@ msgstr ""
 
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:309
 #: app/src/pages/role-editor/src/role-details-view.vue:87
+#: app/src/react/shell/search/useGlobalSearch.ts:58
 msgid "Pages"
 msgstr ""
 
@@ -7715,6 +7742,7 @@ msgstr ""
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:87
 #: app/src/react/features/products/productFormat.ts:13
 #: app/src/react/features/products/ProductsList.tsx:116
+#: app/src/react/shell/search/commands.ts:63
 msgid "Pending"
 msgstr ""
 
@@ -8045,6 +8073,7 @@ msgstr ""
 #: app/src/pages/posts/index.vue:706
 #: app/src/pages/role-editor/src/role-details-view.vue:86
 #: app/src/pages/settings/index.vue:77
+#: app/src/react/shell/search/useGlobalSearch.ts:57
 msgid "Posts"
 msgstr ""
 
@@ -8151,6 +8180,7 @@ msgstr ""
 #: app/src/react/features/products/productFormat.ts:14
 #: app/src/react/features/products/ProductQuickEdit.tsx:117
 #: app/src/react/features/products/ProductsList.tsx:117
+#: app/src/react/shell/search/commands.ts:64
 msgid "Private"
 msgstr ""
 
@@ -8355,6 +8385,7 @@ msgstr ""
 #: app/src/react/features/products/ProductQuickEdit.tsx:114
 #: app/src/react/features/products/ProductsList.tsx:114
 #: app/src/react/features/products/ProductsList.tsx:132
+#: app/src/react/shell/search/commands.ts:61
 msgid "Published"
 msgstr ""
 
@@ -8416,6 +8447,8 @@ msgid "Query time"
 msgstr ""
 
 #: app/src/components/app/search/state/constants.js:40
+#: app/src/react/shell/search/CommandPalette.tsx:181
+#: app/src/react/shell/search/commands.ts:47
 msgid "Quick actions"
 msgstr ""
 
@@ -8529,12 +8562,20 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
+#: app/src/react/shell/search/CommandPalette.tsx:201
+msgid "Recent searches"
+msgstr ""
+
 #: app/src/components/app/search/components/SearchHistory.vue:27
 msgid "Recent Searches"
 msgstr ""
 
 #: app/src/components/app/search/components/RecentlyAccessed.vue:30
 msgid "Recently Accessed"
+msgstr ""
+
+#: app/src/react/shell/search/CommandPalette.tsx:30
+msgid "Recently opened"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:157
@@ -9337,6 +9378,7 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:188
 #: app/src/pages/products/src/ProductsList.vue:229
 #: app/src/react/features/products/productFormat.ts:15
+#: app/src/react/shell/search/commands.ts:65
 msgid "Scheduled"
 msgstr ""
 
@@ -9370,6 +9412,7 @@ msgstr ""
 #: app/src/pages/posts/src/inline-user-select.vue:114
 #: app/src/pages/posts/src/table-filters.vue:146
 #: app/src/react/form/SearchInput.tsx:57
+#: app/src/react/shell/search/CommandPalette.tsx:167
 msgid "Search"
 msgstr ""
 
@@ -9407,6 +9450,10 @@ msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:478
 msgid "Search comments..."
+msgstr ""
+
+#: app/src/react/shell/search/CommandPalette.tsx:166
+msgid "Search content, menus and actions…"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:228
@@ -9491,6 +9538,7 @@ msgstr ""
 
 #: app/src/components/app/search/state/constants.js:26
 #: app/src/pages/posts/index.vue:748
+#: app/src/react/shell/search/commands.ts:45
 msgid "Search posts"
 msgstr ""
 
@@ -9560,6 +9608,10 @@ msgstr ""
 #: app/src/components/kit/FdSearchInput.vue:44
 #: app/src/react/form/SearchInput.tsx:56
 msgid "Search..."
+msgstr ""
+
+#: app/src/react/shell/AppToolbar.tsx:90
+msgid "Search…"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:185
@@ -10123,7 +10175,8 @@ msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:67
 #: app/src/components/app/toolbar/index.vue:63
-#: app/src/react/shell/AppToolbar.tsx:59
+#: app/src/react/shell/AppToolbar.tsx:63
+#: app/src/react/shell/search/useQuickActions.ts:35
 msgid "Site settings"
 msgstr ""
 
@@ -10987,7 +11040,7 @@ msgid "Today"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:201
-#: app/src/react/shell/AppToolbar.tsx:83
+#: app/src/react/shell/AppToolbar.tsx:99
 msgid "Toggle dark mode"
 msgstr ""
 
@@ -10997,12 +11050,12 @@ msgid "Toggle details"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:152
-#: app/src/react/shell/AppToolbar.tsx:75
+#: app/src/react/shell/AppToolbar.tsx:79
 msgid "Toggle menu"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:146
-#: app/src/react/shell/AppToolbar.tsx:70
+#: app/src/react/shell/AppToolbar.tsx:74
 msgid "Toggle sidebar"
 msgstr ""
 
@@ -11270,6 +11323,10 @@ msgstr ""
 
 #: admin/src/Rest/Analytics.php:238
 msgid "Type of chart data to retrieve"
+msgstr ""
+
+#: app/src/react/shell/search/CommandPalette.tsx:230
+msgid "Type to search, or start with a command:"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductAttributes.vue:188
@@ -11677,7 +11734,7 @@ msgid "User management and administration settings"
 msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:209
-#: app/src/react/shell/AppToolbar.tsx:94
+#: app/src/react/shell/AppToolbar.tsx:110
 msgid "User menu"
 msgstr ""
 
@@ -11736,6 +11793,7 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:89
 #: app/src/pages/settings/index.vue:116
 #: app/src/pages/users/src/user-list-view.vue:806
+#: app/src/react/shell/search/useGlobalSearch.ts:64
 msgid "Users"
 msgstr ""
 
@@ -11872,6 +11930,8 @@ msgid "View Applied CSS"
 msgstr ""
 
 #: app/src/components/app/search/state/constants.js:47
+#: app/src/react/shell/search/CommandPalette.tsx:181
+#: app/src/react/shell/search/commands.ts:48
 msgid "View commands"
 msgstr ""
 
@@ -11881,6 +11941,7 @@ msgstr ""
 
 #: app/src/buttons/view-site/component.vue:31
 #: app/src/components/app/search/composables/useQuickActions.js:55
+#: app/src/react/shell/search/useQuickActions.ts:30
 msgid "View dashboard"
 msgstr ""
 
@@ -11928,6 +11989,7 @@ msgstr ""
 
 #: app/src/buttons/view-site/component.vue:22
 #: app/src/components/app/search/composables/useQuickActions.js:61
+#: app/src/react/shell/search/useQuickActions.ts:31
 msgid "View site"
 msgstr ""
 
@@ -11973,7 +12035,7 @@ msgstr ""
 #: app/src/components/app/menu/components/UserDetails.vue:169
 #: app/src/components/app/toolbar/index.vue:59
 #: app/src/react/shell/AppSidebar.tsx:195
-#: app/src/react/shell/AppToolbar.tsx:58
+#: app/src/react/shell/AppToolbar.tsx:62
 msgid "Visit site"
 msgstr ""
 

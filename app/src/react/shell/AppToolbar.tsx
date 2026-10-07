@@ -16,6 +16,9 @@ const headerButton =
 const roundButton =
 	'relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white lg:h-11 lg:w-11';
 
+/** Macs show the command key, everything else shows Ctrl. */
+const shortcutLabel = () => (typeof navigator !== 'undefined' && /mac/i.test(navigator.platform) ? '⌘K' : 'Ctrl K');
+
 /** Gravatar addresses the user by the SHA-256 of their email. */
 const gravatarUrl = async (email: string): Promise<string> => {
 	if (!email || !window.crypto?.subtle) {
@@ -32,9 +35,10 @@ type Props = {
 	collapsed: boolean;
 	onToggleSidebar: () => void;
 	onOpenMenu: () => void;
+	onOpenSearch?: () => void;
 };
 
-export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu }: Props) => {
+export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearch }: Props) => {
 	const { userName, userEmail, userRoles, adminUrl, siteUrl, loginUrl } = useWpData();
 	const { isDark, setColorScheme, globalOverride } = useColorScheme();
 	const [gravatar, setGravatar] = useState('');
@@ -75,6 +79,18 @@ export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu }: Props) =>
 			<button type="button" className={cn(headerButton, 'lg:hidden')} aria-label={__('Toggle menu')} onClick={onOpenMenu}>
 				<Icon name="menu" className="text-xl" />
 			</button>
+
+			{onOpenSearch ? (
+				<button
+					type="button"
+					className="flex h-10 min-w-0 items-center gap-2 rounded-lg border border-gray-200 px-3 text-theme-sm text-gray-400 transition-colors hover:border-gray-300 hover:text-gray-500 dark:border-gray-800 dark:hover:border-gray-700 lg:h-11 lg:w-72"
+					onClick={onOpenSearch}
+				>
+					<Icon name="search" className="shrink-0 text-lg" />
+					<span className="hidden flex-1 text-start lg:block">{__('Search…')}</span>
+					<kbd className="hidden shrink-0 rounded border border-gray-200 px-1.5 py-0.5 text-theme-xs dark:border-gray-700 lg:block">{shortcutLabel()}</kbd>
+				</button>
+			) : null}
 
 			<div className="min-w-0 grow" />
 

@@ -372,7 +372,14 @@ Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o paine
 - Os estilos de layout da casca saíram do `<style>` do componente Vue para `apps/css/theme/admin-shell.css`, que as duas cascas importam — eles descrevem a mesma estrutura e precisavam estar em um lugar só.
 - A casca React fica atrás do filtro `flexify-dashboard/react-shell` (desligado por padrão) até a busca e o painel de notificações irem junto.
 
-**Parte 2 — pendente:** busca (Ctrl/⌘K), painel de notificações, barra do WordPress embutida e o painel com os widgets de e-commerce.
+**Parte 2 — busca (concluída em 07/10/2026):** paleta de comandos com Ctrl/⌘K.
+
+- `useGlobalSearch()` procura no conteúdo (uma requisição por tipo de post que o site expõe) e no menu do admin ao mesmo tempo; o menu é casado em memória porque já foi lido para a sidebar.
+- A sintaxe de comandos é a mesma da busca Vue (`>post`, `@user`, `#category`, `!action`, `?help`), e o histórico, os itens abertos recentemente e os mais usados compartilham as chaves de local storage com ela.
+- Uma lista achatada única guia o teclado: o que está destacado é o que o Enter abre, independentemente do grupo em que aparece.
+- Ficaram de fora o tutorial de primeira utilização e o diálogo de correção de layout (`layout-fix-dialog.vue`, 1.182 linhas), que são utilitários à parte.
+
+**Parte 3 — pendente:** painel de notificações, barra do WordPress embutida e o painel com os widgets de e-commerce.
 
 ### Fase 6 — Conteúdo (GG)
 Posts, mídia, comentários e usuários.

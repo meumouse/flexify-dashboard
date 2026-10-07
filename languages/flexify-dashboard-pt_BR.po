@@ -11185,6 +11185,42 @@ msgstr "Sair"
 msgid "Remove from favourites"
 msgstr "Remover dos favoritos"
 
+#: app/src/react/shell/search/CommandPalette.tsx:176
+msgid "Commands"
+msgstr "Comandos"
+
+#: app/src/react/shell/search/CommandPalette.tsx:31
+msgid "Frequently used"
+msgstr "Mais usados"
+
+#: app/src/react/shell/search/CommandPalette.tsx:226
+msgid "Nothing found for “%s”."
+msgstr "Nada encontrado para “%s”."
+
+#: app/src/react/shell/search/CommandPalette.tsx:181
+msgid "Only %s"
+msgstr "Somente %s"
+
+#: app/src/react/shell/search/CommandPalette.tsx:201
+msgid "Recent searches"
+msgstr "Buscas recentes"
+
+#: app/src/react/shell/search/CommandPalette.tsx:30
+msgid "Recently opened"
+msgstr "Abertos recentemente"
+
+#: app/src/react/shell/search/CommandPalette.tsx:166
+msgid "Search content, menus and actions…"
+msgstr "Busque conteúdo, menus e ações…"
+
+#: app/src/react/shell/AppToolbar.tsx:90
+msgid "Search…"
+msgstr "Buscar…"
+
+#: app/src/react/shell/search/CommandPalette.tsx:230
+msgid "Type to search, or start with a command:"
+msgstr "Digite para buscar, ou comece com um comando:"
+
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"
 msgid "Add New"
