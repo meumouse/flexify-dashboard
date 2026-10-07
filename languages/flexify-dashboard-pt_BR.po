@@ -11074,6 +11074,88 @@ msgstr "Destaque"
 msgid "Channel"
 msgstr "Canal"
 
+#: app/src/react/ui/RichText.tsx:172
+msgid "Align center"
+msgstr "Centralizar"
+
+#: app/src/react/ui/RichText.tsx:171
+msgid "Align left"
+msgstr "Alinhar à esquerda"
+
+#: app/src/react/ui/RichText.tsx:173
+msgid "Align right"
+msgstr "Alinhar à direita"
+
+#: app/src/react/ui/RichText.tsx:162
+msgid "Bold"
+msgstr "Negrito"
+
+#: app/src/react/ui/RichText.tsx:167
+msgid "Bullet list"
+msgstr "Lista com marcadores"
+
+#: app/src/react/ui/RichText.tsx:109
+#: app/src/react/ui/RichText.tsx:156
+msgid "Heading"
+msgstr "Título"
+
+#: app/src/react/ui/RichText.tsx:189
+msgid "Highlight color"
+msgstr "Cor de destaque"
+
+#: app/src/react/ui/RichText.tsx:165
+msgid "Inline code"
+msgstr "Código em linha"
+
+#: app/src/react/ui/RichText.tsx:177
+msgid "Insert image"
+msgstr "Inserir imagem"
+
+#: app/src/react/ui/RichText.tsx:163
+msgid "Italic"
+msgstr "Itálico"
+
+#: app/src/react/ui/RichText.tsx:174
+msgid "Justify"
+msgstr "Justificar"
+
+#: app/src/react/ui/RichText.tsx:233
+msgid "Leave empty to remove the link."
+msgstr "Deixe em branco para remover o link."
+
+#: app/src/react/ui/RichText.tsx:176
+#: app/src/react/ui/RichText.tsx:214
+msgid "Link"
+msgstr "Link"
+
+#: app/src/react/ui/RichText.tsx:168
+msgid "Numbered list"
+msgstr "Lista numerada"
+
+#: app/src/react/ui/RichText.tsx:169
+msgid "Quote"
+msgstr "Citação"
+
+#: app/src/react/ui/RichText.tsx:203
+msgid "Redo"
+msgstr "Refazer"
+
+#: app/src/react/ui/RichText.tsx:164
+msgid "Strikethrough"
+msgstr "Tachado"
+
+#: app/src/react/ui/RichText.tsx:180
+msgid "Text color"
+msgstr "Cor do texto"
+
+#: app/src/react/ui/RichText.tsx:202
+msgid "Undo"
+msgstr "Desfazer"
+
+#: app/src/react/ui/RichText.tsx:86
+msgid "Write something…"
+msgstr "Escreva alguma coisa…"
+
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"
 msgid "Add New"

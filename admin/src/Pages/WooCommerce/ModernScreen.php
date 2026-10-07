@@ -12,7 +12,7 @@ defined('ABSPATH') || exit;
 /**
  * Class ModernScreen
  *
- * Base class that replaces a native WooCommerce admin screen with a Vue app.
+ * Base class that replaces a native WooCommerce admin screen with the plugin app.
  * The native screen stays available with the `fd_classic=1` query argument.
  *
  * @since 3.0.0
@@ -77,7 +77,7 @@ abstract class ModernScreen {
 
 
 	/**
-	 * Stop the main list query (the Vue app loads data through the REST API).
+	 * Stop the main list query (the app loads data through the REST API).
 	 *
 	 * @since 3.0.0
 	 * @param WP_Query $query Query.
@@ -132,7 +132,7 @@ abstract class ModernScreen {
 
 
 	/**
-	 * Enqueue the Vue app assets and store data.
+	 * Enqueue the app assets and store data.
 	 *
 	 * @since 3.0.0
 	 * @return void

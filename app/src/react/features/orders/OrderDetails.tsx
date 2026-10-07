@@ -248,7 +248,7 @@ export const OrderDetails = () => {
 							}
 						/>
 						{canEditItems ? (
-							<Button variant="outline" icon="edit" href={context?.native_edit_url || classicUrl(id)}>
+							<Button variant="outline" icon="edit" onClick={() => navigate(`/order/${id}/edit`)}>
 								{__('Edit items')}
 							</Button>
 						) : null}

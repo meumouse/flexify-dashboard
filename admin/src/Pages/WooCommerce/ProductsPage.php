@@ -12,7 +12,7 @@ defined('ABSPATH') || exit;
  * Class ProductsPage
  *
  * Replaces the WooCommerce products list (edit.php?post_type=product) with the
- * Vue products manager.
+ * React products manager.
  *
  * @since 3.0.0
  * @package MeuMouse\Flexify_Dashboard\Pages\WooCommerce
@@ -37,7 +37,7 @@ class ProductsPage extends ModernScreen {
 	/**
 	 * Remember meta boxes added by extensions to the classic product editor.
 	 *
-	 * The Vue product editor cannot render them, so it warns the user and links to the classic editor.
+	 * The product editor cannot render them, so it warns the user and links to the classic editor.
 	 *
 	 * @since 3.0.0
 	 * @return void
@@ -87,7 +87,7 @@ class ProductsPage extends ModernScreen {
 
 
 	/**
-	 * Send product edit/create screens to the Vue product editor when it is enabled.
+	 * Send product edit/create screens to the product editor when it is enabled.
 	 *
 	 * @since 3.0.0
 	 * @return void
@@ -150,22 +150,19 @@ class ProductsPage extends ModernScreen {
 	/**
 	 * Check whether the catalog screen should be rendered by the React app.
 	 *
-	 * The React screen covers the list, the catalog views and the quick edit; the full product
-	 * editor is still a Vue screen, so stores that enabled it keep the Vue app until it moves over.
+	 * The Vue screen is kept behind the filter as a fallback while the React one settles in.
 	 *
 	 * @since 4.0.0
 	 * @return bool
 	 */
 	protected function use_react_app() {
-		$enabled = ! WooCommerce::is_product_editor_enabled();
-
 		/**
 		 * Filter whether the React catalog screen is used.
 		 *
 		 * @since 4.0.0
 		 * @param bool $enabled Whether the React screen is used.
 		 */
-		return (bool) apply_filters( 'flexify-dashboard/woocommerce/react-products', $enabled );
+		return (bool) apply_filters( 'flexify-dashboard/woocommerce/react-products', true );
 	}
 
 

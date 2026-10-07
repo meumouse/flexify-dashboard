@@ -480,7 +480,7 @@ export const OrdersList = () => {
 							}
 						/>
 						{can('edit_shop_orders') ? (
-							<Button icon="add" href={store.urls.new_order}>
+							<Button icon="add" onClick={() => navigate('/new')}>
 								{__('Add order')}
 							</Button>
 						) : null}

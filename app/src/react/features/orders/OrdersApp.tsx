@@ -11,6 +11,7 @@ import { OrdersList } from '@/react/features/orders/OrdersList';
  */
 
 const OrderDetails = lazy(() => import('@/react/features/orders/OrderDetails').then((module) => ({ default: module.OrderDetails })));
+const OrderEditor = lazy(() => import('@/react/features/orders/OrderEditor').then((module) => ({ default: module.OrderEditor })));
 
 const Loading = () => (
 	<div className="flex items-center justify-center py-20">
@@ -25,7 +26,9 @@ export const OrdersApp = () => (
 				<Suspense fallback={<Loading />}>
 					<Routes>
 						<Route path="/" element={<OrdersList />} />
+						<Route path="/new" element={<OrderEditor />} />
 						<Route path="/order/:id" element={<OrderDetails />} />
+						<Route path="/order/:id/edit" element={<OrderEditor />} />
 						<Route path="*" element={<OrdersList />} />
 					</Routes>
 				</Suspense>

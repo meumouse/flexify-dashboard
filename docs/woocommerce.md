@@ -14,7 +14,7 @@ Em **Flexify Dashboard → Configurações → WooCommerce**:
 
 ## Telas
 
-### Produtos (`Products.js`, montado em `#fd-products-page`)
+### Produtos (`react/main/products.tsx`, montado em `#fd-products-page`)
 
 | Rota | Tela |
 |---|---|
@@ -25,7 +25,7 @@ Em **Flexify Dashboard → Configurações → WooCommerce**:
 | `#/attributes` | Atributos globais e seus valores. |
 | `#/coupons` | Lista e editor de cupons. |
 
-### Pedidos (`Orders.js`, montado em `#fd-orders-page`)
+### Pedidos (`react/main/orders.tsx`, montado em `#fd-orders-page`)
 
 | Rota | Tela |
 |---|---|
@@ -66,8 +66,8 @@ As configurações da loja (moeda, unidades, status, gateways, métodos de entre
 | `flexify-dashboard/woocommerce/page-enabled` | `( bool $enabled, string $page )` — liga/desliga a página `products` ou `orders`. |
 | `flexify-dashboard/woocommerce/product-editor-enabled` | `( bool $enabled )` — liga/desliga o editor Vue de produtos. |
 | `flexify-dashboard/woocommerce/product-editor-extensions` | `( array $extensions )` — campos de extensões (`id`, `label`, `type`) sobre os quais o editor Vue avisa. Os metaboxes são registrados sempre que o editor clássico é aberto; as abas extras vêm do filtro `woocommerce_product_data_tabs`. |
-| `flexify-dashboard/woocommerce/react-products` | `( bool $enabled )` — usa a tela React do catálogo. O padrão é ligada, exceto quando o editor moderno de produtos está ativo, porque ele ainda é uma tela Vue. |
-| `flexify-dashboard/woocommerce/react-orders` | `( bool $enabled )` — usa a tela React de pedidos. O padrão é desligada: criar um pedido e editar os itens ainda são rotas da tela Vue. |
+| `flexify-dashboard/woocommerce/react-products` | `( bool $enabled )` — usa a tela React do catálogo. Ligada por padrão; desligue para voltar à tela Vue. |
+| `flexify-dashboard/woocommerce/react-orders` | `( bool $enabled )` — usa a tela React de pedidos. Ligada por padrão; desligue para voltar à tela Vue. |
 | `flexify-dashboard/woocommerce/order-statuses` | Lista de status (`value`, `label`, `color`) usada nos badges. Use para definir cores de status personalizados. |
 | `flexify-dashboard/woocommerce/js-data` | Dados da loja enviados ao Vue. |
 | `flexify-dashboard/woocommerce/order-context` | `( array $context, WC_Order $order )` — dados extras exibidos no detalhe do pedido. |

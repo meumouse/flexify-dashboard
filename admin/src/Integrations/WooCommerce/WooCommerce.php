@@ -114,7 +114,7 @@ class WooCommerce {
 
 
 	/**
-	 * Check whether products should be created and edited in the Vue product editor.
+	 * Check whether products should be created and edited in the plugin product editor.
 	 *
 	 * The native editor stays the default because many extensions add metaboxes to it.
 	 *
@@ -125,7 +125,7 @@ class WooCommerce {
 		$enabled = self::is_page_enabled( 'products' ) && true === Settings::get_setting( 'use_modern_product_editor', false );
 
 		/**
-		 * Filter whether the Vue product editor is enabled.
+		 * Filter whether the plugin product editor is enabled.
 		 *
 		 * @since 3.0.0
 		 * @param bool $enabled Whether the editor is enabled.
@@ -227,7 +227,7 @@ class WooCommerce {
 
 
 	/**
-	 * Get store data exposed to the Vue pages.
+	 * Get store data exposed to the WooCommerce pages.
 	 *
 	 * @since 3.0.0
 	 * @return array
@@ -318,7 +318,7 @@ class WooCommerce {
 		);
 
 		/**
-		 * Filter WooCommerce data exposed to the Vue pages.
+		 * Filter WooCommerce data exposed to the WooCommerce pages.
 		 *
 		 * @since 3.0.0
 		 * @param array $data Store data.
@@ -349,7 +349,7 @@ class WooCommerce {
 
 
 	/**
-	 * Get fields added by extensions to the classic product editor that the Vue editor cannot show.
+	 * Get fields added by extensions to the classic product editor that the plugin editor cannot show.
 	 *
 	 * Meta boxes are recorded the last time the classic editor was opened; product data tabs are read from their filter.
 	 *
@@ -384,7 +384,7 @@ class WooCommerce {
 		}
 
 		/**
-		 * Filter the extension fields the Vue product editor warns about.
+		 * Filter the extension fields the product editor warns about.
 		 *
 		 * @since 3.0.0
 		 * @param array $extensions List of { id, label, type }.

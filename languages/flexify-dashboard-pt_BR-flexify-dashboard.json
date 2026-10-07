@@ -439,6 +439,15 @@
       "Alerts": [
         "Alertas"
       ],
+      "Align center": [
+        "Centralizar"
+      ],
+      "Align left": [
+        "Alinhar à esquerda"
+      ],
+      "Align right": [
+        "Alinhar à direita"
+      ],
       "All": [
         "Todos"
       ],
@@ -826,6 +835,9 @@
       "Blur": [
         "Borrão"
       ],
+      "Bold": [
+        "Negrito"
+      ],
       "Bounce Rate": [
         "Taxa de rejeição"
       ],
@@ -861,6 +873,9 @@
       ],
       "Bulk options": [
         "Opções de compra em grande quantidade"
+      ],
+      "Bullet list": [
+        "Lista com marcadores"
       ],
       "Button text": [
         "Texto do botão"
@@ -2752,6 +2767,9 @@
       "Handle": [
         "Lidar"
       ],
+      "Heading": [
+        "Título"
+      ],
       "Heading 1": [
         "Título 1"
       ],
@@ -2808,6 +2826,9 @@
       ],
       "High": [
         "Alto"
+      ],
+      "Highlight color": [
+        "Cor de destaque"
       ],
       "Highlights": [
         "Destaques"
@@ -2949,6 +2970,12 @@
       ],
       "Info": [
         "Informações"
+      ],
+      "Inline code": [
+        "Código em linha"
+      ],
+      "Insert image": [
+        "Inserir imagem"
       ],
       "Insert into %s": [
         "Inserir em %s"
@@ -3160,6 +3187,9 @@
       "Inventory": [
         "Estoque"
       ],
+      "Italic": [
+        "Itálico"
+      ],
       "Item": [
         "Item"
       ],
@@ -3213,6 +3243,9 @@
       ],
       "Just now": [
         "Agora mesmo"
+      ],
+      "Justify": [
+        "Justificar"
       ],
       "Keep Fix": [
         "Mantenha fixo"
@@ -3304,6 +3337,9 @@
       "Leave empty to keep existing": [
         "Deixe em branco para manter o existente."
       ],
+      "Leave empty to remove the link.": [
+        "Deixe em branco para remover o link."
+      ],
       "Left": [
         "Esquerda"
       ],
@@ -3381,6 +3417,9 @@
       ],
       "Line": [
         "Linha"
+      ],
+      "Link": [
+        "Link"
       ],
       "Linked products": [
         "Produtos vinculados"
@@ -4273,6 +4312,9 @@
       "Number of customers in the selected period": [
         "Número de clientes no período selecionado"
       ],
+      "Numbered list": [
+        "Lista numerada"
+      ],
       "Object Type": [
         "Tipo de objeto"
       ],
@@ -5023,6 +5065,9 @@
       "Quickly find posts, pages, users, and more. Here are some tips to get started:": [
         "Encontre rapidamente publicações, páginas, usuários e muito mais. Aqui estão algumas dicas para começar:"
       ],
+      "Quote": [
+        "Citação"
+      ],
       "REST API": [
         "API REST"
       ],
@@ -5103,6 +5148,9 @@
       ],
       "Redirections": [
         "Redirecionamentos"
+      ],
+      "Redo": [
+        "Refazer"
       ],
       "Referral": [
         "Indicação"
@@ -6169,6 +6217,9 @@
       "Store": [
         "Loja"
       ],
+      "Strikethrough": [
+        "Tachado"
+      ],
       "Structure": [
         "Estrutura"
       ],
@@ -6279,6 +6330,9 @@
       ],
       "Text Replacement": [
         "Substituição de texto"
+      ],
+      "Text color": [
+        "Cor do texto"
       ],
       "Text copied to clipboard": [
         "Texto copiado para a área de transferência"
@@ -6705,6 +6759,9 @@
       ],
       "Unchecked": [
         "Desmarcado"
+      ],
+      "Undo": [
+        "Desfazer"
       ],
       "Unidentified customer": [
         "Cliente não identificado"
@@ -7188,6 +7245,9 @@
       ],
       "Write something...": [
         "Escreva algo..."
+      ],
+      "Write something…": [
+        "Escreva alguma coisa…"
       ],
       "Yes": [
         "Sim"

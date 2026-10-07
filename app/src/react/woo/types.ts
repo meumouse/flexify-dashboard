@@ -54,7 +54,7 @@ export type StoreData = {
 	manage_stock: boolean;
 	low_stock_amount: number;
 	product_editor: boolean;
-	product_editor_extensions: string[];
+	product_editor_extensions: { id: string; label: string; type: string }[];
 	tax_classes: Option[];
 	taxes_enabled: boolean;
 	coupons_enabled: boolean;
@@ -119,6 +119,43 @@ export type Product = {
 	shipping_class?: string;
 	date_on_sale_from?: string | null;
 	date_on_sale_to?: string | null;
+
+	/* Fields only the editor reads */
+	description?: string;
+	short_description?: string;
+	tax_status?: string;
+	tax_class?: string;
+	low_stock_amount?: number | null;
+	sold_individually?: boolean;
+	virtual?: boolean;
+	downloadable?: boolean;
+	external_url?: string;
+	button_text?: string;
+	attributes?: ProductAttributeValue[];
+	purchase_note?: string;
+	menu_order?: number;
+	reviews_allowed?: boolean;
+	upsell_ids?: number[];
+	cross_sell_ids?: number[];
+	grouped_products?: number[];
+	downloads?: DownloadableFile[];
+	download_limit?: number;
+	download_expiry?: number;
+};
+
+export type DownloadableFile = {
+	id: string;
+	name: string;
+	file: string;
+};
+
+export type ProductAttributeValue = {
+	id: number;
+	name: string;
+	position: number;
+	visible: boolean;
+	variation: boolean;
+	options: string[];
 };
 
 export type VariationAttribute = {

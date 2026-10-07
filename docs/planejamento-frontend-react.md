@@ -348,9 +348,17 @@ Detalhes úteis para as próximas fases:
 - A tela React é opcional enquanto o editor de itens de pedido não for portado: o filtro `flexify-dashboard/woocommerce/react-orders` liga a tela; o padrão continua sendo a tela Vue, porque os redirecionamentos de "Adicionar pedido" e "Editar itens" apontam para rotas que só existem nela.
 - **Kit:** `Modal` e `Sheet` perderam as animações de saída. O Radix mantém o nó fechado montado até a animação de saída avisar que terminou e, quando isso não acontece, o overlay invisível fica por cima da página engolindo todos os cliques.
 
-### Fase 4 — WooCommerce: Editores (G)
+### Fase 4 — WooCommerce: Editores (G) · **concluída em 07/10/2026**
 Editor de produto (incluindo atributos, variações, downloads e vinculados) e editor de pedido (criação manual e edição de itens).
 **Aceite:** salvar produto e pedido pelo React gera o mesmo payload validado nos testes de integração.
+
+Detalhes úteis para as próximas fases:
+
+- Com os editores portados, as duas telas do WooCommerce passam a usar React por padrão. Os filtros `flexify-dashboard/woocommerce/react-products` e `.../react-orders` continuam existindo como volta atrás para a tela Vue.
+- `RichText` (`ui/RichText.tsx`) usa `@tiptap/react` com as mesmas extensões do editor Vue, então o HTML salvo é o mesmo. As imagens vêm da biblioteca de mídia do WordPress por `lib/wpMedia.ts`.
+- `Popover` entrou no kit para painéis que não cabem num menu (as paletas de cor da barra do editor).
+- `useUnsavedChanges()` avisa antes de fechar a aba; a navegação dentro do app é confirmada pelas próprias telas. O bloqueio do botão "voltar" do navegador exigiria trocar o `HashRouter` por um data router — ficou de fora.
+- Falta portar da seção 4.7: `CodeEditor` (Ace), `ImageEditor`, `ImageSelect` e `SortableList`. Nenhum é usado pelas telas do WooCommerce; entram com as páginas de conteúdo.
 
 ### Fase 5 — Shell e painel (G)
 Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o painel com os widgets de e-commerce do TailAdmin.

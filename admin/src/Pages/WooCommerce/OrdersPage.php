@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 /**
  * Class OrdersPage
  *
- * Replaces the WooCommerce orders list and order edit screens with the Vue
+ * Replaces the WooCommerce orders list and order edit screens with the React
  * orders manager. Supports High-Performance Order Storage
  * (admin.php?page=wc-orders) and the legacy posts storage
  * (edit.php?post_type=shop_order).
@@ -37,7 +37,7 @@ class OrdersPage extends ModernScreen {
 
 
 	/**
-	 * Redirect the legacy "Add order" screen to the Vue order editor.
+	 * Redirect the legacy "Add order" screen to the order editor.
 	 *
 	 * @since 3.0.0
 	 * @return void
@@ -184,14 +184,12 @@ class OrdersPage extends ModernScreen {
 		/**
 		 * Filter whether the React orders screen is used.
 		 *
-		 * The React screen covers the list, the quick preview and the order details; creating and
-		 * editing order items is still a Vue screen, so the Vue app stays the default until it
-		 * moves over.
+		 * The Vue screen is kept behind the filter as a fallback while the React one settles in.
 		 *
 		 * @since 4.0.0
 		 * @param bool $enabled Whether the React screen is used.
 		 */
-		return (bool) apply_filters( 'flexify-dashboard/woocommerce/react-orders', false );
+		return (bool) apply_filters( 'flexify-dashboard/woocommerce/react-orders', true );
 	}
 
 
