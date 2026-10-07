@@ -59,20 +59,20 @@ class CustomDashboardPage {
     /**
      * Get the Vite entry of the dashboard.
      *
-     * The React overview shows the store metrics; the Vue dashboard still owns the card
-     * registry, so it stays the default until the cards move over.
+     * Both dashboards read the same card registry, so a site that needs the Vue one back
+     * can have it from the filter.
      *
      * @since 4.0.0
      * @return string
      */
     protected function get_entry() {
         /**
-         * Filter whether the React store overview is used as the dashboard.
+         * Filter whether the React dashboard is used.
          *
          * @since 4.0.0
          * @param bool $enabled Whether the React dashboard is used.
          */
-        return (bool) apply_filters( 'flexify-dashboard/react-dashboard', false ) ? 'react/main/dashboard.tsx' : 'Dashboard.js';
+        return (bool) apply_filters( 'flexify-dashboard/react-dashboard', true ) ? 'react/main/dashboard.tsx' : 'Dashboard.js';
     }
 
 

@@ -360,7 +360,7 @@ Detalhes úteis para as próximas fases:
 - `useUnsavedChanges()` avisa antes de fechar a aba; a navegação dentro do app é confirmada pelas próprias telas. O bloqueio do botão "voltar" do navegador exigiria trocar o `HashRouter` por um data router — ficou de fora.
 - Falta portar da seção 4.7: `CodeEditor` (Ace), `ImageEditor`, `ImageSelect` e `SortableList`. Nenhum é usado pelas telas do WooCommerce; entram com as páginas de conteúdo.
 
-### Fase 5 — Shell e painel (G) · **em andamento**
+### Fase 5 — Shell e painel (G) · **concluída**
 Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o painel com os widgets de e-commerce do TailAdmin.
 **Aceite:** o shell React carrega em todas as telas do wp-admin; páginas ainda em Vue continuam funcionando dentro dele.
 
@@ -396,7 +396,12 @@ Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o paine
 - Os quatro cartões da loja são React. **Um cartão Vue não renderiza no painel React:** ele usa globais (`__`, `sprintf`) que o app Vue dele fornecia, e o veaury cria o app em que monta sem deixar configurá-lo — `beforeVueAppMount` só vale para o `ReactMissVue` externo. Então cada cartão precisa ser portado; os 16 restantes continuam no painel Vue.
 - Bug corrigido: `new Date('2026-10-07')` é meia-noite em UTC, que a oeste de Greenwich é o dia anterior. O período voltava um dia a cada recarga, porque era lido assim e reescrito na barra de endereços.
 
-**Parte 6 — pendente:** portar os 16 grupos de cartões restantes.
+**Parte 6 — cartões restantes (concluída em 07/10/2026):** os 16 grupos que faltavam foram portados — conteúdo (posts recentes, agendados, comentários), site (mídia, saúde do servidor, usuários), analytics (visitantes, rejeição, páginas, países, origens, dispositivos, usuários ativos, visualizações), mapa de visitantes e Rank Math.
+
+- `cards/shared.tsx` guarda o que todo cartão precisa: o período recebido, `useCardQuery`/`useCardList` (mesma chave para o mesmo pedido, então dois cartões que perguntam a mesma coisa recebem uma resposta só) e os três estados — carregando, erro e vazio.
+- Os oito cartões de analytics falam com `analytics/stats` por um `useStats(statType, dateRange)` só; o do Mapbox carrega a biblioteca por import dinâmico e, sem chave configurada, mostra o caminho para as configurações em vez de um mapa vazio.
+- Com os cartões todos em React, o filtro `flexify-dashboard/react-dashboard` passou a vir **ligado**. O painel Vue continua disponível desligando-o.
+- Um cartão Vue de terceiros ainda renderiza pelo `CardRender`, desde que não dependa de globais que o app Vue do plugin fornecia.
 
 ### Fase 6 — Conteúdo (GG)
 Posts, mídia, comentários e usuários.

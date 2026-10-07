@@ -79,6 +79,9 @@
       "%d tag(s) will be deleted. Products will not be deleted.": [
         "%d tag(s) serão excluídas. Os produtos não serão excluídos."
       ],
+      "%d update(s) available": [
+        "%d atualização(ões) disponível(is)"
+      ],
       "%d used": [
         "%d usos"
       ],
@@ -274,6 +277,9 @@
       "Active installs": [
         "Instalações ativas"
       ],
+      "Active users": [
+        "Usuários ativos"
+      ],
       "Activity": [
         "Atividade"
       ],
@@ -321,6 +327,9 @@
       ],
       "Add URLs to any external stylesheets you want Flexify Dashboard to load into the admin": [
         "Adicione URLs para quaisquer folhas de estilo externas que você queira que o Painel Flexify carregue no painel administrativo."
+      ],
+      "Add a Mapbox key to see where your visitors are.": [
+        "Adicione uma chave do Mapbox para ver de onde vêm seus visitantes."
       ],
       "Add a caption": [
         "Adicione uma legenda"
@@ -438,9 +447,6 @@
       ],
       "Admin menu behavior and interaction settings": [
         "Configurações de comportamento e interação do menu de administração"
-      ],
-      "Administrador": [
-        "Administrador"
       ],
       "Administrator": [
         "Administrador"
@@ -871,6 +877,9 @@
       "Bounce Rate": [
         "Taxa de rejeição"
       ],
+      "Bounce rate": [
+        "Taxa de rejeição"
+      ],
       "Breadcrumb": [
         "Trilha de navegação"
       ],
@@ -1129,9 +1138,6 @@
       "Client-side session ID": [
         "ID da sessão do lado do cliente"
       ],
-      "Cliente não identificado": [
-        "Cliente não identificado"
-      ],
       "Close": [
         "Fechar"
       ],
@@ -1305,6 +1311,9 @@
       ],
       "Could not load the data": [
         "Não foi possível carregar os dados"
+      ],
+      "Could not load this card.": [
+        "Não foi possível carregar este cartão."
       ],
       "Could not move the product to the trash.": [
         "Não foi possível mover o produto para a lixeira."
@@ -1494,12 +1503,6 @@
       ],
       "Customers": [
         "Clientes"
-      ],
-      "Customers fell compared with the previous period.": [
-        "O número de clientes caiu em relação ao período anterior."
-      ],
-      "Customers grew compared with the previous period.": [
-        "O número de clientes cresceu em relação ao período anterior."
       ],
       "Customize login page appearance and security": [
         "Personalize a aparência e a segurança da página de login."
@@ -1705,13 +1708,13 @@
       "Device type distribution": [
         "Distribuição por tipo de dispositivo"
       ],
+      "Devices": [
+        "Dispositivos"
+      ],
       "Dialog": [
         "Diálogo"
       ],
       "Direct": [
-        "Direto"
-      ],
-      "Direto": [
         "Direto"
       ],
       "Disable global search": [
@@ -1752,6 +1755,9 @@
       ],
       "Disk Usage": [
         "Utilização do disco"
+      ],
+      "Disk: %sGB of %sGB": [
+        "Disco: %sGB de %sGB"
       ],
       "Dismiss": [
         "Dispensar"
@@ -2173,6 +2179,9 @@
       "Every card is hidden": [
         "Todos os cartões estão ocultos"
       ],
+      "Everything is up to date": [
+        "Está tudo atualizado"
+      ],
       "Example orders": [
         "Pedidos de exemplo"
       ],
@@ -2443,12 +2452,6 @@
       "Failed to validate Turnstile response.": [
         "Falha ao validar a resposta da catraca."
       ],
-      "Faturamento bruto": [
-        "Faturamento bruto"
-      ],
-      "Faturamento líquido": [
-        "Faturamento"
-      ],
       "Favicon url": [
         "URL do favicon"
       ],
@@ -2574,6 +2577,9 @@
       ],
       "Filename": [
         "Nome do arquivo"
+      ],
+      "Files": [
+        "Arquivos"
       ],
       "Files deleted": [
         "Arquivos excluídos"
@@ -3022,6 +3028,9 @@
       "In Range": [
         "Dentro do alcance"
       ],
+      "In period": [
+        "No período"
+      ],
       "In stock": [
         "Em estoque"
       ],
@@ -3346,6 +3355,9 @@
       "Large Files": [
         "Arquivos grandes"
       ],
+      "Large files": [
+        "Arquivos grandes"
+      ],
       "Last %s days": [
         "Últimos %s dias"
       ],
@@ -3390,6 +3402,9 @@
       ],
       "Latest content activity": [
         "Atividade de conteúdo mais recente"
+      ],
+      "Latest conversations": [
+        "Últimas conversas"
       ],
       "Layout and Styling": [
         "Layout e estilo"
@@ -3637,12 +3652,6 @@
       "Logo url": [
         "URL do logotipo"
       ],
-      "Logout": [
-        "Sair"
-      ],
-      "Loja": [
-        "Loja"
-      ],
       "Low": [
         "Baixo"
       ],
@@ -3672,9 +3681,6 @@
       ],
       "Manage Media": [
         "Gerenciar mídia"
-      ],
-      "Manage downloadable files in the classic editor.": [
-        "Gerencie os arquivos para download no editor clássico."
       ],
       "Manage values": [
         "Gerenciar valores"
@@ -3751,6 +3757,9 @@
       "Media item not found.": [
         "Item de mídia não encontrado."
       ],
+      "Media library": [
+        "Biblioteca de mídia"
+      ],
       "Media library and upload management settings": [
         "Configurações da biblioteca de mídia e do gerenciamento de uploads"
       ],
@@ -3768,6 +3777,9 @@
       ],
       "Memory usage": [
         "Uso de memória"
+      ],
+      "Memory: %sMB of %sMB": [
+        "Memória: %sMB de %sMB"
       ],
       "Menu": [
         "Menu"
@@ -3825,9 +3837,6 @@
       ],
       "Min. price": [
         "Preço mín."
-      ],
-      "Minify menu": [
-        "Menu minimizado"
       ],
       "Minimum price": [
         "Preço mínimo"
@@ -4054,6 +4063,9 @@
       "No Dashboard Cards": [
         "Sem cartões de painel"
       ],
+      "No Rank Math sections are enabled.": [
+        "Nenhuma seção do Rank Math está ativada."
+      ],
       "No WooCommerce customer data found for this user": [
         "Não foram encontrados dados de cliente do WooCommerce para este usuário."
       ],
@@ -4092,6 +4104,9 @@
       ],
       "No comments found": [
         "Nenhum comentário encontrado"
+      ],
+      "No comments in this period.": [
+        "Nenhum comentário neste período."
       ],
       "No comments yet": [
         "Ainda não há comentários."
@@ -4210,6 +4225,9 @@
       "No page data available": [
         "Não há dados de página disponíveis."
       ],
+      "No page views in this period.": [
+        "Nenhuma visualização de página neste período."
+      ],
       "No payment method": [
         "Sem método de pagamento"
       ],
@@ -4224,6 +4242,9 @@
       ],
       "No posts found": [
         "Nenhuma publicação encontrada"
+      ],
+      "No posts in this period.": [
+        "Nenhum post neste período."
       ],
       "No price": [
         "Sem preço"
@@ -4251,6 +4272,9 @@
       ],
       "No referrer data available": [
         "Não há dados de referência disponíveis."
+      ],
+      "No referrers in this period.": [
+        "Nenhuma origem neste período."
       ],
       "No remote sites configured yet": [
         "Nenhum site remoto foi configurado ainda."
@@ -4342,6 +4366,9 @@
       "No visible cards in this category": [
         "Não há cartas visíveis nesta categoria."
       ],
+      "No visits in this period.": [
+        "Nenhuma visita neste período."
+      ],
       "None": [
         "Nenhum"
       ],
@@ -4377,6 +4404,9 @@
       ],
       "Nothing found for “%s”.": [
         "Nada encontrado para “%s”."
+      ],
+      "Nothing scheduled for this period.": [
+        "Nada agendado para este período."
       ],
       "Nothing sold in this period.": [
         "Nada vendido neste período."
@@ -4509,6 +4539,9 @@
       ],
       "Open search": [
         "Abrir busca"
+      ],
+      "Open settings": [
+        "Abrir configurações"
       ],
       "Open sheet": [
         "Abrir painel lateral"
@@ -4657,9 +4690,6 @@
       "Overlays": [
         "Sobreposições"
       ],
-      "Overview": [
-        "Visão geral"
-      ],
       "Overview of your site activity": [
         "Visão geral da atividade do seu site"
       ],
@@ -4693,11 +4723,17 @@
       "Page title exceeds maximum length": [
         "O título da página excede o comprimento máximo permitido."
       ],
+      "Page views": [
+        "Visualizações de página"
+      ],
       "Page views from various devices (desktop, mobile, tablet)": [
         "Visualizações de página a partir de vários dispositivos (desktop, celular, tablet)"
       ],
       "Pages": [
         "Páginas"
+      ],
+      "Pages per session": [
+        "Páginas por sessão"
       ],
       "Pagination": [
         "Paginação"
@@ -4759,9 +4795,6 @@
       "Payment via %s": [
         "Pagamento via %s"
       ],
-      "Pedido sem item": [
-        "Pedido sem item"
-      ],
       "Pending": [
         "Pendente"
       ],
@@ -4782,9 +4815,6 @@
       ],
       "Performance": [
         "Desempenho"
-      ],
-      "Period": [
-        "Período"
       ],
       "Permission Issue Detected": [
         "Problema de permissão detectado"
@@ -5197,11 +5227,17 @@
       "REST root": [
         "Raiz da REST"
       ],
+      "Rank Math": [
+        "Rank Math"
+      ],
       "Rank Math Overview": [
         "Visão geral do Rank Math"
       ],
       "Rank Math SEO is not active on this site.": [
         "O Rank Math SEO não está ativo neste site."
+      ],
+      "Rank Math is not available on this site.": [
+        "O Rank Math não está disponível neste site."
       ],
       "Rating": [
         "Avaliação"
@@ -5229,6 +5265,9 @@
       ],
       "Rebrand and customize interface text and icons": [
         "Reformule e personalize o texto e os ícones da interface."
+      ],
+      "Recent": [
+        "Recentes"
       ],
       "Recent (30d)": [
         "Recente (30 dias)"
@@ -5530,9 +5569,6 @@
       "Reset to defaults": [
         "Restaurar padrões de fábrica"
       ],
-      "Reset to system default": [
-        "Restaurar às configurações padrão do sistema"
-      ],
       "Resizable sidebar": [
         "Barra lateral redimensionável"
       ],
@@ -5664,6 +5700,9 @@
       ],
       "SQL Query Editor": [
         "Editor de consultas SQL"
+      ],
+      "SSL": [
+        "SSL"
       ],
       "SSL:": [
         "SSL:"
@@ -5905,9 +5944,6 @@
       "Security token": [
         "Token de segurança"
       ],
-      "See all": [
-        "Ver todos"
-      ],
       "Seen by": [
         "Visto por"
       ],
@@ -6022,9 +6058,6 @@
       "Selection deleted": [
         "Seleção excluída"
       ],
-      "Sem categoria": [
-        "Sem categoria"
-      ],
       "Send an email notification to the user about the changes.": [
         "Enviar uma notificação por e-mail ao usuário sobre as alterações."
       ],
@@ -6067,6 +6100,9 @@
       "Server Health": [
         "Saúde do servidor"
       ],
+      "Server health": [
+        "Saúde do servidor"
+      ],
       "Service Account:": [
         "Conta de serviço:"
       ],
@@ -6081,6 +6117,9 @@
       ],
       "Session tracking and unique visitor data": [
         "Rastreamento de sessão e dados de visitantes únicos"
+      ],
+      "Sessions": [
+        "Sessões"
       ],
       "Set a accent color and Flexify Dashboard will automatically create a color scale for you.": [
         "Defina uma cor de destaque e o Flexify Dashboard criará automaticamente uma escala de cores para você."
@@ -6400,9 +6439,6 @@
       "System": [
         "Sistema"
       ],
-      "System Default": [
-        "Padrão do sistema"
-      ],
       "System performance and updates": [
         "Desempenho e atualizações do sistema"
       ],
@@ -6676,11 +6712,17 @@
       "Thumbnails regenerated": [
         "Miniaturas regeneradas"
       ],
+      "Time on page": [
+        "Tempo na página"
+      ],
       "Timeframe for metrics (hour, day, week, month)": [
         "Período de tempo para as métricas (hora, dia, semana, mês)"
       ],
       "Timestamp": [
         "Carimbo de data/hora"
+      ],
+      "Timezone": [
+        "Fuso horário"
       ],
       "Timezone:": [
         "Fuso horário:"
@@ -6733,8 +6775,17 @@
       "Top Selling Products": [
         "Produtos mais vendidos"
       ],
+      "Top countries": [
+        "Principais países"
+      ],
+      "Top pages": [
+        "Principais páginas"
+      ],
       "Top products": [
         "Produtos mais vendidos"
+      ],
+      "Top referrers": [
+        "Principais origens"
       ],
       "Total": [
         "Total"
@@ -6816,6 +6867,9 @@
       ],
       "Track, fulfil and manage your store orders.": [
         "Acompanhe, atenda e gerencie os pedidos da sua loja."
+      ],
+      "Traffic": [
+        "Tráfego"
       ],
       "Transaction ID": [
         "ID da transação"
@@ -6928,11 +6982,17 @@
       "Unique identifier with up to 28 characters.": [
         "Identificador único com até 28 caracteres."
       ],
+      "Unique visitors": [
+        "Visitantes únicos"
+      ],
       "Unit price": [
         "Preço unitário"
       ],
       "Unknown": [
         "Desconhecido"
+      ],
+      "Unknown author": [
+        "Autor desconhecido"
       ],
       "Unknown response.": [
         "Resposta desconhecida."
@@ -6966,6 +7026,9 @@
       ],
       "Unused detection mode: shallow (default) or deep (scans post_content).": [
         "Modo de detecção não utilizado: superficial (padrão) ou profundo (analisa post_content)."
+      ],
+      "Unused media": [
+        "Mídia não utilizada"
       ],
       "Update": [
         "Atualizar"
@@ -7243,6 +7306,9 @@
       "View commands": [
         "Exibir comandos"
       ],
+      "View comment": [
+        "Ver comentário"
+      ],
       "View dashboard": [
         "Visualizar painel de controle"
       ],
@@ -7261,8 +7327,14 @@
       "View profile": [
         "Ver perfil"
       ],
+      "View report": [
+        "Ver relatório"
+      ],
       "View site": [
         "Ver site"
+      ],
+      "Views": [
+        "Visualizações"
       ],
       "Vignette": [
         "Vinheta"
@@ -7290,6 +7362,9 @@
       ],
       "Visitor locations worldwide": [
         "Locais de visitação em todo o mundo"
+      ],
+      "Visitor map": [
+        "Mapa de visitantes"
       ],
       "Warning": [
         "Aviso"
@@ -7341,6 +7416,9 @@
       ],
       "What This Generates": [
         "O que isso gera"
+      ],
+      "What is queued to go out": [
+        "O que está na fila para publicar"
       ],
       "When enabled, Flexify Dashboard will modernise the default login page.": [
         "Quando ativado, o Painel de Controle do Flexify modernizará a página de login padrão."
@@ -7588,6 +7666,9 @@
       "icon name": [
         "nome do ícone"
       ],
+      "in %d day(s)": [
+        "em %d dia(s)"
+      ],
       "info@gmail.com": [
         "info@gmail.com"
       ],
@@ -7669,6 +7750,9 @@
       "results": [
         "resultados"
       ],
+      "right now": [
+        "neste momento"
+      ],
       "role": [
         "papel"
       ],
@@ -7717,6 +7801,9 @@
       "to select": [
         "para selecionar"
       ],
+      "today": [
+        "hoje"
+      ],
       "total": [
         "total"
       ],
@@ -7746,9 +7833,6 @@
       ],
       "visits": [
         "visitas"
-      ],
-      "vs previous %s days": [
-        "vs %s dias anteriores"
       ],
       "weights loaded": [
         "pesos carregados"

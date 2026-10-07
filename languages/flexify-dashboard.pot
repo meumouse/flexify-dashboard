@@ -161,6 +161,10 @@ msgstr ""
 msgid "%d tag(s) will be deleted. Products will not be deleted."
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/site.tsx:127
+msgid "%d update(s) available"
+msgstr ""
+
 #: app/src/pages/products/src/CouponsView.vue:258
 #: app/src/react/features/products/CouponsView.tsx:237
 msgid "%d used"
@@ -455,6 +459,10 @@ msgstr ""
 msgid "Active installs"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:63
+msgid "Active users"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/active-users/component.vue:118
 msgid "Active Users"
 msgstr ""
@@ -500,6 +508,10 @@ msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:915
 msgid "Add a caption"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/extras.tsx:78
+msgid "Add a Mapbox key to see where your visitors are."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:78
@@ -1493,6 +1505,10 @@ msgstr ""
 msgid "Bold"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/analytics.tsx:209
+msgid "Bounce rate"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:296
 msgid "Bounce Rate"
 msgstr ""
@@ -2251,6 +2267,10 @@ msgstr ""
 msgid "Could not load the data"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/shared.tsx:59
+msgid "Could not load this card."
+msgstr ""
+
 #: admin/src/Rest/WooCommerceProducts.php:303
 msgid "Could not move the product to the trash."
 msgstr ""
@@ -2985,6 +3005,10 @@ msgstr ""
 msgid "Device Usage"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:71
+msgid "Devices"
+msgstr ""
+
 #: app/src/components/kit/FdModal.vue:77
 msgid "Dialog"
 msgstr ""
@@ -3059,6 +3083,10 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:262
 msgid "Disk Usage"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:123
+msgid "Disk: %sGB of %sGB"
 msgstr ""
 
 #: app/src/components/kit/FdAlert.vue:36
@@ -3184,6 +3212,7 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:122
 #: app/src/pages/products/src/ProductQuickEdit.vue:51
 #: app/src/pages/products/src/ProductsList.vue:226
+#: app/src/react/features/dashboard/cards/content.tsx:30
 #: app/src/react/features/design-system/Showcase.tsx:239
 #: app/src/react/features/products/CouponsView.tsx:89
 #: app/src/react/features/products/editor/ProductEditor.tsx:983
@@ -3256,7 +3285,7 @@ msgstr ""
 msgid "Duplicate Site"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:37
+#: app/src/react/features/dashboard/cards/register.ts:114
 msgid "e-Commerce"
 msgstr ""
 
@@ -3595,6 +3624,7 @@ msgid "End date for chart data (ISO 8601 format)"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/bounce-rate-time/component.vue:251
+#: app/src/react/features/dashboard/cards/register.ts:67
 msgid "Engagement"
 msgstr ""
 
@@ -3760,6 +3790,10 @@ msgstr ""
 
 #: app/src/react/features/dashboard/DashboardPage.tsx:113
 msgid "Every card is hidden"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:127
+msgid "Everything is up to date"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:312
@@ -4340,6 +4374,10 @@ msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:1032
 msgid "Filename"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:39
+msgid "Files"
 msgstr ""
 
 #: app/src/components/utility/media-library/index.vue:394
@@ -5017,10 +5055,18 @@ msgstr ""
 msgid "In"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/content.tsx:139
+msgid "in %d day(s)"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:628
 msgid ""
 "In Google Analytics, go to Admin → Property Settings. Your Property ID is "
 "the number shown (e.g. 123456789)."
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:187
+msgid "In period"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/users-chart/component.vue:158
@@ -5549,6 +5595,10 @@ msgstr ""
 msgid "Keyboard Shortcuts"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/site.tsx:51
+msgid "Large files"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:253
 msgid "Large Files"
 msgstr ""
@@ -5617,7 +5667,12 @@ msgid "Latest comments and discussions"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:152
+#: app/src/react/features/dashboard/cards/register.ts:31
 msgid "Latest content activity"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/register.ts:39
+msgid "Latest conversations"
 msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:863
@@ -6145,6 +6200,10 @@ msgstr ""
 msgid "Media item not found."
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:43
+msgid "Media library"
+msgstr ""
+
 #: app/src/apps/js/Media.js:38
 #: app/src/components/utility/media-library/index.vue:634
 #: app/src/components/utility/media-library-v2/index.vue:138
@@ -6182,6 +6241,10 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:244
 msgid "Memory Usage"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:122
+msgid "Memory: %sMB of %sMB"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:433
@@ -6758,6 +6821,10 @@ msgstr ""
 msgid "No comments found"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/content.tsx:177
+msgid "No comments in this period."
+msgstr ""
+
 #: app/src/pages/comments/src/comment-list-view.vue:660
 msgid "No comments yet"
 msgstr ""
@@ -6931,6 +6998,11 @@ msgstr ""
 msgid "No page data available"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/analytics.tsx:253
+#: app/src/react/features/dashboard/cards/analytics.tsx:413
+msgid "No page views in this period."
+msgstr ""
+
 #: app/src/pages/orders/src/OrderEditor.vue:80
 #: app/src/react/features/orders/OrderEditor.tsx:464
 msgid "No payment method"
@@ -6951,6 +7023,10 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:290
 #: app/src/pages/posts/index.vue:656
 msgid "No posts found"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/content.tsx:68
+msgid "No posts in this period."
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:323
@@ -6990,6 +7066,10 @@ msgstr ""
 msgid "No query history"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/extras.tsx:132
+msgid "No Rank Math sections are enabled."
+msgstr ""
+
 #: app/src/components/user-activity/user-activity.vue:316
 #: app/src/pages/users/src/components/user-activity/user-activity.vue:316
 msgid "No recent activity"
@@ -6997,6 +7077,10 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:300
 msgid "No referrer data available"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/analytics.tsx:289
+msgid "No referrers in this period."
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:232
@@ -7131,6 +7215,12 @@ msgstr ""
 msgid "No visible cards in this category"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/analytics.tsx:271
+#: app/src/react/features/dashboard/cards/analytics.tsx:312
+#: app/src/react/features/dashboard/cards/extras.tsx:95
+msgid "No visits in this period."
+msgstr ""
+
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:756
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:756
 msgid "No WooCommerce customer data found for this user"
@@ -7194,6 +7284,10 @@ msgstr ""
 
 #: app/src/react/shell/search/CommandPalette.tsx:226
 msgid "Nothing found for “%s”."
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/content.tsx:117
+msgid "Nothing scheduled for this period."
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:77
@@ -7412,6 +7506,10 @@ msgstr ""
 
 #: app/src/components/app/search/components/SearchTriggerButton.vue:18
 msgid "Open search"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/extras.tsx:80
+msgid "Open settings"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:271
@@ -7728,6 +7826,10 @@ msgstr ""
 msgid "Page URL is required"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:59
+msgid "Page views"
+msgstr ""
+
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:587
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:628
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:238
@@ -7750,6 +7852,10 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:87
 #: app/src/react/shell/search/useGlobalSearch.ts:58
 msgid "Pages"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/analytics.tsx:230
+msgid "Pages per session"
 msgstr ""
 
 #: app/src/components/kit/FdPagination.vue:82
@@ -7928,6 +8034,7 @@ msgid "Phone"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:225
+#: app/src/react/features/dashboard/cards/site.tsx:117
 msgid "PHP"
 msgstr ""
 
@@ -8502,6 +8609,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:162
 #: app/src/pages/products/src/ProductsList.vue:175
 #: app/src/pages/products/src/ProductsList.vue:225
+#: app/src/react/features/dashboard/cards/content.tsx:29
 #: app/src/react/features/design-system/Showcase.tsx:238
 #: app/src/react/features/products/editor/ProductEditor.tsx:982
 #: app/src/react/features/products/productFormat.ts:11
@@ -8611,6 +8719,14 @@ msgstr ""
 msgid "Quote"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:91
+msgid "Rank Math"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/extras.tsx:126
+msgid "Rank Math is not available on this site."
+msgstr ""
+
 #: admin/src/Rest/RankMathDashboardWidget.php:164
 #: app/src/pages/dashboard/src/cards/rank-math-overview/component.vue:115
 msgid "Rank Math Overview"
@@ -8659,6 +8775,11 @@ msgstr ""
 msgid "Rebrand and customize interface text and icons"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/site.tsx:41
+#: app/src/react/features/dashboard/cards/site.tsx:188
+msgid "Recent"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/media-analytics/component.vue:235
 msgid "Recent (30d)"
 msgstr ""
@@ -8677,10 +8798,11 @@ msgid "Recent activity on your site."
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:163
+#: app/src/react/features/dashboard/cards/register.ts:39
 msgid "Recent Comments"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:30
+#: app/src/react/features/dashboard/cards/register.ts:107
 msgid "Recent orders"
 msgstr ""
 
@@ -8690,6 +8812,7 @@ msgid "Recent Orders"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:149
+#: app/src/react/features/dashboard/cards/register.ts:31
 msgid "Recent Posts"
 msgstr ""
 
@@ -9239,7 +9362,7 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:136
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:54
-#: app/src/react/features/dashboard/cards/register.ts:22
+#: app/src/react/features/dashboard/cards/register.ts:99
 #: app/src/react/features/dashboard/RevenueChart.tsx:74
 msgid "Revenue"
 msgstr ""
@@ -9255,6 +9378,10 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1983
 msgid "Right"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/analytics.tsx:369
+msgid "right now"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-list-view.vue:419
@@ -9511,6 +9638,7 @@ msgstr ""
 #: app/src/components/app/search/state/constants.js:95
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:188
 #: app/src/pages/products/src/ProductsList.vue:229
+#: app/src/react/features/dashboard/cards/content.tsx:31
 #: app/src/react/features/products/productFormat.ts:15
 #: app/src/react/shell/search/commands.ts:65
 msgid "Scheduled"
@@ -9523,6 +9651,7 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:196
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:233
 #: app/src/pages/dashboard/src/cards/scheduled-posts/component.vue:313
+#: app/src/react/features/dashboard/cards/register.ts:35
 msgid "Scheduled Posts"
 msgstr ""
 
@@ -10009,6 +10138,10 @@ msgstr ""
 msgid "Separator"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:47
+msgid "Server health"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:160
 msgid "Server Health"
 msgstr ""
@@ -10031,6 +10164,10 @@ msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:128
 msgid "Session tracking and unique visitor data"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/analytics.tsx:226
+msgid "Sessions"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:415
@@ -10333,6 +10470,7 @@ msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:280
 #: app/src/pages/plugins/src/plugin-performance.vue:297
+#: app/src/react/features/dashboard/cards/site.tsx:40
 msgid "Size"
 msgstr ""
 
@@ -10453,6 +10591,10 @@ msgstr ""
 #: app/src/apps/js/Database.js:49
 #: app/src/pages/database/src/query-editor.vue:159
 msgid "SQL Query Editor"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:132
+msgid "SSL"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:359
@@ -10579,7 +10721,7 @@ msgstr ""
 msgid "Store"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:18
+#: app/src/react/features/dashboard/cards/register.ts:95
 msgid "Store overview"
 msgstr ""
 
@@ -11124,12 +11266,20 @@ msgstr ""
 msgid "Thumbnails regenerated"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/analytics.tsx:216
+msgid "Time on page"
+msgstr ""
+
 #: admin/src/Rest/PluginManager.php:331
 msgid "Timeframe for metrics (hour, day, week, month)"
 msgstr ""
 
 #: app/src/pages/activity-log/src/activity-details-view.vue:306
 msgid "Timestamp"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:136
+msgid "Timezone"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:366
@@ -11178,6 +11328,10 @@ msgid ""
 "a new secret key."
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/content.tsx:139
+msgid "today"
+msgstr ""
+
 #: app/src/pages/orders/src/OrdersList.vue:169
 #: app/src/react/features/orders/OrdersList.tsx:430
 msgid "Today"
@@ -11211,16 +11365,28 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:79
+msgid "Top countries"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:232
 msgid "Top Countries"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/register.ts:75
+msgid "Top pages"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:198
 msgid "Top Pages"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:26
+#: app/src/react/features/dashboard/cards/register.ts:103
 msgid "Top products"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/register.ts:83
+msgid "Top referrers"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/top-referrers/component.vue:189
@@ -11242,6 +11408,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:240
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:128
+#: app/src/react/features/dashboard/cards/site.tsx:186
 #: app/src/react/features/design-system/Showcase.tsx:91
 #: app/src/react/features/orders/OrderDetails.tsx:300
 #: app/src/react/features/orders/OrderPreview.tsx:127
@@ -11365,6 +11532,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:478
 #: app/src/react/features/orders/OrdersList.tsx:459
 msgid "Track, fulfil and manage your store orders."
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/register.ts:55
+msgid "Traffic"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:500
@@ -11532,6 +11703,10 @@ msgstr ""
 msgid "unique visitors"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/analytics.tsx:177
+msgid "Unique visitors"
+msgstr ""
+
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:594
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:628
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:283
@@ -11548,7 +11723,12 @@ msgstr ""
 #: app/src/pages/activity-log/src/activity-details-view.vue:286
 #: app/src/pages/activity-log/src/activity-list.vue:261
 #: app/src/pages/media/src/media-list.vue:126
+#: app/src/react/features/dashboard/cards/analytics.tsx:69
 msgid "Unknown"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/content.tsx:34
+msgid "Unknown author"
 msgstr ""
 
 #: admin/src/License/LicenseService.php:480
@@ -11607,6 +11787,10 @@ msgstr ""
 
 #: admin/src/Rest/Media.php:88
 msgid "Unused detection mode: shallow (default) or deep (scans post_content)."
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:47
+msgid "Unused media"
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:1600
@@ -11942,6 +12126,7 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:89
 #: app/src/pages/settings/index.vue:116
 #: app/src/pages/users/src/user-list-view.vue:806
+#: app/src/react/features/dashboard/cards/register.ts:51
 #: app/src/react/shell/search/useGlobalSearch.ts:64
 msgid "Users"
 msgstr ""
@@ -12088,6 +12273,10 @@ msgstr ""
 msgid "View Commands"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/content.tsx:191
+msgid "View comment"
+msgstr ""
+
 #: app/src/buttons/view-site/component.vue:31
 #: app/src/components/app/search/composables/useQuickActions.js:55
 #: app/src/react/shell/search/useQuickActions.ts:30
@@ -12130,6 +12319,10 @@ msgstr ""
 msgid "View profile"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/extras.tsx:146
+msgid "View report"
+msgstr ""
+
 #: admin/src/Rest/RankMathDashboardWidget.php:321
 #: admin/src/Rest/RankMathDashboardWidget.php:367
 #: admin/src/Rest/RankMathDashboardWidget.php:419
@@ -12149,6 +12342,10 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/device-usage/component.vue:208
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:175
 msgid "views"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/analytics.tsx:170
+msgid "Views"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1779
@@ -12194,6 +12391,10 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:451
 msgid "Visitor locations worldwide"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/register.ts:87
+msgid "Visitor map"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/top-countries/component.vue:277
@@ -12287,6 +12488,10 @@ msgstr ""
 msgid "Welcome to your WordPress dashboard! This is your site management hub."
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:35
+msgid "What is queued to go out"
+msgstr ""
+
 #: admin/src/Pages/DummyDataPage.php:122
 msgid "What This Generates"
 msgstr ""
@@ -12373,6 +12578,7 @@ msgid "WooCommerce settings"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:210
+#: app/src/react/features/dashboard/cards/site.tsx:113
 msgid "WordPress"
 msgstr ""
 
