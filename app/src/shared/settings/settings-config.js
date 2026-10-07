@@ -596,22 +596,6 @@ export const settingsConfig = [
   },
 
   {
-    id: 'modern_post_editor_post_types',
-    category: 'posts',
-    type: 'post-type-select',
-    label: __('Post Types for Modern Editor', 'flexify-dashboard'),
-    description: __(
-      'Choose which post types should use the modern post editor. Defaults to posts.',
-      'flexify-dashboard'
-    ),
-    requiresActivation: false,
-    condition: (settings) => settings.use_modern_post_editor === true,
-    componentProps: {
-      class: 'max-w-[300px]',
-    },
-  },
-
-  {
     id: 'enable_realtime_collaboration',
     category: 'posts',
     type: 'toggle',
@@ -943,25 +927,6 @@ export const settingsConfig = [
     },
   },
 
-  // ============================================
-  // CUSTOM POST TYPES SETTINGS
-  // ============================================
-  /*
-  {
-    id: 'enable_custom_post_types',
-    category: 'general',
-    type: 'toggle',
-    label: __('Enable Custom Post Types', 'flexify-dashboard'),
-    description: __(
-      'Enable the custom post types creator to register and manage custom post types without code. Post types are stored in a JSON file for performance.',
-      'flexify-dashboard'
-    ),
-    requiresActivation: false,
-    componentProps: {
-      class: 'max-w-[300px]',
-    },
-  },
-*/
   // ============================================
   // ACTIVITY LOG SETTINGS
   // ============================================

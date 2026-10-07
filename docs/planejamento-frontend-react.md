@@ -524,7 +524,7 @@ Matriz de testes (WP e WooCommerce atuais e anteriores, HPOS ligado/desligado, P
 
 - **A matriz de versões** (WordPress e WooCommerce atuais e anteriores, HPOS ligado e desligado, PHP 7.4 a 8.3, papéis de usuário) **não foi executada**: o MySQL do site local está parado, então nenhuma tela foi aberta contra um banco de verdade nesta migração. Tudo o que está verificado acima foi verificado no harness, com dados simulados. Os testes de integração (`tests/integration/woocommerce-rest.php`) continuam por rodar.
 - **Navegadores:** só o navegador do harness (Chromium). Safari e Firefox não foram abertos.
-- As três telas cujo bundle nunca foi declarado no `vite.config.js` (`PostEditor.js`, `CustomPostTypes.js`, `CustomFieldsMetaBox.js`) são anteriores a esta migração e continuam sem carregar JavaScript nenhum. Precisam de uma decisão à parte.
+- As três telas cujo bundle nunca foi declarado no `vite.config.js` (`PostEditor.js`, `CustomPostTypes.js`, `CustomFieldsMetaBox.js`) **foram removidas** — a decisão à parte que faltava está registrada na seção 12.
 
 ---
 
@@ -567,3 +567,25 @@ Desenvolvimento: `typescript`, `@types/react`, `@types/react-dom`, `@vitejs/plug
 3. Manter a página **Design System** como vitrine oficial do kit React (hoje aparece só com `WP_DEBUG`).
 4. Mapa (`CountryMap`): manter Mapbox ou adotar o mapa vetorial do TailAdmin.
 5. Editor de código (Ace): manter ou migrar para CodeMirror 6 na Fase 7.
+
+---
+
+## 12. Telas sem bundle: decisão e remoção
+
+Três carregadores PHP pediam ao `Scripts::get_base_script_path()` entradas que o `vite.config.js` nunca declarou — `PostEditor.js`, `CustomPostTypes.js` e `CustomFieldsMetaBox.js`. Sem registro no manifesto, o método devolvia `null` e cada carregador saía mais cedo: as telas não carregavam JavaScript nenhum. As folhas de estilo (`post-editor.css`, `custom-post-types.css`, `custom-fields-meta-box.css`) também eram caminhos fixos que nunca existiram no build.
+
+**O problema é anterior a esta migração** e não foi causado por ela. O levantamento mostrou que as telas nunca existiram:
+
+- Nenhum arquivo de origem (Vue, JS ou TS) para as três telas aparece em **nenhum** ponto do histórico do Git.
+- **Nenhuma** versão do `vite.config.js` declarou essas entradas, nem a da era Vue, no commit mais antigo do repositório.
+- Os dois interruptores que exporiam as telas (`use_modern_post_editor` e `enable_custom_post_types`) estavam **comentados** no `settings-config.js` desde o commit mais antigo, com padrão `false`.
+- O que decidiu a questão: `CustomPostEditor` e `CustomPostTypesPage` **nunca eram instanciados**. O `Plugin.php` constrói todas as outras páginas, mas não essas duas — então nem os ganchos chegavam a ser registrados.
+- Como o construtor do `CustomPostTypesPage` era o único a chamar `CustomFieldsLoader::init()` e a engatar `CustomPostTypes::register_custom_post_types()`, todo o motor de Custom Fields também nunca subia. Suas classes REST (`CustomFields`, `OptionPages`, `RelationshipSearch`, `CustomPostTypes`) registram rotas no próprio construtor e nenhuma era instanciada: **nenhuma dessas rotas existia em tempo de execução**.
+- Todos os contextos de Custom Fields renderizavam apenas uma `<div class="flexify-dashboard-custom-fields-app">` vazia, sem alternativa gerada no servidor.
+
+**Decisão: código morto, removido.** Saíram as duas páginas, o REST `CustomPostTypes` e o diretório `Rest/CustomFields/` inteiro (25 arquivos), junto com as opções órfãs `modern_post_editor_post_types` e `enable_custom_post_types` e o ID de tela morto no `Plugin.php`.
+
+**O que foi mantido, de propósito:**
+
+- `Rest/CustomFields/FieldHelpers.php` — é carregado sem condição pelo `flexify-dashboard.php` e expõe ~22 funções públicas (`flexify_dashboard_get_field()` e afins) para quem desenvolve temas. É autocontido (lê o JSON direto, sem usar as classes removidas). Remover transformaria um retorno vazio em *fatal error* em qualquer tema que as chame.
+- `PostEditorMeta`, `PostEditorSEO` e `Collaboration` — são instanciados no `Plugin.php` e suas rotas existem de fato. Ficaram para não quebrar nenhum cliente externo. Por isso a opção `use_modern_post_editor`, que o `Collaboration` lê, também ficou.

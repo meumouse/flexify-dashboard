@@ -260,10 +260,6 @@ class GlobalOptions {
                     'type'    => 'boolean',
                     'default' => false,
                 ),
-                'modern_post_editor_post_types' => array(
-                    'type'    => 'array',
-                    'default' => array(),
-                ),
                 'enable_realtime_collaboration' => array(
                     'type'    => 'boolean',
                     'default' => false,
@@ -281,10 +277,6 @@ class GlobalOptions {
                     'default' => false,
                 ),
                 'enable_role_editor' => array(
-                    'type'    => 'boolean',
-                    'default' => false,
-                ),
-                'enable_custom_post_types' => array(
                     'type'    => 'boolean',
                     'default' => false,
                 ),
@@ -467,10 +459,6 @@ class GlobalOptions {
 
         if ( isset( $value['custom_font_url'] ) ) {
             $sanitized_value['custom_font_url'] = sanitize_url( $value['custom_font_url'] );
-        }
-
-        if ( isset( $value['modern_post_editor_post_types'] ) && is_array( $value['modern_post_editor_post_types'] ) ) {
-            $sanitized_value['modern_post_editor_post_types'] = self::sanitize_post_type_objects( $value['modern_post_editor_post_types'] );
         }
 
         if ( isset( $value['disable_theme'] ) && is_array( $value['disable_theme'] ) ) {

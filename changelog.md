@@ -15,6 +15,7 @@ Versão 4.0.0 (07/10/2026)
 * Correção: as mensagens de erro da tela de login passaram a ser traduzíveis
 * Correção: o construtor de menus devolve ao menu os itens que o site ganhou depois de o menu ter sido criado
 * Correção: o período do painel não volta mais um dia a cada recarga em fusos a oeste de Greenwich
+* Removido código morto: o editor moderno de posts, a tela de tipos de post e o motor de Custom Fields nunca foram instanciados pelo plugin e nunca tiveram interface — as classes que os serviam pediam bundles que o build nunca declarou e suas rotas REST nunca chegavam a ser registradas. As funções públicas `flexify_dashboard_get_field()` e afins continuam disponíveis para temas
 * Atualização das traduções pt_BR
 
 Versão 3.0.0 (17/09/2026)
