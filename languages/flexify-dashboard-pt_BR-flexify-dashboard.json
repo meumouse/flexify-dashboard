@@ -133,12 +133,6 @@
       "%s / page": [
         "%s / página"
       ],
-      "%s Archives": [
-        "Arquivos %s"
-      ],
-      "%s Attributes": [
-        "Atributos %s"
-      ],
       "%s ago": [
         "%s atrás"
       ],
@@ -178,12 +172,6 @@
       "%s item(s)": [
         "%s item(ns)"
       ],
-      "%s list": [
-        "Lista %s"
-      ],
-      "%s list navigation": [
-        "Navegação da lista %s"
-      ],
       "%s notice(s)": [
         "%s aviso(s)"
       ],
@@ -193,23 +181,11 @@
       "%s out of 5": [
         "%s de 5"
       ],
-      "%s published privately.": [
-        "%s publicado de forma privada."
-      ],
-      "%s published.": [
-        "%s publicado."
-      ],
       "%s refunded": [
         "%s reembolsado"
       ],
-      "%s reverted to draft.": [
-        "%s voltou ao estado de rascunho."
-      ],
       "%s row(s)": [
         "%s linha(s)"
-      ],
-      "%s scheduled.": [
-        "%s agendado."
       ],
       "%s selected": [
         "%s selecionado(s)"
@@ -223,9 +199,6 @@
       "%s table(s)": [
         "%s tabela(s)"
       ],
-      "%s updated.": [
-        "%s atualizado."
-      ],
       "%s user(s)": [
         "%s usuário(s)"
       ],
@@ -234,9 +207,6 @@
       ],
       "%s%% vs previous period": [
         "%s%% vs período anterior"
-      ],
-      "(Copy)": [
-        "(Cópia)"
       ],
       "(No label)": [
         "(Sem rótulo)"
@@ -273,9 +243,6 @@
       ],
       "A Dashicons name, for example dashicons-cart.": [
         "Um nome do Dashicons, por exemplo dashicons-cart."
-      ],
-      "A custom post type with this slug already exists.": [
-        "Já existe um tipo de postagem personalizado com esse slug."
       ],
       "A draft is kept but shown to nobody.": [
         "Um rascunho é guardado, mas não é mostrado a ninguém."
@@ -373,12 +340,6 @@
       "Add": [
         "Adicionar"
       ],
-      "Add New": [
-        "Adicionar novo"
-      ],
-      "Add New %s": [
-        "Adicionar novo %s"
-      ],
       "Add New Admin Menu": [
         "Adicionar novo menu de administração"
       ],
@@ -387,9 +348,6 @@
       ],
       "Add New Tag": [
         "Adicionar nova etiqueta"
-      ],
-      "Add Row": [
-        "Adicionar linha"
       ],
       "Add URLs to any external stylesheets you want Flexify Dashboard to load into the admin": [
         "Adicione URLs para quaisquer folhas de estilo externas que você queira que o Painel Flexify carregue no painel administrativo."
@@ -541,9 +499,6 @@
       "Administrator": [
         "Administrador"
       ],
-      "Administrator (manage_options)": [
-        "Administrador (gerenciar opções)"
-      ],
       "Advanced": [
         "Avançado"
       ],
@@ -564,9 +519,6 @@
       ],
       "All": [
         "Todos"
-      ],
-      "All %s": [
-        "Todos os %s"
       ],
       "All Actions": [
         "Todas as ações"
@@ -643,9 +595,6 @@
       "An error occurred while sanitizing the SVG file.": [
         "Ocorreu um erro ao higienizar o arquivo SVG."
       ],
-      "An option page with this slug already exists.": [
-        "Já existe uma página de opções com esse slug."
-      ],
       "Analytics": [
         "Análises"
       ],
@@ -708,9 +657,6 @@
       ],
       "Anything": [
         "Qualquer coisa"
-      ],
-      "Appearance": [
-        "Aparência"
       ],
       "Application password": [
         "Senha de aplicativo"
@@ -777,9 +723,6 @@
       ],
       "Author": [
         "Autor"
-      ],
-      "Author (publish_posts)": [
-        "Autor (publish_posts)"
       ],
       "Auto Cleanup": [
         "Limpeza automática"
@@ -1045,9 +988,6 @@
       "Choose which post types are available in the global search": [
         "Escolha quais tipos de postagem estão disponíveis na pesquisa global."
       ],
-      "Choose which post types should use the modern post editor. Defaults to posts.": [
-        "Escolha quais tipos de postagem devem usar o editor de postagens moderno. O padrão é usar postagens."
-      ],
       "Choose your prefered admin layout": [
         "Escolha o layout de administração de sua preferência."
       ],
@@ -1198,9 +1138,6 @@
       "Contrast": [
         "Contraste"
       ],
-      "Contributor (edit_posts)": [
-        "Colaborador (editar_posts)"
-      ],
       "Cool ← → Warm": [
         "Frio ← → Quente"
       ],
@@ -1324,9 +1261,6 @@
       "Custom Dashboard": [
         "Painel de controle personalizado"
       ],
-      "Custom Fields": [
-        "Campos personalizados"
-      ],
       "Custom Font": [
         "Fonte personalizada"
       ],
@@ -1347,18 +1281,6 @@
       ],
       "Custom ordering": [
         "Ordenação personalizada"
-      ],
-      "Custom post type created successfully.": [
-        "Tipo de postagem personalizado criado com sucesso."
-      ],
-      "Custom post type deleted successfully.": [
-        "Tipo de postagem personalizado excluído com sucesso."
-      ],
-      "Custom post type not found.": [
-        "Tipo de postagem personalizado não encontrado."
-      ],
-      "Custom post type updated successfully.": [
-        "Tipo de postagem personalizado atualizado com sucesso."
       ],
       "Customer": [
         "Cliente"
@@ -1416,9 +1338,6 @@
       ],
       "Default": [
         "Padrão"
-      ],
-      "Default Template": [
-        "Modelo padrão"
       ],
       "Default sort order": [
         "Ordenação padrão"
@@ -1633,9 +1552,6 @@
       "Edit": [
         "Editar"
       ],
-      "Edit %s": [
-        "Editar %s"
-      ],
       "Edit Admin Menu": [
         "Editar menu de administração"
       ],
@@ -1687,9 +1603,6 @@
       "Edit variation": [
         "Editar variação"
       ],
-      "Editor (edit_others_posts)": [
-        "Editor (editar_outros_posts)"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -1710,9 +1623,6 @@
       ],
       "Enable Admin Menu Search": [
         "Ativar a pesquisa no menu de administração"
-      ],
-      "Enable Custom Post Types": [
-        "Ativar tipos de postagem personalizados"
       ],
       "Enable Database Explorer": [
         "Habilitar o Explorador de Banco de Dados"
@@ -1752,9 +1662,6 @@
       ],
       "Enable search functionality in the admin menu to quickly find menu items.": [
         "Ative a função de busca no menu de administração para encontrar itens do menu rapidamente."
-      ],
-      "Enable the custom post types creator to register and manage custom post types without code. Post types are stored in a JSON file for performance.": [
-        "Habilite o criador de tipos de postagem personalizados para registrar e gerenciar tipos de postagem personalizados sem código. Os tipos de postagem são armazenados em um arquivo JSON para melhor desempenho."
       ],
       "Enable the modern database explorer interface to browse tables, view data, and execute SQL queries safely.": [
         "Habilite a interface moderna do explorador de banco de dados para navegar pelas tabelas, visualizar dados e executar consultas SQL com segurança."
@@ -1918,23 +1825,8 @@
       "Failed to decrypt the license server response.": [
         "Falha ao descriptografar a resposta do servidor de licenças."
       ],
-      "Failed to delete custom post type.": [
-        "Falha ao excluir o tipo de postagem personalizado."
-      ],
-      "Failed to delete field group.": [
-        "Falha ao excluir o grupo de campos."
-      ],
-      "Failed to delete option page.": [
-        "Falha ao excluir a página de opções."
-      ],
       "Failed to delete table.": [
         "Falha ao excluir a tabela."
-      ],
-      "Failed to duplicate field group.": [
-        "Falha ao duplicar o grupo de campos."
-      ],
-      "Failed to duplicate option page.": [
-        "Falha ao duplicar a página de opções."
       ],
       "Failed to extract plugin ZIP: %s": [
         "Falha ao extrair o arquivo ZIP do plugin: %s"
@@ -1954,21 +1846,6 @@
       "Failed to retrieve chart data": [
         "Falha ao recuperar os dados do gráfico"
       ],
-      "Failed to save custom post type.": [
-        "Falha ao salvar o tipo de postagem personalizado."
-      ],
-      "Failed to save field group.": [
-        "Falha ao salvar o grupo de campos."
-      ],
-      "Failed to save imported field groups.": [
-        "Falha ao salvar os grupos de campos importados."
-      ],
-      "Failed to save imported post types.": [
-        "Falha ao salvar os tipos de postagem importados."
-      ],
-      "Failed to save option page.": [
-        "Falha ao salvar a página de opções."
-      ],
       "Failed to track analytics event": [
         "Falha ao rastrear evento analítico"
       ],
@@ -1987,9 +1864,6 @@
       "Featured": [
         "Destaque"
       ],
-      "Featured image": [
-        "Imagem em destaque"
-      ],
       "Featured only": [
         "Somente destaques"
       ],
@@ -2004,36 +1878,6 @@
       ],
       "Fictitious analytics data successfully generated for %d months.": [
         "Dados analíticos fictícios gerados com sucesso durante %d meses."
-      ],
-      "Field group at index %d is invalid.": [
-        "O grupo de campos no índice %d é inválido."
-      ],
-      "Field group at index %d is missing a title.": [
-        "O grupo de campos no índice %d não possui título."
-      ],
-      "Field group created successfully.": [
-        "Grupo de campo criado com sucesso."
-      ],
-      "Field group deleted successfully.": [
-        "Grupo de campos excluído com sucesso."
-      ],
-      "Field group duplicated successfully.": [
-        "Grupo de campos duplicado com sucesso."
-      ],
-      "Field group not found.": [
-        "Grupo de campos não encontrado."
-      ],
-      "Field group title is required.": [
-        "É necessário o título do grupo de campos."
-      ],
-      "Field group updated successfully.": [
-        "Grupo de campo atualizado com sucesso."
-      ],
-      "Field name is required.": [
-        "O nome do campo é obrigatório."
-      ],
-      "Fields groups": [
-        "Grupos de campos"
       ],
       "File": [
         "Arquivo"
@@ -2079,9 +1923,6 @@
       ],
       "Files uploaded": [
         "Arquivos enviados"
-      ],
-      "Filter %s list": [
-        "Lista de filtros %s"
       ],
       "Filter by specific page URL": [
         "Filtrar por URL de página específica"
@@ -2275,9 +2116,6 @@
       "Help": [
         "Ajuda"
       ],
-      "Helper function not available. Please ensure the plugin is properly initialized.": [
-        "Função auxiliar não disponível. Certifique-se de que o plugin esteja inicializado corretamente."
-      ],
       "Hidden": [
         "Escondido"
       ],
@@ -2374,17 +2212,11 @@
       "Import %d row(s)": [
         "Importar %d linha(s)"
       ],
-      "Import completed successfully.": [
-        "Importação concluída com sucesso."
-      ],
       "Import products": [
         "Importar produtos"
       ],
       "Import users": [
         "Importar usuários"
-      ],
-      "Import validation failed.": [
-        "A validação da importação falhou."
       ],
       "Important Only": [
         "Somente importante"
@@ -2422,9 +2254,6 @@
       "Insert image": [
         "Inserir imagem"
       ],
-      "Insert into %s": [
-        "Inserir em %s"
-      ],
       "Install": [
         "Instalar"
       ],
@@ -2458,23 +2287,11 @@
       "Invalid document data.": [
         "Dados do documento inválidos."
       ],
-      "Invalid field group ID.": [
-        "ID do grupo de campos inválido."
-      ],
       "Invalid file path.": [
         "Caminho de arquivo inválido."
       ],
       "Invalid file type. Please upload a ZIP file.": [
         "Tipo de arquivo inválido. Por favor, envie um arquivo ZIP."
-      ],
-      "Invalid import data. Expected an array of field groups.": [
-        "Dados de importação inválidos. Esperava-se uma matriz de grupos de campos."
-      ],
-      "Invalid import data. Expected an array of post types.": [
-        "Dados de importação inválidos. Esperava-se uma matriz de tipos de postagem."
-      ],
-      "Invalid import mode. Use \"merge\" or \"replace\".": [
-        "Modo de importação inválido. Use \"mesclar\" ou \"substituir\"."
       ],
       "Invalid license response.": [
         "Resposta de licença inválida."
@@ -2491,12 +2308,6 @@
       "Invalid number of months. Please select between 1 and 12 months.": [
         "Número de meses inválido. Selecione um número entre 1 e 12 meses."
       ],
-      "Invalid option page slug.": [
-        "Slug da página de opções inválido."
-      ],
-      "Invalid or unauthorized function.": [
-        "Função inválida ou não autorizada."
-      ],
       "Invalid order action.": [
         "Ação de pedido inválida."
       ],
@@ -2511,12 +2322,6 @@
       ],
       "Invalid plugin structure - no main plugin file found": [
         "Estrutura de plugin inválida - nenhum arquivo de plugin principal encontrado"
-      ],
-      "Invalid post type slug.": [
-        "Slug de tipo de postagem inválido."
-      ],
-      "Invalid post type slug. Use only lowercase letters, numbers, and underscores. Maximum 20 characters.": [
-        "Slug de tipo de postagem inválido. Use apenas letras minúsculas, números e sublinhados. Máximo de 20 caracteres."
       ],
       "Invalid post type.": [
         "Tipo de postagem inválido."
@@ -3064,9 +2869,6 @@
       "New": [
         "Novo"
       ],
-      "New %s": [
-        "Notícias"
-      ],
       "New Admin Menu": [
         "Novo menu de administração"
       ],
@@ -3117,12 +2919,6 @@
       ],
       "No": [
         "Não"
-      ],
-      "No %s found": [
-        "Nenhum %s encontrado"
-      ],
-      "No %s found in Trash": [
-        "Nenhum %s encontrado na Lixeira"
       ],
       "No Admin Menus found in Trash.": [
         "Nenhum menu administrativo encontrado na lixeira."
@@ -3180,9 +2976,6 @@
       ],
       "No customers found.": [
         "Nenhum cliente encontrado."
-      ],
-      "No field groups are assigned to this option page. Create a field group and set its location to this option page.": [
-        "Nenhum grupo de campos está atribuído a esta página de opções. Crie um grupo de campos e defina sua localização para esta página de opções."
       ],
       "No file was uploaded.": [
         "Nenhum arquivo foi carregado."
@@ -3499,27 +3292,6 @@
       "Operation": [
         "Operação"
       ],
-      "Option Page Not Found": [
-        "Página de opções não encontrada"
-      ],
-      "Option page created successfully.": [
-        "Página de opções criada com sucesso."
-      ],
-      "Option page deleted successfully.": [
-        "Página de opções excluída com sucesso."
-      ],
-      "Option page duplicated successfully.": [
-        "Página de opções duplicada com sucesso."
-      ],
-      "Option page not found.": [
-        "Página de opções não encontrada."
-      ],
-      "Option page title is required.": [
-        "É necessário um título para a página de opções."
-      ],
-      "Option page updated successfully.": [
-        "Página de opções atualizada com sucesso."
-      ],
       "Optional allow list. Selected users or roles (for example, Editor) will still see update notifications for hidden plugins.": [
         "Lista de permissões opcional. Usuários ou funções selecionados (por exemplo, Editor) ainda verão notificações de atualização para plugins ocultos."
       ],
@@ -3651,9 +3423,6 @@
       ],
       "Paragraph": [
         "Parágrafo"
-      ],
-      "Parent %s:": [
-        "Pais:"
       ],
       "Parent category": [
         "Categoria ascendente"
@@ -3807,27 +3576,6 @@
       ],
       "Popular Tags": [
         "Tags populares"
-      ],
-      "Post Types": [
-        "Tipos de postagem"
-      ],
-      "Post Types for Modern Editor": [
-        "Tipos de postagem para o editor moderno"
-      ],
-      "Post type \"%s\" has an invalid slug format.": [
-        "O tipo de postagem \"%s\" possui um formato de slug inválido."
-      ],
-      "Post type \"%s\" uses a reserved slug: %s": [
-        "O tipo de postagem \"%s\" usa um slug reservado: %s"
-      ],
-      "Post type at index %d is missing required fields (slug or name).": [
-        "O tipo de postagem no índice %d não possui os campos obrigatórios (slug ou nome)."
-      ],
-      "Post type name is required.": [
-        "O nome do tipo de postagem é obrigatório."
-      ],
-      "Post type slug is required.": [
-        "É necessário informar o slug do tipo de postagem."
       ],
       "Post type used for the flexify-dashboards menus": [
         "Tipo de postagem usado para os menus flexify-dashboards"
@@ -4180,9 +3928,6 @@
       "Remove customer filter": [
         "Remover filtro de cliente"
       ],
-      "Remove featured image": [
-        "Remover imagem em destaque"
-      ],
       "Remove fee": [
         "Remover taxa"
       ],
@@ -4414,9 +4159,6 @@
       "Save": [
         "Salvar"
       ],
-      "Save Changes": [
-        "Salvar alterações"
-      ],
       "Save address": [
         "Salvar endereço"
       ],
@@ -4461,9 +4203,6 @@
       ],
       "Search": [
         "Procurar"
-      ],
-      "Search %s": [
-        "Pesquisar %s"
       ],
       "Search Admin Menus": [
         "Pesquisar menus de administração"
@@ -4653,9 +4392,6 @@
       ],
       "Set an alternative logo to use in dark mode. If one isn't set it will fall back to the standard logo.": [
         "Defina um logotipo alternativo para usar no modo escuro. Se nenhum for definido, o logotipo padrão será usado."
-      ],
-      "Set featured image": [
-        "Definir imagem em destaque"
       ],
       "Set product image": [
         "Definir imagem do produto"
@@ -4888,9 +4624,6 @@
       "Submenu style": [
         "Estilo de submenu"
       ],
-      "Subscriber (read)": [
-        "Assinante (leitura)"
-      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -4962,9 +4695,6 @@
       ],
       "Temperature": [
         "Temperatura"
-      ],
-      "Template\u0004Add New": [
-        "Adicionar novo"
       ],
       "Term ID": [
         "ID do termo"
@@ -5194,9 +4924,6 @@
       "This order can no longer be edited": [
         "Este pedido não pode mais ser editado"
       ],
-      "This post type slug is reserved by WordPress.": [
-        "Este slug de tipo de postagem é reservado pelo WordPress."
-      ],
       "This product has no variations.": [
         "Este produto não tem variações."
       ],
@@ -5268,9 +4995,6 @@
       ],
       "Too many requests": [
         "Muitos pedidos"
-      ],
-      "Tools": [
-        "Ferramentas"
       ],
       "Top countries": [
         "Principais países"
@@ -5488,9 +5212,6 @@
       "Uploaded": [
         "Enviado"
       ],
-      "Uploaded to this %s": [
-        "Carregado neste %s"
-      ],
       "Uploading": [
         "Enviando"
       ],
@@ -5517,9 +5238,6 @@
       ],
       "Use a negative value for a discount.": [
         "Use um valor negativo para um desconto."
-      ],
-      "Use as featured image": [
-        "Usar como imagem principal"
       ],
       "Use as product image": [
         "Usar como imagem do produto"
@@ -5599,12 +5317,6 @@
       "Users updated": [
         "Usuários atualizados"
       ],
-      "Valid object ID is required.": [
-        "É necessário um ID de objeto válido."
-      ],
-      "Valid option page is required.": [
-        "É necessário preencher uma página de opções válida."
-      ],
       "Value name": [
         "Nome do valor"
       ],
@@ -5640,9 +5352,6 @@
       ],
       "View": [
         "Visualizar"
-      ],
-      "View %s": [
-        "Visualizar %s"
       ],
       "View Admin Menu": [
         "Exibir menu de administração"
@@ -5896,9 +5605,6 @@
       "You do not have permission to perform this action. Required capability: %s": [
         "Você não tem permissão para executar esta ação. Capacidade necessária: %s"
       ],
-      "You do not have permission to save these options.": [
-        "Você não tem permissão para salvar essas opções."
-      ],
       "You do not have sufficient permissions to access this page.": [
         "Você não possui permissões suficientes para acessar esta página."
       ],
@@ -5929,15 +5635,6 @@
       "ZIP functionality is not available on this server.": [
         "A funcionalidade ZIP não está disponível neste servidor."
       ],
-      "add new on admin bar\u0004Admin Menu": [
-        "Menu de administração"
-      ],
-      "admin menu\u0004Admin Menus": [
-        "Menus de administração"
-      ],
-      "admin menu\u0004Admin Notices": [
-        "Avisos do administrador"
-      ],
       "copy": [
         "cópia"
       ],
@@ -5956,26 +5653,11 @@
       "missing": [
         "ausente"
       ],
-      "notice\u0004Add New": [
-        "Adicionar novo"
-      ],
       "off": [
         "desligado"
       ],
       "on": [
         "sobre"
-      ],
-      "post type general name\u0004Admin Menu": [
-        "Menus de administração"
-      ],
-      "post type general name\u0004Admin Notices": [
-        "Avisos do administrador"
-      ],
-      "post type singular name\u0004Admin Menu": [
-        "Menu de administração"
-      ],
-      "post type singular name\u0004Admin Notice": [
-        "Aviso do administrador"
       ],
       "present": [
         "presente"

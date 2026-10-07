@@ -14,17 +14,10 @@ msgstr ""
 msgid "“%s” will be removed from every product that uses it."
 msgstr ""
 
-#: admin/src/Rest/CustomFields/CustomFields.php:535
-#: admin/src/Rest/CustomFields/OptionPages.php:350
-msgid "(Copy)"
-msgstr ""
-
 #: app/src/react/features/menus/MenuEditor.tsx:139
 msgid "(No label)"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/CustomFields.php:856
-#: admin/src/Rest/CustomFields/RelationshipSearch.php:529
 #: app/src/react/features/products/editor/ProductEditor.tsx:587
 #: app/src/react/features/products/ProductsList.tsx:271
 msgid "(no title)"
@@ -182,7 +175,7 @@ msgstr ""
 msgid "%d tag(s) will be deleted. Products will not be deleted."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:127
+#: app/src/react/features/dashboard/cards/site.tsx:130
 msgid "%d update(s) available"
 msgstr ""
 
@@ -237,16 +230,8 @@ msgid ""
 "database may stay behind."
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:846
-msgid "%s Archives"
-msgstr ""
-
 #: app/src/react/features/settings/custom/index.tsx:150
 msgid "%s as a hex value"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:847
-msgid "%s Attributes"
 msgstr ""
 
 #: app/src/react/features/posts/PostCells.tsx:200
@@ -287,14 +272,6 @@ msgstr ""
 msgid "%s item(s)"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:857
-msgid "%s list"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:856
-msgid "%s list navigation"
-msgstr ""
-
 #: app/src/react/features/notices/NoticesList.tsx:113
 msgid "%s notice(s)"
 msgstr ""
@@ -307,28 +284,12 @@ msgstr ""
 msgid "%s out of 5"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:859
-msgid "%s published privately."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:858
-msgid "%s published."
-msgstr ""
-
 #: app/src/react/features/orders/OrdersList.tsx:371
 msgid "%s refunded"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:860
-msgid "%s reverted to draft."
-msgstr ""
-
 #: app/src/react/features/database/DatabaseExplorer.tsx:111
 msgid "%s row(s)"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:861
-msgid "%s scheduled."
 msgstr ""
 
 #: app/src/react/data/DataTable.tsx:135
@@ -347,10 +308,6 @@ msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:169
 msgid "%s table(s)"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:862
-msgid "%s updated."
 msgstr ""
 
 #: app/src/react/features/users/UsersList.tsx:157
@@ -391,10 +348,6 @@ msgstr ""
 
 #: app/src/react/features/orders/OrdersList.tsx:470
 msgid "90 days"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:305
-msgid "A custom post type with this slug already exists."
 msgstr ""
 
 #: app/src/react/features/menus/MenuEditor.tsx:223
@@ -633,14 +586,6 @@ msgstr ""
 msgid "Add new"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:835
-msgid "Add New"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:836
-msgid "Add New %s"
-msgstr ""
-
 #: admin/src/Pages/MenuBuilder.php:336
 msgid "Add New Admin Menu"
 msgstr ""
@@ -684,10 +629,6 @@ msgstr ""
 #: app/src/react/features/roles/RolesList.tsx:48
 #: app/src/react/features/roles/RolesList.tsx:142
 msgid "Add role"
-msgstr ""
-
-#: admin/src/Rest/CustomFields/FieldGroupSanitizer.php:245
-msgid "Add Row"
 msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:695
@@ -793,10 +734,6 @@ msgstr ""
 msgid "Administrator"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:329
-msgid "Administrator (manage_options)"
-msgstr ""
-
 #: app/src/react/features/products/editor/ProductEditor.tsx:958
 #: app/src/react/features/settings/categories.ts:29
 msgid "Advanced"
@@ -822,12 +759,6 @@ msgstr ""
 msgid "Align right"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:140
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:177
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:247
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:332
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:372
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:435
 #: app/src/react/features/comments/CommentsList.tsx:79
 #: app/src/react/features/media/MediaLibrary.tsx:23
 #: app/src/react/features/orders/OrdersList.tsx:159
@@ -836,11 +767,7 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:845
-msgid "All %s"
-msgstr ""
-
-#: app/src/shared/settings/settings-config.js:1017
+#: app/src/shared/settings/settings-config.js:982
 msgid "All Actions"
 msgstr ""
 
@@ -899,7 +826,7 @@ msgid ""
 "sidebar uses the default width."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:713
+#: app/src/shared/settings/settings-config.js:697
 msgid ""
 "Allow font files (.woff2, .woff, .ttf, .otf) to be uploaded to the media "
 "library. This enables custom font support for your site."
@@ -909,7 +836,7 @@ msgstr ""
 msgid "Allow free shipping"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:698
+#: app/src/shared/settings/settings-config.js:682
 msgid ""
 "Allow SVG (Scalable Vector Graphics) files to be uploaded to the media "
 "library. All SVG files are automatically sanitized before upload to remove "
@@ -934,7 +861,7 @@ msgstr ""
 msgid "Alternative text"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:663
+#: app/src/shared/settings/settings-config.js:647
 msgid "Always show hidden update notifications for specific users/roles"
 msgstr ""
 
@@ -952,10 +879,6 @@ msgstr ""
 
 #: admin/src/Options/MediaOptions.php:247
 msgid "An error occurred while sanitizing the SVG file."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:206
-msgid "An option page with this slug already exists."
 msgstr ""
 
 #: admin/src/Rest/RankMathDashboardWidget.php:317
@@ -985,7 +908,7 @@ msgstr ""
 msgid "Analytics property"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:845
+#: app/src/shared/settings/settings-config.js:829
 msgid "Analytics Provider"
 msgstr ""
 
@@ -1054,14 +977,10 @@ msgstr ""
 msgid "API"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:883
+#: app/src/shared/settings/settings-config.js:867
 msgid ""
 "API key used by the analytics map card. Store the token here instead of "
 "keeping it in source code."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:285
-msgid "Appearance"
 msgstr ""
 
 #: app/src/react/features/settings/custom/connections.tsx:102
@@ -1165,11 +1084,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:337
-msgid "Author (publish_posts)"
-msgstr ""
-
-#: app/src/shared/settings/settings-config.js:1028
+#: app/src/shared/settings/settings-config.js:993
 msgid "Auto Cleanup"
 msgstr ""
 
@@ -1190,7 +1105,7 @@ msgstr ""
 msgid "Automatic updates changed"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1029
+#: app/src/shared/settings/settings-config.js:994
 msgid ""
 "Automatically delete logs older than the retention period. Disable to keep "
 "logs indefinitely."
@@ -1567,13 +1482,13 @@ msgstr ""
 msgid "Choose variation image"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1009
+#: app/src/shared/settings/settings-config.js:974
 msgid ""
 "Choose which actions to log. \"All Actions\" logs everything, \"Important "
 "Only\" logs only critical actions like deletions and role changes."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:846
+#: app/src/shared/settings/settings-config.js:830
 msgid ""
 "Choose which analytics provider to use for dashboard data. Select Built-in "
 "Analytics to use the Flexify Dashboard tracking system, or Google Analytics "
@@ -1582,12 +1497,6 @@ msgstr ""
 
 #: app/src/shared/settings/settings-config.js:150
 msgid "Choose which post types are available in the global search"
-msgstr ""
-
-#: app/src/shared/settings/settings-config.js:603
-msgid ""
-"Choose which post types should use the modern post editor. Defaults to "
-"posts."
 msgstr ""
 
 #: app/src/shared/settings/settings-config.js:177
@@ -1718,7 +1627,6 @@ msgstr ""
 msgid "Comment updated"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:301
 #: admin/src/Rest/PostsTables.php:443
 #: app/src/react/features/comments/CommentDetails.tsx:91
 #: app/src/react/features/comments/CommentsList.tsx:146
@@ -1770,7 +1678,7 @@ msgstr ""
 msgid "Configure remote WordPress sites for cross-site operations."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:900
+#: app/src/shared/settings/settings-config.js:884
 msgid ""
 "Configure the site key and secret key used by the modern administrative "
 "login and password recovery forms."
@@ -1796,7 +1704,7 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:863
+#: app/src/shared/settings/settings-config.js:847
 msgid ""
 "Connect your Google Analytics 4 property to display analytics data in the "
 "dashboard. You will need to create OAuth credentials in Google Cloud "
@@ -1813,10 +1721,6 @@ msgstr ""
 
 #: app/src/react/features/media/ImageEditor.tsx:21
 msgid "Contrast"
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:341
-msgid "Contributor (edit_posts)"
 msgstr ""
 
 #: app/src/react/features/media/ImageEditor.tsx:28
@@ -1948,7 +1852,7 @@ msgstr ""
 msgid "Create an order manually, e.g. for phone or in-store sales."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:778
+#: app/src/shared/settings/settings-config.js:762
 msgid ""
 "Create and edit products in a modern editor with pricing, inventory, "
 "images, attributes and variations. Keep it disabled if your extensions add "
@@ -2010,16 +1914,12 @@ msgstr ""
 msgid "Custom css added here will only be added in the admin area and login page."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:811
+#: app/src/shared/settings/settings-config.js:795
 msgid "Custom Dashboard"
 msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:617
 msgid "Custom fields"
-msgstr ""
-
-#: admin/src/Rest/CustomFields/UserMetaBoxManager.php:230
-msgid "Custom Fields"
 msgstr ""
 
 #: app/src/shared/settings/settings-config.js:458
@@ -2032,24 +1932,6 @@ msgstr ""
 
 #: admin/src/Pages/CustomPluginsPage.php:66
 msgid "Custom Plugins"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:328
-msgid "Custom post type created successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:437
-msgid "Custom post type deleted successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:244
-#: admin/src/Rest/CustomPostTypes.php:363
-#: admin/src/Rest/CustomPostTypes.php:417
-msgid "Custom post type not found."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:387
-msgid "Custom post type updated successfully."
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:126
@@ -2093,7 +1975,7 @@ msgid "Dark Logo url"
 msgstr ""
 
 #: app/src/react/features/design-system/FoundationCheck.tsx:52
-#: app/src/react/shell/AppToolbar.tsx:109
+#: app/src/react/shell/AppToolbar.tsx:111
 #: app/src/react/shell/search/useQuickActions.ts:43
 msgid "Dark mode"
 msgstr ""
@@ -2102,7 +1984,6 @@ msgstr ""
 msgid "Dark mode logo"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:313
 #: app/src/react/features/dashboard/DashboardPage.tsx:76
 #: app/src/react/features/frontend/FrontendBar.tsx:23
 #: app/src/react/features/settings/categories.ts:20
@@ -2163,11 +2044,6 @@ msgstr ""
 #: app/src/react/features/products/AttributesView.tsx:189
 #: app/src/react/features/products/AttributesView.tsx:273
 msgid "Default sort order"
-msgstr ""
-
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:91
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:307
-msgid "Default Template"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:279
@@ -2428,7 +2304,7 @@ msgstr ""
 msgid "Discount type"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:123
+#: app/src/react/features/dashboard/cards/site.tsx:126
 msgid "Disk: %sGB of %sGB"
 msgstr ""
 
@@ -2557,10 +2433,6 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:837
-msgid "Edit %s"
-msgstr ""
-
 #: admin/src/Pages/MenuBuilder.php:338
 msgid "Edit Admin Menu"
 msgstr ""
@@ -2634,10 +2506,6 @@ msgstr ""
 msgid "Edit variation"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:333
-msgid "Editor (edit_others_posts)"
-msgstr ""
-
 #: app/src/react/features/comments/CommentDetails.tsx:126
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/users/ImportUsersModal.tsx:19
@@ -2663,7 +2531,7 @@ msgstr ""
 msgid "Empty response."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:973
+#: app/src/shared/settings/settings-config.js:938
 msgid "Enable Activity Logger"
 msgstr ""
 
@@ -2675,25 +2543,21 @@ msgstr ""
 msgid "Enable archives"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:831
+#: app/src/shared/settings/settings-config.js:815
 msgid ""
 "Enable built-in analytics to track user behavior, page views, and "
 "performance metrics within your WordPress admin."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:954
-msgid "Enable Custom Post Types"
-msgstr ""
-
-#: app/src/shared/settings/settings-config.js:916
+#: app/src/shared/settings/settings-config.js:900
 msgid "Enable Database Explorer"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:830
+#: app/src/shared/settings/settings-config.js:814
 msgid "Enable Flexify Dashboard Analytics"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:712
+#: app/src/shared/settings/settings-config.js:696
 msgid "Enable Font Uploads"
 msgstr ""
 
@@ -2705,7 +2569,7 @@ msgstr ""
 msgid "Enable modern list view"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:619
+#: app/src/shared/settings/settings-config.js:603
 msgid ""
 "Enable real-time collaboration in the modern post editor. Multiple users "
 "can edit the same post simultaneously with live cursor tracking and synced "
@@ -2716,7 +2580,7 @@ msgstr ""
 msgid "Enable reviews"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:935
+#: app/src/shared/settings/settings-config.js:919
 msgid "Enable Role Editor"
 msgstr ""
 
@@ -2724,23 +2588,17 @@ msgstr ""
 msgid "Enable search functionality in the admin menu to quickly find menu items."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:697
+#: app/src/shared/settings/settings-config.js:681
 msgid "Enable SVG Uploads"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:955
-msgid ""
-"Enable the custom post types creator to register and manage custom post "
-"types without code. Post types are stored in a JSON file for performance."
-msgstr ""
-
-#: app/src/shared/settings/settings-config.js:917
+#: app/src/shared/settings/settings-config.js:901
 msgid ""
 "Enable the modern database explorer interface to browse tables, view data, "
 "and execute SQL queries safely."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:936
+#: app/src/shared/settings/settings-config.js:920
 msgid ""
 "Enable the modern role editor interface to manage WordPress user roles and "
 "capabilities."
@@ -2798,7 +2656,7 @@ msgstr ""
 msgid "Enter your email or username to recover your password."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:890
+#: app/src/shared/settings/settings-config.js:874
 msgid "Enter your Mapbox token"
 msgstr ""
 
@@ -2859,7 +2717,7 @@ msgstr ""
 msgid "Everyone will see the new menu now"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:127
+#: app/src/react/features/dashboard/cards/site.tsx:130
 msgid "Everything is up to date"
 msgstr ""
 
@@ -2969,28 +2827,8 @@ msgstr ""
 msgid "Failed to decrypt the license server response."
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:429
-msgid "Failed to delete custom post type."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:495
-msgid "Failed to delete field group."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:314
-msgid "Failed to delete option page."
-msgstr ""
-
 #: admin/src/Rest/DatabaseExplorer.php:863
 msgid "Failed to delete table."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:546
-msgid "Failed to duplicate field group."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:358
-msgid "Failed to duplicate option page."
 msgstr ""
 
 #: admin/src/Rest/PluginManager.php:691
@@ -3017,29 +2855,6 @@ msgstr ""
 
 #: admin/src/Rest/Analytics.php:608
 msgid "Failed to retrieve chart data"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:320
-#: admin/src/Rest/CustomPostTypes.php:379
-msgid "Failed to save custom post type."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:386
-#: admin/src/Rest/CustomFields/CustomFields.php:441
-msgid "Failed to save field group."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:669
-msgid "Failed to save imported field groups."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:633
-msgid "Failed to save imported post types."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:215
-#: admin/src/Rest/CustomFields/OptionPages.php:266
-msgid "Failed to save option page."
 msgstr ""
 
 #: admin/src/Rest/Analytics.php:475
@@ -3070,10 +2885,6 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:850
-msgid "Featured image"
-msgstr ""
-
 #: app/src/react/features/products/ProductsList.tsx:499
 msgid "Featured only"
 msgstr ""
@@ -3095,50 +2906,6 @@ msgstr ""
 
 #: admin/src/Analytics/DummyDataGenerator.php:110
 msgid "Fictitious analytics data successfully generated for %d months."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:631
-msgid "Field group at index %d is invalid."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:636
-msgid "Field group at index %d is missing a title."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:391
-msgid "Field group created successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:500
-msgid "Field group deleted successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:551
-msgid "Field group duplicated successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:347
-#: admin/src/Rest/CustomFields/CustomFields.php:427
-#: admin/src/Rest/CustomFields/CustomFields.php:489
-#: admin/src/Rest/CustomFields/CustomFields.php:530
-msgid "Field group not found."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:369
-msgid "Field group title is required."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:446
-msgid "Field group updated successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:758
-msgid "Field name is required."
-msgstr ""
-
-#: admin/src/Pages/CustomPostTypesPage.php:96
-#: admin/src/Pages/CustomPostTypesPage.php:97
-msgid "Fields groups"
 msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:105
@@ -3189,7 +2956,7 @@ msgstr ""
 msgid "File URL"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:39
+#: app/src/react/features/dashboard/cards/site.tsx:42
 msgid "Files"
 msgstr ""
 
@@ -3203,10 +2970,6 @@ msgstr ""
 
 #: app/src/react/features/media/queries.ts:199
 msgid "Files uploaded"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:855
-msgid "Filter %s list"
 msgstr ""
 
 #: admin/src/Rest/Analytics.php:135
@@ -3409,7 +3172,7 @@ msgstr ""
 msgid "Google Analytics 4"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:862
+#: app/src/shared/settings/settings-config.js:846
 msgid "Google Analytics Connection"
 msgstr ""
 
@@ -3421,7 +3184,7 @@ msgstr ""
 msgid "Google Fonts"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:899
+#: app/src/shared/settings/settings-config.js:883
 msgid "Google reCAPTCHA"
 msgstr ""
 
@@ -3481,12 +3244,6 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/CustomFields.php:772
-msgid ""
-"Helper function not available. Please ensure the plugin is properly "
-"initialized."
-msgstr ""
-
 #: app/src/react/features/products/editor/ProductEditor.tsx:996
 #: app/src/react/features/products/ProductQuickEdit.tsx:124
 msgid "Hidden"
@@ -3500,7 +3257,7 @@ msgstr ""
 msgid "Hide language selector"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:652
+#: app/src/shared/settings/settings-config.js:636
 msgid "Hide plugin update notifications for selected plugins"
 msgstr ""
 
@@ -3540,7 +3297,7 @@ msgstr ""
 msgid "How it will look"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:989
+#: app/src/shared/settings/settings-config.js:954
 msgid ""
 "How many days to keep activity logs before automatic cleanup. Default is 90 "
 "days."
@@ -3620,11 +3377,6 @@ msgstr ""
 msgid "Import %d row(s)"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/CustomFields.php:674
-#: admin/src/Rest/CustomPostTypes.php:641
-msgid "Import completed successfully."
-msgstr ""
-
 #: app/src/react/features/products/ProductsList.tsx:401
 msgid "Import products"
 msgstr ""
@@ -3633,11 +3385,7 @@ msgstr ""
 msgid "Import users"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:622
-msgid "Import validation failed."
-msgstr ""
-
-#: app/src/shared/settings/settings-config.js:1018
+#: app/src/shared/settings/settings-config.js:983
 msgid "Important Only"
 msgstr ""
 
@@ -3645,7 +3393,7 @@ msgstr ""
 msgid "in %d day(s)"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:187
+#: app/src/react/features/dashboard/cards/site.tsx:190
 msgid "In period"
 msgstr ""
 
@@ -3693,10 +3441,6 @@ msgstr ""
 msgid "Insert image"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:848
-msgid "Insert into %s"
-msgstr ""
-
 #: app/src/react/features/plugins/PluginRepository.tsx:132
 msgid "Install"
 msgstr ""
@@ -3738,32 +3482,12 @@ msgstr ""
 msgid "Invalid document data."
 msgstr ""
 
-#: admin/src/Rest/CustomFields/CustomFields.php:341
-#: admin/src/Rest/CustomFields/CustomFields.php:411
-#: admin/src/Rest/CustomFields/CustomFields.php:465
-#: admin/src/Rest/CustomFields/CustomFields.php:518
-msgid "Invalid field group ID."
-msgstr ""
-
 #: admin/src/Rest/MediaReplace.php:402
 msgid "Invalid file path."
 msgstr ""
 
 #: admin/src/Rest/PluginManager.php:675
 msgid "Invalid file type. Please upload a ZIP file."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:610
-msgid "Invalid import data. Expected an array of field groups."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:545
-msgid "Invalid import data. Expected an array of post types."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:616
-#: admin/src/Rest/CustomPostTypes.php:557
-msgid "Invalid import mode. Use \"merge\" or \"replace\"."
 msgstr ""
 
 #: admin/src/Rest/GoogleAnalyticsOAuth.php:549
@@ -3791,17 +3515,6 @@ msgstr ""
 msgid "Invalid number of months. Please select between 1 and 12 months."
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPages.php:164
-#: admin/src/Rest/CustomFields/OptionPages.php:241
-#: admin/src/Rest/CustomFields/OptionPages.php:287
-#: admin/src/Rest/CustomFields/OptionPages.php:334
-msgid "Invalid option page slug."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:754
-msgid "Invalid or unauthorized function."
-msgstr ""
-
 #: admin/src/Rest/WooCommerceOrders.php:787
 msgid "Invalid order action."
 msgstr ""
@@ -3822,18 +3535,6 @@ msgstr ""
 
 #: admin/src/Rest/PluginManager.php:708
 msgid "Invalid plugin structure - no main plugin file found"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:229
-#: admin/src/Rest/CustomPostTypes.php:352
-#: admin/src/Rest/CustomPostTypes.php:406
-msgid "Invalid post type slug."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:286
-msgid ""
-"Invalid post type slug. Use only lowercase letters, numbers, and "
-"underscores. Maximum 20 characters."
 msgstr ""
 
 #: admin/src/Rest/PostsTables.php:924
@@ -4047,7 +3748,7 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:51
+#: app/src/react/features/dashboard/cards/site.tsx:54
 msgid "Large files"
 msgstr ""
 
@@ -4206,7 +3907,7 @@ msgstr ""
 msgid "Light"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:109
+#: app/src/react/shell/AppToolbar.tsx:111
 #: app/src/react/shell/search/useQuickActions.ts:42
 msgid "Light mode"
 msgstr ""
@@ -4253,7 +3954,7 @@ msgstr ""
 msgid "Log entry not found."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1008
+#: app/src/shared/settings/settings-config.js:973
 msgid "Log Level"
 msgstr ""
 
@@ -4320,7 +4021,7 @@ msgstr ""
 msgid "Manual refund"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:882
+#: app/src/shared/settings/settings-config.js:866
 msgid "Mapbox API key"
 msgstr ""
 
@@ -4357,7 +4058,6 @@ msgstr ""
 msgid "Means"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:297
 #: app/src/react/features/media/MediaDetails.tsx:105
 #: app/src/react/features/media/MediaEditScreen.tsx:64
 #: app/src/react/features/media/MediaLibrary.tsx:170
@@ -4386,7 +4086,7 @@ msgstr ""
 msgid "Media Tags"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:122
+#: app/src/react/features/dashboard/cards/site.tsx:125
 msgid "Memory: %sMB of %sMB"
 msgstr ""
 
@@ -4480,7 +4180,7 @@ msgstr ""
 msgid "Moderation"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:792
+#: app/src/shared/settings/settings-config.js:776
 msgid "Modern Comments Page"
 msgstr ""
 
@@ -4488,15 +4188,15 @@ msgstr ""
 msgid "Modern login logo"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:682
+#: app/src/shared/settings/settings-config.js:666
 msgid "Modern Media Library"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:762
+#: app/src/shared/settings/settings-config.js:746
 msgid "Modern Orders Page"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:638
+#: app/src/shared/settings/settings-config.js:622
 msgid "Modern Plugin Manager"
 msgstr ""
 
@@ -4504,15 +4204,15 @@ msgstr ""
 msgid "Modern Post Editor"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:777
+#: app/src/shared/settings/settings-config.js:761
 msgid "Modern Product Editor"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:747
+#: app/src/shared/settings/settings-config.js:731
 msgid "Modern Products Page"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:732
+#: app/src/shared/settings/settings-config.js:716
 msgid "Modern Users Page"
 msgstr ""
 
@@ -4666,10 +4366,6 @@ msgstr ""
 msgid "NEW"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:838
-msgid "New %s"
-msgstr ""
-
 #: admin/src/Pages/MenuBuilder.php:337
 msgid "New Admin Menu"
 msgstr ""
@@ -4741,14 +4437,6 @@ msgstr ""
 #: app/src/react/features/database/DatabaseExplorer.tsx:151
 #: app/src/shared/settings/settings-config.js:577
 msgid "No"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:842
-msgid "No %s found"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:843
-msgid "No %s found in Trash"
 msgstr ""
 
 #: admin/src/Pages/MenuBuilder.php:343
@@ -4823,12 +4511,6 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:786
 msgid "No customers found."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPageRenderer.php:248
-msgid ""
-"No field groups are assigned to this option page. Create a field group and "
-"set its location to this option page."
 msgstr ""
 
 #: admin/src/Rest/MediaReplace.php:169
@@ -5284,38 +4966,7 @@ msgstr ""
 msgid "Operation"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPages.php:219
-msgid "Option page created successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:318
-msgid "Option page deleted successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:362
-msgid "Option page duplicated successfully."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPagesLoader.php:96
-msgid "Option Page Not Found"
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:170
-#: admin/src/Rest/CustomFields/OptionPages.php:253
-#: admin/src/Rest/CustomFields/OptionPages.php:308
-#: admin/src/Rest/CustomFields/OptionPages.php:346
-msgid "Option page not found."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:192
-msgid "Option page title is required."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPages.php:270
-msgid "Option page updated successfully."
-msgstr ""
-
-#: app/src/shared/settings/settings-config.js:664
+#: app/src/shared/settings/settings-config.js:648
 msgid ""
 "Optional allow list. Selected users or roles (for example, Editor) will "
 "still see update notifications for hidden plugins."
@@ -5492,7 +5143,6 @@ msgstr ""
 msgid "Page views from various devices (desktop, mobile, tablet)"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:309
 #: app/src/react/features/roles/queries.ts:24
 #: app/src/react/shell/search/useGlobalSearch.ts:58
 msgid "Pages"
@@ -5517,10 +5167,6 @@ msgstr ""
 #: app/src/react/ui/RichText.tsx:107
 #: app/src/react/ui/RichText.tsx:156
 msgid "Paragraph"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:844
-msgid "Parent %s:"
 msgstr ""
 
 #: app/src/react/features/products/CategoriesView.tsx:237
@@ -5628,7 +5274,7 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:117
+#: app/src/react/features/dashboard/cards/site.tsx:120
 msgid "PHP"
 msgstr ""
 
@@ -5751,7 +5397,6 @@ msgid "Plugin updated successfully but reactivation failed: %s"
 msgstr ""
 
 #: admin/src/Pages/CustomPluginsPage.php:55
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:289
 #: app/src/react/features/plugins/PluginsList.tsx:146
 #: app/src/react/features/roles/queries.ts:27
 #: app/src/react/features/settings/categories.ts:19
@@ -5767,44 +5412,14 @@ msgstr ""
 msgid "Popular Tags"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:585
-msgid "Post type \"%s\" has an invalid slug format."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:591
-msgid "Post type \"%s\" uses a reserved slug: %s"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:570
-#: admin/src/Rest/CustomPostTypes.php:579
-msgid "Post type at index %d is missing required fields (slug or name)."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:278
-msgid "Post type name is required."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:270
-msgid "Post type slug is required."
-msgstr ""
-
 #: admin/src/Pages/MenuBuilder.php:348
 msgid "Post type used for the flexify-dashboards menus"
-msgstr ""
-
-#: admin/src/Pages/CustomPostTypesPage.php:83
-msgid "Post Types"
-msgstr ""
-
-#: app/src/shared/settings/settings-config.js:602
-msgid "Post Types for Modern Editor"
 msgstr ""
 
 #: app/src/react/features/orders/AddressFields.tsx:46
 msgid "Postcode / ZIP"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:305
 #: app/src/react/features/posts/PostsList.tsx:148
 #: app/src/react/features/roles/queries.ts:23
 #: app/src/react/features/settings/categories.ts:18
@@ -6109,7 +5724,7 @@ msgstr ""
 msgid "Ready to build screens"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:618
+#: app/src/shared/settings/settings-config.js:602
 msgid "Real-time Collaboration"
 msgstr ""
 
@@ -6134,8 +5749,8 @@ msgstr ""
 msgid "reCAPTCHA keys saved"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:41
-#: app/src/react/features/dashboard/cards/site.tsx:188
+#: app/src/react/features/dashboard/cards/site.tsx:44
+#: app/src/react/features/dashboard/cards/site.tsx:191
 msgid "Recent"
 msgstr ""
 
@@ -6330,10 +5945,6 @@ msgstr ""
 msgid "Remove customer filter"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:852
-msgid "Remove featured image"
-msgstr ""
-
 #: app/src/react/features/orders/OrderEditor.tsx:676
 msgid "Remove fee"
 msgstr ""
@@ -6423,44 +6034,44 @@ msgid ""
 "interface."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:639
+#: app/src/shared/settings/settings-config.js:623
 msgid ""
 "Replace the classic plugins page with a modern plugin manager with plugin "
 "profiling and improved features."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:793
+#: app/src/shared/settings/settings-config.js:777
 msgid ""
 "Replace the classic WordPress comments page with a modern, responsive "
 "comment manager with improved features and better organization."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:683
+#: app/src/shared/settings/settings-config.js:667
 msgid ""
 "Replace the classic WordPress media library with a modern, responsive media "
 "manager with improved upload and organization features."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:733
+#: app/src/shared/settings/settings-config.js:717
 msgid ""
 "Replace the classic WordPress users page with a modern, responsive user "
 "manager with improved features and better organization."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:812
+#: app/src/shared/settings/settings-config.js:796
 msgid ""
 "Replace the default WordPress dashboard with a modern, customizable "
 "dashboard interface."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:763
+#: app/src/shared/settings/settings-config.js:747
 msgid ""
 "Replace the WooCommerce orders list and order details with a modern page "
 "featuring filters, previews, status changes, notes and refunds. Works with "
 "HPOS and legacy order storage."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:748
+#: app/src/shared/settings/settings-config.js:732
 msgid ""
 "Replace the WooCommerce products list with a modern page featuring "
 "counters, filters, quick edit and bulk actions. The classic editor is still "
@@ -6548,7 +6159,7 @@ msgstr ""
 msgid "Results come from WordPress.org. Only what you type is sent there."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:988
+#: app/src/shared/settings/settings-config.js:953
 msgid "Retention Period (Days)"
 msgstr ""
 
@@ -6720,10 +6331,6 @@ msgstr ""
 msgid "Save changes"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPageRenderer.php:87
-msgid "Save Changes"
-msgstr ""
-
 #: app/src/react/features/products/CouponsView.tsx:345
 msgid "Save coupon"
 msgstr ""
@@ -6774,10 +6381,6 @@ msgstr ""
 #: app/src/react/form/SearchInput.tsx:57
 #: app/src/react/shell/search/CommandPalette.tsx:167
 msgid "Search"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:841
-msgid "Search %s"
 msgstr ""
 
 #: admin/src/Pages/MenuBuilder.php:341
@@ -6926,7 +6529,6 @@ msgid "Security"
 msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:168
-#: admin/src/Rest/CustomFields/OptionPageSaver.php:81
 msgid "Security check failed."
 msgstr ""
 
@@ -6981,7 +6583,7 @@ msgstr ""
 msgid "Select row"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:653
+#: app/src/shared/settings/settings-config.js:637
 msgid ""
 "Select the plugins that should not display available update notices in the "
 "Plugins table."
@@ -7058,10 +6660,6 @@ msgid ""
 "back to the standard logo."
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:851
-msgid "Set featured image"
-msgstr ""
-
 #: app/src/react/features/products/editor/ProductEditor.tsx:474
 #: app/src/react/features/products/editor/ProductEditor.tsx:1017
 msgid "Set product image"
@@ -7081,7 +6679,6 @@ msgstr ""
 
 #: admin/src/Pages/Settings.php:64
 #: admin/src/Pages/Settings.php:65
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:277
 #: app/src/react/features/design-system/Showcase.tsx:161
 #: app/src/react/features/posts/PostsSettings.tsx:44
 #: app/src/react/features/roles/queries.ts:29
@@ -7241,7 +6838,7 @@ msgstr ""
 msgid "Site settings"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:40
+#: app/src/react/features/dashboard/cards/site.tsx:43
 #: app/src/react/features/media/ImageEditor.tsx:299
 #: app/src/react/features/media/MediaDetails.tsx:151
 #: app/src/react/features/media/MediaDetails.tsx:200
@@ -7328,12 +6925,11 @@ msgstr ""
 msgid "Specific version to install (optional)"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:132
+#: app/src/react/features/dashboard/cards/site.tsx:135
 msgid "SSL"
 msgstr ""
 
 #: admin/src/Integrations/WooCommerce/WooCommerce.php:406
-#: admin/src/Rest/CustomFields/LocationDataProvider.php:336
 msgid "Standard"
 msgstr ""
 
@@ -7439,10 +7035,6 @@ msgstr ""
 
 #: app/src/shared/settings/settings-config.js:524
 msgid "Submenu style"
-msgstr ""
-
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:345
-msgid "Subscriber (read)"
 msgstr ""
 
 #: app/src/react/features/orders/OrderPreview.tsx:122
@@ -7876,10 +7468,6 @@ msgstr ""
 msgid "This order can no longer be edited"
 msgstr ""
 
-#: admin/src/Rest/CustomPostTypes.php:294
-msgid "This post type slug is reserved by WordPress."
-msgstr ""
-
 #: app/src/react/features/orders/OrderEditor.tsx:521
 #: app/src/react/features/products/ProductVariations.tsx:119
 msgid "This product has no variations."
@@ -7945,7 +7533,7 @@ msgstr ""
 msgid "Timeframe for metrics (hour, day, week, month)"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:136
+#: app/src/react/features/dashboard/cards/site.tsx:139
 msgid "Timezone"
 msgstr ""
 
@@ -7977,7 +7565,7 @@ msgstr ""
 msgid "Today"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:110
+#: app/src/react/shell/AppToolbar.tsx:112
 msgid "Toggle dark mode"
 msgstr ""
 
@@ -7997,10 +7585,6 @@ msgstr ""
 msgid "Too many requests"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:281
-msgid "Tools"
-msgstr ""
-
 #: app/src/react/features/dashboard/cards/register.ts:79
 msgid "Top countries"
 msgstr ""
@@ -8018,7 +7602,7 @@ msgid "Top referrers"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:128
-#: app/src/react/features/dashboard/cards/site.tsx:186
+#: app/src/react/features/dashboard/cards/site.tsx:189
 #: app/src/react/features/design-system/Showcase.tsx:91
 #: app/src/react/features/orders/OrderDetails.tsx:300
 #: app/src/react/features/orders/OrderPreview.tsx:127
@@ -8068,7 +7652,7 @@ msgstr ""
 msgid "Total spent"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:974
+#: app/src/shared/settings/settings-config.js:939
 msgid ""
 "Track and log all admin actions including post changes, user updates, "
 "plugin activations, and more."
@@ -8259,7 +7843,7 @@ msgstr ""
 msgid "Unused detection mode: shallow (default) or deep (scans post_content)."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:47
+#: app/src/react/features/dashboard/cards/site.tsx:50
 msgid "Unused media"
 msgstr ""
 
@@ -8306,10 +7890,6 @@ msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:202
 msgid "Uploaded"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:849
-msgid "Uploaded to this %s"
 msgstr ""
 
 #: app/src/react/features/media/MediaLibrary.tsx:309
@@ -8363,10 +7943,6 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:673
 msgid "Use a negative value for a discount."
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:853
-msgid "Use as featured image"
 msgstr ""
 
 #: app/src/react/features/products/editor/ProductEditor.tsx:1048
@@ -8443,7 +8019,7 @@ msgstr ""
 msgid "User created"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:121
+#: app/src/react/shell/AppToolbar.tsx:123
 msgid "User menu"
 msgstr ""
 
@@ -8469,7 +8045,6 @@ msgstr ""
 msgid "Username there"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPagesRepository.php:293
 #: app/src/react/features/dashboard/cards/register.ts:51
 #: app/src/react/features/roles/queries.ts:26
 #: app/src/react/features/settings/categories.ts:24
@@ -8485,14 +8060,6 @@ msgstr ""
 
 #: app/src/react/features/users/UserModals.tsx:132
 msgid "Users updated"
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:766
-msgid "Valid object ID is required."
-msgstr ""
-
-#: admin/src/Rest/CustomFields/CustomFields.php:763
-msgid "Valid option page is required."
 msgstr ""
 
 #: app/src/react/features/products/AttributesView.tsx:327
@@ -8544,11 +8111,6 @@ msgstr ""
 #: app/src/react/features/posts/PostPreview.tsx:65
 #: app/src/react/features/posts/PostRowMenu.tsx:34
 msgid "View"
-msgstr ""
-
-#: admin/src/Rest/CustomPostTypes.php:839
-#: admin/src/Rest/CustomPostTypes.php:840
-msgid "View %s"
 msgstr ""
 
 #: admin/src/Pages/MenuBuilder.php:339
@@ -8859,7 +8421,7 @@ msgstr ""
 msgid "WooCommerce settings"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:113
+#: app/src/react/features/dashboard/cards/site.tsx:116
 msgid "WordPress"
 msgstr ""
 
@@ -8929,12 +8491,7 @@ msgstr ""
 msgid "You do not have permission to perform this action. Required capability: %s"
 msgstr ""
 
-#: admin/src/Rest/CustomFields/OptionPageSaver.php:85
-msgid "You do not have permission to save these options."
-msgstr ""
-
 #: admin/src/Pages/CustomPluginsPage.php:278
-#: admin/src/Pages/CustomPostTypesPage.php:178
 #: admin/src/Pages/DummyDataPage.php:172
 #: admin/src/Pages/RoleEditorPage.php:152
 #: admin/src/Rest/PostsTables.php:153
