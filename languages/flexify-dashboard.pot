@@ -316,6 +316,10 @@ msgstr ""
 msgid "%s Archives"
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:150
+msgid "%s as a hex value"
+msgstr ""
+
 #: admin/src/Rest/CustomPostTypes.php:847
 msgid "%s Attributes"
 msgstr ""
@@ -416,6 +420,10 @@ msgstr ""
 #: app/src/react/features/media/MediaLibrary.tsx:285
 #: app/src/react/features/posts/PostsList.tsx:196
 msgid "%s selected"
+msgstr ""
+
+#: app/src/react/features/settings/SettingsScreen.tsx:108
+msgid "%s setting(s) match"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:89
@@ -525,6 +533,10 @@ msgstr ""
 msgid "A draft is kept but shown to nobody."
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:356
+msgid "A font file I upload"
+msgstr ""
+
 #: app/src/react/features/menus/MenusList.tsx:99
 msgid "A menu replaces the one WordPress builds, for the people it is meant for."
 msgstr ""
@@ -560,9 +572,17 @@ msgid ""
 "CSS fixes based on your description."
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:224
+msgid "A service account is needed."
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:640
 #: app/src/react/features/products/editor/ProductEditor.tsx:696
 msgid "A short summary shown next to the product image…"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:355
+msgid "A stylesheet of my own"
 msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:83
@@ -585,6 +605,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:414
 msgid "Accent theme colors"
+msgstr ""
+
+#: app/src/react/features/settings/custom/index.tsx:235
+msgid "Across the top"
 msgstr ""
 
 #: app/src/pages/activity-log/src/activity-list-view.vue:304
@@ -625,6 +649,7 @@ msgstr ""
 #: app/src/pages/settings/src/custom-renders/license-key.vue:156
 #: app/src/react/features/plugins/PluginRepository.tsx:122
 #: app/src/react/features/plugins/PluginsList.tsx:93
+#: app/src/react/features/settings/custom/index.tsx:106
 msgid "Activate"
 msgstr ""
 
@@ -654,6 +679,7 @@ msgstr ""
 #: app/src/react/features/plugins/PluginsList.tsx:49
 #: app/src/react/features/plugins/PluginsList.tsx:137
 #: app/src/react/features/products/CouponsView.tsx:100
+#: app/src/react/features/settings/custom/index.tsx:70
 msgid "Active"
 msgstr ""
 
@@ -734,6 +760,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrderNotes.vue:78
 #: app/src/react/features/orders/OrderNotes.tsx:94
 msgid "Add a note about this order…"
+msgstr ""
+
+#: app/src/react/features/settings/custom/index.tsx:227
+msgid "Add a replacement"
 msgstr ""
 
 #: app/src/react/features/roles/RolesList.tsx:24
@@ -935,6 +965,10 @@ msgstr ""
 msgid "Add tags..."
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:111
+msgid "Add the site"
+msgstr ""
+
 #: app/src/react/shell/SidebarItem.tsx:87
 #: app/src/react/shell/SidebarItem.tsx:129
 msgid "Add to favourites"
@@ -1059,6 +1093,7 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:755
 #: app/src/pages/settings/index.vue:149
 #: app/src/react/features/products/editor/ProductEditor.tsx:958
+#: app/src/react/features/settings/categories.ts:29
 msgid "Advanced"
 msgstr ""
 
@@ -1274,6 +1309,12 @@ msgstr ""
 msgid "Amount"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:108
+msgid ""
+"An application password, made on the other site. Not the password you sign "
+"in with."
+msgstr ""
+
 #: app/src/pages/users/src/user-list-view.vue:653
 msgid "An error occurred"
 msgstr ""
@@ -1292,6 +1333,7 @@ msgstr ""
 
 #: admin/src/Rest/RankMathDashboardWidget.php:317
 #: app/src/pages/settings/index.vue:98
+#: app/src/react/features/settings/categories.ts:21
 msgid "Analytics"
 msgstr ""
 
@@ -1315,6 +1357,10 @@ msgstr ""
 msgid ""
 "Analytics must be enabled in the UiXpress settings before generating dummy "
 "data."
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:211
+msgid "Analytics property"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:845
@@ -1395,6 +1441,7 @@ msgid "Any tag"
 msgstr ""
 
 #: app/src/react/features/activity/ActivityList.tsx:183
+#: app/src/react/features/settings/SettingField.tsx:135
 msgid "Anyone"
 msgstr ""
 
@@ -1414,6 +1461,11 @@ msgstr ""
 
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:285
 msgid "Appearance"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:102
+#: app/src/react/features/settings/custom/connections.tsx:103
+msgid "Application password"
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:181
@@ -2205,6 +2257,11 @@ msgstr ""
 msgid "children"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:423
+#: app/src/react/features/settings/SettingField.tsx:36
+msgid "Choose"
+msgstr ""
+
 #: app/src/react/features/users/ImportUsersModal.tsx:206
 msgid "Choose a CSV file"
 msgstr ""
@@ -2215,8 +2272,20 @@ msgid ""
 "enter a custom font URL, or upload your own font files."
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:367
+msgid "Choose a font"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:421
+msgid "Choose a font file"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:836
 msgid "Choose a name for your custom font family"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:207
+msgid "Choose a property"
 msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:211
@@ -2225,6 +2294,10 @@ msgstr ""
 
 #: app/src/react/features/users/DeleteUsersModal.tsx:72
 msgid "Choose a user"
+msgstr ""
+
+#: app/src/react/features/settings/SettingField.tsx:35
+msgid "Choose an image"
 msgstr ""
 
 #: app/src/react/features/posts/PostPreview.tsx:26
@@ -2343,6 +2416,7 @@ msgstr ""
 #: app/src/components/app/search/components/SearchHistory.vue:33
 #: app/src/components/kit/FdInput.vue:96
 #: app/src/pages/database/src/query-editor.vue:177
+#: app/src/react/features/settings/SettingField.tsx:39
 #: app/src/react/form/Input.tsx:81
 #: app/src/react/shell/search/CommandPalette.tsx:203
 msgid "Clear"
@@ -2461,6 +2535,10 @@ msgstr ""
 msgid "Colors, styling, and visual customization"
 msgstr ""
 
+#: app/src/react/features/settings/categories.ts:15
+msgid "Colours, styling and the look of the admin"
+msgstr ""
+
 #: app/src/pages/database/src/table-view.vue:549
 #: app/src/react/features/database/DatabaseExplorer.tsx:149
 msgid "Column"
@@ -2553,6 +2631,7 @@ msgstr ""
 #: app/src/pages/settings/index.vue:122
 #: app/src/react/features/comments/CommentDetails.tsx:91
 #: app/src/react/features/comments/CommentsList.tsx:146
+#: app/src/react/features/settings/categories.ts:25
 msgid "Comments"
 msgstr ""
 
@@ -2644,6 +2723,7 @@ msgid "Confirm the Google reCAPTCHA to continue."
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:679
+#: app/src/react/features/settings/custom/connections.tsx:239
 msgid "Connect"
 msgstr ""
 
@@ -2658,7 +2738,12 @@ msgid ""
 "Console."
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:199
+msgid "Connected"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:346
+#: app/src/react/features/settings/custom/connections.tsx:154
 msgid "Connected to Google Analytics"
 msgstr ""
 
@@ -2728,6 +2813,10 @@ msgstr ""
 
 #: app/src/pages/settings/index.vue:46
 msgid "Core plugin settings and license management"
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:13
+msgid "Core plugin settings and the licence"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderEditor.vue:507
@@ -2907,6 +2996,12 @@ msgstr ""
 
 #: app/src/pages/admin-notices/src/edit.vue:276
 msgid "Create Notice"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:225
+msgid ""
+"Create one in Google Cloud, give it read access to the property, and paste "
+"its JSON key here. It is stored encrypted."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderEditor.vue:411
@@ -3148,6 +3243,7 @@ msgstr ""
 #: app/src/pages/dashboard/index.vue:723
 #: app/src/pages/settings/index.vue:89
 #: app/src/react/features/dashboard/DashboardPage.tsx:76
+#: app/src/react/features/settings/categories.ts:20
 #: app/src/react/shell/AppSidebar.tsx:83
 msgid "Dashboard"
 msgstr ""
@@ -3170,6 +3266,7 @@ msgstr ""
 
 #: app/src/pages/settings/index.vue:143
 #: app/src/react/features/database/DatabaseExplorer.tsx:169
+#: app/src/react/features/settings/categories.ts:28
 msgid "Database"
 msgstr ""
 
@@ -3221,6 +3318,7 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-card.vue:313
 #: app/src/pages/plugins/src/plugin-inspect.vue:325
 #: app/src/react/features/plugins/PluginsList.tsx:89
+#: app/src/react/features/settings/custom/index.tsx:79
 msgid "Deactivate"
 msgstr ""
 
@@ -3652,7 +3750,17 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:518
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:159
+#: app/src/react/features/settings/custom/connections.tsx:183
+#: app/src/react/features/settings/custom/connections.tsx:216
 msgid "Disconnect"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:181
+msgid "Disconnect Google Analytics?"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:173
+msgid "Disconnected"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderPreview.vue:88
@@ -4469,6 +4577,12 @@ msgstr ""
 msgid "Everything is up to date"
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:119
+msgid ""
+"Everything on this screen goes back to how the plugin ships. There is no "
+"undo."
+msgstr ""
+
 #: app/src/react/features/design-system/Showcase.tsx:312
 msgid "Example orders"
 msgstr ""
@@ -5125,6 +5239,8 @@ msgid "Filters"
 msgstr ""
 
 #: app/src/pages/settings/src/text-pairs.vue:24
+#: app/src/react/features/settings/custom/index.tsx:212
+#: app/src/react/features/settings/custom/index.tsx:213
 msgid "Find"
 msgstr ""
 
@@ -5199,9 +5315,21 @@ msgstr ""
 msgid "Focus Search"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:369
+msgid "Font"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:429
+msgid "Font family name"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:769
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:827
 msgid "Font Family Name"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:415
+msgid "Font file"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:809
@@ -5318,6 +5446,7 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductEditor.tsx:673
 #: app/src/react/features/products/ProductQuickEdit.tsx:266
 #: app/src/react/features/roles/queries.ts:22
+#: app/src/react/features/settings/categories.ts:13
 msgid "General"
 msgstr ""
 
@@ -5437,6 +5566,7 @@ msgid "Google Cloud Console"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:91
+#: app/src/react/features/settings/custom/connections.tsx:354
 msgid "Google Fonts"
 msgstr ""
 
@@ -5669,6 +5799,14 @@ msgstr ""
 msgid "How many times your site was clicked on in the search results."
 msgstr ""
 
+#: app/src/react/features/settings/categories.ts:17
+msgid "How the admin menu behaves"
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:14
+msgid "How the login page looks and what guards it"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:545
 msgid "How to connect Google Analytics 4"
 msgstr ""
@@ -5736,6 +5874,10 @@ msgstr ""
 
 #: app/src/react/features/users/ImportUsersModal.tsx:247
 msgid "Ignore"
+msgstr ""
+
+#: app/src/react/features/settings/SettingField.tsx:33
+msgid "Image address"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1380
@@ -5959,6 +6101,7 @@ msgid "Integration with Google reCAPTCHA removed."
 msgstr ""
 
 #: app/src/pages/settings/index.vue:104
+#: app/src/react/features/settings/categories.ts:22
 msgid "Integrations"
 msgstr ""
 
@@ -6421,6 +6564,10 @@ msgstr ""
 msgid "Keyboard Shortcuts"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:268
+msgid "Keys are set"
+msgstr ""
+
 #: app/src/react/features/notices/NoticeEditor.tsx:140
 #: app/src/react/features/roles/RolesList.tsx:104
 msgid "Kind"
@@ -6573,6 +6720,10 @@ msgstr ""
 msgid "Leave empty to keep existing"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:279
+msgid "Leave empty to keep the one already stored."
+msgstr ""
+
 #: app/src/react/ui/RichText.tsx:233
 msgid "Leave empty to remove the link."
 msgstr ""
@@ -6597,11 +6748,20 @@ msgstr ""
 msgid "Length"
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:51
+msgid "Licence activated"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/license-key.vue:110
 msgid "Licence Active"
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:51
+msgid "Licence deactivated"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:62
+#: app/src/react/features/settings/custom/index.tsx:91
 msgid "Licence key"
 msgstr ""
 
@@ -6880,6 +7040,7 @@ msgid "Logged out successfully"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:50
+#: app/src/react/features/settings/categories.ts:14
 msgid "Login"
 msgstr ""
 
@@ -6957,6 +7118,14 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:563
 #: app/src/react/features/products/ProductsList.tsx:413
 msgid "Manage your catalog, prices and stock."
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:18
+msgid "Managing and showing posts"
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:24
+msgid "Managing the people with an account"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:162
@@ -7039,6 +7208,7 @@ msgstr ""
 #: app/src/react/features/media/MediaEditScreen.tsx:64
 #: app/src/react/features/media/MediaLibrary.tsx:170
 #: app/src/react/features/roles/queries.ts:25
+#: app/src/react/features/settings/categories.ts:23
 msgid "Media"
 msgstr ""
 
@@ -7124,6 +7294,7 @@ msgstr ""
 #: app/src/pages/settings/index.vue:71
 #: app/src/react/features/menus/MenuEditor.tsx:204
 #: app/src/react/features/menus/MenusList.tsx:59
+#: app/src/react/features/settings/categories.ts:17
 #: app/src/react/shell/AppShell.tsx:136
 msgid "Menu"
 msgstr ""
@@ -7231,6 +7402,10 @@ msgstr ""
 msgid "Min. price"
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:236
+msgid "Minimal"
+msgstr ""
+
 #: app/src/pages/products/src/ProductsList.vue:614
 #: app/src/react/features/products/ProductsList.tsx:517
 msgid "Minimum price"
@@ -7277,6 +7452,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:129
 #: app/src/react/features/orders/OrdersList.tsx:451
 msgid "Mobile app"
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:25
+msgid "Moderating comments"
 msgstr ""
 
 #: app/src/react/features/comments/CommentDetails.tsx:131
@@ -7507,6 +7686,10 @@ msgstr ""
 #: app/src/components/app/menu/components/MenuSearch.vue:491
 #: app/src/components/app/search/components/EmptyStateInitial.vue:94
 msgid "Navigate"
+msgstr ""
+
+#: app/src/react/features/settings/SettingsScreen.tsx:172
+msgid "Needs a licence"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1725
@@ -7975,6 +8158,10 @@ msgstr ""
 msgid "No orders yet."
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:90
+msgid "No other site is connected yet."
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:294
 msgid "No page data available"
 msgstr ""
@@ -8105,6 +8292,10 @@ msgstr ""
 msgid "No rows"
 msgstr ""
 
+#: app/src/react/features/settings/SettingsScreen.tsx:156
+msgid "No setting here matches that."
+msgstr ""
+
 #: app/src/pages/settings/index.vue:660
 #: app/src/pages/settings/src/settings-panel.vue:551
 msgid "No settings found"
@@ -8172,6 +8363,10 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/users-chart/component.vue:191
 msgid "No user data available"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:83
+msgid "No user set"
 msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:1038
@@ -8260,6 +8455,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrderDetails.vue:497
 #: app/src/react/features/orders/OrderDetails.tsx:561
 msgid "Not paid"
+msgstr ""
+
+#: app/src/react/features/settings/SettingsScreen.tsx:111
+msgid "Not saved yet"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:78
@@ -8869,6 +9068,10 @@ msgstr ""
 msgid "Out of stock"
 msgstr ""
 
+#: app/src/react/features/settings/categories.ts:22
+msgid "Outside services and their keys"
+msgstr ""
+
 #: app/src/react/features/design-system/Showcase.tsx:264
 msgid "Overlays"
 msgstr ""
@@ -9355,6 +9558,7 @@ msgstr ""
 #: app/src/pages/settings/index.vue:83
 #: app/src/react/features/plugins/PluginsList.tsx:146
 #: app/src/react/features/roles/queries.ts:27
+#: app/src/react/features/settings/categories.ts:19
 msgid "Plugins"
 msgstr ""
 
@@ -9434,6 +9638,7 @@ msgstr ""
 #: app/src/pages/settings/index.vue:77
 #: app/src/react/features/posts/PostsList.tsx:148
 #: app/src/react/features/roles/queries.ts:23
+#: app/src/react/features/settings/categories.ts:18
 #: app/src/react/shell/search/useGlobalSearch.ts:57
 msgid "Posts"
 msgstr ""
@@ -9702,6 +9907,10 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:164
+msgid "Property chosen"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:482
 msgid "Property ID"
 msgstr ""
@@ -9920,6 +10129,18 @@ msgstr ""
 
 #: app/src/pages/settings/index.vue:64
 msgid "Rebrand and customize interface text and icons"
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:16
+msgid "Rebrand the interface: names, text and icons"
+msgstr ""
+
+#: app/src/react/features/settings/custom/index.tsx:152
+msgid "Rebuild the scale"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:256
+msgid "reCAPTCHA keys saved"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/site.tsx:41
@@ -10178,7 +10399,13 @@ msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:1079
 #: app/src/pages/settings/src/settings-panel.vue:300
+#: app/src/react/features/settings/custom/connections.tsx:65
+#: app/src/react/features/settings/custom/index.tsx:222
 msgid "Remove"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:85
+msgid "Remove %s"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductAttributes.vue:145
@@ -10294,6 +10521,10 @@ msgstr ""
 msgid "Remove them"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:63
+msgid "Remove this site?"
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductAttributes.vue:180
 #: app/src/react/features/products/editor/ProductAttributes.tsx:239
 msgid "Remove value"
@@ -10397,6 +10628,11 @@ msgid ""
 "used to create and fully edit products."
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:219
+#: app/src/react/features/settings/custom/index.tsx:220
+msgid "Replace with"
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:752
 msgid "Replacing file..."
 msgstr ""
@@ -10432,6 +10668,18 @@ msgstr ""
 msgid "Reset changes"
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:131
+msgid "Reset every setting"
+msgstr ""
+
+#: app/src/react/features/settings/custom/index.tsx:118
+msgid "Reset every setting?"
+msgstr ""
+
+#: app/src/react/features/settings/custom/index.tsx:120
+msgid "Reset everything"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:967
 msgid "Reset item"
 msgstr ""
@@ -10454,6 +10702,14 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-panel.vue:655
 msgid "Reset to defaults"
+msgstr ""
+
+#: app/src/react/features/settings/SettingsScreen.tsx:193
+msgid "Resetting puts every setting back to how the plugin ships, for everyone."
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:29
+msgid "Resetting the plugin and other things that are hard to undo"
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:540
@@ -10792,6 +11048,7 @@ msgstr ""
 #: app/src/react/features/notices/NoticeEditor.tsx:113
 #: app/src/react/features/products/AttributesView.tsx:329
 #: app/src/react/features/products/ProductVariations.tsx:208
+#: app/src/react/features/settings/SettingsScreen.tsx:116
 msgid "Save"
 msgstr ""
 
@@ -10850,6 +11107,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:411
 #: app/src/react/features/orders/OrderEditor.tsx:483
 msgid "Save items"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:285
+msgid "Save the keys"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:731
@@ -11106,6 +11367,10 @@ msgstr ""
 msgid "Search roles..."
 msgstr ""
 
+#: app/src/react/features/settings/SettingsScreen.tsx:125
+msgid "Search settings"
+msgstr ""
+
 #: app/src/pages/settings/index.vue:616
 msgid "Search settings..."
 msgstr ""
@@ -11174,10 +11439,12 @@ msgid "Search…"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:185
+#: app/src/react/features/settings/custom/connections.tsx:278
 msgid "Secret key"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:137
+#: app/src/react/features/settings/categories.ts:27
 msgid "Security"
 msgstr ""
 
@@ -11456,6 +11723,10 @@ msgstr ""
 msgid "Service account credentials saved successfully"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:233
+msgid "Service account key"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:391
 msgid "Service Account:"
 msgstr ""
@@ -11539,6 +11810,7 @@ msgstr ""
 #: app/src/react/features/design-system/Showcase.tsx:161
 #: app/src/react/features/posts/PostsSettings.tsx:44
 #: app/src/react/features/roles/queries.ts:29
+#: app/src/react/features/settings/SettingsScreen.tsx:107
 msgid "Settings"
 msgstr ""
 
@@ -11554,12 +11826,20 @@ msgstr ""
 msgid "Settings Panel"
 msgstr ""
 
+#: app/src/react/features/settings/queries.ts:69
+msgid "Settings reset"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-panel.vue:488
 msgid "Settings reset to defaults"
 msgstr ""
 
 #: admin/src/Rest/SettingsManager.php:81
 msgid "Settings reset to defaults."
+msgstr ""
+
+#: app/src/react/features/settings/queries.ts:54
+msgid "Settings saved"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:377
@@ -11730,6 +12010,10 @@ msgstr ""
 msgid "Shows first in the catalog."
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:234
+msgid "Sidebar"
+msgstr ""
+
 #: app/src/react/features/posts/PostsList.tsx:236
 msgid "Sidebar view"
 msgstr ""
@@ -11760,7 +12044,12 @@ msgstr ""
 msgid "Simple product"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:94
+msgid "Site address"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:173
+#: app/src/react/features/settings/custom/connections.tsx:272
 msgid "Site key"
 msgstr ""
 
@@ -12097,6 +12386,10 @@ msgstr ""
 msgid "Styles"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:407
+msgid "Stylesheet address"
+msgstr ""
+
 #: admin/src/Pages/Login.php:1591
 msgid "Sua sessão foi encerrada."
 msgstr ""
@@ -12308,8 +12601,16 @@ msgstr ""
 msgid "Text Replacement"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:48
+msgid "That does not look like a site address."
+msgstr ""
+
 #: app/src/react/features/users/ImportUsersModal.tsx:95
 msgid "That file could not be read."
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:53
+msgid "That site is already on the list."
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:30
@@ -12357,6 +12658,14 @@ msgstr ""
 msgid "The coupon code is required."
 msgstr ""
 
+#: app/src/react/features/settings/categories.ts:20
+msgid "The custom dashboard and the admin interface"
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:28
+msgid "The database explorer"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-list-view.vue:579
 msgid "The display name for this role"
 msgstr ""
@@ -12394,6 +12703,10 @@ msgstr ""
 msgid "The item will not be shown if hidden"
 msgstr ""
 
+#: app/src/react/features/settings/categories.ts:23
+msgid "The media library and uploads"
+msgstr ""
+
 #: app/src/pages/products/src/editor/useWpMedia.js:15
 #: app/src/react/ui/RichText.tsx:118
 msgid "The media library is not available on this screen."
@@ -12403,6 +12716,14 @@ msgstr ""
 msgid ""
 "The menu cache has been cleared successfully. All users will see fresh menu "
 "data."
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:429
+msgid "The name the stylesheet gives it."
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:353
+msgid "The one the plugin ships with"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:257
@@ -12431,6 +12752,10 @@ msgstr ""
 msgid "The plugin you are looking for could not be found."
 msgstr ""
 
+#: app/src/react/features/settings/categories.ts:19
+msgid "The plugins screen"
+msgstr ""
+
 #: app/src/react/features/posts/usePostsData.ts:59
 msgid "The posts list could not be read. Reload the page and try again."
 msgstr ""
@@ -12445,6 +12770,14 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductEditor.tsx:321
 #: app/src/react/features/products/ProductQuickEdit.tsx:148
 msgid "The product name is required."
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:26
+msgid "The products and orders screens"
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:397
+msgid "The quick brown fox jumps over the lazy dog"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/rank-math-overview/component.vue:361
@@ -12494,6 +12827,10 @@ msgid ""
 "GA4 property with at least Viewer access for data to be retrieved."
 msgstr ""
 
+#: app/src/react/features/settings/SettingsScreen.tsx:97
+msgid "The settings could not be loaded."
+msgstr ""
+
 #: app/src/react/features/activity/ActivityList.tsx:120
 msgid "The site itself"
 msgstr ""
@@ -12506,6 +12843,12 @@ msgstr ""
 msgid ""
 "The specified Google Analytics property was not found. Please check that "
 "the Property ID is correct."
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:182
+msgid ""
+"The stored credentials are removed from this site. The data stays with "
+"Google."
 msgstr ""
 
 #: admin/src/Options/MediaOptions.php:213
@@ -12531,6 +12874,7 @@ msgstr ""
 #: app/src/components/app/toolbar/index.vue:234
 #: app/src/components/app/toolbar/index.vue:235
 #: app/src/pages/settings/index.vue:56
+#: app/src/react/features/settings/categories.ts:15
 msgid "Theme"
 msgstr ""
 
@@ -12558,6 +12902,10 @@ msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:437
 msgid "these %d users"
+msgstr ""
+
+#: app/src/react/features/settings/SettingsScreen.tsx:192
+msgid "These are hard to undo."
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:30
@@ -12639,6 +12987,10 @@ msgstr ""
 msgid "This link will open in a new tab"
 msgstr ""
 
+#: app/src/react/features/settings/custom/index.tsx:62
+msgid "This looks like a development site, so no licence is needed here."
+msgstr ""
+
 #: app/src/pages/media/src/media-details-view.vue:1096
 msgid "This media is not currently used anywhere."
 msgstr ""
@@ -12688,6 +13040,16 @@ msgstr ""
 
 #: app/src/react/features/roles/RoleDetails.tsx:60
 msgid "This role could not be loaded."
+msgstr ""
+
+#: app/src/react/features/settings/SettingField.tsx:105
+msgid "This setting is not available on this screen."
+msgstr ""
+
+#: app/src/react/features/settings/custom/connections.tsx:64
+msgid ""
+"This site stops being reachable from here. Nothing on the other site "
+"changes."
 msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:96
@@ -13197,6 +13559,7 @@ msgstr ""
 msgid "Unchecked"
 msgstr ""
 
+#: app/src/react/features/settings/SettingsScreen.tsx:113
 #: app/src/react/ui/RichText.tsx:202
 msgid "Undo"
 msgstr ""
@@ -13284,6 +13647,10 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductEditor.tsx:627
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:392
 msgid "Unsaved changes"
+msgstr ""
+
+#: app/src/react/features/settings/custom/index.tsx:75
+msgid "Until %s"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:886
@@ -13690,6 +14057,10 @@ msgstr ""
 msgid "Username cannot be changed"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:97
+msgid "Username there"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-details-view.vue:639
 #: app/src/pages/role-editor/src/role-list-view.vue:484
 #: app/src/pages/users/src/user-list-view.vue:981
@@ -13705,6 +14076,7 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:806
 #: app/src/react/features/dashboard/cards/register.ts:51
 #: app/src/react/features/roles/queries.ts:26
+#: app/src/react/features/settings/categories.ts:24
 #: app/src/react/features/users/UserDetails.tsx:53
 #: app/src/react/features/users/UsersList.tsx:156
 #: app/src/react/shell/search/useGlobalSearch.ts:64
@@ -14083,6 +14455,10 @@ msgstr ""
 msgid "Weight:"
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:374
+msgid "Weights"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:1062
 msgid "weights loaded"
 msgstr ""
@@ -14117,6 +14493,14 @@ msgstr ""
 
 #: app/src/react/features/activity/ActivityList.tsx:203
 msgid "What happens on the site shows up here."
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:27
+msgid "What is guarded and how"
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:21
+msgid "What is measured and how"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/register.ts:35
@@ -14175,8 +14559,16 @@ msgid ""
 "site instead of the local site."
 msgstr ""
 
+#: app/src/react/features/settings/custom/connections.tsx:359
+msgid "Where the font comes from"
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:821
 msgid "Whether this menu is active or not"
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:16
+msgid "White label"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:62
@@ -14227,6 +14619,7 @@ msgid "with this role"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:131
+#: app/src/react/features/settings/categories.ts:26
 msgid "WooCommerce"
 msgstr ""
 
@@ -14438,6 +14831,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:540
 #: app/src/react/features/products/editor/ProductEditor.tsx:541
 msgid "Your changes to this product have not been saved."
+msgstr ""
+
+#: app/src/react/features/settings/custom/index.tsx:90
+msgid "Your licence key"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:137

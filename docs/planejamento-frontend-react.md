@@ -440,7 +440,7 @@ Posts, mídia, comentários e usuários.
 - A exportação leva a página que está na tela, não o site inteiro — os filtros é que decidem o recorte.
 - A tela React fica atrás do filtro `flexify-dashboard/react-users`, **ligado** por padrão.
 
-### Fase 7 — Sistema (GG) · **em andamento**
+### Fase 7 — Sistema (GG) · **concluída**
 Plugins, configurações, activity log, database explorer, editor de papéis, construtor de menus, avisos e analytics.
 
 > O item "analytics" desta fase é o **script de rastreamento do frontend** (`apps/js/Analytics.js`), que não é Vue e não muda aqui — ele entra na Fase 8. Os painéis de analytics já foram portados como cartões na Fase 5.
@@ -472,6 +472,15 @@ Plugins, configurações, activity log, database explorer, editor de papéis, co
 - A aritmética de rearranjar — achar um item, mover, remover, alterar — está em `menuEdits.ts`, separada do componente, porque é o que pode errar silenciosamente.
 - O editor avisa que um menu salvo só chega às pessoas quando o cache é renovado, e a lista tem o botão que renova.
 - A tela React fica atrás do filtro `flexify-dashboard/react-menu-builder`, **ligado** por padrão.
+
+**Parte 5 — configurações (concluída em 07/10/2026):** a tela de configurações em React, guiada pelo mesmo esquema que a tela Vue usa.
+
+- `settings-config.js` (1.067 linhas, JavaScript puro) é **aproveitado como está**: ele diz o que cada configuração é, de que categoria, quando se aplica. Uma configuração acrescentada lá aparece nas duas telas sem que nenhuma das duas saiba dela.
+- `generateColorScheme.js` também é reaproveitado — a aritmética que transforma uma cor nos doze passos do tema não é de nenhum dos dois frameworks.
+- As configurações que o esquema chama de `custom` são telas pequenas próprias (licença, escala de cores, CSS, fontes, sites remotos, Google Analytics, reCAPTCHA), procuradas pelo nome que o esquema dá a elas.
+- O que é gravado por endpoints próprios, que criptografam (a conta de serviço do Google, a chave secreta do reCAPTCHA), **não vai junto** no salvamento geral: sobrescreveria o valor criptografado com o que a tela tivesse na mão, normalmente nada.
+- **Bug corrigido antes de chegar ao site:** o esquema chama um `__` global enquanto é avaliado, e quem instalava esse global era a casca Vue. Uma tela React que não carrega a casca Vue estourava na importação, antes de renderizar qualquer coisa — o harness não mostrava isso porque ele mesmo define o global no HTML. `lib/wp-globals.ts` passa a instalá-lo, importado primeiro nas entradas que carregam JavaScript compartilhado.
+- A tela React fica atrás do filtro `flexify-dashboard/react-settings`, **ligado** por padrão.
 
 ### Fase 8 — Login e frontend (M)
 Tela de login personalizada e scripts do frontend.

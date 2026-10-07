@@ -1,3 +1,7 @@
+// The card registry is shared JavaScript that translates through a global, so the globals go
+// in before it is imported; without them the built-in category names stay in English.
+import '@/react/lib/wp-globals';
+
 import '@/apps/css/dashboard.css';
 
 import { PageShell } from '@/react/app/PageShell';

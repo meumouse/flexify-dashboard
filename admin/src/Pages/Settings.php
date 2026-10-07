@@ -111,6 +111,26 @@ class Settings {
 
 
 	/**
+	 * Get the Vite entry of the settings screen.
+	 *
+	 * Both screens read the same schema and write the same option, so a site that needs the
+	 * Vue one back can have it from the filter.
+	 *
+	 * @since 4.0.0
+	 * @return string
+	 */
+	private static function get_entry() {
+		/**
+		 * Filter whether the React settings screen is used.
+		 *
+		 * @since 4.0.0
+		 * @param bool $enabled Whether the React screen is used.
+		 */
+		return (bool) apply_filters( 'flexify-dashboard/react-settings', true ) ? 'react/main/settings.tsx' : 'Settings.js';
+	}
+
+
+	/**
 	 * Load settings page styles.
 	 *
 	 * @since 2.0.0
@@ -118,7 +138,8 @@ class Settings {
 	 */
 	public static function load_styles() {
 		$base_url = plugins_url( 'flexify-dashboard/' );
-		$style_path = $base_url . 'app/dist/assets/styles/settings.css';
+		$stylesheet = Scripts::get_stylesheet_path( self::get_entry() );
+		$style_path = $base_url . 'app/dist/' . ( $stylesheet ? $stylesheet : 'assets/styles/settings.css' );
 
 		wp_enqueue_style( 'flexify-dashboard-settings', $style_path, array(), FLEXIFY_DASHBOARD_VERSION );
 
@@ -141,7 +162,7 @@ class Settings {
 	 */
 	public static function load_scripts() {
 		$base_url = plugins_url( 'flexify-dashboard/' );
-		$script_name = Scripts::get_base_script_path( 'Settings.js' );
+		$script_name = Scripts::get_base_script_path( self::get_entry() );
 
 		if ( empty( $script_name ) ) {
 			return;

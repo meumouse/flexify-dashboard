@@ -178,6 +178,9 @@
       "%s and its files are removed from the site. Anything it stored in the database may stay behind.": [
         "%s e seus arquivos serão removidos do site. O que ele guardou no banco de dados pode permanecer."
       ],
+      "%s as a hex value": [
+        "%s em hexadecimal"
+      ],
       "%s child item": [
         "Item filho %s"
       ],
@@ -243,6 +246,9 @@
       ],
       "%s selected": [
         "%s selecionado(s)"
+      ],
+      "%s setting(s) match": [
+        "%s configuração(ões) correspondem"
       ],
       "%s sold": [
         "%s vendidos"
@@ -325,6 +331,9 @@
       "A draft is kept but shown to nobody.": [
         "Um rascunho é guardado, mas não é mostrado a ninguém."
       ],
+      "A font file I upload": [
+        "Um arquivo de fonte que eu envio"
+      ],
       "A menu replaces the one WordPress builds, for the people it is meant for.": [
         "Um menu substitui o que o WordPress monta, para as pessoas a quem se destina."
       ],
@@ -349,8 +358,14 @@
       "A screenshot of the page will be captured and analyzed. The AI will provide CSS fixes based on your description.": [
         "Uma captura de tela da página será feita e analisada. A IA fornecerá correções de CSS com base na sua descrição."
       ],
+      "A service account is needed.": [
+        "É preciso uma conta de serviço."
+      ],
       "A short summary shown next to the product image…": [
         "Um resumo curto exibido ao lado da imagem do produto…"
+      ],
+      "A stylesheet of my own": [
+        "Uma folha de estilo minha"
       ],
       "A table cannot be brought back. Make sure you have a backup.": [
         "Uma tabela não pode ser recuperada. Garanta que você tem um backup."
@@ -372,6 +387,9 @@
       ],
       "Accent theme colors": [
         "Cores temáticas de destaque"
+      ],
+      "Across the top": [
+        "No topo"
       ],
       "Action": [
         "Ação"
@@ -475,6 +493,9 @@
       "Add a note about this order…": [
         "Adicione uma nota sobre este pedido…"
       ],
+      "Add a replacement": [
+        "Adicionar uma substituição"
+      ],
       "Add a role": [
         "Adicionar uma função"
       ],
@@ -558,6 +579,9 @@
       ],
       "Add tags...": [
         "Adicionar etiquetas..."
+      ],
+      "Add the site": [
+        "Adicionar o site"
       ],
       "Add to favourites": [
         "Adicionar aos favoritos"
@@ -748,6 +772,9 @@
       "Amount": [
         "Valor"
       ],
+      "An application password, made on the other site. Not the password you sign in with.": [
+        "Uma senha de aplicativo, criada no outro site. Não é a senha com que você entra."
+      ],
       "An error occurred": [
         "Ocorreu um erro."
       ],
@@ -780,6 +807,9 @@
       ],
       "Analytics must be enabled in the UiXpress settings before generating dummy data.": [
         "A análise deve estar ativada nas configurações do UiXpress antes de gerar dados fictícios."
+      ],
+      "Analytics property": [
+        "Propriedade do Analytics"
       ],
       "Analytics settings to update": [
         "Atualizar as configurações do Analytics"
@@ -831,6 +861,9 @@
       ],
       "Application Password": [
         "Senha do aplicativo"
+      ],
+      "Application password": [
+        "Senha de aplicativo"
       ],
       "Application passwords can be created in WordPress under Users > Profile > Application Passwords": [
         "As senhas de aplicativos podem ser criadas no WordPress em Usuários > Perfil > Senhas de Aplicativos."
@@ -1267,20 +1300,35 @@
       "Checking connection...": [
         "Verificando conexão..."
       ],
+      "Choose": [
+        "Escolher"
+      ],
       "Choose a CSV file": [
         "Escolha um arquivo CSV"
       ],
       "Choose a custom font for the admin interface. Select from Google Fonts, enter a custom font URL, or upload your own font files.": [
         "Escolha uma fonte personalizada para a interface administrativa. Selecione uma fonte do Google Fonts, insira um URL de fonte personalizada ou carregue seus próprios arquivos de fonte."
       ],
+      "Choose a font": [
+        "Escolha uma fonte"
+      ],
+      "Choose a font file": [
+        "Escolha um arquivo de fonte"
+      ],
       "Choose a name for your custom font family": [
         "Escolha um nome para sua família de fontes personalizada."
+      ],
+      "Choose a property": [
+        "Escolha uma propriedade"
       ],
       "Choose a table to look inside it.": [
         "Escolha uma tabela para ver o que há nela."
       ],
       "Choose a user": [
         "Escolha um usuário"
+      ],
+      "Choose an image": [
+        "Escolha uma imagem"
       ],
       "Choose an item from the list to see it and change its properties.": [
         "Escolha um item da lista para vê-lo e alterar suas propriedades."
@@ -1417,6 +1465,9 @@
       "Colors, styling, and visual customization": [
         "Cores, estilo e personalização visual"
       ],
+      "Colours, styling and the look of the admin": [
+        "Cores, estilo e a aparência do painel"
+      ],
       "Column": [
         "Coluna"
       ],
@@ -1540,6 +1591,9 @@
       "Connect your Google Analytics 4 property to display analytics data in the dashboard. You will need to create OAuth credentials in Google Cloud Console.": [
         "Conecte sua propriedade do Google Analytics 4 para exibir dados analíticos no painel. Você precisará criar credenciais OAuth no Google Cloud Console."
       ],
+      "Connected": [
+        "Conectado"
+      ],
       "Connected to Google Analytics": [
         "Conectado ao Google Analytics"
       ],
@@ -1587,6 +1641,9 @@
       ],
       "Core plugin settings and license management": [
         "Configurações principais do plugin e gerenciamento de licenças"
+      ],
+      "Core plugin settings and the licence": [
+        "Configurações principais do plugin e a licença"
       ],
       "Cost": [
         "Custo"
@@ -1695,6 +1752,9 @@
       ],
       "Create discount codes for your customers.": [
         "Crie códigos de desconto para seus clientes."
+      ],
+      "Create one in Google Cloud, give it read access to the property, and paste its JSON key here. It is stored encrypted.": [
+        "Crie uma no Google Cloud, dê a ela acesso de leitura à propriedade e cole aqui a chave JSON. Ela é guardada criptografada."
       ],
       "Create order": [
         "Criar pedido"
@@ -2076,6 +2136,12 @@
       ],
       "Disconnect": [
         "Desconectar"
+      ],
+      "Disconnect Google Analytics?": [
+        "Desconectar o Google Analytics?"
+      ],
+      "Disconnected": [
+        "Desconectado"
       ],
       "Discount": [
         "Desconto"
@@ -2550,6 +2616,9 @@
       ],
       "Everything is up to date": [
         "Está tudo atualizado"
+      ],
+      "Everything on this screen goes back to how the plugin ships. There is no undo.": [
+        "Tudo nesta tela volta a como o plugin vem de fábrica. Não há como desfazer."
       ],
       "Example orders": [
         "Pedidos de exemplo"
@@ -3040,6 +3109,9 @@
       "Focus Search": [
         "Busca focada"
       ],
+      "Font": [
+        "Fonte"
+      ],
       "Font Family Name": [
         "Nome da família de fontes"
       ],
@@ -3057,6 +3129,12 @@
       ],
       "Font Weights": [
         "Pesos da fonte"
+      ],
+      "Font family name": [
+        "Nome da família da fonte"
+      ],
+      "Font file": [
+        "Arquivo de fonte"
       ],
       "Font file uploads are currently disabled. Enable font uploads in the Media settings to upload custom font files (.woff2, .woff, .ttf, .otf).": [
         "O envio de arquivos de fontes está desativado no momento. Ative o envio de fontes nas configurações de mídia para enviar arquivos de fontes personalizados (.woff2, .woff, .ttf, .otf)."
@@ -3349,6 +3427,12 @@
       "How many times your site was clicked on in the search results.": [
         "Quantas vezes seu site foi clicado nos resultados da pesquisa."
       ],
+      "How the admin menu behaves": [
+        "Como o menu do painel se comporta"
+      ],
+      "How the login page looks and what guards it": [
+        "Como a página de login aparece e o que a protege"
+      ],
       "How to connect Google Analytics 4": [
         "Como conectar o Google Analytics 4"
       ],
@@ -3384,6 +3468,9 @@
       ],
       "Image Editor": [
         "Editor de Imagens"
+      ],
+      "Image address": [
+        "Endereço da imagem"
       ],
       "Image optimized": [
         "Imagem otimizada"
@@ -3799,6 +3886,9 @@
       "Keyboard Shortcuts": [
         "Atalhos de teclado"
       ],
+      "Keys are set": [
+        "Chaves configuradas"
+      ],
       "Kind": [
         "Tipo"
       ],
@@ -3892,6 +3982,9 @@
       "Leave empty to keep existing": [
         "Deixe em branco para manter o existente."
       ],
+      "Leave empty to keep the one already stored.": [
+        "Deixe em branco para manter a que já está guardada."
+      ],
       "Leave empty to remove the link.": [
         "Deixe em branco para remover o link."
       ],
@@ -3906,6 +3999,12 @@
       ],
       "Licence Active": [
         "Licença ativa"
+      ],
+      "Licence activated": [
+        "Licença ativada"
+      ],
+      "Licence deactivated": [
+        "Licença desativada"
       ],
       "Licence key": [
         "Chave de licença"
@@ -4153,6 +4252,12 @@
       "Manage your catalog, prices and stock.": [
         "Gerencie seu catálogo, preços e estoque."
       ],
+      "Managing and showing posts": [
+        "Gerenciar e exibir posts"
+      ],
+      "Managing the people with an account": [
+        "Gerenciar as pessoas com conta"
+      ],
       "Manual refund": [
         "Reembolso manual"
       ],
@@ -4312,6 +4417,9 @@
       "Min. price": [
         "Preço mín."
       ],
+      "Minimal": [
+        "Minimalista"
+      ],
       "Minimum price": [
         "Preço mínimo"
       ],
@@ -4335,6 +4443,9 @@
       ],
       "Mobile app": [
         "Aplicativo móvel"
+      ],
+      "Moderating comments": [
+        "Moderar comentários"
       ],
       "Moderation": [
         "Moderação"
@@ -4449,6 +4560,9 @@
       ],
       "Navigate": [
         "Navegar"
+      ],
+      "Needs a licence": [
+        "Precisa de licença"
       ],
       "Negative = blur, positive = sharpen": [
         "Negativo = desfoque, positivo = nitidez"
@@ -4756,6 +4870,9 @@
       "No orders yet.": [
         "Nenhum pedido ainda."
       ],
+      "No other site is connected yet.": [
+        "Nenhum outro site conectado ainda."
+      ],
       "No page data available": [
         "Não há dados de página disponíveis."
       ],
@@ -4840,6 +4957,9 @@
       "No rows": [
         "Nenhuma linha"
       ],
+      "No setting here matches that.": [
+        "Nenhuma configuração aqui corresponde a isso."
+      ],
       "No settings found": [
         "Nenhuma configuração encontrada"
       ],
@@ -4884,6 +5004,9 @@
       ],
       "No user data available": [
         "Não há dados de usuário disponíveis."
+      ],
+      "No user set": [
+        "Nenhum usuário definido"
       ],
       "No users found": [
         "Nenhum usuário encontrado"
@@ -4938,6 +5061,9 @@
       ],
       "Not paid": [
         "Não pago"
+      ],
+      "Not saved yet": [
+        "Ainda não salvo"
       ],
       "Note": [
         "Nota"
@@ -5292,6 +5418,9 @@
       ],
       "Out of stock": [
         "Sem estoque"
+      ],
+      "Outside services and their keys": [
+        "Serviços externos e suas chaves"
       ],
       "Overlays": [
         "Sobreposições"
@@ -5776,6 +5905,9 @@
       "Property ID:": [
         "ID da propriedade:"
       ],
+      "Property chosen": [
+        "Propriedade escolhida"
+      ],
       "Property saved": [
         "Propriedade salva"
       ],
@@ -5901,6 +6033,12 @@
       ],
       "Rebrand and customize interface text and icons": [
         "Reformule e personalize o texto e os ícones da interface."
+      ],
+      "Rebrand the interface: names, text and icons": [
+        "Personalize a marca da interface: nomes, textos e ícones"
+      ],
+      "Rebuild the scale": [
+        "Recriar a escala"
       ],
       "Recent": [
         "Recentes"
@@ -6058,6 +6196,9 @@
       "Remove": [
         "Remover"
       ],
+      "Remove %s": [
+        "Remover %s"
+      ],
       "Remove Fix": [
         "Remover correção"
       ],
@@ -6127,6 +6268,9 @@
       "Remove them": [
         "Remover"
       ],
+      "Remove this site?": [
+        "Remover este site?"
+      ],
       "Remove value": [
         "Remover valor"
       ],
@@ -6187,6 +6331,9 @@
       "Replace the default WordPress dashboard with a modern, customizable dashboard interface.": [
         "Substitua o painel de controle padrão do WordPress por uma interface moderna e personalizável."
       ],
+      "Replace with": [
+        "Substituir por"
+      ],
       "Replacing file...": [
         "Substituindo arquivo..."
       ],
@@ -6208,6 +6355,15 @@
       "Reset changes": [
         "Redefinir alterações"
       ],
+      "Reset every setting": [
+        "Redefinir todas as configurações"
+      ],
+      "Reset every setting?": [
+        "Redefinir todas as configurações?"
+      ],
+      "Reset everything": [
+        "Redefinir tudo"
+      ],
       "Reset item": [
         "Redefinir item"
       ],
@@ -6225,6 +6381,12 @@
       ],
       "Reset to defaults": [
         "Restaurar padrões de fábrica"
+      ],
+      "Resetting puts every setting back to how the plugin ships, for everyone.": [
+        "Redefinir devolve todas as configurações ao padrão de fábrica, para todos."
+      ],
+      "Resetting the plugin and other things that are hard to undo": [
+        "Redefinir o plugin e outras coisas difíceis de desfazer"
       ],
       "Resizable sidebar": [
         "Barra lateral redimensionável"
@@ -6442,6 +6604,9 @@
       "Save items": [
         "Salvar itens"
       ],
+      "Save the keys": [
+        "Salvar as chaves"
+      ],
       "Save the product to start adding variations.": [
         "Salve o produto para começar a adicionar variações."
       ],
@@ -6606,6 +6771,9 @@
       ],
       "Search roles...": [
         "Buscar vagas..."
+      ],
+      "Search settings": [
+        "Pesquisar configurações"
       ],
       "Search settings...": [
         "Configurações de pesquisa..."
@@ -6838,6 +7006,9 @@
       "Service account credentials saved successfully": [
         "As credenciais da conta de serviço foram salvas com sucesso."
       ],
+      "Service account key": [
+        "Chave da conta de serviço"
+      ],
       "Session tracking and unique visitor data": [
         "Rastreamento de sessão e dados de visitantes únicos"
       ],
@@ -6889,11 +7060,17 @@
       "Settings must be an object": [
         "As configurações devem ser um objeto"
       ],
+      "Settings reset": [
+        "Configurações redefinidas"
+      ],
       "Settings reset to defaults": [
         "Configurações redefinidas para os padrões de fábrica"
       ],
       "Settings reset to defaults.": [
         "As configurações foram redefinidas para os padrões de fábrica."
+      ],
+      "Settings saved": [
+        "Configurações salvas"
       ],
       "Settings updated!": [
         "Configurações atualizadas!"
@@ -7168,6 +7345,9 @@
       "Styles": [
         "Estilos"
       ],
+      "Stylesheet address": [
+        "Endereço da folha de estilo"
+      ],
       "Sua sessão foi encerrada.": [
         "Sua sessão foi encerrada."
       ],
@@ -7288,8 +7468,14 @@
       "Text copied to clipboard": [
         "Texto copiado para a área de transferência"
       ],
+      "That does not look like a site address.": [
+        "Isso não parece um endereço de site."
+      ],
       "That file could not be read.": [
         "Não foi possível ler esse arquivo."
+      ],
+      "That site is already on the list.": [
+        "Esse site já está na lista."
       ],
       "The 5 best-selling products in your store": [
         "Os 5 produtos mais vendidos na sua loja"
@@ -7336,6 +7522,12 @@
       "The coupon code is required.": [
         "O código do cupom é obrigatório."
       ],
+      "The custom dashboard and the admin interface": [
+        "O painel personalizado e a interface do admin"
+      ],
+      "The database explorer": [
+        "O explorador do banco de dados"
+      ],
       "The display name for this role": [
         "O nome de exibição para esta função"
       ],
@@ -7360,11 +7552,20 @@
       "The item will not be shown if hidden": [
         "O item não será exibido se estiver oculto."
       ],
+      "The media library and uploads": [
+        "A biblioteca de mídia e os envios"
+      ],
       "The media library is not available on this screen.": [
         "A biblioteca de mídia não está disponível nesta tela."
       ],
       "The menu cache has been cleared successfully. All users will see fresh menu data.": [
         "O cache do menu foi limpo com sucesso. Todos os usuários verão os dados atualizados do menu."
+      ],
+      "The name the stylesheet gives it.": [
+        "O nome que a folha de estilo dá a ela."
+      ],
+      "The one the plugin ships with": [
+        "A que vem com o plugin"
       ],
       "The order may have been deleted or you do not have permission to view it.": [
         "O pedido pode ter sido excluído ou você não tem permissão para visualizá-lo."
@@ -7381,6 +7582,9 @@
       "The plugin you are looking for could not be found.": [
         "O plugin que você está procurando não foi encontrado."
       ],
+      "The plugins screen": [
+        "A tela de plugins"
+      ],
       "The posts list could not be read. Reload the page and try again.": [
         "Não foi possível ler a lista de posts. Recarregue a página e tente novamente."
       ],
@@ -7389,6 +7593,12 @@
       ],
       "The product name is required.": [
         "O nome do produto é obrigatório."
+      ],
+      "The products and orders screens": [
+        "As telas de produtos e pedidos"
+      ],
+      "The quick brown fox jumps over the lazy dog": [
+        "Um pequeno jabuti xereta viu dez cegonhas felizes"
       ],
       "The refund amount cannot exceed %s.": [
         "O valor do reembolso não pode ultrapassar %s."
@@ -7411,6 +7621,9 @@
       "The service account email (found in the JSON file) must be added to your GA4 property with at least Viewer access for data to be retrieved.": [
         "O endereço de e-mail da conta de serviço (encontrado no arquivo JSON) deve ser adicionado à sua propriedade do GA4 com, no mínimo, acesso de Visualizador para que os dados possam ser recuperados."
       ],
+      "The settings could not be loaded.": [
+        "Não foi possível carregar as configurações."
+      ],
       "The site itself": [
         "O próprio site"
       ],
@@ -7419,6 +7632,9 @@
       ],
       "The specified Google Analytics property was not found. Please check that the Property ID is correct.": [
         "A propriedade do Google Analytics especificada não foi encontrada. Verifique se o ID da propriedade está correto."
+      ],
+      "The stored credentials are removed from this site. The data stays with Google.": [
+        "As credenciais guardadas são removidas deste site. Os dados continuam no Google."
       ],
       "The tag name is required.": [
         "O nome da tag é obrigatório."
@@ -7437,6 +7653,9 @@
       ],
       "There was an error fetching this plugins information": [
         "Ocorreu um erro ao obter as informações deste plugin."
+      ],
+      "These are hard to undo.": [
+        "Estas são difíceis de desfazer."
       ],
       "These metrics represent plugin performance during a admin dashboard page load. While this provides valuable insight into plugin behavior, actual performance may vary across different pages and user interactions.": [
         "Essas métricas representam o desempenho do plugin durante o carregamento de uma página do painel de administração. Embora isso forneça informações valiosas sobre o comportamento do plugin, o desempenho real pode variar entre diferentes páginas e interações do usuário."
@@ -7486,6 +7705,9 @@
       "This link will open in a new tab": [
         "Este link será aberto em uma nova aba."
       ],
+      "This looks like a development site, so no licence is needed here.": [
+        "Este parece ser um site de desenvolvimento, então não é preciso licença aqui."
+      ],
       "This media is not currently used anywhere.": [
         "Este conteúdo não está sendo utilizado em nenhum lugar no momento."
       ],
@@ -7519,8 +7741,14 @@
       "This role could not be loaded.": [
         "Não foi possível carregar esta função."
       ],
+      "This setting is not available on this screen.": [
+        "Esta configuração não está disponível nesta tela."
+      ],
       "This site URL already exists": [
         "Este site já existe."
+      ],
+      "This site stops being reachable from here. Nothing on the other site changes.": [
+        "Este site deixa de ser acessível daqui. Nada muda no outro site."
       ],
       "This tool will generate realistic dummy analytics data for the last 2 months to help you test the analytics features.": [
         "Esta ferramenta irá gerar dados analíticos fictícios realistas para os últimos 2 meses, para ajudar você a testar os recursos analíticos."
@@ -7864,6 +8092,9 @@
       "Unsaved changes": [
         "Alterações não salvas"
       ],
+      "Until %s": [
+        "Até %s"
+      ],
       "Untitled": [
         "Sem título"
       ],
@@ -8095,6 +8326,9 @@
       "Username cannot be changed": [
         "O nome de usuário não pode ser alterado."
       ],
+      "Username there": [
+        "Usuário de lá"
+      ],
       "Users": [
         "Usuários"
       ],
@@ -8311,6 +8545,9 @@
       "Weight:": [
         "Peso:"
       ],
+      "Weights": [
+        "Pesos"
+      ],
       "Welcome to Global Search": [
         "Bem-vindo à Busca Global"
       ],
@@ -8337,6 +8574,12 @@
       ],
       "What happens on the site shows up here.": [
         "O que acontece no site aparece aqui."
+      ],
+      "What is guarded and how": [
+        "O que é protegido e como"
+      ],
+      "What is measured and how": [
+        "O que é medido e como"
       ],
       "What is queued to go out": [
         "O que está na fila para publicar"
@@ -8371,11 +8614,17 @@
       "When you switch to a remote site, all API requests will be sent to that site instead of the local site.": [
         "Ao mudar para um site remoto, todas as solicitações de API serão enviadas para esse site em vez do site local."
       ],
+      "Where the font comes from": [
+        "De onde vem a fonte"
+      ],
       "Whether this menu is active or not": [
         "Se este menu está ativo ou não."
       ],
       "White Label": [
         "Marca Branca"
+      ],
+      "White label": [
+        "Marca branca"
       ],
       "Who": [
         "Quem"
@@ -8529,6 +8778,9 @@
       ],
       "Your changes to this product have not been saved.": [
         "As alterações neste produto não foram salvas."
+      ],
+      "Your licence key": [
+        "Sua chave de licença"
       ],
       "Your license key:": [
         "Sua chave de licença:"
@@ -8700,6 +8952,9 @@
       ],
       "present": [
         "presente"
+      ],
+      "reCAPTCHA keys saved": [
+        "Chaves do reCAPTCHA salvas"
       ],
       "requests remaining": [
         "solicitações restantes"

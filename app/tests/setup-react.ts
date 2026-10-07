@@ -1,5 +1,9 @@
 import '@testing-library/jest-dom/vitest';
 import { cleanup } from '@testing-library/react';
+
+// Shared JavaScript from the Vue side translates through a global, and some of it does so
+// while it is being imported.
+import '@/react/lib/wp-globals';
 import { afterEach, vi } from 'vitest';
 
 afterEach(() => {

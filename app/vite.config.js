@@ -65,6 +65,8 @@ export default defineConfig({
 				// React role editor; the Vue entry stays as the fallback behind the filter.
 				'role-editor-react': path.resolve(__dirname, 'src/react/main/role-editor.tsx'),
 				settings: path.resolve(__dirname, 'src/apps/js/Settings.js'),
+				// React settings screen; the Vue entry stays as the fallback behind the filter.
+				'settings-react': path.resolve(__dirname, 'src/react/main/settings.tsx'),
 				users: path.resolve(__dirname, 'src/apps/js/Users.js'),
 				// React users screen; the Vue entry stays as the fallback behind the filter.
 				'users-react': path.resolve(__dirname, 'src/react/main/users.tsx'),
