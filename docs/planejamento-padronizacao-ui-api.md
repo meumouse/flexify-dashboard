@@ -119,5 +119,5 @@ Fases 1–3 antes da 4 porque a responsividade vai tocar quase todo arquivo de t
 ## 6. O que este plano não cobre
 
 - A barra `#wpadminbar` continua sendo movida do DOM (premissa 3).
-- As três telas cujo bundle nunca foi declarado (`PostEditor.js`, `CustomPostTypes.js`, `CustomFieldsMetaBox.js`) seguem fora — têm tarefa própria.
+- As três telas cujo bundle nunca foi declarado (`PostEditor.js`, `CustomPostTypes.js`, `CustomFieldsMetaBox.js`) não entram aqui porque **já foram removidas** — eram código morto, nunca instanciado. Ver a seção 12 de `planejamento-frontend-react.md`.
 - Nada aqui depende de rodar a matriz de versões do WordPress/WooCommerce, que continua pendente da fase 10 da migração anterior.
