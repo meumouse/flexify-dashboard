@@ -17,11 +17,13 @@ type Props = {
 	labels: string[];
 	datasets: ChartDataset[];
 	currency: string;
-	subtitle: string;
+	subtitle?: string;
 	loading?: boolean;
+	/** Render only the chart, for when the dashboard already drew the card around it */
+	bare?: boolean;
 };
 
-export const RevenueChart = ({ labels, datasets, currency, subtitle, loading = false }: Props) => {
+export const RevenueChart = ({ labels, datasets, currency, subtitle, loading = false, bare = false }: Props) => {
 	const isDark = useIsDark();
 
 	const options = useMemo(
@@ -55,18 +57,22 @@ export const RevenueChart = ({ labels, datasets, currency, subtitle, loading = f
 
 	const series = datasets.map((dataset) => ({ name: dataset.label, data: dataset.data }));
 
-	return (
+	const chart = loading ? (
+		<Skeleton className="h-72 w-full" />
+	) : !series.length ? (
+		<p className="py-16 text-center text-theme-sm text-gray-500 dark:text-gray-400">{__('No revenue in this period.')}</p>
+	) : (
+		<Suspense fallback={<Skeleton className="h-72 w-full" />}>
+			{/* Remounting on theme change is what makes Apex pick up the new colours. */}
+			<ReactApexChart key={isDark ? 'dark' : 'light'} options={options} series={series} type="area" height={288} />
+		</Suspense>
+	);
+
+	return bare ? (
+		chart
+	) : (
 		<Card title={__('Revenue')} description={subtitle}>
-			{loading ? (
-				<Skeleton className="h-72 w-full" />
-			) : !series.length ? (
-				<p className="py-16 text-center text-theme-sm text-gray-500 dark:text-gray-400">{__('No revenue in this period.')}</p>
-			) : (
-				<Suspense fallback={<Skeleton className="h-72 w-full" />}>
-					{/* Remounting on theme change is what makes Apex pick up the new colours. */}
-					<ReactApexChart key={isDark ? 'dark' : 'light'} options={options} series={series} type="area" height={288} />
-				</Suspense>
-			)}
+			{chart}
 		</Card>
 	);
 };

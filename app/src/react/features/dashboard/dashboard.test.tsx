@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import { AppProviders } from '@/react/app/AppProviders';
-import { StoreDashboard } from '@/react/features/dashboard/StoreDashboard';
-import { isoDate, rangeForDays } from '@/react/features/dashboard/useWooDashboard';
+import { StoreMetricsCard, StoreRecentOrdersCard, StoreTopProductsCard } from '@/react/features/dashboard/cards/ecommerce';
+import { applyStoredLayout, clampWidth, type DashboardCard } from '@/react/features/dashboard/useDashboardLayout';
+import { isoDate, parseDay, rangeForDays } from '@/react/features/dashboard/useWooDashboard';
 import type { WpData } from '@/react/types/wordpress';
 
 const wpData: WpData = {
@@ -27,11 +27,7 @@ const METRICS = {
 	success: true,
 	woocommerce_active: true,
 	metrics: {
-		revenue: {
-			gross: 4821,
-			net: 4512,
-			chart_data: { interval: 'day', labels: ['01/10', '02/10'], datasets: [{ label: 'Receita', data: [1200, 3312], borderColor: '#008aff' }] },
-		},
+		revenue: { gross: 4821, net: 4512, chart_data: { interval: 'day', labels: ['01/10'], datasets: [{ label: 'Receita', data: [4512] }] } },
 		top_products: [{ id: 201, name: 'Camiseta', quantity: 48, total: 2875 }],
 		recent_orders: [{ id: 1200, number: '1200', customer: 'Ana Souza', total: 85.8, status: { label: 'Processando', color: 'primary' }, date: '2026-10-07' }],
 		average_ticket: 297.6,
@@ -41,78 +37,103 @@ const METRICS = {
 	},
 };
 
-const stubRest = (body: unknown = METRICS) => {
-	const calls: string[] = [];
-
+const stubRest = (body: unknown = METRICS) =>
 	vi.stubGlobal(
 		'fetch',
-		vi.fn(async (input: RequestInfo | URL) => {
-			const url = new URL(String(input));
-			calls.push(`${url.pathname}${url.search}`);
-
-			return new Response(JSON.stringify(body), { status: 200, headers: { 'Content-Type': 'application/json' } });
-		})
+		vi.fn(async () => new Response(JSON.stringify(body), { status: 200, headers: { 'Content-Type': 'application/json' } }))
 	);
 
-	return calls;
-};
-
-const renderDashboard = () =>
+const renderCard = (card: React.ReactNode) =>
 	render(
 		<AppProviders wpData={wpData}>
-			<StoreDashboard />
+			<div>{card}</div>
 		</AppProviders>
 	);
 
-afterEach(() => vi.unstubAllGlobals());
+const range: [Date, Date] = [new Date(2026, 9, 1), new Date(2026, 9, 7)];
 
-describe('useWooDashboard helpers', () => {
+afterEach(() => {
+	vi.unstubAllGlobals();
+	window.localStorage.clear();
+});
+
+describe('dashboard period helpers', () => {
 	it('formats a date the way the endpoint expects', () => {
 		expect(isoDate(new Date(2026, 9, 7))).toBe('2026-10-07');
 		expect(isoDate(new Date(2026, 0, 1))).toBe('2026-01-01');
 	});
 
 	it('builds a range that includes today', () => {
-		const range = rangeForDays(7);
-		const span = Math.round((range.to.getTime() - range.from.getTime()) / 86_400_000);
+		const built = rangeForDays(7);
 
-		expect(span).toBe(6);
+		expect(Math.round((built.to.getTime() - built.from.getTime()) / 86_400_000)).toBe(6);
+	});
+
+	it('reads a day back as the same day, whatever the timezone', () => {
+		// Read as UTC midnight this lands on the day before anywhere west of Greenwich.
+		expect(isoDate(parseDay('2026-10-07') as Date)).toBe('2026-10-07');
+		expect(isoDate(parseDay('2026-01-01') as Date)).toBe('2026-01-01');
+		expect(parseDay('')).toBeNull();
+		expect(parseDay('not a date')).toBeNull();
 	});
 });
 
-describe('StoreDashboard', () => {
-	it('shows the period metrics and what sold', async () => {
+describe('useDashboardLayout helpers', () => {
+	it('keeps a card width inside the grid', () => {
+		expect(clampWidth(20, 4)).toBe(12);
+		expect(clampWidth(1, 4)).toBe(3);
+		expect(clampWidth('oito', 6)).toBe(6);
+	});
+
+	const card = (id: string, width = 4): DashboardCard => ({ component: () => null, metadata: { id, width, mobileWidth: 12 } });
+
+	it('applies the saved order and widths, and puts new cards last', () => {
+		const result = applyStoredLayout(
+			{ site: [card('a'), card('b'), card('new')] },
+			{ categories: { site: { order: ['b', 'a'], widths: { b: 8 } } } }
+		);
+
+		expect(result.site.map((entry) => entry.metadata.id)).toEqual(['b', 'a', 'new']);
+		expect(result.site[0].metadata.width).toBe(8);
+	});
+
+	it('ignores an order that mentions cards the site no longer has', () => {
+		const result = applyStoredLayout({ site: [card('a')] }, { categories: { site: { order: ['gone', 'a'] } } });
+
+		expect(result.site.map((entry) => entry.metadata.id)).toEqual(['a']);
+	});
+});
+
+describe('store cards', () => {
+	it('shows the metrics of the period', async () => {
 		stubRest();
-		renderDashboard();
+		renderCard(<StoreMetricsCard dateRange={range} />);
 
 		// The amount is formatted for whatever locale the runner uses, so only the digits matter.
 		expect(await screen.findByText(/4[.,]512/)).toBeInTheDocument();
 		expect(screen.getByText('162')).toBeInTheDocument();
 		expect(screen.getByText('118')).toBeInTheDocument();
-		expect(screen.getByText('Camiseta')).toBeInTheDocument();
-		expect(screen.getByText('#1200')).toBeInTheDocument();
 	});
 
-	it('asks the endpoint for the chosen period', async () => {
-		const user = userEvent.setup();
-		const calls = stubRest();
-		renderDashboard();
+	it('lists what sold and the orders that came in', async () => {
+		stubRest();
+		renderCard(
+			<>
+				<StoreTopProductsCard dateRange={range} />
+				<StoreRecentOrdersCard dateRange={range} />
+			</>
+		);
 
-		await screen.findByText('162');
-		await user.click(screen.getByRole('tab', { name: '7 days' }));
-
-		await waitFor(() => expect(calls.length).toBeGreaterThan(1));
-
-		const last = new URLSearchParams(calls[calls.length - 1].split('?')[1]);
-		const span = Math.round((new Date(String(last.get('date_to'))).getTime() - new Date(String(last.get('date_from'))).getTime()) / 86_400_000);
-		expect(span).toBe(6);
+		expect(await screen.findByText('Camiseta')).toBeInTheDocument();
+		expect(await screen.findByText('#1200')).toBeInTheDocument();
+		expect(screen.getByText('Ana Souza')).toBeInTheDocument();
 	});
 
-	it('says so when WooCommerce is not active instead of showing empty metrics', async () => {
+	it('says so when WooCommerce is off instead of drawing empty metrics', async () => {
 		stubRest({ success: true, woocommerce_active: false, metrics: {} });
-		renderDashboard();
+		renderCard(<StoreMetricsCard dateRange={range} />);
 
 		expect(await screen.findByText('WooCommerce is not active')).toBeInTheDocument();
-		expect(screen.queryByText('Recent orders')).not.toBeInTheDocument();
+		expect(screen.queryByText('162')).not.toBeInTheDocument();
 	});
 });

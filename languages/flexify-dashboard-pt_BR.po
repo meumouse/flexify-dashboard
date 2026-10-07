@@ -11318,6 +11318,66 @@ msgstr "vs %s dias anteriores"
 msgid "WooCommerce is not active"
 msgstr "O WooCommerce não está ativo"
 
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:39
+msgid "%s%% vs previous period"
+msgstr "%s%% vs período anterior"
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:39
+msgid "+%s%% vs previous period"
+msgstr "+%s%% vs período anterior"
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:114
+msgid "Bring one back to see it on the dashboard again."
+msgstr "Traga um de volta para vê-lo no painel outra vez."
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:91
+msgid "Cards"
+msgstr "Cartões"
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:121
+msgid "Cards on the dashboard"
+msgstr "Cartões do painel"
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:114
+msgid "Cards registered by the plugin and its extensions appear here."
+msgstr "Cartões registrados pelo plugin e por suas extensões aparecem aqui."
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:116
+msgid "Choose cards"
+msgstr "Escolher cartões"
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:102
+msgid "Dashboard sections"
+msgstr "Seções do painel"
+
+#: app/src/react/features/dashboard/cards/register.ts:37
+msgid "e-Commerce"
+msgstr "e-Commerce"
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:83
+msgid "End date"
+msgstr "Data final"
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:113
+msgid "Every card is hidden"
+msgstr "Todos os cartões estão ocultos"
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:113
+msgid "No cards here yet"
+msgstr "Nenhum cartão aqui ainda"
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:131
+msgid "No cards registered for this section."
+msgstr "Nenhum cartão registrado para esta seção."
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:121
+msgid "Pick what this section shows."
+msgstr "Escolha o que esta seção mostra."
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:81
+msgid "Start date"
+msgstr "Data inicial"
+
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"
 msgid "Add New"

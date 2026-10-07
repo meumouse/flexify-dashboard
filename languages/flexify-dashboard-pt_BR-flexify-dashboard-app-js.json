@@ -160,6 +160,9 @@
       "%s will be moved to the trash.": [
         "%s será movido para a lixeira."
       ],
+      "%s%% vs previous period": [
+        "%s%% vs período anterior"
+      ],
       "(Copy)": [
         "(Cópia)"
       ],
@@ -171,6 +174,9 @@
       ],
       "(no title)": [
         "(sem título)"
+      ],
+      "+%s%% vs previous period": [
+        "+%s%% vs período anterior"
       ],
       "1 comment selected": [
         "1 comentário selecionado"
@@ -871,6 +877,9 @@
       "Brightness": [
         "Brilho"
       ],
+      "Bring one back to see it on the dashboard again.": [
+        "Traga um de volta para vê-lo no painel outra vez."
+      ],
       "Browser time in ISO format": [
         "Hora do navegador em formato ISO"
       ],
@@ -955,6 +964,15 @@
       "Card visibility is stored independently for each category.": [
         "A visibilidade dos cartões é armazenada independentemente para cada categoria."
       ],
+      "Cards": [
+        "Cartões"
+      ],
+      "Cards on the dashboard": [
+        "Cartões do painel"
+      ],
+      "Cards registered by the plugin and its extensions appear here.": [
+        "Cartões registrados pelo plugin e por suas extensões aparecem aqui."
+      ],
       "Catalog visibility": [
         "Visibilidade no catálogo"
       ],
@@ -1011,6 +1029,9 @@
       ],
       "Choose a name for your custom font family": [
         "Escolha um nome para sua família de fontes personalizada."
+      ],
+      "Choose cards": [
+        "Escolher cartões"
       ],
       "Choose custom icon from the list or add a Base64 encoded Data URI. Icons only show for top level items. ": [
         "Escolha um ícone personalizado na lista ou adicione um URI de dados codificado em Base64. Os ícones são exibidos apenas para itens de nível superior."
@@ -1509,6 +1530,9 @@
       ],
       "Dashboard logo": [
         "Logotipo do painel de controle"
+      ],
+      "Dashboard sections": [
+        "Seções do painel"
       ],
       "Data": [
         "Dados"
@@ -2017,6 +2041,9 @@
       "Enabled": [
         "Ativada"
       ],
+      "End date": [
+        "Data final"
+      ],
       "End date for analytics (ISO 8601)": [
         "Data final para análises (ISO 8601)"
       ],
@@ -2142,6 +2169,9 @@
       ],
       "Every 30 Seconds": [
         "A cada 30 segundos"
+      ],
+      "Every card is hidden": [
+        "Todos os cartões estão ocultos"
       ],
       "Example orders": [
         "Pedidos de exemplo"
@@ -4045,8 +4075,14 @@
       "No capabilities found": [
         "Nenhuma funcionalidade encontrada"
       ],
+      "No cards here yet": [
+        "Nenhum cartão aqui ainda"
+      ],
       "No cards registered for this category yet.": [
         "Ainda não há cartões cadastrados para esta categoria."
+      ],
+      "No cards registered for this section.": [
+        "Nenhum cartão registrado para esta seção."
       ],
       "No categories found": [
         "Nenhuma categoria encontrada"
@@ -4764,6 +4800,9 @@
       ],
       "Phone": [
         "Telefone"
+      ],
+      "Pick what this section shows.": [
+        "Escolha o que esta seção mostra."
       ],
       "Please add your licence key to unlock the plugin settings": [
         "Por favor, insira sua chave de licença para desbloquear as configurações do plugin."
@@ -6283,6 +6322,9 @@
       "Start Import": [
         "Iniciar Importação"
       ],
+      "Start date": [
+        "Data inicial"
+      ],
       "Start date for analytics (ISO 8601)": [
         "Data de início para análises (ISO 8601)"
       ],
@@ -7506,6 +7548,9 @@
       ],
       "days": [
         "dias"
+      ],
+      "e-Commerce": [
+        "e-Commerce"
       ],
       "e.g. 123456789": [
         "Exemplo: 123456789"

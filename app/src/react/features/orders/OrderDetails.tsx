@@ -10,7 +10,7 @@ import { Avatar, Badge, Button, Card, DropdownMenu, EmptyState, Icon, PageHeader
 import { orderKeys, useCountries, useOrder, useOrderAction, useOrderContext, useOrderSiblings, useOrdersBulk, useUpdateOrder } from '@/react/woo/queries';
 import { useWoo } from '@/react/woo/WooProvider';
 import { AddressModal } from '@/react/features/orders/AddressModal';
-import { ExtensionCardRender } from '@/react/features/orders/ExtensionCardRender';
+import { CardRender } from '@/react/ui/CardRender';
 import { OrderNotes } from '@/react/features/orders/OrderNotes';
 import { RefundModal } from '@/react/features/orders/RefundModal';
 import { customerName, formatDate, itemsCount, orderTitle, totalRefunded } from '@/react/features/orders/orderFormat';
@@ -628,7 +628,7 @@ export const OrderDetails = () => {
 
 					{extensionCards.map((card, index) => (
 						<Card key={card.metadata?.id || `extension-${index}`} title={card.title || ''}>
-							<ExtensionCardRender card={card} props={{ order, context }} />
+							<CardRender card={card} props={{ order, context }} />
 						</Card>
 					))}
 				</div>

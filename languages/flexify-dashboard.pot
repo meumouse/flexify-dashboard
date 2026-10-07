@@ -217,7 +217,7 @@ msgstr ""
 msgid "%s child items"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:57
+#: app/src/react/features/dashboard/DashboardPage.tsx:87
 msgid "%s days"
 msgstr ""
 
@@ -267,7 +267,7 @@ msgstr ""
 msgid "%s selected"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:101
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:89
 msgid "%s sold"
 msgstr ""
 
@@ -280,10 +280,18 @@ msgstr ""
 msgid "%s will be moved to the trash."
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:39
+msgid "%s%% vs previous period"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:606
 msgid ""
 "→ Admin → Property Access Management, add the service account email as a "
 "Viewer"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:39
+msgid "+%s%% vs previous period"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:233
@@ -421,7 +429,7 @@ msgstr ""
 msgid "Activate the plugin to display the Rank Math overview widget in Analytics."
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:33
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:13
 msgid "Activate WooCommerce to see the store metrics here."
 msgstr ""
 
@@ -1362,7 +1370,7 @@ msgstr ""
 msgid "Average position of all the keywords ranking within top 100 positions."
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:75
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:42
 msgid "Average ticket"
 msgstr ""
 
@@ -1496,6 +1504,10 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1446
 msgid "Brightness"
+msgstr ""
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:114
+msgid "Bring one back to see it on the dashboard again."
 msgstr ""
 
 #: admin/src/Rest/Analytics.php:106
@@ -1662,6 +1674,18 @@ msgstr ""
 msgid "Card visibility is stored independently for each category."
 msgstr ""
 
+#: app/src/react/features/dashboard/DashboardPage.tsx:91
+msgid "Cards"
+msgstr ""
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:121
+msgid "Cards on the dashboard"
+msgstr ""
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:114
+msgid "Cards registered by the plugin and its extensions appear here."
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:771
 #: app/src/pages/products/src/ProductQuickEdit.vue:229
 #: app/src/react/features/products/editor/ProductEditor.tsx:998
@@ -1779,6 +1803,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:836
 msgid "Choose a name for your custom font family"
+msgstr ""
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:116
+msgid "Choose cards"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:1026
@@ -2514,7 +2542,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:539
 #: app/src/pages/orders/src/OrdersList.vue:237
 #: app/src/pages/orders/src/OrdersList.vue:431
-#: app/src/react/features/dashboard/StoreDashboard.tsx:135
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:126
 #: app/src/react/features/design-system/Showcase.tsx:82
 #: app/src/react/features/orders/OrderDetails.tsx:447
 #: app/src/react/features/orders/OrderEditor.tsx:754
@@ -2549,18 +2577,10 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/customers/component.vue:76
 #: app/src/pages/orders/src/OrdersList.vue:462
-#: app/src/react/features/dashboard/StoreDashboard.tsx:68
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:37
 #: app/src/react/features/design-system/Showcase.tsx:211
 #: app/src/react/features/orders/OrdersList.tsx:422
 msgid "Customers"
-msgstr ""
-
-#: app/src/react/features/dashboard/StoreDashboard.tsx:167
-msgid "Customers fell compared with the previous period."
-msgstr ""
-
-#: app/src/react/features/dashboard/StoreDashboard.tsx:167
-msgid "Customers grew compared with the previous period."
 msgstr ""
 
 #: app/src/pages/settings/index.vue:52
@@ -2606,12 +2626,17 @@ msgstr ""
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:313
 #: app/src/pages/dashboard/index.vue:723
 #: app/src/pages/settings/index.vue:89
+#: app/src/react/features/dashboard/DashboardPage.tsx:76
 #: app/src/react/shell/AppSidebar.tsx:83
 msgid "Dashboard"
 msgstr ""
 
 #: admin/src/Pages/Frontend.php:70
 msgid "Dashboard logo"
+msgstr ""
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:102
+msgid "Dashboard sections"
 msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:424
@@ -3187,6 +3212,8 @@ msgid "Drag & drop files here"
 msgstr ""
 
 #: app/src/pages/dashboard/src/card-render.vue:116
+#: app/src/react/features/dashboard/DashboardGrid.tsx:93
+#: app/src/react/features/dashboard/DashboardGrid.tsx:98
 msgid "Drag to reorder"
 msgstr ""
 
@@ -3227,6 +3254,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:95
 msgid "Duplicate Site"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/register.ts:37
+msgid "e-Commerce"
 msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:458
@@ -3547,6 +3578,10 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
+#: app/src/react/features/dashboard/DashboardPage.tsx:83
+msgid "End date"
+msgstr ""
+
 #: admin/src/Rest/UserAnalytics.php:94
 msgid "End date for analytics (ISO 8601)"
 msgstr ""
@@ -3721,6 +3756,10 @@ msgstr ""
 
 #: admin/src/Activity/ActivityLogger.php:120
 msgid "Every 30 Seconds"
+msgstr ""
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:113
+msgid "Every card is hidden"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:312
@@ -5514,7 +5553,7 @@ msgstr ""
 msgid "Large Files"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:26
+#: app/src/react/features/dashboard/DashboardPage.tsx:77
 msgid "Last %s days"
 msgstr ""
 
@@ -6492,7 +6531,7 @@ msgid "Net payment"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:797
-#: app/src/react/features/dashboard/StoreDashboard.tsx:65
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:34
 #: app/src/react/features/design-system/Showcase.tsx:220
 msgid "Net revenue"
 msgstr ""
@@ -6690,8 +6729,16 @@ msgstr ""
 msgid "No capabilities found"
 msgstr ""
 
+#: app/src/react/features/dashboard/DashboardPage.tsx:113
+msgid "No cards here yet"
+msgstr ""
+
 #: app/src/pages/dashboard/index.vue:930
 msgid "No cards registered for this category yet."
+msgstr ""
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:131
+msgid "No cards registered for this section."
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:167
@@ -6861,7 +6908,7 @@ msgstr ""
 msgid "No orders in the selected period."
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:128
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:117
 msgid "No orders in this period."
 msgstr ""
 
@@ -7149,7 +7196,7 @@ msgstr ""
 msgid "Nothing found for “%s”."
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:91
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:77
 msgid "Nothing sold in this period."
 msgstr ""
 
@@ -7479,7 +7526,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:236
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/posts/src/table-filters.vue:164
-#: app/src/react/features/dashboard/StoreDashboard.tsx:134
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:125
 #: app/src/react/features/design-system/Showcase.tsx:79
 #: app/src/react/features/orders/OrderEditor.tsx:811
 #: app/src/react/features/orders/OrdersList.tsx:290
@@ -7575,7 +7622,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:478
 #: app/src/pages/orders/src/OrdersList.vue:554
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:469
-#: app/src/react/features/dashboard/StoreDashboard.tsx:66
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:35
 #: app/src/react/features/design-system/Showcase.tsx:212
 #: app/src/react/features/orders/OrderDetails.tsx:216
 #: app/src/react/features/orders/OrderDetails.tsx:467
@@ -7849,10 +7896,6 @@ msgstr ""
 msgid "Performance"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:56
-msgid "Period"
-msgstr ""
-
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:980
 msgid ""
 "Permission denied: The service account does not have access to this Google "
@@ -7886,6 +7929,10 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:225
 msgid "PHP"
+msgstr ""
+
+#: app/src/react/features/dashboard/DashboardPage.tsx:121
+msgid "Pick what this section shows."
 msgstr ""
 
 #: app/src/pages/settings/src/settings-panel.vue:519
@@ -8633,7 +8680,7 @@ msgstr ""
 msgid "Recent Comments"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:113
+#: app/src/react/features/dashboard/cards/register.ts:30
 msgid "Recent orders"
 msgstr ""
 
@@ -8713,7 +8760,6 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:514
 #: app/src/pages/products/src/ProductsList.vue:594
 #: app/src/pages/products/src/ProductsList.vue:595
-#: app/src/react/features/dashboard/StoreDashboard.tsx:59
 #: app/src/react/features/design-system/Showcase.tsx:119
 #: app/src/react/features/orders/OrdersList.tsx:534
 #: app/src/react/features/orders/OrdersList.tsx:535
@@ -9118,6 +9164,7 @@ msgid "Resize"
 msgstr ""
 
 #: app/src/pages/dashboard/src/card-render.vue:125
+#: app/src/react/features/dashboard/DashboardGrid.tsx:113
 msgid "Resize card"
 msgstr ""
 
@@ -9192,7 +9239,8 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/revenue/component.vue:136
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:54
-#: app/src/react/features/dashboard/RevenueChart.tsx:59
+#: app/src/react/features/dashboard/cards/register.ts:22
+#: app/src/react/features/dashboard/RevenueChart.tsx:74
 msgid "Revenue"
 msgstr ""
 
@@ -9723,10 +9771,6 @@ msgstr ""
 
 #: app/src/react/features/design-system/FoundationCheck.tsx:50
 msgid "Security token"
-msgstr ""
-
-#: app/src/react/features/dashboard/StoreDashboard.tsx:116
-msgid "See all"
 msgstr ""
 
 #: app/src/pages/admin-notices/src/table.vue:281
@@ -10432,6 +10476,10 @@ msgstr ""
 msgid "Start Crop"
 msgstr ""
 
+#: app/src/react/features/dashboard/DashboardPage.tsx:81
+msgid "Start date"
+msgstr ""
+
 #: admin/src/Rest/UserAnalytics.php:87
 msgid "Start date for analytics (ISO 8601)"
 msgstr ""
@@ -10478,7 +10526,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:228
 #: app/src/pages/products/src/ProductsList.vue:186
 #: app/src/pages/products/src/ProductsList.vue:647
-#: app/src/react/features/dashboard/StoreDashboard.tsx:136
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:127
 #: app/src/react/features/design-system/Showcase.tsx:90
 #: app/src/react/features/design-system/Showcase.tsx:233
 #: app/src/react/features/orders/OrderEditor.tsx:820
@@ -10531,8 +10579,7 @@ msgstr ""
 msgid "Store"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:31
-#: app/src/react/features/dashboard/StoreDashboard.tsx:48
+#: app/src/react/features/dashboard/cards/register.ts:18
 msgid "Store overview"
 msgstr ""
 
@@ -11172,7 +11219,7 @@ msgstr ""
 msgid "Top Pages"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:83
+#: app/src/react/features/dashboard/cards/register.ts:26
 msgid "Top products"
 msgstr ""
 
@@ -11194,7 +11241,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderPreview.vue:100
 #: app/src/pages/orders/src/OrdersList.vue:240
 #: app/src/pages/orders/src/OrdersList.vue:431
-#: app/src/react/features/dashboard/StoreDashboard.tsx:137
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:128
 #: app/src/react/features/design-system/Showcase.tsx:91
 #: app/src/react/features/orders/OrderDetails.tsx:300
 #: app/src/react/features/orders/OrderPreview.tsx:127
@@ -12159,10 +12206,6 @@ msgstr ""
 msgid "visits"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:72
-msgid "vs previous %s days"
-msgstr ""
-
 #: app/src/pages/admin-notices/src/edit.vue:55
 msgid "Warning"
 msgstr ""
@@ -12315,7 +12358,7 @@ msgstr ""
 msgid "WooCommerce"
 msgstr ""
 
-#: app/src/react/features/dashboard/StoreDashboard.tsx:33
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:13
 msgid "WooCommerce is not active"
 msgstr ""
 

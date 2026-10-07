@@ -3,6 +3,7 @@ export { Avatar } from '@/react/ui/Avatar';
 export { Badge } from '@/react/ui/Badge';
 export { Button, type FdButtonProps } from '@/react/ui/Button';
 export { Card } from '@/react/ui/Card';
+export { CardRender, type RenderableCard } from '@/react/ui/CardRender';
 export { DropdownMenu, type MenuItem } from '@/react/ui/DropdownMenu';
 export { EmptyState } from '@/react/ui/EmptyState';
 export { Icon } from '@/react/ui/Icon';

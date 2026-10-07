@@ -391,7 +391,12 @@ Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o paine
 - O ApexCharts entra por import dinâmico: é a dependência mais pesada da tela e só o gráfico precisa dela. O gráfico é remontado quando o tema muda, que é o que faz o Apex adotar as cores novas.
 - O painel React fica atrás do filtro `flexify-dashboard/react-dashboard` (desligado por padrão), porque **o painel Vue ainda é dono do registro de cartões** — os 18 grupos de cartões e a API de cartões de terceiros continuam lá.
 
-**Parte 5 — pendente:** o registro de cartões (`assets/js/dashboard/registry.js` é JavaScript puro e pode ser reaproveitado), a grade redimensionável, o seletor de período e os 18 grupos de cartões atuais.
+**Parte 5 — grade de cartões (concluída em 07/10/2026):** o painel React passou a usar o registro de cartões (`assets/js/dashboard/registry.js`, JavaScript puro, aproveitado como está), com grade de 12 colunas, reordenação arrastando, redimensionamento preso às colunas, escolha de quais cartões aparecem e seletor de período — tudo guardado por categoria em local storage, como no painel Vue.
+
+- Os quatro cartões da loja são React. **Um cartão Vue não renderiza no painel React:** ele usa globais (`__`, `sprintf`) que o app Vue dele fornecia, e o veaury cria o app em que monta sem deixar configurá-lo — `beforeVueAppMount` só vale para o `ReactMissVue` externo. Então cada cartão precisa ser portado; os 16 restantes continuam no painel Vue.
+- Bug corrigido: `new Date('2026-10-07')` é meia-noite em UTC, que a oeste de Greenwich é o dia anterior. O período voltava um dia a cada recarga, porque era lido assim e reescrito na barra de endereços.
+
+**Parte 6 — pendente:** portar os 16 grupos de cartões restantes.
 
 ### Fase 6 — Conteúdo (GG)
 Posts, mídia, comentários e usuários.
