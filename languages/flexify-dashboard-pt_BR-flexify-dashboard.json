@@ -85,6 +85,12 @@
       "%d order(s) will be permanently deleted. This action cannot be undone.": [
         "%d pedido(s) serão excluídos permanentemente. Esta ação não pode ser desfeita."
       ],
+      "%d person excluded": [
+        "%d pessoa(s) excluída(s)"
+      ],
+      "%d person included": [
+        "%d pessoa(s) incluída(s)"
+      ],
       "%d product(s) could not be updated": [
         "%d produto(s) não puderam ser atualizados"
       ],
@@ -99,6 +105,9 @@
       ],
       "%d products": [
         "%d produtos"
+      ],
+      "%d role(s)": [
+        "%d função(ões)"
       ],
       "%d row(s) were not imported": [
         "%d linha(s) não foram importadas"
@@ -256,6 +265,9 @@
       "(Copy)": [
         "(Cópia)"
       ],
+      "(No label)": [
+        "(Sem rótulo)"
+      ],
       "(No title)": [
         "(Sem título)"
       ],
@@ -304,8 +316,17 @@
       "90 days": [
         "90 dias"
       ],
+      "A Dashicons name, for example dashicons-cart.": [
+        "Um nome do Dashicons, por exemplo dashicons-cart."
+      ],
       "A custom post type with this slug already exists.": [
         "Já existe um tipo de postagem personalizado com esse slug."
+      ],
+      "A draft is kept but shown to nobody.": [
+        "Um rascunho é guardado, mas não é mostrado a ninguém."
+      ],
+      "A menu replaces the one WordPress builds, for the people it is meant for.": [
+        "Um menu substitui o que o WordPress monta, para as pessoas a quem se destina."
       ],
       "A new version of the <strong>Flexify Dashboard</strong> plugin is available.": [
         "Uma nova versão do plugin <strong>Flexify Dashboard</strong> está disponível."
@@ -321,6 +342,9 @@
       ],
       "A role with this slug already exists.": [
         "Já existe uma vaga para esse tipo de personagem."
+      ],
+      "A saved menu reaches people when the cache turns over.": [
+        "Um menu salvo chega às pessoas quando o cache é renovado."
       ],
       "A screenshot of the page will be captured and analyzed. The AI will provide CSS fixes based on your description.": [
         "Uma captura de tela da página será feita e analisada. A IA fornecerá correções de CSS com base na sua descrição."
@@ -442,6 +466,12 @@
       "Add a caption": [
         "Adicione uma legenda"
       ],
+      "Add a link": [
+        "Adicionar um link"
+      ],
+      "Add a link under it": [
+        "Adicionar um link abaixo dele"
+      ],
       "Add a note about this order…": [
         "Adicione uma nota sobre este pedido…"
       ],
@@ -483,6 +513,9 @@
       ],
       "Add manually": [
         "Adicionar manualmente"
+      ],
+      "Add menu": [
+        "Adicionar menu"
       ],
       "Add new": [
         "Adicionar novo"
@@ -544,6 +577,9 @@
       "Added here": [
         "Adicionada aqui"
       ],
+      "Address": [
+        "Endereço"
+      ],
       "Address line 1": [
         "Endereço"
       ],
@@ -579,6 +615,9 @@
       ],
       "Admin menu behavior and interaction settings": [
         "Configurações de comportamento e interação do menu de administração"
+      ],
+      "Admin menus": [
+        "Menus do painel"
       ],
       "Admin notices": [
         "Avisos do painel"
@@ -690,6 +729,9 @@
       ],
       "Allowed emails": [
         "E-mails permitidos"
+      ],
+      "Also these people": [
+        "Também estas pessoas"
       ],
       "Alt Text": [
         "Texto alternativo"
@@ -804,6 +846,9 @@
       ],
       "Apply menu to everyone": [
         "Aplicar o menu a todos"
+      ],
+      "Apply to everyone now": [
+        "Aplicar para todos agora"
       ],
       "Apply to roles or users": [
         "Candidatar-se a funções ou usuários"
@@ -1075,6 +1120,9 @@
       "Bubble": [
         "Bolha"
       ],
+      "Build one to change what the admin menu looks like for some or all of the people here.": [
+        "Monte um para mudar como o menu do painel aparece para algumas ou todas as pessoas daqui."
+      ],
       "Built-in Analytics": [
         "Análises integradas"
       ],
@@ -1237,6 +1285,9 @@
       "Choose an item from the list to see it and change its properties.": [
         "Escolha um item da lista para vê-lo e alterar suas propriedades."
       ],
+      "Choose an item on the left to change it.": [
+        "Escolha um item à esquerda para alterá-lo."
+      ],
       "Choose cards": [
         "Escolher cartões"
       ],
@@ -1275,6 +1326,9 @@
       ],
       "Choose your prefered admin layout": [
         "Escolha o layout de administração de sua preferência."
+      ],
+      "Chosen item": [
+        "Item escolhido"
       ],
       "City": [
         "Cidade"
@@ -1897,6 +1951,9 @@
       "Delete this file?": [
         "Excluir este arquivo?"
       ],
+      "Delete this menu?": [
+        "Excluir este menu?"
+      ],
       "Delete this notice?": [
         "Excluir este aviso?"
       ],
@@ -2485,11 +2542,20 @@
       "Everyone": [
         "Todos"
       ],
+      "Everyone on this site": [
+        "Todos neste site"
+      ],
+      "Everyone will see the new menu now": [
+        "Todos verão o novo menu agora"
+      ],
       "Everything is up to date": [
         "Está tudo atualizado"
       ],
       "Example orders": [
         "Pedidos de exemplo"
+      ],
+      "Except these people": [
+        "Exceto estas pessoas"
       ],
       "Exclude roles or users": [
         "Excluir funções ou usuários"
@@ -3001,6 +3067,9 @@
       "Fonts": [
         "Fontes"
       ],
+      "For": [
+        "Para"
+      ],
       "Force global theme": [
         "Tema global da Força"
       ],
@@ -3241,6 +3310,9 @@
       "Hide the screen options toggle in the toolbar": [
         "Ocultar a opção de alternância das opções de tela na barra de ferramentas"
       ],
+      "Hide this item": [
+        "Ocultar este item"
+      ],
       "High": [
         "Alto"
       ],
@@ -3384,6 +3456,9 @@
       ],
       "In stock": [
         "Em estoque"
+      ],
+      "In use": [
+        "Em uso"
       ],
       "Inactive": [
         "Inativo"
@@ -3729,6 +3804,9 @@
       ],
       "Kinds of action": [
         "Tipos de ação"
+      ],
+      "Label": [
+        "Rótulo"
       ],
       "Large Files": [
         "Arquivos grandes"
@@ -4183,6 +4261,9 @@
       "Menu Settings": [
         "Configurações do menu"
       ],
+      "Menu actions": [
+        "Ações do menu"
+      ],
       "Menu cache cleared": [
         "Cache do menu limpo"
       ],
@@ -4209,6 +4290,9 @@
       ],
       "Menu order": [
         "Ordem no menu"
+      ],
+      "Menu saved": [
+        "Menu salvo"
       ],
       "Menu updated": [
         "Menu atualizado"
@@ -4831,6 +4915,15 @@
       "No visits in this period.": [
         "Nenhuma visita neste período."
       ],
+      "Nobody excluded": [
+        "Ninguém excluído"
+      ],
+      "Nobody in particular": [
+        "Ninguém em especial"
+      ],
+      "Nobody yet": [
+        "Ninguém ainda"
+      ],
       "None": [
         "Nenhum"
       ],
@@ -5017,6 +5110,9 @@
       "Only the first %d variations will be created.": [
         "Somente as primeiras %d variações serão criadas."
       ],
+      "Only you see this; it is how you tell your menus apart.": [
+        "Só você vê isso; é como você diferencia seus menus."
+      ],
       "Open": [
         "Abrir"
       ],
@@ -5031,6 +5127,9 @@
       ],
       "Open full editor": [
         "Abrir editor completo"
+      ],
+      "Open in a new tab": [
+        "Abrir em uma nova aba"
       ],
       "Open in classic editor": [
         "Abrir no editor clássico"
@@ -5995,6 +6094,9 @@
       "Remove from featured": [
         "Remover dos destaques"
       ],
+      "Remove from this menu": [
+        "Remover deste menu"
+      ],
       "Remove image": [
         "Remover imagem"
       ],
@@ -6444,6 +6546,9 @@
       ],
       "Search menu...": [
         "Menu de pesquisa..."
+      ],
+      "Search menus": [
+        "Pesquisar menus"
       ],
       "Search menus...": [
         "Menus de pesquisa..."
@@ -7267,6 +7372,9 @@
       "The payment method does not support automatic refunds. Remember to return the money to the customer manually.": [
         "O método de pagamento não suporta reembolsos automáticos. Lembre-se de devolver o valor ao cliente manualmente."
       ],
+      "The people it applied to go back to the menu WordPress builds.": [
+        "As pessoas a quem ele se aplicava voltam ao menu que o WordPress monta."
+      ],
       "The plugin directory could not be reached.": [
         "Não foi possível acessar o diretório de plugins."
       ],
@@ -7380,6 +7488,9 @@
       ],
       "This media is not currently used anywhere.": [
         "Este conteúdo não está sendo utilizado em nenhum lugar no momento."
+      ],
+      "This menu could not be loaded.": [
+        "Não foi possível carregar este menu."
       ],
       "This menu will be applied to everyone if enabled.": [
         "Este menu será aplicado a todos se estiver ativado."
@@ -7711,6 +7822,9 @@
       "Undo": [
         "Desfazer"
       ],
+      "Undo my changes to it": [
+        "Desfazer minhas alterações nele"
+      ],
       "Unidentified customer": [
         "Cliente não identificado"
       ],
@@ -7893,6 +8007,12 @@
       ],
       "Use these credentials in the modern administrative login and password recovery forms with Google reCAPTCHA v2 checkbox.": [
         "Utilize essas credenciais nos formulários modernos de login administrativo e recuperação de senha com a caixa de seleção do Google reCAPTCHA v2."
+      ],
+      "Use this menu": [
+        "Usar este menu"
+      ],
+      "Use “Apply to everyone now” on the menu list to make it immediate.": [
+        "Use \"Aplicar para todos agora\" na lista de menus para que seja imediato."
       ],
       "Used In": [
         "Usado em"
@@ -8260,6 +8380,9 @@
       "Who": [
         "Quem"
       ],
+      "Who gets this menu": [
+        "Quem recebe este menu"
+      ],
       "Who sees it": [
         "Quem vê"
       ],
@@ -8292,6 +8415,9 @@
       ],
       "WordPress": [
         "WordPress"
+      ],
+      "WordPress calls it %s.": [
+        "O WordPress o chama de %s."
       ],
       "WordPress capability required to see the remote site switcher in the toolbar. Defaults to \"manage_options\" (admin users). Users with this capability or below will see the switcher.": [
         "É necessário ter a permissão \"manage_options\" do WordPress para visualizar o seletor de sites remotos na barra de ferramentas. O padrão é \"manage_options\" (usuários administradores). Usuários com essa permissão ou inferior verão o seletor."

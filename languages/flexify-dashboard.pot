@@ -21,6 +21,10 @@ msgstr ""
 msgid "(Copy)"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:139
+msgid "(No label)"
+msgstr ""
+
 #: admin/src/Rest/CustomFields/CustomFields.php:856
 #: admin/src/Rest/CustomFields/RelationshipSearch.php:529
 #: app/src/pages/products/src/editor/ProductEditor.vue:197
@@ -35,6 +39,8 @@ msgstr ""
 #: admin/src/Rest/PostsTables.php:716
 #: app/src/react/features/comments/CommentDetails.tsx:142
 #: app/src/react/features/comments/CommentsList.tsx:127
+#: app/src/react/features/menus/MenuEditor.tsx:147
+#: app/src/react/features/menus/MenusList.tsx:62
 #: app/src/react/features/notices/NoticeEditor.tsx:103
 #: app/src/react/features/notices/NoticeEditor.tsx:133
 #: app/src/react/features/notices/NoticesList.tsx:54
@@ -124,6 +130,7 @@ msgid "%d hours ago"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:297
+#: app/src/react/features/menus/MenusList.tsx:63
 #: app/src/react/features/orders/OrderDetails.tsx:286
 msgid "%d item(s)"
 msgstr ""
@@ -174,6 +181,14 @@ msgstr ""
 msgid "%d order(s) will be permanently deleted. This action cannot be undone."
 msgstr ""
 
+#: app/src/react/features/menus/MenusList.tsx:25
+msgid "%d person excluded"
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:24
+msgid "%d person included"
+msgstr ""
+
 #: app/src/pages/products/src/ProductsList.vue:466
 #: app/src/react/features/products/ProductsList.tsx:198
 msgid "%d product(s) could not be updated"
@@ -197,6 +212,10 @@ msgstr ""
 #: app/src/pages/products/src/AttributesView.vue:259
 #: app/src/react/features/products/AttributesView.tsx:335
 msgid "%d products"
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:23
+msgid "%d role(s)"
 msgstr ""
 
 #: app/src/react/features/users/ImportUsersModal.tsx:215
@@ -498,6 +517,18 @@ msgstr ""
 msgid "A custom post type with this slug already exists."
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:223
+msgid "A Dashicons name, for example dashicons-cart."
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:207
+msgid "A draft is kept but shown to nobody."
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:99
+msgid "A menu replaces the one WordPress builds, for the people it is meant for."
+msgstr ""
+
 #: admin/src/Update/Updater.php:378
 msgid "A new version of the <strong>Flexify Dashboard</strong> plugin is available."
 msgstr ""
@@ -517,6 +548,10 @@ msgstr ""
 
 #: admin/src/Rest/RoleEditor.php:319
 msgid "A role with this slug already exists."
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:312
+msgid "A saved menu reaches people when the cache turns over."
 msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:909
@@ -684,6 +719,14 @@ msgstr ""
 msgid "Add a caption"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:178
+msgid "Add a link"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:240
+msgid "Add a link under it"
+msgstr ""
+
 #: app/src/react/features/dashboard/cards/extras.tsx:78
 msgid "Add a Mapbox key to see where your visitors are."
 msgstr ""
@@ -771,6 +814,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:295
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:341
 msgid "Add manually"
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:115
+msgid "Add menu"
 msgstr ""
 
 #: app/src/pages/posts/index.vue:665
@@ -928,6 +975,10 @@ msgstr ""
 msgid "Added here"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:221
+msgid "Address"
+msgstr ""
+
 #: app/src/pages/orders/src/AddressFields.vue:41
 #: app/src/react/features/orders/AddressFields.tsx:30
 msgid "Address line 1"
@@ -974,6 +1025,11 @@ msgstr ""
 
 #: app/src/pages/settings/index.vue:73
 msgid "Admin menu behavior and interaction settings"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:148
+#: app/src/react/features/menus/MenusList.tsx:98
+msgid "Admin menus"
 msgstr ""
 
 #: app/src/react/features/notices/NoticeEditor.tsx:104
@@ -1187,6 +1243,10 @@ msgstr ""
 msgid "Allowed emails"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:301
+msgid "Also these people"
+msgstr ""
+
 #: app/src/components/utility/media-library/index.vue:782
 msgid "Alt text"
 msgstr ""
@@ -1387,6 +1447,10 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1941
 msgid "Apply Resize"
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:103
+msgid "Apply to everyone now"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:889
@@ -1834,6 +1898,12 @@ msgstr ""
 msgid "Bubble"
 msgstr ""
 
+#: app/src/react/features/menus/MenusList.tsx:142
+msgid ""
+"Build one to change what the admin menu looks like for some or all of the "
+"people here."
+msgstr ""
+
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:92
 #: app/src/pages/settings/src/settings-config.js:44
 msgid "Built-in Analytics"
@@ -2161,6 +2231,10 @@ msgstr ""
 msgid "Choose an item from the list to see it and change its properties."
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:265
+msgid "Choose an item on the left to change it."
+msgstr ""
+
 #: app/src/react/features/dashboard/DashboardPage.tsx:116
 msgid "Choose cards"
 msgstr ""
@@ -2225,6 +2299,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:177
 msgid "Choose your prefered admin layout"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:212
+msgid "Chosen item"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:59
@@ -3210,6 +3288,10 @@ msgstr ""
 #: app/src/react/features/design-system/Showcase.tsx:294
 #: app/src/react/features/media/MediaDetails.tsx:114
 #: app/src/react/features/media/MediaLibrary.tsx:294
+#: app/src/react/features/menus/MenuEditor.tsx:103
+#: app/src/react/features/menus/MenuEditor.tsx:152
+#: app/src/react/features/menus/MenusList.tsx:47
+#: app/src/react/features/menus/MenusList.tsx:87
 #: app/src/react/features/notices/NoticeEditor.tsx:89
 #: app/src/react/features/notices/NoticeEditor.tsx:109
 #: app/src/react/features/notices/NoticesList.tsx:34
@@ -3360,6 +3442,11 @@ msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:90
 msgid "Delete this file?"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:101
+#: app/src/react/features/menus/MenusList.tsx:45
+msgid "Delete this menu?"
 msgstr ""
 
 #: app/src/react/features/notices/NoticeEditor.tsx:87
@@ -3729,6 +3816,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:226
 #: app/src/react/features/dashboard/cards/content.tsx:30
 #: app/src/react/features/design-system/Showcase.tsx:239
+#: app/src/react/features/menus/MenusList.tsx:73
 #: app/src/react/features/products/CouponsView.tsx:89
 #: app/src/react/features/products/editor/ProductEditor.tsx:983
 #: app/src/react/features/products/productFormat.ts:12
@@ -3844,6 +3932,8 @@ msgstr ""
 #: app/src/pages/products/src/TagsView.vue:167
 #: app/src/react/features/media/MediaEditScreen.tsx:64
 #: app/src/react/features/media/MediaLibrary.tsx:288
+#: app/src/react/features/menus/MenuEditor.tsx:148
+#: app/src/react/features/menus/MenusList.tsx:85
 #: app/src/react/features/notices/NoticeEditor.tsx:104
 #: app/src/react/features/notices/NoticesList.tsx:99
 #: app/src/react/features/posts/PostPreview.tsx:61
@@ -4362,8 +4452,17 @@ msgstr ""
 msgid "Every card is hidden"
 msgstr ""
 
+#: app/src/react/features/menus/MenusList.tsx:19
 #: app/src/react/features/notices/NoticesList.tsx:74
 msgid "Everyone"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:274
+msgid "Everyone on this site"
+msgstr ""
+
+#: app/src/react/features/menus/queries.ts:86
+msgid "Everyone will see the new menu now"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/site.tsx:127
@@ -4372,6 +4471,10 @@ msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:312
 msgid "Example orders"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:305
+msgid "Except these people"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:913
@@ -5136,6 +5239,10 @@ msgstr ""
 msgid "Fonts"
 msgstr ""
 
+#: app/src/react/features/menus/MenusList.tsx:67
+msgid "For"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:353
 msgid "Force global theme"
 msgstr ""
@@ -5501,6 +5608,10 @@ msgstr ""
 msgid "Hide the screen options toggle in the toolbar"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:225
+msgid "Hide this item"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:620
 msgid "High"
 msgstr ""
@@ -5598,6 +5709,7 @@ msgstr ""
 
 #: app/src/components/app/menu/components/FavoritesSection.vue:197
 #: app/src/pages/menu-creator/src/edit.vue:1023
+#: app/src/react/features/menus/MenuEditor.tsx:223
 msgid "Icon"
 msgstr ""
 
@@ -5746,6 +5858,10 @@ msgstr ""
 #: app/src/react/features/products/productFormat.ts:32
 #: app/src/react/features/products/ProductsList.tsx:381
 msgid "In stock"
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:73
+msgid "In use"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-card.vue:284
@@ -6209,6 +6325,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderPreview.vue:65
 #: app/src/pages/orders/src/OrdersList.vue:239
 #: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/react/features/menus/MenuEditor.tsx:164
 #: app/src/react/features/orders/OrderDetails.tsx:292
 #: app/src/react/features/orders/OrderEditor.tsx:500
 #: app/src/react/features/orders/OrderPreview.tsx:102
@@ -6311,6 +6428,10 @@ msgstr ""
 
 #: app/src/react/features/activity/ActivityList.tsx:86
 msgid "Kinds of action"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:217
+msgid "Label"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/site.tsx:51
@@ -7001,8 +7122,14 @@ msgstr ""
 
 #: app/src/components/app/toolbar/index.vue:156
 #: app/src/pages/settings/index.vue:71
+#: app/src/react/features/menus/MenuEditor.tsx:204
+#: app/src/react/features/menus/MenusList.tsx:59
 #: app/src/react/shell/AppShell.tsx:136
 msgid "Menu"
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:89
+msgid "Menu actions"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:226
@@ -7016,6 +7143,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:178
+#: app/src/react/features/menus/queries.ts:65
 msgid "Menu created"
 msgstr ""
 
@@ -7027,6 +7155,7 @@ msgid "Menu Creator"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:239
+#: app/src/react/features/menus/queries.ts:74
 msgid "Menu deleted"
 msgstr ""
 
@@ -7053,6 +7182,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:759
 #: app/src/react/features/products/editor/ProductEditor.tsx:968
 msgid "Menu order"
+msgstr ""
+
+#: app/src/react/features/menus/queries.ts:65
+msgid "Menu saved"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:807
@@ -7250,6 +7383,7 @@ msgstr ""
 msgid "Move coupon to trash?"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:167
 #: app/src/react/features/posts/PostsSettings.tsx:139
 msgid "Move down"
 msgstr ""
@@ -7306,6 +7440,7 @@ msgstr ""
 msgid "Move to trash?"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:166
 #: app/src/react/features/posts/PostsSettings.tsx:130
 msgid "Move up"
 msgstr ""
@@ -7333,6 +7468,7 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:1549
 #: app/src/react/features/comments/CommentDetails.tsx:125
 #: app/src/react/features/design-system/Showcase.tsx:386
+#: app/src/react/features/menus/MenuEditor.tsx:206
 #: app/src/react/features/products/AttributesView.tsx:51
 #: app/src/react/features/products/AttributesView.tsx:183
 #: app/src/react/features/products/AttributesView.tsx:265
@@ -7456,6 +7592,7 @@ msgid "New Link"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:502
+#: app/src/react/features/menus/MenusList.tsx:110
 msgid "New menu"
 msgstr ""
 
@@ -7764,6 +7901,7 @@ msgid "No menus found"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:492
+#: app/src/react/features/menus/MenusList.tsx:141
 msgid "No menus yet"
 msgstr ""
 
@@ -8085,6 +8223,18 @@ msgstr ""
 msgid "No WooCommerce customer data found for this user"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:306
+msgid "Nobody excluded"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:302
+msgid "Nobody in particular"
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:28
+msgid "Nobody yet"
+msgstr ""
+
 #: app/src/pages/products/src/CategoriesView.vue:203
 #: app/src/pages/products/src/editor/ProductEditor.vue:143
 #: app/src/react/features/products/CategoriesView.tsx:238
@@ -8388,6 +8538,10 @@ msgstr ""
 msgid "Only the first %d variations will be created."
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:206
+msgid "Only you see this; it is how you tell your menus apart."
+msgstr ""
+
 #: app/src/components/app/search/components/EmptyStateInitial.vue:121
 msgid "Open"
 msgstr ""
@@ -8395,6 +8549,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:217
 #: app/src/react/features/products/ProductQuickEdit.tsx:260
 msgid "Open full editor"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:226
+msgid "Open in a new tab"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:210
@@ -10082,6 +10240,10 @@ msgstr ""
 msgid "Remove from featured"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:258
+msgid "Remove from this menu"
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:793
 #: app/src/pages/products/src/editor/ProductEditor.vue:806
 #: app/src/react/features/products/editor/ProductEditor.tsx:1031
@@ -10542,6 +10704,7 @@ msgstr ""
 #: app/src/pages/users/src/user-import.vue:61
 #: app/src/pages/users/src/user-list-view.vue:1388
 #: app/src/pages/users/src/user-list-view.vue:1576
+#: app/src/react/features/menus/MenuEditor.tsx:280
 #: app/src/react/features/roles/RoleDetails.tsx:86
 #: app/src/react/features/roles/RolesList.tsx:138
 #: app/src/react/features/users/ImportUsersModal.tsx:26
@@ -10625,6 +10788,7 @@ msgstr ""
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:468
 #: app/src/pages/settings/src/settings-panel.vue:508
 #: app/src/react/features/media/ImageEditor.tsx:368
+#: app/src/react/features/menus/MenuEditor.tsx:155
 #: app/src/react/features/notices/NoticeEditor.tsx:113
 #: app/src/react/features/products/AttributesView.tsx:329
 #: app/src/react/features/products/ProductVariations.tsx:208
@@ -10848,6 +11012,11 @@ msgstr ""
 
 #: app/src/components/app/menu/components/MenuSearch.vue:375
 msgid "Search menu..."
+msgstr ""
+
+#: app/src/react/features/menus/MenusList.tsx:126
+#: app/src/react/features/menus/MenusList.tsx:127
+msgid "Search menus"
 msgstr ""
 
 #: app/src/pages/menu-creator/src/menu-list-view.vue:380
@@ -11854,6 +12023,7 @@ msgstr ""
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:127
 #: app/src/react/features/design-system/Showcase.tsx:90
 #: app/src/react/features/design-system/Showcase.tsx:233
+#: app/src/react/features/menus/MenusList.tsx:70
 #: app/src/react/features/notices/NoticesList.tsx:79
 #: app/src/react/features/orders/OrderEditor.tsx:820
 #: app/src/react/features/orders/OrdersList.tsx:290
@@ -12247,6 +12417,11 @@ msgid ""
 "the money to the customer manually."
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:102
+#: app/src/react/features/menus/MenusList.tsx:46
+msgid "The people it applied to go back to the menu WordPress builds."
+msgstr ""
+
 #: app/src/react/features/plugins/PluginRepository.tsx:77
 #: app/src/react/features/plugins/queries.ts:106
 msgid "The plugin directory could not be reached."
@@ -12466,6 +12641,10 @@ msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:1096
 msgid "This media is not currently used anywhere."
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:78
+msgid "This menu could not be loaded."
 msgstr ""
 
 #: app/src/pages/menu-creator/src/edit.vue:863
@@ -13022,6 +13201,10 @@ msgstr ""
 msgid "Undo"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:245
+msgid "Undo my changes to it"
+msgstr ""
+
 #: admin/src/Rest/WooCommerceDashboard.php:555
 msgid "Unidentified customer"
 msgstr ""
@@ -13308,6 +13491,10 @@ msgstr ""
 msgid "Usage restrictions"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:313
+msgid "Use “Apply to everyone now” on the menu list to make it immediate."
+msgstr ""
+
 #: app/src/pages/orders/src/OrderEditor.vue:513
 #: app/src/react/features/orders/OrderEditor.tsx:673
 msgid "Use a negative value for a discount."
@@ -13359,6 +13546,10 @@ msgstr ""
 msgid ""
 "Use these credentials in the modern administrative login and password "
 "recovery forms with Google reCAPTCHA v2 checkbox."
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:207
+msgid "Use this menu"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductAttributes.vue:197
@@ -13997,6 +14188,10 @@ msgstr ""
 msgid "Who"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:269
+msgid "Who gets this menu"
+msgstr ""
+
 #: app/src/react/features/notices/NoticeEditor.tsx:161
 msgid "Who sees it"
 msgstr ""
@@ -14052,6 +14247,10 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:210
 #: app/src/react/features/dashboard/cards/site.tsx:113
 msgid "WordPress"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:218
+msgid "WordPress calls it %s."
 msgstr ""
 
 #: app/src/pages/settings/src/settings-config.js:119

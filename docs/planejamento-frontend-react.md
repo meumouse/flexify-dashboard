@@ -466,6 +466,13 @@ Plugins, configurações, activity log, database explorer, editor de papéis, co
 - As telas React ficam atrás dos filtros `flexify-dashboard/react-database` e `flexify-dashboard/react-role-editor`, **ligados** por padrão.
 - **Correção de acessibilidade em todas as telas desta migração:** os campos estavam dentro de um `<Field label>`, que desenha o rótulo mas não o associa ao campo — para um leitor de tela eles não tinham nome nenhum. O `Input`, o `Select` e o `Textarea` têm `label` próprio, que faz a associação; o `Field` ficou só para o que não é campo (um seletor, um editor de texto), com `aria-label` onde é preciso. Um teste encontrou isso.
 
+**Parte 4 — construtor de menus (concluída em 07/10/2026):** a lista de menus e o editor de um menu em React.
+
+- O editor **reaproveita o `processMenu` da casca React** para ler o menu que o site tem agora, e junta o que foi salvo com o que o site ganhou desde então (`restoreMissing`): um plugin instalado depois de o menu ter sido feito aparece no lugar dele, em vez de simplesmente sumir.
+- A aritmética de rearranjar — achar um item, mover, remover, alterar — está em `menuEdits.ts`, separada do componente, porque é o que pode errar silenciosamente.
+- O editor avisa que um menu salvo só chega às pessoas quando o cache é renovado, e a lista tem o botão que renova.
+- A tela React fica atrás do filtro `flexify-dashboard/react-menu-builder`, **ligado** por padrão.
+
 ### Fase 8 — Login e frontend (M)
 Tela de login personalizada e scripts do frontend.
 

@@ -47,6 +47,8 @@ export default defineConfig({
 				// React media screen; the Vue entry stays as the fallback behind the filter.
 				'media-react': path.resolve(__dirname, 'src/react/main/media.tsx'),
 				'menu-creator': path.resolve(__dirname, 'src/apps/js/MenuCreator.js'),
+				// React menu builder; the Vue entry stays as the fallback behind the filter.
+				'menu-creator-react': path.resolve(__dirname, 'src/react/main/menu-creator.tsx'),
 				plugins: path.resolve(__dirname, 'src/apps/js/Plugins.js'),
 				// React plugins screen; the Vue entry stays as the fallback behind the filter.
 				'plugins-react': path.resolve(__dirname, 'src/react/main/plugins.tsx'),
