@@ -59,18 +59,29 @@ export const readWpData = (mainSelector = '#fd-script', pageSelector?: string): 
 
 	const pageData: Record<string, unknown> = {};
 
-	if (page) {
+	// The main tag carries post types and statuses for every screen; a page tag may narrow
+	// them to what that screen is about, so it is read last and wins.
+	[main, page].forEach((tag) => {
+		if (!tag) {
+			return;
+		}
+
 		Object.entries(PAGE_PAYLOADS).forEach(([key, attribute]) => {
-			const value = json<unknown>(page, attribute, null);
+			const value = json<unknown>(tag, attribute, null);
 
 			if (value !== null) {
 				pageData[key] = value;
 			}
 		});
 
-		pageData.supportsCategories = bool(page, 'supports_categories');
-		pageData.supportsTags = bool(page, 'supports_tags');
-	}
+		if (tag.hasAttribute('supports_categories')) {
+			pageData.supportsCategories = bool(tag, 'supports_categories');
+		}
+
+		if (tag.hasAttribute('supports_tags')) {
+			pageData.supportsTags = bool(tag, 'supports_tags');
+		}
+	});
 
 	return {
 		pluginBase: text(main, 'plugin-base'),

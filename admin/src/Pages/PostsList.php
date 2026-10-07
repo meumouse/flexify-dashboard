@@ -102,7 +102,8 @@ class PostsList {
 	 */
 	public static function load_styles_and_scripts() {
 		$base_url   = plugins_url( 'flexify-dashboard/' );
-		$style_path = $base_url . 'app/dist/assets/styles/posts.css';
+		$stylesheet = Scripts::get_stylesheet_path( self::get_entry() );
+		$style_path = $base_url . 'app/dist/' . ( $stylesheet ? $stylesheet : 'assets/styles/posts.css' );
 
 		wp_enqueue_style( 'flexify-dashboard-posts', $style_path, array(), FLEXIFY_DASHBOARD_VERSION );
 
@@ -115,7 +116,7 @@ class PostsList {
 			}
 		);
 
-		$script_name = Scripts::get_base_script_path( 'Posts.js' );
+		$script_name = Scripts::get_base_script_path( self::get_entry() );
 		$post_type   = self::get_current_post_type();
 
 		$supports_categories = is_object_in_taxonomy( $post_type, 'category' );
@@ -131,6 +132,26 @@ class PostsList {
 				'post_statuses'       => esc_attr( wp_json_encode( self::get_post_type_statuses( $post_type ) ) ),
 			)
 		);
+	}
+
+
+	/**
+	 * Get the Vite entry of the posts screen.
+	 *
+	 * Both screens read the same hidden data page, so a site that needs the Vue one back can
+	 * have it from the filter.
+	 *
+	 * @since 4.0.0
+	 * @return string
+	 */
+	private static function get_entry() {
+		/**
+		 * Filter whether the React posts screen is used.
+		 *
+		 * @since 4.0.0
+		 * @param bool $enabled Whether the React screen is used.
+		 */
+		return (bool) apply_filters( 'flexify-dashboard/react-posts', true ) ? 'react/main/posts.tsx' : 'Posts.js';
 	}
 
 

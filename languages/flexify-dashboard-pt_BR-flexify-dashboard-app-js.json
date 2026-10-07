@@ -10,6 +10,9 @@
       "%1$s (#%2$s)": [
         "%1$s (#%2$s)"
       ],
+      "%1$s of %2$s failed.": [
+        "%1$s de %2$s falharam."
+      ],
       "%d available": [
         "%d disponível(is)"
       ],
@@ -30,6 +33,12 @@
       ],
       "%d item(s)": [
         "%d item(ns)"
+      ],
+      "%d item(s) will be changed. Fields left empty stay as they are.": [
+        "%d item(ns) serão alterados. Os campos deixados em branco permanecem como estão."
+      ],
+      "%d item(s) will be moved to the trash. Items already there are deleted for good.": [
+        "%d item(ns) serão movidos para a lixeira. Os que já estão lá são excluídos definitivamente."
       ],
       "%d items selected": [
         "%d itens selecionados"
@@ -127,6 +136,9 @@
       "%s in stock": [
         "%s em estoque"
       ],
+      "%s item(s)": [
+        "%s item(ns)"
+      ],
       "%s list": [
         "Lista %s"
       ],
@@ -180,6 +192,9 @@
       ],
       "+%s%% vs previous period": [
         "+%s%% vs período anterior"
+      ],
+      "1 child item": [
+        "1 item filho"
       ],
       "1 comment selected": [
         "1 comentário selecionado"
@@ -613,6 +628,9 @@
       "Any %s": [
         "Qualquer %s"
       ],
+      "Any category": [
+        "Qualquer categoria"
+      ],
       "Any channel": [
         "Qualquer canal"
       ],
@@ -1003,6 +1021,9 @@
       "Change": [
         "Mudar"
       ],
+      "Change author": [
+        "Alterar autor"
+      ],
       "Change status": [
         "Alterar status"
       ],
@@ -1038,6 +1059,9 @@
       ],
       "Choose a name for your custom font family": [
         "Escolha um nome para sua família de fontes personalizada."
+      ],
+      "Choose an item from the list to see it and change its properties.": [
+        "Escolha um item da lista para vê-lo e alterar suas propriedades."
       ],
       "Choose cards": [
         "Escolher cartões"
@@ -1129,6 +1153,9 @@
       "Click to change": [
         "Clique para alterar"
       ],
+      "Click to rename": [
+        "Clique para renomear"
+      ],
       "Click to select file or drag and drop": [
         "Clique para selecionar o arquivo ou arraste e solte."
       ],
@@ -1146,6 +1173,9 @@
       ],
       "Code": [
         "Código"
+      ],
+      "Collapse": [
+        "Recolher"
       ],
       "Collapse sidebar": [
         "Recolher barra lateral"
@@ -2203,6 +2233,9 @@
       "Expand": [
         "Expandir"
       ],
+      "Expand all": [
+        "Expandir tudo"
+      ],
       "Expand all posts": [
         "Expandir todas as publicações"
       ],
@@ -2709,6 +2742,9 @@
       ],
       "Frequently used": [
         "Mais usados"
+      ],
+      "From": [
+        "De"
       ],
       "From WordPress": [
         "Do WordPress"
@@ -3280,14 +3316,23 @@
       "Item": [
         "Item"
       ],
+      "Item actions": [
+        "Ações do item"
+      ],
       "Item author updated": [
         "Item atualizado pelo autor"
       ],
       "Item deleted": [
         "Item excluído"
       ],
+      "Item details": [
+        "Detalhes do item"
+      ],
       "Item duplicated": [
         "Item duplicado"
+      ],
+      "Item moved to the trash": [
+        "Item movido para a lixeira"
       ],
       "Item restored": [
         "Item restaurado"
@@ -3295,8 +3340,14 @@
       "Item status updated": [
         "Status do item atualizado"
       ],
+      "Item title": [
+        "Título do item"
+      ],
       "Item title updated": [
         "Título do item atualizado"
+      ],
+      "Item updated": [
+        "Item atualizado"
       ],
       "Items": [
         "Itens"
@@ -3435,6 +3486,9 @@
       ],
       "Leave empty to remove the link.": [
         "Deixe em branco para remover o link."
+      ],
+      "Leave unchanged": [
+        "Manter como está"
       ],
       "Left": [
         "Esquerda"
@@ -3925,11 +3979,23 @@
       "Move coupon to trash?": [
         "Mover cupom para a lixeira?"
       ],
+      "Move down": [
+        "Mover para baixo"
+      ],
+      "Move to the trash": [
+        "Mover para a lixeira"
+      ],
+      "Move to the trash?": [
+        "Mover para a lixeira?"
+      ],
       "Move to trash": [
         "Mover para a lixeira"
       ],
       "Move to trash?": [
         "Mover para a lixeira?"
+      ],
+      "Move up": [
+        "Mover para cima"
       ],
       "Multiple statements are not allowed.": [
         "Não são permitidas múltiplas declarações."
@@ -4405,6 +4471,9 @@
       "Nothing found for “%s”.": [
         "Nada encontrado para “%s”."
       ],
+      "Nothing found.": [
+        "Nada encontrado."
+      ],
       "Nothing scheduled for this period.": [
         "Nada agendado para este período."
       ],
@@ -4701,6 +4770,9 @@
       ],
       "Page": [
         "Página"
+      ],
+      "Page %1$s of %2$s": [
+        "Página %1$s de %2$s"
       ],
       "Page Analytics": [
         "Análise da página"
@@ -5917,6 +5989,9 @@
       "Search tags": [
         "Buscar tags"
       ],
+      "Search users": [
+        "Pesquisar usuários"
+      ],
       "Search users...": [
         "Pesquisar usuários..."
       ],
@@ -5949,6 +6024,9 @@
       ],
       "Select": [
         "Selecione"
+      ],
+      "Select %s": [
+        "Selecionar %s"
       ],
       "Select All": [
         "Selecionar tudo"
@@ -6229,6 +6307,9 @@
       "Shortcuts": [
         "Atalhos"
       ],
+      "Show child items": [
+        "Mostrar itens filhos"
+      ],
       "Show less": [
         "Mostrar menos"
       ],
@@ -6261,6 +6342,9 @@
       ],
       "Sidebar View": [
         "Visualização da barra lateral"
+      ],
+      "Sidebar view": [
+        "Visualização lateral"
       ],
       "Sign In": [
         "Entrar"
@@ -6325,6 +6409,9 @@
       "Some fields may only be available in the classic editor.": [
         "Alguns campos podem estar disponíveis somente no editor clássico."
       ],
+      "Some items could not be updated.": [
+        "Alguns itens não puderam ser atualizados."
+      ],
       "Some variations could not be saved": [
         "Algumas variações não puderam ser salvas"
       ],
@@ -6387,6 +6474,9 @@
       ],
       "Status and feedback": [
         "Status e retorno"
+      ],
+      "Status: %s": [
+        "Status: %s"
       ],
       "Stock": [
         "Estoque"
@@ -6462,6 +6552,9 @@
       ],
       "Table settings": [
         "Configurações da mesa"
+      ],
+      "Table view": [
+        "Visualização em tabela"
       ],
       "Tables Created:": [
         "Tabelas criadas:"
@@ -6547,6 +6640,12 @@
       "The category name is required.": [
         "O nome da categoria é obrigatório."
       ],
+      "The chosen categories replace the current ones.": [
+        "As categorias escolhidas substituem as atuais."
+      ],
+      "The chosen tags replace the current ones.": [
+        "As tags escolhidas substituem as atuais."
+      ],
       "The copy was saved as a draft.": [
         "A cópia foi salva como rascunho."
       ],
@@ -6585,6 +6684,9 @@
       ],
       "The plugin you are looking for could not be found.": [
         "O plugin que você está procurando não foi encontrado."
+      ],
+      "The posts list could not be read. Reload the page and try again.": [
+        "Não foi possível ler a lista de posts. Recarregue a página e tente novamente."
       ],
       "The product may have been deleted or you do not have permission to edit it.": [
         "O produto pode ter sido excluído ou você não tem permissão para editá-lo."
@@ -6651,6 +6753,9 @@
       ],
       "This is the site key for your turnstyle which can be created from your cloudflare dashboard.": [
         "Esta é a chave do seu torniquete, que pode ser criada no painel de controle do Cloudflare."
+      ],
+      "This item will be deleted for good. There is no undo.": [
+        "Este item será excluído definitivamente. Não há como desfazer."
       ],
       "This link will open in a new tab": [
         "Este link será aberto em uma nova aba."
@@ -6735,6 +6840,9 @@
       ],
       "Title of the page being viewed": [
         "Título da página que está sendo visualizada"
+      ],
+      "To": [
+        "Até"
       ],
       "To delete this table, please enter your password to confirm.": [
         "Para excluir esta tabela, digite sua senha para confirmar."
@@ -7537,6 +7645,9 @@
       "You are not allowed to publish products.": [
         "Você não tem permissão para publicar produtos."
       ],
+      "You can restore it from the trash later.": [
+        "Você poderá restaurá-lo da lixeira depois."
+      ],
       "You do not have permission to edit this media item.": [
         "Você não tem permissão para editar este item de mídia."
       ],
@@ -7617,6 +7728,9 @@
       ],
       "comments": [
         "comentários"
+      ],
+      "copy": [
+        "cópia"
       ],
       "countries": [
         "países"

@@ -33,6 +33,9 @@ msgid "(no title)"
 msgstr ""
 
 #: admin/src/Rest/PostsTables.php:716
+#: app/src/react/features/posts/PostCells.tsx:194
+#: app/src/react/features/posts/PostPreview.tsx:31
+#: app/src/react/features/posts/PostsSidebar.tsx:152
 msgid "(No title)"
 msgstr ""
 
@@ -42,6 +45,10 @@ msgstr ""
 
 #: app/src/react/features/design-system/FoundationCheck.tsx:66
 msgid "%1$s (#%2$s)"
+msgstr ""
+
+#: app/src/react/features/posts/usePostMutations.ts:55
+msgid "%1$s of %2$s failed."
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:135
@@ -79,6 +86,16 @@ msgstr ""
 #: app/src/pages/orders/src/OrderDetails.vue:297
 #: app/src/react/features/orders/OrderDetails.tsx:286
 msgid "%d item(s)"
+msgstr ""
+
+#: app/src/react/features/posts/BatchEditModal.tsx:68
+msgid "%d item(s) will be changed. Fields left empty stay as they are."
+msgstr ""
+
+#: app/src/react/features/posts/PostsList.tsx:88
+msgid ""
+"%d item(s) will be moved to the trash. Items already there are deleted for "
+"good."
 msgstr ""
 
 #: app/src/pages/media/src/media-list-view.vue:348
@@ -218,6 +235,7 @@ msgid "%s child item"
 msgstr ""
 
 #: app/src/pages/posts/index.vue:889
+#: app/src/react/features/posts/PostCells.tsx:200
 msgid "%s child items"
 msgstr ""
 
@@ -230,6 +248,11 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:401
 #: app/src/react/features/products/ProductsList.tsx:328
 msgid "%s in stock"
+msgstr ""
+
+#: app/src/react/features/posts/PostsList.tsx:257
+#: app/src/react/features/posts/PostsSidebar.tsx:103
+msgid "%s item(s)"
 msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:857
@@ -268,6 +291,7 @@ msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:95
 #: app/src/react/data/DataTable.tsx:135
+#: app/src/react/features/posts/PostsList.tsx:196
 msgid "%s selected"
 msgstr ""
 
@@ -296,6 +320,10 @@ msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:39
 msgid "+%s%% vs previous period"
+msgstr ""
+
+#: app/src/react/features/posts/PostCells.tsx:200
+msgid "1 child item"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:233
@@ -595,6 +623,9 @@ msgstr ""
 #: app/src/pages/posts/index.vue:775
 #: app/src/pages/posts/index.vue:801
 #: app/src/pages/settings/src/custom-renders/external-stylesheets.vue:72
+#: app/src/react/features/posts/PostsList.tsx:238
+#: app/src/react/features/posts/PostsSidebar.tsx:77
+#: app/src/react/features/posts/PostsSidebar.tsx:124
 msgid "Add new"
 msgstr ""
 
@@ -1064,6 +1095,10 @@ msgstr ""
 msgid "Any %s"
 msgstr ""
 
+#: app/src/react/features/posts/PostsSettings.tsx:57
+msgid "Any category"
+msgstr ""
+
 #: app/src/pages/orders/src/OrdersList.vue:523
 #: app/src/react/features/orders/OrdersList.tsx:559
 msgid "Any channel"
@@ -1230,6 +1265,7 @@ msgstr ""
 
 #: app/src/pages/database/src/layout.vue:199
 #: app/src/pages/posts/src/table-filters.vue:34
+#: app/src/react/features/posts/PostsSettings.tsx:93
 msgid "Ascending"
 msgstr ""
 
@@ -1299,6 +1335,8 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-card.vue:384
 #: app/src/pages/posts/src/batch-edit.vue:150
 #: app/src/pages/posts/src/post-preview.vue:354
+#: app/src/react/features/posts/BatchEditModal.tsx:90
+#: app/src/react/features/posts/PostPreview.tsx:79
 msgid "Author"
 msgstr ""
 
@@ -1636,6 +1674,7 @@ msgstr ""
 #: app/src/react/features/orders/AddressModal.tsx:56
 #: app/src/react/features/orders/OrderEditor.tsx:480
 #: app/src/react/features/orders/RefundModal.tsx:145
+#: app/src/react/features/posts/BatchEditModal.tsx:72
 #: app/src/react/features/products/AttributesView.tsx:249
 #: app/src/react/features/products/AttributesView.tsx:330
 #: app/src/react/features/products/BulkCategoryModal.tsx:45
@@ -1719,6 +1758,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:280
 #: app/src/pages/products/src/ProductsList.vue:183
 #: app/src/pages/products/src/ProductsList.vue:542
+#: app/src/react/features/posts/BatchEditModal.tsx:95
+#: app/src/react/features/posts/PostPreview.tsx:86
+#: app/src/react/features/posts/PostsSettings.tsx:51
 #: app/src/react/features/products/CategoriesView.tsx:182
 #: app/src/react/features/products/editor/ProductEditor.tsx:1076
 #: app/src/react/features/products/ProductQuickEdit.tsx:346
@@ -1752,6 +1794,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:493
 msgid "Change"
+msgstr ""
+
+#: app/src/react/features/posts/PostCells.tsx:86
+msgid "Change author"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:288
@@ -1819,6 +1865,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:836
 msgid "Choose a name for your custom font family"
+msgstr ""
+
+#: app/src/react/features/posts/PostPreview.tsx:26
+msgid "Choose an item from the list to see it and change its properties."
 msgstr ""
 
 #: app/src/react/features/dashboard/DashboardPage.tsx:116
@@ -1961,6 +2011,8 @@ msgstr ""
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:567
 #: app/src/pages/users/src/user-list-view.vue:1500
 #: app/src/react/data/DataTable.tsx:142
+#: app/src/react/data/EntityPicker.tsx:96
+#: app/src/react/features/posts/PostsList.tsx:200
 msgid "Clear selection"
 msgstr ""
 
@@ -1981,6 +2033,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:561
 msgid "Click to change"
+msgstr ""
+
+#: app/src/react/features/posts/PostCells.tsx:192
+msgid "Click to rename"
 msgstr ""
 
 #: app/src/pages/users/src/user-import.vue:462
@@ -2013,6 +2069,10 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
+#: app/src/react/features/posts/PostCells.tsx:146
+msgid "Collapse"
+msgstr ""
+
 #: app/src/components/app/toolbar/index.vue:145
 #: app/src/react/shell/AppToolbar.tsx:77
 msgid "Collapse sidebar"
@@ -2036,6 +2096,7 @@ msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:445
 #: app/src/pages/posts/src/table-filters.vue:219
+#: app/src/react/features/posts/PostsSettings.tsx:108
 msgid "Columns"
 msgstr ""
 
@@ -2203,6 +2264,10 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1656
 msgid "Cool ← → Warm"
+msgstr ""
+
+#: app/src/react/features/posts/usePostMutations.ts:85
+msgid "copy"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressModal.vue:52
@@ -2780,6 +2845,7 @@ msgstr ""
 #: app/src/react/features/design-system/Showcase.tsx:279
 #: app/src/react/features/design-system/Showcase.tsx:294
 #: app/src/react/features/orders/OrderNotes.tsx:67
+#: app/src/react/features/posts/PostsList.tsx:163
 #: app/src/react/features/products/AttributesView.tsx:102
 #: app/src/react/features/products/AttributesView.tsx:170
 #: app/src/react/features/products/AttributesView.tsx:206
@@ -2842,6 +2908,8 @@ msgstr ""
 #: app/src/react/features/orders/OrdersList.tsx:248
 #: app/src/react/features/orders/OrdersList.tsx:270
 #: app/src/react/features/orders/OrdersList.tsx:627
+#: app/src/react/features/posts/PostRowMenu.tsx:23
+#: app/src/react/features/posts/PostRowMenu.tsx:39
 #: app/src/react/features/products/ProductsList.tsx:213
 #: app/src/react/features/products/ProductsList.tsx:233
 #: app/src/react/features/products/ProductsList.tsx:568
@@ -2856,6 +2924,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:476
 #: app/src/react/features/design-system/Showcase.tsx:277
 #: app/src/react/features/orders/OrdersList.tsx:244
+#: app/src/react/features/posts/PostRowMenu.tsx:21
 #: app/src/react/features/products/ProductsList.tsx:209
 msgid "Delete permanently?"
 msgstr ""
@@ -2918,6 +2987,7 @@ msgstr ""
 
 #: app/src/pages/database/src/layout.vue:200
 #: app/src/pages/posts/src/table-filters.vue:35
+#: app/src/react/features/posts/PostsSettings.tsx:94
 msgid "Descending"
 msgstr ""
 
@@ -3269,6 +3339,8 @@ msgstr ""
 #: app/src/pages/media/src/media-list-view.vue:1837
 #: app/src/pages/posts/src/post-actions.vue:44
 #: app/src/pages/products/src/ProductsList.vue:499
+#: app/src/react/features/posts/PostRowMenu.tsx:35
+#: app/src/react/features/posts/PostsList.tsx:160
 #: app/src/react/features/products/ProductsList.tsx:240
 msgid "Duplicate"
 msgstr ""
@@ -3321,6 +3393,9 @@ msgstr ""
 #: app/src/pages/products/src/CouponsView.vue:202
 #: app/src/pages/products/src/ProductsList.vue:497
 #: app/src/pages/products/src/TagsView.vue:167
+#: app/src/react/features/posts/PostPreview.tsx:61
+#: app/src/react/features/posts/PostRowMenu.tsx:33
+#: app/src/react/features/posts/PostsList.tsx:154
 #: app/src/react/features/products/AttributesView.tsx:204
 #: app/src/react/features/products/CategoriesView.tsx:167
 #: app/src/react/features/products/CouponsView.tsx:261
@@ -3378,6 +3453,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:384
 #: app/src/react/features/orders/OrderDetails.tsx:252
 #: app/src/react/features/orders/OrderEditor.tsx:475
+#: app/src/react/features/posts/BatchEditModal.tsx:67
 msgid "Edit items"
 msgstr ""
 
@@ -3823,7 +3899,12 @@ msgstr ""
 
 #: app/src/components/kit/FdDataTable.vue:128
 #: app/src/react/data/DataTable.tsx:166
+#: app/src/react/features/posts/PostCells.tsx:146
 msgid "Expand"
+msgstr ""
+
+#: app/src/react/features/posts/PostsSettings.tsx:101
+msgid "Expand all"
 msgstr ""
 
 #: app/src/pages/posts/src/table-filters.vue:212
@@ -4418,6 +4499,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:510
 #: app/src/pages/posts/src/table-filters.vue:140
 #: app/src/react/features/orders/OrdersList.tsx:522
+#: app/src/react/features/posts/PostsSettings.tsx:48
 msgid "Filters"
 msgstr ""
 
@@ -4567,6 +4649,10 @@ msgstr ""
 
 #: app/src/components/app/search/components/FrequentlyUsed.vue:30
 msgid "Frequently Used"
+msgstr ""
+
+#: app/src/react/features/posts/PostsSettings.tsx:62
+msgid "From"
 msgstr ""
 
 #: app/src/react/shell/notices/NotificationsPanel.tsx:104
@@ -5466,19 +5552,36 @@ msgstr ""
 msgid "Item"
 msgstr ""
 
+#: app/src/react/features/posts/PostRowMenu.tsx:42
+msgid "Item actions"
+msgstr ""
+
 #: app/src/pages/posts/src/updatePostAuthor.js:20
+#: app/src/react/features/posts/PostPreview.tsx:80
+#: app/src/react/features/posts/PostsList.tsx:125
 msgid "Item author updated"
 msgstr ""
 
 #: app/src/pages/posts/src/post-actions.vue:172
+#: app/src/react/features/posts/PostRowMenu.tsx:28
 msgid "Item deleted"
 msgstr ""
 
+#: app/src/react/features/posts/PostPreview.tsx:26
+msgid "Item details"
+msgstr ""
+
 #: app/src/pages/posts/src/post-actions.vue:142
+#: app/src/react/features/posts/PostRowMenu.tsx:35
 msgid "Item duplicated"
 msgstr ""
 
+#: app/src/react/features/posts/PostRowMenu.tsx:28
+msgid "Item moved to the trash"
+msgstr ""
+
 #: app/src/pages/posts/src/post-actions.vue:188
+#: app/src/react/features/posts/PostRowMenu.tsx:38
 msgid "Item restored"
 msgstr ""
 
@@ -5487,11 +5590,22 @@ msgid "item selected"
 msgstr ""
 
 #: app/src/pages/posts/src/updatePostStatus.js:18
+#: app/src/react/features/posts/PostPreview.tsx:73
+#: app/src/react/features/posts/PostsList.tsx:121
 msgid "Item status updated"
 msgstr ""
 
+#: app/src/react/features/posts/PostCells.tsx:179
+msgid "Item title"
+msgstr ""
+
 #: app/src/pages/posts/src/inlineTitleUpdate.js:27
+#: app/src/react/features/posts/PostsList.tsx:115
 msgid "Item title updated"
+msgstr ""
+
+#: app/src/react/features/posts/usePostMutations.ts:26
+msgid "Item updated"
 msgstr ""
 
 #: app/src/pages/activity-log/src/activity-list-view.vue:352
@@ -5514,10 +5628,12 @@ msgid "Items"
 msgstr ""
 
 #: app/src/pages/posts/src/batchDeletePosts.js:45
+#: app/src/react/features/posts/PostsList.tsx:94
 msgid "Items deleted"
 msgstr ""
 
 #: app/src/pages/posts/src/batchDuplicatePosts.js:47
+#: app/src/react/features/posts/PostsList.tsx:159
 msgid "Items duplicated"
 msgstr ""
 
@@ -5527,6 +5643,7 @@ msgid "Items per page"
 msgstr ""
 
 #: app/src/pages/posts/src/batchPublishPosts.js:45
+#: app/src/react/features/posts/PostsList.tsx:156
 msgid "Items published"
 msgstr ""
 
@@ -5547,6 +5664,7 @@ msgid "Items subtotal"
 msgstr ""
 
 #: app/src/pages/posts/src/batch-edit.vue:76
+#: app/src/react/features/posts/BatchEditModal.tsx:48
 msgid "Items updated"
 msgstr ""
 
@@ -5728,6 +5846,13 @@ msgstr ""
 
 #: app/src/react/ui/RichText.tsx:233
 msgid "Leave empty to remove the link."
+msgstr ""
+
+#: app/src/react/features/posts/BatchEditModal.tsx:84
+#: app/src/react/features/posts/BatchEditModal.tsx:91
+#: app/src/react/features/posts/BatchEditModal.tsx:96
+#: app/src/react/features/posts/BatchEditModal.tsx:102
+msgid "Leave unchanged"
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1973
@@ -6493,6 +6618,21 @@ msgstr ""
 msgid "Move coupon to trash?"
 msgstr ""
 
+#: app/src/react/features/posts/PostsSettings.tsx:139
+msgid "Move down"
+msgstr ""
+
+#: app/src/react/features/posts/PostRowMenu.tsx:23
+#: app/src/react/features/posts/PostRowMenu.tsx:39
+#: app/src/react/features/posts/PostsList.tsx:89
+msgid "Move to the trash"
+msgstr ""
+
+#: app/src/react/features/posts/PostRowMenu.tsx:21
+#: app/src/react/features/posts/PostsList.tsx:87
+msgid "Move to the trash?"
+msgstr ""
+
 #: app/src/pages/orders/src/OrderDetails.vue:179
 #: app/src/pages/orders/src/OrderDetails.vue:214
 #: app/src/pages/orders/src/OrdersList.vue:398
@@ -6526,6 +6666,10 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductEditor.tsx:523
 #: app/src/react/features/products/ProductsList.tsx:209
 msgid "Move to trash?"
+msgstr ""
+
+#: app/src/react/features/posts/PostsSettings.tsx:130
+msgid "Move up"
 msgstr ""
 
 #: admin/src/Rest/DatabaseExplorer.php:657
@@ -6725,6 +6869,7 @@ msgstr ""
 #: app/src/pages/menu-creator/src/menu-list-view.vue:459
 #: app/src/pages/posts/index.vue:623
 #: app/src/pages/users/src/user-list-view.vue:1006
+#: app/src/react/features/posts/PostsSidebar.tsx:108
 msgid "Next"
 msgstr ""
 
@@ -7279,11 +7424,17 @@ msgid "Note to customer"
 msgstr ""
 
 #: app/src/pages/posts/index.vue:786
+#: app/src/react/features/posts/PostsList.tsx:274
+#: app/src/react/features/posts/PostsSidebar.tsx:122
 msgid "Nothing found"
 msgstr ""
 
 #: app/src/react/shell/search/CommandPalette.tsx:226
 msgid "Nothing found for “%s”."
+msgstr ""
+
+#: app/src/react/data/EntityPicker.tsx:106
+msgid "Nothing found."
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/content.tsx:117
@@ -7629,6 +7780,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderEditor.tsx:811
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:322
+#: app/src/react/features/posts/PostsSettings.tsx:88
 msgid "Order"
 msgstr ""
 
@@ -7655,6 +7807,7 @@ msgid "Order attribution"
 msgstr ""
 
 #: app/src/pages/posts/src/table-filters.vue:188
+#: app/src/react/features/posts/PostsSettings.tsx:84
 msgid "Order by"
 msgstr ""
 
@@ -7804,6 +7957,11 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:243
 msgid "PAGE"
+msgstr ""
+
+#: app/src/react/features/posts/PostsList.tsx:282
+#: app/src/react/features/posts/PostsSidebar.tsx:106
+msgid "Page %1$s of %2$s"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/page-analytics/component.vue:166
@@ -7985,6 +8143,7 @@ msgid "Pending review"
 msgstr ""
 
 #: app/src/pages/posts/src/table-filters.vue:159
+#: app/src/react/features/posts/PostsSettings.tsx:73
 msgid "Per page"
 msgstr ""
 
@@ -8303,6 +8462,7 @@ msgstr ""
 #: app/src/pages/posts/index.vue:706
 #: app/src/pages/role-editor/src/role-details-view.vue:86
 #: app/src/pages/settings/index.vue:77
+#: app/src/react/features/posts/PostsList.tsx:148
 #: app/src/react/shell/search/useGlobalSearch.ts:57
 msgid "Posts"
 msgstr ""
@@ -8328,6 +8488,7 @@ msgstr ""
 #: app/src/pages/posts/src/post-preview.vue:421
 #: app/src/pages/products/src/editor/ProductEditor.vue:490
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:1007
+#: app/src/react/features/posts/PostPreview.tsx:107
 #: app/src/react/features/products/editor/ProductEditor.tsx:607
 msgid "Preview"
 msgstr ""
@@ -8341,6 +8502,7 @@ msgstr ""
 #: app/src/pages/menu-creator/src/menu-list-view.vue:450
 #: app/src/pages/posts/index.vue:615
 #: app/src/pages/users/src/user-list-view.vue:997
+#: app/src/react/features/posts/PostsSidebar.tsx:107
 msgid "Previous"
 msgstr ""
 
@@ -8584,6 +8746,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:524
 #: app/src/pages/products/src/editor/ProductEditor.vue:768
+#: app/src/react/features/posts/PostsList.tsx:157
 #: app/src/react/features/products/editor/ProductEditor.tsx:642
 #: app/src/react/features/products/editor/ProductEditor.tsx:976
 msgid "Publish"
@@ -9316,6 +9479,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:664
 #: app/src/react/features/orders/OrdersList.tsx:268
 #: app/src/react/features/orders/OrdersList.tsx:624
+#: app/src/react/features/posts/PostRowMenu.tsx:38
 #: app/src/react/features/products/ProductsList.tsx:231
 #: app/src/react/features/products/ProductsList.tsx:565
 msgid "Restore"
@@ -9574,6 +9738,7 @@ msgstr ""
 #: app/src/pages/products/src/CategoriesView.vue:208
 #: app/src/pages/products/src/ProductQuickEdit.vue:300
 #: app/src/pages/products/src/TagsView.vue:193
+#: app/src/react/features/posts/BatchEditModal.tsx:75
 #: app/src/react/features/products/CategoriesView.tsx:214
 #: app/src/react/features/products/ProductQuickEdit.tsx:237
 #: app/src/react/features/products/TagsView.tsx:196
@@ -9674,6 +9839,7 @@ msgstr ""
 #: app/src/pages/posts/src/inline-status-select.vue:70
 #: app/src/pages/posts/src/inline-user-select.vue:114
 #: app/src/pages/posts/src/table-filters.vue:146
+#: app/src/react/data/EntityPicker.tsx:92
 #: app/src/react/form/SearchInput.tsx:57
 #: app/src/react/shell/search/CommandPalette.tsx:167
 msgid "Search"
@@ -9801,6 +9967,7 @@ msgstr ""
 
 #: app/src/components/app/search/state/constants.js:26
 #: app/src/pages/posts/index.vue:748
+#: app/src/react/features/posts/PostsList.tsx:149
 #: app/src/react/shell/search/commands.ts:45
 msgid "Search posts"
 msgstr ""
@@ -9864,6 +10031,10 @@ msgstr ""
 msgid "Search Traffic"
 msgstr ""
 
+#: app/src/react/features/posts/PostCells.tsx:84
+msgid "Search users"
+msgstr ""
+
 #: app/src/pages/users/src/user-list-view.vue:844
 msgid "Search users..."
 msgstr ""
@@ -9910,6 +10081,10 @@ msgstr ""
 #: app/src/components/app/search/components/EmptyStateInitial.vue:103
 #: app/src/pages/media/src/media-list-view.vue:1871
 msgid "Select"
+msgstr ""
+
+#: app/src/react/features/posts/PostsSidebar.tsx:146
+msgid "Select %s"
 msgstr ""
 
 #: app/src/pages/products/src/BulkCategoryModal.vue:34
@@ -10235,6 +10410,7 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:92
 #: app/src/pages/settings/index.vue:579
 #: app/src/react/features/design-system/Showcase.tsx:161
+#: app/src/react/features/posts/PostsSettings.tsx:44
 msgid "Settings"
 msgstr ""
 
@@ -10367,6 +10543,10 @@ msgstr ""
 msgid "Shortcuts"
 msgstr ""
 
+#: app/src/react/features/posts/PostsSettings.tsx:102
+msgid "Show child items"
+msgstr ""
+
 #: app/src/components/app/admin-notices/NotificationsPanel.vue:299
 #: app/src/react/shell/notices/NotificationsPanel.tsx:89
 msgid "Show less"
@@ -10409,6 +10589,10 @@ msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:248
 msgid "Shows first in the catalog."
+msgstr ""
+
+#: app/src/react/features/posts/PostsList.tsx:236
+msgid "Sidebar view"
 msgstr ""
 
 #: app/src/pages/posts/index.vue:729
@@ -10540,6 +10724,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:605
 #: app/src/react/features/products/editor/ProductEditor.tsx:653
 msgid "Some fields may only be available in the classic editor."
+msgstr ""
+
+#: app/src/react/features/posts/usePostMutations.ts:55
+msgid "Some items could not be updated."
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:147
@@ -10674,6 +10862,8 @@ msgstr ""
 #: app/src/react/features/orders/OrderEditor.tsx:820
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:355
+#: app/src/react/features/posts/BatchEditModal.tsx:81
+#: app/src/react/features/posts/PostPreview.tsx:72
 #: app/src/react/features/products/CouponsView.tsx:246
 #: app/src/react/features/products/editor/ProductEditor.tsx:987
 #: app/src/react/features/products/ProductQuickEdit.tsx:271
@@ -10684,6 +10874,10 @@ msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:167
 msgid "Status and feedback"
+msgstr ""
+
+#: app/src/react/features/posts/PostCells.tsx:52
+msgid "Status: %s"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:185
@@ -10807,7 +11001,12 @@ msgid "Table not found."
 msgstr ""
 
 #: app/src/pages/posts/src/table-filters.vue:156
+#: app/src/react/features/posts/PostsSettings.tsx:71
 msgid "Table settings"
+msgstr ""
+
+#: app/src/react/features/posts/PostsSidebar.tsx:76
+msgid "Table view"
 msgstr ""
 
 #: app/src/apps/js/Database.js:43
@@ -10854,6 +11053,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:294
 #: app/src/pages/products/src/ProductsList.vue:543
 #: app/src/pages/products/src/TagsView.vue:130
+#: app/src/react/features/posts/BatchEditModal.tsx:101
+#: app/src/react/features/posts/PostPreview.tsx:93
 #: app/src/react/features/products/editor/ProductEditor.tsx:1114
 #: app/src/react/features/products/editor/ProductEditor.tsx:1115
 #: app/src/react/features/products/ProductQuickEdit.tsx:372
@@ -10938,6 +11139,14 @@ msgstr ""
 msgid "The category name is required."
 msgstr ""
 
+#: app/src/react/features/posts/BatchEditModal.tsx:95
+msgid "The chosen categories replace the current ones."
+msgstr ""
+
+#: app/src/react/features/posts/BatchEditModal.tsx:101
+msgid "The chosen tags replace the current ones."
+msgstr ""
+
 #: app/src/pages/products/src/ProductsList.vue:445
 #: app/src/react/features/products/ProductsList.tsx:224
 msgid "The copy was saved as a draft."
@@ -11003,6 +11212,10 @@ msgstr ""
 
 #: app/src/pages/plugins/src/plugin-details-view.vue:68
 msgid "The plugin you are looking for could not be found."
+msgstr ""
+
+#: app/src/react/features/posts/usePostsData.ts:59
+msgid "The posts list could not be read. Reload the page and try again."
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:574
@@ -11160,6 +11373,10 @@ msgid ""
 "cloudflare dashboard."
 msgstr ""
 
+#: app/src/react/features/posts/PostRowMenu.tsx:22
+msgid "This item will be deleted for good. There is no undo."
+msgstr ""
+
 #: app/src/pages/menu-creator/src/edit.vue:1057
 msgid "This link will open in a new tab"
 msgstr ""
@@ -11300,6 +11517,10 @@ msgstr ""
 
 #: admin/src/Rest/Analytics.php:166
 msgid "Title of the page being viewed"
+msgstr ""
+
+#: app/src/react/features/posts/PostsSettings.tsx:65
+msgid "To"
 msgstr ""
 
 #: app/src/components/app/search/components/KeyboardShortcuts.vue:32
@@ -11728,6 +11949,8 @@ msgid "Unknown"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/content.tsx:34
+#: app/src/react/features/posts/PostCells.tsx:67
+#: app/src/react/features/posts/PostCells.tsx:83
 msgid "Unknown author"
 msgstr ""
 
@@ -11830,6 +12053,7 @@ msgid "Update settings"
 msgstr ""
 
 #: app/src/pages/posts/src/inline-status-select.vue:64
+#: app/src/react/features/posts/PostCells.tsx:38
 msgid "Update status"
 msgstr ""
 
@@ -11907,6 +12131,7 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-performance.vue:345
 #: app/src/pages/posts/src/post-preview.vue:404
 #: app/src/pages/settings/src/custom-renders/external-stylesheets.vue:58
+#: app/src/react/features/posts/PostPreview.tsx:99
 #: app/src/react/ui/RichText.tsx:233
 msgid "URL"
 msgstr ""
@@ -12237,6 +12462,8 @@ msgstr ""
 #: app/src/pages/posts/src/post-actions.vue:37
 #: app/src/pages/posts/src/post-preview.vue:329
 #: app/src/pages/users/src/user-list-view.vue:1473
+#: app/src/react/features/posts/PostPreview.tsx:65
+#: app/src/react/features/posts/PostRowMenu.tsx:34
 msgid "View"
 msgstr ""
 
@@ -12517,6 +12744,7 @@ msgid "When hidden the language selector on the login page will not be displayed
 msgstr ""
 
 #: app/src/pages/posts/index.vue:790
+#: app/src/react/features/posts/PostsList.tsx:275
 msgid "When you create new items they will show up here."
 msgstr ""
 
@@ -12698,6 +12926,10 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceProducts.php:339
 msgid "You are not allowed to publish products."
+msgstr ""
+
+#: app/src/react/features/posts/PostRowMenu.tsx:22
+msgid "You can restore it from the trash later."
 msgstr ""
 
 #: admin/src/Rest/MediaReplace.php:159

@@ -403,8 +403,18 @@ Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o paine
 - Com os cartões todos em React, o filtro `flexify-dashboard/react-dashboard` passou a vir **ligado**. O painel Vue continua disponível desligando-o.
 - Um cartão Vue de terceiros ainda renderiza pelo `CardRender`, desde que não dependa de globais que o app Vue do plugin fornecia.
 
-### Fase 6 — Conteúdo (GG)
+### Fase 6 — Conteúdo (GG) · **em andamento**
 Posts, mídia, comentários e usuários.
+
+**Parte 1 — posts (concluída em 07/10/2026):** a tela de posts em React, com as duas visualizações, edição na linha e ações em lote.
+
+- A lista **não vem da REST**: o plugin roda a `WP_List_Table` que o WordPress renderizaria em uma página escondida atrás do `admin.php` e imprime o resultado como JSON. É o único jeito de receber as colunas, as visões e as ações de linha que os plugins do site acrescentam, então a resposta chega como documento e o JSON é lido de dentro dele (`usePostsData.ts`).
+- O que cada visão filtra é calculado no navegador (`viewParams`), e não lido da resposta: assim a primeira requisição já sabe o que `?view=pending` pede, em vez de depender de uma lista que seria descartada.
+- As preferências de coluna guardam **chaves**, aplicadas sobre o que o servidor mandou — uma coluna que um plugin acrescentou depois aparece visível, no fim, e uma que sumiu é descartada. As chaves de local storage são as do Vue, então as duas telas concordam enquanto coexistirem.
+- Não existe rota de lote na REST do WordPress, então cada ação em lote é uma requisição por post, **em sequência**: cem gravações paralelas é o que derruba uma hospedagem compartilhada.
+- Colunas que a tela não conhece são impressas como o WordPress e os plugins as renderizaram; só título, status, autor e taxonomias têm tratamento próprio.
+- `EntityPicker` entrou no kit (`react/data/`): escolher categorias, tags ou autores é a mesma coisa três vezes, e a busca acontece no servidor porque um blog com oitocentas categorias nunca mostraria a procurada filtrando no navegador.
+- A tela React fica atrás do filtro `flexify-dashboard/react-posts`, **ligado** por padrão.
 
 ### Fase 7 — Sistema (GG)
 Plugins, configurações, activity log, database explorer, editor de papéis, construtor de menus, avisos e analytics.

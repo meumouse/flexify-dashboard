@@ -23,7 +23,6 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				app: path.resolve(__dirname, 'src/apps/js/flexify-dashboard.js'),
-				// React shell; the Vue entry stays until the search and the notifications move over.
 				'app-react': path.resolve(__dirname, 'src/react/main/app.tsx'),
 				theme: path.resolve(__dirname, 'src/apps/js/Theme.js'),
 				'activity-log': path.resolve(__dirname, 'src/apps/js/ActivityLog.js'),
@@ -31,7 +30,6 @@ export default defineConfig({
 				analytics: path.resolve(__dirname, 'src/apps/js/Analytics.js'),
 				comments: path.resolve(__dirname, 'src/apps/js/Comments.js'),
 				dashboard: path.resolve(__dirname, 'src/apps/js/Dashboard.js'),
-				// React store overview; the Vue dashboard keeps the card registry until it moves over.
 				'dashboard-react': path.resolve(__dirname, 'src/react/main/dashboard.tsx'),
 				database: path.resolve(__dirname, 'src/apps/js/Database.js'),
 				'design-system': path.resolve(__dirname, 'src/react/main/design-system.tsx'),
@@ -41,6 +39,8 @@ export default defineConfig({
 				'menu-creator': path.resolve(__dirname, 'src/apps/js/MenuCreator.js'),
 				plugins: path.resolve(__dirname, 'src/apps/js/Plugins.js'),
 				posts: path.resolve(__dirname, 'src/apps/js/Posts.js'),
+				// React posts screen; the Vue entry stays as the fallback behind the filter.
+				'posts-react': path.resolve(__dirname, 'src/react/main/posts.tsx'),
 				products: path.resolve(__dirname, 'src/apps/js/Products.js'),
 				// React catalog screen; the Vue entry stays until the product editor moves over.
 				'products-react': path.resolve(__dirname, 'src/react/main/products.tsx'),
