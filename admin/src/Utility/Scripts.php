@@ -41,7 +41,7 @@ class Scripts {
 			return null;
 		}
 
-		$target_src = 'apps/js/' . ltrim( $filename, '/' );
+		$target_src = self::get_entry_src( $filename );
 
 		foreach ( $manifest as $entry ) {
 			if ( ! is_array( $entry ) ) {
@@ -77,11 +77,28 @@ class Scripts {
 			return null;
 		}
 
-		if ( preg_match( '/\.js$/', $filename ) ) {
+		if ( preg_match( '/\.(js|jsx|ts|tsx)$/', $filename ) ) {
 			return self::get_stylesheet_from_js_entry( $manifest, $filename );
 		}
 
 		return self::find_stylesheet_in_manifest( $manifest, $filename );
+	}
+
+
+	/**
+	 * Resolve the manifest key of an entry.
+	 *
+	 * Legacy Vue entries are passed by file name only and live in `src/apps/js`; React
+	 * entries are passed with their path relative to `src` (e.g. `react/main/orders.tsx`).
+	 *
+	 * @since 3.1.0
+	 * @param string $filename Entry file name or path relative to `src`.
+	 * @return string
+	 */
+	private static function get_entry_src( $filename ) {
+		$filename = ltrim( $filename, '/' );
+
+		return false === strpos( $filename, '/' ) ? 'apps/js/' . $filename : $filename;
 	}
 
 
@@ -144,7 +161,7 @@ class Scripts {
 	 * @return string|null
 	 */
 	private static function get_stylesheet_from_js_entry( $manifest, $filename ) {
-		$target_src = 'apps/js/' . ltrim( $filename, '/' );
+		$target_src = self::get_entry_src( $filename );
 
 		foreach ( $manifest as $entry ) {
 			if ( ! is_array( $entry ) ) {

@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 export default defineConfig({
 	base: './',
 	root: 'src',
-	plugins: [tailwindcss(), vue()],
+	// React only handles the TypeScript sources under src/react; the Vue code keeps using plugin-vue.
+	plugins: [tailwindcss(), vue(), react({ include: '**/*.{ts,tsx}' })],
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
@@ -28,7 +30,7 @@ export default defineConfig({
 				comments: path.resolve(__dirname, 'src/apps/js/Comments.js'),
 				dashboard: path.resolve(__dirname, 'src/apps/js/Dashboard.js'),
 				database: path.resolve(__dirname, 'src/apps/js/Database.js'),
-				'design-system': path.resolve(__dirname, 'src/apps/js/DesignSystem.js'),
+				'design-system': path.resolve(__dirname, 'src/react/main/design-system.tsx'),
 				frontend: path.resolve(__dirname, 'src/apps/js/Frontend.js'),
 				login: path.resolve(__dirname, 'src/apps/js/Login.js'),
 				media: path.resolve(__dirname, 'src/apps/js/Media.js'),

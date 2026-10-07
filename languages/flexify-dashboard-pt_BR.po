@@ -1679,6 +1679,7 @@ msgstr "URL do logotipo escuro"
 
 #: app/src/components/app/search/composables/useQuickActions.js:74
 #: app/src/components/app/toolbar/index.vue:200
+#: app/src/react/features/design-system/FoundationCheck.tsx:52
 msgid "Dark mode"
 msgstr "Modo escuro"
 
@@ -2458,7 +2459,7 @@ msgstr "Erros"
 msgid "Every 30 Minutes"
 msgstr "A cada 30 minutos"
 
-#: admin/src/Activity/ActivityLogger.php:110
+#: admin/src/Activity/ActivityLogger.php:120
 msgid "Every 30 Seconds"
 msgstr "A cada 30 segundos"
 
@@ -5042,6 +5043,7 @@ msgstr "Aviso atualizado"
 
 #: app/src/components/app/admin-notices/index.vue:97
 #: app/src/components/app/admin-notices/NotificationsPanel.vue:191
+#: app/src/react/app/ToastProvider.tsx:81
 msgid "Notifications"
 msgstr "Notificações"
 
@@ -5072,6 +5074,7 @@ msgid "Off"
 msgstr "Desligado"
 
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:249
+#: app/src/react/features/design-system/FoundationCheck.tsx:52
 msgid "on"
 msgstr "sobre"
 
@@ -8593,6 +8596,7 @@ msgid "Dialog"
 msgstr "Diálogo"
 
 #: app/src/components/kit/FdAlert.vue:36
+#: app/src/react/app/ToastProvider.tsx:96
 msgid "Dismiss"
 msgstr "Dispensar"
 
@@ -11300,6 +11304,119 @@ msgstr "Algumas extensões adicionam campos disponíveis apenas no editor cláss
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:354
 msgid "Virtual"
 msgstr "Virtual"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:66
+msgid "%1$s (#%2$s)"
+msgstr "%1$s (#%2$s)"
+
+#: app/src/react/app/AppProviders.tsx:46
+msgid "Could not load the data"
+msgstr "Não foi possível carregar os dados"
+
+#: app/src/react/lib/rest.ts:94
+msgid "Could not reach the site. Check your connection and try again."
+msgstr "Não foi possível acessar o site. Verifique sua conexão e tente novamente."
+
+#: app/src/react/app/AppProviders.tsx:49
+msgid "Could not save the changes"
+msgstr "Não foi possível salvar as alterações"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:55
+msgid "fallback to English"
+msgstr "usando o inglês"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:65
+msgid "GET wp/v2/users/me"
+msgstr "GET wp/v2/users/me"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:61
+msgid "Loading…"
+msgstr "Carregando…"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:50
+msgid "missing"
+msgstr "ausente"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:80
+msgid "Notify %s"
+msgstr "Notificar %s"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:52
+msgid "off"
+msgstr "desligado"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:47
+msgid "Page data"
+msgstr "Dados da página"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:42
+msgid ""
+"Phase 0 of the React migration: data, REST, translations, dark mode and "
+"notifications."
+msgstr ""
+"Fase 0 da migração para React: dados, REST, traduções, modo escuro e "
+"notificações."
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:51
+msgid "Plugin folder"
+msgstr "Pasta do plugin"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:50
+msgid "present"
+msgstr "presente"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:40
+msgid "React foundation"
+msgstr "Fundação React"
+
+#: app/src/react/app/ErrorBoundary.tsx:43
+msgid "Reload page"
+msgstr "Recarregar página"
+
+#: app/src/react/app/ErrorBoundary.tsx:33
+msgid ""
+"Reload the page to try again. If it keeps happening, share the details "
+"below with support."
+msgstr ""
+"Recarregue a página para tentar de novo. Se continuar acontecendo, envie os "
+"detalhes abaixo para o suporte."
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:60
+msgid "REST request"
+msgstr "Requisição REST"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:49
+msgid "REST root"
+msgstr "Raiz da REST"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:50
+msgid "Security token"
+msgstr "Token de segurança"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:48
+msgid "Signed in as"
+msgstr "Conectado como"
+
+#: app/src/react/app/ErrorBoundary.tsx:31
+msgid "Something went wrong on this screen"
+msgstr "Algo deu errado nesta tela"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:78
+msgid "Test notification: %s"
+msgstr "Notificação de teste: %s"
+
+#: app/src/react/app/AppProviders.tsx:29
+#: app/src/react/lib/rest.ts:102
+msgid "The request failed. Please try again."
+msgstr "A requisição falhou. Tente novamente."
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:54
+msgid "Translations"
+msgstr "Traduções"
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:55
+msgid "wp.i18n loaded"
+msgstr "wp.i18n carregado"
 
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"

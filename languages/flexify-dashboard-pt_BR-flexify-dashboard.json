@@ -7282,31 +7282,109 @@
       "Virtual": [
         "Virtual"
       ],
-      "notice\u0004Add New": [
+      "%1$s (#%2$s)": [
+        "%1$s (#%2$s)"
+      ],
+      "Could not load the data": [
+        "Não foi possível carregar os dados"
+      ],
+      "Could not reach the site. Check your connection and try again.": [
+        "Não foi possível acessar o site. Verifique sua conexão e tente novamente."
+      ],
+      "Could not save the changes": [
+        "Não foi possível salvar as alterações"
+      ],
+      "fallback to English": [
+        "usando o inglês"
+      ],
+      "GET wp/v2/users/me": [
+        "GET wp/v2/users/me"
+      ],
+      "Loading…": [
+        "Carregando…"
+      ],
+      "missing": [
+        "ausente"
+      ],
+      "Notify %s": [
+        "Notificar %s"
+      ],
+      "off": [
+        "desligado"
+      ],
+      "Page data": [
+        "Dados da página"
+      ],
+      "Phase 0 of the React migration: data, REST, translations, dark mode and notifications.": [
+        "Fase 0 da migração para React: dados, REST, traduções, modo escuro e notificações."
+      ],
+      "Plugin folder": [
+        "Pasta do plugin"
+      ],
+      "present": [
+        "presente"
+      ],
+      "React foundation": [
+        "Fundação React"
+      ],
+      "Reload page": [
+        "Recarregar página"
+      ],
+      "Reload the page to try again. If it keeps happening, share the details below with support.": [
+        "Recarregue a página para tentar de novo. Se continuar acontecendo, envie os detalhes abaixo para o suporte."
+      ],
+      "REST request": [
+        "Requisição REST"
+      ],
+      "REST root": [
+        "Raiz da REST"
+      ],
+      "Security token": [
+        "Token de segurança"
+      ],
+      "Signed in as": [
+        "Conectado como"
+      ],
+      "Something went wrong on this screen": [
+        "Algo deu errado nesta tela"
+      ],
+      "Test notification: %s": [
+        "Notificação de teste: %s"
+      ],
+      "The request failed. Please try again.": [
+        "A requisição falhou. Tente novamente."
+      ],
+      "Translations": [
+        "Traduções"
+      ],
+      "wp.i18n loaded": [
+        "wp.i18n carregado"
+      ],
+      "noticeAdd New": [
         "Adicionar novo"
       ],
-      "Template\u0004Add New": [
+      "TemplateAdd New": [
         "Adicionar novo"
       ],
-      "add new on admin bar\u0004Admin Menu": [
+      "add new on admin barAdmin Menu": [
         "Menu de administração"
       ],
-      "post type general name\u0004Admin Menu": [
+      "post type general nameAdmin Menu": [
         "Menus de administração"
       ],
-      "post type general name\u0004Admin Notices": [
+      "post type general nameAdmin Notices": [
         "Avisos do administrador"
       ],
-      "post type singular name\u0004Admin Menu": [
+      "post type singular nameAdmin Menu": [
         "Menu de administração"
       ],
-      "post type singular name\u0004Admin Notice": [
+      "post type singular nameAdmin Notice": [
         "Aviso do administrador"
       ],
-      "admin menu\u0004Admin Menus": [
+      "admin menuAdmin Menus": [
         "Menus de administração"
       ],
-      "admin menu\u0004Admin Notices": [
+      "admin menuAdmin Notices": [
         "Avisos do administrador"
       ]
     }

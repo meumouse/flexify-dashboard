@@ -106,7 +106,7 @@ class DesignSystemPage {
 	public static function load_assets() {
 		$base_url = plugins_url( 'flexify-dashboard/' );
 		$style_path = $base_url . 'app/dist/assets/styles/design-system.css';
-		$script_name = Scripts::get_base_script_path( 'DesignSystem.js' );
+		$script_name = Scripts::get_base_script_path( 'react/main/design-system.tsx' );
 
 		wp_enqueue_style( 'flexify-dashboard-design-system', $style_path, array(), FLEXIFY_DASHBOARD_VERSION );
 

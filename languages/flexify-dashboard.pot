@@ -36,6 +36,10 @@ msgstr ""
 msgid "(Untitled)"
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:66
+msgid "%1$s (#%2$s)"
+msgstr ""
+
 #: app/src/pages/orders/src/RefundModal.vue:135
 msgid "%d available"
 msgstr ""
@@ -1906,8 +1910,16 @@ msgid ""
 "manually below."
 msgstr ""
 
+#: app/src/react/app/AppProviders.tsx:46
+msgid "Could not load the data"
+msgstr ""
+
 #: admin/src/Rest/WooCommerceProducts.php:303
 msgid "Could not move the product to the trash."
+msgstr ""
+
+#: app/src/react/lib/rest.ts:94
+msgid "Could not reach the site. Check your connection and try again."
 msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:494
@@ -1916,6 +1928,10 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceProducts.php:321
 msgid "Could not restore the product."
+msgstr ""
+
+#: app/src/react/app/AppProviders.tsx:49
+msgid "Could not save the changes"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:468
@@ -2215,6 +2231,7 @@ msgstr ""
 
 #: app/src/components/app/search/composables/useQuickActions.js:74
 #: app/src/components/app/toolbar/index.vue:200
+#: app/src/react/features/design-system/FoundationCheck.tsx:52
 msgid "Dark mode"
 msgstr ""
 
@@ -2587,6 +2604,7 @@ msgid "Disk Usage"
 msgstr ""
 
 #: app/src/components/kit/FdAlert.vue:36
+#: app/src/react/app/ToastProvider.tsx:96
 msgid "Dismiss"
 msgstr ""
 
@@ -3206,7 +3224,7 @@ msgstr ""
 msgid "Every 30 Minutes"
 msgstr ""
 
-#: admin/src/Activity/ActivityLogger.php:110
+#: admin/src/Activity/ActivityLogger.php:120
 msgid "Every 30 Seconds"
 msgstr ""
 
@@ -3565,6 +3583,10 @@ msgstr ""
 
 #: admin/src/Security/TurnStyle.php:245
 msgid "Failed to validate Turnstile response."
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:55
+msgid "fallback to English"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-inspect.vue:305
@@ -3957,6 +3979,10 @@ msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:126
 msgid "Geographic data from different countries and cities"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:65
+msgid "GET wp/v2/users/me"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:314
@@ -5179,6 +5205,10 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:61
+msgid "Loading…"
+msgstr ""
+
 #: app/src/components/utility/remote-site-select/index.vue:67
 #: app/src/components/utility/remote-site-select/index.vue:87
 #: app/src/components/utility/remote-site-select/index.vue:118
@@ -5526,6 +5556,10 @@ msgstr ""
 
 #: app/src/components/app/search/utils/formatRelativeDate.js:20
 msgid "minutes"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:50
+msgid "missing"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:242
@@ -6330,7 +6364,12 @@ msgstr ""
 
 #: app/src/components/app/admin-notices/index.vue:97
 #: app/src/components/app/admin-notices/NotificationsPanel.vue:191
+#: app/src/react/app/ToastProvider.tsx:81
 msgid "Notifications"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:80
+msgid "Notify %s"
 msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:466
@@ -6354,6 +6393,10 @@ msgstr ""
 msgid "of"
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:52
+msgid "off"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:34
 #: app/src/pages/settings/src/settings-panel.vue:66
 msgid "Off"
@@ -6368,6 +6411,7 @@ msgid "Older order #%s"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/recent-comments/component.vue:249
+#: app/src/react/features/design-system/FoundationCheck.tsx:52
 msgid "on"
 msgstr ""
 
@@ -6712,6 +6756,10 @@ msgstr ""
 msgid "Page Analytics"
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:47
+msgid "Page data"
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:298
 msgid "Page data will appear when visitors browse your site"
 msgstr ""
@@ -6882,6 +6930,12 @@ msgstr ""
 msgid "Persistent admin notices for Flexify Dashboard."
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:42
+msgid ""
+"Phase 0 of the React migration: data, REST, translations, dark mode and "
+"notifications."
+msgstr ""
+
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:653
 #: app/src/pages/orders/src/AddressFields.vue:62
 #: app/src/pages/orders/src/OrdersList.vue:431
@@ -6973,6 +7027,10 @@ msgstr ""
 
 #: app/src/pages/plugins/index.vue:486
 msgid "Plugin Details"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:51
+msgid "Plugin folder"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-card.vue:367
@@ -7153,6 +7211,10 @@ msgstr ""
 #: admin/src/Rest/PostsTables.php:83
 #: admin/src/Rest/PostsTables.php:84
 msgid "Posts Data"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:50
+msgid "present"
 msgstr ""
 
 #: app/src/components/app/search/components/SearchOnboarding.vue:88
@@ -7484,6 +7546,10 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:40
+msgid "React foundation"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:618
 msgid "Real-time Collaboration"
 msgstr ""
@@ -7656,6 +7722,16 @@ msgstr ""
 
 #: app/src/pages/products/src/ProductVariations.vue:109
 msgid "Reload"
+msgstr ""
+
+#: app/src/react/app/ErrorBoundary.tsx:43
+msgid "Reload page"
+msgstr ""
+
+#: app/src/react/app/ErrorBoundary.tsx:33
+msgid ""
+"Reload the page to try again. If it keeps happening, share the details "
+"below with support."
 msgstr ""
 
 #: app/src/assets/js/functions/lmnFetch.js:87
@@ -7930,6 +8006,14 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:120
 msgid "REST API"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:60
+msgid "REST request"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:49
+msgid "REST root"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:152
@@ -8462,6 +8546,10 @@ msgstr ""
 msgid "Security settings and administration"
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:50
+msgid "Security token"
+msgstr ""
+
 #: app/src/pages/admin-notices/src/table.vue:281
 msgid "Seen by"
 msgstr ""
@@ -8927,6 +9015,10 @@ msgstr ""
 msgid "Sign Out"
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:48
+msgid "Signed in as"
+msgstr ""
+
 #: app/src/pages/products/src/editor/ProductEditor.vue:113
 msgid "Simple product"
 msgstr ""
@@ -9006,6 +9098,10 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:147
 msgid "Some variations could not be saved"
+msgstr ""
+
+#: app/src/react/app/ErrorBoundary.tsx:31
+msgid "Something went wrong on this screen"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:569
@@ -9294,6 +9390,10 @@ msgstr ""
 msgid "Term ID"
 msgstr ""
 
+#: app/src/react/features/design-system/FoundationCheck.tsx:78
+msgid "Test notification: %s"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-card.vue:417
 msgid "Tested up to"
 msgstr ""
@@ -9398,6 +9498,11 @@ msgstr ""
 
 #: admin/src/Pages/Login.php:1882
 msgid "The request could not be completed."
+msgstr ""
+
+#: app/src/react/app/AppProviders.tsx:29
+#: app/src/react/lib/rest.ts:102
+msgid "The request failed. Please try again."
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:302
@@ -9833,6 +9938,10 @@ msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1954
 msgid "Transform"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:54
+msgid "Translations"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-details-view.vue:70
@@ -10739,6 +10848,10 @@ msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:987
 msgid "Would you like to keep this fix permanently or remove it?"
+msgstr ""
+
+#: app/src/react/features/design-system/FoundationCheck.tsx:55
+msgid "wp.i18n loaded"
 msgstr ""
 
 #: app/src/components/app/search/layout-fix-dialog.vue:39

@@ -299,9 +299,16 @@ Legenda da coluna **Origem**: `kit` = porte do componente Vue atual · `TailAdmi
 
 Cada fase termina com build, testes, verificação visual no harness e commit.
 
-### Fase 0 — Fundação (M)
-TypeScript, `@vitejs/plugin-react`, estrutura de pastas, `AppProviders`, `PageShell`, `restClient`, `i18n`, `WpDataProvider`, harness React (claro/escuro, celular), Vitest + Testing Library.
-**Aceite:** uma tela de exemplo monta em React dentro do wp-admin, com tema, i18n e REST funcionando.
+### Fase 0 — Fundação (M) · **concluída em 07/10/2026**
+TypeScript, `@vitejs/plugin-react`, estrutura de pastas, `AppProviders` (Query + dados do WP + tema + notificações + ErrorBoundary), `PageShell`, `restClient`, `i18n`, `Icon`, harness React e Vitest + Testing Library (15 testes).
+**Aceite:** a página **Design System** passou a ser a primeira tela React do plugin; monta no wp-admin com tema, traduções, REST e notificações funcionando.
+
+Detalhes úteis para as próximas fases:
+
+- `Scripts::get_base_script_path()` agora aceita caminhos relativos a `src` (ex.: `react/main/orders.tsx`); nomes sem barra continuam apontando para `apps/js`.
+- Entradas React ficam em `src/react/main/<tela>.tsx` e montam com `mountApp( id, <PageShell>…</PageShell>, '#fd-…-script' )`.
+- `@vitejs/plugin-react` está na linha 4 porque o Vite do projeto é a versão 5; a versão 6 do plugin exige Vite 8. Atualizar o Vite é um item à parte.
+- Comandos: `npm run build`, `npm run typecheck`, `npm run test:react` (Vitest) e `npm test` (testes puros + Vitest).
 
 ### Fase 1 — Kit de UI (G)
 Seções 4.1 a 4.3 e 4.5: primitivos, formulários, tabela de dados e sobreposições, com a página de Design System reescrita em React como vitrine e teste visual.
