@@ -407,7 +407,6 @@ class Plugin {
             'flexify_dashboard_page_flexify-dashboard-database-explorer',
             'flexify_dashboard_page_flexify-dashboard-role-editor',
             'flexify_dashboard_page_flexify-dashboard-activity-log',
-            'flexify_dashboard_page_flexify-dashboard-custom-post-types',
         );
 
         $flexify_dashboard_options = self::return_global_options();

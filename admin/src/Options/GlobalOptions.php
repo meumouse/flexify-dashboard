@@ -401,7 +401,6 @@ class GlobalOptions {
             'enable_font_uploads',
             'enable_database_explorer',
             'enable_role_editor',
-            'enable_custom_post_types',
             'enable_activity_logger',
             'activity_log_auto_cleanup',
             'hide_language_selector',

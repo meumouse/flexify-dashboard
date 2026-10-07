@@ -84,7 +84,7 @@ export const CreateUserModal = ({ open, onClose, roles, onCreated }: CreateProps
 							className="flex-1"
 						/>
 						<Button variant="outline" size="sm" iconOnly icon={visible ? 'visibility_off' : 'visibility'} onClick={() => setVisible(!visible)} aria-label={__('Show password')} />
-						<Button variant="outline" size="sm" icon="autorenew" onClick={() => setForm({ ...form, password: generatePassword() })}>
+						<Button variant="outline" size="sm" icon="refresh" onClick={() => setForm({ ...form, password: generatePassword() })}>
 							{__('Generate')}
 						</Button>
 					</div>

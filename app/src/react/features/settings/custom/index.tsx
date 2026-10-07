@@ -127,7 +127,7 @@ const ResetSettings = () => {
 	};
 
 	return (
-		<Button variant="danger" size="sm" icon="restart_alt" loading={reset.isPending} onClick={askThenReset}>
+		<Button variant="danger" size="sm" icon="refresh" loading={reset.isPending} onClick={askThenReset}>
 			{__('Reset every setting')}
 		</Button>
 	);
@@ -212,7 +212,7 @@ const TextPairs = ({ setting, settings, onChange }: CustomRenderProps) => {
 						placeholder={__('Find')}
 						aria-label={__('Find')}
 					/>
-					<Icon name="arrow_right_alt" className="text-base text-gray-400" />
+					<Icon name="arrow_forward" className="text-base text-gray-400" />
 					<Input
 						value={pair[1] ?? ''}
 						onChange={(event) => set(pairs.map((item, position) => (position === index ? [item[0], event.target.value] : item)))}

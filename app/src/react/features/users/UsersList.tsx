@@ -163,7 +163,7 @@ export const UsersList = () => {
 						<Button variant="outline" icon="download" onClick={exportPage}>
 							{__('Export')}
 						</Button>
-						<Button icon="person_add" onClick={() => setCreateOpen(true)}>
+						<Button icon="person" onClick={() => setCreateOpen(true)}>
 							{__('Add user')}
 						</Button>
 					</div>

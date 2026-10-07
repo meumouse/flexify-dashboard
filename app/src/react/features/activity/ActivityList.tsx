@@ -20,7 +20,7 @@ export const ACTION_LOOKS: Record<string, { icon: string; tone: string }> = {
 	created: { icon: 'add_circle', tone: 'text-success-500' },
 	updated: { icon: 'edit', tone: 'text-brand-500' },
 	deleted: { icon: 'delete', tone: 'text-error-500' },
-	trashed: { icon: 'delete_sweep', tone: 'text-warning-500' },
+	trashed: { icon: 'delete', tone: 'text-warning-500' },
 	restored: { icon: 'restore', tone: 'text-success-500' },
 	login: { icon: 'login', tone: 'text-success-500' },
 	logout: { icon: 'logout', tone: 'text-gray-400' },
@@ -130,7 +130,7 @@ export const ActivityList = () => {
 				title={__('Activity log')}
 				description={sprintf(__('%s entries'), String(total))}
 				actions={
-					<Button variant="outline" icon="delete_sweep" loading={cleanup.isPending} onClick={askThenClean}>
+					<Button variant="outline" icon="delete" loading={cleanup.isPending} onClick={askThenClean}>
 						{__('Remove old entries')}
 					</Button>
 				}

@@ -63,7 +63,7 @@ export const PluginRepository = ({ installed }: { installed: Plugin[] }) => {
 
 			{!search ? (
 				<div className="py-16 text-center">
-					<Icon name="travel_explore" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
+					<Icon name="search" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
 					<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Search for a plugin to add it to this site.')}</p>
 				</div>
 			) : results.isLoading ? (

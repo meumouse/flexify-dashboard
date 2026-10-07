@@ -3,6 +3,7 @@ import { useIsDark } from '@/react/app/ThemeProvider';
 import { cn } from '@/react/lib/cn';
 import { __, sprintf } from '@/react/lib/i18n';
 import { Icon, Skeleton } from '@/react/ui';
+import { formatBytes } from '@/react/features/media/queries';
 import { CardError, CardLoading, StatRow, compactNumber, useCardQuery, useRange, type CardProps } from '@/react/features/dashboard/cards/shared';
 
 /**
@@ -14,7 +15,9 @@ const ReactApexChart = lazy(() => import('react-apexcharts'));
 
 type MediaAnalytics = {
 	total_files?: number;
-	total_size?: string;
+	/** Raw bytes; `total_size_formatted` is the one meant to be read */
+	total_size?: number;
+	total_size_formatted?: string;
 	recent_uploads?: number;
 	unused_media?: number;
 	large_files?: number;
@@ -36,9 +39,9 @@ export const MediaAnalyticsCard = () => {
 		<div>
 			<StatRow
 				stats={[
-					{ label: __('Files'), value: compactNumber(data.total_files ?? 0) },
-					{ label: __('Size'), value: String(data.total_size ?? '—') },
-					{ label: __('Recent'), value: compactNumber(data.recent_uploads ?? 0) },
+					{ label: __('Files'), value: compactNumber(data.total_files ?? 0), icon: 'photo_library' },
+					{ label: __('Size'), value: data.total_size_formatted ?? formatBytes(data.total_size ?? 0), icon: 'storage' },
+					{ label: __('Recent'), value: compactNumber(data.recent_uploads ?? 0), icon: 'schedule' },
 				]}
 			/>
 
@@ -183,9 +186,9 @@ export const UsersChartCard = ({ dateRange }: CardProps) => {
 		<div>
 			<StatRow
 				stats={[
-					{ label: __('Total'), value: compactNumber(data.total_users ?? 0) },
-					{ label: __('In period'), value: compactNumber(data.users_in_range ?? 0) },
-					{ label: __('Recent'), value: compactNumber(data.recent_users ?? 0) },
+					{ label: __('Total'), value: compactNumber(data.total_users ?? 0), icon: 'group' },
+					{ label: __('In period'), value: compactNumber(data.users_in_range ?? 0), icon: 'person' },
+					{ label: __('Recent'), value: compactNumber(data.recent_users ?? 0), icon: 'schedule' },
 				]}
 			/>
 

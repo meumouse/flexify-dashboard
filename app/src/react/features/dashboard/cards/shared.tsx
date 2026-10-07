@@ -67,15 +67,56 @@ export const CardEmpty = ({ icon = 'inbox', message }: { icon?: string; message:
 	</div>
 );
 
-/** Three numbers side by side, the shape most of these cards open with. */
-export const StatRow = ({ stats, className }: { stats: { label: string; value: string }[]; className?: string }) => (
-	<div className={cn('mb-5 grid gap-4', `grid-cols-${stats.length}`, className)}>
-		{stats.map((stat) => (
-			<div key={stat.label} className="text-center">
-				<p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{stat.value}</p>
-				<p className="text-theme-xs text-gray-500 dark:text-gray-400">{stat.label}</p>
-			</div>
-		))}
+export type Stat = {
+	label: string;
+	value: string;
+	/** Icon name; drawn in a rounded square above the label, as the design system does */
+	icon?: string;
+	/** Percentage change, e.g. 11.01 or -9.05 */
+	trend?: number | null;
+};
+
+/**
+ * The numbers a card opens with.
+ *
+ * Each one reads top to bottom — icon, then what it is, then how much — which is the shape
+ * the design system uses everywhere a figure is shown, and the reason a number is legible
+ * at a glance. The column count is written out rather than built from the length, because
+ * Tailwind reads the source to decide which classes to generate and never sees a built one.
+ */
+export const StatRow = ({ stats, className }: { stats: Stat[]; className?: string }) => (
+	<div className={cn('mb-5 grid gap-4', stats.length >= 4 ? 'grid-cols-2 sm:grid-cols-4' : stats.length === 3 ? 'grid-cols-3' : 'grid-cols-2', className)}>
+		{stats.map((stat) => {
+			const up = stat.trend !== null && stat.trend !== undefined && stat.trend >= 0;
+
+			return (
+				<div key={stat.label} className="min-w-0">
+					{stat.icon ? (
+						<span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white/90">
+							<Icon name={stat.icon} className="text-xl" />
+						</span>
+					) : null}
+
+					<p className="truncate text-theme-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
+
+					<p className="mt-1 flex flex-wrap items-center gap-2">
+						<span className="truncate text-title-sm font-bold text-gray-800 dark:text-white/90">{stat.value}</span>
+
+						{stat.trend !== null && stat.trend !== undefined ? (
+							<span
+								className={cn(
+									'flex shrink-0 items-center gap-0.5 rounded-full px-2 py-0.5 text-theme-xs font-medium',
+									up ? 'bg-success-50 text-success-600 dark:bg-success-500/15 dark:text-success-500' : 'bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-500'
+								)}
+							>
+								<Icon name={up ? 'arrow_upward' : 'arrow_downward'} className="text-xs" />
+								{`${Math.abs(stat.trend).toLocaleString(undefined, { maximumFractionDigits: 2 })}%`}
+							</span>
+						) : null}
+					</p>
+				</div>
+			);
+		})}
 	</div>
 );
 

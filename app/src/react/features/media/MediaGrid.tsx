@@ -54,7 +54,7 @@ export const MediaGrid = ({ items, view, selected, onSelect, onOpen, loading }: 
 	if (!items.length) {
 		return (
 			<div className="py-16 text-center">
-				<Icon name="perm_media" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
+				<Icon name="photo_library" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
 				<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Nothing in the library matches this.')}</p>
 			</div>
 		);

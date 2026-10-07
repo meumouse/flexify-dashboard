@@ -87,12 +87,14 @@ export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearc
 			{onOpenSearch ? (
 				<button
 					type="button"
-					className="flex h-10 min-w-0 items-center gap-2 rounded-lg border border-gray-200 px-3 text-theme-sm text-gray-400 transition-colors hover:border-gray-300 hover:text-gray-500 dark:border-gray-800 dark:hover:border-gray-700 lg:h-11 lg:w-72"
+					className="flex h-10 min-w-0 items-center gap-2.5 rounded-lg border border-gray-200 px-3.5 text-theme-sm text-gray-400 transition-colors hover:border-gray-300 hover:text-gray-500 dark:border-gray-800 dark:hover:border-gray-700 lg:h-11 lg:w-[26rem]"
 					onClick={onOpenSearch}
 				>
 					<Icon name="search" className="shrink-0 text-lg" />
 					<span className="hidden flex-1 text-start lg:block">{__('Search…')}</span>
-					<kbd className="hidden shrink-0 rounded border border-gray-200 px-1.5 py-0.5 text-theme-xs dark:border-gray-700 lg:block">{shortcutLabel()}</kbd>
+					<kbd className="hidden shrink-0 rounded-lg border border-gray-200 bg-gray-50 px-2 py-1 text-theme-xs text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 lg:block">
+						{shortcutLabel()}
+					</kbd>
 				</button>
 			) : null}
 

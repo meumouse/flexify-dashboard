@@ -79,7 +79,7 @@ const PluginRow = ({ plugin }: { plugin: Plugin }) => {
 				/>
 
 				{plugin.has_update ? (
-					<Button size="sm" icon="system_update_alt" loading={update.isPending && update.variables === plugin.slug} onClick={() => update.mutate(plugin.slug)}>
+					<Button size="sm" icon="update" loading={update.isPending && update.variables === plugin.slug} onClick={() => update.mutate(plugin.slug)}>
 						{__('Update')}
 					</Button>
 				) : null}

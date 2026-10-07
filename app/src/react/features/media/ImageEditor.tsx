@@ -351,7 +351,7 @@ export const ImageEditor = ({ image, saving = false, onSave, onCancel }: Props) 
 					<Button
 						variant="outline"
 						size="sm"
-						icon="restart_alt"
+						icon="refresh"
 						onClick={() => {
 							setEdits(NO_EDITS);
 							setSource(image);

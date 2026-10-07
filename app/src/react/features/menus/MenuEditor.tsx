@@ -230,7 +230,7 @@ export const MenuEditor = () => {
 										<Button
 											variant="outline"
 											size="sm"
-											icon="subdirectory_arrow_right"
+											icon="arrow_forward"
 											onClick={() => {
 												const child = newCustomChild();
 												setItems(updateItem(items, where, { submenu: [...(items[where.parent].submenu ?? []), child] }));
@@ -241,7 +241,7 @@ export const MenuEditor = () => {
 										</Button>
 									) : null}
 
-									<Button variant="ghost" size="sm" icon="restart_alt" onClick={() => change({ settings: {} })}>
+									<Button variant="ghost" size="sm" icon="refresh" onClick={() => change({ settings: {} })}>
 										{__('Undo my changes to it')}
 									</Button>
 

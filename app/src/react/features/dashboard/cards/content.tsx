@@ -58,9 +58,9 @@ export const RecentPostsCard = ({ dateRange }: CardProps) => {
 		<div>
 			<StatRow
 				stats={[
-					{ label: labels.publish, value: String(published) },
-					{ label: labels.draft, value: String(drafts) },
-					{ label: labels.future, value: String(posts.length - published - drafts) },
+					{ label: labels.publish, value: String(published), icon: 'check_circle' },
+					{ label: labels.draft, value: String(drafts), icon: 'edit' },
+					{ label: labels.future, value: String(posts.length - published - drafts), icon: 'calendar_today' },
 				]}
 			/>
 

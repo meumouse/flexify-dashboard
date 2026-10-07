@@ -254,7 +254,7 @@ export const MediaLibrary = () => {
 					<Switch checked={query.unused} onCheckedChange={(unused) => apply({ unused: unused ? '1' : '' })} label={__('Unused only')} size="sm" />
 
 					{activeFilters ? (
-						<Button variant="ghost" size="sm" icon="filter_alt_off" onClick={() => apply({ type: 'all', since: 'all', unused: '', tags: '' })}>
+						<Button variant="ghost" size="sm" icon="close" onClick={() => apply({ type: 'all', since: 'all', unused: '', tags: '' })}>
 							{__('Clear filters')}
 						</Button>
 					) : null}
