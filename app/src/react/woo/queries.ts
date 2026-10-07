@@ -1,7 +1,23 @@
 import { useMutation, useQuery, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
 import { useRest } from '@/react/app/WpDataProvider';
 import { useWoo } from '@/react/woo/WooProvider';
-import type { Attribute, AttributeTerm, BulkResult, Category, Coupon, Option, Product, ProductsSummary, Tag, Variation } from '@/react/woo/types';
+import type {
+	Attribute,
+	AttributeTerm,
+	BulkResult,
+	Category,
+	Country,
+	Coupon,
+	Option,
+	Order,
+	OrderContext,
+	OrderNote,
+	OrdersSummary,
+	Product,
+	ProductsSummary,
+	Tag,
+	Variation,
+} from '@/react/woo/types';
 
 /**
  * Query hooks for the WooCommerce screens.
@@ -284,5 +300,161 @@ export const useUpdateVariation = (productId: number) => {
 	return useWooMutation<Variation, { id: number; data: Record<string, unknown> }>(
 		async ({ id, data }) => (await wc<Variation>(`products/${productId}/variations/${id}`, { method: 'PUT', data })).data as unknown as Variation,
 		[wooKeys.summary]
+	);
+};
+
+/* ------------------------------------------------------------------ Orders */
+
+export const orderKeys = {
+	orders: (params?: unknown) => ['woo', 'orders', params] as const,
+	ordersRoot: ['woo', 'orders'] as const,
+	order: (id: number) => ['woo', 'order', id] as const,
+	context: (id: number) => ['woo', 'order-context', id] as const,
+	notes: (id: number) => ['woo', 'order-notes', id] as const,
+	siblings: (id: number) => ['woo', 'order-siblings', id] as const,
+	summary: (params?: unknown) => ['woo', 'orders-summary', params] as const,
+	summaryRoot: ['woo', 'orders-summary'] as const,
+	countries: ['woo', 'countries'] as const,
+};
+
+export const ORDER_FIELDS = [
+	'id',
+	'number',
+	'status',
+	'currency',
+	'currency_symbol',
+	'date_created',
+	'date_paid',
+	'total',
+	'total_tax',
+	'shipping_total',
+	'discount_total',
+	'customer_id',
+	'customer_note',
+	'billing',
+	'shipping',
+	'payment_method',
+	'payment_method_title',
+	'line_items',
+	'shipping_lines',
+	'fee_lines',
+	'coupon_lines',
+	'refunds',
+	'created_via',
+].join(',');
+
+export const useOrders = (params: Record<string, unknown>) => {
+	const { wc } = useWoo();
+
+	return useQuery({
+		queryKey: orderKeys.orders(params),
+		queryFn: ({ signal }) => wc<Order>('orders', { params: { ...params, _fields: ORDER_FIELDS }, signal }),
+		placeholderData: (previous) => previous,
+	});
+};
+
+export const useOrdersSummary = (params: Record<string, unknown> = {}, options: { refetchInterval?: number } = {}) => {
+	const { fd } = useWoo();
+
+	return useQuery({
+		queryKey: orderKeys.summary(params),
+		queryFn: async ({ signal }) => (await fd<OrdersSummary>('orders/summary', { params, signal })).data as unknown as OrdersSummary,
+		...options,
+	});
+};
+
+export const useOrder = (id: number) => {
+	const { wc } = useWoo();
+
+	return useQuery({
+		queryKey: orderKeys.order(id),
+		enabled: id > 0,
+		retry: false,
+		queryFn: async ({ signal }) => (await wc<Order>(`orders/${id}`, { signal })).data as unknown as Order,
+	});
+};
+
+export const useOrderContext = (id: number) => {
+	const { fd } = useWoo();
+
+	return useQuery({
+		queryKey: orderKeys.context(id),
+		enabled: id > 0,
+		retry: false,
+		queryFn: async ({ signal }) => (await fd<OrderContext>(`orders/${id}/context`, { signal })).data as unknown as OrderContext,
+	});
+};
+
+export const useOrderNotes = (id: number) => {
+	const { wc } = useWoo();
+
+	return useQuery({
+		queryKey: orderKeys.notes(id),
+		enabled: id > 0,
+		queryFn: async ({ signal }) => (await wc<OrderNote>(`orders/${id}/notes`, { params: { type: 'any' }, signal })).data ?? [],
+	});
+};
+
+/**
+ * The newer and older orders around the current one, used by the arrows in the header.
+ */
+export const useOrderSiblings = (id: number, dateCreatedGmt?: string) => {
+	const { wc } = useWoo();
+
+	return useQuery({
+		queryKey: [...orderKeys.siblings(id), dateCreatedGmt],
+		enabled: id > 0 && Boolean(dateCreatedGmt),
+		queryFn: async ({ signal }) => {
+			const base = { per_page: 1, orderby: 'date', status: 'any', exclude: String(id), dates_are_gmt: 'true', _fields: 'id,number' };
+
+			const [newer, older] = await Promise.all([
+				wc<Order>('orders', { params: { ...base, after: dateCreatedGmt, order: 'asc' }, signal }),
+				wc<Order>('orders', { params: { ...base, before: dateCreatedGmt, order: 'desc' }, signal }),
+			]);
+
+			return { previous: newer.data?.[0] ?? null, next: older.data?.[0] ?? null };
+		},
+	});
+};
+
+/** Countries and their states; they never change during a visit. */
+export const useCountries = () => {
+	const { wc } = useWoo();
+
+	return useQuery({
+		queryKey: orderKeys.countries,
+		staleTime: Infinity,
+		queryFn: async ({ signal }) => {
+			const response = await wc<Country>('data/countries', { params: { _fields: 'code,name,states' }, signal });
+
+			return [...(response.data ?? [])].sort((a, b) => a.name.localeCompare(b.name));
+		},
+	});
+};
+
+export const useOrdersBulk = () => {
+	const { fd } = useWoo();
+
+	return useWooMutation<BulkResult, BulkPayload>(
+		async (payload) => (await fd<BulkResult>('orders/bulk', { method: 'POST', data: payload })).data as unknown as BulkResult,
+		[orderKeys.ordersRoot, orderKeys.summaryRoot]
+	);
+};
+
+export const useUpdateOrder = () => {
+	const { wc } = useWoo();
+
+	return useWooMutation<Order, { id: number; data: Record<string, unknown> }>(
+		async ({ id, data }) => (await wc<Order>(`orders/${id}`, { method: 'PUT', data })).data as unknown as Order,
+		[orderKeys.ordersRoot, orderKeys.summaryRoot]
+	);
+};
+
+export const useOrderAction = (id: number) => {
+	const { fd } = useWoo();
+
+	return useWooMutation<{ success: boolean }, string>(
+		async (action) => (await fd<{ success: boolean }>(`orders/${id}/action`, { method: 'POST', data: { action } })).data as unknown as { success: boolean },
+		[orderKeys.order(id), orderKeys.context(id), orderKeys.notes(id)]
 	);
 };

@@ -38,7 +38,12 @@ export const Sheet = ({ open, onOpenChange, title, description, side = 'right', 
 	return (
 		<Dialog.Root open={open} onOpenChange={onOpenChange}>
 			<Dialog.Portal container={container}>
-				<Dialog.Overlay className="fixed inset-0 z-99999 bg-gray-900/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
+			{/*
+				Only the way in is animated: Radix keeps a closed node mounted until its exit
+				animation reports back, and when that does not happen the invisible overlay stays
+				on top of the page and swallows every click.
+			*/}
+				<Dialog.Overlay className="fixed inset-0 z-99999 bg-gray-900/40 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
 				<Dialog.Content
 					onEscapeKeyDown={block}
 					onPointerDownOutside={block}
@@ -46,10 +51,8 @@ export const Sheet = ({ open, onOpenChange, title, description, side = 'right', 
 					className={cn(
 						'fixed inset-y-0 z-99999 flex w-full flex-col bg-white shadow-theme-xl dark:bg-gray-900',
 						side === 'left' ? 'left-0 border-e border-gray-200 dark:border-gray-800' : 'right-0 border-s border-gray-200 dark:border-gray-800',
-						'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:duration-300 data-[state=closed]:duration-200',
-						side === 'left'
-							? 'data-[state=open]:slide-in-from-left data-[state=closed]:slide-out-to-left'
-							: 'data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right',
+						'data-[state=open]:animate-in data-[state=open]:duration-300',
+						side === 'left' ? 'data-[state=open]:slide-in-from-left' : 'data-[state=open]:slide-in-from-right',
 						sizes[size]
 					)}
 				>

@@ -337,9 +337,16 @@ Detalhes úteis para as próximas fases:
 - `ModernScreen` passou a resolver a folha de estilos pelo manifesto (`Scripts::get_stylesheet_path()`). O nome fixo apontava para `assets/styles/products.css`, que o build não gera — as telas de produtos e pedidos carregavam um 404.
 - `Scripts` agora ignora registros de CSS ao procurar a entrada: quando duas entradas importam folhas com o mesmo conteúdo, o Vite grava um registro extra apontando para o `.css` e ele vinha antes da entrada real.
 
-### Fase 3 — WooCommerce: Pedidos (G)
+### Fase 3 — WooCommerce: Pedidos (G) · **concluída em 07/10/2026**
 Lista, contadores, filtros, prévia, detalhes, notas, reembolso, endereços, ações e navegação entre pedidos.
 **Aceite:** fluxo completo (ver → mudar status → nota → reembolso) sem sair da tela.
+
+Detalhes úteis para as próximas fases:
+
+- Os helpers de pedido são puros (`features/orders/orderFormat.ts`); o que precisa dos dados da loja vem de `useOrderHelpers()` (preço na moeda do pedido, URL do editor clássico e as ações de status).
+- Os cartões de extensão continuam funcionando: `ExtensionCardRender` repete o contrato do `ComponentRender` do Vue e aceita HTML, React e componentes Vue (via `applyVueInReact` do veaury).
+- A tela React é opcional enquanto o editor de itens de pedido não for portado: o filtro `flexify-dashboard/woocommerce/react-orders` liga a tela; o padrão continua sendo a tela Vue, porque os redirecionamentos de "Adicionar pedido" e "Editar itens" apontam para rotas que só existem nela.
+- **Kit:** `Modal` e `Sheet` perderam as animações de saída. O Radix mantém o nó fechado montado até a animação de saída avisar que terminou e, quando isso não acontece, o overlay invisível fica por cima da página engolindo todos os cliques.
 
 ### Fase 4 — WooCommerce: Editores (G)
 Editor de produto (incluindo atributos, variações, downloads e vinculados) e editor de pedido (criação manual e edição de itens).

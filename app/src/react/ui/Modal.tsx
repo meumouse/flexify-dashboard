@@ -37,7 +37,12 @@ export const Modal = ({ open, onOpenChange, title, description, size = 'md', per
 	return (
 		<Dialog.Root open={open} onOpenChange={onOpenChange}>
 			<Dialog.Portal container={container}>
-				<Dialog.Overlay className="fixed inset-0 z-99999 bg-gray-900/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
+			{/*
+				Only the way in is animated: Radix keeps a closed node mounted until its exit
+				animation reports back, and when that does not happen the invisible overlay stays
+				on top of the page and swallows every click.
+			*/}
+				<Dialog.Overlay className="fixed inset-0 z-99999 bg-gray-900/40 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
 				<Dialog.Content
 					onEscapeKeyDown={block}
 					onPointerDownOutside={block}

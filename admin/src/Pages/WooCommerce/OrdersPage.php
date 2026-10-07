@@ -175,10 +175,31 @@ class OrdersPage extends ModernScreen {
 
 
 	/**
+	 * Check whether the orders screen should be rendered by the React app.
+	 *
+	 * @since 4.0.0
+	 * @return bool
+	 */
+	protected function use_react_app() {
+		/**
+		 * Filter whether the React orders screen is used.
+		 *
+		 * The React screen covers the list, the quick preview and the order details; creating and
+		 * editing order items is still a Vue screen, so the Vue app stays the default until it
+		 * moves over.
+		 *
+		 * @since 4.0.0
+		 * @param bool $enabled Whether the React screen is used.
+		 */
+		return (bool) apply_filters( 'flexify-dashboard/woocommerce/react-orders', false );
+	}
+
+
+	/**
 	 * {@inheritdoc}
 	 */
 	protected function get_entry() {
-		return 'Orders.js';
+		return $this->use_react_app() ? 'react/main/orders.tsx' : 'Orders.js';
 	}
 
 

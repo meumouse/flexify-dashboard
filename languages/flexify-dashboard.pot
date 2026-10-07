@@ -44,6 +44,7 @@ msgid "%1$s (#%2$s)"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:135
+#: app/src/react/features/orders/RefundModal.tsx:171
 msgid "%d available"
 msgstr ""
 
@@ -75,6 +76,7 @@ msgid "%d hours ago"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:297
+#: app/src/react/features/orders/OrderDetails.tsx:286
 msgid "%d item(s)"
 msgstr ""
 
@@ -90,22 +92,27 @@ msgid "%d minutes ago"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:537
+#: app/src/react/features/orders/OrdersList.tsx:596
 msgid "%d new order(s) received"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:384
+#: app/src/react/features/orders/OrdersList.tsx:234
 msgid "%d order(s) could not be updated"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:380
+#: app/src/react/features/orders/OrdersList.tsx:230
 msgid "%d order(s) updated"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:397
+#: app/src/react/features/orders/OrdersList.tsx:247
 msgid "%d order(s) will be moved to the trash."
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:396
+#: app/src/react/features/orders/OrdersList.tsx:246
 msgid "%d order(s) will be permanently deleted. This action cannot be undone."
 msgstr ""
 
@@ -219,6 +226,7 @@ msgid "%s list navigation"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:229
+#: app/src/react/features/orders/OrdersList.tsx:206
 msgid "%s orders"
 msgstr ""
 
@@ -231,6 +239,7 @@ msgid "%s published."
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:602
+#: app/src/react/features/orders/OrdersList.tsx:371
 msgid "%s refunded"
 msgstr ""
 
@@ -252,6 +261,7 @@ msgid "%s updated."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:178
+#: app/src/react/features/orders/OrderDetails.tsx:163
 msgid "%s will be moved to the trash."
 msgstr ""
 
@@ -299,6 +309,7 @@ msgid "162 orders"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:485
+#: app/src/react/features/orders/OrdersList.tsx:469
 msgid "30 days"
 msgstr ""
 
@@ -307,10 +318,12 @@ msgid "404 Monitor"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:484
+#: app/src/react/features/orders/OrdersList.tsx:468
 msgid "7 days"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:486
+#: app/src/react/features/orders/OrdersList.tsx:470
 msgid "90 days"
 msgstr ""
 
@@ -370,6 +383,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductVariations.vue:126
 #: app/src/pages/products/src/TagsView.vue:174
 #: app/src/react/features/design-system/Showcase.tsx:104
+#: app/src/react/features/orders/OrderDetails.tsx:246
+#: app/src/react/features/orders/OrdersList.tsx:412
 #: app/src/react/features/products/AttributesView.tsx:208
 #: app/src/react/features/products/CategoriesView.tsx:172
 #: app/src/react/features/products/CouponsView.tsx:266
@@ -458,6 +473,7 @@ msgid "Add a caption"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:78
+#: app/src/react/features/orders/OrderNotes.tsx:94
 msgid "Add a note about this order…"
 msgstr ""
 
@@ -551,6 +567,7 @@ msgid "Add New Tag"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:82
+#: app/src/react/features/orders/OrderNotes.tsx:100
 msgid "Add note"
 msgstr ""
 
@@ -563,10 +580,12 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:405
 #: app/src/pages/orders/src/OrdersList.vue:495
 #: app/src/react/features/design-system/Showcase.tsx:348
+#: app/src/react/features/orders/OrdersList.tsx:484
 msgid "Add order"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:461
+#: app/src/react/features/orders/OrdersList.tsx:421
 msgid "Add order in classic screen"
 msgstr ""
 
@@ -639,10 +658,12 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:41
+#: app/src/react/features/orders/AddressFields.tsx:30
 msgid "Address line 1"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:42
+#: app/src/react/features/orders/AddressFields.tsx:31
 msgid "Address line 2"
 msgstr ""
 
@@ -736,6 +757,7 @@ msgstr ""
 #: app/src/pages/posts/src/constants.js:18
 #: app/src/pages/products/src/ProductsList.vue:161
 #: app/src/pages/users/src/user-list-view.vue:867
+#: app/src/react/features/orders/OrdersList.tsx:159
 #: app/src/react/features/products/ProductsList.tsx:113
 msgid "All"
 msgstr ""
@@ -952,18 +974,22 @@ msgid "Any %s"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:523
+#: app/src/react/features/orders/OrdersList.tsx:559
 msgid "Any channel"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:509
+#: app/src/react/features/orders/OrdersList.tsx:517
 msgid "Any date"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:524
+#: app/src/react/features/orders/OrdersList.tsx:567
 msgid "Any origin"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:522
+#: app/src/react/features/orders/OrdersList.tsx:550
 msgid "Any payment method"
 msgstr ""
 
@@ -1232,6 +1258,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:118
+#: app/src/react/features/orders/RefundModal.tsx:141
 msgid "Available to refund: %s"
 msgstr ""
 
@@ -1277,6 +1304,7 @@ msgid "Back to menu"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:258
+#: app/src/react/features/orders/OrderDetails.tsx:108
 msgid "Back to orders"
 msgstr ""
 
@@ -1326,11 +1354,13 @@ msgid "Before"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderPreview.vue:108
+#: app/src/react/features/orders/OrderPreview.tsx:135
 msgid "Billing"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:462
 #: app/src/pages/orders/src/OrderEditor.vue:526
+#: app/src/react/features/orders/OrderDetails.tsx:500
 msgid "Billing address"
 msgstr ""
 
@@ -1340,6 +1370,7 @@ msgid "Billing Address"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressModal.vue:43
+#: app/src/react/features/orders/AddressModal.tsx:42
 msgid "Billing address updated"
 msgstr ""
 
@@ -1352,6 +1383,7 @@ msgid "Biographical Info"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:118
+#: app/src/react/features/orders/OrdersList.tsx:440
 msgid "Block checkout"
 msgstr ""
 
@@ -1436,6 +1468,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:714
 #: app/src/pages/orders/src/OrdersList.vue:126
+#: app/src/react/features/orders/OrdersList.tsx:448
 msgid "Campaign"
 msgstr ""
 
@@ -1476,6 +1509,8 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:1723
 #: app/src/react/app/ConfirmProvider.tsx:59
 #: app/src/react/features/design-system/Showcase.tsx:370
+#: app/src/react/features/orders/AddressModal.tsx:56
+#: app/src/react/features/orders/RefundModal.tsx:145
 #: app/src/react/features/products/AttributesView.tsx:249
 #: app/src/react/features/products/AttributesView.tsx:330
 #: app/src/react/features/products/BulkCategoryModal.tsx:45
@@ -1582,6 +1617,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrderPreview.vue:134
 #: app/src/pages/orders/src/OrdersList.vue:418
 #: app/src/pages/orders/src/OrdersList.vue:561
+#: app/src/react/features/orders/OrderDetails.tsx:265
+#: app/src/react/features/orders/OrderPreview.tsx:79
+#: app/src/react/features/orders/OrdersList.tsx:278
+#: app/src/react/features/orders/OrdersList.tsx:638
 msgid "Change status"
 msgstr ""
 
@@ -1601,6 +1640,10 @@ msgstr ""
 
 #: app/src/pages/activity-log/src/activity-details-view.vue:342
 msgid "Changes"
+msgstr ""
+
+#: app/src/react/features/orders/OrdersList.tsx:561
+msgid "Channel"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:193
@@ -1697,14 +1740,18 @@ msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:59
 #: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/react/features/orders/AddressFields.tsx:45
+#: app/src/react/features/orders/OrdersList.tsx:290
 msgid "City"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:117
+#: app/src/react/features/orders/OrdersList.tsx:439
 msgid "Classic checkout"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:464
+#: app/src/react/features/orders/OrdersList.tsx:424
 msgid "Classic orders screen"
 msgstr ""
 
@@ -1748,6 +1795,7 @@ msgstr ""
 #: app/src/pages/media/src/media-list-view.vue:1699
 #: app/src/pages/orders/src/OrdersList.vue:512
 #: app/src/pages/products/src/ProductsList.vue:585
+#: app/src/react/features/orders/OrdersList.tsx:531
 #: app/src/react/features/products/ProductsList.tsx:467
 msgid "Clear filters"
 msgstr ""
@@ -1801,8 +1849,8 @@ msgstr ""
 #: app/src/components/app/search/layout-fix-dialog.vue:1119
 #: app/src/components/kit/FdModal.vue:72
 #: app/src/components/kit/FdSheet.vue:69
-#: app/src/react/ui/Modal.tsx:59
-#: app/src/react/ui/Sheet.tsx:72
+#: app/src/react/ui/Modal.tsx:64
+#: app/src/react/ui/Sheet.tsx:75
 msgid "Close"
 msgstr ""
 
@@ -1903,6 +1951,7 @@ msgid "Commerce"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:40
+#: app/src/react/features/orders/AddressFields.tsx:29
 msgid "Company"
 msgstr ""
 
@@ -1998,6 +2047,7 @@ msgid "Cool ← → Warm"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressModal.vue:52
+#: app/src/react/features/orders/AddressModal.tsx:73
 msgid "Copy billing address"
 msgstr ""
 
@@ -2087,6 +2137,7 @@ msgid "COUNTRY"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:46
+#: app/src/react/features/orders/AddressFields.tsx:37
 msgid "Country / Region"
 msgstr ""
 
@@ -2127,6 +2178,7 @@ msgstr ""
 #: app/src/pages/products/src/CouponsView.vue:218
 #: app/src/pages/products/src/CouponsView.vue:240
 #: app/src/pages/products/src/ProductsList.vue:545
+#: app/src/react/features/orders/OrderDetails.tsx:389
 #: app/src/react/features/products/CouponsView.tsx:277
 #: app/src/react/features/products/CouponsView.tsx:279
 #: app/src/react/features/products/CouponsView.tsx:330
@@ -2220,6 +2272,8 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:119
 #: app/src/pages/orders/src/OrdersList.vue:576
+#: app/src/react/features/orders/OrdersList.tsx:336
+#: app/src/react/features/orders/OrdersList.tsx:441
 msgid "Created in admin"
 msgstr ""
 
@@ -2272,6 +2326,7 @@ msgid "Custom dashboard and admin interface settings"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:530
+#: app/src/react/features/orders/OrderDetails.tsx:617
 msgid "Custom fields"
 msgstr ""
 
@@ -2336,6 +2391,9 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:237
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/react/features/design-system/Showcase.tsx:82
+#: app/src/react/features/orders/OrderDetails.tsx:447
+#: app/src/react/features/orders/OrdersList.tsx:290
+#: app/src/react/features/orders/OrdersList.tsx:342
 msgid "Customer"
 msgstr ""
 
@@ -2347,6 +2405,8 @@ msgstr ""
 #: app/src/pages/orders/src/OrderDetails.vue:413
 #: app/src/pages/orders/src/OrderEditor.vue:580
 #: app/src/pages/orders/src/OrderPreview.vue:126
+#: app/src/react/features/orders/OrderDetails.tsx:437
+#: app/src/react/features/orders/OrderPreview.tsx:173
 msgid "Customer note"
 msgstr ""
 
@@ -2356,12 +2416,14 @@ msgid "Customer Since"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:527
+#: app/src/react/features/orders/OrdersList.tsx:575
 msgid "Customer: %s"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/customers/component.vue:76
 #: app/src/pages/orders/src/OrdersList.vue:462
 #: app/src/react/features/design-system/Showcase.tsx:211
+#: app/src/react/features/orders/OrdersList.tsx:422
 msgid "Customers"
 msgstr ""
 
@@ -2443,6 +2505,9 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:243
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/products/src/ProductsList.vue:187
+#: app/src/react/features/orders/OrdersList.tsx:290
+#: app/src/react/features/orders/OrdersList.tsx:392
+#: app/src/react/features/orders/OrdersList.tsx:519
 #: app/src/react/features/products/ProductsList.tsx:341
 msgid "Date"
 msgstr ""
@@ -2529,6 +2594,7 @@ msgstr ""
 #: app/src/pages/users/src/user-list.vue:223
 #: app/src/react/features/design-system/Showcase.tsx:279
 #: app/src/react/features/design-system/Showcase.tsx:294
+#: app/src/react/features/orders/OrderNotes.tsx:67
 #: app/src/react/features/products/AttributesView.tsx:102
 #: app/src/react/features/products/AttributesView.tsx:170
 #: app/src/react/features/products/AttributesView.tsx:206
@@ -2572,10 +2638,12 @@ msgid "Delete items"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:120
+#: app/src/react/features/orders/OrderNotes.tsx:146
 msgid "Delete note"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:54
+#: app/src/react/features/orders/OrderNotes.tsx:65
 msgid "Delete note?"
 msgstr ""
 
@@ -2585,6 +2653,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:480
 #: app/src/pages/products/src/ProductsList.vue:492
 #: app/src/pages/products/src/ProductsList.vue:665
+#: app/src/react/features/orders/OrdersList.tsx:248
+#: app/src/react/features/orders/OrdersList.tsx:270
+#: app/src/react/features/orders/OrdersList.tsx:627
 #: app/src/react/features/products/ProductsList.tsx:213
 #: app/src/react/features/products/ProductsList.tsx:233
 #: app/src/react/features/products/ProductsList.tsx:568
@@ -2598,6 +2669,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:394
 #: app/src/pages/products/src/ProductsList.vue:476
 #: app/src/react/features/design-system/Showcase.tsx:277
+#: app/src/react/features/orders/OrdersList.tsx:244
 #: app/src/react/features/products/ProductsList.tsx:209
 msgid "Delete permanently?"
 msgstr ""
@@ -2725,6 +2797,7 @@ msgid "Development server detected, no need to activate your licence key."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:520
+#: app/src/react/features/orders/OrderDetails.tsx:599
 msgid "Device"
 msgstr ""
 
@@ -2748,6 +2821,7 @@ msgstr ""
 #: admin/src/Rest/WooCommerceDashboard.php:415
 #: admin/src/Rest/WooCommerceOrders.php:717
 #: app/src/pages/orders/src/OrdersList.vue:127
+#: app/src/react/features/orders/OrdersList.tsx:449
 msgid "Direct"
 msgstr ""
 
@@ -2793,6 +2867,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderPreview.vue:88
 #: app/src/pages/products/src/CouponsView.vue:60
 #: app/src/pages/products/src/CouponsView.vue:293
+#: app/src/react/features/orders/OrderPreview.tsx:123
 #: app/src/react/features/products/CouponsView.tsx:223
 #: app/src/react/features/products/CouponsView.tsx:369
 msgid "Discount"
@@ -3048,6 +3123,8 @@ msgstr ""
 
 #: app/src/pages/orders/src/AddressModal.vue:50
 #: app/src/pages/orders/src/OrderDetails.vue:464
+#: app/src/react/features/orders/AddressModal.tsx:52
+#: app/src/react/features/orders/OrderDetails.tsx:501
 msgid "Edit billing address"
 msgstr ""
 
@@ -3074,6 +3151,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:284
 #: app/src/pages/orders/src/OrderEditor.vue:384
+#: app/src/react/features/orders/OrderDetails.tsx:252
 msgid "Edit items"
 msgstr ""
 
@@ -3107,6 +3185,8 @@ msgstr ""
 
 #: app/src/pages/orders/src/AddressModal.vue:50
 #: app/src/pages/orders/src/OrderDetails.vue:477
+#: app/src/react/features/orders/AddressModal.tsx:52
+#: app/src/react/features/orders/OrderDetails.tsx:532
 msgid "Edit shipping address"
 msgstr ""
 
@@ -3160,10 +3240,12 @@ msgstr ""
 #: app/src/pages/users/src/user-import.vue:54
 #: app/src/pages/users/src/user-list-view.vue:1131
 #: app/src/pages/users/src/user-list-view.vue:1562
+#: app/src/react/features/orders/OrdersList.tsx:290
 msgid "Email"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:61
+#: app/src/react/features/orders/AddressFields.tsx:48
 msgid "Email address"
 msgstr ""
 
@@ -3315,6 +3397,7 @@ msgid "Engagement data will appear when users interact with your site"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:72
+#: app/src/react/features/orders/RefundModal.tsx:98
 msgid "Enter a refund amount greater than zero."
 msgstr ""
 
@@ -3535,10 +3618,12 @@ msgid "Export completed"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:564
+#: app/src/react/features/orders/OrdersList.tsx:643
 msgid "Export CSV"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:459
+#: app/src/react/features/orders/OrdersList.tsx:419
 msgid "Export current page (CSV)"
 msgstr ""
 
@@ -4065,6 +4150,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:510
 #: app/src/pages/posts/src/table-filters.vue:140
+#: app/src/react/features/orders/OrdersList.tsx:522
 msgid "Filters"
 msgstr ""
 
@@ -4091,6 +4177,7 @@ msgid "Finished"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:38
+#: app/src/react/features/orders/AddressFields.tsx:27
 msgid "First name"
 msgstr ""
 
@@ -4394,6 +4481,8 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:434
 #: app/src/pages/orders/src/useOrderHelpers.js:99
+#: app/src/react/features/orders/OrderDetails.tsx:460
+#: app/src/react/features/orders/orderFormat.ts:34
 msgid "Guest"
 msgstr ""
 
@@ -5037,6 +5126,7 @@ msgid "Inventory"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:524
+#: app/src/react/features/orders/OrderDetails.tsx:608
 msgid "IP address"
 msgstr ""
 
@@ -5051,6 +5141,7 @@ msgid "item"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:126
+#: app/src/react/features/orders/RefundModal.tsx:161
 msgid "Item"
 msgstr ""
 
@@ -5093,6 +5184,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrderPreview.vue:65
 #: app/src/pages/orders/src/OrdersList.vue:239
 #: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/react/features/orders/OrderDetails.tsx:292
+#: app/src/react/features/orders/OrderPreview.tsx:102
+#: app/src/react/features/orders/OrdersList.tsx:290
+#: app/src/react/features/orders/OrdersList.tsx:360
 msgid "Items"
 msgstr ""
 
@@ -5124,6 +5219,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:368
 #: app/src/pages/orders/src/OrderEditor.vue:602
+#: app/src/react/features/orders/OrderDetails.tsx:388
 msgid "Items subtotal"
 msgstr ""
 
@@ -5177,6 +5273,7 @@ msgid "Large Files"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:171
+#: app/src/react/features/orders/OrdersList.tsx:432
 msgid "Last 30 days"
 msgstr ""
 
@@ -5189,10 +5286,12 @@ msgid "Last 5 minutes"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:170
+#: app/src/react/features/orders/OrdersList.tsx:431
 msgid "Last 7 days"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:173
+#: app/src/react/features/orders/OrdersList.tsx:434
 msgid "Last 90 days"
 msgstr ""
 
@@ -5201,6 +5300,7 @@ msgid "Last modified"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:39
+#: app/src/react/features/orders/AddressFields.tsx:28
 msgid "Last name"
 msgstr ""
 
@@ -5638,6 +5738,7 @@ msgid "Manage your catalog, prices and stock."
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:162
+#: app/src/react/features/orders/RefundModal.tsx:211
 msgid "Manual refund"
 msgstr ""
 
@@ -5863,6 +5964,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:492
 #: app/src/pages/plugins/src/plugin-performance.vue:344
+#: app/src/react/features/orders/OrderDetails.tsx:556
 msgid "Method"
 msgstr ""
 
@@ -5919,6 +6021,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:719
 #: app/src/pages/orders/src/OrdersList.vue:129
+#: app/src/react/features/orders/OrdersList.tsx:451
 msgid "Mobile app"
 msgstr ""
 
@@ -5983,6 +6086,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:492
 #: app/src/pages/products/src/ProductsList.vue:567
 #: app/src/pages/products/src/ProductsList.vue:658
+#: app/src/react/features/orders/OrdersList.tsx:478
 #: app/src/react/features/products/ProductsList.tsx:416
 #: app/src/react/features/products/ProductsList.tsx:600
 msgid "More"
@@ -6027,6 +6131,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:480
 #: app/src/pages/products/src/ProductsList.vue:507
 #: app/src/react/features/design-system/Showcase.tsx:102
+#: app/src/react/features/orders/OrderDetails.tsx:164
+#: app/src/react/features/orders/OrderDetails.tsx:186
+#: app/src/react/features/orders/OrdersList.tsx:248
+#: app/src/react/features/orders/OrdersList.tsx:282
 #: app/src/react/features/products/CouponsView.tsx:195
 #: app/src/react/features/products/CouponsView.tsx:264
 #: app/src/react/features/products/ProductsList.tsx:213
@@ -6038,6 +6146,8 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:394
 #: app/src/pages/products/src/editor/ProductEditor.vue:504
 #: app/src/pages/products/src/ProductsList.vue:476
+#: app/src/react/features/orders/OrderDetails.tsx:162
+#: app/src/react/features/orders/OrdersList.tsx:244
 #: app/src/react/features/products/ProductsList.tsx:209
 msgid "Move to trash?"
 msgstr ""
@@ -6102,6 +6212,7 @@ msgid "Net"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:393
+#: app/src/react/features/orders/OrderDetails.tsx:410
 msgid "Net payment"
 msgstr ""
 
@@ -6111,6 +6222,7 @@ msgid "Net revenue"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:227
+#: app/src/react/features/orders/OrdersList.tsx:204
 msgid "Net revenue (%s days)"
 msgstr ""
 
@@ -6166,6 +6278,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:553
 #: app/src/react/features/design-system/Showcase.tsx:344
+#: app/src/react/features/orders/OrdersList.tsx:619
 msgid "New orders will appear here as soon as customers check out."
 msgstr ""
 
@@ -6212,10 +6325,12 @@ msgid "New value"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:273
+#: app/src/react/features/orders/OrderDetails.tsx:226
 msgid "Newer order"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:272
+#: app/src/react/features/orders/OrderDetails.tsx:220
 msgid "Newer order #%s"
 msgstr ""
 
@@ -6281,6 +6396,7 @@ msgid "No attributes yet"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:469
+#: app/src/react/features/orders/OrderDetails.tsx:510
 msgid "No billing address."
 msgstr ""
 
@@ -6430,10 +6546,12 @@ msgid "No new notifications"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:272
+#: app/src/react/features/orders/OrderDetails.tsx:220
 msgid "No newer orders"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:97
+#: app/src/react/features/orders/OrderNotes.tsx:118
 msgid "No notes yet."
 msgstr ""
 
@@ -6442,6 +6560,7 @@ msgid "No notices found"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:275
+#: app/src/react/features/orders/OrderDetails.tsx:230
 msgid "No older orders"
 msgstr ""
 
@@ -6450,6 +6569,7 @@ msgid "No orders in the selected period."
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:552
+#: app/src/react/features/orders/OrdersList.tsx:618
 msgid "No orders match your filters"
 msgstr ""
 
@@ -6459,6 +6579,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:552
 #: app/src/react/features/design-system/Showcase.tsx:343
+#: app/src/react/features/orders/OrdersList.tsx:618
 msgid "No orders yet"
 msgstr ""
 
@@ -6565,10 +6686,12 @@ msgid "No settings match your search in this category."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:482
+#: app/src/react/features/orders/OrderDetails.tsx:543
 msgid "No shipping address set."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderPreview.vue:118
+#: app/src/react/features/orders/OrderPreview.tsx:161
 msgid "No shipping address."
 msgstr ""
 
@@ -6680,26 +6803,32 @@ msgid "Not connected to Google Analytics"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:497
+#: app/src/react/features/orders/OrderDetails.tsx:561
 msgid "Not paid"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:78
+#: app/src/react/features/orders/OrderNotes.tsx:95
 msgid "Note"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:48
+#: app/src/react/features/orders/OrderNotes.tsx:58
 msgid "Note added"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:67
+#: app/src/react/features/orders/OrderNotes.tsx:76
 msgid "Note deleted"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:48
+#: app/src/react/features/orders/OrderNotes.tsx:58
 msgid "Note sent to customer"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:29
+#: app/src/react/features/orders/OrderNotes.tsx:20
 msgid "Note to customer"
 msgstr ""
 
@@ -6777,10 +6906,12 @@ msgid "Off"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:276
+#: app/src/react/features/orders/OrderDetails.tsx:236
 msgid "Older order"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:275
+#: app/src/react/features/orders/OrderDetails.tsx:230
 msgid "Older order #%s"
 msgstr ""
 
@@ -6800,6 +6931,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:224
 #: app/src/react/features/design-system/Showcase.tsx:219
+#: app/src/react/features/orders/OrdersList.tsx:197
 msgid "On hold"
 msgstr ""
 
@@ -6825,6 +6957,7 @@ msgid "One uppercase letter"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:576
+#: app/src/react/features/orders/OrdersList.tsx:336
 msgid "Online store"
 msgstr ""
 
@@ -6864,6 +6997,8 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:421
 #: app/src/pages/products/src/editor/ProductEditor.vue:493
 #: app/src/pages/products/src/editor/ProductEditor.vue:616
+#: app/src/react/features/orders/OrderDetails.tsx:184
+#: app/src/react/features/orders/OrdersList.tsx:281
 msgid "Open in classic editor"
 msgstr ""
 
@@ -7004,12 +7139,15 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/posts/src/table-filters.vue:164
 #: app/src/react/features/design-system/Showcase.tsx:79
+#: app/src/react/features/orders/OrdersList.tsx:290
+#: app/src/react/features/orders/OrdersList.tsx:322
 msgid "Order"
 msgstr ""
 
 #: admin/src/Activity/ActivityHooks.php:784
 #: admin/src/Activity/ActivityHooks.php:813
 #: app/src/pages/orders/src/useOrderHelpers.js:102
+#: app/src/react/features/orders/orderFormat.ts:37
 msgid "Order #%s"
 msgstr ""
 
@@ -7018,10 +7156,12 @@ msgid "Order #%s created"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:171
+#: app/src/react/features/orders/OrderDetails.tsx:156
 msgid "Order action applied"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:511
+#: app/src/react/features/orders/OrderDetails.tsx:586
 msgid "Order attribution"
 msgstr ""
 
@@ -7038,22 +7178,27 @@ msgid "Order items updated"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:160
+#: app/src/react/features/orders/OrderDetails.tsx:145
 msgid "Order marked as %s"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:188
+#: app/src/react/features/orders/OrderDetails.tsx:175
 msgid "Order moved to the trash"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:257
+#: app/src/react/features/orders/OrderDetails.tsx:104
 msgid "Order not found"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:76
+#: app/src/react/features/orders/OrderNotes.tsx:81
 msgid "Order notes"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:503
+#: app/src/react/features/orders/OrdersList.tsx:507
 msgid "Order status"
 msgstr ""
 
@@ -7063,10 +7208,12 @@ msgid "Order Status Breakdown"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderPreview.vue:44
+#: app/src/react/features/orders/OrderPreview.tsx:48
 msgid "Order status updated"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:384
+#: app/src/react/features/orders/OrderDetails.tsx:398
 msgid "Order total"
 msgstr ""
 
@@ -7084,10 +7231,15 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:554
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:469
 #: app/src/react/features/design-system/Showcase.tsx:212
+#: app/src/react/features/orders/OrderDetails.tsx:216
+#: app/src/react/features/orders/OrderDetails.tsx:467
+#: app/src/react/features/orders/OrdersList.tsx:458
+#: app/src/react/features/orders/OrdersList.tsx:609
 msgid "Orders"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:416
+#: app/src/react/features/orders/OrdersList.tsx:276
 msgid "Orders from this customer"
 msgstr ""
 
@@ -7097,6 +7249,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:715
 #: app/src/pages/orders/src/OrdersList.vue:124
+#: app/src/react/features/orders/OrdersList.tsx:446
 msgid "Organic"
 msgstr ""
 
@@ -7106,6 +7259,8 @@ msgid "Organization"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:514
+#: app/src/react/features/orders/OrderDetails.tsx:590
+#: app/src/react/features/orders/OrdersList.tsx:569
 msgid "Origin"
 msgstr ""
 
@@ -7203,10 +7358,12 @@ msgid "Pagination"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:496
+#: app/src/react/features/orders/OrderDetails.tsx:560
 msgid "Paid on"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderPreview.vue:18
+#: app/src/react/features/orders/OrderPreview.tsx:96
 msgid "Paid via %s"
 msgstr ""
 
@@ -7271,6 +7428,9 @@ msgstr ""
 #: app/src/pages/orders/src/OrderDetails.vue:489
 #: app/src/pages/orders/src/OrdersList.vue:241
 #: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/react/features/orders/OrderDetails.tsx:553
+#: app/src/react/features/orders/OrdersList.tsx:290
+#: app/src/react/features/orders/OrdersList.tsx:375
 msgid "Payment"
 msgstr ""
 
@@ -7279,10 +7439,12 @@ msgid "Payment failed"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderEditor.vue:578
+#: app/src/react/features/orders/OrdersList.tsx:552
 msgid "Payment method"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderPreview.vue:18
+#: app/src/react/features/orders/OrderPreview.tsx:96
 msgid "Payment via %s"
 msgstr ""
 
@@ -7301,6 +7463,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:222
 #: app/src/react/features/design-system/Showcase.tsx:217
+#: app/src/react/features/orders/OrdersList.tsx:181
 msgid "Pending payment"
 msgstr ""
 
@@ -7354,6 +7517,8 @@ msgstr ""
 #: app/src/pages/orders/src/AddressFields.vue:62
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:653
+#: app/src/react/features/orders/AddressFields.tsx:50
+#: app/src/react/features/orders/OrdersList.tsx:290
 msgid "Phone"
 msgstr ""
 
@@ -7549,6 +7714,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:720
 #: app/src/pages/orders/src/OrdersList.vue:130
+#: app/src/react/features/orders/OrdersList.tsx:452
 msgid "Point of sale"
 msgstr ""
 
@@ -7611,6 +7777,7 @@ msgid "Post Types for Modern Editor"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:60
+#: app/src/react/features/orders/AddressFields.tsx:46
 msgid "Postcode / ZIP"
 msgstr ""
 
@@ -7671,6 +7838,7 @@ msgstr ""
 #: app/src/pages/products/src/BulkPriceModal.vue:46
 #: app/src/pages/products/src/ProductsList.vue:184
 #: app/src/react/features/design-system/Showcase.tsx:230
+#: app/src/react/features/orders/OrderDetails.tsx:298
 #: app/src/react/features/products/BulkPriceModal.tsx:70
 #: app/src/react/features/products/BulkPriceModal.tsx:75
 #: app/src/react/features/products/ProductsList.tsx:313
@@ -7703,6 +7871,7 @@ msgid "Primary action"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:209
+#: app/src/react/features/orders/OrderDetails.tsx:183
 msgid "Print"
 msgstr ""
 
@@ -7722,6 +7891,7 @@ msgid "Private"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:30
+#: app/src/react/features/orders/OrderNotes.tsx:24
 msgid "Private note"
 msgstr ""
 
@@ -7733,6 +7903,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:223
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:88
 #: app/src/react/features/design-system/Showcase.tsx:218
+#: app/src/react/features/orders/OrdersList.tsx:189
 msgid "Processing"
 msgstr ""
 
@@ -7741,6 +7912,7 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:52
 #: app/src/pages/orders/src/OrderDetails.vue:308
 #: app/src/pages/products/src/ProductsList.vue:182
+#: app/src/react/features/orders/OrderDetails.tsx:297
 #: app/src/react/features/products/ProductsList.tsx:257
 msgid "Product"
 msgstr ""
@@ -7912,10 +8084,12 @@ msgid "Purchase note"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:310
+#: app/src/react/features/orders/OrderDetails.tsx:299
 msgid "Qty"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:128
+#: app/src/react/features/orders/RefundModal.tsx:163
 msgid "Qty to refund"
 msgstr ""
 
@@ -7931,6 +8105,7 @@ msgid "Quantity of orders from period"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:139
+#: app/src/react/features/orders/RefundModal.tsx:184
 msgid "Quantity to refund"
 msgstr ""
 
@@ -7982,6 +8157,9 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:417
 #: app/src/pages/orders/src/OrdersList.vue:626
 #: app/src/pages/orders/src/OrdersList.vue:627
+#: app/src/react/features/orders/OrdersList.tsx:277
+#: app/src/react/features/orders/OrdersList.tsx:408
+#: app/src/react/features/orders/OrdersList.tsx:409
 msgid "Quick preview"
 msgstr ""
 
@@ -8027,6 +8205,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:148
 #: app/src/react/features/design-system/Showcase.tsx:380
+#: app/src/react/features/orders/RefundModal.tsx:196
 msgid "Reason (optional)"
 msgstr ""
 
@@ -8073,6 +8252,7 @@ msgid "Recently Accessed"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:157
+#: app/src/react/features/orders/RefundModal.tsx:206
 msgid "Record the refund without sending it to the payment gateway."
 msgstr ""
 
@@ -8094,6 +8274,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:716
 #: app/src/pages/orders/src/OrdersList.vue:125
+#: app/src/react/features/orders/OrdersList.tsx:447
 msgid "Referral"
 msgstr ""
 
@@ -8118,6 +8299,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:594
 #: app/src/pages/products/src/ProductsList.vue:595
 #: app/src/react/features/design-system/Showcase.tsx:119
+#: app/src/react/features/orders/OrdersList.tsx:534
+#: app/src/react/features/orders/OrdersList.tsx:535
 #: app/src/react/features/products/ProductsList.tsx:481
 #: app/src/react/features/products/ProductsList.tsx:482
 msgid "Refresh"
@@ -8126,42 +8309,52 @@ msgstr ""
 #: app/src/pages/orders/src/OrderDetails.vue:285
 #: app/src/pages/orders/src/RefundModal.vue:171
 #: app/src/react/features/design-system/Showcase.tsx:373
+#: app/src/react/features/orders/OrderDetails.tsx:257
+#: app/src/react/features/orders/RefundModal.tsx:148
 msgid "Refund"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:405
+#: app/src/react/features/orders/OrderDetails.tsx:425
 msgid "Refund #%s"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:171
+#: app/src/react/features/orders/RefundModal.tsx:148
 msgid "Refund %s"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:147
 #: app/src/react/features/design-system/Showcase.tsx:379
+#: app/src/react/features/orders/RefundModal.tsx:195
 msgid "Refund amount"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:111
+#: app/src/react/features/orders/RefundModal.tsx:128
 msgid "Refund created"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:156
+#: app/src/react/features/orders/RefundModal.tsx:205
 msgid "Refund manually"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:118
 #: app/src/react/features/design-system/Showcase.tsx:365
+#: app/src/react/features/orders/RefundModal.tsx:140
 msgid "Refund order"
 msgstr ""
 
 #: app/src/components/woocommerce-customer/woocommerce-customer.vue:92
 #: app/src/pages/orders/src/OrderDetails.vue:389
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:92
+#: app/src/react/features/orders/OrderDetails.tsx:404
 msgid "Refunded"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:401
+#: app/src/react/features/orders/OrderDetails.tsx:420
 msgid "Refunds"
 msgstr ""
 
@@ -8174,6 +8367,7 @@ msgid "Registered"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:434
+#: app/src/react/features/orders/OrderDetails.tsx:460
 msgid "Registered customer"
 msgstr ""
 
@@ -8267,6 +8461,7 @@ msgid "Remove customer"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:528
+#: app/src/react/features/orders/OrdersList.tsx:579
 msgid "Remove customer filter"
 msgstr ""
 
@@ -8491,6 +8686,7 @@ msgid "Resize card"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:120
+#: app/src/react/features/orders/OrdersList.tsx:442
 msgid "REST API"
 msgstr ""
 
@@ -8503,6 +8699,7 @@ msgid "REST root"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:152
+#: app/src/react/features/orders/RefundModal.tsx:200
 msgid "Restock refunded items"
 msgstr ""
 
@@ -8511,6 +8708,8 @@ msgstr ""
 #: app/src/pages/posts/src/post-actions.vue:53
 #: app/src/pages/products/src/ProductsList.vue:490
 #: app/src/pages/products/src/ProductsList.vue:664
+#: app/src/react/features/orders/OrdersList.tsx:268
+#: app/src/react/features/orders/OrdersList.tsx:624
 #: app/src/react/features/products/ProductsList.tsx:231
 #: app/src/react/features/products/ProductsList.tsx:565
 msgid "Restore"
@@ -8561,6 +8760,7 @@ msgid "Revenue"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:488
+#: app/src/react/features/orders/OrdersList.tsx:466
 msgid "Revenue period"
 msgstr ""
 
@@ -8745,6 +8945,7 @@ msgid "Save"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressModal.vue:58
+#: app/src/react/features/orders/AddressModal.tsx:59
 msgid "Save address"
 msgstr ""
 
@@ -8949,6 +9150,7 @@ msgid "Search or type command..."
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:507
+#: app/src/react/features/orders/OrdersList.tsx:511
 msgid "Search order, customer or email"
 msgstr ""
 
@@ -9083,6 +9285,7 @@ msgid "Select a comment from the list to view details and edit properties."
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:47
+#: app/src/react/features/orders/AddressFields.tsx:38
 msgid "Select a country"
 msgstr ""
 
@@ -9121,6 +9324,7 @@ msgid "Select a role from the list to view and edit its capabilities."
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:55
+#: app/src/react/features/orders/AddressFields.tsx:41
 msgid "Select a state"
 msgstr ""
 
@@ -9234,6 +9438,7 @@ msgid "Send an email notification to the user about their new account."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:82
+#: app/src/react/features/orders/OrderNotes.tsx:100
 msgid "Send note"
 msgstr ""
 
@@ -9242,6 +9447,7 @@ msgid "Send recovery link"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:80
+#: app/src/react/features/orders/OrderNotes.tsx:98
 msgid "Send to customer"
 msgstr ""
 
@@ -9418,12 +9624,16 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:242
 #: app/src/pages/products/src/editor/ProductEditor.vue:690
 #: app/src/pages/products/src/ProductQuickEdit.vue:263
+#: app/src/react/features/orders/OrderPreview.tsx:124
+#: app/src/react/features/orders/OrderPreview.tsx:153
+#: app/src/react/features/orders/OrdersList.tsx:378
 #: app/src/react/features/products/ProductQuickEdit.tsx:328
 msgid "Shipping"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:472
 #: app/src/pages/orders/src/OrderEditor.vue:530
+#: app/src/react/features/orders/OrderDetails.tsx:515
 msgid "Shipping address"
 msgstr ""
 
@@ -9433,6 +9643,7 @@ msgid "Shipping Address"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressModal.vue:43
+#: app/src/react/features/orders/AddressModal.tsx:42
 msgid "Shipping address updated"
 msgstr ""
 
@@ -9455,6 +9666,7 @@ msgid "Shipping only"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:376
+#: app/src/react/features/orders/OrderDetails.tsx:392
 msgid "Shipping: %s"
 msgstr ""
 
@@ -9495,6 +9707,7 @@ msgid "Show more"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:539
+#: app/src/react/features/orders/OrdersList.tsx:599
 msgid "Show new orders"
 msgstr ""
 
@@ -9607,6 +9820,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:692
 #: app/src/pages/products/src/ProductVariations.vue:140
 #: app/src/react/features/design-system/Showcase.tsx:387
+#: app/src/react/features/orders/OrderDetails.tsx:329
 #: app/src/react/features/products/ProductQuickEdit.tsx:270
 #: app/src/react/features/products/ProductsList.tsx:288
 #: app/src/react/features/products/ProductVariations.tsx:156
@@ -9741,11 +9955,14 @@ msgid "Start searching"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:431
+#: app/src/react/features/orders/OrdersList.tsx:290
 msgid "State"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:54
 #: app/src/pages/orders/src/AddressFields.vue:58
+#: app/src/react/features/orders/AddressFields.tsx:41
+#: app/src/react/features/orders/AddressFields.tsx:43
 msgid "State / County"
 msgstr ""
 
@@ -9765,6 +9982,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:647
 #: app/src/react/features/design-system/Showcase.tsx:90
 #: app/src/react/features/design-system/Showcase.tsx:233
+#: app/src/react/features/orders/OrdersList.tsx:290
+#: app/src/react/features/orders/OrdersList.tsx:355
 #: app/src/react/features/products/CouponsView.tsx:246
 #: app/src/react/features/products/ProductQuickEdit.tsx:271
 #: app/src/react/features/products/ProductsList.tsx:336
@@ -9828,6 +10047,7 @@ msgid "Subscriber (read)"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderPreview.vue:84
+#: app/src/react/features/orders/OrderPreview.tsx:122
 msgid "Subtotal"
 msgstr ""
 
@@ -9847,6 +10067,7 @@ msgstr ""
 #: app/src/components/app/menu/components/UserDetails.vue:426
 #: app/src/components/app/toolbar/index.vue:72
 #: app/src/pages/orders/src/OrderNotes.vue:31
+#: app/src/react/features/orders/OrderNotes.tsx:27
 msgid "System"
 msgstr ""
 
@@ -9959,6 +10180,8 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:380
 #: app/src/pages/orders/src/OrderPreview.vue:96
+#: app/src/react/features/orders/OrderDetails.tsx:396
+#: app/src/react/features/orders/OrderPreview.tsx:125
 msgid "Taxes"
 msgstr ""
 
@@ -10052,10 +10275,12 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:257
+#: app/src/react/features/orders/OrderDetails.tsx:105
 msgid "The order may have been deleted or you do not have permission to view it."
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:163
+#: app/src/react/features/orders/RefundModal.tsx:212
 msgid ""
 "The payment method does not support automatic refunds. Remember to return "
 "the money to the customer manually."
@@ -10084,6 +10309,7 @@ msgid "The Rank Math widget has no available modules for this user."
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:77
+#: app/src/react/features/orders/RefundModal.tsx:103
 msgid "The refund amount cannot exceed %s."
 msgstr ""
 
@@ -10228,10 +10454,12 @@ msgid "This menu will be applied to everyone if enabled."
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:172
+#: app/src/react/features/orders/OrdersList.tsx:433
 msgid "This month"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderNotes.vue:55
+#: app/src/react/features/orders/OrderNotes.tsx:66
 msgid "This note will be permanently removed from the order."
 msgstr ""
 
@@ -10308,6 +10536,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:174
+#: app/src/react/features/orders/OrdersList.tsx:435
 msgid "This year"
 msgstr ""
 
@@ -10370,6 +10599,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:169
+#: app/src/react/features/orders/OrdersList.tsx:430
 msgid "Today"
 msgstr ""
 
@@ -10425,6 +10655,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:240
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/react/features/design-system/Showcase.tsx:91
+#: app/src/react/features/orders/OrderDetails.tsx:300
+#: app/src/react/features/orders/OrderPreview.tsx:127
+#: app/src/react/features/orders/OrdersList.tsx:290
+#: app/src/react/features/orders/OrdersList.tsx:366
 msgid "Total"
 msgstr ""
 
@@ -10499,6 +10733,7 @@ msgid "Total Size"
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:445
+#: app/src/react/features/orders/OrderDetails.tsx:472
 msgid "Total spent"
 msgstr ""
 
@@ -10537,10 +10772,12 @@ msgid "Track stock quantity"
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:478
+#: app/src/react/features/orders/OrdersList.tsx:459
 msgid "Track, fulfil and manage your store orders."
 msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:500
+#: app/src/react/features/orders/OrderDetails.tsx:565
 msgid "Transaction ID"
 msgstr ""
 
@@ -10561,6 +10798,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:230
 #: app/src/pages/products/src/ProductsList.vue:661
 #: app/src/react/features/design-system/Showcase.tsx:330
+#: app/src/react/features/orders/OrdersList.tsx:172
+#: app/src/react/features/orders/OrdersList.tsx:647
 #: app/src/react/features/products/productFormat.ts:16
 #: app/src/react/features/products/ProductsList.tsx:118
 #: app/src/react/features/products/ProductsList.tsx:606
@@ -10582,6 +10821,7 @@ msgid "Try a different search term or use command syntax to filter results."
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:553
+#: app/src/react/features/orders/OrdersList.tsx:619
 msgid "Try adjusting the search or date range."
 msgstr ""
 
@@ -10699,6 +10939,7 @@ msgid "Unique Visitors"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:127
+#: app/src/react/features/orders/RefundModal.tsx:162
 msgid "Unit price"
 msgstr ""
 
@@ -11232,6 +11473,8 @@ msgstr ""
 #: app/src/pages/orders/src/OrderPreview.vue:137
 #: app/src/pages/orders/src/OrdersList.vue:415
 #: app/src/react/features/design-system/Showcase.tsx:100
+#: app/src/react/features/orders/OrderPreview.tsx:84
+#: app/src/react/features/orders/OrdersList.tsx:275
 msgid "View details"
 msgstr ""
 
@@ -11243,6 +11486,8 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:474
 #: app/src/pages/orders/src/OrderDetails.vue:475
+#: app/src/react/features/orders/OrderDetails.tsx:519
+#: app/src/react/features/orders/OrderDetails.tsx:528
 msgid "View on map"
 msgstr ""
 
@@ -11255,6 +11500,8 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:424
 #: app/src/pages/orders/src/OrderDetails.vue:425
+#: app/src/react/features/orders/OrderDetails.tsx:450
+#: app/src/react/features/orders/OrderDetails.tsx:451
 msgid "View profile"
 msgstr ""
 
@@ -11361,6 +11608,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:718
 #: app/src/pages/orders/src/OrdersList.vue:128
+#: app/src/react/features/orders/OrdersList.tsx:450
 msgid "Web admin"
 msgstr ""
 
@@ -11482,6 +11730,7 @@ msgid "WooCommerce is not active."
 msgstr ""
 
 #: app/src/pages/orders/src/OrdersList.vue:463
+#: app/src/react/features/orders/OrdersList.tsx:423
 msgid "WooCommerce settings"
 msgstr ""
 

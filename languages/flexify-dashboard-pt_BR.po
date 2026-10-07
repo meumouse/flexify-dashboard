@@ -11070,6 +11070,10 @@ msgstr "Suas alterações estão no ar."
 msgid "Featured"
 msgstr "Destaque"
 
+#: app/src/react/features/orders/OrdersList.tsx:561
+msgid "Channel"
+msgstr "Canal"
+
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"
 msgid "Add New"
