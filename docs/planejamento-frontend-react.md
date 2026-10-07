@@ -452,6 +452,12 @@ Plugins, configurações, activity log, database explorer, editor de papéis, co
 - Um aviso é um post type, então as rotas do núcleo dão conta; o que faz dele um aviso (tipo, papéis, se pode ser dispensado) está no meta. O editor mostra o aviso como o wp-admin vai mostrá-lo.
 - As telas React ficam atrás dos filtros `flexify-dashboard/react-activity-log` e `flexify-dashboard/react-admin-notices`, **ligados** por padrão.
 
+**Parte 2 — plugins (concluída em 07/10/2026):** a tela de plugins em React, com a lista, as ações, o envio de ZIP e a busca no diretório.
+
+- O WordPress não tem REST para plugins; tudo passa pelas rotas que o próprio plugin registra. O identificador é o **arquivo** do plugin (`woocommerce/woocommerce.php`), que tem uma barra: ela é escapada, senão o servidor a lê como outro segmento do caminho.
+- A busca no diretório fala direto com a api.wordpress.org, do navegador. É público e não leva nada deste site além do que foi digitado — e a tela diz isso, em vez de deixar a pessoa adivinhar.
+- Um plugin do diretório é identificado pela pasta; um site o tem instalado como `pasta/arquivo.php`. É assim que a tela sabe que o resultado da busca já está instalado.
+
 ### Fase 8 — Login e frontend (M)
 Tela de login personalizada e scripts do frontend.
 

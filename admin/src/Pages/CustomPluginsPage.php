@@ -89,7 +89,8 @@ class CustomPluginsPage {
      */
     public function load_styles() {
         $base_url = plugins_url( 'flexify-dashboard/' );
-        $style_src = $base_url . 'app/dist/assets/styles/plugins.css';
+        $stylesheet = Scripts::get_stylesheet_path( $this->get_entry() );
+        $style_src = $base_url . 'app/dist/' . ( $stylesheet ? $stylesheet : 'assets/styles/plugins.css' );
 
         wp_enqueue_style(
             'flexify-dashboard-plugins',
@@ -106,13 +107,33 @@ class CustomPluginsPage {
 
 
     /**
+     * Get the Vite entry of the plugins screen.
+     *
+     * Both screens act through the same routes, so a site that needs the Vue one back can
+     * have it from the filter.
+     *
+     * @since 4.0.0
+     * @return string
+     */
+    private function get_entry() {
+        /**
+         * Filter whether the React plugins screen is used.
+         *
+         * @since 4.0.0
+         * @param bool $enabled Whether the React screen is used.
+         */
+        return (bool) apply_filters( 'flexify-dashboard/react-plugins', true ) ? 'react/main/plugins.tsx' : 'Plugins.js';
+    }
+
+
+    /**
      * Loads plugins page scripts.
      *
      * @since 2.0.0
      * @return void
      */
     public function load_scripts() {
-        $script_name = Scripts::get_base_script_path( 'Plugins.js' );
+        $script_name = Scripts::get_base_script_path( $this->get_entry() );
 
         if ( empty( $script_name ) ) {
             return;

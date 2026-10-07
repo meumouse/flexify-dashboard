@@ -288,6 +288,14 @@ msgstr "%s / página"
 msgid "%s ago"
 msgstr "%s atrás"
 
+#: app/src/react/features/plugins/PluginsList.tsx:31
+msgid ""
+"%s and its files are removed from the site. Anything it stored in the "
+"database may stay behind."
+msgstr ""
+"%s e seus arquivos serão removidos do site. O que ele guardou no banco de "
+"dados pode permanecer."
+
 #: admin/src/Rest/CustomPostTypes.php:846
 msgid "%s Archives"
 msgstr "Arquivos %s"
@@ -328,6 +336,14 @@ msgstr "%s arquivo(s)"
 msgid "%s in stock"
 msgstr "%s em estoque"
 
+#: app/src/react/features/plugins/PluginsList.tsx:147
+msgid "%s installed"
+msgstr "%s instalados"
+
+#: app/src/react/features/plugins/PluginRepository.tsx:111
+msgid "%s installs"
+msgstr "%s instalações"
+
 #: app/src/react/features/posts/PostsList.tsx:257
 #: app/src/react/features/posts/PostsSidebar.tsx:103
 msgid "%s item(s)"
@@ -349,6 +365,10 @@ msgstr "%s aviso(s)"
 #: app/src/react/features/orders/OrdersList.tsx:206
 msgid "%s orders"
 msgstr "%s pedidos"
+
+#: app/src/react/features/plugins/PluginRepository.tsx:38
+msgid "%s out of 5"
+msgstr "%s de 5"
 
 #: admin/src/Rest/CustomPostTypes.php:859
 msgid "%s published privately."
@@ -553,9 +573,15 @@ msgstr "Ação"
 msgid "Actions"
 msgstr "Ações"
 
+#: app/src/react/features/plugins/PluginsList.tsx:106
+msgid "Actions for %s"
+msgstr "Ações de %s"
+
 #: app/src/pages/plugins/src/plugin-card.vue:302
 #: app/src/pages/plugins/src/plugin-inspect.vue:326
 #: app/src/pages/settings/src/custom-renders/license-key.vue:156
+#: app/src/react/features/plugins/PluginRepository.tsx:122
+#: app/src/react/features/plugins/PluginsList.tsx:93
 msgid "Activate"
 msgstr "Ativar"
 
@@ -583,6 +609,9 @@ msgstr "Ativando..."
 #: app/src/pages/plugins/src/plugin-card.vue:284
 #: app/src/pages/products/src/CouponsView.vue:75
 #: app/src/react/features/notices/NoticesList.tsx:82
+#: app/src/react/features/plugins/PluginRepository.tsx:118
+#: app/src/react/features/plugins/PluginsList.tsx:49
+#: app/src/react/features/plugins/PluginsList.tsx:137
 #: app/src/react/features/products/CouponsView.tsx:100
 msgid "Active"
 msgstr "Ativo"
@@ -738,6 +767,7 @@ msgstr "Adicionar manualmente"
 #: app/src/pages/posts/index.vue:775
 #: app/src/pages/posts/index.vue:801
 #: app/src/pages/settings/src/custom-renders/external-stylesheets.vue:72
+#: app/src/react/features/plugins/PluginsList.tsx:140
 #: app/src/react/features/posts/PostsList.tsx:238
 #: app/src/react/features/posts/PostsSidebar.tsx:77
 #: app/src/react/features/posts/PostsSidebar.tsx:124
@@ -1607,9 +1637,18 @@ msgstr "Atualizações automáticas desativadas"
 msgid "Auto updates enabled"
 msgstr "Atualizações automáticas ativadas"
 
+#: app/src/react/features/plugins/PluginsList.tsx:76
+#: app/src/react/features/plugins/PluginsList.tsx:102
+msgid "Auto-update"
+msgstr "Atualização automática"
+
 #: app/src/pages/plugins/src/plugin-card.vue:439
 msgid "Automatic Updates"
 msgstr "Atualizações automáticas"
+
+#: app/src/react/features/plugins/queries.ts:154
+msgid "Automatic updates changed"
+msgstr "Atualização automática alterada"
 
 #: app/src/pages/settings/src/settings-config.js:1029
 msgid ""
@@ -3160,6 +3199,7 @@ msgstr "dias"
 
 #: app/src/pages/plugins/src/plugin-card.vue:313
 #: app/src/pages/plugins/src/plugin-inspect.vue:325
+#: app/src/react/features/plugins/PluginsList.tsx:89
 msgid "Deactivate"
 msgstr "Desativar"
 
@@ -3231,6 +3271,8 @@ msgstr "Modelo padrão"
 #: app/src/react/features/notices/NoticesList.tsx:34
 #: app/src/react/features/notices/NoticesList.tsx:101
 #: app/src/react/features/orders/OrderNotes.tsx:67
+#: app/src/react/features/plugins/PluginsList.tsx:32
+#: app/src/react/features/plugins/PluginsList.tsx:104
 #: app/src/react/features/posts/PostsList.tsx:163
 #: app/src/react/features/products/AttributesView.tsx:102
 #: app/src/react/features/products/AttributesView.tsx:170
@@ -3370,6 +3412,10 @@ msgstr "Excluir este arquivo?"
 #: app/src/react/features/notices/NoticesList.tsx:32
 msgid "Delete this notice?"
 msgstr "Excluir este aviso?"
+
+#: app/src/react/features/plugins/PluginsList.tsx:30
+msgid "Delete this plugin?"
+msgstr "Excluir este plugin?"
 
 #: app/src/pages/products/src/AttributesView.vue:261
 #: app/src/react/features/products/AttributesView.tsx:337
@@ -5780,6 +5826,7 @@ msgid "In stock"
 msgstr "Em estoque"
 
 #: app/src/pages/plugins/src/plugin-card.vue:284
+#: app/src/react/features/plugins/PluginsList.tsx:138
 msgid "Inactive"
 msgstr "Inativo"
 
@@ -5835,6 +5882,7 @@ msgid "Insert into %s"
 msgstr "Inserir em %s"
 
 #: app/src/pages/plugins/src/plugin-repo-card.vue:118
+#: app/src/react/features/plugins/PluginRepository.tsx:132
 msgid "Install"
 msgstr "Instalar"
 
@@ -5851,6 +5899,7 @@ msgid "Installation"
 msgstr "Instalação"
 
 #: app/src/pages/plugins/src/plugin-repo-card.vue:120
+#: app/src/react/features/plugins/PluginsList.tsx:136
 msgid "Installed"
 msgstr "Instalado"
 
@@ -7260,6 +7309,10 @@ msgstr "Mais"
 msgid "More actions"
 msgstr "Mais ações"
 
+#: app/src/react/features/plugins/PluginRepository.tsx:137
+msgid "More details"
+msgstr "Mais detalhes"
+
 #: app/src/pages/products/src/ProductsList.vue:586
 #: app/src/pages/products/src/ProductsList.vue:587
 #: app/src/react/features/products/ProductsList.tsx:470
@@ -7876,6 +7929,10 @@ msgstr "Sem método de pagamento"
 msgid "No plugin file uploaded"
 msgstr "Nenhum arquivo de plugin foi carregado."
 
+#: app/src/react/features/plugins/PluginsList.tsx:199
+msgid "No plugin here matches that."
+msgstr "Nenhum plugin aqui corresponde a isso."
+
 #: app/src/pages/plugins/index.vue:416
 msgid "No plugins found"
 msgstr "Nenhum plugin encontrado"
@@ -8159,6 +8216,10 @@ msgstr "Nada encontrado para “%s”."
 #: app/src/react/data/EntityPicker.tsx:110
 msgid "Nothing found."
 msgstr "Nada encontrado."
+
+#: app/src/react/features/plugins/PluginRepository.tsx:82
+msgid "Nothing in the directory matches that."
+msgstr "Nada no diretório corresponde a isso."
 
 #: app/src/react/features/media/MediaGrid.tsx:58
 msgid "Nothing in the library matches this."
@@ -9075,17 +9136,26 @@ msgstr "Por favor, selecione um arquivo CSV ou Excel."
 msgid "Please select a valid ZIP file"
 msgstr "Por favor, selecione um arquivo ZIP válido."
 
+#: app/src/react/features/plugins/queries.ts:134
+msgid "Plugin activated"
+msgstr "Plugin ativado"
+
 #: admin/src/Rest/PluginManager.php:413
 msgid "Plugin activated successfully"
 msgstr "Plugin ativado com sucesso"
 
 #: app/src/pages/plugins/src/deactivatePlugin.js:32
+#: app/src/react/features/plugins/queries.ts:139
 msgid "Plugin deactivated"
 msgstr "Plugin desativado"
 
 #: admin/src/Rest/PluginManager.php:452
 msgid "Plugin deactivated successfully"
 msgstr "Plugin desativado com sucesso"
+
+#: app/src/react/features/plugins/queries.ts:149
+msgid "Plugin deleted"
+msgstr "Plugin excluído"
 
 #: admin/src/Rest/PluginManager.php:496
 msgid "Plugin deleted successfully"
@@ -9114,6 +9184,8 @@ msgstr "A instalação do plugin falhou."
 
 #: app/src/pages/plugins/src/plugin-inspect.vue:147
 #: app/src/pages/plugins/src/plugin-repo-card.vue:88
+#: app/src/react/features/plugins/queries.ts:159
+#: app/src/react/features/plugins/queries.ts:178
 msgid "Plugin installed"
 msgstr "Plugin instalado"
 
@@ -9169,6 +9241,10 @@ msgstr "Slug do plugin para obter métricas (opcional)"
 msgid "Plugin update failed"
 msgstr "A atualização do plugin falhou."
 
+#: app/src/react/features/plugins/queries.ts:144
+msgid "Plugin updated"
+msgstr "Plugin atualizado"
+
 #: admin/src/Rest/PluginManager.php:588
 #: admin/src/Rest/PluginManager.php:824
 msgid "Plugin updated successfully"
@@ -9200,6 +9276,7 @@ msgstr "Plugin carregado com sucesso"
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:317
 #: app/src/pages/role-editor/src/role-details-view.vue:90
 #: app/src/pages/settings/index.vue:83
+#: app/src/react/features/plugins/PluginsList.tsx:146
 msgid "Plugins"
 msgstr "Plugins"
 
@@ -10384,6 +10461,10 @@ msgstr "resultados"
 msgid "Results"
 msgstr "Resultados"
 
+#: app/src/react/features/plugins/PluginRepository.tsx:61
+msgid "Results come from WordPress.org. Only what you type is sent there."
+msgstr "Os resultados vêm do WordPress.org. Só o que você digita é enviado para lá."
+
 #: app/src/pages/settings/src/settings-config.js:988
 msgid "Retention Period (Days)"
 msgstr "Período de retenção (dias)"
@@ -10817,6 +10898,10 @@ msgstr "Buscar clientes por nome ou e-mail"
 msgid "Search fonts..."
 msgstr "Pesquisar fontes..."
 
+#: app/src/react/features/plugins/PluginRepository.tsx:67
+msgid "Search for a plugin to add it to this site."
+msgstr "Pesquise um plugin para adicioná-lo a este site."
+
 #: app/src/components/app/search/components/EmptyStateInitial.vue:38
 msgid "Search for posts, pages, users, categories, or use quick actions."
 msgstr ""
@@ -10831,6 +10916,11 @@ msgstr "Busque produtos acima para adicioná-los ao pedido."
 #: app/src/components/utility/icon-select/index.vue:113
 msgid "Search icons"
 msgstr "Ícones de pesquisa"
+
+#: app/src/react/features/plugins/PluginsList.tsx:182
+#: app/src/react/features/plugins/PluginsList.tsx:183
+msgid "Search installed plugins"
+msgstr "Pesquisar plugins instalados"
 
 #: app/src/pages/media/src/media-list-view.vue:1337
 msgid "Search media..."
@@ -10961,6 +11051,11 @@ msgstr "Pesquisar na biblioteca"
 #: app/src/react/features/activity/ActivityList.tsx:147
 msgid "Search the log"
 msgstr "Pesquisar no registro"
+
+#: app/src/react/features/plugins/PluginRepository.tsx:57
+#: app/src/react/features/plugins/PluginRepository.tsx:58
+msgid "Search the plugin directory"
+msgstr "Pesquisar no diretório de plugins"
 
 #: admin/src/Rest/RankMathDashboardWidget.php:222
 msgid "Search Traffic"
@@ -12247,6 +12342,11 @@ msgstr ""
 "O método de pagamento não suporta reembolsos automáticos. Lembre-se de "
 "devolver o valor ao cliente manualmente."
 
+#: app/src/react/features/plugins/PluginRepository.tsx:77
+#: app/src/react/features/plugins/queries.ts:106
+msgid "The plugin directory could not be reached."
+msgstr "Não foi possível acessar o diretório de plugins."
+
 #: app/src/pages/plugins/src/plugin-details-view.vue:68
 msgid "The plugin you are looking for could not be found."
 msgstr "O plugin que você está procurando não foi encontrado."
@@ -13165,6 +13265,7 @@ msgstr "Somente não utilizados"
 #: app/src/pages/plugins/src/plugin-card.vue:324
 #: app/src/pages/posts/src/batch-edit.vue:157
 #: app/src/pages/products/src/editor/ProductEditor.vue:523
+#: app/src/react/features/plugins/PluginsList.tsx:83
 #: app/src/react/features/products/editor/ProductEditor.tsx:642
 msgid "Update"
 msgstr "Atualizar"
@@ -13172,6 +13273,10 @@ msgstr "Atualizar"
 #: app/src/pages/posts/src/inline-user-select.vue:108
 msgid "Update author"
 msgstr "Atualizar autor"
+
+#: app/src/react/features/plugins/PluginsList.tsx:54
+msgid "Update available"
+msgstr "Atualização disponível"
 
 #: app/src/pages/plugins/src/plugin-card.vue:287
 msgid "Update Available"
@@ -13211,6 +13316,10 @@ msgstr "Atualizar usuário"
 msgid "updates"
 msgstr "atualizações"
 
+#: app/src/react/features/plugins/PluginsList.tsx:139
+msgid "Updates"
+msgstr "Atualizações"
+
 #: app/src/pages/plugins/src/plugin-card.vue:322
 msgid "Updating..."
 msgstr "Atualizando..."
@@ -13219,6 +13328,10 @@ msgstr "Atualizando..."
 #: app/src/react/features/media/MediaLibrary.tsx:183
 msgid "Upload"
 msgstr "Carregar"
+
+#: app/src/react/features/plugins/PluginsList.tsx:150
+msgid "Upload a ZIP"
+msgstr "Enviar um ZIP"
 
 #: admin/src/Rest/MediaBulk.php:207
 msgid "Upload directory is not available."
@@ -13817,6 +13930,10 @@ msgstr "Visível na página do produto"
 msgid "Visit site"
 msgstr "Visite o site"
 
+#: app/src/react/features/plugins/PluginsList.tsx:101
+msgid "Visit the plugin site"
+msgstr "Visitar o site do plugin"
+
 #: app/src/pages/dashboard/src/cards/analytics-map/component.vue:601
 msgid "Visit Volume"
 msgstr "Volume de visitas"
@@ -14222,7 +14339,7 @@ msgstr "Você não tem permissão para executar esta ação. Capacidade necessá
 msgid "You do not have permission to save these options."
 msgstr "Você não tem permissão para salvar essas opções."
 
-#: admin/src/Pages/CustomPluginsPage.php:266
+#: admin/src/Pages/CustomPluginsPage.php:287
 #: admin/src/Pages/CustomPostTypesPage.php:178
 #: admin/src/Pages/DummyDataPage.php:172
 #: admin/src/Pages/RoleEditorPage.php:140

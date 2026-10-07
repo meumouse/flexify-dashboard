@@ -157,6 +157,9 @@
       "%s ago": [
         "%s atrás"
       ],
+      "%s and its files are removed from the site. Anything it stored in the database may stay behind.": [
+        "%s e seus arquivos serão removidos do site. O que ele guardou no banco de dados pode permanecer."
+      ],
       "%s child item": [
         "Item filho %s"
       ],
@@ -178,6 +181,12 @@
       "%s in stock": [
         "%s em estoque"
       ],
+      "%s installed": [
+        "%s instalados"
+      ],
+      "%s installs": [
+        "%s instalações"
+      ],
       "%s item(s)": [
         "%s item(ns)"
       ],
@@ -192,6 +201,9 @@
       ],
       "%s orders": [
         "%s pedidos"
+      ],
+      "%s out of 5": [
+        "%s de 5"
       ],
       "%s published privately.": [
         "%s publicado de forma privada."
@@ -321,6 +333,9 @@
       ],
       "Actions": [
         "Ações"
+      ],
+      "Actions for %s": [
+        "Ações de %s"
       ],
       "Activate": [
         "Ativar"
@@ -886,8 +901,14 @@
       "Auto updates enabled": [
         "Atualizações automáticas ativadas"
       ],
+      "Auto-update": [
+        "Atualização automática"
+      ],
       "Automatic Updates": [
         "Atualizações automáticas"
+      ],
+      "Automatic updates changed": [
+        "Atualização automática alterada"
       ],
       "Automatically delete logs older than the retention period. Disable to keep logs indefinitely.": [
         "Exclui automaticamente os registros mais antigos que o período de retenção. Desative para manter os registros indefinidamente."
@@ -1833,6 +1854,9 @@
       ],
       "Delete this notice?": [
         "Excluir este aviso?"
+      ],
+      "Delete this plugin?": [
+        "Excluir este plugin?"
       ],
       "Delete value": [
         "Excluir valor"
@@ -4222,6 +4246,9 @@
       "More actions": [
         "Mais ações"
       ],
+      "More details": [
+        "Mais detalhes"
+      ],
       "More filters": [
         "Mais filtros"
       ],
@@ -4591,6 +4618,9 @@
       "No plugin file uploaded": [
         "Nenhum arquivo de plugin foi carregado."
       ],
+      "No plugin here matches that.": [
+        "Nenhum plugin aqui corresponde a isso."
+      ],
       "No plugins found": [
         "Nenhum plugin encontrado"
       ],
@@ -4767,6 +4797,9 @@
       ],
       "Nothing found.": [
         "Nada encontrado."
+      ],
+      "Nothing in the directory matches that.": [
+        "Nada no diretório corresponde a isso."
       ],
       "Nothing in the library matches this.": [
         "Nada na biblioteca corresponde a isso."
@@ -5299,6 +5332,9 @@
       "Plugin Page": [
         "Página do Plugin"
       ],
+      "Plugin activated": [
+        "Plugin ativado"
+      ],
       "Plugin activated successfully": [
         "Plugin ativado com sucesso"
       ],
@@ -5307,6 +5343,9 @@
       ],
       "Plugin deactivated successfully": [
         "Plugin desativado com sucesso"
+      ],
+      "Plugin deleted": [
+        "Plugin excluído"
       ],
       "Plugin deleted successfully": [
         "Plugin removido com sucesso"
@@ -5349,6 +5388,9 @@
       ],
       "Plugin update failed": [
         "A atualização do plugin falhou."
+      ],
+      "Plugin updated": [
+        "Plugin atualizado"
       ],
       "Plugin updated successfully": [
         "Plugin atualizado com sucesso"
@@ -6022,6 +6064,9 @@
       "Results": [
         "Resultados"
       ],
+      "Results come from WordPress.org. Only what you type is sent there.": [
+        "Os resultados vêm do WordPress.org. Só o que você digita é enviado para lá."
+      ],
       "Retention Period (Days)": [
         "Período de retenção (dias)"
       ],
@@ -6277,6 +6322,9 @@
       "Search fonts...": [
         "Pesquisar fontes..."
       ],
+      "Search for a plugin to add it to this site.": [
+        "Pesquise um plugin para adicioná-lo a este site."
+      ],
       "Search for posts, pages, users, categories, or use quick actions.": [
         "Pesquise publicações, páginas, usuários, categorias ou utilize ações rápidas."
       ],
@@ -6285,6 +6333,9 @@
       ],
       "Search icons": [
         "Ícones de pesquisa"
+      ],
+      "Search installed plugins": [
+        "Pesquisar plugins instalados"
       ],
       "Search media...": [
         "Pesquisar mídia..."
@@ -6369,6 +6420,9 @@
       ],
       "Search the log": [
         "Pesquisar no registro"
+      ],
+      "Search the plugin directory": [
+        "Pesquisar no diretório de plugins"
       ],
       "Search users": [
         "Pesquisar usuários"
@@ -7102,6 +7156,9 @@
       "The payment method does not support automatic refunds. Remember to return the money to the customer manually.": [
         "O método de pagamento não suporta reembolsos automáticos. Lembre-se de devolver o valor ao cliente manualmente."
       ],
+      "The plugin directory could not be reached.": [
+        "Não foi possível acessar o diretório de plugins."
+      ],
       "The plugin you are looking for could not be found.": [
         "O plugin que você está procurando não foi encontrado."
       ],
@@ -7615,6 +7672,9 @@
       "Update author": [
         "Atualizar autor"
       ],
+      "Update available": [
+        "Atualização disponível"
+      ],
       "Update credentials": [
         "Atualizar credenciais"
       ],
@@ -7623,6 +7683,9 @@
       ],
       "Update status": [
         "Atualizar status"
+      ],
+      "Updates": [
+        "Atualizações"
       ],
       "Updating...": [
         "Atualizando..."
@@ -7635,6 +7698,9 @@
       ],
       "Upload Font": [
         "Carregar fonte"
+      ],
+      "Upload a ZIP": [
+        "Enviar um ZIP"
       ],
       "Upload directory is not available.": [
         "O diretório de uploads não está disponível."
@@ -7956,6 +8022,9 @@
       ],
       "Visit site": [
         "Visite o site"
+      ],
+      "Visit the plugin site": [
+        "Visitar o site do plugin"
       ],
       "Visitor locations worldwide": [
         "Locais de visitação em todo o mundo"
