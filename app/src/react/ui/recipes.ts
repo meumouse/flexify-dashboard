@@ -19,7 +19,7 @@ export {
 	dropdownItemClass,
 	badgeColors,
 	alertColors,
-} from '@/components/kit/recipes.js';
+} from '@/shared/recipes.js';
 
 export type ButtonVariant = 'primary' | 'outline' | 'secondary' | 'danger' | 'danger-outline' | 'warning' | 'success' | 'ghost' | 'link';
 export type ControlSize = 'xs' | 'sm' | 'md' | 'lg';

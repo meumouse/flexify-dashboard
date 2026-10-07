@@ -5,7 +5,7 @@ import { __ } from '@/react/lib/i18n';
 import { Button, Icon, Input, Select, Switch, Textarea } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
 import { CUSTOM_RENDERS } from '@/react/features/settings/custom';
-import type { SettingDefinition } from '@/pages/settings/src/settings-config.js';
+import type { SettingDefinition } from '@/shared/settings/settings-config.js';
 import type { Settings } from '@/react/features/settings/queries';
 
 /**

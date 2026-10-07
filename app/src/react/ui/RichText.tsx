@@ -8,7 +8,7 @@ import Placeholder from '@tiptap/extension-placeholder';
 import TextAlign from '@tiptap/extension-text-align';
 import { Color } from '@tiptap/extension-color';
 import { TextStyle } from '@tiptap/extension-text-style';
-import { BackgroundColor } from '@/components/utility/rich-text/src/tiptapColorExtensions.js';
+import { BackgroundColor } from '@/shared/rich-text/tiptapColorExtensions.js';
 import { useNotify } from '@/react/app/ToastProvider';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';

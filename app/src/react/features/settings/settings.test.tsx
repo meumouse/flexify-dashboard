@@ -6,7 +6,7 @@ import { AppProviders } from '@/react/app/AppProviders';
 import { SettingsScreen, isApplicable, matchesSearch } from '@/react/features/settings/SettingsScreen';
 import { SAVED_ELSEWHERE } from '@/react/features/settings/queries';
 import { googleFontUrl, normaliseSiteUrl } from '@/react/features/settings/custom/connections';
-import type { SettingDefinition } from '@/pages/settings/src/settings-config.js';
+import type { SettingDefinition } from '@/shared/settings/settings-config.js';
 import type { WpData } from '@/react/types/wordpress';
 
 const wpData: WpData = {

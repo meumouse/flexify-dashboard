@@ -1,4 +1,4 @@
-import type { FilterValues } from '@/components/utility/image-editor/src/filters.js';
+import type { FilterValues } from '@/shared/image-editor/filters.js';
 
 /**
  * What an edit is, apart from how it is shown.

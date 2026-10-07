@@ -60,22 +60,13 @@ class CustomCommentsPage {
 
 
     /**
-     * Get the Vite entry of the comments screen.
-     *
-     * Both screens moderate through the same core REST routes, so a site that needs the Vue
-     * one back can have it from the filter.
+     * Get the Vite entry of this screen.
      *
      * @since 4.0.0
      * @return string
      */
     private function get_entry() {
-        /**
-         * Filter whether the React comments screen is used.
-         *
-         * @since 4.0.0
-         * @param bool $enabled Whether the React screen is used.
-         */
-        return (bool) apply_filters( 'flexify-dashboard/react-comments', true ) ? 'react/main/comments.tsx' : 'Comments.js';
+    	return 'react/main/comments.tsx';
     }
 
 

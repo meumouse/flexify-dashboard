@@ -44,5 +44,5 @@ npm run pot
 npm run compile
 ```
 
-`pot` extrai as strings de `.php`, `.js`, `.ts`, `.tsx` e `.vue`; `compile` gera o `.mo` e os JSON
+`pot` extrai as strings de `.php`, `.js`, `.ts` e `.tsx`; `compile` gera o `.mo` e os JSON
 que o `wp_set_script_translations()` carrega.

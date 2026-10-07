@@ -494,9 +494,18 @@ Tela de login personalizada e scripts do frontend.
 - As telas React ficam atrás dos filtros `flexify-dashboard/react-login` e `flexify-dashboard/react-frontend`, **ligados** por padrão.
 - O `apps/js/Analytics.js` (script de rastreamento do frontend) **não muda**: é JavaScript puro, sem framework, e continua como está.
 
-### Fase 9 — Remoção do Vue (M)
+### Fase 9 — Remoção do Vue (M) · **concluída**
 Tirar `vue`, `vue-router`, `pinia`, `reka-ui`, `veaury`, `vue-shadow-dom`, `vue-draggable-next`, `@tiptap/vue-3`, `vue3-apexcharts`, `@vuepic/vue-datepicker`; limpar entradas, código morto e documentação.
-**Aceite:** nenhum arquivo `.vue` no plugin e bundles menores que os atuais.
+**Aceite:** nenhum arquivo `.vue` no plugin e bundles menores que os atuais. ✔
+
+**Concluída em 07/10/2026.** Nenhum arquivo `.vue` restou no plugin.
+
+- O que era compartilhado e não pertencia a framework nenhum mudou para `src/shared/`: o esquema de configurações, o gerador da escala de cores, as rotinas de pixel do editor de imagem, o CSV, o registro de cartões, o sistema de hooks, as receitas de classe e a formatação de preços. É código que as duas telas usavam e que continua valendo.
+- Saíram `src/pages`, `src/components`, `src/store`, `src/setup`, `src/composables`, `src/buttons` e as entradas Vue de `src/apps/js` — ficaram só `Theme.js` (define o esquema de cores antes de qualquer coisa renderizar) e `Analytics.js` (registra visitas no site), os dois JavaScript puro.
+- Saíram as dependências: `vue`, `vue-router`, `pinia`, `reka-ui`, `veaury`, `vue-shadow-dom`, `vue-draggable-next`, `@tiptap/vue-3`, `vue3-apexcharts`, `@vuepic/vue-datepicker`, `vaul-vue`, `@vueuse/core` e `@vitejs/plugin-vue` — e, com elas, `ace-builds`, `axios`, `browser-image-compression`, `dayjs`, `html2canvas`, `lodash-es`, `md5`, `uuid` e `zod`, que só o código Vue usava.
+- Os filtros `flexify-dashboard/react-*` saíram junto: não há mais para onde voltar. Cada `get_entry()` tem uma resposta só.
+- **Quebra documentada:** um cartão de terceiros escrito em Vue não renderiza mais. O `CardRender` diz isso na tela, em vez de não desenhar nada, para quem escreveu o cartão saber o que aconteceu. Cartões em HTML e em React continuam funcionando.
+- O chunk compartilhado por todas as telas caiu de 585 kB para 477 kB, e o build de ~21 s para ~10 s.
 
 ### Fase 10 — QA e lançamento 4.0.0 (M)
 Matriz de testes (WP e WooCommerce atuais e anteriores, HPOS ligado/desligado, PHP 7.4+, navegadores, RTL, papéis), acessibilidade, desempenho, traduções, changelog e release.

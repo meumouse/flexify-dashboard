@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useCan, useWpData } from '@/react/app/WpDataProvider';
-import { CATEGORY_ALIASES, dashboardRegistry } from '@/assets/js/dashboard/registry.js';
+import { CATEGORY_ALIASES, dashboardRegistry } from '@/shared/dashboard/registry.js';
 import type { RenderableCard } from '@/react/ui';
 
 /**

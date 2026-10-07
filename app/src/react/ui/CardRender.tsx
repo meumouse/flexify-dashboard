@@ -1,12 +1,14 @@
 import { useMemo, type ComponentType } from 'react';
-import { applyVueInReact } from 'veaury';
 import { useCan, useWpData } from '@/react/app/WpDataProvider';
+import { __ } from '@/react/lib/i18n';
+
 /**
  * Render a card registered through the JavaScript API, wherever it came from.
  *
- * Keeps the contract of the Vue `ComponentRender`: a card is HTML, a React component or a Vue
- * component, the last wrapped by veaury so it still mounts inside this React tree. Cards can
- * also say which capabilities and plugins they need.
+ * A card is markup or a React component, and says which capabilities and plugins it needs.
+ * Vue cards were supported while the plugin had Vue in it; from 4.0.0 there is no Vue to
+ * mount them with, and a card that says it is one says so on screen instead of rendering
+ * nothing, so whoever wrote it can see what happened.
  */
 
 export type RenderableCard = {
@@ -29,7 +31,7 @@ type Props = {
 	props: Record<string, unknown>;
 };
 
-const framework = (card: RenderableCard) => card.metadata?.framework ?? card.metadata?.language ?? 'vue';
+const framework = (card: RenderableCard) => card.metadata?.framework ?? card.metadata?.language ?? 'react';
 
 export const CardRender = ({ card, props }: Props) => {
 	const can = useCan();
@@ -43,13 +45,11 @@ export const CardRender = ({ card, props }: Props) => {
 			return null;
 		}
 
-		if (kind === 'react') {
-			return card.component as ComponentType<Record<string, unknown>>;
+		if (kind === 'vue') {
+			return null;
 		}
 
-		// veaury creates the Vue app itself and gives no way in, so a Vue card that reaches for a
-		// global its own app would have provided — `__` among them — cannot render here.
-		return applyVueInReact(card.component) as ComponentType<Record<string, unknown>>;
+		return card.component as ComponentType<Record<string, unknown>>;
 	}, [card.component, kind]);
 
 	const capabilities = metadata.requires_capabilities ?? metadata.requiresCapabilities;
@@ -73,6 +73,14 @@ export const CardRender = ({ card, props }: Props) => {
 	if (kind === 'html') {
 		// The markup comes from an extension running in the same admin page, like a Vue card would.
 		return <div id={metadata.id} className={metadata.className} dangerouslySetInnerHTML={{ __html: String(card.component ?? '') }} />;
+	}
+
+	if (kind === 'vue') {
+		return (
+			<div className="rounded-xl bg-warning-50 p-4 text-theme-xs text-warning-700 dark:bg-warning-500/10 dark:text-warning-400">
+				{__('This card was built for the old Vue dashboard. It needs to be rebuilt as a React component or as markup.')}
+			</div>
+		);
 	}
 
 	if (!Component) {

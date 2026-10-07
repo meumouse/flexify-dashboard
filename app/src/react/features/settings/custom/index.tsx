@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { generateColorScheme } from '@/pages/settings/src/generateColorScheme.js';
+import { generateColorScheme } from '@/shared/settings/generateColorScheme.js';
 import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { useRest } from '@/react/app/WpDataProvider';
@@ -8,7 +8,7 @@ import { cn } from '@/react/lib/cn';
 import { __, sprintf } from '@/react/lib/i18n';
 import { Alert, Badge, Button, Icon, Input, Textarea } from '@/react/ui';
 import { useResetSettings, type Settings } from '@/react/features/settings/queries';
-import type { SettingDefinition } from '@/pages/settings/src/settings-config.js';
+import type { SettingDefinition } from '@/shared/settings/settings-config.js';
 import { FontSelector, GoogleAnalyticsConnection, GoogleRecaptchaConnection, RemoteSites } from '@/react/features/settings/custom/connections';
 
 /**

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
-import { applyFilters } from '@/assets/js/functions/HooksSystem.js';
+import { applyFilters } from '@/shared/hooks.js';
 import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { decodeHtml } from '@/react/lib/html';

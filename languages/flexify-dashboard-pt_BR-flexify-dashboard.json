@@ -37,23 +37,11 @@
       "%d comment(s) will be moved to the trash.": [
         "%d comentário(s) serão movidos para a lixeira."
       ],
-      "%d comments selected": [
-        "%d comentários selecionados"
-      ],
-      "%d days ago": [
-        "%d dias atrás"
-      ],
-      "%d file(s) uploaded": [
-        "%d arquivo(s) enviado(s)"
-      ],
       "%d file(s) will be changed. Fields left empty stay as they are.": [
         "%d arquivo(s) serão alterados. Os campos deixados em branco permanecem como estão."
       ],
       "%d file(s) will be deleted for good. The media library has no trash.": [
         "%d arquivo(s) serão excluídos definitivamente. A biblioteca de mídia não tem lixeira."
-      ],
-      "%d hours ago": [
-        "%d horas atrás"
       ],
       "%d item(s)": [
         "%d item(ns)"
@@ -63,12 +51,6 @@
       ],
       "%d item(s) will be moved to the trash. Items already there are deleted for good.": [
         "%d item(ns) serão movidos para a lixeira. Os que já estão lá são excluídos definitivamente."
-      ],
-      "%d items selected": [
-        "%d itens selecionados"
-      ],
-      "%d minutes ago": [
-        "%d minutos atrás"
       ],
       "%d new order(s) received": [
         "%d novo(s) pedido(s) recebido(s)"
@@ -112,9 +94,6 @@
       "%d row(s) were not imported": [
         "%d linha(s) não foram importadas"
       ],
-      "%d rows found": [
-        "%d linhas encontradas"
-      ],
       "%d selected product(s).": [
         "%d produto(s) selecionado(s)."
       ],
@@ -141,15 +120,6 @@
       ],
       "%d user(s) will be deleted. This cannot be undone.": [
         "%d usuário(s) serão excluídos. Não há como desfazer."
-      ],
-      "%d users exported successfully": [
-        "%d usuários exportados com sucesso"
-      ],
-      "%d users imported successfully, %d errors": [
-        "%d usuários importados com sucesso, %d erros"
-      ],
-      "%d users selected": [
-        "%d usuários selecionaram"
       ],
       "%d variation(s) created": [
         "%d variação(ões) criada(s)"
@@ -180,9 +150,6 @@
       ],
       "%s as a hex value": [
         "%s em hexadecimal"
-      ],
-      "%s child item": [
-        "Item filho %s"
       ],
       "%s child items": [
         "%s itens filhos"
@@ -289,24 +256,6 @@
       "1 child item": [
         "1 item filho"
       ],
-      "1 comment selected": [
-        "1 comentário selecionado"
-      ],
-      "1 day ago": [
-        "1 dia atrás"
-      ],
-      "1 hour ago": [
-        "1 hora atrás"
-      ],
-      "1 item selected": [
-        "1 item selecionado"
-      ],
-      "1 minute ago": [
-        "1 minuto atrás"
-      ],
-      "1 user selected": [
-        "1 usuário selecionou"
-      ],
       "162 orders": [
         "162 pedidos"
       ],
@@ -355,9 +304,6 @@
       "A saved menu reaches people when the cache turns over.": [
         "Um menu salvo chega às pessoas quando o cache é renovado."
       ],
-      "A screenshot of the page will be captured and analyzed. The AI will provide CSS fixes based on your description.": [
-        "Uma captura de tela da página será feita e analisada. A IA fornecerá correções de CSS com base na sua descrição."
-      ],
       "A service account is needed.": [
         "É preciso uma conta de serviço."
       ],
@@ -378,9 +324,6 @@
       ],
       "API key used by the analytics map card. Store the token here instead of keeping it in source code.": [
         "Chave de API usada pelo cartão de mapa de análise. Armazene o token aqui em vez de mantê-lo no código-fonte."
-      ],
-      "About the user": [
-        "Sobre o usuário"
       ],
       "Accent base": [
         "Base de destaque"
@@ -406,23 +349,11 @@
       "Activate WooCommerce to see the store metrics here.": [
         "Ative o WooCommerce para ver as métricas da loja aqui."
       ],
-      "Activate the plugin to display the Rank Math overview widget in Analytics.": [
-        "Ative o plugin para exibir o widget de visão geral do Rank Math no Analytics."
-      ],
       "Activating Flexify Dashboard enables updates and features": [
         "Ativar o painel Flexify permite o acesso a atualizações e recursos."
       ],
-      "Activating...": [
-        "Ativando..."
-      ],
       "Active": [
         "Ativo"
-      ],
-      "Active Users": [
-        "Usuários ativos"
-      ],
-      "Active installs": [
-        "Instalações ativas"
       ],
       "Active users": [
         "Usuários ativos"
@@ -430,20 +361,11 @@
       "Activity": [
         "Atividade"
       ],
-      "Activity Details": [
-        "Detalhes da atividade"
-      ],
       "Activity Log": [
         "Registro de atividades"
       ],
-      "Activity Log Details": [
-        "Detalhes do registro de atividades"
-      ],
       "Activity log": [
         "Registro de atividades"
-      ],
-      "Activity log entry not found": [
-        "Registro de atividades não encontrado"
       ],
       "Activity logger is not enabled.": [
         "O registro de atividades não está ativado."
@@ -469,20 +391,11 @@
       "Add Row": [
         "Adicionar linha"
       ],
-      "Add Site": [
-        "Adicionar site"
-      ],
-      "Add URL": [
-        "Adicionar URL"
-      ],
       "Add URLs to any external stylesheets you want Flexify Dashboard to load into the admin": [
         "Adicione URLs para quaisquer folhas de estilo externas que você queira que o Painel Flexify carregue no painel administrativo."
       ],
       "Add a Mapbox key to see where your visitors are.": [
         "Adicione uma chave do Mapbox para ver de onde vêm seus visitantes."
-      ],
-      "Add a caption": [
-        "Adicione uma legenda"
       ],
       "Add a link": [
         "Adicionar um link"
@@ -556,17 +469,11 @@
       "Add order in classic screen": [
         "Adicionar pedido na tela clássica"
       ],
-      "Add plugin": [
-        "Adicionar plugin"
-      ],
       "Add product": [
         "Adicionar produto"
       ],
       "Add role": [
         "Adicionar função"
-      ],
-      "Add roles...": [
-        "Adicionar funções..."
       ],
       "Add shipping": [
         "Adicionar entrega"
@@ -576,9 +483,6 @@
       ],
       "Add tags": [
         "Adicionar tags"
-      ],
-      "Add tags...": [
-        "Adicionar etiquetas..."
       ],
       "Add the site": [
         "Adicionar o site"
@@ -594,9 +498,6 @@
       ],
       "Add value": [
         "Adicionar valor"
-      ],
-      "Add your Mapbox API key in Settings > Integrations to enable the Analytics Map card.": [
-        "Adicione sua chave de API do Mapbox em Configurações > Integrações para ativar o cartão de mapa do Analytics."
       ],
       "Added here": [
         "Adicionada aqui"
@@ -619,14 +520,8 @@
       "Adjustments": [
         "Ajustes"
       ],
-      "Admin": [
-        "Administrador"
-      ],
       "Admin Notices": [
         "Avisos administrativos"
-      ],
-      "Admin Role": [
-        "Função de administrador"
       ],
       "Admin favicon": [
         "Ícone de administrador"
@@ -636,9 +531,6 @@
       ],
       "Admin menu": [
         "Menu do admin"
-      ],
-      "Admin menu behavior and interaction settings": [
-        "Configurações de comportamento e interação do menu de administração"
       ],
       "Admin menus": [
         "Menus do painel"
@@ -654,12 +546,6 @@
       ],
       "Advanced": [
         "Avançado"
-      ],
-      "After": [
-        "Depois"
-      ],
-      "After saving, enable Google reCAPTCHA in Settings > Login to require it on the administrative login and password recovery forms.": [
-        "Após salvar, ative o Google reCAPTCHA em Configurações > Login para que ele seja exigido nos formulários de login administrativo e recuperação de senha."
       ],
       "Aggregated daily statistics": [
         "Estatísticas diárias agregadas"
@@ -694,26 +580,17 @@
       "All Tags": [
         "Todas as etiquetas"
       ],
-      "All Types": [
-        "Todos os tipos"
-      ],
       "All categories": [
         "Todas as categorias"
       ],
       "All caught up": [
         "Tudo em dia"
       ],
-      "All default WordPress pages (Posts, Pages, Comments, etc.) will continue to show local content.": [
-        "Todas as páginas padrão do WordPress (Posts, Páginas, Comentários, etc.) continuarão exibindo conteúdo local."
-      ],
       "All products": [
         "Todos os produtos"
       ],
       "All roles": [
         "Todas as funções"
-      ],
-      "All selected": [
-        "Todos os selecionados"
       ],
       "All tags": [
         "Todas as tags"
@@ -730,9 +607,6 @@
       "Allow SVG (Scalable Vector Graphics) files to be uploaded to the media library. All SVG files are automatically sanitized before upload to remove potentially malicious code, ensuring safe handling of SVG files.": [
         "Permitir o carregamento de arquivos SVG (Scalable Vector Graphics) para a biblioteca de mídia. Todos os arquivos SVG são automaticamente higienizados antes do carregamento para remover códigos potencialmente maliciosos, garantindo o manuseio seguro desses arquivos."
       ],
-      "Allow WordPress to update this plugin automatically": [
-        "Permitir que o WordPress atualize este plugin automaticamente"
-      ],
       "Allow backorders?": [
         "Permitir encomendas?"
       ],
@@ -745,9 +619,6 @@
       "Allow free shipping": [
         "Permitir frete grátis"
       ],
-      "Allow users to dismiss this notice": [
-        "Permitir que os usuários ignorem este aviso"
-      ],
       "Allow, but notify customer": [
         "Permitir, mas avisar o cliente"
       ],
@@ -756,12 +627,6 @@
       ],
       "Also these people": [
         "Também estas pessoas"
-      ],
-      "Alt Text": [
-        "Texto alternativo"
-      ],
-      "Alt text": [
-        "Texto alternativo"
       ],
       "Alternative text": [
         "Texto alternativo"
@@ -775,26 +640,17 @@
       "An application password, made on the other site. Not the password you sign in with.": [
         "Uma senha de aplicativo, criada no outro site. Não é a senha com que você entra."
       ],
-      "An error occurred": [
-        "Ocorreu um erro."
-      ],
       "An error occurred while sanitizing the SVG file.": [
         "Ocorreu um erro ao higienizar o arquivo SVG."
       ],
       "An option page with this slug already exists.": [
         "Já existe uma página de opções com esse slug."
       ],
-      "An unexpected error occurred during upload": [
-        "Ocorreu um erro inesperado durante o upload."
-      ],
       "Analytics": [
         "Análises"
       ],
       "Analytics Enabled:": [
         "Análises ativadas:"
-      ],
-      "Analytics Map": [
-        "Mapa analítico"
       ],
       "Analytics Provider": [
         "Fornecedor de análises"
@@ -813,9 +669,6 @@
       ],
       "Analytics settings to update": [
         "Atualizar as configurações do Analytics"
-      ],
-      "Analyzing layout issues...": [
-        "Analisando problemas de layout..."
       ],
       "Anonymous": [
         "Anônimo"
@@ -859,32 +712,17 @@
       "Appearance": [
         "Aparência"
       ],
-      "Application Password": [
-        "Senha do aplicativo"
-      ],
       "Application password": [
         "Senha de aplicativo"
-      ],
-      "Application passwords can be created in WordPress under Users > Profile > Application Passwords": [
-        "As senhas de aplicativos podem ser criadas no WordPress em Usuários > Perfil > Senhas de Aplicativos."
       ],
       "Apply": [
         "Aplicar"
       ],
-      "Apply Resize": [
-        "Aplicar redimensionamento"
-      ],
       "Apply crop": [
         "Aplicar corte"
       ],
-      "Apply menu to everyone": [
-        "Aplicar o menu a todos"
-      ],
       "Apply to everyone now": [
         "Aplicar para todos agora"
-      ],
-      "Apply to roles or users": [
-        "Candidatar-se a funções ou usuários"
       ],
       "Approve": [
         "Aprovar"
@@ -894,42 +732,6 @@
       ],
       "Archives": [
         "Arquivos"
-      ],
-      "Are you sure you want to batch update these items?": [
-        "Tem certeza de que deseja atualizar esses itens em lote?"
-      ],
-      "Are you sure you want to delete %s? This action cannot be undone.": [
-        "Tem certeza de que deseja excluir %s? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure you want to delete the role \"%s\"? This action cannot be undone.": [
-        "Tem certeza de que deseja excluir a função \"%s\"? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure you want to delete the table \"%s\"? This action cannot be undone.": [
-        "Tem certeza de que deseja excluir a tabela \"%s\"? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure you want to delete these files? This action cannot be undone.": [
-        "Tem certeza de que deseja excluir esses arquivos? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure you want to delete these items? This action cannot be undone.": [
-        "Tem certeza de que deseja excluir esses itens? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure you want to delete this comment? This action cannot be undone.": [
-        "Tem certeza de que deseja excluir este comentário? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure you want to delete this item? This action cannot be undone.": [
-        "Tem certeza de que deseja excluir este item? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure you want to delete this plugin? This action cannot be undone.": [
-        "Tem certeza de que deseja excluir este plugin? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure you want to publish these items?": [
-        "Tem certeza de que deseja publicar esses itens?"
-      ],
-      "Are you sure you want to remove this remote site? This action cannot be undone.": [
-        "Tem certeza de que deseja remover este site remoto? Esta ação não pode ser desfeita."
-      ],
-      "Are you sure?": [
-        "Tem certeza?"
       ],
       "Are you sure? This will delete all existing analytics data.": [
         "Tem certeza? Isso apagará todos os dados analíticos existentes."
@@ -942,12 +744,6 @@
       ],
       "Asked again because this cannot be undone.": [
         "Pedida novamente porque não há como desfazer."
-      ],
-      "Aspect Ratio": [
-        "Proporção da tela"
-      ],
-      "At least 8 characters": [
-        "Pelo menos 8 caracteres"
       ],
       "Attribute created": [
         "Atributo criado"
@@ -985,26 +781,8 @@
       "Author (publish_posts)": [
         "Autor (publish_posts)"
       ],
-      "Author Email": [
-        "E-mail do autor"
-      ],
-      "Author Name": [
-        "Nome do autor"
-      ],
-      "Author URL": [
-        "URL do autor"
-      ],
-      "Author name": [
-        "Nome do autor"
-      ],
       "Auto Cleanup": [
         "Limpeza automática"
-      ],
-      "Auto update disabled": [
-        "Atualização automática desativada"
-      ],
-      "Auto update enabled": [
-        "Atualização automática ativada"
       ],
       "Auto updates disabled": [
         "Atualizações automáticas desativadas"
@@ -1014,9 +792,6 @@
       ],
       "Auto-update": [
         "Atualização automática"
-      ],
-      "Automatic Updates": [
-        "Atualizações automáticas"
       ],
       "Automatic updates changed": [
         "Atualização automática alterada"
@@ -1030,12 +805,6 @@
       "Available to refund: R$ 85,80": [
         "Disponível para reembolso: R$ 85,80"
       ],
-      "Average Order": [
-        "Pedido médio"
-      ],
-      "Average Order Value": [
-        "Valor médio do pedido"
-      ],
       "Average Position": [
         "Posição média"
       ],
@@ -1045,38 +814,17 @@
       "Average ticket": [
         "Ticket médio"
       ],
-      "Average value per order in the selected period": [
-        "Valor médio por pedido no período selecionado"
-      ],
-      "Avg. Time on Site": [
-        "Tempo médio no site"
-      ],
       "Back": [
         "Voltar"
-      ],
-      "Back to list": [
-        "Voltar à lista"
-      ],
-      "Back to menu": [
-        "Voltar ao menu"
       ],
       "Back to orders": [
         "Voltar para pedidos"
       ],
-      "Back to plugins": [
-        "Voltar aos plugins"
-      ],
       "Back to products": [
         "Voltar para produtos"
       ],
-      "Back to sign in": [
-        "Voltar para a página de login"
-      ],
       "Back to signing in": [
         "Voltar para entrar"
-      ],
-      "Backend performance": [
-        "Desempenho do backend"
       ],
       "Backorders": [
         "Encomendas"
@@ -1090,32 +838,17 @@
       "Base theme colors": [
         "Cores do tema base"
       ],
-      "Basic Information": [
-        "Informações básicas"
-      ],
-      "Batch edit": [
-        "Edição em lote"
-      ],
-      "Before": [
-        "Antes"
-      ],
       "Behaviour": [
         "Comportamento"
       ],
       "Billing": [
         "Cobrança"
       ],
-      "Billing Address": [
-        "Endereço de Cobrança"
-      ],
       "Billing address": [
         "Endereço de cobrança"
       ],
       "Billing address updated": [
         "Endereço de cobrança atualizado"
-      ],
-      "Biographical Info": [
-        "Informações biográficas"
       ],
       "Biography": [
         "Biografia"
@@ -1131,9 +864,6 @@
       ],
       "Bold": [
         "Negrito"
-      ],
-      "Bounce Rate": [
-        "Taxa de rejeição"
       ],
       "Bounce rate": [
         "Taxa de rejeição"
@@ -1153,29 +883,11 @@
       "Browser timezone for accurate time calculations": [
         "Fuso horário do navegador para cálculos de tempo precisos"
       ],
-      "Bubble": [
-        "Bolha"
-      ],
       "Build one to change what the admin menu looks like for some or all of the people here.": [
         "Monte um para mudar como o menu do painel aparece para algumas ou todas as pessoas daqui."
       ],
       "Built-in Analytics": [
         "Análises integradas"
-      ],
-      "Built-in analytics and tracking settings": [
-        "Configurações integradas de análise e rastreamento"
-      ],
-      "Bulk Edit": [
-        "Edição em massa"
-      ],
-      "Bulk Edit Media": [
-        "Edição em massa de mídia"
-      ],
-      "Bulk Edit Users": [
-        "Usuários de edição em massa"
-      ],
-      "Bulk options": [
-        "Opções de compra em grande quantidade"
       ],
       "Bullet list": [
         "Lista com marcadores"
@@ -1188,18 +900,6 @@
       ],
       "Buy product": [
         "Comprar produto"
-      ],
-      "COUNTRY": [
-        "PAÍS"
-      ],
-      "CSS copied to clipboard": [
-        "CSS copiado para a área de transferência"
-      ],
-      "CSS fix saved to custom CSS settings": [
-        "Correção de CSS salva nas configurações de CSS personalizadas."
-      ],
-      "Callback": [
-        "Ligar de volta"
       ],
       "Camiseta Básica Algodão": [
         "Camiseta Básica Algodão"
@@ -1228,17 +928,8 @@
       "Capabilities must be an array.": [
         "As capacidades devem ser uma matriz."
       ],
-      "Capabilities updated": [
-        "Funcionalidades atualizadas"
-      ],
       "Caption": [
         "Rubrica"
-      ],
-      "Capturing screenshot...": [
-        "Capturando uma imagem da tela..."
-      ],
-      "Card visibility is stored independently for each category.": [
-        "A visibilidade dos cartões é armazenada independentemente para cada categoria."
       ],
       "Cards": [
         "Cartões"
@@ -1267,26 +958,14 @@
       "Category updated": [
         "Categoria atualizada"
       ],
-      "Change": [
-        "Mudar"
-      ],
       "Change author": [
         "Alterar autor"
       ],
       "Change status": [
         "Alterar status"
       ],
-      "Change the link of the URL": [
-        "Alterar o link da URL"
-      ],
       "Change the login url from wp-login.php to a custom slug. Ensure you remember what you change this to.": [
         "Altere o URL de login de wp-login.php para um slug personalizado. Certifique-se de lembrar qual slug você definiu."
-      ],
-      "Changelog": [
-        "Registro de alterações"
-      ],
-      "Changes": [
-        "Mudanças"
       ],
       "Channel": [
         "Canal"
@@ -1303,9 +982,6 @@
       "Check your email to continue the password recovery process.": [
         "Verifique seu e-mail para continuar o processo de recuperação de senha."
       ],
-      "Checking connection...": [
-        "Verificando conexão..."
-      ],
       "Choose": [
         "Escolher"
       ],
@@ -1320,9 +996,6 @@
       ],
       "Choose a font file": [
         "Escolha um arquivo de fonte"
-      ],
-      "Choose a name for your custom font family": [
-        "Escolha um nome para sua família de fontes personalizada."
       ],
       "Choose a property": [
         "Escolha uma propriedade"
@@ -1344,9 +1017,6 @@
       ],
       "Choose cards": [
         "Escolher cartões"
-      ],
-      "Choose custom icon from the list or add a Base64 encoded Data URI. Icons only show for top level items. ": [
-        "Escolha um ícone personalizado na lista ou adicione um URI de dados codificado em Base64. Os ícones são exibidos apenas para itens de nível superior."
       ],
       "Choose file": [
         "Escolher arquivo"
@@ -1405,18 +1075,6 @@
       "Clear": [
         "Claro"
       ],
-      "Clear All Filters": [
-        "Limpar todos os filtros"
-      ],
-      "Clear Cache": [
-        "Limpar cache"
-      ],
-      "Clear Search": [
-        "Limpar pesquisa"
-      ],
-      "Clear custom properties": [
-        "Limpar propriedades personalizadas"
-      ],
       "Clear filters": [
         "Limpar filtros"
       ],
@@ -1426,32 +1084,14 @@
       "Click": [
         "Clique"
       ],
-      "Click and drag on the image to select crop area": [
-        "Clique e arraste na imagem para selecionar a área de recorte."
-      ],
-      "Click the service account, go to \"Keys\" tab, click \"Add Key\" → \"Create new key\" → JSON": [
-        "Clique na conta de serviço, acesse a guia \"Chaves\", clique em \"Adicionar chave\" → \"Criar nova chave\" → JSON"
-      ],
-      "Click to change": [
-        "Clique para alterar"
-      ],
       "Click to rename": [
         "Clique para renomear"
-      ],
-      "Click to select file or drag and drop": [
-        "Clique para selecionar o arquivo ou arraste e solte."
-      ],
-      "Click to select font files": [
-        "Clique para selecionar os arquivos de fonte."
       ],
       "Client-side session ID": [
         "ID da sessão do lado do cliente"
       ],
       "Close": [
         "Fechar"
-      ],
-      "Close modal": [
-        "Fechar modal"
       ],
       "Code": [
         "Código"
@@ -1465,12 +1105,6 @@
       "Collapse submenu": [
         "Recolher submenu"
       ],
-      "Color": [
-        "Cor"
-      ],
-      "Colors, styling, and visual customization": [
-        "Cores, estilo e personalização visual"
-      ],
       "Colours, styling and the look of the admin": [
         "Cores, estilo e a aparência do painel"
       ],
@@ -1483,47 +1117,20 @@
       "Columns": [
         "Colunas"
       ],
-      "Command Syntax": [
-        "Sintaxe do comando"
-      ],
       "Commands": [
         "Comandos"
       ],
       "Comment": [
         "Comentário"
       ],
-      "Comment Details": [
-        "Detalhes do comentário"
-      ],
-      "Comment ID": [
-        "ID do comentário"
-      ],
-      "Comment content...": [
-        "Conteúdo do comentário..."
-      ],
       "Comment deleted": [
         "Comentário excluído"
-      ],
-      "Comment deleted successfully": [
-        "Comentário excluído com sucesso"
-      ],
-      "Comment deleted successfully!": [
-        "Comentário excluído com sucesso!"
-      ],
-      "Comment management and administration settings": [
-        "Configurações de gerenciamento e administração de comentários"
       ],
       "Comment moved to the trash": [
         "Comentário movido para a lixeira"
       ],
-      "Comment not found": [
-        "Comentário não encontrado"
-      ],
       "Comment updated": [
         "Comentário atualizado"
-      ],
-      "Comment updated successfully": [
-        "Comentário atualizado com sucesso"
       ],
       "Comments": [
         "Comentários"
@@ -1546,9 +1153,6 @@
       "Comments moved to the trash": [
         "Comentários movidos para a lixeira"
       ],
-      "Comments updated successfully": [
-        "Comentários atualizados com sucesso"
-      ],
       "Commerce": [
         "Comércio"
       ],
@@ -1558,23 +1162,14 @@
       "Compare": [
         "Comparar"
       ],
-      "Completed": [
-        "Concluído"
-      ],
       "Components": [
         "Componentes"
-      ],
-      "Configure external services and API keys": [
-        "Configure serviços externos e chaves de API."
       ],
       "Configure remote WordPress sites for cross-site operations.": [
         "Configure sites WordPress remotos para operações entre sites."
       ],
       "Configure the site key and secret key used by the modern administrative login and password recovery forms.": [
         "Configure a chave do site e a chave secreta usadas pelos formulários modernos de login administrativo e recuperação de senha."
-      ],
-      "Configured": [
-        "Configurado"
       ],
       "Confira seu e-mail para continuar o processo de recuperação de senha.": [
         "Confira seu e-mail para continuar o processo de recuperação de senha."
@@ -1591,9 +1186,6 @@
       "Connect": [
         "Conectar"
       ],
-      "Connect Google Analytics": [
-        "Conectar o Google Analytics"
-      ],
       "Connect your Google Analytics 4 property to display analytics data in the dashboard. You will need to create OAuth credentials in Google Cloud Console.": [
         "Conecte sua propriedade do Google Analytics 4 para exibir dados analíticos no painel. Você precisará criar credenciais OAuth no Google Cloud Console."
       ],
@@ -1603,32 +1195,17 @@
       "Connected to Google Analytics": [
         "Conectado ao Google Analytics"
       ],
-      "Connection Issue": [
-        "Problema de conexão"
-      ],
-      "Container": [
-        "Recipiente"
-      ],
-      "Content": [
-        "Contente"
-      ],
       "Contrast": [
         "Contraste"
       ],
       "Contributor (edit_posts)": [
         "Colaborador (editar_posts)"
       ],
-      "Convert": [
-        "Converter"
-      ],
       "Cool ← → Warm": [
         "Frio ← → Quente"
       ],
       "Copied to the clipboard": [
         "Copiado para a área de transferência"
-      ],
-      "Copy CSS": [
-        "Copiar CSS"
       ],
       "Copy URL": [
         "Copiar URL"
@@ -1638,15 +1215,6 @@
       ],
       "Copy code": [
         "Copiar código"
-      ],
-      "Copy failed": [
-        "Falha na cópia"
-      ],
-      "Core": [
-        "Essencial"
-      ],
-      "Core plugin settings and license management": [
-        "Configurações principais do plugin e gerenciamento de licenças"
       ],
       "Core plugin settings and the licence": [
         "Configurações principais do plugin e a licença"
@@ -1662,12 +1230,6 @@
       ],
       "Could not delete the product.": [
         "Não foi possível excluir o produto."
-      ],
-      "Could not find wpbody element. Please ensure you are on a WordPress admin page.": [
-        "Não foi possível encontrar o elemento wpbody. Certifique-se de estar em uma página administrativa do WordPress."
-      ],
-      "Could not load properties automatically. You can enter your Property ID manually below.": [
-        "Não foi possível carregar as propriedades automaticamente. Você pode inserir o ID da sua propriedade manualmente abaixo."
       ],
       "Could not load the data": [
         "Não foi possível carregar os dados"
@@ -1693,9 +1255,6 @@
       "Country / Region": [
         "País / Região"
       ],
-      "Country data will appear when visitors browse your site": [
-        "Os dados do país serão exibidos quando os visitantes navegarem pelo seu site."
-      ],
       "Coupon code": [
         "Código do cupom"
       ],
@@ -1719,27 +1278,6 @@
       ],
       "Coupons give customers a discount at checkout.": [
         "Cupons dão desconto aos clientes na finalização da compra."
-      ],
-      "Create New Notice": [
-        "Criar novo aviso"
-      ],
-      "Create New Role": [
-        "Criar nova função"
-      ],
-      "Create New User": [
-        "Criar novo usuário"
-      ],
-      "Create Notice": [
-        "Criar aviso"
-      ],
-      "Create Role": [
-        "Criar função"
-      ],
-      "Create User": [
-        "Criar usuário"
-      ],
-      "Create Your First Notice": [
-        "Crie seu primeiro aviso"
       ],
       "Create a new post quickly from here.": [
         "Crie uma nova publicação rapidamente a partir daqui."
@@ -1765,14 +1303,8 @@
       "Create order": [
         "Criar pedido"
       ],
-      "Create tag": [
-        "Criar etiqueta"
-      ],
       "Create your first product to start selling.": [
         "Crie seu primeiro produto para começar a vender."
-      ],
-      "Created": [
-        "Criado"
       ],
       "Created in admin": [
         "Criado no painel"
@@ -1789,9 +1321,6 @@
       "Current Analytics Status": [
         "Estado atual da análise"
       ],
-      "Currently Active": [
-        "Atualmente ativo"
-      ],
       "Custom Dashboard": [
         "Painel de controle personalizado"
       ],
@@ -1801,17 +1330,8 @@
       "Custom Font": [
         "Fonte personalizada"
       ],
-      "Custom Meta Fields": [
-        "Campos Meta Personalizados"
-      ],
       "Custom Plugins": [
         "Plugins personalizados"
-      ],
-      "Custom Separator": [
-        "Separador personalizado"
-      ],
-      "Custom URL": [
-        "URL personalizada"
       ],
       "Custom attribute": [
         "Atributo personalizado"
@@ -1822,17 +1342,8 @@
       "Custom css added here will only be added in the admin area and login page.": [
         "O CSS personalizado adicionado aqui será aplicado somente na área administrativa e na página de login."
       ],
-      "Custom dashboard and admin interface settings": [
-        "Configurações personalizadas do painel de controle e da interface administrativa"
-      ],
       "Custom fields": [
         "Campos personalizados"
-      ],
-      "Custom fields:": [
-        "Campos personalizados:"
-      ],
-      "Custom menu item": [
-        "Item de menu personalizado"
       ],
       "Custom ordering": [
         "Ordenação personalizada"
@@ -1852,12 +1363,6 @@
       "Customer": [
         "Cliente"
       ],
-      "Customer Information": [
-        "Informações do cliente"
-      ],
-      "Customer Since": [
-        "Cliente desde"
-      ],
       "Customer note": [
         "Nota do cliente"
       ],
@@ -1867,23 +1372,14 @@
       "Customers": [
         "Clientes"
       ],
-      "Customize login page appearance and security": [
-        "Personalize a aparência e a segurança da página de login."
-      ],
       "Customize the text displayed in the WordPress admin area. Enter original words or phrases and their replacements to white-label the admin interface.": [
         "Personalize o texto exibido na área administrativa do WordPress. Insira palavras ou frases originais e suas substituições para personalizar a interface administrativa com a sua marca."
-      ],
-      "Daily limit exceeded. Please try again tomorrow.": [
-        "Limite diário excedido. Tente novamente amanhã."
       ],
       "Dark": [
         "Escuro"
       ],
       "Dark Logo url": [
         "URL do logotipo escuro"
-      ],
-      "Dark Mode": [
-        "Modo escuro"
       ],
       "Dark mode": [
         "Modo escuro"
@@ -1900,9 +1396,6 @@
       "Dashboard sections": [
         "Seções do painel"
       ],
-      "Data": [
-        "Dados"
-      ],
       "Data table": [
         "Tabela de dados"
       ],
@@ -1912,35 +1405,17 @@
       "Database Explorer": [
         "Explorador de banco de dados"
       ],
-      "Database explorer and management settings": [
-        "Configurações do explorador e gerenciamento de banco de dados"
-      ],
       "Date": [
         "Data"
       ],
-      "Date Range": [
-        "Intervalo de datas"
-      ],
-      "Date range": [
-        "Intervalo de datas"
-      ],
       "Deactivate": [
         "Desativar"
-      ],
-      "Deactivating...": [
-        "Desativando..."
       ],
       "Decrease": [
         "Diminuir"
       ],
       "Default": [
         "Padrão"
-      ],
-      "Default (Outfit)": [
-        "Padrão (Outfit)"
-      ],
-      "Default Password": [
-        "Senha padrão"
       ],
       "Default Template": [
         "Modelo padrão"
@@ -1951,35 +1426,11 @@
       "Delete": [
         "Excluir"
       ],
-      "Delete Permanently": [
-        "Excluir permanentemente"
-      ],
-      "Delete Role": [
-        "Excluir função"
-      ],
-      "Delete Table": [
-        "Excluir tabela"
-      ],
-      "Delete Table?": [
-        "Excluir tabela?"
-      ],
       "Delete attribute?": [
         "Excluir atributo?"
       ],
       "Delete category?": [
         "Excluir categoria?"
-      ],
-      "Delete failed": [
-        "Falha ao excluir"
-      ],
-      "Delete file": [
-        "Excluir arquivo"
-      ],
-      "Delete item": [
-        "Excluir item"
-      ],
-      "Delete items": [
-        "Excluir itens"
       ],
       "Delete note": [
         "Excluir nota"
@@ -1992,9 +1443,6 @@
       ],
       "Delete permanently?": [
         "Excluir permanentemente?"
-      ],
-      "Delete selected": [
-        "Excluir selecionados"
       ],
       "Delete table": [
         "Excluir tabela"
@@ -2047,20 +1495,8 @@
       "Deleted": [
         "Excluído"
       ],
-      "Deleted menus cannot be retrieved.": [
-        "Os menus apagados não podem ser recuperados."
-      ],
-      "Depreciated functions": [
-        "Funções obsoletas"
-      ],
       "Descending": [
         "Descendente"
-      ],
-      "Describe the image for screen readers": [
-        "Descreva a imagem para leitores de tela."
-      ],
-      "Describe the layout or styling issue": [
-        "Descreva o problema de layout ou estilo."
       ],
       "Describe the product in detail…": [
         "Descreva o produto em detalhes…"
@@ -2074,9 +1510,6 @@
       "Descriptions": [
         "Descrições"
       ],
-      "Deselect All": [
-        "Desmarcar tudo"
-      ],
       "Design System": [
         "Design System"
       ],
@@ -2089,26 +1522,11 @@
       "Details of": [
         "Detalhes de"
       ],
-      "Development server detected, no need to activate your licence key.": [
-        "Servidor de desenvolvimento detectado, não é necessário ativar sua chave de licença."
-      ],
       "Device": [
         "Dispositivo"
       ],
-      "Device Usage": [
-        "Utilização do dispositivo"
-      ],
-      "Device data will appear when visitors browse your site": [
-        "Os dados do dispositivo serão exibidos quando os visitantes navegarem em seu site."
-      ],
-      "Device type distribution": [
-        "Distribuição por tipo de dispositivo"
-      ],
       "Devices": [
         "Dispositivos"
-      ],
-      "Dialog": [
-        "Diálogo"
       ],
       "Dimensions": [
         "Dimensões"
@@ -2122,9 +1540,6 @@
       "Disable global search for all users.": [
         "Desativar a pesquisa global para todos os usuários."
       ],
-      "Disable magic dark mode for this page": [
-        "Desative o modo escuro mágico para esta página."
-      ],
       "Disable theme": [
         "Desativar tema"
       ],
@@ -2133,9 +1548,6 @@
       ],
       "Discard changes": [
         "Descartar alterações"
-      ],
-      "Discard this order?": [
-        "Descartar este pedido?"
       ],
       "Discard unsaved changes?": [
         "Descartar alterações não salvas?"
@@ -2155,47 +1567,20 @@
       "Discount type": [
         "Tipo de desconto"
       ],
-      "Disk Space": [
-        "Espaço em disco"
-      ],
-      "Disk Usage": [
-        "Utilização do disco"
-      ],
       "Disk: %sGB of %sGB": [
         "Disco: %sGB de %sGB"
       ],
       "Dismiss": [
         "Dispensar"
       ],
-      "Dismissed By": [
-        "Dispensado por"
-      ],
-      "Dismissible": [
-        "Dispensável"
-      ],
-      "Display Name": [
-        "Nome de exibição"
-      ],
-      "Display Settings": [
-        "Configurações de exibição"
-      ],
       "Display name": [
         "Nome de exibição"
-      ],
-      "Display this notice to users": [
-        "Exibir este aviso aos usuários"
       ],
       "Do not allow": [
         "Não permitir"
       ],
-      "Docs": [
-        "Documentos"
-      ],
       "Documents": [
         "Documentos"
-      ],
-      "Done": [
-        "Feito"
       ],
       "Download": [
         "Download"
@@ -2212,9 +1597,6 @@
       "Download started": [
         "Download iniciado"
       ],
-      "Download the JSON key file": [
-        "Baixe o arquivo de chave JSON."
-      ],
       "Downloadable": [
         "Baixável"
       ],
@@ -2227,38 +1609,14 @@
       "Downloadable files of variable products are managed in the classic editor.": [
         "Os arquivos para download de produtos variáveis são gerenciados no editor clássico."
       ],
-      "Downloaded": [
-        "Baixado"
-      ],
-      "Downloads": [
-        "Downloads"
-      ],
       "Draft": [
         "Rascunho"
-      ],
-      "Draft menu": [
-        "Menu de rascunho"
-      ],
-      "Draft notice": [
-        "Aviso preliminar"
       ],
       "Drafts": [
         "Rascunhos"
       ],
-      "Drag & drop files here": [
-        "Arraste e solte arquivos aqui"
-      ],
       "Drag to reorder": [
         "Arraste para reordenar"
-      ],
-      "Drag to resize": [
-        "Arraste para redimensionar."
-      ],
-      "Drop file to replace": [
-        "Arraste e solte o arquivo para substituir."
-      ],
-      "Drop files to upload": [
-        "Arraste e solte os arquivos para fazer o upload."
       ],
       "Drop the files to upload them": [
         "Solte os arquivos para enviá-los"
@@ -2272,15 +1630,6 @@
       "Duplicate": [
         "Duplicado"
       ],
-      "Duplicate Site": [
-        "Site duplicado"
-      ],
-      "Duplicate items": [
-        "Itens duplicados"
-      ],
-      "Duplicate selected": [
-        "Selecionado duplicado"
-      ],
       "Edit": [
         "Editar"
       ],
@@ -2292,18 +1641,6 @@
       ],
       "Edit Admin Notice": [
         "Editar aviso do administrador"
-      ],
-      "Edit CSS": [
-        "Editar CSS"
-      ],
-      "Edit Image": [
-        "Editar imagem"
-      ],
-      "Edit Notice": [
-        "Aviso de edição"
-      ],
-      "Edit Profile": [
-        "Editar perfil"
       ],
       "Edit Tag": [
         "Editar etiqueta"
@@ -2335,17 +1672,8 @@
       "Edit my profile": [
         "Editar meu perfil"
       ],
-      "Edit order items": [
-        "Editar itens do pedido"
-      ],
-      "Edit product": [
-        "Editar produto"
-      ],
       "Edit profile": [
         "Editar perfil"
-      ],
-      "Edit role name": [
-        "Editar nome da função"
       ],
       "Edit shipping address": [
         "Editar endereço de entrega"
@@ -2359,35 +1687,14 @@
       "Edit variation": [
         "Editar variação"
       ],
-      "Edit your search criteria, or upload a new file.": [
-        "Edite seus critérios de pesquisa ou carregue um novo arquivo."
-      ],
-      "Editing %d items. Leave fields empty to keep existing values.": [
-        "Editando %d itens. Deixe os campos vazios para manter os valores existentes."
-      ],
-      "Editing %d users. Leave fields empty to keep existing values.": [
-        "Editando %d usuários. Deixe os campos vazios para manter os valores existentes."
-      ],
-      "Editing 1 item. Leave fields empty to keep existing values.": [
-        "Editando 1 item. Deixe os campos em branco para manter os valores existentes."
-      ],
-      "Editing 1 user. Leave fields empty to keep existing values.": [
-        "Editando 1 usuário. Deixe os campos em branco para manter os valores existentes."
-      ],
       "Editor (edit_others_posts)": [
         "Editor (editar_outros_posts)"
-      ],
-      "Effects": [
-        "Efeitos"
       ],
       "Email": [
         "E-mail"
       ],
       "Email address": [
         "Endereço de e-mail"
-      ],
-      "Email or username": [
-        "E-mail ou nome de usuário"
       ],
       "Empty allowed": [
         "Aceita vazio"
@@ -2403,9 +1710,6 @@
       ],
       "Enable Admin Menu Search": [
         "Ativar a pesquisa no menu de administração"
-      ],
-      "Enable Analytics, 404 Monitor or Redirections in Rank Math and confirm the current user has access.": [
-        "Ative o Analytics, o Monitor de Erro 404 ou os Redirecionamentos no Rank Math e confirme se o usuário atual tem acesso."
       ],
       "Enable Custom Post Types": [
         "Ativar tipos de postagem personalizados"
@@ -2431,20 +1735,11 @@
       "Enable TurnStyle": [
         "Ativar TurnStyle"
       ],
-      "Enable analytics in settings to view data": [
-        "Ative a função de análise nas configurações para visualizar os dados."
-      ],
       "Enable archives": [
         "Ativar arquivos"
       ],
       "Enable built-in analytics to track user behavior, page views, and performance metrics within your WordPress admin.": [
         "Ative as ferramentas de análise integradas para acompanhar o comportamento do usuário, as visualizações de página e as métricas de desempenho no painel de administração do WordPress."
-      ],
-      "Enable font uploads to add font files": [
-        "Ative o upload de fontes para adicionar arquivos de fonte."
-      ],
-      "Enable magic dark mode for this page": [
-        "Ative o modo escuro mágico para esta página."
       ],
       "Enable modern list view": [
         "Ativar visualização de lista moderna"
@@ -2457,9 +1752,6 @@
       ],
       "Enable search functionality in the admin menu to quickly find menu items.": [
         "Ative a função de busca no menu de administração para encontrar itens do menu rapidamente."
-      ],
-      "Enable the": [
-        "Ative o"
       ],
       "Enable the custom post types creator to register and manage custom post types without code. Post types are stored in a JSON file for performance.": [
         "Habilite o criador de tipos de postagem personalizados para registrar e gerenciar tipos de postagem personalizados sem código. Os tipos de postagem são armazenados em um arquivo JSON para melhor desempenho."
@@ -2488,12 +1780,6 @@
       "Engagement": [
         "Noivado"
       ],
-      "Engagement data will appear when users interact with your site": [
-        "Os dados de engajamento serão exibidos quando os usuários interagirem com seu site."
-      ],
-      "Enter Property ID": [
-        "Insira o ID da propriedade"
-      ],
       "Enter a refund amount greater than zero.": [
         "Informe um valor de reembolso maior que zero."
       ],
@@ -2503,50 +1789,17 @@
       "Enter a valid quantity.": [
         "Informe uma quantidade válida."
       ],
-      "Enter both keys before saving": [
-        "Digite ambas as chaves antes de salvar."
-      ],
-      "Enter custom meta field keys (one per line)": [
-        "Insira chaves de campo meta personalizadas (uma por linha)"
-      ],
-      "Enter notice content...": [
-        "Insira o conteúdo do aviso..."
-      ],
-      "Enter notice title": [
-        "Insira o título do aviso"
-      ],
       "Enter the Google reCAPTCHA site key and secret key.": [
         "Insira a chave do site e a chave secreta do Google reCAPTCHA."
-      ],
-      "Enter the URL to an external font stylesheet (CSS file)": [
-        "Insira o URL de uma folha de estilo de fonte externa (arquivo CSS)."
-      ],
-      "Enter your Google reCAPTCHA secret key": [
-        "Insira sua chave secreta do Google reCAPTCHA"
-      ],
-      "Enter your Google reCAPTCHA site key": [
-        "Insira a chave do seu site Google reCAPTCHA."
       ],
       "Enter your Mapbox token": [
         "Insira seu token do Mapbox."
       ],
-      "Enter your SELECT query here...": [
-        "Insira sua consulta SELECT aqui..."
-      ],
       "Enter your details to carry on.": [
         "Informe seus dados para continuar."
       ],
-      "Enter your email and password to sign in!": [
-        "Digite seu e-mail e senha para entrar!"
-      ],
-      "Enter your email or username and we will send you a recovery link.": [
-        "Insira seu e-mail ou nome de usuário e enviaremos um link de recuperação."
-      ],
       "Enter your email or username to recover your password.": [
         "Digite seu e-mail ou nome de usuário para recuperar sua senha."
-      ],
-      "Enter your password": [
-        "Digite sua senha"
       ],
       "Enter your username and password to continue.": [
         "Digite seu nome de usuário e senha para continuar."
@@ -2563,47 +1816,8 @@
       "Error": [
         "Erro"
       ],
-      "Error deleting table": [
-        "Erro ao excluir a tabela"
-      ],
-      "Error downloading files": [
-        "Erro ao baixar os arquivos"
-      ],
-      "Error duplicating files": [
-        "Erro ao duplicar arquivos"
-      ],
-      "Error executing query": [
-        "Erro ao executar a consulta"
-      ],
       "Error generating dummy data: ": [
         "Erro ao gerar dados fictícios:"
-      ],
-      "Error loading table data": [
-        "Erro ao carregar os dados da tabela"
-      ],
-      "Error loading table structure": [
-        "Erro ao carregar a estrutura da tabela"
-      ],
-      "Error parsing file": [
-        "Erro ao analisar o arquivo"
-      ],
-      "Error updating comments": [
-        "Erro ao atualizar comentários"
-      ],
-      "Error updating media": [
-        "Erro ao atualizar a mídia"
-      ],
-      "Error updating users": [
-        "Erro ao atualizar usuários"
-      ],
-      "Error uploading menu": [
-        "Erro ao carregar o menu"
-      ],
-      "Error uploading settings": [
-        "Erro ao carregar as configurações"
-      ],
-      "Errors": [
-        "Erros"
       ],
       "Estimated total": [
         "Total estimado"
@@ -2638,29 +1852,14 @@
       "Except these people": [
         "Exceto estas pessoas"
       ],
-      "Exclude roles or users": [
-        "Excluir funções ou usuários"
-      ],
       "Exclude sale items": [
         "Excluir itens em promoção"
-      ],
-      "Execute": [
-        "Executar"
-      ],
-      "Execute SELECT queries only (read-only for safety)": [
-        "Executar somente consultas SELECT (somente leitura por segurança)"
-      ],
-      "Execution time": [
-        "Tempo de execução"
       ],
       "Expand": [
         "Expandir"
       ],
       "Expand all": [
         "Expandir tudo"
-      ],
-      "Expand all posts": [
-        "Expandir todas as publicações"
       ],
       "Expand sidebar": [
         "Expandir barra lateral"
@@ -2680,29 +1879,14 @@
       "Export": [
         "Exportar"
       ],
-      "Export %d filtered users to CSV file": [
-        "Exportar %d usuários filtrados para arquivo CSV"
-      ],
       "Export CSV": [
         "Exportar CSV"
-      ],
-      "Export Users": [
-        "Usuários de exportação"
-      ],
-      "Export completed": [
-        "Exportação concluída"
       ],
       "Export current page (CSV)": [
         "Exportar página atual (CSV)"
       ],
-      "Export failed": [
-        "A exportação falhou"
-      ],
       "Export products": [
         "Exportar produtos"
-      ],
-      "Export to CSV": [
-        "Exportar para CSV"
       ],
       "Exposure": [
         "Exposição"
@@ -2716,56 +1900,23 @@
       "External/Affiliate product": [
         "Produto externo/afiliado"
       ],
-      "Extracting HTML...": [
-        "Extraindo HTML..."
-      ],
-      "Extreme Caution Required": [
-        "Extrema cautela é necessária."
-      ],
-      "FAQ": [
-        "Perguntas frequentes"
-      ],
-      "Failed": [
-        "Fracassado"
-      ],
-      "Failed to activate key": [
-        "Falha ao ativar a chave"
-      ],
-      "Failed to add tag": [
-        "Falha ao adicionar a tag"
-      ],
       "Failed to authenticate with Google. Please check your service account key.": [
         "Falha na autenticação com o Google. Verifique a chave da sua conta de serviço."
       ],
       "Failed to collect metrics": [
         "Falha na coleta de métricas"
       ],
-      "Failed to copy CSS": [
-        "Falha ao copiar o CSS"
-      ],
       "Failed to create ZIP file.": [
         "Falha ao criar o arquivo ZIP."
       ],
-      "Failed to create role": [
-        "Falha ao criar a função"
-      ],
       "Failed to create role.": [
         "Falha ao criar a função."
-      ],
-      "Failed to create tag": [
-        "Falha ao criar a tag"
-      ],
-      "Failed to create user": [
-        "Falha ao criar usuário"
       ],
       "Failed to deactivate plugin": [
         "Falha ao desativar o plugin"
       ],
       "Failed to decrypt the license server response.": [
         "Falha ao descriptografar a resposta do servidor de licenças."
-      ],
-      "Failed to delete comment": [
-        "Não foi possível excluir o comentário."
       ],
       "Failed to delete custom post type.": [
         "Falha ao excluir o tipo de postagem personalizado."
@@ -2776,20 +1927,8 @@
       "Failed to delete option page.": [
         "Falha ao excluir a página de opções."
       ],
-      "Failed to delete role": [
-        "Falha ao excluir a função"
-      ],
-      "Failed to delete table": [
-        "Falha ao excluir a tabela"
-      ],
       "Failed to delete table.": [
         "Falha ao excluir a tabela."
-      ],
-      "Failed to disable magic dark mode": [
-        "Falha ao desativar o modo escuro mágico"
-      ],
-      "Failed to disconnect": [
-        "Falha ao desconectar"
       ],
       "Failed to duplicate field group.": [
         "Falha ao duplicar o grupo de campos."
@@ -2797,44 +1936,11 @@
       "Failed to duplicate option page.": [
         "Falha ao duplicar a página de opções."
       ],
-      "Failed to enable magic dark mode": [
-        "Falha ao ativar o modo escuro mágico"
-      ],
       "Failed to extract plugin ZIP: %s": [
         "Falha ao extrair o arquivo ZIP do plugin: %s"
       ],
       "Failed to fetch properties. Make sure the service account has been added to your GA4 property.": [
         "Não foi possível obter as propriedades. Certifique-se de que a conta de serviço foi adicionada à sua propriedade GA4."
-      ],
-      "Failed to fix layout and styling": [
-        "Não foi possível corrigir o layout e o estilo."
-      ],
-      "Failed to fix layout and styling. Please try again later.": [
-        "Não foi possível corrigir o layout e o estilo. Tente novamente mais tarde."
-      ],
-      "Failed to load analytics": [
-        "Falha ao carregar as análises"
-      ],
-      "Failed to load media analytics": [
-        "Falha ao carregar as análises de mídia"
-      ],
-      "Failed to load plugins": [
-        "Falha ao carregar os plugins"
-      ],
-      "Failed to load revenue": [
-        "Falha ao carregar a receita"
-      ],
-      "Failed to load role": [
-        "Falha ao carregar a função"
-      ],
-      "Failed to load roles": [
-        "Falha ao carregar as funções"
-      ],
-      "Failed to load scheduled posts": [
-        "Falha ao carregar as postagens agendadas"
-      ],
-      "Failed to load user analytics": [
-        "Falha ao carregar as análises do usuário."
       ],
       "Failed to move uploaded file.": [
         "Falha ao mover o arquivo enviado."
@@ -2842,35 +1948,17 @@
       "Failed to parse metrics JSON": [
         "Falha ao analisar o JSON das métricas"
       ],
-      "Failed to remove activation": [
-        "Falha ao remover a ativação"
-      ],
       "Failed to remove existing plugin: %s": [
         "Falha ao remover o plugin existente: %s"
       ],
-      "Failed to remove tag": [
-        "Falha ao remover a etiqueta"
-      ],
-      "Failed to reset settings": [
-        "Falha ao redefinir as configurações"
-      ],
       "Failed to retrieve chart data": [
         "Falha ao recuperar os dados do gráfico"
-      ],
-      "Failed to save CSS fix": [
-        "Falha ao salvar a correção do CSS"
-      ],
-      "Failed to save credentials": [
-        "Falha ao salvar as credenciais"
       ],
       "Failed to save custom post type.": [
         "Falha ao salvar o tipo de postagem personalizado."
       ],
       "Failed to save field group.": [
         "Falha ao salvar o grupo de campos."
-      ],
-      "Failed to save image": [
-        "Falha ao salvar a imagem"
       ],
       "Failed to save imported field groups.": [
         "Falha ao salvar os grupos de campos importados."
@@ -2881,29 +1969,11 @@
       "Failed to save option page.": [
         "Falha ao salvar a página de opções."
       ],
-      "Failed to save property": [
-        "Não foi possível salvar a propriedade."
-      ],
       "Failed to track analytics event": [
         "Falha ao rastrear evento analítico"
       ],
       "Failed to update auto update settings": [
         "Falha ao atualizar as configurações de atualização automática"
-      ],
-      "Failed to update capabilities": [
-        "Falha ao atualizar as capacidades"
-      ],
-      "Failed to update comment": [
-        "Falha ao atualizar o comentário"
-      ],
-      "Failed to update role name": [
-        "Falha ao atualizar o nome da função"
-      ],
-      "Failed to update tags": [
-        "Falha ao atualizar as tags"
-      ],
-      "Failed to update user": [
-        "Falha ao atualizar o usuário"
       ],
       "Failed to validate Turnstile response.": [
         "Falha ao validar a resposta da catraca."
@@ -2920,17 +1990,11 @@
       "Featured image": [
         "Imagem em destaque"
       ],
-      "Featured image updated": [
-        "Imagem em destaque atualizada"
-      ],
       "Featured only": [
         "Somente destaques"
       ],
       "Featured product": [
         "Produto em destaque"
-      ],
-      "Features:": [
-        "Características:"
       ],
       "Fee name": [
         "Nome da taxa"
@@ -2974,12 +2038,6 @@
       "File": [
         "Arquivo"
       ],
-      "File Too Large": [
-        "Arquivo muito grande"
-      ],
-      "File Types": [
-        "Tipos de arquivo"
-      ],
       "File URL": [
         "URL do arquivo"
       ],
@@ -2988,9 +2046,6 @@
       ],
       "File deleted": [
         "Arquivo excluído"
-      ],
-      "File loaded": [
-        "Arquivo carregado"
       ],
       "File name": [
         "Nome do arquivo"
@@ -3001,26 +2056,8 @@
       "File replaced": [
         "Arquivo substituído"
       ],
-      "File replaced successfully": [
-        "Arquivo substituído com sucesso"
-      ],
-      "File replaced successfully!": [
-        "Arquivo substituído com sucesso!"
-      ],
       "File replaced successfully.": [
         "Arquivo substituído com sucesso."
-      ],
-      "File replacement failed": [
-        "A substituição do arquivo falhou"
-      ],
-      "File size": [
-        "Tamanho do arquivo"
-      ],
-      "File size must be less than 50MB": [
-        "O tamanho do arquivo deve ser inferior a 50 MB."
-      ],
-      "File type": [
-        "Tipo de arquivo"
       ],
       "File type not allowed.": [
         "Tipo de arquivo não permitido."
@@ -3031,32 +2068,17 @@
       "File upload failed. Please try again.": [
         "O envio do arquivo falhou. Tente novamente."
       ],
-      "File uploaded": [
-        "Arquivo enviado"
-      ],
-      "Filename": [
-        "Nome do arquivo"
-      ],
       "Files": [
         "Arquivos"
       ],
       "Files deleted": [
         "Arquivos excluídos"
       ],
-      "Files downloaded": [
-        "Arquivos baixados"
-      ],
-      "Files duplicated": [
-        "Arquivos duplicados"
-      ],
       "Files updated": [
         "Arquivos atualizados"
       ],
       "Files uploaded": [
         "Arquivos enviados"
-      ],
-      "Files uploaded successfully!": [
-        "Arquivos enviados com sucesso!"
       ],
       "Filter %s list": [
         "Lista de filtros %s"
@@ -3079,23 +2101,8 @@
       "Find users": [
         "Encontrar usuários"
       ],
-      "Find your Property ID in Google Analytics: Admin → Property Settings → Property ID (a number like 123456789)": [
-        "Encontre o ID da sua propriedade no Google Analytics: Administrador → Configurações da propriedade → ID da propriedade (um número como 123456789)"
-      ],
-      "Finding your Property ID:": [
-        "Como encontrar o ID do seu imóvel:"
-      ],
-      "Finished": [
-        "Finalizado"
-      ],
-      "First Name": [
-        "Primeiro nome"
-      ],
       "First name": [
         "Nome"
-      ],
-      "Fix Layout": [
-        "Corrigir layout"
       ],
       "Fixed amount": [
         "Valor fixo"
@@ -3109,50 +2116,20 @@
       "Flexify Dashboard": [
         "Flexify Dashboard"
       ],
-      "Flexify Dashboard licence key": [
-        "Chave de licença do painel Flexify"
-      ],
       "Flip H": [
         "Vire H"
       ],
       "Flip V": [
         "Virar V"
       ],
-      "Focus Search": [
-        "Busca focada"
-      ],
       "Font": [
         "Fonte"
-      ],
-      "Font Family Name": [
-        "Nome da família de fontes"
-      ],
-      "Font Files": [
-        "Arquivos de fontes"
-      ],
-      "Font Source": [
-        "Fonte da fonte"
-      ],
-      "Font Stylesheet URL": [
-        "URL da folha de estilo da fonte"
-      ],
-      "Font Uploads Disabled": [
-        "Upload de fontes desativado"
-      ],
-      "Font Weights": [
-        "Pesos da fonte"
       ],
       "Font family name": [
         "Nome da família da fonte"
       ],
       "Font file": [
         "Arquivo de fonte"
-      ],
-      "Font file uploads are currently disabled. Enable font uploads in the Media settings to upload custom font files (.woff2, .woff, .ttf, .otf).": [
-        "O envio de arquivos de fontes está desativado no momento. Ative o envio de fontes nas configurações de mídia para enviar arquivos de fontes personalizados (.woff2, .woff, .ttf, .otf)."
-      ],
-      "Font name...": [
-        "Nome da fonte..."
       ],
       "Fonts": [
         "Fontes"
@@ -3163,14 +2140,8 @@
       "Force global theme": [
         "Tema global da Força"
       ],
-      "Forgot password?": [
-        "Esqueceu sua senha?"
-      ],
       "Form controls": [
         "Controles de formulário"
-      ],
-      "Found": [
-        "Encontrado"
       ],
       "Foundation": [
         "Fundação"
@@ -3181,9 +2152,6 @@
       "Free shipping": [
         "Frete grátis"
       ],
-      "Frequently Used": [
-        "Frequentemente usado"
-      ],
       "Frequently used": [
         "Mais usados"
       ],
@@ -3193,14 +2161,8 @@
       "From WordPress": [
         "Do WordPress"
       ],
-      "Frontend performance": [
-        "Desempenho do front-end"
-      ],
       "Full (%1$s × %2$s)": [
         "Completo (%1$s × %2$s)"
-      ],
-      "Function": [
-        "Função"
       ],
       "GET wp/v2/users/me": [
         "GET wp/v2/users/me"
@@ -3225,9 +2187,6 @@
       ],
       "Generate code": [
         "Gerar código"
-      ],
-      "Generate strong password": [
-        "Gere uma senha forte."
       ],
       "Generate variations": [
         "Gerar variações"
@@ -3256,14 +2215,8 @@
       "Go Pro": [
         "Vá para o Pro"
       ],
-      "Go to": [
-        "Vá para"
-      ],
       "Go to the dashboard": [
         "Ir para o painel"
-      ],
-      "Google Analytics": [
-        "Google Analytics"
       ],
       "Google Analytics 4": [
         "Google Analytics 4"
@@ -3271,20 +2224,8 @@
       "Google Analytics Connection": [
         "Conexão com o Google Analytics"
       ],
-      "Google Analytics Connection Issue": [
-        "Problema de conexão com o Google Analytics"
-      ],
-      "Google Analytics Data API": [
-        "API de dados do Google Analytics"
-      ],
-      "Google Analytics Error": [
-        "Erro do Google Analytics"
-      ],
       "Google Analytics disconnected": [
         "Google Analytics desconectado"
-      ],
-      "Google Cloud Console": [
-        "Console do Google Cloud"
       ],
       "Google Fonts": [
         "Fontes do Google"
@@ -3292,20 +2233,11 @@
       "Google reCAPTCHA": [
         "Google reCAPTCHA"
       ],
-      "Google reCAPTCHA credentials saved": [
-        "Credenciais do Google reCAPTCHA salvas"
-      ],
       "Google reCAPTCHA credentials saved successfully.": [
         "As credenciais do Google reCAPTCHA foram salvas com sucesso."
       ],
-      "Google reCAPTCHA disconnected": [
-        "Google reCAPTCHA desconectado"
-      ],
       "Google reCAPTCHA validation failed. Please try again.": [
         "A validação do Google reCAPTCHA falhou. Tente novamente."
-      ],
-      "Got it, thanks!": [
-        "Entendi, obrigado!"
       ],
       "Grain": [
         "Grão"
@@ -3313,14 +2245,8 @@
       "Green ← → Magenta": [
         "Verde ← → Magenta"
       ],
-      "Grid View": [
-        "Visualização em grade"
-      ],
       "Grid view": [
         "Visualização em grade"
-      ],
-      "Gross": [
-        "Bruto"
       ],
       "Gross revenue": [
         "Receita bruta"
@@ -3340,32 +2266,8 @@
       "HTTP Error": [
         "Erro HTTP"
       ],
-      "HTTP requests": [
-        "requisições HTTP"
-      ],
-      "Handle": [
-        "Lidar"
-      ],
       "Heading": [
         "Título"
-      ],
-      "Heading 1": [
-        "Título 1"
-      ],
-      "Heading 2": [
-        "Título 2"
-      ],
-      "Heading 3": [
-        "Título 3"
-      ],
-      "Heading 4": [
-        "Título 4"
-      ],
-      "Heading 5": [
-        "Título 5"
-      ],
-      "Heading 6": [
-        "Título 6"
       ],
       "Height": [
         "Altura"
@@ -3379,17 +2281,11 @@
       "Hidden": [
         "Escondido"
       ],
-      "Hide Applied CSS": [
-        "Ocultar CSS aplicado"
-      ],
       "Hide help toggle": [
         "Ocultar ou alternar a ajuda"
       ],
       "Hide language selector": [
         "Ocultar seletor de idioma"
-      ],
-      "Hide password": [
-        "Ocultar senha"
       ],
       "Hide plugin update notifications for selected plugins": [
         "Ocultar notificações de atualização de plugins selecionados"
@@ -3409,23 +2305,11 @@
       "Hide this item": [
         "Ocultar este item"
       ],
-      "High": [
-        "Alto"
-      ],
       "Highlight color": [
         "Cor de destaque"
       ],
       "Highlights": [
         "Destaques"
-      ],
-      "History": [
-        "História"
-      ],
-      "Hook": [
-        "Gancho"
-      ],
-      "Hooks": [
-        "Ganchos"
       ],
       "Hover": [
         "Passar o cursor"
@@ -3451,26 +2335,14 @@
       "How the login page looks and what guards it": [
         "Como a página de login aparece e o que a protege"
       ],
-      "How to connect Google Analytics 4": [
-        "Como conectar o Google Analytics 4"
-      ],
       "Hue": [
         "Matiz"
-      ],
-      "I Understand": [
-        "Eu entendo"
       ],
       "I forgot my password": [
         "Esqueci minha senha"
       ],
-      "ID": [
-        "EU IA"
-      ],
       "ID of the notice to mark as seen": [
         "Identificação do aviso a ser marcado como visto"
-      ],
-      "IP Address": [
-        "Endereço IP"
       ],
       "IP address": [
         "Endereço IP"
@@ -3487,17 +2359,8 @@
       "Ignore": [
         "Ignorar"
       ],
-      "Image Editor": [
-        "Editor de Imagens"
-      ],
       "Image address": [
         "Endereço da imagem"
-      ],
-      "Image optimized": [
-        "Imagem otimizada"
-      ],
-      "Image saved successfully": [
-        "Imagem salva com sucesso"
       ],
       "Image url": [
         "URL da imagem"
@@ -3511,23 +2374,8 @@
       "Import %d row(s)": [
         "Importar %d linha(s)"
       ],
-      "Import Errors": [
-        "Erros de importação"
-      ],
-      "Import Users": [
-        "Importar usuários"
-      ],
-      "Import Users from CSV": [
-        "Importar usuários de um arquivo CSV"
-      ],
-      "Import completed": [
-        "Importação concluída"
-      ],
       "Import completed successfully.": [
         "Importação concluída com sucesso."
-      ],
-      "Import failed": [
-        "A importação falhou"
       ],
       "Import products": [
         "Importar produtos"
@@ -3540,21 +2388,6 @@
       ],
       "Important Only": [
         "Somente importante"
-      ],
-      "Important:": [
-        "Importante:"
-      ],
-      "Importing...": [
-        "Importando..."
-      ],
-      "In": [
-        "Em"
-      ],
-      "In Google Analytics, go to Admin → Property Settings. Your Property ID is the number shown (e.g. 123456789).": [
-        "No Google Analytics, acesse Administrador → Configurações da propriedade. O ID da sua propriedade é o número exibido (por exemplo, 123456789)."
-      ],
-      "In Range": [
-        "Dentro do alcance"
       ],
       "In period": [
         "No período"
@@ -3571,26 +2404,14 @@
       "Inactive": [
         "Inativo"
       ],
-      "Include Custom Fields": [
-        "Incluir campos personalizados"
-      ],
       "Increase": [
         "Aumentar"
       ],
       "Indeterminate": [
         "Indeterminado"
       ],
-      "Indexes": [
-        "Índices"
-      ],
       "Individual use only": [
         "Somente uso individual"
-      ],
-      "Individual visitors": [
-        "visitantes individuais"
-      ],
-      "Info": [
-        "Informações"
       ],
       "Information": [
         "Informação"
@@ -3607,26 +2428,8 @@
       "Install": [
         "Instalar"
       ],
-      "Install plugin": [
-        "Instalar plugin"
-      ],
-      "Install plugins or extensions to add dashboard cards here.": [
-        "Instale plugins ou extensões para adicionar cartões ao painel aqui."
-      ],
-      "Installation": [
-        "Instalação"
-      ],
       "Installed": [
         "Instalado"
-      ],
-      "Installed Plugins": [
-        "Plugins instalados"
-      ],
-      "Installs": [
-        "Instala"
-      ],
-      "Instance removed": [
-        "Instância removida"
       ],
       "Integration with Google reCAPTCHA removed.": [
         "Integração com o Google reCAPTCHA removida."
@@ -3634,20 +2437,8 @@
       "Integrations": [
         "Integrações"
       ],
-      "Invalid": [
-        "Inválido"
-      ],
-      "Invalid File": [
-        "Arquivo inválido"
-      ],
-      "Invalid Input": [
-        "Entrada inválida"
-      ],
       "Invalid JSON format": [
         "Formato JSON inválido"
-      ],
-      "Invalid URL": [
-        "URL inválida"
       ],
       "Invalid action.": [
         "Ação inválida."
@@ -3657,9 +2448,6 @@
       ],
       "Invalid authentication credentials.": [
         "Credenciais de autenticação inválidas."
-      ],
-      "Invalid capabilities format": [
-        "Formato de capacidades inválido"
       ],
       "Invalid category.": [
         "Categoria inválida."
@@ -3676,9 +2464,6 @@
       "Invalid file path.": [
         "Caminho de arquivo inválido."
       ],
-      "Invalid file type": [
-        "Tipo de arquivo inválido"
-      ],
       "Invalid file type. Please upload a ZIP file.": [
         "Tipo de arquivo inválido. Por favor, envie um arquivo ZIP."
       ],
@@ -3694,17 +2479,11 @@
       "Invalid license response.": [
         "Resposta de licença inválida."
       ],
-      "Invalid mapping": [
-        "Mapeamento inválido"
-      ],
       "Invalid media IDs provided.": [
         "IDs de mídia inválidos fornecidos."
       ],
       "Invalid media item": [
         "Item de mídia inválido"
-      ],
-      "Invalid menu_meta: must be an object": [
-        "Menu_meta inválido: deve ser um objeto"
       ],
       "Invalid notice or user.": [
         "Aviso ou usuário inválido."
@@ -3727,9 +2506,6 @@
       "Invalid order.": [
         "Pedido inválido."
       ],
-      "Invalid password": [
-        "Senha inválida"
-      ],
       "Invalid password.": [
         "Senha inválida."
       ],
@@ -3751,14 +2527,8 @@
       "Invalid product.": [
         "Produto inválido."
       ],
-      "Invalid remote site configuration": [
-        "Configuração de site remoto inválida"
-      ],
       "Invalid request.": [
         "Solicitação inválida."
-      ],
-      "Invalid request. Please check your input.": [
-        "Solicitação inválida. Por favor, verifique sua entrada."
       ],
       "Invalid request. Please refresh the page and try again.": [
         "Solicitação inválida. Atualize a página e tente novamente."
@@ -3766,17 +2536,8 @@
       "Invalid response from license server.": [
         "Resposta inválida do servidor de licenças."
       ],
-      "Invalid role format": [
-        "Formato de função inválido"
-      ],
       "Invalid role format.": [
         "Formato de função inválido."
-      ],
-      "Invalid role name": [
-        "Nome de função inválido"
-      ],
-      "Invalid role slug": [
-        "Slug de função inválido"
       ],
       "Invalid role.": [
         "Função inválida."
@@ -3786,9 +2547,6 @@
       ],
       "Invalid session. Please reload the page and try again.": [
         "Sessão inválida. Recarregue a página e tente novamente."
-      ],
-      "Invalid settings: must be an object": [
-        "Configurações inválidas: deve ser um objeto"
       ],
       "Invalid stat type": [
         "Tipo de estatística inválido"
@@ -3868,9 +2626,6 @@
       "Items published": [
         "Itens publicados"
       ],
-      "Items selected": [
-        "Itens selecionados"
-      ],
       "Items subtotal": [
         "Subtotal dos itens"
       ],
@@ -3883,32 +2638,14 @@
       "JSON must be a service account key (type should be \"service_account\")": [
         "O JSON deve ser uma chave de conta de serviço (o tipo deve ser \"service_account\")."
       ],
-      "Just now": [
-        "Agora mesmo"
-      ],
       "Justify": [
         "Justificar"
-      ],
-      "Keep Fix": [
-        "Mantenha fixo"
-      ],
-      "Keep me logged in": [
-        "Mantenha-me conectado"
       ],
       "Keep me signed in": [
         "Manter-me conectado"
       ],
-      "Keep the same ID and regenerate thumbnails": [
-        "Mantenha o mesmo ID e gere novas miniaturas."
-      ],
       "Key": [
         "Chave"
-      ],
-      "Key successfully activated": [
-        "Chave ativada com sucesso"
-      ],
-      "Keyboard Shortcuts": [
-        "Atalhos de teclado"
       ],
       "Keys are set": [
         "Chaves configuradas"
@@ -3922,9 +2659,6 @@
       "Label": [
         "Rótulo"
       ],
-      "Large Files": [
-        "Arquivos grandes"
-      ],
       "Large files": [
         "Arquivos grandes"
       ],
@@ -3937,20 +2671,11 @@
       "Last 30 days": [
         "Últimos 30 dias"
       ],
-      "Last 5 minutes": [
-        "Últimos 5 minutos"
-      ],
       "Last 7 days": [
         "Últimos 7 dias"
       ],
       "Last 90 days": [
         "Últimos 90 dias"
-      ],
-      "Last Name": [
-        "Sobrenome"
-      ],
-      "Last Updated": [
-        "Última atualização"
       ],
       "Last modified": [
         "Última modificação"
@@ -3958,20 +2683,11 @@
       "Last name": [
         "Sobrenome"
       ],
-      "Last updated": [
-        "Última atualização"
-      ],
       "Last year": [
         "Último ano"
       ],
-      "Latest 5 orders": [
-        "Últimos 5 pedidos"
-      ],
       "Latest Blog Posts from Rank Math": [
         "Últimas postagens do blog Rank Math"
-      ],
-      "Latest comments and discussions": [
-        "Últimos comentários e discussões"
       ],
       "Latest content activity": [
         "Atividade de conteúdo mais recente"
@@ -3979,32 +2695,11 @@
       "Latest conversations": [
         "Últimas conversas"
       ],
-      "Layout and Styling": [
-        "Layout e estilo"
-      ],
-      "Layout and styling fix applied successfully!": [
-        "Ajustes de layout e estilo aplicados com sucesso!"
-      ],
-      "Layout fix removed": [
-        "Correção de layout removida"
-      ],
-      "Learn more": [
-        "Saber mais"
-      ],
-      "Leave blank to keep current password": [
-        "Deixe em branco para manter a senha atual."
-      ],
       "Leave empty to create a guest order.": [
         "Deixe em branco para criar um pedido de visitante."
       ],
       "Leave empty to generate it from the name.": [
         "Deixe em branco para gerar a partir do nome."
-      ],
-      "Leave empty to generate random passwords": [
-        "Deixe em branco para gerar senhas aleatórias."
-      ],
-      "Leave empty to keep existing": [
-        "Deixe em branco para manter o existente."
       ],
       "Leave empty to keep the one already stored.": [
         "Deixe em branco para manter a que já está guardada."
@@ -4021,9 +2716,6 @@
       "Length": [
         "Comprimento"
       ],
-      "Licence Active": [
-        "Licença ativa"
-      ],
       "Licence activated": [
         "Licença ativada"
       ],
@@ -4038,12 +2730,6 @@
       ],
       "License deactivated successfully.": [
         "Licença desativada com sucesso."
-      ],
-      "License expires on:": [
-        "A licença expira em:"
-      ],
-      "License information:": [
-        "Informações sobre a licença:"
       ],
       "License is active.": [
         "A licença está ativa."
@@ -4072,12 +2758,6 @@
       "License server returned invalid data.": [
         "O servidor de licenças retornou dados inválidos."
       ],
-      "License status:": [
-        "Situação da licença:"
-      ],
-      "License type:": [
-        "Tipo de licença:"
-      ],
       "License validated successfully.": [
         "Licença validada com sucesso."
       ],
@@ -4087,26 +2767,17 @@
       "Light": [
         "Luz"
       ],
-      "Light Mode": [
-        "Modo claro"
-      ],
       "Light mode": [
         "Modo claro"
       ],
       "Limit purchases to 1 item per order": [
         "Limitar compras a 1 item por pedido"
       ],
-      "Line": [
-        "Linha"
-      ],
       "Link": [
         "Link"
       ],
       "Linked products": [
         "Produtos vinculados"
-      ],
-      "List View": [
-        "Visualização em lista"
       ],
       "List view": [
         "Visualização em lista"
@@ -4117,92 +2788,8 @@
       "Loading": [
         "Carregando"
       ],
-      "Loading Notice...": [
-        "Aviso de carregamento..."
-      ],
-      "Loading Settings...": [
-        "Carregando configurações..."
-      ],
-      "Loading analytics...": [
-        "Carregando análises..."
-      ],
-      "Loading comments...": [
-        "Carregando comentários..."
-      ],
-      "Loading editor...": [
-        "Carregando editor..."
-      ],
-      "Loading font...": [
-        "Carregando fonte..."
-      ],
-      "Loading image...": [
-        "Carregando imagem..."
-      ],
-      "Loading integration status...": [
-        "Carregando o status da integração..."
-      ],
-      "Loading map data...": [
-        "Carregando dados do mapa..."
-      ],
-      "Loading media analytics...": [
-        "Carregando análises de mídia..."
-      ],
-      "Loading media...": [
-        "Carregando mídia..."
-      ],
-      "Loading menus...": [
-        "Carregando menus..."
-      ],
-      "Loading more...": [
-        "Carregando mais..."
-      ],
-      "Loading notices...": [
-        "Carregando avisos..."
-      ],
-      "Loading plugins...": [
-        "Carregando plugins..."
-      ],
-      "Loading plugins…": [
-        "Carregando plugins…"
-      ],
-      "Loading posts...": [
-        "Carregando posts..."
-      ],
-      "Loading properties...": [
-        "Carregando propriedades..."
-      ],
-      "Loading revenue...": [
-        "Carregando receita..."
-      ],
-      "Loading roles...": [
-        "Carregando funções..."
-      ],
-      "Loading scheduled posts...": [
-        "Carregando publicações agendadas..."
-      ],
-      "Loading settings...": [
-        "Carregando configurações..."
-      ],
-      "Loading tables...": [
-        "Carregando tabelas..."
-      ],
-      "Loading user analytics...": [
-        "Carregando análises de usuários..."
-      ],
-      "Loading users...": [
-        "Carregando usuários..."
-      ],
-      "Loading...": [
-        "Carregando..."
-      ],
       "Loading…": [
         "Carregando…"
-      ],
-      "Local": [
-        "Local"
-      ],
-      "Location data will appear when visitors browse your site": [
-        "Os dados de localização serão exibidos quando os visitantes navegarem pelo seu site."
       ],
       "Lock aspect ratio": [
         "Proporção de aspecto de bloqueio"
@@ -4240,35 +2827,11 @@
       "Logo url": [
         "URL do logotipo"
       ],
-      "Low": [
-        "Baixo"
-      ],
       "Low stock": [
         "Estoque baixo"
       ],
       "Low stock threshold": [
         "Limite de estoque baixo"
-      ],
-      "Lowercase letters, numbers, hyphens, and underscores only": [
-        "Somente letras minúsculas, números, hífens e sublinhados."
-      ],
-      "Luminosity": [
-        "Luminosidade"
-      ],
-      "Magic dark mode disabled for this page": [
-        "O modo escuro mágico está desativado para esta página."
-      ],
-      "Magic dark mode enabled for this page": [
-        "Modo escuro mágico ativado para esta página"
-      ],
-      "Manage Cards": [
-        "Gerenciar cartões"
-      ],
-      "Manage Dashboard Cards": [
-        "Gerenciar cartões do painel"
-      ],
-      "Manage Media": [
-        "Gerenciar mídia"
       ],
       "Manage values": [
         "Gerenciar valores"
@@ -4285,20 +2848,8 @@
       "Manual refund": [
         "Reembolso manual"
       ],
-      "Map CSV Columns to User Fields": [
-        "Mapear colunas CSV para campos de usuário"
-      ],
-      "Map a field": [
-        "Mapear um campo"
-      ],
       "Mapbox API key": [
         "Chave da API do Mapbox"
-      ],
-      "Mapbox API key required": [
-        "É necessário ter uma chave de API do Mapbox."
-      ],
-      "Mark as Spam": [
-        "Marcar como spam"
       ],
       "Mark as featured": [
         "Marcar como destaque"
@@ -4327,17 +2878,8 @@
       "Media": [
         "Mídia"
       ],
-      "Media Analytics": [
-        "Análise de mídia"
-      ],
-      "Media Details": [
-        "Detalhes da mídia"
-      ],
       "Media ID is required.": [
         "É necessário identificar a mídia."
-      ],
-      "Media Library": [
-        "Biblioteca de mídia"
       ],
       "Media Tag": [
         "Etiqueta de mídia"
@@ -4345,35 +2887,11 @@
       "Media Tags": [
         "Tags de mídia"
       ],
-      "Media deleted successfully!": [
-        "Mídia excluída com sucesso!"
-      ],
-      "Media item not found": [
-        "Item de mídia não encontrado"
-      ],
       "Media item not found.": [
         "Item de mídia não encontrado."
       ],
       "Media library": [
         "Biblioteca de mídia"
-      ],
-      "Media library and upload management settings": [
-        "Configurações da biblioteca de mídia e do gerenciamento de uploads"
-      ],
-      "Media library overview": [
-        "Visão geral da biblioteca de mídia"
-      ],
-      "Media updated successfully": [
-        "Mídia atualizada com sucesso"
-      ],
-      "Medium": [
-        "Médio"
-      ],
-      "Memory Usage": [
-        "Uso de memória"
-      ],
-      "Memory usage": [
-        "Uso de memória"
       ],
       "Memory: %sMB of %sMB": [
         "Memória: %sMB de %sMB"
@@ -4384,17 +2902,8 @@
       "Menu Creator": [
         "Criador de Menus"
       ],
-      "Menu Editor": [
-        "Editor de menus"
-      ],
-      "Menu Settings": [
-        "Configurações do menu"
-      ],
       "Menu actions": [
         "Ações do menu"
-      ],
-      "Menu cache cleared": [
-        "Cache do menu limpo"
       ],
       "Menu cache key rotated successfully. All client caches have been invalidated.": [
         "A chave de cache do menu foi rotacionada com sucesso. Todos os caches do cliente foram invalidados."
@@ -4405,32 +2914,14 @@
       "Menu deleted": [
         "Menu excluído"
       ],
-      "Menu deleted successfully!": [
-        "Menu excluído com sucesso!"
-      ],
-      "Menu editor": [
-        "Editor de menu"
-      ],
-      "Menu imported": [
-        "Menu importado"
-      ],
-      "Menu name": [
-        "Nome do menu"
-      ],
       "Menu order": [
         "Ordem no menu"
       ],
       "Menu saved": [
         "Menu salvo"
       ],
-      "Menu updated": [
-        "Menu atualizado"
-      ],
       "Message": [
         "Mensagem"
-      ],
-      "Metadata": [
-        "Metadados"
       ],
       "Method": [
         "Método"
@@ -4450,17 +2941,8 @@
       "Minimum spend": [
         "Gasto mínimo"
       ],
-      "Missing Mapbox access token": [
-        "Token de acesso do Mapbox ausente"
-      ],
-      "Missing Required Plugins": [
-        "Plugins necessários ausentes"
-      ],
       "Missing required field: %s": [
         "Campo obrigatório ausente: %s"
-      ],
-      "Missing required fields (username or email)": [
-        "Campos obrigatórios ausentes (nome de usuário ou e-mail)"
       ],
       "Missing security token. Please refresh the page and try again.": [
         "Token de segurança ausente. Atualize a página e tente novamente."
@@ -4477,23 +2959,14 @@
       "Modern Comments Page": [
         "Página de comentários moderna"
       ],
-      "Modern Dashboard": [
-        "Painel de controle moderno"
-      ],
       "Modern Media Library": [
         "Biblioteca de Mídia Moderna"
-      ],
-      "Modern Media Page": [
-        "Página de Mídia Moderna"
       ],
       "Modern Orders Page": [
         "Página moderna de pedidos"
       ],
       "Modern Plugin Manager": [
         "Gerenciador de Plugins Moderno"
-      ],
-      "Modern Plugins Page": [
-        "Página de Plugins Modernos"
       ],
       "Modern Post Editor": [
         "Editor de postagens moderno"
@@ -4513,9 +2986,6 @@
       "Modernise login page": [
         "Modernizar a página de login"
       ],
-      "Modified": [
-        "Modificado"
-      ],
       "More": [
         "Mais"
       ],
@@ -4527,15 +2997,6 @@
       ],
       "More filters": [
         "Mais filtros"
-      ],
-      "Most traffic sources": [
-        "A maioria das fontes de tráfego"
-      ],
-      "Most visited pages": [
-        "Páginas mais visitadas"
-      ],
-      "Most visitors by country": [
-        "Maior número de visitantes por país"
       ],
       "Move coupon to trash?": [
         "Mover cupom para a lixeira?"
@@ -4576,26 +3037,14 @@
       "Name Z–A": [
         "Nome Z–A"
       ],
-      "Name of your custom menu.": [
-        "Nome do seu menu personalizado."
-      ],
       "Name shown to customer": [
         "Nome exibido ao cliente"
-      ],
-      "Navigate": [
-        "Navegar"
       ],
       "Needs a licence": [
         "Precisa de licença"
       ],
-      "Negative = blur, positive = sharpen": [
-        "Negativo = desfoque, positivo = nitidez"
-      ],
       "Negative blurs, positive sharpens": [
         "Negativo desfoca, positivo aumenta a nitidez"
-      ],
-      "Net": [
-        "Líquido"
       ],
       "Net payment": [
         "Pagamento líquido"
@@ -4605,15 +3054,6 @@
       ],
       "Net revenue (%s days)": [
         "Receita líquida (%s dias)"
-      ],
-      "Network": [
-        "Rede"
-      ],
-      "Network error during activation": [
-        "Erro de rede durante a ativação"
-      ],
-      "Network error during removal": [
-        "Erro de rede durante a remoção"
       ],
       "Never": [
         "Nunca"
@@ -4630,23 +3070,11 @@
       "New Admin Menu": [
         "Novo menu de administração"
       ],
-      "New Link": [
-        "Novo link"
-      ],
       "New Page": [
         "Nova página"
       ],
-      "New Password": [
-        "Nova Senha"
-      ],
       "New Post": [
         "Nova publicação"
-      ],
-      "New Role": [
-        "Novo cargo"
-      ],
-      "New Separator": [
-        "Novo Separador"
       ],
       "New Tag Name": [
         "Novo nome da tag"
@@ -4656,9 +3084,6 @@
       ],
       "New category": [
         "Nova categoria"
-      ],
-      "New item": [
-        "Novo item"
       ],
       "New menu": [
         "Novo menu"
@@ -4671,9 +3096,6 @@
       ],
       "New owner": [
         "Novo responsável"
-      ],
-      "New post": [
-        "Nova publicação"
       ],
       "New value": [
         "Novo valor"
@@ -4711,20 +3133,8 @@
       "No Admin Notices found.": [
         "Nenhuma notificação administrativa encontrada."
       ],
-      "No Dashboard Cards": [
-        "Sem cartões de painel"
-      ],
       "No Rank Math sections are enabled.": [
         "Nenhuma seção do Rank Math está ativada."
-      ],
-      "No WooCommerce customer data found for this user": [
-        "Não foram encontrados dados de cliente do WooCommerce para este usuário."
-      ],
-      "No activities found": [
-        "Nenhuma atividade encontrada"
-      ],
-      "No analytics data available": [
-        "Não há dados analíticos disponíveis."
       ],
       "No attributes used for variations": [
         "Nenhum atributo usado para variações"
@@ -4738,17 +3148,11 @@
       "No billing address.": [
         "Sem endereço de cobrança."
       ],
-      "No capabilities found": [
-        "Nenhuma funcionalidade encontrada"
-      ],
       "No capability matches that.": [
         "Nenhuma permissão corresponde a isso."
       ],
       "No cards here yet": [
         "Nenhum cartão aqui ainda"
-      ],
-      "No cards registered for this category yet.": [
-        "Ainda não há cartões cadastrados para esta categoria."
       ],
       "No cards registered for this section.": [
         "Nenhum cartão registrado para esta seção."
@@ -4762,23 +3166,11 @@
       "No columns": [
         "Nenhuma coluna"
       ],
-      "No comments found": [
-        "Nenhum comentário encontrado"
-      ],
       "No comments here": [
         "Nenhum comentário aqui"
       ],
       "No comments in this period.": [
         "Nenhum comentário neste período."
-      ],
-      "No comments yet": [
-        "Ainda não há comentários."
-      ],
-      "No components available for this tab": [
-        "Nenhum componente disponível para esta aba."
-      ],
-      "No country data available": [
-        "Não há dados disponíveis por país."
       ],
       "No coupons match your search": [
         "Nenhum cupom corresponde à sua busca"
@@ -4789,32 +3181,11 @@
       "No customers found.": [
         "Nenhum cliente encontrado."
       ],
-      "No data available for the selected period.": [
-        "Não há dados disponíveis para o período selecionado."
-      ],
-      "No data found": [
-        "Nenhum dado encontrado"
-      ],
-      "No data to import": [
-        "Não há dados para importar."
-      ],
-      "No device data available": [
-        "Não há dados disponíveis sobre o dispositivo."
-      ],
-      "No engagement data available": [
-        "Não há dados de engajamento disponíveis."
-      ],
       "No field groups are assigned to this option page. Create a field group and set its location to this option page.": [
         "Nenhum grupo de campos está atribuído a esta página de opções. Crie um grupo de campos e defina sua localização para esta página de opções."
       ],
       "No file was uploaded.": [
         "Nenhum arquivo foi carregado."
-      ],
-      "No fonts found": [
-        "Nenhuma fonte encontrada"
-      ],
-      "No health data available": [
-        "Não há dados de saúde disponíveis."
       ],
       "No items found": [
         "Nenhum item encontrado"
@@ -4825,44 +3196,17 @@
       "No license key found.": [
         "Nenhuma chave de licença encontrada."
       ],
-      "No location data available": [
-        "Não há dados de localização disponíveis."
-      ],
-      "No media data available": [
-        "Não há dados de mídia disponíveis."
-      ],
-      "No media files": [
-        "Nenhum arquivo de mídia"
-      ],
-      "No media found": [
-        "Nenhum conteúdo encontrado"
-      ],
-      "No menu items found": [
-        "Nenhum item de menu encontrado"
-      ],
-      "No menus found": [
-        "Nenhum menu encontrado"
-      ],
       "No menus yet": [
         "Ainda não há menus."
       ],
       "No metrics found": [
         "Nenhuma métrica encontrada"
       ],
-      "No more items": [
-        "Não há mais itens."
-      ],
-      "No new notifications": [
-        "Nenhuma notificação nova"
-      ],
       "No newer orders": [
         "Nenhum pedido mais recente"
       ],
       "No notes yet.": [
         "Nenhuma nota ainda."
-      ],
-      "No notices found": [
-        "Nenhuma notificação encontrada"
       ],
       "No notices yet": [
         "Nenhum aviso ainda"
@@ -4875,9 +3219,6 @@
       ],
       "No one has this role, so nothing changes for anybody.": [
         "Ninguém tem esta função, então nada muda para ninguém."
-      ],
-      "No orders in the selected period.": [
-        "Não há pedidos no período selecionado."
       ],
       "No orders in this period.": [
         "Nenhum pedido neste período."
@@ -4897,9 +3238,6 @@
       "No other site is connected yet.": [
         "Nenhum outro site conectado ainda."
       ],
-      "No page data available": [
-        "Não há dados de página disponíveis."
-      ],
       "No page views in this period.": [
         "Nenhuma visualização de página neste período."
       ],
@@ -4912,23 +3250,11 @@
       "No plugin here matches that.": [
         "Nenhum plugin aqui corresponde a isso."
       ],
-      "No plugins found": [
-        "Nenhum plugin encontrado"
-      ],
-      "No plugins found.": [
-        "Nenhum plugin encontrado."
-      ],
-      "No posts found": [
-        "Nenhuma publicação encontrada"
-      ],
       "No posts in this period.": [
         "Nenhum post neste período."
       ],
       "No price": [
         "Sem preço"
-      ],
-      "No products found": [
-        "Nenhum produto encontrado"
       ],
       "No products found.": [
         "Nenhum produto encontrado."
@@ -4942,53 +3268,20 @@
       "No products yet": [
         "Nenhum produto ainda"
       ],
-      "No query history": [
-        "Sem histórico de consultas"
-      ],
-      "No recent activity": [
-        "Nenhuma atividade recente"
-      ],
-      "No referrer data available": [
-        "Não há dados de referência disponíveis."
-      ],
       "No referrers in this period.": [
         "Nenhuma origem neste período."
-      ],
-      "No remote sites configured yet": [
-        "Nenhum site remoto foi configurado ainda."
-      ],
-      "No results found": [
-        "Nenhum resultado encontrado"
-      ],
-      "No results yet. Execute a query to see results.": [
-        "Ainda não há resultados. Execute uma consulta para ver os resultados."
       ],
       "No revenue in this period.": [
         "Nenhuma receita neste período."
       ],
-      "No role": [
-        "Sem função"
-      ],
       "No roles": [
         "Nenhuma função"
-      ],
-      "No roles available": [
-        "Não há vagas disponíveis."
-      ],
-      "No roles found": [
-        "Nenhuma vaga encontrada"
       ],
       "No rows": [
         "Nenhuma linha"
       ],
       "No setting here matches that.": [
         "Nenhuma configuração aqui corresponde a isso."
-      ],
-      "No settings found": [
-        "Nenhuma configuração encontrada"
-      ],
-      "No settings match your search in this category.": [
-        "Nenhuma configuração corresponde à sua pesquisa nesta categoria."
       ],
       "No shipping address set.": [
         "Nenhum endereço de entrega definido."
@@ -4998,21 +3291,6 @@
       ],
       "No shipping class": [
         "Sem classe de entrega"
-      ],
-      "No sites found": [
-        "Nenhum site encontrado"
-      ],
-      "No status": [
-        "Sem status"
-      ],
-      "No tables available": [
-        "Não há mesas disponíveis."
-      ],
-      "No tables found": [
-        "Nenhuma tabela encontrada"
-      ],
-      "No tags available": [
-        "Nenhuma etiqueta disponível"
       ],
       "No tags found": [
         "Nenhuma etiqueta encontrada"
@@ -5026,26 +3304,11 @@
       "No update available for this plugin": [
         "Não há atualizações disponíveis para este plugin."
       ],
-      "No user data available": [
-        "Não há dados de usuário disponíveis."
-      ],
       "No user set": [
         "Nenhum usuário definido"
       ],
-      "No users found": [
-        "Nenhum usuário encontrado"
-      ],
-      "No users have dismissed this notice yet": [
-        "Nenhum usuário rejeitou este aviso ainda."
-      ],
       "No users here": [
         "Nenhum usuário aqui"
-      ],
-      "No users to export": [
-        "Não há usuários para exportar."
-      ],
-      "No users yet": [
-        "Ainda não há usuários"
       ],
       "No valid files found to download.": [
         "Nenhum arquivo válido encontrado para download."
@@ -5055,9 +3318,6 @@
       ],
       "No variations yet": [
         "Nenhuma variação ainda"
-      ],
-      "No visible cards in this category": [
-        "Não há cartas visíveis nesta categoria."
       ],
       "No visits in this period.": [
         "Nenhuma visita neste período."
@@ -5073,12 +3333,6 @@
       ],
       "None": [
         "Nenhum"
-      ],
-      "Not available": [
-        "Não disponível"
-      ],
-      "Not configured": [
-        "Não configurado"
       ],
       "Not connected to Google Analytics": [
         "Não está conectado ao Google Analytics."
@@ -5143,20 +3397,8 @@
       "Notice": [
         "Aviso"
       ],
-      "Notice Editor": [
-        "Editor de Avisos"
-      ],
-      "Notice Title": [
-        "Título do Aviso"
-      ],
-      "Notice Type": [
-        "Tipo de aviso"
-      ],
       "Notice actions": [
         "Ações do aviso"
-      ],
-      "Notice content will appear here...": [
-        "Aviso: o conteúdo aparecerá aqui..."
       ],
       "Notice created": [
         "Aviso criado"
@@ -5176,23 +3418,14 @@
       "Notify %s": [
         "Notificar %s"
       ],
-      "Null": [
-        "Nulo"
-      ],
       "Number of Months": [
         "Número de meses"
-      ],
-      "Number of customers in the selected period": [
-        "Número de clientes no período selecionado"
       ],
       "Numbered list": [
         "Lista numerada"
       ],
       "Object": [
         "Objeto"
-      ],
-      "Object Type": [
-        "Tipo de objeto"
       ],
       "Off": [
         "Desligado"
@@ -5209,9 +3442,6 @@
       "Oldest first": [
         "Mais antigos primeiro"
       ],
-      "On Hold": [
-        "Em espera"
-      ],
       "On backorder": [
         "Sob encomenda"
       ],
@@ -5220,18 +3450,6 @@
       ],
       "Once dismissed, that person does not see it again.": [
         "Depois de dispensado, a pessoa não o vê novamente."
-      ],
-      "One lowercase letter": [
-        "Uma letra minúscula"
-      ],
-      "One number": [
-        "Um número"
-      ],
-      "One special character": [
-        "Um personagem especial"
-      ],
-      "One uppercase letter": [
-        "Uma letra maiúscula"
       ],
       "Online store": [
         "Loja virtual"
@@ -5248,12 +3466,6 @@
       "Only SELECT runs here, and the server caps how many rows come back.": [
         "Apenas SELECT roda aqui, e o servidor limita quantas linhas voltam."
       ],
-      "Only images can be edited": [
-        "Somente imagens podem ser editadas."
-      ],
-      "Only images can be optimized": [
-        "Somente imagens podem ser otimizadas."
-      ],
       "Only pending or on-hold orders can have their items changed. Change the status first.": [
         "Somente pedidos pendentes ou aguardando podem ter os itens alterados. Altere o status primeiro."
       ],
@@ -5262,18 +3474,6 @@
       ],
       "Only you see this; it is how you tell your menus apart.": [
         "Só você vê isso; é como você diferencia seus menus."
-      ],
-      "Open": [
-        "Abrir"
-      ],
-      "Open Integrations settings": [
-        "Abra as configurações de integrações."
-      ],
-      "Open Manage Cards": [
-        "Abra o Gerenciador de Cartões"
-      ],
-      "Open SQL Editor": [
-        "Abra o Editor SQL"
       ],
       "Open full editor": [
         "Abrir editor completo"
@@ -5287,14 +3487,8 @@
       "Open in classic screen": [
         "Abrir na tela clássica"
       ],
-      "Open in new tab": [
-        "Abrir em nova aba"
-      ],
       "Open modal": [
         "Abrir modal"
-      ],
-      "Open search": [
-        "Abrir busca"
       ],
       "Open settings": [
         "Abrir configurações"
@@ -5302,26 +3496,8 @@
       "Open sheet": [
         "Abrir painel lateral"
       ],
-      "Opening Media Library...": [
-        "Abrindo a Biblioteca de Mídia..."
-      ],
       "Operation": [
         "Operação"
-      ],
-      "Optimise image": [
-        "Otimizar imagem"
-      ],
-      "Optimization failed": [
-        "A otimização falhou"
-      ],
-      "Optimize Image": [
-        "Otimizar imagem"
-      ],
-      "Optimizing image...": [
-        "Otimizando imagem..."
-      ],
-      "Optimizing...": [
-        "Otimizando..."
       ],
       "Option Page Not Found": [
         "Página de opções não encontrada"
@@ -5359,12 +3535,6 @@
       "Optional logo for to be displayed in the menu": [
         "Logotipo opcional para ser exibido no menu."
       ],
-      "Options": [
-        "Opções"
-      ],
-      "Or enter custom:": [
-        "Ou insira uma opção personalizada:"
-      ],
       "Order": [
         "Ordem"
       ],
@@ -5374,9 +3544,6 @@
       "Order #%s created": [
         "Pedido #%s criado"
       ],
-      "Order Status Breakdown": [
-        "Detalhamento do status do pedido"
-      ],
       "Order action applied": [
         "Ação do pedido aplicada"
       ],
@@ -5385,9 +3552,6 @@
       ],
       "Order by": [
         "Ordenar por"
-      ],
-      "Order details": [
-        "Detalhes do pedido"
       ],
       "Order items updated": [
         "Itens do pedido atualizados"
@@ -5422,9 +3586,6 @@
       "Orders from this customer": [
         "Pedidos deste cliente"
       ],
-      "Orders received": [
-        "Pedidos recebidos"
-      ],
       "Organic": [
         "Orgânico"
       ],
@@ -5449,23 +3610,11 @@
       "Overlays": [
         "Sobreposições"
       ],
-      "Overview of your site activity": [
-        "Visão geral da atividade do seu site"
-      ],
-      "PAGE": [
-        "PÁGINA"
-      ],
       "PHP": [
         "PHP"
       ],
-      "Page": [
-        "Página"
-      ],
       "Page %1$s of %2$s": [
         "Página %1$s de %2$s"
-      ],
-      "Page Analytics": [
-        "Análise da página"
       ],
       "Page URL is required": [
         "É necessário o URL da página."
@@ -5473,14 +3622,8 @@
       "Page Views": [
         "Visualizações de página"
       ],
-      "Page Views Analytics": [
-        "Análise de visualizações de página"
-      ],
       "Page data": [
         "Dados da página"
-      ],
-      "Page data will appear when visitors browse your site": [
-        "Os dados da página serão exibidos quando os visitantes navegarem pelo seu site."
       ],
       "Page title exceeds maximum length": [
         "O título da página excede o comprimento máximo permitido."
@@ -5518,32 +3661,11 @@
       "Password": [
         "Senha"
       ],
-      "Password Requirements": [
-        "Requisitos de senha"
-      ],
-      "Password generated": [
-        "Senha gerada"
-      ],
       "Password is required for this operation.": [
         "É necessária uma senha para esta operação."
       ],
       "Password is required.": [
         "É necessário usar uma senha."
-      ],
-      "Password verification failed": [
-        "Falha na verificação da senha"
-      ],
-      "Paste URL or search": [
-        "Cole o URL ou pesquise"
-      ],
-      "Paste the contents of the JSON key file below and enter your Property ID": [
-        "Cole o conteúdo do arquivo de chave JSON abaixo e insira o ID da sua propriedade."
-      ],
-      "Paste the contents of your service account JSON key file:": [
-        "Cole o conteúdo do arquivo JSON da chave da sua conta de serviço:"
-      ],
-      "Paste your service account JSON key here...": [
-        "Cole aqui a chave JSON da sua conta de serviço..."
       ],
       "Paused": [
         "Pausado"
@@ -5584,12 +3706,6 @@
       "Percentage discount": [
         "Desconto percentual"
       ],
-      "Performance": [
-        "Desempenho"
-      ],
-      "Permission Issue Detected": [
-        "Problema de permissão detectado"
-      ],
       "Permission denied: The service account does not have access to this Google Analytics property. Please add the service account email to your GA4 property with Viewer access. Go to Google Analytics → Admin → Property Access Management and add the service account email.": [
         "Permissão negada: a conta de serviço não tem acesso a esta propriedade do Google Analytics. Adicione o e-mail da conta de serviço à sua propriedade do GA4 com acesso de visualizador. Acesse Google Analytics → Administrador → Gerenciamento de acesso à propriedade e adicione o e-mail da conta de serviço."
       ],
@@ -5605,62 +3721,14 @@
       "Pick what this section shows.": [
         "Escolha o que esta seção mostra."
       ],
-      "Please add your licence key to unlock the plugin settings": [
-        "Por favor, insira sua chave de licença para desbloquear as configurações do plugin."
-      ],
       "Please complete the Turnstile challenge.": [
         "Por favor, complete o desafio da catraca."
-      ],
-      "Please describe the layout issue": [
-        "Por favor, descreva o problema de layout."
-      ],
-      "Please enter a Property ID": [
-        "Por favor, insira o ID da propriedade."
-      ],
-      "Please enter a SQL query": [
-        "Por favor, insira uma consulta SQL."
-      ],
-      "Please enter your password": [
-        "Por favor, insira sua senha."
-      ],
-      "Please fill in all required fields": [
-        "Por favor, preencha todos os campos obrigatórios."
-      ],
-      "Please map all required fields": [
-        "Por favor, preencha todos os campos obrigatórios."
-      ],
-      "Please paste your service account JSON key": [
-        "Por favor, cole a chave JSON da sua conta de serviço."
-      ],
-      "Please provide a valid JSON file": [
-        "Por favor, forneça um arquivo JSON válido."
       ],
       "Please provide a valid license key.": [
         "Por favor, forneça uma chave de licença válida."
       ],
-      "Please provide a valid site URL": [
-        "Por favor, forneça um URL de site válido."
-      ],
       "Please review the highlighted fields": [
         "Revise os campos destacados"
-      ],
-      "Please select a CSV or Excel file": [
-        "Por favor, selecione um arquivo CSV ou Excel."
-      ],
-      "Please select a valid ZIP file": [
-        "Por favor, selecione um arquivo ZIP válido."
-      ],
-      "Plugin Details": [
-        "Detalhes do Plugin"
-      ],
-      "Plugin Info": [
-        "Informações do plugin"
-      ],
-      "Plugin Information": [
-        "Informações do Plugin"
-      ],
-      "Plugin Page": [
-        "Página do Plugin"
       ],
       "Plugin activated": [
         "Plugin ativado"
@@ -5701,9 +3769,6 @@
       "Plugin installed successfully but reactivation failed: %s": [
         "Plugin instalado com sucesso, mas a reativação falhou: %s"
       ],
-      "Plugin management interface options": [
-        "Opções da interface de gerenciamento de plugins"
-      ],
       "Plugin not found": [
         "Plugin não encontrado"
       ],
@@ -5734,9 +3799,6 @@
       "Plugin updated successfully but reactivation failed: %s": [
         "Plugin atualizado com sucesso, mas a reativação falhou: %s"
       ],
-      "Plugin uploaded successfully": [
-        "Plugin carregado com sucesso"
-      ],
       "Plugins": [
         "Plugins"
       ],
@@ -5746,26 +3808,11 @@
       "Popular Tags": [
         "Tags populares"
       ],
-      "Popularity": [
-        "Popularidade"
-      ],
-      "Position": [
-        "Posição"
-      ],
-      "Post": [
-        "Publicar"
-      ],
-      "Post Details": [
-        "Detalhes da publicação"
-      ],
       "Post Types": [
         "Tipos de postagem"
       ],
       "Post Types for Modern Editor": [
         "Tipos de postagem para o editor moderno"
-      ],
-      "Post management and display preferences": [
-        "Preferências de gerenciamento e exibição de postagens"
       ],
       "Post type \"%s\" has an invalid slug format.": [
         "O tipo de postagem \"%s\" possui um formato de slug inválido."
@@ -5800,23 +3847,14 @@
       "Prefix and hint": [
         "Prefixo e dica"
       ],
-      "Press": [
-        "Imprensa"
-      ],
       "Preview": [
         "Pré-visualização"
-      ],
-      "Preview (first 5 rows)": [
-        "Pré-visualização (primeiras 5 linhas)"
       ],
       "Previous": [
         "Anterior"
       ],
       "Previous page": [
         "Página anterior"
-      ],
-      "Previous period:": [
-        "Período anterior:"
       ],
       "Price": [
         "Preço"
@@ -5839,17 +3877,11 @@
       "Print": [
         "Imprimir"
       ],
-      "Priority": [
-        "Prioridade"
-      ],
       "Private": [
         "Privado"
       ],
       "Private note": [
         "Nota privada"
-      ],
-      "Pro": [
-        "Pró"
       ],
       "Processing": [
         "Processamento"
@@ -5905,9 +3937,6 @@
       "Products": [
         "Produtos"
       ],
-      "Products and orders management pages": [
-        "Páginas de gestão de produtos e pedidos"
-      ],
       "Products in this category will not be deleted.": [
         "Os produtos desta categoria não serão excluídos."
       ],
@@ -5920,32 +3949,17 @@
       "Profile": [
         "Perfil"
       ],
-      "Property ID": [
-        "ID da propriedade"
-      ],
       "Property ID is required": [
         "É necessário o ID da propriedade."
       ],
-      "Property ID:": [
-        "ID da propriedade:"
-      ],
       "Property chosen": [
         "Propriedade escolhida"
-      ],
-      "Property saved": [
-        "Propriedade salva"
       ],
       "Property saved successfully": [
         "Propriedade salva com sucesso"
       ],
       "Publish": [
         "Publicar"
-      ],
-      "Publish changes?": [
-        "Publicar alterações?"
-      ],
-      "Publish items": [
-        "Publicar itens"
       ],
       "Published": [
         "Publicado"
@@ -5962,35 +3976,17 @@
       "Quantity": [
         "Quantidade"
       ],
-      "Quantity of orders from period": [
-        "Quantidade de pedidos do período"
-      ],
       "Quantity to refund": [
         "Quantidade a reembolsar"
-      ],
-      "Queries": [
-        "Consultas"
       ],
       "Query": [
         "Consulta"
       ],
-      "Query History": [
-        "Histórico de consultas"
-      ],
       "Query contains prohibited SQL keywords.": [
         "A consulta contém palavras-chave SQL proibidas."
       ],
-      "Query executed successfully. %d rows returned.": [
-        "Consulta executada com sucesso. %d linhas retornadas."
-      ],
       "Query execution failed. Please check your SQL syntax.": [
         "A execução da consulta falhou. Verifique a sintaxe do seu SQL."
-      ],
-      "Query time": [
-        "Tempo de consulta"
-      ],
-      "Quick Actions": [
-        "Ações rápidas"
       ],
       "Quick Draft": [
         "Rascunho rápido"
@@ -6003,9 +3999,6 @@
       ],
       "Quick preview": [
         "Pré-visualização rápida"
-      ],
-      "Quickly find posts, pages, users, and more. Here are some tips to get started:": [
-        "Encontre rapidamente publicações, páginas, usuários e muito mais. Aqui estão algumas dicas para começar:"
       ],
       "Quote": [
         "Citação"
@@ -6025,14 +4018,8 @@
       "Rank Math Overview": [
         "Visão geral do Rank Math"
       ],
-      "Rank Math SEO is not active on this site.": [
-        "O Rank Math SEO não está ativo neste site."
-      ],
       "Rank Math is not available on this site.": [
         "O Rank Math não está disponível neste site."
-      ],
-      "Rating": [
-        "Avaliação"
       ],
       "React component kit of the plugin, based on TailAdmin.": [
         "Kit de componentes React do plugin, baseado no TailAdmin."
@@ -6055,9 +4042,6 @@
       "Reason (optional)": [
         "Motivo (opcional)"
       ],
-      "Rebrand and customize interface text and icons": [
-        "Reformule e personalize o texto e os ícones da interface."
-      ],
       "Rebrand the interface: names, text and icons": [
         "Personalize a marca da interface: nomes, textos e ícones"
       ],
@@ -6067,26 +4051,11 @@
       "Recent": [
         "Recentes"
       ],
-      "Recent (30d)": [
-        "Recente (30 dias)"
-      ],
-      "Recent (7d)": [
-        "Recente (7d)"
-      ],
-      "Recent Activity": [
-        "Atividade recente"
-      ],
       "Recent Comments": [
         "Comentários recentes"
       ],
-      "Recent Orders": [
-        "Pedidos recentes"
-      ],
       "Recent Posts": [
         "Postagens recentes"
-      ],
-      "Recent Searches": [
-        "Pesquisas recentes"
       ],
       "Recent activity": [
         "Atividade recente"
@@ -6100,17 +4069,11 @@
       "Recent searches": [
         "Buscas recentes"
       ],
-      "Recently Accessed": [
-        "Acessado recentemente"
-      ],
       "Recently opened": [
         "Abertos recentemente"
       ],
       "Record the refund without sending it to the payment gateway.": [
         "Registra o reembolso sem enviá-lo ao gateway de pagamento."
-      ],
-      "Recover Password": [
-        "Recuperar senha"
       ],
       "Redirection Count": [
         "Contagem de redirecionamentos"
@@ -6135,9 +4098,6 @@
       ],
       "Referrer data from search engines and social media": [
         "Dados de referência de mecanismos de busca e mídias sociais"
-      ],
-      "Referrer data will appear when visitors arrive from external sources": [
-        "Os dados de referência aparecerão quando os visitantes chegarem de fontes externas."
       ],
       "Refresh": [
         "Atualizar"
@@ -6169,9 +4129,6 @@
       "Refunds": [
         "Reembolsos"
       ],
-      "Regenerating thumbnails": [
-        "Regenerando miniaturas"
-      ],
       "Registered": [
         "Registrado"
       ],
@@ -6184,9 +4141,6 @@
       "Regular price for all variations": [
         "Preço normal para todas as variações"
       ],
-      "Release to start uploading": [
-        "Liberar para iniciar o upload"
-      ],
       "Reload": [
         "Recarregar"
       ],
@@ -6196,23 +4150,11 @@
       "Reload the page to try again. If it keeps happening, share the details below with support.": [
         "Recarregue a página para tentar de novo. Se continuar acontecendo, envie os detalhes abaixo para o suporte."
       ],
-      "Remote Site Error": [
-        "Erro de site remoto"
-      ],
       "Remote Site Switcher Capability": [
         "Capacidade de troca remota de sites"
       ],
-      "Remote Site Switching": [
-        "Comutação de Site Remoto"
-      ],
       "Remote Sites": [
         "Locais remotos"
-      ],
-      "Remote site has been removed successfully": [
-        "O site remoto foi removido com sucesso."
-      ],
-      "Remote site switching works on:": [
-        "A comutação remota de sites funciona da seguinte forma:"
       ],
       "Remote validation failed, using the previous valid response.": [
         "A validação remota falhou, utilizando a resposta válida anterior."
@@ -6222,12 +4164,6 @@
       ],
       "Remove %s": [
         "Remover %s"
-      ],
-      "Remove Fix": [
-        "Remover correção"
-      ],
-      "Remove Remote Site?": [
-        "Remover site remoto?"
       ],
       "Remove attribute": [
         "Remover atributo"
@@ -6268,12 +4204,6 @@
       "Remove item": [
         "Remover item"
       ],
-      "Remove key": [
-        "Remover chave"
-      ],
-      "Remove license?": [
-        "Remover licença?"
-      ],
       "Remove old entries": [
         "Remover entradas antigas"
       ],
@@ -6285,9 +4215,6 @@
       ],
       "Remove shipping": [
         "Remover entrega"
-      ],
-      "Remove tag": [
-        "Remover etiqueta"
       ],
       "Remove them": [
         "Remover"
@@ -6301,32 +4228,17 @@
       "Removed from featured": [
         "Removido dos destaques"
       ],
-      "Removes the fix immediately.": [
-        "Remove a correção imediatamente."
-      ],
       "Rename Flexify Dashboard": [
         "Renomear Painel do Flexify"
-      ],
-      "Rename menu item": [
-        "Renomear item do menu"
       ],
       "Rename value": [
         "Renomear valor"
       ],
-      "Reorder card": [
-        "Cartão de pedido"
-      ],
       "Replace": [
         "Substituir"
       ],
-      "Replace Image": [
-        "Substituir imagem"
-      ],
       "Replace file": [
         "Substituir arquivo"
-      ],
-      "Replace secret key": [
-        "Substituir chave secreta"
       ],
       "Replace the WooCommerce orders list and order details with a modern page featuring filters, previews, status changes, notes and refunds. Works with HPOS and legacy order storage.": [
         "Substitui a lista e os detalhes de pedidos do WooCommerce por uma página moderna com filtros, pré-visualizações, alteração de status, notas e reembolsos. Funciona com HPOS e com o armazenamento legado de pedidos."
@@ -6358,26 +4270,11 @@
       "Replace with": [
         "Substituir por"
       ],
-      "Replacing file...": [
-        "Substituindo arquivo..."
-      ],
-      "Replacing...": [
-        "Substituindo..."
-      ],
-      "Requires PHP": [
-        "Requer PHP"
-      ],
-      "Requires WordPress": [
-        "Requer WordPress"
-      ],
       "Requires a free shipping method that accepts coupons.": [
         "Requer um método de frete grátis que aceite cupons."
       ],
       "Reset": [
         "Reiniciar"
-      ],
-      "Reset changes": [
-        "Redefinir alterações"
       ],
       "Reset every setting": [
         "Redefinir todas as configurações"
@@ -6388,23 +4285,8 @@
       "Reset everything": [
         "Redefinir tudo"
       ],
-      "Reset item": [
-        "Redefinir item"
-      ],
-      "Reset plugin configuration and other advanced actions": [
-        "Redefinir configuração do plugin e outras ações avançadas"
-      ],
       "Reset settings": [
         "Redefinir configurações"
-      ],
-      "Reset settings?": [
-        "Redefinir configurações?"
-      ],
-      "Reset to default font": [
-        "Restaurar fonte padrão"
-      ],
-      "Reset to defaults": [
-        "Restaurar padrões de fábrica"
       ],
       "Reset your password": [
         "Redefinir sua senha"
@@ -6418,9 +4300,6 @@
       "Resizable sidebar": [
         "Barra lateral redimensionável"
       ],
-      "Resize": [
-        "Redimensionar"
-      ],
       "Resize card": [
         "Redimensionar cartão"
       ],
@@ -6433,20 +4312,11 @@
       "Restore all Flexify Dashboard settings to their default values.": [
         "Restaure todas as configurações do painel Flexify para seus valores padrão."
       ],
-      "Results": [
-        "Resultados"
-      ],
       "Results come from WordPress.org. Only what you type is sent there.": [
         "Os resultados vêm do WordPress.org. Só o que você digita é enviado para lá."
       ],
       "Retention Period (Days)": [
         "Período de retenção (dias)"
-      ],
-      "Retest Connection": [
-        "Testar novamente a conexão"
-      ],
-      "Retry": [
-        "Tentar novamente"
       ],
       "Return only unused media items (unattached and not used as featured image).": [
         "Devolva apenas itens de mídia não utilizados (desvinculados e não usados como imagem principal)."
@@ -6457,26 +4327,14 @@
       "Revenue period": [
         "Período da receita"
       ],
-      "Reviews": [
-        "Avaliações"
-      ],
       "Right": [
         "Certo"
       ],
       "Role": [
         "Função"
       ],
-      "Role Details": [
-        "Detalhes da função"
-      ],
       "Role Editor": [
         "Editor de Funções"
-      ],
-      "Role Name": [
-        "Nome do cargo"
-      ],
-      "Role Slug": [
-        "Função Slug"
       ],
       "Role capabilities updated successfully.": [
         "Atribuições da função atualizadas com sucesso."
@@ -6484,17 +4342,11 @@
       "Role created": [
         "Função criada"
       ],
-      "Role created successfully": [
-        "Função criada com sucesso"
-      ],
       "Role created successfully.": [
         "Função criada com sucesso."
       ],
       "Role deleted": [
         "Função excluída"
-      ],
-      "Role deleted successfully": [
-        "Função excluída com sucesso"
       ],
       "Role deleted successfully.": [
         "Função excluída com sucesso."
@@ -6505,23 +4357,11 @@
       "Role name cannot be empty.": [
         "O nome da função não pode estar vazio."
       ],
-      "Role name is required": [
-        "O nome do cargo é obrigatório."
-      ],
       "Role name is too long.": [
         "O nome do cargo é muito longo."
       ],
-      "Role name must be between 1 and 100 characters.": [
-        "O nome da função deve ter entre 1 e 100 caracteres."
-      ],
-      "Role name updated": [
-        "Nome do cargo atualizado"
-      ],
       "Role name updated successfully.": [
         "Nome do cargo atualizado com sucesso."
-      ],
-      "Role not found": [
-        "Função não encontrada"
       ],
       "Role not found.": [
         "Função não encontrada."
@@ -6535,23 +4375,11 @@
       "Role slug is too long.": [
         "O título da função é muito longo."
       ],
-      "Role slug must be 60 characters or less.": [
-        "O código da função deve ter no máximo 60 caracteres."
-      ],
-      "Role slug too long": [
-        "Função slug muito longa"
-      ],
       "Role updated": [
         "Função atualizada"
       ],
       "Roles": [
         "Funções"
-      ],
-      "Rounded": [
-        "Arredondado"
-      ],
-      "Row": [
-        "Linha"
       ],
       "Row %1$s: %2$s": [
         "Linha %1$s: %2$s"
@@ -6562,26 +4390,11 @@
       "Run": [
         "Executar"
       ],
-      "SEO insights mirrored from the Rank Math dashboard widget.": [
-        "Informações de SEO reproduzidas a partir do widget do painel do Rank Math."
-      ],
       "SKU": [
         "SKU"
       ],
-      "SOURCE": [
-        "FONTE"
-      ],
-      "SQL Query": [
-        "Consulta SQL"
-      ],
-      "SQL Query Editor": [
-        "Editor de consultas SQL"
-      ],
       "SSL": [
         "SSL"
-      ],
-      "SSL:": [
-        "SSL:"
       ],
       "Sale ends": [
         "Promoção termina"
@@ -6591,9 +4404,6 @@
       ],
       "Sale starts": [
         "Promoção começa"
-      ],
-      "Sales Summary": [
-        "Resumo de Vendas"
       ],
       "Same as billing address": [
         "Igual ao endereço de cobrança"
@@ -6619,14 +4429,8 @@
       "Save coupon": [
         "Salvar cupom"
       ],
-      "Save credentials": [
-        "Salvar credenciais"
-      ],
       "Save draft": [
         "Salvar rascunho"
-      ],
-      "Save failed": [
-        "Falha ao salvar"
       ],
       "Save items": [
         "Salvar itens"
@@ -6643,9 +4447,6 @@
       "Saved": [
         "Salvo"
       ],
-      "Saves to custom CSS settings for persistence.": [
-        "Salva as configurações CSS personalizadas para fins de persistência."
-      ],
       "Schedule sale": [
         "Agendar promoção"
       ],
@@ -6657,15 +4458,6 @@
       ],
       "Scheduled for %s from now": [
         "Agendado para daqui a %s"
-      ],
-      "Screen options": [
-        "Opções de tela"
-      ],
-      "Screenshots": [
-        "Capturas de tela"
-      ],
-      "Scripts": [
-        "Roteiros"
       ],
       "Search": [
         "Procurar"
@@ -6685,26 +4477,17 @@
       "Search Traffic": [
         "Tráfego de pesquisa"
       ],
-      "Search activities...": [
-        "Atividades de pesquisa..."
-      ],
       "Search by name or SKU": [
         "Buscar por nome ou SKU"
       ],
       "Search capabilities": [
         "Pesquisar permissões"
       ],
-      "Search capabilities...": [
-        "Recursos de pesquisa..."
-      ],
       "Search categories": [
         "Buscar categorias"
       ],
       "Search comments": [
         "Pesquisar comentários"
-      ],
-      "Search comments...": [
-        "Pesquisar comentários..."
       ],
       "Search content, menus and actions…": [
         "Busque conteúdo, menus e ações…"
@@ -6715,77 +4498,29 @@
       "Search customers by name or email": [
         "Buscar clientes por nome ou e-mail"
       ],
-      "Search fonts...": [
-        "Pesquisar fontes..."
-      ],
       "Search for a plugin to add it to this site.": [
         "Pesquise um plugin para adicioná-lo a este site."
-      ],
-      "Search for posts, pages, users, categories, or use quick actions.": [
-        "Pesquise publicações, páginas, usuários, categorias ou utilize ações rápidas."
       ],
       "Search for products above to add them to the order.": [
         "Busque produtos acima para adicioná-los ao pedido."
       ],
-      "Search icons": [
-        "Ícones de pesquisa"
-      ],
       "Search installed plugins": [
         "Pesquisar plugins instalados"
-      ],
-      "Search media...": [
-        "Pesquisar mídia..."
-      ],
-      "Search menu...": [
-        "Menu de pesquisa..."
       ],
       "Search menus": [
         "Pesquisar menus"
       ],
-      "Search menus...": [
-        "Menus de pesquisa..."
-      ],
       "Search notices": [
         "Pesquisar avisos"
       ],
-      "Search notices...": [
-        "Avisos de pesquisa..."
-      ],
-      "Search only categories": [
-        "Pesquisar somente por categorias"
-      ],
-      "Search only pages": [
-        "Pesquisar somente páginas"
-      ],
-      "Search only posts": [
-        "Pesquisar somente posts"
-      ],
-      "Search only users": [
-        "Pesquisar somente usuários"
-      ],
-      "Search or type command...": [
-        "Buscar ou digitar comando..."
-      ],
       "Search order, customer or email": [
         "Buscar pedido, cliente ou e-mail"
-      ],
-      "Search plugins": [
-        "Plugins de pesquisa"
-      ],
-      "Search plugins...": [
-        "Plugins de pesquisa..."
       ],
       "Search post types": [
         "Pesquisar tipos de postagem"
       ],
       "Search posts": [
         "Pesquisar publicações"
-      ],
-      "Search posts, pages, categories, users...": [
-        "Pesquisar publicações, páginas, categorias, usuários..."
-      ],
-      "Search posts...": [
-        "Pesquisar publicações..."
       ],
       "Search products": [
         "Buscar produtos"
@@ -6796,26 +4531,11 @@
       "Search results only": [
         "Somente nos resultados de busca"
       ],
-      "Search roles...": [
-        "Buscar vagas..."
-      ],
       "Search settings": [
         "Pesquisar configurações"
       ],
-      "Search settings...": [
-        "Configurações de pesquisa..."
-      ],
-      "Search sites...": [
-        "Pesquisar sites..."
-      ],
-      "Search table data...": [
-        "Pesquisar dados da tabela..."
-      ],
       "Search tables": [
         "Pesquisar tabelas"
-      ],
-      "Search tables...": [
-        "Pesquisar tabelas..."
       ],
       "Search tags": [
         "Buscar tags"
@@ -6831,9 +4551,6 @@
       ],
       "Search users": [
         "Pesquisar usuários"
-      ],
-      "Search users...": [
-        "Pesquisar usuários..."
       ],
       "Search...": [
         "Buscar..."
@@ -6853,71 +4570,20 @@
       "Security check failed. Please try again or contact the site administrator.": [
         "A verificação de segurança falhou. Tente novamente ou entre em contato com o administrador do site."
       ],
-      "Security settings and administration": [
-        "Configurações e administração de segurança"
-      ],
       "Security token": [
         "Token de segurança"
       ],
       "Seen by": [
         "Visto por"
       ],
-      "Select": [
-        "Selecione"
-      ],
       "Select %s": [
         "Selecionar %s"
-      ],
-      "Select All": [
-        "Selecionar tudo"
-      ],
-      "Select CSV File": [
-        "Selecione o arquivo CSV"
-      ],
-      "Select Font": [
-        "Selecione a fonte"
-      ],
-      "Select Font File": [
-        "Selecione o arquivo de fonte"
-      ],
-      "Select Property": [
-        "Selecione o imóvel"
       ],
       "Select a category": [
         "Selecione uma categoria"
       ],
-      "Select a category from the list to configure your settings.": [
-        "Selecione uma categoria da lista para configurar suas preferências."
-      ],
-      "Select a comment from the list to view details and edit properties.": [
-        "Selecione um comentário da lista para visualizar os detalhes e editar as propriedades."
-      ],
       "Select a country": [
         "Selecione um país"
-      ],
-      "Select a media file from the list to view details and edit properties.": [
-        "Selecione um arquivo de mídia da lista para visualizar detalhes e editar propriedades."
-      ],
-      "Select a menu from the list to edit its structure and settings.": [
-        "Selecione um menu da lista para editar sua estrutura e configurações."
-      ],
-      "Select a notice from the list to edit it, or create a new one to get started.": [
-        "Selecione um aviso da lista para editá-lo ou crie um novo para começar."
-      ],
-      "Select a notice type": [
-        "Selecione um tipo de notificação"
-      ],
-      "Select a plugin from the list to view its details and manage settings.": [
-        "Selecione um plugin da lista para visualizar seus detalhes e gerenciar as configurações."
-      ],
-      "Select a post from the list to view details and edit properties.": [
-        "Selecione uma publicação da lista para visualizar detalhes e editar propriedades."
-      ],
-      "Select a property...": [
-        "Selecione um imóvel..."
-      ],
-      "Select a role from the list to view and edit its capabilities.": [
-        "Selecione uma função da lista para visualizar e editar suas atribuições."
       ],
       "Select a state": [
         "Selecione um estado"
@@ -6925,23 +4591,8 @@
       "Select a status": [
         "Selecione um status"
       ],
-      "Select a table from the list to view its structure and data.": [
-        "Selecione uma tabela da lista para visualizar sua estrutura e dados."
-      ],
-      "Select a user from the list to view details and edit properties.": [
-        "Selecione um usuário da lista para visualizar detalhes e editar propriedades."
-      ],
       "Select all": [
         "Selecionar todos"
-      ],
-      "Select an activity from the list to view detailed information.": [
-        "Selecione uma atividade da lista para visualizar informações detalhadas."
-      ],
-      "Select date": [
-        "Selecione a data"
-      ],
-      "Select font files from your media library. Supported: .woff2, .woff, .ttf, .otf": [
-        "Selecione arquivos de fonte da sua biblioteca de mídia. Formatos suportados: .woff2, .woff, .ttf, .otf"
       ],
       "Select how many months of dummy data to generate.": [
         "Selecione quantos meses de dados fictícios deseja gerar."
@@ -6949,56 +4600,20 @@
       "Select image": [
         "Selecionar imagem"
       ],
-      "Select order": [
-        "Selecione o pedido"
-      ],
-      "Select ordering": [
-        "Selecione o pedido"
-      ],
-      "Select post types": [
-        "Selecione os tipos de postagem"
-      ],
       "Select row": [
         "Selecionar linha"
       ],
       "Select the plugins that should not display available update notices in the Plugins table.": [
         "Selecione os plugins que não devem exibir avisos de atualização disponíveis na tabela Plugins."
       ],
-      "Select users or roles": [
-        "Selecione usuários ou funções"
-      ],
-      "Select weights to include. At least one is required.": [
-        "Selecione os pesos a incluir. Pelo menos um é obrigatório."
-      ],
-      "Selected:": [
-        "Selecionado:"
-      ],
-      "Selection deleted": [
-        "Seleção excluída"
-      ],
-      "Send an email notification to the user about the changes.": [
-        "Enviar uma notificação por e-mail ao usuário sobre as alterações."
-      ],
-      "Send an email notification to the user about their new account.": [
-        "Enviar uma notificação por e-mail ao usuário sobre sua nova conta."
-      ],
       "Send note": [
         "Enviar nota"
-      ],
-      "Send recovery link": [
-        "Enviar link de recuperação"
       ],
       "Send the link": [
         "Enviar o link"
       ],
       "Send to customer": [
         "Enviar ao cliente"
-      ],
-      "Send user notification": [
-        "Enviar notificação ao usuário"
-      ],
-      "Send welcome email to new users": [
-        "Enviar e-mail de boas-vindas para novos usuários"
       ],
       "Senha redefinida com sucesso. Faça login para continuar.": [
         "Senha redefinida com sucesso. Faça login para continuar."
@@ -7015,23 +4630,8 @@
       "Separate tags with commas.": [
         "Separe as tags com vírgulas."
       ],
-      "Separator": [
-        "Separador"
-      ],
-      "Server Health": [
-        "Saúde do servidor"
-      ],
       "Server health": [
         "Saúde do servidor"
-      ],
-      "Service Account:": [
-        "Conta de serviço:"
-      ],
-      "Service Accounts": [
-        "Contas de serviço"
-      ],
-      "Service account connected successfully": [
-        "Conta de serviço conectada com sucesso"
       ],
       "Service account credentials saved successfully": [
         "As credenciais da conta de serviço foram salvas com sucesso."
@@ -7054,20 +4654,11 @@
       "Set an alternative logo to use in dark mode. If one isn't set it will fall back to the standard logo.": [
         "Defina um logotipo alternativo para usar no modo escuro. Se nenhum for definido, o logotipo padrão será usado."
       ],
-      "Set date": [
-        "Definir data"
-      ],
       "Set featured image": [
         "Definir imagem em destaque"
       ],
       "Set product image": [
         "Definir imagem do produto"
-      ],
-      "Set specific roles or users this menu applies to.": [
-        "Defina funções ou usuários específicos aos quais este menu se aplica."
-      ],
-      "Set specific roles or users this menu won't apply to.": [
-        "Defina funções ou usuários específicos aos quais este menu não se aplicará."
       ],
       "Set their prices to make them purchasable.": [
         "Defina os preços para que possam ser compradas."
@@ -7081,32 +4672,17 @@
       "Settings": [
         "Configurações"
       ],
-      "Settings Panel": [
-        "Painel de Configurações"
-      ],
-      "Settings imported": [
-        "Configurações importadas"
-      ],
       "Settings must be an object": [
         "As configurações devem ser um objeto"
       ],
       "Settings reset": [
         "Configurações redefinidas"
       ],
-      "Settings reset to defaults": [
-        "Configurações redefinidas para os padrões de fábrica"
-      ],
       "Settings reset to defaults.": [
         "As configurações foram redefinidas para os padrões de fábrica."
       ],
       "Settings saved": [
         "Configurações salvas"
-      ],
-      "Settings updated!": [
-        "Configurações atualizadas!"
-      ],
-      "Setup Instructions": [
-        "Instruções de instalação"
       ],
       "Shadows": [
         "Sombras"
@@ -7116,9 +4692,6 @@
       ],
       "Shipping": [
         "Entrega"
-      ],
-      "Shipping Address": [
-        "Endereço para envio"
       ],
       "Shipping address": [
         "Endereço de entrega"
@@ -7153,29 +4726,14 @@
       "Short description of the product.": [
         "Descrição curta do produto."
       ],
-      "Shortcut name": [
-        "Nome abreviado"
-      ],
-      "Shortcuts": [
-        "Atalhos"
-      ],
       "Show child items": [
         "Mostrar itens filhos"
       ],
       "Show less": [
         "Mostrar menos"
       ],
-      "Show more": [
-        "Mostrar mais"
-      ],
       "Show new orders": [
         "Mostrar novos pedidos"
-      ],
-      "Show non-WordPress tables only": [
-        "Exibir apenas tabelas que não sejam do WordPress"
-      ],
-      "Show only quick actions": [
-        "Mostrar apenas ações rápidas"
       ],
       "Show password": [
         "Mostrar senha"
@@ -7185,12 +4743,6 @@
       ],
       "Show this notice": [
         "Mostrar este aviso"
-      ],
-      "Show tutorial again": [
-        "Mostrar tutorial novamente"
-      ],
-      "Showing": [
-        "Exibindo"
       ],
       "Showing %1$s to %2$s of %3$s": [
         "Mostrando %1$s a %2$s de %3$s"
@@ -7204,44 +4756,17 @@
       "Sidebar": [
         "Barra lateral"
       ],
-      "Sidebar View": [
-        "Visualização da barra lateral"
-      ],
       "Sidebar view": [
         "Visualização lateral"
       ],
-      "Sign In": [
-        "Entrar"
-      ],
-      "Sign Out": [
-        "Sair"
-      ],
       "Sign in": [
         "Entrar"
-      ],
-      "Sign out": [
-        "Sair"
       ],
       "Signed in as": [
         "Conectado como"
       ],
       "Simple product": [
         "Produto simples"
-      ],
-      "Site Removed": [
-        "Site removido"
-      ],
-      "Site Settings": [
-        "Configurações do site"
-      ],
-      "Site URL": [
-        "URL do site"
-      ],
-      "Site URL (e.g., https://example.com)": [
-        "URL do site (por exemplo, https://example.com)"
-      ],
-      "Site URL, username, and application password are required": [
-        "É necessário o URL do site, o nome de usuário e a senha do aplicativo."
       ],
       "Site address": [
         "Endereço do site"
@@ -7257,12 +4782,6 @@
       ],
       "Skeletons": [
         "Esqueletos"
-      ],
-      "Skip": [
-        "Pular"
-      ],
-      "Skip first data row (if it contains headers)": [
-        "Ignorar a primeira linha de dados (se ela contiver cabeçalhos)"
       ],
       "Slug": [
         "Lesma"
@@ -7300,15 +4819,6 @@
       "Sort": [
         "Ordenar"
       ],
-      "Sort By": [
-        "Ordenar por"
-      ],
-      "Sort plugins": [
-        "Plugins de classificação"
-      ],
-      "Source": [
-        "Fonte"
-      ],
       "Spam": [
         "Spam"
       ],
@@ -7318,17 +4828,8 @@
       "Standard": [
         "Padrão"
       ],
-      "Standard fields (ID, username, email, name, roles, etc.) are always included": [
-        "Os campos padrão (ID, nome de usuário, e-mail, nome, funções, etc.) estão sempre incluídos."
-      ],
       "Standard shipping": [
         "Entrega padrão"
-      ],
-      "Start Crop": [
-        "Iniciar o cultivo"
-      ],
-      "Start Import": [
-        "Iniciar Importação"
       ],
       "Start date": [
         "Data inicial"
@@ -7341,9 +4842,6 @@
       ],
       "Start date for chart data (ISO 8601 format)": [
         "Data de início dos dados do gráfico (formato ISO 8601)"
-      ],
-      "Start searching": [
-        "Comece a pesquisar"
       ],
       "State": [
         "Estado"
@@ -7381,12 +4879,6 @@
       "Strikethrough": [
         "Tachado"
       ],
-      "Structure": [
-        "Estrutura"
-      ],
-      "Styles": [
-        "Estilos"
-      ],
       "Stylesheet address": [
         "Endereço da folha de estilo"
       ],
@@ -7408,14 +4900,8 @@
       "Summary": [
         "Resumo"
       ],
-      "Supported formats: .woff2, .woff, .ttf, .otf": [
-        "Formatos suportados: .woff2, .woff, .ttf, .otf"
-      ],
       "System": [
         "Sistema"
-      ],
-      "System performance and updates": [
-        "Desempenho e atualizações do sistema"
       ],
       "System tables cannot be deleted.": [
         "As tabelas do sistema não podem ser excluídas."
@@ -7423,17 +4909,8 @@
       "Table '%s' has been deleted.": [
         "A tabela '%s' foi excluída."
       ],
-      "Table Details": [
-        "Detalhes da tabela"
-      ],
-      "Table View": [
-        "Visualização em tabela"
-      ],
       "Table deleted": [
         "Tabela excluída"
-      ],
-      "Table deleted successfully": [
-        "Tabela excluída com sucesso"
       ],
       "Table not found.": [
         "Tabela não encontrada."
@@ -7449,9 +4926,6 @@
       ],
       "Tag created": [
         "Tag criada"
-      ],
-      "Tag created and added": [
-        "Etiqueta criada e adicionada"
       ],
       "Tag name is required": [
         "O nome da tag é obrigatório."
@@ -7470,9 +4944,6 @@
       ],
       "Taking capabilities away from it can lock everyone out of parts of the site, including this screen.": [
         "Tirar permissões dela pode trancar todo mundo fora de partes do site, inclusive desta tela."
-      ],
-      "Target Roles": [
-        "Funções-alvo"
       ],
       "Tax class": [
         "Classe de imposto"
@@ -7501,17 +4972,11 @@
       "Test notification: %s": [
         "Notificação de teste: %s"
       ],
-      "Tested up to": [
-        "Testado até"
-      ],
       "Text Replacement": [
         "Substituição de texto"
       ],
       "Text color": [
         "Cor do texto"
-      ],
-      "Text copied to clipboard": [
-        "Texto copiado para a área de transferência"
       ],
       "That does not look like a site address.": [
         "Isso não parece um endereço de site."
@@ -7522,17 +4987,8 @@
       "That site is already on the list.": [
         "Esse site já está na lista."
       ],
-      "The 5 best-selling products in your store": [
-        "Os 5 produtos mais vendidos na sua loja"
-      ],
       "The Flexify Dashboard plugin version is the latest.": [
         "A versão do plugin Flexify Dashboard é a mais recente."
-      ],
-      "The Rank Math blog feed is temporarily unavailable.": [
-        "O feed do blog Rank Math está temporariamente indisponível."
-      ],
-      "The Rank Math widget has no available modules for this user.": [
-        "O widget Rank Math não possui módulos disponíveis para este usuário."
       ],
       "The SVG file could not be read for sanitization.": [
         "O arquivo SVG não pôde ser lido para sanitização."
@@ -7573,17 +5029,11 @@
       "The database explorer": [
         "O explorador do banco de dados"
       ],
-      "The display name for this role": [
-        "O nome de exibição para esta função"
-      ],
       "The download could not be prepared.": [
         "Não foi possível preparar o download."
       ],
       "The end date must be after the start date.": [
         "A data final deve ser posterior à data inicial."
-      ],
-      "The exact font-family name as defined in the stylesheet": [
-        "O nome exato da família de fontes, conforme definido na folha de estilo."
       ],
       "The file will be deleted for good. The media library has no trash.": [
         "O arquivo será excluído definitivamente. A biblioteca de mídia não tem lixeira."
@@ -7594,17 +5044,11 @@
       "The gateway refused the charge.": [
         "O gateway recusou a cobrança."
       ],
-      "The item will not be shown if hidden": [
-        "O item não será exibido se estiver oculto."
-      ],
       "The media library and uploads": [
         "A biblioteca de mídia e os envios"
       ],
       "The media library is not available on this screen.": [
         "A biblioteca de mídia não está disponível nesta tela."
-      ],
-      "The menu cache has been cleared successfully. All users will see fresh menu data.": [
-        "O cache do menu foi limpo com sucesso. Todos os usuários verão os dados atualizados do menu."
       ],
       "The name the stylesheet gives it.": [
         "O nome que a folha de estilo dá a ela."
@@ -7623,9 +5067,6 @@
       ],
       "The plugin directory could not be reached.": [
         "Não foi possível acessar o diretório de plugins."
-      ],
-      "The plugin you are looking for could not be found.": [
-        "O plugin que você está procurando não foi encontrado."
       ],
       "The plugins screen": [
         "A tela de plugins"
@@ -7663,12 +5104,6 @@
       "The sanitized SVG file could not be saved.": [
         "O arquivo SVG higienizado não pôde ser salvo."
       ],
-      "The secret key is stored securely and never exposed in the generic settings payload.": [
-        "A chave secreta é armazenada com segurança e nunca é exposta no conteúdo das configurações genéricas."
-      ],
-      "The service account email (found in the JSON file) must be added to your GA4 property with at least Viewer access for data to be retrieved.": [
-        "O endereço de e-mail da conta de serviço (encontrado no arquivo JSON) deve ser adicionado à sua propriedade do GA4 com, no mínimo, acesso de Visualizador para que os dados possam ser recuperados."
-      ],
       "The settings could not be loaded.": [
         "Não foi possível carregar as configurações."
       ],
@@ -7699,17 +5134,8 @@
       "There is nothing to export.": [
         "Não há nada para exportar."
       ],
-      "There was an error fetching this plugins information": [
-        "Ocorreu um erro ao obter as informações deste plugin."
-      ],
       "These are hard to undo.": [
         "Estas são difíceis de desfazer."
-      ],
-      "These metrics represent plugin performance during a admin dashboard page load. While this provides valuable insight into plugin behavior, actual performance may vary across different pages and user interactions.": [
-        "Essas métricas representam o desempenho do plugin durante o carregamento de uma página do painel de administração. Embora isso forneça informações valiosas sobre o comportamento do plugin, o desempenho real pode variar entre diferentes páginas e interações do usuário."
-      ],
-      "These metrics represent plugin performance during a home page load. While this provides valuable insight into plugin behavior, actual performance may vary across different pages and user interactions.": [
-        "Essas métricas representam o desempenho do plugin durante o carregamento da página inicial. Embora isso forneça informações valiosas sobre o comportamento do plugin, o desempenho real pode variar entre diferentes páginas e interações do usuário."
       ],
       "This SKU is already in use.": [
         "Este SKU já está em uso."
@@ -7719,6 +5145,9 @@
       ],
       "This attribute has no values yet.": [
         "Este atributo ainda não tem valores."
+      ],
+      "This card was built for the old Vue dashboard. It needs to be rebuilt as a React component or as markup.": [
+        "Este cartão foi feito para o painel Vue antigo. Ele precisa ser refeito como componente React ou como HTML."
       ],
       "This comment could not be loaded.": [
         "Não foi possível carregar este comentário."
@@ -7750,20 +5179,11 @@
       "This item will be deleted for good. There is no undo.": [
         "Este item será excluído definitivamente. Não há como desfazer."
       ],
-      "This link will open in a new tab": [
-        "Este link será aberto em uma nova aba."
-      ],
       "This looks like a development site, so no licence is needed here.": [
         "Este parece ser um site de desenvolvimento, então não é preciso licença aqui."
       ],
-      "This media is not currently used anywhere.": [
-        "Este conteúdo não está sendo utilizado em nenhum lugar no momento."
-      ],
       "This menu could not be loaded.": [
         "Não foi possível carregar este menu."
-      ],
-      "This menu will be applied to everyone if enabled.": [
-        "Este menu será aplicado a todos se estiver ativado."
       ],
       "This month": [
         "Este mês"
@@ -7773,9 +5193,6 @@
       ],
       "This order can no longer be edited": [
         "Este pedido não pode mais ser editado"
-      ],
-      "This plugin requires the following plugins to be installed and active:": [
-        "Este plugin requer que os seguintes plugins estejam instalados e ativos:"
       ],
       "This post type slug is reserved by WordPress.": [
         "Este slug de tipo de postagem é reservado pelo WordPress."
@@ -7792,9 +5209,6 @@
       "This setting is not available on this screen.": [
         "Esta configuração não está disponível nesta tela."
       ],
-      "This site URL already exists": [
-        "Este site já existe."
-      ],
       "This site stops being reachable from here. Nothing on the other site changes.": [
         "Este site deixa de ser acessível daqui. Nada muda no outro site."
       ],
@@ -7807,20 +5221,8 @@
       "This user is not a customer of the store.": [
         "Este usuário não é cliente da loja."
       ],
-      "This will deactivate the current license for this site and remove the local license data. This action cannot be undone from here.": [
-        "Isso desativará a licença atual deste site e removerá os dados da licença local. Esta ação não pode ser desfeita a partir daqui."
-      ],
       "This will delete all existing analytics data and replace it with dummy data for testing purposes.": [
         "Isso excluirá todos os dados analíticos existentes e os substituirá por dados fictícios para fins de teste."
-      ],
-      "This will delete your current Flexify Dashboard configuration and restore the default settings. This action cannot be undone.": [
-        "Isso apagará sua configuração atual do Painel Flexify e restaurará as configurações padrão. Essa ação não pode ser desfeita."
-      ],
-      "This will permantantly delete the file. Proceed?": [
-        "Isso apagará o arquivo permanentemente. Deseja prosseguir?"
-      ],
-      "This will permantantly optimise the image and convert to webp format.": [
-        "Isso otimizará permanentemente a imagem e a converterá para o formato webp."
       ],
       "This will rename Flexify Dashboard in the plugins list as well as renaming it's settings link.": [
         "Isso renomeará o Painel de Controle do Flexify na lista de plugins, bem como o link de suas configurações."
@@ -7828,23 +5230,14 @@
       "This year": [
         "Este ano"
       ],
-      "Thumbnails regenerated": [
-        "Miniaturas regeneradas"
-      ],
       "Time on page": [
         "Tempo na página"
       ],
       "Timeframe for metrics (hour, day, week, month)": [
         "Período de tempo para as métricas (hora, dia, semana, mês)"
       ],
-      "Timestamp": [
-        "Carimbo de data/hora"
-      ],
       "Timezone": [
         "Fuso horário"
-      ],
-      "Timezone:": [
-        "Fuso horário:"
       ],
       "Tint": [
         "Matiz"
@@ -7857,12 +5250,6 @@
       ],
       "To": [
         "Até"
-      ],
-      "To delete this table, please enter your password to confirm.": [
-        "Para excluir esta tabela, digite sua senha para confirmar."
-      ],
-      "To update the integration, enter the current site key you want to keep and a new secret key.": [
-        "Para atualizar a integração, insira a chave do site atual que deseja manter e uma nova chave secreta."
       ],
       "Today": [
         "Hoje"
@@ -7885,18 +5272,6 @@
       "Tools": [
         "Ferramentas"
       ],
-      "Top Countries": [
-        "Principais países"
-      ],
-      "Top Pages": [
-        "Páginas principais"
-      ],
-      "Top Referrers": [
-        "Principais fontes de referência"
-      ],
-      "Top Selling Products": [
-        "Produtos mais vendidos"
-      ],
       "Top countries": [
         "Principais países"
       ],
@@ -7915,35 +5290,11 @@
       "Total Clicks": [
         "Total de cliques"
       ],
-      "Total Files": [
-        "Total de arquivos"
-      ],
       "Total Impressions": [
         "Impressões totais"
       ],
-      "Total Items": [
-        "Total de itens"
-      ],
       "Total Keywords": [
         "Total de palavras-chave"
-      ],
-      "Total Queries": [
-        "Total de consultas"
-      ],
-      "Total Size": [
-        "Tamanho total"
-      ],
-      "Total Spent": [
-        "Total gasto"
-      ],
-      "Total Users": [
-        "Total de usuários"
-      ],
-      "Total asset size": [
-        "Tamanho total do ativo"
-      ],
-      "Total hooks": [
-        "Número total de ganchos"
       ],
       "Total number of 404 pages opened by the users.": [
         "Número total de páginas com erro 404 abertas pelos usuários."
@@ -7960,20 +5311,11 @@
       "Total number visits received on all the 404 pages.": [
         "Número total de visitas recebidas em todas as páginas 404."
       ],
-      "Total page visits": [
-        "Total de visitas à página"
-      ],
       "Total products": [
         "Total de produtos"
       ],
-      "Total scripts": [
-        "Total de scripts"
-      ],
       "Total spent": [
         "Total gasto"
-      ],
-      "Total styles": [
-        "Estilos totais"
       ],
       "Track and log all admin actions including post changes, user updates, plugin activations, and more.": [
         "Acompanhe e registre todas as ações administrativas, incluindo alterações em posts, atualizações de usuários, ativações de plugins e muito mais."
@@ -7996,26 +5338,11 @@
       "Transaction ID": [
         "ID da transação"
       ],
-      "Transform": [
-        "Transformar"
-      ],
       "Translations": [
         "Traduções"
       ],
       "Trash": [
         "Lixo"
-      ],
-      "Try Again": [
-        "Tente novamente"
-      ],
-      "Try a different search term": [
-        "Tente um termo de pesquisa diferente."
-      ],
-      "Try a different search term or check another category.": [
-        "Tente um termo de pesquisa diferente ou verifique outra categoria."
-      ],
-      "Try a different search term or use command syntax to filter results.": [
-        "Tente um termo de pesquisa diferente ou use a sintaxe de comando para filtrar os resultados."
       ],
       "Try adjusting the search or date range.": [
         "Tente ajustar a busca ou o período."
@@ -8023,14 +5350,8 @@
       "Try adjusting the search or filters.": [
         "Tente ajustar a busca ou os filtros."
       ],
-      "Try adjusting your search terms": [
-        "Tente ajustar seus termos de pesquisa."
-      ],
       "Try again": [
         "Tente novamente"
-      ],
-      "Try these:": [
-        "Experimente estas opções:"
       ],
       "Turnstile validation failed. Please try again.": [
         "A validação da catraca falhou. Tente novamente."
@@ -8077,17 +5398,11 @@
       "Unable to create tag": [
         "Não foi possível criar a tag"
       ],
-      "Unable to load Rank Math data": [
-        "Não foi possível carregar os dados do Rank Math."
-      ],
       "Unable to reach the license server.": [
         "Não foi possível acessar o servidor de licenças."
       ],
       "Unable to retrieve table structure.": [
         "Não foi possível recuperar a estrutura da tabela."
-      ],
-      "Unable to upload menu": [
-        "Não foi possível carregar o menu."
       ],
       "Uncategorized": [
         "Sem categoria"
@@ -8125,35 +5440,14 @@
       "Unknown response.": [
         "Resposta desconhecida."
       ],
-      "Unknown source": [
-        "Fonte desconhecida"
-      ],
-      "Unknown user": [
-        "Usuário desconhecido"
-      ],
       "Unlimited": [
         "Ilimitado"
-      ],
-      "Unnamed product": [
-        "Produto sem nome"
       ],
       "Unsaved changes": [
         "Alterações não salvas"
       ],
       "Until %s": [
         "Até %s"
-      ],
-      "Untitled": [
-        "Sem título"
-      ],
-      "Untitled Notice": [
-        "Aviso sem título"
-      ],
-      "Unused": [
-        "Não utilizado"
-      ],
-      "Unused Media Only": [
-        "Mídia não utilizada apenas"
       ],
       "Unused detection mode: shallow (default) or deep (scans post_content).": [
         "Modo de detecção não utilizado: superficial (padrão) ou profundo (analisa post_content)."
@@ -8167,32 +5461,11 @@
       "Update": [
         "Atualizar"
       ],
-      "Update Available": [
-        "Atualização disponível"
-      ],
-      "Update Comment": [
-        "Atualizar comentário"
-      ],
-      "Update Notice": [
-        "Aviso de atualização"
-      ],
       "Update Tag": [
         "Atualizar etiqueta"
       ],
-      "Update User": [
-        "Atualizar usuário"
-      ],
-      "Update author": [
-        "Atualizar autor"
-      ],
       "Update available": [
         "Atualização disponível"
-      ],
-      "Update credentials": [
-        "Atualizar credenciais"
-      ],
-      "Update settings": [
-        "Atualizar configurações"
       ],
       "Update status": [
         "Atualizar status"
@@ -8200,17 +5473,8 @@
       "Updates": [
         "Atualizações"
       ],
-      "Updating...": [
-        "Atualizando..."
-      ],
       "Upload": [
         "Carregar"
-      ],
-      "Upload Failed": [
-        "Falha no envio"
-      ],
-      "Upload Font": [
-        "Carregar fonte"
       ],
       "Upload a ZIP": [
         "Enviar um ZIP"
@@ -8221,12 +5485,6 @@
       "Upload failed": [
         "Falha no upload"
       ],
-      "Upload failed - no response data": [
-        "Falha no envio - nenhum dado de resposta."
-      ],
-      "Upload failed. Please try again.": [
-        "O envio falhou. Tente novamente."
-      ],
       "Uploaded": [
         "Enviado"
       ],
@@ -8235,9 +5493,6 @@
       ],
       "Uploading": [
         "Enviando"
-      ],
-      "Uploading Plugin": [
-        "Plugin de upload"
       ],
       "Upsells": [
         "Upsells"
@@ -8259,9 +5514,6 @@
       ],
       "Use Google reCAPTCHA v2 checkbox in the modern administrative login and password recovery forms. Credentials are configured in Integrations.": [
         "Utilize a caixa de seleção do Google reCAPTCHA v2 nos formulários modernos de login administrativo e recuperação de senha. As credenciais são configuradas em Integrações."
-      ],
-      "Use Manage Cards to show the cards you want for this category.": [
-        "Use a opção \"Gerenciar cartões\" para exibir os cartões desejados para esta categoria."
       ],
       "Use a negative value for a discount.": [
         "Use um valor negativo para um desconto."
@@ -8290,17 +5542,11 @@
       "Use the roles in the file": [
         "Usar as funções do arquivo"
       ],
-      "Use these credentials in the modern administrative login and password recovery forms with Google reCAPTCHA v2 checkbox.": [
-        "Utilize essas credenciais nos formulários modernos de login administrativo e recuperação de senha com a caixa de seleção do Google reCAPTCHA v2."
-      ],
       "Use this menu": [
         "Usar este menu"
       ],
       "Use “Apply to everyone now” on the menu list to make it immediate.": [
         "Use \"Aplicar para todos agora\" na lista de menus para que seja imediato."
-      ],
-      "Used In": [
-        "Usado em"
       ],
       "Used for variations": [
         "Usado para variações"
@@ -8311,26 +5557,8 @@
       "Used up": [
         "Esgotado"
       ],
-      "Used when password column is not mapped or empty": [
-        "Utilizado quando a coluna de senha não está mapeada ou está vazia."
-      ],
       "User": [
         "Usuário"
-      ],
-      "User Agent": [
-        "Agente do usuário"
-      ],
-      "User Analytics": [
-        "Análise de usuários"
-      ],
-      "User Details": [
-        "Detalhes do usuário"
-      ],
-      "User ID": [
-        "ID do usuário"
-      ],
-      "User Information": [
-        "Informações do usuário"
       ],
       "User actions": [
         "Ações do usuário"
@@ -8338,47 +5566,23 @@
       "User agent string": [
         "String do agente do usuário"
       ],
-      "User behavior metrics": [
-        "Métricas de comportamento do usuário"
-      ],
       "User cannot edit this post": [
         "O usuário não pode editar esta publicação."
       ],
       "User created": [
         "Usuário criado"
       ],
-      "User created successfully!": [
-        "Usuário criado com sucesso!"
-      ],
-      "User deleted successfully!": [
-        "Usuário excluído com sucesso!"
-      ],
-      "User management and administration settings": [
-        "Configurações de gerenciamento e administração de usuários"
-      ],
       "User menu": [
         "Menu do usuário"
-      ],
-      "User name": [
-        "Nome de usuário"
       ],
       "User not found": [
         "Usuário não encontrado"
       ],
-      "User registration trends": [
-        "Tendências de registro de usuários"
-      ],
       "User updated": [
         "Usuário atualizado"
       ],
-      "User updated successfully": [
-        "Usuário atualizado com sucesso"
-      ],
       "Username": [
         "Nome de usuário"
-      ],
-      "Username cannot be changed": [
-        "O nome de usuário não pode ser alterado."
       ],
       "Username or email": [
         "Usuário ou e-mail"
@@ -8389,26 +5593,11 @@
       "Users": [
         "Usuários"
       ],
-      "Users currently browsing": [
-        "Usuários navegando no momento"
-      ],
       "Users deleted": [
         "Usuários excluídos"
       ],
-      "Users to export:": [
-        "Usuários para exportar:"
-      ],
       "Users updated": [
         "Usuários atualizados"
-      ],
-      "Users updated successfully": [
-        "Usuários atualizados com sucesso"
-      ],
-      "VISITORS": [
-        "VISITANTES"
-      ],
-      "Valid": [
-        "Válido"
       ],
       "Valid object ID is required.": [
         "É necessário um ID de objeto válido."
@@ -8443,29 +5632,11 @@
       "Verifique seu e-mail para ativar a conta.": [
         "Verifique seu e-mail para ativar a conta."
       ],
-      "Verify": [
-        "Verificar"
-      ],
-      "Verify Password": [
-        "Verificar senha"
-      ],
-      "Verifying...": [
-        "Verificando..."
-      ],
-      "Version": [
-        "Versão"
-      ],
-      "Very High": [
-        "Muito alto"
-      ],
       "Vibrance": [
         "Vibração"
       ],
       "Video": [
         "Vídeo"
-      ],
-      "Videos": [
-        "Vídeos"
       ],
       "View": [
         "Visualizar"
@@ -8479,20 +5650,11 @@
       "View Admin Notice": [
         "Ver aviso do administrador"
       ],
-      "View Applied CSS": [
-        "Ver CSS aplicado"
-      ],
-      "View Commands": [
-        "Exibir comandos"
-      ],
       "View Report": [
         "Ver relatório"
       ],
       "View Tag": [
         "Ver etiqueta"
-      ],
-      "View all": [
-        "Ver tudo"
       ],
       "View commands": [
         "Exibir comandos"
@@ -8539,26 +5701,17 @@
       "Virtual product (no shipping)": [
         "Produto virtual (sem entrega)"
       ],
-      "Visible": [
-        "Visível"
-      ],
       "Visible columns": [
         "Colunas visíveis"
       ],
       "Visible on the product page": [
         "Visível na página do produto"
       ],
-      "Visit Volume": [
-        "Volume de visitas"
-      ],
       "Visit site": [
         "Visite o site"
       ],
       "Visit the plugin site": [
         "Visitar o site do plugin"
-      ],
-      "Visitor locations worldwide": [
-        "Locais de visitação em todo o mundo"
       ],
       "Visitor map": [
         "Mapa de visitantes"
@@ -8568,9 +5721,6 @@
       ],
       "Warning:": [
         "Aviso:"
-      ],
-      "Warning: Administrator Role": [
-        "Aviso: Função de administrador"
       ],
       "We could not sign you in. Check your details and try again.": [
         "Não foi possível entrar. Confira seus dados e tente novamente."
@@ -8596,23 +5746,11 @@
       "Website": [
         "Site"
       ],
-      "Website traffic and engagement": [
-        "Tráfego e engajamento do site"
-      ],
-      "Website traffic trends": [
-        "tendências de tráfego do site"
-      ],
       "Weight": [
         "Peso"
       ],
-      "Weight:": [
-        "Peso:"
-      ],
       "Weights": [
         "Pesos"
-      ],
-      "Welcome to Global Search": [
-        "Bem-vindo à Busca Global"
       ],
       "Welcome to WordPress": [
         "Bem-vindo ao WordPress"
@@ -8674,17 +5812,8 @@
       "When you create new items they will show up here.": [
         "Ao criar novos itens, eles aparecerão aqui."
       ],
-      "When you switch to a remote site, all API requests will be sent to that site instead of the local site.": [
-        "Ao mudar para um site remoto, todas as solicitações de API serão enviadas para esse site em vez do site local."
-      ],
       "Where the font comes from": [
         "De onde vem a fonte"
-      ],
-      "Whether this menu is active or not": [
-        "Se este menu está ativo ou não."
-      ],
-      "White Label": [
-        "Marca Branca"
       ],
       "White label": [
         "Marca branca"
@@ -8697,9 +5826,6 @@
       ],
       "Who sees it": [
         "Quem vê"
-      ],
-      "Widget": [
-        "Widget"
       ],
       "Width": [
         "Largura"
@@ -8740,50 +5866,11 @@
       "WordPress table": [
         "Tabela do WordPress"
       ],
-      "Would you like to keep this fix permanently or remove it?": [
-        "Deseja manter essa correção permanentemente ou removê-la?"
-      ],
-      "Write something...": [
-        "Escreva algo..."
-      ],
       "Write something…": [
         "Escreva alguma coisa…"
       ],
       "Yes": [
         "Sim"
-      ],
-      "Yes delete it": [
-        "Sim, apague-o."
-      ],
-      "Yes delete them": [
-        "Sim, apague-os."
-      ],
-      "Yes publish them": [
-        "Sim, publique-os."
-      ],
-      "Yes update them": [
-        "Sim, atualize-os."
-      ],
-      "Yes, I understand the risk": [
-        "Sim, eu entendo o risco."
-      ],
-      "Yes, delete": [
-        "Sim, apagar"
-      ],
-      "Yes, delete it": [
-        "Sim, apague-o."
-      ],
-      "Yes, delete table": [
-        "Sim, exclua a tabela."
-      ],
-      "Yes, remove site": [
-        "Sim, remova o site."
-      ],
-      "You are about to modify the administrator role capabilities. This is extremely dangerous and could lock you out of your site permanently. Are you absolutely sure you want to proceed?": [
-        "Você está prestes a modificar as permissões da função de administrador. Isso é extremamente perigoso e pode bloquear seu acesso ao site permanentemente. Tem certeza absoluta de que deseja prosseguir?"
-      ],
-      "You are editing the Administrator role. Modifying capabilities incorrectly could permanently lock you out of your WordPress site. Only make changes if you are absolutely certain of what you are doing. It is strongly recommended to test changes on a staging site first.": [
-        "Você está editando a função de Administrador. Modificar as permissões incorretamente pode bloquear permanentemente o seu acesso ao seu site WordPress. Faça alterações somente se tiver absoluta certeza do que está fazendo. É altamente recomendável testar as alterações em um ambiente de teste primeiro."
       ],
       "You are not allowed to delete this order.": [
         "Você não tem permissão para excluir este pedido."
@@ -8815,17 +5902,11 @@
       "You do not have sufficient permissions to access this page.": [
         "Você não possui permissões suficientes para acessar esta página."
       ],
-      "You have unsaved changes": [
-        "Você tem alterações não salvas."
-      ],
       "You must be logged in to access this endpoint.": [
         "Você precisa estar conectado para acessar este endpoint."
       ],
       "You must be logged in to access this page.": [
         "Você precisa estar conectado para acessar esta página."
-      ],
-      "You're all caught up": [
-        "Você já está por dentro de tudo."
       ],
       "Your account": [
         "Sua conta"
@@ -8833,23 +5914,14 @@
       "Your account is valid, but you do not have access to the administrative panel.": [
         "Sua conta é válida, mas você não tem acesso ao painel administrativo."
       ],
-      "Your browser does not support the video tag.": [
-        "Seu navegador não suporta a tag de vídeo."
-      ],
       "Your changes are live.": [
         "Suas alterações estão no ar."
-      ],
-      "Your changes have not been saved.": [
-        "Suas alterações não foram salvas."
       ],
       "Your changes to this product have not been saved.": [
         "As alterações neste produto não foram salvas."
       ],
       "Your licence key": [
         "Sua chave de licença"
-      ],
-      "Your license key:": [
-        "Sua chave de licença:"
       ],
       "Your password": [
         "Sua senha"
@@ -8866,41 +5938,8 @@
       "admin menu\u0004Admin Notices": [
         "Avisos do administrador"
       ],
-      "ago": [
-        "atrás"
-      ],
-      "and create a new project (or select existing)": [
-        "e crie um novo projeto (ou selecione um existente)"
-      ],
-      "and create a new service account": [
-        "e criar uma nova conta de serviço"
-      ],
-      "author@example.com": [
-        "autor@exemplo.com"
-      ],
-      "capabilities selected": [
-        "capacidades selecionadas"
-      ],
-      "child": [
-        "criança"
-      ],
-      "children": [
-        "crianças"
-      ],
-      "comment": [
-        "comentário"
-      ],
-      "comments": [
-        "comentários"
-      ],
       "copy": [
         "cópia"
-      ],
-      "countries": [
-        "países"
-      ],
-      "day": [
-        "dia"
       ],
       "days": [
         "dias"
@@ -8908,80 +5947,11 @@
       "e-Commerce": [
         "e-Commerce"
       ],
-      "e.g. 123456789": [
-        "Exemplo: 123456789"
-      ],
-      "e.g., Inter, Roboto, Custom Font": [
-        "Por exemplo, Inter, Roboto, Fonte Personalizada"
-      ],
-      "e.g., Manager": [
-        "Exemplo: Gerente"
-      ],
-      "e.g., My Custom Font": [
-        "Por exemplo, minha fonte personalizada."
-      ],
-      "e.g., The header is overlapping with the content area": [
-        "Por exemplo, o cabeçalho está sobrepondo a área de conteúdo."
-      ],
-      "e.g., manager": [
-        "Por exemplo, gerente"
-      ],
       "fallback to English": [
         "usando o inglês"
       ],
-      "hour": [
-        "hora"
-      ],
-      "hours": [
-        "horas"
-      ],
-      "https://example.com": [
-        "https://example.com"
-      ],
-      "https://fonts.googleapis.com/css2?family=...": [
-        "https://fonts.googleapis.com/css2?family=..."
-      ],
-      "icon name": [
-        "nome do ícone"
-      ],
       "in %d day(s)": [
         "em %d dia(s)"
-      ],
-      "info@gmail.com": [
-        "info@gmail.com"
-      ],
-      "item": [
-        "item"
-      ],
-      "item selected": [
-        "item selecionado"
-      ],
-      "items": [
-        "Unid"
-      ],
-      "items selected": [
-        "itens selecionados"
-      ],
-      "matching setting(s)": [
-        "configuração(ões) correspondente(s)"
-      ],
-      "max 10MB": [
-        "máximo 10 MB"
-      ],
-      "menu": [
-        "menu"
-      ],
-      "menus": [
-        "menus"
-      ],
-      "meta_key_1\nmeta_key_2\n...": [
-        "meta_key_1\nmeta_key_2\n..."
-      ],
-      "minute": [
-        "minuto"
-      ],
-      "minutes": [
-        "minutos"
       ],
       "missing": [
         "ausente"
@@ -8989,20 +5959,11 @@
       "notice\u0004Add New": [
         "Adicionar novo"
       ],
-      "of": [
-        "de"
-      ],
       "off": [
         "desligado"
       ],
       "on": [
         "sobre"
-      ],
-      "or click to browse": [
-        "ou clique para selecionar"
-      ],
-      "pages": [
-        "páginas"
       ],
       "post type general name\u0004Admin Menu": [
         "Menus de administração"
@@ -9022,119 +5983,20 @@
       "reCAPTCHA keys saved": [
         "Chaves do reCAPTCHA salvas"
       ],
-      "requests remaining": [
-        "solicitações restantes"
-      ],
-      "result": [
-        "resultado"
-      ],
-      "results": [
-        "resultados"
-      ],
       "right now": [
         "neste momento"
-      ],
-      "role": [
-        "papel"
-      ],
-      "roles": [
-        "funções"
-      ],
-      "rows": [
-        "linhas"
-      ],
-      "sources": [
-        "fontes"
-      ],
-      "table": [
-        "mesa"
-      ],
-      "tables": [
-        "tabelas"
-      ],
-      "these %d comments": [
-        "esses %d comentários"
-      ],
-      "these %d files": [
-        "esses %d arquivos"
-      ],
-      "these %d users": [
-        "esses %d usuários"
-      ],
-      "this comment": [
-        "este comentário"
-      ],
-      "this file": [
-        "este arquivo"
-      ],
-      "this user": [
-        "este usuário"
-      ],
-      "to close": [
-        "para fechar"
-      ],
-      "to navigate": [
-        "para navegar"
-      ],
-      "to open search": [
-        "para abrir a pesquisa"
-      ],
-      "to select": [
-        "para selecionar"
       ],
       "today": [
         "hoje"
       ],
-      "total": [
-        "total"
-      ],
-      "unique visitors": [
-        "visitantes únicos"
-      ],
-      "unread": [
-        "não lido"
-      ],
-      "updates": [
-        "atualizações"
-      ],
-      "url": [
-        "URL"
-      ],
-      "user": [
-        "usuário"
-      ],
-      "user@example.com": [
-        "usuário@exemplo.com"
-      ],
-      "users": [
-        "Usuários"
-      ],
-      "views": [
-        "vistas"
-      ],
-      "visits": [
-        "visitas"
-      ],
-      "weights loaded": [
-        "pesos carregados"
-      ],
-      "with this role": [
-        "com este cargo"
-      ],
       "wp.i18n loaded": [
         "wp.i18n carregado"
-      ],
-      "wpbody element not found": [
-        "Elemento wpbody não encontrado"
       ],
       "“%s” and all of its values will be removed from every product.": [
         "“%s” e todos os seus valores serão removidos de todos os produtos."
       ],
       "“%s” will be removed from every product that uses it.": [
         "“%s” será removido de todos os produtos que o utilizam."
-      ],
-      "→ Admin → Property Access Management, add the service account email as a Viewer": [
-        "→ Administração → Gestão de Acesso à Propriedade, adicione o e-mail da conta de serviço como visualizador."
       ]
     }
   }

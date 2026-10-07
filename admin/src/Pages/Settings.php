@@ -111,22 +111,13 @@ class Settings {
 
 
 	/**
-	 * Get the Vite entry of the settings screen.
-	 *
-	 * Both screens read the same schema and write the same option, so a site that needs the
-	 * Vue one back can have it from the filter.
+	 * Get the Vite entry of this screen.
 	 *
 	 * @since 4.0.0
 	 * @return string
 	 */
 	private static function get_entry() {
-		/**
-		 * Filter whether the React settings screen is used.
-		 *
-		 * @since 4.0.0
-		 * @param bool $enabled Whether the React screen is used.
-		 */
-		return (bool) apply_filters( 'flexify-dashboard/react-settings', true ) ? 'react/main/settings.tsx' : 'Settings.js';
+		return 'react/main/settings.tsx';
 	}
 
 

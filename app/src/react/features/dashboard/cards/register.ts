@@ -1,4 +1,4 @@
-import { dashboardRegistry } from '@/assets/js/dashboard/registry.js';
+import { dashboardRegistry } from '@/shared/dashboard/registry.js';
 import { __ } from '@/react/lib/i18n';
 import { StoreMetricsCard, StoreRecentOrdersCard, StoreRevenueCard, StoreTopProductsCard } from '@/react/features/dashboard/cards/ecommerce';
 import { RecentCommentsCard, RecentPostsCard, ScheduledPostsCard } from '@/react/features/dashboard/cards/content';

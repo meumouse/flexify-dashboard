@@ -482,22 +482,11 @@ class Plugin {
     /**
      * Get the Vite entry of the admin shell.
      *
-     * The Vue shell is kept behind the filter until the search and the notifications panel
-     * move over to React.
-     *
      * @since 4.0.0
      * @return string
      */
     public static function get_shell_entry() {
-        /**
-         * Filter whether the React admin shell is used.
-         *
-         * @since 4.0.0
-         * @param bool $enabled Whether the React shell is used.
-         */
-        $react = (bool) apply_filters( 'flexify-dashboard/react-shell', false );
-
-        return $react ? 'react/main/app.tsx' : 'flexify-dashboard.js';
+        return 'react/main/app.tsx';
     }
 
 

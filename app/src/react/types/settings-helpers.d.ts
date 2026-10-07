@@ -4,6 +4,6 @@
  * It turns one colour into the twelve steps the theme is built from; the arithmetic belongs
  * to neither framework.
  */
-declare module '@/pages/settings/src/generateColorScheme.js' {
+declare module '@/shared/settings/generateColorScheme.js' {
 	export function generateColorScheme(hex: string): Record<string, string>;
 }

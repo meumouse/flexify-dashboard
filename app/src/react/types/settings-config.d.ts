@@ -5,7 +5,7 @@
  * both screens read the same file, so a setting added to one appears in the other.
  */
 
-declare module '@/pages/settings/src/settings-config.js' {
+declare module '@/shared/settings/settings-config.js' {
 	export type SettingType =
 		| 'toggle'
 		| 'input'

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { exportUsersToCSV } from '@/assets/js/functions/exportUsersToCSV.js';
+import { exportUsersToCSV } from '@/shared/exportUsersToCSV.js';
 import { useNotify } from '@/react/app/ToastProvider';
 import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { decodeHtml } from '@/react/lib/html';

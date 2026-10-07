@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { applyFiltersToCanvas, type FilterValues } from '@/components/utility/image-editor/src/filters.js';
-import { drawVignette } from '@/components/utility/image-editor/src/canvas.js';
+import { applyFiltersToCanvas, type FilterValues } from '@/shared/image-editor/filters.js';
+import { drawVignette } from '@/shared/image-editor/canvas.js';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
 import { Button, Card, Icon, Input, Switch } from '@/react/ui';

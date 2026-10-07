@@ -81,22 +81,13 @@ class CustomMediaPage {
 
 
     /**
-     * Get the Vite entry of the media screen.
-     *
-     * Both screens read the same library through the same routes, so a site that needs the Vue
-     * one back can have it from the filter.
+     * Get the Vite entry of this screen.
      *
      * @since 4.0.0
      * @return string
      */
     private function get_entry() {
-        /**
-         * Filter whether the React media screen is used.
-         *
-         * @since 4.0.0
-         * @param bool $enabled Whether the React screen is used.
-         */
-        return (bool) apply_filters( 'flexify-dashboard/react-media', true ) ? 'react/main/media.tsx' : 'Media.js';
+    	return 'react/main/media.tsx';
     }
 
 

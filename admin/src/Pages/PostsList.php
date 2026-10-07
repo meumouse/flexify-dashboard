@@ -136,22 +136,13 @@ class PostsList {
 
 
 	/**
-	 * Get the Vite entry of the posts screen.
-	 *
-	 * Both screens read the same hidden data page, so a site that needs the Vue one back can
-	 * have it from the filter.
+	 * Get the Vite entry of this screen.
 	 *
 	 * @since 4.0.0
 	 * @return string
 	 */
 	private static function get_entry() {
-		/**
-		 * Filter whether the React posts screen is used.
-		 *
-		 * @since 4.0.0
-		 * @param bool $enabled Whether the React screen is used.
-		 */
-		return (bool) apply_filters( 'flexify-dashboard/react-posts', true ) ? 'react/main/posts.tsx' : 'Posts.js';
+		return 'react/main/posts.tsx';
 	}
 
 

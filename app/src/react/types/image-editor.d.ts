@@ -5,7 +5,7 @@
  * nothing to do with either framework, so they are used as they are rather than rewritten.
  */
 
-declare module '@/components/utility/image-editor/src/filters.js' {
+declare module '@/shared/image-editor/filters.js' {
 	export type FilterValues = {
 		brightness: number;
 		contrast: number;
@@ -26,6 +26,6 @@ declare module '@/components/utility/image-editor/src/filters.js' {
 	export function applyFiltersToCanvas(canvas: HTMLCanvasElement, values: FilterValues): void;
 }
 
-declare module '@/components/utility/image-editor/src/canvas.js' {
+declare module '@/shared/image-editor/canvas.js' {
 	export function drawVignette(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement, vignette: number): void;
 }

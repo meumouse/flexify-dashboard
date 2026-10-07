@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { parseCSV } from '@/assets/js/functions/parseCSV.js';
+import { parseCSV } from '@/shared/csv.js';
 import { useRest } from '@/react/app/WpDataProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { __, sprintf } from '@/react/lib/i18n';

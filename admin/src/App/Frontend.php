@@ -115,22 +115,13 @@ class Frontend {
 
 
     /**
-     * Get the Vite entry of the frontend bar.
-     *
-     * Both bars read the same printed data, so a site that needs the Vue one back can have it
-     * from the filter.
+     * Get the Vite entry of this screen.
      *
      * @since 4.0.0
      * @return string
      */
     private static function get_entry() {
-        /**
-         * Filter whether the React frontend bar is used.
-         *
-         * @since 4.0.0
-         * @param bool $enabled Whether the React bar is used.
-         */
-        return (bool) apply_filters( 'flexify-dashboard/react-frontend', true ) ? 'react/main/frontend.tsx' : 'Frontend.js';
+    	return 'react/main/frontend.tsx';
     }
 
 

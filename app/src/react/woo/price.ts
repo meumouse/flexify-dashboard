@@ -1,4 +1,4 @@
-import { DEFAULT_CURRENCY as JS_DEFAULT_CURRENCY, formatPrice as jsFormatPrice, parsePrice as jsParsePrice } from '@/composables/wooPrice.js';
+import { DEFAULT_CURRENCY as JS_DEFAULT_CURRENCY, formatPrice as jsFormatPrice, parsePrice as jsParsePrice } from '@/shared/wooPrice.js';
 import type { Currency } from '@/react/woo/types';
 
 /**

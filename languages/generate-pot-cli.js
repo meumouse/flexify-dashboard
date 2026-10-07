@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 const TEXT_DOMAIN = "flexify-dashboard";
 const PLUGIN_ROOT = path.resolve(__dirname, "..");
 const OUTPUT_FILE = path.join(__dirname, `${TEXT_DOMAIN}.pot`);
-const INCLUDED_EXTENSIONS = new Set([".php", ".js", ".jsx", ".ts", ".tsx", ".vue"]);
+const INCLUDED_EXTENSIONS = new Set([".php", ".js", ".jsx", ".ts", ".tsx"]);
 const IGNORED_DIRECTORIES = new Set([
   ".git",
   ".vscode",

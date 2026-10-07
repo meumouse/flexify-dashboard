@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { settingsConfig, type SettingDefinition } from '@/pages/settings/src/settings-config.js';
+import { settingsConfig, type SettingDefinition } from '@/shared/settings/settings-config.js';
 import { useWpData } from '@/react/app/WpDataProvider';
 import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { useUnsavedChanges } from '@/react/hooks/useUnsavedChanges';
