@@ -324,9 +324,18 @@ Detalhes úteis para as próximas fases:
 - Testes: `src/react/ui/kit.test.tsx` cobre teclado, nomes acessíveis, portal, debounce e a `DataTable` (seleção, ordenação, expansão). O `afterEach` global restaura os temporizadores reais, senão um teste que falha com `vi.useFakeTimers()` travaria todos os seguintes.
 - Traduções: `languages/convert-cli.js` foi substituído por `generate-json-cli.js` (ESM, usa o `gettext-parser` já instalado e não depende mais do `i18next-conv`); gere com `npm run compile` dentro de `languages/`.
 
-### Fase 2 — WooCommerce: Produtos (G)
+### Fase 2 — WooCommerce: Produtos (G) · **concluída em 07/10/2026**
 Lista, filtros, variações expansíveis, edição rápida, ações em massa, categorias, tags, atributos e cupons.
 **Aceite:** paridade com a tela Vue atual; os testes de integração da API continuam passando.
+
+Detalhes úteis para as próximas fases:
+
+- `WooProvider` / `useWoo()` expõem os dados da loja, a moeda, `price()`, `toDecimal()`, `can()` e os dois clientes REST (`wc()` para `wc/v3` e `fd()` para os endpoints do plugin). O payload vem do `#fd-woocommerce-script`, igual ao da tela Vue.
+- Os hooks de dados ficam em `src/react/woo/queries.ts`; as chaves seguem `['woo', <recurso>, …]`, então uma mutação invalida o recurso inteiro com `['woo', 'products']`.
+- `useQueryFilters()` mantém os filtros na barra de endereços (hash router) e omite os valores iguais ao padrão.
+- A tela React só é usada quando o editor moderno de produtos está desligado — o editor ainda é Vue. A fase 4 porta o editor e remove essa bifurcação; o filtro `flexify-dashboard/woocommerce/react-products` força uma das duas.
+- `ModernScreen` passou a resolver a folha de estilos pelo manifesto (`Scripts::get_stylesheet_path()`). O nome fixo apontava para `assets/styles/products.css`, que o build não gera — as telas de produtos e pedidos carregavam um 404.
+- `Scripts` agora ignora registros de CSS ao procurar a entrada: quando duas entradas importam folhas com o mesmo conteúdo, o Vite grava um registro extra apontando para o `.css` e ele vinha antes da entrada real.
 
 ### Fase 3 — WooCommerce: Pedidos (G)
 Lista, contadores, filtros, prévia, detalhes, notas, reembolso, endereços, ações e navegação entre pedidos.

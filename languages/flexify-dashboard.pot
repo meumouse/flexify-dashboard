@@ -7,10 +7,12 @@ msgstr ""
 "x-domain: flexify-dashboard\n"
 
 #: app/src/pages/products/src/AttributesView.vue:90
+#: app/src/react/features/products/AttributesView.tsx:101
 msgid "“%s” and all of its values will be removed from every product."
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:156
+#: app/src/react/features/products/AttributesView.tsx:169
 msgid "“%s” will be removed from every product that uses it."
 msgstr ""
 
@@ -25,6 +27,7 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:580
 #: app/src/pages/products/src/editor/ProductEditor.vue:583
 #: app/src/pages/products/src/ProductsList.vue:678
+#: app/src/react/features/products/ProductsList.tsx:271
 msgid "(no title)"
 msgstr ""
 
@@ -45,6 +48,7 @@ msgid "%d available"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:164
+#: app/src/react/features/products/CategoriesView.tsx:198
 msgid "%d categories"
 msgstr ""
 
@@ -106,22 +110,27 @@ msgid "%d order(s) will be permanently deleted. This action cannot be undone."
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:466
+#: app/src/react/features/products/ProductsList.tsx:198
 msgid "%d product(s) could not be updated"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:462
+#: app/src/react/features/products/ProductsList.tsx:194
 msgid "%d product(s) updated"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:479
+#: app/src/react/features/products/ProductsList.tsx:212
 msgid "%d product(s) will be moved to the trash."
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:478
+#: app/src/react/features/products/ProductsList.tsx:211
 msgid "%d product(s) will be permanently deleted. This action cannot be undone."
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:259
+#: app/src/react/features/products/AttributesView.tsx:335
 msgid "%d products"
 msgstr ""
 
@@ -130,18 +139,22 @@ msgid "%d rows found"
 msgstr ""
 
 #: app/src/pages/products/src/BulkCategoryModal.vue:32
+#: app/src/react/features/products/BulkCategoryModal.tsx:41
 msgid "%d selected product(s)."
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:43
+#: app/src/react/features/products/BulkPriceModal.tsx:49
 msgid "%d selected product(s). Variations of variable products are updated too."
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:106
+#: app/src/react/features/products/TagsView.tsx:72
 msgid "%d tag(s) will be deleted. Products will not be deleted."
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:258
+#: app/src/react/features/products/CouponsView.tsx:237
 msgid "%d used"
 msgstr ""
 
@@ -162,6 +175,7 @@ msgid "%d variation(s) created"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:696
+#: app/src/react/features/products/ProductsList.tsx:297
 msgid "%d variations"
 msgstr ""
 
@@ -192,6 +206,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:325
 #: app/src/pages/products/src/ProductsList.vue:714
+#: app/src/react/features/products/ProductsList.tsx:328
 msgid "%s in stock"
 msgstr ""
 
@@ -308,6 +323,7 @@ msgid "A new version of the <strong>Flexify Dashboard</strong> plugin is availab
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:141
+#: app/src/react/features/products/CouponsView.tsx:146
 msgid "A percentage discount cannot be higher than 100."
 msgstr ""
 
@@ -354,6 +370,12 @@ msgstr ""
 #: app/src/pages/products/src/ProductVariations.vue:126
 #: app/src/pages/products/src/TagsView.vue:174
 #: app/src/react/features/design-system/Showcase.tsx:104
+#: app/src/react/features/products/AttributesView.tsx:208
+#: app/src/react/features/products/CategoriesView.tsx:172
+#: app/src/react/features/products/CouponsView.tsx:266
+#: app/src/react/features/products/ProductsList.tsx:354
+#: app/src/react/features/products/ProductVariations.tsx:130
+#: app/src/react/features/products/TagsView.tsx:117
 msgid "Actions"
 msgstr ""
 
@@ -380,6 +402,7 @@ msgstr ""
 #: app/src/pages/menu-creator/src/edit.vue:58
 #: app/src/pages/plugins/src/plugin-card.vue:284
 #: app/src/pages/products/src/CouponsView.vue:75
+#: app/src/react/features/products/CouponsView.tsx:100
 msgid "Active"
 msgstr ""
 
@@ -426,6 +449,7 @@ msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:243
 #: app/src/pages/products/src/editor/ProductAttributes.vue:203
+#: app/src/react/features/products/AttributesView.tsx:298
 msgid "Add"
 msgstr ""
 
@@ -443,6 +467,8 @@ msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:190
 #: app/src/pages/products/src/AttributesView.vue:227
+#: app/src/react/features/products/AttributesView.tsx:222
+#: app/src/react/features/products/AttributesView.tsx:245
 msgid "Add attribute"
 msgstr ""
 
@@ -465,11 +491,18 @@ msgstr ""
 #: app/src/pages/products/src/CategoriesView.vue:208
 #: app/src/pages/products/src/editor/ProductEditor.vue:839
 #: app/src/pages/products/src/ProductsList.vue:535
+#: app/src/react/features/products/BulkCategoryModal.tsx:33
+#: app/src/react/features/products/CategoriesView.tsx:189
+#: app/src/react/features/products/CategoriesView.tsx:207
+#: app/src/react/features/products/CategoriesView.tsx:214
+#: app/src/react/features/products/ProductsList.tsx:391
 msgid "Add category"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:222
 #: app/src/pages/products/src/CouponsView.vue:280
+#: app/src/react/features/products/CouponsView.tsx:286
+#: app/src/react/features/products/CouponsView.tsx:338
 msgid "Add coupon"
 msgstr ""
 
@@ -546,6 +579,7 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:580
 #: app/src/pages/products/src/editor/ProductEditor.vue:583
 #: app/src/pages/products/src/ProductsList.vue:570
+#: app/src/react/features/products/ProductsList.tsx:419
 msgid "Add product"
 msgstr ""
 
@@ -570,6 +604,9 @@ msgstr ""
 #: app/src/pages/products/src/TagsView.vue:134
 #: app/src/pages/products/src/TagsView.vue:185
 #: app/src/pages/products/src/TagsView.vue:193
+#: app/src/react/features/products/TagsView.tsx:134
+#: app/src/react/features/products/TagsView.tsx:189
+#: app/src/react/features/products/TagsView.tsx:196
 msgid "Add tag"
 msgstr ""
 
@@ -610,11 +647,15 @@ msgid "Address line 2"
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:69
+#: app/src/react/features/products/BulkPriceModal.tsx:98
+#: app/src/react/features/products/BulkPriceModal.tsx:103
 msgid "Adjust by"
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:43
 #: app/src/pages/products/src/ProductsList.vue:655
+#: app/src/react/features/products/BulkPriceModal.tsx:48
+#: app/src/react/features/products/ProductsList.tsx:592
 msgid "Adjust prices"
 msgstr ""
 
@@ -695,6 +736,7 @@ msgstr ""
 #: app/src/pages/posts/src/constants.js:18
 #: app/src/pages/products/src/ProductsList.vue:161
 #: app/src/pages/users/src/user-list-view.vue:867
+#: app/src/react/features/products/ProductsList.tsx:113
 msgid "All"
 msgstr ""
 
@@ -716,6 +758,7 @@ msgid "All Admin Notices"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:600
+#: app/src/react/features/products/ProductsList.tsx:487
 msgid "All categories"
 msgstr ""
 
@@ -726,6 +769,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:603
+#: app/src/react/features/products/ProductsList.tsx:500
 msgid "All products"
 msgstr ""
 
@@ -734,6 +778,7 @@ msgid "All selected"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:607
+#: app/src/react/features/products/ProductsList.tsx:508
 msgid "All tags"
 msgstr ""
 
@@ -742,6 +787,7 @@ msgid "All Tags"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:601
+#: app/src/react/features/products/ProductsList.tsx:488
 msgid "All types"
 msgstr ""
 
@@ -755,10 +801,12 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:137
 #: app/src/pages/products/src/ProductQuickEdit.vue:66
+#: app/src/react/features/products/ProductQuickEdit.tsx:130
 msgid "Allow"
 msgstr ""
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:252
+#: app/src/react/features/products/ProductQuickEdit.tsx:320
 msgid "Allow backorders?"
 msgstr ""
 
@@ -775,6 +823,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:306
+#: app/src/react/features/products/CouponsView.tsx:386
 msgid "Allow free shipping"
 msgstr ""
 
@@ -795,10 +844,12 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:136
 #: app/src/pages/products/src/ProductQuickEdit.vue:65
+#: app/src/react/features/products/ProductQuickEdit.tsx:129
 msgid "Allow, but notify customer"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:315
+#: app/src/react/features/products/CouponsView.tsx:400
 msgid "Allowed emails"
 msgstr ""
 
@@ -818,6 +869,8 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:513
 #: app/src/pages/products/src/BulkPriceModal.vue:81
 #: app/src/pages/products/src/CouponsView.vue:298
+#: app/src/react/features/products/BulkPriceModal.tsx:114
+#: app/src/react/features/products/CouponsView.tsx:375
 msgid "Amount"
 msgstr ""
 
@@ -889,6 +942,7 @@ msgid "Anonymous"
 msgstr ""
 
 #: app/src/pages/products/src/ProductVariations.vue:26
+#: app/src/react/features/products/ProductVariations.tsx:56
 msgid "Any"
 msgstr ""
 
@@ -914,6 +968,7 @@ msgid "Any payment method"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:602
+#: app/src/react/features/products/ProductsList.tsx:493
 msgid "Any stock status"
 msgstr ""
 
@@ -945,6 +1000,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:587
 #: app/src/pages/products/src/BulkPriceModal.vue:90
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:298
+#: app/src/react/features/products/BulkPriceModal.tsx:56
 msgid "Apply"
 msgstr ""
 
@@ -971,6 +1027,7 @@ msgid "Approved"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:35
+#: app/src/react/features/products/AttributesView.tsx:192
 msgid "Archives"
 msgstr ""
 
@@ -1065,10 +1122,12 @@ msgid "At least 8 characters"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:82
+#: app/src/react/features/products/AttributesView.tsx:93
 msgid "Attribute created"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:100
+#: app/src/react/features/products/AttributesView.tsx:111
 msgid "Attribute deleted"
 msgstr ""
 
@@ -1081,6 +1140,7 @@ msgid "Attribute name, e.g. Material"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:82
+#: app/src/react/features/products/AttributesView.tsx:93
 msgid "Attribute updated"
 msgstr ""
 
@@ -1094,6 +1154,10 @@ msgstr ""
 #: app/src/pages/products/src/AttributesView.vue:204
 #: app/src/pages/products/src/editor/ProductEditor.vue:725
 #: app/src/pages/products/src/ProductsList.vue:544
+#: app/src/react/features/products/AttributesView.tsx:217
+#: app/src/react/features/products/AttributesView.tsx:219
+#: app/src/react/features/products/AttributesView.tsx:238
+#: app/src/react/features/products/ProductsList.tsx:398
 msgid "Attributes"
 msgstr ""
 
@@ -1412,6 +1476,14 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:1723
 #: app/src/react/app/ConfirmProvider.tsx:59
 #: app/src/react/features/design-system/Showcase.tsx:370
+#: app/src/react/features/products/AttributesView.tsx:249
+#: app/src/react/features/products/AttributesView.tsx:330
+#: app/src/react/features/products/BulkCategoryModal.tsx:45
+#: app/src/react/features/products/BulkPriceModal.tsx:53
+#: app/src/react/features/products/CategoriesView.tsx:211
+#: app/src/react/features/products/CouponsView.tsx:342
+#: app/src/react/features/products/ProductQuickEdit.tsx:234
+#: app/src/react/features/products/TagsView.tsx:193
 msgid "Cancel"
 msgstr ""
 
@@ -1459,6 +1531,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:771
 #: app/src/pages/products/src/ProductQuickEdit.vue:229
+#: app/src/react/features/products/ProductQuickEdit.tsx:275
 msgid "Catalog visibility"
 msgstr ""
 
@@ -1472,23 +1545,32 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:280
 #: app/src/pages/products/src/ProductsList.vue:183
 #: app/src/pages/products/src/ProductsList.vue:542
+#: app/src/react/features/products/CategoriesView.tsx:182
+#: app/src/react/features/products/ProductQuickEdit.tsx:346
+#: app/src/react/features/products/ProductsList.tsx:307
+#: app/src/react/features/products/ProductsList.tsx:396
+#: app/src/react/features/products/ProductsList.tsx:487
 msgid "Categories"
 msgstr ""
 
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:95
 #: app/src/pages/products/src/BulkCategoryModal.vue:34
+#: app/src/react/features/products/BulkCategoryModal.tsx:56
 msgid "Category"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:123
+#: app/src/react/features/products/CategoriesView.tsx:115
 msgid "Category created"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:141
+#: app/src/react/features/products/CategoriesView.tsx:133
 msgid "Category deleted"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:123
+#: app/src/react/features/products/CategoriesView.tsx:115
 msgid "Category updated"
 msgstr ""
 
@@ -1627,12 +1709,16 @@ msgid "Classic orders screen"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:550
+#: app/src/react/features/products/ProductsList.tsx:404
 msgid "Classic products screen"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:156
 #: app/src/pages/products/src/CouponsView.vue:221
 #: app/src/pages/products/src/TagsView.vue:133
+#: app/src/react/features/products/CategoriesView.tsx:186
+#: app/src/react/features/products/CouponsView.tsx:283
+#: app/src/react/features/products/TagsView.tsx:131
 msgid "Classic screen"
 msgstr ""
 
@@ -1662,6 +1748,7 @@ msgstr ""
 #: app/src/pages/media/src/media-list-view.vue:1699
 #: app/src/pages/orders/src/OrdersList.vue:512
 #: app/src/pages/products/src/ProductsList.vue:585
+#: app/src/react/features/products/ProductsList.tsx:467
 msgid "Clear filters"
 msgstr ""
 
@@ -1724,6 +1811,7 @@ msgid "Close modal"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:59
+#: app/src/react/features/products/CouponsView.tsx:211
 msgid "Code"
 msgstr ""
 
@@ -1914,6 +2002,7 @@ msgid "Copy billing address"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:203
+#: app/src/react/features/products/CouponsView.tsx:262
 msgid "Copy code"
 msgstr ""
 
@@ -1944,6 +2033,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:179
+#: app/src/react/features/products/CouponsView.tsx:187
 msgid "Could not copy the code"
 msgstr ""
 
@@ -2006,22 +2096,27 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderEditor.vue:586
 #: app/src/pages/products/src/CouponsView.vue:284
+#: app/src/react/features/products/CouponsView.tsx:360
 msgid "Coupon code"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:177
+#: app/src/react/features/products/CouponsView.tsx:185
 msgid "Coupon code copied"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:169
+#: app/src/react/features/products/CouponsView.tsx:177
 msgid "Coupon created"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:196
+#: app/src/react/features/products/CouponsView.tsx:204
 msgid "Coupon moved to the trash"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:169
+#: app/src/react/features/products/CouponsView.tsx:177
 msgid "Coupon updated"
 msgstr ""
 
@@ -2032,6 +2127,10 @@ msgstr ""
 #: app/src/pages/products/src/CouponsView.vue:218
 #: app/src/pages/products/src/CouponsView.vue:240
 #: app/src/pages/products/src/ProductsList.vue:545
+#: app/src/react/features/products/CouponsView.tsx:277
+#: app/src/react/features/products/CouponsView.tsx:279
+#: app/src/react/features/products/CouponsView.tsx:330
+#: app/src/react/features/products/ProductsList.tsx:399
 msgid "Coupons"
 msgstr ""
 
@@ -2040,6 +2139,7 @@ msgid "Coupons and taxes are applied by WooCommerce when the order is saved."
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:239
+#: app/src/react/features/products/CouponsView.tsx:329
 msgid "Coupons give customers a discount at checkout."
 msgstr ""
 
@@ -2048,6 +2148,7 @@ msgid "Create a new post quickly from here."
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:232
+#: app/src/react/features/products/AttributesView.tsx:278
 msgid "Create a page listing the products with each value."
 msgstr ""
 
@@ -2063,10 +2164,12 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:203
+#: app/src/react/features/products/AttributesView.tsx:237
 msgid "Create attributes to describe and vary your products."
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:217
+#: app/src/react/features/products/CouponsView.tsx:278
 msgid "Create discount codes for your customers."
 msgstr ""
 
@@ -2107,6 +2210,7 @@ msgid "Create Your First Notice"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:640
+#: app/src/react/features/products/ProductsList.tsx:560
 msgid "Create your first product to start selling."
 msgstr ""
 
@@ -2192,6 +2296,7 @@ msgid "Custom Meta Fields"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:40
+#: app/src/react/features/products/AttributesView.tsx:50
 msgid "Custom ordering"
 msgstr ""
 
@@ -2338,6 +2443,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:243
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/products/src/ProductsList.vue:187
+#: app/src/react/features/products/ProductsList.tsx:341
 msgid "Date"
 msgstr ""
 
@@ -2368,6 +2474,7 @@ msgid "Deactivating..."
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:63
+#: app/src/react/features/products/BulkPriceModal.tsx:91
 msgid "Decrease"
 msgstr ""
 
@@ -2386,6 +2493,8 @@ msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:34
 #: app/src/pages/products/src/AttributesView.vue:231
+#: app/src/react/features/products/AttributesView.tsx:189
+#: app/src/react/features/products/AttributesView.tsx:273
 msgid "Default sort order"
 msgstr ""
 
@@ -2420,14 +2529,24 @@ msgstr ""
 #: app/src/pages/users/src/user-list.vue:223
 #: app/src/react/features/design-system/Showcase.tsx:279
 #: app/src/react/features/design-system/Showcase.tsx:294
+#: app/src/react/features/products/AttributesView.tsx:102
+#: app/src/react/features/products/AttributesView.tsx:170
+#: app/src/react/features/products/AttributesView.tsx:206
+#: app/src/react/features/products/CategoriesView.tsx:124
+#: app/src/react/features/products/CategoriesView.tsx:170
+#: app/src/react/features/products/TagsView.tsx:73
+#: app/src/react/features/products/TagsView.tsx:115
+#: app/src/react/features/products/TagsView.tsx:180
 msgid "Delete"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:89
+#: app/src/react/features/products/AttributesView.tsx:100
 msgid "Delete attribute?"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:130
+#: app/src/react/features/products/CategoriesView.tsx:122
 msgid "Delete category?"
 msgstr ""
 
@@ -2466,6 +2585,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:480
 #: app/src/pages/products/src/ProductsList.vue:492
 #: app/src/pages/products/src/ProductsList.vue:665
+#: app/src/react/features/products/ProductsList.tsx:213
+#: app/src/react/features/products/ProductsList.tsx:233
+#: app/src/react/features/products/ProductsList.tsx:568
 msgid "Delete permanently"
 msgstr ""
 
@@ -2476,6 +2598,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:394
 #: app/src/pages/products/src/ProductsList.vue:476
 #: app/src/react/features/design-system/Showcase.tsx:277
+#: app/src/react/features/products/ProductsList.tsx:209
 msgid "Delete permanently?"
 msgstr ""
 
@@ -2498,14 +2621,17 @@ msgid "Delete Table?"
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:105
+#: app/src/react/features/products/TagsView.tsx:71
 msgid "Delete tags?"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:261
+#: app/src/react/features/products/AttributesView.tsx:337
 msgid "Delete value"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:155
+#: app/src/react/features/products/AttributesView.tsx:168
 msgid "Delete value?"
 msgstr ""
 
@@ -2555,10 +2681,13 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:350
 #: app/src/pages/products/src/TagsView.vue:189
 #: app/src/react/features/design-system/Showcase.tsx:243
+#: app/src/react/features/products/CategoriesView.tsx:240
+#: app/src/react/features/products/TagsView.tsx:216
 msgid "Description"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:289
+#: app/src/react/features/products/CouponsView.tsx:365
 msgid "Description (optional)"
 msgstr ""
 
@@ -2664,10 +2793,13 @@ msgstr ""
 #: app/src/pages/orders/src/OrderPreview.vue:88
 #: app/src/pages/products/src/CouponsView.vue:60
 #: app/src/pages/products/src/CouponsView.vue:293
+#: app/src/react/features/products/CouponsView.tsx:223
+#: app/src/react/features/products/CouponsView.tsx:369
 msgid "Discount"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:295
+#: app/src/react/features/products/CouponsView.tsx:371
 msgid "Discount type"
 msgstr ""
 
@@ -2712,6 +2844,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:135
 #: app/src/pages/products/src/ProductQuickEdit.vue:64
+#: app/src/react/features/products/ProductQuickEdit.tsx:128
 msgid "Do not allow"
 msgstr ""
 
@@ -2789,6 +2922,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:51
 #: app/src/pages/products/src/ProductsList.vue:226
 #: app/src/react/features/design-system/Showcase.tsx:239
+#: app/src/react/features/products/CouponsView.tsx:89
+#: app/src/react/features/products/productFormat.ts:12
+#: app/src/react/features/products/ProductQuickEdit.tsx:115
 msgid "Draft"
 msgstr ""
 
@@ -2802,6 +2938,7 @@ msgstr ""
 
 #: app/src/pages/posts/src/constants.js:19
 #: app/src/pages/products/src/ProductsList.vue:163
+#: app/src/react/features/products/ProductsList.tsx:115
 msgid "Drafts"
 msgstr ""
 
@@ -2836,6 +2973,7 @@ msgstr ""
 #: app/src/pages/media/src/media-list-view.vue:1837
 #: app/src/pages/posts/src/post-actions.vue:44
 #: app/src/pages/products/src/ProductsList.vue:499
+#: app/src/react/features/products/ProductsList.tsx:240
 msgid "Duplicate"
 msgstr ""
 
@@ -2883,6 +3021,11 @@ msgstr ""
 #: app/src/pages/products/src/CouponsView.vue:202
 #: app/src/pages/products/src/ProductsList.vue:497
 #: app/src/pages/products/src/TagsView.vue:167
+#: app/src/react/features/products/AttributesView.tsx:204
+#: app/src/react/features/products/CategoriesView.tsx:167
+#: app/src/react/features/products/CouponsView.tsx:261
+#: app/src/react/features/products/ProductsList.tsx:238
+#: app/src/react/features/products/TagsView.tsx:112
 msgid "Edit"
 msgstr ""
 
@@ -2899,6 +3042,7 @@ msgid "Edit Admin Notice"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:227
+#: app/src/react/features/products/AttributesView.tsx:245
 msgid "Edit attribute"
 msgstr ""
 
@@ -2908,10 +3052,12 @@ msgid "Edit billing address"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:199
+#: app/src/react/features/products/CategoriesView.tsx:207
 msgid "Edit category"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:280
+#: app/src/react/features/products/CouponsView.tsx:338
 msgid "Edit coupon"
 msgstr ""
 
@@ -2965,6 +3111,7 @@ msgid "Edit shipping address"
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:185
+#: app/src/react/features/products/TagsView.tsx:189
 msgid "Edit tag"
 msgstr ""
 
@@ -3051,6 +3198,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:232
+#: app/src/react/features/products/AttributesView.tsx:277
 msgid "Enable archives"
 msgstr ""
 
@@ -3171,6 +3319,7 @@ msgid "Enter a refund amount greater than zero."
 msgstr ""
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:142
+#: app/src/react/features/products/ProductQuickEdit.tsx:159
 msgid "Enter a valid quantity."
 msgstr ""
 
@@ -3327,6 +3476,7 @@ msgid "Exclude roles or users"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:317
+#: app/src/react/features/products/CouponsView.tsx:409
 msgid "Exclude sale items"
 msgstr ""
 
@@ -3356,14 +3506,17 @@ msgid "Expand sidebar"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:73
+#: app/src/react/features/products/CouponsView.tsx:93
 msgid "Expired"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:62
+#: app/src/react/features/products/CouponsView.tsx:241
 msgid "Expires"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:304
+#: app/src/react/features/products/CouponsView.tsx:381
 msgid "Expiry date"
 msgstr ""
 
@@ -3394,6 +3547,7 @@ msgid "Export failed"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:548
+#: app/src/react/features/products/ProductsList.tsx:402
 msgid "Export products"
 msgstr ""
 
@@ -3698,6 +3852,10 @@ msgstr ""
 msgid "Favicon url"
 msgstr ""
 
+#: app/src/react/features/products/ProductsList.tsx:501
+msgid "Featured"
+msgstr ""
+
 #: admin/src/Rest/CustomPostTypes.php:850
 msgid "Featured image"
 msgstr ""
@@ -3707,6 +3865,7 @@ msgid "Featured image updated"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:603
+#: app/src/react/features/products/ProductsList.tsx:499
 msgid "Featured only"
 msgstr ""
 
@@ -3714,6 +3873,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:231
 #: app/src/react/features/design-system/Showcase.tsx:248
 #: app/src/react/features/design-system/Showcase.tsx:388
+#: app/src/react/features/products/ProductQuickEdit.tsx:279
 msgid "Featured product"
 msgstr ""
 
@@ -3894,6 +4054,8 @@ msgid "Filter by specific page URL"
 msgstr ""
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:286
+#: app/src/react/features/products/ProductQuickEdit.tsx:353
+#: app/src/react/features/products/ProductQuickEdit.tsx:354
 msgid "Filter categories"
 msgstr ""
 
@@ -3941,14 +4103,17 @@ msgid "Fix Layout"
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:75
+#: app/src/react/features/products/BulkPriceModal.tsx:106
 msgid "Fixed amount"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:54
+#: app/src/react/features/products/CouponsView.tsx:78
 msgid "Fixed cart discount"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:55
+#: app/src/react/features/products/CouponsView.tsx:79
 msgid "Fixed product discount"
 msgstr ""
 
@@ -4037,6 +4202,7 @@ msgid "Free"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:253
+#: app/src/react/features/products/CouponsView.tsx:229
 msgid "Free shipping"
 msgstr ""
 
@@ -4060,11 +4226,14 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:223
 #: app/src/pages/role-editor/src/role-details-view.vue:85
 #: app/src/pages/settings/index.vue:44
+#: app/src/react/features/products/ProductQuickEdit.tsx:266
 msgid "General"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:285
 #: app/src/pages/products/src/CouponsView.vue:286
+#: app/src/react/features/products/CouponsView.tsx:361
+#: app/src/react/features/products/CouponsView.tsx:362
 msgid "Generate code"
 msgstr ""
 
@@ -4113,6 +4282,7 @@ msgid "Global"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:186
+#: app/src/react/features/products/AttributesView.tsx:218
 msgid ""
 "Global attributes such as size or color can be reused across products and "
 "variations."
@@ -4259,6 +4429,7 @@ msgstr ""
 #: app/src/components/utility/image-editor/index.vue:1920
 #: app/src/pages/products/src/editor/ProductEditor.vue:718
 #: app/src/pages/products/src/ProductQuickEdit.vue:268
+#: app/src/react/features/products/ProductQuickEdit.tsx:333
 msgid "Height"
 msgstr ""
 
@@ -4277,6 +4448,7 @@ msgstr ""
 #: app/src/pages/menu-creator/src/edit.vue:1075
 #: app/src/pages/products/src/editor/ProductEditor.vue:131
 #: app/src/pages/products/src/ProductQuickEdit.vue:60
+#: app/src/react/features/products/ProductQuickEdit.tsx:124
 msgid "Hidden"
 msgstr ""
 
@@ -4464,6 +4636,7 @@ msgid "Import failed"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:547
+#: app/src/react/features/products/ProductsList.tsx:401
 msgid "Import products"
 msgstr ""
 
@@ -4509,6 +4682,8 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:40
 #: app/src/pages/products/src/ProductsList.vue:254
 #: app/src/pages/products/src/ProductsList.vue:524
+#: app/src/react/features/products/productFormat.ts:32
+#: app/src/react/features/products/ProductsList.tsx:381
 msgid "In stock"
 msgstr ""
 
@@ -4521,6 +4696,7 @@ msgid "Include Custom Fields"
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:62
+#: app/src/react/features/products/BulkPriceModal.tsx:90
 msgid "Increase"
 msgstr ""
 
@@ -4533,6 +4709,7 @@ msgid "Indexes"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:316
+#: app/src/react/features/products/CouponsView.tsx:406
 msgid "Individual use only"
 msgstr ""
 
@@ -4855,6 +5032,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:676
 #: app/src/pages/products/src/ProductQuickEdit.vue:248
+#: app/src/react/features/products/ProductQuickEdit.tsx:308
 msgid "Inventory"
 msgstr ""
 
@@ -5086,6 +5264,8 @@ msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:202
 #: app/src/pages/products/src/TagsView.vue:188
+#: app/src/react/features/products/CategoriesView.tsx:232
+#: app/src/react/features/products/TagsView.tsx:214
 msgid "Leave empty to generate it from the name."
 msgstr ""
 
@@ -5110,6 +5290,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:716
 #: app/src/pages/products/src/ProductQuickEdit.vue:266
+#: app/src/react/features/products/ProductQuickEdit.tsx:331
 msgid "Length"
 msgstr ""
 
@@ -5409,6 +5590,8 @@ msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:177
 #: app/src/pages/products/src/ProductsList.vue:251
+#: app/src/react/features/products/productFormat.ts:29
+#: app/src/react/features/products/ProductsList.tsx:148
 msgid "Low stock"
 msgstr ""
 
@@ -5445,10 +5628,12 @@ msgid "Manage Media"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:171
+#: app/src/react/features/products/AttributesView.tsx:203
 msgid "Manage values"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:563
+#: app/src/react/features/products/ProductsList.tsx:413
 msgid "Manage your catalog, prices and stock."
 msgstr ""
 
@@ -5474,6 +5659,8 @@ msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:532
 #: app/src/pages/products/src/ProductsList.vue:685
+#: app/src/react/features/products/ProductsList.tsx:277
+#: app/src/react/features/products/ProductsList.tsx:388
 msgid "Mark as featured"
 msgstr ""
 
@@ -5486,6 +5673,7 @@ msgid "Mark as Spam"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:428
+#: app/src/react/features/products/ProductsList.tsx:181
 msgid "Marked as featured"
 msgstr ""
 
@@ -5498,6 +5686,7 @@ msgid "max 10MB"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:622
+#: app/src/react/features/products/ProductsList.tsx:531
 msgid "Max. price"
 msgstr ""
 
@@ -5506,10 +5695,12 @@ msgid "Maximum 100 items can be downloaded at once."
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:623
+#: app/src/react/features/products/ProductsList.tsx:532
 msgid "Maximum price"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:313
+#: app/src/react/features/products/CouponsView.tsx:395
 msgid "Maximum spend"
 msgstr ""
 
@@ -5680,14 +5871,17 @@ msgid "Metrics"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:613
+#: app/src/react/features/products/ProductsList.tsx:516
 msgid "Min. price"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:614
+#: app/src/react/features/products/ProductsList.tsx:517
 msgid "Minimum price"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:312
+#: app/src/react/features/products/CouponsView.tsx:394
 msgid "Minimum spend"
 msgstr ""
 
@@ -5789,6 +5983,8 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:492
 #: app/src/pages/products/src/ProductsList.vue:567
 #: app/src/pages/products/src/ProductsList.vue:658
+#: app/src/react/features/products/ProductsList.tsx:416
+#: app/src/react/features/products/ProductsList.tsx:600
 msgid "More"
 msgstr ""
 
@@ -5798,6 +5994,8 @@ msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:586
 #: app/src/pages/products/src/ProductsList.vue:587
+#: app/src/react/features/products/ProductsList.tsx:470
+#: app/src/react/features/products/ProductsList.tsx:475
 msgid "More filters"
 msgstr ""
 
@@ -5814,6 +6012,7 @@ msgid "Most visitors by country"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:185
+#: app/src/react/features/products/CouponsView.tsx:193
 msgid "Move coupon to trash?"
 msgstr ""
 
@@ -5828,6 +6027,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:480
 #: app/src/pages/products/src/ProductsList.vue:507
 #: app/src/react/features/design-system/Showcase.tsx:102
+#: app/src/react/features/products/CouponsView.tsx:195
+#: app/src/react/features/products/CouponsView.tsx:264
+#: app/src/react/features/products/ProductsList.tsx:213
+#: app/src/react/features/products/ProductsList.tsx:248
 msgid "Move to trash"
 msgstr ""
 
@@ -5835,6 +6038,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:394
 #: app/src/pages/products/src/editor/ProductEditor.vue:504
 #: app/src/pages/products/src/ProductsList.vue:476
+#: app/src/react/features/products/ProductsList.tsx:209
 msgid "Move to trash?"
 msgstr ""
 
@@ -5860,10 +6064,19 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:1344
 #: app/src/pages/users/src/user-list-view.vue:1549
 #: app/src/react/features/design-system/Showcase.tsx:386
+#: app/src/react/features/products/AttributesView.tsx:51
+#: app/src/react/features/products/AttributesView.tsx:183
+#: app/src/react/features/products/AttributesView.tsx:265
+#: app/src/react/features/products/CategoriesView.tsx:140
+#: app/src/react/features/products/CategoriesView.tsx:227
+#: app/src/react/features/products/ProductQuickEdit.tsx:267
+#: app/src/react/features/products/TagsView.tsx:90
+#: app/src/react/features/products/TagsView.tsx:209
 msgid "Name"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:42
+#: app/src/react/features/products/AttributesView.tsx:52
 msgid "Name (numeric)"
 msgstr ""
 
@@ -5994,6 +6207,7 @@ msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:242
 #: app/src/pages/products/src/editor/ProductAttributes.vue:169
+#: app/src/react/features/products/AttributesView.tsx:296
 msgid "New value"
 msgstr ""
 
@@ -6062,6 +6276,7 @@ msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:202
 #: app/src/pages/products/src/editor/ProductAttributes.vue:125
+#: app/src/react/features/products/AttributesView.tsx:236
 msgid "No attributes yet"
 msgstr ""
 
@@ -6079,6 +6294,8 @@ msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:167
 #: app/src/pages/products/src/ProductQuickEdit.vue:290
+#: app/src/react/features/products/CategoriesView.tsx:201
+#: app/src/react/features/products/ProductQuickEdit.tsx:368
 msgid "No categories found"
 msgstr ""
 
@@ -6104,10 +6321,12 @@ msgid "No country data available"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:238
+#: app/src/react/features/products/CouponsView.tsx:328
 msgid "No coupons match your search"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:238
+#: app/src/react/features/products/CouponsView.tsx:328
 msgid "No coupons yet"
 msgstr ""
 
@@ -6285,6 +6504,7 @@ msgid "No products found."
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:639
+#: app/src/react/features/products/ProductsList.tsx:559
 msgid "No products match your filters"
 msgstr ""
 
@@ -6293,6 +6513,7 @@ msgid "No products selected."
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:639
+#: app/src/react/features/products/ProductsList.tsx:559
 msgid "No products yet"
 msgstr ""
 
@@ -6353,6 +6574,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:720
 #: app/src/pages/products/src/ProductQuickEdit.vue:273
+#: app/src/react/features/products/ProductQuickEdit.tsx:339
 msgid "No shipping class"
 msgstr ""
 
@@ -6382,10 +6604,12 @@ msgid "No tags found"
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:150
+#: app/src/react/features/products/TagsView.tsx:177
 msgid "No tags match your search"
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:150
+#: app/src/react/features/products/TagsView.tsx:177
 msgid "No tags yet"
 msgstr ""
 
@@ -6418,6 +6642,7 @@ msgid "No valid files found to download."
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:249
+#: app/src/react/features/products/AttributesView.tsx:309
 msgid "No values yet."
 msgstr ""
 
@@ -6436,6 +6661,7 @@ msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:203
 #: app/src/pages/products/src/editor/ProductEditor.vue:143
+#: app/src/react/features/products/CategoriesView.tsx:238
 msgid "None"
 msgstr ""
 
@@ -6567,6 +6793,8 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:42
 #: app/src/pages/products/src/ProductsList.vue:247
 #: app/src/pages/products/src/ProductsList.vue:526
+#: app/src/react/features/products/productFormat.ts:25
+#: app/src/react/features/products/ProductsList.tsx:383
 msgid "On backorder"
 msgstr ""
 
@@ -6628,6 +6856,7 @@ msgid "Open"
 msgstr ""
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:217
+#: app/src/react/features/products/ProductQuickEdit.tsx:260
 msgid "Open full editor"
 msgstr ""
 
@@ -6676,6 +6905,8 @@ msgid "Opening Media Library..."
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:57
+#: app/src/react/features/products/BulkPriceModal.tsx:83
+#: app/src/react/features/products/BulkPriceModal.tsx:88
 msgid "Operation"
 msgstr ""
 
@@ -6870,6 +7101,7 @@ msgid "Organic"
 msgstr ""
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:279
+#: app/src/react/features/products/ProductQuickEdit.tsx:345
 msgid "Organization"
 msgstr ""
 
@@ -6893,6 +7125,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:176
 #: app/src/pages/products/src/ProductsList.vue:243
 #: app/src/pages/products/src/ProductsList.vue:525
+#: app/src/react/features/products/productFormat.ts:21
+#: app/src/react/features/products/ProductsList.tsx:140
+#: app/src/react/features/products/ProductsList.tsx:382
 msgid "Out of stock"
 msgstr ""
 
@@ -6984,6 +7219,7 @@ msgid "Parent %s:"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:203
+#: app/src/react/features/products/CategoriesView.tsx:237
 msgid "Parent category"
 msgstr ""
 
@@ -7058,6 +7294,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:164
 #: app/src/pages/products/src/ProductsList.vue:227
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:87
+#: app/src/react/features/products/productFormat.ts:13
+#: app/src/react/features/products/ProductsList.tsx:116
 msgid "Pending"
 msgstr ""
 
@@ -7068,6 +7306,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:123
 #: app/src/pages/products/src/ProductQuickEdit.vue:52
+#: app/src/react/features/products/ProductQuickEdit.tsx:116
 msgid "Pending review"
 msgstr ""
 
@@ -7076,10 +7315,12 @@ msgid "Per page"
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:74
+#: app/src/react/features/products/BulkPriceModal.tsx:105
 msgid "Percentage"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:53
+#: app/src/react/features/products/CouponsView.tsx:77
 msgid "Percentage discount"
 msgstr ""
 
@@ -7430,6 +7671,9 @@ msgstr ""
 #: app/src/pages/products/src/BulkPriceModal.vue:46
 #: app/src/pages/products/src/ProductsList.vue:184
 #: app/src/react/features/design-system/Showcase.tsx:230
+#: app/src/react/features/products/BulkPriceModal.tsx:70
+#: app/src/react/features/products/BulkPriceModal.tsx:75
+#: app/src/react/features/products/ProductsList.tsx:313
 msgid "Price"
 msgstr ""
 
@@ -7442,6 +7686,7 @@ msgid "Prices are set on each variation."
 msgstr ""
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:239
+#: app/src/react/features/products/ProductQuickEdit.tsx:285
 msgid ""
 "Prices of variable products are managed in each variation. Expand the "
 "product in the list to edit them."
@@ -7449,6 +7694,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:646
 #: app/src/pages/products/src/ProductQuickEdit.vue:235
+#: app/src/react/features/products/ProductQuickEdit.tsx:283
 msgid "Pricing"
 msgstr ""
 
@@ -7469,6 +7715,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:53
 #: app/src/pages/products/src/ProductsList.vue:165
 #: app/src/pages/products/src/ProductsList.vue:228
+#: app/src/react/features/products/productFormat.ts:14
+#: app/src/react/features/products/ProductQuickEdit.tsx:117
+#: app/src/react/features/products/ProductsList.tsx:117
 msgid "Private"
 msgstr ""
 
@@ -7492,14 +7741,17 @@ msgstr ""
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:52
 #: app/src/pages/orders/src/OrderDetails.vue:308
 #: app/src/pages/products/src/ProductsList.vue:182
+#: app/src/react/features/products/ProductsList.tsx:257
 msgid "Product"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:152
+#: app/src/react/features/products/CategoriesView.tsx:181
 msgid "Product categories"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:445
+#: app/src/react/features/products/ProductsList.tsx:224
 msgid "Product duplicated"
 msgstr ""
 
@@ -7537,11 +7789,14 @@ msgid "Product saved and published"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:578
+#: app/src/react/features/products/ProductsList.tsx:452
 msgid "Product status"
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:129
 #: app/src/pages/products/src/TagsView.vue:151
+#: app/src/react/features/products/TagsView.tsx:126
+#: app/src/react/features/products/TagsView.tsx:172
 msgid "Product tags"
 msgstr ""
 
@@ -7550,6 +7805,7 @@ msgid "Product type"
 msgstr ""
 
 #: app/src/pages/products/src/ProductQuickEdit.vue:198
+#: app/src/react/features/products/ProductQuickEdit.tsx:216
 msgid "Product updated"
 msgstr ""
 
@@ -7567,6 +7823,14 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:641
 #: app/src/pages/products/src/TagsView.vue:39
 #: app/src/pages/products/src/TagsView.vue:130
+#: app/src/react/features/products/AttributesView.tsx:219
+#: app/src/react/features/products/CategoriesView.tsx:155
+#: app/src/react/features/products/CategoriesView.tsx:182
+#: app/src/react/features/products/CouponsView.tsx:279
+#: app/src/react/features/products/ProductsList.tsx:412
+#: app/src/react/features/products/ProductsList.tsx:548
+#: app/src/react/features/products/TagsView.tsx:100
+#: app/src/react/features/products/TagsView.tsx:127
 msgid "Products"
 msgstr ""
 
@@ -7575,6 +7839,7 @@ msgid "Products and orders management pages"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:131
+#: app/src/react/features/products/CategoriesView.tsx:123
 msgid "Products in this category will not be deleted."
 msgstr ""
 
@@ -7635,6 +7900,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:175
 #: app/src/pages/products/src/ProductsList.vue:225
 #: app/src/react/features/design-system/Showcase.tsx:238
+#: app/src/react/features/products/productFormat.ts:11
+#: app/src/react/features/products/ProductQuickEdit.tsx:114
+#: app/src/react/features/products/ProductsList.tsx:114
+#: app/src/react/features/products/ProductsList.tsx:132
 msgid "Published"
 msgstr ""
 
@@ -7653,6 +7922,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:494
 #: app/src/pages/products/src/editor/ProductEditor.vue:681
 #: app/src/pages/products/src/ProductQuickEdit.vue:251
+#: app/src/react/features/products/ProductQuickEdit.tsx:317
 msgid "Quantity"
 msgstr ""
 
@@ -7704,6 +7974,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:207
 #: app/src/pages/products/src/ProductsList.vue:498
 #: app/src/react/features/design-system/Showcase.tsx:384
+#: app/src/react/features/products/ProductQuickEdit.tsx:229
+#: app/src/react/features/products/ProductsList.tsx:239
 msgid "Quick edit"
 msgstr ""
 
@@ -7846,6 +8118,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:594
 #: app/src/pages/products/src/ProductsList.vue:595
 #: app/src/react/features/design-system/Showcase.tsx:119
+#: app/src/react/features/products/ProductsList.tsx:481
+#: app/src/react/features/products/ProductsList.tsx:482
 msgid "Refresh"
 msgstr ""
 
@@ -7909,6 +8183,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:242
 #: app/src/pages/products/src/ProductVariations.vue:123
 #: app/src/pages/products/src/ProductVariations.vue:148
+#: app/src/react/features/products/BulkPriceModal.tsx:77
+#: app/src/react/features/products/ProductQuickEdit.tsx:291
+#: app/src/react/features/products/ProductVariations.tsx:126
+#: app/src/react/features/products/ProductVariations.tsx:170
 msgid "Regular price"
 msgstr ""
 
@@ -7921,6 +8199,7 @@ msgid "Release to start uploading"
 msgstr ""
 
 #: app/src/pages/products/src/ProductVariations.vue:109
+#: app/src/react/features/products/ProductVariations.tsx:108
 msgid "Reload"
 msgstr ""
 
@@ -7974,6 +8253,8 @@ msgstr ""
 #: app/src/pages/products/src/BulkCategoryModal.vue:31
 #: app/src/pages/products/src/BulkCategoryModal.vue:38
 #: app/src/pages/products/src/ProductsList.vue:536
+#: app/src/react/features/products/BulkCategoryModal.tsx:33
+#: app/src/react/features/products/ProductsList.tsx:392
 msgid "Remove category"
 msgstr ""
 
@@ -8008,6 +8289,8 @@ msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:533
 #: app/src/pages/products/src/ProductsList.vue:685
+#: app/src/react/features/products/ProductsList.tsx:277
+#: app/src/react/features/products/ProductsList.tsx:389
 msgid "Remove from featured"
 msgstr ""
 
@@ -8049,6 +8332,7 @@ msgid "Remove value"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:428
+#: app/src/react/features/products/ProductsList.tsx:181
 msgid "Removed from featured"
 msgstr ""
 
@@ -8065,6 +8349,7 @@ msgid "Rename menu item"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:260
+#: app/src/react/features/products/AttributesView.tsx:336
 msgid "Rename value"
 msgstr ""
 
@@ -8148,6 +8433,7 @@ msgid "requests remaining"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:306
+#: app/src/react/features/products/CouponsView.tsx:387
 msgid "Requires a free shipping method that accepts coupons."
 msgstr ""
 
@@ -8225,6 +8511,8 @@ msgstr ""
 #: app/src/pages/posts/src/post-actions.vue:53
 #: app/src/pages/products/src/ProductsList.vue:490
 #: app/src/pages/products/src/ProductsList.vue:664
+#: app/src/react/features/products/ProductsList.tsx:231
+#: app/src/react/features/products/ProductsList.tsx:565
 msgid "Restore"
 msgstr ""
 
@@ -8421,6 +8709,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:243
 #: app/src/pages/products/src/ProductVariations.vue:124
 #: app/src/pages/products/src/ProductVariations.vue:154
+#: app/src/react/features/products/BulkPriceModal.tsx:78
+#: app/src/react/features/products/ProductQuickEdit.tsx:298
+#: app/src/react/features/products/ProductVariations.tsx:127
+#: app/src/react/features/products/ProductVariations.tsx:182
 msgid "Sale price"
 msgstr ""
 
@@ -8447,6 +8739,8 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:616
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:468
 #: app/src/pages/settings/src/settings-panel.vue:508
+#: app/src/react/features/products/AttributesView.tsx:329
+#: app/src/react/features/products/ProductVariations.tsx:208
 msgid "Save"
 msgstr ""
 
@@ -8455,12 +8749,16 @@ msgid "Save address"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:236
+#: app/src/react/features/products/AttributesView.tsx:252
 msgid "Save attribute"
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:208
 #: app/src/pages/products/src/ProductQuickEdit.vue:300
 #: app/src/pages/products/src/TagsView.vue:193
+#: app/src/react/features/products/CategoriesView.tsx:214
+#: app/src/react/features/products/ProductQuickEdit.tsx:237
+#: app/src/react/features/products/TagsView.tsx:196
 msgid "Save changes"
 msgstr ""
 
@@ -8473,6 +8771,7 @@ msgid "Save Changes"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:331
+#: app/src/react/features/products/CouponsView.tsx:345
 msgid "Save coupon"
 msgstr ""
 
@@ -8516,6 +8815,7 @@ msgstr ""
 #: app/src/components/app/search/state/constants.js:95
 #: app/src/pages/dashboard/src/cards/recent-posts/component.vue:188
 #: app/src/pages/products/src/ProductsList.vue:229
+#: app/src/react/features/products/productFormat.ts:15
 msgid "Scheduled"
 msgstr ""
 
@@ -8569,6 +8869,7 @@ msgid "Search Admin Notices"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:583
+#: app/src/react/features/products/ProductsList.tsx:462
 msgid "Search by name or SKU"
 msgstr ""
 
@@ -8578,6 +8879,7 @@ msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:163
 #: app/src/pages/products/src/editor/ProductEditor.vue:824
+#: app/src/react/features/products/CategoriesView.tsx:197
 msgid "Search categories"
 msgstr ""
 
@@ -8586,6 +8888,7 @@ msgid "Search comments..."
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:228
+#: app/src/react/features/products/CouponsView.tsx:316
 msgid "Search coupons"
 msgstr ""
 
@@ -8685,6 +8988,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:130
 #: app/src/pages/products/src/ProductQuickEdit.vue:59
+#: app/src/react/features/products/ProductQuickEdit.tsx:123
 msgid "Search results only"
 msgstr ""
 
@@ -8709,6 +9013,7 @@ msgid "Search tables..."
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:140
+#: app/src/react/features/products/TagsView.tsx:164
 msgid "Search tags"
 msgstr ""
 
@@ -8765,6 +9070,7 @@ msgid "Select"
 msgstr ""
 
 #: app/src/pages/products/src/BulkCategoryModal.vue:34
+#: app/src/react/features/products/BulkCategoryModal.tsx:57
 msgid "Select a category"
 msgstr ""
 
@@ -8962,6 +9268,7 @@ msgid "SEO insights mirrored from the Rank Math dashboard widget."
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:315
+#: app/src/react/features/products/CouponsView.tsx:401
 msgid "Separate emails with commas. Use * as a wildcard, e.g. *@example.com."
 msgstr ""
 
@@ -8971,6 +9278,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:844
 #: app/src/pages/products/src/ProductQuickEdit.vue:294
+#: app/src/react/features/products/ProductQuickEdit.tsx:372
 msgid "Separate tags with commas."
 msgstr ""
 
@@ -9046,6 +9354,7 @@ msgid "Set their prices to make them purchasable."
 msgstr ""
 
 #: app/src/pages/products/src/BulkPriceModal.vue:64
+#: app/src/react/features/products/BulkPriceModal.tsx:92
 msgid "Set to"
 msgstr ""
 
@@ -9109,6 +9418,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:242
 #: app/src/pages/products/src/editor/ProductEditor.vue:690
 #: app/src/pages/products/src/ProductQuickEdit.vue:263
+#: app/src/react/features/products/ProductQuickEdit.tsx:328
 msgid "Shipping"
 msgstr ""
 
@@ -9132,6 +9442,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:720
 #: app/src/pages/products/src/ProductQuickEdit.vue:272
+#: app/src/react/features/products/ProductQuickEdit.tsx:338
 msgid "Shipping class"
 msgstr ""
 
@@ -9149,11 +9460,13 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:128
 #: app/src/pages/products/src/ProductQuickEdit.vue:57
+#: app/src/react/features/products/ProductQuickEdit.tsx:121
 msgid "Shop and search results"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:129
 #: app/src/pages/products/src/ProductQuickEdit.vue:58
+#: app/src/react/features/products/ProductQuickEdit.tsx:122
 msgid "Shop only"
 msgstr ""
 
@@ -9294,6 +9607,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:692
 #: app/src/pages/products/src/ProductVariations.vue:140
 #: app/src/react/features/design-system/Showcase.tsx:387
+#: app/src/react/features/products/ProductQuickEdit.tsx:270
+#: app/src/react/features/products/ProductsList.tsx:288
+#: app/src/react/features/products/ProductVariations.tsx:156
 msgid "SKU"
 msgstr ""
 
@@ -9307,6 +9623,13 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:226
 #: app/src/pages/products/src/TagsView.vue:38
 #: app/src/pages/products/src/TagsView.vue:188
+#: app/src/react/features/products/AttributesView.tsx:186
+#: app/src/react/features/products/AttributesView.tsx:269
+#: app/src/react/features/products/CategoriesView.tsx:152
+#: app/src/react/features/products/CategoriesView.tsx:231
+#: app/src/react/features/products/ProductQuickEdit.tsx:269
+#: app/src/react/features/products/TagsView.tsx:97
+#: app/src/react/features/products/TagsView.tsx:213
 msgid "Slug"
 msgstr ""
 
@@ -9442,6 +9765,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:647
 #: app/src/react/features/design-system/Showcase.tsx:90
 #: app/src/react/features/design-system/Showcase.tsx:233
+#: app/src/react/features/products/CouponsView.tsx:246
+#: app/src/react/features/products/ProductQuickEdit.tsx:271
+#: app/src/react/features/products/ProductsList.tsx:336
+#: app/src/react/features/products/ProductsList.tsx:578
 msgid "Status"
 msgstr ""
 
@@ -9452,6 +9779,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:185
 #: app/src/pages/products/src/ProductsList.vue:652
 #: app/src/pages/products/src/ProductVariations.vue:125
+#: app/src/react/features/products/ProductsList.tsx:320
+#: app/src/react/features/products/ProductsList.tsx:587
+#: app/src/react/features/products/ProductVariations.tsx:128
 msgid "Stock"
 msgstr ""
 
@@ -9461,12 +9791,15 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:348
 #: app/src/pages/products/src/ProductVariations.vue:165
+#: app/src/react/features/products/ProductVariations.tsx:194
 msgid "Stock quantity"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:685
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:349
 #: app/src/pages/products/src/ProductQuickEdit.vue:257
+#: app/src/react/features/products/ProductQuickEdit.tsx:323
+#: app/src/react/features/products/ProductsList.tsx:494
 msgid "Stock status"
 msgstr ""
 
@@ -9567,6 +9900,7 @@ msgid "Tables Created:"
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:98
+#: app/src/react/features/products/TagsView.tsx:64
 msgid "Tag created"
 msgstr ""
 
@@ -9579,6 +9913,7 @@ msgid "Tag name is required"
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:98
+#: app/src/react/features/products/TagsView.tsx:64
 msgid "Tag updated"
 msgstr ""
 
@@ -9594,10 +9929,15 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:294
 #: app/src/pages/products/src/ProductsList.vue:543
 #: app/src/pages/products/src/TagsView.vue:130
+#: app/src/react/features/products/ProductQuickEdit.tsx:372
+#: app/src/react/features/products/ProductsList.tsx:397
+#: app/src/react/features/products/ProductsList.tsx:508
+#: app/src/react/features/products/TagsView.tsx:127
 msgid "Tags"
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:116
+#: app/src/react/features/products/TagsView.tsx:82
 msgid "Tags deleted"
 msgstr ""
 
@@ -9627,6 +9967,7 @@ msgid "Temperature"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:43
+#: app/src/react/features/products/AttributesView.tsx:53
 msgid "Term ID"
 msgstr ""
 
@@ -9652,22 +9993,27 @@ msgid "The 5 best-selling products in your store"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:67
+#: app/src/react/features/products/AttributesView.tsx:80
 msgid "The attribute name is required."
 msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:110
+#: app/src/react/features/products/CategoriesView.tsx:104
 msgid "The category name is required."
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:445
+#: app/src/react/features/products/ProductsList.tsx:224
 msgid "The copy was saved as a draft."
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:316
+#: app/src/react/features/products/CouponsView.tsx:407
 msgid "The coupon cannot be combined with other coupons."
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:140
+#: app/src/react/features/products/CouponsView.tsx:142
 msgid "The coupon code is required."
 msgstr ""
 
@@ -9725,6 +10071,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:299
 #: app/src/pages/products/src/ProductQuickEdit.vue:131
+#: app/src/react/features/products/ProductQuickEdit.tsx:148
 msgid "The product name is required."
 msgstr ""
 
@@ -9752,6 +10099,8 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:302
 #: app/src/pages/products/src/ProductQuickEdit.vue:138
 #: app/src/pages/products/src/ProductVariations.vue:71
+#: app/src/react/features/products/ProductQuickEdit.tsx:155
+#: app/src/react/features/products/ProductVariations.tsx:82
 msgid "The sale price must be lower than the regular price."
 msgstr ""
 
@@ -9788,6 +10137,7 @@ msgid ""
 msgstr ""
 
 #: app/src/pages/products/src/TagsView.vue:87
+#: app/src/react/features/products/TagsView.tsx:58
 msgid "The tag name is required."
 msgstr ""
 
@@ -9899,6 +10249,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderEditor.vue:440
 #: app/src/pages/products/src/ProductVariations.vue:116
+#: app/src/react/features/products/ProductVariations.tsx:119
 msgid "This product has no variations."
 msgstr ""
 
@@ -10131,6 +10482,7 @@ msgid "Total page visits"
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:174
+#: app/src/react/features/products/ProductsList.tsx:125
 msgid "Total products"
 msgstr ""
 
@@ -10180,6 +10532,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:679
 #: app/src/pages/products/src/ProductQuickEdit.vue:249
+#: app/src/react/features/products/ProductQuickEdit.tsx:309
 msgid "Track stock quantity"
 msgstr ""
 
@@ -10208,6 +10561,9 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:230
 #: app/src/pages/products/src/ProductsList.vue:661
 #: app/src/react/features/design-system/Showcase.tsx:330
+#: app/src/react/features/products/productFormat.ts:16
+#: app/src/react/features/products/ProductsList.tsx:118
+#: app/src/react/features/products/ProductsList.tsx:606
 msgid "Trash"
 msgstr ""
 
@@ -10230,6 +10586,7 @@ msgid "Try adjusting the search or date range."
 msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:640
+#: app/src/react/features/products/ProductsList.tsx:560
 msgid "Try adjusting the search or filters."
 msgstr ""
 
@@ -10274,6 +10631,7 @@ msgstr ""
 #: app/src/pages/database/src/table-view.vue:461
 #: app/src/pages/database/src/table-view.vue:554
 #: app/src/pages/plugins/src/plugin-performance.vue:377
+#: app/src/react/features/products/ProductsList.tsx:488
 msgid "Type"
 msgstr ""
 
@@ -10326,6 +10684,7 @@ msgid "Unidentified customer"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:230
+#: app/src/react/features/products/AttributesView.tsx:270
 msgid "Unique identifier with up to 28 characters."
 msgstr ""
 
@@ -10367,6 +10726,8 @@ msgstr ""
 #: app/src/pages/products/src/CouponsView.vue:324
 #: app/src/pages/products/src/editor/ProductEditor.vue:709
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:370
+#: app/src/react/features/products/CouponsView.tsx:422
+#: app/src/react/features/products/CouponsView.tsx:431
 msgid "Unlimited"
 msgstr ""
 
@@ -10531,22 +10892,27 @@ msgid "URL of the page being viewed"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:61
+#: app/src/react/features/products/CouponsView.tsx:236
 msgid "Usage"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:323
+#: app/src/react/features/products/CouponsView.tsx:421
 msgid "Usage limit per coupon"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:324
+#: app/src/react/features/products/CouponsView.tsx:430
 msgid "Usage limit per user"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:321
+#: app/src/react/features/products/CouponsView.tsx:413
 msgid "Usage limits"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:310
+#: app/src/react/features/products/CouponsView.tsx:392
 msgid "Usage restrictions"
 msgstr ""
 
@@ -10602,6 +10968,7 @@ msgid "Used In"
 msgstr ""
 
 #: app/src/pages/products/src/CouponsView.vue:74
+#: app/src/react/features/products/CouponsView.tsx:97
 msgid "Used up"
 msgstr ""
 
@@ -10747,10 +11114,12 @@ msgid "Valid option page is required."
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:253
+#: app/src/react/features/products/AttributesView.tsx:327
 msgid "Value name"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:240
+#: app/src/react/features/products/AttributesView.tsx:287
 msgid "Values available for this attribute."
 msgstr ""
 
@@ -10759,6 +11128,7 @@ msgid "Variable product"
 msgstr ""
 
 #: app/src/pages/products/src/ProductVariations.vue:122
+#: app/src/react/features/products/ProductVariations.tsx:125
 msgid "Variation"
 msgstr ""
 
@@ -10772,11 +11142,13 @@ msgid "Variation image"
 msgstr ""
 
 #: app/src/pages/products/src/ProductVariations.vue:93
+#: app/src/react/features/products/ProductVariations.tsx:95
 msgid "Variation updated"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:730
 #: app/src/pages/products/src/ProductVariations.vue:108
+#: app/src/react/features/products/ProductVariations.tsx:106
 msgid "Variations"
 msgstr ""
 
@@ -10865,6 +11237,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:490
 #: app/src/pages/products/src/ProductsList.vue:503
+#: app/src/react/features/products/ProductsList.tsx:244
 msgid "View in store"
 msgstr ""
 
@@ -10875,6 +11248,8 @@ msgstr ""
 
 #: app/src/pages/products/src/CategoriesView.vue:186
 #: app/src/pages/products/src/TagsView.vue:168
+#: app/src/react/features/products/CategoriesView.tsx:168
+#: app/src/react/features/products/TagsView.tsx:113
 msgid "View products"
 msgstr ""
 
@@ -10921,6 +11296,8 @@ msgstr ""
 
 #: app/src/pages/products/src/ProductsList.vue:194
 #: app/src/pages/products/src/ProductsList.vue:591
+#: app/src/react/features/products/ProductsList.tsx:363
+#: app/src/react/features/products/ProductsList.tsx:480
 msgid "Visible columns"
 msgstr ""
 
@@ -11005,6 +11382,7 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:715
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:347
 #: app/src/pages/products/src/ProductQuickEdit.vue:265
+#: app/src/react/features/products/ProductQuickEdit.tsx:330
 msgid "Weight"
 msgstr ""
 
@@ -11077,6 +11455,7 @@ msgstr ""
 #: app/src/components/utility/image-editor/index.vue:1899
 #: app/src/pages/products/src/editor/ProductEditor.vue:717
 #: app/src/pages/products/src/ProductQuickEdit.vue:267
+#: app/src/react/features/products/ProductQuickEdit.tsx:332
 msgid "Width"
 msgstr ""
 

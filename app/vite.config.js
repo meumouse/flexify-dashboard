@@ -38,6 +38,8 @@ export default defineConfig({
 				plugins: path.resolve(__dirname, 'src/apps/js/Plugins.js'),
 				posts: path.resolve(__dirname, 'src/apps/js/Posts.js'),
 				products: path.resolve(__dirname, 'src/apps/js/Products.js'),
+				// React catalog screen; the Vue entry stays until the product editor moves over.
+				'products-react': path.resolve(__dirname, 'src/react/main/products.tsx'),
 				orders: path.resolve(__dirname, 'src/apps/js/Orders.js'),
 				'role-editor': path.resolve(__dirname, 'src/apps/js/RoleEditor.js'),
 				settings: path.resolve(__dirname, 'src/apps/js/Settings.js'),

@@ -11066,6 +11066,10 @@ msgstr "Com ícone"
 msgid "Your changes are live."
 msgstr "Suas alterações estão no ar."
 
+#: app/src/react/features/products/ProductsList.tsx:501
+msgid "Featured"
+msgstr "Destaque"
+
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"
 msgid "Add New"

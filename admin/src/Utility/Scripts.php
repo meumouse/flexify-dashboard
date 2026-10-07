@@ -44,16 +44,39 @@ class Scripts {
 		$target_src = self::get_entry_src( $filename );
 
 		foreach ( $manifest as $entry ) {
-			if ( ! is_array( $entry ) ) {
+			if ( ! self::is_entry_for( $entry, $target_src ) ) {
 				continue;
 			}
 
-			if ( isset( $entry['src'] ) && $target_src === $entry['src'] && ! empty( $entry['file'] ) ) {
-				return $entry['file'];
-			}
+			return $entry['file'];
 		}
 
 		return null;
+	}
+
+
+	/**
+	 * Check whether a manifest record is the JavaScript entry of a source file.
+	 *
+	 * When two entries import stylesheets with the same content, Vite emits one shared CSS asset
+	 * and records it under a generated key that still points at one of the sources. Those records
+	 * carry a `.css` file and no `isEntry` flag, so they must not be mistaken for the script.
+	 *
+	 * @since 3.1.0
+	 * @param mixed  $entry      Manifest record.
+	 * @param string $target_src Source path to match.
+	 * @return bool
+	 */
+	private static function is_entry_for( $entry, $target_src ) {
+		if ( ! is_array( $entry ) || empty( $entry['file'] ) ) {
+			return false;
+		}
+
+		if ( ! isset( $entry['src'] ) || $target_src !== $entry['src'] ) {
+			return false;
+		}
+
+		return (bool) preg_match( '/\.(js|mjs|cjs)$/', $entry['file'] );
 	}
 
 
@@ -164,11 +187,7 @@ class Scripts {
 		$target_src = self::get_entry_src( $filename );
 
 		foreach ( $manifest as $entry ) {
-			if ( ! is_array( $entry ) ) {
-				continue;
-			}
-
-			if ( ! isset( $entry['src'] ) || $target_src !== $entry['src'] ) {
+			if ( ! self::is_entry_for( $entry, $target_src ) ) {
 				continue;
 			}
 

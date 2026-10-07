@@ -148,10 +148,32 @@ class ProductsPage extends ModernScreen {
 
 
 	/**
+	 * Check whether the catalog screen should be rendered by the React app.
+	 *
+	 * The React screen covers the list, the catalog views and the quick edit; the full product
+	 * editor is still a Vue screen, so stores that enabled it keep the Vue app until it moves over.
+	 *
+	 * @since 4.0.0
+	 * @return bool
+	 */
+	protected function use_react_app() {
+		$enabled = ! WooCommerce::is_product_editor_enabled();
+
+		/**
+		 * Filter whether the React catalog screen is used.
+		 *
+		 * @since 4.0.0
+		 * @param bool $enabled Whether the React screen is used.
+		 */
+		return (bool) apply_filters( 'flexify-dashboard/woocommerce/react-products', $enabled );
+	}
+
+
+	/**
 	 * {@inheritdoc}
 	 */
 	protected function get_entry() {
-		return 'Products.js';
+		return $this->use_react_app() ? 'react/main/products.tsx' : 'Products.js';
 	}
 
 

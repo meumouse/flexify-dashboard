@@ -139,8 +139,16 @@ abstract class ModernScreen {
 	 */
 	public function enqueue_assets() {
 		$base_url = plugins_url( 'flexify-dashboard/' );
-		$style_path = $base_url . 'app/dist/assets/styles/' . $this->get_stylesheet();
 		$script_name = Scripts::get_base_script_path( $this->get_entry() );
+
+		// Prefer the stylesheet the manifest attaches to the entry; the declared name is the fallback.
+		$stylesheet = Scripts::get_stylesheet_path( $this->get_entry() );
+
+		if ( ! $stylesheet ) {
+			$stylesheet = 'assets/styles/' . $this->get_stylesheet();
+		}
+
+		$style_path = $base_url . 'app/dist/' . $stylesheet;
 
 		wp_enqueue_style( 'flexify-dashboard-' . sanitize_title( $this->get_mount_id() ), $style_path, array(), FLEXIFY_DASHBOARD_VERSION );
 		wp_enqueue_media();
