@@ -10,6 +10,9 @@
       "%1$s (#%2$s)": [
         "%1$s (#%2$s)"
       ],
+      "%1$s columns, %2$s rows.": [
+        "%1$s colunas, %2$s linhas."
+      ],
       "%1$s of %2$s": [
         "%1$s de %2$s"
       ],
@@ -91,6 +94,9 @@
       "%d products": [
         "%d produtos"
       ],
+      "%d row(s) were not imported": [
+        "%d linha(s) não foram importadas"
+      ],
       "%d rows found": [
         "%d linhas encontradas"
       ],
@@ -108,6 +114,18 @@
       ],
       "%d used": [
         "%d usos"
+      ],
+      "%d user(s) exported": [
+        "%d usuário(s) exportados"
+      ],
+      "%d user(s) imported": [
+        "%d usuário(s) importados"
+      ],
+      "%d user(s) will be changed. Fields left empty stay as they are.": [
+        "%d usuário(s) serão alterados. Os campos deixados em branco permanecem como estão."
+      ],
+      "%d user(s) will be deleted. This cannot be undone.": [
+        "%d usuário(s) serão excluídos. Não há como desfazer."
       ],
       "%d users exported successfully": [
         "%d usuários exportados com sucesso"
@@ -193,6 +211,9 @@
       "%s updated.": [
         "%s atualizado."
       ],
+      "%s user(s)": [
+        "%s usuário(s)"
+      ],
       "%s will be moved to the trash.": [
         "%s será movido para a lixeira."
       ],
@@ -267,6 +288,9 @@
       ],
       "A short summary shown next to the product image…": [
         "Um resumo curto exibido ao lado da imagem do produto…"
+      ],
+      "A username column and an email column are needed.": [
+        "É preciso uma coluna de nome de usuário e uma de e-mail."
       ],
       "API": [
         "API"
@@ -373,6 +397,9 @@
       "Add a note about this order…": [
         "Adicione uma nota sobre este pedido…"
       ],
+      "Add a user": [
+        "Adicionar um usuário"
+      ],
       "Add at least one product to the order.": [
         "Adicione pelo menos um produto ao pedido."
       ],
@@ -447,6 +474,9 @@
       ],
       "Add to gallery": [
         "Adicionar à galeria"
+      ],
+      "Add user": [
+        "Adicionar usuário"
       ],
       "Add value": [
         "Adicionar valor"
@@ -552,6 +582,9 @@
       ],
       "All products": [
         "Todos os produtos"
+      ],
+      "All roles": [
+        "Todas as funções"
       ],
       "All selected": [
         "Todos os selecionados"
@@ -919,6 +952,9 @@
       "Biographical Info": [
         "Informações biográficas"
       ],
+      "Biography": [
+        "Biografia"
+      ],
       "Block checkout": [
         "Checkout em blocos"
       ],
@@ -1093,11 +1129,17 @@
       "Checking connection...": [
         "Verificando conexão..."
       ],
+      "Choose a CSV file": [
+        "Escolha um arquivo CSV"
+      ],
       "Choose a custom font for the admin interface. Select from Google Fonts, enter a custom font URL, or upload your own font files.": [
         "Escolha uma fonte personalizada para a interface administrativa. Selecione uma fonte do Google Fonts, insira um URL de fonte personalizada ou carregue seus próprios arquivos de fonte."
       ],
       "Choose a name for your custom font family": [
         "Escolha um nome para sua família de fontes personalizada."
+      ],
+      "Choose a user": [
+        "Escolha um usuário"
       ],
       "Choose an item from the list to see it and change its properties.": [
         "Escolha um item da lista para vê-lo e alterar suas propriedades."
@@ -1230,6 +1272,9 @@
       ],
       "Column": [
         "Coluna"
+      ],
+      "Column in the file": [
+        "Coluna no arquivo"
       ],
       "Columns": [
         "Colunas"
@@ -1741,8 +1786,14 @@
       "Delete tags?": [
         "Excluir tags?"
       ],
+      "Delete their content too": [
+        "Excluir também o conteúdo"
+      ],
       "Delete these files?": [
         "Excluir estes arquivos?"
+      ],
+      "Delete these users?": [
+        "Excluir estes usuários?"
       ],
       "Delete this file?": [
         "Excluir este arquivo?"
@@ -2058,6 +2109,9 @@
       ],
       "Edit tag": [
         "Editar tag"
+      ],
+      "Edit users": [
+        "Editar usuários"
       ],
       "Edit variation": [
         "Editar variação"
@@ -2872,6 +2926,9 @@
       "General": [
         "Em geral"
       ],
+      "Generate": [
+        "Gerar"
+      ],
       "Generate Dummy Analytics Data": [
         "Gerar dados analíticos fictícios"
       ],
@@ -2901,6 +2958,9 @@
       ],
       "Give every fee a name.": [
         "Dê um nome a cada taxa."
+      ],
+      "Give their content to someone else": [
+        "Transferir o conteúdo para outra pessoa"
       ],
       "Global": [
         "Global"
@@ -3115,6 +3175,9 @@
       "Icon only button": [
         "Botão apenas com ícone"
       ],
+      "Ignore": [
+        "Ignorar"
+      ],
       "Image Editor": [
         "Editor de Imagens"
       ],
@@ -3132,6 +3195,9 @@
       ],
       "Import": [
         "Importar"
+      ],
+      "Import %d row(s)": [
+        "Importar %d linha(s)"
       ],
       "Import Errors": [
         "Erros de importação"
@@ -3153,6 +3219,9 @@
       ],
       "Import products": [
         "Importar produtos"
+      ],
+      "Import users": [
+        "Importar usuários"
       ],
       "Import validation failed.": [
         "A validação da importação falhou."
@@ -3901,6 +3970,9 @@
       "Maximum spend": [
         "Gasto máximo"
       ],
+      "Means": [
+        "Significa"
+      ],
       "Media": [
         "Mídia"
       ],
@@ -4222,6 +4294,9 @@
       "New orders will appear here as soon as customers check out.": [
         "Novos pedidos aparecerão aqui assim que os clientes finalizarem a compra."
       ],
+      "New owner": [
+        "Novo responsável"
+      ],
       "New post": [
         "Nova publicação"
       ],
@@ -4281,6 +4356,9 @@
       ],
       "No attributes yet": [
         "Nenhum atributo ainda"
+      ],
+      "No billing address on file.": [
+        "Nenhum endereço de cobrança cadastrado."
       ],
       "No billing address.": [
         "Sem endereço de cobrança."
@@ -4426,6 +4504,9 @@
       "No orders yet": [
         "Nenhum pedido ainda"
       ],
+      "No orders yet.": [
+        "Nenhum pedido ainda."
+      ],
       "No page data available": [
         "Não há dados de página disponíveis."
       ],
@@ -4552,6 +4633,9 @@
       "No users have dismissed this notice yet": [
         "Nenhum usuário rejeitou este aviso ainda."
       ],
+      "No users here": [
+        "Nenhum usuário aqui"
+      ],
       "No users to export": [
         "Não há usuários para exportar."
       ],
@@ -4617,6 +4701,9 @@
       ],
       "Nothing on the site uses this file.": [
         "Nada no site usa este arquivo."
+      ],
+      "Nothing recorded for this user yet.": [
+        "Nada registrado para este usuário ainda."
       ],
       "Nothing scheduled for this period.": [
         "Nada agendado para este período."
@@ -5023,6 +5110,9 @@
       "Pending review": [
         "Revisão pendente"
       ],
+      "People with an account on this site show up here.": [
+        "As pessoas com conta neste site aparecem aqui."
+      ],
       "Per page": [
         "Por página"
       ],
@@ -5233,6 +5323,9 @@
       "Posts Data": [
         "Dados de postagens"
       ],
+      "Posts, pages and uploads they own go with them.": [
+        "Os posts, páginas e arquivos dessa pessoa serão excluídos junto."
+      ],
       "Prefix and hint": [
         "Prefixo e dica"
       ],
@@ -5352,6 +5445,9 @@
       ],
       "Products recommended instead of this one, usually more profitable or better quality.": [
         "Produtos recomendados no lugar deste, geralmente mais lucrativos ou de melhor qualidade."
+      ],
+      "Profile": [
+        "Perfil"
       ],
       "Property ID": [
         "ID da propriedade"
@@ -5508,6 +5604,9 @@
       ],
       "Recent Searches": [
         "Pesquisas recentes"
+      ],
+      "Recent activity": [
+        "Atividade recente"
       ],
       "Recent activity on your site.": [
         "Atividade recente em seu site."
@@ -5734,6 +5833,9 @@
       "Replace the WooCommerce products list with a modern page featuring counters, filters, quick edit and bulk actions. The classic editor is still used to create and fully edit products.": [
         "Substitui a lista de produtos do WooCommerce por uma página moderna com contadores, filtros, edição rápida e ações em massa. O editor clássico continua sendo usado para criar e editar produtos por completo."
       ],
+      "Replace the biography": [
+        "Substituir a biografia"
+      ],
       "Replace the built-in WordPress editor with a modern, enhanced post editor interface.": [
         "Substitua o editor padrão do WordPress por uma interface de edição de posts moderna e aprimorada."
       ],
@@ -5836,6 +5938,9 @@
       "Right": [
         "Certo"
       ],
+      "Role": [
+        "Função"
+      ],
       "Role Details": [
         "Detalhes da função"
       ],
@@ -5862,6 +5967,9 @@
       ],
       "Role deleted successfully.": [
         "Função excluída com sucesso."
+      ],
+      "Role for everyone imported": [
+        "Função para todos os importados"
       ],
       "Role name cannot be empty.": [
         "O nome da função não pode estar vazio."
@@ -5907,6 +6015,9 @@
       ],
       "Row": [
         "Linha"
+      ],
+      "Row %1$s: %2$s": [
+        "Linha %1$s: %2$s"
       ],
       "SEO insights mirrored from the Rank Math dashboard widget.": [
         "Informações de SEO reproduzidas a partir do widget do painel do Rank Math."
@@ -6574,6 +6685,9 @@
       "Some items could not be updated.": [
         "Alguns itens não puderam ser atualizados."
       ],
+      "Some users could not be updated.": [
+        "Alguns usuários não puderam ser atualizados."
+      ],
       "Some variations could not be saved": [
         "Algumas variações não puderam ser salvas"
       ],
@@ -6784,6 +6898,9 @@
       "Text copied to clipboard": [
         "Texto copiado para a área de transferência"
       ],
+      "That file could not be read.": [
+        "Não foi possível ler esse arquivo."
+      ],
       "The 5 best-selling products in your store": [
         "Os 5 produtos mais vendidos na sua loja"
       ],
@@ -6801,6 +6918,9 @@
       ],
       "The SVG file could not be sanitized. The file may be corrupted or contain invalid content.": [
         "O arquivo SVG não pôde ser higienizado. O arquivo pode estar corrompido ou conter conteúdo inválido."
+      ],
+      "The activity log is turned off, so there is nothing to show here.": [
+        "O registro de atividades está desativado, então não há nada para mostrar aqui."
       ],
       "The attribute name is required.": [
         "O nome do atributo é obrigatório."
@@ -6840,6 +6960,9 @@
       ],
       "The file will be deleted for good. The media library has no trash.": [
         "O arquivo será excluído definitivamente. A biblioteca de mídia não tem lixeira."
+      ],
+      "The first row has to be the column headings.": [
+        "A primeira linha precisa ser o cabeçalho das colunas."
       ],
       "The gateway refused the charge.": [
         "O gateway recusou a cobrança."
@@ -6898,11 +7021,17 @@
       "The tag name is required.": [
         "O nome da tag é obrigatório."
       ],
+      "The user can change it after signing in.": [
+        "O usuário poderá alterá-la depois de entrar."
+      ],
       "Theme": [
         "Tema"
       ],
       "Themes": [
         "Temas"
+      ],
+      "There is nothing to export.": [
+        "Não há nada para exportar."
       ],
       "There was an error fetching this plugins information": [
         "Ocorreu um erro ao obter as informações deste plugin."
@@ -6981,6 +7110,12 @@
       ],
       "This tool will generate realistic dummy analytics data for the last 2 months to help you test the analytics features.": [
         "Esta ferramenta irá gerar dados analíticos fictícios realistas para os últimos 2 meses, para ajudar você a testar os recursos analíticos."
+      ],
+      "This user could not be loaded.": [
+        "Não foi possível carregar este usuário."
+      ],
+      "This user is not a customer of the store.": [
+        "Este usuário não é cliente da loja."
       ],
       "This will deactivate the current license for this site and remove the local license data. This action cannot be undone from here.": [
         "Isso desativará a licença atual deste site e removerá os dados da licença local. Esta ação não pode ser desfeita a partir daqui."
@@ -7438,6 +7573,9 @@
       "Use the modern posts list interface instead of the classic WordPress table layout.": [
         "Utilize a interface moderna de lista de posts em vez do layout clássico de tabela do WordPress."
       ],
+      "Use the roles in the file": [
+        "Usar as funções do arquivo"
+      ],
       "Use these credentials in the modern administrative login and password recovery forms with Google reCAPTCHA v2 checkbox.": [
         "Utilize essas credenciais nos formulários modernos de login administrativo e recuperação de senha com a caixa de seleção do Google reCAPTCHA v2."
       ],
@@ -7456,6 +7594,9 @@
       "Used when password column is not mapped or empty": [
         "Utilizado quando a coluna de senha não está mapeada ou está vazia."
       ],
+      "User": [
+        "Usuário"
+      ],
       "User Agent": [
         "Agente do usuário"
       ],
@@ -7471,6 +7612,9 @@
       "User Information": [
         "Informações do usuário"
       ],
+      "User actions": [
+        "Ações do usuário"
+      ],
       "User agent string": [
         "String do agente do usuário"
       ],
@@ -7479,6 +7623,9 @@
       ],
       "User cannot edit this post": [
         "O usuário não pode editar esta publicação."
+      ],
+      "User created": [
+        "Usuário criado"
       ],
       "User created successfully!": [
         "Usuário criado com sucesso!"
@@ -7501,6 +7648,9 @@
       "User registration trends": [
         "Tendências de registro de usuários"
       ],
+      "User updated": [
+        "Usuário atualizado"
+      ],
       "User updated successfully": [
         "Usuário atualizado com sucesso"
       ],
@@ -7516,8 +7666,14 @@
       "Users currently browsing": [
         "Usuários navegando no momento"
       ],
+      "Users deleted": [
+        "Usuários excluídos"
+      ],
       "Users to export:": [
         "Usuários para exportar:"
+      ],
+      "Users updated": [
+        "Usuários atualizados"
       ],
       "Users updated successfully": [
         "Usuários atualizados com sucesso"
@@ -7725,6 +7881,9 @@
       ],
       "Welcome to your WordPress dashboard! This is your site management hub.": [
         "Bem-vindo ao seu painel de controle do WordPress! Este é o seu centro de gerenciamento do site."
+      ],
+      "What %s means": [
+        "O que %s significa"
       ],
       "What This Generates": [
         "O que isso gera"

@@ -49,6 +49,10 @@ msgstr "(Sem título)"
 msgid "%1$s (#%2$s)"
 msgstr "%1$s (#%2$s)"
 
+#: app/src/react/features/users/ImportUsersModal.tsx:226
+msgid "%1$s columns, %2$s rows."
+msgstr "%1$s colunas, %2$s linhas."
+
 #: app/src/react/features/media/MediaLibrary.tsx:318
 msgid "%1$s of %2$s"
 msgstr "%1$s de %2$s"
@@ -193,6 +197,10 @@ msgstr ""
 msgid "%d products"
 msgstr "%d produtos"
 
+#: app/src/react/features/users/ImportUsersModal.tsx:215
+msgid "%d row(s) were not imported"
+msgstr "%d linha(s) não foram importadas"
+
 #: app/src/pages/users/src/user-import.vue:112
 msgid "%d rows found"
 msgstr "%d linhas encontradas"
@@ -222,6 +230,25 @@ msgstr "%d atualização(ões) disponível(is)"
 #: app/src/react/features/products/CouponsView.tsx:237
 msgid "%d used"
 msgstr "%d usos"
+
+#: app/src/react/features/users/UsersList.tsx:84
+msgid "%d user(s) exported"
+msgstr "%d usuário(s) exportados"
+
+#: app/src/react/features/users/ImportUsersModal.tsx:154
+#: app/src/react/features/users/ImportUsersModal.tsx:211
+msgid "%d user(s) imported"
+msgstr "%d usuário(s) importados"
+
+#: app/src/react/features/users/UserModals.tsx:161
+msgid "%d user(s) will be changed. Fields left empty stay as they are."
+msgstr ""
+"%d usuário(s) serão alterados. Os campos deixados em branco permanecem como "
+"estão."
+
+#: app/src/react/features/users/DeleteUsersModal.tsx:48
+msgid "%d user(s) will be deleted. This cannot be undone."
+msgstr "%d usuário(s) serão excluídos. Não há como desfazer."
 
 #: app/src/pages/users/src/user-list-view.vue:408
 msgid "%d users exported successfully"
@@ -348,6 +375,10 @@ msgstr "%s vendidos"
 msgid "%s updated."
 msgstr "%s atualizado."
 
+#: app/src/react/features/users/UsersList.tsx:157
+msgid "%s user(s)"
+msgstr "%s usuário(s)"
+
 #: app/src/pages/orders/src/OrderDetails.vue:178
 #: app/src/react/features/orders/OrderDetails.tsx:163
 msgid "%s will be moved to the trash."
@@ -461,6 +492,10 @@ msgstr ""
 msgid "A short summary shown next to the product image…"
 msgstr "Um resumo curto exibido ao lado da imagem do produto…"
 
+#: app/src/react/features/users/ImportUsersModal.tsx:259
+msgid "A username column and an email column are needed."
+msgstr "É preciso uma coluna de nome de usuário e uma de e-mail."
+
 #: app/src/components/user-details-form/user-details-form.vue:270
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:270
 #: app/src/pages/users/src/user-list-view.vue:1377
@@ -551,6 +586,7 @@ msgstr "Usuários ativos"
 #: admin/src/Pages/CustomDashboardPage.php:139
 #: app/src/components/index.js:15
 #: app/src/pages/users/src/components/index.js:15
+#: app/src/react/features/users/panels.tsx:321
 msgid "Activity"
 msgstr "Atividade"
 
@@ -599,6 +635,10 @@ msgstr "Adicione uma chave do Mapbox para ver de onde vêm seus visitantes."
 #: app/src/react/features/orders/OrderNotes.tsx:94
 msgid "Add a note about this order…"
 msgstr "Adicione uma nota sobre este pedido…"
+
+#: app/src/react/features/users/UserModals.tsx:59
+msgid "Add a user"
+msgstr "Adicionar um usuário"
 
 #: app/src/pages/orders/src/OrderEditor.vue:277
 #: app/src/react/features/orders/OrderEditor.tsx:408
@@ -799,6 +839,11 @@ msgstr ""
 "Adicione URLs para quaisquer folhas de estilo externas que você queira que "
 "o Painel Flexify carregue no painel administrativo."
 
+#: app/src/react/features/users/UserModals.tsx:66
+#: app/src/react/features/users/UsersList.tsx:167
+msgid "Add user"
+msgstr "Adicionar usuário"
+
 #: app/src/pages/products/src/editor/ProductAttributes.vue:170
 #: app/src/react/features/products/editor/ProductAttributes.tsx:220
 msgid "Add value"
@@ -981,6 +1026,10 @@ msgstr ""
 #: app/src/react/features/products/ProductsList.tsx:500
 msgid "All products"
 msgstr "Todos os produtos"
+
+#: app/src/react/features/users/UsersList.tsx:186
+msgid "All roles"
+msgstr "Todas as funções"
 
 #: app/src/pages/role-editor/src/role-details-view.vue:774
 msgid "All selected"
@@ -1640,6 +1689,7 @@ msgstr "Cobrança"
 #: app/src/pages/orders/src/OrderEditor.vue:526
 #: app/src/react/features/orders/OrderDetails.tsx:500
 #: app/src/react/features/orders/OrderEditor.tsx:715
+#: app/src/react/features/users/panels.tsx:288
 msgid "Billing address"
 msgstr "Endereço de cobrança"
 
@@ -1660,6 +1710,13 @@ msgstr "Endereço de cobrança atualizado"
 #: app/src/pages/users/src/user-list-view.vue:1592
 msgid "Biographical Info"
 msgstr "Informações biográficas"
+
+#: app/src/react/features/users/ImportUsersModal.tsx:25
+#: app/src/react/features/users/panels.tsx:75
+#: app/src/react/features/users/UserModals.tsx:112
+#: app/src/react/features/users/UserModals.tsx:185
+msgid "Biography"
+msgstr "Biografia"
 
 #: app/src/pages/orders/src/OrdersList.vue:118
 #: app/src/react/features/orders/OrdersList.tsx:440
@@ -1823,6 +1880,10 @@ msgstr "Campanha"
 #: app/src/react/features/products/CouponsView.tsx:342
 #: app/src/react/features/products/ProductQuickEdit.tsx:234
 #: app/src/react/features/products/TagsView.tsx:193
+#: app/src/react/features/users/DeleteUsersModal.tsx:52
+#: app/src/react/features/users/ImportUsersModal.tsx:174
+#: app/src/react/features/users/UserModals.tsx:63
+#: app/src/react/features/users/UserModals.tsx:165
 #: app/src/react/ui/RichText.tsx:218
 msgid "Cancel"
 msgstr "Cancelar"
@@ -2005,6 +2066,10 @@ msgstr "criança"
 msgid "children"
 msgstr "crianças"
 
+#: app/src/react/features/users/ImportUsersModal.tsx:206
+msgid "Choose a CSV file"
+msgstr "Escolha um arquivo CSV"
+
 #: app/src/pages/settings/src/settings-config.js:459
 msgid ""
 "Choose a custom font for the admin interface. Select from Google Fonts, "
@@ -2017,6 +2082,10 @@ msgstr ""
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:836
 msgid "Choose a name for your custom font family"
 msgstr "Escolha um nome para sua família de fontes personalizada."
+
+#: app/src/react/features/users/DeleteUsersModal.tsx:72
+msgid "Choose a user"
+msgstr "Escolha um usuário"
 
 #: app/src/react/features/posts/PostPreview.tsx:26
 msgid "Choose an item from the list to see it and change its properties."
@@ -2223,6 +2292,7 @@ msgstr "ID da sessão do lado do cliente"
 #: app/src/components/app/search/layout-fix-dialog.vue:1119
 #: app/src/components/kit/FdModal.vue:72
 #: app/src/components/kit/FdSheet.vue:69
+#: app/src/react/features/users/ImportUsersModal.tsx:174
 #: app/src/react/ui/Modal.tsx:64
 #: app/src/react/ui/Sheet.tsx:75
 msgid "Close"
@@ -2261,6 +2331,10 @@ msgstr "Cores, estilo e personalização visual"
 #: app/src/pages/database/src/table-view.vue:549
 msgid "Column"
 msgstr "Coluna"
+
+#: app/src/react/features/users/ImportUsersModal.tsx:232
+msgid "Column in the file"
+msgstr "Coluna no arquivo"
 
 #: app/src/pages/database/src/table-view.vue:445
 #: app/src/pages/posts/src/table-filters.vue:219
@@ -2377,6 +2451,7 @@ msgstr "Comentários atualizados com sucesso"
 
 #: app/src/components/index.js:16
 #: app/src/pages/users/src/components/index.js:16
+#: app/src/react/features/users/panels.tsx:322
 msgid "Commerce"
 msgstr "Comércio"
 
@@ -2880,6 +2955,7 @@ msgstr "URL personalizada"
 #: app/src/react/features/orders/OrderEditor.tsx:754
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:342
+#: app/src/react/features/users/panels.tsx:249
 msgid "Customer"
 msgstr "Cliente"
 
@@ -3110,6 +3186,10 @@ msgstr "Modelo padrão"
 #: app/src/react/features/products/TagsView.tsx:73
 #: app/src/react/features/products/TagsView.tsx:115
 #: app/src/react/features/products/TagsView.tsx:180
+#: app/src/react/features/users/DeleteUsersModal.tsx:55
+#: app/src/react/features/users/UserDetails.tsx:60
+#: app/src/react/features/users/UsersList.tsx:138
+#: app/src/react/features/users/UsersList.tsx:214
 msgid "Delete"
 msgstr "Excluir"
 
@@ -3215,9 +3295,17 @@ msgstr "Excluir tabela?"
 msgid "Delete tags?"
 msgstr "Excluir tags?"
 
+#: app/src/react/features/users/DeleteUsersModal.tsx:81
+msgid "Delete their content too"
+msgstr "Excluir também o conteúdo"
+
 #: app/src/react/features/media/MediaLibrary.tsx:116
 msgid "Delete these files?"
 msgstr "Excluir estes arquivos?"
+
+#: app/src/react/features/users/DeleteUsersModal.tsx:47
+msgid "Delete these users?"
+msgstr "Excluir estes usuários?"
 
 #: app/src/react/features/media/MediaDetails.tsx:90
 msgid "Delete this file?"
@@ -3321,6 +3409,7 @@ msgstr "Seções do design system"
 #: app/src/pages/media/src/media-details-view.vue:1027
 #: app/src/pages/users/src/components/index.js:14
 #: app/src/react/features/media/MediaDetails.tsx:183
+#: app/src/react/features/users/panels.tsx:320
 msgid "Details"
 msgstr "Detalhes"
 
@@ -3458,6 +3547,9 @@ msgid "Dismissible"
 msgstr "Dispensável"
 
 #: app/src/pages/users/src/user-list-view.vue:1348
+#: app/src/react/features/users/ImportUsersModal.tsx:21
+#: app/src/react/features/users/panels.tsx:66
+#: app/src/react/features/users/UserModals.tsx:96
 msgid "Display name"
 msgstr "Nome de exibição"
 
@@ -3698,6 +3790,8 @@ msgstr "Por exemplo, o cabeçalho está sobrepondo a área de conteúdo."
 #: app/src/react/features/products/CouponsView.tsx:261
 #: app/src/react/features/products/ProductsList.tsx:238
 #: app/src/react/features/products/TagsView.tsx:112
+#: app/src/react/features/users/UsersList.tsx:134
+#: app/src/react/features/users/UsersList.tsx:211
 msgid "Edit"
 msgstr "Editar"
 
@@ -3809,6 +3903,10 @@ msgstr "Editar tag"
 msgid "Edit Tag"
 msgstr "Editar etiqueta"
 
+#: app/src/react/features/users/UserModals.tsx:160
+msgid "Edit users"
+msgstr "Editar usuários"
+
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:330
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:411
 msgid "Edit variation"
@@ -3859,6 +3957,10 @@ msgstr "Efeitos"
 #: app/src/pages/users/src/user-list-view.vue:1562
 #: app/src/react/features/comments/CommentDetails.tsx:130
 #: app/src/react/features/orders/OrdersList.tsx:290
+#: app/src/react/features/users/ImportUsersModal.tsx:19
+#: app/src/react/features/users/panels.tsx:69
+#: app/src/react/features/users/UserModals.tsx:76
+#: app/src/react/features/users/UsersList.tsx:102
 msgid "Email"
 msgstr "E-mail"
 
@@ -4270,6 +4372,7 @@ msgstr "Data de expiração"
 #: app/src/pages/menu-creator/src/edit.vue:589
 #: app/src/react/features/design-system/Showcase.tsx:290
 #: app/src/react/features/design-system/Showcase.tsx:327
+#: app/src/react/features/users/UsersList.tsx:164
 msgid "Export"
 msgstr "Exportar"
 
@@ -4885,6 +4988,8 @@ msgstr "Finalizado"
 
 #: app/src/pages/orders/src/AddressFields.vue:38
 #: app/src/react/features/orders/AddressFields.tsx:27
+#: app/src/react/features/users/ImportUsersModal.tsx:22
+#: app/src/react/features/users/panels.tsx:60
 msgid "First name"
 msgstr "Nome"
 
@@ -5049,6 +5154,10 @@ msgstr "Galeria"
 msgid "General"
 msgstr "Em geral"
 
+#: app/src/react/features/users/UserModals.tsx:91
+msgid "Generate"
+msgstr "Gerar"
+
 #: app/src/pages/products/src/CouponsView.vue:285
 #: app/src/pages/products/src/CouponsView.vue:286
 #: app/src/react/features/products/CouponsView.tsx:361
@@ -5099,6 +5208,10 @@ msgstr "Dê um nome a cada atributo personalizado."
 #: app/src/react/features/orders/OrderEditor.tsx:413
 msgid "Give every fee a name."
 msgstr "Dê um nome a cada taxa."
+
+#: app/src/react/features/users/DeleteUsersModal.tsx:65
+msgid "Give their content to someone else"
+msgstr "Transferir o conteúdo para outra pessoa"
 
 #: app/src/pages/products/src/editor/ProductAttributes.vue:134
 #: app/src/react/features/products/editor/ProductAttributes.tsx:164
@@ -5447,6 +5560,10 @@ msgstr "EU IA"
 msgid "ID of the notice to mark as seen"
 msgstr "Identificação do aviso a ser marcado como visto"
 
+#: app/src/react/features/users/ImportUsersModal.tsx:247
+msgid "Ignore"
+msgstr "Ignorar"
+
 #: app/src/components/utility/image-editor/index.vue:1380
 msgid "Image Editor"
 msgstr "Editor de Imagens"
@@ -5471,8 +5588,14 @@ msgid "Images"
 msgstr "Imagens"
 
 #: app/src/pages/menu-creator/src/edit.vue:597
+#: app/src/react/features/users/ImportUsersModal.tsx:177
+#: app/src/react/features/users/UsersList.tsx:161
 msgid "Import"
 msgstr "Importar"
+
+#: app/src/react/features/users/ImportUsersModal.tsx:177
+msgid "Import %d row(s)"
+msgstr "Importar %d linha(s)"
 
 #: app/src/pages/users/src/user-import.vue:352
 msgid "Import completed"
@@ -5496,6 +5619,10 @@ msgstr "A importação falhou"
 #: app/src/react/features/products/ProductsList.tsx:401
 msgid "Import products"
 msgstr "Importar produtos"
+
+#: app/src/react/features/users/ImportUsersModal.tsx:169
+msgid "Import users"
+msgstr "Importar usuários"
 
 #: app/src/pages/users/src/user-list-view.vue:813
 msgid "Import Users"
@@ -6152,6 +6279,8 @@ msgstr "Última modificação"
 
 #: app/src/pages/orders/src/AddressFields.vue:39
 #: app/src/react/features/orders/AddressFields.tsx:28
+#: app/src/react/features/users/ImportUsersModal.tsx:23
+#: app/src/react/features/users/panels.tsx:63
 msgid "Last name"
 msgstr "Sobrenome"
 
@@ -6253,6 +6382,7 @@ msgstr "Deixe em branco para remover o link."
 #: app/src/react/features/posts/BatchEditModal.tsx:91
 #: app/src/react/features/posts/BatchEditModal.tsx:96
 #: app/src/react/features/posts/BatchEditModal.tsx:102
+#: app/src/react/features/users/UserModals.tsx:177
 msgid "Leave unchanged"
 msgstr "Manter como está"
 
@@ -6702,6 +6832,10 @@ msgstr "Preço máximo"
 #: app/src/react/features/products/CouponsView.tsx:395
 msgid "Maximum spend"
 msgstr "Gasto máximo"
+
+#: app/src/react/features/users/ImportUsersModal.tsx:233
+msgid "Means"
+msgstr "Significa"
 
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:297
 #: app/src/pages/role-editor/src/role-details-view.vue:88
@@ -7250,6 +7384,10 @@ msgstr "Novo menu"
 msgid "New orders will appear here as soon as customers check out."
 msgstr "Novos pedidos aparecerão aqui assim que os clientes finalizarem a compra."
 
+#: app/src/react/features/users/DeleteUsersModal.tsx:71
+msgid "New owner"
+msgstr "Novo responsável"
+
 #: app/src/components/app/search/composables/useQuickActions.js:49
 #: app/src/react/shell/search/useQuickActions.ts:29
 msgid "New Page"
@@ -7373,6 +7511,10 @@ msgstr "Nenhum atributo usado para variações"
 #: app/src/react/features/products/editor/ProductAttributes.tsx:152
 msgid "No attributes yet"
 msgstr "Nenhum atributo ainda"
+
+#: app/src/react/features/users/panels.tsx:312
+msgid "No billing address on file."
+msgstr "Nenhum endereço de cobrança cadastrado."
 
 #: app/src/pages/orders/src/OrderDetails.vue:469
 #: app/src/react/features/orders/OrderDetails.tsx:510
@@ -7591,6 +7733,10 @@ msgstr "Nenhum pedido selecionado."
 msgid "No orders yet"
 msgstr "Nenhum pedido ainda"
 
+#: app/src/react/features/users/panels.tsx:266
+msgid "No orders yet."
+msgstr "Nenhum pedido ainda."
+
 #: app/src/pages/dashboard/src/cards/top-pages/component.vue:294
 msgid "No page data available"
 msgstr "Não há dados de página disponíveis."
@@ -7786,6 +7932,10 @@ msgstr "Nenhum usuário encontrado"
 msgid "No users have dismissed this notice yet"
 msgstr "Nenhum usuário rejeitou este aviso ainda."
 
+#: app/src/react/features/users/UsersList.tsx:206
+msgid "No users here"
+msgstr "Nenhum usuário aqui"
+
 #: app/src/pages/users/src/user-list-view.vue:352
 msgid "No users to export"
 msgstr "Não há usuários para exportar."
@@ -7896,6 +8046,10 @@ msgstr "Nada na biblioteca corresponde a isso."
 #: app/src/react/features/media/MediaDetails.tsx:229
 msgid "Nothing on the site uses this file."
 msgstr "Nada no site usa este arquivo."
+
+#: app/src/react/features/users/panels.tsx:174
+msgid "Nothing recorded for this user yet."
+msgstr "Nada registrado para este usuário ainda."
 
 #: app/src/react/features/dashboard/cards/content.tsx:117
 msgid "Nothing scheduled for this period."
@@ -8353,6 +8507,7 @@ msgstr "Pedido sem itens"
 #: app/src/react/features/orders/OrderEditor.tsx:473
 #: app/src/react/features/orders/OrdersList.tsx:458
 #: app/src/react/features/orders/OrdersList.tsx:609
+#: app/src/react/features/users/panels.tsx:252
 msgid "Orders"
 msgstr "Pedidos"
 
@@ -8529,6 +8684,8 @@ msgstr "Categoria ascendente"
 #: app/src/pages/users/src/user-import.vue:55
 #: app/src/pages/users/src/user-list-view.vue:1147
 #: app/src/pages/users/src/user-list-view.vue:1299
+#: app/src/react/features/users/ImportUsersModal.tsx:20
+#: app/src/react/features/users/UserModals.tsx:80
 msgid "Password"
 msgstr "Senha"
 
@@ -8622,6 +8779,10 @@ msgstr "Pagamento pendente"
 #: app/src/react/features/products/ProductQuickEdit.tsx:116
 msgid "Pending review"
 msgstr "Revisão pendente"
+
+#: app/src/react/features/users/UsersList.tsx:207
+msgid "People with an account on this site show up here."
+msgstr "As pessoas com conta neste site aparecem aqui."
 
 #: app/src/pages/posts/src/table-filters.vue:159
 #: app/src/react/features/posts/PostsSettings.tsx:73
@@ -8968,6 +9129,10 @@ msgstr "Postagens"
 msgid "Posts Data"
 msgstr "Dados de postagens"
 
+#: app/src/react/features/users/DeleteUsersModal.tsx:82
+msgid "Posts, pages and uploads they own go with them."
+msgstr "Os posts, páginas e arquivos dessa pessoa serão excluídos junto."
+
 #: app/src/react/features/design-system/Showcase.tsx:230
 msgid "Prefix and hint"
 msgstr "Prefixo e dica"
@@ -9223,6 +9388,10 @@ msgstr ""
 "Produtos recomendados no lugar deste, geralmente mais lucrativos ou de "
 "melhor qualidade."
 
+#: app/src/react/features/users/panels.tsx:58
+msgid "Profile"
+msgstr "Perfil"
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:482
 msgid "Property ID"
 msgstr "ID da propriedade"
@@ -9453,6 +9622,10 @@ msgstr "Recente (30 dias)"
 msgid "Recent (7d)"
 msgstr "Recente (7d)"
 
+#: app/src/react/features/users/panels.tsx:180
+msgid "Recent activity"
+msgstr "Atividade recente"
+
 #: app/src/components/user-activity/user-activity.vue:258
 #: app/src/pages/users/src/components/user-activity/user-activity.vue:258
 msgid "Recent Activity"
@@ -9468,6 +9641,7 @@ msgid "Recent Comments"
 msgstr "Comentários recentes"
 
 #: app/src/react/features/dashboard/cards/register.ts:107
+#: app/src/react/features/users/panels.tsx:261
 msgid "Recent orders"
 msgstr "Pedidos recentes"
 
@@ -9615,6 +9789,7 @@ msgid "Regenerating thumbnails"
 msgstr "Regenerando miniaturas"
 
 #: app/src/pages/users/src/user-details-view.vue:356
+#: app/src/react/features/users/UsersList.tsx:121
 msgid "Registered"
 msgstr "Registrado"
 
@@ -9842,6 +10017,10 @@ msgstr "Substituir imagem"
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:185
 msgid "Replace secret key"
 msgstr "Substituir chave secreta"
+
+#: app/src/react/features/users/UserModals.tsx:183
+msgid "Replace the biography"
+msgstr "Substituir a biografia"
 
 #: app/src/pages/settings/src/settings-config.js:588
 msgid ""
@@ -10087,6 +10266,12 @@ msgstr "neste momento"
 msgid "role"
 msgstr "papel"
 
+#: app/src/react/features/users/UserModals.tsx:100
+#: app/src/react/features/users/UserModals.tsx:174
+#: app/src/react/features/users/UsersList.tsx:188
+msgid "Role"
+msgstr "Função"
+
 #: admin/src/Rest/RoleEditor.php:207
 msgid "Role capabilities updated successfully."
 msgstr "Atribuições da função atualizadas com sucesso."
@@ -10118,6 +10303,10 @@ msgstr "Detalhes da função"
 #: app/src/pages/role-editor/src/role-list-view.vue:388
 msgid "Role Editor"
 msgstr "Editor de Funções"
+
+#: app/src/react/features/users/ImportUsersModal.tsx:264
+msgid "Role for everyone imported"
+msgstr "Função para todos os importados"
 
 #: app/src/pages/role-editor/src/role-list-view.vue:570
 msgid "Role Name"
@@ -10193,6 +10382,9 @@ msgstr "funções"
 #: app/src/pages/users/src/user-import.vue:61
 #: app/src/pages/users/src/user-list-view.vue:1388
 #: app/src/pages/users/src/user-list-view.vue:1576
+#: app/src/react/features/users/ImportUsersModal.tsx:26
+#: app/src/react/features/users/panels.tsx:104
+#: app/src/react/features/users/UsersList.tsx:105
 msgid "Roles"
 msgstr "Funções"
 
@@ -10203,6 +10395,10 @@ msgstr "Arredondado"
 #: app/src/pages/users/src/user-import.vue:637
 msgid "Row"
 msgstr "Linha"
+
+#: app/src/react/features/users/ImportUsersModal.tsx:145
+msgid "Row %1$s: %2$s"
+msgstr "Linha %1$s: %2$s"
 
 #: app/src/pages/database/src/layout.vue:374
 #: app/src/pages/database/src/query-editor.vue:232
@@ -10284,6 +10480,8 @@ msgstr "Salvar atributo"
 #: app/src/react/features/products/CategoriesView.tsx:214
 #: app/src/react/features/products/ProductQuickEdit.tsx:237
 #: app/src/react/features/products/TagsView.tsx:196
+#: app/src/react/features/users/panels.tsx:99
+#: app/src/react/features/users/UserModals.tsx:168
 msgid "Save changes"
 msgstr "Salvar alterações"
 
@@ -10586,6 +10784,8 @@ msgid "Search Traffic"
 msgstr "Tráfego de pesquisa"
 
 #: app/src/react/features/posts/PostCells.tsx:84
+#: app/src/react/features/users/UsersList.tsx:178
+#: app/src/react/features/users/UsersList.tsx:179
 msgid "Search users"
 msgstr "Pesquisar usuários"
 
@@ -11149,6 +11349,7 @@ msgstr "Mostrar apenas ações rápidas"
 
 #: app/src/pages/login/src/login-password-field.vue:43
 #: app/src/pages/users/src/user-list-view.vue:1327
+#: app/src/react/features/users/UserModals.tsx:89
 msgid "Show password"
 msgstr "Mostrar senha"
 
@@ -11318,6 +11519,10 @@ msgstr "Alguns arquivos não puderam ser atualizados."
 #: app/src/react/features/posts/usePostMutations.ts:55
 msgid "Some items could not be updated."
 msgstr "Alguns itens não puderam ser atualizados."
+
+#: app/src/react/features/users/queries.ts:129
+msgid "Some users could not be updated."
+msgstr "Alguns usuários não puderam ser atualizados."
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:147
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:187
@@ -11730,9 +11935,19 @@ msgstr "Texto copiado para a área de transferência"
 msgid "Text Replacement"
 msgstr "Substituição de texto"
 
+#: app/src/react/features/users/ImportUsersModal.tsx:95
+msgid "That file could not be read."
+msgstr "Não foi possível ler esse arquivo."
+
 #: app/src/pages/dashboard/src/cards/ecommerce/top-products/component.vue:30
 msgid "The 5 best-selling products in your store"
 msgstr "Os 5 produtos mais vendidos na sua loja"
+
+#: app/src/react/features/users/panels.tsx:158
+msgid "The activity log is turned off, so there is nothing to show here."
+msgstr ""
+"O registro de atividades está desativado, então não há nada para mostrar "
+"aqui."
 
 #: app/src/pages/products/src/AttributesView.vue:67
 #: app/src/react/features/products/AttributesView.tsx:80
@@ -11793,6 +12008,10 @@ msgid "The file will be deleted for good. The media library has no trash."
 msgstr ""
 "O arquivo será excluído definitivamente. A biblioteca de mídia não tem "
 "lixeira."
+
+#: app/src/react/features/users/ImportUsersModal.tsx:207
+msgid "The first row has to be the column headings."
+msgstr "A primeira linha precisa ser o cabeçalho das colunas."
 
 #: admin/src/Update/Updater.php:395
 msgid "The Flexify Dashboard plugin version is the latest."
@@ -11932,6 +12151,10 @@ msgstr ""
 msgid "The tag name is required."
 msgstr "O nome da tag é obrigatório."
 
+#: app/src/react/features/users/UserModals.tsx:80
+msgid "The user can change it after signing in."
+msgstr "O usuário poderá alterá-la depois de entrar."
+
 #: app/src/components/app/menu/components/UserDetails.vue:389
 #: app/src/components/app/toolbar/index.vue:234
 #: app/src/components/app/toolbar/index.vue:235
@@ -11943,6 +12166,10 @@ msgstr "Tema"
 #: app/src/pages/role-editor/src/role-details-view.vue:91
 msgid "Themes"
 msgstr "Temas"
+
+#: app/src/react/features/users/UsersList.tsx:62
+msgid "There is nothing to export."
+msgstr "Não há nada para exportar."
 
 #: app/src/pages/plugins/src/plugin-inspect.vue:207
 msgid "There was an error fetching this plugins information"
@@ -12107,6 +12334,14 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:436
 msgid "this user"
 msgstr "este usuário"
+
+#: app/src/react/features/users/UserDetails.tsx:41
+msgid "This user could not be loaded."
+msgstr "Não foi possível carregar este usuário."
+
+#: app/src/react/features/users/panels.tsx:240
+msgid "This user is not a customer of the store."
+msgstr "Este usuário não é cliente da loja."
 
 #: app/src/pages/settings/src/settings-panel.vue:296
 msgid ""
@@ -12392,6 +12627,7 @@ msgstr "Tamanho total"
 
 #: app/src/pages/orders/src/OrderDetails.vue:445
 #: app/src/react/features/orders/OrderDetails.tsx:472
+#: app/src/react/features/users/panels.tsx:256
 msgid "Total spent"
 msgstr "Total gasto"
 
@@ -12924,6 +13160,10 @@ msgstr ""
 "Utilize a interface moderna de lista de posts em vez do layout clássico de "
 "tabela do WordPress."
 
+#: app/src/react/features/users/ImportUsersModal.tsx:261
+msgid "Use the roles in the file"
+msgstr "Usar as funções do arquivo"
+
 #: app/src/pages/settings/src/custom-renders/google-recaptcha-connection.vue:144
 msgid ""
 "Use these credentials in the modern administrative login and password "
@@ -12960,6 +13200,14 @@ msgstr "Utilizado quando a coluna de senha não está mapeada ou está vazia."
 msgid "user"
 msgstr "usuário"
 
+#: app/src/react/features/users/UsersList.tsx:90
+msgid "User"
+msgstr "Usuário"
+
+#: app/src/react/features/users/UsersList.tsx:147
+msgid "User actions"
+msgstr "Ações do usuário"
+
 #: app/src/pages/activity-log/src/activity-details-view.vue:327
 msgid "User Agent"
 msgstr "Agente do usuário"
@@ -12979,6 +13227,10 @@ msgstr "Métricas de comportamento do usuário"
 #: admin/src/Rest/Collaboration.php:294
 msgid "User cannot edit this post"
 msgstr "O usuário não pode editar esta publicação."
+
+#: app/src/react/features/users/queries.ts:99
+msgid "User created"
+msgstr "Usuário criado"
 
 #: app/src/pages/users/src/user-list-view.vue:624
 msgid "User created successfully!"
@@ -13024,6 +13276,10 @@ msgstr "Usuário não encontrado"
 msgid "User registration trends"
 msgstr "Tendências de registro de usuários"
 
+#: app/src/react/features/users/queries.ts:108
+msgid "User updated"
+msgstr "Usuário atualizado"
+
 #: app/src/components/user-details-form/user-details-form.vue:145
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:145
 msgid "User updated successfully"
@@ -13044,6 +13300,8 @@ msgstr "usuário@exemplo.com"
 #: app/src/pages/users/src/user-import.vue:53
 #: app/src/pages/users/src/user-list-view.vue:1116
 #: app/src/pages/users/src/user-list-view.vue:1120
+#: app/src/react/features/users/ImportUsersModal.tsx:18
+#: app/src/react/features/users/UserModals.tsx:72
 msgid "Username"
 msgstr "Nome de usuário"
 
@@ -13066,6 +13324,8 @@ msgstr "Usuários"
 #: app/src/pages/settings/index.vue:116
 #: app/src/pages/users/src/user-list-view.vue:806
 #: app/src/react/features/dashboard/cards/register.ts:51
+#: app/src/react/features/users/UserDetails.tsx:53
+#: app/src/react/features/users/UsersList.tsx:156
 #: app/src/react/shell/search/useGlobalSearch.ts:64
 msgid "Users"
 msgstr "Usuários"
@@ -13074,9 +13334,17 @@ msgstr "Usuários"
 msgid "Users currently browsing"
 msgstr "Usuários navegando no momento"
 
+#: app/src/react/features/users/DeleteUsersModal.tsx:33
+msgid "Users deleted"
+msgstr "Usuários excluídos"
+
 #: app/src/pages/users/src/user-list-view.vue:1693
 msgid "Users to export:"
 msgstr "Usuários para exportar:"
+
+#: app/src/react/features/users/UserModals.tsx:144
+msgid "Users updated"
+msgstr "Usuários atualizados"
 
 #: app/src/pages/users/src/user-list-view.vue:324
 msgid "Users updated successfully"
@@ -13266,6 +13534,8 @@ msgstr "Ver produtos"
 #: app/src/pages/orders/src/OrderDetails.vue:425
 #: app/src/react/features/orders/OrderDetails.tsx:450
 #: app/src/react/features/orders/OrderDetails.tsx:451
+#: app/src/react/features/users/UserDetails.tsx:57
+#: app/src/react/features/users/UsersList.tsx:135
 msgid "View profile"
 msgstr "Ver perfil"
 
@@ -13402,6 +13672,9 @@ msgstr "Painel administrativo"
 #: app/src/pages/users/src/user-import.vue:59
 #: app/src/pages/users/src/user-list-view.vue:1358
 #: app/src/react/features/comments/CommentDetails.tsx:133
+#: app/src/react/features/users/ImportUsersModal.tsx:24
+#: app/src/react/features/users/panels.tsx:72
+#: app/src/react/features/users/UserModals.tsx:108
 msgid "Website"
 msgstr "Site"
 
@@ -13443,6 +13716,10 @@ msgid "Welcome to your WordPress dashboard! This is your site management hub."
 msgstr ""
 "Bem-vindo ao seu painel de controle do WordPress! Este é o seu centro de "
 "gerenciamento do site."
+
+#: app/src/react/features/users/ImportUsersModal.tsx:250
+msgid "What %s means"
+msgstr "O que %s significa"
 
 #: app/src/react/features/dashboard/cards/register.ts:35
 msgid "What is queued to go out"

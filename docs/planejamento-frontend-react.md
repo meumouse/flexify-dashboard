@@ -403,7 +403,7 @@ Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o paine
 - Com os cartões todos em React, o filtro `flexify-dashboard/react-dashboard` passou a vir **ligado**. O painel Vue continua disponível desligando-o.
 - Um cartão Vue de terceiros ainda renderiza pelo `CardRender`, desde que não dependa de globais que o app Vue do plugin fornecia.
 
-### Fase 6 — Conteúdo (GG) · **em andamento**
+### Fase 6 — Conteúdo (GG) · **concluída**
 Posts, mídia, comentários e usuários.
 
 **Parte 1 — posts (concluída em 07/10/2026):** a tela de posts em React, com as duas visualizações, edição na linha e ações em lote.
@@ -430,6 +430,15 @@ Posts, mídia, comentários e usuários.
 - O editor de imagem **reaproveita as rotinas de pixel do editor Vue** (`components/utility/image-editor/src/*.js`, JavaScript puro — só os filtros são seiscentas linhas). O que foi escrito em React é a superfície: a tela, o ponteiro e os controles. `imageEdits.ts` guarda a aritmética (onde a imagem cai na tela, o que um retângulo desenhado sobre ela significa nos pixels dela), separada para poder ser testada sozinha.
 - A imagem é pedida com `crossOrigin`: sem isso a tela recusa a devolver os pixels depois que algo de outra origem foi desenhado nela, e salvar falharia só em sites que servem os uploads de um CDN.
 - A tela React fica atrás do filtro `flexify-dashboard/react-media`, **ligado** por padrão.
+
+**Parte 4 — usuários (concluída em 07/10/2026):** a tela de usuários em React, com a lista, criação, edição em lote, importação e exportação CSV e a página de um usuário.
+
+- **Bug corrigido:** a tela Vue excluía usuários com `reassign: 1` fixo — todo o conteúdo de quem fosse excluído ia parar no usuário de ID 1, fosse ele quem fosse. A tela React pergunta, como o wp-admin faz, e também aceita excluir o conteúdo junto.
+- A página de um usuário é feita de painéis (`panels.tsx`): perfil, atividade e cliente da loja. O painel que depende de um plugin ausente não aparece, em vez de aparecer só para dizer que não dá.
+- A importação lê o CSV com o `parseCSV.js` que já existia e adivinha o que cada coluna significa pelo nome do cabeçalho ("E-mail", "email address" e "Email" são a mesma coluna), deixando corrigir o palpite. Uma linha por requisição, em sequência, para saber **qual** linha falhou e por quê.
+- Quem é importado sem senha recebe uma gerada: uma senha que ninguém sabe é mais segura que uma que todos sabem.
+- A exportação leva a página que está na tela, não o site inteiro — os filtros é que decidem o recorte.
+- A tela React fica atrás do filtro `flexify-dashboard/react-users`, **ligado** por padrão.
 
 ### Fase 7 — Sistema (GG)
 Plugins, configurações, activity log, database explorer, editor de papéis, construtor de menus, avisos e analytics.

@@ -54,6 +54,8 @@ export default defineConfig({
 				'role-editor': path.resolve(__dirname, 'src/apps/js/RoleEditor.js'),
 				settings: path.resolve(__dirname, 'src/apps/js/Settings.js'),
 				users: path.resolve(__dirname, 'src/apps/js/Users.js'),
+				// React users screen; the Vue entry stays as the fallback behind the filter.
+				'users-react': path.resolve(__dirname, 'src/react/main/users.tsx'),
 			},
 			output: {
 				entryFileNames: '[name].build.[hash].js',
