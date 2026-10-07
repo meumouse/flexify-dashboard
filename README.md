@@ -24,6 +24,10 @@ Voce tambem pode instalar manualmente:
 * Envie a pasta `flexify-dashboard`
 * Ative o plugin no painel do WordPress em `Plugins`
 
+### Desenvolvimento
+
+Para trabalhar no plugin a partir de um clone, veja [docs/desenvolvimento.md](docs/desenvolvimento.md).
+
 ### Compatibilidade
 
 Compativel com WordPress 6.0+ e PHP 7.4+.
