@@ -7,6 +7,8 @@ import { useAdminMenu } from '@/react/shell/menu/useAdminMenu';
 import { AppSidebar, SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '@/react/shell/AppSidebar';
 import { AppToolbar } from '@/react/shell/AppToolbar';
 import { PORTAL_ID } from '@/react/app/PageShell';
+import { NotificationsPanel } from '@/react/shell/notices/NotificationsPanel';
+import { useWpNotices } from '@/react/shell/notices/useWpNotices';
 import { CommandPalette } from '@/react/shell/search/CommandPalette';
 import { useColorScheme } from '@/react/shell/useColorScheme';
 import { Sheet } from '@/react/ui';
@@ -37,6 +39,8 @@ export const AppShell = () => {
 	const [collapsed, setCollapsed] = useState(readCollapsed);
 	const [drawerOpen, setDrawerOpen] = useState(false);
 	const [searchOpen, setSearchOpen] = useState(false);
+	const [noticesOpen, setNoticesOpen] = useState(false);
+	const wpNotices = useWpNotices();
 	const bodyHolder = useRef<HTMLDivElement>(null);
 	const moved = useRef(false);
 
@@ -117,6 +121,8 @@ export const AppShell = () => {
 							onToggleSidebar={toggleSidebar}
 							onOpenMenu={() => setDrawerOpen(true)}
 							onOpenSearch={searchEnabled ? () => setSearchOpen(true) : undefined}
+							onOpenNotifications={() => setNoticesOpen(true)}
+							notificationsCount={wpNotices.count}
 						/>
 					</div>
 
@@ -134,6 +140,8 @@ export const AppShell = () => {
 				</Sheet>
 
 				{searchEnabled ? <CommandPalette open={searchOpen} onOpenChange={setSearchOpen} menu={menu} /> : null}
+
+				<NotificationsPanel open={noticesOpen} onOpenChange={setNoticesOpen} attachWpNotices={wpNotices.attach} wpCount={wpNotices.count} />
 
 				{/* Overlays of the shell render here, inside the isolated container. */}
 				<div id={PORTAL_ID} />

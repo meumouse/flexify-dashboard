@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { useWpData } from '@/react/app/WpDataProvider';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
+import { NotificationBell } from '@/react/shell/notices/NotificationsPanel';
 import { useColorScheme } from '@/react/shell/useColorScheme';
+import { WpToolbar } from '@/react/shell/WpToolbar';
 import { Avatar, DropdownMenu, Icon, Tooltip, type MenuItem } from '@/react/ui';
 
 /**
@@ -36,9 +38,11 @@ type Props = {
 	onToggleSidebar: () => void;
 	onOpenMenu: () => void;
 	onOpenSearch?: () => void;
+	onOpenNotifications: () => void;
+	notificationsCount: number;
 };
 
-export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearch }: Props) => {
+export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearch, onOpenNotifications, notificationsCount }: Props) => {
 	const { userName, userEmail, userRoles, adminUrl, siteUrl, loginUrl } = useWpData();
 	const { isDark, setColorScheme, globalOverride } = useColorScheme();
 	const [gravatar, setGravatar] = useState('');
@@ -92,7 +96,14 @@ export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearc
 				</button>
 			) : null}
 
-			<div className="min-w-0 grow" />
+			<div className="relative flex min-w-0 grow flex-row items-center max-lg:overflow-hidden">
+				<div className="no-scrollbar flex w-full flex-row items-center gap-4 max-lg:overflow-auto">
+					<WpToolbar />
+				</div>
+				<div className="pointer-events-none absolute end-0 top-0 bottom-0 hidden w-16 bg-gradient-to-l from-white to-transparent max-lg:block dark:from-gray-900" />
+			</div>
+
+			<NotificationBell count={notificationsCount} onClick={onOpenNotifications} />
 
 			{!globalOverride ? (
 				<Tooltip text={isDark ? __('Light mode') : __('Dark mode')} side="bottom">

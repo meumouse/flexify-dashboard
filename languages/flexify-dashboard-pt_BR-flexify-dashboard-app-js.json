@@ -97,6 +97,9 @@
       "%d variations": [
         "%d variações"
       ],
+      "%d waiting for you": [
+        "%d esperando por você"
+      ],
       "%s / page": [
         "%s / página"
       ],
@@ -477,6 +480,9 @@
       ],
       "All categories": [
         "Todas as categorias"
+      ],
+      "All caught up": [
+        "Tudo em dia"
       ],
       "All default WordPress pages (Posts, Pages, Comments, etc.) will continue to show local content.": [
         "Todas as páginas padrão do WordPress (Posts, Páginas, Comentários, etc.) continuarão exibindo conteúdo local."
@@ -2650,6 +2656,9 @@
       "Frequently used": [
         "Mais usados"
       ],
+      "From WordPress": [
+        "Do WordPress"
+      ],
       "Frontend performance": [
         "Desempenho do front-end"
       ],
@@ -4120,6 +4129,9 @@
       "No notices found": [
         "Nenhuma notificação encontrada"
       ],
+      "No notifications on this screen.": [
+        "Nenhuma notificação nesta tela."
+      ],
       "No older orders": [
         "Nenhum pedido mais antigo"
       ],
@@ -4303,6 +4315,9 @@
       "Nothing found for “%s”.": [
         "Nada encontrado para “%s”."
       ],
+      "Nothing waiting": [
+        "Nada esperando"
+      ],
       "Notice Editor": [
         "Editor de Avisos"
       ],
@@ -4326,6 +4341,9 @@
       ],
       "Notifications": [
         "Notificações"
+      ],
+      "Notifications (%d)": [
+        "Notificações (%d)"
       ],
       "Notify %s": [
         "Notificar %s"
@@ -5121,6 +5139,9 @@
       ],
       "React foundation": [
         "Fundação React"
+      ],
+      "Read more": [
+        "Ler mais"
       ],
       "Ready to build screens": [
         "Pronto para construir telas"

@@ -11221,6 +11221,34 @@ msgstr "Buscar…"
 msgid "Type to search, or start with a command:"
 msgstr "Digite para buscar, ou comece com um comando:"
 
+#: app/src/react/shell/notices/NotificationsPanel.tsx:57
+msgid "%d waiting for you"
+msgstr "%d esperando por você"
+
+#: app/src/react/shell/notices/NotificationsPanel.tsx:110
+msgid "All caught up"
+msgstr "Tudo em dia"
+
+#: app/src/react/shell/notices/NotificationsPanel.tsx:104
+msgid "From WordPress"
+msgstr "Do WordPress"
+
+#: app/src/react/shell/notices/NotificationsPanel.tsx:110
+msgid "No notifications on this screen."
+msgstr "Nenhuma notificação nesta tela."
+
+#: app/src/react/shell/notices/NotificationsPanel.tsx:57
+msgid "Nothing waiting"
+msgstr "Nada esperando"
+
+#: app/src/react/shell/notices/NotificationsPanel.tsx:120
+msgid "Notifications (%d)"
+msgstr "Notificações (%d)"
+
+#: app/src/react/shell/notices/NotificationsPanel.tsx:89
+msgid "Read more"
+msgstr "Ler mais"
+
 #: admin/src/Rest/AdminNotices.php:70
 msgctxt "notice"
 msgid "Add New"

@@ -379,7 +379,14 @@ Sidebar, toolbar, busca, notificações, menu do usuário, modo escuro e o paine
 - Uma lista achatada única guia o teclado: o que está destacado é o que o Enter abre, independentemente do grupo em que aparece.
 - Ficaram de fora o tutorial de primeira utilização e o diálogo de correção de layout (`layout-fix-dialog.vue`, 1.182 linhas), que são utilitários à parte.
 
-**Parte 3 — pendente:** painel de notificações, barra do WordPress embutida e o painel com os widgets de e-commerce.
+**Parte 3 — notificações e barra do WordPress (concluída em 07/10/2026):**
+
+- Os avisos nativos são escondidos onde estão, contados e **movidos** para o painel quando ele abre — mover preserva a marcação e os comportamentos que plugins prendem a ela. O hook guarda quais já moveu, porque os refs são anexados antes dos efeitos e o painel pode receber os avisos antes de eles serem escondidos.
+- Os avisos publicados pelo plugin vêm da REST, filtrados por papel/usuário e por quem já dispensou.
+- `WpToolbar` move a `#wpadminbar` para dentro da barra do shell, também sem recriá-la, para os seletores do núcleo continuarem valendo para outros plugins.
+- A contagem usa `textContent` em vez de `innerText`: a resposta é a mesma para um aviso e não depende de layout, o que deixa o comportamento testável.
+
+**Parte 4 — pendente:** o painel com os widgets de e-commerce (seção 4.11) e os cartões atuais do painel.
 
 ### Fase 6 — Conteúdo (GG)
 Posts, mídia, comentários e usuários.
