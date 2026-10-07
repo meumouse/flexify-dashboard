@@ -440,8 +440,17 @@ Posts, mídia, comentários e usuários.
 - A exportação leva a página que está na tela, não o site inteiro — os filtros é que decidem o recorte.
 - A tela React fica atrás do filtro `flexify-dashboard/react-users`, **ligado** por padrão.
 
-### Fase 7 — Sistema (GG)
+### Fase 7 — Sistema (GG) · **em andamento**
 Plugins, configurações, activity log, database explorer, editor de papéis, construtor de menus, avisos e analytics.
+
+> O item "analytics" desta fase é o **script de rastreamento do frontend** (`apps/js/Analytics.js`), que não é Vue e não muda aqui — ele entra na Fase 8. Os painéis de analytics já foram portados como cartões na Fase 5.
+
+**Parte 1 — registro de atividades e avisos (concluída em 07/10/2026):** as duas telas de lista mais simples da fase.
+
+- Os filtros do registro vêm do próprio registro: o endpoint `activity-log/stats` diz quais ações e quais tipos de objeto existem, e só esses são oferecidos — com a contagem ao lado.
+- A tela de uma entrada mostra o antes e o depois lado a lado, campo a campo, marcando só o que de fato mudou.
+- Um aviso é um post type, então as rotas do núcleo dão conta; o que faz dele um aviso (tipo, papéis, se pode ser dispensado) está no meta. O editor mostra o aviso como o wp-admin vai mostrá-lo.
+- As telas React ficam atrás dos filtros `flexify-dashboard/react-activity-log` e `flexify-dashboard/react-admin-notices`, **ligados** por padrão.
 
 ### Fase 8 — Login e frontend (M)
 Tela de login personalizada e scripts do frontend.

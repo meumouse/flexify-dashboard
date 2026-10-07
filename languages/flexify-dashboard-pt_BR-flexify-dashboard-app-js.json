@@ -169,6 +169,9 @@
       "%s days": [
         "%s dias"
       ],
+      "%s entries": [
+        "%s entradas"
+      ],
       "%s file(s)": [
         "%s arquivo(s)"
       ],
@@ -183,6 +186,9 @@
       ],
       "%s list navigation": [
         "Navegação da lista %s"
+      ],
+      "%s notice(s)": [
+        "%s aviso(s)"
       ],
       "%s orders": [
         "%s pedidos"
@@ -277,6 +283,9 @@
       "A new version of the <strong>Flexify Dashboard</strong> plugin is available.": [
         "Uma nova versão do plugin <strong>Flexify Dashboard</strong> está disponível."
       ],
+      "A notice is a message shown to the people who use this site’s admin.": [
+        "Um aviso é uma mensagem mostrada a quem usa o painel deste site."
+      ],
       "A percentage discount cannot be higher than 100.": [
         "Um desconto percentual não pode ser maior que 100."
       ],
@@ -351,6 +360,9 @@
       ],
       "Activity Log Details": [
         "Detalhes do registro de atividades"
+      ],
+      "Activity log": [
+        "Registro de atividades"
       ],
       "Activity log entry not found": [
         "Registro de atividades não encontrado"
@@ -439,6 +451,9 @@
       "Add note": [
         "Adicionar nota"
       ],
+      "Add notice": [
+        "Adicionar aviso"
+      ],
       "Add or remove tags": [
         "Adicionar ou remover etiquetas"
       ],
@@ -519,6 +534,9 @@
       ],
       "Admin menu behavior and interaction settings": [
         "Configurações de comportamento e interação do menu de administração"
+      ],
+      "Admin notices": [
+        "Avisos do painel"
       ],
       "Administrator": [
         "Administrador"
@@ -691,6 +709,9 @@
       "Any %s": [
         "Qualquer %s"
       ],
+      "Any action": [
+        "Qualquer ação"
+      ],
       "Any category": [
         "Qualquer categoria"
       ],
@@ -711,6 +732,12 @@
       ],
       "Any tag": [
         "Qualquer tag"
+      ],
+      "Anyone": [
+        "Qualquer pessoa"
+      ],
+      "Anything": [
+        "Qualquer coisa"
       ],
       "Appearance": [
         "Aparência"
@@ -937,6 +964,9 @@
       "Before": [
         "Antes"
       ],
+      "Behaviour": [
+        "Comportamento"
+      ],
       "Billing": [
         "Cobrança"
       ],
@@ -1038,6 +1068,9 @@
       ],
       "Campaign": [
         "Campanha"
+      ],
+      "Can be dismissed": [
+        "Pode ser dispensado"
       ],
       "Cancel": [
         "Cancelar"
@@ -1798,6 +1831,9 @@
       "Delete this file?": [
         "Excluir este arquivo?"
       ],
+      "Delete this notice?": [
+        "Excluir este aviso?"
+      ],
       "Delete value": [
         "Excluir valor"
       ],
@@ -2302,6 +2338,15 @@
       "Enter your username and password to continue.": [
         "Digite seu nome de usuário e senha para continuar."
       ],
+      "Entries": [
+        "Entradas"
+      ],
+      "Entries older than the period the plugin keeps are deleted. There is no undo.": [
+        "As entradas mais antigas que o período guardado pelo plugin serão excluídas. Não há como desfazer."
+      ],
+      "Entry": [
+        "Entrada"
+      ],
       "Error": [
         "Erro"
       ],
@@ -2358,6 +2403,9 @@
       ],
       "Every card is hidden": [
         "Todos os cartões estão ocultos"
+      ],
+      "Everyone": [
+        "Todos"
       ],
       "Everything is up to date": [
         "Está tudo atualizado"
@@ -3136,6 +3184,9 @@
       "Hover": [
         "Passar o cursor"
       ],
+      "How it will look": [
+        "Como vai aparecer"
+      ],
       "How many days to keep activity logs before automatic cleanup. Default is 90 days.": [
         "Por quantos dias os registros de atividades devem ser mantidos antes da limpeza automática? O padrão é 90 dias."
       ],
@@ -3276,6 +3327,9 @@
       ],
       "Info": [
         "Informações"
+      ],
+      "Information": [
+        "Informação"
       ],
       "Inline code": [
         "Código em linha"
@@ -3493,6 +3547,9 @@
       "Inventory": [
         "Estoque"
       ],
+      "It stops being shown and cannot be brought back.": [
+        "Ele deixa de ser mostrado e não pode ser recuperado."
+      ],
       "Italic": [
         "Itálico"
       ],
@@ -3585,6 +3642,12 @@
       ],
       "Keyboard Shortcuts": [
         "Atalhos de teclado"
+      ],
+      "Kind": [
+        "Tipo"
+      ],
+      "Kinds of action": [
+        "Tipos de ação"
       ],
       "Large Files": [
         "Arquivos grandes"
@@ -4252,6 +4315,9 @@
       "Never expires": [
         "Nunca expira"
       ],
+      "New": [
+        "Novo"
+      ],
       "New %s": [
         "Notícias"
       ],
@@ -4290,6 +4356,9 @@
       ],
       "New menu": [
         "Novo menu"
+      ],
+      "New notice": [
+        "Novo aviso"
       ],
       "New orders will appear here as soon as customers check out.": [
         "Novos pedidos aparecerão aqui assim que os clientes finalizarem a compra."
@@ -4482,6 +4551,9 @@
       ],
       "No notices found": [
         "Nenhuma notificação encontrada"
+      ],
+      "No notices yet": [
+        "Nenhum aviso ainda"
       ],
       "No notifications on this screen.": [
         "Nenhuma notificação nesta tela."
@@ -4699,6 +4771,9 @@
       "Nothing in the library matches this.": [
         "Nada na biblioteca corresponde a isso."
       ],
+      "Nothing logged yet": [
+        "Nada registrado ainda"
+      ],
       "Nothing on the site uses this file.": [
         "Nada no site usa este arquivo."
       ],
@@ -4714,6 +4789,12 @@
       "Nothing waiting": [
         "Nada esperando"
       ],
+      "Nothing was recorded about what changed.": [
+        "Nada foi registrado sobre o que mudou."
+      ],
+      "Notice": [
+        "Aviso"
+      ],
       "Notice Editor": [
         "Editor de Avisos"
       ],
@@ -4722,6 +4803,9 @@
       ],
       "Notice Type": [
         "Tipo de aviso"
+      ],
+      "Notice actions": [
+        "Ações do aviso"
       ],
       "Notice content will appear here...": [
         "Aviso: o conteúdo aparecerá aqui..."
@@ -4756,11 +4840,17 @@
       "Numbered list": [
         "Lista numerada"
       ],
+      "Object": [
+        "Objeto"
+      ],
       "Object Type": [
         "Tipo de objeto"
       ],
       "Off": [
         "Desligado"
+      ],
+      "Old entries removed": [
+        "Entradas antigas removidas"
       ],
       "Older order": [
         "Pedido mais antigo"
@@ -4779,6 +4869,9 @@
       ],
       "On hold": [
         "Aguardando"
+      ],
+      "Once dismissed, that person does not see it again.": [
+        "Depois de dispensado, a pessoa não o vê novamente."
       ],
       "One lowercase letter": [
         "Uma letra minúscula"
@@ -5089,6 +5182,9 @@
       "Paste your service account JSON key here...": [
         "Cole aqui a chave JSON da sua conta de serviço..."
       ],
+      "Paused": [
+        "Pausado"
+      ],
       "Payment": [
         "Pagamento"
       ],
@@ -5109,6 +5205,9 @@
       ],
       "Pending review": [
         "Revisão pendente"
+      ],
+      "People": [
+        "Pessoas"
       ],
       "People with an account on this site show up here.": [
         "As pessoas com conta neste site aparecem aqui."
@@ -5785,6 +5884,12 @@
       "Remove license?": [
         "Remover licença?"
       ],
+      "Remove old entries": [
+        "Remover entradas antigas"
+      ],
+      "Remove old entries?": [
+        "Remover entradas antigas?"
+      ],
       "Remove product": [
         "Remover produto"
       ],
@@ -5793,6 +5898,9 @@
       ],
       "Remove tag": [
         "Remover etiqueta"
+      ],
+      "Remove them": [
+        "Remover"
       ],
       "Remove value": [
         "Remover valor"
@@ -6187,6 +6295,9 @@
       "Search menus...": [
         "Menus de pesquisa..."
       ],
+      "Search notices": [
+        "Pesquisar avisos"
+      ],
       "Search notices...": [
         "Avisos de pesquisa..."
       ],
@@ -6255,6 +6366,9 @@
       ],
       "Search the library": [
         "Pesquisar na biblioteca"
+      ],
+      "Search the log": [
+        "Pesquisar no registro"
       ],
       "Search users": [
         "Pesquisar usuários"
@@ -6595,6 +6709,9 @@
       "Show password": [
         "Mostrar senha"
       ],
+      "Show this notice": [
+        "Mostrar este aviso"
+      ],
       "Show tutorial again": [
         "Mostrar tutorial novamente"
       ],
@@ -6603,6 +6720,9 @@
       ],
       "Showing %1$s to %2$s of %3$s": [
         "Mostrando %1$s a %2$s de %3$s"
+      ],
+      "Shown to": [
+        "Mostrado para"
       ],
       "Shows first in the catalog.": [
         "Aparece primeiro no catálogo."
@@ -7015,6 +7135,12 @@
       "The service account email (found in the JSON file) must be added to your GA4 property with at least Viewer access for data to be retrieved.": [
         "O endereço de e-mail da conta de serviço (encontrado no arquivo JSON) deve ser adicionado à sua propriedade do GA4 com, no mínimo, acesso de Visualizador para que os dados possam ser recuperados."
       ],
+      "The site itself": [
+        "O próprio site"
+      ],
+      "The site itself, with nobody signed in.": [
+        "O próprio site, sem ninguém conectado."
+      ],
       "The specified Google Analytics property was not found. Please check that the Property ID is correct.": [
         "A propriedade do Google Analytics especificada não foi encontrada. Verifique se o ID da propriedade está correto."
       ],
@@ -7056,6 +7182,9 @@
       ],
       "This comment will be deleted for good. There is no undo.": [
         "Este comentário será excluído definitivamente. Não há como desfazer."
+      ],
+      "This entry could not be loaded.": [
+        "Não foi possível carregar esta entrada."
       ],
       "This file could not be loaded.": [
         "Não foi possível carregar este arquivo."
@@ -7888,6 +8017,15 @@
       "What This Generates": [
         "O que isso gera"
       ],
+      "What changed": [
+        "O que mudou"
+      ],
+      "What happened": [
+        "O que aconteceu"
+      ],
+      "What happens on the site shows up here.": [
+        "O que acontece no site aparece aqui."
+      ],
       "What is queued to go out": [
         "O que está na fila para publicar"
       ],
@@ -7896,6 +8034,9 @@
       ],
       "What the image shows, for people who cannot see it.": [
         "O que a imagem mostra, para quem não pode vê-la."
+      ],
+      "When": [
+        "Quando"
       ],
       "When enabled, Flexify Dashboard will modernise the default login page.": [
         "Quando ativado, o Painel de Controle do Flexify modernizará a página de login padrão."
@@ -7921,6 +8062,12 @@
       "White Label": [
         "Marca Branca"
       ],
+      "Who": [
+        "Quem"
+      ],
+      "Who sees it": [
+        "Quem vê"
+      ],
       "Widget": [
         "Widget"
       ],
@@ -7932,6 +8079,9 @@
       ],
       "With icon": [
         "Com ícone"
+      ],
+      "With nothing chosen, everyone sees it.": [
+        "Sem nada marcado, todos veem."
       ],
       "WooCommerce": [
         "WooCommerce"

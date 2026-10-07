@@ -96,13 +96,33 @@ class CustomActivityLogPage {
 
 
     /**
+     * Get the Vite entry of the activity log screen.
+     *
+     * Both screens read the same log through the same routes, so a site that needs the Vue
+     * one back can have it from the filter.
+     *
+     * @since 4.0.0
+     * @return string
+     */
+    private static function get_entry() {
+        /**
+         * Filter whether the React activity log screen is used.
+         *
+         * @since 4.0.0
+         * @param bool $enabled Whether the React screen is used.
+         */
+        return (bool) apply_filters( 'flexify-dashboard/react-activity-log', true ) ? 'react/main/activity-log.tsx' : 'ActivityLog.js';
+    }
+
+
+    /**
      * Loads activity log page scripts.
      *
      * @since 2.0.0
      * @return void
      */
     public static function load_scripts() {
-        $script_name = Scripts::get_base_script_path( 'ActivityLog.js' );
+        $script_name = Scripts::get_base_script_path( self::get_entry() );
 
         if ( empty( $script_name ) ) {
             return;

@@ -35,6 +35,9 @@ msgstr "(sem título)"
 #: admin/src/Rest/PostsTables.php:716
 #: app/src/react/features/comments/CommentDetails.tsx:153
 #: app/src/react/features/comments/CommentsList.tsx:127
+#: app/src/react/features/notices/NoticeEditor.tsx:103
+#: app/src/react/features/notices/NoticeEditor.tsx:135
+#: app/src/react/features/notices/NoticesList.tsx:54
 #: app/src/react/features/posts/PostCells.tsx:194
 #: app/src/react/features/posts/PostPreview.tsx:31
 #: app/src/react/features/posts/PostsSidebar.tsx:152
@@ -310,6 +313,10 @@ msgstr "%s comentário(s)"
 msgid "%s days"
 msgstr "%s dias"
 
+#: app/src/react/features/activity/ActivityList.tsx:131
+msgid "%s entries"
+msgstr "%s entradas"
+
 #: app/src/react/features/media/MediaLibrary.tsx:171
 msgid "%s file(s)"
 msgstr "%s arquivo(s)"
@@ -333,6 +340,10 @@ msgstr "Lista %s"
 #: admin/src/Rest/CustomPostTypes.php:856
 msgid "%s list navigation"
 msgstr "Navegação da lista %s"
+
+#: app/src/react/features/notices/NoticesList.tsx:113
+msgid "%s notice(s)"
+msgstr "%s aviso(s)"
 
 #: app/src/pages/orders/src/OrdersList.vue:229
 #: app/src/react/features/orders/OrdersList.tsx:206
@@ -470,6 +481,10 @@ msgstr ""
 "Uma nova versão do plugin <strong>Flexify Dashboard</strong> está "
 "disponível."
 
+#: app/src/react/features/notices/NoticesList.tsx:142
+msgid "A notice is a message shown to the people who use this site’s admin."
+msgstr "Um aviso é uma mensagem mostrada a quem usa o painel deste site."
+
 #: app/src/pages/products/src/CouponsView.vue:141
 #: app/src/react/features/products/CouponsView.tsx:146
 msgid "A percentage discount cannot be higher than 100."
@@ -512,6 +527,7 @@ msgstr "Cores temáticas de destaque"
 
 #: app/src/pages/activity-log/src/activity-list-view.vue:304
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:207
+#: app/src/react/features/activity/ActivityList.tsx:159
 msgid "Action"
 msgstr "Ação"
 
@@ -566,6 +582,7 @@ msgstr "Ativando..."
 #: app/src/pages/menu-creator/src/edit.vue:58
 #: app/src/pages/plugins/src/plugin-card.vue:284
 #: app/src/pages/products/src/CouponsView.vue:75
+#: app/src/react/features/notices/NoticesList.tsx:82
 #: app/src/react/features/products/CouponsView.tsx:100
 msgid "Active"
 msgstr "Ativo"
@@ -595,6 +612,11 @@ msgstr "Atividade"
 #: app/src/pages/activity-log/src/activity-list-view.vue:410
 msgid "Activity Details"
 msgstr "Detalhes da atividade"
+
+#: app/src/react/features/activity/ActivityDetails.tsx:89
+#: app/src/react/features/activity/ActivityList.tsx:130
+msgid "Activity log"
+msgstr "Registro de atividades"
 
 #: admin/src/Pages/CustomActivityLogPage.php:47
 #: admin/src/Pages/CustomActivityLogPage.php:48
@@ -746,6 +768,10 @@ msgstr "Adicionar nova etiqueta"
 #: app/src/react/features/orders/OrderNotes.tsx:100
 msgid "Add note"
 msgstr "Adicionar nota"
+
+#: app/src/react/features/notices/NoticesList.tsx:116
+msgid "Add notice"
+msgstr "Adicionar aviso"
 
 #: admin/src/Rest/MediaTags.php:139
 msgid "Add or remove tags"
@@ -904,6 +930,11 @@ msgstr "Menu do admin"
 #: app/src/pages/settings/index.vue:73
 msgid "Admin menu behavior and interaction settings"
 msgstr "Configurações de comportamento e interação do menu de administração"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:104
+#: app/src/react/features/notices/NoticesList.tsx:112
+msgid "Admin notices"
+msgstr "Avisos do painel"
 
 #: admin/src/Rest/AdminNotices.php:231
 #: app/src/apps/js/AdminNotices.js:39
@@ -1236,6 +1267,10 @@ msgstr "Qualquer"
 msgid "Any %s"
 msgstr "Qualquer %s"
 
+#: app/src/react/features/activity/ActivityList.tsx:155
+msgid "Any action"
+msgstr "Qualquer ação"
+
 #: app/src/react/features/posts/PostsSettings.tsx:57
 msgid "Any category"
 msgstr "Qualquer categoria"
@@ -1269,6 +1304,14 @@ msgstr "Qualquer status de estoque"
 #: app/src/react/features/media/MediaLibrary.tsx:250
 msgid "Any tag"
 msgstr "Qualquer tag"
+
+#: app/src/react/features/activity/ActivityList.tsx:183
+msgid "Anyone"
+msgstr "Qualquer pessoa"
+
+#: app/src/react/features/activity/ActivityList.tsx:166
+msgid "Anything"
+msgstr "Qualquer coisa"
 
 #: admin/src/Rest/WooCommerceDashboard.php:416
 msgid "API"
@@ -1680,6 +1723,10 @@ msgstr "Edição em lote"
 msgid "Before"
 msgstr "Antes"
 
+#: app/src/react/features/notices/NoticeEditor.tsx:178
+msgid "Behaviour"
+msgstr "Comportamento"
+
 #: app/src/pages/orders/src/OrderPreview.vue:108
 #: app/src/react/features/orders/OrderPreview.tsx:135
 msgid "Billing"
@@ -1827,6 +1874,10 @@ msgstr "Camiseta Básica Algodão"
 #: app/src/react/features/orders/OrdersList.tsx:448
 msgid "Campaign"
 msgstr "Campanha"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:184
+msgid "Can be dismissed"
+msgstr "Pode ser dispensado"
 
 #: app/src/components/app/menu/components/FavoritesSection.vue:227
 #: app/src/components/app/search/layout-fix-dialog.vue:922
@@ -3175,6 +3226,10 @@ msgstr "Modelo padrão"
 #: app/src/react/features/design-system/Showcase.tsx:294
 #: app/src/react/features/media/MediaDetails.tsx:114
 #: app/src/react/features/media/MediaLibrary.tsx:294
+#: app/src/react/features/notices/NoticeEditor.tsx:89
+#: app/src/react/features/notices/NoticeEditor.tsx:109
+#: app/src/react/features/notices/NoticesList.tsx:34
+#: app/src/react/features/notices/NoticesList.tsx:101
 #: app/src/react/features/orders/OrderNotes.tsx:67
 #: app/src/react/features/posts/PostsList.tsx:163
 #: app/src/react/features/products/AttributesView.tsx:102
@@ -3310,6 +3365,11 @@ msgstr "Excluir estes usuários?"
 #: app/src/react/features/media/MediaDetails.tsx:90
 msgid "Delete this file?"
 msgstr "Excluir este arquivo?"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:87
+#: app/src/react/features/notices/NoticesList.tsx:32
+msgid "Delete this notice?"
+msgstr "Excluir este aviso?"
 
 #: app/src/pages/products/src/AttributesView.vue:261
 #: app/src/react/features/products/AttributesView.tsx:337
@@ -3782,6 +3842,8 @@ msgstr "Por exemplo, o cabeçalho está sobrepondo a área de conteúdo."
 #: app/src/pages/products/src/TagsView.vue:167
 #: app/src/react/features/media/MediaEditScreen.tsx:64
 #: app/src/react/features/media/MediaLibrary.tsx:288
+#: app/src/react/features/notices/NoticeEditor.tsx:104
+#: app/src/react/features/notices/NoticesList.tsx:99
 #: app/src/react/features/posts/PostPreview.tsx:61
 #: app/src/react/features/posts/PostRowMenu.tsx:33
 #: app/src/react/features/posts/PostsList.tsx:154
@@ -4223,9 +4285,27 @@ msgstr "Insira sua consulta SELECT aqui..."
 msgid "Enter your username and password to continue."
 msgstr "Digite seu nome de usuário e senha para continuar."
 
+#: app/src/react/features/activity/ActivityList.tsx:85
+msgid "Entries"
+msgstr "Entradas"
+
+#: app/src/react/features/activity/ActivityList.tsx:74
+msgid ""
+"Entries older than the period the plugin keeps are deleted. There is no "
+"undo."
+msgstr ""
+"As entradas mais antigas que o período guardado pelo plugin serão "
+"excluídas. Não há como desfazer."
+
+#: app/src/react/features/activity/ActivityDetails.tsx:89
+#: app/src/react/features/activity/ActivityDetails.tsx:97
+msgid "Entry"
+msgstr "Entrada"
+
 #: app/src/pages/admin-notices/src/edit.vue:61
 #: app/src/pages/plugins/index.vue:224
 #: app/src/pages/plugins/index.vue:232
+#: app/src/react/features/notices/queries.ts:35
 msgid "Error"
 msgstr "Erro"
 
@@ -4301,6 +4381,10 @@ msgstr "A cada 30 segundos"
 #: app/src/react/features/dashboard/DashboardPage.tsx:113
 msgid "Every card is hidden"
 msgstr "Todos os cartões estão ocultos"
+
+#: app/src/react/features/notices/NoticesList.tsx:74
+msgid "Everyone"
+msgstr "Todos"
 
 #: app/src/react/features/dashboard/cards/site.tsx:127
 msgid "Everything is up to date"
@@ -5120,6 +5204,9 @@ msgstr "Mais usados"
 msgid "Frequently Used"
 msgstr "Frequentemente usado"
 
+#: app/src/react/features/activity/ActivityDetails.tsx:107
+#: app/src/react/features/activity/ActivityList.tsx:123
+#: app/src/react/features/activity/ActivityList.tsx:187
 #: app/src/react/features/posts/PostsSettings.tsx:62
 msgid "From"
 msgstr "De"
@@ -5484,6 +5571,10 @@ msgstr "horas"
 msgid "Hover"
 msgstr "Passar o cursor"
 
+#: app/src/react/features/notices/NoticeEditor.tsx:133
+msgid "How it will look"
+msgstr "Como vai aparecer"
+
 #: app/src/pages/settings/src/settings-config.js:989
 msgid ""
 "How many days to keep activity logs before automatic cleanup. Default is 90 "
@@ -5556,7 +5647,7 @@ msgstr "Botão apenas com ícone"
 msgid "ID"
 msgstr "EU IA"
 
-#: admin/src/Rest/AdminNotices.php:310
+#: admin/src/Rest/AdminNotices.php:331
 msgid "ID of the notice to mark as seen"
 msgstr "Identificação do aviso a ser marcado como visto"
 
@@ -5727,6 +5818,10 @@ msgstr "Informações"
 msgid "info@gmail.com"
 msgstr "info@gmail.com"
 
+#: app/src/react/features/notices/queries.ts:32
+msgid "Information"
+msgstr "Informação"
+
 #: app/src/react/ui/RichText.tsx:165
 msgid "Inline code"
 msgstr "Código em linha"
@@ -5877,8 +5972,8 @@ msgstr "Item de mídia inválido"
 msgid "Invalid menu_meta: must be an object"
 msgstr "Menu_meta inválido: deve ser um objeto"
 
-#: admin/src/Rest/AdminNotices.php:359
-#: admin/src/Rest/AdminNotices.php:367
+#: admin/src/Rest/AdminNotices.php:380
+#: admin/src/Rest/AdminNotices.php:388
 msgid "Invalid notice or user."
 msgstr "Aviso ou usuário inválido."
 
@@ -6057,6 +6152,11 @@ msgstr "Endereço IP"
 msgid "IP Address"
 msgstr "Endereço IP"
 
+#: app/src/react/features/notices/NoticeEditor.tsx:88
+#: app/src/react/features/notices/NoticesList.tsx:33
+msgid "It stops being shown and cannot be brought back."
+msgstr "Ele deixa de ser mostrado e não pode ser recuperado."
+
 #: app/src/react/ui/RichText.tsx:163
 msgid "Italic"
 msgstr "Itálico"
@@ -6234,6 +6334,14 @@ msgstr "Chave ativada com sucesso"
 #: app/src/components/app/search/components/EmptyStateInitial.vue:85
 msgid "Keyboard Shortcuts"
 msgstr "Atalhos de teclado"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:142
+msgid "Kind"
+msgstr "Tipo"
+
+#: app/src/react/features/activity/ActivityList.tsx:86
+msgid "Kinds of action"
+msgstr "Tipos de ação"
 
 #: app/src/react/features/dashboard/cards/site.tsx:51
 msgid "Large files"
@@ -6995,6 +7103,7 @@ msgid "menus"
 msgstr "menus"
 
 #: app/src/pages/plugins/src/plugin-performance.vue:378
+#: app/src/react/features/notices/NoticeEditor.tsx:127
 msgid "Message"
 msgstr "Mensagem"
 
@@ -7348,6 +7457,10 @@ msgstr "Nunca"
 msgid "Never expires"
 msgstr "Nunca expira"
 
+#: app/src/react/features/notices/NoticeEditor.tsx:104
+msgid "New"
+msgstr "Novo"
+
 #: admin/src/Rest/RankMathDashboardWidget.php:552
 msgid "NEW"
 msgstr "NOVO"
@@ -7377,6 +7490,10 @@ msgstr "Novo link"
 #: app/src/pages/menu-creator/src/menu-list-view.vue:502
 msgid "New menu"
 msgstr "Novo menu"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:103
+msgid "New notice"
+msgstr "Novo aviso"
 
 #: app/src/pages/orders/src/OrdersList.vue:553
 #: app/src/react/features/design-system/Showcase.tsx:344
@@ -7700,6 +7817,10 @@ msgstr "Nenhuma nota ainda."
 #: app/src/pages/admin-notices/src/table.vue:236
 msgid "No notices found"
 msgstr "Nenhuma notificação encontrada"
+
+#: app/src/react/features/notices/NoticesList.tsx:141
+msgid "No notices yet"
+msgstr "Nenhum aviso ainda"
 
 #: app/src/react/shell/notices/NotificationsPanel.tsx:110
 msgid "No notifications on this screen."
@@ -8043,6 +8164,10 @@ msgstr "Nada encontrado."
 msgid "Nothing in the library matches this."
 msgstr "Nada na biblioteca corresponde a isso."
 
+#: app/src/react/features/activity/ActivityList.tsx:202
+msgid "Nothing logged yet"
+msgstr "Nada registrado ainda"
+
 #: app/src/react/features/media/MediaDetails.tsx:229
 msgid "Nothing on the site uses this file."
 msgstr "Nada no site usa este arquivo."
@@ -8063,16 +8188,30 @@ msgstr "Nada vendido neste período."
 msgid "Nothing waiting"
 msgstr "Nada esperando"
 
+#: app/src/react/features/activity/ActivityDetails.tsx:34
+msgid "Nothing was recorded about what changed."
+msgstr "Nada foi registrado sobre o que mudou."
+
+#: app/src/react/features/notices/NoticesList.tsx:46
+msgid "Notice"
+msgstr "Aviso"
+
+#: app/src/react/features/notices/NoticesList.tsx:103
+msgid "Notice actions"
+msgstr "Ações do aviso"
+
 #: app/src/pages/admin-notices/src/edit.vue:415
 msgid "Notice content will appear here..."
 msgstr "Aviso: o conteúdo aparecerá aqui..."
 
 #: app/src/pages/admin-notices/src/edit.vue:189
 #: app/src/pages/admin-notices/src/table.vue:107
+#: app/src/react/features/notices/queries.ts:71
 msgid "Notice created"
 msgstr "Aviso criado"
 
 #: app/src/pages/admin-notices/src/edit.vue:217
+#: app/src/react/features/notices/queries.ts:80
 msgid "Notice deleted"
 msgstr "Aviso excluído"
 
@@ -8089,6 +8228,7 @@ msgid "Notice Type"
 msgstr "Tipo de aviso"
 
 #: app/src/pages/admin-notices/src/edit.vue:188
+#: app/src/react/features/notices/queries.ts:71
 msgid "Notice updated"
 msgstr "Aviso atualizado"
 
@@ -8124,6 +8264,10 @@ msgstr "Número de meses"
 msgid "Numbered list"
 msgstr "Lista numerada"
 
+#: app/src/react/features/activity/ActivityDetails.tsx:105
+msgid "Object"
+msgstr "Objeto"
+
 #: app/src/pages/activity-log/src/activity-list-view.vue:327
 msgid "Object Type"
 msgstr "Tipo de objeto"
@@ -8141,6 +8285,10 @@ msgstr "desligado"
 #: app/src/pages/settings/src/settings-panel.vue:66
 msgid "Off"
 msgstr "Desligado"
+
+#: app/src/react/features/activity/queries.ts:106
+msgid "Old entries removed"
+msgstr "Entradas antigas removidas"
 
 #: app/src/pages/orders/src/OrderDetails.vue:276
 #: app/src/react/features/orders/OrderDetails.tsx:236
@@ -8182,6 +8330,10 @@ msgstr "Aguardando"
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:89
 msgid "On Hold"
 msgstr "Em espera"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:185
+msgid "Once dismissed, that person does not see it again."
+msgstr "Depois de dispensado, a pessoa não o vê novamente."
 
 #: app/src/pages/users/src/user-list-view.vue:1240
 msgid "One lowercase letter"
@@ -8727,6 +8879,10 @@ msgstr "Cole o URL ou pesquise"
 msgid "Paste your service account JSON key here..."
 msgstr "Cole aqui a chave JSON da sua conta de serviço..."
 
+#: app/src/react/features/notices/NoticesList.tsx:82
+msgid "Paused"
+msgstr "Pausado"
+
 #: app/src/pages/orders/src/OrderDetails.vue:489
 #: app/src/pages/orders/src/OrdersList.vue:241
 #: app/src/pages/orders/src/OrdersList.vue:431
@@ -8779,6 +8935,10 @@ msgstr "Pagamento pendente"
 #: app/src/react/features/products/ProductQuickEdit.tsx:116
 msgid "Pending review"
 msgstr "Revisão pendente"
+
+#: app/src/react/features/activity/ActivityList.tsx:87
+msgid "People"
+msgstr "Pessoas"
 
 #: app/src/react/features/users/UsersList.tsx:207
 msgid "People with an account on this site show up here."
@@ -9951,6 +10111,14 @@ msgstr "Remover chave"
 msgid "Remove license?"
 msgstr "Remover licença?"
 
+#: app/src/react/features/activity/ActivityList.tsx:134
+msgid "Remove old entries"
+msgstr "Remover entradas antigas"
+
+#: app/src/react/features/activity/ActivityList.tsx:73
+msgid "Remove old entries?"
+msgstr "Remover entradas antigas?"
+
 #: app/src/pages/products/src/editor/ProductPicker.vue:106
 #: app/src/react/features/products/editor/ProductPicker.tsx:130
 msgid "Remove product"
@@ -9968,6 +10136,10 @@ msgstr "Remover entrega"
 #: app/src/components/utility/tag-input/index.vue:387
 msgid "Remove tag"
 msgstr "Remover etiqueta"
+
+#: app/src/react/features/activity/ActivityList.tsx:75
+msgid "Remove them"
+msgstr "Remover"
 
 #: app/src/pages/products/src/editor/ProductAttributes.vue:180
 #: app/src/react/features/products/editor/ProductAttributes.tsx:239
@@ -10455,6 +10627,7 @@ msgstr "Saturação"
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:468
 #: app/src/pages/settings/src/settings-panel.vue:508
 #: app/src/react/features/media/ImageEditor.tsx:368
+#: app/src/react/features/notices/NoticeEditor.tsx:113
 #: app/src/react/features/products/AttributesView.tsx:329
 #: app/src/react/features/products/ProductVariations.tsx:208
 msgid "Save"
@@ -10671,6 +10844,11 @@ msgstr "Menu de pesquisa..."
 msgid "Search menus..."
 msgstr "Menus de pesquisa..."
 
+#: app/src/react/features/notices/NoticesList.tsx:126
+#: app/src/react/features/notices/NoticesList.tsx:127
+msgid "Search notices"
+msgstr "Pesquisar avisos"
+
 #: app/src/pages/admin-notices/src/table.vue:204
 msgid "Search notices..."
 msgstr "Avisos de pesquisa..."
@@ -10779,6 +10957,11 @@ msgstr "Etiquetas de pesquisa"
 msgid "Search the library"
 msgstr "Pesquisar na biblioteca"
 
+#: app/src/react/features/activity/ActivityList.tsx:146
+#: app/src/react/features/activity/ActivityList.tsx:147
+msgid "Search the log"
+msgstr "Pesquisar no registro"
+
 #: admin/src/Rest/RankMathDashboardWidget.php:222
 msgid "Search Traffic"
 msgstr "Tráfego de pesquisa"
@@ -10830,6 +11013,8 @@ msgid "Security token"
 msgstr "Token de segurança"
 
 #: app/src/pages/admin-notices/src/table.vue:281
+#: app/src/react/features/notices/NoticeEditor.tsx:191
+#: app/src/react/features/notices/NoticesList.tsx:88
 msgid "Seen by"
 msgstr "Visto por"
 
@@ -11353,6 +11538,10 @@ msgstr "Mostrar apenas ações rápidas"
 msgid "Show password"
 msgstr "Mostrar senha"
 
+#: app/src/react/features/notices/NoticeEditor.tsx:180
+msgid "Show this notice"
+msgstr "Mostrar este aviso"
+
 #: app/src/components/app/search/components/EmptyStateInitial.vue:133
 msgid "Show tutorial again"
 msgstr "Mostrar tutorial novamente"
@@ -11365,6 +11554,10 @@ msgstr "Exibindo"
 #: app/src/react/ui/Pagination.tsx:75
 msgid "Showing %1$s to %2$s of %3$s"
 msgstr "Mostrando %1$s a %2$s de %3$s"
+
+#: app/src/react/features/notices/NoticesList.tsx:63
+msgid "Shown to"
+msgstr "Mostrado para"
 
 #: app/src/react/features/design-system/Showcase.tsx:248
 msgid "Shows first in the catalog."
@@ -11663,6 +11856,7 @@ msgstr "Estado"
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:127
 #: app/src/react/features/design-system/Showcase.tsx:90
 #: app/src/react/features/design-system/Showcase.tsx:233
+#: app/src/react/features/notices/NoticesList.tsx:79
 #: app/src/react/features/orders/OrderEditor.tsx:820
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:355
@@ -11754,6 +11948,7 @@ msgstr "Subtotal"
 
 #: app/src/pages/admin-notices/src/edit.vue:49
 #: app/src/pages/plugins/index.vue:156
+#: app/src/react/features/notices/queries.ts:33
 msgid "Success"
 msgstr "Sucesso"
 
@@ -12126,6 +12321,14 @@ msgstr ""
 "ser adicionado à sua propriedade do GA4 com, no mínimo, acesso de "
 "Visualizador para que os dados possam ser recuperados."
 
+#: app/src/react/features/activity/ActivityList.tsx:120
+msgid "The site itself"
+msgstr "O próprio site"
+
+#: app/src/react/features/activity/ActivityDetails.tsx:125
+msgid "The site itself, with nobody signed in."
+msgstr "O próprio site, sem ninguém conectado."
+
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:996
 msgid ""
 "The specified Google Analytics property was not found. Please check that "
@@ -12229,6 +12432,10 @@ msgstr "Não foi possível carregar este comentário."
 #: app/src/react/features/comments/CommentDetails.tsx:74
 msgid "This comment will be deleted for good. There is no undo."
 msgstr "Este comentário será excluído definitivamente. Não há como desfazer."
+
+#: app/src/react/features/activity/ActivityDetails.tsx:79
+msgid "This entry could not be loaded."
+msgstr "Não foi possível carregar esta entrada."
 
 #: app/src/pages/media/src/media-list-view.vue:735
 msgid "this file"
@@ -12424,6 +12631,7 @@ msgstr "Matiz"
 #: app/src/pages/media/src/media-list-view.vue:1919
 #: app/src/react/features/media/MediaBulkEdit.tsx:57
 #: app/src/react/features/media/MediaDetails.tsx:185
+#: app/src/react/features/notices/NoticeEditor.tsx:123
 msgid "Title"
 msgstr "Título"
 
@@ -12431,6 +12639,7 @@ msgstr "Título"
 msgid "Title of the page being viewed"
 msgstr "Título da página que está sendo visualizada"
 
+#: app/src/react/features/activity/ActivityList.tsx:188
 #: app/src/react/features/posts/PostsSettings.tsx:65
 msgid "To"
 msgstr "Até"
@@ -12777,6 +12986,8 @@ msgstr "Dois produtos estão com estoque baixo."
 #: app/src/pages/database/src/table-view.vue:461
 #: app/src/pages/database/src/table-view.vue:554
 #: app/src/pages/plugins/src/plugin-performance.vue:377
+#: app/src/react/features/activity/ActivityDetails.tsx:104
+#: app/src/react/features/activity/ActivityList.tsx:170
 #: app/src/react/features/media/MediaDetails.tsx:207
 #: app/src/react/features/products/ProductsList.tsx:488
 msgid "Type"
@@ -13629,6 +13840,7 @@ msgid "visits"
 msgstr "visitas"
 
 #: app/src/pages/admin-notices/src/edit.vue:55
+#: app/src/react/features/notices/queries.ts:34
 msgid "Warning"
 msgstr "Aviso"
 
@@ -13721,6 +13933,18 @@ msgstr ""
 msgid "What %s means"
 msgstr "O que %s significa"
 
+#: app/src/react/features/activity/ActivityDetails.tsx:92
+msgid "What changed"
+msgstr "O que mudou"
+
+#: app/src/react/features/activity/ActivityList.tsx:93
+msgid "What happened"
+msgstr "O que aconteceu"
+
+#: app/src/react/features/activity/ActivityList.tsx:203
+msgid "What happens on the site shows up here."
+msgstr "O que acontece no site aparece aqui."
+
 #: app/src/react/features/dashboard/cards/register.ts:35
 msgid "What is queued to go out"
 msgstr "O que está na fila para publicar"
@@ -13736,6 +13960,11 @@ msgstr "O que a imagem mostra, para quem não pode vê-la."
 #: admin/src/Pages/DummyDataPage.php:122
 msgid "What This Generates"
 msgstr "O que isso gera"
+
+#: app/src/react/features/activity/ActivityDetails.tsx:106
+#: app/src/react/features/activity/ActivityList.tsx:124
+msgid "When"
+msgstr "Quando"
 
 #: app/src/pages/settings/src/settings-config.js:267
 msgid ""
@@ -13784,6 +14013,15 @@ msgstr "Se este menu está ativo ou não."
 msgid "White Label"
 msgstr "Marca Branca"
 
+#: app/src/react/features/activity/ActivityDetails.tsx:113
+#: app/src/react/features/activity/ActivityList.tsx:112
+msgid "Who"
+msgstr "Quem"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:163
+msgid "Who sees it"
+msgstr "Quem vê"
+
 #: app/src/pages/media/src/media-details-view.vue:1132
 msgid "Widget"
 msgstr "Widget"
@@ -13805,6 +14043,10 @@ msgstr "Com erro"
 #: app/src/react/features/design-system/Showcase.tsx:185
 msgid "With icon"
 msgstr "Com ícone"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:168
+msgid "With nothing chosen, everyone sees it."
+msgstr "Sem nada marcado, todos veem."
 
 #: app/src/pages/role-editor/src/role-details-view.vue:641
 msgid "with this role"

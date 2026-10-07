@@ -26,7 +26,11 @@ export default defineConfig({
 				'app-react': path.resolve(__dirname, 'src/react/main/app.tsx'),
 				theme: path.resolve(__dirname, 'src/apps/js/Theme.js'),
 				'activity-log': path.resolve(__dirname, 'src/apps/js/ActivityLog.js'),
+				// React activity log; the Vue entry stays as the fallback behind the filter.
+				'activity-log-react': path.resolve(__dirname, 'src/react/main/activity-log.tsx'),
 				'admin-notices': path.resolve(__dirname, 'src/apps/js/AdminNotices.js'),
+				// React admin notices; the Vue entry stays as the fallback behind the filter.
+				'admin-notices-react': path.resolve(__dirname, 'src/react/main/admin-notices.tsx'),
 				analytics: path.resolve(__dirname, 'src/apps/js/Analytics.js'),
 				comments: path.resolve(__dirname, 'src/apps/js/Comments.js'),
 				// React comments screen; the Vue entry stays as the fallback behind the filter.

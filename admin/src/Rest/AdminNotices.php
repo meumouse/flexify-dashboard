@@ -255,9 +255,30 @@ class AdminNotices {
 	 */
 	public static function load_styles() {
 		$plugin_url = plugins_url( 'flexify-dashboard/' );
-		$style_url = $plugin_url . 'app/dist/assets/styles/admin-notices.css';
+		$stylesheet = Scripts::get_stylesheet_path( self::get_entry() );
+		$style_url = $plugin_url . 'app/dist/' . ( $stylesheet ? $stylesheet : 'assets/styles/admin-notices.css' );
 
 		wp_enqueue_style( 'flexify-dashboard-admin-notices', $style_url, array(), FLEXIFY_DASHBOARD_VERSION );
+	}
+
+
+	/**
+	 * Get the Vite entry of the admin notices screen.
+	 *
+	 * Both screens read the same notices through the same routes, so a site that needs the
+	 * Vue one back can have it from the filter.
+	 *
+	 * @since 4.0.0
+	 * @return string
+	 */
+	private static function get_entry() {
+		/**
+		 * Filter whether the React admin notices screen is used.
+		 *
+		 * @since 4.0.0
+		 * @param bool $enabled Whether the React screen is used.
+		 */
+		return (bool) apply_filters( 'flexify-dashboard/react-admin-notices', true ) ? 'react/main/admin-notices.tsx' : 'AdminNotices.js';
 	}
 
 
@@ -269,7 +290,7 @@ class AdminNotices {
 	 */
 	public static function load_scripts() {
 		$plugin_url = plugins_url( 'flexify-dashboard/' );
-		$script_name = Scripts::get_base_script_path( 'AdminNotices.js' );
+		$script_name = Scripts::get_base_script_path( self::get_entry() );
 		$script_args = array(
 			'id' => 'fd-admin-notices-script',
 			'src' => $plugin_url . 'app/dist/' . $script_name,
