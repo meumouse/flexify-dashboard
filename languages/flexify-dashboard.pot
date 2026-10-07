@@ -1822,6 +1822,10 @@ msgstr ""
 msgid "Back to sign in"
 msgstr ""
 
+#: app/src/react/features/login/LoginScreen.tsx:188
+msgid "Back to signing in"
+msgstr ""
+
 #: app/src/pages/plugins/src/plugin-performance.vue:24
 msgid "Backend performance"
 msgstr ""
@@ -2241,7 +2245,11 @@ msgstr ""
 msgid "Check updates"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1868
+#: app/src/react/features/login/useLoginScreen.ts:235
+msgid "Check your email to carry on resetting your password."
+msgstr ""
+
+#: admin/src/Pages/Login.php:1888
 msgid "Check your email to continue the password recovery process."
 msgstr ""
 
@@ -2705,7 +2713,7 @@ msgstr ""
 msgid "Configured"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1605
+#: admin/src/Pages/Login.php:1625
 msgid "Confira seu e-mail para continuar o processo de recuperação de senha."
 msgstr ""
 
@@ -2718,7 +2726,7 @@ msgstr ""
 msgid "Confirm dialog"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1642
+#: admin/src/Pages/Login.php:1662
 msgid "Confirm the Google reCAPTCHA to continue."
 msgstr ""
 
@@ -3243,6 +3251,7 @@ msgstr ""
 #: app/src/pages/dashboard/index.vue:723
 #: app/src/pages/settings/index.vue:89
 #: app/src/react/features/dashboard/DashboardPage.tsx:76
+#: app/src/react/features/frontend/FrontendBar.tsx:23
 #: app/src/react/features/settings/categories.ts:20
 #: app/src/react/shell/AppSidebar.tsx:83
 msgid "Dashboard"
@@ -4125,6 +4134,10 @@ msgstr ""
 msgid "Edit items of %s"
 msgstr ""
 
+#: app/src/react/features/frontend/FrontendBar.tsx:24
+msgid "Edit my profile"
+msgstr ""
+
 #: app/src/apps/js/AdminNotices.js:45
 msgid "Edit Notice"
 msgstr ""
@@ -4427,6 +4440,10 @@ msgstr ""
 msgid "Enter the URL to an external font stylesheet (CSS file)"
 msgstr ""
 
+#: app/src/react/features/login/LoginScreen.tsx:107
+msgid "Enter your details to carry on."
+msgstr ""
+
 #: app/src/pages/login/src/login-form-panel.vue:142
 msgid "Enter your email and password to sign in!"
 msgstr ""
@@ -4435,7 +4452,7 @@ msgstr ""
 msgid "Enter your email or username and we will send you a recovery link."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1842
+#: admin/src/Pages/Login.php:1862
 msgid "Enter your email or username to recover your password."
 msgstr ""
 
@@ -4460,8 +4477,8 @@ msgstr ""
 msgid "Enter your SELECT query here..."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1704
-#: admin/src/Pages/Login.php:1752
+#: admin/src/Pages/Login.php:1724
+#: admin/src/Pages/Login.php:1772
 msgid "Enter your username and password to continue."
 msgstr ""
 
@@ -5530,6 +5547,10 @@ msgstr ""
 msgid "Go to"
 msgstr ""
 
+#: app/src/react/features/frontend/FrontendBar.tsx:32
+msgid "Go to the dashboard"
+msgstr ""
+
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:603
 msgid "Google Analytics"
 msgstr ""
@@ -5586,7 +5607,7 @@ msgstr ""
 msgid "Google reCAPTCHA disconnected"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1676
+#: admin/src/Pages/Login.php:1696
 msgid "Google reCAPTCHA validation failed. Please try again."
 msgstr ""
 
@@ -5734,6 +5755,10 @@ msgstr ""
 msgid "Hide the help toggle in the toolbar"
 msgstr ""
 
+#: app/src/react/features/login/LoginScreen.tsx:151
+msgid "Hide the password"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:370
 msgid "Hide the screen options toggle in the toolbar"
 msgstr ""
@@ -5839,6 +5864,10 @@ msgstr ""
 #: app/src/components/utility/image-editor/index.vue:1619
 #: app/src/react/features/media/ImageEditor.tsx:27
 msgid "Hue"
+msgstr ""
+
+#: app/src/react/features/login/LoginScreen.tsx:188
+msgid "I forgot my password"
 msgstr ""
 
 #: app/src/components/utility/remote-site-select/index.vue:219
@@ -6325,7 +6354,7 @@ msgstr ""
 msgid "Invalid security token. Please refresh the page and try again."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1727
+#: admin/src/Pages/Login.php:1747
 msgid "Invalid session. Please reload the page and try again."
 msgstr ""
 
@@ -6361,7 +6390,7 @@ msgstr ""
 msgid "Invalid URL"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1700
+#: admin/src/Pages/Login.php:1720
 msgid "Invalid username or password."
 msgstr ""
 
@@ -6545,6 +6574,10 @@ msgstr ""
 
 #: app/src/pages/login/src/login-form-panel.vue:220
 msgid "Keep me logged in"
+msgstr ""
+
+#: app/src/react/features/login/LoginScreen.tsx:159
+msgid "Keep me signed in"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:735
@@ -7031,6 +7064,7 @@ msgstr ""
 msgid "Log Level"
 msgstr ""
 
+#: app/src/react/features/frontend/FrontendBar.tsx:26
 #: app/src/react/shell/AppToolbar.tsx:69
 msgid "Log out"
 msgstr ""
@@ -7052,7 +7086,7 @@ msgstr ""
 msgid "Login path"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1823
+#: admin/src/Pages/Login.php:1843
 msgid "Login successful."
 msgstr ""
 
@@ -9189,6 +9223,7 @@ msgstr ""
 #: app/src/pages/users/src/user-import.vue:55
 #: app/src/pages/users/src/user-list-view.vue:1147
 #: app/src/pages/users/src/user-list-view.vue:1299
+#: app/src/react/features/login/LoginScreen.tsx:141
 #: app/src/react/features/users/ImportUsersModal.tsx:20
 #: app/src/react/features/users/UserModals.tsx:76
 #: app/src/react/features/users/UserModals.tsx:83
@@ -10704,6 +10739,10 @@ msgstr ""
 msgid "Reset to defaults"
 msgstr ""
 
+#: app/src/react/features/login/LoginScreen.tsx:105
+msgid "Reset your password"
+msgstr ""
+
 #: app/src/react/features/settings/SettingsScreen.tsx:193
 msgid "Resetting puts every setting back to how the plugin ships, for everyone."
 msgstr ""
@@ -11659,6 +11698,10 @@ msgstr ""
 msgid "Send recovery link"
 msgstr ""
 
+#: app/src/react/features/login/LoginScreen.tsx:179
+msgid "Send the link"
+msgstr ""
+
 #: app/src/pages/orders/src/OrderNotes.vue:80
 #: app/src/react/features/orders/OrderNotes.tsx:98
 msgid "Send to customer"
@@ -11674,7 +11717,7 @@ msgstr ""
 msgid "Send welcome email to new users"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1598
+#: admin/src/Pages/Login.php:1618
 msgid "Senha redefinida com sucesso. Faça login para continuar."
 msgstr ""
 
@@ -11985,6 +12028,10 @@ msgstr ""
 msgid "Show password"
 msgstr ""
 
+#: app/src/react/features/login/LoginScreen.tsx:151
+msgid "Show the password"
+msgstr ""
+
 #: app/src/react/features/notices/NoticeEditor.tsx:178
 msgid "Show this notice"
 msgstr ""
@@ -12020,6 +12067,11 @@ msgstr ""
 
 #: app/src/pages/posts/index.vue:729
 msgid "Sidebar View"
+msgstr ""
+
+#: app/src/react/features/login/LoginScreen.tsx:105
+#: app/src/react/features/login/LoginScreen.tsx:179
+msgid "Sign in"
 msgstr ""
 
 #: app/src/pages/login/src/login-form-panel.vue:139
@@ -12390,7 +12442,7 @@ msgstr ""
 msgid "Stylesheet address"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1591
+#: admin/src/Pages/Login.php:1611
 msgid "Sua sessão foi encerrada."
 msgstr ""
 
@@ -12568,6 +12620,10 @@ msgstr ""
 #: app/src/react/features/orders/OrderDetails.tsx:396
 #: app/src/react/features/orders/OrderPreview.tsx:125
 msgid "Taxes"
+msgstr ""
+
+#: app/src/react/features/login/LoginScreen.tsx:107
+msgid "Tell us your username or email and we will send you a link."
 msgstr ""
 
 #: app/src/components/utility/image-editor/index.vue:1641
@@ -12788,12 +12844,16 @@ msgstr ""
 msgid "The Rank Math widget has no available modules for this user."
 msgstr ""
 
+#: app/src/react/features/login/useLoginScreen.ts:151
+msgid "The reCAPTCHA could not be loaded."
+msgstr ""
+
 #: app/src/pages/orders/src/RefundModal.vue:77
 #: app/src/react/features/orders/RefundModal.tsx:103
 msgid "The refund amount cannot exceed %s."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1882
+#: admin/src/Pages/Login.php:1902
 msgid "The request could not be completed."
 msgstr ""
 
@@ -13899,6 +13959,14 @@ msgstr ""
 msgid "Use Manage Cards to show the cards you want for this category."
 msgstr ""
 
+#: app/src/react/features/frontend/FrontendBar.tsx:39
+msgid "Use the dark theme"
+msgstr ""
+
+#: app/src/react/features/frontend/FrontendBar.tsx:39
+msgid "Use the light theme"
+msgstr ""
+
 #: app/src/pages/settings/src/settings-config.js:572
 msgid ""
 "Use the modern posts list interface instead of the classic WordPress table "
@@ -14057,6 +14125,11 @@ msgstr ""
 msgid "Username cannot be changed"
 msgstr ""
 
+#: app/src/react/features/login/LoginScreen.tsx:137
+#: app/src/react/features/login/LoginScreen.tsx:163
+msgid "Username or email"
+msgstr ""
+
 #: app/src/react/features/settings/custom/connections.tsx:97
 msgid "Username there"
 msgstr ""
@@ -14159,7 +14232,7 @@ msgstr ""
 msgid "Variations"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1612
+#: admin/src/Pages/Login.php:1632
 msgid "Verifique seu e-mail para ativar a conta."
 msgstr ""
 
@@ -14398,8 +14471,16 @@ msgstr ""
 msgid "Warning: Administrator Role"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1694
-#: admin/src/Pages/Login.php:1709
+#: app/src/react/features/login/useLoginScreen.ts:208
+msgid "We could not sign you in. Check your details and try again."
+msgstr ""
+
+#: app/src/react/features/login/useLoginScreen.ts:232
+msgid "We could not start the password reset. Try again."
+msgstr ""
+
+#: admin/src/Pages/Login.php:1714
+#: admin/src/Pages/Login.php:1729
 msgid "We were unable to authenticate right now. Please try again."
 msgstr ""
 
@@ -14407,7 +14488,7 @@ msgstr ""
 msgid "We were unable to save the Google reCAPTCHA secret key."
 msgstr ""
 
-#: admin/src/Pages/Login.php:1666
+#: admin/src/Pages/Login.php:1686
 msgid "We were unable to validate Google reCAPTCHA at this time. Please try again."
 msgstr ""
 
@@ -14810,7 +14891,11 @@ msgstr ""
 msgid "You're all caught up"
 msgstr ""
 
-#: admin/src/Pages/Login.php:1816
+#: app/src/react/features/frontend/FrontendBar.tsx:47
+msgid "Your account"
+msgstr ""
+
+#: admin/src/Pages/Login.php:1836
 msgid ""
 "Your account is valid, but you do not have access to the administrative "
 "panel."

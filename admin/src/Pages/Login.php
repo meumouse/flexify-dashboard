@@ -1126,6 +1126,26 @@ class Login {
 
 
 	/**
+	 * Get the Vite entry of the login screen.
+	 *
+	 * Both screens post to the same admin-ajax actions, so a site that needs the Vue one back
+	 * can have it from the filter.
+	 *
+	 * @since 4.0.0
+	 * @return string
+	 */
+	private static function get_entry() {
+		/**
+		 * Filter whether the React login screen is used.
+		 *
+		 * @since 4.0.0
+		 * @param bool $enabled Whether the React screen is used.
+		 */
+		return (bool) apply_filters( 'flexify-dashboard/react-login', true ) ? 'react/main/login.tsx' : 'Login.js';
+	}
+
+
+	/**
 	 * Enqueue login styles.
 	 *
 	 * @since 2.0.0
@@ -1142,7 +1162,7 @@ class Login {
 		$plugin_path = dirname( $plugin_base_file );
 		$url = plugins_url( '/', $plugin_base_file );
 
-		$stylesheet_path = Scripts::get_stylesheet_path( 'Login.js' );
+		$stylesheet_path = Scripts::get_stylesheet_path( self::get_entry() );
 
 		if ( $stylesheet_path ) {
 			$style = $url . "app/dist/{$stylesheet_path}";
@@ -1206,7 +1226,7 @@ class Login {
 			return;
 		}
 
-		$script_name = Scripts::get_base_script_path( 'Login.js' );
+		$script_name = Scripts::get_base_script_path( self::get_entry() );
 
 		if ( ! $script_name ) {
 			return;

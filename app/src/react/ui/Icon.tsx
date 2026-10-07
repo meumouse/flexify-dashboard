@@ -1,4 +1,4 @@
-import { useWpData } from '@/react/app/WpDataProvider';
+import { useOptionalWpData } from '@/react/app/WpDataProvider';
 
 /**
  * Renders an icon from `assets/icons` as a CSS mask, so it inherits the current color.
@@ -11,7 +11,8 @@ type Props = {
 };
 
 export const Icon = ({ name, className, title }: Props) => {
-	const { pluginBase } = useWpData();
+	// The login screen has no provider, and the plugin folder is where it always is.
+	const pluginBase = useOptionalWpData()?.pluginBase ?? '/wp-content/plugins/flexify-dashboard/';
 	const source = name.startsWith('data:image') ? name : `${pluginBase}assets/icons/${name}.svg`;
 
 	return (

@@ -115,6 +115,26 @@ class Frontend {
 
 
     /**
+     * Get the Vite entry of the frontend bar.
+     *
+     * Both bars read the same printed data, so a site that needs the Vue one back can have it
+     * from the filter.
+     *
+     * @since 4.0.0
+     * @return string
+     */
+    private static function get_entry() {
+        /**
+         * Filter whether the React frontend bar is used.
+         *
+         * @since 4.0.0
+         * @param bool $enabled Whether the React bar is used.
+         */
+        return (bool) apply_filters( 'flexify-dashboard/react-frontend', true ) ? 'react/main/frontend.tsx' : 'Frontend.js';
+    }
+
+
+    /**
      * Load toolbar scripts and styles.
      *
      * @since 2.0.0
@@ -122,7 +142,7 @@ class Frontend {
      */
     public function load_toolbar_script() {
         self::$plugin_url = plugins_url( 'flexify-dashboard/' );
-        self::$script_name = Scripts::get_base_script_path( 'Frontend.js' );
+        self::$script_name = Scripts::get_base_script_path( self::get_entry() );
 
         if ( empty( self::$script_name ) ) {
             return;
@@ -150,9 +170,11 @@ class Frontend {
             FLEXIFY_DASHBOARD_PLUGIN_PATH . '/languages/'
         );
 
+        $stylesheet = Scripts::get_stylesheet_path( self::get_entry() );
+
         wp_enqueue_style(
             'flexify-dashboard-frontend',
-            self::$plugin_url . 'app/dist/assets/styles/frontend.css',
+            self::$plugin_url . 'app/dist/' . ( $stylesheet ? $stylesheet : 'assets/styles/frontend.css' ),
             array(),
             FLEXIFY_DASHBOARD_VERSION
         );

@@ -42,7 +42,11 @@ export default defineConfig({
 				'database-react': path.resolve(__dirname, 'src/react/main/database.tsx'),
 				'design-system': path.resolve(__dirname, 'src/react/main/design-system.tsx'),
 				frontend: path.resolve(__dirname, 'src/apps/js/Frontend.js'),
+				// React frontend bar; the Vue entry stays as the fallback behind the filter.
+				'frontend-react': path.resolve(__dirname, 'src/react/main/frontend.tsx'),
 				login: path.resolve(__dirname, 'src/apps/js/Login.js'),
+				// React login screen; the Vue entry stays as the fallback behind the filter.
+				'login-react': path.resolve(__dirname, 'src/react/main/login.tsx'),
 				media: path.resolve(__dirname, 'src/apps/js/Media.js'),
 				// React media screen; the Vue entry stays as the fallback behind the filter.
 				'media-react': path.resolve(__dirname, 'src/react/main/media.tsx'),

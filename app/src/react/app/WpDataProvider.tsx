@@ -41,6 +41,15 @@ const useWpContext = (): WpContextValue => {
 /** Site, user and plugin data printed by the admin page. */
 export const useWpData = (): WpData => useWpContext().wp;
 
+/**
+ * The same data where there may be no provider at all.
+ *
+ * The login screen runs for somebody who is not signed in: no REST nonce, no admin data and
+ * none of the providers the admin screens share. A component the kit uses on both — an icon,
+ * for instance — has to work in either.
+ */
+export const useOptionalWpData = (): WpData | null => useContext(WpContext)?.wp ?? null;
+
 /** REST client already configured with the page nonce. */
 export const useRest = (): RestClient => useWpContext().rest;
 

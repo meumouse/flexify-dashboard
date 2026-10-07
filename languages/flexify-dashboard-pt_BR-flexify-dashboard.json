@@ -1072,6 +1072,9 @@
       "Back to sign in": [
         "Voltar para a página de login"
       ],
+      "Back to signing in": [
+        "Voltar para entrar"
+      ],
       "Backend performance": [
         "Desempenho do backend"
       ],
@@ -1293,6 +1296,9 @@
       ],
       "Check updates": [
         "Confira as atualizações"
+      ],
+      "Check your email to carry on resetting your password.": [
+        "Confira seu e-mail para continuar a redefinição da senha."
       ],
       "Check your email to continue the password recovery process.": [
         "Verifique seu e-mail para continuar o processo de recuperação de senha."
@@ -2326,6 +2332,9 @@
       "Edit items of %s": [
         "Editar itens do %s"
       ],
+      "Edit my profile": [
+        "Editar meu perfil"
+      ],
       "Edit order items": [
         "Editar itens do pedido"
       ],
@@ -2523,6 +2532,9 @@
       ],
       "Enter your SELECT query here...": [
         "Insira sua consulta SELECT aqui..."
+      ],
+      "Enter your details to carry on.": [
+        "Informe seus dados para continuar."
       ],
       "Enter your email and password to sign in!": [
         "Digite seu e-mail e senha para entrar!"
@@ -3247,6 +3259,9 @@
       "Go to": [
         "Vá para"
       ],
+      "Go to the dashboard": [
+        "Ir para o painel"
+      ],
       "Google Analytics": [
         "Google Analytics"
       ],
@@ -3385,6 +3400,9 @@
       "Hide the help toggle in the toolbar": [
         "Ocultar a opção de ajuda na barra de ferramentas"
       ],
+      "Hide the password": [
+        "Ocultar a senha"
+      ],
       "Hide the screen options toggle in the toolbar": [
         "Ocultar a opção de alternância das opções de tela na barra de ferramentas"
       ],
@@ -3441,6 +3459,9 @@
       ],
       "I Understand": [
         "Eu entendo"
+      ],
+      "I forgot my password": [
+        "Esqueci minha senha"
       ],
       "ID": [
         "EU IA"
@@ -3873,6 +3894,9 @@
       ],
       "Keep me logged in": [
         "Mantenha-me conectado"
+      ],
+      "Keep me signed in": [
+        "Manter-me conectado"
       ],
       "Keep the same ID and regenerate thumbnails": [
         "Mantenha o mesmo ID e gere novas miniaturas."
@@ -6382,6 +6406,9 @@
       "Reset to defaults": [
         "Restaurar padrões de fábrica"
       ],
+      "Reset your password": [
+        "Redefinir sua senha"
+      ],
       "Resetting puts every setting back to how the plugin ships, for everyone.": [
         "Redefinir devolve todas as configurações ao padrão de fábrica, para todos."
       ],
@@ -6961,6 +6988,9 @@
       "Send recovery link": [
         "Enviar link de recuperação"
       ],
+      "Send the link": [
+        "Enviar o link"
+      ],
       "Send to customer": [
         "Enviar ao cliente"
       ],
@@ -7150,6 +7180,9 @@
       "Show password": [
         "Mostrar senha"
       ],
+      "Show the password": [
+        "Mostrar a senha"
+      ],
       "Show this notice": [
         "Mostrar este aviso"
       ],
@@ -7168,6 +7201,9 @@
       "Shows first in the catalog.": [
         "Aparece primeiro no catálogo."
       ],
+      "Sidebar": [
+        "Barra lateral"
+      ],
       "Sidebar View": [
         "Visualização da barra lateral"
       ],
@@ -7179,6 +7215,9 @@
       ],
       "Sign Out": [
         "Sair"
+      ],
+      "Sign in": [
+        "Entrar"
       ],
       "Sign out": [
         "Sair"
@@ -7203,6 +7242,9 @@
       ],
       "Site URL, username, and application password are required": [
         "É necessário o URL do site, o nome de usuário e a senha do aplicativo."
+      ],
+      "Site address": [
+        "Endereço do site"
       ],
       "Site key": [
         "Chave do site"
@@ -7444,6 +7486,9 @@
       "Taxes": [
         "Impostos"
       ],
+      "Tell us your username or email and we will send you a link.": [
+        "Informe seu usuário ou e-mail e enviaremos um link."
+      ],
       "Temperature": [
         "Temperatura"
       ],
@@ -7599,6 +7644,9 @@
       ],
       "The quick brown fox jumps over the lazy dog": [
         "Um pequeno jabuti xereta viu dez cegonhas felizes"
+      ],
+      "The reCAPTCHA could not be loaded.": [
+        "Não foi possível carregar o reCAPTCHA."
       ],
       "The refund amount cannot exceed %s.": [
         "O valor do reembolso não pode ultrapassar %s."
@@ -8230,6 +8278,12 @@
       "Use image": [
         "Usar imagem"
       ],
+      "Use the dark theme": [
+        "Usar o tema escuro"
+      ],
+      "Use the light theme": [
+        "Usar o tema claro"
+      ],
       "Use the modern posts list interface instead of the classic WordPress table layout.": [
         "Utilize a interface moderna de lista de posts em vez do layout clássico de tabela do WordPress."
       ],
@@ -8325,6 +8379,9 @@
       ],
       "Username cannot be changed": [
         "O nome de usuário não pode ser alterado."
+      ],
+      "Username or email": [
+        "Usuário ou e-mail"
       ],
       "Username there": [
         "Usuário de lá"
@@ -8514,6 +8571,12 @@
       ],
       "Warning: Administrator Role": [
         "Aviso: Função de administrador"
+      ],
+      "We could not sign you in. Check your details and try again.": [
+        "Não foi possível entrar. Confira seus dados e tente novamente."
+      ],
+      "We could not start the password reset. Try again.": [
+        "Não foi possível iniciar a redefinição de senha. Tente novamente."
       ],
       "We were unable to authenticate right now. Please try again.": [
         "Não foi possível autenticar neste momento. Por favor, tente novamente."
@@ -8763,6 +8826,9 @@
       ],
       "You're all caught up": [
         "Você já está por dentro de tudo."
+      ],
+      "Your account": [
+        "Sua conta"
       ],
       "Your account is valid, but you do not have access to the administrative panel.": [
         "Sua conta é válida, mas você não tem acesso ao painel administrativo."

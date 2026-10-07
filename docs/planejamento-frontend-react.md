@@ -482,8 +482,17 @@ Plugins, configurações, activity log, database explorer, editor de papéis, co
 - **Bug corrigido antes de chegar ao site:** o esquema chama um `__` global enquanto é avaliado, e quem instalava esse global era a casca Vue. Uma tela React que não carrega a casca Vue estourava na importação, antes de renderizar qualquer coisa — o harness não mostrava isso porque ele mesmo define o global no HTML. `lib/wp-globals.ts` passa a instalá-lo, importado primeiro nas entradas que carregam JavaScript compartilhado.
 - A tela React fica atrás do filtro `flexify-dashboard/react-settings`, **ligado** por padrão.
 
-### Fase 8 — Login e frontend (M)
+### Fase 8 — Login e frontend (M) · **concluída**
 Tela de login personalizada e scripts do frontend.
+
+**Concluída em 07/10/2026.**
+
+- **A tela de login:** a única tela React que roda para quem não está autenticado. Ela não usa nada do admin — o nome, o logo e as cores do site vêm de um endpoint público pequeno — e fala com o `admin-ajax`, porque quem a usa ainda não tem nonce.
+- As mensagens de erro da tela Vue estavam escritas em português no código, fora do sistema de tradução; na versão React passam pelo `__()` como o resto.
+- **Bug corrigido, encontrado por um teste:** o `Icon` do kit exigia o `WpDataProvider`, que a tela de login não tem. Ela estouraria ao renderizar. `useOptionalWpData()` resolve: o ícone funciona nas duas situações.
+- **A barra do frontend** renderiza dentro de um *shadow root*, como a Vue: nas páginas do site quem manda no CSS é o tema, e um shadow root é a única garantia de que nada dele chega à barra — nem o contrário.
+- As telas React ficam atrás dos filtros `flexify-dashboard/react-login` e `flexify-dashboard/react-frontend`, **ligados** por padrão.
+- O `apps/js/Analytics.js` (script de rastreamento do frontend) **não muda**: é JavaScript puro, sem framework, e continua como está.
 
 ### Fase 9 — Remoção do Vue (M)
 Tirar `vue`, `vue-router`, `pinia`, `reka-ui`, `veaury`, `vue-shadow-dom`, `vue-draggable-next`, `@tiptap/vue-3`, `vue3-apexcharts`, `@vuepic/vue-datepicker`; limpar entradas, código morto e documentação.
