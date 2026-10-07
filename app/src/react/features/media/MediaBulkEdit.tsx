@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRest } from '@/react/app/WpDataProvider';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Button, Field, Input, Modal, Textarea } from '@/react/ui';
+import { Button, Input, Modal, Textarea } from '@/react/ui';
 import { useMediaMutations } from '@/react/features/media/queries';
 
 /**
@@ -54,18 +54,10 @@ export const MediaBulkEdit = ({ open, onClose, ids, onDone }: Props) => {
 			}
 		>
 			<div className="flex flex-col gap-4">
-				<Field label={__('Title')}>
-					<Input value={form.title} onChange={(event) => setForm({ ...form, title: event.target.value })} />
-				</Field>
-				<Field label={__('Alternative text')} hint={__('What the file shows, for people who cannot see it.')}>
-					<Input value={form.alt_text} onChange={(event) => setForm({ ...form, alt_text: event.target.value })} />
-				</Field>
-				<Field label={__('Caption')}>
-					<Input value={form.caption} onChange={(event) => setForm({ ...form, caption: event.target.value })} />
-				</Field>
-				<Field label={__('Description')}>
-					<Textarea rows={3} value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} />
-				</Field>
+				<Input value={form.title} onChange={(event) => setForm({ ...form, title: event.target.value })} label={__('Title')} />
+				<Input value={form.alt_text} onChange={(event) => setForm({ ...form, alt_text: event.target.value })} label={__('Alternative text')} hint={__('What the file shows, for people who cannot see it.')} />
+				<Input value={form.caption} onChange={(event) => setForm({ ...form, caption: event.target.value })} label={__('Caption')} />
+				<Textarea rows={3} value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} label={__('Description')} />
 			</div>
 		</Modal>
 	);

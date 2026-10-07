@@ -120,9 +120,7 @@ export const NoticeEditor = () => {
 				<div className="flex flex-col gap-6 lg:col-span-2">
 					<Card>
 						<div className="flex flex-col gap-4">
-							<Field label={__('Title')} required>
-								<Input value={draft.title} onChange={(event) => setDraft({ ...draft, title: event.target.value })} />
-							</Field>
+							<Input value={draft.title} onChange={(event) => setDraft({ ...draft, title: event.target.value })} label={__('Title')} />
 
 							<Field label={__('Message')}>
 								<RichText value={draft.content} onChange={(content) => setDraft({ ...draft, content })} />

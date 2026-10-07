@@ -78,14 +78,11 @@ export const BatchEditModal = ({ open, onClose, posts, onDone }: Props) => {
 			}
 		>
 			<div className="flex flex-col gap-4">
-				<Field label={__('Status')}>
-					<Select
+				<Select
 						value={status}
 						placeholder={__('Leave unchanged')}
 						options={statuses.map((item) => ({ value: item.value, label: item.label }))}
-						onChange={(event) => setStatus(event.target.value)}
-					/>
-				</Field>
+						onChange={(event) => setStatus(event.target.value)} label={__('Status')} />
 
 				<Field label={__('Author')}>
 					<EntityPicker endpoint="wp/v2/users" toItem={userItem} value={author} onChange={setAuthor} multiple={false} placeholder={__('Leave unchanged')} params={{ who: 'authors' }} />

@@ -85,7 +85,7 @@ export const EntityPicker = ({ endpoint, toItem, value, onChange, multiple = tru
 			className="w-72"
 			trigger={
 				trigger ?? (
-					<Button variant="outline" size="sm" disabled={disabled} className={cn('w-full justify-between font-normal', className)}>
+					<Button variant="outline" size="sm" disabled={disabled} aria-label={placeholder} className={cn('w-full justify-between font-normal', className)}>
 						<span className={cn('truncate', !chosen.length && 'text-gray-400 dark:text-gray-500')}>{label}</span>
 						<Icon name="expand_more" className="shrink-0 text-base" />
 					</Button>

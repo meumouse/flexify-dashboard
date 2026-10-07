@@ -67,6 +67,26 @@ class RoleEditorPage {
 
 
 	/**
+	 * Get the Vite entry of the role editor.
+	 *
+	 * Both screens edit roles through the same routes, so a site that needs the Vue one back
+	 * can have it from the filter.
+	 *
+	 * @since 4.0.0
+	 * @return string
+	 */
+	private static function get_entry() {
+		/**
+		 * Filter whether the React role editor is used.
+		 *
+		 * @since 4.0.0
+		 * @param bool $enabled Whether the React screen is used.
+		 */
+		return (bool) apply_filters( 'flexify-dashboard/react-role-editor', true ) ? 'react/main/role-editor.tsx' : 'RoleEditor.js';
+	}
+
+
+	/**
 	 * Load role editor styles.
 	 *
 	 * @since 2.0.0
@@ -74,7 +94,8 @@ class RoleEditorPage {
 	 */
 	public static function load_styles() {
 		$base_url   = plugins_url( 'flexify-dashboard/' );
-		$style_path = $base_url . 'app/dist/assets/styles/role-editor.css';
+		$stylesheet = Scripts::get_stylesheet_path( self::get_entry() );
+		$style_path = $base_url . 'app/dist/' . ( $stylesheet ? $stylesheet : 'assets/styles/role-editor.css' );
 
 		wp_enqueue_style( 'flexify-dashboard-role-editor', $style_path, array(), FLEXIFY_DASHBOARD_VERSION );
 
@@ -97,7 +118,7 @@ class RoleEditorPage {
 	 */
 	public static function load_scripts() {
 		$base_url    = plugins_url( 'flexify-dashboard/' );
-		$script_name = Scripts::get_base_script_path( 'RoleEditor.js' );
+		$script_name = Scripts::get_base_script_path( self::get_entry() );
 
 		if ( empty( $script_name ) ) {
 			return;

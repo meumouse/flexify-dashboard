@@ -3,7 +3,7 @@ import { parseCSV } from '@/assets/js/functions/parseCSV.js';
 import { useRest } from '@/react/app/WpDataProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Alert, Button, Field, Icon, Modal, Select, Switch } from '@/react/ui';
+import { Alert, Button, Icon, Modal, Select, Switch } from '@/react/ui';
 import { generatePassword } from '@/react/features/users/UserModals';
 import type { Role } from '@/react/features/users/queries';
 
@@ -261,9 +261,7 @@ export const ImportUsersModal = ({ open, onClose, roles, onDone }: Props) => {
 					<Switch checked={useFileRoles} onCheckedChange={setUseFileRoles} label={__('Use the roles in the file')} />
 
 					{!useFileRoles ? (
-						<Field label={__('Role for everyone imported')}>
-							<Select value={role} options={roles.map((item) => ({ value: item.slug, label: item.name }))} onChange={(event) => setRole(event.target.value)} />
-						</Field>
+						<Select value={role} options={roles.map((item) => ({ value: item.slug, label: item.name }))} onChange={(event) => setRole(event.target.value)} label={__('Role for everyone imported')} />
 					) : null}
 				</div>
 			)}

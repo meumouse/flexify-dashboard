@@ -5,7 +5,7 @@ import { useUnsavedChanges } from '@/react/hooks/useUnsavedChanges';
 import { cn } from '@/react/lib/cn';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __ } from '@/react/lib/i18n';
-import { Badge, Button, Card, Checkbox, Field, Icon, Input, Skeleton, Textarea } from '@/react/ui';
+import { Badge, Button, Card, Checkbox, Icon, Input, Skeleton, Textarea } from '@/react/ui';
 import { useRoles, useUserMutations, type User } from '@/react/features/users/queries';
 
 /**
@@ -57,24 +57,12 @@ export const DetailsPanel = ({ user }: PanelProps) => {
 		<div className="grid gap-6 lg:grid-cols-3">
 			<Card title={__('Profile')} className="lg:col-span-2">
 				<div className="grid gap-4 sm:grid-cols-2">
-					<Field label={__('First name')}>
-						<Input value={form.first_name} onChange={(event) => setForm({ ...form, first_name: event.target.value })} />
-					</Field>
-					<Field label={__('Last name')}>
-						<Input value={form.last_name} onChange={(event) => setForm({ ...form, last_name: event.target.value })} />
-					</Field>
-					<Field label={__('Display name')}>
-						<Input value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} />
-					</Field>
-					<Field label={__('Email')}>
-						<Input type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} />
-					</Field>
-					<Field label={__('Website')} className="sm:col-span-2">
-						<Input type="url" value={form.url} onChange={(event) => setForm({ ...form, url: event.target.value })} />
-					</Field>
-					<Field label={__('Biography')} className="sm:col-span-2">
-						<Textarea rows={4} value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} />
-					</Field>
+					<Input value={form.first_name} onChange={(event) => setForm({ ...form, first_name: event.target.value })} label={__('First name')} />
+					<Input value={form.last_name} onChange={(event) => setForm({ ...form, last_name: event.target.value })} label={__('Last name')} />
+					<Input value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} label={__('Display name')} />
+					<Input type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} label={__('Email')} />
+					<Input type="url" value={form.url} onChange={(event) => setForm({ ...form, url: event.target.value })} label={__('Website')} />
+					<Textarea rows={4} value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} label={__('Biography')} />
 				</div>
 
 				<div className="mt-5 flex justify-end">

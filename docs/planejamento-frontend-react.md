@@ -458,6 +458,14 @@ Plugins, configurações, activity log, database explorer, editor de papéis, co
 - A busca no diretório fala direto com a api.wordpress.org, do navegador. É público e não leva nada deste site além do que foi digitado — e a tela diz isso, em vez de deixar a pessoa adivinhar.
 - Um plugin do diretório é identificado pela pasta; um site o tem instalado como `pasta/arquivo.php`. É assim que a tela sabe que o resultado da busca já está instalado.
 
+**Parte 3 — banco de dados e funções (concluída em 07/10/2026):** as duas telas que podem trancar um site.
+
+- O explorador só lê: o servidor aceita apenas `SELECT` e limita as linhas. A tela diz isso antes de enviar, em vez de deixar a pessoa descobrir pelo erro.
+- Apagar uma tabela pede o nome digitado **e** a senha de novo. Nada disso se desfaz, e uma aba logada aberta não é prova de que quem está no teclado quis fazer isso.
+- O editor de funções mostra as permissões nos grupos que o endpoint já separa, e avisa em cima da função de administrador: tirar permissões dela tranca todo mundo fora de partes do site — inclusive dessa tela.
+- As telas React ficam atrás dos filtros `flexify-dashboard/react-database` e `flexify-dashboard/react-role-editor`, **ligados** por padrão.
+- **Correção de acessibilidade em todas as telas desta migração:** os campos estavam dentro de um `<Field label>`, que desenha o rótulo mas não o associa ao campo — para um leitor de tela eles não tinham nome nenhum. O `Input`, o `Select` e o `Textarea` têm `label` próprio, que faz a associação; o `Field` ficou só para o que não é campo (um seletor, um editor de texto), com `aria-label` onde é preciso. Um teste encontrou isso.
+
 ### Fase 8 — Login e frontend (M)
 Tela de login personalizada e scripts do frontend.
 

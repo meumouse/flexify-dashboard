@@ -5,7 +5,7 @@ import { useNotify } from '@/react/app/ToastProvider';
 import { useUnsavedChanges } from '@/react/hooks/useUnsavedChanges';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Button, Card, Field, Icon, Input, PageHeader, Select, Skeleton, Textarea } from '@/react/ui';
+import { Button, Card, Icon, Input, PageHeader, Select, Skeleton, Textarea } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
 import { iconFor } from '@/react/features/media/MediaGrid';
 import { fileNameOf, formatBytes, useMediaItem, useMediaMutations, useMediaUsage, type MediaItem } from '@/react/features/media/queries';
@@ -182,20 +182,12 @@ export const MediaDetails = () => {
 
 					<Card title={__('Details')}>
 						<div className="flex flex-col gap-4">
-							<Field label={__('Title')}>
-								<Input value={draft.title} onChange={(event) => setDraft({ ...draft, title: event.target.value })} />
-							</Field>
+							<Input value={draft.title} onChange={(event) => setDraft({ ...draft, title: event.target.value })} label={__('Title')} />
 							{isImage ? (
-								<Field label={__('Alternative text')} hint={__('What the image shows, for people who cannot see it.')}>
-									<Input value={draft.alt_text} onChange={(event) => setDraft({ ...draft, alt_text: event.target.value })} />
-								</Field>
+								<Input value={draft.alt_text} onChange={(event) => setDraft({ ...draft, alt_text: event.target.value })} label={__('Alternative text')} hint={__('What the image shows, for people who cannot see it.')} />
 							) : null}
-							<Field label={__('Caption')}>
-								<Input value={draft.caption} onChange={(event) => setDraft({ ...draft, caption: event.target.value })} />
-							</Field>
-							<Field label={__('Description')}>
-								<Textarea rows={4} value={draft.description} onChange={(event) => setDraft({ ...draft, description: event.target.value })} />
-							</Field>
+							<Input value={draft.caption} onChange={(event) => setDraft({ ...draft, caption: event.target.value })} label={__('Caption')} />
+							<Textarea rows={4} value={draft.description} onChange={(event) => setDraft({ ...draft, description: event.target.value })} label={__('Description')} />
 						</div>
 					</Card>
 				</div>

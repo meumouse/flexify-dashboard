@@ -69,13 +69,9 @@ export const CreateUserModal = ({ open, onClose, roles, onCreated }: CreateProps
 			}
 		>
 			<div className="flex flex-col gap-4">
-				<Field label={__('Username')} required>
-					<Input value={form.username} onChange={(event) => setForm({ ...form, username: event.target.value })} autoComplete="off" />
-				</Field>
+				<Input value={form.username} onChange={(event) => setForm({ ...form, username: event.target.value })} autoComplete="off" label={__('Username')} />
 
-				<Field label={__('Email')} required>
-					<Input type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} autoComplete="off" />
-				</Field>
+				<Input type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} autoComplete="off" label={__('Email')} />
 
 				<Field label={__('Password')} required hint={__('The user can change it after signing in.')}>
 					<div className="flex items-center gap-2">
@@ -84,6 +80,7 @@ export const CreateUserModal = ({ open, onClose, roles, onCreated }: CreateProps
 							value={form.password}
 							onChange={(event) => setForm({ ...form, password: event.target.value })}
 							autoComplete="new-password"
+							aria-label={__('Password')}
 							className="flex-1"
 						/>
 						<Button variant="outline" size="sm" iconOnly icon={visible ? 'visibility_off' : 'visibility'} onClick={() => setVisible(!visible)} aria-label={__('Show password')} />
@@ -93,25 +90,16 @@ export const CreateUserModal = ({ open, onClose, roles, onCreated }: CreateProps
 					</div>
 				</Field>
 
-				<Field label={__('Display name')}>
-					<Input value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} />
-				</Field>
+				<Input value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} label={__('Display name')} />
 
-				<Field label={__('Role')}>
-					<Select
+				<Select
 						value={form.role}
 						options={roles.map((role) => ({ value: role.slug, label: role.name }))}
-						onChange={(event) => setForm({ ...form, role: event.target.value })}
-					/>
-				</Field>
+						onChange={(event) => setForm({ ...form, role: event.target.value })} label={__('Role')} />
 
-				<Field label={__('Website')}>
-					<Input type="url" value={form.url} onChange={(event) => setForm({ ...form, url: event.target.value })} />
-				</Field>
+				<Input type="url" value={form.url} onChange={(event) => setForm({ ...form, url: event.target.value })} label={__('Website')} />
 
-				<Field label={__('Biography')}>
-					<Textarea rows={3} value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} />
-				</Field>
+				<Textarea rows={3} value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} label={__('Biography')} />
 			</div>
 		</Modal>
 	);
@@ -171,14 +159,11 @@ export const BulkEditUsersModal = ({ open, onClose, ids, roles, onDone }: BulkPr
 			}
 		>
 			<div className="flex flex-col gap-4">
-				<Field label={__('Role')}>
-					<Select
+				<Select
 						value={role}
 						placeholder={__('Leave unchanged')}
 						options={roles.map((item) => ({ value: item.slug, label: item.name }))}
-						onChange={(event) => setRole(event.target.value)}
-					/>
-				</Field>
+						onChange={(event) => setRole(event.target.value)} label={__('Role')} />
 
 				<Switch checked={replaceBio} onCheckedChange={setReplaceBio} label={__('Replace the biography')} />
 

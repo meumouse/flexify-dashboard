@@ -4,7 +4,7 @@ import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useUnsavedChanges } from '@/react/hooks/useUnsavedChanges';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __ } from '@/react/lib/i18n';
-import { Avatar, Button, Card, Field, Input, PageHeader, Select, Skeleton, Textarea } from '@/react/ui';
+import { Avatar, Button, Card, Input, PageHeader, Select, Skeleton, Textarea } from '@/react/ui';
 import { STATUS_LABELS, postOf, useComment, useCommentMutations } from '@/react/features/comments/queries';
 
 /**
@@ -108,9 +108,7 @@ export const CommentDetails = () => {
 
 			<div className="grid gap-6 lg:grid-cols-3">
 				<Card className="lg:col-span-2">
-					<Field label={__('Comment')}>
-						<Textarea rows={8} value={draft.content} onChange={(event) => setDraft({ ...draft, content: event.target.value })} />
-					</Field>
+					<Textarea rows={8} value={draft.content} onChange={(event) => setDraft({ ...draft, content: event.target.value })} label={__('Comment')} />
 				</Card>
 
 				<div className="flex flex-col gap-6">
@@ -124,27 +122,18 @@ export const CommentDetails = () => {
 						</div>
 
 						<div className="flex flex-col gap-4">
-							<Field label={__('Name')}>
-								<Input value={draft.author_name} onChange={(event) => setDraft({ ...draft, author_name: event.target.value })} />
-							</Field>
-							<Field label={__('Email')}>
-								<Input type="email" value={draft.author_email} onChange={(event) => setDraft({ ...draft, author_email: event.target.value })} />
-							</Field>
-							<Field label={__('Website')}>
-								<Input type="url" value={draft.author_url} onChange={(event) => setDraft({ ...draft, author_url: event.target.value })} />
-							</Field>
+							<Input value={draft.author_name} onChange={(event) => setDraft({ ...draft, author_name: event.target.value })} label={__('Name')} />
+							<Input type="email" value={draft.author_email} onChange={(event) => setDraft({ ...draft, author_email: event.target.value })} label={__('Email')} />
+							<Input type="url" value={draft.author_url} onChange={(event) => setDraft({ ...draft, author_url: event.target.value })} label={__('Website')} />
 						</div>
 					</Card>
 
 					<Card title={__('Moderation')}>
 						<div className="flex flex-col gap-4">
-							<Field label={__('Status')}>
-								<Select
+							<Select
 									value={draft.status}
 									options={Object.entries(labels).map(([value, label]) => ({ value, label }))}
-									onChange={(event) => setDraft({ ...draft, status: event.target.value })}
-								/>
-							</Field>
+									onChange={(event) => setDraft({ ...draft, status: event.target.value })} label={__('Status')} />
 
 							<div>
 								<p className="mb-1 text-theme-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{__('In reply to')}</p>

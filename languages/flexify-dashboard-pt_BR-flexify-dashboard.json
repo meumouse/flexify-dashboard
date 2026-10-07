@@ -7,6 +7,9 @@
         "lang": "pt_BR",
         "plural-forms": "nplurals=2; plural=(n != 1);"
       },
+      "%1$d user(s) have the role %2$s. They keep their account but lose what the role allowed.": [
+        "%1$d usuário(s) têm a função %2$s. Eles mantêm a conta, mas perdem o que a função permitia."
+      ],
       "%1$s (#%2$s)": [
         "%1$s (#%2$s)"
       ],
@@ -18,6 +21,9 @@
       ],
       "%1$s of %2$s failed.": [
         "%1$s de %2$s falharam."
+      ],
+      "%1$s rows · %2$s": [
+        "%1$s linhas · %2$s"
       ],
       "%d available": [
         "%d disponível(is)"
@@ -157,6 +163,9 @@
       "%s ago": [
         "%s atrás"
       ],
+      "%s and everything in it will be gone.": [
+        "%s e tudo o que há nela serão apagados."
+      ],
       "%s and its files are removed from the site. Anything it stored in the database may stay behind.": [
         "%s e seus arquivos serão removidos do site. O que ele guardou no banco de dados pode permanecer."
       ],
@@ -217,6 +226,9 @@
       "%s reverted to draft.": [
         "%s voltou ao estado de rascunho."
       ],
+      "%s row(s)": [
+        "%s linha(s)"
+      ],
       "%s scheduled.": [
         "%s agendado."
       ],
@@ -225,6 +237,9 @@
       ],
       "%s sold": [
         "%s vendidos"
+      ],
+      "%s table(s)": [
+        "%s tabela(s)"
       ],
       "%s updated.": [
         "%s atualizado."
@@ -301,6 +316,9 @@
       "A percentage discount cannot be higher than 100.": [
         "Um desconto percentual não pode ser maior que 100."
       ],
+      "A role is a set of things an account may do.": [
+        "Uma função é um conjunto de coisas que uma conta pode fazer."
+      ],
       "A role with this slug already exists.": [
         "Já existe uma vaga para esse tipo de personagem."
       ],
@@ -309,6 +327,9 @@
       ],
       "A short summary shown next to the product image…": [
         "Um resumo curto exibido ao lado da imagem do produto…"
+      ],
+      "A table cannot be brought back. Make sure you have a backup.": [
+        "Uma tabela não pode ser recuperada. Garanta que você tem um backup."
       ],
       "A username column and an email column are needed.": [
         "É preciso uma coluna de nome de usuário e uma de e-mail."
@@ -424,6 +445,9 @@
       "Add a note about this order…": [
         "Adicione uma nota sobre este pedido…"
       ],
+      "Add a role": [
+        "Adicionar uma função"
+      ],
       "Add a user": [
         "Adicionar um usuário"
       ],
@@ -484,6 +508,9 @@
       "Add product": [
         "Adicionar produto"
       ],
+      "Add role": [
+        "Adicionar função"
+      ],
       "Add roles...": [
         "Adicionar funções..."
       ],
@@ -513,6 +540,9 @@
       ],
       "Add your Mapbox API key in Settings > Integrations to enable the Analytics Map card.": [
         "Adicione sua chave de API do Mapbox em Configurações > Integrações para ativar o cartão de mapa do Analytics."
+      ],
+      "Added here": [
+        "Adicionada aqui"
       ],
       "Address line 1": [
         "Endereço"
@@ -832,6 +862,9 @@
       "Ascending": [
         "Ascendente"
       ],
+      "Asked again because this cannot be undone.": [
+        "Pedida novamente porque não há como desfazer."
+      ],
       "Aspect Ratio": [
         "Proporção da tela"
       ],
@@ -1105,6 +1138,9 @@
       "Cannot delete role. There are %d user(s) with this role. Please reassign users to another role first.": [
         "Não é possível excluir a função. Existem %d usuários com essa função. Por favor, reatribua os usuários a outra função primeiro."
       ],
+      "Capabilities": [
+        "Permissões"
+      ],
       "Capabilities must be an array.": [
         "As capacidades devem ser uma matriz."
       ],
@@ -1191,6 +1227,9 @@
       ],
       "Choose a name for your custom font family": [
         "Escolha um nome para sua família de fontes personalizada."
+      ],
+      "Choose a table to look inside it.": [
+        "Escolha uma tabela para ver o que há nela."
       ],
       "Choose a user": [
         "Escolha um usuário"
@@ -1837,8 +1876,14 @@
       "Delete selected": [
         "Excluir selecionados"
       ],
+      "Delete table": [
+        "Excluir tabela"
+      ],
       "Delete tags?": [
         "Excluir tags?"
+      ],
+      "Delete the table": [
+        "Excluir a tabela"
       ],
       "Delete their content too": [
         "Excluir também o conteúdo"
@@ -1857,6 +1902,12 @@
       ],
       "Delete this plugin?": [
         "Excluir este plugin?"
+      ],
+      "Delete this role?": [
+        "Excluir esta função?"
+      ],
+      "Delete this table?": [
+        "Excluir esta tabela?"
       ],
       "Delete value": [
         "Excluir valor"
@@ -2205,6 +2256,9 @@
       ],
       "Email or username": [
         "E-mail ou nome de usuário"
+      ],
+      "Empty allowed": [
+        "Aceita vazio"
       ],
       "Empty and loading states": [
         "Estados vazio e de carregamento"
@@ -3207,6 +3261,9 @@
       ],
       "Hover": [
         "Passar o cursor"
+      ],
+      "How WordPress stores it. It cannot be changed later.": [
+        "Como o WordPress a guarda. Não pode ser alterado depois."
       ],
       "How it will look": [
         "Como vai aparecer"
@@ -4462,6 +4519,9 @@
       "No capabilities found": [
         "Nenhuma funcionalidade encontrada"
       ],
+      "No capability matches that.": [
+        "Nenhuma permissão corresponde a isso."
+      ],
       "No cards here yet": [
         "Nenhum cartão aqui ainda"
       ],
@@ -4476,6 +4536,9 @@
       ],
       "No categories found.": [
         "Nenhuma categoria encontrada."
+      ],
+      "No columns": [
+        "Nenhuma coluna"
       ],
       "No comments found": [
         "Nenhum comentário encontrado"
@@ -4588,6 +4651,9 @@
       "No older orders": [
         "Nenhum pedido mais antigo"
       ],
+      "No one has this role, so nothing changes for anybody.": [
+        "Ninguém tem esta função, então nada muda para ninguém."
+      ],
       "No orders in the selected period.": [
         "Não há pedidos no período selecionado."
       ],
@@ -4678,11 +4744,17 @@
       "No role": [
         "Sem função"
       ],
+      "No roles": [
+        "Nenhuma função"
+      ],
       "No roles available": [
         "Não há vagas disponíveis."
       ],
       "No roles found": [
         "Nenhuma vaga encontrada"
+      ],
+      "No rows": [
+        "Nenhuma linha"
       ],
       "No settings found": [
         "Nenhuma configuração encontrada"
@@ -4924,8 +4996,14 @@
       "Only %s": [
         "Somente %s"
       ],
+      "Only SELECT is allowed.": [
+        "Apenas SELECT é permitido."
+      ],
       "Only SELECT queries are allowed for safety.": [
         "Somente consultas SELECT são permitidas por motivos de segurança."
+      ],
+      "Only SELECT runs here, and the server caps how many rows come back.": [
+        "Apenas SELECT roda aqui, e o servidor limita quantas linhas voltam."
       ],
       "Only images can be edited": [
         "Somente imagens podem ser editadas."
@@ -5638,6 +5716,9 @@
       "Queries": [
         "Consultas"
       ],
+      "Query": [
+        "Consulta"
+      ],
       "Query History": [
         "Histórico de consultas"
       ],
@@ -6109,11 +6190,17 @@
       "Role capabilities updated successfully.": [
         "Atribuições da função atualizadas com sucesso."
       ],
+      "Role created": [
+        "Função criada"
+      ],
       "Role created successfully": [
         "Função criada com sucesso"
       ],
       "Role created successfully.": [
         "Função criada com sucesso."
+      ],
+      "Role deleted": [
+        "Função excluída"
       ],
       "Role deleted successfully": [
         "Função excluída com sucesso"
@@ -6148,6 +6235,9 @@
       "Role not found.": [
         "Função não encontrada."
       ],
+      "Role renamed": [
+        "Função renomeada"
+      ],
       "Role slug can only contain lowercase letters, numbers, hyphens, and underscores.": [
         "O cabeçalho da função só pode conter letras minúsculas, números, hífens e sublinhados."
       ],
@@ -6160,6 +6250,9 @@
       "Role slug too long": [
         "Função slug muito longa"
       ],
+      "Role updated": [
+        "Função atualizada"
+      ],
       "Roles": [
         "Funções"
       ],
@@ -6171,6 +6264,12 @@
       ],
       "Row %1$s: %2$s": [
         "Linha %1$s: %2$s"
+      ],
+      "Rows": [
+        "Linhas"
+      ],
+      "Run": [
+        "Executar"
       ],
       "SEO insights mirrored from the Rank Math dashboard widget.": [
         "Informações de SEO reproduzidas a partir do widget do painel do Rank Math."
@@ -6298,6 +6397,9 @@
       "Search by name or SKU": [
         "Buscar por nome ou SKU"
       ],
+      "Search capabilities": [
+        "Pesquisar permissões"
+      ],
       "Search capabilities...": [
         "Recursos de pesquisa..."
       ],
@@ -6408,6 +6510,9 @@
       ],
       "Search table data...": [
         "Pesquisar dados da tabela..."
+      ],
+      "Search tables": [
+        "Pesquisar tabelas"
       ],
       "Search tables...": [
         "Pesquisar tabelas..."
@@ -6997,6 +7102,9 @@
       "Table View": [
         "Visualização em tabela"
       ],
+      "Table deleted": [
+        "Tabela excluída"
+      ],
       "Table deleted successfully": [
         "Tabela excluída com sucesso"
       ],
@@ -7032,6 +7140,9 @@
       ],
       "Tags updated": [
         "Tags atualizadas"
+      ],
+      "Taking capabilities away from it can lock everyone out of parts of the site, including this screen.": [
+        "Tirar permissões dela pode trancar todo mundo fora de partes do site, inclusive desta tela."
       ],
       "Target Roles": [
         "Funções-alvo"
@@ -7249,6 +7360,9 @@
       "This image could not be opened for editing.": [
         "Não foi possível abrir esta imagem para edição."
       ],
+      "This is the administrator role.": [
+        "Esta é a função de administrador."
+      ],
       "This is the number of pageviews carried out by visitors from Search Engines.": [
         "Este é o número de visualizações de página realizadas por visitantes provenientes de mecanismos de busca."
       ],
@@ -7290,6 +7404,9 @@
       ],
       "This product type is managed by an extension": [
         "Este tipo de produto é gerenciado por uma extensão"
+      ],
+      "This role could not be loaded.": [
+        "Não foi possível carregar esta função."
       ],
       "This site URL already exists": [
         "Este site já existe."
@@ -7542,6 +7659,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Type %s to confirm": [
+        "Digite %s para confirmar"
       ],
       "Type of analytics stats to retrieve": [
         "Tipo de estatísticas analíticas a serem obtidas"
@@ -8089,6 +8209,9 @@
       "What changed": [
         "O que mudou"
       ],
+      "What each kind of account on this site is allowed to do.": [
+        "O que cada tipo de conta deste site pode fazer."
+      ],
       "What happened": [
         "O que aconteceu"
       ],
@@ -8097,6 +8220,9 @@
       ],
       "What is queued to go out": [
         "O que está na fila para publicar"
+      ],
+      "What people see, for example \"Shop manager\".": [
+        "O que as pessoas veem, por exemplo \"Gerente da loja\"."
       ],
       "What the file shows, for people who cannot see it.": [
         "O que o arquivo mostra, para quem não pode vê-lo."
@@ -8172,6 +8298,9 @@
       ],
       "WordPress core tables cannot be deleted.": [
         "As tabelas principais do WordPress não podem ser excluídas."
+      ],
+      "WordPress table": [
+        "Tabela do WordPress"
       ],
       "Would you like to keep this fix permanently or remove it?": [
         "Deseja manter essa correção permanentemente ou removê-la?"
@@ -8277,6 +8406,9 @@
       ],
       "Your license key:": [
         "Sua chave de licença:"
+      ],
+      "Your password": [
+        "Sua senha"
       ],
       "ZIP functionality is not available on this server.": [
         "A funcionalidade ZIP não está disponível neste servidor."

@@ -33,10 +33,10 @@ msgid "(no title)"
 msgstr ""
 
 #: admin/src/Rest/PostsTables.php:716
-#: app/src/react/features/comments/CommentDetails.tsx:153
+#: app/src/react/features/comments/CommentDetails.tsx:142
 #: app/src/react/features/comments/CommentsList.tsx:127
 #: app/src/react/features/notices/NoticeEditor.tsx:103
-#: app/src/react/features/notices/NoticeEditor.tsx:135
+#: app/src/react/features/notices/NoticeEditor.tsx:133
 #: app/src/react/features/notices/NoticesList.tsx:54
 #: app/src/react/features/posts/PostCells.tsx:194
 #: app/src/react/features/posts/PostPreview.tsx:31
@@ -48,6 +48,12 @@ msgstr ""
 msgid "(Untitled)"
 msgstr ""
 
+#: app/src/react/features/roles/RolesList.tsx:78
+msgid ""
+"%1$d user(s) have the role %2$s. They keep their account but lose what the "
+"role allowed."
+msgstr ""
+
 #: app/src/react/features/design-system/FoundationCheck.tsx:66
 msgid "%1$s (#%2$s)"
 msgstr ""
@@ -57,11 +63,16 @@ msgid "%1$s columns, %2$s rows."
 msgstr ""
 
 #: app/src/react/features/media/MediaLibrary.tsx:318
+#: app/src/react/features/roles/RoleDetails.tsx:131
 msgid "%1$s of %2$s"
 msgstr ""
 
 #: app/src/react/features/posts/usePostMutations.ts:55
 msgid "%1$s of %2$s failed."
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:221
+msgid "%1$s rows · %2$s"
 msgstr ""
 
 #: app/src/pages/orders/src/RefundModal.vue:135
@@ -229,7 +240,7 @@ msgstr ""
 msgid "%d user(s) imported"
 msgstr ""
 
-#: app/src/react/features/users/UserModals.tsx:161
+#: app/src/react/features/users/UserModals.tsx:149
 msgid "%d user(s) will be changed. Fields left empty stay as they are."
 msgstr ""
 
@@ -270,6 +281,10 @@ msgstr ""
 
 #: admin/src/Rest/PostsTables.php:745
 msgid "%s ago"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:82
+msgid "%s and everything in it will be gone."
 msgstr ""
 
 #: app/src/react/features/plugins/PluginsList.tsx:31
@@ -369,6 +384,10 @@ msgstr ""
 msgid "%s reverted to draft."
 msgstr ""
 
+#: app/src/react/features/database/DatabaseExplorer.tsx:111
+msgid "%s row(s)"
+msgstr ""
+
 #: admin/src/Rest/CustomPostTypes.php:861
 msgid "%s scheduled."
 msgstr ""
@@ -382,6 +401,10 @@ msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:89
 msgid "%s sold"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:169
+msgid "%s table(s)"
 msgstr ""
 
 #: admin/src/Rest/CustomPostTypes.php:862
@@ -488,6 +511,10 @@ msgstr ""
 msgid "A percentage discount cannot be higher than 100."
 msgstr ""
 
+#: app/src/react/features/roles/RolesList.tsx:157
+msgid "A role is a set of things an account may do."
+msgstr ""
+
 #: admin/src/Rest/RoleEditor.php:319
 msgid "A role with this slug already exists."
 msgstr ""
@@ -501,6 +528,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:640
 #: app/src/react/features/products/editor/ProductEditor.tsx:696
 msgid "A short summary shown next to the product image…"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:83
+msgid "A table cannot be brought back. Make sure you have a backup."
 msgstr ""
 
 #: app/src/react/features/users/ImportUsersModal.tsx:259
@@ -550,6 +581,7 @@ msgid "Actions"
 msgstr ""
 
 #: app/src/react/features/plugins/PluginsList.tsx:106
+#: app/src/react/features/roles/RolesList.tsx:129
 msgid "Actions for %s"
 msgstr ""
 
@@ -606,7 +638,7 @@ msgstr ""
 #: admin/src/Pages/CustomDashboardPage.php:139
 #: app/src/components/index.js:15
 #: app/src/pages/users/src/components/index.js:15
-#: app/src/react/features/users/panels.tsx:321
+#: app/src/react/features/users/panels.tsx:309
 msgid "Activity"
 msgstr ""
 
@@ -659,6 +691,10 @@ msgstr ""
 #: app/src/pages/orders/src/OrderNotes.vue:78
 #: app/src/react/features/orders/OrderNotes.tsx:94
 msgid "Add a note about this order…"
+msgstr ""
+
+#: app/src/react/features/roles/RolesList.tsx:24
+msgid "Add a role"
 msgstr ""
 
 #: app/src/react/features/users/UserModals.tsx:59
@@ -811,6 +847,11 @@ msgstr ""
 msgid "Add product"
 msgstr ""
 
+#: app/src/react/features/roles/RolesList.tsx:48
+#: app/src/react/features/roles/RolesList.tsx:142
+msgid "Add role"
+msgstr ""
+
 #: app/src/components/user-details-form/user-details-form.vue:301
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:301
 #: app/src/pages/users/src/user-list-view.vue:1394
@@ -839,7 +880,7 @@ msgstr ""
 msgid "Add tag"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:221
+#: app/src/react/features/media/MediaDetails.tsx:213
 msgid "Add tags"
 msgstr ""
 
@@ -881,6 +922,10 @@ msgstr ""
 msgid ""
 "Add your Mapbox API key in Settings > Integrations to enable the Analytics "
 "Map card."
+msgstr ""
+
+#: app/src/react/features/roles/RolesList.tsx:107
+msgid "Added here"
 msgstr ""
 
 #: app/src/pages/orders/src/AddressFields.vue:41
@@ -1014,6 +1059,7 @@ msgstr ""
 #: app/src/react/features/media/MediaLibrary.tsx:23
 #: app/src/react/features/orders/OrdersList.tsx:159
 #: app/src/react/features/products/ProductsList.tsx:113
+#: app/src/react/features/roles/RoleDetails.tsx:150
 msgid "All"
 msgstr ""
 
@@ -1150,8 +1196,8 @@ msgstr ""
 msgid "Alt Text"
 msgstr ""
 
-#: app/src/react/features/media/MediaBulkEdit.tsx:60
-#: app/src/react/features/media/MediaDetails.tsx:189
+#: app/src/react/features/media/MediaBulkEdit.tsx:58
+#: app/src/react/features/media/MediaDetails.tsx:187
 msgid "Alternative text"
 msgstr ""
 
@@ -1233,7 +1279,7 @@ msgstr ""
 
 #: app/src/pages/comments/src/comment-details-view.vue:363
 #: app/src/react/features/comments/CommentDetails.tsx:90
-#: app/src/react/features/comments/CommentDetails.tsx:121
+#: app/src/react/features/comments/CommentDetails.tsx:119
 #: app/src/react/features/comments/CommentsList.tsx:96
 msgid "Anonymous"
 msgstr ""
@@ -1447,6 +1493,10 @@ msgstr ""
 msgid "Ascending"
 msgstr ""
 
+#: app/src/react/features/database/DatabaseExplorer.tsx:88
+msgid "Asked again because this cannot be undone."
+msgstr ""
+
 #: app/src/components/utility/image-editor/index.vue:1828
 msgid "Aspect Ratio"
 msgstr ""
@@ -1517,9 +1567,9 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-card.vue:384
 #: app/src/pages/posts/src/batch-edit.vue:150
 #: app/src/pages/posts/src/post-preview.vue:354
-#: app/src/react/features/comments/CommentDetails.tsx:117
+#: app/src/react/features/comments/CommentDetails.tsx:115
 #: app/src/react/features/comments/CommentsList.tsx:91
-#: app/src/react/features/posts/BatchEditModal.tsx:90
+#: app/src/react/features/posts/BatchEditModal.tsx:87
 #: app/src/react/features/posts/PostPreview.tsx:79
 msgid "Author"
 msgstr ""
@@ -1626,6 +1676,7 @@ msgid "Avg. Time on Site"
 msgstr ""
 
 #: app/src/pages/media/src/media-edit-view.vue:194
+#: app/src/react/features/roles/RoleDetails.tsx:90
 msgid "Back"
 msgstr ""
 
@@ -1689,7 +1740,7 @@ msgstr ""
 msgid "Before"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:178
+#: app/src/react/features/notices/NoticeEditor.tsx:176
 msgid "Behaviour"
 msgstr ""
 
@@ -1702,7 +1753,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:526
 #: app/src/react/features/orders/OrderDetails.tsx:500
 #: app/src/react/features/orders/OrderEditor.tsx:715
-#: app/src/react/features/users/panels.tsx:288
+#: app/src/react/features/users/panels.tsx:276
 msgid "Billing address"
 msgstr ""
 
@@ -1725,9 +1776,9 @@ msgid "Biographical Info"
 msgstr ""
 
 #: app/src/react/features/users/ImportUsersModal.tsx:25
-#: app/src/react/features/users/panels.tsx:75
-#: app/src/react/features/users/UserModals.tsx:112
-#: app/src/react/features/users/UserModals.tsx:185
+#: app/src/react/features/users/panels.tsx:65
+#: app/src/react/features/users/UserModals.tsx:102
+#: app/src/react/features/users/UserModals.tsx:170
 msgid "Biography"
 msgstr ""
 
@@ -1841,7 +1892,7 @@ msgstr ""
 msgid "Campaign"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:184
+#: app/src/react/features/notices/NoticeEditor.tsx:182
 msgid "Can be dismissed"
 msgstr ""
 
@@ -1881,6 +1932,7 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:1610
 #: app/src/pages/users/src/user-list-view.vue:1723
 #: app/src/react/app/ConfirmProvider.tsx:59
+#: app/src/react/features/database/DatabaseExplorer.tsx:57
 #: app/src/react/features/design-system/Showcase.tsx:370
 #: app/src/react/features/media/ImageEditor.tsx:229
 #: app/src/react/features/media/ImageEditor.tsx:365
@@ -1897,10 +1949,11 @@ msgstr ""
 #: app/src/react/features/products/CouponsView.tsx:342
 #: app/src/react/features/products/ProductQuickEdit.tsx:234
 #: app/src/react/features/products/TagsView.tsx:193
+#: app/src/react/features/roles/RolesList.tsx:28
 #: app/src/react/features/users/DeleteUsersModal.tsx:52
 #: app/src/react/features/users/ImportUsersModal.tsx:174
 #: app/src/react/features/users/UserModals.tsx:63
-#: app/src/react/features/users/UserModals.tsx:165
+#: app/src/react/features/users/UserModals.tsx:153
 #: app/src/react/ui/RichText.tsx:218
 msgid "Cancel"
 msgstr ""
@@ -1921,6 +1974,11 @@ msgid ""
 "users to another role first."
 msgstr ""
 
+#: app/src/react/features/roles/RoleDetails.tsx:120
+#: app/src/react/features/roles/RolesList.tsx:101
+msgid "Capabilities"
+msgstr ""
+
 #: admin/src/Rest/RoleEditor.php:186
 msgid "Capabilities must be an array."
 msgstr ""
@@ -1936,8 +1994,8 @@ msgstr ""
 #: app/src/components/utility/media-library/index.vue:788
 #: app/src/pages/media/src/media-details-view.vue:909
 #: app/src/pages/media/src/media-list-view.vue:1945
-#: app/src/react/features/media/MediaBulkEdit.tsx:63
-#: app/src/react/features/media/MediaDetails.tsx:193
+#: app/src/react/features/media/MediaBulkEdit.tsx:59
+#: app/src/react/features/media/MediaDetails.tsx:189
 msgid "Caption"
 msgstr ""
 
@@ -1978,7 +2036,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:280
 #: app/src/pages/products/src/ProductsList.vue:183
 #: app/src/pages/products/src/ProductsList.vue:542
-#: app/src/react/features/posts/BatchEditModal.tsx:95
+#: app/src/react/features/posts/BatchEditModal.tsx:92
 #: app/src/react/features/posts/PostPreview.tsx:86
 #: app/src/react/features/posts/PostsSettings.tsx:51
 #: app/src/react/features/products/CategoriesView.tsx:182
@@ -2089,6 +2147,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/font-selector.vue:836
 msgid "Choose a name for your custom font family"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:211
+msgid "Choose a table to look inside it."
 msgstr ""
 
 #: app/src/react/features/users/DeleteUsersModal.tsx:72
@@ -2322,6 +2384,7 @@ msgid "Colors, styling, and visual customization"
 msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:549
+#: app/src/react/features/database/DatabaseExplorer.tsx:149
 msgid "Column"
 msgstr ""
 
@@ -2331,6 +2394,7 @@ msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:445
 #: app/src/pages/posts/src/table-filters.vue:219
+#: app/src/react/features/database/DatabaseExplorer.tsx:144
 #: app/src/react/features/posts/PostsSettings.tsx:108
 msgid "Columns"
 msgstr ""
@@ -2444,7 +2508,7 @@ msgstr ""
 
 #: app/src/components/index.js:16
 #: app/src/pages/users/src/components/index.js:16
-#: app/src/react/features/users/panels.tsx:322
+#: app/src/react/features/users/panels.tsx:310
 msgid "Commerce"
 msgstr ""
 
@@ -2926,7 +2990,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderEditor.tsx:754
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:342
-#: app/src/react/features/users/panels.tsx:249
+#: app/src/react/features/users/panels.tsx:237
 msgid "Customer"
 msgstr ""
 
@@ -3027,6 +3091,7 @@ msgid "Data table"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:143
+#: app/src/react/features/database/DatabaseExplorer.tsx:169
 msgid "Database"
 msgstr ""
 
@@ -3048,7 +3113,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrdersList.vue:243
 #: app/src/pages/orders/src/OrdersList.vue:431
 #: app/src/pages/products/src/ProductsList.vue:187
-#: app/src/react/features/comments/CommentDetails.tsx:161
+#: app/src/react/features/comments/CommentDetails.tsx:150
 #: app/src/react/features/comments/CommentsList.tsx:141
 #: app/src/react/features/media/MediaLibrary.tsx:225
 #: app/src/react/features/orders/OrdersList.tsx:290
@@ -3092,6 +3157,7 @@ msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:476
 #: app/src/pages/settings/src/custom-renders/layout-selector.vue:26
+#: app/src/react/features/database/DatabaseExplorer.tsx:164
 #: app/src/react/ui/RichText.tsx:185
 msgid "Default"
 msgstr ""
@@ -3161,6 +3227,8 @@ msgstr ""
 #: app/src/react/features/products/TagsView.tsx:73
 #: app/src/react/features/products/TagsView.tsx:115
 #: app/src/react/features/products/TagsView.tsx:180
+#: app/src/react/features/roles/RolesList.tsx:80
+#: app/src/react/features/roles/RolesList.tsx:122
 #: app/src/react/features/users/DeleteUsersModal.tsx:55
 #: app/src/react/features/users/UserDetails.tsx:60
 #: app/src/react/features/users/UsersList.tsx:138
@@ -3257,6 +3325,10 @@ msgstr ""
 msgid "Delete selected"
 msgstr ""
 
+#: app/src/react/features/database/DatabaseExplorer.tsx:228
+msgid "Delete table"
+msgstr ""
+
 #: app/src/pages/database/src/table-view.vue:397
 msgid "Delete Table"
 msgstr ""
@@ -3268,6 +3340,10 @@ msgstr ""
 #: app/src/pages/products/src/TagsView.vue:105
 #: app/src/react/features/products/TagsView.tsx:71
 msgid "Delete tags?"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:76
+msgid "Delete the table"
 msgstr ""
 
 #: app/src/react/features/users/DeleteUsersModal.tsx:81
@@ -3293,6 +3369,14 @@ msgstr ""
 
 #: app/src/react/features/plugins/PluginsList.tsx:30
 msgid "Delete this plugin?"
+msgstr ""
+
+#: app/src/react/features/roles/RolesList.tsx:76
+msgid "Delete this role?"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:53
+msgid "Delete this table?"
 msgstr ""
 
 #: app/src/pages/products/src/AttributesView.vue:261
@@ -3355,8 +3439,8 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:350
 #: app/src/pages/products/src/TagsView.vue:189
 #: app/src/react/features/design-system/Showcase.tsx:243
-#: app/src/react/features/media/MediaBulkEdit.tsx:66
-#: app/src/react/features/media/MediaDetails.tsx:196
+#: app/src/react/features/media/MediaBulkEdit.tsx:60
+#: app/src/react/features/media/MediaDetails.tsx:190
 #: app/src/react/features/products/CategoriesView.tsx:240
 #: app/src/react/features/products/editor/ProductEditor.tsx:685
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:460
@@ -3393,7 +3477,7 @@ msgstr ""
 #: app/src/pages/media/src/media-details-view.vue:1027
 #: app/src/pages/users/src/components/index.js:14
 #: app/src/react/features/media/MediaDetails.tsx:183
-#: app/src/react/features/users/panels.tsx:320
+#: app/src/react/features/users/panels.tsx:308
 msgid "Details"
 msgstr ""
 
@@ -3430,7 +3514,7 @@ msgstr ""
 msgid "Dialog"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:209
+#: app/src/react/features/media/MediaDetails.tsx:201
 msgid "Dimensions"
 msgstr ""
 
@@ -3528,8 +3612,8 @@ msgstr ""
 
 #: app/src/pages/users/src/user-list-view.vue:1348
 #: app/src/react/features/users/ImportUsersModal.tsx:21
-#: app/src/react/features/users/panels.tsx:66
-#: app/src/react/features/users/UserModals.tsx:96
+#: app/src/react/features/users/panels.tsx:62
+#: app/src/react/features/users/UserModals.tsx:93
 msgid "Display name"
 msgstr ""
 
@@ -3770,6 +3854,7 @@ msgstr ""
 #: app/src/react/features/products/CouponsView.tsx:261
 #: app/src/react/features/products/ProductsList.tsx:238
 #: app/src/react/features/products/TagsView.tsx:112
+#: app/src/react/features/roles/RolesList.tsx:119
 #: app/src/react/features/users/UsersList.tsx:134
 #: app/src/react/features/users/UsersList.tsx:211
 msgid "Edit"
@@ -3883,7 +3968,7 @@ msgstr ""
 msgid "Edit Tag"
 msgstr ""
 
-#: app/src/react/features/users/UserModals.tsx:160
+#: app/src/react/features/users/UserModals.tsx:148
 msgid "Edit users"
 msgstr ""
 
@@ -3929,11 +4014,11 @@ msgstr ""
 #: app/src/pages/users/src/user-import.vue:54
 #: app/src/pages/users/src/user-list-view.vue:1131
 #: app/src/pages/users/src/user-list-view.vue:1562
-#: app/src/react/features/comments/CommentDetails.tsx:130
+#: app/src/react/features/comments/CommentDetails.tsx:126
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/users/ImportUsersModal.tsx:19
-#: app/src/react/features/users/panels.tsx:69
-#: app/src/react/features/users/UserModals.tsx:76
+#: app/src/react/features/users/panels.tsx:63
+#: app/src/react/features/users/UserModals.tsx:74
 #: app/src/react/features/users/UsersList.tsx:102
 msgid "Email"
 msgstr ""
@@ -3945,6 +4030,10 @@ msgstr ""
 
 #: app/src/pages/login/src/login-recovery-panel.vue:42
 msgid "Email or username"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:151
+msgid "Empty allowed"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:338
@@ -4779,7 +4868,7 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-performance.vue:362
 #: app/src/pages/plugins/src/plugin-performance.vue:379
 #: app/src/react/features/media/MediaDetails.tsx:105
-#: app/src/react/features/media/MediaDetails.tsx:204
+#: app/src/react/features/media/MediaDetails.tsx:196
 msgid "File"
 msgstr ""
 
@@ -4798,7 +4887,7 @@ msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:700
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:361
-#: app/src/react/features/media/MediaDetails.tsx:206
+#: app/src/react/features/media/MediaDetails.tsx:198
 #: app/src/react/features/products/editor/ProductEditor.tsx:841
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:474
 msgid "File name"
@@ -5093,6 +5182,7 @@ msgstr ""
 msgid "From"
 msgstr ""
 
+#: app/src/react/features/roles/RolesList.tsx:107
 #: app/src/react/shell/notices/NotificationsPanel.tsx:104
 msgid "From WordPress"
 msgstr ""
@@ -5120,10 +5210,11 @@ msgstr ""
 #: app/src/pages/settings/index.vue:44
 #: app/src/react/features/products/editor/ProductEditor.tsx:673
 #: app/src/react/features/products/ProductQuickEdit.tsx:266
+#: app/src/react/features/roles/queries.ts:22
 msgid "General"
 msgstr ""
 
-#: app/src/react/features/users/UserModals.tsx:91
+#: app/src/react/features/users/UserModals.tsx:88
 msgid "Generate"
 msgstr ""
 
@@ -5449,7 +5540,7 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:133
+#: app/src/react/features/notices/NoticeEditor.tsx:131
 msgid "How it will look"
 msgstr ""
 
@@ -5469,6 +5560,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/google-analytics-connection.vue:545
 msgid "How to connect Google Analytics 4"
+msgstr ""
+
+#: app/src/react/features/roles/RolesList.tsx:61
+msgid "How WordPress stores it. It cannot be changed later."
 msgstr ""
 
 #: admin/src/Rest/PluginManager.php:1006
@@ -5637,7 +5732,7 @@ msgstr ""
 msgid "In Range"
 msgstr ""
 
-#: app/src/react/features/comments/CommentDetails.tsx:150
+#: app/src/react/features/comments/CommentDetails.tsx:139
 #: app/src/react/features/comments/CommentsList.tsx:111
 msgid "In reply to"
 msgstr ""
@@ -6197,6 +6292,7 @@ msgid "Keep the same ID and regenerate thumbnails"
 msgstr ""
 
 #: app/src/pages/database/src/table-view.vue:471
+#: app/src/react/features/database/DatabaseExplorer.tsx:154
 msgid "Key"
 msgstr ""
 
@@ -6208,7 +6304,8 @@ msgstr ""
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:142
+#: app/src/react/features/notices/NoticeEditor.tsx:140
+#: app/src/react/features/roles/RolesList.tsx:104
 msgid "Kind"
 msgstr ""
 
@@ -6261,7 +6358,7 @@ msgstr ""
 #: app/src/pages/orders/src/AddressFields.vue:39
 #: app/src/react/features/orders/AddressFields.tsx:28
 #: app/src/react/features/users/ImportUsersModal.tsx:23
-#: app/src/react/features/users/panels.tsx:63
+#: app/src/react/features/users/panels.tsx:61
 msgid "Last name"
 msgstr ""
 
@@ -6359,11 +6456,11 @@ msgstr ""
 msgid "Leave empty to remove the link."
 msgstr ""
 
-#: app/src/react/features/posts/BatchEditModal.tsx:84
-#: app/src/react/features/posts/BatchEditModal.tsx:91
-#: app/src/react/features/posts/BatchEditModal.tsx:96
-#: app/src/react/features/posts/BatchEditModal.tsx:102
-#: app/src/react/features/users/UserModals.tsx:177
+#: app/src/react/features/posts/BatchEditModal.tsx:83
+#: app/src/react/features/posts/BatchEditModal.tsx:88
+#: app/src/react/features/posts/BatchEditModal.tsx:93
+#: app/src/react/features/posts/BatchEditModal.tsx:99
+#: app/src/react/features/users/UserModals.tsx:164
 msgid "Leave unchanged"
 msgstr ""
 
@@ -6820,6 +6917,7 @@ msgstr ""
 #: app/src/react/features/media/MediaDetails.tsx:105
 #: app/src/react/features/media/MediaEditScreen.tsx:64
 #: app/src/react/features/media/MediaLibrary.tsx:170
+#: app/src/react/features/roles/queries.ts:25
 msgid "Media"
 msgstr ""
 
@@ -6970,7 +7068,7 @@ msgid "menus"
 msgstr ""
 
 #: app/src/pages/plugins/src/plugin-performance.vue:378
-#: app/src/react/features/notices/NoticeEditor.tsx:127
+#: app/src/react/features/notices/NoticeEditor.tsx:125
 msgid "Message"
 msgstr ""
 
@@ -7048,7 +7146,7 @@ msgstr ""
 msgid "Mobile app"
 msgstr ""
 
-#: app/src/react/features/comments/CommentDetails.tsx:139
+#: app/src/react/features/comments/CommentDetails.tsx:131
 msgid "Moderation"
 msgstr ""
 
@@ -7233,7 +7331,7 @@ msgstr ""
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:207
 #: app/src/pages/users/src/user-list-view.vue:1344
 #: app/src/pages/users/src/user-list-view.vue:1549
-#: app/src/react/features/comments/CommentDetails.tsx:127
+#: app/src/react/features/comments/CommentDetails.tsx:125
 #: app/src/react/features/design-system/Showcase.tsx:386
 #: app/src/react/features/products/AttributesView.tsx:51
 #: app/src/react/features/products/AttributesView.tsx:183
@@ -7243,6 +7341,8 @@ msgstr ""
 #: app/src/react/features/products/ProductQuickEdit.tsx:267
 #: app/src/react/features/products/TagsView.tsx:90
 #: app/src/react/features/products/TagsView.tsx:209
+#: app/src/react/features/roles/RoleDetails.tsx:108
+#: app/src/react/features/roles/RolesList.tsx:54
 msgid "Name"
 msgstr ""
 
@@ -7453,6 +7553,7 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-card.vue:425
 #: app/src/pages/settings/src/settings-config.js:577
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:212
+#: app/src/react/features/database/DatabaseExplorer.tsx:151
 msgid "No"
 msgstr ""
 
@@ -7497,7 +7598,7 @@ msgstr ""
 msgid "No attributes yet"
 msgstr ""
 
-#: app/src/react/features/users/panels.tsx:312
+#: app/src/react/features/users/panels.tsx:300
 msgid "No billing address on file."
 msgstr ""
 
@@ -7508,6 +7609,10 @@ msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:734
 msgid "No capabilities found"
+msgstr ""
+
+#: app/src/react/features/roles/RoleDetails.tsx:138
+msgid "No capability matches that."
 msgstr ""
 
 #: app/src/react/features/dashboard/DashboardPage.tsx:113
@@ -7532,6 +7637,10 @@ msgstr ""
 #: app/src/pages/products/src/editor/ProductEditor.vue:835
 #: app/src/react/features/products/editor/ProductEditor.tsx:1093
 msgid "No categories found."
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:238
+msgid "No columns"
 msgstr ""
 
 #: app/src/pages/comments/src/comment-list-view.vue:659
@@ -7697,6 +7806,10 @@ msgstr ""
 msgid "No older orders"
 msgstr ""
 
+#: app/src/react/features/roles/RolesList.tsx:79
+msgid "No one has this role, so nothing changes for anybody."
+msgstr ""
+
 #: app/src/pages/dashboard/src/cards/ecommerce/sales-summary/component.vue:166
 msgid "No orders in the selected period."
 msgstr ""
@@ -7720,7 +7833,7 @@ msgstr ""
 msgid "No orders yet"
 msgstr ""
 
-#: app/src/react/features/users/panels.tsx:266
+#: app/src/react/features/users/panels.tsx:254
 msgid "No orders yet."
 msgstr ""
 
@@ -7838,12 +7951,20 @@ msgstr ""
 msgid "No role"
 msgstr ""
 
+#: app/src/react/features/roles/RolesList.tsx:156
+msgid "No roles"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-list-view.vue:451
 msgid "No roles available"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-list-view.vue:450
 msgid "No roles found"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:39
+msgid "No rows"
 msgstr ""
 
 #: app/src/pages/settings/index.vue:660
@@ -8042,11 +8163,11 @@ msgstr ""
 msgid "Nothing logged yet"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:229
+#: app/src/react/features/media/MediaDetails.tsx:221
 msgid "Nothing on the site uses this file."
 msgstr ""
 
-#: app/src/react/features/users/panels.tsx:174
+#: app/src/react/features/users/panels.tsx:162
 msgid "Nothing recorded for this user yet."
 msgstr ""
 
@@ -8205,7 +8326,7 @@ msgstr ""
 msgid "On Hold"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:185
+#: app/src/react/features/notices/NoticeEditor.tsx:183
 msgid "Once dismissed, that person does not see it again."
 msgstr ""
 
@@ -8250,8 +8371,16 @@ msgid ""
 "status first."
 msgstr ""
 
+#: app/src/react/features/database/DatabaseExplorer.tsx:109
+msgid "Only SELECT is allowed."
+msgstr ""
+
 #: admin/src/Rest/DatabaseExplorer.php:622
 msgid "Only SELECT queries are allowed for safety."
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:102
+msgid "Only SELECT runs here, and the server caps how many rows come back."
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductVariationsEditor.vue:184
@@ -8524,7 +8653,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderEditor.tsx:473
 #: app/src/react/features/orders/OrdersList.tsx:458
 #: app/src/react/features/orders/OrdersList.tsx:609
-#: app/src/react/features/users/panels.tsx:252
+#: app/src/react/features/users/panels.tsx:240
 msgid "Orders"
 msgstr ""
 
@@ -8561,6 +8690,7 @@ msgstr ""
 #: app/src/pages/orders/src/OrderEditor.vue:82
 #: app/src/pages/role-editor/src/role-details-view.vue:93
 #: app/src/react/features/orders/OrderEditor.tsx:463
+#: app/src/react/features/roles/queries.ts:30
 msgid "Other"
 msgstr ""
 
@@ -8653,6 +8783,7 @@ msgstr ""
 
 #: admin/src/Rest/CustomFields/OptionPagesRepository.php:309
 #: app/src/pages/role-editor/src/role-details-view.vue:87
+#: app/src/react/features/roles/queries.ts:24
 #: app/src/react/shell/search/useGlobalSearch.ts:58
 msgid "Pages"
 msgstr ""
@@ -8698,7 +8829,8 @@ msgstr ""
 #: app/src/pages/users/src/user-list-view.vue:1147
 #: app/src/pages/users/src/user-list-view.vue:1299
 #: app/src/react/features/users/ImportUsersModal.tsx:20
-#: app/src/react/features/users/UserModals.tsx:80
+#: app/src/react/features/users/UserModals.tsx:76
+#: app/src/react/features/users/UserModals.tsx:83
 msgid "Password"
 msgstr ""
 
@@ -8796,6 +8928,8 @@ msgid "Pending review"
 msgstr ""
 
 #: app/src/react/features/activity/ActivityList.tsx:87
+#: app/src/react/features/roles/RoleDetails.tsx:116
+#: app/src/react/features/roles/RolesList.tsx:100
 msgid "People"
 msgstr ""
 
@@ -9062,6 +9196,7 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:90
 #: app/src/pages/settings/index.vue:83
 #: app/src/react/features/plugins/PluginsList.tsx:146
+#: app/src/react/features/roles/queries.ts:27
 msgid "Plugins"
 msgstr ""
 
@@ -9140,6 +9275,7 @@ msgstr ""
 #: app/src/pages/role-editor/src/role-details-view.vue:86
 #: app/src/pages/settings/index.vue:77
 #: app/src/react/features/posts/PostsList.tsx:148
+#: app/src/react/features/roles/queries.ts:23
 #: app/src/react/shell/search/useGlobalSearch.ts:57
 msgid "Posts"
 msgstr ""
@@ -9505,6 +9641,11 @@ msgstr ""
 msgid "Queries"
 msgstr ""
 
+#: app/src/react/features/database/DatabaseExplorer.tsx:102
+#: app/src/react/features/database/DatabaseExplorer.tsx:145
+msgid "Query"
+msgstr ""
+
 #: admin/src/Rest/DatabaseExplorer.php:644
 msgid "Query contains prohibited SQL keywords."
 msgstr ""
@@ -9636,7 +9777,7 @@ msgstr ""
 msgid "Recent (7d)"
 msgstr ""
 
-#: app/src/react/features/users/panels.tsx:180
+#: app/src/react/features/users/panels.tsx:168
 msgid "Recent activity"
 msgstr ""
 
@@ -9655,7 +9796,7 @@ msgid "Recent Comments"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/register.ts:107
-#: app/src/react/features/users/panels.tsx:261
+#: app/src/react/features/users/panels.tsx:249
 msgid "Recent orders"
 msgstr ""
 
@@ -10040,7 +10181,7 @@ msgstr ""
 msgid "Replace secret key"
 msgstr ""
 
-#: app/src/react/features/users/UserModals.tsx:183
+#: app/src/react/features/users/UserModals.tsx:168
 msgid "Replace the biography"
 msgstr ""
 
@@ -10269,8 +10410,10 @@ msgstr ""
 msgid "role"
 msgstr ""
 
-#: app/src/react/features/users/UserModals.tsx:100
-#: app/src/react/features/users/UserModals.tsx:174
+#: app/src/react/features/roles/RoleDetails.tsx:107
+#: app/src/react/features/roles/RolesList.tsx:92
+#: app/src/react/features/users/UserModals.tsx:98
+#: app/src/react/features/users/UserModals.tsx:166
 #: app/src/react/features/users/UsersList.tsx:188
 msgid "Role"
 msgstr ""
@@ -10279,12 +10422,20 @@ msgstr ""
 msgid "Role capabilities updated successfully."
 msgstr ""
 
+#: app/src/react/features/roles/queries.ts:98
+msgid "Role created"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-list-view.vue:286
 msgid "Role created successfully"
 msgstr ""
 
 #: admin/src/Rest/RoleEditor.php:347
 msgid "Role created successfully."
+msgstr ""
+
+#: app/src/react/features/roles/queries.ts:107
+msgid "Role deleted"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:494
@@ -10348,6 +10499,10 @@ msgstr ""
 msgid "Role not found."
 msgstr ""
 
+#: app/src/react/features/roles/queries.ts:89
+msgid "Role renamed"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-list-view.vue:587
 msgid "Role Slug"
 msgstr ""
@@ -10372,6 +10527,10 @@ msgstr ""
 msgid "Role slug too long"
 msgstr ""
 
+#: app/src/react/features/roles/queries.ts:80
+msgid "Role updated"
+msgstr ""
+
 #: app/src/pages/role-editor/src/role-list-view.vue:420
 msgid "roles"
 msgstr ""
@@ -10383,8 +10542,10 @@ msgstr ""
 #: app/src/pages/users/src/user-import.vue:61
 #: app/src/pages/users/src/user-list-view.vue:1388
 #: app/src/pages/users/src/user-list-view.vue:1576
+#: app/src/react/features/roles/RoleDetails.tsx:86
+#: app/src/react/features/roles/RolesList.tsx:138
 #: app/src/react/features/users/ImportUsersModal.tsx:26
-#: app/src/react/features/users/panels.tsx:104
+#: app/src/react/features/users/panels.tsx:92
 #: app/src/react/features/users/UsersList.tsx:105
 msgid "Roles"
 msgstr ""
@@ -10407,6 +10568,14 @@ msgstr ""
 #: app/src/pages/database/src/table-view.vue:387
 #: app/src/pages/users/src/user-import.vue:477
 msgid "rows"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:143
+msgid "Rows"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:106
+msgid "Run"
 msgstr ""
 
 #: app/src/pages/products/src/editor/ProductEditor.vue:658
@@ -10482,8 +10651,9 @@ msgstr ""
 #: app/src/react/features/products/CategoriesView.tsx:214
 #: app/src/react/features/products/ProductQuickEdit.tsx:237
 #: app/src/react/features/products/TagsView.tsx:196
-#: app/src/react/features/users/panels.tsx:99
-#: app/src/react/features/users/UserModals.tsx:168
+#: app/src/react/features/roles/RoleDetails.tsx:93
+#: app/src/react/features/users/panels.tsx:87
+#: app/src/react/features/users/UserModals.tsx:156
 msgid "Save changes"
 msgstr ""
 
@@ -10606,6 +10776,10 @@ msgstr ""
 #: app/src/pages/products/src/ProductsList.vue:583
 #: app/src/react/features/products/ProductsList.tsx:462
 msgid "Search by name or SKU"
+msgstr ""
+
+#: app/src/react/features/roles/RoleDetails.tsx:130
+msgid "Search capabilities"
 msgstr ""
 
 #: app/src/pages/role-editor/src/role-details-view.vue:709
@@ -10775,6 +10949,10 @@ msgstr ""
 msgid "Search table data..."
 msgstr ""
 
+#: app/src/react/features/database/DatabaseExplorer.tsx:174
+msgid "Search tables"
+msgstr ""
+
 #: app/src/pages/database/src/layout.vue:184
 msgid "Search tables..."
 msgstr ""
@@ -10852,7 +11030,7 @@ msgid "Security token"
 msgstr ""
 
 #: app/src/pages/admin-notices/src/table.vue:281
-#: app/src/react/features/notices/NoticeEditor.tsx:191
+#: app/src/react/features/notices/NoticeEditor.tsx:189
 #: app/src/react/features/notices/NoticesList.tsx:88
 msgid "Seen by"
 msgstr ""
@@ -11191,6 +11369,7 @@ msgstr ""
 #: app/src/pages/settings/index.vue:579
 #: app/src/react/features/design-system/Showcase.tsx:161
 #: app/src/react/features/posts/PostsSettings.tsx:44
+#: app/src/react/features/roles/queries.ts:29
 msgid "Settings"
 msgstr ""
 
@@ -11353,11 +11532,11 @@ msgstr ""
 
 #: app/src/pages/login/src/login-password-field.vue:43
 #: app/src/pages/users/src/user-list-view.vue:1327
-#: app/src/react/features/users/UserModals.tsx:89
+#: app/src/react/features/users/UserModals.tsx:86
 msgid "Show password"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:180
+#: app/src/react/features/notices/NoticeEditor.tsx:178
 msgid "Show this notice"
 msgstr ""
 
@@ -11448,7 +11627,7 @@ msgstr ""
 #: app/src/react/features/dashboard/cards/site.tsx:40
 #: app/src/react/features/media/ImageEditor.tsx:299
 #: app/src/react/features/media/MediaDetails.tsx:151
-#: app/src/react/features/media/MediaDetails.tsx:208
+#: app/src/react/features/media/MediaDetails.tsx:200
 msgid "Size"
 msgstr ""
 
@@ -11499,6 +11678,8 @@ msgstr ""
 #: app/src/react/features/products/ProductQuickEdit.tsx:269
 #: app/src/react/features/products/TagsView.tsx:97
 #: app/src/react/features/products/TagsView.tsx:213
+#: app/src/react/features/roles/RoleDetails.tsx:112
+#: app/src/react/features/roles/RolesList.tsx:61
 msgid "Slug"
 msgstr ""
 
@@ -11668,7 +11849,7 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:228
 #: app/src/pages/products/src/ProductsList.vue:186
 #: app/src/pages/products/src/ProductsList.vue:647
-#: app/src/react/features/comments/CommentDetails.tsx:141
+#: app/src/react/features/comments/CommentDetails.tsx:136
 #: app/src/react/features/comments/CommentsList.tsx:134
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:127
 #: app/src/react/features/design-system/Showcase.tsx:90
@@ -11677,7 +11858,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderEditor.tsx:820
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:355
-#: app/src/react/features/posts/BatchEditModal.tsx:81
+#: app/src/react/features/posts/BatchEditModal.tsx:85
 #: app/src/react/features/posts/PostPreview.tsx:72
 #: app/src/react/features/products/CouponsView.tsx:246
 #: app/src/react/features/products/editor/ProductEditor.tsx:987
@@ -11801,6 +11982,10 @@ msgstr ""
 msgid "Table '%s' has been deleted."
 msgstr ""
 
+#: app/src/react/features/database/queries.ts:93
+msgid "Table deleted"
+msgstr ""
+
 #: app/src/pages/database/src/table-view.vue:322
 msgid "Table deleted successfully"
 msgstr ""
@@ -11869,8 +12054,8 @@ msgstr ""
 #: app/src/pages/products/src/ProductQuickEdit.vue:294
 #: app/src/pages/products/src/ProductsList.vue:543
 #: app/src/pages/products/src/TagsView.vue:130
-#: app/src/react/features/media/MediaDetails.tsx:214
-#: app/src/react/features/posts/BatchEditModal.tsx:101
+#: app/src/react/features/media/MediaDetails.tsx:206
+#: app/src/react/features/posts/BatchEditModal.tsx:98
 #: app/src/react/features/posts/PostPreview.tsx:93
 #: app/src/react/features/products/editor/ProductEditor.tsx:1114
 #: app/src/react/features/products/editor/ProductEditor.tsx:1115
@@ -11888,6 +12073,12 @@ msgstr ""
 
 #: app/src/react/features/media/queries.ts:245
 msgid "Tags updated"
+msgstr ""
+
+#: app/src/react/features/roles/RoleDetails.tsx:101
+msgid ""
+"Taking capabilities away from it can lock everyone out of parts of the "
+"site, including this screen."
 msgstr ""
 
 #: app/src/pages/admin-notices/src/edit.vue:473
@@ -11955,7 +12146,7 @@ msgstr ""
 msgid "The 5 best-selling products in your store"
 msgstr ""
 
-#: app/src/react/features/users/panels.tsx:158
+#: app/src/react/features/users/panels.tsx:146
 msgid "The activity log is turned off, so there is nothing to show here."
 msgstr ""
 
@@ -11969,11 +12160,11 @@ msgstr ""
 msgid "The category name is required."
 msgstr ""
 
-#: app/src/react/features/posts/BatchEditModal.tsx:95
+#: app/src/react/features/posts/BatchEditModal.tsx:92
 msgid "The chosen categories replace the current ones."
 msgstr ""
 
-#: app/src/react/features/posts/BatchEditModal.tsx:101
+#: app/src/react/features/posts/BatchEditModal.tsx:98
 msgid "The chosen tags replace the current ones."
 msgstr ""
 
@@ -12157,7 +12348,7 @@ msgstr ""
 msgid "The tag name is required."
 msgstr ""
 
-#: app/src/react/features/users/UserModals.tsx:80
+#: app/src/react/features/users/UserModals.tsx:76
 msgid "The user can change it after signing in."
 msgstr ""
 
@@ -12170,6 +12361,7 @@ msgstr ""
 
 #: app/src/pages/dashboard/src/cards/server-health/component.vue:332
 #: app/src/pages/role-editor/src/role-details-view.vue:91
+#: app/src/react/features/roles/queries.ts:28
 msgid "Themes"
 msgstr ""
 
@@ -12244,6 +12436,10 @@ msgstr ""
 msgid "This image could not be opened for editing."
 msgstr ""
 
+#: app/src/react/features/roles/RoleDetails.tsx:100
+msgid "This is the administrator role."
+msgstr ""
+
 #: admin/src/Rest/RankMathDashboardWidget.php:223
 msgid "This is the number of pageviews carried out by visitors from Search Engines."
 msgstr ""
@@ -12311,6 +12507,10 @@ msgstr ""
 msgid "This product type is managed by an extension"
 msgstr ""
 
+#: app/src/react/features/roles/RoleDetails.tsx:60
+msgid "This role could not be loaded."
+msgstr ""
+
 #: app/src/pages/settings/src/sections/RemoteSitesSection.vue:96
 msgid "This site URL already exists"
 msgstr ""
@@ -12333,7 +12533,7 @@ msgstr ""
 msgid "This user could not be loaded."
 msgstr ""
 
-#: app/src/react/features/users/panels.tsx:240
+#: app/src/react/features/users/panels.tsx:228
 msgid "This user is not a customer of the store."
 msgstr ""
 
@@ -12611,7 +12811,7 @@ msgstr ""
 
 #: app/src/pages/orders/src/OrderDetails.vue:445
 #: app/src/react/features/orders/OrderDetails.tsx:472
-#: app/src/react/features/users/panels.tsx:256
+#: app/src/react/features/users/panels.tsx:244
 msgid "Total spent"
 msgstr ""
 
@@ -12759,9 +12959,14 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-performance.vue:377
 #: app/src/react/features/activity/ActivityDetails.tsx:104
 #: app/src/react/features/activity/ActivityList.tsx:170
-#: app/src/react/features/media/MediaDetails.tsx:207
+#: app/src/react/features/database/DatabaseExplorer.tsx:150
+#: app/src/react/features/media/MediaDetails.tsx:199
 #: app/src/react/features/products/ProductsList.tsx:488
 msgid "Type"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:86
+msgid "Type %s to confirm"
 msgstr ""
 
 #: admin/src/Rest/Analytics.php:143
@@ -13029,7 +13234,7 @@ msgid "Upload Font"
 msgstr ""
 
 #: app/src/pages/media/src/media-details-view.vue:862
-#: app/src/react/features/media/MediaDetails.tsx:210
+#: app/src/react/features/media/MediaDetails.tsx:202
 msgid "Uploaded"
 msgstr ""
 
@@ -13161,7 +13366,7 @@ msgstr ""
 msgid "Used for variations"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:225
+#: app/src/react/features/media/MediaDetails.tsx:217
 msgid "Used in"
 msgstr ""
 
@@ -13308,6 +13513,7 @@ msgstr ""
 #: app/src/pages/settings/index.vue:116
 #: app/src/pages/users/src/user-list-view.vue:806
 #: app/src/react/features/dashboard/cards/register.ts:51
+#: app/src/react/features/roles/queries.ts:26
 #: app/src/react/features/users/UserDetails.tsx:53
 #: app/src/react/features/users/UsersList.tsx:156
 #: app/src/react/shell/search/useGlobalSearch.ts:64
@@ -13326,7 +13532,7 @@ msgstr ""
 msgid "Users to export:"
 msgstr ""
 
-#: app/src/react/features/users/UserModals.tsx:144
+#: app/src/react/features/users/UserModals.tsx:132
 msgid "Users updated"
 msgstr ""
 
@@ -13503,7 +13709,7 @@ msgstr ""
 msgid "View on map"
 msgstr ""
 
-#: app/src/react/features/comments/CommentDetails.tsx:168
+#: app/src/react/features/comments/CommentDetails.tsx:157
 msgid "View on the site"
 msgstr ""
 
@@ -13658,10 +13864,10 @@ msgstr ""
 #: app/src/pages/users/src/components/user-details-form/user-details-form.vue:252
 #: app/src/pages/users/src/user-import.vue:59
 #: app/src/pages/users/src/user-list-view.vue:1358
-#: app/src/react/features/comments/CommentDetails.tsx:133
+#: app/src/react/features/comments/CommentDetails.tsx:127
 #: app/src/react/features/users/ImportUsersModal.tsx:24
-#: app/src/react/features/users/panels.tsx:72
-#: app/src/react/features/users/UserModals.tsx:108
+#: app/src/react/features/users/panels.tsx:64
+#: app/src/react/features/users/UserModals.tsx:100
 msgid "Website"
 msgstr ""
 
@@ -13710,6 +13916,10 @@ msgstr ""
 msgid "What changed"
 msgstr ""
 
+#: app/src/react/features/roles/RolesList.tsx:139
+msgid "What each kind of account on this site is allowed to do."
+msgstr ""
+
 #: app/src/react/features/activity/ActivityList.tsx:93
 msgid "What happened"
 msgstr ""
@@ -13722,11 +13932,15 @@ msgstr ""
 msgid "What is queued to go out"
 msgstr ""
 
-#: app/src/react/features/media/MediaBulkEdit.tsx:60
+#: app/src/react/features/roles/RolesList.tsx:54
+msgid "What people see, for example \"Shop manager\"."
+msgstr ""
+
+#: app/src/react/features/media/MediaBulkEdit.tsx:58
 msgid "What the file shows, for people who cannot see it."
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:189
+#: app/src/react/features/media/MediaDetails.tsx:187
 msgid "What the image shows, for people who cannot see it."
 msgstr ""
 
@@ -13783,7 +13997,7 @@ msgstr ""
 msgid "Who"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:163
+#: app/src/react/features/notices/NoticeEditor.tsx:161
 msgid "Who sees it"
 msgstr ""
 
@@ -13809,7 +14023,7 @@ msgstr ""
 msgid "With icon"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:168
+#: app/src/react/features/notices/NoticeEditor.tsx:166
 msgid "With nothing chosen, everyone sees it."
 msgstr ""
 
@@ -13851,6 +14065,10 @@ msgstr ""
 msgid "WordPress core tables cannot be deleted."
 msgstr ""
 
+#: app/src/react/features/database/DatabaseExplorer.tsx:222
+msgid "WordPress table"
+msgstr ""
+
 #: app/src/components/app/search/layout-fix-dialog.vue:987
 msgid "Would you like to keep this fix permanently or remove it?"
 msgstr ""
@@ -13877,6 +14095,7 @@ msgstr ""
 #: app/src/pages/plugins/src/plugin-card.vue:425
 #: app/src/pages/settings/src/settings-config.js:578
 #: app/src/pages/users/src/components/woocommerce-customer/woocommerce-customer.vue:212
+#: app/src/react/features/database/DatabaseExplorer.tsx:151
 msgid "Yes"
 msgstr ""
 
@@ -13978,7 +14197,7 @@ msgstr ""
 #: admin/src/Pages/CustomPluginsPage.php:287
 #: admin/src/Pages/CustomPostTypesPage.php:178
 #: admin/src/Pages/DummyDataPage.php:172
-#: admin/src/Pages/RoleEditorPage.php:140
+#: admin/src/Pages/RoleEditorPage.php:161
 #: admin/src/Rest/PostsTables.php:153
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
@@ -14024,6 +14243,10 @@ msgstr ""
 
 #: app/src/pages/settings/src/custom-renders/license-key.vue:137
 msgid "Your license key:"
+msgstr ""
+
+#: app/src/react/features/database/DatabaseExplorer.tsx:88
+msgid "Your password"
 msgstr ""
 
 #: admin/src/Rest/MediaBulk.php:197

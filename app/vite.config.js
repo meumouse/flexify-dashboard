@@ -38,6 +38,8 @@ export default defineConfig({
 				dashboard: path.resolve(__dirname, 'src/apps/js/Dashboard.js'),
 				'dashboard-react': path.resolve(__dirname, 'src/react/main/dashboard.tsx'),
 				database: path.resolve(__dirname, 'src/apps/js/Database.js'),
+				// React database explorer; the Vue entry stays as the fallback behind the filter.
+				'database-react': path.resolve(__dirname, 'src/react/main/database.tsx'),
 				'design-system': path.resolve(__dirname, 'src/react/main/design-system.tsx'),
 				frontend: path.resolve(__dirname, 'src/apps/js/Frontend.js'),
 				login: path.resolve(__dirname, 'src/apps/js/Login.js'),
@@ -58,6 +60,8 @@ export default defineConfig({
 				// React orders screen; the Vue entry stays until the order editor moves over.
 				'orders-react': path.resolve(__dirname, 'src/react/main/orders.tsx'),
 				'role-editor': path.resolve(__dirname, 'src/apps/js/RoleEditor.js'),
+				// React role editor; the Vue entry stays as the fallback behind the filter.
+				'role-editor-react': path.resolve(__dirname, 'src/react/main/role-editor.tsx'),
 				settings: path.resolve(__dirname, 'src/apps/js/Settings.js'),
 				users: path.resolve(__dirname, 'src/apps/js/Users.js'),
 				// React users screen; the Vue entry stays as the fallback behind the filter.
