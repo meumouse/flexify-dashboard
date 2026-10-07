@@ -1,3 +1,22 @@
+Versão 4.0.0 (07/10/2026)
+* Correção de bugs
+* Otimizações
+* Frontend reescrito em React com TypeScript: todas as telas do plugin, da casca do admin ao login
+* Removido o Vue do plugin — e com ele vue-router, pinia, reka-ui, veaury, vue-shadow-dom, vue-draggable-next, @tiptap/vue-3, vue3-apexcharts, @vuepic/vue-datepicker, vaul-vue e @vueuse/core
+* **Quebra de compatibilidade:** um cartão do painel registrado por outro plugin e escrito em Vue não renderiza mais; cartões em HTML e em React continuam funcionando, e o painel avisa na tela quando encontra um cartão Vue
+* O chunk compartilhado por todas as telas caiu de 585 kB para 477 kB
+* Painel reescrito: grade de 12 colunas, reordenação arrastando, redimensionamento preso às colunas e escolha de quais cartões aparecem, tudo guardado por categoria
+* Telas de posts, comentários, mídia e usuários reescritas, com as duas visualizações da tela de posts e o editor de imagem
+* Telas de plugins, configurações, registro de atividades, explorador do banco, editor de papéis, construtor de menus e avisos reescritas
+* Tela de login e barra do frontend reescritas
+* Correção: ao excluir usuários, o plugin agora pergunta para quem vai o conteúdo deles — antes ia sempre para o usuário de ID 1, fosse ele quem fosse
+* Correção: os comentários mostram em que post foram deixados; a consulta que deveria buscar isso nunca era verdadeira e o título nunca aparecia
+* Correção: todos os campos de formulário passaram a ter rótulo associado — para um leitor de tela eles não tinham nome
+* Correção: as mensagens de erro da tela de login passaram a ser traduzíveis
+* Correção: o construtor de menus devolve ao menu os itens que o site ganhou depois de o menu ter sido criado
+* Correção: o período do painel não volta mais um dia a cada recarga em fusos a oeste de Greenwich
+* Atualização das traduções pt_BR
+
 Versão 3.0.0 (17/09/2026)
 * Correção de bugs
 * Otimizações

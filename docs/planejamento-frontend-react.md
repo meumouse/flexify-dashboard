@@ -507,8 +507,24 @@ Tirar `vue`, `vue-router`, `pinia`, `reka-ui`, `veaury`, `vue-shadow-dom`, `vue-
 - **Quebra documentada:** um cartão de terceiros escrito em Vue não renderiza mais. O `CardRender` diz isso na tela, em vez de não desenhar nada, para quem escreveu o cartão saber o que aconteceu. Cartões em HTML e em React continuam funcionando.
 - O chunk compartilhado por todas as telas caiu de 585 kB para 477 kB, e o build de ~21 s para ~10 s.
 
-### Fase 10 — QA e lançamento 4.0.0 (M)
+### Fase 10 — QA e lançamento 4.0.0 (M) · **parcial**
 Matriz de testes (WP e WooCommerce atuais e anteriores, HPOS ligado/desligado, PHP 7.4+, navegadores, RTL, papéis), acessibilidade, desempenho, traduções, changelog e release.
+
+**Feito em 07/10/2026:**
+
+- **Varredura das 15 telas no harness**, em tema claro e escuro: todas renderizam e nenhuma deixa erro não tratado no console.
+- **RTL:** com `dir="rtl"` o layout espelha corretamente — sidebar à direita, tabelas e ícones direcionais invertidos. As classes lógicas (`ps-`, `pe-`, `ms-`, `me-`, `start-`, `end-`) é que fazem isso; não há folha de estilo RTL separada.
+- **Acessibilidade:** todo campo de formulário tem rótulo associado (uma falha encontrada por teste e corrigida em todas as telas); os controles só de ícone têm `aria-label`; os estados `aria-pressed`, `aria-current` e `aria-expanded` estão onde há alternância.
+- **Testes:** 168 no Vitest, cobrindo o kit, a casca, e a lógica de cada tela (o que é aritmética ou contrato — não a aparência).
+- **Desempenho:** o chunk compartilhado por todas as telas caiu de 585 kB para 477 kB; o build caiu de ~21 s para ~10 s. ApexCharts, Mapbox e o editor de imagem entram por import dinâmico, só quando a tela que precisa deles é aberta.
+- **Traduções:** POT regerado (2.853 entradas, sem as ~2.700 que só existiam no código Vue) e pt_BR completo.
+- **Changelog e versão:** 4.0.0, com a quebra de compatibilidade dos cartões Vue dita em primeira linha.
+
+**Não verificado, e por quê:**
+
+- **A matriz de versões** (WordPress e WooCommerce atuais e anteriores, HPOS ligado e desligado, PHP 7.4 a 8.3, papéis de usuário) **não foi executada**: o MySQL do site local está parado, então nenhuma tela foi aberta contra um banco de verdade nesta migração. Tudo o que está verificado acima foi verificado no harness, com dados simulados. Os testes de integração (`tests/integration/woocommerce-rest.php`) continuam por rodar.
+- **Navegadores:** só o navegador do harness (Chromium). Safari e Firefox não foram abertos.
+- As três telas cujo bundle nunca foi declarado no `vite.config.js` (`PostEditor.js`, `CustomPostTypes.js`, `CustomFieldsMetaBox.js`) são anteriores a esta migração e continuam sem carregar JavaScript nenhum. Precisam de uma decisão à parte.
 
 ---
 
