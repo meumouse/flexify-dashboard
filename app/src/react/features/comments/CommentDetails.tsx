@@ -90,7 +90,7 @@ export const CommentDetails = () => {
 				title={decodeHtml(comment.data.author_name) || __('Anonymous')}
 				breadcrumbs={[{ label: __('Comments'), href: '#/' }, { label: __('Comment') }]}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						<Button variant="outline" icon="delete" className="text-error-600" onClick={askThenRemove}>
 							{inTrash ? __('Delete permanently') : __('Move to the trash')}
 						</Button>
@@ -102,7 +102,7 @@ export const CommentDetails = () => {
 						>
 							{__('Save changes')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

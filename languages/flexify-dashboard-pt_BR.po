@@ -8815,3 +8815,30 @@ msgstr ""
 msgctxt "admin menu"
 msgid "Admin Notices"
 msgstr ""
+
+msgid "Badge colour"
+msgstr "Cor do selo"
+
+msgid "Every file"
+msgstr "Todos os arquivos"
+
+msgid "File type"
+msgstr "Tipo de arquivo"
+
+msgid "Load more"
+msgstr "Carregar mais"
+
+msgid "Nothing here"
+msgstr "Nada por aqui"
+
+msgid "Opens the system picker."
+msgstr "Abre o seletor do sistema."
+
+msgid "Upload a file or change the search."
+msgstr "Envie um arquivo ou mude a busca."
+
+msgid "Use this file"
+msgstr "Usar este arquivo"
+
+msgid "WordPress toolbar"
+msgstr "Barra do WordPress"

@@ -1,3 +1,19 @@
+Versão 4.1.0 (07/10/2026)
+* Correção de bugs
+* Otimizações
+* A barra do WordPress deixou de ser movida para dentro da interface: os itens são lidos do `WP_Admin_Bar` e desenhados por componente nosso, com o id e as classes que o CSS de outros plugins procura. **Quebra de compatibilidade:** um plugin que procura `#wp-admin-bar-…` por JavaScript, depois da página carregada, não encontra mais; o que ele registrou por `admin_bar_menu` continua aparecendo
+* O menu lateral deixou de ser lido do DOM: vem dos globais `$menu` e `$submenu`, impresso na página como JSON, com a rota `GET flexify-dashboard/v1/admin-menu` para quem precisar fora do admin
+* Os avisos do WordPress deixaram de ser movidos para o painel de notificações: são capturados no servidor e desenhados com o alerta do design system. **Quebra de compatibilidade:** um plugin que liga um botão dentro do próprio aviso por script de carregamento não encontra mais o aviso na página; links e formulários dentro do aviso continuam funcionando
+* O modal de mídia do WordPress (`wp.media`) foi substituído por uma biblioteca nossa, que lê a mesma rota da tela de mídia — nos sete lugares que o abriam
+* Abaixo de 640px toda tabela do plugin vira lista de cartões, o que arrumou doze telas de uma vez
+* Uma escala de tamanho de fonte só, em todo o wp-admin: um tamanho por tag (h1 a h6, p, small) e os tokens do design system nos componentes. 232 classes trocadas, e um teste que falha se a escala crua do Tailwind voltar
+* Quatro valores de arredondamento, no lugar de nove
+* Todo seletor passou a ser componente do kit: o dropdown e o slider em Radix, e o seletor de cor e o diálogo de arquivo como elementos nativos dentro do kit, que é onde eles podem morar. Um teste falha se um controle cru voltar para uma tela
+* Correção: na lista de plugins, o nome era espremido até sumir em telas estreitas, em vez de a linha quebrar; o mesmo acontecia com o título das páginas
+* Correção: a lista de posts deixou de abrir um documento HTML para achar o JSON dentro dele
+* Correção: `AGENTS.md` passou a descrever as regras do projeto, com `CLAUDE.md` apontando para ele
+* Atualização das traduções pt_BR
+
 Versão 4.0.0 (07/10/2026)
 * Correção de bugs
 * Otimizações

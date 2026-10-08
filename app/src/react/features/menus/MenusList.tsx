@@ -98,7 +98,7 @@ export const MenusList = () => {
 				title={__('Admin menus')}
 				description={__('A menu replaces the one WordPress builds, for the people it is meant for.')}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						<Button variant="outline" icon="refresh" loading={flushCache.isPending} onClick={() => flushCache.mutate()}>
 							{__('Apply to everyone now')}
 						</Button>
@@ -114,7 +114,7 @@ export const MenusList = () => {
 						>
 							{__('Add menu')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

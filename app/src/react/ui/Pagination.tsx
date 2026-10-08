@@ -88,7 +88,7 @@ export const Pagination = ({
 				) : null}
 			</div>
 
-			<nav className="flex items-center gap-1.5" aria-label={__('Pagination')}>
+			<nav className="flex flex-wrap items-center justify-center gap-1.5" aria-label={__('Pagination')}>
 				<button type="button" className={navButton} disabled={disabled || page <= 1} aria-label={__('Previous page')} onClick={() => goTo(page - 1)}>
 					<Icon name="chevron_left" className="text-theme-lg rtl:rotate-180" />
 				</button>

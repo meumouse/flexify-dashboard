@@ -147,14 +147,14 @@ export const MenuEditor = () => {
 				title={title || __('(No title)')}
 				breadcrumbs={[{ label: __('Admin menus'), href: '#/' }, { label: __('Edit') }]}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						<Button variant="outline" icon="delete" className="text-error-600" onClick={askThenDelete}>
 							{__('Delete')}
 						</Button>
 						<Button icon="save" loading={save.isPending} disabled={!dirty} onClick={submit}>
 							{__('Save')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

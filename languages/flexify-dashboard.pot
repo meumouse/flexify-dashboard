@@ -18,7 +18,7 @@ msgstr ""
 msgid "(No label)"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:587
+#: app/src/react/features/products/editor/ProductEditor.tsx:588
 #: app/src/react/features/products/ProductsList.tsx:271
 msgid "(no title)"
 msgstr ""
@@ -51,11 +51,11 @@ msgstr ""
 msgid "%1$s (#%2$s)"
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:226
+#: app/src/react/features/users/ImportUsersModal.tsx:211
 msgid "%1$s columns, %2$s rows."
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:318
+#: app/src/react/features/media/MediaLibrary.tsx:308
 #: app/src/react/features/roles/RoleDetails.tsx:131
 msgid "%1$s of %2$s"
 msgstr ""
@@ -88,7 +88,7 @@ msgstr ""
 msgid "%d file(s) will be changed. Fields left empty stay as they are."
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:117
+#: app/src/react/features/media/MediaLibrary.tsx:118
 msgid "%d file(s) will be deleted for good. The media library has no trash."
 msgstr ""
 
@@ -159,7 +159,7 @@ msgstr ""
 msgid "%d role(s)"
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:215
+#: app/src/react/features/users/ImportUsersModal.tsx:200
 msgid "%d row(s) were not imported"
 msgstr ""
 
@@ -188,7 +188,7 @@ msgid "%d user(s) exported"
 msgstr ""
 
 #: app/src/react/features/users/ImportUsersModal.tsx:154
-#: app/src/react/features/users/ImportUsersModal.tsx:211
+#: app/src/react/features/users/ImportUsersModal.tsx:196
 msgid "%d user(s) imported"
 msgstr ""
 
@@ -200,7 +200,7 @@ msgstr ""
 msgid "%d user(s) will be deleted. This cannot be undone."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:246
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:247
 msgid "%d variation(s) created"
 msgstr ""
 
@@ -208,11 +208,11 @@ msgstr ""
 msgid "%d variations"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:57
+#: app/src/react/shell/notices/NotificationsPanel.tsx:54
 msgid "%d waiting for you"
 msgstr ""
 
-#: app/src/react/ui/Pagination.tsx:87
+#: app/src/react/ui/Pagination.tsx:83
 msgid "%s / page"
 msgstr ""
 
@@ -250,11 +250,11 @@ msgstr ""
 msgid "%s entries"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:171
+#: app/src/react/features/media/MediaLibrary.tsx:172
 msgid "%s file(s)"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:401
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:402
 #: app/src/react/features/products/ProductsList.tsx:328
 msgid "%s in stock"
 msgstr ""
@@ -292,8 +292,8 @@ msgstr ""
 msgid "%s row(s)"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:135
-#: app/src/react/features/media/MediaLibrary.tsx:285
+#: app/src/react/data/DataTable.tsx:155
+#: app/src/react/features/media/MediaLibrary.tsx:275
 #: app/src/react/features/posts/PostsList.tsx:196
 msgid "%s selected"
 msgstr ""
@@ -330,7 +330,7 @@ msgstr ""
 msgid "1 child item"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:220
+#: app/src/react/features/design-system/Showcase.tsx:224
 msgid "162 orders"
 msgstr ""
 
@@ -358,7 +358,7 @@ msgstr ""
 msgid "A draft is kept but shown to nobody."
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:356
+#: app/src/react/features/settings/custom/connections.tsx:357
 msgid "A font file I upload"
 msgstr ""
 
@@ -394,11 +394,11 @@ msgstr ""
 msgid "A service account is needed."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:696
+#: app/src/react/features/products/editor/ProductEditor.tsx:697
 msgid "A short summary shown next to the product image…"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:355
+#: app/src/react/features/settings/custom/connections.tsx:356
 msgid "A stylesheet of my own"
 msgstr ""
 
@@ -406,7 +406,7 @@ msgstr ""
 msgid "A table cannot be brought back. Make sure you have a backup."
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:259
+#: app/src/react/features/users/ImportUsersModal.tsx:244
 msgid "A username column and an email column are needed."
 msgstr ""
 
@@ -426,7 +426,7 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:104
+#: app/src/react/features/design-system/Showcase.tsx:108
 #: app/src/react/features/orders/OrderDetails.tsx:246
 #: app/src/react/features/orders/OrdersList.tsx:412
 #: app/src/react/features/products/AttributesView.tsx:208
@@ -540,7 +540,7 @@ msgstr ""
 msgid "Add attributes such as size or color to create variations."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:332
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:333
 msgid "Add attributes, mark them as “Used for variations” and save the product."
 msgstr ""
 
@@ -548,7 +548,7 @@ msgstr ""
 #: app/src/react/features/products/CategoriesView.tsx:189
 #: app/src/react/features/products/CategoriesView.tsx:207
 #: app/src/react/features/products/CategoriesView.tsx:214
-#: app/src/react/features/products/editor/ProductEditor.tsx:1110
+#: app/src/react/features/products/editor/ProductEditor.tsx:1111
 #: app/src/react/features/products/ProductsList.tsx:391
 msgid "Add category"
 msgstr ""
@@ -562,16 +562,16 @@ msgstr ""
 msgid "Add fee"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:863
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:503
+#: app/src/react/features/products/editor/ProductEditor.tsx:864
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:504
 msgid "Add file"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1067
+#: app/src/react/features/products/editor/ProductEditor.tsx:1068
 msgid "Add gallery images"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:341
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:342
 msgid "Add manually"
 msgstr ""
 
@@ -610,7 +610,7 @@ msgstr ""
 msgid "Add or remove tags"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:348
+#: app/src/react/features/design-system/Showcase.tsx:354
 #: app/src/react/features/orders/OrderEditor.tsx:470
 #: app/src/react/features/orders/OrderEditor.tsx:475
 #: app/src/react/features/orders/OrdersList.tsx:484
@@ -621,7 +621,7 @@ msgstr ""
 msgid "Add order in classic screen"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:587
+#: app/src/react/features/products/editor/ProductEditor.tsx:588
 #: app/src/react/features/products/ProductsList.tsx:419
 msgid "Add product"
 msgstr ""
@@ -641,7 +641,7 @@ msgstr ""
 msgid "Add tag"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:213
+#: app/src/react/features/media/MediaDetails.tsx:199
 msgid "Add tags"
 msgstr ""
 
@@ -649,12 +649,12 @@ msgstr ""
 msgid "Add the site"
 msgstr ""
 
-#: app/src/react/shell/SidebarItem.tsx:87
-#: app/src/react/shell/SidebarItem.tsx:129
+#: app/src/react/shell/SidebarItem.tsx:86
+#: app/src/react/shell/SidebarItem.tsx:128
 msgid "Add to favourites"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:482
+#: app/src/react/features/products/editor/ProductEditor.tsx:483
 msgid "Add to gallery"
 msgstr ""
 
@@ -734,7 +734,7 @@ msgstr ""
 msgid "Administrator"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:958
+#: app/src/react/features/products/editor/ProductEditor.tsx:959
 #: app/src/react/features/settings/categories.ts:29
 msgid "Advanced"
 msgstr ""
@@ -743,19 +743,19 @@ msgstr ""
 msgid "Aggregated daily statistics"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:190
+#: app/src/react/features/design-system/Showcase.tsx:194
 msgid "Alerts"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:172
+#: app/src/react/ui/RichText.tsx:167
 msgid "Align center"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:171
+#: app/src/react/ui/RichText.tsx:166
 msgid "Align left"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:173
+#: app/src/react/ui/RichText.tsx:168
 msgid "Align right"
 msgstr ""
 
@@ -783,7 +783,7 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:110
+#: app/src/react/shell/notices/NotificationsPanel.tsx:121
 msgid "All caught up"
 msgstr ""
 
@@ -807,11 +807,11 @@ msgstr ""
 msgid "All types"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:230
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:231
 msgid "All variations already exist"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:803
+#: app/src/react/features/products/editor/ProductEditor.tsx:804
 #: app/src/react/features/products/ProductQuickEdit.tsx:130
 msgid "Allow"
 msgstr ""
@@ -843,7 +843,7 @@ msgid ""
 "potentially malicious code, ensuring safe handling of SVG files."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:802
+#: app/src/react/features/products/editor/ProductEditor.tsx:803
 #: app/src/react/features/products/ProductQuickEdit.tsx:129
 msgid "Allow, but notify customer"
 msgstr ""
@@ -857,7 +857,7 @@ msgid "Also these people"
 msgstr ""
 
 #: app/src/react/features/media/MediaBulkEdit.tsx:58
-#: app/src/react/features/media/MediaDetails.tsx:187
+#: app/src/react/features/media/MediaDetails.tsx:173
 msgid "Alternative text"
 msgstr ""
 
@@ -926,8 +926,8 @@ msgstr ""
 msgid "Any"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:143
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:426
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:144
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:427
 msgid "Any %s"
 msgstr ""
 
@@ -943,7 +943,7 @@ msgstr ""
 msgid "Any channel"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:218
+#: app/src/react/features/media/MediaLibrary.tsx:208
 #: app/src/react/features/orders/OrdersList.tsx:517
 msgid "Any date"
 msgstr ""
@@ -960,12 +960,12 @@ msgstr ""
 msgid "Any stock status"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:250
+#: app/src/react/features/media/MediaLibrary.tsx:240
 msgid "Any tag"
 msgstr ""
 
 #: app/src/react/features/activity/ActivityList.tsx:183
-#: app/src/react/features/settings/SettingField.tsx:135
+#: app/src/react/features/settings/SettingField.tsx:139
 msgid "Anyone"
 msgstr ""
 
@@ -990,8 +990,8 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:871
 #: app/src/react/features/products/BulkPriceModal.tsx:56
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:356
-#: app/src/react/ui/RichText.tsx:221
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:357
+#: app/src/react/ui/RichText.tsx:216
 msgid "Apply"
 msgstr ""
 
@@ -1019,7 +1019,7 @@ msgstr ""
 msgid "Are you sure? This will delete all existing analytics data."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:254
+#: app/src/react/features/design-system/Showcase.tsx:260
 msgid "Arrives in 1 day."
 msgstr ""
 
@@ -1058,7 +1058,7 @@ msgstr ""
 #: app/src/react/features/products/AttributesView.tsx:217
 #: app/src/react/features/products/AttributesView.tsx:219
 #: app/src/react/features/products/AttributesView.tsx:238
-#: app/src/react/features/products/editor/ProductEditor.tsx:909
+#: app/src/react/features/products/editor/ProductEditor.tsx:910
 #: app/src/react/features/products/ProductsList.tsx:398
 msgid "Attributes"
 msgstr ""
@@ -1067,6 +1067,7 @@ msgstr ""
 msgid "Attributes show extra information such as material or size."
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:51
 #: app/src/react/features/media/MediaLibrary.tsx:26
 msgid "Audio"
 msgstr ""
@@ -1115,7 +1116,7 @@ msgstr ""
 msgid "Available to refund: %s"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:366
+#: app/src/react/features/design-system/Showcase.tsx:372
 msgid "Available to refund: R$ 85,80"
 msgstr ""
 
@@ -1139,19 +1140,23 @@ msgstr ""
 msgid "Back to orders"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:580
+#: app/src/react/features/products/editor/ProductEditor.tsx:581
 msgid "Back to products"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:188
+#: app/src/react/features/login/LoginScreen.tsx:186
 msgid "Back to signing in"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:805
+#: app/src/react/features/products/editor/ProductEditor.tsx:806
 msgid "Backorders"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:169
+#: app/src/react/features/design-system/Showcase.tsx:249
+msgid "Badge colour"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:173
 msgid "Badges"
 msgstr ""
 
@@ -1200,7 +1205,7 @@ msgstr ""
 msgid "Blur"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:162
+#: app/src/react/ui/RichText.tsx:157
 msgid "Bold"
 msgstr ""
 
@@ -1239,23 +1244,23 @@ msgstr ""
 msgid "Built-in Analytics"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:167
+#: app/src/react/ui/RichText.tsx:162
 msgid "Bullet list"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:757
+#: app/src/react/features/products/editor/ProductEditor.tsx:758
 msgid "Button text"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:142
+#: app/src/react/features/design-system/Showcase.tsx:146
 msgid "Buttons"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:757
+#: app/src/react/features/products/editor/ProductEditor.tsx:758
 msgid "Buy product"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:384
+#: app/src/react/features/design-system/Showcase.tsx:390
 msgid "Camiseta Básica Algodão"
 msgstr ""
 
@@ -1269,10 +1274,11 @@ msgid "Can be dismissed"
 msgstr ""
 
 #: app/src/react/app/ConfirmProvider.tsx:59
+#: app/src/react/app/MediaPickerProvider.tsx:88
 #: app/src/react/features/database/DatabaseExplorer.tsx:57
-#: app/src/react/features/design-system/Showcase.tsx:370
+#: app/src/react/features/design-system/Showcase.tsx:376
 #: app/src/react/features/media/ImageEditor.tsx:229
-#: app/src/react/features/media/ImageEditor.tsx:365
+#: app/src/react/features/media/ImageEditor.tsx:360
 #: app/src/react/features/media/MediaBulkEdit.tsx:48
 #: app/src/react/features/orders/AddressModal.tsx:56
 #: app/src/react/features/orders/OrderEditor.tsx:480
@@ -1291,11 +1297,11 @@ msgstr ""
 #: app/src/react/features/users/ImportUsersModal.tsx:174
 #: app/src/react/features/users/UserModals.tsx:63
 #: app/src/react/features/users/UserModals.tsx:153
-#: app/src/react/ui/RichText.tsx:218
+#: app/src/react/ui/RichText.tsx:213
 msgid "Cancel"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:283
+#: app/src/react/features/design-system/Showcase.tsx:289
 msgid "Cancelled"
 msgstr ""
 
@@ -1319,7 +1325,7 @@ msgid "Capabilities must be an array."
 msgstr ""
 
 #: app/src/react/features/media/MediaBulkEdit.tsx:59
-#: app/src/react/features/media/MediaDetails.tsx:189
+#: app/src/react/features/media/MediaDetails.tsx:175
 msgid "Caption"
 msgstr ""
 
@@ -1335,7 +1341,7 @@ msgstr ""
 msgid "Cards registered by the plugin and its extensions appear here."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:998
+#: app/src/react/features/products/editor/ProductEditor.tsx:999
 #: app/src/react/features/products/ProductQuickEdit.tsx:275
 msgid "Catalog visibility"
 msgstr ""
@@ -1344,7 +1350,7 @@ msgstr ""
 #: app/src/react/features/posts/PostPreview.tsx:86
 #: app/src/react/features/posts/PostsSettings.tsx:51
 #: app/src/react/features/products/CategoriesView.tsx:182
-#: app/src/react/features/products/editor/ProductEditor.tsx:1076
+#: app/src/react/features/products/editor/ProductEditor.tsx:1077
 #: app/src/react/features/products/ProductQuickEdit.tsx:346
 #: app/src/react/features/products/ProductsList.tsx:307
 #: app/src/react/features/products/ProductsList.tsx:396
@@ -1390,7 +1396,7 @@ msgstr ""
 msgid "Channel"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:193
+#: app/src/react/features/design-system/Showcase.tsx:197
 msgid "Check the stock"
 msgstr ""
 
@@ -1406,12 +1412,12 @@ msgstr ""
 msgid "Check your email to continue the password recovery process."
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:423
-#: app/src/react/features/settings/SettingField.tsx:36
+#: app/src/react/features/settings/custom/connections.tsx:424
+#: app/src/react/features/settings/SettingField.tsx:39
 msgid "Choose"
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:206
+#: app/src/react/features/users/ImportUsersModal.tsx:191
 msgid "Choose a CSV file"
 msgstr ""
 
@@ -1421,11 +1427,11 @@ msgid ""
 "enter a custom font URL, or upload your own font files."
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:367
+#: app/src/react/features/settings/custom/connections.tsx:368
 msgid "Choose a font"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:421
+#: app/src/react/features/settings/custom/connections.tsx:422
 msgid "Choose a font file"
 msgstr ""
 
@@ -1441,7 +1447,7 @@ msgstr ""
 msgid "Choose a user"
 msgstr ""
 
-#: app/src/react/features/settings/SettingField.tsx:35
+#: app/src/react/features/settings/SettingField.tsx:38
 msgid "Choose an image"
 msgstr ""
 
@@ -1457,8 +1463,8 @@ msgstr ""
 msgid "Choose cards"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:851
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:484
+#: app/src/react/features/products/editor/ProductEditor.tsx:852
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:485
 msgid "Choose file"
 msgstr ""
 
@@ -1478,7 +1484,7 @@ msgstr ""
 msgid "Choose variation"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:378
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:379
 msgid "Choose variation image"
 msgstr ""
 
@@ -1534,21 +1540,21 @@ msgstr ""
 msgid "Cleaned up %d old log entries."
 msgstr ""
 
-#: app/src/react/features/settings/SettingField.tsx:39
+#: app/src/react/features/settings/SettingField.tsx:42
 #: app/src/react/form/Input.tsx:81
 #: app/src/react/shell/search/CommandPalette.tsx:203
 msgid "Clear"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:258
+#: app/src/react/features/media/MediaLibrary.tsx:248
 #: app/src/react/features/orders/OrdersList.tsx:531
 #: app/src/react/features/products/ProductsList.tsx:467
 msgid "Clear filters"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:142
+#: app/src/react/data/DataTable.tsx:162
 #: app/src/react/data/EntityPicker.tsx:100
-#: app/src/react/features/media/MediaLibrary.tsx:296
+#: app/src/react/features/media/MediaLibrary.tsx:286
 #: app/src/react/features/posts/PostsList.tsx:200
 msgid "Clear selection"
 msgstr ""
@@ -1583,7 +1589,7 @@ msgstr ""
 msgid "Collapse sidebar"
 msgstr ""
 
-#: app/src/react/shell/SidebarItem.tsx:102
+#: app/src/react/shell/SidebarItem.tsx:101
 msgid "Collapse submenu"
 msgstr ""
 
@@ -1595,7 +1601,7 @@ msgstr ""
 msgid "Column"
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:232
+#: app/src/react/features/users/ImportUsersModal.tsx:217
 msgid "Column in the file"
 msgstr ""
 
@@ -1670,7 +1676,7 @@ msgstr ""
 msgid "Compare"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:132
+#: app/src/react/features/design-system/Showcase.tsx:136
 msgid "Components"
 msgstr ""
 
@@ -1692,7 +1698,7 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:286
+#: app/src/react/features/design-system/Showcase.tsx:292
 msgid "Confirm dialog"
 msgstr ""
 
@@ -1769,7 +1775,7 @@ msgstr ""
 msgid "Could not delete the product."
 msgstr ""
 
-#: app/src/react/app/AppProviders.tsx:47
+#: app/src/react/app/AppProviders.tsx:48
 msgid "Could not load the data"
 msgstr ""
 
@@ -1793,7 +1799,7 @@ msgstr ""
 msgid "Could not restore the product."
 msgstr ""
 
-#: app/src/react/app/AppProviders.tsx:50
+#: app/src/react/app/AppProviders.tsx:51
 msgid "Could not save the changes"
 msgstr ""
 
@@ -1894,7 +1900,7 @@ msgstr ""
 msgid "Crop"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:951
+#: app/src/react/features/products/editor/ProductEditor.tsx:952
 msgid "Cross-sells"
 msgstr ""
 
@@ -1935,7 +1941,7 @@ msgid "Custom Plugins"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:126
-#: app/src/react/features/design-system/Showcase.tsx:82
+#: app/src/react/features/design-system/Showcase.tsx:86
 #: app/src/react/features/orders/OrderDetails.tsx:447
 #: app/src/react/features/orders/OrderEditor.tsx:754
 #: app/src/react/features/orders/OrdersList.tsx:290
@@ -1955,7 +1961,7 @@ msgid "Customer: %s"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:37
-#: app/src/react/features/design-system/Showcase.tsx:211
+#: app/src/react/features/design-system/Showcase.tsx:215
 #: app/src/react/features/orders/OrdersList.tsx:422
 msgid "Customers"
 msgstr ""
@@ -1999,7 +2005,7 @@ msgstr ""
 msgid "Dashboard sections"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:307
+#: app/src/react/features/design-system/Showcase.tsx:313
 msgid "Data table"
 msgstr ""
 
@@ -2015,7 +2021,7 @@ msgstr ""
 
 #: app/src/react/features/comments/CommentDetails.tsx:150
 #: app/src/react/features/comments/CommentsList.tsx:141
-#: app/src/react/features/media/MediaLibrary.tsx:225
+#: app/src/react/features/media/MediaLibrary.tsx:215
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:392
 #: app/src/react/features/orders/OrdersList.tsx:519
@@ -2023,7 +2029,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:302
+#: app/src/react/features/design-system/Showcase.tsx:308
 msgid "days"
 msgstr ""
 
@@ -2037,7 +2043,7 @@ msgid "Decrease"
 msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:164
-#: app/src/react/ui/RichText.tsx:185
+#: app/src/react/ui/RichText.tsx:180
 msgid "Default"
 msgstr ""
 
@@ -2046,10 +2052,10 @@ msgstr ""
 msgid "Default sort order"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:279
-#: app/src/react/features/design-system/Showcase.tsx:294
+#: app/src/react/features/design-system/Showcase.tsx:285
+#: app/src/react/features/design-system/Showcase.tsx:300
 #: app/src/react/features/media/MediaDetails.tsx:114
-#: app/src/react/features/media/MediaLibrary.tsx:294
+#: app/src/react/features/media/MediaLibrary.tsx:284
 #: app/src/react/features/menus/MenuEditor.tsx:103
 #: app/src/react/features/menus/MenuEditor.tsx:152
 #: app/src/react/features/menus/MenusList.tsx:47
@@ -2067,7 +2073,7 @@ msgstr ""
 #: app/src/react/features/products/AttributesView.tsx:206
 #: app/src/react/features/products/CategoriesView.tsx:124
 #: app/src/react/features/products/CategoriesView.tsx:170
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:267
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:268
 #: app/src/react/features/products/TagsView.tsx:73
 #: app/src/react/features/products/TagsView.tsx:115
 #: app/src/react/features/products/TagsView.tsx:180
@@ -2101,7 +2107,7 @@ msgstr ""
 #: app/src/react/features/comments/CommentsList.tsx:66
 #: app/src/react/features/comments/CommentsList.tsx:189
 #: app/src/react/features/media/MediaDetails.tsx:92
-#: app/src/react/features/media/MediaLibrary.tsx:118
+#: app/src/react/features/media/MediaLibrary.tsx:119
 #: app/src/react/features/orders/OrdersList.tsx:248
 #: app/src/react/features/orders/OrdersList.tsx:270
 #: app/src/react/features/orders/OrdersList.tsx:627
@@ -2115,7 +2121,7 @@ msgstr ""
 
 #: app/src/react/features/comments/CommentDetails.tsx:73
 #: app/src/react/features/comments/CommentsList.tsx:62
-#: app/src/react/features/design-system/Showcase.tsx:277
+#: app/src/react/features/design-system/Showcase.tsx:283
 #: app/src/react/features/orders/OrdersList.tsx:244
 #: app/src/react/features/posts/PostRowMenu.tsx:21
 #: app/src/react/features/products/ProductsList.tsx:209
@@ -2138,7 +2144,7 @@ msgstr ""
 msgid "Delete their content too"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:116
+#: app/src/react/features/media/MediaLibrary.tsx:117
 msgid "Delete these files?"
 msgstr ""
 
@@ -2180,15 +2186,15 @@ msgstr ""
 msgid "Delete value?"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:414
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:415
 msgid "Delete variation"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:267
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:268
 msgid "Delete variation?"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:283
+#: app/src/react/features/design-system/Showcase.tsx:289
 msgid "Deleted"
 msgstr ""
 
@@ -2196,16 +2202,16 @@ msgstr ""
 msgid "Descending"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:690
+#: app/src/react/features/products/editor/ProductEditor.tsx:691
 msgid "Describe the product in detail…"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:243
+#: app/src/react/features/design-system/Showcase.tsx:247
 #: app/src/react/features/media/MediaBulkEdit.tsx:60
-#: app/src/react/features/media/MediaDetails.tsx:190
+#: app/src/react/features/media/MediaDetails.tsx:176
 #: app/src/react/features/products/CategoriesView.tsx:240
-#: app/src/react/features/products/editor/ProductEditor.tsx:685
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:460
+#: app/src/react/features/products/editor/ProductEditor.tsx:686
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:461
 #: app/src/react/features/products/TagsView.tsx:216
 msgid "Description"
 msgstr ""
@@ -2214,26 +2220,26 @@ msgstr ""
 msgid "Description (optional)"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:683
+#: app/src/react/features/products/editor/ProductEditor.tsx:684
 msgid "Descriptions"
 msgstr ""
 
 #: admin/src/Pages/DesignSystemPage.php:70
-#: app/src/react/features/design-system/Showcase.tsx:113
-#: app/src/react/features/design-system/Showcase.tsx:115
+#: app/src/react/features/design-system/Showcase.tsx:117
+#: app/src/react/features/design-system/Showcase.tsx:119
 msgid "Design System"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:135
+#: app/src/react/features/design-system/Showcase.tsx:139
 msgid "Design system sections"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:183
+#: app/src/react/features/media/MediaDetails.tsx:169
 #: app/src/react/features/users/panels.tsx:308
 msgid "Details"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:319
+#: app/src/react/features/design-system/Showcase.tsx:325
 msgid "Details of"
 msgstr ""
 
@@ -2245,7 +2251,7 @@ msgstr ""
 msgid "Devices"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:201
+#: app/src/react/features/media/MediaDetails.tsx:187
 msgid "Dimensions"
 msgstr ""
 
@@ -2268,16 +2274,16 @@ msgstr ""
 msgid "Disable theme"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:159
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:405
+#: app/src/react/features/design-system/Showcase.tsx:163
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:406
 msgid "Disabled"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:542
+#: app/src/react/features/products/editor/ProductEditor.tsx:543
 msgid "Discard changes"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:540
+#: app/src/react/features/products/editor/ProductEditor.tsx:541
 msgid "Discard unsaved changes?"
 msgstr ""
 
@@ -2309,8 +2315,8 @@ msgid "Disk: %sGB of %sGB"
 msgstr ""
 
 #: app/src/react/app/ToastProvider.tsx:96
-#: app/src/react/shell/notices/NotificationsPanel.tsx:93
-#: app/src/react/ui/Alert.tsx:40
+#: app/src/react/shell/notices/NotificationsPanel.tsx:90
+#: app/src/react/ui/Alert.tsx:42
 msgid "Dismiss"
 msgstr ""
 
@@ -2320,62 +2326,63 @@ msgstr ""
 msgid "Display name"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:801
+#: app/src/react/features/products/editor/ProductEditor.tsx:802
 #: app/src/react/features/products/ProductQuickEdit.tsx:128
 msgid "Do not allow"
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:52
 #: app/src/react/features/media/MediaLibrary.tsx:27
 msgid "Documents"
 msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:159
-#: app/src/react/features/media/MediaLibrary.tsx:291
+#: app/src/react/features/media/MediaLibrary.tsx:281
 msgid "Download"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:291
+#: app/src/react/features/design-system/Showcase.tsx:297
 msgid "Download CSV"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:881
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:524
+#: app/src/react/features/products/editor/ProductEditor.tsx:882
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:525
 msgid "Download expiry (days)"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:872
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:513
+#: app/src/react/features/products/editor/ProductEditor.tsx:873
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:514
 msgid "Download limit"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:143
+#: app/src/react/features/media/MediaLibrary.tsx:144
 msgid "Download started"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:830
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:466
+#: app/src/react/features/products/editor/ProductEditor.tsx:831
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:467
 msgid "Downloadable"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:495
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:303
+#: app/src/react/features/products/editor/ProductEditor.tsx:496
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:304
 msgid "Downloadable file"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:835
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:471
+#: app/src/react/features/products/editor/ProductEditor.tsx:836
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:472
 msgid "Downloadable files"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:832
+#: app/src/react/features/products/editor/ProductEditor.tsx:833
 msgid "Downloadable files of variable products are managed in the classic editor."
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/content.tsx:30
-#: app/src/react/features/design-system/Showcase.tsx:239
+#: app/src/react/features/design-system/Showcase.tsx:243
 #: app/src/react/features/menus/MenusList.tsx:73
 #: app/src/react/features/products/CouponsView.tsx:89
-#: app/src/react/features/products/editor/ProductEditor.tsx:983
+#: app/src/react/features/products/editor/ProductEditor.tsx:984
 #: app/src/react/features/products/productFormat.ts:12
 #: app/src/react/features/products/ProductQuickEdit.tsx:115
 #: app/src/react/shell/search/commands.ts:62
@@ -2391,11 +2398,11 @@ msgstr ""
 msgid "Drag to reorder"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:304
+#: app/src/react/features/media/MediaLibrary.tsx:294
 msgid "Drop the files to upload them"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:298
+#: app/src/react/features/design-system/Showcase.tsx:304
 msgid "Dropdown"
 msgstr ""
 
@@ -2414,7 +2421,7 @@ msgid "e-Commerce"
 msgstr ""
 
 #: app/src/react/features/media/MediaEditScreen.tsx:64
-#: app/src/react/features/media/MediaLibrary.tsx:288
+#: app/src/react/features/media/MediaLibrary.tsx:278
 #: app/src/react/features/menus/MenuEditor.tsx:148
 #: app/src/react/features/menus/MenusList.tsx:85
 #: app/src/react/features/notices/NoticeEditor.tsx:104
@@ -2502,7 +2509,7 @@ msgstr ""
 msgid "Edit users"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:411
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:412
 msgid "Edit variation"
 msgstr ""
 
@@ -2523,7 +2530,7 @@ msgstr ""
 msgid "Empty allowed"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:338
+#: app/src/react/features/design-system/Showcase.tsx:344
 msgid "Empty and loading states"
 msgstr ""
 
@@ -2576,7 +2583,7 @@ msgid ""
 "changes."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:970
+#: app/src/react/features/products/editor/ProductEditor.tsx:971
 msgid "Enable reviews"
 msgstr ""
 
@@ -2608,7 +2615,7 @@ msgstr ""
 msgid "Enable TurnStyle"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:463
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:464
 msgid "Enabled"
 msgstr ""
 
@@ -2640,7 +2647,7 @@ msgstr ""
 msgid "Enter a valid quantity."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:333
+#: app/src/react/features/products/editor/ProductEditor.tsx:334
 msgid "Enter a valid URL starting with http:// or https://."
 msgstr ""
 
@@ -2648,7 +2655,7 @@ msgstr ""
 msgid "Enter the Google reCAPTCHA site key and secret key."
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:107
+#: app/src/react/features/login/LoginScreen.tsx:108
 msgid "Enter your details to carry on."
 msgstr ""
 
@@ -2704,6 +2711,10 @@ msgstr ""
 msgid "Every card is hidden"
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:48
+msgid "Every file"
+msgstr ""
+
 #: app/src/react/features/menus/MenusList.tsx:19
 #: app/src/react/features/notices/NoticesList.tsx:74
 msgid "Everyone"
@@ -2727,7 +2738,7 @@ msgid ""
 "undo."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:312
+#: app/src/react/features/design-system/Showcase.tsx:318
 msgid "Example orders"
 msgstr ""
 
@@ -2739,7 +2750,7 @@ msgstr ""
 msgid "Exclude sale items"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:166
+#: app/src/react/data/DataTable.tsx:208
 #: app/src/react/features/posts/PostCells.tsx:146
 msgid "Expand"
 msgstr ""
@@ -2752,7 +2763,7 @@ msgstr ""
 msgid "Expand sidebar"
 msgstr ""
 
-#: app/src/react/shell/SidebarItem.tsx:102
+#: app/src/react/shell/SidebarItem.tsx:101
 msgid "Expand submenu"
 msgstr ""
 
@@ -2768,8 +2779,8 @@ msgstr ""
 msgid "Expiry date"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:290
-#: app/src/react/features/design-system/Showcase.tsx:327
+#: app/src/react/features/design-system/Showcase.tsx:296
+#: app/src/react/features/design-system/Showcase.tsx:333
 #: app/src/react/features/users/UsersList.tsx:164
 msgid "Export"
 msgstr ""
@@ -2790,7 +2801,7 @@ msgstr ""
 msgid "Exposure"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:254
+#: app/src/react/features/design-system/Showcase.tsx:260
 msgid "Express shipping"
 msgstr ""
 
@@ -2798,7 +2809,7 @@ msgstr ""
 msgid "External stylesheets"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:595
+#: app/src/react/features/products/editor/ProductEditor.tsx:596
 msgid "External/Affiliate product"
 msgstr ""
 
@@ -2889,9 +2900,9 @@ msgstr ""
 msgid "Featured only"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:248
-#: app/src/react/features/design-system/Showcase.tsx:388
-#: app/src/react/features/products/editor/ProductEditor.tsx:1000
+#: app/src/react/features/design-system/Showcase.tsx:254
+#: app/src/react/features/design-system/Showcase.tsx:394
+#: app/src/react/features/products/editor/ProductEditor.tsx:1001
 #: app/src/react/features/products/ProductQuickEdit.tsx:279
 msgid "Featured product"
 msgstr ""
@@ -2909,7 +2920,7 @@ msgid "Fictitious analytics data successfully generated for %d months."
 msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:105
-#: app/src/react/features/media/MediaDetails.tsx:196
+#: app/src/react/features/media/MediaDetails.tsx:182
 msgid "File"
 msgstr ""
 
@@ -2921,9 +2932,9 @@ msgstr ""
 msgid "File deleted"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:198
-#: app/src/react/features/products/editor/ProductEditor.tsx:841
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:474
+#: app/src/react/features/media/MediaDetails.tsx:184
+#: app/src/react/features/products/editor/ProductEditor.tsx:842
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:475
 msgid "File name"
 msgstr ""
 
@@ -2939,6 +2950,10 @@ msgstr ""
 msgid "File replaced successfully."
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:98
+msgid "File type"
+msgstr ""
+
 #: admin/src/Rest/MediaReplace.php:292
 msgid "File type not allowed."
 msgstr ""
@@ -2951,8 +2966,8 @@ msgstr ""
 msgid "File upload failed. Please try again."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:847
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:480
+#: app/src/react/features/products/editor/ProductEditor.tsx:848
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:481
 msgid "File URL"
 msgstr ""
 
@@ -2960,7 +2975,7 @@ msgstr ""
 msgid "Files"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:123
+#: app/src/react/features/media/MediaLibrary.tsx:124
 msgid "Files deleted"
 msgstr ""
 
@@ -3017,7 +3032,7 @@ msgstr ""
 msgid "Fixed product discount"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:115
+#: app/src/react/features/design-system/Showcase.tsx:119
 msgid "Flexify Dashboard"
 msgstr ""
 
@@ -3029,18 +3044,19 @@ msgstr ""
 msgid "Flip V"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:369
+#: app/src/react/features/settings/custom/connections.tsx:370
 msgid "Font"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:429
+#: app/src/react/features/settings/custom/connections.tsx:430
 msgid "Font family name"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:415
+#: app/src/react/features/settings/custom/connections.tsx:416
 msgid "Font file"
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:53
 #: app/src/react/features/media/MediaLibrary.tsx:28
 msgid "Fonts"
 msgstr ""
@@ -3053,11 +3069,11 @@ msgstr ""
 msgid "Force global theme"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:226
+#: app/src/react/features/design-system/Showcase.tsx:230
 msgid "Form controls"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:133
+#: app/src/react/features/design-system/Showcase.tsx:137
 msgid "Foundation"
 msgstr ""
 
@@ -3081,7 +3097,7 @@ msgid "From"
 msgstr ""
 
 #: app/src/react/features/roles/RolesList.tsx:107
-#: app/src/react/shell/notices/NotificationsPanel.tsx:104
+#: app/src/react/shell/notices/NotificationsPanel.tsx:101
 msgid "From WordPress"
 msgstr ""
 
@@ -3089,11 +3105,11 @@ msgstr ""
 msgid "Full (%1$s × %2$s)"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1039
+#: app/src/react/features/products/editor/ProductEditor.tsx:1040
 msgid "Gallery"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:673
+#: app/src/react/features/products/editor/ProductEditor.tsx:674
 #: app/src/react/features/products/ProductQuickEdit.tsx:266
 #: app/src/react/features/roles/queries.ts:22
 #: app/src/react/features/settings/categories.ts:13
@@ -3121,11 +3137,11 @@ msgstr ""
 msgid "Generate Test Data"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:338
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:339
 msgid "Generate variations"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:369
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:370
 msgid "Generate variations from the attributes or add them one by one."
 msgstr ""
 
@@ -3137,7 +3153,7 @@ msgstr ""
 msgid "GET wp/v2/users/me"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:337
+#: app/src/react/features/products/editor/ProductEditor.tsx:338
 msgid "Give every custom attribute a name."
 msgstr ""
 
@@ -3180,7 +3196,7 @@ msgstr ""
 msgid "Google Analytics disconnected"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:354
+#: app/src/react/features/settings/custom/connections.tsx:355
 msgid "Google Fonts"
 msgstr ""
 
@@ -3204,7 +3220,7 @@ msgstr ""
 msgid "Green ← → Magenta"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:180
+#: app/src/react/features/media/MediaLibrary.tsx:181
 msgid "Grid view"
 msgstr ""
 
@@ -3212,15 +3228,15 @@ msgstr ""
 msgid "Gross revenue"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:594
+#: app/src/react/features/products/editor/ProductEditor.tsx:595
 msgid "Grouped product"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:936
+#: app/src/react/features/products/editor/ProductEditor.tsx:937
 msgid "Grouped products"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:744
+#: app/src/react/features/products/editor/ProductEditor.tsx:745
 msgid "Grouped products take their prices from the child products."
 msgstr ""
 
@@ -3229,13 +3245,13 @@ msgstr ""
 msgid "Guest"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:109
-#: app/src/react/ui/RichText.tsx:156
+#: app/src/react/ui/RichText.tsx:108
+#: app/src/react/ui/RichText.tsx:151
 msgid "Heading"
 msgstr ""
 
 #: app/src/react/features/media/ImageEditor.tsx:316
-#: app/src/react/features/products/editor/ProductEditor.tsx:893
+#: app/src/react/features/products/editor/ProductEditor.tsx:894
 #: app/src/react/features/products/ProductQuickEdit.tsx:333
 msgid "Height"
 msgstr ""
@@ -3244,7 +3260,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:996
+#: app/src/react/features/products/editor/ProductEditor.tsx:997
 #: app/src/react/features/products/ProductQuickEdit.tsx:124
 msgid "Hidden"
 msgstr ""
@@ -3269,7 +3285,7 @@ msgstr ""
 msgid "Hide the help toggle in the toolbar"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:151
+#: app/src/react/features/login/LoginScreen.tsx:152
 msgid "Hide the password"
 msgstr ""
 
@@ -3281,7 +3297,7 @@ msgstr ""
 msgid "Hide this item"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:189
+#: app/src/react/ui/RichText.tsx:184
 msgid "Highlight color"
 msgstr ""
 
@@ -3331,7 +3347,7 @@ msgstr ""
 msgid "Hue"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:188
+#: app/src/react/features/login/LoginScreen.tsx:186
 msgid "I forgot my password"
 msgstr ""
 
@@ -3339,11 +3355,11 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:157
+#: app/src/react/features/design-system/Showcase.tsx:161
 msgid "Icon after"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:160
+#: app/src/react/features/design-system/Showcase.tsx:164
 msgid "Icon only button"
 msgstr ""
 
@@ -3351,11 +3367,11 @@ msgstr ""
 msgid "ID of the notice to mark as seen"
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:247
+#: app/src/react/features/users/ImportUsersModal.tsx:232
 msgid "Ignore"
 msgstr ""
 
-#: app/src/react/features/settings/SettingField.tsx:33
+#: app/src/react/features/settings/SettingField.tsx:36
 msgid "Image address"
 msgstr ""
 
@@ -3363,8 +3379,9 @@ msgstr ""
 msgid "Image url"
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:49
 #: app/src/react/features/media/MediaLibrary.tsx:24
-#: app/src/react/features/products/editor/ProductEditor.tsx:1009
+#: app/src/react/features/products/editor/ProductEditor.tsx:1010
 msgid "Images"
 msgstr ""
 
@@ -3402,8 +3419,8 @@ msgstr ""
 msgid "In reply to"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:601
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:320
+#: app/src/react/features/products/editor/ProductEditor.tsx:602
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:321
 #: app/src/react/features/products/productFormat.ts:32
 #: app/src/react/features/products/ProductsList.tsx:381
 msgid "In stock"
@@ -3421,7 +3438,7 @@ msgstr ""
 msgid "Increase"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:250
+#: app/src/react/features/design-system/Showcase.tsx:256
 msgid "Indeterminate"
 msgstr ""
 
@@ -3433,11 +3450,11 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:165
+#: app/src/react/ui/RichText.tsx:160
 msgid "Inline code"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:177
+#: app/src/react/ui/RichText.tsx:172
 msgid "Insert image"
 msgstr ""
 
@@ -3537,7 +3554,7 @@ msgstr ""
 msgid "Invalid plugin structure - no main plugin file found"
 msgstr ""
 
-#: admin/src/Rest/PostsTables.php:924
+#: admin/src/Rest/PostsTables.php:934
 msgid "Invalid post type."
 msgstr ""
 
@@ -3609,7 +3626,7 @@ msgstr ""
 msgid "Invalid username or password."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:780
+#: app/src/react/features/products/editor/ProductEditor.tsx:781
 #: app/src/react/features/products/ProductQuickEdit.tsx:308
 msgid "Inventory"
 msgstr ""
@@ -3623,7 +3640,7 @@ msgstr ""
 msgid "It stops being shown and cannot be brought back."
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:163
+#: app/src/react/ui/RichText.tsx:158
 msgid "Italic"
 msgstr ""
 
@@ -3694,7 +3711,7 @@ msgstr ""
 msgid "Items duplicated"
 msgstr ""
 
-#: app/src/react/ui/Pagination.tsx:78
+#: app/src/react/ui/Pagination.tsx:84
 msgid "Items per page"
 msgstr ""
 
@@ -3719,11 +3736,11 @@ msgstr ""
 msgid "JSON must be a service account key (type should be \"service_account\")"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:174
+#: app/src/react/ui/RichText.tsx:169
 msgid "Justify"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:159
+#: app/src/react/features/login/LoginScreen.tsx:158
 msgid "Keep me signed in"
 msgstr ""
 
@@ -3756,7 +3773,7 @@ msgstr ""
 msgid "Last %s days"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:221
+#: app/src/react/features/media/MediaLibrary.tsx:211
 #: app/src/react/features/orders/OrdersList.tsx:432
 msgid "Last 30 days"
 msgstr ""
@@ -3765,7 +3782,7 @@ msgstr ""
 msgid "Last 30 Days"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:220
+#: app/src/react/features/media/MediaLibrary.tsx:210
 #: app/src/react/features/orders/OrdersList.tsx:431
 msgid "Last 7 days"
 msgstr ""
@@ -3774,7 +3791,7 @@ msgstr ""
 msgid "Last 90 days"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1003
+#: app/src/react/features/products/editor/ProductEditor.tsx:1004
 msgid "Last modified"
 msgstr ""
 
@@ -3784,7 +3801,7 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:222
+#: app/src/react/features/media/MediaLibrary.tsx:212
 msgid "Last year"
 msgstr ""
 
@@ -3813,7 +3830,7 @@ msgstr ""
 msgid "Leave empty to keep the one already stored."
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:233
+#: app/src/react/ui/RichText.tsx:228
 msgid "Leave empty to remove the link."
 msgstr ""
 
@@ -3829,7 +3846,7 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:891
+#: app/src/react/features/products/editor/ProductEditor.tsx:892
 #: app/src/react/features/products/ProductQuickEdit.tsx:331
 msgid "Length"
 msgstr ""
@@ -3912,29 +3929,33 @@ msgstr ""
 msgid "Light mode"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:820
+#: app/src/react/features/products/editor/ProductEditor.tsx:821
 msgid "Limit purchases to 1 item per order"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:176
-#: app/src/react/ui/RichText.tsx:214
+#: app/src/react/ui/RichText.tsx:171
+#: app/src/react/ui/RichText.tsx:209
 msgid "Link"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:932
+#: app/src/react/features/products/editor/ProductEditor.tsx:933
 msgid "Linked products"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:180
+#: app/src/react/features/media/MediaLibrary.tsx:181
 msgid "List view"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:182
+#: app/src/react/features/design-system/Showcase.tsx:186
 msgid "Live"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:158
-#: app/src/react/features/design-system/Showcase.tsx:213
+#: app/src/react/app/MediaPickerProvider.tsx:152
+msgid "Load more"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:162
+#: app/src/react/features/design-system/Showcase.tsx:217
 msgid "Loading"
 msgstr ""
 
@@ -3997,7 +4018,7 @@ msgstr ""
 msgid "Low stock"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:813
+#: app/src/react/features/products/editor/ProductEditor.tsx:814
 msgid "Low stock threshold"
 msgstr ""
 
@@ -4054,13 +4075,13 @@ msgstr ""
 msgid "Maximum spend"
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:233
+#: app/src/react/features/users/ImportUsersModal.tsx:218
 msgid "Means"
 msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:105
 #: app/src/react/features/media/MediaEditScreen.tsx:64
-#: app/src/react/features/media/MediaLibrary.tsx:170
+#: app/src/react/features/media/MediaLibrary.tsx:171
 #: app/src/react/features/roles/queries.ts:25
 #: app/src/react/features/settings/categories.ts:23
 msgid "Media"
@@ -4074,6 +4095,7 @@ msgstr ""
 msgid "Media item not found."
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:84
 #: app/src/react/features/dashboard/cards/register.ts:43
 msgid "Media library"
 msgstr ""
@@ -4093,7 +4115,7 @@ msgstr ""
 #: app/src/react/features/menus/MenuEditor.tsx:204
 #: app/src/react/features/menus/MenusList.tsx:59
 #: app/src/react/features/settings/categories.ts:17
-#: app/src/react/shell/AppShell.tsx:136
+#: app/src/react/shell/AppShell.tsx:135
 msgid "Menu"
 msgstr ""
 
@@ -4119,7 +4141,7 @@ msgstr ""
 msgid "Menu deleted"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:968
+#: app/src/react/features/products/editor/ProductEditor.tsx:969
 msgid "Menu order"
 msgstr ""
 
@@ -4135,7 +4157,7 @@ msgstr ""
 msgid "Method"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:209
+#: app/src/react/features/design-system/Showcase.tsx:213
 msgid "Metrics"
 msgstr ""
 
@@ -4226,7 +4248,7 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:635
+#: app/src/react/features/products/editor/ProductEditor.tsx:636
 msgid "More actions"
 msgstr ""
 
@@ -4265,15 +4287,15 @@ msgstr ""
 msgid "Move to the trash?"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:102
+#: app/src/react/features/design-system/Showcase.tsx:106
 #: app/src/react/features/orders/OrderDetails.tsx:164
 #: app/src/react/features/orders/OrderDetails.tsx:186
 #: app/src/react/features/orders/OrdersList.tsx:248
 #: app/src/react/features/orders/OrdersList.tsx:282
 #: app/src/react/features/products/CouponsView.tsx:195
 #: app/src/react/features/products/CouponsView.tsx:264
-#: app/src/react/features/products/editor/ProductEditor.tsx:523
-#: app/src/react/features/products/editor/ProductEditor.tsx:609
+#: app/src/react/features/products/editor/ProductEditor.tsx:524
+#: app/src/react/features/products/editor/ProductEditor.tsx:610
 #: app/src/react/features/products/ProductsList.tsx:213
 #: app/src/react/features/products/ProductsList.tsx:248
 msgid "Move to trash"
@@ -4281,7 +4303,7 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:162
 #: app/src/react/features/orders/OrdersList.tsx:244
-#: app/src/react/features/products/editor/ProductEditor.tsx:523
+#: app/src/react/features/products/editor/ProductEditor.tsx:524
 #: app/src/react/features/products/ProductsList.tsx:209
 msgid "Move to trash?"
 msgstr ""
@@ -4296,7 +4318,7 @@ msgid "Multiple statements are not allowed."
 msgstr ""
 
 #: app/src/react/features/comments/CommentDetails.tsx:125
-#: app/src/react/features/design-system/Showcase.tsx:386
+#: app/src/react/features/design-system/Showcase.tsx:392
 #: app/src/react/features/menus/MenuEditor.tsx:206
 #: app/src/react/features/products/AttributesView.tsx:51
 #: app/src/react/features/products/AttributesView.tsx:183
@@ -4315,7 +4337,7 @@ msgstr ""
 msgid "Name (numeric)"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:234
+#: app/src/react/features/media/MediaLibrary.tsx:224
 msgid "Name A–Z"
 msgstr ""
 
@@ -4323,7 +4345,7 @@ msgstr ""
 msgid "Name shown to customer"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:235
+#: app/src/react/features/media/MediaLibrary.tsx:225
 msgid "Name Z–A"
 msgstr ""
 
@@ -4341,7 +4363,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:797
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:34
-#: app/src/react/features/design-system/Showcase.tsx:220
+#: app/src/react/features/design-system/Showcase.tsx:224
 msgid "Net revenue"
 msgstr ""
 
@@ -4349,8 +4371,8 @@ msgstr ""
 msgid "Net revenue (%s days)"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:882
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:525
+#: app/src/react/features/products/editor/ProductEditor.tsx:883
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:526
 msgid "Never"
 msgstr ""
 
@@ -4370,8 +4392,8 @@ msgstr ""
 msgid "New Admin Menu"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1107
 #: app/src/react/features/products/editor/ProductEditor.tsx:1108
+#: app/src/react/features/products/editor/ProductEditor.tsx:1109
 msgid "New category"
 msgstr ""
 
@@ -4383,7 +4405,7 @@ msgstr ""
 msgid "New notice"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:344
+#: app/src/react/features/design-system/Showcase.tsx:350
 #: app/src/react/features/orders/OrdersList.tsx:619
 msgid "New orders will appear here as soon as customers check out."
 msgstr ""
@@ -4422,7 +4444,7 @@ msgstr ""
 msgid "Newer order #%s"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:232
+#: app/src/react/features/media/MediaLibrary.tsx:222
 msgid "Newest first"
 msgstr ""
 
@@ -4430,7 +4452,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: app/src/react/ui/Pagination.tsx:122
+#: app/src/react/ui/Pagination.tsx:118
 msgid "Next page"
 msgstr ""
 
@@ -4451,7 +4473,7 @@ msgstr ""
 msgid "No Admin Notices found."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:331
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:332
 msgid "No attributes used for variations"
 msgstr ""
 
@@ -4485,7 +4507,7 @@ msgstr ""
 msgid "No categories found"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1093
+#: app/src/react/features/products/editor/ProductEditor.tsx:1094
 msgid "No categories found."
 msgstr ""
 
@@ -4517,7 +4539,8 @@ msgstr ""
 msgid "No file was uploaded."
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:225
+#: app/src/react/data/DataTable.tsx:186
+#: app/src/react/data/DataTable.tsx:267
 msgid "No items found"
 msgstr ""
 
@@ -4549,7 +4572,7 @@ msgstr ""
 msgid "No notices yet"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:110
+#: app/src/react/shell/notices/NotificationsPanel.tsx:121
 msgid "No notifications on this screen."
 msgstr ""
 
@@ -4573,7 +4596,7 @@ msgstr ""
 msgid "No orders selected."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:343
+#: app/src/react/features/design-system/Showcase.tsx:349
 #: app/src/react/features/orders/OrdersList.tsx:618
 msgid "No orders yet"
 msgstr ""
@@ -4599,7 +4622,7 @@ msgstr ""
 msgid "No plugin file uploaded"
 msgstr ""
 
-#: app/src/react/features/plugins/PluginsList.tsx:199
+#: app/src/react/features/plugins/PluginsList.tsx:184
 msgid "No plugin here matches that."
 msgstr ""
 
@@ -4607,7 +4630,7 @@ msgstr ""
 msgid "No posts in this period."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:398
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:399
 msgid "No price"
 msgstr ""
 
@@ -4660,7 +4683,7 @@ msgstr ""
 msgid "No shipping address."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:898
+#: app/src/react/features/products/editor/ProductEditor.tsx:899
 #: app/src/react/features/products/ProductQuickEdit.tsx:339
 msgid "No shipping class"
 msgstr ""
@@ -4697,7 +4720,7 @@ msgstr ""
 msgid "No values yet."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:369
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:370
 msgid "No variations yet"
 msgstr ""
 
@@ -4720,8 +4743,8 @@ msgid "Nobody yet"
 msgstr ""
 
 #: app/src/react/features/products/CategoriesView.tsx:238
-#: app/src/react/features/products/editor/ProductEditor.tsx:769
-#: app/src/react/ui/RichText.tsx:196
+#: app/src/react/features/products/editor/ProductEditor.tsx:770
+#: app/src/react/ui/RichText.tsx:191
 msgid "None"
 msgstr ""
 
@@ -4770,6 +4793,10 @@ msgstr ""
 msgid "Nothing found."
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:112
+msgid "Nothing here"
+msgstr ""
+
 #: app/src/react/features/plugins/PluginRepository.tsx:82
 msgid "Nothing in the directory matches that."
 msgstr ""
@@ -4782,7 +4809,7 @@ msgstr ""
 msgid "Nothing logged yet"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:221
+#: app/src/react/features/media/MediaDetails.tsx:207
 msgid "Nothing on the site uses this file."
 msgstr ""
 
@@ -4798,7 +4825,7 @@ msgstr ""
 msgid "Nothing sold in this period."
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:57
+#: app/src/react/shell/notices/NotificationsPanel.tsx:54
 msgid "Nothing waiting"
 msgstr ""
 
@@ -4827,12 +4854,12 @@ msgid "Notice updated"
 msgstr ""
 
 #: app/src/react/app/ToastProvider.tsx:81
-#: app/src/react/shell/notices/NotificationsPanel.tsx:57
-#: app/src/react/shell/notices/NotificationsPanel.tsx:120
+#: app/src/react/shell/notices/NotificationsPanel.tsx:54
+#: app/src/react/shell/notices/NotificationsPanel.tsx:131
 msgid "Notifications"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:120
+#: app/src/react/shell/notices/NotificationsPanel.tsx:131
 msgid "Notifications (%d)"
 msgstr ""
 
@@ -4844,7 +4871,7 @@ msgstr ""
 msgid "Number of Months"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:168
+#: app/src/react/ui/RichText.tsx:163
 msgid "Numbered list"
 msgstr ""
 
@@ -4872,7 +4899,7 @@ msgstr ""
 msgid "Older order #%s"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:233
+#: app/src/react/features/media/MediaLibrary.tsx:223
 msgid "Oldest first"
 msgstr ""
 
@@ -4880,14 +4907,14 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:603
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:322
+#: app/src/react/features/products/editor/ProductEditor.tsx:604
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:323
 #: app/src/react/features/products/productFormat.ts:25
 #: app/src/react/features/products/ProductsList.tsx:383
 msgid "On backorder"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:219
+#: app/src/react/features/design-system/Showcase.tsx:223
 #: app/src/react/features/orders/OrdersList.tsx:197
 msgid "On hold"
 msgstr ""
@@ -4922,7 +4949,7 @@ msgstr ""
 msgid "Only SELECT runs here, and the server caps how many rows come back."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:235
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:236
 msgid "Only the first %d variations will be created."
 msgstr ""
 
@@ -4940,16 +4967,16 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:184
 #: app/src/react/features/orders/OrdersList.tsx:281
-#: app/src/react/features/products/editor/ProductEditor.tsx:608
-#: app/src/react/features/products/editor/ProductEditor.tsx:665
+#: app/src/react/features/products/editor/ProductEditor.tsx:609
+#: app/src/react/features/products/editor/ProductEditor.tsx:666
 msgid "Open in classic editor"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:292
+#: app/src/react/features/design-system/Showcase.tsx:298
 msgid "Open in classic screen"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:268
+#: app/src/react/features/design-system/Showcase.tsx:274
 msgid "Open modal"
 msgstr ""
 
@@ -4957,8 +4984,12 @@ msgstr ""
 msgid "Open settings"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:271
+#: app/src/react/features/design-system/Showcase.tsx:277
 msgid "Open sheet"
+msgstr ""
+
+#: app/src/react/features/design-system/Showcase.tsx:249
+msgid "Opens the system picker."
 msgstr ""
 
 #: app/src/react/features/products/BulkPriceModal.tsx:83
@@ -4991,7 +5022,7 @@ msgid "Optional logo for to be displayed in the menu"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:125
-#: app/src/react/features/design-system/Showcase.tsx:79
+#: app/src/react/features/design-system/Showcase.tsx:83
 #: app/src/react/features/orders/OrderEditor.tsx:811
 #: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/orders/OrdersList.tsx:322
@@ -5058,7 +5089,7 @@ msgid "Order without items"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:35
-#: app/src/react/features/design-system/Showcase.tsx:212
+#: app/src/react/features/design-system/Showcase.tsx:216
 #: app/src/react/features/orders/OrderDetails.tsx:216
 #: app/src/react/features/orders/OrderDetails.tsx:467
 #: app/src/react/features/orders/OrderEditor.tsx:473
@@ -5097,8 +5128,8 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:535
 #: app/src/react/features/orders/OrderEditor.tsx:558
-#: app/src/react/features/products/editor/ProductEditor.tsx:602
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:321
+#: app/src/react/features/products/editor/ProductEditor.tsx:603
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:322
 #: app/src/react/features/products/productFormat.ts:21
 #: app/src/react/features/products/ProductsList.tsx:140
 #: app/src/react/features/products/ProductsList.tsx:382
@@ -5109,7 +5140,7 @@ msgstr ""
 msgid "Outside services and their keys"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:264
+#: app/src/react/features/design-system/Showcase.tsx:270
 msgid "Overlays"
 msgstr ""
 
@@ -5152,7 +5183,7 @@ msgstr ""
 msgid "Pages per session"
 msgstr ""
 
-#: app/src/react/ui/Pagination.tsx:95
+#: app/src/react/ui/Pagination.tsx:91
 msgid "Pagination"
 msgstr ""
 
@@ -5164,8 +5195,8 @@ msgstr ""
 msgid "Paid via %s"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:107
-#: app/src/react/ui/RichText.tsx:156
+#: app/src/react/ui/RichText.tsx:106
+#: app/src/react/ui/RichText.tsx:151
 msgid "Paragraph"
 msgstr ""
 
@@ -5173,7 +5204,7 @@ msgstr ""
 msgid "Parent category"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:141
+#: app/src/react/features/login/LoginScreen.tsx:142
 #: app/src/react/features/users/ImportUsersModal.tsx:20
 #: app/src/react/features/users/UserModals.tsx:76
 #: app/src/react/features/users/UserModals.tsx:83
@@ -5198,7 +5229,7 @@ msgstr ""
 msgid "Payment"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:196
+#: app/src/react/features/design-system/Showcase.tsx:200
 msgid "Payment failed"
 msgstr ""
 
@@ -5219,12 +5250,12 @@ msgstr ""
 msgid "Pending"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:217
+#: app/src/react/features/design-system/Showcase.tsx:221
 #: app/src/react/features/orders/OrdersList.tsx:181
 msgid "Pending payment"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:984
+#: app/src/react/features/products/editor/ProductEditor.tsx:985
 #: app/src/react/features/products/ProductQuickEdit.tsx:116
 msgid "Pending review"
 msgstr ""
@@ -5290,7 +5321,7 @@ msgstr ""
 msgid "Please provide a valid license key."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:436
+#: app/src/react/features/products/editor/ProductEditor.tsx:437
 msgid "Please review the highlighted fields"
 msgstr ""
 
@@ -5436,7 +5467,7 @@ msgstr ""
 msgid "Posts, pages and uploads they own go with them."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:230
+#: app/src/react/features/design-system/Showcase.tsx:234
 msgid "Prefix and hint"
 msgstr ""
 
@@ -5445,7 +5476,7 @@ msgid "present"
 msgstr ""
 
 #: app/src/react/features/posts/PostPreview.tsx:107
-#: app/src/react/features/products/editor/ProductEditor.tsx:607
+#: app/src/react/features/products/editor/ProductEditor.tsx:608
 msgid "Preview"
 msgstr ""
 
@@ -5453,11 +5484,11 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: app/src/react/ui/Pagination.tsx:96
+#: app/src/react/ui/Pagination.tsx:92
 msgid "Previous page"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:230
+#: app/src/react/features/design-system/Showcase.tsx:234
 #: app/src/react/features/orders/OrderDetails.tsx:298
 #: app/src/react/features/products/BulkPriceModal.tsx:70
 #: app/src/react/features/products/BulkPriceModal.tsx:75
@@ -5465,11 +5496,11 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:352
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:353
 msgid "Price for all"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:742
+#: app/src/react/features/products/editor/ProductEditor.tsx:743
 msgid "Prices are set on each variation."
 msgstr ""
 
@@ -5479,12 +5510,12 @@ msgid ""
 "product in the list to edit them."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:704
+#: app/src/react/features/products/editor/ProductEditor.tsx:705
 #: app/src/react/features/products/ProductQuickEdit.tsx:283
 msgid "Pricing"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:122
+#: app/src/react/features/design-system/Showcase.tsx:126
 msgid "Primary action"
 msgstr ""
 
@@ -5492,7 +5523,7 @@ msgstr ""
 msgid "Print"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:985
+#: app/src/react/features/products/editor/ProductEditor.tsx:986
 #: app/src/react/features/products/productFormat.ts:14
 #: app/src/react/features/products/ProductQuickEdit.tsx:117
 #: app/src/react/features/products/ProductsList.tsx:117
@@ -5504,7 +5535,7 @@ msgstr ""
 msgid "Private note"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:218
+#: app/src/react/features/design-system/Showcase.tsx:222
 #: app/src/react/features/orders/OrdersList.tsx:189
 msgid "Processing"
 msgstr ""
@@ -5526,32 +5557,32 @@ msgstr ""
 msgid "Product duplication is not available."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:482
+#: app/src/react/features/products/editor/ProductEditor.tsx:483
 msgid "Product gallery"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:474
+#: app/src/react/features/products/editor/ProductEditor.tsx:475
 msgid "Product image"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:532
+#: app/src/react/features/products/editor/ProductEditor.tsx:533
 msgid "Product moved to the trash"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:229
-#: app/src/react/features/products/editor/ProductEditor.tsx:675
+#: app/src/react/features/design-system/Showcase.tsx:233
+#: app/src/react/features/products/editor/ProductEditor.tsx:676
 msgid "Product name"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:578
+#: app/src/react/features/products/editor/ProductEditor.tsx:579
 msgid "Product not found"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:462
+#: app/src/react/features/products/editor/ProductEditor.tsx:463
 msgid "Product saved"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:462
+#: app/src/react/features/products/editor/ProductEditor.tsx:463
 msgid "Product saved and published"
 msgstr ""
 
@@ -5564,7 +5595,7 @@ msgstr ""
 msgid "Product tags"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:706
+#: app/src/react/features/products/editor/ProductEditor.tsx:707
 msgid "Product type"
 msgstr ""
 
@@ -5572,7 +5603,7 @@ msgstr ""
 msgid "Product updated"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:753
+#: app/src/react/features/products/editor/ProductEditor.tsx:754
 msgid "Product URL"
 msgstr ""
 
@@ -5580,7 +5611,7 @@ msgstr ""
 #: app/src/react/features/products/CategoriesView.tsx:155
 #: app/src/react/features/products/CategoriesView.tsx:182
 #: app/src/react/features/products/CouponsView.tsx:279
-#: app/src/react/features/products/editor/ProductEditor.tsx:632
+#: app/src/react/features/products/editor/ProductEditor.tsx:633
 #: app/src/react/features/products/ProductsList.tsx:412
 #: app/src/react/features/products/ProductsList.tsx:548
 #: app/src/react/features/products/TagsView.tsx:100
@@ -5592,11 +5623,11 @@ msgstr ""
 msgid "Products in this category will not be deleted."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:952
+#: app/src/react/features/products/editor/ProductEditor.tsx:953
 msgid "Products promoted in the cart based on this product."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:947
+#: app/src/react/features/products/editor/ProductEditor.tsx:948
 msgid ""
 "Products recommended instead of this one, usually more profitable or better "
 "quality."
@@ -5619,15 +5650,15 @@ msgid "Property saved successfully"
 msgstr ""
 
 #: app/src/react/features/posts/PostsList.tsx:157
-#: app/src/react/features/products/editor/ProductEditor.tsx:642
-#: app/src/react/features/products/editor/ProductEditor.tsx:976
+#: app/src/react/features/products/editor/ProductEditor.tsx:643
+#: app/src/react/features/products/editor/ProductEditor.tsx:977
 msgid "Publish"
 msgstr ""
 
 #: admin/src/Rest/PostsTables.php:439
 #: app/src/react/features/dashboard/cards/content.tsx:29
-#: app/src/react/features/design-system/Showcase.tsx:238
-#: app/src/react/features/products/editor/ProductEditor.tsx:982
+#: app/src/react/features/design-system/Showcase.tsx:242
+#: app/src/react/features/products/editor/ProductEditor.tsx:983
 #: app/src/react/features/products/productFormat.ts:11
 #: app/src/react/features/products/ProductQuickEdit.tsx:114
 #: app/src/react/features/products/ProductsList.tsx:114
@@ -5636,7 +5667,7 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:964
+#: app/src/react/features/products/editor/ProductEditor.tsx:965
 msgid "Purchase note"
 msgstr ""
 
@@ -5649,7 +5680,7 @@ msgid "Qty to refund"
 msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:600
-#: app/src/react/features/products/editor/ProductEditor.tsx:796
+#: app/src/react/features/products/editor/ProductEditor.tsx:797
 #: app/src/react/features/products/ProductQuickEdit.tsx:317
 msgid "Quantity"
 msgstr ""
@@ -5680,7 +5711,7 @@ msgstr ""
 msgid "Quick Draft"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:384
+#: app/src/react/features/design-system/Showcase.tsx:390
 #: app/src/react/features/products/ProductQuickEdit.tsx:229
 #: app/src/react/features/products/ProductsList.tsx:239
 msgid "Quick edit"
@@ -5692,7 +5723,7 @@ msgstr ""
 msgid "Quick preview"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:169
+#: app/src/react/ui/RichText.tsx:164
 msgid "Quote"
 msgstr ""
 
@@ -5708,7 +5739,7 @@ msgstr ""
 msgid "Rank Math Overview"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:114
+#: app/src/react/features/design-system/Showcase.tsx:118
 msgid "React component kit of the plugin, based on TailAdmin."
 msgstr ""
 
@@ -5716,11 +5747,11 @@ msgstr ""
 msgid "React foundation"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:89
+#: app/src/react/shell/notices/NotificationsPanel.tsx:86
 msgid "Read more"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:121
+#: app/src/react/features/design-system/Showcase.tsx:125
 msgid "Ready to build screens"
 msgstr ""
 
@@ -5732,7 +5763,7 @@ msgstr ""
 msgid "Realistic browser and operating system data"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:380
+#: app/src/react/features/design-system/Showcase.tsx:386
 #: app/src/react/features/orders/RefundModal.tsx:196
 msgid "Reason (optional)"
 msgstr ""
@@ -5799,7 +5830,7 @@ msgstr ""
 msgid "Redirections"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:203
+#: app/src/react/ui/RichText.tsx:198
 msgid "Redo"
 msgstr ""
 
@@ -5820,7 +5851,7 @@ msgstr ""
 msgid "Referrer URL exceeds maximum length"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:119
+#: app/src/react/features/design-system/Showcase.tsx:123
 #: app/src/react/features/orders/OrdersList.tsx:534
 #: app/src/react/features/orders/OrdersList.tsx:535
 #: app/src/react/features/products/ProductsList.tsx:481
@@ -5828,7 +5859,7 @@ msgstr ""
 msgid "Refresh"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:373
+#: app/src/react/features/design-system/Showcase.tsx:379
 #: app/src/react/features/orders/OrderDetails.tsx:257
 #: app/src/react/features/orders/RefundModal.tsx:148
 msgid "Refund"
@@ -5842,7 +5873,7 @@ msgstr ""
 msgid "Refund %s"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:379
+#: app/src/react/features/design-system/Showcase.tsx:385
 #: app/src/react/features/orders/RefundModal.tsx:195
 msgid "Refund amount"
 msgstr ""
@@ -5855,7 +5886,7 @@ msgstr ""
 msgid "Refund manually"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:365
+#: app/src/react/features/design-system/Showcase.tsx:371
 #: app/src/react/features/orders/RefundModal.tsx:140
 msgid "Refund order"
 msgstr ""
@@ -5877,15 +5908,15 @@ msgid "Registered customer"
 msgstr ""
 
 #: app/src/react/features/products/BulkPriceModal.tsx:77
-#: app/src/react/features/products/editor/ProductEditor.tsx:714
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:433
+#: app/src/react/features/products/editor/ProductEditor.tsx:715
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:434
 #: app/src/react/features/products/ProductQuickEdit.tsx:291
 #: app/src/react/features/products/ProductVariations.tsx:126
 #: app/src/react/features/products/ProductVariations.tsx:170
 msgid "Regular price"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:353
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:354
 msgid "Regular price for all variations"
 msgstr ""
 
@@ -5949,8 +5980,8 @@ msgstr ""
 msgid "Remove fee"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:856
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:490
+#: app/src/react/features/products/editor/ProductEditor.tsx:857
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:491
 msgid "Remove file"
 msgstr ""
 
@@ -5967,8 +5998,8 @@ msgstr ""
 msgid "Remove from this menu"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1031
-#: app/src/react/features/products/editor/ProductEditor.tsx:1056
+#: app/src/react/features/products/editor/ProductEditor.tsx:1032
+#: app/src/react/features/products/editor/ProductEditor.tsx:1057
 msgid "Remove image"
 msgstr ""
 
@@ -6016,7 +6047,7 @@ msgstr ""
 msgid "Rename value"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1024
+#: app/src/react/features/products/editor/ProductEditor.tsx:1025
 msgid "Replace"
 msgstr ""
 
@@ -6087,7 +6118,7 @@ msgstr ""
 msgid "Requires a free shipping method that accepts coupons."
 msgstr ""
 
-#: app/src/react/features/media/ImageEditor.tsx:362
+#: app/src/react/features/media/ImageEditor.tsx:357
 msgid "Reset"
 msgstr ""
 
@@ -6107,7 +6138,7 @@ msgstr ""
 msgid "Reset settings"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:105
+#: app/src/react/features/login/LoginScreen.tsx:106
 msgid "Reset your password"
 msgstr ""
 
@@ -6216,7 +6247,7 @@ msgstr ""
 msgid "Role Editor"
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:264
+#: app/src/react/features/users/ImportUsersModal.tsx:249
 msgid "Role for everyone imported"
 msgstr ""
 
@@ -6276,20 +6307,20 @@ msgstr ""
 msgid "Run"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:735
+#: app/src/react/features/products/editor/ProductEditor.tsx:736
 msgid "Sale ends"
 msgstr ""
 
 #: app/src/react/features/products/BulkPriceModal.tsx:78
-#: app/src/react/features/products/editor/ProductEditor.tsx:721
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:440
+#: app/src/react/features/products/editor/ProductEditor.tsx:722
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:441
 #: app/src/react/features/products/ProductQuickEdit.tsx:298
 #: app/src/react/features/products/ProductVariations.tsx:127
 #: app/src/react/features/products/ProductVariations.tsx:182
 msgid "Sale price"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:730
+#: app/src/react/features/products/editor/ProductEditor.tsx:731
 msgid "Sale starts"
 msgstr ""
 
@@ -6301,7 +6332,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: app/src/react/features/media/ImageEditor.tsx:368
+#: app/src/react/features/media/ImageEditor.tsx:363
 #: app/src/react/features/menus/MenuEditor.tsx:155
 #: app/src/react/features/notices/NoticeEditor.tsx:113
 #: app/src/react/features/products/AttributesView.tsx:329
@@ -6335,7 +6366,7 @@ msgstr ""
 msgid "Save coupon"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:638
+#: app/src/react/features/products/editor/ProductEditor.tsx:639
 msgid "Save draft"
 msgstr ""
 
@@ -6347,19 +6378,19 @@ msgstr ""
 msgid "Save the keys"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:917
+#: app/src/react/features/products/editor/ProductEditor.tsx:918
 msgid "Save the product to start adding variations."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:919
+#: app/src/react/features/products/editor/ProductEditor.tsx:920
 msgid "Save the product to use the attribute changes in the variations."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:192
+#: app/src/react/features/design-system/Showcase.tsx:196
 msgid "Saved"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:727
+#: app/src/react/features/products/editor/ProductEditor.tsx:728
 msgid "Schedule sale"
 msgstr ""
 
@@ -6400,7 +6431,7 @@ msgid "Search capabilities"
 msgstr ""
 
 #: app/src/react/features/products/CategoriesView.tsx:197
-#: app/src/react/features/products/editor/ProductEditor.tsx:1078
+#: app/src/react/features/products/editor/ProductEditor.tsx:1079
 msgid "Search categories"
 msgstr ""
 
@@ -6429,8 +6460,8 @@ msgstr ""
 msgid "Search for products above to add them to the order."
 msgstr ""
 
-#: app/src/react/features/plugins/PluginsList.tsx:182
-#: app/src/react/features/plugins/PluginsList.tsx:183
+#: app/src/react/features/plugins/PluginsList.tsx:167
+#: app/src/react/features/plugins/PluginsList.tsx:168
 msgid "Search installed plugins"
 msgstr ""
 
@@ -6457,7 +6488,7 @@ msgstr ""
 msgid "Search posts"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:242
+#: app/src/react/features/design-system/Showcase.tsx:246
 #: app/src/react/features/products/editor/ProductPicker.tsx:92
 msgid "Search products"
 msgstr ""
@@ -6466,7 +6497,7 @@ msgstr ""
 msgid "Search products by name or SKU to add"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:995
+#: app/src/react/features/products/editor/ProductEditor.tsx:996
 #: app/src/react/features/products/ProductQuickEdit.tsx:123
 msgid "Search results only"
 msgstr ""
@@ -6487,8 +6518,9 @@ msgstr ""
 msgid "Search Tags"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:209
-#: app/src/react/features/media/MediaLibrary.tsx:210
+#: app/src/react/app/MediaPickerProvider.tsx:97
+#: app/src/react/features/media/MediaLibrary.tsx:199
+#: app/src/react/features/media/MediaLibrary.tsx:200
 msgid "Search the library"
 msgstr ""
 
@@ -6561,11 +6593,11 @@ msgstr ""
 msgid "Select a state"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:236
+#: app/src/react/features/design-system/Showcase.tsx:240
 msgid "Select a status"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:159
+#: app/src/react/data/DataTable.tsx:201
 #: app/src/react/features/products/editor/ProductAttributes.tsx:224
 msgid "Select all"
 msgstr ""
@@ -6574,12 +6606,12 @@ msgstr ""
 msgid "Select how many months of dummy data to generate."
 msgstr ""
 
-#: app/src/react/lib/wpMedia.ts:53
-#: app/src/react/ui/RichText.tsx:116
+#: app/src/react/ui/RichText.tsx:114
 msgid "Select image"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:248
+#: app/src/react/data/DataTable.tsx:290
+#: app/src/react/data/DataTable.tsx:420
 msgid "Select row"
 msgstr ""
 
@@ -6593,7 +6625,7 @@ msgstr ""
 msgid "Send note"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:179
+#: app/src/react/features/login/LoginScreen.tsx:177
 msgid "Send the link"
 msgstr ""
 
@@ -6605,7 +6637,7 @@ msgstr ""
 msgid "Senha redefinida com sucesso. Faça login para continuar."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:965
+#: app/src/react/features/products/editor/ProductEditor.tsx:966
 msgid "Sent to the customer after purchase."
 msgstr ""
 
@@ -6617,7 +6649,7 @@ msgstr ""
 msgid "Separate tags with commas"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1115
+#: app/src/react/features/products/editor/ProductEditor.tsx:1116
 #: app/src/react/features/products/ProductQuickEdit.tsx:372
 msgid "Separate tags with commas."
 msgstr ""
@@ -6660,12 +6692,12 @@ msgid ""
 "back to the standard logo."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:474
-#: app/src/react/features/products/editor/ProductEditor.tsx:1017
+#: app/src/react/features/products/editor/ProductEditor.tsx:475
+#: app/src/react/features/products/editor/ProductEditor.tsx:1018
 msgid "Set product image"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:246
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:247
 msgid "Set their prices to make them purchasable."
 msgstr ""
 
@@ -6679,7 +6711,7 @@ msgstr ""
 
 #: admin/src/Pages/Settings.php:64
 #: admin/src/Pages/Settings.php:65
-#: app/src/react/features/design-system/Showcase.tsx:161
+#: app/src/react/features/design-system/Showcase.tsx:165
 #: app/src/react/features/posts/PostsSettings.tsx:44
 #: app/src/react/features/roles/queries.ts:29
 #: app/src/react/features/settings/SettingsScreen.tsx:107
@@ -6715,7 +6747,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderPreview.tsx:124
 #: app/src/react/features/orders/OrderPreview.tsx:153
 #: app/src/react/features/orders/OrdersList.tsx:378
-#: app/src/react/features/products/editor/ProductEditor.tsx:826
+#: app/src/react/features/products/editor/ProductEditor.tsx:827
 #: app/src/react/features/products/ProductQuickEdit.tsx:328
 msgid "Shipping"
 msgstr ""
@@ -6733,7 +6765,7 @@ msgstr ""
 msgid "Shipping and fees"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:899
+#: app/src/react/features/products/editor/ProductEditor.tsx:900
 #: app/src/react/features/products/ProductQuickEdit.tsx:338
 msgid "Shipping class"
 msgstr ""
@@ -6742,7 +6774,7 @@ msgstr ""
 msgid "Shipping method"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:768
+#: app/src/react/features/products/editor/ProductEditor.tsx:769
 msgid "Shipping only"
 msgstr ""
 
@@ -6750,21 +6782,21 @@ msgstr ""
 msgid "Shipping: %s"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:993
+#: app/src/react/features/products/editor/ProductEditor.tsx:994
 #: app/src/react/features/products/ProductQuickEdit.tsx:121
 msgid "Shop and search results"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:994
+#: app/src/react/features/products/editor/ProductEditor.tsx:995
 #: app/src/react/features/products/ProductQuickEdit.tsx:122
 msgid "Shop only"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:686
+#: app/src/react/features/products/editor/ProductEditor.tsx:687
 msgid "Short description"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:243
+#: app/src/react/features/design-system/Showcase.tsx:247
 msgid "Short description of the product."
 msgstr ""
 
@@ -6772,7 +6804,7 @@ msgstr ""
 msgid "Show child items"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:89
+#: app/src/react/shell/notices/NotificationsPanel.tsx:86
 msgid "Show less"
 msgstr ""
 
@@ -6784,7 +6816,7 @@ msgstr ""
 msgid "Show password"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:151
+#: app/src/react/features/login/LoginScreen.tsx:152
 msgid "Show the password"
 msgstr ""
 
@@ -6792,7 +6824,7 @@ msgstr ""
 msgid "Show this notice"
 msgstr ""
 
-#: app/src/react/ui/Pagination.tsx:75
+#: app/src/react/ui/Pagination.tsx:76
 msgid "Showing %1$s to %2$s of %3$s"
 msgstr ""
 
@@ -6800,7 +6832,7 @@ msgstr ""
 msgid "Shown to"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:248
+#: app/src/react/features/design-system/Showcase.tsx:254
 msgid "Shows first in the catalog."
 msgstr ""
 
@@ -6812,8 +6844,8 @@ msgstr ""
 msgid "Sidebar view"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:105
-#: app/src/react/features/login/LoginScreen.tsx:179
+#: app/src/react/features/login/LoginScreen.tsx:106
+#: app/src/react/features/login/LoginScreen.tsx:177
 msgid "Sign in"
 msgstr ""
 
@@ -6821,7 +6853,7 @@ msgstr ""
 msgid "Signed in as"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:592
+#: app/src/react/features/products/editor/ProductEditor.tsx:593
 msgid "Simple product"
 msgstr ""
 
@@ -6841,18 +6873,18 @@ msgstr ""
 #: app/src/react/features/dashboard/cards/site.tsx:43
 #: app/src/react/features/media/ImageEditor.tsx:299
 #: app/src/react/features/media/MediaDetails.tsx:151
-#: app/src/react/features/media/MediaDetails.tsx:200
+#: app/src/react/features/media/MediaDetails.tsx:186
 msgid "Size"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:352
+#: app/src/react/features/design-system/Showcase.tsx:358
 msgid "Skeletons"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:387
+#: app/src/react/features/design-system/Showcase.tsx:393
 #: app/src/react/features/orders/OrderDetails.tsx:329
-#: app/src/react/features/products/editor/ProductEditor.tsx:785
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:429
+#: app/src/react/features/products/editor/ProductEditor.tsx:786
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:430
 #: app/src/react/features/products/ProductQuickEdit.tsx:270
 #: app/src/react/features/products/ProductsList.tsx:288
 #: app/src/react/features/products/ProductVariations.tsx:156
@@ -6863,7 +6895,7 @@ msgstr ""
 #: app/src/react/features/products/AttributesView.tsx:269
 #: app/src/react/features/products/CategoriesView.tsx:152
 #: app/src/react/features/products/CategoriesView.tsx:231
-#: app/src/react/features/products/editor/ProductEditor.tsx:676
+#: app/src/react/features/products/editor/ProductEditor.tsx:677
 #: app/src/react/features/products/ProductQuickEdit.tsx:269
 #: app/src/react/features/products/TagsView.tsx:97
 #: app/src/react/features/products/TagsView.tsx:213
@@ -6872,11 +6904,11 @@ msgstr ""
 msgid "Slug"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:258
+#: app/src/react/features/design-system/Showcase.tsx:264
 msgid "Small switch"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:179
+#: app/src/react/features/design-system/Showcase.tsx:183
 msgid "Solid"
 msgstr ""
 
@@ -6884,11 +6916,11 @@ msgstr ""
 msgid "Some comments could not be updated."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:661
+#: app/src/react/features/products/editor/ProductEditor.tsx:662
 msgid "Some extensions add fields only available in the classic editor"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:653
+#: app/src/react/features/products/editor/ProductEditor.tsx:654
 msgid "Some fields may only be available in the classic editor."
 msgstr ""
 
@@ -6904,7 +6936,7 @@ msgstr ""
 msgid "Some users could not be updated."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:187
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:188
 msgid "Some variations could not be saved"
 msgstr ""
 
@@ -6912,7 +6944,7 @@ msgstr ""
 msgid "Something went wrong on this screen"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:241
+#: app/src/react/features/media/MediaLibrary.tsx:231
 msgid "Sort"
 msgstr ""
 
@@ -6933,7 +6965,7 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:253
+#: app/src/react/features/design-system/Showcase.tsx:259
 msgid "Standard shipping"
 msgstr ""
 
@@ -6966,8 +6998,8 @@ msgstr ""
 #: app/src/react/features/comments/CommentDetails.tsx:136
 #: app/src/react/features/comments/CommentsList.tsx:134
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:127
-#: app/src/react/features/design-system/Showcase.tsx:90
-#: app/src/react/features/design-system/Showcase.tsx:233
+#: app/src/react/features/design-system/Showcase.tsx:94
+#: app/src/react/features/design-system/Showcase.tsx:237
 #: app/src/react/features/menus/MenusList.tsx:70
 #: app/src/react/features/notices/NoticesList.tsx:79
 #: app/src/react/features/orders/OrderEditor.tsx:820
@@ -6976,14 +7008,14 @@ msgstr ""
 #: app/src/react/features/posts/BatchEditModal.tsx:85
 #: app/src/react/features/posts/PostPreview.tsx:72
 #: app/src/react/features/products/CouponsView.tsx:246
-#: app/src/react/features/products/editor/ProductEditor.tsx:987
+#: app/src/react/features/products/editor/ProductEditor.tsx:988
 #: app/src/react/features/products/ProductQuickEdit.tsx:271
 #: app/src/react/features/products/ProductsList.tsx:336
 #: app/src/react/features/products/ProductsList.tsx:578
 msgid "Status"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:167
+#: app/src/react/features/design-system/Showcase.tsx:171
 msgid "Status and feedback"
 msgstr ""
 
@@ -6997,17 +7029,17 @@ msgstr ""
 msgid "Stock"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:786
+#: app/src/react/features/products/editor/ProductEditor.tsx:787
 msgid "Stock keeping unit, unique per product."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:451
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:452
 #: app/src/react/features/products/ProductVariations.tsx:194
 msgid "Stock quantity"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:818
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:454
+#: app/src/react/features/products/editor/ProductEditor.tsx:819
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:455
 #: app/src/react/features/products/ProductQuickEdit.tsx:323
 #: app/src/react/features/products/ProductsList.tsx:494
 msgid "Stock status"
@@ -7021,11 +7053,11 @@ msgstr ""
 msgid "Store overview"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:164
+#: app/src/react/ui/RichText.tsx:159
 msgid "Strikethrough"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:407
+#: app/src/react/features/settings/custom/connections.tsx:408
 msgid "Stylesheet address"
 msgstr ""
 
@@ -7097,11 +7129,11 @@ msgid "Tag updated"
 msgstr ""
 
 #: admin/src/Rest/MediaTags.php:129
-#: app/src/react/features/media/MediaDetails.tsx:206
+#: app/src/react/features/media/MediaDetails.tsx:192
 #: app/src/react/features/posts/BatchEditModal.tsx:98
 #: app/src/react/features/posts/PostPreview.tsx:93
-#: app/src/react/features/products/editor/ProductEditor.tsx:1114
 #: app/src/react/features/products/editor/ProductEditor.tsx:1115
+#: app/src/react/features/products/editor/ProductEditor.tsx:1116
 #: app/src/react/features/products/ProductQuickEdit.tsx:372
 #: app/src/react/features/products/ProductsList.tsx:397
 #: app/src/react/features/products/ProductsList.tsx:508
@@ -7123,15 +7155,15 @@ msgid ""
 "site, including this screen."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:773
+#: app/src/react/features/products/editor/ProductEditor.tsx:774
 msgid "Tax class"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:771
+#: app/src/react/features/products/editor/ProductEditor.tsx:772
 msgid "Tax status"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:767
+#: app/src/react/features/products/editor/ProductEditor.tsx:768
 msgid "Taxable"
 msgstr ""
 
@@ -7140,7 +7172,7 @@ msgstr ""
 msgid "Taxes"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:107
+#: app/src/react/features/login/LoginScreen.tsx:108
 msgid "Tell us your username or email and we will send you a link."
 msgstr ""
 
@@ -7156,7 +7188,7 @@ msgstr ""
 msgid "Test notification: %s"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:180
+#: app/src/react/ui/RichText.tsx:175
 msgid "Text color"
 msgstr ""
 
@@ -7220,11 +7252,11 @@ msgstr ""
 msgid "The database explorer"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:132
+#: app/src/react/features/media/MediaLibrary.tsx:133
 msgid "The download could not be prepared."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:329
+#: app/src/react/features/products/editor/ProductEditor.tsx:330
 msgid "The end date must be after the start date."
 msgstr ""
 
@@ -7232,7 +7264,7 @@ msgstr ""
 msgid "The file will be deleted for good. The media library has no trash."
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:207
+#: app/src/react/features/users/ImportUsersModal.tsx:192
 msgid "The first row has to be the column headings."
 msgstr ""
 
@@ -7240,7 +7272,7 @@ msgstr ""
 msgid "The Flexify Dashboard plugin version is the latest."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:197
+#: app/src/react/features/design-system/Showcase.tsx:201
 msgid "The gateway refused the charge."
 msgstr ""
 
@@ -7248,15 +7280,11 @@ msgstr ""
 msgid "The media library and uploads"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:118
-msgid "The media library is not available on this screen."
-msgstr ""
-
-#: app/src/react/features/settings/custom/connections.tsx:429
+#: app/src/react/features/settings/custom/connections.tsx:430
 msgid "The name the stylesheet gives it."
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:353
+#: app/src/react/features/settings/custom/connections.tsx:354
 msgid "The one the plugin ships with"
 msgstr ""
 
@@ -7284,15 +7312,15 @@ msgstr ""
 msgid "The plugins screen"
 msgstr ""
 
-#: app/src/react/features/posts/usePostsData.ts:59
+#: app/src/react/features/posts/usePostsData.ts:60
 msgid "The posts list could not be read. Reload the page and try again."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:578
+#: app/src/react/features/products/editor/ProductEditor.tsx:579
 msgid "The product may have been deleted or you do not have permission to edit it."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:321
+#: app/src/react/features/products/editor/ProductEditor.tsx:322
 #: app/src/react/features/products/ProductQuickEdit.tsx:148
 msgid "The product name is required."
 msgstr ""
@@ -7301,7 +7329,7 @@ msgstr ""
 msgid "The products and orders screens"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:397
+#: app/src/react/features/settings/custom/connections.tsx:398
 msgid "The quick brown fox jumps over the lazy dog"
 msgstr ""
 
@@ -7317,12 +7345,12 @@ msgstr ""
 msgid "The request could not be completed."
 msgstr ""
 
-#: app/src/react/app/AppProviders.tsx:30
+#: app/src/react/app/AppProviders.tsx:31
 #: app/src/react/lib/rest.ts:102
 msgid "The request failed. Please try again."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:325
+#: app/src/react/features/products/editor/ProductEditor.tsx:326
 #: app/src/react/features/products/ProductQuickEdit.tsx:155
 #: app/src/react/features/products/ProductVariations.tsx:82
 msgid "The sale price must be lower than the regular price."
@@ -7390,7 +7418,7 @@ msgstr ""
 msgid "These are hard to undo."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:278
+#: app/src/react/features/design-system/Showcase.tsx:284
 msgid "This action cannot be undone."
 msgstr ""
 
@@ -7473,7 +7501,7 @@ msgstr ""
 msgid "This product has no variations."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:652
+#: app/src/react/features/products/editor/ProductEditor.tsx:653
 msgid "This product type is managed by an extension"
 msgstr ""
 
@@ -7481,7 +7509,7 @@ msgstr ""
 msgid "This role could not be loaded."
 msgstr ""
 
-#: app/src/react/features/settings/SettingField.tsx:105
+#: app/src/react/features/settings/SettingField.tsx:109
 msgid "This setting is not available on this screen."
 msgstr ""
 
@@ -7491,7 +7519,7 @@ msgid ""
 "changes."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:231
+#: app/src/react/features/design-system/Showcase.tsx:235
 msgid "This SKU is already in use."
 msgstr ""
 
@@ -7542,7 +7570,7 @@ msgid "Tint"
 msgstr ""
 
 #: app/src/react/features/media/MediaBulkEdit.tsx:57
-#: app/src/react/features/media/MediaDetails.tsx:185
+#: app/src/react/features/media/MediaDetails.tsx:171
 #: app/src/react/features/notices/NoticeEditor.tsx:123
 msgid "Title"
 msgstr ""
@@ -7560,7 +7588,7 @@ msgstr ""
 msgid "today"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:219
+#: app/src/react/features/media/MediaLibrary.tsx:209
 #: app/src/react/features/orders/OrdersList.tsx:430
 msgid "Today"
 msgstr ""
@@ -7569,7 +7597,8 @@ msgstr ""
 msgid "Toggle dark mode"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:259
+#: app/src/react/data/DataTable.tsx:301
+#: app/src/react/data/DataTable.tsx:451
 msgid "Toggle details"
 msgstr ""
 
@@ -7603,7 +7632,7 @@ msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:128
 #: app/src/react/features/dashboard/cards/site.tsx:189
-#: app/src/react/features/design-system/Showcase.tsx:91
+#: app/src/react/features/design-system/Showcase.tsx:95
 #: app/src/react/features/orders/OrderDetails.tsx:300
 #: app/src/react/features/orders/OrderPreview.tsx:127
 #: app/src/react/features/orders/OrdersList.tsx:290
@@ -7658,16 +7687,16 @@ msgid ""
 "plugin activations, and more."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:257
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:464
+#: app/src/react/features/design-system/Showcase.tsx:263
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:465
 msgid "Track stock"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:792
+#: app/src/react/features/products/editor/ProductEditor.tsx:793
 msgid "Track stock at product level"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:792
+#: app/src/react/features/products/editor/ProductEditor.tsx:793
 #: app/src/react/features/products/ProductQuickEdit.tsx:309
 msgid "Track stock quantity"
 msgstr ""
@@ -7689,7 +7718,7 @@ msgid "Translations"
 msgstr ""
 
 #: app/src/react/features/comments/queries.ts:47
-#: app/src/react/features/design-system/Showcase.tsx:330
+#: app/src/react/features/design-system/Showcase.tsx:336
 #: app/src/react/features/orders/OrdersList.tsx:172
 #: app/src/react/features/orders/OrdersList.tsx:647
 #: app/src/react/features/products/productFormat.ts:16
@@ -7706,7 +7735,7 @@ msgstr ""
 msgid "Try adjusting the search or filters."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:200
+#: app/src/react/features/design-system/Showcase.tsx:204
 msgid "Try again"
 msgstr ""
 
@@ -7722,14 +7751,14 @@ msgstr ""
 msgid "Turnstyle site key"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:193
+#: app/src/react/features/design-system/Showcase.tsx:197
 msgid "Two products are running low."
 msgstr ""
 
 #: app/src/react/features/activity/ActivityDetails.tsx:104
 #: app/src/react/features/activity/ActivityList.tsx:170
 #: app/src/react/features/database/DatabaseExplorer.tsx:150
-#: app/src/react/features/media/MediaDetails.tsx:199
+#: app/src/react/features/media/MediaDetails.tsx:185
 #: app/src/react/features/products/ProductsList.tsx:488
 msgid "Type"
 msgstr ""
@@ -7773,12 +7802,12 @@ msgstr ""
 msgid "Uncategorized"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:249
+#: app/src/react/features/design-system/Showcase.tsx:255
 msgid "Unchecked"
 msgstr ""
 
 #: app/src/react/features/settings/SettingsScreen.tsx:113
-#: app/src/react/ui/RichText.tsx:202
+#: app/src/react/ui/RichText.tsx:197
 msgid "Undo"
 msgstr ""
 
@@ -7825,13 +7854,13 @@ msgstr ""
 
 #: app/src/react/features/products/CouponsView.tsx:422
 #: app/src/react/features/products/CouponsView.tsx:431
-#: app/src/react/features/products/editor/ProductEditor.tsx:873
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:514
+#: app/src/react/features/products/editor/ProductEditor.tsx:874
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:515
 msgid "Unlimited"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:627
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:392
+#: app/src/react/features/products/editor/ProductEditor.tsx:628
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:393
 msgid "Unsaved changes"
 msgstr ""
 
@@ -7847,12 +7876,12 @@ msgstr ""
 msgid "Unused media"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:254
+#: app/src/react/features/media/MediaLibrary.tsx:244
 msgid "Unused only"
 msgstr ""
 
 #: app/src/react/features/plugins/PluginsList.tsx:83
-#: app/src/react/features/products/editor/ProductEditor.tsx:642
+#: app/src/react/features/products/editor/ProductEditor.tsx:643
 msgid "Update"
 msgstr ""
 
@@ -7872,8 +7901,13 @@ msgstr ""
 msgid "Updates"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:183
+#: app/src/react/app/MediaPickerProvider.tsx:100
+#: app/src/react/features/media/MediaLibrary.tsx:184
 msgid "Upload"
+msgstr ""
+
+#: app/src/react/app/MediaPickerProvider.tsx:112
+msgid "Upload a file or change the search."
 msgstr ""
 
 #: app/src/react/features/plugins/PluginsList.tsx:150
@@ -7888,20 +7922,20 @@ msgstr ""
 msgid "Upload failed"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:202
+#: app/src/react/features/media/MediaDetails.tsx:188
 msgid "Uploaded"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:309
+#: app/src/react/features/media/MediaLibrary.tsx:299
 msgid "Uploading"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:946
+#: app/src/react/features/products/editor/ProductEditor.tsx:947
 msgid "Upsells"
 msgstr ""
 
 #: app/src/react/features/posts/PostPreview.tsx:99
-#: app/src/react/ui/RichText.tsx:233
+#: app/src/react/ui/RichText.tsx:228
 msgid "URL"
 msgstr ""
 
@@ -7945,12 +7979,12 @@ msgstr ""
 msgid "Use a negative value for a discount."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:1048
+#: app/src/react/features/products/editor/ProductEditor.tsx:1049
 msgid "Use as product image"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:495
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:303
+#: app/src/react/features/products/editor/ProductEditor.tsx:496
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:304
 msgid "Use file"
 msgstr ""
 
@@ -7960,8 +7994,7 @@ msgid ""
 "password recovery forms. Credentials are configured in Integrations."
 msgstr ""
 
-#: app/src/react/lib/wpMedia.ts:54
-#: app/src/react/ui/RichText.tsx:117
+#: app/src/react/ui/RichText.tsx:114
 msgid "Use image"
 msgstr ""
 
@@ -7979,8 +8012,12 @@ msgid ""
 "layout."
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:261
+#: app/src/react/features/users/ImportUsersModal.tsx:246
 msgid "Use the roles in the file"
+msgstr ""
+
+#: app/src/react/app/MediaPickerProvider.tsx:91
+msgid "Use this file"
 msgstr ""
 
 #: app/src/react/features/menus/MenuEditor.tsx:207
@@ -7991,7 +8028,7 @@ msgstr ""
 msgid "Used for variations"
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:217
+#: app/src/react/features/media/MediaDetails.tsx:203
 msgid "Used in"
 msgstr ""
 
@@ -8036,8 +8073,8 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: app/src/react/features/login/LoginScreen.tsx:137
-#: app/src/react/features/login/LoginScreen.tsx:163
+#: app/src/react/features/login/LoginScreen.tsx:138
+#: app/src/react/features/login/LoginScreen.tsx:161
 msgid "Username or email"
 msgstr ""
 
@@ -8070,7 +8107,7 @@ msgstr ""
 msgid "Values available for this attribute."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:593
+#: app/src/react/features/products/editor/ProductEditor.tsx:594
 msgid "Variable product"
 msgstr ""
 
@@ -8079,11 +8116,11 @@ msgid "Variation"
 msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:532
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:144
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:145
 msgid "Variation #%s"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:295
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:296
 msgid "Variation image"
 msgstr ""
 
@@ -8091,7 +8128,7 @@ msgstr ""
 msgid "Variation updated"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:916
+#: app/src/react/features/products/editor/ProductEditor.tsx:917
 #: app/src/react/features/products/ProductVariations.tsx:106
 msgid "Variations"
 msgstr ""
@@ -8104,6 +8141,7 @@ msgstr ""
 msgid "Vibrance"
 msgstr ""
 
+#: app/src/react/app/MediaPickerProvider.tsx:50
 #: app/src/react/features/media/MediaLibrary.tsx:25
 msgid "Video"
 msgstr ""
@@ -8134,13 +8172,13 @@ msgstr ""
 msgid "View dashboard"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:100
+#: app/src/react/features/design-system/Showcase.tsx:104
 #: app/src/react/features/orders/OrderPreview.tsx:84
 #: app/src/react/features/orders/OrdersList.tsx:275
 msgid "View details"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:607
+#: app/src/react/features/products/editor/ProductEditor.tsx:608
 #: app/src/react/features/products/ProductsList.tsx:244
 msgid "View in store"
 msgstr ""
@@ -8192,11 +8230,11 @@ msgstr ""
 msgid "Vignette"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:465
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:466
 msgid "Virtual"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:829
+#: app/src/react/features/products/editor/ProductEditor.tsx:830
 msgid "Virtual product (no shipping)"
 msgstr ""
 
@@ -8209,7 +8247,7 @@ msgstr ""
 msgid "Visible on the product page"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:195
+#: app/src/react/shell/AppSidebar.tsx:197
 #: app/src/react/shell/AppToolbar.tsx:66
 msgid "Visit site"
 msgstr ""
@@ -8269,13 +8307,14 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:890
-#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:444
+#: app/src/react/features/design-system/Showcase.tsx:248
+#: app/src/react/features/products/editor/ProductEditor.tsx:891
+#: app/src/react/features/products/editor/ProductVariationsEditor.tsx:445
 #: app/src/react/features/products/ProductQuickEdit.tsx:330
 msgid "Weight"
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:374
+#: app/src/react/features/settings/custom/connections.tsx:375
 msgid "Weights"
 msgstr ""
 
@@ -8287,7 +8326,7 @@ msgstr ""
 msgid "Welcome to your WordPress dashboard! This is your site management hub."
 msgstr ""
 
-#: app/src/react/features/users/ImportUsersModal.tsx:250
+#: app/src/react/features/users/ImportUsersModal.tsx:235
 msgid "What %s means"
 msgstr ""
 
@@ -8327,7 +8366,7 @@ msgstr ""
 msgid "What the file shows, for people who cannot see it."
 msgstr ""
 
-#: app/src/react/features/media/MediaDetails.tsx:187
+#: app/src/react/features/media/MediaDetails.tsx:173
 msgid "What the image shows, for people who cannot see it."
 msgstr ""
 
@@ -8364,7 +8403,7 @@ msgstr ""
 msgid "When you create new items they will show up here."
 msgstr ""
 
-#: app/src/react/features/settings/custom/connections.tsx:359
+#: app/src/react/features/settings/custom/connections.tsx:360
 msgid "Where the font comes from"
 msgstr ""
 
@@ -8386,17 +8425,17 @@ msgid "Who sees it"
 msgstr ""
 
 #: app/src/react/features/media/ImageEditor.tsx:305
-#: app/src/react/features/products/editor/ProductEditor.tsx:892
+#: app/src/react/features/products/editor/ProductEditor.tsx:893
 #: app/src/react/features/products/ProductQuickEdit.tsx:332
 msgid "Width"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:231
+#: app/src/react/features/design-system/Showcase.tsx:235
 msgid "With error"
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:156
-#: app/src/react/features/design-system/Showcase.tsx:185
+#: app/src/react/features/design-system/Showcase.tsx:160
+#: app/src/react/features/design-system/Showcase.tsx:189
 msgid "With icon"
 msgstr ""
 
@@ -8444,11 +8483,15 @@ msgstr ""
 msgid "WordPress table"
 msgstr ""
 
+#: app/src/react/shell/WpToolbar.tsx:129
+msgid "WordPress toolbar"
+msgstr ""
+
 #: app/src/react/features/design-system/FoundationCheck.tsx:55
 msgid "wp.i18n loaded"
 msgstr ""
 
-#: app/src/react/ui/RichText.tsx:86
+#: app/src/react/ui/RichText.tsx:85
 msgid "Write something…"
 msgstr ""
 
@@ -8516,11 +8559,11 @@ msgid ""
 "panel."
 msgstr ""
 
-#: app/src/react/features/design-system/Showcase.tsx:192
+#: app/src/react/features/design-system/Showcase.tsx:196
 msgid "Your changes are live."
 msgstr ""
 
-#: app/src/react/features/products/editor/ProductEditor.tsx:541
+#: app/src/react/features/products/editor/ProductEditor.tsx:542
 msgid "Your changes to this product have not been saved."
 msgstr ""
 

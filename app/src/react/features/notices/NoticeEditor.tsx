@@ -103,7 +103,7 @@ export const NoticeEditor = () => {
 				title={isNew ? __('New notice') : draft.title || __('(No title)')}
 				breadcrumbs={[{ label: __('Admin notices'), href: '#/' }, { label: isNew ? __('New') : __('Edit') }]}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						{!isNew ? (
 							<Button variant="outline" icon="delete" className="text-error-600" onClick={askThenDelete}>
 								{__('Delete')}
@@ -112,7 +112,7 @@ export const NoticeEditor = () => {
 						<Button icon="save" loading={save.isPending} disabled={!dirty || !draft.title} onClick={submit}>
 							{__('Save')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

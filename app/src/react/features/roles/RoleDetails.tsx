@@ -85,14 +85,14 @@ export const RoleDetails = () => {
 				title={role.data.name}
 				breadcrumbs={[{ label: __('Roles'), href: '#/' }, { label: role.data.name }]}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						<Button variant="outline" onClick={() => navigate('/')}>
 							{__('Back')}
 						</Button>
 						<Button icon="save" loading={saveCapabilities.isPending || rename.isPending} disabled={!dirty} onClick={save}>
 							{__('Save changes')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

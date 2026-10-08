@@ -104,7 +104,7 @@ export const MediaDetails = () => {
 				title={decodeHtml(stripTags(item.title.rendered)) || fileNameOf(item)}
 				breadcrumbs={[{ label: __('Media'), href: '#/' }, { label: __('File') }]}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						{isImage ? (
 							<Button variant="outline" icon="tune" href={`#/file/${item.id}/edit`}>
 								{__('Edit image')}
@@ -116,7 +116,7 @@ export const MediaDetails = () => {
 						<Button icon="save" loading={save.isPending} disabled={!dirty} onClick={() => save.mutate({ id: item.id, data: { ...draft } })}>
 							{__('Save changes')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

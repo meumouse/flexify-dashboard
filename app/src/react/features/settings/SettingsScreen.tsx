@@ -107,7 +107,7 @@ export const SettingsScreen = () => {
 				title={__('Settings')}
 				description={search ? sprintf(__('%s setting(s) match'), String(shown.length)) : current.description}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						{dirty ? <span className="text-theme-xs text-gray-500 dark:text-gray-400">{__('Not saved yet')}</span> : null}
 						<Button variant="outline" disabled={!dirty} onClick={() => setDraft(stored.data ?? {})}>
 							{__('Undo')}
@@ -115,7 +115,7 @@ export const SettingsScreen = () => {
 						<Button icon="save" loading={save.isPending} disabled={!dirty} onClick={() => save.mutate(settings)}>
 							{__('Save')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

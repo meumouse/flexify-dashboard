@@ -156,7 +156,7 @@ export const UsersList = () => {
 				title={__('Users')}
 				description={sprintf(__('%s user(s)'), String(total))}
 				actions={
-					<div className="flex flex-wrap items-center gap-3">
+					<>
 						<Button variant="outline" icon="upload_file" onClick={() => setImportOpen(true)}>
 							{__('Import')}
 						</Button>
@@ -166,7 +166,7 @@ export const UsersList = () => {
 						<Button icon="person" onClick={() => setCreateOpen(true)}>
 							{__('Add user')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

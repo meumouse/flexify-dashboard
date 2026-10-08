@@ -168,10 +168,26 @@ Localizar seções que ainda saem como HTML do WordPress dentro de telas nossas,
 
 Nada mais no `app/src/react` toca `window.wp`, e o único `<iframe>` é a pré-visualização do post no site, que é conteúdo, não tela do admin.
 
-### Fase 7 — QA e 4.1.0 (M)
+### Fase 7 — QA e 4.1.0 (M) · parcial
 Varredura das telas em 375/768/1440, claro e escuro, no **site real** — não no harness. Changelog e versão.
 
 → **Verificação:** a matriz preenchida com o que foi aberto de verdade, e o que não foi dito explicitamente.
+
+**O que foi verificado:** as 17 telas, em 375 / 768 / 1440, claro e escuro, **no harness**. Nenhuma com rolagem horizontal e nenhum container cortando o próprio conteúdo, ignorando o que corta de propósito. Três defeitos saíram dessa varredura:
+
+- O cabeçalho de página não quebrava linha em tela estreita, porque 11 telas embrulhavam os botões num segundo `flex` que o `PageHeader` já fazia. O embrulho saiu das 11.
+- A paginação estourava a partir de sete páginas, por não quebrar linha.
+- O título caía a 52px ao lado de ações que não encolhem — mesma raiz do defeito da lista de plugins.
+
+**O que não foi verificado, e por quê:** nada disso rodou no site real. O MySQL do Local estava parado durante o trabalho, e o host é `flexify-dashboard.local`, onde não entro com senha. Isso importa mais que de costume nesta versão, porque **todo o PHP novo da fase 5 nunca executou** — só passou por `php -l`. O que precisa de um olhar na primeira vez que o site subir:
+
+1. `AdminMenu::print_menu` — o menu aparece na barra lateral, com os ícones dos plugins instalados e as bolhas de contagem.
+2. `AdminBar::take_over_rendering` — a barra aparece com os itens do WooCommerce e dos outros plugins, e o `#wpadminbar` nativo não é impresso duas vezes.
+3. `WpNotices::capture_notices` — os avisos aparecem no painel de notificações e **não** sobram na página.
+4. `PostsTables::render_page` — a lista de posts carrega, com as colunas que outros plugins acrescentam.
+5. `useMediaPicker` — a biblioteca abre e envia arquivo.
+
+A matriz do site real continua por preencher.
 
 ## 5. Ordem e por quê
 
@@ -181,3 +197,16 @@ Fases 1–3 antes da 4 porque a responsividade vai tocar quase todo arquivo de t
 
 - As três telas cujo bundle nunca foi declarado (`PostEditor.js`, `CustomPostTypes.js`, `CustomFieldsMetaBox.js`) não entram aqui porque **já foram removidas** — eram código morto, nunca instanciado. Ver a seção 12 de `planejamento-frontend-react.md`.
 - Nada aqui depende de rodar a matriz de versões do WordPress/WooCommerce, que continua pendente da fase 10 da migração anterior.
+
+## 7. Onde isto chegou
+
+| Medida | Antes | Agora |
+|---|---|---|
+| Raios de borda | 9 valores | 4, mais `full` — com teste |
+| Tamanhos de fonte | 2 escalas, 212 usos da crua | 1 escala, 0 usos da crua — com teste |
+| Controles HTML crus em tela | 6 declarados, 11 na prática | 0 — com teste |
+| Telas com tabela ilegível em 375px | 12 | 0 |
+| Dados lidos do DOM | posts, menu, avisos, barra | nenhum |
+| Modal de terceiro dentro da interface | `wp.media`, em 7 lugares | nenhum |
+
+Três testes seguram o que foi arrumado: `scales.test.ts`, `controls.test.ts` e `icons.test.ts`. Os três leem o código como texto e dizem o que usar no lugar quando falham.

@@ -772,6 +772,9 @@
       "Backorders": [
         "Encomendas"
       ],
+      "Badge colour": [
+        "Cor do selo"
+      ],
       "Badges": [
         "Selos"
       ],
@@ -1738,6 +1741,9 @@
       "Every card is hidden": [
         "Todos os cartões estão ocultos"
       ],
+      "Every file": [
+        "Todos os arquivos"
+      ],
       "Everyone": [
         "Todos"
       ],
@@ -1902,6 +1908,9 @@
       ],
       "File replaced successfully.": [
         "Arquivo substituído com sucesso."
+      ],
+      "File type": [
+        "Tipo de arquivo"
       ],
       "File type not allowed.": [
         "Tipo de arquivo não permitido."
@@ -2590,6 +2599,9 @@
       "Live": [
         "No ar"
       ],
+      "Load more": [
+        "Carregar mais"
+      ],
       "Loading": [
         "Carregando"
       ],
@@ -3160,6 +3172,9 @@
       "Nothing found.": [
         "Nada encontrado."
       ],
+      "Nothing here": [
+        "Nada por aqui"
+      ],
       "Nothing in the directory matches that.": [
         "Nada no diretório corresponde a isso."
       ],
@@ -3288,6 +3303,9 @@
       ],
       "Open sheet": [
         "Abrir painel lateral"
+      ],
+      "Opens the system picker.": [
+        "Abre o seletor do sistema."
       ],
       "Operation": [
         "Operação"
@@ -5203,6 +5221,9 @@
       "Upload a ZIP": [
         "Enviar um ZIP"
       ],
+      "Upload a file or change the search.": [
+        "Envie um arquivo ou mude a busca."
+      ],
       "Upload directory is not available.": [
         "O diretório de uploads não está disponível."
       ],
@@ -5259,6 +5280,9 @@
       ],
       "Use the roles in the file": [
         "Usar as funções do arquivo"
+      ],
+      "Use this file": [
+        "Usar este arquivo"
       ],
       "Use this menu": [
         "Usar este menu"
@@ -5574,6 +5598,9 @@
       ],
       "WordPress table": [
         "Tabela do WordPress"
+      ],
+      "WordPress toolbar": [
+        "Barra do WordPress"
       ],
       "Write something…": [
         "Escreva alguma coisa…"

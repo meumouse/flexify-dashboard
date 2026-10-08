@@ -171,7 +171,7 @@ export const MediaLibrary = () => {
 				title={__('Media')}
 				description={sprintf(__('%s file(s)'), String(total))}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						<Button
 							variant="outline"
 							size="sm"
@@ -183,7 +183,7 @@ export const MediaLibrary = () => {
 						<Button icon="upload" loading={upload.isPending} onClick={filePicker.open}>
 							{__('Upload')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

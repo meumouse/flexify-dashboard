@@ -213,7 +213,7 @@ export const PostsList = () => {
 			<PageHeader
 				title={title}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						<PostsSettings
 							query={query}
 							onChange={(patch) =>
@@ -237,7 +237,7 @@ export const PostsList = () => {
 						<Button href={newUrl} icon="add">
 							{postType.labels?.new_item ?? __('Add new')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 

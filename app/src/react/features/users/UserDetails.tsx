@@ -52,14 +52,14 @@ export const UserDetails = () => {
 				title={decodeHtml(user.data.name)}
 				breadcrumbs={[{ label: __('Users'), href: '#/' }, { label: decodeHtml(user.data.name) }]}
 				actions={
-					<div className="flex items-center gap-3">
+					<>
 						<Button href={user.data.link} target="_blank" rel="noopener noreferrer" variant="outline" icon="visibility">
 							{__('View profile')}
 						</Button>
 						<Button variant="outline" icon="delete" className="text-error-600" onClick={() => setDeleteOpen(true)}>
 							{__('Delete')}
 						</Button>
-					</div>
+					</>
 				}
 			/>
 
