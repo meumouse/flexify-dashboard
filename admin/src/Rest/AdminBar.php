@@ -62,7 +62,7 @@ class AdminBar {
 	 */
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
-		add_action( 'admin_init', array( $this, 'take_over_rendering' ) );
+		add_action( 'in_admin_header', array( $this, 'take_over_rendering' ), -1 );
 		add_action( 'admin_print_footer_scripts', array( $this, 'print_bar' ), 1 );
 	}
 
@@ -115,6 +115,11 @@ class AdminBar {
 	 * removed: no plugin would get the chance to add anything. It is replaced by the same
 	 * sequence, minus the call that writes the markup.
 	 *
+	 * This runs on `in_admin_header` and not on `admin_init` because the decision depends on
+	 * the screen, and at `admin_init` there is no screen yet — on the block editor and the
+	 * site editor the shell does not draw, and taking the toolbar away there would leave the
+	 * page with none at all. Core renders at priority 0 on this same hook, so -1 is in time.
+	 *
 	 * @since 4.1.0
 	 * @return void
 	 */
@@ -124,7 +129,7 @@ class AdminBar {
 		}
 
 		remove_action( 'in_admin_header', 'wp_admin_bar_render', 0 );
-		add_action( 'in_admin_header', array( $this, 'collect' ), 0 );
+		$this->collect();
 	}
 
 

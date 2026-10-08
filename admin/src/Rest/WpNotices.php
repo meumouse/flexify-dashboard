@@ -74,7 +74,7 @@ class WpNotices {
 	 */
 	public function __construct() {
 		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
-		add_action( 'admin_init', array( $this, 'capture_notices' ) );
+		add_action( 'in_admin_header', array( $this, 'capture_notices' ), -1 );
 		add_action( 'admin_print_footer_scripts', array( $this, 'print_notices' ), 1 );
 	}
 
@@ -128,6 +128,10 @@ class WpNotices {
 	 * Take the notices out of the page instead of letting them print.
 	 *
 	 * Each action is buffered from before anything can write to it until after everything has.
+	 *
+	 * Hooked to `in_admin_header`, which fires before the four notice actions and after the
+	 * screen is known — at `admin_init` there is no screen, and the answer would be wrong on
+	 * the editors, where the shell does not draw and the notices would simply vanish.
 	 *
 	 * @since 4.1.0
 	 * @return void

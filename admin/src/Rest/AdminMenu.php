@@ -2,6 +2,8 @@
 
 namespace MeuMouse\Flexify_Dashboard\Rest;
 
+use MeuMouse\Flexify_Dashboard\App\Plugin;
+
 use WP_REST_Response;
 
 defined('ABSPATH') || exit;
@@ -106,7 +108,9 @@ class AdminMenu {
 	 * @return void
 	 */
 	public function print_menu() {
-		if ( ! is_user_logged_in() ) {
+		// Printing a menu nothing reads is waste, and the shell uses this tag to know it is on
+		// a screen it draws.
+		if ( ! is_user_logged_in() || ! Plugin::is_shell_active() ) {
 			return;
 		}
 

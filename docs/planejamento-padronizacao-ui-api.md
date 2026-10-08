@@ -189,6 +189,8 @@ Varredura das telas em 375/768/1440, claro e escuro, no **site real** — não n
 
 A matriz do site real continua por preencher.
 
+Dois defeitos foram encontrados **lendo o código do WordPress** em vez de rodando o nosso: a barra e os avisos decidiam em `admin_init` se a casca está ativa, e naquele momento ainda não existe tela. No editor de blocos e no editor do site, onde a casca não desenha, a resposta seria "ativa" — a barra sumiria da página e os avisos seriam engolidos sem ninguém para mostrá-los. Os dois passaram para `in_admin_header`, que roda depois de a tela existir e antes de o núcleo imprimir qualquer coisa.
+
 ## 5. Ordem e por quê
 
 Fases 1–3 antes da 4 porque a responsividade vai tocar quase todo arquivo de tela: fazer isso **depois** de fixar escala e seletores evita passar duas vezes no mesmo código. A 5 é independente e pode correr em paralelo com a 4 se houver mais de uma pessoa.
