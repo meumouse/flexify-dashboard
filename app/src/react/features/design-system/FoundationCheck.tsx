@@ -37,8 +37,8 @@ export const FoundationCheck = () => {
 	return (
 		<div className="space-y-6">
 			<div>
-				<h1 className="text-xl font-semibold text-gray-800 dark:text-white/90">{__('React foundation')}</h1>
-				<p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+				<h1 className="text-theme-xl font-semibold text-gray-800 dark:text-white/90">{__('React foundation')}</h1>
+				<p className="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">
 					{__('Phase 0 of the React migration: data, REST, translations, dark mode and notifications.')}
 				</p>
 			</div>
@@ -74,7 +74,7 @@ export const FoundationCheck = () => {
 					<button
 						key={tone}
 						type="button"
-						className="inline-flex h-10 items-center rounded-lg border border-gray-300 px-4 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 focus:outline-hidden focus-visible:shadow-focus-ring dark:border-gray-700 dark:text-gray-300 dark:hover:bg-white/[0.03]"
+						className="inline-flex h-10 items-center rounded-lg border border-gray-300 px-4 text-theme-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 focus:outline-hidden focus-visible:shadow-focus-ring dark:border-gray-700 dark:text-gray-300 dark:hover:bg-white/[0.03]"
 						onClick={() => notify({ tone, title: sprintf(__('Test notification: %s'), tone) })}
 					>
 						{sprintf(__('Notify %s'), tone)}

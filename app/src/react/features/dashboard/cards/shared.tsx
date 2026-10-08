@@ -55,14 +55,14 @@ export const CardLoading = ({ rows = 3 }: { rows?: number }) => (
 
 export const CardError = ({ message }: { message?: string }) => (
 	<div className="py-8 text-center">
-		<Icon name="error" className="mx-auto mb-3 text-3xl text-gray-400" />
+		<Icon name="error" className="mx-auto mb-3 text-title-sm text-gray-400" />
 		<p className="text-theme-sm text-gray-500 dark:text-gray-400">{message || __('Could not load this card.')}</p>
 	</div>
 );
 
 export const CardEmpty = ({ icon = 'inbox', message }: { icon?: string; message: string }) => (
 	<div className="py-8 text-center">
-		<Icon name={icon} className="mx-auto mb-3 text-3xl text-gray-300 dark:text-gray-600" />
+		<Icon name={icon} className="mx-auto mb-3 text-title-sm text-gray-300 dark:text-gray-600" />
 		<p className="text-theme-sm text-gray-500 dark:text-gray-400">{message}</p>
 	</div>
 );
@@ -93,7 +93,7 @@ export const StatRow = ({ stats, className }: { stats: Stat[]; className?: strin
 				<div key={stat.label} className="min-w-0">
 					{stat.icon ? (
 						<span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white/90">
-							<Icon name={stat.icon} className="text-xl" />
+							<Icon name={stat.icon} className="text-theme-xl" />
 						</span>
 					) : null}
 
@@ -109,7 +109,7 @@ export const StatRow = ({ stats, className }: { stats: Stat[]; className?: strin
 									up ? 'bg-success-50 text-success-600 dark:bg-success-500/15 dark:text-success-500' : 'bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-500'
 								)}
 							>
-								<Icon name={up ? 'arrow_upward' : 'arrow_downward'} className="text-xs" />
+								<Icon name={up ? 'arrow_upward' : 'arrow_downward'} className="text-theme-xs" />
 								{`${Math.abs(stat.trend).toLocaleString(undefined, { maximumFractionDigits: 2 })}%`}
 							</span>
 						) : null}

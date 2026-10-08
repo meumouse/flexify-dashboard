@@ -126,7 +126,7 @@ export const ServerHealthCard = () => {
 			{disk ? <UsageBar used={disk.used} total={disk.total} label={sprintf(__('Disk: %sGB of %sGB'), String(disk.used), String(disk.total))} /> : null}
 
 			<div className="flex items-center gap-2 rounded-xl bg-gray-50 px-3 py-2 text-theme-sm dark:bg-white/[0.03]">
-				<Icon name={updates ? 'update' : 'check_circle'} className={cn('text-base', updates ? 'text-warning-500' : 'text-success-500')} />
+				<Icon name={updates ? 'update' : 'check_circle'} className={cn('text-theme-md', updates ? 'text-warning-500' : 'text-success-500')} />
 				<span className="text-gray-700 dark:text-gray-300">{updates ? sprintf(__('%d update(s) available'), updates) : __('Everything is up to date')}</span>
 			</div>
 

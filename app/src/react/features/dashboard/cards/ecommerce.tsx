@@ -15,7 +15,7 @@ const NotActive = () => <EmptyState compact icon="shopping_bag" title={__('WooCo
 const Metric = ({ label, value, hint, loading }: { label: string; value: string; hint?: string; loading: boolean }) => (
 	<div>
 		<p className="text-theme-sm text-gray-500 dark:text-gray-400">{label}</p>
-		{loading ? <Skeleton className="mt-1 h-7 w-24" /> : <p className="mt-1 text-2xl font-semibold text-gray-800 dark:text-white/90">{value}</p>}
+		{loading ? <Skeleton className="mt-1 h-7 w-24" /> : <p className="mt-1 text-title-xs font-semibold text-gray-800 dark:text-white/90">{value}</p>}
 		{hint && !loading ? <p className="mt-1 text-theme-xs text-gray-500 dark:text-gray-400">{hint}</p> : null}
 	</div>
 );

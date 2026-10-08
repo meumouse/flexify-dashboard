@@ -71,7 +71,7 @@ export const Pagination = ({
 
 	return (
 		<div className={cn('flex flex-col items-center justify-between gap-4 sm:flex-row', className)}>
-			<div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+			<div className="flex items-center gap-3 text-theme-sm text-gray-500 dark:text-gray-400">
 				<span>{sprintf(__('Showing %1$s to %2$s of %3$s'), from.toLocaleString(), to.toLocaleString(), total.toLocaleString())}</span>
 				{showPerPage && onPerPageChange ? (
 					<label className="hidden items-center gap-2 sm:flex">
@@ -80,7 +80,7 @@ export const Pagination = ({
 							value={perPage}
 							disabled={disabled}
 							onChange={(event) => onPerPageChange(Number(event.target.value))}
-							className="h-9 rounded-lg border border-gray-300 bg-transparent px-2 text-sm text-gray-700 shadow-theme-xs focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400"
+							className="h-9 rounded-lg border border-gray-300 bg-transparent px-2 text-theme-sm text-gray-700 shadow-theme-xs focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400"
 						>
 							{perPageOptions.map((option) => (
 								<option key={option} value={option}>
@@ -94,12 +94,12 @@ export const Pagination = ({
 
 			<nav className="flex items-center gap-1.5" aria-label={__('Pagination')}>
 				<button type="button" className={navButton} disabled={disabled || page <= 1} aria-label={__('Previous page')} onClick={() => goTo(page - 1)}>
-					<Icon name="chevron_left" className="text-lg rtl:rotate-180" />
+					<Icon name="chevron_left" className="text-theme-lg rtl:rotate-180" />
 				</button>
 
 				{pageList(page, totalPages).map((item) =>
 					typeof item === 'string' ? (
-						<span key={item} className="flex h-9 w-6 items-center justify-center text-sm text-gray-400">
+						<span key={item} className="flex h-9 w-6 items-center justify-center text-theme-sm text-gray-400">
 							…
 						</span>
 					) : (
@@ -110,7 +110,7 @@ export const Pagination = ({
 							disabled={disabled}
 							onClick={() => goTo(item)}
 							className={cn(
-								'flex h-9 min-w-9 items-center justify-center rounded-lg px-2 text-sm font-medium transition-colors sm:h-10 sm:min-w-10',
+								'flex h-9 min-w-9 items-center justify-center rounded-lg px-2 text-theme-sm font-medium transition-colors sm:h-10 sm:min-w-10',
 								item === page ? 'bg-brand-500 text-white' : 'text-gray-700 hover:bg-brand-500/[0.08] hover:text-brand-500 dark:text-gray-400 dark:hover:text-brand-400'
 							)}
 						>
@@ -120,7 +120,7 @@ export const Pagination = ({
 				)}
 
 				<button type="button" className={navButton} disabled={disabled || page >= totalPages} aria-label={__('Next page')} onClick={() => goTo(page + 1)}>
-					<Icon name="chevron_right" className="text-lg rtl:rotate-180" />
+					<Icon name="chevron_right" className="text-theme-lg rtl:rotate-180" />
 				</button>
 			</nav>
 		</div>

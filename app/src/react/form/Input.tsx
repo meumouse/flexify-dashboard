@@ -54,7 +54,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 			<div className="relative">
 				{icon || prefix ? (
 					<span className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5 text-gray-500 dark:text-gray-400">
-						{icon ? <Icon name={icon} className="text-lg" /> : <span className="text-sm">{prefix}</span>}
+						{icon ? <Icon name={icon} className="text-theme-lg" /> : <span className="text-theme-sm">{prefix}</span>}
 					</span>
 				) : null}
 
@@ -81,10 +81,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 						aria-label={__('Clear')}
 						onClick={clear}
 					>
-						<Icon name="close" className="text-base" />
+						<Icon name="close" className="text-theme-md" />
 					</button>
 				) : suffix ? (
-					<span className="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-3.5 text-sm text-gray-500 dark:text-gray-400">{suffix}</span>
+					<span className="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-3.5 text-theme-sm text-gray-500 dark:text-gray-400">{suffix}</span>
 				) : null}
 			</div>
 		</Field>

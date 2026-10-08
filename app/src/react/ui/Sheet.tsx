@@ -66,15 +66,15 @@ export const Sheet = ({ open, onOpenChange, title, description, side = 'right', 
 							<div className="flex items-start justify-between gap-4 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6">
 								{header ?? (
 									<div className="min-w-0">
-										<Dialog.Title className="truncate text-lg font-semibold text-gray-800 dark:text-white/90">{title}</Dialog.Title>
-										{description ? <Dialog.Description className="mt-0.5 text-sm text-gray-500 dark:text-gray-400">{description}</Dialog.Description> : null}
+										<Dialog.Title className="truncate text-theme-lg font-semibold text-gray-800 dark:text-white/90">{title}</Dialog.Title>
+										{description ? <Dialog.Description className="mt-0.5 text-theme-sm text-gray-500 dark:text-gray-400">{description}</Dialog.Description> : null}
 									</div>
 								)}
 								<Dialog.Close
 									className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
 									aria-label={__('Close')}
 								>
-									<Icon name="close" className="text-xl" />
+									<Icon name="close" className="text-theme-xl" />
 								</Dialog.Close>
 							</div>
 

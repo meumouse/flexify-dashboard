@@ -132,11 +132,11 @@ export const DataTable = <T,>({
 		<div className="relative">
 			{selectable && selected.length > 0 && bulkActions ? (
 				<div className="flex flex-wrap items-center gap-3 border-b border-gray-100 bg-brand-25 px-5 py-3 dark:border-gray-800 dark:bg-brand-500/[0.08] sm:px-6">
-					<span className="text-sm font-medium text-gray-700 dark:text-gray-300">{sprintf(__('%s selected'), selected.length)}</span>
+					<span className="text-theme-sm font-medium text-gray-700 dark:text-gray-300">{sprintf(__('%s selected'), selected.length)}</span>
 					<div className="flex flex-wrap items-center gap-2">{bulkActions({ selected, clear: () => onSelectedChange?.([]) })}</div>
 					<button
 						type="button"
-						className="ms-auto text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+						className="ms-auto text-theme-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
 						onClick={() => onSelectedChange?.([])}
 					>
 						{__('Clear selection')}
@@ -192,7 +192,7 @@ export const DataTable = <T,>({
 											{column.label}
 											<Icon
 												name={sort?.key === column.key ? (sort.direction === 'asc' ? 'arrow_upward' : 'arrow_downward') : 'unfold'}
-												className={cn('text-sm', sort?.key === column.key ? 'text-gray-700 dark:text-gray-300' : 'text-gray-400 opacity-60 group-hover:opacity-100')}
+												className={cn('text-theme-sm', sort?.key === column.key ? 'text-gray-700 dark:text-gray-300' : 'text-gray-400 opacity-60 group-hover:opacity-100')}
 											/>
 										</button>
 									) : (
@@ -258,9 +258,9 @@ export const DataTable = <T,>({
 															aria-expanded={isExpanded(key)}
 															aria-label={__('Toggle details')}
 															onClick={() => toggleExpanded(key)}
-															className="flex h-7 w-7 items-center justify-center rounded-md text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5"
+															className="flex h-7 w-7 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5"
 														>
-															<Icon name="chevron_right" className={cn('text-lg transition-transform', isExpanded(key) && 'rotate-90')} />
+															<Icon name="chevron_right" className={cn('text-theme-lg transition-transform', isExpanded(key) && 'rotate-90')} />
 														</button>
 													) : null}
 												</td>

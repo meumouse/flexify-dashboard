@@ -50,7 +50,7 @@ const STATUS_COLORS: Record<string, BadgeColor> = { processing: 'primary', pendi
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
 	<section className="space-y-4">
-		<h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">{title}</h2>
+		<h2 className="text-theme-lg font-semibold text-gray-800 dark:text-white/90">{title}</h2>
 		{children}
 	</section>
 );

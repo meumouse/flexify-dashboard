@@ -207,7 +207,7 @@ export const DatabaseExplorer = () => {
 					{!table ? (
 						<Card>
 							<div className="py-16 text-center">
-								<Icon name="storage" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
+								<Icon name="storage" className="mx-auto mb-3 text-title-md text-gray-300 dark:text-gray-600" />
 								<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Choose a table to look inside it.')}</p>
 							</div>
 						</Card>
@@ -215,7 +215,7 @@ export const DatabaseExplorer = () => {
 						<>
 							<div className="mb-4 flex flex-wrap items-center justify-between gap-3">
 								<div>
-									<h2 className="font-mono text-lg font-semibold text-gray-900 dark:text-gray-100">{table}</h2>
+									<h2 className="font-mono text-theme-lg font-semibold text-gray-900 dark:text-gray-100">{table}</h2>
 									{current ? (
 										<p className="text-theme-xs text-gray-500 dark:text-gray-400">
 											{sprintf(__('%1$s rows · %2$s'), String(current.row_count), formatSize(current.size_mb))}

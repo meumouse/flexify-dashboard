@@ -27,7 +27,7 @@ const Preview = ({ item, className }: { item: MediaItem; className?: string }) =
 		<img src={thumbnailOf(item)} alt="" aria-hidden loading="lazy" className={cn('h-full w-full object-cover', className)} />
 	) : (
 		<span className={cn('flex h-full w-full items-center justify-center text-gray-400', className)}>
-			<Icon name={iconFor(item.mime_type)} className="text-3xl" />
+			<Icon name={iconFor(item.mime_type)} className="text-title-sm" />
 		</span>
 	);
 
@@ -54,7 +54,7 @@ export const MediaGrid = ({ items, view, selected, onSelect, onOpen, loading }: 
 	if (!items.length) {
 		return (
 			<div className="py-16 text-center">
-				<Icon name="photo_library" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
+				<Icon name="photo_library" className="mx-auto mb-3 text-title-md text-gray-300 dark:text-gray-600" />
 				<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Nothing in the library matches this.')}</p>
 			</div>
 		);
@@ -114,7 +114,7 @@ export const MediaGrid = ({ items, view, selected, onSelect, onOpen, loading }: 
 							selected.includes(item.id) ? 'border-brand-500 shadow-theme-sm' : 'border-gray-200 hover:shadow-theme-sm dark:border-gray-800'
 						)}
 					>
-						<span className="absolute start-2 top-2 z-10 rounded-md bg-white/90 p-0.5 opacity-0 transition-opacity group-hover:opacity-100 has-[:checked]:opacity-100 dark:bg-gray-900/90">
+						<span className="absolute start-2 top-2 z-10 rounded-lg bg-white/90 p-0.5 opacity-0 transition-opacity group-hover:opacity-100 has-[:checked]:opacity-100 dark:bg-gray-900/90">
 							<span onClick={(event) => event.stopPropagation()}>
 								<Checkbox
 									size="sm"

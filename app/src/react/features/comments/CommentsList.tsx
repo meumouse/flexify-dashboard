@@ -157,7 +157,7 @@ export const CommentsList = () => {
 						className="w-full sm:w-72"
 					/>
 
-					{comments.isFetching ? <Icon name="progress_activity" className="animate-spin text-base text-gray-400" /> : null}
+					{comments.isFetching ? <Icon name="progress_activity" className="animate-spin text-theme-md text-gray-400" /> : null}
 				</div>
 
 				<DataTable

@@ -259,7 +259,7 @@ export const MediaLibrary = () => {
 						</Button>
 					) : null}
 
-					{library.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-base text-gray-400" /> : null}
+					{library.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
 				</div>
 			</Card>
 
@@ -300,7 +300,7 @@ export const MediaLibrary = () => {
 			{dragging ? (
 				<div className="pointer-events-none fixed inset-0 z-99999 flex items-center justify-center bg-brand-500/10 backdrop-blur-sm">
 					<div className="rounded-2xl border-2 border-dashed border-brand-500 bg-white px-10 py-8 text-center dark:bg-gray-900">
-						<Icon name="upload" className="mb-2 text-4xl text-brand-500" />
+						<Icon name="upload" className="mb-2 text-title-md text-brand-500" />
 						<p className="text-theme-sm font-medium text-gray-900 dark:text-gray-100">{__('Drop the files to upload them')}</p>
 					</div>
 				</div>

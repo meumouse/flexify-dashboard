@@ -13,6 +13,7 @@
 @layer wordpress-base, base, fd-theme, properties, theme, components, utilities, fd-isolation;
 
 @import '@fontsource-variable/outfit/wght.css';
+@import './typography.css' layer(base);
 
 :root {
 	/* Neutral palette (RGB channels) — TailAdmin gray */
@@ -29,6 +30,32 @@
 	--fd-base-800: 29 41 57;
 	--fd-base-900: 16 24 40;
 	--fd-base-950: 12 17 29;
+
+	/* Type scale (TailAdmin) — the sizes behind text-theme-* and text-title-* */
+	--fd-text-2xs: 10px;
+	--fd-text-2xs-leading: 14px;
+	--fd-text-xs: 12px;
+	--fd-text-xs-leading: 18px;
+	--fd-text-sm: 14px;
+	--fd-text-sm-leading: 20px;
+	--fd-text-md: 16px;
+	--fd-text-md-leading: 24px;
+	--fd-text-lg: 18px;
+	--fd-text-lg-leading: 28px;
+	--fd-text-xl: 20px;
+	--fd-text-xl-leading: 30px;
+	--fd-title-xs: 24px;
+	--fd-title-xs-leading: 32px;
+	--fd-title-sm: 30px;
+	--fd-title-sm-leading: 38px;
+	--fd-title-md: 36px;
+	--fd-title-md-leading: 44px;
+	--fd-title-lg: 48px;
+	--fd-title-lg-leading: 60px;
+	--fd-title-xl: 60px;
+	--fd-title-xl-leading: 72px;
+	--fd-title-2xl: 72px;
+	--fd-title-2xl-leading: 90px;
 
 	/* Accent palette (RGB channels) — #008aff */
 	--fd-accent-25: 245 250 255;

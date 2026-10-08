@@ -132,7 +132,7 @@ export const CommandPalette = ({ open, onOpenChange, menu }: Props) => {
 				onMouseEnter={() => setActiveIndex(index)}
 				onClick={() => open_(entry)}
 			>
-				<Icon name={isAction ? entry.action.icon : 'arrow_right'} className="shrink-0 text-base text-gray-400" />
+				<Icon name={isAction ? entry.action.icon : 'arrow_right'} className="shrink-0 text-theme-md text-gray-400" />
 				{/* Menu results carry markup that shows the parent before the child. */}
 				<span className="min-w-0 flex-1 truncate text-theme-sm" dangerouslySetInnerHTML={{ __html: isAction ? entry.action.name : entry.result.name }} />
 				{!isAction && entry.result.status && STATUS_BADGE_CLASSES[entry.result.status] ? (
@@ -155,19 +155,19 @@ export const CommandPalette = ({ open, onOpenChange, menu }: Props) => {
 	return (
 		<Modal open={open} onOpenChange={onOpenChange} size="lg" hideClose bodyClassName="p-0">
 			<div className="flex items-center gap-3 border-b border-gray-200 px-4 dark:border-gray-800">
-				<Icon name="search" className="shrink-0 text-xl text-gray-400" />
+				<Icon name="search" className="shrink-0 text-theme-xl text-gray-400" />
 				<input
 					ref={inputRef}
 					value={query}
 					onChange={(event) => setQuery(event.target.value)}
 					onKeyDown={onKeyDown}
 					type="text"
-					className="h-14 w-full bg-transparent text-base text-gray-800 outline-hidden placeholder:text-gray-400 dark:text-white/90"
+					className="h-14 w-full bg-transparent text-theme-md text-gray-800 outline-hidden placeholder:text-gray-400 dark:text-white/90"
 					placeholder={__('Search content, menus and actions…')}
 					aria-label={__('Search')}
 				/>
 				{loading ? <Spinner className="h-4 w-4 text-gray-400" /> : null}
-				<kbd className="hidden shrink-0 rounded border border-gray-200 px-1.5 py-0.5 text-theme-xs text-gray-400 dark:border-gray-700 sm:block">esc</kbd>
+				<kbd className="hidden shrink-0 rounded-sm border border-gray-200 px-1.5 py-0.5 text-theme-xs text-gray-400 dark:border-gray-700 sm:block">esc</kbd>
 			</div>
 
 			<div ref={listRef} className="custom-scrollbar max-h-[60vh] overflow-y-auto p-2">
@@ -177,7 +177,7 @@ export const CommandPalette = ({ open, onOpenChange, menu }: Props) => {
 						<ul className="space-y-1 px-3 py-1">
 							{Object.entries(COMMAND_PATTERNS).map(([prefix, filter]) => (
 								<li key={prefix} className="flex items-center gap-3 text-theme-sm text-gray-600 dark:text-gray-400">
-									<code className="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-theme-xs dark:bg-gray-800">{prefix}</code>
+									<code className="rounded-sm bg-gray-100 px-1.5 py-0.5 font-mono text-theme-xs dark:bg-gray-800">{prefix}</code>
 									{filter === 'quickActions' ? __('Quick actions') : filter === 'help' ? __('View commands') : sprintf(__('Only %s'), filter)}
 								</li>
 							))}
@@ -222,7 +222,7 @@ export const CommandPalette = ({ open, onOpenChange, menu }: Props) => {
 					<div className="px-3 py-10 text-center">
 						{parsed.cleanQuery ? (
 							<>
-								<Icon name="search_off" className="mx-auto mb-2 text-2xl text-gray-300" />
+								<Icon name="search_off" className="mx-auto mb-2 text-title-xs text-gray-300" />
 								<p className="text-theme-sm text-gray-500 dark:text-gray-400">{sprintf(__('Nothing found for “%s”.'), parsed.cleanQuery)}</p>
 							</>
 						) : (
@@ -236,7 +236,7 @@ export const CommandPalette = ({ open, onOpenChange, menu }: Props) => {
 											className="flex items-center gap-1.5 rounded-full border border-gray-200 px-3 py-1 text-theme-xs text-gray-600 hover:border-brand-300 hover:text-brand-500 dark:border-gray-700 dark:text-gray-400"
 											onClick={() => setQuery(`${example.query} `)}
 										>
-											<Icon name={example.icon} className="text-sm" />
+											<Icon name={example.icon} className="text-theme-sm" />
 											{example.label}
 										</button>
 									))}

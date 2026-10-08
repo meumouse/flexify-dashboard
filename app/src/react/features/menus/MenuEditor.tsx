@@ -135,7 +135,7 @@ export const MenuEditor = () => {
 			)}
 			aria-current={selected === item.id}
 		>
-			<Icon name={item.settings?.hidden ? 'visibility_off' : item.custom ? 'link' : 'drag_indicator'} className="shrink-0 text-base text-gray-400" />
+			<Icon name={item.settings?.hidden ? 'visibility_off' : item.custom ? 'link' : 'drag_indicator'} className="shrink-0 text-theme-md text-gray-400" />
 			<span className="min-w-0 flex-1 truncate">{decodeHtml(stripTags(labelOf(item))) || __('(No label)')}</span>
 			{position.child === null && items[position.parent]?.submenu?.length ? <span className="shrink-0 text-theme-xs text-gray-400">{items[position.parent].submenu?.length}</span> : null}
 			</button>

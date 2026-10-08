@@ -107,7 +107,7 @@ export const ProductPicker = ({ ids, onChange, placeholder, exclude = [], types 
 									disabled={ids.includes(product.id)}
 									onClick={() => add(product)}
 								>
-									<span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+									<span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
 										{product.images?.[0]?.src ? <img src={product.images[0].src} alt="" className="h-full w-full object-cover" /> : <Icon name="inventory" className="text-gray-400" />}
 									</span>
 									<span className="min-w-0 flex-1 truncate text-theme-sm text-gray-800 dark:text-white/90">{decodeHtml(product.name)}</span>
@@ -130,7 +130,7 @@ export const ProductPicker = ({ ids, onChange, placeholder, exclude = [], types 
 								aria-label={__('Remove product')}
 								onClick={() => onChange(ids.filter((item) => item !== id))}
 							>
-								<Icon name="close" className="text-sm" />
+								<Icon name="close" className="text-theme-sm" />
 							</button>
 						</li>
 					))}

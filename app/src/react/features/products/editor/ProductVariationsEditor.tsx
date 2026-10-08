@@ -378,7 +378,7 @@ export const ProductVariationsEditor = forwardRef<VariationsHandle, Props>(funct
 									aria-label={__('Choose variation image')}
 									onClick={() => chooseImage(variation)}
 								>
-									{variation.image?.src ? <img src={variation.image.src} alt="" className="h-full w-full object-cover" /> : <Icon name="image" className="text-lg" />}
+									{variation.image?.src ? <img src={variation.image.src} alt="" className="h-full w-full object-cover" /> : <Icon name="image" className="text-theme-lg" />}
 								</button>
 
 								<button

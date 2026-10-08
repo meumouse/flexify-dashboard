@@ -26,7 +26,7 @@
 	:where(.fd-body-container) .wrap > h1:not(:where(.flexify-dashboard-isolation *)) {
 		margin: 0 0 0.25rem;
 		padding: 0;
-		font-size: 1.25rem;
+		font-size: var(--fd-text-xl);
 		line-height: 1.75rem;
 		font-weight: 600;
 		color: rgb(var(--fd-base-800));
@@ -39,7 +39,7 @@
 
 	:where(.fd-body-container) .wrap h2.title:not(:where(.flexify-dashboard-isolation *)),
 	:where(.fd-body-container) .wrap > h2:not(.nav-tab-wrapper):not(:where(.flexify-dashboard-isolation *)) {
-		font-size: 1.125rem;
+		font-size: var(--fd-text-md);
 		line-height: 1.75rem;
 		font-weight: 600;
 		color: rgb(var(--fd-base-800));
@@ -52,7 +52,7 @@
 
 	:where(.fd-body-container) p.description:not(:where(.flexify-dashboard-isolation *)),
 	:where(.fd-body-container) .form-wrap p:not(:where(.flexify-dashboard-isolation *)) {
-		font-size: 0.75rem;
+		font-size: var(--fd-text-xs);
 		line-height: 1.125rem;
 		color: rgb(var(--fd-base-500));
 	}
@@ -85,7 +85,7 @@
 		background-color: rgb(var(--fd-accent-500));
 		box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 		color: #fff;
-		font-size: 0.875rem;
+		font-size: var(--fd-text-sm);
 		font-weight: 500;
 		line-height: 1;
 		text-shadow: none;
@@ -129,7 +129,7 @@
 		background-color: rgb(var(--fd-base-0));
 		box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 		color: rgb(var(--fd-base-700));
-		font-size: 0.875rem;
+		font-size: var(--fd-text-sm);
 		font-weight: 500;
 		line-height: 1;
 		vertical-align: middle;
@@ -157,7 +157,7 @@
 	:where(.fd-body-container) .button.button-small:not(:where(.flexify-dashboard-isolation *)) {
 		min-height: 2rem;
 		padding: 0 0.75rem;
-		font-size: 0.75rem;
+		font-size: var(--fd-text-xs);
 	}
 
 	:where(.fd-body-container) .button.button-large:not(:where(.flexify-dashboard-isolation *)),
@@ -196,7 +196,7 @@
 		background-color: transparent;
 		box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 		color: rgb(var(--fd-base-800));
-		font-size: 0.875rem;
+		font-size: var(--fd-text-sm);
 		line-height: 1.25rem;
 		transition: border-color 0.15s ease, box-shadow 0.15s ease;
 	}
@@ -276,7 +276,7 @@
 	:where(.fd-body-container) .form-table th:not(:where(.flexify-dashboard-isolation *)),
 	:where(.fd-body-container) .form-wrap label:not(:where(.flexify-dashboard-isolation *)) {
 		color: rgb(var(--fd-base-700));
-		font-size: 0.875rem;
+		font-size: var(--fd-text-sm);
 		font-weight: 500;
 	}
 
@@ -307,7 +307,7 @@
 		margin: 0;
 		padding: 0;
 		color: rgb(var(--fd-base-600));
-		font-size: 0.875rem;
+		font-size: var(--fd-text-sm);
 	}
 
 	:where(.fd-body-container) .notice.notice-success:not(:where(.flexify-dashboard-isolation *)),
@@ -394,7 +394,7 @@
 		border-bottom: 2px solid transparent;
 		background: transparent;
 		color: rgb(var(--fd-base-500));
-		font-size: 0.875rem;
+		font-size: var(--fd-text-sm);
 		font-weight: 500;
 		line-height: 1.25rem;
 		transition: color 0.15s ease, border-color 0.15s ease;
@@ -461,7 +461,7 @@
 		border-bottom: 1px solid rgb(var(--fd-base-100));
 		background-color: transparent;
 		color: rgb(var(--fd-base-500));
-		font-size: 0.75rem;
+		font-size: var(--fd-text-xs);
 		font-weight: 500;
 		line-height: 1.125rem;
 	}
@@ -482,7 +482,7 @@
 		padding: 1rem;
 		border-top: 1px solid rgb(var(--fd-base-100));
 		color: rgb(var(--fd-base-500));
-		font-size: 0.875rem;
+		font-size: var(--fd-text-sm);
 		vertical-align: middle;
 	}
 
@@ -533,7 +533,7 @@
 
 	:where(.fd-body-container) .tablenav .displaying-num:not(:where(.flexify-dashboard-isolation *)) {
 		color: rgb(var(--fd-base-500));
-		font-size: 0.875rem;
+		font-size: var(--fd-text-sm);
 	}
 
 	:where(.fd-body-container) .tablenav .tablenav-pages .button:not(:where(.flexify-dashboard-isolation *)),
@@ -574,7 +574,7 @@
 	:where(.fd-body-container) .postbox .postbox-header .hndle:not(:where(.flexify-dashboard-isolation *)) {
 		padding: 1rem 1.25rem;
 		color: rgb(var(--fd-base-800));
-		font-size: 1rem;
+		font-size: var(--fd-text-md);
 		font-weight: 600;
 	}
 
@@ -600,7 +600,7 @@
 		margin: 0;
 		padding: 0.125rem 0.625rem;
 		border-radius: 9999px;
-		font-size: 0.75rem;
+		font-size: var(--fd-text-xs);
 		font-weight: 500;
 		line-height: 1.125rem;
 	}

@@ -28,7 +28,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
 		return (
 			<div className="rounded-2xl border border-error-200 bg-error-50 p-6 dark:border-error-500/30 dark:bg-error-500/10">
-				<h2 className="text-lg font-semibold text-gray-800 dark:text-white/90">{__('Something went wrong on this screen')}</h2>
+				<h2 className="text-theme-lg font-semibold text-gray-800 dark:text-white/90">{__('Something went wrong on this screen')}</h2>
 				<p className="mt-1 text-theme-sm text-gray-600 dark:text-gray-300">
 					{__('Reload the page to try again. If it keeps happening, share the details below with support.')}
 				</p>
@@ -37,7 +37,7 @@ export class ErrorBoundary extends Component<Props, State> {
 				</pre>
 				<button
 					type="button"
-					className="mt-4 inline-flex h-10 items-center rounded-lg bg-brand-500 px-4 text-sm font-medium text-white transition-colors hover:bg-brand-600"
+					className="mt-4 inline-flex h-10 items-center rounded-lg bg-brand-500 px-4 text-theme-sm font-medium text-white transition-colors hover:bg-brand-600"
 					onClick={() => window.location.reload()}
 				>
 					{__('Reload page')}

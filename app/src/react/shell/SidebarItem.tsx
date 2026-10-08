@@ -34,7 +34,7 @@ const iconClass = 'text-gray-500 transition-colors duration-150 group-hover:text
 
 export const MenuIcon = ({ item }: { item: MenuItem }) => {
 	if (item.settings?.icon) {
-		return <Icon name={item.settings.icon} className={cn('text-2xl', iconClass)} />;
+		return <Icon name={item.settings.icon} className={cn('text-title-xs', iconClass)} />;
 	}
 
 	// Without a custom icon the original WordPress classes are reused, and the stylesheet the
@@ -91,7 +91,7 @@ export const SidebarItem = ({ item, active, expanded, hasSubmenu, favorite, onTo
 					onFavorite();
 				}}
 			>
-				<Icon name="star" className="text-base" />
+				<Icon name="star" className="text-theme-md" />
 			</button>
 		) : null}
 
@@ -109,12 +109,12 @@ export const SidebarItem = ({ item, active, expanded, hasSubmenu, favorite, onTo
 			>
 				<Icon
 					name="expand_more"
-					className={cn('text-lg transition-transform duration-200', expanded ? 'rotate-180 text-brand-500 dark:text-brand-400' : 'text-gray-500 dark:text-gray-400')}
+					className={cn('text-theme-lg transition-transform duration-200', expanded ? 'rotate-180 text-brand-500 dark:text-brand-400' : 'text-gray-500 dark:text-gray-400')}
 				/>
 			</button>
 		) : null}
 
-		{item.settings?.open_new ? <Icon name="open_new" className={cn('text-base opacity-0 transition-opacity group-hover:opacity-100 max-md:opacity-100', active && 'opacity-100')} /> : null}
+		{item.settings?.open_new ? <Icon name="open_new" className={cn('text-theme-md opacity-0 transition-opacity group-hover:opacity-100 max-md:opacity-100', active && 'opacity-100')} /> : null}
 	</a>
 );
 
@@ -133,7 +133,7 @@ export const SidebarSubItem = ({ item, active, favorite, onFavorite }: { item: S
 					onFavorite();
 				}}
 			>
-				<Icon name="star" className="text-sm" />
+				<Icon name="star" className="text-theme-sm" />
 			</button>
 		) : null}
 	</a>

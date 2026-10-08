@@ -81,7 +81,7 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 			onMouseLeave={onLeave}
 		>
 			<a href={adminUrl} className={cn('flex h-16 shrink-0 items-center gap-2 px-5', minified && 'justify-center px-0')} aria-label={__('Dashboard')}>
-				{logo && !minified ? <img src={logo} alt="" className="h-6" /> : <Icon name="flexify-dashboard" className="text-2xl text-brand-500" />}
+				{logo && !minified ? <img src={logo} alt="" className="h-6" /> : <Icon name="flexify-dashboard" className="text-title-xs text-brand-500" />}
 			</a>
 
 			{favorites.length && !minified ? (
@@ -94,7 +94,7 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 								href={formatUrl(favorite.url)}
 								className="group flex min-h-9 items-center gap-2 rounded-lg px-3 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5"
 							>
-								<Icon name={favorite.settings?.icon || 'link'} className="shrink-0 text-base text-gray-400" />
+								<Icon name={favorite.settings?.icon || 'link'} className="shrink-0 text-theme-md text-gray-400" />
 								<span className="min-w-0 flex-1 truncate" dangerouslySetInnerHTML={{ __html: favorite.settings?.name || favorite.name || '' }} />
 								<button
 									type="button"
@@ -105,7 +105,7 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 										remove(favorite.url as string);
 									}}
 								>
-									<Icon name="close" className="text-sm" />
+									<Icon name="close" className="text-theme-sm" />
 								</button>
 							</a>
 						))}
@@ -123,7 +123,7 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 								}
 
 								return item.settings?.name ? (
-									<p key={item.id} id={item.id} className="mt-4 mb-2 px-3 text-xs uppercase leading-5 text-gray-400" dangerouslySetInnerHTML={{ __html: item.settings.name }} />
+									<p key={item.id} id={item.id} className="mt-4 mb-2 px-3 text-theme-xs uppercase leading-5 text-gray-400" dangerouslySetInnerHTML={{ __html: item.settings.name }} />
 								) : (
 									<hr key={item.id} id={item.id} className="my-2 w-full border-t border-gray-100 dark:border-gray-800" />
 								);
@@ -191,7 +191,7 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 			{!minified ? (
 				<div className="shrink-0 border-t border-gray-100 px-3 py-3 dark:border-gray-800">
 					<a href={siteUrl} className="flex items-center gap-2 rounded-lg px-3 py-2 text-theme-sm text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/5">
-						<Icon name="home" className="text-base" />
+						<Icon name="home" className="text-theme-md" />
 						{__('Visit site')}
 					</a>
 				</div>

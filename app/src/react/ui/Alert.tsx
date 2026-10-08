@@ -27,7 +27,7 @@ export const Alert = ({ variant = 'info', title, message, dismissible = false, c
 	return (
 		<div className={cn('rounded-xl border p-4', palette.box, className)} role="alert">
 			<div className="flex items-start gap-3">
-				<Icon name={palette.iconName} className={cn('mt-0.5 shrink-0 text-xl', palette.icon)} />
+				<Icon name={palette.iconName} className={cn('mt-0.5 shrink-0 text-theme-xl', palette.icon)} />
 				<div className="min-w-0 flex-1">
 					{title ? <h4 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">{title}</h4> : null}
 					{children ?? (message ? <p className={cn('text-theme-sm text-gray-600 dark:text-gray-300', title && 'mt-1')}>{message}</p> : null)}
@@ -40,7 +40,7 @@ export const Alert = ({ variant = 'info', title, message, dismissible = false, c
 						aria-label={__('Dismiss')}
 						onClick={() => setVisible(false)}
 					>
-						<Icon name="close" className="text-base" />
+						<Icon name="close" className="text-theme-md" />
 					</button>
 				) : null}
 			</div>

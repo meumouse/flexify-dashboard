@@ -211,7 +211,7 @@ export const CouponsView = () => {
 			label: __('Code'),
 			cell: (row) => (
 				<div className="min-w-40">
-					<span className="rounded-md border border-dashed border-gray-300 px-2 py-0.5 font-mono text-theme-sm font-medium uppercase text-gray-800 dark:border-gray-700 dark:text-white/90">
+					<span className="rounded-lg border border-dashed border-gray-300 px-2 py-0.5 font-mono text-theme-sm font-medium uppercase text-gray-800 dark:border-gray-700 dark:text-white/90">
 						{row.code}
 					</span>
 					{row.description ? <p className="mt-1 truncate text-theme-xs text-gray-500 dark:text-gray-400">{row.description}</p> : null}

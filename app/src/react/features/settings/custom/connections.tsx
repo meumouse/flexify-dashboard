@@ -77,7 +77,7 @@ export const RemoteSites = ({ settings, onChange }: CustomRenderProps) => {
 				<ul className="flex flex-col gap-2">
 					{sites.map((site, index) => (
 						<li key={site.url} className="flex items-center gap-3 rounded-xl border border-gray-200 p-3 dark:border-gray-800">
-							<Icon name="public" className="shrink-0 text-base text-gray-400" />
+							<Icon name="public" className="shrink-0 text-theme-md text-gray-400" />
 							<div className="min-w-0 flex-1">
 								<p className="truncate text-theme-sm font-medium text-gray-900 dark:text-gray-100">{site.url}</p>
 								<p className="truncate text-theme-xs text-gray-500 dark:text-gray-400">{site.username || __('No user set')}</p>
@@ -382,7 +382,7 @@ export const FontSelector = ({ settings, onChange }: CustomRenderProps) => {
 									onChange({ custom_font_url: family ? googleFontUrl(family, next.length ? next : ['400']) : '' });
 								}}
 								className={cn(
-									'rounded-md px-2 py-1 text-theme-xs font-medium transition-colors',
+									'rounded-lg px-2 py-1 text-theme-xs font-medium transition-colors',
 									weights.includes(weight) ? 'bg-brand-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
 								)}
 								aria-pressed={weights.includes(weight)}
@@ -393,7 +393,7 @@ export const FontSelector = ({ settings, onChange }: CustomRenderProps) => {
 					</div>
 
 					{family ? (
-						<p className="rounded-xl border border-gray-200 p-4 text-xl dark:border-gray-800" style={{ fontFamily: `"${family}", sans-serif` }}>
+						<p className="rounded-xl border border-gray-200 p-4 text-theme-xl dark:border-gray-800" style={{ fontFamily: `"${family}", sans-serif` }}>
 							{__('The quick brown fox jumps over the lazy dog')}
 						</p>
 					) : null}

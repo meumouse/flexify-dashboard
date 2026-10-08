@@ -79,18 +79,18 @@ export const Tabs = <T extends string | number>({ value, items, onChange, varian
 							'inline-flex shrink-0 items-center gap-2 whitespace-nowrap font-medium transition-colors focus:outline-hidden focus-visible:shadow-focus-ring disabled:cursor-not-allowed disabled:opacity-50',
 							variant === 'segmented'
 								? cn(
-										'rounded-md px-3 py-2 text-theme-sm',
+										'rounded-lg px-3 py-2 text-theme-sm',
 										selected ? 'bg-white text-gray-900 shadow-theme-xs dark:bg-gray-800 dark:text-white' : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
 									)
 								: cn(
-										'-mb-px border-b-2 px-2.5 py-3 text-sm',
+										'-mb-px border-b-2 px-2.5 py-3 text-theme-sm',
 										selected
 											? 'border-brand-500 text-brand-500 dark:border-brand-400 dark:text-brand-400'
 											: 'border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
 									)
 						)}
 					>
-						{item.icon ? <Icon name={item.icon} className="text-base" /> : null}
+						{item.icon ? <Icon name={item.icon} className="text-theme-md" /> : null}
 						<span>{item.label}</span>
 						{item.count !== undefined && item.count !== null ? (
 							<span

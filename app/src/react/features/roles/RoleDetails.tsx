@@ -134,7 +134,7 @@ export const RoleDetails = () => {
 						<div className="max-h-[36rem] overflow-y-auto p-4 custom-scrollbar">
 							{!groups.length ? (
 								<div className="py-12 text-center">
-									<Icon name="search_off" className="mx-auto mb-3 text-3xl text-gray-300 dark:text-gray-600" />
+									<Icon name="search_off" className="mx-auto mb-3 text-title-sm text-gray-300 dark:text-gray-600" />
 									<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('No capability matches that.')}</p>
 								</div>
 							) : (

@@ -1,6 +1,7 @@
-import { readdirSync, readFileSync, statSync } from 'node:fs';
+import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { reactSourceFiles } from '../../../tests/source-tree';
 
 /**
  * Every icon name the screens ask for has to exist in `assets/icons`.
@@ -10,19 +11,7 @@ import { describe, expect, it } from 'vitest';
  * Ten of them had got in that way before this test existed.
  */
 
-const SOURCE = join(__dirname, '..');
 const ICONS = join(__dirname, '../../../../assets/icons');
-
-const sourceFiles = (directory: string): string[] =>
-	readdirSync(directory).flatMap((entry) => {
-		const path = join(directory, entry);
-
-		if (statSync(path).isDirectory()) {
-			return sourceFiles(path);
-		}
-
-		return /\.tsx?$/.test(entry) && !/\.test\.tsx?$/.test(entry) ? [path] : [];
-	});
 
 /**
  * The names passed as `icon="…"` or `name="…"`, which is how every call site spells it.
@@ -36,13 +25,13 @@ describe('icon names', () => {
 
 		const missing = new Map<string, Set<string>>();
 
-		sourceFiles(SOURCE).forEach((path) => {
-			iconNames(readFileSync(path, 'utf8')).forEach((name) => {
+		reactSourceFiles().forEach(({ path, contents }) => {
+			iconNames(contents).forEach((name) => {
 				if (available.has(name)) {
 					return;
 				}
 
-				missing.set(name, (missing.get(name) ?? new Set()).add(path.slice(SOURCE.length + 1)));
+				missing.set(name, (missing.get(name) ?? new Set()).add(path));
 			});
 		});
 

@@ -96,7 +96,7 @@ export const ActivityDetails = () => {
 				<div className="flex flex-col gap-6">
 					<Card title={__('Entry')}>
 						<div className="mb-4 flex items-center gap-2">
-							<Icon name={look.icon} className={cn('text-base', look.tone)} />
+							<Icon name={look.icon} className={cn('text-theme-md', look.tone)} />
 							<span className="text-theme-sm font-medium text-gray-800 dark:text-gray-200">{activity.action}</span>
 						</div>
 

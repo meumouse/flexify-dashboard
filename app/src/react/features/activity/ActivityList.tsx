@@ -96,7 +96,7 @@ export const ActivityList = () => {
 
 				return (
 					<div className="flex items-start gap-3">
-						<Icon name={look.icon} className={cn('mt-0.5 text-base', look.tone)} />
+						<Icon name={look.icon} className={cn('mt-0.5 text-theme-md', look.tone)} />
 						<div className="min-w-0">
 							<p className="truncate text-theme-sm font-medium text-gray-900 dark:text-gray-100">{decodeHtml(subjectOf(activity))}</p>
 							<p className="truncate text-theme-xs text-gray-500 dark:text-gray-400">
@@ -187,7 +187,7 @@ export const ActivityList = () => {
 					<Input type="date" size="sm" value={params.date_from} onChange={(event) => apply({ date_from: event.target.value })} aria-label={__('From')} />
 					<Input type="date" size="sm" value={params.date_to} onChange={(event) => apply({ date_to: event.target.value })} aria-label={__('To')} />
 
-					{activities.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-base text-gray-400" /> : null}
+					{activities.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
 				</div>
 
 				<DataTable

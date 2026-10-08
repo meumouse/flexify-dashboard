@@ -74,7 +74,7 @@ export const AnalyticsMapCard = ({ dateRange }: CardProps) => {
 	if (!token) {
 		return (
 			<div className="py-8 text-center">
-				<Icon name="public" className="mx-auto mb-3 text-3xl text-gray-300 dark:text-gray-600" />
+				<Icon name="public" className="mx-auto mb-3 text-title-sm text-gray-300 dark:text-gray-600" />
 				<p className="mb-4 text-theme-sm text-gray-500 dark:text-gray-400">{__('Add a Mapbox key to see where your visitors are.')}</p>
 				<Button size="sm" variant="outline" href={`${adminUrl}admin.php?page=flexify-dashboard-settings`}>
 					{__('Open settings')}

@@ -126,7 +126,7 @@ export const OrderNotes = ({ orderId }: Props) => {
 								{index < notes.length - 1 ? <span className="absolute start-4 top-9 -bottom-5 w-px bg-gray-200 dark:bg-gray-800" aria-hidden="true" /> : null}
 								<Tooltip text={tone.label}>
 									<span className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${tone.classes}`}>
-										<Icon name={tone.icon} className="text-base" />
+										<Icon name={tone.icon} className="text-theme-md" />
 									</span>
 								</Tooltip>
 								<div className="min-w-0 flex-1">

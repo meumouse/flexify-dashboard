@@ -17,7 +17,7 @@ type Draft = {
 };
 
 const inputClass =
-	'h-9 w-full rounded-lg border border-gray-300 bg-transparent px-3 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90';
+	'h-9 w-full rounded-lg border border-gray-300 bg-transparent px-3 text-theme-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90';
 
 const headerClass = 'px-4 py-2.5 text-start text-theme-xs font-medium text-gray-500 dark:text-gray-400';
 
@@ -103,7 +103,7 @@ export const ProductVariations = ({ product, onUpdated }: Props) => {
 	return (
 		<div className="rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
 			<div className="flex items-center justify-between border-b border-gray-100 px-4 py-3 dark:border-gray-800">
-				<p className="text-sm font-medium text-gray-800 dark:text-white/90">{__('Variations')}</p>
+				<p className="text-theme-sm font-medium text-gray-800 dark:text-white/90">{__('Variations')}</p>
 				<Button variant="ghost" size="xs" icon="refresh" disabled={isFetching} onClick={() => refetch()}>
 					{__('Reload')}
 				</Button>
@@ -116,7 +116,7 @@ export const ProductVariations = ({ product, onUpdated }: Props) => {
 					))}
 				</div>
 			) : !variations.length ? (
-				<p className="p-4 text-sm text-gray-500 dark:text-gray-400">{__('This product has no variations.')}</p>
+				<p className="p-4 text-theme-sm text-gray-500 dark:text-gray-400">{__('This product has no variations.')}</p>
 			) : (
 				<div className="overflow-x-auto custom-scrollbar">
 					<table className="min-w-full">
@@ -143,11 +143,11 @@ export const ProductVariations = ({ product, onUpdated }: Props) => {
 									<tr key={variation.id}>
 										<td className="px-4 py-3">
 											<div className="flex min-w-52 items-center gap-3">
-												<div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+												<div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
 													{variation.image?.src ? (
 														<img src={variation.image.src} alt="" className="h-full w-full object-cover" loading="lazy" />
 													) : (
-														<Icon name="image" className="text-base text-gray-400" />
+														<Icon name="image" className="text-theme-md text-gray-400" />
 													)}
 												</div>
 												<div className="min-w-0">

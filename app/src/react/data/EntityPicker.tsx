@@ -87,7 +87,7 @@ export const EntityPicker = ({ endpoint, toItem, value, onChange, multiple = tru
 				trigger ?? (
 					<Button variant="outline" size="sm" disabled={disabled} aria-label={placeholder} className={cn('w-full justify-between font-normal', className)}>
 						<span className={cn('truncate', !chosen.length && 'text-gray-400 dark:text-gray-500')}>{label}</span>
-						<Icon name="expand_more" className="shrink-0 text-base" />
+						<Icon name="expand_more" className="shrink-0 text-theme-md" />
 					</Button>
 				)
 			}
@@ -119,7 +119,7 @@ export const EntityPicker = ({ endpoint, toItem, value, onChange, multiple = tru
 									>
 										{multiple ? <Checkbox size="sm" checked={value.includes(item.id)} onCheckedChange={() => toggle(item.id)} tabIndex={-1} aria-hidden /> : null}
 										<span className="min-w-0 flex-1 truncate text-gray-700 dark:text-gray-300">{decodeHtml(item.label)}</span>
-										{!multiple && value.includes(item.id) ? <Icon name="check" className="text-base text-brand-500" /> : null}
+										{!multiple && value.includes(item.id) ? <Icon name="check" className="text-theme-md text-brand-500" /> : null}
 									</button>
 								</li>
 							))}

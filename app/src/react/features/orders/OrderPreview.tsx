@@ -104,7 +104,7 @@ export const OrderPreview = ({ open, onOpenChange, order, onStatusChanged, onOpe
 						{current.line_items?.map((item) => (
 							<li key={item.id} className="flex items-center gap-3 px-4 py-3">
 								<div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
-									{item.image?.src ? <img src={item.image.src} alt="" className="h-full w-full object-cover" loading="lazy" /> : <Icon name="inventory" className="text-lg text-gray-400" />}
+									{item.image?.src ? <img src={item.image.src} alt="" className="h-full w-full object-cover" loading="lazy" /> : <Icon name="inventory" className="text-theme-lg text-gray-400" />}
 								</div>
 								<div className="min-w-0 flex-1">
 									<p className="truncate text-theme-sm font-medium text-gray-800 dark:text-white/90">{decodeHtml(item.name)}</p>
@@ -123,7 +123,7 @@ export const OrderPreview = ({ open, onOpenChange, order, onStatusChanged, onOpe
 						{Number(current.discount_total) ? summaryRow(__('Discount'), price(current.discount_total, current), true) : null}
 						{current.shipping_lines?.length ? summaryRow(__('Shipping'), price(current.shipping_total, current)) : null}
 						{Number(current.total_tax) ? summaryRow(__('Taxes'), price(current.total_tax, current)) : null}
-						<div className="flex justify-between border-t border-gray-100 pt-2 text-base font-semibold text-gray-800 dark:border-gray-800 dark:text-white/90">
+						<div className="flex justify-between border-t border-gray-100 pt-2 text-theme-md font-semibold text-gray-800 dark:border-gray-800 dark:text-white/90">
 							<dt>{__('Total')}</dt>
 							<dd>{price(current.total, current)}</dd>
 						</div>

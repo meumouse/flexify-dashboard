@@ -42,13 +42,13 @@ export const PostPreview = ({ post, onUpdate }: Props) => {
 
 			<div className="mb-6">
 				<div className="mb-4 flex items-start justify-between gap-4">
-					<h1 className="flex-1 text-2xl font-semibold text-gray-900 dark:text-gray-100">{title}</h1>
+					<h1 className="flex-1 text-title-xs font-semibold text-gray-900 dark:text-gray-100">{title}</h1>
 					<PostRowMenu post={post} />
 				</div>
 
 				<div className="flex flex-wrap items-center gap-3 text-theme-sm text-gray-500 dark:text-gray-400">
 					<span className="flex items-center gap-1.5">
-						<Icon name="schedule" className="text-base" />
+						<Icon name="schedule" className="text-theme-md" />
 						{/* The date arrives as WordPress rendered it, with its own title attribute. */}
 						<span>{stripTags(String(post.date ?? ''))}</span>
 					</span>

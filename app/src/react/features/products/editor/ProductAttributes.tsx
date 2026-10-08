@@ -239,7 +239,7 @@ export const ProductAttributes = ({ attributes, onChange, isVariable = false }: 
 												aria-label={__('Remove value')}
 												onClick={() => update(index, { options: attribute.options.filter((item) => item !== option) })}
 											>
-												<Icon name="close" className="text-sm" />
+												<Icon name="close" className="text-theme-sm" />
 											</button>
 										</span>
 									))}

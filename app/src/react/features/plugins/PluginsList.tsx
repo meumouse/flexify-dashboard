@@ -184,7 +184,7 @@ export const PluginsList = () => {
 							className="w-full sm:w-72"
 						/>
 
-						{plugins.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-base text-gray-400" /> : null}
+						{plugins.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
 					</div>
 
 					{plugins.isLoading ? (
@@ -195,7 +195,7 @@ export const PluginsList = () => {
 						</div>
 					) : !shown.length ? (
 						<div className="py-16 text-center">
-							<Icon name="extension" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
+							<Icon name="extension" className="mx-auto mb-3 text-title-md text-gray-300 dark:text-gray-600" />
 							<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('No plugin here matches that.')}</p>
 						</div>
 					) : (

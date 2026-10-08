@@ -235,7 +235,7 @@ export const ImageEditor = ({ image, saving = false, onSave, onCancel }: Props) 
 										type="button"
 										onClick={() => setRatio(option.value)}
 										className={cn(
-											'rounded-md px-2 py-1 text-theme-xs font-medium transition-colors',
+											'rounded-lg px-2 py-1 text-theme-xs font-medium transition-colors',
 											ratio === option.value ? 'bg-brand-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
 										)}
 									>
@@ -308,7 +308,7 @@ export const ImageEditor = ({ image, saving = false, onSave, onCancel }: Props) 
 								setSize({ width, height: lockRatio ? keepRatio(width, { width: image.naturalWidth, height: image.naturalHeight }, 'width') : size.height });
 							}}
 						/>
-						<Icon name="close" className="text-sm text-gray-400" />
+						<Icon name="close" className="text-theme-sm text-gray-400" />
 						<Input
 							type="number"
 							size="sm"

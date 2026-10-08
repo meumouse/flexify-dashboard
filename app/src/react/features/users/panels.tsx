@@ -172,7 +172,7 @@ export const ActivityPanel = ({ user }: PanelProps) => {
 
 					return (
 						<li key={activity.id} className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-gray-50 dark:hover:bg-white/5">
-							<Icon name={look.icon} className={cn('mt-0.5 text-base', look.tone)} />
+							<Icon name={look.icon} className={cn('mt-0.5 text-theme-md', look.tone)} />
 							<div className="min-w-0 flex-1">
 								<p className="truncate text-theme-sm text-gray-800 dark:text-gray-200">{decodeHtml(stripTags(titleOf(activity)))}</p>
 								<p className="text-theme-xs text-gray-500 dark:text-gray-400">
@@ -238,11 +238,11 @@ export const CommercePanel = ({ user }: PanelProps) => {
 				<div className="mb-5 grid grid-cols-2 gap-4">
 					<div>
 						<p className="text-theme-xs text-gray-500 dark:text-gray-400">{__('Orders')}</p>
-						<p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{customer.data.orders_count ?? 0}</p>
+						<p className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{customer.data.orders_count ?? 0}</p>
 					</div>
 					<div>
 						<p className="text-theme-xs text-gray-500 dark:text-gray-400">{__('Total spent')}</p>
-						<p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{customer.data.total_spent ?? '0'}</p>
+						<p className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{customer.data.total_spent ?? '0'}</p>
 					</div>
 				</div>
 

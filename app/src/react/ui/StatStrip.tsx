@@ -67,7 +67,7 @@ export const StatStrip = ({ items, loading = false, onSelect, className }: Props
 						<Skeleton className="mt-2 h-7 w-20" />
 					) : (
 						<div className="mt-1.5 flex flex-wrap items-baseline gap-x-2">
-							<span className={cn('text-xl font-semibold sm:text-2xl', tones[item.tone ?? 'default'])}>{item.value}</span>
+							<span className={cn('text-theme-xl font-semibold sm:text-title-xs', tones[item.tone ?? 'default'])}>{item.value}</span>
 							{item.hint ? <span className="text-theme-xs text-gray-500 dark:text-gray-400">{item.hint}</span> : null}
 						</div>
 					)}

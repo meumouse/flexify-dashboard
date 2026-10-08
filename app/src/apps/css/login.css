@@ -260,7 +260,7 @@
   }
 
   .fd-login-brand-text {
-    font-size: 2rem;
+    font-size: var(--fd-title-sm);
     font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.05;
@@ -270,7 +270,7 @@
   .fd-login-aside-copy {
     margin-top: 1.15rem;
     color: rgb(219 234 254 / 0.74);
-    font-size: 0.925rem;
+    font-size: var(--fd-text-sm);
     font-weight: 500;
     line-height: 1.7;
     text-align: center;

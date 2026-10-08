@@ -32,7 +32,7 @@ export const Radio = ({ checked, onSelect, label, description, disabled, classNa
 
 			{label || description ? (
 				<span className="flex flex-col">
-					<span className="text-sm font-medium text-gray-700 dark:text-gray-400">{label}</span>
+					<span className="text-theme-sm font-medium text-gray-700 dark:text-gray-400">{label}</span>
 					{description ? <span className="mt-0.5 text-theme-xs text-gray-500 dark:text-gray-400">{description}</span> : null}
 				</span>
 			) : null}

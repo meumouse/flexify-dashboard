@@ -1013,7 +1013,7 @@ export const ProductEditor = () => {
 									className="flex aspect-square w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-gray-300 bg-gray-50 text-theme-sm text-gray-500 transition-colors hover:border-brand-500 hover:text-brand-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400"
 									onClick={chooseFeatured}
 								>
-									<Icon name="image" className="text-3xl" />
+									<Icon name="image" className="text-title-sm" />
 									{__('Set product image')}
 								</button>
 							) : (
@@ -1048,7 +1048,7 @@ export const ProductEditor = () => {
 													aria-label={__('Use as product image')}
 													onClick={() => set({ images: [form.images[index + 1], ...form.images.filter((_, itemIndex) => itemIndex !== index + 1)] })}
 												>
-													<Icon name="star_full" className="text-sm" />
+													<Icon name="star_full" className="text-theme-sm" />
 												</button>
 												<button
 													type="button"
@@ -1056,7 +1056,7 @@ export const ProductEditor = () => {
 													aria-label={__('Remove image')}
 													onClick={() => set({ images: form.images.filter((_, itemIndex) => itemIndex !== index + 1) })}
 												>
-													<Icon name="close" className="text-sm" />
+													<Icon name="close" className="text-theme-sm" />
 												</button>
 											</div>
 										</div>
@@ -1067,7 +1067,7 @@ export const ProductEditor = () => {
 										aria-label={__('Add gallery images')}
 										onClick={addGallery}
 									>
-										<Icon name="add" className="text-xl" />
+										<Icon name="add" className="text-theme-xl" />
 									</button>
 								</div>
 							</div>

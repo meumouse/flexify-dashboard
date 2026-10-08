@@ -138,7 +138,7 @@ export const SettingsScreen = () => {
 										)}
 										aria-current={!search && category === item.value}
 									>
-										<Icon name={item.icon} className="shrink-0 text-base text-gray-400" />
+										<Icon name={item.icon} className="shrink-0 text-theme-md text-gray-400" />
 										<span className="min-w-0 flex-1 truncate">{item.label}</span>
 										<span className="shrink-0 text-theme-xs text-gray-400">{counts[item.value] ?? 0}</span>
 									</button>
@@ -152,7 +152,7 @@ export const SettingsScreen = () => {
 					{!shown.length ? (
 						<Card>
 							<div className="py-16 text-center">
-								<Icon name="search_off" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
+								<Icon name="search_off" className="mx-auto mb-3 text-title-md text-gray-300 dark:text-gray-600" />
 								<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('No setting here matches that.')}</p>
 							</div>
 						</Card>

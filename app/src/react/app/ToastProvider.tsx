@@ -85,7 +85,7 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
 						role="status"
 						className="pointer-events-auto flex w-full max-w-sm items-start gap-3 rounded-xl border border-gray-200 bg-white p-4 shadow-theme-lg dark:border-gray-800 dark:bg-gray-900"
 					>
-						<Icon name={TONES[toast.tone].icon} className={cn('mt-0.5 shrink-0 text-lg', TONES[toast.tone].className)} />
+						<Icon name={TONES[toast.tone].icon} className={cn('mt-0.5 shrink-0 text-theme-lg', TONES[toast.tone].className)} />
 						<div className="min-w-0 flex-1">
 							<p className="text-theme-sm font-medium text-gray-800 dark:text-white/90">{toast.title}</p>
 							{toast.message ? <p className="mt-0.5 text-theme-xs text-gray-500 dark:text-gray-400">{toast.message}</p> : null}
@@ -96,7 +96,7 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
 							aria-label={__('Dismiss')}
 							onClick={() => dismiss(toast.id)}
 						>
-							<Icon name="close" className="text-base" />
+							<Icon name="close" className="text-theme-md" />
 						</button>
 					</div>
 				))}

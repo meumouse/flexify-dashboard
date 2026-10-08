@@ -37,7 +37,7 @@ const Stars = ({ rating }: { rating?: number }) => {
 	return (
 		<span className="flex items-center gap-0.5" aria-label={sprintf(__('%s out of 5'), String(stars))}>
 			{Array.from({ length: 5 }, (_, index) => (
-				<Icon key={index} name={index < stars ? 'star' : 'star_border'} className="text-sm text-warning-400" />
+				<Icon key={index} name={index < stars ? 'star' : 'star_border'} className="text-theme-sm text-warning-400" />
 			))}
 		</span>
 	);
@@ -63,7 +63,7 @@ export const PluginRepository = ({ installed }: { installed: Plugin[] }) => {
 
 			{!search ? (
 				<div className="py-16 text-center">
-					<Icon name="search" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
+					<Icon name="search" className="mx-auto mb-3 text-title-md text-gray-300 dark:text-gray-600" />
 					<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Search for a plugin to add it to this site.')}</p>
 				</div>
 			) : results.isLoading ? (
@@ -78,7 +78,7 @@ export const PluginRepository = ({ installed }: { installed: Plugin[] }) => {
 				</Card>
 			) : !results.data?.plugins.length ? (
 				<div className="py-16 text-center">
-					<Icon name="search_off" className="mx-auto mb-3 text-4xl text-gray-300 dark:text-gray-600" />
+					<Icon name="search_off" className="mx-auto mb-3 text-title-md text-gray-300 dark:text-gray-600" />
 					<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Nothing in the directory matches that.')}</p>
 				</div>
 			) : (
@@ -94,7 +94,7 @@ export const PluginRepository = ({ installed }: { installed: Plugin[] }) => {
 											<img src={plugin.icons['1x'] ?? plugin.icons.default} alt="" aria-hidden className="h-12 w-12 shrink-0 rounded-lg object-cover" />
 										) : (
 											<span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-400 dark:bg-gray-800">
-												<Icon name="extension" className="text-xl" />
+												<Icon name="extension" className="text-theme-xl" />
 											</span>
 										)}
 

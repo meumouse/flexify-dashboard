@@ -116,7 +116,7 @@ export const PostsSettings = ({ query, onChange, columns, onToggleColumn, onMove
 									className="flex min-w-0 flex-1 items-center gap-2 rounded-lg px-2 py-1.5 text-start text-theme-sm transition-colors hover:bg-gray-50 dark:hover:bg-white/5"
 									aria-pressed={column.active}
 								>
-									<Icon name={column.active ? 'check_box' : 'check_box_outline_blank'} className={column.active ? 'text-base text-brand-500' : 'text-base text-gray-400'} />
+									<Icon name={column.active ? 'check_box' : 'check_box_outline_blank'} className={column.active ? 'text-theme-md text-brand-500' : 'text-theme-md text-gray-400'} />
 									<span className={column.active ? 'truncate text-gray-700 dark:text-gray-300' : 'truncate text-gray-400 dark:text-gray-500'}>{columnLabel(column)}</span>
 								</button>
 

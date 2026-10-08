@@ -152,7 +152,7 @@ export const TitleCell = ({ post, hierarchical, expanded, onToggle, onRename }: 
 				<img src={post.title.image_url} alt="" aria-hidden className="h-9 w-9 shrink-0 rounded-lg object-cover" />
 			) : (
 				<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-400 dark:bg-gray-800">
-					<Icon name="description" className="text-base" />
+					<Icon name="description" className="text-theme-md" />
 				</span>
 			)}
 
@@ -217,7 +217,7 @@ export const TermsCell = ({ terms }: { terms: PostTerm[] }) => {
 					key={term.id}
 					href={term.url}
 					onClick={(event) => event.stopPropagation()}
-					className="inline-flex items-center whitespace-nowrap rounded-md border border-brand-200 bg-brand-50 px-2 py-1 text-theme-xs font-medium text-brand-700 transition-colors hover:bg-brand-100 dark:border-brand-800 dark:bg-brand-500/10 dark:text-brand-300 dark:hover:bg-brand-500/20"
+					className="inline-flex items-center whitespace-nowrap rounded-lg border border-brand-200 bg-brand-50 px-2 py-1 text-theme-xs font-medium text-brand-700 transition-colors hover:bg-brand-100 dark:border-brand-800 dark:bg-brand-500/10 dark:text-brand-300 dark:hover:bg-brand-500/20"
 				>
 					{decodeHtml(term.title)}
 				</a>

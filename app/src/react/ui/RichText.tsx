@@ -42,7 +42,7 @@ const toolbarButton = (active: boolean) =>
 const ToolbarButton = ({ icon, label, active = false, disabled = false, onClick }: { icon: string; label: string; active?: boolean; disabled?: boolean; onClick: () => void }) => (
 	<Tooltip text={label}>
 		<button type="button" className={toolbarButton(active)} aria-label={label} aria-pressed={active} disabled={disabled} onClick={onClick}>
-			<Icon name={icon} className="text-base" />
+			<Icon name={icon} className="text-theme-md" />
 		</button>
 	</Tooltip>
 );
@@ -154,7 +154,7 @@ export const RichText = ({ value, onChange, placeholder, className, minHeight = 
 					trigger={
 						<button type="button" className="flex h-8 items-center gap-1 rounded-lg px-2 text-theme-sm text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/[0.06]">
 							{heading ? `${__('Heading')} ${heading}` : __('Paragraph')}
-							<Icon name="expand_more" className="text-base" />
+							<Icon name="expand_more" className="text-theme-md" />
 						</button>
 					}
 				/>
@@ -178,7 +178,7 @@ export const RichText = ({ value, onChange, placeholder, className, minHeight = 
 				<Popover
 					trigger={
 						<button type="button" className={toolbarButton(editor.isActive('textStyle'))} aria-label={__('Text color')}>
-							<Icon name="format_color_text" className="text-base" />
+							<Icon name="format_color_text" className="text-theme-md" />
 						</button>
 					}
 				>
@@ -187,7 +187,7 @@ export const RichText = ({ value, onChange, placeholder, className, minHeight = 
 				<Popover
 					trigger={
 						<button type="button" className={toolbarButton(editor.isActive('backgroundColor'))} aria-label={__('Highlight color')}>
-							<Icon name="format_color_fill" className="text-base" />
+							<Icon name="format_color_fill" className="text-theme-md" />
 						</button>
 					}
 				>
@@ -203,7 +203,7 @@ export const RichText = ({ value, onChange, placeholder, className, minHeight = 
 				<ToolbarButton icon="redo" label={__('Redo')} disabled={!editor.can().redo()} onClick={() => chain().redo().run()} />
 			</div>
 
-			<div className="fd-richtext bg-transparent px-4 py-3 text-sm text-gray-800 dark:text-white/90">
+			<div className="fd-richtext bg-transparent px-4 py-3 text-theme-sm text-gray-800 dark:text-white/90">
 				<EditorContent editor={editor} />
 			</div>
 

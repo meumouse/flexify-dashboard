@@ -272,17 +272,17 @@ export const OrderDetails = () => {
 
 			<p className="-mt-3 mb-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-theme-sm text-gray-500 dark:text-gray-400">
 				<span className="flex items-center gap-1.5">
-					<Icon name="calendar_today" className="text-base" />
+					<Icon name="calendar_today" className="text-theme-md" />
 					{formatDate(order.date_created, true)}
 				</span>
 				{order.payment_method_title ? (
 					<span className="flex items-center gap-1.5">
-						<Icon name="payments" className="text-base" />
+						<Icon name="payments" className="text-theme-md" />
 						{order.payment_method_title}
 					</span>
 				) : null}
 				<span className="flex items-center gap-1.5">
-					<Icon name="shopping_bag" className="text-base" />
+					<Icon name="shopping_bag" className="text-theme-md" />
 					{sprintf(__('%d item(s)'), itemsCount(order))}
 				</span>
 			</p>
@@ -313,7 +313,7 @@ export const OrderDetails = () => {
 															{itemImage(item) ? (
 																<img src={itemImage(item)} alt="" className="h-full w-full object-cover" loading="lazy" />
 															) : (
-																<Icon name="inventory" className="text-xl text-gray-400" />
+																<Icon name="inventory" className="text-theme-xl text-gray-400" />
 															)}
 														</div>
 														<div className="min-w-0">
@@ -364,7 +364,7 @@ export const OrderDetails = () => {
 										<tr key={`fee-${fee.id}`}>
 											<td className="px-5 py-3 text-gray-700 dark:text-gray-300 sm:px-6" colSpan={3}>
 												<span className="flex items-center gap-2">
-													<Icon name="add" className="text-base text-gray-400" />
+													<Icon name="add" className="text-theme-md text-gray-400" />
 													{decodeHtml(fee.name)}
 												</span>
 											</td>
@@ -394,7 +394,7 @@ export const OrderDetails = () => {
 									</div>
 								))}
 								{Number(order.total_tax) ? totalsRow(__('Taxes'), price(order.total_tax, order)) : null}
-								<div className="flex justify-between gap-4 border-t border-gray-100 pt-2.5 text-base font-semibold text-gray-800 dark:border-gray-800 dark:text-white/90">
+								<div className="flex justify-between gap-4 border-t border-gray-100 pt-2.5 text-theme-md font-semibold text-gray-800 dark:border-gray-800 dark:text-white/90">
 									<dt>{__('Order total')}</dt>
 									<dd>{price(order.total, order)}</dd>
 								</div>
@@ -479,7 +479,7 @@ export const OrderDetails = () => {
 						<ul className="mt-4 space-y-2 text-theme-sm">
 							{order.billing?.email ? (
 								<li className="flex items-center gap-2">
-									<Icon name="email" className="shrink-0 text-base text-gray-400" />
+									<Icon name="email" className="shrink-0 text-theme-md text-gray-400" />
 									<a href={`mailto:${order.billing.email}`} dir="ltr" className="truncate text-brand-500 hover:text-brand-600 dark:text-brand-400">
 										{order.billing.email}
 									</a>
@@ -487,7 +487,7 @@ export const OrderDetails = () => {
 							) : null}
 							{order.billing?.phone ? (
 								<li className="flex items-center gap-2">
-									<Icon name="mobile" className="shrink-0 text-base text-gray-400" />
+									<Icon name="mobile" className="shrink-0 text-theme-md text-gray-400" />
 									<a href={`tel:${order.billing.phone}`} dir="ltr" className="text-brand-500 hover:text-brand-600 dark:text-brand-400">
 										{order.billing.phone}
 									</a>
@@ -544,7 +544,7 @@ export const OrderDetails = () => {
 						)}
 						{order.shipping_lines?.map((line) => (
 							<div key={line.id} className="mt-3 flex items-center gap-2 rounded-xl bg-gray-50 px-3 py-2 text-theme-sm text-gray-700 dark:bg-white/[0.03] dark:text-gray-300">
-								<Icon name="local_shipping" className="shrink-0 text-base text-gray-400" />
+								<Icon name="local_shipping" className="shrink-0 text-theme-md text-gray-400" />
 								<span className="truncate">{decodeHtml(line.method_title)}</span>
 							</div>
 						))}
@@ -598,7 +598,7 @@ export const OrderDetails = () => {
 									<div className="flex justify-between gap-4">
 										<dt className="text-gray-500 dark:text-gray-400">{__('Device')}</dt>
 										<dd className="flex items-center gap-1.5 text-gray-800 dark:text-white/90">
-											<Icon name={deviceIcon} className="text-base text-gray-400" />
+											<Icon name={deviceIcon} className="text-theme-md text-gray-400" />
 											{context.attribution.device}
 										</dd>
 									</div>

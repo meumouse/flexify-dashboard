@@ -30,14 +30,14 @@ export const FrontendBar = () => {
 		<div className="flexify-dashboard-isolation">
 			<div className={cn('flex items-center gap-2 border-b border-gray-200 bg-white px-4 py-2 dark:border-gray-700 dark:bg-gray-900', isDark && 'dark')}>
 				<a href={adminUrl} className="me-2 flex items-center gap-2" aria-label={__('Go to the dashboard')}>
-					{logo ? <img src={logo} alt="" aria-hidden className="h-5 object-contain" /> : <Icon name="dashboard" className="text-lg text-gray-500 dark:text-gray-400" />}
+					{logo ? <img src={logo} alt="" aria-hidden className="h-5 object-contain" /> : <Icon name="dashboard" className="text-theme-lg text-gray-500 dark:text-gray-400" />}
 				</a>
 
 				<span className="flex-1" />
 
 				{!globalOverride ? (
 					<button type="button" onClick={() => setColorScheme(isDark ? 'light' : 'dark')} className={button} aria-label={isDark ? __('Use the light theme') : __('Use the dark theme')}>
-						<Icon name={isDark ? 'light_mode' : 'dark_mode'} className="text-lg" />
+						<Icon name={isDark ? 'light_mode' : 'dark_mode'} className="text-theme-lg" />
 					</button>
 				) : null}
 

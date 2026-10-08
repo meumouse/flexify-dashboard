@@ -23,7 +23,7 @@ export const Badge = ({ color = 'primary', variant = 'light', size = 'sm', icon,
 		<span
 			className={cn(
 				'inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 font-medium',
-				size === 'md' ? 'text-sm' : 'text-theme-xs',
+				size === 'md' ? 'text-theme-sm' : 'text-theme-xs',
 				palette[variant] ?? palette.light,
 				className
 			)}
@@ -34,7 +34,7 @@ export const Badge = ({ color = 'primary', variant = 'light', size = 'sm', icon,
 					<span className={cn('relative inline-flex h-1.5 w-1.5 rounded-full', variant === 'solid' ? 'bg-white' : palette.dot)} />
 				</span>
 			) : icon ? (
-				<Icon name={icon} className="text-sm" />
+				<Icon name={icon} className="text-theme-sm" />
 			) : null}
 			{children}
 		</span>

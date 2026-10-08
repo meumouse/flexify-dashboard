@@ -67,7 +67,7 @@ export const BulkPriceModal = ({ open, onOpenChange, count, onApply }: Props) =>
 				}}
 			>
 				<div>
-					<p className="mb-2 text-sm font-medium text-gray-700 dark:text-gray-400">{__('Price')}</p>
+					<p className="mb-2 text-theme-sm font-medium text-gray-700 dark:text-gray-400">{__('Price')}</p>
 					<Tabs
 						value={form.target}
 						onChange={(target) => setForm((current) => ({ ...current, target }))}
@@ -80,7 +80,7 @@ export const BulkPriceModal = ({ open, onOpenChange, count, onApply }: Props) =>
 					/>
 				</div>
 				<div>
-					<p className="mb-2 text-sm font-medium text-gray-700 dark:text-gray-400">{__('Operation')}</p>
+					<p className="mb-2 text-theme-sm font-medium text-gray-700 dark:text-gray-400">{__('Operation')}</p>
 					<Tabs
 						value={form.operation}
 						onChange={(operation) => setForm((current) => ({ ...current, operation }))}
@@ -95,7 +95,7 @@ export const BulkPriceModal = ({ open, onOpenChange, count, onApply }: Props) =>
 				</div>
 				{form.operation !== 'set' ? (
 					<div>
-						<p className="mb-2 text-sm font-medium text-gray-700 dark:text-gray-400">{__('Adjust by')}</p>
+						<p className="mb-2 text-theme-sm font-medium text-gray-700 dark:text-gray-400">{__('Adjust by')}</p>
 						<Tabs
 							value={form.mode}
 							onChange={(mode) => setForm((current) => ({ ...current, mode }))}

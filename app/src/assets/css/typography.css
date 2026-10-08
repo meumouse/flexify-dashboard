@@ -1,0 +1,59 @@
+/**
+ * One size per tag, from the type scale.
+ *
+ * Imported twice on purpose, because one layer cannot cover both sides of the admin:
+ *
+ * - `layer(base)` in globals.css, for native WordPress screens. It sits above
+ *   `wordpress-base`, where Plugin::layer_wordpress_styles() puts every other stylesheet, so
+ *   it wins over core and over other plugins. That is the point: a heading is the same size
+ *   on every screen. A plugin that needs its own size still has an unlayered `<style>` block
+ *   or `!important`.
+ * - `layer(fd-isolation-scope)` in _base.css, after Tailwind's preflight, for our own
+ *   screens. Preflight sets every heading to `font-size: inherit` and sits in a higher layer
+ *   than `base`, so without this second import the whole ladder is dead exactly where the
+ *   interface lives — which is what happened the first time this was written.
+ *
+ * Both copies are element selectors, so a component that spells its size with a token
+ * (`text-theme-xl`) still wins: a class beats an element within the same layer.
+ *
+ * The ladder is anchored on the kit — `PageHeader` is an `h2` at 20px and `Card` an `h3` at
+ * 16px — so component and tag land on the same value. Weight, colour and margins are left
+ * alone; only the size is standardised.
+ */
+
+h1 {
+	font-size: var(--fd-title-xs);
+	line-height: var(--fd-title-xs-leading);
+}
+
+h2 {
+	font-size: var(--fd-text-xl);
+	line-height: var(--fd-text-xl-leading);
+}
+
+h3 {
+	font-size: var(--fd-text-md);
+	line-height: var(--fd-text-md-leading);
+}
+
+h4 {
+	font-size: var(--fd-text-sm);
+	line-height: var(--fd-text-sm-leading);
+}
+
+/* Nothing in this interface goes below h4, so both share the smallest step. */
+h5,
+h6 {
+	font-size: var(--fd-text-xs);
+	line-height: var(--fd-text-xs-leading);
+}
+
+p {
+	font-size: var(--fd-text-sm);
+	line-height: var(--fd-text-sm-leading);
+}
+
+small {
+	font-size: var(--fd-text-xs);
+	line-height: var(--fd-text-xs-leading);
+}

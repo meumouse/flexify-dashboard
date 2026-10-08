@@ -250,10 +250,10 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 				>
 					<div className="flex items-center gap-4 rounded-xl border border-gray-200 p-3 dark:border-gray-800">
 						<div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
-							{product.images?.[0]?.src ? <img src={product.images[0].src} alt="" className="h-full w-full object-cover" /> : <Icon name="image" className="text-xl text-gray-400" />}
+							{product.images?.[0]?.src ? <img src={product.images[0].src} alt="" className="h-full w-full object-cover" /> : <Icon name="image" className="text-theme-xl text-gray-400" />}
 						</div>
 						<div className="min-w-0 flex-1">
-							<p className="truncate text-sm font-medium text-gray-800 dark:text-white/90">
+							<p className="truncate text-theme-sm font-medium text-gray-800 dark:text-white/90">
 								#{product.id} · {typeLabel}
 							</p>
 							<a href={editUrl} className="text-theme-xs font-medium text-brand-500 hover:text-brand-600 dark:text-brand-400">
@@ -263,7 +263,7 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 					</div>
 
 					<section className="space-y-4">
-						<h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">{__('General')}</h4>
+						<h4 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">{__('General')}</h4>
 						<Input value={form.name} onChange={(event) => set({ name: event.target.value })} label={__('Name')} error={errors.name} required />
 						<div className="grid gap-4 sm:grid-cols-2">
 							<Input value={form.slug} onChange={(event) => set({ slug: event.target.value })} label={__('Slug')} />
@@ -280,7 +280,7 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 					</section>
 
 					<section className="space-y-4 border-t border-gray-100 pt-6 dark:border-gray-800">
-						<h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">{__('Pricing')}</h4>
+						<h4 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">{__('Pricing')}</h4>
 						{isVariable ? (
 							<Alert variant="info" message={__('Prices of variable products are managed in each variation. Expand the product in the list to edit them.')} />
 						) : !isGrouped ? (
@@ -305,7 +305,7 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 					</section>
 
 					<section className="space-y-4 border-t border-gray-100 pt-6 dark:border-gray-800">
-						<h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">{__('Inventory')}</h4>
+						<h4 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">{__('Inventory')}</h4>
 						<Switch checked={form.manage_stock} onCheckedChange={(manage_stock) => set({ manage_stock })} label={__('Track stock quantity')} />
 						{form.manage_stock ? (
 							<div className="grid gap-4 sm:grid-cols-2">
@@ -325,7 +325,7 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 					</section>
 
 					<section className="space-y-4 border-t border-gray-100 pt-6 dark:border-gray-800">
-						<h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">{__('Shipping')}</h4>
+						<h4 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">{__('Shipping')}</h4>
 						<div className="grid gap-4 sm:grid-cols-4">
 							<Input value={form.weight} onChange={(event) => set({ weight: event.target.value })} label={__('Weight')} suffix={store.weight_unit} inputMode="decimal" />
 							<Input value={form.length} onChange={(event) => set({ length: event.target.value })} label={__('Length')} suffix={store.dimension_unit} inputMode="decimal" />
@@ -342,14 +342,14 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 					</section>
 
 					<section className="space-y-4 border-t border-gray-100 pt-6 dark:border-gray-800">
-						<h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">{__('Organization')}</h4>
+						<h4 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">{__('Organization')}</h4>
 						<Field label={__('Categories')}>
 							<div className="rounded-lg border border-gray-300 dark:border-gray-700">
 								<input
 									value={categorySearch}
 									onChange={(event) => setCategorySearch(event.target.value)}
 									type="search"
-									className="w-full rounded-t-lg border-b border-gray-200 bg-transparent px-3 py-2 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-hidden dark:border-gray-800 dark:text-white/90"
+									className="w-full rounded-t-lg border-b border-gray-200 bg-transparent px-3 py-2 text-theme-sm text-gray-800 placeholder:text-gray-400 focus:outline-hidden dark:border-gray-800 dark:text-white/90"
 									placeholder={__('Filter categories')}
 									aria-label={__('Filter categories')}
 								/>

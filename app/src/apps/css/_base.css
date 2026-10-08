@@ -1,5 +1,5 @@
 /**
- * Base stylesheet shared by every Vue app entry point.
+ * Base stylesheet shared by every app entry point.
  *
  * Tailwind preflight and utilities are emitted inside the `fd-isolation-scope`
  * layer and scoped to `.flexify-dashboard-isolation` by
@@ -10,6 +10,8 @@
 @import '../../assets/css/globals.css';
 @import './isolation/scope.css' layer(fd-isolation);
 @import 'tailwindcss/preflight.css' layer(fd-isolation-scope);
+/* After preflight, which otherwise flattens every heading to `font-size: inherit`. */
+@import '../../assets/css/typography.css' layer(fd-isolation-scope);
 @import 'tailwindcss/utilities.css' layer(fd-isolation-scope) source(none);
 @import './isolation/after.css' layer(fd-isolation);
 

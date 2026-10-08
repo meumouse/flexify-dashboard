@@ -151,7 +151,7 @@ export const NoticeEditor = () => {
 											: 'border-gray-200 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-white/5'
 									)}
 								>
-									<Icon name={type.icon} className={cn('text-base', type.tone)} />
+									<Icon name={type.icon} className={cn('text-theme-md', type.tone)} />
 									<span className="truncate text-gray-700 dark:text-gray-300">{type.label}</span>
 								</button>
 							))}

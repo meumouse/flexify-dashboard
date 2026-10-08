@@ -31,13 +31,13 @@ export const MetricCard = ({ label, value, icon, trend = null, trendLabel, loadi
 		<div className={cn(cardClass, 'p-5 md:p-6', className)}>
 			{icon ? (
 				<div className={cn('flex h-12 w-12 items-center justify-center rounded-xl', tones[tone] ?? tones.gray)}>
-					<Icon name={icon} className="text-2xl" />
+					<Icon name={icon} className="text-title-xs" />
 				</div>
 			) : null}
 
 			<div className={cn('flex items-end justify-between gap-3', icon && 'mt-5')}>
 				<div className="min-w-0">
-					<span className="text-sm text-gray-500 dark:text-gray-400">{label}</span>
+					<span className="text-theme-sm text-gray-500 dark:text-gray-400">{label}</span>
 					{loading ? (
 						<Skeleton className="mt-2 h-8 w-28" />
 					) : (
@@ -49,13 +49,13 @@ export const MetricCard = ({ label, value, icon, trend = null, trendLabel, loadi
 					<span
 						title={trendLabel}
 						className={cn(
-							'flex shrink-0 items-center gap-1 rounded-full py-0.5 ps-2 pe-2.5 text-sm font-medium',
+							'flex shrink-0 items-center gap-1 rounded-full py-0.5 ps-2 pe-2.5 text-theme-sm font-medium',
 							trendUp
 								? 'bg-success-50 text-success-600 dark:bg-success-500/15 dark:text-success-500'
 								: 'bg-error-50 text-error-600 dark:bg-error-500/15 dark:text-error-500'
 						)}
 					>
-						<Icon name={trendUp ? 'arrow_upward' : 'arrow_downward'} className="text-sm" />
+						<Icon name={trendUp ? 'arrow_upward' : 'arrow_downward'} className="text-theme-sm" />
 						{`${Math.abs(trend).toLocaleString(undefined, { maximumFractionDigits: 2 })}%`}
 					</span>
 				) : null}

@@ -23,7 +23,7 @@ Levantamento em 07/10/2026, sobre `app/src/react`:
 Declaradas porque mudam o resultado. Corrija-me onde estiver errado.
 
 1. **"Seletor" = qualquer controle de escolha**, não só o dropdown: select, checkbox, radio, switch, slider, color, date. Todos devem ser componentes do kit.
-2. **A padronização de fonte por tag vale no wp-admin inteiro** (decisão do projeto, contra a recomendação inicial de limitar ao container isolado). Para reduzir o risco de quebrar telas de terceiros, as regras ficam numa camada de baixa especificidade (`@layer base`, seletor de elemento puro), de modo que qualquer CSS de plugin que defina o próprio tamanho continua ganhando.
+2. **A padronização de fonte por tag vale no wp-admin inteiro** (decisão do projeto, contra a recomendação inicial de limitar ao container isolado). Escrevi aqui, errado, que a regra ficaria "de baixa especificidade, para plugin de terceiro continuar ganhando" — não é o que acontece: `Plugin::layer_wordpress_styles()` move todo `<link rel=stylesheet>` para a camada `wordpress-base`, abaixo de `base`, então a regra por tag ganha do núcleo e dos outros plugins. O custo real: telas de terceiros mudam de tamanho de fonte. Quem precisar do próprio tamanho tem `<style>` inline, que não entra em camada, e `!important`.
 3. **"Ocultar a seção legada e refazer" vale para tudo, sem exceção**, inclusive a barra `#wpadminbar`: ela passa a ser lida por rota e desenhada por componente nosso. O custo é conhecido e aceito — plugins que dependem dos seletores `#wp-admin-bar-*` para injetar itens via JavaScript deixam de encontrá-los. Em troca, os itens passam a vir como dados e a barra deixa de ser a única parte da interface que não controlamos.
 4. **Responsividade "máxima"** = três alvos verificados: 375px (celular), 768px (tablet), 1440px (desktop). Não é um breakpoint por tamanho de tela existente.
 
@@ -59,20 +59,27 @@ O menu é construído pelos globais `$menu`/`$submenu` do PHP. Uma rota REST os 
 
 Cada fase tem critério verificável. Nenhuma começa antes de a anterior passar.
 
-### Fase 1 — Governança do projeto (P)
+### Fase 1 — Governança do projeto (P) · concluída
 Criar `AGENTS.md` com as diretrizes e padrões, e `CLAUDE.md` apontando para ele.
 
 Conteúdo do `AGENTS.md`: arquitetura API First; React + Tailwind + Vite no frontend e PHP/REST no backend; proibição de controles HTML crus em código de tela; escala de raios; escala tipográfica por tag; alvos de responsividade; namespace REST interno; política de estruturas legadas; e as diretrizes do `karpathy-guidelines` (pensar antes de codar, simplicidade, mudanças cirúrgicas, critério verificável).
 
 → **Verificação:** os dois arquivos existem, e `CLAUDE.md` não duplica regra nenhuma — só referencia.
 
-### Fase 2 — Escala tipográfica e de raios (M)
+### Fase 2 — Escala tipográfica e de raios (M) · concluída
 Definir a escala no CSS do design system e aplicar.
 
 - Raios: reduzir de 9 para **4** — `sm` (badge/pill pequeno), `lg` (controles), `xl` (cards internos), `2xl` (cards) e `full` só para avatar/pill.
 - Tipografia: um tamanho por tag dentro do container isolado (h1–h6, p, small), mais a escala de tokens para o resto. Eliminar os 212 usos da escala crua.
 
 → **Verificação:** um teste que varre `app/src/react` e falha se aparecer classe de raio ou de fonte fora da escala — o mesmo formato do teste de ícones que já existe.
+
+**Resultado:** `app/src/react/ui/scales.test.ts`, escrito antes da troca para provar a conversão. 232 classes trocadas em 84 arquivos; 23 raios fora da escala e 209 tamanhos crus zerados. Três tokens entraram porque a escala não tinha o valor: `--text-theme-md` (16px) e `--text-theme-lg` (18px), que explicavam os 63 `text-base` e 24 `text-lg`, e `--text-theme-2xs` (10px), que substitui os quatro `text-[10px]`. O CSS nosso também passou a ler a escala em vez de `rem` — sobraram quatro valores crus, três deles na barra legada que a fase 5 apaga e um que é tamanho de glifo de ícone, não de texto.
+
+Dois defeitos apareceram na verificação no navegador, nenhum dos dois visível em teste:
+
+- O bloco do Tailwind é `@theme inline reference`, que embute o valor nas classes e **não publica** nenhum `--text-*`. A primeira versão do CSS por tag usava `var(--text-theme-sm)` e não resolvia nada — chegou a quebrar o corpo do app, que caiu de 14px para os 13px herdados do wp-admin. A escala passou a morar em `:root` como `--fd-text-*`, com o bloco do Tailwind apontando para lá, igual à paleta.
+- O preflight do Tailwind achata todo heading em `font-size: inherit`, numa camada acima de `base`. Com a regra só em `base`, a escada valia nas telas nativas e morria dentro do nosso app — todo heading a 14px. O arquivo agora é importado também em `layer(fd-isolation-scope)`, depois do preflight. Conferido no navegador: a escada bate dos dois lados (24/20/16/14/12) e classe de componente continua ganhando do seletor de tag.
 
 ### Fase 3 — Kit de seletores em React (M)
 Substituir todo controle cru por componente do kit.

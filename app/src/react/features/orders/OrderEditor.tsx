@@ -514,7 +514,7 @@ export const OrderEditor = () => {
 												className="mb-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-theme-sm text-gray-500 hover:bg-gray-50 dark:hover:bg-white/[0.03]"
 												onClick={() => setVariationPicker({ product: null, variations: [], loading: false })}
 											>
-												<Icon name="arrow_back" className="text-base" />
+												<Icon name="arrow_back" className="text-theme-md" />
 												{decodeHtml(variationPicker.product.name)}
 											</button>
 											{!variationPicker.variations.length ? (
@@ -548,7 +548,7 @@ export const OrderEditor = () => {
 												className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-start hover:bg-gray-50 dark:hover:bg-white/[0.03]"
 												onClick={() => pickProduct(product)}
 											>
-												<span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+												<span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
 													{product.images?.[0]?.src ? <img src={product.images[0].src} alt="" className="h-full w-full object-cover" /> : <Icon name="inventory" className="text-gray-400" />}
 												</span>
 												<span className="min-w-0 flex-1">
@@ -886,7 +886,7 @@ export const OrderEditor = () => {
 											disabled={!isEditable}
 											onClick={() => removeCoupon(coupon)}
 										>
-											<Icon name="close" className="text-sm" />
+											<Icon name="close" className="text-theme-sm" />
 										</button>
 									</span>
 								))}
@@ -910,7 +910,7 @@ export const OrderEditor = () => {
 									<dd className="text-gray-800 dark:text-white/90">{money(feesTotal)}</dd>
 								</div>
 							) : null}
-							<div className="flex justify-between gap-4 border-t border-gray-100 pt-2.5 text-base font-semibold text-gray-800 dark:border-gray-800 dark:text-white/90">
+							<div className="flex justify-between gap-4 border-t border-gray-100 pt-2.5 text-theme-md font-semibold text-gray-800 dark:border-gray-800 dark:text-white/90">
 								<dt>{__('Estimated total')}</dt>
 								<dd>{money(estimatedTotal)}</dd>
 							</div>

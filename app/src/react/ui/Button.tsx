@@ -28,7 +28,7 @@ export type FdButtonProps = ButtonProps | LinkProps;
 const DIRECTIONAL_ICONS = ['chevron_left', 'chevron_right', 'arrow_back', 'arrow_forward', 'arrow_left_alt', 'arrow_right', 'first_page', 'last_page'];
 
 const iconClass = (name: string, size: ControlSize) =>
-	cn(size === 'xs' ? 'text-base' : 'text-lg', DIRECTIONAL_ICONS.includes(name) && 'rtl:rotate-180');
+	cn(size === 'xs' ? 'text-theme-md' : 'text-theme-lg', DIRECTIONAL_ICONS.includes(name) && 'rtl:rotate-180');
 
 /**
  * Button of the design system. Renders an anchor when `href` is set.

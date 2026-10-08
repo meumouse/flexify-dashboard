@@ -106,7 +106,7 @@ const RankedBars = ({ rows, emptyMessage, icon }: { rows: { key: string; label: 
 
 const ProviderError = ({ message }: { message: string }) => (
 	<div className="rounded-xl bg-warning-50 p-4 text-theme-sm text-gray-700 dark:bg-warning-500/10 dark:text-gray-300">
-		<Icon name="warning" className="mb-2 text-xl text-warning-500" />
+		<Icon name="warning" className="mb-2 text-theme-xl text-warning-500" />
 		<p>{message}</p>
 	</div>
 );
@@ -169,14 +169,14 @@ export const PageAnalyticsCard = ({ dateRange }: CardProps) => {
 			<div>
 				<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Views')}</p>
 				<p className="mt-1 flex items-baseline gap-2">
-					<span className="text-2xl font-bold text-gray-900 dark:text-gray-100">{compactNumber(viewsNow)}</span>
+					<span className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{compactNumber(viewsNow)}</span>
 					<Trend value={change(viewsNow, data?.comparison?.total_views ?? 0)} />
 				</p>
 			</div>
 			<div>
 				<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Unique visitors')}</p>
 				<p className="mt-1 flex items-baseline gap-2">
-					<span className="text-2xl font-bold text-gray-900 dark:text-gray-100">{compactNumber(visitorsNow)}</span>
+					<span className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{compactNumber(visitorsNow)}</span>
 					<Trend value={change(visitorsNow, data?.comparison?.total_unique_visitors ?? 0)} />
 				</p>
 			</div>
@@ -208,14 +208,14 @@ export const BounceRateCard = ({ dateRange }: CardProps) => {
 				<div>
 					<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Bounce rate')}</p>
 					<p className="mt-1 flex items-baseline gap-2">
-						<span className="text-2xl font-bold text-gray-900 dark:text-gray-100">{Math.round(data?.avg_bounce_rate ?? 0)}%</span>
+						<span className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{Math.round(data?.avg_bounce_rate ?? 0)}%</span>
 						<Trend value={change(data?.avg_bounce_rate ?? 0, data?.comparison?.avg_bounce_rate ?? 0)} inverted />
 					</p>
 				</div>
 				<div>
 					<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Time on page')}</p>
 					<p className="mt-1 flex items-baseline gap-2">
-						<span className="text-2xl font-bold text-gray-900 dark:text-gray-100">{time}</span>
+						<span className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{time}</span>
 						<Trend value={change(data?.avg_time_on_page ?? 0, data?.comparison?.avg_time_on_page ?? 0)} />
 					</p>
 				</div>
@@ -319,7 +319,7 @@ export const DeviceUsageCard = ({ dateRange }: CardProps) => {
 			{rows.map((row) => (
 				<li key={row.key} className="flex items-center gap-3">
 					<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400">
-						<Icon name={DEVICE_ICONS[row.key] ?? 'desktop'} className="text-base" />
+						<Icon name={DEVICE_ICONS[row.key] ?? 'desktop'} className="text-theme-md" />
 					</span>
 					<div className="min-w-0 flex-1">
 						<div className="flex items-center justify-between gap-3 text-theme-sm">
@@ -365,7 +365,7 @@ export const ActiveUsersCard = () => {
 					<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success-400 opacity-60" />
 					<span className="relative inline-flex h-3 w-3 rounded-full bg-success-500" />
 				</span>
-				<p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{compactNumber(data?.active_users ?? 0)}</p>
+				<p className="text-title-sm font-bold text-gray-900 dark:text-gray-100">{compactNumber(data?.active_users ?? 0)}</p>
 				<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('right now')}</p>
 			</div>
 

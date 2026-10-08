@@ -49,7 +49,7 @@ export const NoticesList = () => {
 
 				return (
 					<div className="flex items-start gap-3">
-						<Icon name={type.icon} className={cn('mt-0.5 text-base', type.tone)} />
+						<Icon name={type.icon} className={cn('mt-0.5 text-theme-md', type.tone)} />
 						<div className="min-w-0">
 							<p className="truncate text-theme-sm font-medium text-gray-900 dark:text-gray-100">{decodeHtml(stripTags(notice.title.rendered)) || __('(No title)')}</p>
 							<p className="line-clamp-1 text-theme-xs text-gray-500 dark:text-gray-400">{decodeHtml(stripTags(notice.content.rendered))}</p>
@@ -128,7 +128,7 @@ export const NoticesList = () => {
 						className="w-full sm:w-64"
 					/>
 
-					{notices.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-base text-gray-400" /> : null}
+					{notices.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
 				</div>
 
 				<DataTable

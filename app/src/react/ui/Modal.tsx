@@ -48,22 +48,22 @@ export const Modal = ({ open, onOpenChange, title, description, size = 'md', per
 					onPointerDownOutside={block}
 					onInteractOutside={block}
 					className={cn(
-						'fixed left-1/2 top-1/2 z-99999 flex max-h-[90vh] w-[calc(100vw-2rem)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-3xl bg-white shadow-theme-xl dark:bg-gray-900',
+						'fixed left-1/2 top-1/2 z-99999 flex max-h-[90vh] w-[calc(100vw-2rem)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-2xl bg-white shadow-theme-xl dark:bg-gray-900',
 						sizes[size]
 					)}
 				>
 					{title || !hideClose ? (
 						<div className="flex items-start justify-between gap-4 px-6 pb-2 pt-6 lg:px-8 lg:pt-8">
 							<div className="min-w-0">
-								{title ? <Dialog.Title className="text-lg font-semibold text-gray-800 dark:text-white/90">{title}</Dialog.Title> : null}
-								{description ? <Dialog.Description className="mt-0.5 text-sm text-gray-500 dark:text-gray-400">{description}</Dialog.Description> : null}
+								{title ? <Dialog.Title className="text-theme-lg font-semibold text-gray-800 dark:text-white/90">{title}</Dialog.Title> : null}
+								{description ? <Dialog.Description className="mt-0.5 text-theme-sm text-gray-500 dark:text-gray-400">{description}</Dialog.Description> : null}
 							</div>
 							{!hideClose ? (
 								<Dialog.Close
 									className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
 									aria-label={__('Close')}
 								>
-									<Icon name="close" className="text-xl" />
+									<Icon name="close" className="text-theme-xl" />
 								</Dialog.Close>
 							) : null}
 						</div>

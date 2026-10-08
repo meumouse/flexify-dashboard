@@ -120,9 +120,9 @@ export const NotificationBell = ({ count, onClick }: { count: number; onClick: (
 		aria-label={count ? sprintf(__('Notifications (%d)'), count) : __('Notifications')}
 		onClick={onClick}
 	>
-		<Icon name="notifications" className="text-xl" />
+		<Icon name="notifications" className="text-theme-xl" />
 		{count ? (
-			<span className="absolute -end-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-error-500 px-1 text-[10px] font-medium leading-none text-white">
+			<span className="absolute -end-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-error-500 px-1 text-theme-2xs font-medium leading-none text-white">
 				{count > 9 ? '9+' : count}
 			</span>
 		) : null}

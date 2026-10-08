@@ -202,7 +202,7 @@ export const ImportUsersModal = ({ open, onClose, roles, onDone }: Props) => {
 					onClick={() => fileInput.current?.click()}
 					className="flex w-full flex-col items-center gap-2 rounded-xl border-2 border-dashed border-gray-300 p-10 text-center transition-colors hover:border-brand-400 dark:border-gray-700"
 				>
-					<Icon name="upload_file" className="text-3xl text-gray-400" />
+					<Icon name="upload_file" className="text-title-sm text-gray-400" />
 					<span className="text-theme-sm font-medium text-gray-700 dark:text-gray-300">{__('Choose a CSV file')}</span>
 					<span className="text-theme-xs text-gray-500 dark:text-gray-400">{__('The first row has to be the column headings.')}</span>
 				</button>

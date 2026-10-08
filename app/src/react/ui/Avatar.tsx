@@ -13,12 +13,12 @@ type Props = {
 };
 
 const sizes = {
-	xs: 'h-6 w-6 text-[10px]',
-	sm: 'h-8 w-8 text-xs',
-	md: 'h-10 w-10 text-sm',
-	lg: 'h-12 w-12 text-base',
-	xl: 'h-14 w-14 text-lg',
-	'2xl': 'h-16 w-16 text-xl',
+	xs: 'h-6 w-6 text-theme-2xs',
+	sm: 'h-8 w-8 text-theme-xs',
+	md: 'h-10 w-10 text-theme-sm',
+	lg: 'h-12 w-12 text-theme-md',
+	xl: 'h-14 w-14 text-theme-lg',
+	'2xl': 'h-16 w-16 text-theme-xl',
 };
 
 const statusColors = {

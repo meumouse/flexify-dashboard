@@ -118,9 +118,27 @@ Variar o lado **de um valor da escala** é permitido quando a forma pede — `ro
 
 ### Tipografia
 
-**Um tamanho por tag**, definido em `@layer base` com seletor de elemento puro — de baixa especificidade de propósito, para que CSS de terceiros ainda consiga sobrepor quando precisar. Vale no wp-admin inteiro.
+**Um tamanho por tag**, em `app/src/assets/css/typography.css`. Vale no wp-admin inteiro:
 
-Dentro de componentes, use a escala de tokens do design system (`text-theme-xs`, `text-theme-sm`, `text-title-sm`…). **Não** use a escala crua do Tailwind (`text-sm`, `text-base`, `text-2xl`…) — ela existe no Tailwind mas não é a escala deste projeto.
+| Tag | Tamanho | Classe | Variável |
+|---|---|---|---|
+| `h1` | 24px | `text-title-xs` | `--fd-title-xs` |
+| `h2` | 20px | `text-theme-xl` | `--fd-text-xl` |
+| `h3` | 16px | `text-theme-md` | `--fd-text-md` |
+| `h4` | 14px | `text-theme-sm` | `--fd-text-sm` |
+| `h5`, `h6` | 12px | `text-theme-xs` | `--fd-text-xs` |
+| `p` | 14px | `text-theme-sm` | `--fd-text-sm` |
+| `small` | 12px | `text-theme-xs` | `--fd-text-xs` |
+
+A escada está ancorada no kit: `PageHeader` usa `h2` a 20px e `Card` usa `h3` a 16px, então componente e tag caem no mesmo valor.
+
+O arquivo é importado **duas vezes**, porque uma camada só não cobre os dois lados do admin: `layer(base)` em `globals.css` para as telas nativas, e `layer(fd-isolation-scope)` em `_base.css`, **depois do preflight**, para as nossas. O preflight do Tailwind achata todo heading em `font-size: inherit` numa camada acima de `base`; sem a segunda importação a escada morre justamente onde a interface vive.
+
+**Isso sobrepõe CSS de terceiros, de propósito.** `Plugin::layer_wordpress_styles()` joga todo `<link rel=stylesheet>` da página na camada `wordpress-base`, que fica **abaixo** de `base` — então a regra por tag ganha do núcleo do WordPress e dos outros plugins. Quem precisa do próprio tamanho ainda consegue, por `<style>` inline (que não é colocado em camada) ou `!important`. Não escreva "baixa especificidade" aqui: a camada manda mais que a especificidade.
+
+Dentro de componentes, use a escala de classes do design system (`text-theme-2xs`, `text-theme-xs`, `text-theme-sm`, `text-theme-md`, `text-theme-lg`, `text-theme-xl`, `text-title-*`). **Não** use a escala crua do Tailwind (`text-sm`, `text-base`, `text-2xl`…) — ela existe no Tailwind mas não é a escala deste projeto.
+
+**Em CSS nosso, use a variável `--fd-*`, nunca `--text-*`.** O bloco do Tailwind é `@theme inline reference`: ele embute o valor nas classes e **não publica** `--text-theme-sm` em lugar nenhum, então `font-size: var(--text-theme-sm)` não resolve nada. A escala de verdade mora em `:root`, em `globals.css`, como `--fd-text-sm` e `--fd-text-sm-leading` — mesmo arranjo da paleta (`--fd-base-*`). `rem` solto também não.
 
 ---
 
@@ -187,8 +205,11 @@ String nova visível ao usuário: regenerar o POT e traduzir (`languages/`, veja
 Alguns padrões aqui são verificados por teste, porque comentário não segura nada:
 
 - `app/src/react/ui/icons.test.ts` — falha se um nome de ícone não tiver arquivo em `assets/icons`.
+- `app/src/react/ui/scales.test.ts` — falha se aparecer raio fora da escala ou tamanho de fonte da escala crua do Tailwind. A mensagem diz qual classe usar no lugar.
 
-A fazer, conforme o [plano de padronização](docs/planejamento-padronizacao-ui-api.md): teste de escala de raios, de escala tipográfica, e de controle HTML cru fora do kit.
+Os dois leem o código como texto, com `app/tests/source-tree.ts`.
+
+A fazer, conforme o [plano de padronização](docs/planejamento-padronizacao-ui-api.md): teste de controle HTML cru fora do kit.
 
 ---
 

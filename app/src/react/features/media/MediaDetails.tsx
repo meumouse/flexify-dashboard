@@ -132,7 +132,7 @@ export const MediaDetails = () => {
 								<audio src={item.source_url} controls className="w-full" />
 							) : (
 								<span className="text-center text-gray-400">
-									<Icon name={iconFor(item.mime_type)} className="mb-2 text-5xl" />
+									<Icon name={iconFor(item.mime_type)} className="mb-2 text-title-lg" />
 									<span className="block text-theme-sm">{fileNameOf(item)}</span>
 								</span>
 							)}

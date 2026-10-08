@@ -141,7 +141,7 @@ export const CategoriesView = () => {
 			cell: (row) => (
 				<div className="flex items-center gap-3" style={{ paddingInlineStart: `${row.depth * 1.5}rem` }}>
 					<div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
-						{row.image?.src ? <img src={row.image.src} alt="" className="h-full w-full object-cover" loading="lazy" /> : <Icon name="category" className="text-lg text-gray-400" />}
+						{row.image?.src ? <img src={row.image.src} alt="" className="h-full w-full object-cover" loading="lazy" /> : <Icon name="category" className="text-theme-lg text-gray-400" />}
 					</div>
 					<button type="button" className="text-start font-medium text-gray-800 hover:text-brand-500 dark:text-white/90 dark:hover:text-brand-400" onClick={() => openSheet(row)}>
 						{row.label}
@@ -195,7 +195,7 @@ export const CategoriesView = () => {
 			<Card padding="none">
 				<div className="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:flex-row sm:items-center sm:px-6">
 					<SearchInput value={search} onChange={setSearch} debounce={150} className="w-full sm:w-80" placeholder={__('Search categories')} />
-					<p className="text-sm text-gray-500 dark:text-gray-400 sm:ms-auto">{sprintf(__('%d categories'), categories.length)}</p>
+					<p className="text-theme-sm text-gray-500 dark:text-gray-400 sm:ms-auto">{sprintf(__('%d categories'), categories.length)}</p>
 				</div>
 
 				<DataTable columns={columns} rows={rows} loading={isLoading} emptyIcon="category" emptyTitle={__('No categories found')} />

@@ -61,7 +61,7 @@ export const DropdownMenu = ({ items, trigger, align = 'end', side = 'bottom', w
 						const className = cn(dropdownItemClass, item.danger && 'text-error-500 hover:bg-error-50 hover:text-error-600 dark:hover:bg-error-500/10');
 						const content = (
 							<Fragment>
-								{item.icon ? <Icon name={item.icon} className="text-base" /> : null}
+								{item.icon ? <Icon name={item.icon} className="text-theme-md" /> : null}
 								<span className="truncate">{item.label}</span>
 							</Fragment>
 						);

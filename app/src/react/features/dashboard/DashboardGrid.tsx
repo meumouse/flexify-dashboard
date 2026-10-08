@@ -88,7 +88,7 @@ export const DashboardGrid = ({ cards, cardProps, onMove, onResize }: Props) => 
 					}}
 				>
 					<header className="mb-4 flex items-start justify-between gap-3">
-						{card.metadata.title ? <h2 className="text-base font-semibold text-gray-800 dark:text-white/90">{String(card.metadata.title)}</h2> : <span />}
+						{card.metadata.title ? <h2 className="text-theme-md font-semibold text-gray-800 dark:text-white/90">{String(card.metadata.title)}</h2> : <span />}
 
 						<Tooltip text={__('Drag to reorder')}>
 							<button
@@ -99,7 +99,7 @@ export const DashboardGrid = ({ cards, cardProps, onMove, onResize }: Props) => 
 								onDragStart={() => setDragging(card.metadata.id)}
 								onDragEnd={() => setDragging(null)}
 							>
-								<Icon name="drag_indicator" className="text-lg" />
+								<Icon name="drag_indicator" className="text-theme-lg" />
 							</button>
 						</Tooltip>
 					</header>

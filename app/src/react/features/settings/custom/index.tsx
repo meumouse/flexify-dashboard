@@ -157,8 +157,8 @@ const ColorScale = ({ setting, settings, onChange }: CustomRenderProps) => {
 				<div className="flex flex-wrap gap-1">
 					{Object.entries(scale).map(([step, color]) => (
 						<span key={step} className="flex flex-col items-center gap-1">
-							<span className="h-8 w-8 rounded-md border border-gray-200 dark:border-gray-800" style={{ background: color }} title={`${step}: ${color}`} />
-							<span className="text-[10px] text-gray-400">{step}</span>
+							<span className="h-8 w-8 rounded-lg border border-gray-200 dark:border-gray-800" style={{ background: color }} title={`${step}: ${color}`} />
+							<span className="text-theme-2xs text-gray-400">{step}</span>
 						</span>
 					))}
 				</div>
@@ -212,7 +212,7 @@ const TextPairs = ({ setting, settings, onChange }: CustomRenderProps) => {
 						placeholder={__('Find')}
 						aria-label={__('Find')}
 					/>
-					<Icon name="arrow_forward" className="text-base text-gray-400" />
+					<Icon name="arrow_forward" className="text-theme-md text-gray-400" />
 					<Input
 						value={pair[1] ?? ''}
 						onChange={(event) => set(pairs.map((item, position) => (position === index ? [item[0], event.target.value] : item)))}
@@ -252,7 +252,7 @@ const LayoutSelector = ({ setting, settings, onChange }: CustomRenderProps) => {
 					)}
 					aria-pressed={current === layout.value}
 				>
-					<Icon name={layout.icon} className="text-2xl text-gray-500 dark:text-gray-400" />
+					<Icon name={layout.icon} className="text-title-xs text-gray-500 dark:text-gray-400" />
 					<span className="text-theme-xs text-gray-700 dark:text-gray-300">{layout.label}</span>
 				</button>
 			))}

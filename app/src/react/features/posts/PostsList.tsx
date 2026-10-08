@@ -278,7 +278,7 @@ export const PostsList = () => {
 
 				<div className="flex flex-wrap items-center justify-between gap-3 border-t border-gray-100 p-4 dark:border-gray-800">
 					<span className="flex items-center gap-2 text-theme-sm text-gray-500 dark:text-gray-400">
-						{posts.isFetching ? <Icon name="progress_activity" className="animate-spin text-base" /> : null}
+						{posts.isFetching ? <Icon name="progress_activity" className="animate-spin text-theme-md" /> : null}
 						{sprintf(__('Page %1$s of %2$s'), String(query.page), String(Math.max(1, payload?.pages ?? 1)))}
 					</span>
 

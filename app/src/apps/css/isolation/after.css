@@ -1,5 +1,5 @@
 :where(.flexify-dashboard-isolation) {
-	font-size: 14px;
+	font-size: var(--fd-text-sm);
 }
 
 body:where(:has(.wp-admin)) {

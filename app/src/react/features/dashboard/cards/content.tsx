@@ -82,7 +82,7 @@ export const RecentPostsCard = ({ dateRange }: CardProps) => {
 							</div>
 							{post.comment_count ? (
 								<span className="flex shrink-0 items-center gap-1 text-theme-xs text-gray-500 dark:text-gray-400">
-									<Icon name="comment" className="text-xs" />
+									<Icon name="comment" className="text-theme-xs" />
 									{compactNumber(post.comment_count)}
 								</span>
 							) : null}
@@ -128,7 +128,7 @@ export const ScheduledPostsCard = ({ dateRange }: CardProps) => {
 				return (
 					<li key={post.id} className="flex items-center gap-3 rounded-2xl p-3 transition-colors hover:bg-gray-50 dark:hover:bg-white/5">
 						<span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-500 dark:bg-brand-500/15 dark:text-brand-400">
-							<Icon name="calendar_today" className="text-base" />
+							<Icon name="calendar_today" className="text-theme-md" />
 						</span>
 						<div className="min-w-0 flex-1">
 							<a href={`${adminUrl}post.php?post=${post.id}&action=edit`} className="truncate text-theme-sm font-medium text-gray-900 hover:text-brand-600 dark:text-gray-100 dark:hover:text-brand-400">

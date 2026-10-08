@@ -31,7 +31,7 @@ const Field = ({
 	children?: React.ReactNode;
 }) => (
 	<div className="fd-login-field">
-		<label htmlFor={id} className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">
+		<label htmlFor={id} className="mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-300">
 			{label}
 		</label>
 		<div className="relative flex items-center">
@@ -43,7 +43,7 @@ const Field = ({
 				onChange={(event) => onChange(event.target.value)}
 				autoComplete={autoComplete}
 				autoFocus={autoFocus}
-				className="h-11 w-full rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-900 shadow-theme-xs outline-hidden transition-colors placeholder:text-gray-400 focus:border-brand-400 focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
+				className="h-11 w-full rounded-lg border border-gray-300 bg-white px-3 text-theme-sm text-gray-900 shadow-theme-xs outline-hidden transition-colors placeholder:text-gray-400 focus:border-brand-400 focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90"
 			/>
 			{children}
 		</div>
@@ -85,11 +85,11 @@ export const LoginScreen = ({ config }: { config: LoginConfig }) => {
 					{site.logoUrl ? (
 						<img src={site.logoUrl} alt="" aria-hidden className="max-h-20 max-w-xs object-contain" />
 					) : (
-						<span className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white/15 text-3xl font-semibold">{initial}</span>
+						<span className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white/15 text-title-sm font-semibold">{initial}</span>
 					)}
 
-					{site.siteName ? <h1 className="text-2xl font-semibold">{site.siteName}</h1> : null}
-					{site.siteDescription ? <p className="text-sm text-white/80">{site.siteDescription}</p> : null}
+					{site.siteName ? <h1 className="text-title-xs font-semibold">{site.siteName}</h1> : null}
+					{site.siteDescription ? <p className="text-theme-sm text-white/80">{site.siteDescription}</p> : null}
 				</div>
 			</aside>
 
@@ -99,18 +99,18 @@ export const LoginScreen = ({ config }: { config: LoginConfig }) => {
 						{site.siteLogoUrl || site.logoUrl ? (
 							<img src={site.siteLogoUrl || site.logoUrl} alt="" aria-hidden className="max-h-14 object-contain" />
 						) : null}
-						{site.siteName ? <span className="text-lg font-semibold text-gray-900 dark:text-white/90">{site.siteName}</span> : null}
+						{site.siteName ? <span className="text-theme-lg font-semibold text-gray-900 dark:text-white/90">{site.siteName}</span> : null}
 					</div>
 
-					<h2 className="mb-1 text-xl font-semibold text-gray-900 dark:text-white/90">{onLogin ? __('Sign in') : __('Reset your password')}</h2>
-					<p className="mb-6 text-sm text-gray-500 dark:text-gray-400">
+					<h2 className="mb-1 text-theme-xl font-semibold text-gray-900 dark:text-white/90">{onLogin ? __('Sign in') : __('Reset your password')}</h2>
+					<p className="mb-6 text-theme-sm text-gray-500 dark:text-gray-400">
 						{onLogin ? __('Enter your details to carry on.') : __('Tell us your username or email and we will send you a link.')}
 					</p>
 
 					{screen.notice ? (
 						<div
 							className={cn(
-								'mb-4 rounded-lg px-3 py-2 text-sm',
+								'mb-4 rounded-lg px-3 py-2 text-theme-sm',
 								screen.notice.type === 'success' ? 'bg-success-50 text-success-700 dark:bg-success-500/10' : 'bg-blue-light-50 text-blue-light-700 dark:bg-blue-light-500/10'
 							)}
 							role="status"
@@ -120,7 +120,7 @@ export const LoginScreen = ({ config }: { config: LoginConfig }) => {
 					) : null}
 
 					{screen.error ? (
-						<div className="mb-4 rounded-lg bg-error-50 px-3 py-2 text-sm text-error-700 dark:bg-error-500/10 dark:text-error-400" role="alert">
+						<div className="mb-4 rounded-lg bg-error-50 px-3 py-2 text-theme-sm text-error-700 dark:bg-error-500/10 dark:text-error-400" role="alert">
 							{screen.error}
 						</div>
 					) : null}
@@ -147,14 +147,14 @@ export const LoginScreen = ({ config }: { config: LoginConfig }) => {
 									<button
 										type="button"
 										onClick={() => screen.setShowPassword(!screen.showPassword)}
-										className="absolute end-2 flex h-8 w-8 items-center justify-center rounded-md text-gray-400 transition-colors hover:text-gray-600 dark:hover:text-gray-300"
+										className="absolute end-2 flex h-8 w-8 items-center justify-center rounded-lg text-gray-400 transition-colors hover:text-gray-600 dark:hover:text-gray-300"
 										aria-label={screen.showPassword ? __('Hide the password') : __('Show the password')}
 									>
-										<Icon name={screen.showPassword ? 'visibility_off' : 'visibility'} className="text-base" />
+										<Icon name={screen.showPassword ? 'visibility_off' : 'visibility'} className="text-theme-md" />
 									</button>
 								</Field>
 
-								<label className="flex cursor-pointer items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+								<label className="flex cursor-pointer items-center gap-2 text-theme-sm text-gray-600 dark:text-gray-400">
 									<input type="checkbox" checked={screen.remember} onChange={(event) => screen.setRemember(event.target.checked)} className="accent-brand-500" />
 									{__('Keep me signed in')}
 								</label>
@@ -166,16 +166,16 @@ export const LoginScreen = ({ config }: { config: LoginConfig }) => {
 						{screen.captchaOn ? (
 							<div>
 								<div ref={screen.mountCaptcha} />
-								{screen.captchaError ? <p className="mt-1 text-xs text-error-600">{screen.captchaError}</p> : null}
+								{screen.captchaError ? <p className="mt-1 text-theme-xs text-error-600">{screen.captchaError}</p> : null}
 							</div>
 						) : null}
 
 						<button
 							type="submit"
 							disabled={onLogin ? !screen.canSubmit : !screen.canRecover}
-							className="flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-brand-500 text-sm font-medium text-white transition-colors hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
+							className="flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-brand-500 text-theme-sm font-medium text-white transition-colors hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
 						>
-							{screen.busy ? <Icon name="progress_activity" className="animate-spin text-base" /> : null}
+							{screen.busy ? <Icon name="progress_activity" className="animate-spin text-theme-md" /> : null}
 							{onLogin ? __('Sign in') : __('Send the link')}
 						</button>
 					</form>
@@ -183,7 +183,7 @@ export const LoginScreen = ({ config }: { config: LoginConfig }) => {
 					<button
 						type="button"
 						onClick={onLogin ? screen.showRecovery : screen.showLogin}
-						className="mt-4 w-full text-center text-sm font-medium text-brand-600 hover:underline dark:text-brand-400"
+						className="mt-4 w-full text-center text-theme-sm font-medium text-brand-600 hover:underline dark:text-brand-400"
 					>
 						{onLogin ? __('I forgot my password') : __('Back to signing in')}
 					</button>

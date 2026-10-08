@@ -76,12 +76,12 @@ export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearc
 		>
 			<Tooltip text={collapsed ? __('Expand sidebar') : __('Collapse sidebar')} side="bottom">
 				<button type="button" className={cn(headerButton, 'hidden lg:flex')} aria-label={__('Toggle sidebar')} onClick={onToggleSidebar}>
-					<Icon name={collapsed ? 'menu' : 'left_panel_close'} className="text-xl" />
+					<Icon name={collapsed ? 'menu' : 'left_panel_close'} className="text-theme-xl" />
 				</button>
 			</Tooltip>
 
 			<button type="button" className={cn(headerButton, 'lg:hidden')} aria-label={__('Toggle menu')} onClick={onOpenMenu}>
-				<Icon name="menu" className="text-xl" />
+				<Icon name="menu" className="text-theme-xl" />
 			</button>
 
 			{onOpenSearch ? (
@@ -90,7 +90,7 @@ export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearc
 					className="flex h-10 min-w-0 items-center gap-2.5 rounded-lg border border-gray-200 px-3.5 text-theme-sm text-gray-400 transition-colors hover:border-gray-300 hover:text-gray-500 dark:border-gray-800 dark:hover:border-gray-700 lg:h-11 lg:w-[26rem]"
 					onClick={onOpenSearch}
 				>
-					<Icon name="search" className="shrink-0 text-lg" />
+					<Icon name="search" className="shrink-0 text-theme-lg" />
 					<span className="hidden flex-1 text-start lg:block">{__('Search…')}</span>
 					<kbd className="hidden shrink-0 rounded-lg border border-gray-200 bg-gray-50 px-2 py-1 text-theme-xs text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 lg:block">
 						{shortcutLabel()}
@@ -110,7 +110,7 @@ export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearc
 			{!globalOverride ? (
 				<Tooltip text={isDark ? __('Light mode') : __('Dark mode')} side="bottom">
 					<button type="button" className={roundButton} aria-label={__('Toggle dark mode')} onClick={() => setColorScheme(isDark ? 'light' : 'dark')}>
-						<Icon name={isDark ? 'light_mode' : 'dark_mode'} className="text-xl" />
+						<Icon name={isDark ? 'light_mode' : 'dark_mode'} className="text-theme-xl" />
 					</button>
 				</Tooltip>
 			) : null}

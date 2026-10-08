@@ -80,7 +80,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
 					)}
 				</select>
 				<span className="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-3.5 text-gray-500 dark:text-gray-400">
-					<Icon name="expand_more" className="text-lg" />
+					<Icon name="expand_more" className="text-theme-lg" />
 				</span>
 			</div>
 		</Field>

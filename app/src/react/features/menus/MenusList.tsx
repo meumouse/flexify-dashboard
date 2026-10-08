@@ -128,7 +128,7 @@ export const MenusList = () => {
 						className="w-full sm:w-64"
 					/>
 
-					{menus.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-base text-gray-400" /> : null}
+					{menus.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
 				</div>
 
 				<DataTable

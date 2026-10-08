@@ -150,7 +150,7 @@ export const SettingField = ({ setting, settings, onChange }: Props) => {
 
 export const LockedSetting = ({ label }: { label: string }) => (
 	<span className="flex items-center gap-2 text-theme-xs text-gray-400">
-		<Icon name="lock" className="text-sm" />
+		<Icon name="lock" className="text-theme-sm" />
 		{label}
 	</span>
 );

@@ -262,7 +262,7 @@ export const ProductsList = () => {
 						{row.images?.[0]?.src ? (
 							<img src={row.images[0].src} alt={row.images[0].alt || row.name} className="h-full w-full object-cover" loading="lazy" />
 						) : (
-							<Icon name="image" className="text-xl text-gray-400" />
+							<Icon name="image" className="text-theme-xl text-gray-400" />
 						)}
 					</div>
 					<div className="min-w-0">
@@ -277,7 +277,7 @@ export const ProductsList = () => {
 									aria-label={row.featured ? __('Remove from featured') : __('Mark as featured')}
 									onClick={() => toggleFeatured(row)}
 								>
-									<Icon name={row.featured ? 'star_full' : 'star_empty'} className="text-base" />
+									<Icon name={row.featured ? 'star_full' : 'star_empty'} className="text-theme-md" />
 								</button>
 							) : null}
 						</div>

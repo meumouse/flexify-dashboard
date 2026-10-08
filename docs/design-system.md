@@ -29,20 +29,21 @@ As variáveis guardam canais RGB (`--fd-accent-500: 0 138 255`) e são impressas
 ## Tipografia
 
 - Fonte padrão: **Outfit** (auto-hospedada). A fonte pode ser trocada nas configurações (`--fd-font-sans`).
-- Escala extra: `text-title-2xl` (72/90), `text-title-xl` (60/72), `text-title-lg` (48/60), `text-title-md` (36/44), `text-title-sm` (30/38), `text-title-xs` (24/32), `text-theme-xl` (20/30), `text-theme-sm` (14/20), `text-theme-xs` (12/18).
+- Escala: `text-title-2xl` (72/90), `text-title-xl` (60/72), `text-title-lg` (48/60), `text-title-md` (36/44), `text-title-sm` (30/38), `text-title-xs` (24/32), `text-theme-xl` (20/30), `text-theme-lg` (18/28), `text-theme-md` (16/24), `text-theme-sm` (14/20), `text-theme-xs` (12/18), `text-theme-2xs` (10/14).
+- **É a única escala.** A crua do Tailwind (`text-sm`, `text-base`, `text-2xl`…) não se usa, e `app/src/react/ui/scales.test.ts` falha se ela aparecer. Tamanho por tag (`h1`–`h6`, `p`, `small`) em [AGENTS.md](../AGENTS.md).
 
 | Elemento | Classes |
 |---|---|
-| Título de página | `text-xl font-semibold text-gray-800 dark:text-white/90` |
-| Título de card | `text-lg font-semibold text-gray-800 dark:text-white/90` |
+| Título de página | `text-theme-xl font-semibold text-gray-800 dark:text-white/90` |
+| Título de card | `text-theme-md font-semibold text-gray-800 dark:text-white/90` |
 | Valor de métrica | `text-title-sm font-bold text-gray-800 dark:text-white/90` |
-| Texto secundário | `text-sm text-gray-500 dark:text-gray-400` |
-| Label de formulário | `mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400` |
+| Texto secundário | `text-theme-sm text-gray-500 dark:text-gray-400` |
+| Label de formulário | `mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400` |
 
 ## Sombras, raios e breakpoints
 
 - Sombras: `shadow-theme-xs|sm|md|lg|xl`, `shadow-focus-ring` (anel de foco com a cor de destaque), `shadow-tooltip`.
-- Raios (`--radius: 0.5rem`): botões/inputs `rounded-lg`, tabelas/alertas `rounded-xl`, cards `rounded-2xl`, modais `rounded-3xl`, badges `rounded-full`.
+- Raios (`--radius: 0.5rem`), quatro valores: badges pequenos `rounded-sm`, botões/inputs `rounded-lg`, blocos dentro de card `rounded-xl`, cards e modais `rounded-2xl`, e `rounded-full` só para avatar e indicador circular. Variar o lado de um valor da escala (`rounded-t-2xl`) é permitido; outro valor, não.
 - Breakpoints extras: `2xsm` (375px), `xsm` (425px), `3xl` (2000px).
 
 ## Modo escuro

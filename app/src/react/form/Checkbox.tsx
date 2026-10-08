@@ -56,7 +56,7 @@ export const Checkbox = ({
 				<span
 					className={cn(
 						'flex shrink-0 items-center justify-center border-[1.25px] transition-colors peer-focus-visible:shadow-focus-ring',
-						size === 'sm' ? 'h-4 w-4 rounded-sm' : 'h-5 w-5 rounded-md',
+						size === 'sm' ? 'h-4 w-4 rounded-sm' : 'h-5 w-5 rounded-lg',
 						checked || indeterminate ? 'border-brand-500 bg-brand-500 text-white' : 'border-gray-300 bg-transparent dark:border-gray-700',
 						disabled && 'opacity-50'
 					)}
@@ -75,7 +75,7 @@ export const Checkbox = ({
 
 			{hasLabel ? (
 				<span className="flex flex-col">
-					<span className="text-sm font-medium text-gray-700 dark:text-gray-400">{children ?? label}</span>
+					<span className="text-theme-sm font-medium text-gray-700 dark:text-gray-400">{children ?? label}</span>
 					{description ? <span className="mt-0.5 text-theme-xs text-gray-500 dark:text-gray-400">{description}</span> : null}
 				</span>
 			) : null}

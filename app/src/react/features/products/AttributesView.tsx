@@ -184,13 +184,13 @@ export const AttributesView = () => {
 		{
 			key: 'slug',
 			label: __('Slug'),
-			cell: (row) => <code className="rounded bg-gray-100 px-1.5 py-0.5 text-theme-xs text-gray-600 dark:bg-gray-800 dark:text-gray-400">{row.slug}</code>,
+			cell: (row) => <code className="rounded-sm bg-gray-100 px-1.5 py-0.5 text-theme-xs text-gray-600 dark:bg-gray-800 dark:text-gray-400">{row.slug}</code>,
 		},
 		{ key: 'order_by', label: __('Default sort order'), cell: (row) => orderLabel(row.order_by) },
 		{
 			key: 'has_archives',
 			label: __('Archives'),
-			cell: (row) => <Icon name={row.has_archives ? 'check' : 'remove'} className={`text-lg ${row.has_archives ? 'text-success-500' : 'text-gray-400'}`} />,
+			cell: (row) => <Icon name={row.has_archives ? 'check' : 'remove'} className={`text-theme-lg ${row.has_archives ? 'text-success-500' : 'text-gray-400'}`} />,
 		},
 		{
 			key: 'actions',

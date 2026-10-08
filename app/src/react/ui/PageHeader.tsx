@@ -26,7 +26,7 @@ export const PageHeader = ({ title, description, breadcrumbs = [], actions, clas
 						{breadcrumbs.map((crumb, index) => {
 							const isLast = index === breadcrumbs.length - 1;
 							const className = cn(
-								'text-sm',
+								'text-theme-sm',
 								isLast ? 'text-gray-800 dark:text-white/90' : 'cursor-pointer text-gray-500 hover:text-brand-500 dark:text-gray-400 dark:hover:text-brand-400'
 							);
 
@@ -43,7 +43,7 @@ export const PageHeader = ({ title, description, breadcrumbs = [], actions, clas
 									) : (
 										<span className={className}>{crumb.label}</span>
 									)}
-									{!isLast ? <Icon name="chevron_right" className="text-sm text-gray-400 rtl:rotate-180" /> : null}
+									{!isLast ? <Icon name="chevron_right" className="text-theme-sm text-gray-400 rtl:rotate-180" /> : null}
 								</li>
 							);
 						})}
@@ -51,8 +51,8 @@ export const PageHeader = ({ title, description, breadcrumbs = [], actions, clas
 				</nav>
 			) : null}
 
-			<h2 className="text-xl font-semibold text-gray-800 dark:text-white/90">{title}</h2>
-			{description ? <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{description}</p> : null}
+			<h2 className="text-theme-xl font-semibold text-gray-800 dark:text-white/90">{title}</h2>
+			{description ? <p className="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">{description}</p> : null}
 		</div>
 
 		{actions ? <div className="flex flex-wrap items-center gap-3">{actions}</div> : null}

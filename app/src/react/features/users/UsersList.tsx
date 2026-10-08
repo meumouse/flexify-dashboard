@@ -188,7 +188,7 @@ export const UsersList = () => {
 						aria-label={__('Role')}
 					/>
 
-					{users.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-base text-gray-400" /> : null}
+					{users.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
 				</div>
 
 				<DataTable

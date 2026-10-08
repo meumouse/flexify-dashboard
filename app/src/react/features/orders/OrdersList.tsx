@@ -579,7 +579,7 @@ export const OrdersList = () => {
 									aria-label={__('Remove customer filter')}
 									onClick={() => applyFilters({ customer: '', customer_name: '' })}
 								>
-									<Icon name="close" className="text-sm" />
+									<Icon name="close" className="text-theme-sm" />
 								</button>
 							</span>
 						) : null}
@@ -592,7 +592,7 @@ export const OrdersList = () => {
 						role="status"
 					>
 						<span className="flex items-center gap-2">
-							<Icon name="notifications" className="text-lg" />
+							<Icon name="notifications" className="text-theme-lg" />
 							{sprintf(__('%d new order(s) received'), newOrders)}
 						</span>
 						<Button size="xs" onClick={showNewOrders}>

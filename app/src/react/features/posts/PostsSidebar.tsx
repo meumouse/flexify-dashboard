@@ -71,7 +71,7 @@ export const PostsSidebar = ({
 		<div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white md:w-96 dark:border-gray-800 dark:bg-white/[0.03]">
 			<div className="px-6 pb-4 pt-6">
 				<div className="mb-4 flex items-center justify-between gap-2">
-					<h1 className="text-xl font-medium text-gray-900 dark:text-gray-100">{title}</h1>
+					<h1 className="text-theme-xl font-medium text-gray-900 dark:text-gray-100">{title}</h1>
 					<div className="flex items-center gap-2">
 						<Button variant="outline" size="sm" iconOnly icon="table_chart" onClick={onTableView} aria-label={__('Table view')} />
 						<Button href={newUrl} size="sm" iconOnly icon="add" aria-label={__('Add new')} />
@@ -88,7 +88,7 @@ export const PostsSidebar = ({
 						type="button"
 						onClick={() => onView(item.value)}
 						className={cn(
-							'whitespace-nowrap rounded-md px-3 py-1.5 text-theme-xs font-medium transition-colors',
+							'whitespace-nowrap rounded-lg px-3 py-1.5 text-theme-xs font-medium transition-colors',
 							view === item.value
 								? 'bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900'
 								: 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'
@@ -100,7 +100,7 @@ export const PostsSidebar = ({
 			</div>
 
 			<div className="flex items-center justify-between px-6 pb-3 pe-4">
-				<span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">{sprintf(__('%s item(s)'), String(total))}</span>
+				<span className="text-theme-2xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">{sprintf(__('%s item(s)'), String(total))}</span>
 
 				<div className="flex items-center gap-1">
 					<span className="me-2 text-theme-xs text-gray-500">{sprintf(__('Page %1$s of %2$s'), String(page), String(Math.max(1, pages)))}</span>
@@ -118,7 +118,7 @@ export const PostsSidebar = ({
 					</div>
 				) : !posts.length ? (
 					<div className="p-8 text-center">
-						<Icon name="article" className="mx-auto mb-3 text-3xl text-gray-300 dark:text-gray-600" />
+						<Icon name="article" className="mx-auto mb-3 text-title-sm text-gray-300 dark:text-gray-600" />
 						<p className="mb-4 text-theme-sm text-gray-500 dark:text-gray-400">{__('Nothing found')}</p>
 						<Button href={newUrl} size="sm">
 							{__('Add new')}
