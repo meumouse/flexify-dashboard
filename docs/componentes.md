@@ -35,7 +35,7 @@ Uma vitrine com todos eles fica em **Flexify Dashboard → Design System** (`adm
 | `MetricCard` | `label`, `value`, `icon`, `tone`, `trend`, `trendLabel`, `loading` | Ícone em quadrado, rótulo, número, badge de variação. |
 | `StatStrip` | `items` (`{ key, label, value, hint, tone, clickable, active }`), `loading`, `onSelect` | |
 | `Tabs` | `value`, `items` (`{ value, label, count, icon, disabled }`), `onChange`, `variant` (underline, segmented), `ariaLabel` | Navegação por setas. |
-| `DataTable` | `columns`, `rows`, `rowKey`, `loading`, `selectable` + `selected`/`onSelectedChange`, `sort`/`onSortChange`, `expandable` + `expanded`/`onExpandedChange`, `clickableRows`/`onRowClick`, `bulkActions` | `columns[].cell` desenha a célula; `renderExpanded` desenha a linha aberta. |
+| `DataTable` | `columns`, `rows`, `rowKey`, `loading`, `selectable` + `selected`/`onSelectedChange`, `sort`/`onSortChange`, `expandable` + `expanded`/`onExpandedChange`, `clickableRows`/`onRowClick`, `bulkActions` | `columns[].cell` desenha a célula; `renderExpanded` desenha a linha aberta. **Abaixo de 640px a tabela vira lista de cartões**: `columns[].card` escolhe o lugar de cada coluna no cartão (`title`, `meta`, `actions`, `hidden`). Coluna sem `label` já vai para as ações, então na maioria das telas não é preciso declarar nada. |
 | `Pagination` | `page`, `perPage`, `total`, `onPageChange`, `onPerPageChange`, `perPageOptions`, `showPerPage` | |
 | `DropdownMenu` | `items` (`{ label, icon, onSelect, danger, href }`, `{ separator }`, `{ heading }`), `trigger`, `align`, `side`, `width` | `trigger` deve ser um botão. |
 | `Popover` | `trigger`, `align`, `side`, `className` | Para conteúdo que não é menu. |

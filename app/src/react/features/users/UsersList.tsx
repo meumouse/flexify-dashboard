@@ -156,7 +156,7 @@ export const UsersList = () => {
 				title={__('Users')}
 				description={sprintf(__('%s user(s)'), String(total))}
 				actions={
-					<div className="flex items-center gap-3">
+					<div className="flex flex-wrap items-center gap-3">
 						<Button variant="outline" icon="upload_file" onClick={() => setImportOpen(true)}>
 							{__('Import')}
 						</Button>

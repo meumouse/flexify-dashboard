@@ -151,7 +151,12 @@ Toda tela trabalhada é verificada em **três larguras**: 375px (celular), 768px
 
 O que se espera em cada uma:
 
-- **375px:** sem rolagem horizontal. Tabela vira lista. Filtros empilham. Ações viram menu. Modal ocupa a tela.
+- **375px:** sem rolagem horizontal. Tabela vira lista — o `DataTable` já faz isso sozinho, com `columns[].card` para escolher o que vai no cartão. Filtros empilham. Ações viram menu. Modal ocupa a tela.
+
+Duas armadilhas que já custaram caro aqui:
+
+- **`flex-1` tem base 0**, então um irmão que não encolhe nunca força a quebra de linha: o outro lado é espremido até sumir em vez de descer. Em tela estreita, use `w-full sm:w-auto` em vez de confiar no `flex-wrap`.
+- **Largura mínima de coluna** (`min-w-64`) serve à tabela e atrapalha o cartão. Prefixe com o breakpoint: `sm:min-w-64`.
 - **768px:** duas colunas onde fazia sentido ter duas.
 - **1440px:** o layout cheio.
 

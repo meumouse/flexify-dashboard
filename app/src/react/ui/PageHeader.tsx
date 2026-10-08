@@ -19,7 +19,7 @@ type Props = {
 
 export const PageHeader = ({ title, description, breadcrumbs = [], actions, className }: Props) => (
 	<div className={cn('mb-6 flex flex-wrap items-start justify-between gap-4', className)}>
-		<div className="min-w-0">
+		<div className="w-full min-w-0 sm:w-auto">
 			{breadcrumbs.length ? (
 				<nav className="mb-1.5" aria-label={__('Breadcrumb')}>
 					<ol className="flex flex-wrap items-center gap-1.5">
@@ -55,6 +55,6 @@ export const PageHeader = ({ title, description, breadcrumbs = [], actions, clas
 			{description ? <p className="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">{description}</p> : null}
 		</div>
 
-		{actions ? <div className="flex flex-wrap items-center gap-3">{actions}</div> : null}
+		{actions ? <div className="flex w-full flex-wrap items-center gap-3 sm:w-auto">{actions}</div> : null}
 	</div>
 );

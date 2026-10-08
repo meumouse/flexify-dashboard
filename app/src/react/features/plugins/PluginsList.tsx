@@ -40,7 +40,7 @@ const PluginRow = ({ plugin }: { plugin: Plugin }) => {
 
 	return (
 		<li className="flex flex-wrap items-start gap-4 p-4">
-			<div className="min-w-0 flex-1">
+			<div className="w-full min-w-0 sm:w-auto sm:flex-1">
 				<div className="mb-1 flex flex-wrap items-center gap-2">
 					<h3 className="truncate text-theme-sm font-semibold text-gray-900 dark:text-gray-100">{decodeHtml(plugin.Name)}</h3>
 					<span className="text-theme-xs text-gray-400">{plugin.Version}</span>
@@ -69,7 +69,7 @@ const PluginRow = ({ plugin }: { plugin: Plugin }) => {
 				</p>
 			</div>
 
-			<div className="flex shrink-0 items-center gap-2">
+			<div className="flex shrink-0 flex-wrap items-center gap-2">
 				<Switch
 					checked={plugin.auto_update_enabled}
 					onCheckedChange={() => toggleAutoUpdate.mutate(plugin.slug)}

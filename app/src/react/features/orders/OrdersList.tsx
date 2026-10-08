@@ -341,7 +341,7 @@ export const OrdersList = () => {
 			key: 'customer',
 			label: __('Customer'),
 			cell: (row) => (
-				<div className="flex min-w-48 items-center gap-3">
+				<div className="flex items-center gap-3 sm:min-w-48">
 					<Avatar name={customerName(row)} size="sm" />
 					<div className="min-w-0">
 						<p className="truncate font-medium text-gray-800 dark:text-white/90">{customerName(row)}</p>

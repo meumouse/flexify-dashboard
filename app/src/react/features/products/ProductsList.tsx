@@ -257,7 +257,7 @@ export const ProductsList = () => {
 			label: __('Product'),
 			sortable: true,
 			cell: (row) => (
-				<div className="flex min-w-64 items-center gap-3">
+				<div className="flex items-center gap-3 sm:min-w-64">
 					<div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
 						{row.images?.[0]?.src ? (
 							<img src={row.images[0].src} alt={row.images[0].alt || row.name} className="h-full w-full object-cover" loading="lazy" />

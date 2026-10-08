@@ -100,12 +100,26 @@ Duas decisões mudaram em relação ao que estava escrito aqui:
 
 Um defeito apareceu no caminho: `recipes.js` vive em `app/src/shared` e escapava do teste de escala da fase 2 — classes cruas sobrevivendo num arquivo que alimenta todo componente. O varredor passou a ler `app/src/shared` e `.js` também.
 
-### Fase 4 — Responsividade das telas das fases 5–8 (G)
+### Fase 4 — Responsividade das telas das fases 5–8 (G) · concluída
 Na ordem do pior para o melhor: barra do frontend (0), banco (1), comentários/login/avisos/configurações (3), registro/menus/posts (4), papéis (5), usuários (6), painel/plugins (7).
 
 Para cada uma: tabela vira lista em 375px, filtros empilham, ações viram menu, modais ocupam a tela toda no celular.
 
 → **Verificação:** cada tela aberta em 375/768/1440 sem overflow horizontal e sem elemento cortado. Capturas lado a lado no PR.
+
+**Resultado:** as 16 telas varridas nas três larguras, nenhuma com rolagem horizontal nem container cortando o próprio conteúdo.
+
+O trabalho não foi tela a tela como esta fase previa. A maior parte do problema era uma peça só: o `DataTable` mostrava a mesma tabela de oito colunas em 375px. Ele passou a desenhar cada linha como cartão abaixo de 640px, e com isso **doze telas** ficaram prontas de uma vez. A coluna escolhe seu lugar no cartão por `columns[].card`, e coluna sem rótulo já vai para as ações — então nenhuma tela precisou declarar nada.
+
+A contagem de breakpoints, que foi como o problema se mediu na seção 1, provou ser um proxy ruim. A barra do frontend tem zero e está certa: é um logo, um espaçador e dois botões, não há o que rearranjar. O que encontrou defeito de verdade foi varrer o DOM procurando container cuja largura é menor que o conteúdo, ignorando o que corta de propósito (`truncate`, `line-clamp`, `overflow-x-auto`, `sr-only`).
+
+Três defeitos reais, todos a mesma raiz:
+
+- **`flex-1` tem base 0.** Na lista de plugins o nome era espremido a 19px em vez de a linha quebrar, porque o bloco de ações não encolhe e o outro encolhe até zero. Mesma coisa no `PageHeader`, onde o título caía para 52px. Os dois passaram a `w-full sm:w-auto`.
+- **`min-w-64` na célula de produto** serve à tabela e estourava o cartão. Virou `sm:min-w-64`.
+- **Duas colunas de meta a 375px** deixam 91px por valor, o que corta um e-mail no meio. A grade do cartão só abre em duas colunas a partir de 425px.
+
+Uma escolha de implementação vale registro: a lista de cartões e a tabela são **uma árvore ou a outra**, escolhida em tempo de render por `useMediaQuery`, não as duas com uma escondida por CSS. Desenhar as duas põe cada linha duas vezes na página, que é o que o celular mais fraco paga; e foi o que a suíte denunciou na primeira tentativa, com cada texto aparecendo em dobro.
 
 ### Fase 5 — API First: eliminar leitura de DOM (G)
 Rotas novas em `MeuMouse\Flexify_Dashboard\Rest`, namespace `flexify-dashboard/v1`:
