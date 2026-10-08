@@ -368,7 +368,7 @@ export const CouponsView = () => {
 					<section className="space-y-4">
 						<h3 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">{__('Discount')}</h3>
 						<div className="grid gap-4 sm:grid-cols-2">
-							<Select value={form.discount_type} onChange={(event) => set({ discount_type: event.target.value as CouponType })} options={typeOptions} label={__('Discount type')} />
+							<Select value={form.discount_type} onChange={(next) => set({ discount_type: next as CouponType })} options={typeOptions} label={__('Discount type')} />
 							<Input
 								value={form.amount}
 								onChange={(event) => set({ amount: event.target.value })}

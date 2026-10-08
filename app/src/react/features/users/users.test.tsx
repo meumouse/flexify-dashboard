@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { chooseOption } from '../../../../tests/select';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
@@ -123,7 +124,7 @@ describe('users screen', () => {
 		renderList();
 
 		await screen.findByText('Maria');
-		await user.selectOptions(screen.getByRole('combobox', { name: 'Role' }), 'customer');
+		await chooseOption(user, 'Role', 'Cliente');
 
 		await waitFor(() => expect(urls.some((url) => url.includes('roles=customer'))).toBe(true));
 	});

@@ -20,12 +20,15 @@ export { Tabs, type TabItem } from '@/react/ui/Tabs';
 export { Tooltip, TooltipProvider } from '@/react/ui/Tooltip';
 
 export { Checkbox } from '@/react/form/Checkbox';
+export { ColorPicker } from '@/react/form/ColorPicker';
 export { Field } from '@/react/form/Field';
 export { Input } from '@/react/form/Input';
 export { Radio } from '@/react/form/Radio';
 export { SearchInput } from '@/react/form/SearchInput';
 export { Select, type SelectGroup, type SelectOption } from '@/react/form/Select';
+export { Slider } from '@/react/form/Slider';
 export { Switch } from '@/react/form/Switch';
 export { Textarea } from '@/react/form/Textarea';
+export { useFilePicker } from '@/react/form/useFilePicker';
 
 export { DataTable, type Column, type RowKey, type SortState } from '@/react/data/DataTable';

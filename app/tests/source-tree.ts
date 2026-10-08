@@ -25,10 +25,10 @@ const walk = (directory: string): string[] =>
 			return walk(path);
 		}
 
-		return /\.tsx?$/.test(entry) && !/\.test\.tsx?$/.test(entry) ? [path] : [];
+		return /\.(tsx?|jsx?)$/.test(entry) && !/\.test\.(tsx?|jsx?)$/.test(entry) ? [path] : [];
 	});
 
-/** Every TypeScript file under `app/src/react`, tests excluded. */
+/** Every source file under `app/src/react` (or another root), tests excluded. */
 export const reactSourceFiles = (root: string = REACT_SOURCE): SourceFile[] =>
 	walk(root).map((path) => ({ path: relative(root, path).split(sep).join('/'), contents: readFileSync(path, 'utf8') }));
 

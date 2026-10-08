@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
+import { Checkbox } from '@/react/form/Checkbox';
 import { Icon } from '@/react/ui/Icon';
 import { hexToRgb, useLoginScreen, type LoginConfig } from '@/react/features/login/useLoginScreen';
 
@@ -154,10 +155,7 @@ export const LoginScreen = ({ config }: { config: LoginConfig }) => {
 									</button>
 								</Field>
 
-								<label className="flex cursor-pointer items-center gap-2 text-theme-sm text-gray-600 dark:text-gray-400">
-									<input type="checkbox" checked={screen.remember} onChange={(event) => screen.setRemember(event.target.checked)} className="accent-brand-500" />
-									{__('Keep me signed in')}
-								</label>
+								<Checkbox size="sm" checked={screen.remember} onCheckedChange={screen.setRemember} label={__('Keep me signed in')} className="items-center" />
 							</>
 						) : (
 							<Field id="user_login_recovery" label={__('Username or email')} value={screen.recoveryLogin} onChange={screen.setRecoveryLogin} autoComplete="username" autoFocus />

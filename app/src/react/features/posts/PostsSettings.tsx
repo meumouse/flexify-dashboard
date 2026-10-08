@@ -82,7 +82,7 @@ export const PostsSettings = ({ query, onChange, columns, onToggleColumn, onMove
 					</Row>
 
 					<Row label={__('Order by')}>
-						<Select size="sm" value={query.orderby} options={orderByOptions} onChange={(event) => onChange({ orderby: event.target.value, page: 1 })} />
+						<Select size="sm" value={query.orderby} options={orderByOptions} onChange={(next) => onChange({ orderby: next, page: 1 })} />
 					</Row>
 
 					<Row label={__('Order')}>
@@ -93,7 +93,7 @@ export const PostsSettings = ({ query, onChange, columns, onToggleColumn, onMove
 								{ value: 'ASC', label: __('Ascending') },
 								{ value: 'DESC', label: __('Descending') },
 							]}
-							onChange={(event) => onChange({ order: event.target.value as 'ASC' | 'DESC', page: 1 })}
+							onChange={(next) => onChange({ order: next as 'ASC' | 'DESC', page: 1 })}
 						/>
 					</Row>
 

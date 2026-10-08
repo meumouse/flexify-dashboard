@@ -270,7 +270,7 @@ export const AttributesView = () => {
 						hint={__('Unique identifier with up to 28 characters.')}
 						maxLength={28}
 					/>
-					<Select value={form.order_by} onChange={(event) => setForm((current) => ({ ...current, order_by: event.target.value }))} options={orderOptions} label={__('Default sort order')} />
+					<Select value={form.order_by} onChange={(next) => setForm((current) => ({ ...current, order_by: next }))} options={orderOptions} label={__('Default sort order')} />
 					<Checkbox
 						checked={form.has_archives}
 						onCheckedChange={(has_archives) => setForm((current) => ({ ...current, has_archives }))}

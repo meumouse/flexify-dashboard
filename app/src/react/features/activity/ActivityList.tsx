@@ -155,7 +155,7 @@ export const ActivityList = () => {
 							{ value: 'all', label: __('Any action') },
 							...(stats.data?.actions ?? []).map((item) => ({ value: item.action, label: `${item.action} (${item.count})` })),
 						]}
-						onChange={(event) => apply({ action: event.target.value })}
+						onChange={(next) => apply({ action: next })}
 						aria-label={__('Action')}
 					/>
 
@@ -166,7 +166,7 @@ export const ActivityList = () => {
 							{ value: 'all', label: __('Anything') },
 							...(stats.data?.object_types ?? []).map((item) => ({ value: item.object_type, label: `${item.object_type} (${item.count})` })),
 						]}
-						onChange={(event) => apply({ object_type: event.target.value })}
+						onChange={(next) => apply({ object_type: next })}
 						aria-label={__('Type')}
 					/>
 

@@ -26,9 +26,9 @@ export const buttonVariants = {
 
 export const buttonSizes = {
   xs: 'h-8 px-3 text-theme-xs',
-  sm: 'h-10 px-4 text-sm',
-  md: 'h-11 px-5 text-sm',
-  lg: 'h-12 px-6 text-base',
+  sm: 'h-10 px-4 text-theme-sm',
+  md: 'h-11 px-5 text-theme-sm',
+  lg: 'h-12 px-6 text-theme-md',
 };
 
 export const iconButtonSizes = {
@@ -39,7 +39,7 @@ export const iconButtonSizes = {
 };
 
 export const fieldBase =
-  'w-full rounded-lg border bg-transparent text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 transition-colors focus:outline-hidden focus:ring-3 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 disabled:cursor-not-allowed disabled:border-gray-100 disabled:bg-gray-50 disabled:text-gray-500 dark:disabled:border-gray-800 dark:disabled:bg-white/[0.03]';
+  'w-full rounded-lg border bg-transparent text-theme-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 transition-colors focus:outline-hidden focus:ring-3 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 disabled:cursor-not-allowed disabled:border-gray-100 disabled:bg-gray-50 disabled:text-gray-500 dark:disabled:border-gray-800 dark:disabled:bg-white/[0.03]';
 
 export const fieldStates = {
   default: 'border-gray-300 focus:border-brand-300 focus:ring-brand-500/10 dark:border-gray-700 dark:focus:border-brand-800',
@@ -53,7 +53,7 @@ export const fieldSizes = {
   lg: 'h-12 px-4 py-3',
 };
 
-export const labelClass = 'mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400';
+export const labelClass = 'mb-1.5 block text-theme-sm font-medium text-gray-700 dark:text-gray-400';
 
 export const hintClasses = {
   default: 'mt-1.5 text-theme-xs text-gray-500 dark:text-gray-400',

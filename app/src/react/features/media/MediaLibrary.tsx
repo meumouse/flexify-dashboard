@@ -4,7 +4,7 @@ import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { cn } from '@/react/lib/cn';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Button, Card, Icon, Modal, PageHeader, SearchInput, Select, Spinner, Switch, Tabs, type TabItem } from '@/react/ui';
+import { Button, Card, Icon, Modal, PageHeader, SearchInput, Select, Spinner, Switch, Tabs, useFilePicker, type TabItem } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
 import { MediaGrid } from '@/react/features/media/MediaGrid';
 import { MediaBulkEdit } from '@/react/features/media/MediaBulkEdit';
@@ -53,7 +53,6 @@ export const MediaLibrary = () => {
 	const [bulkEditOpen, setBulkEditOpen] = useState(false);
 	const [progress, setProgress] = useState<{ done: number; total: number; name: string } | null>(null);
 	const [dragging, setDragging] = useState(false);
-	const fileInput = useRef<HTMLInputElement>(null);
 	const sentinel = useRef<HTMLDivElement>(null);
 
 	const query: MediaFilters = {
@@ -110,6 +109,8 @@ export const MediaLibrary = () => {
 			{ onSettled: () => setProgress(null) }
 		);
 	};
+
+	const filePicker = useFilePicker({ multiple: true, onPick: sendFiles });
 
 	const askThenDelete = async () => {
 		const confirmed = await confirm({
@@ -179,25 +180,14 @@ export const MediaLibrary = () => {
 							onClick={() => setFilters({ view: view === 'grid' ? 'list' : 'grid' })}
 							aria-label={view === 'grid' ? __('List view') : __('Grid view')}
 						/>
-						<Button icon="upload" loading={upload.isPending} onClick={() => fileInput.current?.click()}>
+						<Button icon="upload" loading={upload.isPending} onClick={filePicker.open}>
 							{__('Upload')}
 						</Button>
 					</div>
 				}
 			/>
 
-			<input
-				ref={fileInput}
-				type="file"
-				multiple
-				className="hidden"
-				aria-hidden
-				tabIndex={-1}
-				onChange={(event) => {
-					sendFiles(event.target.files);
-					event.target.value = '';
-				}}
-			/>
+			{filePicker.picker}
 
 			<Tabs items={TYPES} value={query.type} onChange={(type) => apply({ type })} className="mb-5" />
 
@@ -221,7 +211,7 @@ export const MediaLibrary = () => {
 							{ value: 'month', label: __('Last 30 days') },
 							{ value: 'year', label: __('Last year') },
 						]}
-						onChange={(event) => apply({ since: event.target.value })}
+						onChange={(next) => apply({ since: next })}
 						aria-label={__('Date')}
 					/>
 
@@ -234,8 +224,8 @@ export const MediaLibrary = () => {
 							{ value: 'title:asc', label: __('Name A–Z') },
 							{ value: 'title:desc', label: __('Name Z–A') },
 						]}
-						onChange={(event) => {
-							const [orderby, order] = event.target.value.split(':');
+						onChange={(next) => {
+							const [orderby, order] = next.split(':');
 							apply({ orderby, order });
 						}}
 						aria-label={__('Sort')}

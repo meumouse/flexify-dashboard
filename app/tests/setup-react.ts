@@ -17,3 +17,19 @@ afterEach(() => {
 if (!Element.prototype.scrollIntoView) {
 	Element.prototype.scrollIntoView = () => {};
 }
+
+// Radix builds its popups against pointer capture and element size, neither of which jsdom
+// implements. Without these, opening a Select or a dropdown throws instead of being tested.
+if (!Element.prototype.hasPointerCapture) {
+	Element.prototype.hasPointerCapture = () => false;
+	Element.prototype.setPointerCapture = () => {};
+	Element.prototype.releasePointerCapture = () => {};
+}
+
+if (!globalThis.ResizeObserver) {
+	globalThis.ResizeObserver = class {
+		observe() {}
+		unobserve() {}
+		disconnect() {}
+	};
+}

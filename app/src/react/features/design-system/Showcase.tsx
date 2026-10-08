@@ -9,6 +9,7 @@ import {
 	Button,
 	Card,
 	Checkbox,
+	ColorPicker,
 	DataTable,
 	DropdownMenu,
 	EmptyState,
@@ -23,6 +24,7 @@ import {
 	Sheet,
 	Skeleton,
 	StatStrip,
+	Slider,
 	Switch,
 	Tabs,
 	Textarea,
@@ -67,6 +69,8 @@ export const Showcase = () => {
 	const [checked, setChecked] = useState(true);
 	const [radio, setRadio] = useState('standard');
 	const [switched, setSwitched] = useState(true);
+	const [weight, setWeight] = useState(2);
+	const [colour, setColour] = useState('#008aff');
 	const [modalOpen, setModalOpen] = useState(false);
 	const [sheetOpen, setSheetOpen] = useState(false);
 	const [selected, setSelected] = useState<RowKey[]>([]);
@@ -232,7 +236,7 @@ export const Showcase = () => {
 								<Select
 									label={__('Status')}
 									value={select}
-									onChange={(event) => setSelect(event.target.value)}
+									onChange={(next) => setSelect(next)}
 									placeholder={__('Select a status')}
 									options={[
 										{ value: 'publish', label: __('Published') },
@@ -241,6 +245,8 @@ export const Showcase = () => {
 								/>
 								<SearchInput value={search} onChange={setSearch} placeholder={__('Search products')} />
 								<Textarea label={__('Description')} rows={3} defaultValue={__('Short description of the product.')} />
+								<Slider label={__('Weight')} value={weight} onChange={setWeight} min={0} max={10} valueLabel={`${weight} kg`} />
+								<ColorPicker label={__('Badge colour')} value={colour} onChange={setColour} hint={__('Opens the system picker.')} />
 							</div>
 
 							<div className="mt-6 flex flex-wrap items-start gap-8">

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { reactSourceFiles, stringLiterals } from '../../../tests/source-tree';
+import { join } from 'node:path';
+import { reactSourceFiles, stringLiterals, REACT_SOURCE } from '../../../tests/source-tree';
 
 /**
  * The visual scales are part of the design system, not a per-screen choice.
@@ -43,10 +44,17 @@ const INSTEAD: Record<string, string> = {
 	'rounded-3xl': 'rounded-2xl',
 };
 
+const SHARED = join(REACT_SOURCE, '../shared');
+
 const offenders = (match: (literal: string) => string[]) => {
 	const found = new Map<string, Set<string>>();
 
-	reactSourceFiles().forEach(({ path, contents }) => {
+	/*
+	 * `@/shared` is scanned too: `recipes.ts` re-exports the class strings from there, so raw
+	 * classes hide in a file that is not under `app/src/react` and reach every component that
+	 * uses a recipe.
+	 */
+	[...reactSourceFiles(), ...reactSourceFiles(SHARED)].forEach(({ path, contents }) => {
 		stringLiterals(contents)
 			.flatMap(match)
 			.forEach((className) => {

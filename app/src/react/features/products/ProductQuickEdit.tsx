@@ -268,10 +268,10 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 						<div className="grid gap-4 sm:grid-cols-2">
 							<Input value={form.slug} onChange={(event) => set({ slug: event.target.value })} label={__('Slug')} />
 							<Input value={form.sku} onChange={(event) => set({ sku: event.target.value })} label={__('SKU')} />
-							<Select value={form.status} onChange={(event) => set({ status: event.target.value })} label={__('Status')} options={statusOptions} />
+							<Select value={form.status} onChange={(next) => set({ status: next })} label={__('Status')} options={statusOptions} />
 							<Select
 								value={form.catalog_visibility}
-								onChange={(event) => set({ catalog_visibility: event.target.value })}
+								onChange={(next) => set({ catalog_visibility: next })}
 								label={__('Catalog visibility')}
 								options={visibilityOptions}
 							/>
@@ -317,10 +317,10 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 									label={__('Quantity')}
 									error={errors.stock_quantity}
 								/>
-								<Select value={form.backorders} onChange={(event) => set({ backorders: event.target.value })} label={__('Allow backorders?')} options={backorderOptions} />
+								<Select value={form.backorders} onChange={(next) => set({ backorders: next })} label={__('Allow backorders?')} options={backorderOptions} />
 							</div>
 						) : !isVariable ? (
-							<Select value={form.stock_status} onChange={(event) => set({ stock_status: event.target.value })} label={__('Stock status')} options={store.stock_statuses} />
+							<Select value={form.stock_status} onChange={(next) => set({ stock_status: next })} label={__('Stock status')} options={store.stock_statuses} />
 						) : null}
 					</section>
 
@@ -334,7 +334,7 @@ export const ProductQuickEdit = ({ open, onOpenChange, product, categories, onSa
 						</div>
 						<Select
 							value={form.shipping_class}
-							onChange={(event) => set({ shipping_class: event.target.value })}
+							onChange={(next) => set({ shipping_class: next })}
 							label={__('Shipping class')}
 							placeholder={__('No shipping class')}
 							options={shippingClasses}

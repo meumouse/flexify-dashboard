@@ -484,18 +484,18 @@ export const ProductsList = () => {
 						</div>
 					</div>
 					<div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 2xl:flex-1">
-						<Select value={filters.category} onChange={(event) => applyFilters({ category: event.target.value })} options={categoryOptions(categories)} placeholder={__('All categories')} aria-label={__('Categories')} />
-						<Select value={filters.type} onChange={(event) => applyFilters({ type: event.target.value })} options={store.product_types} placeholder={__('All types')} aria-label={__('Type')} />
+						<Select value={filters.category} onChange={(next) => applyFilters({ category: next })} options={categoryOptions(categories)} placeholder={__('All categories')} aria-label={__('Categories')} />
+						<Select value={filters.type} onChange={(next) => applyFilters({ type: next })} options={store.product_types} placeholder={__('All types')} aria-label={__('Type')} />
 						<Select
 							value={filters.stock_status}
-							onChange={(event) => applyFilters({ stock_status: event.target.value })}
+							onChange={(next) => applyFilters({ stock_status: next })}
 							options={store.stock_statuses}
 							placeholder={__('Any stock status')}
 							aria-label={__('Stock status')}
 						/>
 						<Select
 							value={filters.featured}
-							onChange={(event) => applyFilters({ featured: event.target.value })}
+							onChange={(next) => applyFilters({ featured: next })}
 							options={[{ value: '1', label: __('Featured only') }]}
 							placeholder={__('All products')}
 							aria-label={__('Featured')}
@@ -505,7 +505,7 @@ export const ProductsList = () => {
 
 				{showMoreFilters ? (
 					<div className="grid grid-cols-1 gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:grid-cols-3 sm:px-6 xl:flex xl:items-center">
-						<Select value={filters.tag} onChange={(event) => applyFilters({ tag: event.target.value })} options={tagOptions} placeholder={__('All tags')} className="xl:w-48" aria-label={__('Tags')} />
+						<Select value={filters.tag} onChange={(next) => applyFilters({ tag: next })} options={tagOptions} placeholder={__('All tags')} className="xl:w-48" aria-label={__('Tags')} />
 						{/* The bound is applied on blur or Enter, so typing does not fire a request per keystroke. */}
 						<Input
 							defaultValue={filters.min_price}

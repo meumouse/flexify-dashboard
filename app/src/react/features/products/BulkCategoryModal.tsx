@@ -52,7 +52,7 @@ export const BulkCategoryModal = ({ open, onOpenChange, mode, options, count, on
 		>
 			<Select
 				value={category}
-				onChange={(event) => setCategory(event.target.value)}
+				onChange={(next) => setCategory(next)}
 				label={__('Category')}
 				placeholder={__('Select a category')}
 				options={options}

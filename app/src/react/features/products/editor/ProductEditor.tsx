@@ -703,7 +703,7 @@ export const ProductEditor = () => {
 
 						<Card title={__('Pricing')}>
 							<div className="space-y-5">
-								<Select value={form.type} onChange={(event) => set({ type: event.target.value })} options={typeOptions} label={__('Product type')} className="sm:max-w-xs" />
+								<Select value={form.type} onChange={(next) => set({ type: next })} options={typeOptions} label={__('Product type')} className="sm:max-w-xs" />
 
 								{hasPrice ? (
 									<>
@@ -762,7 +762,7 @@ export const ProductEditor = () => {
 									<div className="grid gap-4 sm:grid-cols-2">
 										<Select
 											value={form.tax_status}
-											onChange={(event) => set({ tax_status: event.target.value })}
+											onChange={(next) => set({ tax_status: next })}
 											options={[
 												{ value: 'taxable', label: __('Taxable') },
 												{ value: 'shipping', label: __('Shipping only') },
@@ -770,7 +770,7 @@ export const ProductEditor = () => {
 											]}
 											label={__('Tax status')}
 										/>
-										<Select value={form.tax_class} onChange={(event) => set({ tax_class: event.target.value })} options={store.tax_classes ?? []} label={__('Tax class')} />
+										<Select value={form.tax_class} onChange={(next) => set({ tax_class: next })} options={store.tax_classes ?? []} label={__('Tax class')} />
 									</div>
 								) : null}
 							</div>
@@ -796,7 +796,7 @@ export const ProductEditor = () => {
 											<Input value={form.stock_quantity} onChange={(event) => set({ stock_quantity: event.target.value })} type="number" step={1} label={__('Quantity')} />
 											<Select
 												value={form.backorders}
-												onChange={(event) => set({ backorders: event.target.value })}
+												onChange={(next) => set({ backorders: next })}
 												options={[
 													{ value: 'no', label: __('Do not allow') },
 													{ value: 'notify', label: __('Allow, but notify customer') },
@@ -815,7 +815,7 @@ export const ProductEditor = () => {
 											/>
 										</div>
 									) : !isVariable ? (
-										<Select value={form.stock_status} onChange={(event) => set({ stock_status: event.target.value })} options={stockOptions} label={__('Stock status')} className="sm:max-w-xs" />
+										<Select value={form.stock_status} onChange={(next) => set({ stock_status: next })} options={stockOptions} label={__('Stock status')} className="sm:max-w-xs" />
 									) : null}
 									<Checkbox checked={form.sold_individually} onCheckedChange={(sold_individually) => set({ sold_individually })} label={__('Limit purchases to 1 item per order')} />
 								</div>
@@ -894,7 +894,7 @@ export const ProductEditor = () => {
 											</div>
 											<Select
 												value={form.shipping_class}
-												onChange={(event) => set({ shipping_class: event.target.value })}
+												onChange={(next) => set({ shipping_class: next })}
 												options={[{ value: '', label: __('No shipping class') }, ...shippingClasses]}
 												label={__('Shipping class')}
 												className="sm:max-w-xs"
@@ -977,7 +977,7 @@ export const ProductEditor = () => {
 							<div className="space-y-4">
 								<Select
 									value={form.status}
-									onChange={(event) => set({ status: event.target.value })}
+									onChange={(next) => set({ status: next })}
 									options={[
 										{ value: 'publish', label: __('Published') },
 										{ value: 'draft', label: __('Draft') },
@@ -988,7 +988,7 @@ export const ProductEditor = () => {
 								/>
 								<Select
 									value={form.catalog_visibility}
-									onChange={(event) => set({ catalog_visibility: event.target.value })}
+									onChange={(next) => set({ catalog_visibility: next })}
 									options={[
 										{ value: 'visible', label: __('Shop and search results') },
 										{ value: 'catalog', label: __('Shop only') },

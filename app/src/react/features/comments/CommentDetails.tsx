@@ -133,7 +133,7 @@ export const CommentDetails = () => {
 							<Select
 									value={draft.status}
 									options={Object.entries(labels).map(([value, label]) => ({ value, label }))}
-									onChange={(event) => setDraft({ ...draft, status: event.target.value })} label={__('Status')} />
+									onChange={(next) => setDraft({ ...draft, status: next })} label={__('Status')} />
 
 							<div>
 								<p className="mb-1 text-theme-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{__('In reply to')}</p>

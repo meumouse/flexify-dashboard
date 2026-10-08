@@ -32,13 +32,13 @@ export const AddressFields = ({ address, onChange, type = 'billing' }: Props) =>
 			<Select
 				value={address.country}
 				// Changing the country invalidates the state, which is a list of that country.
-				onChange={(event) => onChange({ ...address, country: event.target.value, state: '' })}
+				onChange={(next) => onChange({ ...address, country: next, state: '' })}
 				options={countryOptions}
 				label={__('Country / Region')}
 				placeholder={__('Select a country')}
 			/>
 			{stateOptions.length ? (
-				<Select value={address.state} onChange={(event) => set('state', event.target.value)} options={stateOptions} label={__('State / County')} placeholder={__('Select a state')} />
+				<Select value={address.state} onChange={(next) => set('state', next)} options={stateOptions} label={__('State / County')} placeholder={__('Select a state')} />
 			) : (
 				<Input value={address.state} onChange={(event) => set('state', event.target.value)} label={__('State / County')} autoComplete="off" />
 			)}

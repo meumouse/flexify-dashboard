@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { render, screen, waitFor, within } from '@testing-library/react';
+import { chooseOption, openSelect } from '../../../../tests/select';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { AppProviders } from '@/react/app/AppProviders';
@@ -107,9 +108,10 @@ describe('activity screen', () => {
 		stubFetch();
 		renderList();
 
-		const filter = await screen.findByRole('combobox', { name: 'Action' });
+		await screen.findByRole('combobox', { name: 'Action' });
+		await openSelect(userEvent.setup(), 'Action');
 
-		await waitFor(() => expect(within(filter).getByText('updated (70)')).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByRole('option', { name: 'updated (70)' })).toBeInTheDocument());
 	});
 
 	it('narrows by action on the server', async () => {
@@ -121,9 +123,7 @@ describe('activity screen', () => {
 
 		await screen.findByText('Como vender mais no Pix');
 
-		const filter = screen.getByRole('combobox', { name: 'Action' });
-		await waitFor(() => expect(within(filter).getByText('updated (70)')).toBeInTheDocument());
-		await user.selectOptions(filter, 'updated');
+		await chooseOption(user, 'Action', 'updated (70)');
 
 		await waitFor(() => expect(urls.some((url) => url.includes('action=updated'))).toBe(true));
 	});

@@ -615,10 +615,10 @@ export const OrderEditor = () => {
 								<div key={line.key} className="grid items-end gap-3 sm:grid-cols-[1fr_1fr_9rem_auto]">
 									<Select
 										value={line.method_id}
-										onChange={(event) => {
-											const method = store.shipping_methods.find((item) => item.value === event.target.value);
+										onChange={(next) => {
+											const method = store.shipping_methods.find((item) => item.value === next);
 											setShippingLines((current) =>
-												current.map((item) => (item.key === line.key ? { ...item, method_id: event.target.value, method_title: method?.label ?? item.method_title } : item))
+												current.map((item) => (item.key === line.key ? { ...item, method_id: next, method_title: method?.label ?? item.method_title } : item))
 											);
 											touch();
 										}}
@@ -812,8 +812,8 @@ export const OrderEditor = () => {
 							<div className="space-y-4">
 								<Select
 									value={form.status}
-									onChange={(event) => {
-										setForm((current) => ({ ...current, status: event.target.value }));
+									onChange={(next) => {
+										setForm((current) => ({ ...current, status: next }));
 										touch();
 									}}
 									options={statusOptions}
@@ -821,8 +821,8 @@ export const OrderEditor = () => {
 								/>
 								<Select
 									value={form.payment_method}
-									onChange={(event) => {
-										setForm((current) => ({ ...current, payment_method: event.target.value }));
+									onChange={(next) => {
+										setForm((current) => ({ ...current, payment_method: next }));
 										touch();
 									}}
 									options={paymentOptions}

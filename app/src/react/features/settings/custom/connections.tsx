@@ -207,7 +207,7 @@ export const GoogleAnalyticsConnection = () => {
 						{ value: '', label: __('Choose a property') },
 						...list.map((property) => ({ value: String(property.property_id ?? property.id ?? ''), label: property.displayName ?? property.name ?? String(property.id) })),
 					]}
-					onChange={(event) => (event.target.value ? chooseProperty.mutate(event.target.value) : undefined)}
+					onChange={(next) => (next ? chooseProperty.mutate(next) : undefined)}
 					aria-label={__('Analytics property')}
 					className="max-w-sm"
 				/>
@@ -355,7 +355,7 @@ export const FontSelector = ({ settings, onChange }: CustomRenderProps) => {
 					{ value: 'url', label: __('A stylesheet of my own') },
 					{ value: 'upload', label: __('A font file I upload') },
 				]}
-				onChange={(event) => onChange({ custom_font_source: event.target.value })}
+				onChange={(next) => onChange({ custom_font_source: next })}
 				aria-label={__('Where the font comes from')}
 				className="max-w-xs"
 			/>
@@ -365,7 +365,7 @@ export const FontSelector = ({ settings, onChange }: CustomRenderProps) => {
 					<Select
 						value={family}
 						options={[{ value: '', label: __('Choose a font') }, ...GOOGLE_FONTS.map((name) => ({ value: name, label: name }))]}
-						onChange={(event) => onChange({ custom_font_family: event.target.value, custom_font_url: event.target.value ? googleFontUrl(event.target.value, weights) : '' })}
+						onChange={(next) => onChange({ custom_font_family: next, custom_font_url: next ? googleFontUrl(next, weights) : '' })}
 						aria-label={__('Font')}
 						className="max-w-xs"
 					/>

@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { parseCSV } from '@/shared/csv.js';
 import { useRest } from '@/react/app/WpDataProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Alert, Button, Icon, Modal, Select, Switch } from '@/react/ui';
+import { Alert, Button, Icon, Modal, Select, Switch, useFilePicker } from '@/react/ui';
 import { generatePassword } from '@/react/features/users/UserModals';
 import type { Role } from '@/react/features/users/queries';
 
@@ -72,7 +72,7 @@ type Parsed = { headers: string[]; rows: Record<string, string>[] };
 export const ImportUsersModal = ({ open, onClose, roles, onDone }: Props) => {
 	const rest = useRest();
 	const { notify } = useNotify();
-	const fileInput = useRef<HTMLInputElement>(null);
+	const csv = useFilePicker({ accept: '.csv,text/csv', onPick: (files) => read(files[0]) });
 	const [parsed, setParsed] = useState<Parsed | null>(null);
 	const [mapping, setMapping] = useState<Record<string, string>>({});
 	const [role, setRole] = useState('subscriber');
@@ -179,27 +179,12 @@ export const ImportUsersModal = ({ open, onClose, roles, onDone }: Props) => {
 				</>
 			}
 		>
-			<input
-				ref={fileInput}
-				type="file"
-				accept=".csv,text/csv"
-				className="hidden"
-				aria-hidden
-				tabIndex={-1}
-				onChange={(event) => {
-					const file = event.target.files?.[0];
-					event.target.value = '';
-
-					if (file) {
-						read(file);
-					}
-				}}
-			/>
+			{csv.picker}
 
 			{!parsed ? (
 				<button
 					type="button"
-					onClick={() => fileInput.current?.click()}
+					onClick={csv.open}
 					className="flex w-full flex-col items-center gap-2 rounded-xl border-2 border-dashed border-gray-300 p-10 text-center transition-colors hover:border-brand-400 dark:border-gray-700"
 				>
 					<Icon name="upload_file" className="text-title-sm text-gray-400" />
@@ -246,7 +231,7 @@ export const ImportUsersModal = ({ open, onClose, roles, onDone }: Props) => {
 												value={mapping[header] ?? ''}
 												placeholder={__('Ignore')}
 												options={FIELDS().map((field) => ({ value: field.value, label: field.label }))}
-												onChange={(event) => setMapping({ ...mapping, [header]: event.target.value })}
+												onChange={(next) => setMapping({ ...mapping, [header]: next })}
 												aria-label={sprintf(__('What %s means'), header)}
 											/>
 										</td>
@@ -261,7 +246,7 @@ export const ImportUsersModal = ({ open, onClose, roles, onDone }: Props) => {
 					<Switch checked={useFileRoles} onCheckedChange={setUseFileRoles} label={__('Use the roles in the file')} />
 
 					{!useFileRoles ? (
-						<Select value={role} options={roles.map((item) => ({ value: item.slug, label: item.name }))} onChange={(event) => setRole(event.target.value)} label={__('Role for everyone imported')} />
+						<Select value={role} options={roles.map((item) => ({ value: item.slug, label: item.name }))} onChange={(next) => setRole(next)} label={__('Role for everyone imported')} />
 					) : null}
 				</div>
 			)}

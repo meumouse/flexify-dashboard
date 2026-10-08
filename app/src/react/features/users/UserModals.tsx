@@ -95,7 +95,7 @@ export const CreateUserModal = ({ open, onClose, roles, onCreated }: CreateProps
 				<Select
 						value={form.role}
 						options={roles.map((role) => ({ value: role.slug, label: role.name }))}
-						onChange={(event) => setForm({ ...form, role: event.target.value })} label={__('Role')} />
+						onChange={(next) => setForm({ ...form, role: next })} label={__('Role')} />
 
 				<Input type="url" value={form.url} onChange={(event) => setForm({ ...form, url: event.target.value })} label={__('Website')} />
 
@@ -163,7 +163,7 @@ export const BulkEditUsersModal = ({ open, onClose, ids, roles, onDone }: BulkPr
 						value={role}
 						placeholder={__('Leave unchanged')}
 						options={roles.map((item) => ({ value: item.slug, label: item.name }))}
-						onChange={(event) => setRole(event.target.value)} label={__('Role')} />
+						onChange={(next) => setRole(next)} label={__('Role')} />
 
 				<Switch checked={replaceBio} onCheckedChange={setReplaceBio} label={__('Replace the biography')} />
 

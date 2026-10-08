@@ -1,4 +1,5 @@
 import { cn } from '@/react/lib/cn';
+import { Select } from '@/react/form/Select';
 import { __, sprintf } from '@/react/lib/i18n';
 import { Icon } from '@/react/ui/Icon';
 
@@ -74,21 +75,16 @@ export const Pagination = ({
 			<div className="flex items-center gap-3 text-theme-sm text-gray-500 dark:text-gray-400">
 				<span>{sprintf(__('Showing %1$s to %2$s of %3$s'), from.toLocaleString(), to.toLocaleString(), total.toLocaleString())}</span>
 				{showPerPage && onPerPageChange ? (
-					<label className="hidden items-center gap-2 sm:flex">
-						<span className="sr-only">{__('Items per page')}</span>
-						<select
-							value={perPage}
-							disabled={disabled}
-							onChange={(event) => onPerPageChange(Number(event.target.value))}
-							className="h-9 rounded-lg border border-gray-300 bg-transparent px-2 text-theme-sm text-gray-700 shadow-theme-xs focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400"
-						>
-							{perPageOptions.map((option) => (
-								<option key={option} value={option}>
-									{sprintf(__('%s / page'), option)}
-								</option>
-							))}
-						</select>
-					</label>
+					<Select
+						size="sm"
+						value={perPage}
+						disabled={disabled}
+						onChange={(next) => onPerPageChange(Number(next))}
+						options={perPageOptions.map((option) => ({ value: option, label: sprintf(__('%s / page'), option) }))}
+						aria-label={__('Items per page')}
+						className="hidden sm:block"
+						selectClassName="w-auto"
+					/>
 				) : null}
 			</div>
 

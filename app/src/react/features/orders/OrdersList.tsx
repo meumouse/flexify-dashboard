@@ -512,7 +512,7 @@ export const OrdersList = () => {
 					<div className="flex flex-wrap items-center gap-2 sm:contents">
 						<Select
 							value={filters.date}
-							onChange={(event) => applyFilters({ date: event.target.value })}
+							onChange={(next) => applyFilters({ date: next })}
 							options={dateOptions}
 							placeholder={__('Any date')}
 							className="min-w-0 flex-1 sm:w-48 sm:flex-none"
@@ -545,7 +545,7 @@ export const OrdersList = () => {
 								{paymentOptions.length ? (
 									<Select
 										value={filters.payment_method}
-										onChange={(event) => applyFilters({ payment_method: event.target.value })}
+										onChange={(next) => applyFilters({ payment_method: next })}
 										options={paymentOptions}
 										placeholder={__('Any payment method')}
 										className="sm:w-52"
@@ -554,7 +554,7 @@ export const OrdersList = () => {
 								) : null}
 								<Select
 									value={filters.created_via}
-									onChange={(event) => applyFilters({ created_via: event.target.value })}
+									onChange={(next) => applyFilters({ created_via: next })}
 									options={createdViaOptions}
 									placeholder={__('Any channel')}
 									className="sm:w-48"
@@ -562,7 +562,7 @@ export const OrdersList = () => {
 								/>
 								<Select
 									value={filters.origin}
-									onChange={(event) => applyFilters({ origin: event.target.value })}
+									onChange={(next) => applyFilters({ origin: next })}
 									options={originOptions}
 									placeholder={__('Any origin')}
 									className="sm:w-44"

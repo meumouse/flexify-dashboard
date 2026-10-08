@@ -82,7 +82,7 @@ export const BatchEditModal = ({ open, onClose, posts, onDone }: Props) => {
 						value={status}
 						placeholder={__('Leave unchanged')}
 						options={statuses.map((item) => ({ value: item.value, label: item.label }))}
-						onChange={(event) => setStatus(event.target.value)} label={__('Status')} />
+						onChange={(next) => setStatus(next)} label={__('Status')} />
 
 				<Field label={__('Author')}>
 					<EntityPicker endpoint="wp/v2/users" toItem={userItem} value={author} onChange={setAuthor} multiple={false} placeholder={__('Leave unchanged')} params={{ who: 'authors' }} />

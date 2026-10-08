@@ -233,7 +233,7 @@ export const CategoriesView = () => {
 					/>
 					<Select
 						value={form.parent}
-						onChange={(event) => setForm((current) => ({ ...current, parent: event.target.value }))}
+						onChange={(next) => setForm((current) => ({ ...current, parent: next }))}
 						label={__('Parent category')}
 						options={[{ value: '0', label: __('None') }, ...parentOptions]}
 					/>

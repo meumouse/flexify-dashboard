@@ -6,7 +6,7 @@ import { useNotify } from '@/react/app/ToastProvider';
 import { useRest } from '@/react/app/WpDataProvider';
 import { cn } from '@/react/lib/cn';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Alert, Badge, Button, Icon, Input, Textarea } from '@/react/ui';
+import { Alert, Badge, Button, ColorPicker, Icon, Input, Textarea } from '@/react/ui';
 import { useResetSettings, type Settings } from '@/react/features/settings/queries';
 import type { SettingDefinition } from '@/shared/settings/settings-config.js';
 import { FontSelector, GoogleAnalyticsConnection, GoogleRecaptchaConnection, RemoteSites } from '@/react/features/settings/custom/connections';
@@ -146,7 +146,7 @@ const ColorScale = ({ setting, settings, onChange }: CustomRenderProps) => {
 	return (
 		<div className="flex flex-col gap-3">
 			<div className="flex items-center gap-2">
-				<input type="color" value={base} onChange={(event) => build(event.target.value)} aria-label={setting.label} className="h-9 w-12 cursor-pointer rounded-lg border border-gray-200 dark:border-gray-800" />
+				<ColorPicker value={base} onChange={build} aria-label={setting.label} />
 				<Input value={base} onChange={(event) => build(event.target.value)} aria-label={sprintf(__('%s as a hex value'), setting.label)} className="max-w-32 font-mono" />
 				<Button variant="ghost" size="sm" icon="refresh" onClick={() => build(base)}>
 					{__('Rebuild the scale')}

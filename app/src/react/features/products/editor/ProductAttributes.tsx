@@ -272,7 +272,7 @@ export const ProductAttributes = ({ attributes, onChange, isVariable = false }: 
 			))}
 
 			<div className="flex flex-wrap items-center gap-2">
-				<Select value={selectedToAdd} onChange={(event) => setSelectedToAdd(event.target.value)} options={availableOptions} placeholder={__('Add attribute…')} size="sm" className="w-60" />
+				<Select value={selectedToAdd} onChange={(next) => setSelectedToAdd(next)} options={availableOptions} placeholder={__('Add attribute…')} size="sm" className="w-60" />
 				<Button size="sm" variant="outline" icon="add" disabled={!selectedToAdd} onClick={addAttribute}>
 					{__('Add')}
 				</Button>

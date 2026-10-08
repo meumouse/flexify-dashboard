@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { useUnsavedChanges } from '@/react/hooks/useUnsavedChanges';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Button, Card, Icon, Input, PageHeader, Select, Skeleton, Textarea } from '@/react/ui';
+import { Button, Card, Icon, Input, PageHeader, Select, Skeleton, Textarea, useFilePicker } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
 import { iconFor } from '@/react/features/media/MediaGrid';
 import { fileNameOf, formatBytes, useMediaItem, useMediaMutations, useMediaUsage, type MediaItem } from '@/react/features/media/queries';
@@ -41,7 +41,7 @@ export const MediaDetails = () => {
 	const { save, replace, bulk, remove, setTags } = useMediaMutations();
 	const [draft, setDraft] = useState<Draft | null>(null);
 	const [size, setSize] = useState('full');
-	const fileInput = useRef<HTMLInputElement>(null);
+	const replaceFile = useFilePicker({ onPick: (files) => replace.mutate({ id: item.id, file: files[0] }) });
 
 	useEffect(() => {
 		if (media.data) {
@@ -147,7 +147,7 @@ export const MediaDetails = () => {
 										{ value: 'full', label: sprintf(__('Full (%1$s × %2$s)'), String(item.media_details?.width ?? '?'), String(item.media_details?.height ?? '?')) },
 										...sizes.map(([name, data]) => ({ value: name, label: `${name} (${data.width} × ${data.height})` })),
 									]}
-									onChange={(event) => setSize(event.target.value)}
+									onChange={(next) => setSize(next)}
 									aria-label={__('Size')}
 								/>
 							) : null}
@@ -158,25 +158,11 @@ export const MediaDetails = () => {
 							<Button variant="outline" size="sm" icon="download" href={item.source_url} download target="_blank" rel="noopener noreferrer">
 								{__('Download')}
 							</Button>
-							<Button variant="outline" size="sm" icon="swap_horiz" loading={replace.isPending} onClick={() => fileInput.current?.click()}>
+							<Button variant="outline" size="sm" icon="swap_horiz" loading={replace.isPending} onClick={replaceFile.open}>
 								{__('Replace file')}
 							</Button>
 
-							<input
-								ref={fileInput}
-								type="file"
-								className="hidden"
-								aria-hidden
-								tabIndex={-1}
-								onChange={(event) => {
-									const file = event.target.files?.[0];
-									event.target.value = '';
-
-									if (file) {
-										replace.mutate({ id: item.id, file });
-									}
-								}}
-							/>
+							{replaceFile.picker}
 						</div>
 					</Card>
 

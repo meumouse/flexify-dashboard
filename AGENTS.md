@@ -33,6 +33,8 @@ Proibido em `app/src/react/features`, `shell` e `data`:
 <input type="range">   <input type="color">   <input type="file">
 ```
 
+Classe que estiliza controle nativo (`accent-brand-500`) também não, pela mesma razão: ela só existe porque alguém usou o controle cru.
+
 O lugar de um controle nativo é dentro do kit, em `app/src/react/form`, embrulhado num componente. É lá que `<input>` e `<button>` nativos podem aparecer.
 
 | Precisa de | Use |
@@ -45,6 +47,7 @@ O lugar de um controle nativo é dentro do kit, em `app/src/react/form`, embrulh
 | Texto, número, data, senha | `Input` |
 | Texto longo | `Textarea` |
 | Texto formatado | `RichText` |
+| Arquivo do disco | `useFilePicker` |
 
 **Rótulo:** `Input`, `Select` e `Textarea` têm `label` próprio, que associa o rótulo ao campo. `Field` é só para o que **não** é campo (um seletor customizado, um editor) — e aí o controle interno precisa de `aria-label`.
 
@@ -206,10 +209,11 @@ Alguns padrões aqui são verificados por teste, porque comentário não segura 
 
 - `app/src/react/ui/icons.test.ts` — falha se um nome de ícone não tiver arquivo em `assets/icons`.
 - `app/src/react/ui/scales.test.ts` — falha se aparecer raio fora da escala ou tamanho de fonte da escala crua do Tailwind. A mensagem diz qual classe usar no lugar.
+- `app/src/react/form/controls.test.ts` — falha se um controle HTML cru aparecer fora de `app/src/react/form`. A mensagem diz qual componente usar no lugar.
 
-Os dois leem o código como texto, com `app/tests/source-tree.ts`.
+Os três leem o código como texto, com `app/tests/source-tree.ts`, que varre `app/src/react` e também `app/src/shared` — é de lá que vêm as classes compartilhadas, então é lá que elas se escondem.
 
-A fazer, conforme o [plano de padronização](docs/planejamento-padronizacao-ui-api.md): teste de controle HTML cru fora do kit.
+Ao escrever um teste desses, **prove que ele pega alguma coisa**: insira a violação, veja falhar, tire. Um teste que varre a árvore errada passa sem olhar nada.
 
 ---
 

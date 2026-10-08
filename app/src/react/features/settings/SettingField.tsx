@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useRest, useWpData } from '@/react/app/WpDataProvider';
 import { openMediaFrame } from '@/react/lib/wpMedia';
 import { __ } from '@/react/lib/i18n';
-import { Button, Icon, Input, Select, Switch, Textarea } from '@/react/ui';
+import { Button, Checkbox, Icon, Input, Select, Switch, Textarea } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
 import { CUSTOM_RENDERS } from '@/react/features/settings/custom';
 import type { SettingDefinition } from '@/shared/settings/settings-config.js';
@@ -47,15 +47,15 @@ const PostTypeSetting = ({ value, onChange }: { value: string[]; onChange: (valu
 	return (
 		<div className="flex flex-wrap gap-3">
 			{types.map((type) => (
-				<label key={type.name} className="flex cursor-pointer items-center gap-2 text-theme-sm">
-					<input
-						type="checkbox"
-						checked={value.includes(type.name)}
-						onChange={(event) => onChange(event.target.checked ? [...value, type.name] : value.filter((item) => item !== type.name))}
-						className="accent-brand-500"
-					/>
-					<span className="text-gray-700 dark:text-gray-300">{type.labels?.name ?? type.name}</span>
-				</label>
+				<Checkbox
+					key={type.name}
+					size="sm"
+					checked={value.includes(type.name)}
+					onCheckedChange={(checked) => onChange(checked ? [...value, type.name] : value.filter((item) => item !== type.name))}
+					className="items-center"
+				>
+					<span className="text-theme-sm text-gray-700 dark:text-gray-300">{type.labels?.name ?? type.name}</span>
+				</Checkbox>
 			))}
 		</div>
 	);
@@ -77,15 +77,15 @@ const PluginSetting = ({ value, onChange }: { value: string[]; onChange: (value:
 	return (
 		<div className="flex max-h-48 flex-col gap-2 overflow-y-auto rounded-xl border border-gray-200 p-3 dark:border-gray-800">
 			{plugins.map((plugin) => (
-				<label key={plugin.slug} className="flex cursor-pointer items-center gap-2 text-theme-sm">
-					<input
-						type="checkbox"
-						checked={value.includes(plugin.slug)}
-						onChange={(event) => onChange(event.target.checked ? [...value, plugin.slug] : value.filter((item) => item !== plugin.slug))}
-						className="accent-brand-500"
-					/>
-					<span className="truncate text-gray-700 dark:text-gray-300">{plugin.Name}</span>
-				</label>
+				<Checkbox
+					key={plugin.slug}
+					size="sm"
+					checked={value.includes(plugin.slug)}
+					onCheckedChange={(checked) => onChange(checked ? [...value, plugin.slug] : value.filter((item) => item !== plugin.slug))}
+					className="items-center"
+				>
+					<span className="truncate text-theme-sm text-gray-700 dark:text-gray-300">{plugin.Name}</span>
+				</Checkbox>
 			))}
 		</div>
 	);
@@ -111,7 +111,7 @@ export const SettingField = ({ setting, settings, onChange }: Props) => {
 			return <Switch checked={value === true} onCheckedChange={set} aria-label={setting.label} />;
 
 		case 'select':
-			return <Select value={asString(value)} options={props.options ?? []} onChange={(event) => set(event.target.value)} aria-label={setting.label} className="max-w-xs" />;
+			return <Select value={asString(value)} options={props.options ?? []} onChange={(next) => set(next)} aria-label={setting.label} className="max-w-xs" />;
 
 		case 'number':
 			return <Input type="number" min={props.min} max={props.max} value={asString(value)} onChange={(event) => set(Number(event.target.value))} aria-label={setting.label} className="max-w-32" />;

@@ -17,12 +17,15 @@ Uma vitrine com todos eles fica em **Flexify Dashboard → Design System** (`adm
 | `Button` | `variant` (primary, outline, secondary, danger, danger-outline, warning, success, ghost, link), `size` (xs, sm, md, lg), `icon`, `iconRight`, `iconOnly`, `loading`, `block`, `href` | Renderiza `<a>` quando `href` é informado. Com `iconOnly`, passe `aria-label`. |
 | `Input` | `value`, `onChange`, `label`, `hint`, `error`, `success`, `icon`, `prefix`, `suffix`, `size`, `clearable`, `onClear` | O resto das props vai para o `<input>`. Use `label` — é ele que associa o rótulo ao campo. |
 | `Textarea` | `value`, `onChange`, `label`, `hint`, `error`, `rows` | |
-| `Select` | `value`, `onChange`, `options` (`{ value, label }` ou grupos `{ label, options }`), `placeholder`, `label`, `size` | |
+| `Select` | `value`, `onChange` (recebe o valor, não o evento), `options` (`{ value, label }` ou grupos `{ label, options }`), `placeholder`, `label`, `size` | Radix, não `<select>` nativo. Num teste, use `openSelect`/`chooseOption` de `app/tests/select.ts` — `userEvent.selectOptions` não alcança. |
 | `SearchInput` | `value`, `onChange` (reporta depois da pausa), `debounce`, `placeholder`, `size` | Passe `aria-label`. |
 | `Checkbox` | `checked`, `onCheckedChange`, `label`, `description`, `indeterminate`, `size` (sm, md) | |
 | `Radio` | `checked`, `onSelect`, `label`, `description`, `name`, `value` | |
 | `Switch` | `checked`, `onCheckedChange`, `label`, `description`, `size`, `labelPosition` | |
-| `Field` | `label`, `htmlFor`, `hint`, `error`, `success`, `required` | Só para o que **não** é campo do kit. O controle interno precisa de `aria-label`. |
+| `Slider` | `value`, `onChange`, `min`, `max`, `step`, `label`, `valueLabel`, `hint` | Radix. `valueLabel` aparece no fim da linha do rótulo. |
+| `ColorPicker` | `value`, `onChange`, `label`, `hint`, `error` | Abre o seletor do sistema, com o eyedropper e as cores recentes. |
+| `useFilePicker` | `{ accept, multiple, onPick }` → `{ open, picker }` | Hook. Chame `open()` no clique do botão e renderize `{picker}` em qualquer lugar da árvore. |
+| `Field` | `label`, `htmlFor`, `hint`, `labelSuffix`, `error`, `success`, `required` | Só para o que **não** é campo do kit. O controle interno precisa de `aria-label`. |
 | `EntityPicker` | `endpoint`, `toItem`, `value`, `onChange`, `multiple`, `placeholder`, `params`, `chosen`, `trigger` | Em `@/react/data`. Busca no servidor. |
 | `Badge` | `color` (primary, success, error, warning, info, orange, purple, light, dark), `variant` (light, solid), `size`, `icon`, `dot`, `pulse` | |
 | `Alert` | `variant` (success, error, warning, info), `title`, `message`, `dismissible`, `actions` | |

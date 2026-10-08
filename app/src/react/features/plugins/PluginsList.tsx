@@ -1,10 +1,10 @@
-import { useMemo, useRef } from 'react';
+import { useMemo } from 'react';
 import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { cn } from '@/react/lib/cn';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Badge, Button, Card, DropdownMenu, Icon, PageHeader, SearchInput, Skeleton, Switch, Tabs, type TabItem } from '@/react/ui';
+import { Badge, Button, Card, DropdownMenu, Icon, PageHeader, SearchInput, Skeleton, Switch, Tabs, useFilePicker, type TabItem } from '@/react/ui';
 import { PluginRepository } from '@/react/features/plugins/PluginRepository';
 import { usePluginActions, usePlugins, useUploadPlugin, type Plugin } from '@/react/features/plugins/queries';
 
@@ -114,7 +114,7 @@ export const PluginsList = () => {
 	const { filters, setFilters } = useQueryFilters(DEFAULTS);
 	const plugins = usePlugins();
 	const upload = useUploadPlugin();
-	const fileInput = useRef<HTMLInputElement>(null);
+	const zip = useFilePicker({ accept: '.zip,application/zip', onPick: (files) => upload.mutate(files[0]) });
 
 	const [search, view] = [String(filters.search), String(filters.view)];
 	const all = plugins.data ?? [];
@@ -146,28 +146,13 @@ export const PluginsList = () => {
 				title={__('Plugins')}
 				description={sprintf(__('%s installed'), String(counts.installed))}
 				actions={
-					<Button variant="outline" icon="upload" loading={upload.isPending} onClick={() => fileInput.current?.click()}>
+					<Button variant="outline" icon="upload" loading={upload.isPending} onClick={zip.open}>
 						{__('Upload a ZIP')}
 					</Button>
 				}
 			/>
 
-			<input
-				ref={fileInput}
-				type="file"
-				accept=".zip,application/zip"
-				className="hidden"
-				aria-hidden
-				tabIndex={-1}
-				onChange={(event) => {
-					const file = event.target.files?.[0];
-					event.target.value = '';
-
-					if (file) {
-						upload.mutate(file);
-					}
-				}}
-			/>
+			{zip.picker}
 
 			<Tabs items={tabs} value={view} onChange={(next) => setFilters({ view: next })} className="mb-5" />
 

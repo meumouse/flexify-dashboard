@@ -3,7 +3,7 @@ import { applyFiltersToCanvas, type FilterValues } from '@/shared/image-editor/f
 import { drawVignette } from '@/shared/image-editor/canvas.js';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
-import { Button, Card, Icon, Input, Switch } from '@/react/ui';
+import { Button, Card, Icon, Input, Slider, Switch } from '@/react/ui';
 import { NO_EDITS, cropFromCanvas, fitWithin, hasEdits, keepRatio, rectBetween, type Edits, type Rect } from '@/react/features/media/imageEdits';
 
 /**
@@ -328,21 +328,16 @@ export const ImageEditor = ({ image, saving = false, onSave, onCancel }: Props) 
 				<Card title={__('Adjustments')} className="max-h-[30rem] overflow-y-auto custom-scrollbar">
 					<div className="flex flex-col gap-4">
 						{SLIDERS.map((slider) => (
-							<label key={slider.key} className="block">
-								<span className="mb-1 flex items-center justify-between text-theme-xs">
-									<span className="text-gray-600 dark:text-gray-400">{slider.label}</span>
-									<span className="font-medium text-gray-800 dark:text-white/90">{edits[slider.key]}</span>
-								</span>
-								<input
-									type="range"
-									min={slider.min}
-									max={slider.max}
-									value={edits[slider.key]}
-									onChange={(event) => setEdits({ ...edits, [slider.key]: Number(event.target.value) })}
-									className="w-full accent-brand-500"
-								/>
-								{slider.hint ? <span className="mt-0.5 block text-theme-xs text-gray-400">{slider.hint}</span> : null}
-							</label>
+							<Slider
+								key={slider.key}
+								label={slider.label}
+								valueLabel={String(edits[slider.key])}
+								hint={slider.hint}
+								min={slider.min}
+								max={slider.max}
+								value={edits[slider.key]}
+								onChange={(next) => setEdits({ ...edits, [slider.key]: next })}
+							/>
 						))}
 					</div>
 				</Card>

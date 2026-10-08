@@ -81,7 +81,7 @@ Dois defeitos apareceram na verificação no navegador, nenhum dos dois visível
 - O bloco do Tailwind é `@theme inline reference`, que embute o valor nas classes e **não publica** nenhum `--text-*`. A primeira versão do CSS por tag usava `var(--text-theme-sm)` e não resolvia nada — chegou a quebrar o corpo do app, que caiu de 14px para os 13px herdados do wp-admin. A escala passou a morar em `:root` como `--fd-text-*`, com o bloco do Tailwind apontando para lá, igual à paleta.
 - O preflight do Tailwind achata todo heading em `font-size: inherit`, numa camada acima de `base`. Com a regra só em `base`, a escada valia nas telas nativas e morria dentro do nosso app — todo heading a 14px. O arquivo agora é importado também em `layer(fd-isolation-scope)`, depois do preflight. Conferido no navegador: a escada bate dos dois lados (24/20/16/14/12) e classe de componente continua ganhando do seletor de tag.
 
-### Fase 3 — Kit de seletores em React (M)
+### Fase 3 — Kit de seletores em React (M) · concluída
 Substituir todo controle cru por componente do kit.
 
 - `Select` → Radix (`@radix-ui/react-select`), mantendo a API atual para não tocar nos 24 call sites.
@@ -90,6 +90,15 @@ Substituir todo controle cru por componente do kit.
 - Checkbox cru → `Checkbox` do kit em `SettingField` (2) e `LoginScreen` (1).
 
 → **Verificação:** teste que falha se `<select>`, `<input type="checkbox|radio|range|color">` aparecer fora de `app/src/react/form`. Suite verde. As 3 telas conferidas em 375/768/1440.
+
+**Resultado:** `app/src/react/form/controls.test.ts`, provado com uma violação inserida de propósito antes de valer. O levantamento inicial tinha ficado curto: além dos cinco controles listados, havia um `<select>` nativo dentro do próprio `Pagination` e **quatro cópias** do mesmo `<input type="file">` escondido — mídia, biblioteca, plugins e importação de usuários, cada uma com o próprio `ref` e o mesmo reset de `value`. Viraram `useFilePicker`, uma cópia só.
+
+Duas decisões mudaram em relação ao que estava escrito aqui:
+
+- **A API do `Select` mudou**, ao contrário do que esta fase previa. Manter `onChange(event)` com Radix exigiria fabricar um `{ target: { value } }` falso; `onChange(value)` é honesto e o TypeScript apontou os 53 pontos de chamada, que foram trocados mecanicamente. Nenhum custo real — o plano previa evitar o trabalho, não evitar a mentira.
+- **`ColorPicker` embrulha o controle nativo** em vez de recriá-lo. O seletor do sistema traz o conta-gotas, as cores recentes e a paleta que a pessoa já usa; recriar isso seria perder. A regra pede que o nativo more no kit, e é onde ele está.
+
+Um defeito apareceu no caminho: `recipes.js` vive em `app/src/shared` e escapava do teste de escala da fase 2 — classes cruas sobrevivendo num arquivo que alimenta todo componente. O varredor passou a ler `app/src/shared` e `.js` também.
 
 ### Fase 4 — Responsividade das telas das fases 5–8 (G)
 Na ordem do pior para o melhor: barra do frontend (0), banco (1), comentários/login/avisos/configurações (3), registro/menus/posts (4), papéis (5), usuários (6), painel/plugins (7).

@@ -420,7 +420,7 @@ export const ProductVariationsEditor = forwardRef<VariationsHandle, Props>(funct
 										<Select
 											key={attribute.id || attribute.name}
 											value={attributeValue(variation, attribute)}
-											onChange={(event) => setAttributeValue(variation, attribute, event.target.value)}
+											onChange={(next) => setAttributeValue(variation, attribute, next)}
 											label={attributeLabel(attribute)}
 											options={attribute.options.map((option) => ({ value: option, label: option }))}
 											placeholder={sprintf(__('Any %s'), attributeLabel(attribute))}
@@ -451,7 +451,7 @@ export const ProductVariationsEditor = forwardRef<VariationsHandle, Props>(funct
 											label={__('Stock quantity')}
 										/>
 									) : (
-										<Select value={variation.stock_status} onChange={(event) => patch(variation.id, { stock_status: event.target.value })} options={stockOptions} label={__('Stock status')} />
+										<Select value={variation.stock_status} onChange={(next) => patch(variation.id, { stock_status: next })} options={stockOptions} label={__('Stock status')} />
 									)}
 									<Input
 										value={variation.description}

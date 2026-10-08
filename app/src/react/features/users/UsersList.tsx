@@ -184,7 +184,7 @@ export const UsersList = () => {
 						size="sm"
 						value={params.role}
 						options={[{ value: 'all', label: __('All roles') }, ...roles.map((role) => ({ value: role.slug, label: role.name }))]}
-						onChange={(event) => apply({ role: event.target.value })}
+						onChange={(next) => apply({ role: next })}
 						aria-label={__('Role')}
 					/>
 
