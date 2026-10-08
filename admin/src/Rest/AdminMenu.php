@@ -4,8 +4,6 @@ namespace MeuMouse\Flexify_Dashboard\Rest;
 
 use MeuMouse\Flexify_Dashboard\App\Plugin;
 
-use WP_REST_Response;
-
 defined('ABSPATH') || exit;
 
 /**
@@ -19,22 +17,20 @@ defined('ABSPATH') || exit;
  * reads the globals instead, which is where the menu actually is.
  *
  * The menu is printed into the page as JSON, because that is what it cost before: the markup
- * was already there and the sidebar drew without waiting. The route exists for anything that
- * needs the menu without being on an admin page.
+ * was already there and the sidebar drew without waiting.
+ *
+ * There is deliberately no REST route for it. The menu only exists inside an admin request:
+ * building it anywhere else means requiring `wp-admin/menu.php`, which ends in a capability
+ * check that calls `wp_die( 403 )` on globals that a REST request does not have — and even
+ * past that, `is_admin()` is false there, so WooCommerce and this plugin never register their
+ * own items. The answer would be a menu missing half of itself, which is worse than no
+ * answer. Same reason the posts table is not a route either.
  *
  * @since 4.1.0
  * @package MeuMouse\Flexify_Dashboard\Rest
  * @author MeuMouse.com
  */
 class AdminMenu {
-
-	/**
-	 * REST namespace.
-	 *
-	 * @since 4.1.0
-	 * @var string
-	 */
-	private const REST_NAMESPACE = 'flexify-dashboard/v1';
 
 	/**
 	 * Id of the script tag the menu is printed into.
@@ -52,52 +48,7 @@ class AdminMenu {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
 		add_action( 'admin_print_footer_scripts', array( $this, 'print_menu' ), 1 );
-	}
-
-
-	/**
-	 * Register REST API routes.
-	 *
-	 * @since 4.1.0
-	 * @return void
-	 */
-	public function register_routes() {
-		register_rest_route(
-			self::REST_NAMESPACE,
-			'/admin-menu',
-			array(
-				'methods' => 'GET',
-				'callback' => array( $this, 'get_menu_response' ),
-				'permission_callback' => array( $this, 'check_permissions' ),
-			)
-		);
-	}
-
-
-	/**
-	 * Whether the current user may read the menu.
-	 *
-	 * The menu is the user's own: every item in it was already filtered by the capability
-	 * WordPress recorded for it, so reading the dashboard is enough.
-	 *
-	 * @since 4.1.0
-	 * @return bool
-	 */
-	public function check_permissions() {
-		return current_user_can( 'read' );
-	}
-
-
-	/**
-	 * Answer with the menu.
-	 *
-	 * @since 4.1.0
-	 * @return WP_REST_Response
-	 */
-	public function get_menu_response() {
-		return rest_ensure_response( self::get_menu() );
 	}
 
 
@@ -125,18 +76,14 @@ class AdminMenu {
 	/**
 	 * The admin menu, as the current user sees it.
 	 *
-	 * Outside an admin request the globals are empty, so the menu is built first. That is what
-	 * makes the REST route answer the same thing the page prints.
+	 * Empty outside an admin request, where WordPress has not built one. See the note on the
+	 * class about why nothing tries to build it there.
 	 *
 	 * @since 4.1.0
 	 * @return array
 	 */
 	public static function get_menu() {
 		global $menu, $submenu;
-
-		if ( empty( $menu ) ) {
-			self::build_menu();
-		}
 
 		$items = array();
 
@@ -149,28 +96,6 @@ class AdminMenu {
 		}
 
 		return $items;
-	}
-
-
-	/**
-	 * Build the menu outside an admin request.
-	 *
-	 * `wp-admin/includes/menu.php` is what fires `admin_menu` and leaves the globals filled;
-	 * it also calls functions from the admin includes, which REST has not loaded.
-	 *
-	 * @since 4.1.0
-	 * @return void
-	 */
-	private static function build_menu() {
-		if ( ! function_exists( 'add_menu_page' ) ) {
-			require_once ABSPATH . 'wp-admin/includes/plugin.php';
-		}
-
-		if ( ! function_exists( 'get_admin_page_parent' ) ) {
-			require_once ABSPATH . 'wp-admin/includes/screen.php';
-		}
-
-		require_once ABSPATH . 'wp-admin/includes/menu.php';
 	}
 
 
@@ -271,13 +196,23 @@ class AdminMenu {
 	 * }
 	 */
 	private static function split_title( $title ) {
+		$title = (string) $title;
 		$count = null;
 
-		if ( preg_match( '/<span[^>]*class="[^"]*count[^"]*"[^>]*>.*?(\d[\d.,]*).*?<\/span>/is', (string) $title, $matches ) ) {
+		if ( preg_match( '/<span[^>]*class="[^"]*count[^"]*"[^>]*>.*?(\d[\d.,]*).*?<\/span>/is', $title, $matches ) ) {
 			$count = (int) preg_replace( '/\D/', '', $matches[1] );
 		}
 
-		$name = wp_strip_all_tags( (string) $title );
+		/*
+		 * The name is the text outside the spans. WordPress hangs the bubble on one and the
+		 * text a screen reader hears on another, and stripping tags alone glues all three
+		 * together: "Comments 0 Comments in moderation".
+		 */
+		$name = wp_strip_all_tags( preg_replace( '/<span[^>]*>.*?<\/span>/is', '', $title ) );
+
+		if ( '' === trim( $name ) ) {
+			$name = wp_strip_all_tags( $title );
+		}
 
 		return array(
 			'name' => trim( html_entity_decode( $name, ENT_QUOTES, 'UTF-8' ) ),

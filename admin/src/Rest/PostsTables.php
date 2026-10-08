@@ -942,7 +942,17 @@ class PostsTables {
 		$views = $wp_list_table->get_views();
 		$processed_views = $this->process_views( $views );
 
+		/*
+		 * This is called for what it records, not for what it writes: the classes WordPress
+		 * gives each column are only captured while the header is being printed. The markup
+		 * it echoes used to land in the hidden page's HTML, where nobody looked. Now that the
+		 * answer is JSON and nothing else, it has to be thrown away or it arrives glued to
+		 * the front of the body and nothing can parse it.
+		 */
+		ob_start();
 		$wp_list_table->print_column_headers( false );
+		ob_end_clean();
+
 		$column_classes = $wp_list_table->captured_classes;
 		$columns = $this->process_columns( get_current_screen(), $params['post_type'] );
 

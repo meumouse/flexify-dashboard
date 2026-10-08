@@ -24,6 +24,10 @@ Isso vale para tudo, sem exceção — inclusive a barra `#wpadminbar`, que é l
 
 **O que não cabe em rota.** Um dado que só existe dentro de uma requisição do admin não vira rota REST, porque `is_admin()` é falso ali e metade dos plugins não registra nada. É o caso da lista de posts: as colunas vêm de `WP_List_Table`, e o WooCommerce carrega a classe que adiciona as dele atrás de `if ( $this->is_request( 'admin' ) )`. Nesses casos o endpoint fica onde está e devolve **JSON e nada em volta** — o que se corrige é o cliente parar de abrir um documento para achar o dado.
 
+É o caso do menu também: construí-lo fora do admin exige `require wp-admin/menu.php`, que termina numa checagem de permissão com `wp_die( 403 )` sobre globais que a requisição REST não tem — e, passando disso, devolveria um menu sem o WooCommerce e sem o próprio plugin. **Resposta parcial em silêncio é pior que resposta nenhuma:** a rota não existe, e o motivo está escrito na classe. A barra, que não depende de nada disso, tem rota e responde.
+
+**Endpoint que devolve JSON não pode ter nada ecoando antes.** `print_column_headers()` existe pelo que ele registra, não pelo que escreve; o markup ia para o HTML da página escondida, onde ninguém olhava, e colado na frente de um `wp_send_json` quebra o `JSON.parse`. Em dúvida, `ob_start()` em volta da chamada.
+
 Referências: [WordPress REST API](https://developer.wordpress.org/rest-api/reference/) · [WooCommerce REST API](https://developer.woocommerce.com/docs/apis/rest-api/)
 
 ---
@@ -207,6 +211,14 @@ cd app && npm run typecheck && npm test && npx vite build
 ```
 
 PHP alterado: `php -l` em cada arquivo.
+
+**Classe PHP nova: regenerar o autoload.**
+
+```bash
+cd admin && composer dump-autoload --classmap-authoritative
+```
+
+O autoload é `classmap-authoritative`: classe que não está no mapa **não é carregada**, mesmo com o PSR-4 configurado certinho. Esquecer isso não dá erro no `php -l` nem nos testes do front — dá fatal em toda carga de página. Já aconteceu.
 
 String nova visível ao usuário: regenerar o POT e traduzir (`languages/`, veja [docs/desenvolvimento.md](docs/desenvolvimento.md)).
 

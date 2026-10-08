@@ -75,6 +75,19 @@ describe('WpToolbar', () => {
 		expect(await screen.findByText('2')).toBeInTheDocument();
 	});
 
+	it('draws no bubble for a count of zero', () => {
+		printBar({ primary: [item('wp-admin-bar-comments', '0', 0)], secondary: [] });
+
+		render(
+			<AppProviders wpData={wpData}>
+				<WpToolbar />
+			</AppProviders>
+		);
+
+		expect(screen.queryByText('0')).not.toBeInTheDocument();
+		expect(screen.getByRole('link')).toBeInTheDocument();
+	});
+
 	it('opens the children of an item as a menu', async () => {
 		const user = userEvent.setup();
 		printBar();

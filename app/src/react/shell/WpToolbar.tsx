@@ -66,6 +66,10 @@ export const readBar = (root: Document = document): Bar => {
 
 const itemClass = 'flex h-9 items-center gap-1.5 rounded-lg px-2.5 text-theme-sm text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-200';
 
+/*
+ * A count of zero draws no bubble, the way WordPress hides one with `count-0`: the comments
+ * item is always in the bar, and a grey "0" beside it is noise.
+ */
 const ItemBody = ({ item }: { item: BarItem }) => (
 	<>
 		{ICONS[item.id] ? (
@@ -76,7 +80,7 @@ const ItemBody = ({ item }: { item: BarItem }) => (
 		)}
 		{item.count === null ? (
 			<span className="ab-label max-w-32 truncate">{item.label}</span>
-		) : (
+		) : item.count === 0 ? null : (
 			<span className="ab-label inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-brand-50 px-1.5 text-theme-xs font-medium text-brand-500 dark:bg-brand-500/15 dark:text-brand-400">
 				{item.count}
 			</span>

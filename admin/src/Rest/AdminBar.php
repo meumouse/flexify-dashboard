@@ -187,9 +187,47 @@ class AdminBar {
 		$nodes = $this->get_nodes();
 
 		return array(
-			'primary' => self::children_of( 'root-default', $nodes ),
-			'secondary' => self::children_of( 'top-secondary', $nodes ),
+			// `top-secondary` is itself a group sitting at the top, so the left side has to
+			// leave it alone or everything on the right is drawn on both sides.
+			'primary' => self::top_level( $nodes, array( '', 'root', 'root-default' ), array( 'top-secondary' ) ),
+			'secondary' => self::top_level( $nodes, array( 'top-secondary' ), array() ),
 		);
+	}
+
+
+	/**
+	 * The items on one side of the bar.
+	 *
+	 * A node added without a parent only lands in the `root-default` group while WordPress is
+	 * rendering — `_bind()` is called from `render()`, which is the one step this class skips.
+	 * So the top of the bar is every node whose parent is one of the names that mean "the
+	 * top", and nearly every node has none at all.
+	 *
+	 * @since 4.1.0
+	 * @param array $nodes   Every node.
+	 * @param array $parents Parent ids that count as this side of the bar.
+	 * @param array $skip    Node ids to leave to the other side.
+	 * @return array
+	 */
+	private static function top_level( $nodes, $parents, $skip ) {
+		$items = array();
+
+		foreach ( (array) $nodes as $node ) {
+			$parent = isset( $node->parent ) && $node->parent ? (string) $node->parent : '';
+
+			if ( ! in_array( $parent, $parents, true ) || 'root' === $node->id || in_array( $node->id, $skip, true ) ) {
+				continue;
+			}
+
+			if ( ! empty( $node->group ) ) {
+				$items = array_merge( $items, self::children_of( $node->id, $nodes ) );
+				continue;
+			}
+
+			$items[] = self::format( $node, $nodes );
+		}
+
+		return $items;
 	}
 
 

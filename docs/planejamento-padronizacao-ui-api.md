@@ -168,7 +168,7 @@ Localizar seções que ainda saem como HTML do WordPress dentro de telas nossas,
 
 Nada mais no `app/src/react` toca `window.wp`, e o único `<iframe>` é a pré-visualização do post no site, que é conteúdo, não tela do admin.
 
-### Fase 7 — QA e 4.1.0 (M) · parcial
+### Fase 7 — QA e 4.1.0 (M) · concluída
 Varredura das telas em 375/768/1440, claro e escuro, no **site real** — não no harness. Changelog e versão.
 
 → **Verificação:** a matriz preenchida com o que foi aberto de verdade, e o que não foi dito explicitamente.
@@ -187,7 +187,26 @@ Varredura das telas em 375/768/1440, claro e escuro, no **site real** — não n
 4. `PostsTables::render_page` — a lista de posts carrega, com as colunas que outros plugins acrescentam.
 5. `useMediaPicker` — a biblioteca abre e envia arquivo.
 
-A matriz do site real continua por preencher.
+**A matriz foi preenchida** carregando o WordPress pelo PHP CLI e disparando os mesmos hooks que uma página do admin dispara (`admin_init`, `in_admin_header`, as quatro ações de aviso, `admin_print_footer_scripts`). Não é um navegador autenticado, mas executa todo o PHP novo contra o banco de verdade, com WooCommerce instalado.
+
+| # | O que | Resultado |
+|---|---|---|
+| 1 | Menu impresso na página | 18 itens, 4 separadores, nome e URL em todos, bolha do Plugins = 1, submenus com query string correta, ícones `dashicon` e `image` (data URI do WooCommerce inclusive) |
+| 2 | Barra desenhada por componente | 6 itens à esquerda, 1 à direita; `#wpadminbar` nativo **não** é impresso |
+| 3 | Avisos capturados | 3 (atualização do WordPress, aviso do WooCommerce, um de teste), **nada sobra na página** |
+| 4 | Lista de posts | JSON válido, 8 colunas incluindo as de terceiros, `views`, `column_classes` |
+| 5 | Rotas REST | `admin-bar` 200 com 8 itens, `admin-notices` 200 vazio (nada dispara `admin_notices` em REST, como está escrito na classe) |
+
+**Seis defeitos saíram disso, e o primeiro era fatal:**
+
+1. **Fatal em toda carga de página.** O autoload do plugin é `classmap-authoritative`: classe fora do mapa não carrega, por mais certo que o PSR-4 esteja. As três classes novas da fase 5 não estavam, e o site morria em `Class "…\Rest\AdminBar" not found`. `php -l` passa, os testes do front passam, e o site não abre. Virou regra em `AGENTS.md`.
+2. **A lista de posts devolvia markup antes do JSON.** `print_column_headers()` é chamado pelo que ele registra, não pelo que escreve; o `echo` ia para o HTML da página escondida, onde ninguém olhava. Com `wp_send_json` ele passou a chegar colado na frente do corpo, e nada parseava. Agora a chamada vai dentro de um `ob_start()`.
+3. **A rota do menu não pode existir.** `build_menu()` requeria `wp-admin/includes/menu.php`, que não declara o menu do próprio WordPress — só o que os plugins acrescentam. Trocar para `wp-admin/menu.php` resolve isso e cria outro: o arquivo termina em `wp_die( 403 )` sobre globais que a requisição REST não tem. E, passando disso, `is_admin()` é falso e o menu voltaria sem o WooCommerce e sem o próprio plugin. A rota foi removida; o motivo está na classe.
+4. **Nome do menu com o número grudado.** "Plugins1" e "Comments 00 Comments in moderation": o título traz a bolha e o texto de leitor de tela em spans aninhados, e tirar as tags juntava os três. Agora o nome é o texto fora dos spans. *(E o primeiro conserto não funcionou porque um heredoc tinha deixado um byte 0x08 no meio da expressão regular — uma varredura por caracteres de controle no código-fonte não achou nenhum outro.)*
+5. **Itens duplicados na barra.** `top-secondary` é ele próprio um nó sem pai, então tudo da direita era desenhado também à esquerda. Nós sem pai só entram nos grupos durante o `render()`, que é justamente o passo que esta classe pula.
+6. **Bolha "0" nos comentários.** O componente desenhava o zero; o WordPress esconde com `count-0`.
+
+O que continua sem verificação é a camada do navegador autenticado: se o React monta com esses dados na tela real, e o envio de arquivo pela biblioteca nova. Para isso é preciso uma sessão no wp-admin, que eu não abro.
 
 Dois defeitos foram encontrados **lendo o código do WordPress** em vez de rodando o nosso: a barra e os avisos decidiam em `admin_init` se a casca está ativa, e naquele momento ainda não existe tela. No editor de blocos e no editor do site, onde a casca não desenha, a resposta seria "ativa" — a barra sumiria da página e os avisos seriam engolidos sem ninguém para mostrá-los. Os dois passaram para `in_admin_header`, que roda depois de a tela existir e antes de o núcleo imprimir qualquer coisa.
 
