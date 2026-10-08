@@ -68,11 +68,8 @@ const payload: PostsPayload = {
 	},
 };
 
-const dataPage = (body: PostsPayload) =>
-	`<html><body><script type="application/json" id="flexify-dashboard-posts-data">${JSON.stringify(body)}</script></body></html>`;
-
 /**
- * Answers the hidden data page with the payload and every REST call with an empty object.
+ * Answers the posts endpoint with the payload and every REST call with an empty object.
  * Only writes reach `onWrite`; the pickers read from the same REST base and would drown it.
  */
 const stubFetch = (onWrite?: (url: string, init?: RequestInit) => void) =>
@@ -82,7 +79,7 @@ const stubFetch = (onWrite?: (url: string, init?: RequestInit) => void) =>
 			const url = String(input);
 
 			if (url.includes('page=flexify-dashboard-posts-data')) {
-				return new Response(dataPage(payload), { status: 200, headers: { 'Content-Type': 'text/html' } });
+				return new Response(JSON.stringify(payload), { status: 200, headers: { 'Content-Type': 'application/json' } });
 			}
 
 			if (init?.method && init.method !== 'GET') {
@@ -139,11 +136,11 @@ describe('posts request', () => {
 		expect(viewParams('mine', 7)).toEqual({ author: '7' });
 	});
 
-	it('reads the payload out of the page it comes wrapped in', () => {
-		expect(parsePostsPayload(dataPage(payload)).items).toHaveLength(2);
+	it('reads the payload', () => {
+		expect(parsePostsPayload(JSON.stringify(payload)).items).toHaveLength(2);
 	});
 
-	it('says so when the page answers with something else', () => {
+	it('says so when the endpoint answers with something that is not JSON', () => {
 		expect(() => parsePostsPayload('<html><body>Fatal error</body></html>')).toThrow();
 	});
 });

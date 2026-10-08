@@ -903,9 +903,19 @@ class PostsTables {
 
 
 	/**
-	 * Render the hidden page output as JSON.
+	 * Answer with the posts table as JSON.
+	 *
+	 * This is not a REST route, and cannot be one. The columns, the views and the row actions
+	 * are whatever the site's own plugins added to `WP_Posts_List_Table`, and those plugins
+	 * only register them in an admin request: WooCommerce, for one, includes the class that
+	 * adds the product columns behind `if ( $this->is_request( 'admin' ) )`, and `is_admin()`
+	 * is false while REST is answering. A route in our namespace would return a table with
+	 * every third-party column missing — the cost that made the structured-data option
+	 * unacceptable in the first place. So the admin page stays, and what it returns is JSON
+	 * and nothing else.
 	 *
 	 * @since 2.0.0
+	 * @version 4.1.0
 	 * @return void
 	 */
 	public function render_page() {
@@ -959,9 +969,6 @@ class PostsTables {
 			'custom_styles'  => array_values( $this->captured_styles ),
 			'views'          => $processed_views,
 		);
-		?>
-		<script type="application/json" id="flexify-dashboard-posts-data"><?php echo wp_json_encode( $response ); ?></script>
-		<?php
-		exit;
+		wp_send_json( $response );
 	}
 }

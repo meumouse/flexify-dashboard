@@ -1,8 +1,9 @@
-import type { DashIcon } from '@/react/shell/menu/types';
-
 /**
- * WordPress icons live in `:before` pseudo-elements that belong to the native stylesheet.
- * The sidebar renders its own markup, so those rules are rebuilt here for the new classes.
+ * Dashicons the sidebar draws with the plugin's own icons instead.
+ *
+ * Everything else keeps the dashicon WordPress registered: the admin's own stylesheet already
+ * defines the glyph for `.dashicons-admin-post:before`, and the sidebar gives its icon holder
+ * that class.
  */
 
 const ICON_BOX = `
@@ -13,26 +14,6 @@ const ICON_BOX = `
 	display: block;
 	font-size: 1.2rem;
 `;
-
-export const dashIconStyles = (icons: DashIcon[]): string =>
-	icons
-		.map((icon) => {
-			// A dashicon whose content is an image belongs in the background instead.
-			const isImageContent = icon.before.includes('url(');
-			const background = isImageContent ? icon.before : icon.backGroundImage;
-			const content = isImageContent ? '' : icon.before;
-
-			return `${icon.class}:before {
-	content: '${content}';
-${ICON_BOX}	color: currentColor;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-	${icon.font ? `font-family: '${icon.font}' !important;` : ''}
-	${background ? `background-image: ${background} !important; filter: contrast(0.3);` : ''}
-}`;
-		})
-		.join('\n');
 
 /** Dashicons replaced by the plugin icon set, so the sidebar looks like the rest of the app. */
 const OVERRIDES: [string, string][] = [

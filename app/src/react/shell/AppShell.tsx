@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useWpData } from '@/react/app/WpDataProvider';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
-import { dashIconStyles, iconOverrideStyles } from '@/react/shell/menu/iconStyles';
+import { iconOverrideStyles } from '@/react/shell/menu/iconStyles';
 import { useAdminMenu } from '@/react/shell/menu/useAdminMenu';
 import { AppSidebar, SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '@/react/shell/AppSidebar';
 import { AppToolbar } from '@/react/shell/AppToolbar';
@@ -34,7 +34,7 @@ const readCollapsed = (): boolean => {
 export const AppShell = () => {
 	const { pluginBase, settings } = useWpData();
 	const { isDark } = useColorScheme();
-	const { menu, dashIcons, loading, toggleOpen } = useAdminMenu();
+	const { menu, loading, toggleOpen } = useAdminMenu();
 
 	const [collapsed, setCollapsed] = useState(readCollapsed);
 	const [drawerOpen, setDrawerOpen] = useState(false);
@@ -100,7 +100,6 @@ export const AppShell = () => {
 		<div className="flexify-dashboard-container">
 			<style>{':root{font-size:14px}'}</style>
 			<style>{iconOverrideStyles(pluginBase)}</style>
-			<style>{dashIconStyles(dashIcons)}</style>
 			{customCss ? <style>{customCss}</style> : null}
 			{Array.isArray(externalStylesheets)
 				? externalStylesheets.map((href, index) => <link key={href} rel="stylesheet" id={`fd-external-${index}-css`} href={href} media="all" />)

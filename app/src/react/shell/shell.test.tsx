@@ -3,7 +3,7 @@ import { render, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { AppProviders } from '@/react/app/AppProviders';
 import { AppSidebar } from '@/react/shell/AppSidebar';
-import { processMenu } from '@/react/shell/menu/parse';
+import { MENU_SCRIPT_ID, readAdminMenu } from '@/react/shell/menu/read';
 import { reconcileMenu } from '@/react/shell/menu/useAdminMenu';
 import type { MenuItem } from '@/react/shell/menu/types';
 import type { WpData } from '@/react/types/wordpress';
@@ -25,43 +25,47 @@ const wpData: WpData = {
 	page: {},
 };
 
-/** The markup WordPress prints for the admin menu, trimmed to what the parser reads. */
-const ADMIN_MENU = `
-<div id="adminmenumain">
-	<ul id="adminmenu">
-		<li class="wp-has-submenu wp-menu-open menu-top" id="menu-dashboard">
-			<a href="index.php" class="wp-has-submenu wp-menu-open menu-top current">
-				<div class="wp-menu-image dashicons-before dashicons-dashboard"></div>
-				<div class="wp-menu-name">Painel</div>
-			</a>
-			<ul class="wp-submenu">
-				<li class="current"><a href="index.php" class="current">Início</a></li>
-				<li><a href="update-core.php">Atualizações <span class="update-count">2</span></a></li>
-			</ul>
-		</li>
-		<li class="wp-menu-separator"><div class="separator"></div></li>
-		<li class="menu-top" id="menu-comments">
-			<a href="edit-comments.php" class="menu-top">
-				<div class="wp-menu-image dashicons-before dashicons-admin-comments"></div>
-				<div class="wp-menu-name">Comentários <span class="awaiting-mod">4</span></div>
-			</a>
-		</li>
-		<li class="menu-top" id="menu-plugins">
-			<a href="plugins.php" class="menu-top">
-				<div class="wp-menu-image dashicons-before dashicons-admin-plugins"></div>
-				<div class="wp-menu-name">Plugins</div>
-			</a>
-			<ul class="wp-submenu">
-				<li><a href="plugins.php">Instalados</a></li>
-				<li><a href="plugin-install.php" class="hide-if-js">Adicionar</a></li>
-			</ul>
-		</li>
-	</ul>
-</div>
-`;
+/** What `AdminMenu::get_menu()` prints, trimmed to what the sidebar reads. */
+const ADMIN_MENU = [
+	{
+		id: 'menu-dashboard',
+		name: 'Painel',
+		url: 'index.php',
+		notifications: null,
+		icon: { kind: 'dashicon', value: 'dashicons-dashboard' },
+		classes: ['menu-top'],
+		submenu: [
+			{ id: 'menu-index-php', name: 'Início', url: 'index.php', notifications: null },
+			{ id: 'menu-update-core-php', name: 'Atualizações', url: 'update-core.php', notifications: 2 },
+		],
+	},
+	{ id: 'separator1', type: 'separator' },
+	{
+		id: 'menu-comments',
+		name: 'Comentários',
+		url: 'edit-comments.php',
+		notifications: 4,
+		icon: { kind: 'dashicon', value: 'dashicons-admin-comments' },
+		classes: ['menu-top'],
+		submenu: [],
+	},
+	{
+		id: 'menu-plugins',
+		name: 'Plugins',
+		url: 'plugins.php',
+		notifications: null,
+		icon: { kind: 'dashicon', value: 'dashicons-admin-plugins' },
+		classes: ['menu-top'],
+		submenu: [{ id: 'menu-plugins-php', name: 'Instalados', url: 'plugins.php', notifications: null }],
+	},
+];
+
+const printMenu = (items: unknown = ADMIN_MENU) => {
+	document.body.innerHTML = `<script type="application/json" id="${MENU_SCRIPT_ID}">${JSON.stringify(items)}</script>`;
+};
 
 beforeEach(() => {
-	document.body.innerHTML = ADMIN_MENU;
+	printMenu();
 	window.history.replaceState({}, '', '/wp-admin/edit-comments.php');
 });
 
@@ -71,26 +75,32 @@ afterEach(() => {
 	vi.unstubAllGlobals();
 });
 
-describe('processMenu', () => {
+describe('readAdminMenu', () => {
 	it('reads the items, the separators and the notification counts', () => {
-		const { menu } = processMenu(document.getElementById('adminmenumain'));
+		const menu = readAdminMenu();
 
-		expect(menu.map((item) => item.type ?? item.name)).toEqual(['Painel', 'separator', 'Comentários ', 'Plugins']);
+		expect(menu.map((item) => item.type ?? item.name)).toEqual(['Painel', 'separator', 'Comentários', 'Plugins']);
 		expect(menu[2].notifications).toBe(4);
-		expect(menu[0].submenu?.map((entry) => entry.name)).toEqual(['Início', 'Atualizações ']);
+		expect(menu[0].submenu?.map((entry) => entry.name)).toEqual(['Início', 'Atualizações']);
 		expect(menu[0].submenu?.[1].notifications).toBe(2);
 	});
 
-	it('leaves out submenu entries WordPress hides from scripts', () => {
-		const { menu } = processMenu(document.getElementById('adminmenumain'));
+	it('answers with an empty menu when the page printed none', () => {
+		document.body.innerHTML = '';
 
-		expect(menu[3].submenu?.map((entry) => entry.name)).toEqual(['Instalados']);
+		expect(readAdminMenu()).toEqual([]);
 	});
 
-	it('prefers the item matching the address over the branch WordPress marked', () => {
-		const { menu } = processMenu(document.getElementById('adminmenumain'));
+	it('answers with an empty menu when what it printed is not JSON', () => {
+		document.body.innerHTML = `<script type="application/json" id="${MENU_SCRIPT_ID}">not json</script>`;
 
-		// WordPress printed Painel as current, but the browser is on the comments screen.
+		expect(readAdminMenu()).toEqual([]);
+	});
+
+	it('marks the item matching the address, and only that one', () => {
+		const menu = readAdminMenu();
+
+		// The browser is on the comments screen.
 		expect(menu[2].active).toBe(true);
 		expect(menu[0].active).toBe(false);
 		expect(menu[0].submenu?.every((entry) => !entry.active)).toBe(true);
@@ -125,9 +135,8 @@ describe('reconcileMenu', () => {
 });
 
 describe('AppSidebar', () => {
-	// The native menu stays in the document, so every query is scoped to the sidebar.
 	const renderSidebar = (collapsed = false) => {
-		const { menu } = processMenu(document.getElementById('adminmenumain'));
+		const menu = readAdminMenu();
 
 		const { container } = render(
 			<AppProviders wpData={wpData}>

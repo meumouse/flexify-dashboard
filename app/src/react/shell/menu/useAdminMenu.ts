@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRest, useWpData } from '@/react/app/WpDataProvider';
-import { applyDirectMatches, processMenu } from '@/react/shell/menu/parse';
-import type { DashIcon, MenuItem } from '@/react/shell/menu/types';
+import { applyDirectMatches } from '@/react/shell/menu/active';
+import { readAdminMenu } from '@/react/shell/menu/read';
+import type { MenuItem } from '@/react/shell/menu/types';
 
 /**
- * Loads the admin menu: the native one parsed from the DOM, then the custom menu the site may
- * have published for this user. The result is cached per user so later screens render at once.
+ * Loads the admin menu: the native one the plugin printed into the page, then the custom menu
+ * the site may have published for this user. The result is cached per user so later screens
+ * render at once.
  */
 
 const CACHE_MAX_AGE = 60 * 60 * 1000;
@@ -124,28 +126,26 @@ export const useAdminMenu = () => {
 
 	const [nativeMenu, setNativeMenu] = useState<MenuItem[]>([]);
 	const [menu, setMenu] = useState<MenuItem[]>([]);
-	const [dashIcons, setDashIcons] = useState<DashIcon[]>([]);
 	const [loading, setLoading] = useState(true);
 
 	const cacheKey = `flexify_dashboard_menu_${userId}_${(settings as { menu_cache_key?: string }).menu_cache_key ?? ''}`;
 
 	useEffect(() => {
-		const parsed = processMenu(document.getElementById('adminmenumain') ?? document.body);
+		const native = readAdminMenu();
 
-		setNativeMenu(parsed.menu);
-		setDashIcons(parsed.dashIcons);
+		setNativeMenu(native);
 
 		const cached = readCache(cacheKey);
 
 		if (cached === NO_MENUS || (Array.isArray(cached) && !cached.length)) {
-			setMenu(parsed.menu);
+			setMenu(native);
 			setLoading(false);
 
 			return;
 		}
 
 		if (Array.isArray(cached)) {
-			setMenu(reconcileMenu(cached, parsed.menu));
+			setMenu(reconcileMenu(cached, native));
 			setLoading(false);
 
 			return;
@@ -164,15 +164,15 @@ export const useAdminMenu = () => {
 
 				if (custom) {
 					writeCache(cacheKey, custom);
-					setMenu(reconcileMenu(custom, parsed.menu));
+					setMenu(reconcileMenu(custom, native));
 				} else {
 					writeCache(cacheKey, NO_MENUS);
-					setMenu(parsed.menu);
+					setMenu(native);
 				}
 			})
 			.catch(() => {
 				if (active) {
-					setMenu(parsed.menu);
+					setMenu(native);
 				}
 			})
 			.finally(() => {
@@ -198,5 +198,5 @@ export const useAdminMenu = () => {
 		[menu]
 	);
 
-	return { menu: visibleMenu, nativeMenu, dashIcons, loading, toggleOpen };
+	return { menu: visibleMenu, nativeMenu, loading, toggleOpen };
 };

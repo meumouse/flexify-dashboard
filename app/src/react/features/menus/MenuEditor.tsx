@@ -10,7 +10,7 @@ import { EntityPicker, userItem } from '@/react/data/EntityPicker';
 import { useRoles } from '@/react/features/users/queries';
 import { findItem, idAt, moveItem, newCustomChild, newCustomItem, removeItem, restoreMissing, updateItem, type Where } from '@/react/features/menus/menuEdits';
 import { useMenu, useMenuMutations, type MenuAudience } from '@/react/features/menus/queries';
-import { processMenu } from '@/react/shell/menu/parse';
+import { readAdminMenu } from '@/react/shell/menu/read';
 import type { MenuItem, SubMenuItem } from '@/react/shell/menu/types';
 
 /**
@@ -35,8 +35,8 @@ export const MenuEditor = () => {
 	const [selected, setSelected] = useState<string | null>(null);
 	const [loaded, setLoaded] = useState(false);
 
-	// What the site's own menu looks like right now, read from the page the admin printed.
-	const native = useMemo(() => processMenu(document.querySelector('#adminmenumain')).menu, []);
+	// What the site's own menu looks like right now, as the admin page printed it.
+	const native = useMemo(() => readAdminMenu(), []);
 
 	useEffect(() => {
 		if (!menu.data || loaded) {

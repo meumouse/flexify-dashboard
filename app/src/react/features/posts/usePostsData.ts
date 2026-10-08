@@ -4,11 +4,12 @@ import { __ } from '@/react/lib/i18n';
 import type { PostRow, PostTypeObject, PostsPayload, PostsQuery } from '@/react/features/posts/types';
 
 /**
- * Read the posts list from the page the plugin hides behind `admin.php`.
+ * Read the posts list from the endpoint the plugin hides behind `admin.php`.
  *
- * It is not REST: the page runs the list table WordPress would have rendered and prints the
- * result as JSON, which is the only way to get the columns, views and row actions that the
- * site's own plugins add. So the answer arrives as a document and the JSON is read out of it.
+ * It is not REST and cannot be. The columns, views and row actions are whatever the site's
+ * own plugins added to the list table, and those are only registered in an admin request —
+ * WooCommerce loads the class that adds the product columns behind `is_admin()`, which is
+ * false while REST is answering. What the endpoint returns is JSON, nothing around it.
  */
 
 const DATA_PAGE = 'flexify-dashboard-posts-data';
@@ -51,15 +52,13 @@ export const buildPostsUrl = (adminUrl: string, nonce: string, query: PostsQuery
 	return url.toString();
 };
 
-export const parsePostsPayload = (html: string): PostsPayload => {
-	const document = new DOMParser().parseFromString(html, 'text/html');
-	const script = document.getElementById(DATA_PAGE);
-
-	if (!script?.textContent) {
+/** An error page, a login redirect or a PHP notice all arrive here as something that is not JSON. */
+export const parsePostsPayload = (body: string): PostsPayload => {
+	try {
+		return JSON.parse(body) as PostsPayload;
+	} catch {
 		throw new Error(__('The posts list could not be read. Reload the page and try again.'));
 	}
-
-	return JSON.parse(script.textContent) as PostsPayload;
 };
 
 export const usePostsData = (query: PostsQuery) => {

@@ -32,29 +32,28 @@ const itemClass = (active: boolean) =>
 
 const iconClass = 'text-gray-500 transition-colors duration-150 group-hover:text-gray-700 group-[.active]:text-brand-500 dark:text-gray-400 dark:group-hover:text-gray-300 dark:group-[.active]:text-brand-400';
 
+/**
+ * The icon of a top-level item.
+ *
+ * A menu that was not given an icon is painted by the plugin that registered it, from its own
+ * stylesheet — so the holder keeps the id and the classes WordPress would have used, and that
+ * CSS still finds it.
+ */
 export const MenuIcon = ({ item }: { item: MenuItem }) => {
 	if (item.settings?.icon) {
 		return <Icon name={item.settings.icon} className={cn('text-title-xs', iconClass)} />;
 	}
 
-	// Without a custom icon the original WordPress classes are reused, and the stylesheet the
-	// shell prints gives them back their `:before` glyph.
-	return <span className={cn('icon h-6 w-6 bg-contain bg-center bg-no-repeat', iconClass, item.imageClasses?.join(' '))} style={cssFromText(item.iconStyles)} />;
-};
-
-/** WordPress hands the icon styles over as a css text string. */
-const cssFromText = (styles?: string): React.CSSProperties | undefined => {
-	if (!styles) {
-		return undefined;
+	if (item.icon?.kind === 'image') {
+		return <img src={item.icon.value} alt="" aria-hidden className="h-5 w-5 object-contain opacity-80" />;
 	}
 
-	return Object.fromEntries(
-		styles
-			.split(';')
-			.map((rule) => rule.split(':'))
-			.filter((parts): parts is [string, string] => parts.length === 2)
-			.map(([property, value]) => [property.trim().replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase()), value.trim()])
-	) as React.CSSProperties;
+	return (
+		<span
+			id={item.id ? `${item.id}-icon` : undefined}
+			className={cn('wp-menu-image dashicons-before flex h-6 w-6 items-center justify-center', iconClass, item.icon?.kind === 'dashicon' && item.icon.value)}
+		/>
+	);
 };
 
 type Props = {

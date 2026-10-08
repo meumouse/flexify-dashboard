@@ -3,7 +3,7 @@ import { useWpData } from '@/react/app/WpDataProvider';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
 import { formatUrl } from '@/react/shell/menu/location';
-import { isItemActive } from '@/react/shell/menu/parse';
+import { isItemActive } from '@/react/shell/menu/active';
 import { useFavorites } from '@/react/shell/menu/useFavorites';
 import { MenuIcon, NotificationBadge, SidebarItem, SidebarSubItem } from '@/react/shell/SidebarItem';
 import { Icon, Skeleton, Tooltip } from '@/react/ui';
