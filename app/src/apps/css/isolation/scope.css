@@ -24,6 +24,3 @@
 	font-family: var(--fd-font-sans);
 }
 
-:where(.flexify-dashboard-isolation) #wpadminbar {
-	all: unset;
-}

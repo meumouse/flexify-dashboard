@@ -30,6 +30,7 @@ use MeuMouse\Flexify_Dashboard\Pages\WooCommerce\ProductsPage as WooCommerceProd
 use MeuMouse\Flexify_Dashboard\Pages\Analytics as AnalyticsPage;
 use MeuMouse\Flexify_Dashboard\Rest\LicenseManager;
 use MeuMouse\Flexify_Dashboard\Rest\ActivityLog as RestActivityLog;
+use MeuMouse\Flexify_Dashboard\Rest\AdminBar;
 use MeuMouse\Flexify_Dashboard\Rest\AdminMenu;
 use MeuMouse\Flexify_Dashboard\Rest\AdminNotices;
 use MeuMouse\Flexify_Dashboard\Rest\Analytics;
@@ -190,6 +191,7 @@ class Plugin {
         new GoogleAnalyticsOAuth();
         new PostsList();
         new PostsTables();
+        new AdminBar();
         new AdminMenu();
         new AdminNotices();
         new WpNotices();

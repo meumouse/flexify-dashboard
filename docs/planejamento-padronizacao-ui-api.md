@@ -14,7 +14,7 @@ Levantamento em 07/10/2026, sobre `app/src/react`:
 | Seletores | `form/Select.tsx` renderiza um `<select>` nativo, usado em 24 arquivos |
 | Controles crus em tela | `<input type="checkbox">` em `SettingField.tsx` (2) e `LoginScreen.tsx` (1); `<input type="range">` em `ImageEditor.tsx`; `<input type="color">` em `settings/custom/index.tsx` |
 | Responsividade (nº de breakpoints) | produtos 62 · pedidos 45 · mídia 12 · plugins 7 · painel 7 · usuários 6 · papéis 5 · posts 4 · menus 4 · registro 4 · configurações 3 · comentários 3 · login 3 · avisos 3 · **banco 1** · **barra do frontend 0** |
-| Dados fora de REST | posts (raspa JSON de uma página escondida), menu lateral (lê `#adminmenu` do DOM), avisos (move `.notice` do DOM), barra do WP (move `#wpadminbar`) |
+| Dados fora de REST | posts (raspa JSON de uma página escondida), menu lateral (lê `#adminmenu` do DOM), avisos (move `.notice` do DOM), barra do WP (move `#wpadminbar`) — **resolvido na fase 5** |
 
 **O padrão:** as telas das fases 2–4 (produtos, pedidos) seguem o design system e são responsivas; as telas das fases 5–8 não. A causa é conhecida — foram validadas no harness, sem reabrir a referência nem testar em larguras diferentes.
 
@@ -121,7 +121,7 @@ Três defeitos reais, todos a mesma raiz:
 
 Uma escolha de implementação vale registro: a lista de cartões e a tabela são **uma árvore ou a outra**, escolhida em tempo de render por `useMediaQuery`, não as duas com uma escondida por CSS. Desenhar as duas põe cada linha duas vezes na página, que é o que o celular mais fraco paga; e foi o que a suíte denunciou na primeira tentativa, com cada texto aparecendo em dobro.
 
-### Fase 5 — API First: eliminar leitura de DOM (G)
+### Fase 5 — API First: eliminar leitura de DOM (G) · concluída
 Rotas novas em `MeuMouse\Flexify_Dashboard\Rest`, namespace `flexify-dashboard/v1`:
 
 - `GET /posts-table` — substitui a raspagem da página escondida (conforme decisão 3.1).
@@ -132,6 +132,20 @@ Rotas novas em `MeuMouse\Flexify_Dashboard\Rest`, namespace `flexify-dashboard/v
 Cada uma com permissão, sanitização e paginação nos cabeçalhos, como as rotas que já existem.
 
 → **Verificação:** `grep` por `DOMParser`, `querySelector('#adminmenu` e `querySelector('#wpadminbar` em `app/src/react` não retorna nada. `WpToolbar` deixa de existir, substituído por um componente que recebe dados. Teste de integração cobrindo as quatro rotas.
+
+**Resultado:** três classes novas — `AdminMenu`, `WpNotices` e `AdminBar` — cada uma com a sua rota em `flexify-dashboard/v1` e, mais importante, **imprimindo o dado na própria página** como JSON. Imprimir mantém o que o DOM dava de graça: a casca desenha na primeira pintura, sem request. A rota responde o mesmo para quem não está numa página do admin, construindo o menu ou a barra por conta própria, já que fora do admin os globais estão vazios.
+
+O `grep` da verificação retorna duas coisas, nenhuma delas leitura de DOM: `safeHtml` usa `DOMParser` para **limpar** HTML vindo da API antes de renderizar, e a barra do frontend usa `#wpadminbar` como **ponto de montagem** de um shadow root. A regra em `AGENTS.md` foi escrita de novo para dizer isso, porque como estava proibia as duas.
+
+**A decisão 3.1 estava errada e não dava para implementar.** A opção (A) era "uma rota REST que continua renderizando as células". Não existe: numa requisição REST `is_admin()` é falso, e o WooCommerce — como quase todo plugin — carrega a classe que adiciona as colunas dele atrás de `if ( $this->is_request( 'admin' ) )`. A rota devolveria uma tabela sem nenhuma coluna de terceiro, que é exatamente o custo que fez a opção (B) ser recusada. O que era defeito de verdade era o cliente **abrir um documento HTML para achar o JSON lá dentro**; o endpoint ficou onde estava e passou a responder `wp_send_json`, e o cliente faz `JSON.parse`.
+
+**Os ícones deixaram de ser copiados.** O menu lia o `content` do `:before` de cada ícone e reemitia tudo como folha de estilo. Agora um dashicon mantém a classe — a folha do próprio admin desenha o glifo —, um ícone que é URL vira `img`, e um menu cujo plugin pinta o ícone pelo CSS dele continua recebendo o id e as classes que esse CSS procura. Mesma ideia na barra.
+
+**O que se perdeu, dito em voz alta:**
+
+- Um plugin que procura `#wp-admin-bar-…` **por JavaScript**, depois da página carregada, não acha mais. O que ele registrou por `admin_bar_menu`, que é quase tudo, está lá.
+- Um plugin que liga um botão dentro do **próprio aviso** por script de carregamento não acha o aviso, porque ele não está mais na página naquele momento. Links e formulários dentro do aviso continuam funcionando; o botão de dispensar passou a ser nosso.
+- 130 linhas de CSS que existiam só para re-vestir a barra movida foram embora com ela.
 
 ### Fase 6 — Estruturas legadas dentro das nossas páginas (M)
 Localizar seções que ainda saem como HTML do WordPress dentro de telas nossas, ocultar e refazer com componentes; onde faltar rota, criar no namespace interno.

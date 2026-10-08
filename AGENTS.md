@@ -16,7 +16,13 @@ Quando uma regra aqui conflitar com o que o código faz hoje, **a regra ganha** 
 
 **É proibido ler dados do DOM.** Nada de `DOMParser`, nada de `querySelector` em markup do WordPress para extrair informação, nada de raspar página escondida, nada de mover markup do WordPress para dentro da nossa interface. Se o dado não tem rota, a rota é criada.
 
-Isso vale para tudo, sem exceção — inclusive a barra `#wpadminbar`, que é lida por uma rota e desenhada por componente nosso como qualquer outra coisa.
+Isso vale para tudo, sem exceção — inclusive a barra `#wpadminbar`, que é lida do `WP_Admin_Bar` e desenhada por componente nosso como qualquer outra coisa.
+
+**O que não é leitura de DOM**, para não confundir: usar um elemento como ponto de montagem, mover `#wpcontent` para dentro da casca (é o que a casca faz), ou limpar HTML que veio da API antes de renderizar. O que se proíbe é tirar *informação* de markup.
+
+**De onde o dado vem.** Quando a tela já está no admin e o dado é daquela tela, o PHP **imprime JSON na página** num `<script type="application/json">` — menu, avisos e barra fazem assim. Custa o mesmo que o markup custava e desenha na primeira pintura, sem request. A rota REST existe em paralelo, para quem precisa do mesmo dado fora de uma página do admin. Ler esse `<script>` nosso não é ler o DOM do WordPress: é o mesmo que `wp_localize_script`, com outra forma.
+
+**O que não cabe em rota.** Um dado que só existe dentro de uma requisição do admin não vira rota REST, porque `is_admin()` é falso ali e metade dos plugins não registra nada. É o caso da lista de posts: as colunas vêm de `WP_List_Table`, e o WooCommerce carrega a classe que adiciona as dele atrás de `if ( $this->is_request( 'admin' ) )`. Nesses casos o endpoint fica onde está e devolve **JSON e nada em volta** — o que se corrige é o cliente parar de abrir um documento para achar o dado.
 
 Referências: [WordPress REST API](https://developer.wordpress.org/rest-api/reference/) · [WooCommerce REST API](https://developer.woocommerce.com/docs/apis/rest-api/)
 
