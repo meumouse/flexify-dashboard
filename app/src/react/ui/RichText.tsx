@@ -9,10 +9,9 @@ import TextAlign from '@tiptap/extension-text-align';
 import { Color } from '@tiptap/extension-color';
 import { TextStyle } from '@tiptap/extension-text-style';
 import { BackgroundColor } from '@/shared/rich-text/tiptapColorExtensions.js';
-import { useNotify } from '@/react/app/ToastProvider';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
-import { openMediaFrame } from '@/react/lib/wpMedia';
+import { useMediaPicker } from '@/react/app/MediaPickerProvider';
 import { Button, DropdownMenu, Icon, Input, Modal, Popover, Tooltip, type MenuItem } from '@/react/ui';
 
 /**
@@ -68,7 +67,7 @@ const Swatches = ({ colors, onPick, onClear, clearLabel }: { colors: string[]; o
 const Divider = () => <span className="mx-1 h-5 w-px bg-gray-200 dark:bg-gray-700" aria-hidden="true" />;
 
 export const RichText = ({ value, onChange, placeholder, className, minHeight = '12rem' }: Props) => {
-	const { notify } = useNotify();
+	const pickMedia = useMediaPicker();
 	const [linkOpen, setLinkOpen] = useState(false);
 	const [linkUrl, setLinkUrl] = useState('');
 
@@ -112,11 +111,7 @@ export const RichText = ({ value, onChange, placeholder, className, minHeight = 
 	];
 
 	const addImage = async () => {
-		const [image] = await openMediaFrame({
-			title: __('Select image'),
-			button: __('Use image'),
-			onUnavailable: () => notify({ title: __('The media library is not available on this screen.'), tone: 'error' }),
-		});
+		const [image] = await pickMedia({ title: __('Select image'), button: __('Use image') });
 
 		if (image) {
 			chain().setImage({ src: image.url, alt: image.alt }).run();

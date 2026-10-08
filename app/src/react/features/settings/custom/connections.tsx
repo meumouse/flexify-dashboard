@@ -4,7 +4,7 @@ import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { useRest } from '@/react/app/WpDataProvider';
 import { cn } from '@/react/lib/cn';
-import { openMediaFrame } from '@/react/lib/wpMedia';
+import { useMediaPicker } from '@/react/app/MediaPickerProvider';
 import { __, sprintf } from '@/react/lib/i18n';
 import { Alert, Badge, Button, Icon, Input, Select, Textarea } from '@/react/ui';
 import type { CustomRenderProps } from '@/react/features/settings/custom';
@@ -326,6 +326,7 @@ export const googleFontUrl = (family: string, weights: string[]): string =>
 	`https://fonts.googleapis.com/css2?family=${encodeURIComponent(family).replace(/%20/g, '+')}:wght@${[...weights].sort().join(';')}&display=swap`;
 
 export const FontSelector = ({ settings, onChange }: CustomRenderProps) => {
+	const pickMedia = useMediaPicker();
 	const source = String(settings.custom_font_source ?? 'system');
 	const family = String(settings.custom_font_family ?? '');
 	const url = String(settings.custom_font_url ?? '');
@@ -418,7 +419,7 @@ export const FontSelector = ({ settings, onChange }: CustomRenderProps) => {
 						size="sm"
 						icon="upload"
 						className="self-end"
-						onClick={() => openMediaFrame({ title: __('Choose a font file'), type: '' }).then((files) => (files[0] ? onChange({ custom_font_url: files[0].url }) : undefined))}
+						onClick={() => pickMedia({ title: __('Choose a font file'), type: '' }).then((files) => (files[0] ? onChange({ custom_font_url: files[0].url }) : undefined))}
 					>
 						{__('Choose')}
 					</Button>

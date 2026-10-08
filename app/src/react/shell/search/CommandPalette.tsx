@@ -134,7 +134,7 @@ export const CommandPalette = ({ open, onOpenChange, menu }: Props) => {
 			>
 				<Icon name={isAction ? entry.action.icon : 'arrow_right'} className="shrink-0 text-theme-md text-gray-400" />
 				{/* Menu results carry markup that shows the parent before the child. */}
-				<span className="min-w-0 flex-1 truncate text-theme-sm" dangerouslySetInnerHTML={{ __html: isAction ? entry.action.name : entry.result.name }} />
+				<span className="min-w-0 flex-1 truncate text-theme-sm">{isAction ? entry.action.name : entry.result.name}</span>
 				{!isAction && entry.result.status && STATUS_BADGE_CLASSES[entry.result.status] ? (
 					<span className={cn('shrink-0 rounded-full px-2 py-0.5 text-theme-xs', STATUS_BADGE_CLASSES[entry.result.status])}>{statusLabel(entry.result.status)}</span>
 				) : null}

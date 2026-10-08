@@ -6,7 +6,7 @@ import { useWpData } from '@/react/app/WpDataProvider';
 import { useUnsavedChanges } from '@/react/hooks/useUnsavedChanges';
 import { decodeHtml } from '@/react/lib/html';
 import { __ } from '@/react/lib/i18n';
-import { openMediaFrame } from '@/react/lib/wpMedia';
+import { useMediaPicker } from '@/react/app/MediaPickerProvider';
 import {
 	Alert,
 	Badge,
@@ -143,6 +143,7 @@ export const ProductEditor = () => {
 	const navigate = useNavigate();
 	const confirm = useConfirm();
 	const { notify } = useNotify();
+	const pickMedia = useMediaPicker();
 	const { adminUrl } = useWpData();
 	const { store, currency, wc, toDecimal, can } = useWoo();
 	const queryClient = useQueryClient();
@@ -471,7 +472,7 @@ export const ProductEditor = () => {
 	};
 
 	const chooseFeatured = async () => {
-		const [image] = await openMediaFrame({ title: __('Product image'), button: __('Set product image') });
+		const [image] = await pickMedia({ title: __('Product image'), button: __('Set product image') });
 
 		if (image) {
 			set({ images: [{ id: image.id, src: image.src, alt: image.alt }, ...form.images.slice(1).filter((item) => item.id !== image.id)] });
@@ -479,7 +480,7 @@ export const ProductEditor = () => {
 	};
 
 	const addGallery = async () => {
-		const images = await openMediaFrame({ title: __('Product gallery'), button: __('Add to gallery'), multiple: true });
+		const images = await pickMedia({ title: __('Product gallery'), button: __('Add to gallery'), multiple: true });
 
 		if (!images.length) {
 			return;
@@ -492,7 +493,7 @@ export const ProductEditor = () => {
 	};
 
 	const chooseDownloadFile = async (index: number) => {
-		const [file] = await openMediaFrame({ title: __('Downloadable file'), button: __('Use file'), type: '' });
+		const [file] = await pickMedia({ title: __('Downloadable file'), button: __('Use file'), type: '' });
 
 		if (!file) {
 			return;

@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useRest, useWpData } from '@/react/app/WpDataProvider';
-import { openMediaFrame } from '@/react/lib/wpMedia';
+import { useMediaPicker } from '@/react/app/MediaPickerProvider';
 import { __ } from '@/react/lib/i18n';
 import { Button, Checkbox, Icon, Input, Select, Switch, Textarea } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
@@ -26,19 +26,23 @@ const asString = (value: unknown): string => (value === null || value === undefi
 const asArray = (value: unknown): string[] => (Array.isArray(value) ? value.map(String) : []);
 
 /** Pick a file from the media library the site already has. */
-const ImageSetting = ({ value, placeholder, onChange }: { value: string; placeholder?: string; onChange: (value: string) => void }) => (
-	<div className="flex items-center gap-2">
-		{value ? <img src={value} alt="" aria-hidden className="h-10 w-10 shrink-0 rounded-lg object-cover" /> : null}
+const ImageSetting = ({ value, placeholder, onChange }: { value: string; placeholder?: string; onChange: (value: string) => void }) => {
+	const pickMedia = useMediaPicker();
 
-		<Input value={value} placeholder={placeholder} onChange={(event) => onChange(event.target.value)} aria-label={placeholder ?? __('Image address')} className="flex-1" />
+	return (
+		<div className="flex items-center gap-2">
+			{value ? <img src={value} alt="" aria-hidden className="h-10 w-10 shrink-0 rounded-lg object-cover" /> : null}
 
-		<Button variant="outline" size="sm" icon="image" onClick={() => openMediaFrame({ title: __('Choose an image') }).then((files) => (files[0] ? onChange(files[0].url) : undefined))}>
-			{__('Choose')}
-		</Button>
+			<Input value={value} placeholder={placeholder} onChange={(event) => onChange(event.target.value)} aria-label={placeholder ?? __('Image address')} className="flex-1" />
 
-		{value ? <Button variant="ghost" size="sm" iconOnly icon="close" onClick={() => onChange('')} aria-label={__('Clear')} /> : null}
-	</div>
-);
+			<Button variant="outline" size="sm" icon="image" onClick={() => pickMedia({ title: __('Choose an image') }).then((files) => (files[0] ? onChange(files[0].url) : undefined))}>
+				{__('Choose')}
+			</Button>
+
+			{value ? <Button variant="ghost" size="sm" iconOnly icon="close" onClick={() => onChange('')} aria-label={__('Clear')} /> : null}
+		</div>
+	);
+};
 
 const PostTypeSetting = ({ value, onChange }: { value: string[]; onChange: (value: string[]) => void }) => {
 	const { page } = useWpData();

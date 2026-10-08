@@ -55,10 +55,15 @@ Não são componentes, são hooks de contexto:
 ```tsx
 const confirm = useConfirm();            // @/react/app/ConfirmProvider
 const { notify } = useNotify();          // @/react/app/ToastProvider
+const pickMedia = useMediaPicker();      // @/react/app/MediaPickerProvider
 
 if (await confirm({ title, message, confirmLabel, variant: 'danger' })) { … }
 notify({ tone: 'success', title: __('Pronto') });
+
+const [image] = await pickMedia({ title: __('Escolher imagem'), type: 'image' });
 ```
+
+`useMediaPicker` abre a biblioteca de mídia **nossa**, lendo o mesmo `wp/v2/media` que a tela de mídia usa. Substituiu `wp.media`, o modal do WordPress. Opções: `title`, `button`, `multiple`, `type` (`image`, `video`, `audio`, `document`, `font`, ou `''` para tudo). Devolve `{ id, src, url, title, alt }[]`, vazio se a pessoa fechar.
 
 ## Regras
 

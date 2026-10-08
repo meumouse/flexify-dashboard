@@ -147,10 +147,26 @@ O `grep` da verificação retorna duas coisas, nenhuma delas leitura de DOM: `sa
 - Um plugin que liga um botão dentro do **próprio aviso** por script de carregamento não acha o aviso, porque ele não está mais na página naquele momento. Links e formulários dentro do aviso continuam funcionando; o botão de dispensar passou a ser nosso.
 - 130 linhas de CSS que existiam só para re-vestir a barra movida foram embora com ela.
 
-### Fase 6 — Estruturas legadas dentro das nossas páginas (M)
+### Fase 6 — Estruturas legadas dentro das nossas páginas (M) · concluída
 Localizar seções que ainda saem como HTML do WordPress dentro de telas nossas, ocultar e refazer com componentes; onde faltar rota, criar no namespace interno.
 
 → **Verificação:** inventário no PR com o que foi encontrado, o que foi refeito e qual rota foi criada para cada caso.
+
+**O que foi encontrado e refeito**
+
+| Estrutura | Onde | O que foi feito |
+|---|---|---|
+| **Modal de mídia do WordPress** (`wp.media`) | 7 pontos: editor de produto (imagem, galeria, arquivo), variações (imagem, arquivo), fonte personalizada, campo de imagem das configurações, editor de texto rico | `useMediaPicker()`, do mesmo feitio de `useConfirm()`. Lê `wp/v2/media`, a mesma rota da tela de mídia — não foi preciso criar nenhuma. `wpMedia.ts` foi apagado, e com ele o último uso de `window.wp`. |
+| **Nome do menu injetado como HTML** | barra lateral (3), paleta de comandos (1) | Desde a fase 5 o nome vem do servidor já sem tags e com as entidades decodificadas, então é texto. Passou a ser renderizado como texto — um título com `<` deixa de virar markup. |
+
+**O que ficou como HTML injetado, e por quê** — oito pontos, todos declarados:
+
+- **Célula da lista de posts** e **`price_html` do WooCommerce**: HTML que a própria API devolve pronto; é a decisão 3.1 e o formato de preço da loja.
+- **Nota de pedido**: passa por `safeHtml`, que mantém só formatação simples e links.
+- **Aviso em edição, aviso publicado, aviso do WordPress**: conteúdo autoral, escrito no nosso editor ou impresso pelo plugin que o criou (fase 5).
+- **`CardRender`**: cartão de terceiro no painel, que é a API documentada em [dashboard-card-api.md](dashboard-card-api.md).
+
+Nada mais no `app/src/react` toca `window.wp`, e o único `<iframe>` é a pré-visualização do post no site, que é conteúdo, não tela do admin.
 
 ### Fase 7 — QA e 4.1.0 (M)
 Varredura das telas em 375/768/1440, claro e escuro, no **site real** — não no harness. Changelog e versão.

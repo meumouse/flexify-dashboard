@@ -2,7 +2,7 @@ import { forwardRef, useCallback, useEffect, useImperativeHandle, useState } fro
 import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { __, sprintf } from '@/react/lib/i18n';
-import { openMediaFrame } from '@/react/lib/wpMedia';
+import { useMediaPicker } from '@/react/app/MediaPickerProvider';
 import { Alert, Badge, Button, EmptyState, Icon, Input, Select, Skeleton, Switch } from '@/react/ui';
 import { useWoo } from '@/react/woo/WooProvider';
 import { missingCombos, sameAttribute, type ParentAttribute } from '@/react/features/products/editor/variationCombos';
@@ -58,6 +58,7 @@ type Props = {
 export const ProductVariationsEditor = forwardRef<VariationsHandle, Props>(function ProductVariationsEditor({ productId, attributes, onDirtyChange }, ref) {
 	const confirm = useConfirm();
 	const { notify } = useNotify();
+	const pickMedia = useMediaPicker();
 	const { wc, store, currency, toDecimal, price } = useWoo();
 
 	const [variations, setVariations] = useState<VariationForm[]>([]);
@@ -292,7 +293,7 @@ export const ProductVariationsEditor = forwardRef<VariationsHandle, Props>(funct
 	};
 
 	const chooseImage = async (variation: VariationForm) => {
-		const [image] = await openMediaFrame({ title: __('Variation image') });
+		const [image] = await pickMedia({ title: __('Variation image') });
 
 		if (image) {
 			patch(variation.id, { image: { id: image.id, src: image.src } });
@@ -300,7 +301,7 @@ export const ProductVariationsEditor = forwardRef<VariationsHandle, Props>(funct
 	};
 
 	const chooseDownloadFile = async (variation: VariationForm, index: number) => {
-		const [file] = await openMediaFrame({ title: __('Downloadable file'), button: __('Use file'), type: '' });
+		const [file] = await pickMedia({ title: __('Downloadable file'), button: __('Use file'), type: '' });
 
 		if (!file) {
 			return;

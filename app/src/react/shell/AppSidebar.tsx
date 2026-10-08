@@ -95,7 +95,7 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 								className="group flex min-h-9 items-center gap-2 rounded-lg px-3 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5"
 							>
 								<Icon name={favorite.settings?.icon || 'link'} className="shrink-0 text-theme-md text-gray-400" />
-								<span className="min-w-0 flex-1 truncate" dangerouslySetInnerHTML={{ __html: favorite.settings?.name || favorite.name || '' }} />
+								<span className="min-w-0 flex-1 truncate">{favorite.settings?.name || favorite.name || ''}</span>
 								<button
 									type="button"
 									className="shrink-0 text-gray-400 opacity-0 transition-opacity hover:text-error-500 group-hover:opacity-100"
@@ -123,7 +123,9 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 								}
 
 								return item.settings?.name ? (
-									<p key={item.id} id={item.id} className="mt-4 mb-2 px-3 text-theme-xs uppercase leading-5 text-gray-400" dangerouslySetInnerHTML={{ __html: item.settings.name }} />
+									<p key={item.id} id={item.id} className="mt-4 mb-2 px-3 text-theme-xs uppercase leading-5 text-gray-400">
+										{item.settings.name}
+									</p>
 								) : (
 									<hr key={item.id} id={item.id} className="my-2 w-full border-t border-gray-100 dark:border-gray-800" />
 								);

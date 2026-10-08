@@ -75,7 +75,7 @@ export const SidebarItem = ({ item, active, expanded, hasSubmenu, favorite, onTo
 
 		<span className="flex min-w-0 flex-grow items-center justify-between gap-3 ps-9">
 			{/* The name carries the markup WordPress printed, such as the update bubbles. */}
-			<span className="min-w-0 flex-1 font-medium leading-5" dangerouslySetInnerHTML={{ __html: item.settings?.name || item.name || '' }} />
+			<span className="min-w-0 flex-1 font-medium leading-5">{item.settings?.name || item.name || ''}</span>
 			<NotificationBadge count={item.notifications} />
 		</span>
 
@@ -119,7 +119,7 @@ export const SidebarItem = ({ item, active, expanded, hasSubmenu, favorite, onTo
 
 export const SidebarSubItem = ({ item, active, favorite, onFavorite }: { item: SubMenuItem; active: boolean; favorite: boolean; onFavorite: () => void }) => (
 	<a href={formatUrl(item.url)} className={cn(itemClass(active), 'px-3 py-1.5')} target={item.settings?.open_new ? '_blank' : undefined}>
-		<span className="min-w-0 flex-1 truncate" dangerouslySetInnerHTML={{ __html: item.settings?.name || item.name || '' }} />
+		<span className="min-w-0 flex-1 truncate">{item.settings?.name || item.name || ''}</span>
 		<NotificationBadge count={item.notifications} />
 		{!favorite ? (
 			<button
