@@ -14,9 +14,9 @@ Quando uma regra aqui conflitar com o que o código faz hoje, **a regra ganha** 
 - **Namespace REST:** `flexify-dashboard/v1`. Rotas do núcleo (`wp/v2/…`) e do WooCommerce (`wc/v3/…`) são usadas direto quando dão conta.
 - **Quando o WordPress não fornece a rota que a tela precisa, ela é construída** em `admin/src/Rest`, com `permission_callback`, sanitização dos argumentos e paginação nos cabeçalhos `X-WP-Total` / `X-WP-TotalPages`.
 
-**É proibido ler dados do DOM.** Nada de `DOMParser`, nada de `querySelector` em markup do WordPress para extrair informação, nada de raspar página escondida. Se o dado não tem rota, a rota é criada.
+**É proibido ler dados do DOM.** Nada de `DOMParser`, nada de `querySelector` em markup do WordPress para extrair informação, nada de raspar página escondida, nada de mover markup do WordPress para dentro da nossa interface. Se o dado não tem rota, a rota é criada.
 
-> Exceção única e declarada: `#wpadminbar` continua sendo **movida** para dentro da barra do shell, não recriada, porque outros plugins dependem desses seletores. Mover markup para reposicionar não é ler dado.
+Isso vale para tudo, sem exceção — inclusive a barra `#wpadminbar`, que é lida por uma rota e desenhada por componente nosso como qualquer outra coisa.
 
 Referências: [WordPress REST API](https://developer.wordpress.org/rest-api/reference/) · [WooCommerce REST API](https://developer.woocommerce.com/docs/apis/rest-api/)
 
@@ -52,7 +52,53 @@ O lugar de um controle nativo é dentro do kit, em `app/src/react/form`, embrulh
 
 ---
 
-## 3. Visual
+## 3. Como o código é escrito
+
+**Código-fonte em inglês.** Nome de variável, função, classe, arquivo, e **todo comentário**. Vale para TypeScript, PHP e CSS. A documentação em `docs/` e este arquivo ficam em português; o código, não.
+
+**Comentário diz por quê, não o quê.** O código já diz o que faz. O comentário existe para o que não está escrito: a razão da escolha, o caso que obrigou aquela linha, a consequência de mudar.
+
+```ts
+// Bad: repeats the code.
+// Loop over the posts and add them up.
+
+// Good: says what the code cannot.
+// The REST API has no batch route, so a bulk action is one request per post. They run in
+// sequence: a hundred parallel writes is what takes a shared host down.
+```
+
+**Nada de menção a coprodução** — nem no código, nem em comentário, nem em mensagem de commit.
+
+**Legível por gente.** Nome que se lê, função que cabe na cabeça, aninhamento raso. Se precisa de um comentário para explicar *o que* o trecho faz, o trecho está errado, não falta comentário.
+
+---
+
+## 4. SOLID e modularidade
+
+Cada peça tem uma razão para existir e um motivo para mudar.
+
+- **Responsabilidade única.** Um componente desenha; um hook busca dado; um módulo puro calcula. Quando os três estão no mesmo arquivo, a parte que dá para testar fica refém da que não dá. É por isso que a aritmética mora separada — `imageEdits.ts`, `menuEdits.ts`, `variationCombos.ts` — e tem teste próprio.
+- **Aberto para extensão.** Variação nova entra por prop ou por registro, não por `if` novo no meio do componente.
+- **Substituição.** Componente do kit aceita as props do elemento que ele embrulha, para poder ser usado onde o elemento seria.
+- **Interface enxuta.** Props que ninguém usa não existem. Hook não devolve o que a tela não pede.
+- **Inversão de dependência.** Tela fala com `useRest()`, não com `fetch`. Tela fala com `useConfirm()`, não com `window.confirm`.
+
+**Reaproveite antes de escrever.** Antes de criar componente, hook ou método: procure. O kit tem 30 componentes, `@/react/data` tem os genéricos de dados, `@/shared` tem o que não é de framework nenhum. Terceira repetição de um trecho é sinal de que ele vira peça — a segunda, não necessariamente.
+
+**Onde cada coisa mora**
+
+| Camada | Lugar | O que pode |
+|---|---|---|
+| Kit de UI | `app/src/react/ui`, `app/src/react/form` | HTML nativo, nenhuma regra de negócio, nenhuma chamada de rede |
+| Genéricos de dados | `app/src/react/data` | Componentes que falam com a API de forma genérica |
+| Telas | `app/src/react/features/<tela>` | Compõe kit e hooks; não desenha controle cru |
+| Casca | `app/src/react/shell` | Barra, menu, busca, avisos |
+| Sem framework | `app/src/shared` | Cálculo puro, reaproveitado por qualquer lado |
+| Rotas REST | `admin/src/Rest` | Permissão, sanitização, resposta |
+
+---
+
+## 5. Visual
 
 ### Raios
 
@@ -66,7 +112,9 @@ Quatro valores. Mais que isso é ruído.
 | `rounded-2xl` | o card |
 | `rounded-full` | só avatar e indicador circular |
 
-Não use `rounded`, `rounded-md`, `rounded-3xl` nem variações de lado (`rounded-t`, `rounded-s`).
+Fora da escala não se usa: nada de `rounded`, `rounded-md`, `rounded-3xl` ou valor arbitrário.
+
+Variar o lado **de um valor da escala** é permitido quando a forma pede — `rounded-t-2xl` no topo de um card com imagem, `rounded-s-2xl` num painel encostado na borda. O que é fixo é a escala, não o lado.
 
 ### Tipografia
 
@@ -76,7 +124,7 @@ Dentro de componentes, use a escala de tokens do design system (`text-theme-xs`,
 
 ---
 
-## 4. Responsividade
+## 6. Responsividade
 
 Toda tela trabalhada é verificada em **três larguras**: 375px (celular), 768px (tablet), 1440px (desktop).
 
@@ -90,7 +138,7 @@ O que se espera em cada uma:
 
 ---
 
-## 5. Como trabalhar
+## 7. Como trabalhar
 
 Destilado de [karpathy-guidelines](https://x.com/karpathy/status/2015883857489522876) (MIT).
 
@@ -120,7 +168,7 @@ Para tarefa de vários passos, diga o plano antes: passo → como verifica.
 
 ---
 
-## 6. Antes de commitar
+## 8. Antes de commitar
 
 ```bash
 cd app && npm run typecheck && npm test && npx vite build
@@ -134,7 +182,7 @@ String nova visível ao usuário: regenerar o POT e traduzir (`languages/`, veja
 
 ---
 
-## 7. Testes que seguram padrão
+## 9. Testes que seguram padrão
 
 Alguns padrões aqui são verificados por teste, porque comentário não segura nada:
 
@@ -144,7 +192,7 @@ A fazer, conforme o [plano de padronização](docs/planejamento-padronizacao-ui-
 
 ---
 
-## 8. Documentação
+## 10. Documentação
 
 | Assunto | Arquivo |
 |---|---|

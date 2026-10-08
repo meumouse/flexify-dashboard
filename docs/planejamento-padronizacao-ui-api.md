@@ -24,7 +24,7 @@ Declaradas porque mudam o resultado. Corrija-me onde estiver errado.
 
 1. **"Seletor" = qualquer controle de escolha**, não só o dropdown: select, checkbox, radio, switch, slider, color, date. Todos devem ser componentes do kit.
 2. **A padronização de fonte por tag vale no wp-admin inteiro** (decisão do projeto, contra a recomendação inicial de limitar ao container isolado). Para reduzir o risco de quebrar telas de terceiros, as regras ficam numa camada de baixa especificidade (`@layer base`, seletor de elemento puro), de modo que qualquer CSS de plugin que defina o próprio tamanho continua ganhando.
-3. **"Ocultar a seção legada e refazer"** vale para markup do WordPress dentro das nossas páginas. A barra `#wpadminbar` é exceção: outros plugins dependem dos seletores dela, então ela continua sendo movida, não recriada.
+3. **"Ocultar a seção legada e refazer" vale para tudo, sem exceção**, inclusive a barra `#wpadminbar`: ela passa a ser lida por rota e desenhada por componente nosso. O custo é conhecido e aceito — plugins que dependem dos seletores `#wp-admin-bar-*` para injetar itens via JavaScript deixam de encontrá-los. Em troca, os itens passam a vir como dados e a barra deixa de ser a única parte da interface que não controlamos.
 4. **Responsividade "máxima"** = três alvos verificados: 375px (celular), 768px (tablet), 1440px (desktop). Não é um breakpoint por tamanho de tela existente.
 
 ## 3. Decisões tomadas
@@ -97,10 +97,11 @@ Rotas novas em `MeuMouse\Flexify_Dashboard\Rest`, namespace `flexify-dashboard/v
 - `GET /posts-table` — substitui a raspagem da página escondida (conforme decisão 3.1).
 - `GET /admin-menu` — expõe `$menu`/`$submenu` (conforme decisão 3.3).
 - `GET /admin-notices` — avisos como dados, no lugar de mover `.notice` do DOM.
+- `GET /admin-bar` — percorre o `WP_Admin_Bar` e devolve os nós (id, título, href, pai, meta), para a barra ser desenhada por componente nosso em vez de movida do DOM.
 
 Cada uma com permissão, sanitização e paginação nos cabeçalhos, como as rotas que já existem.
 
-→ **Verificação:** `grep` por `DOMParser` e `querySelector('#adminmenu` em `app/src/react` não retorna nada (exceto `WpToolbar`, que é exceção declarada). Teste de integração cobrindo as três rotas.
+→ **Verificação:** `grep` por `DOMParser`, `querySelector('#adminmenu` e `querySelector('#wpadminbar` em `app/src/react` não retorna nada. `WpToolbar` deixa de existir, substituído por um componente que recebe dados. Teste de integração cobrindo as quatro rotas.
 
 ### Fase 6 — Estruturas legadas dentro das nossas páginas (M)
 Localizar seções que ainda saem como HTML do WordPress dentro de telas nossas, ocultar e refazer com componentes; onde faltar rota, criar no namespace interno.
@@ -118,6 +119,5 @@ Fases 1–3 antes da 4 porque a responsividade vai tocar quase todo arquivo de t
 
 ## 6. O que este plano não cobre
 
-- A barra `#wpadminbar` continua sendo movida do DOM (premissa 3).
 - As três telas cujo bundle nunca foi declarado (`PostEditor.js`, `CustomPostTypes.js`, `CustomFieldsMetaBox.js`) não entram aqui porque **já foram removidas** — eram código morto, nunca instanciado. Ver a seção 12 de `planejamento-frontend-react.md`.
 - Nada aqui depende de rodar a matriz de versões do WordPress/WooCommerce, que continua pendente da fase 10 da migração anterior.
