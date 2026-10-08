@@ -9,6 +9,8 @@ type Props = {
 	title?: string;
 	message?: string;
 	dismissible?: boolean;
+	/** Called after the alert hides itself, for whoever needs to remember that it is gone. */
+	onDismiss?: () => void;
 	className?: string;
 	/** Replaces the message */
 	children?: ReactNode;
@@ -16,7 +18,7 @@ type Props = {
 	actions?: ReactNode;
 };
 
-export const Alert = ({ variant = 'info', title, message, dismissible = false, className, children, actions }: Props) => {
+export const Alert = ({ variant = 'info', title, message, dismissible = false, onDismiss, className, children, actions }: Props) => {
 	const [visible, setVisible] = useState(true);
 	const palette = alertColors[variant] ?? alertColors.info;
 
@@ -38,7 +40,10 @@ export const Alert = ({ variant = 'info', title, message, dismissible = false, c
 						type="button"
 						className="shrink-0 rounded-full p-1 text-gray-400 transition-colors hover:bg-white/60 hover:text-gray-700 dark:hover:bg-white/10 dark:hover:text-white"
 						aria-label={__('Dismiss')}
-						onClick={() => setVisible(false)}
+						onClick={() => {
+							setVisible(false);
+							onDismiss?.();
+						}}
 					>
 						<Icon name="close" className="text-theme-md" />
 					</button>

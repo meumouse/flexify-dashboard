@@ -1,12 +1,13 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { cn } from '@/react/lib/cn';
 import { __, sprintf } from '@/react/lib/i18n';
 import { useAdminNotices } from '@/react/shell/notices/useAdminNotices';
-import { Button, EmptyState, Icon, Sheet, Skeleton } from '@/react/ui';
+import type { WpNotice } from '@/react/shell/notices/useWpNotices';
+import { Alert, Button, EmptyState, Icon, Sheet, Skeleton } from '@/react/ui';
 
 /**
  * Everything waiting for attention on this screen: the notices the site published and the ones
- * WordPress printed, which are moved in here instead of being copied.
+ * WordPress printed, both drawn here from what the server said.
  */
 
 const DOT_COLORS: Record<string, string> = {
@@ -37,21 +38,17 @@ const isLong = (html: string) => html.replace(/<[^>]*>/g, '').length > PREVIEW_L
 type Props = {
 	open: boolean;
 	onOpenChange: (open: boolean) => void;
-	/** Moves the native WordPress notices into the given container */
-	attachWpNotices: (container: HTMLElement | null) => void;
-	wpCount: number;
+	wpNotices: WpNotice[];
+	onDismissWpNotice: (id: string) => void;
 };
 
-export const NotificationsPanel = ({ open, onOpenChange, attachWpNotices, wpCount }: Props) => {
+export const NotificationsPanel = ({ open, onOpenChange, wpNotices, onDismissWpNotice }: Props) => {
 	const { notices, loading, dismiss, dismissing } = useAdminNotices();
 	const [expanded, setExpanded] = useState<number[]>([]);
 
-	// The native notices are appended once the panel has a place to put them.
-	const container = useCallback((node: HTMLDivElement | null) => attachWpNotices(node), [attachWpNotices]);
-
 	const toggle = (id: number) => setExpanded((current) => (current.includes(id) ? current.filter((entry) => entry !== id) : [...current, id]));
 
-	const total = notices.length + wpCount;
+	const total = notices.length + wpNotices.length;
 
 	return (
 		<Sheet open={open} onOpenChange={onOpenChange} side="right" size="md" title={__('Notifications')} description={total ? sprintf(__('%d waiting for you'), total) : __('Nothing waiting')}>
@@ -99,11 +96,25 @@ export const NotificationsPanel = ({ open, onOpenChange, attachWpNotices, wpCoun
 					);
 				})}
 
-				{wpCount ? (
+				{wpNotices.length ? (
 					<section>
 						<p className="mb-2 text-theme-xs uppercase tracking-wide text-gray-400">{__('From WordPress')}</p>
-						{/* The notices themselves are moved here, markup and behaviour intact. */}
-						<div ref={container} className="wp-notifications-container space-y-3" />
+						<div className="wp-notifications-container space-y-3">
+							{wpNotices.map((notice) => (
+								<Alert
+									key={notice.id}
+									variant={notice.type}
+									dismissible={notice.dismissible}
+									onDismiss={() => onDismissWpNotice(notice.id)}
+								>
+									{/*
+									 * The notice's own markup, which is what WordPress would have printed into
+									 * the page in this same request.
+									 */}
+									<div className="fd-wp-notice text-theme-sm text-gray-600 dark:text-gray-300" dangerouslySetInnerHTML={{ __html: notice.html }} />
+								</Alert>
+							))}
+						</div>
 					</section>
 				) : null}
 

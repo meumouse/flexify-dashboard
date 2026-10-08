@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { AppProviders } from '@/react/app/AppProviders';
 import { NotificationsPanel } from '@/react/shell/notices/NotificationsPanel';
-import { useWpNotices } from '@/react/shell/notices/useWpNotices';
+import { NOTICES_SCRIPT_ID, readWpNotices } from '@/react/shell/notices/useWpNotices';
 import type { WpData } from '@/react/types/wordpress';
 
 const wpData: WpData = {
@@ -47,53 +47,48 @@ const stubRest = () => {
 	return calls;
 };
 
-/**
- * Probe that exposes what the hook decided about the notices WordPress printed.
- *
- * The holder only exists while the panel is open, which is what decides whether the notices
- * stay hidden on the page or move into it.
- */
-const WpNoticesProbe = ({ panelOpen = false }: { panelOpen?: boolean }) => {
-	const { count, attach } = useWpNotices();
-
-	return (
-		<div>
-			<span data-testid="count">{count}</span>
-			{panelOpen ? <div data-testid="holder" ref={attach} /> : null}
-		</div>
-	);
+const printNotices = (notices: unknown) => {
+	document.body.innerHTML = `<script type="application/json" id="${NOTICES_SCRIPT_ID}">${JSON.stringify(notices)}</script>`;
 };
 
-beforeEach(() => {
-	document.body.innerHTML = `
-		<div id="wpbody-content">
-			<div class="notice notice-success"><p>Configurações salvas.</p></div>
-			<div class="notice notice-error"><p>Algo falhou.</p></div>
-			<div class="notice notice-info hidden"><p>Escondida pelo WordPress.</p></div>
-			<div class="notice" id="setting-error-settings_updated"><p>Ignorada.</p></div>
-		</div>
-	`;
-});
+const CAPTURED = [
+	{
+		"id": "",
+		"type": "success",
+		"dismissible": true,
+		"html": "<p>Configurações salvas.</p>"
+	},
+	{
+		"id": "",
+		"type": "error",
+		"dismissible": false,
+		"html": "<p>Algo falhou.</p>"
+	},
+	{
+		"id": "",
+		"type": "info",
+		"dismissible": false,
+		"html": "<p>  </p>"
+	}
+];
+
+beforeEach(() => printNotices(CAPTURED));
 
 // The body is rebuilt in beforeEach; wiping it here would run before Testing Library unmounts.
 afterEach(() => vi.unstubAllGlobals());
 
-describe('useWpNotices', () => {
-	it('counts only the notices that carry a message and hides them in place', () => {
-		render(<WpNoticesProbe />);
+describe('readWpNotices', () => {
+	it('reads what the server captured and drops the ones with nothing to say', () => {
+		const notices = readWpNotices();
 
-		expect(screen.getByTestId('count')).toHaveTextContent('2');
-		expect(document.querySelector<HTMLElement>('.notice-success')?.style.display).toBe('none');
+		expect(notices).toHaveLength(2);
+		expect(notices.map((notice) => notice.type)).toEqual(['success', 'error']);
 	});
 
-	it('moves the notices into the panel instead of copying them', () => {
-		render(<WpNoticesProbe panelOpen />);
+	it('answers with none when the page printed none', () => {
+		document.body.innerHTML = '';
 
-		const holder = screen.getByTestId('holder');
-		expect(holder.querySelectorAll('.notice')).toHaveLength(2);
-		// The originals are gone from the page, markup and listeners intact in their new home.
-		expect(document.querySelectorAll('#wpbody-content .notice')).toHaveLength(2);
-		expect(holder.querySelector<HTMLElement>('.notice-success')?.style.display).toBe('');
+		expect(readWpNotices()).toEqual([]);
 	});
 });
 
@@ -101,7 +96,7 @@ describe('NotificationsPanel', () => {
 	const renderPanel = () =>
 		render(
 			<AppProviders wpData={wpData}>
-				<NotificationsPanel open onOpenChange={() => {}} attachWpNotices={() => {}} wpCount={0} />
+				<NotificationsPanel open onOpenChange={() => {}} wpNotices={[]} onDismissWpNotice={() => {}} />
 			</AppProviders>
 		);
 
@@ -113,6 +108,27 @@ describe('NotificationsPanel', () => {
 		// Targeted at a role the user does not have, and one already dismissed.
 		expect(screen.queryByText('Só para admins')).not.toBeInTheDocument();
 		expect(screen.queryByText('Já lida')).not.toBeInTheDocument();
+	});
+
+	it("draws what WordPress printed, with the notice's own markup inside", async () => {
+		stubRest();
+
+		render(
+			<AppProviders wpData={wpData}>
+				<NotificationsPanel
+					open
+					onOpenChange={() => {}}
+					wpNotices={[{ id: 'wp-1', type: 'error', dismissible: true, html: '<p>Algo falhou. <a href="/fix">Corrigir</a></p>' }]}
+					onDismissWpNotice={() => {}}
+				/>
+			</AppProviders>
+		);
+
+		await screen.findByRole('dialog');
+
+		expect(screen.getByText(/Algo falhou/)).toBeInTheDocument();
+		// The link the plugin put in its notice is still a link.
+		expect(screen.getByRole('link', { name: 'Corrigir' })).toHaveAttribute('href', '/fix');
 	});
 
 	it('dismisses a notice for this user only', async () => {

@@ -140,7 +140,7 @@ export const AppShell = () => {
 
 				{searchEnabled ? <CommandPalette open={searchOpen} onOpenChange={setSearchOpen} menu={menu} /> : null}
 
-				<NotificationsPanel open={noticesOpen} onOpenChange={setNoticesOpen} attachWpNotices={wpNotices.attach} wpCount={wpNotices.count} />
+				<NotificationsPanel open={noticesOpen} onOpenChange={setNoticesOpen} wpNotices={wpNotices.notices} onDismissWpNotice={wpNotices.dismiss} />
 
 				{/* Overlays of the shell render here, inside the isolated container. */}
 				<div id={PORTAL_ID} />

@@ -46,6 +46,7 @@ use MeuMouse\Flexify_Dashboard\Rest\PluginManager;
 use MeuMouse\Flexify_Dashboard\Rest\PostEditorMeta;
 use MeuMouse\Flexify_Dashboard\Rest\PostEditorSEO;
 use MeuMouse\Flexify_Dashboard\Rest\PostsTables;
+use MeuMouse\Flexify_Dashboard\Rest\WpNotices;
 use MeuMouse\Flexify_Dashboard\Rest\RankMathDashboardWidget;
 use MeuMouse\Flexify_Dashboard\Rest\RestLogout;
 use MeuMouse\Flexify_Dashboard\Rest\RoleEditor;
@@ -191,6 +192,7 @@ class Plugin {
         new PostsTables();
         new AdminMenu();
         new AdminNotices();
+        new WpNotices();
         new CustomDashboardPage();
 
         if ( Settings::is_enabled( 'enable_role_editor' ) ) {
@@ -559,6 +561,20 @@ class Plugin {
             'flexify-dashboard',
             FLEXIFY_DASHBOARD_PLUGIN_PATH . '/languages/'
         );
+    }
+
+
+    /**
+     * Whether the admin shell is drawing this screen for the current user.
+     *
+     * Anything that hands its work to the shell — the notices, for one — has to know, because
+     * without the shell there is nothing on the other side to render it.
+     *
+     * @since 4.1.0
+     * @return bool
+     */
+    public static function is_shell_active() {
+        return ! self::is_theme_disabled() && ! self::is_site_editor() && ! self::is_mainwp_page() && ! self::is_no_theme_page();
     }
 
 
