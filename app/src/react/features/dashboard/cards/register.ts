@@ -1,6 +1,6 @@
 import { dashboardRegistry } from '@/shared/dashboard/registry.js';
 import { __ } from '@/react/lib/i18n';
-import { StoreMetricsCard, StoreRecentOrdersCard, StoreRevenueCard, StoreTopProductsCard } from '@/react/features/dashboard/cards/ecommerce';
+import { StoreChannelsCard, StoreMetricsCard, StoreRecentOrdersCard, StoreRevenueCard, StoreTargetCard, StoreTopProductsCard } from '@/react/features/dashboard/cards/ecommerce';
 import { RecentCommentsCard, RecentPostsCard, ScheduledPostsCard } from '@/react/features/dashboard/cards/content';
 import { MediaAnalyticsCard, ServerHealthCard, UsersChartCard } from '@/react/features/dashboard/cards/site';
 import {
@@ -25,6 +25,9 @@ import { AnalyticsMapCard, RankMathCard } from '@/react/features/dashboard/cards
  */
 
 const WOO = ['woocommerce/woocommerce.php'];
+
+// The store cards are ordered so the default grid fills its rows: overview, revenue beside the
+// best sellers, the target beside the channels, then the latest orders.
 
 const reactCards = [
 	{
@@ -92,19 +95,27 @@ const reactCards = [
 		component: RankMathCard,
 	},
 	{
-		metadata: { id: 'woo-store-metrics', title: __('Store overview'), width: 12, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
+		metadata: { id: 'woo-store-metrics', priority: 10, title: __('Store overview'), width: 12, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
 		component: StoreMetricsCard,
 	},
 	{
-		metadata: { id: 'woo-revenue-chart', title: __('Revenue'), width: 8, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
+		metadata: { id: 'woo-revenue-chart', priority: 20, title: __('Revenue'), width: 8, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
 		component: StoreRevenueCard,
 	},
 	{
-		metadata: { id: 'woo-top-products-react', title: __('Top products'), width: 4, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
+		metadata: { id: 'woo-top-products-react', priority: 30, title: __('Top products'), width: 4, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
 		component: StoreTopProductsCard,
 	},
 	{
-		metadata: { id: 'woo-recent-orders', title: __('Recent orders'), width: 12, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
+		metadata: { id: 'woo-monthly-target', priority: 40, title: __('Monthly target'), width: 4, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
+		component: StoreTargetCard,
+	},
+	{
+		metadata: { id: 'woo-sales-channels', priority: 50, title: __('Sales by channel'), width: 8, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
+		component: StoreChannelsCard,
+	},
+	{
+		metadata: { id: 'woo-recent-orders', priority: 60, title: __('Recent orders'), width: 12, mobileWidth: 12, language: 'react', category: 'e-commerce', requires_plugins: WOO },
 		component: StoreRecentOrdersCard,
 	},
 ];

@@ -1,7 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { AppProviders } from '@/react/app/AppProviders';
-import { StoreMetricsCard, StoreRecentOrdersCard, StoreTopProductsCard } from '@/react/features/dashboard/cards/ecommerce';
+import { StoreChannelsCard, StoreMetricsCard, StoreRecentOrdersCard, StoreTargetCard, StoreTopProductsCard } from '@/react/features/dashboard/cards/ecommerce';
+import { sparklinePoints, targetProgress } from '@/react/features/dashboard/charts';
 import { applyStoredLayout, clampWidth, type DashboardCard } from '@/react/features/dashboard/useDashboardLayout';
 import { isoDate, parseDay, rangeForDays } from '@/react/features/dashboard/useWooDashboard';
 import type { WpData } from '@/react/types/wordpress';
@@ -28,11 +29,14 @@ const METRICS = {
 	woocommerce_active: true,
 	metrics: {
 		revenue: { gross: 4821, net: 4512, chart_data: { interval: 'day', labels: ['01/10'], datasets: [{ label: 'Receita', data: [4512] }] } },
-		top_products: [{ id: 201, name: 'Camiseta', quantity: 48, total: 2875 }],
-		recent_orders: [{ id: 1200, number: '1200', customer: 'Ana Souza', total: 85.8, status: { label: 'Processando', color: 'primary' }, date: '2026-10-07' }],
+		top_products: [{ product_id: 201, name: 'Camiseta', quantity: 48, revenue: 2875 }],
+		recent_orders: [{ id: 1200, number: '1200', customer_name: 'Ana Souza', total: 85.8, status: { slug: 'processing', label: 'Processando' }, created_at: '2026-10-07T10:00:00Z' }],
 		average_ticket: 297.6,
 		orders_received: 162,
 		customers: { total: 118, previous_total: 103, change_percentage: 14.56, trend: 'up' },
+		comparison: { revenue: 12.4, orders: 8.1, average_ticket: -3.6 },
+		channels: [{ key: 'direct', label: 'Direto', orders: 74, revenue: 3000 }],
+		month: { target: 10000, revenue: 4500, today: 300, previous: 4000 },
 		currency: 'BRL',
 	},
 };
@@ -135,5 +139,59 @@ describe('store cards', () => {
 
 		expect(await screen.findByText('WooCommerce is not active')).toBeInTheDocument();
 		expect(screen.queryByText('162')).not.toBeInTheDocument();
+	});
+});
+
+describe('small charts', () => {
+	it('fits a series into the box, oldest on the left and highest at the top', () => {
+		const points = sparklinePoints([0, 10, 5], 100, 20, 0).split(' ');
+
+		expect(points).toEqual(['0,20', '50,0', '100,10']);
+	});
+
+	it('draws a flat series across the middle, and nothing for a single value', () => {
+		expect(sparklinePoints([4, 4], 100, 20, 0)).toBe('0,10 100,10');
+		expect(sparklinePoints([4], 100, 20)).toBe('');
+	});
+
+	it('measures a target, past 100 when it is beaten, and 0 without one', () => {
+		expect(targetProgress(4500, 10000)).toBe(45);
+		expect(targetProgress(12000, 10000)).toBe(120);
+		expect(targetProgress(500, 0)).toBe(0);
+	});
+});
+
+describe('store comparison and target', () => {
+	it('puts the change against the previous period under each figure', async () => {
+		stubRest();
+		renderCard(<StoreMetricsCard dateRange={range} />);
+
+		expect(await screen.findByText('12.4%')).toBeInTheDocument();
+		expect(screen.getByText('3.6%')).toBeInTheDocument();
+		expect(screen.getAllByText('vs previous period')).toHaveLength(4);
+	});
+
+	it('measures the month against the target', async () => {
+		stubRest();
+		renderCard(<StoreTargetCard dateRange={range} />);
+
+		expect(await screen.findByText('45%')).toBeInTheDocument();
+		expect(screen.getByText(/ahead of the/)).toBeInTheDocument();
+	});
+
+	it('asks for a target when there is none instead of drawing an empty gauge', async () => {
+		stubRest({ ...METRICS, metrics: { ...METRICS.metrics, month: { target: 0, revenue: 4500, today: 300, previous: 4000 } } });
+		renderCard(<StoreTargetCard dateRange={range} />);
+
+		expect(await screen.findByText('No monthly target yet')).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: 'Set a target' })).toHaveAttribute('href', expect.stringContaining('category=woocommerce'));
+	});
+
+	it('lists the channels with their orders', async () => {
+		stubRest();
+		renderCard(<StoreChannelsCard dateRange={range} />);
+
+		expect(await screen.findByText('Direto')).toBeInTheDocument();
+		expect(screen.getByText('74 orders')).toBeInTheDocument();
 	});
 });

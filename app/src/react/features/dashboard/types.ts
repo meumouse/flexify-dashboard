@@ -22,8 +22,8 @@ export type WooDashboardMetrics = {
 		completed_processing_orders: number;
 		period?: { date_from: string; date_to: string };
 	};
-	top_products?: { id: number; name: string; quantity: number; total: number; image?: string }[];
-	recent_orders?: { id: number; number: string; customer: string; total: number; status: { label: string; color?: string }; date: string; product?: string }[];
+	top_products?: { product_id: number; name: string; quantity: number; revenue: number; image?: string; edit_url?: string }[];
+	recent_orders?: { id: number; number: string; customer_name: string; total: number; status: { slug: string; label: string }; created_at: string | null; edit_url?: string }[];
 	average_ticket?: number;
 	orders_received?: number;
 	customers?: {
@@ -32,6 +32,12 @@ export type WooDashboardMetrics = {
 		change_percentage: number;
 		trend: string;
 	};
+	/** Percentage change against the period of the same length just before */
+	comparison?: { revenue: number; orders: number; average_ticket: number };
+	/** Orders and revenue by the kind of source they came from, largest first */
+	channels?: { key: string; label: string; orders: number; revenue: number }[];
+	/** The calendar month to date, against the target set in the settings (0 when none) */
+	month?: { target: number; revenue: number; today: number; previous: number };
 	currency?: string;
 };
 

@@ -345,6 +345,29 @@ Decisões tomadas ao executar:
 5. Tabelas compactas (top páginas, top produtos) com barra de progresso proporcional.
 6. Mapa: depende da pergunta aberta (Mapbox × vetorial).
 
+**Feito em 08/10/2026.**
+- **Rota `woocommerce-dashboard`.** Passou a devolver:
+  - `comparison`: variação de receita, pedidos e ticket médio contra o período anterior de mesmo tamanho. Clientes já tinham.
+  - `channels`: receita e pedidos por tipo de origem (campanha, orgânico, indicação, direto…), sem o nome exato da campanha.
+  - `month`: mês até hoje, hoje, e o mês passado até o mesmo dia, contra a meta.
+  - `number` em cada pedido recente.
+- **Configuração nova `monthly_revenue_target`** (WooCommerce), validada em `GlobalOptions`.
+- **Visão geral da loja:** virou uma faixa só, com divisórias e a variação abaixo de cada número. A receita traz uma sparkline em SVG, só onde cabe (2 colunas, ou 4 a partir de 2xl).
+- **Cartões novos:**
+  - **Meta mensal:** meia-rosca em SVG, frase de leitura e Meta/Este mês/Hoje compactos. Sem meta, mostra o convite para definir uma, com link para a configuração.
+  - **Vendas por canal:** rosca ApexCharts com a cor de destaque, mais a lista.
+- **Ordem padrão** dos cartões da loja via `priority`, preenchendo as linhas: 12, 8+4, 4+8, 12. Antes era alfabética por id.
+
+**Dois defeitos encontrados no caminho:**
+- Os cartões "Mais vendidos" e "Pedidos recentes" liam campos que a rota não manda (`id`, `total`, `customer`, `number` no lugar de `product_id`, `revenue`, `customer_name`). O mock e o teste tinham sido escritos para o tipo, não para a rota, por isso passavam. No site, esses cartões saíam vazios. Agora tipo, mock e teste seguem a rota.
+- Abaixo de 768px a grade do painel tem uma coluna, mas o `gridColumn: span N` inline criava colunas implícitas, e todo cartão menor que 12 ficava espremido (63px numa tela de 375). Agora a largura entra só a partir de `md`, por `md:col-span-(--fd-card-span)`.
+
+Decisões tomadas ao executar:
+- **O Mapbox fica.** Funciona, e trocar por mapa vetorial é uma migração sem defeito a corrigir.
+- **Sem rosca de status de pedido nem barras empilhadas por status.** A rota só considera pedidos concluídos e em processamento, então o gráfico teria duas fatias. "Vendas por canal" é a rosca que tem o que mostrar.
+- **Países e referências seguem como lista com barra de progresso** (desde a fase 1), que é o que uma barra horizontal mostraria, sem carregar o ApexCharts.
+- **A sparkline e a meia-rosca são SVG**, com a geometria em `charts.ts` testada. Carregar o ApexCharts para uma linha e um arco custaria mais que os cartões.
+
 **Critério:**
 - Todo cartão de gráfico usa o tema de gráfico compartilhado e reage a claro/escuro e à cor de destaque.
 - Nenhum cartão mostra número sem rótulo de período.

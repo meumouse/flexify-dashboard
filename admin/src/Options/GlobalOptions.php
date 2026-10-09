@@ -256,6 +256,10 @@ class GlobalOptions {
                     'type'    => 'boolean',
                     'default' => false,
                 ),
+                'monthly_revenue_target' => array(
+                    'type'    => 'number',
+                    'default' => 0,
+                ),
                 'use_modern_post_editor' => array(
                     'type'    => 'boolean',
                     'default' => false,
@@ -423,6 +427,10 @@ class GlobalOptions {
 
         if ( isset( $value['activity_log_retention_days'] ) ) {
             $sanitized_value['activity_log_retention_days'] = absint( $value['activity_log_retention_days'] );
+        }
+
+        if ( isset( $value['monthly_revenue_target'] ) ) {
+            $sanitized_value['monthly_revenue_target'] = max( 0, round( (float) $value['monthly_revenue_target'], 2 ) );
         }
 
         if ( isset( $value['activity_log_level'] ) ) {

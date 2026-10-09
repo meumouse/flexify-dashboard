@@ -282,6 +282,7 @@ msgstr ""
 msgid "%s notice(s)"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:240
 #: app/src/react/features/orders/OrdersList.tsx:206
 msgid "%s orders"
 msgstr ""
@@ -308,7 +309,7 @@ msgstr ""
 msgid "%s setting(s) match"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:89
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:285
 msgid "%s sold"
 msgstr ""
 
@@ -322,14 +323,6 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:163
 msgid "%s will be moved to the trash."
-msgstr ""
-
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:39
-msgid "%s%% vs previous period"
-msgstr ""
-
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:39
-msgid "+%s%% vs previous period"
 msgstr ""
 
 #: app/src/react/features/posts/PostCells.tsx:200
@@ -464,7 +457,7 @@ msgstr ""
 msgid "Activate"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:13
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:21
 msgid "Activate WooCommerce to see the store metrics here."
 msgstr ""
 
@@ -485,7 +478,7 @@ msgstr ""
 msgid "Active sessions"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:63
+#: app/src/react/features/dashboard/cards/register.ts:66
 msgid "Active users"
 msgstr ""
 
@@ -789,7 +782,7 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:982
+#: app/src/shared/settings/settings-config.js:997
 msgid "All Actions"
 msgstr ""
 
@@ -926,7 +919,7 @@ msgstr ""
 msgid "Analytics property"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:829
+#: app/src/shared/settings/settings-config.js:844
 msgid "Analytics Provider"
 msgstr ""
 
@@ -993,10 +986,11 @@ msgid "Anything"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:416
+#: admin/src/Rest/WooCommerceDashboard.php:673
 msgid "API"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:867
+#: app/src/shared/settings/settings-config.js:882
 msgid ""
 "API key used by the analytics map card. Store the token here instead of "
 "keeping it in source code."
@@ -1112,7 +1106,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:993
+#: app/src/shared/settings/settings-config.js:1008
 msgid "Auto Cleanup"
 msgstr ""
 
@@ -1133,7 +1127,7 @@ msgstr ""
 msgid "Automatic updates changed"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:994
+#: app/src/shared/settings/settings-config.js:1009
 msgid ""
 "Automatically delete logs older than the retention period. Disable to keep "
 "logs indefinitely."
@@ -1155,7 +1149,7 @@ msgstr ""
 msgid "Average position of all the keywords ranking within top 100 positions."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:42
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:89
 msgid "Average ticket"
 msgstr ""
 
@@ -1302,6 +1296,10 @@ msgstr ""
 #: admin/src/Rest/WooCommerceOrders.php:714
 #: app/src/react/features/orders/OrdersList.tsx:455
 msgid "Campaign"
+msgstr ""
+
+#: admin/src/Rest/WooCommerceDashboard.php:664
+msgid "Campaigns"
 msgstr ""
 
 #: app/src/react/features/notices/NoticeEditor.tsx:182
@@ -1538,13 +1536,13 @@ msgstr ""
 msgid "Choose variation image"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:974
+#: app/src/shared/settings/settings-config.js:989
 msgid ""
 "Choose which actions to log. \"All Actions\" logs everything, \"Important "
 "Only\" logs only critical actions like deletions and role changes."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:830
+#: app/src/shared/settings/settings-config.js:845
 msgid ""
 "Choose which analytics provider to use for dashboard data. Select Built-in "
 "Analytics to use the Flexify Dashboard tracking system, or Google Analytics "
@@ -1742,7 +1740,7 @@ msgstr ""
 msgid "Configure remote WordPress sites for cross-site operations."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:884
+#: app/src/shared/settings/settings-config.js:899
 msgid ""
 "Configure the site key and secret key used by the modern administrative "
 "login and password recovery forms."
@@ -1768,7 +1766,7 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:847
+#: app/src/shared/settings/settings-config.js:862
 msgid ""
 "Connect your Google Analytics 4 property to display analytics data in the "
 "dashboard. You will need to create OAuth credentials in Google Cloud "
@@ -1954,6 +1952,7 @@ msgstr ""
 msgid "Create your first product to start selling."
 msgstr ""
 
+#: admin/src/Rest/WooCommerceDashboard.php:671
 #: app/src/react/features/orders/OrdersList.tsx:343
 #: app/src/react/features/orders/OrdersList.tsx:448
 msgid "Created in admin"
@@ -1987,7 +1986,7 @@ msgstr ""
 msgid "Custom css added here will only be added in the admin area and login page."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:795
+#: app/src/shared/settings/settings-config.js:810
 msgid "Custom Dashboard"
 msgstr ""
 
@@ -2007,7 +2006,7 @@ msgstr ""
 msgid "Custom Plugins"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:126
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:322
 #: app/src/react/features/design-system/Showcase.tsx:95
 #: app/src/react/features/orders/OrderDetails.tsx:447
 #: app/src/react/features/orders/OrderEditor.tsx:754
@@ -2028,7 +2027,7 @@ msgstr ""
 msgid "Customer: %s"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:37
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:88
 #: app/src/react/features/design-system/Showcase.tsx:224
 #: app/src/react/features/orders/OrdersList.tsx:429
 msgid "Customers"
@@ -2331,7 +2330,7 @@ msgstr ""
 msgid "Device"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:71
+#: app/src/react/features/dashboard/cards/register.ts:74
 msgid "Devices"
 msgstr ""
 
@@ -2341,6 +2340,9 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:414
 #: admin/src/Rest/WooCommerceDashboard.php:415
+#: admin/src/Rest/WooCommerceDashboard.php:667
+#: admin/src/Rest/WooCommerceDashboard.php:668
+#: admin/src/Rest/WooCommerceDashboard.php:669
 #: admin/src/Rest/WooCommerceOrders.php:717
 #: app/src/react/features/orders/OrdersList.tsx:456
 msgid "Direct"
@@ -2485,8 +2487,8 @@ msgstr ""
 msgid "Drafts"
 msgstr ""
 
-#: app/src/react/features/dashboard/DashboardGrid.tsx:93
-#: app/src/react/features/dashboard/DashboardGrid.tsx:98
+#: app/src/react/features/dashboard/DashboardGrid.tsx:101
+#: app/src/react/features/dashboard/DashboardGrid.tsx:106
 msgid "Drag to reorder"
 msgstr ""
 
@@ -2512,7 +2514,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:114
+#: app/src/react/features/dashboard/cards/register.ts:125
 msgid "e-Commerce"
 msgstr ""
 
@@ -2634,7 +2636,7 @@ msgstr ""
 msgid "Empty response."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:938
+#: app/src/shared/settings/settings-config.js:953
 msgid "Enable Activity Logger"
 msgstr ""
 
@@ -2646,17 +2648,17 @@ msgstr ""
 msgid "Enable archives"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:815
+#: app/src/shared/settings/settings-config.js:830
 msgid ""
 "Enable built-in analytics to track user behavior, page views, and "
 "performance metrics within your WordPress admin."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:900
+#: app/src/shared/settings/settings-config.js:915
 msgid "Enable Database Explorer"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:814
+#: app/src/shared/settings/settings-config.js:829
 msgid "Enable Flexify Dashboard Analytics"
 msgstr ""
 
@@ -2683,7 +2685,7 @@ msgstr ""
 msgid "Enable reviews"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:919
+#: app/src/shared/settings/settings-config.js:934
 msgid "Enable Role Editor"
 msgstr ""
 
@@ -2695,13 +2697,13 @@ msgstr ""
 msgid "Enable SVG Uploads"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:901
+#: app/src/shared/settings/settings-config.js:916
 msgid ""
 "Enable the modern database explorer interface to browse tables, view data, "
 "and execute SQL queries safely."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:920
+#: app/src/shared/settings/settings-config.js:935
 msgid ""
 "Enable the modern role editor interface to manage WordPress user roles and "
 "capabilities."
@@ -2727,7 +2729,7 @@ msgstr ""
 msgid "End date for chart data (ISO 8601 format)"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:67
+#: app/src/react/features/dashboard/cards/register.ts:70
 msgid "Engagement"
 msgstr ""
 
@@ -2755,7 +2757,7 @@ msgstr ""
 msgid "Enter your email or username to recover your password."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:874
+#: app/src/shared/settings/settings-config.js:889
 msgid "Enter your Mapbox token"
 msgstr ""
 
@@ -3292,7 +3294,7 @@ msgstr ""
 msgid "Google Analytics 4"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:846
+#: app/src/shared/settings/settings-config.js:861
 msgid "Google Analytics Connection"
 msgstr ""
 
@@ -3304,7 +3306,7 @@ msgstr ""
 msgid "Google Fonts"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:883
+#: app/src/shared/settings/settings-config.js:898
 msgid "Google reCAPTCHA"
 msgstr ""
 
@@ -3329,7 +3331,7 @@ msgstr ""
 msgid "Grid view"
 msgstr ""
 
-#: admin/src/Rest/WooCommerceDashboard.php:792
+#: admin/src/Rest/WooCommerceDashboard.php:907
 msgid "Gross revenue"
 msgstr ""
 
@@ -3418,7 +3420,7 @@ msgstr ""
 msgid "How it will look"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:954
+#: app/src/shared/settings/settings-config.js:969
 msgid ""
 "How many days to keep activity logs before automatic cleanup. Default is 90 "
 "days."
@@ -3507,7 +3509,7 @@ msgstr ""
 msgid "Import users"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:983
+#: app/src/shared/settings/settings-config.js:998
 msgid "Important Only"
 msgstr ""
 
@@ -3930,11 +3932,11 @@ msgstr ""
 msgid "Latest Blog Posts from Rank Math"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:31
+#: app/src/react/features/dashboard/cards/register.ts:34
 msgid "Latest content activity"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:39
+#: app/src/react/features/dashboard/cards/register.ts:42
 msgid "Latest conversations"
 msgstr ""
 
@@ -4099,7 +4101,7 @@ msgstr ""
 msgid "Log entry not found."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:973
+#: app/src/shared/settings/settings-config.js:988
 msgid "Log Level"
 msgstr ""
 
@@ -4167,7 +4169,7 @@ msgstr ""
 msgid "Manual refund"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:866
+#: app/src/shared/settings/settings-config.js:881
 msgid "Mapbox API key"
 msgstr ""
 
@@ -4217,7 +4219,7 @@ msgid "Media item not found."
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:84
-#: app/src/react/features/dashboard/cards/register.ts:43
+#: app/src/react/features/dashboard/cards/register.ts:46
 msgid "Media library"
 msgstr ""
 
@@ -4314,6 +4316,7 @@ msgstr ""
 msgid "Missing security token. Please refresh the page and try again."
 msgstr ""
 
+#: admin/src/Rest/WooCommerceDashboard.php:670
 #: admin/src/Rest/WooCommerceOrders.php:719
 #: app/src/react/features/orders/OrdersList.tsx:458
 msgid "Mobile app"
@@ -4327,7 +4330,7 @@ msgstr ""
 msgid "Moderation"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:776
+#: app/src/shared/settings/settings-config.js:791
 msgid "Modern Comments Page"
 msgstr ""
 
@@ -4365,6 +4368,14 @@ msgstr ""
 
 #: app/src/shared/settings/settings-config.js:190
 msgid "Modernise login page"
+msgstr ""
+
+#: app/src/shared/settings/settings-config.js:776
+msgid "Monthly revenue target"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/register.ts:110
+msgid "Monthly target"
 msgstr ""
 
 #: app/src/react/features/orders/OrdersList.tsx:509
@@ -4481,8 +4492,8 @@ msgstr ""
 msgid "Net payment"
 msgstr ""
 
-#: admin/src/Rest/WooCommerceDashboard.php:797
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:34
+#: admin/src/Rest/WooCommerceDashboard.php:912
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:86
 #: app/src/react/features/design-system/Showcase.tsx:233
 msgid "Net revenue"
 msgstr ""
@@ -4690,6 +4701,10 @@ msgstr ""
 msgid "No metrics found"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:138
+msgid "No monthly target yet"
+msgstr ""
+
 #: app/src/react/features/orders/OrderDetails.tsx:220
 msgid "No newer orders"
 msgstr ""
@@ -4714,7 +4729,7 @@ msgstr ""
 msgid "No one has this role, so nothing changes for anybody."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:117
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:313
 msgid "No orders in this period."
 msgstr ""
 
@@ -4799,6 +4814,10 @@ msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:39
 msgid "No rows"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:223
+msgid "No sales in this period."
 msgstr ""
 
 #: app/src/react/features/settings/SettingsScreen.tsx:163
@@ -4951,7 +4970,7 @@ msgstr ""
 msgid "Nothing scheduled for this period."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:77
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:267
 msgid "Nothing sold in this period."
 msgstr ""
 
@@ -5159,7 +5178,7 @@ msgstr ""
 msgid "Optional logo for to be displayed in the menu"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:125
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:321
 #: app/src/react/features/design-system/Showcase.tsx:92
 #: app/src/react/features/orders/OrderEditor.tsx:811
 #: app/src/react/features/orders/OrdersList.tsx:297
@@ -5232,7 +5251,7 @@ msgstr ""
 msgid "Order without items"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:35
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:87
 #: app/src/react/features/design-system/Showcase.tsx:225
 #: app/src/react/features/orders/OrderDetails.tsx:216
 #: app/src/react/features/orders/OrderDetails.tsx:467
@@ -5253,6 +5272,10 @@ msgstr ""
 msgid "Organic"
 msgstr ""
 
+#: admin/src/Rest/WooCommerceDashboard.php:665
+msgid "Organic search"
+msgstr ""
+
 #: app/src/react/features/products/ProductQuickEdit.tsx:345
 msgid "Organization"
 msgstr ""
@@ -5270,6 +5293,7 @@ msgstr ""
 msgid "Original file not found."
 msgstr ""
 
+#: admin/src/Rest/WooCommerceDashboard.php:681
 #: app/src/react/features/orders/OrderEditor.tsx:463
 #: app/src/react/features/roles/queries.ts:30
 msgid "Other"
@@ -5310,7 +5334,7 @@ msgstr ""
 msgid "Page URL is required"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:59
+#: app/src/react/features/dashboard/cards/register.ts:62
 msgid "Page views"
 msgstr ""
 
@@ -5617,6 +5641,7 @@ msgstr ""
 msgid "Plugins"
 msgstr ""
 
+#: admin/src/Rest/WooCommerceDashboard.php:672
 #: admin/src/Rest/WooCommerceOrders.php:720
 #: app/src/react/features/orders/OrdersList.tsx:459
 msgid "Point of sale"
@@ -5927,7 +5952,7 @@ msgstr ""
 msgid "Quote"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:91
+#: app/src/react/features/dashboard/cards/register.ts:94
 msgid "Rank Math"
 msgstr ""
 
@@ -5993,16 +6018,16 @@ msgstr ""
 msgid "Recent activity on your site."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:39
+#: app/src/react/features/dashboard/cards/register.ts:42
 msgid "Recent Comments"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:107
+#: app/src/react/features/dashboard/cards/register.ts:118
 #: app/src/react/features/users/panels.tsx:249
 msgid "Recent orders"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:31
+#: app/src/react/features/dashboard/cards/register.ts:34
 msgid "Recent Posts"
 msgstr ""
 
@@ -6034,6 +6059,7 @@ msgstr ""
 msgid "Redo"
 msgstr ""
 
+#: admin/src/Rest/WooCommerceDashboard.php:666
 #: admin/src/Rest/WooCommerceOrders.php:716
 #: app/src/react/features/orders/OrdersList.tsx:454
 msgid "Referral"
@@ -6272,7 +6298,7 @@ msgid ""
 "profiling and improved features."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:777
+#: app/src/shared/settings/settings-config.js:792
 msgid ""
 "Replace the classic WordPress comments page with a modern, responsive "
 "comment manager with improved features and better organization."
@@ -6290,7 +6316,7 @@ msgid ""
 "manager with improved features and better organization."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:796
+#: app/src/shared/settings/settings-config.js:811
 msgid ""
 "Replace the default WordPress dashboard with a modern, customizable "
 "dashboard interface."
@@ -6355,7 +6381,7 @@ msgstr ""
 msgid "Resizable sidebar"
 msgstr ""
 
-#: app/src/react/features/dashboard/DashboardGrid.tsx:113
+#: app/src/react/features/dashboard/DashboardGrid.tsx:121
 msgid "Resize card"
 msgstr ""
 
@@ -6395,7 +6421,7 @@ msgstr ""
 msgid "Results come from WordPress.org. Only what you type is sent there."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:953
+#: app/src/shared/settings/settings-config.js:968
 msgid "Retention Period (Days)"
 msgstr ""
 
@@ -6403,7 +6429,7 @@ msgstr ""
 msgid "Return only unused media items (unattached and not used as featured image)."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:99
+#: app/src/react/features/dashboard/cards/register.ts:102
 #: app/src/react/features/dashboard/RevenueChart.tsx:74
 msgid "Revenue"
 msgstr ""
@@ -6533,6 +6559,10 @@ msgstr ""
 msgid "Sale starts"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/register.ts:114
+msgid "Sales by channel"
+msgstr ""
+
 #: app/src/react/features/orders/OrderEditor.tsx:733
 msgid "Same as billing address"
 msgstr ""
@@ -6617,7 +6647,7 @@ msgstr ""
 msgid "Scheduled for %s from now"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:35
+#: app/src/react/features/dashboard/cards/register.ts:38
 msgid "Scheduled Posts"
 msgstr ""
 
@@ -6869,7 +6899,7 @@ msgstr ""
 msgid "Separate tags with commas."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:47
+#: app/src/react/features/dashboard/cards/register.ts:50
 msgid "Server health"
 msgstr ""
 
@@ -6905,6 +6935,10 @@ msgstr ""
 msgid "Set a new one. The current password stops working at once."
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:140
+msgid "Set a target"
+msgstr ""
+
 #: app/src/shared/settings/settings-config.js:91
 msgid ""
 "Set an alternative logo to use in dark mode. If one isn't set it will fall "
@@ -6922,6 +6956,12 @@ msgstr ""
 
 #: app/src/react/features/products/BulkPriceModal.tsx:92
 msgid "Set to"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:138
+msgid ""
+"Set what the store aims to earn each month and this card measures the month "
+"against it."
 msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:838
@@ -7247,7 +7287,7 @@ msgstr ""
 #: admin/src/Rest/PostsTables.php:418
 #: app/src/react/features/comments/CommentDetails.tsx:136
 #: app/src/react/features/comments/CommentsList.tsx:134
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:127
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:323
 #: app/src/react/features/design-system/Showcase.tsx:103
 #: app/src/react/features/design-system/Showcase.tsx:246
 #: app/src/react/features/menus/MenusList.tsx:70
@@ -7304,7 +7344,7 @@ msgstr ""
 msgid "Store"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:95
+#: app/src/react/features/dashboard/cards/register.ts:98
 msgid "Store overview"
 msgstr ""
 
@@ -7420,6 +7460,10 @@ msgstr ""
 msgid ""
 "Taking capabilities away from it can lock everyone out of parts of the "
 "site, including this screen."
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:167
+msgid "Target"
 msgstr ""
 
 #: app/src/react/features/products/editor/ProductEditor.tsx:784
@@ -7555,6 +7599,14 @@ msgstr ""
 
 #: app/src/react/features/settings/categories.ts:30
 msgid "The media library and uploads"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:160
+msgid "The month is at %1$s, ahead of the %2$s last month had by this day."
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:161
+msgid "The month is at %1$s, behind the %2$s last month had by this day."
 msgstr ""
 
 #: app/src/react/features/settings/custom/connections.tsx:430
@@ -7770,6 +7822,7 @@ msgstr ""
 msgid "This menu could not be loaded."
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:168
 #: app/src/react/features/orders/OrdersList.tsx:440
 #: app/src/react/form/DateRangePicker.tsx:28
 msgid "This month"
@@ -7878,6 +7931,7 @@ msgstr ""
 msgid "today"
 msgstr ""
 
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:169
 #: app/src/react/features/media/MediaLibrary.tsx:151
 #: app/src/react/features/orders/OrdersList.tsx:437
 #: app/src/react/form/DatePicker.tsx:109
@@ -7905,23 +7959,24 @@ msgstr ""
 msgid "Too many requests"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:79
+#: app/src/react/features/dashboard/cards/register.ts:82
 msgid "Top countries"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:75
+#: app/src/react/features/dashboard/cards/register.ts:78
 msgid "Top pages"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:103
+#: app/src/react/features/dashboard/cards/register.ts:106
 msgid "Top products"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:83
+#: app/src/react/features/dashboard/cards/register.ts:86
 msgid "Top referrers"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:128
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:204
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:324
 #: app/src/react/features/dashboard/cards/site.tsx:187
 #: app/src/react/features/design-system/Showcase.tsx:104
 #: app/src/react/features/orders/OrderDetails.tsx:300
@@ -7973,7 +8028,7 @@ msgstr ""
 msgid "Total spent"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:939
+#: app/src/shared/settings/settings-config.js:954
 msgid ""
 "Track and log all admin actions including post changes, user updates, "
 "plugin activations, and more."
@@ -7997,7 +8052,7 @@ msgstr ""
 msgid "Track, fulfil and manage your store orders."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:55
+#: app/src/react/features/dashboard/cards/register.ts:58
 msgid "Traffic"
 msgstr ""
 
@@ -8401,7 +8456,7 @@ msgstr ""
 msgid "Username there"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:51
+#: app/src/react/features/dashboard/cards/register.ts:54
 #: app/src/react/features/roles/queries.ts:26
 #: app/src/react/features/settings/categories.ts:32
 #: app/src/react/features/users/UserDetails.tsx:58
@@ -8575,8 +8630,12 @@ msgstr ""
 msgid "Visit the plugin site"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:87
+#: app/src/react/features/dashboard/cards/register.ts:90
 msgid "Visitor map"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:65
+msgid "vs previous period"
 msgstr ""
 
 #: app/src/react/features/notices/queries.ts:34
@@ -8673,7 +8732,7 @@ msgstr ""
 msgid "What is measured and how"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/register.ts:35
+#: app/src/react/features/dashboard/cards/register.ts:38
 msgid "What is queued to go out"
 msgstr ""
 
@@ -8687,6 +8746,12 @@ msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:173
 msgid "What the image shows, for people who cannot see it."
+msgstr ""
+
+#: app/src/shared/settings/settings-config.js:777
+msgid ""
+"What the store aims to earn each calendar month. The dashboard measures the "
+"month against it; leave it at 0 to hide the target."
 msgstr ""
 
 #: admin/src/Pages/DummyDataPage.php:122
@@ -8766,7 +8831,7 @@ msgstr ""
 msgid "WooCommerce"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/ecommerce.tsx:13
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:21
 msgid "WooCommerce is not active"
 msgstr ""
 

@@ -650,6 +650,96 @@ class WooCommerceDashboard {
 
 
 	/**
+	 * The channel an order came through, by kind rather than by the exact source.
+	 *
+	 * The order source names the campaign or the referring site; a chart of those has a slice
+	 * per newsletter. The kind — campaign, organic, referral, direct — is what a store compares.
+	 *
+	 * @since 4.2.0
+	 * @param string $type Source type from get_order_source().
+	 * @return array
+	 */
+	private function get_channel( $type ) {
+		$labels = array(
+			'utm' => __( 'Campaigns', 'flexify-dashboard' ),
+			'organic' => __( 'Organic search', 'flexify-dashboard' ),
+			'referral' => __( 'Referral', 'flexify-dashboard' ),
+			'typein' => __( 'Direct', 'flexify-dashboard' ),
+			'checkout' => __( 'Direct', 'flexify-dashboard' ),
+			'store-api' => __( 'Direct', 'flexify-dashboard' ),
+			'mobile_app' => __( 'Mobile app', 'flexify-dashboard' ),
+			'admin' => __( 'Created in admin', 'flexify-dashboard' ),
+			'pos' => __( 'Point of sale', 'flexify-dashboard' ),
+			'rest-api' => __( 'API', 'flexify-dashboard' ),
+		);
+
+		// Classic and block checkout are the same channel to the person reading the chart.
+		$key = in_array( $type, array( 'typein', 'checkout', 'store-api' ), true ) ? 'direct' : ( isset( $labels[ $type ] ) ? $type : 'other' );
+
+		return array(
+			'key' => $key,
+			'label' => isset( $labels[ $type ] ) ? $labels[ $type ] : __( 'Other', 'flexify-dashboard' ),
+		);
+	}
+
+
+	/**
+	 * How the month is going against the target set in the settings.
+	 *
+	 * Always the calendar month up to today, whatever period the dashboard shows: a monthly
+	 * target only means something against the month. Last month is counted up to the same day,
+	 * so the comparison is not a whole month against part of one.
+	 *
+	 * @since 4.2.0
+	 * @return array
+	 */
+	private function get_month_progress() {
+		$settings = get_option( 'flexify_dashboard_settings', array() );
+		$target = is_array( $settings ) && isset( $settings['monthly_revenue_target'] ) ? max( 0, (float) $settings['monthly_revenue_target'] ) : 0;
+
+		$now = current_datetime();
+		$today = $now->format( 'Y-m-d' );
+		$month = $this->get_period_timestamps( $now->format( 'Y-m-01' ), $today );
+
+		$last_month_start = $now->modify( 'first day of last month' );
+		$last_month_day = min( (int) $now->format( 'j' ), (int) $last_month_start->format( 't' ) );
+		$last_month = $this->get_period_timestamps( $last_month_start->format( 'Y-m-01' ), $last_month_start->format( 'Y-m-' ) . str_pad( (string) $last_month_day, 2, '0', STR_PAD_LEFT ) );
+
+		$revenue = 0;
+		$today_revenue = 0;
+		$timezone = wp_timezone();
+
+		foreach ( $this->get_orders_by_period( $month['date_from'], $month['date_to'] ) as $order ) {
+			if ( ! ( $order instanceof WC_Order ) ) {
+				continue;
+			}
+
+			$revenue += (float) $order->get_total();
+			$created = $order->get_date_created();
+
+			if ( $created && $created->setTimezone( $timezone )->format( 'Y-m-d' ) === $today ) {
+				$today_revenue += (float) $order->get_total();
+			}
+		}
+
+		$previous = 0;
+
+		foreach ( $this->get_orders_by_period( $last_month['date_from'], $last_month['date_to'] ) as $order ) {
+			if ( $order instanceof WC_Order ) {
+				$previous += (float) $order->get_total();
+			}
+		}
+
+		return array(
+			'target' => round( $target, 2 ),
+			'revenue' => round( $revenue, 2 ),
+			'today' => round( $today_revenue, 2 ),
+			'previous' => round( $previous, 2 ),
+		);
+	}
+
+
+	/**
 	 * Get dashboard metrics response.
 	 *
 	 * @since 2.0.0
@@ -682,6 +772,7 @@ class WooCommerceDashboard {
 		$customers       = array();
 		$product_sales   = array();
 		$recent_orders   = array();
+		$channels        = array();
 		$chart_interval  = $this->get_chart_interval( $date_from, $date_to );
 		$revenue_chart   = $this->build_chart_buckets( $date_from, $date_to, $chart_interval );
 		$timezone        = wp_timezone();
@@ -705,6 +796,20 @@ class WooCommerceDashboard {
 			$revenue_net   += $order_total;
 			$revenue_gross += ( $order_total + $order_discount );
 
+			$channel = $this->get_channel( $order_source['type'] );
+
+			if ( ! isset( $channels[ $channel['key'] ] ) ) {
+				$channels[ $channel['key'] ] = array(
+					'key' => $channel['key'],
+					'label' => $channel['label'],
+					'orders' => 0,
+					'revenue' => 0,
+				);
+			}
+
+			++$channels[ $channel['key'] ]['orders'];
+			$channels[ $channel['key'] ]['revenue'] += $order_total;
+
 			$created_at = $order->get_date_created();
 
 			if ( $created_at ) {
@@ -718,6 +823,7 @@ class WooCommerceDashboard {
 
 			$recent_orders[] = array(
 				'id'            => $order_id,
+				'number'        => (string) $order->get_order_number(),
 				'customer_name' => $customer_name,
 				'total'         => round( $order_total, 2 ),
 				'edit_url'      => admin_url( 'admin.php?page=wc-orders&action=edit&id=' . $order_id ),
@@ -762,12 +868,18 @@ class WooCommerceDashboard {
 		$recent_orders  = array_slice( $recent_orders, 0, 5 );
 		$average_ticket = $orders_received > 0 ? $revenue_gross / $orders_received : 0;
 		$previous_customers = array();
+		$previous_net       = 0;
+		$previous_gross     = 0;
+		$previous_count     = 0;
 
 		foreach ( $previous_orders as $previous_order ) {
 			if ( ! ( $previous_order instanceof WC_Order ) ) {
 				continue;
 			}
 
+			++$previous_count;
+			$previous_net   += (float) $previous_order->get_total();
+			$previous_gross += (float) $previous_order->get_total() + (float) $previous_order->get_total_discount();
 			$previous_customers[ $this->build_customer_key( $previous_order ) ] = true;
 		}
 
@@ -775,6 +887,9 @@ class WooCommerceDashboard {
 		$previous_customers_count = count( $previous_customers );
 		$customers_change         = $this->calculate_percentage_change( $customers_count, $previous_customers_count );
 		$chart_datasets           = $this->prepare_chart_datasets( $revenue_chart );
+		$previous_average         = $previous_count > 0 ? $previous_gross / $previous_count : 0;
+
+		usort( $channels, static fn( $a, $b ) => $b['revenue'] <=> $a['revenue'] );
 
 		return new WP_REST_Response(
 			array(
@@ -818,6 +933,22 @@ class WooCommerceDashboard {
 						'change_percentage' => round( $customers_change, 2 ),
 						'trend'             => $this->get_trend_label( $customers_change ),
 					),
+					// Each figure against the period of the same length just before, so a number on
+					// screen always says whether it is good news.
+					'comparison'      => array(
+						'revenue'        => round( $this->calculate_percentage_change( $revenue_net, $previous_net ), 2 ),
+						'orders'         => round( $this->calculate_percentage_change( $orders_received, $previous_count ), 2 ),
+						'average_ticket' => round( $this->calculate_percentage_change( $average_ticket, $previous_average ), 2 ),
+					),
+					'channels'        => array_map(
+						static function ( $channel ) {
+							$channel['revenue'] = round( $channel['revenue'], 2 );
+
+							return $channel;
+						},
+						array_values( $channels )
+					),
+					'month'           => $this->get_month_progress(),
 					'currency'        => get_woocommerce_currency(),
 				),
 			),

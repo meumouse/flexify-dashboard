@@ -770,6 +770,21 @@ export const settingsConfig = [
   },
 
   {
+    id: 'monthly_revenue_target',
+    category: 'woocommerce',
+    type: 'number',
+    label: __('Monthly revenue target', 'flexify-dashboard'),
+    description: __(
+      'What the store aims to earn each calendar month. The dashboard measures the month against it; leave it at 0 to hide the target.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    componentProps: {
+      min: 0,
+    },
+  },
+
+  {
     id: 'use_modern_comments_page',
     category: 'comments',
     type: 'toggle',

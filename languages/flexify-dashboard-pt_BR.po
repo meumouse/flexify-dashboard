@@ -9161,3 +9161,59 @@ msgstr "Seção das configurações"
 #: app/src/react/features/settings/SettingsScreen.tsx:128
 msgid "Settings sections"
 msgstr "Seções das configurações"
+
+#: admin/src/Rest/WooCommerceDashboard.php:664
+msgid "Campaigns"
+msgstr "Campanhas"
+
+#: app/src/shared/settings/settings-config.js:776
+msgid "Monthly revenue target"
+msgstr "Meta de receita mensal"
+
+#: app/src/react/features/dashboard/cards/register.ts:110
+msgid "Monthly target"
+msgstr "Meta mensal"
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:138
+msgid "No monthly target yet"
+msgstr "Ainda não há meta mensal"
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:223
+msgid "No sales in this period."
+msgstr "Nenhuma venda neste período."
+
+#: admin/src/Rest/WooCommerceDashboard.php:665
+msgid "Organic search"
+msgstr "Busca orgânica"
+
+#: app/src/react/features/dashboard/cards/register.ts:114
+msgid "Sales by channel"
+msgstr "Vendas por canal"
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:140
+msgid "Set a target"
+msgstr "Definir uma meta"
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:138
+msgid "Set what the store aims to earn each month and this card measures the month against it."
+msgstr "Defina quanto a loja pretende faturar por mês e este cartão compara o mês com a meta."
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:167
+msgid "Target"
+msgstr "Meta"
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:160
+msgid "The month is at %1$s, ahead of the %2$s last month had by this day."
+msgstr "O mês está em %1$s, à frente dos %2$s que o mês passado tinha até este dia."
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:161
+msgid "The month is at %1$s, behind the %2$s last month had by this day."
+msgstr "O mês está em %1$s, atrás dos %2$s que o mês passado tinha até este dia."
+
+#: app/src/react/features/dashboard/cards/ecommerce.tsx:65
+msgid "vs previous period"
+msgstr "vs. período anterior"
+
+#: app/src/shared/settings/settings-config.js:777
+msgid "What the store aims to earn each calendar month. The dashboard measures the month against it; leave it at 0 to hide the target."
+msgstr "Quanto a loja pretende faturar em cada mês do calendário. O painel compara o mês com esse valor; deixe 0 para esconder a meta."

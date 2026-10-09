@@ -74,6 +74,7 @@ class Default_Options {
             'use_modern_products_page'                   => true,
             'use_modern_orders_page'                     => true,
             'use_modern_product_editor'                  => false,
+            'monthly_revenue_target'                     => 0,
             'use_modern_post_editor'                     => false,
             'enable_realtime_collaboration'              => false,
             'enable_svg_uploads'                         => false,

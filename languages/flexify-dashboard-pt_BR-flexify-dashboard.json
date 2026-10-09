@@ -884,6 +884,9 @@
       "Campaign": [
         "Campanha"
       ],
+      "Campaigns": [
+        "Campanhas"
+      ],
       "Can be dismissed": [
         "Pode ser dispensado"
       ],
@@ -2897,6 +2900,12 @@
       "Modernise login page": [
         "Modernizar a página de login"
       ],
+      "Monthly revenue target": [
+        "Meta de receita mensal"
+      ],
+      "Monthly target": [
+        "Meta mensal"
+      ],
       "More": [
         "Mais"
       ],
@@ -3107,6 +3116,9 @@
       "No metrics found": [
         "Nenhuma métrica encontrada"
       ],
+      "No monthly target yet": [
+        "Ainda não há meta mensal"
+      ],
       "No newer orders": [
         "Nenhum pedido mais recente"
       ],
@@ -3184,6 +3196,9 @@
       ],
       "No rows": [
         "Nenhuma linha"
+      ],
+      "No sales in this period.": [
+        "Nenhuma venda neste período."
       ],
       "No setting here matches that.": [
         "Nenhuma configuração aqui corresponde a isso."
@@ -3490,6 +3505,9 @@
       ],
       "Organic": [
         "Orgânico"
+      ],
+      "Organic search": [
+        "Busca orgânica"
       ],
       "Organization": [
         "Organização"
@@ -4325,6 +4343,9 @@
       "Sale starts": [
         "Promoção começa"
       ],
+      "Sales by channel": [
+        "Vendas por canal"
+      ],
       "Same as billing address": [
         "Igual ao endereço de cobrança"
       ],
@@ -4574,6 +4595,9 @@
       "Set a new one. The current password stops working at once.": [
         "Defina uma nova. A senha atual deixa de funcionar na hora."
       ],
+      "Set a target": [
+        "Definir uma meta"
+      ],
       "Set an alternative logo to use in dark mode. If one isn't set it will fall back to the standard logo.": [
         "Defina um logotipo alternativo para usar no modo escuro. Se nenhum for definido, o logotipo padrão será usado."
       ],
@@ -4585,6 +4609,9 @@
       ],
       "Set to": [
         "Definir como"
+      ],
+      "Set what the store aims to earn each month and this card measures the month against it.": [
+        "Defina quanto a loja pretende faturar por mês e este cartão compara o mês com a meta."
       ],
       "Sets the payment date and moves the order to processing or completed.": [
         "Define a data de pagamento e move o pedido para processando ou concluído."
@@ -4895,6 +4922,9 @@
       "Taking capabilities away from it can lock everyone out of parts of the site, including this screen.": [
         "Tirar permissões dela pode trancar todo mundo fora de partes do site, inclusive desta tela."
       ],
+      "Target": [
+        "Meta"
+      ],
       "Tax class": [
         "Classe de imposto"
       ],
@@ -5002,6 +5032,12 @@
       ],
       "The media library is not available on this screen.": [
         "A biblioteca de mídia não está disponível nesta tela."
+      ],
+      "The month is at %1$s, ahead of the %2$s last month had by this day.": [
+        "O mês está em %1$s, à frente dos %2$s que o mês passado tinha até este dia."
+      ],
+      "The month is at %1$s, behind the %2$s last month had by this day.": [
+        "O mês está em %1$s, atrás dos %2$s que o mês passado tinha até este dia."
       ],
       "The name the stylesheet gives it.": [
         "O nome que a folha de estilo dá a ela."
@@ -5759,6 +5795,9 @@
       "What the image shows, for people who cannot see it.": [
         "O que a imagem mostra, para quem não pode vê-la."
       ],
+      "What the store aims to earn each calendar month. The dashboard measures the month against it; leave it at 0 to hide the target.": [
+        "Quanto a loja pretende faturar em cada mês do calendário. O painel compara o mês com esse valor; deixe 0 para esconder a meta."
+      ],
       "When": [
         "Quando"
       ],
@@ -5932,6 +5971,9 @@
       ],
       "today": [
         "hoje"
+      ],
+      "vs previous period": [
+        "vs. período anterior"
       ],
       "wp.i18n loaded": [
         "wp.i18n carregado"

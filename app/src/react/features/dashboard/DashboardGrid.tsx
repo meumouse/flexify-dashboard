@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, type CSSProperties } from 'react';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
 import { CardRender, Icon, Tooltip } from '@/react/ui';
@@ -70,8 +70,16 @@ export const DashboardGrid = ({ cards, cardProps, onMove, onResize }: Props) => 
 				<section
 					key={card.metadata.id}
 					id={card.metadata.id}
-					className={cn(cardClass, 'group/card relative min-w-0 p-5 md:p-6', dragging === card.metadata.id && 'opacity-50', resizing === card.metadata.id && 'ring-2 ring-brand-500/40')}
-					style={{ gridColumn: `span ${card.metadata.width} / span ${card.metadata.width}` }}
+					className={cn(
+						cardClass,
+						'group/card relative min-w-0 p-5 md:col-span-(--fd-card-span) md:p-6',
+						dragging === card.metadata.id && 'opacity-50',
+						resizing === card.metadata.id && 'ring-2 ring-brand-500/40'
+					)}
+					// The width only applies from md, where the grid has twelve columns. Set inline, a
+					// span of 4 in the one-column phone grid made three implicit columns and a card a
+					// third of the screen wide.
+					style={{ '--fd-card-span': card.metadata.width } as CSSProperties}
 					onDragOver={(event) => {
 						if (dragging && dragging !== card.metadata.id) {
 							event.preventDefault();
