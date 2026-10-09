@@ -9,7 +9,7 @@ import { RevenueChart } from '@/react/features/dashboard/RevenueChart';
 import { Sparkline } from '@/react/features/dashboard/Sparkline';
 import { SERIES_COLORS, accentColor, targetProgress } from '@/react/features/dashboard/charts';
 import { money, useCardMetrics, type CardProps } from '@/react/features/dashboard/cards/useCardMetrics';
-import type { BadgeColor } from '@/react/ui/recipes';
+import { figureClass, type BadgeColor } from '@/react/ui/recipes';
 
 /**
  * The store cards of the dashboard: what the period earned against the one before, what sold,
@@ -58,7 +58,7 @@ const Metric = ({ label, value, change, trend, loading }: { label: string; value
 	<div className="flex min-w-0 items-end justify-between gap-3 py-4 xl:px-6 xl:first:ps-0 xl:last:pe-0">
 		<div className="min-w-0">
 			<p className="truncate text-theme-sm text-gray-500 dark:text-gray-400">{label}</p>
-			{loading ? <Skeleton className="mt-1 h-7 w-24" /> : <p className="mt-1 truncate text-title-xs font-semibold text-gray-800 dark:text-white/90">{value}</p>}
+			{loading ? <Skeleton className="mt-1 h-7 w-24" /> : <p className={cn('mt-1 truncate', figureClass.strip)}>{value}</p>}
 			{!loading && change !== undefined ? (
 				<p className="mt-1.5 flex flex-wrap items-center gap-1.5 text-theme-xs text-gray-500 dark:text-gray-400">
 					<Change value={change} />
@@ -151,7 +151,7 @@ export const StoreTargetCard = ({ dateRange }: CardProps) => {
 			<div className="relative">
 				<Gauge percent={percent} />
 				<div className="absolute inset-x-0 bottom-0 text-center">
-					<p className="text-title-sm font-semibold text-gray-800 dark:text-white/90">{`${percent.toLocaleString(undefined, { maximumFractionDigits: 1 })}%`}</p>
+					<p className={figureClass.hero}>{`${percent.toLocaleString(undefined, { maximumFractionDigits: 1 })}%`}</p>
 				</div>
 			</div>
 

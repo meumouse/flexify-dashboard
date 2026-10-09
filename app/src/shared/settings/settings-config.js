@@ -27,6 +27,15 @@ const getSubmenuStyles = () => [
 ];
 
 /**
+ * Get sidebar colour options
+ * @returns {Array} Sidebar colour options
+ */
+const getSidebarThemeOptions = () => [
+  { value: 'dark', label: __('Dark', 'flexify-dashboard') },
+  { value: 'auto', label: __('Same as the admin theme', 'flexify-dashboard') },
+];
+
+/**
  * Get force global theme options
  * @returns {Array} Force global theme options
  */
@@ -563,6 +572,19 @@ export const settingsConfig = [
       class: 'max-w-[300px]',
     },
     getOptions: getSubmenuStyles,
+  },
+
+  {
+    id: 'sidebar_theme',
+    category: 'menu',
+    type: 'select',
+    label: __('Sidebar colour', 'flexify-dashboard'),
+    description: __(
+      'Dark keeps the sidebar dark in light mode too, so the menu stands apart from the page. Same as the admin theme follows light and dark mode.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+    getOptions: getSidebarThemeOptions,
   },
 
   {

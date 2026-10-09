@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useRest } from '@/react/app/WpDataProvider';
 import { cn } from '@/react/lib/cn';
+import { figureClass } from '@/react/ui/recipes';
 import { __ } from '@/react/lib/i18n';
 import { Icon, Skeleton } from '@/react/ui';
 import { isoDate } from '@/react/features/dashboard/useWooDashboard';
@@ -92,15 +93,15 @@ export const StatRow = ({ stats, className }: { stats: Stat[]; className?: strin
 			return (
 				<div key={stat.label} className="min-w-0">
 					{stat.icon ? (
-						<span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white/90">
-							<Icon name={stat.icon} className="text-theme-xl" />
+						<span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-white/90">
+							<Icon name={stat.icon} className="text-theme-lg" />
 						</span>
 					) : null}
 
 					<p className="truncate text-theme-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
 
 					<p className="mt-1 flex flex-wrap items-center gap-2">
-						<span className="truncate text-title-sm font-bold text-gray-800 dark:text-white/90">{stat.value}</span>
+						<span className={cn('truncate', figureClass.card)}>{stat.value}</span>
 
 						{stat.trend !== null && stat.trend !== undefined ? (
 							<span

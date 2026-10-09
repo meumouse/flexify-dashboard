@@ -61,6 +61,19 @@ export const hintClasses = {
   success: 'mt-1.5 text-theme-xs text-success-500',
 };
 
+/**
+ * How big a figure is, by how much room it has.
+ *
+ * One number alone in a card (a target, people online) can be large; four side by side across
+ * the page a step smaller; three sharing a third of the page smaller again. A 30px figure in a
+ * 300px card is what made "808.92 KB" crowd its neighbours.
+ */
+export const figureClass = {
+  hero: 'text-title-sm font-semibold text-gray-800 dark:text-white/90',
+  strip: 'text-title-xs font-semibold text-gray-800 dark:text-white/90',
+  card: 'text-theme-xl font-semibold text-gray-800 dark:text-white/90',
+};
+
 export const cardClass = 'rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]';
 
 export const dropdownPanelClass =

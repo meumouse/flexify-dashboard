@@ -27,6 +27,8 @@ type Props = {
 	collapsed: boolean;
 	/** The drawer on small screens always renders the full sidebar */
 	mobile?: boolean;
+	/** Drawn dark, which picks the dark logo when the site has one */
+	dark?: boolean;
 	/** Expanded width; it differs from the default when the site lets the edge be dragged */
 	width?: number;
 	/** Present when the edge can be dragged: the width while dragging, then once at the end */
@@ -37,7 +39,7 @@ type Props = {
 
 const RESIZE_STEP = 16;
 
-export const AppSidebar = ({ menu, loading, collapsed, mobile = false, width: expandedWidth = SIDEBAR_WIDTH, onResize, onResizeEnd, onToggleOpen }: Props) => {
+export const AppSidebar = ({ menu, loading, collapsed, mobile = false, dark = false, width: expandedWidth = SIDEBAR_WIDTH, onResize, onResizeEnd, onToggleOpen }: Props) => {
 	const { settings, siteUrl, adminUrl } = useWpData();
 	const { favorites, add, remove, isFavorite } = useFavorites();
 	const [query, setQuery] = useState('');
@@ -106,7 +108,8 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, width: ex
 		return states;
 	}, [menu]);
 
-	const logo = (settings as { logo?: string; dark_logo?: string }).logo;
+	const logos = settings as { logo?: string; dark_logo?: string };
+	const logo = (dark && logos.dark_logo) || logos.logo;
 
 	const width = mobile ? '100%' : `${minified ? SIDEBAR_COLLAPSED_WIDTH : expandedWidth}px`;
 

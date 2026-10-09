@@ -117,15 +117,17 @@ class Analytics {
 					'required' => false,
 					'default' => null,
 					'type' => 'string',
-					'format' => 'date-time',
-					'description' => __( 'Start date for analytics data (ISO 8601 format)', 'flexify-dashboard' ),
+					'validate_callback' => array( $this, 'validate_date_param' ),
+					'sanitize_callback' => array( $this, 'sanitize_start_date' ),
+					'description' => __( 'Start date for analytics data (YYYY-MM-DD or ISO 8601)', 'flexify-dashboard' ),
 				),
 				'end_date' => array(
 					'required' => false,
 					'default' => null,
 					'type' => 'string',
-					'format' => 'date-time',
-					'description' => __( 'End date for analytics data (ISO 8601 format)', 'flexify-dashboard' ),
+					'validate_callback' => array( $this, 'validate_date_param' ),
+					'sanitize_callback' => array( $this, 'sanitize_end_date' ),
+					'description' => __( 'End date for analytics data (YYYY-MM-DD or ISO 8601)', 'flexify-dashboard' ),
 				),
 				'page_url' => array(
 					'required' => false,
@@ -219,15 +221,17 @@ class Analytics {
 					'required' => false,
 					'default' => null,
 					'type' => 'string',
-					'format' => 'date-time',
-					'description' => __( 'Start date for chart data (ISO 8601 format)', 'flexify-dashboard' ),
+					'validate_callback' => array( $this, 'validate_date_param' ),
+					'sanitize_callback' => array( $this, 'sanitize_start_date' ),
+					'description' => __( 'Start date for chart data (YYYY-MM-DD or ISO 8601)', 'flexify-dashboard' ),
 				),
 				'end_date' => array(
 					'required' => false,
 					'default' => null,
 					'type' => 'string',
-					'format' => 'date-time',
-					'description' => __( 'End date for chart data (ISO 8601 format)', 'flexify-dashboard' ),
+					'validate_callback' => array( $this, 'validate_date_param' ),
+					'sanitize_callback' => array( $this, 'sanitize_end_date' ),
+					'description' => __( 'End date for chart data (YYYY-MM-DD or ISO 8601)', 'flexify-dashboard' ),
 				),
 				'chart_type' => array(
 					'required' => false,
@@ -621,6 +625,71 @@ class Analytics {
 	 */
 	public function sanitize_required_url( $value ) {
 		return esc_url_raw( trim( (string) $value ) );
+	}
+
+
+	/**
+	 * Accept a day (`2026-10-08`) as well as a full ISO 8601 date-time.
+	 *
+	 * The dashboard asks for whole days and sends just the day; `format => date-time` refused that
+	 * with a 400, which left every analytics card saying it could not load.
+	 *
+	 * @since 4.2.0
+	 * @param mixed $value Date value.
+	 * @return bool
+	 */
+	public function validate_date_param( $value ) {
+		return null === $value || '' === $value || ( is_string( $value ) && false !== strtotime( $value ) );
+	}
+
+
+	/**
+	 * The start of the period, at the first second of its day.
+	 *
+	 * @since 4.2.0
+	 * @param mixed $value Date value.
+	 * @return string|null
+	 */
+	public function sanitize_start_date( $value ) {
+		return $this->normalise_day( $value, '00:00:00' );
+	}
+
+
+	/**
+	 * The end of the period, at the last second of its day.
+	 *
+	 * The raw table compares `created_at <= end`; a bare day there means midnight, and the last
+	 * day of the period would count nothing.
+	 *
+	 * @since 4.2.0
+	 * @param mixed $value Date value.
+	 * @return string|null
+	 */
+	public function sanitize_end_date( $value ) {
+		return $this->normalise_day( $value, '23:59:59' );
+	}
+
+
+	/**
+	 * A bare day gets the given time; a full date-time is kept as the moment it names.
+	 *
+	 * @since 4.2.0
+	 * @param mixed  $value Date value.
+	 * @param string $time  Time for a bare day.
+	 * @return string|null
+	 */
+	private function normalise_day( $value, $time ) {
+		if ( ! is_string( $value ) || '' === $value ) {
+			return null;
+		}
+
+		if ( preg_match( '/^\d{4}-\d{2}-\d{2}$/', $value ) ) {
+			return $value . ' ' . $time;
+		}
+
+		$timestamp = strtotime( $value );
+
+		return false === $timestamp ? null : gmdate( 'Y-m-d H:i:s', $timestamp );
 	}
 
 

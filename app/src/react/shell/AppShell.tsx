@@ -40,6 +40,9 @@ export const AppShell = () => {
 
 	const [collapsed, setCollapsed] = useState(readCollapsed);
 	const resizable = (settings as { sidebar_resizable?: boolean }).sidebar_resizable === true;
+	// Dark unless the site chose to follow the theme; a site saved before the option existed has
+	// no value and gets the default.
+	const sidebarDark = isDark || (settings as { sidebar_theme?: string }).sidebar_theme !== 'auto';
 	const sidebar = useSidebarWidth(resizable);
 	const [drawerOpen, setDrawerOpen] = useState(false);
 	const [searchOpen, setSearchOpen] = useState(false);
@@ -111,13 +114,14 @@ export const AppShell = () => {
 
 			<div className="flexify-dashboard-layout">
 				<div
-					className={cn('flexify-dashboard-isolation fd-sidebar-container flexify-dashboard-normalize sticky top-0 box-border h-screen max-h-screen font-sans', isDark && 'dark')}
+					className={cn('flexify-dashboard-isolation fd-sidebar-container flexify-dashboard-normalize sticky top-0 box-border h-screen max-h-screen font-sans', sidebarDark && 'dark')}
 					style={{ width: collapsed ? SIDEBAR_COLLAPSED_WIDTH : sidebar.width }}
 				>
 					<AppSidebar
 						menu={menu}
 						loading={loading}
 						collapsed={collapsed}
+						dark={sidebarDark}
 						width={sidebar.width}
 						onResize={resizable ? sidebar.resize : undefined}
 						onResizeEnd={resizable ? sidebar.commit : undefined}
@@ -149,8 +153,8 @@ export const AppShell = () => {
 
 			<div className={cn('flexify-dashboard-isolation', isDark && 'dark')}>
 				<Sheet open={drawerOpen} onOpenChange={setDrawerOpen} side="left" size="sm" bare title={__('Menu')}>
-					<div className="h-full max-h-full w-full overflow-hidden">
-						<AppSidebar menu={menu} loading={loading} collapsed={false} mobile onToggleOpen={toggleOpen} />
+					<div className={cn('h-full max-h-full w-full overflow-hidden', sidebarDark && 'dark')}>
+						<AppSidebar menu={menu} loading={loading} collapsed={false} mobile dark={sidebarDark} onToggleOpen={toggleOpen} />
 					</div>
 				</Sheet>
 

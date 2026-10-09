@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { cn } from '@/react/lib/cn';
 import { Icon } from '@/react/ui/Icon';
 import { Skeleton } from '@/react/ui/Spinner';
-import { cardClass } from '@/react/ui/recipes';
+import { cardClass, figureClass } from '@/react/ui/recipes';
 
 type Props = {
 	label: string;
@@ -41,7 +41,7 @@ export const MetricCard = ({ label, value, icon, trend = null, trendLabel, loadi
 					{loading ? (
 						<Skeleton className="mt-2 h-8 w-28" />
 					) : (
-						<h4 className="mt-2 truncate text-title-sm font-bold text-gray-800 dark:text-white/90">{value}</h4>
+						<h4 className={cn('mt-2 truncate', figureClass.hero)}>{value}</h4>
 					)}
 				</div>
 

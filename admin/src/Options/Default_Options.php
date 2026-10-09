@@ -58,6 +58,7 @@ class Default_Options {
             'external_stylesheets'                       => array(),
             'force_global_theme'                         => 'off',
             'submenu_style'                              => 'click',
+            'sidebar_theme'                              => 'dark',
             'enable_admin_menu_search'                   => false,
             'sidebar_resizable'                          => false,
             'hide_language_selector'                     => false,

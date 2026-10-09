@@ -192,6 +192,10 @@ class GlobalOptions {
                     'type'    => 'string',
                     'default' => 'click',
                 ),
+                'sidebar_theme' => array(
+                    'type'    => 'string',
+                    'default' => 'dark',
+                ),
                 'enable_admin_menu_search' => array(
                     'type'    => 'boolean',
                     'default' => false,
@@ -446,6 +450,10 @@ class GlobalOptions {
         // Kept as written, line breaks included: the maintenance page shows them.
         if ( isset( $value['maintenance_message'] ) ) {
             $sanitized_value['maintenance_message'] = sanitize_textarea_field( $value['maintenance_message'] );
+        }
+
+        if ( isset( $value['sidebar_theme'] ) ) {
+            $sanitized_value['sidebar_theme'] = 'auto' === $value['sidebar_theme'] ? 'auto' : 'dark';
         }
 
         if ( isset( $value['monthly_revenue_target'] ) ) {

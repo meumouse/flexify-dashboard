@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useWpData } from '@/react/app/WpDataProvider';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
@@ -21,18 +20,6 @@ const roundButton =
 /** Macs show the command key, everything else shows Ctrl. */
 const shortcutLabel = () => (typeof navigator !== 'undefined' && /mac/i.test(navigator.platform) ? '⌘K' : 'Ctrl K');
 
-/** Gravatar addresses the user by the SHA-256 of their email. */
-const gravatarUrl = async (email: string): Promise<string> => {
-	if (!email || !window.crypto?.subtle) {
-		return '';
-	}
-
-	const digest = await window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.trim().toLowerCase()));
-	const hash = [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
-
-	return `https://gravatar.com/avatar/${hash}?d=404&s=88`;
-};
-
 type Props = {
 	collapsed: boolean;
 	onToggleSidebar: () => void;
@@ -43,23 +30,8 @@ type Props = {
 };
 
 export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearch, onOpenNotifications, notificationsCount }: Props) => {
-	const { userName, userEmail, userRoles, adminUrl, siteUrl, loginUrl } = useWpData();
+	const { userName, userRoles, adminUrl, siteUrl, loginUrl, currentUser } = useWpData();
 	const { isDark, setColorScheme, globalOverride } = useColorScheme();
-	const [gravatar, setGravatar] = useState('');
-
-	useEffect(() => {
-		let active = true;
-
-		gravatarUrl(userEmail).then((url) => {
-			if (active) {
-				setGravatar(url);
-			}
-		});
-
-		return () => {
-			active = false;
-		};
-	}, [userEmail]);
 
 	const userLinks: MenuItem[] = [
 		{ label: __('Edit profile'), icon: 'person', href: `${adminUrl}profile.php` },
@@ -121,7 +93,7 @@ export const AppToolbar = ({ collapsed, onToggleSidebar, onOpenMenu, onOpenSearc
 				width="w-[260px]"
 				trigger={
 					<button type="button" className="flex items-center gap-3 rounded-full text-gray-700 dark:text-gray-400" aria-label={__('User menu')}>
-						<Avatar src={gravatar} name={userName} size="md" />
+						<Avatar src={currentUser?.avatar} name={userName} size="md" />
 						<span className="hidden max-w-32 truncate text-theme-sm font-medium xl:block">{userName}</span>
 					</button>
 				}

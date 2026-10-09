@@ -115,7 +115,9 @@ export const SettingField = ({ setting, settings, onChange }: Props) => {
 			return <Switch checked={value === true} onCheckedChange={set} aria-label={setting.label} />;
 
 		case 'select':
-			return <Select value={asString(value)} options={props.options ?? []} onChange={(next) => set(next)} aria-label={setting.label} className="max-w-xs" />;
+			// The schema gives most selects their options through `getOptions`; reading only
+			// `componentProps` left the submenu, global theme and analytics provider selects empty.
+			return <Select value={asString(value)} options={props.options ?? setting.getOptions?.() ?? []} onChange={(next) => set(next)} aria-label={setting.label} className="max-w-xs" />;
 
 		case 'number':
 			return <Input type="number" min={props.min} max={props.max} value={asString(value)} onChange={(event) => set(Number(event.target.value))} aria-label={setting.label} className="max-w-32" />;

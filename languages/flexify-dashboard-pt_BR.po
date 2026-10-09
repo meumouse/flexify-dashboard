@@ -9368,3 +9368,31 @@ msgstr "Arquivos sem uso"
 #: app/src/react/features/orders/OrdersBoard.tsx:168
 msgid "WooCommerce may email the customer about the new status."
 msgstr "O WooCommerce pode enviar um e-mail ao cliente sobre o novo status."
+
+#: app/src/shared/settings/settings-config.js:582
+msgid "Dark keeps the sidebar dark in light mode too, so the menu stands apart from the page. Same as the admin theme follows light and dark mode."
+msgstr "Escura mantém a sidebar escura também no modo claro, para o menu se destacar da página. Igual ao tema do admin acompanha o modo claro e o escuro."
+
+#: admin/src/Rest/Analytics.php:130
+msgid "End date for analytics data (YYYY-MM-DD or ISO 8601)"
+msgstr "Data final dos dados de analytics (AAAA-MM-DD ou ISO 8601)"
+
+#: admin/src/Rest/Analytics.php:234
+msgid "End date for chart data (YYYY-MM-DD or ISO 8601)"
+msgstr "Data final dos dados do gráfico (AAAA-MM-DD ou ISO 8601)"
+
+#: app/src/shared/settings/settings-config.js:35
+msgid "Same as the admin theme"
+msgstr "Igual ao tema do admin"
+
+#: app/src/shared/settings/settings-config.js:581
+msgid "Sidebar colour"
+msgstr "Cor da sidebar"
+
+#: admin/src/Rest/Analytics.php:122
+msgid "Start date for analytics data (YYYY-MM-DD or ISO 8601)"
+msgstr "Data inicial dos dados de analytics (AAAA-MM-DD ou ISO 8601)"
+
+#: admin/src/Rest/Analytics.php:226
+msgid "Start date for chart data (YYYY-MM-DD or ISO 8601)"
+msgstr "Data inicial dos dados do gráfico (AAAA-MM-DD ou ISO 8601)"

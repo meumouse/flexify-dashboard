@@ -1385,6 +1385,9 @@
       "Dark Logo url": [
         "URL do logotipo escuro"
       ],
+      "Dark keeps the sidebar dark in light mode too, so the menu stands apart from the page. Same as the admin theme follows light and dark mode.": [
+        "Escura mantém a sidebar escura também no modo claro, para o menu se destacar da página. Igual ao tema do admin acompanha o modo claro e o escuro."
+      ],
       "Dark mode": [
         "Modo escuro"
       ],
@@ -1787,8 +1790,14 @@
       "End date for analytics data (ISO 8601 format)": [
         "Data final para dados analíticos (formato ISO 8601)"
       ],
+      "End date for analytics data (YYYY-MM-DD or ISO 8601)": [
+        "Data final dos dados de analytics (AAAA-MM-DD ou ISO 8601)"
+      ],
       "End date for chart data (ISO 8601 format)": [
         "Data final para dados do gráfico (formato ISO 8601)"
+      ],
+      "End date for chart data (YYYY-MM-DD or ISO 8601)": [
+        "Data final dos dados do gráfico (AAAA-MM-DD ou ISO 8601)"
       ],
       "Engagement": [
         "Noivado"
@@ -4430,6 +4439,9 @@
       "Same as billing address": [
         "Igual ao endereço de cobrança"
       ],
+      "Same as the admin theme": [
+        "Igual ao tema do admin"
+      ],
       "Saturation": [
         "Saturação"
       ],
@@ -4802,6 +4814,9 @@
       "Sidebar": [
         "Barra lateral"
       ],
+      "Sidebar colour": [
+        "Cor da sidebar"
+      ],
       "Sidebar view": [
         "Visualização lateral"
       ],
@@ -4898,8 +4913,14 @@
       "Start date for analytics data (ISO 8601 format)": [
         "Data de início dos dados analíticos (formato ISO 8601)"
       ],
+      "Start date for analytics data (YYYY-MM-DD or ISO 8601)": [
+        "Data inicial dos dados de analytics (AAAA-MM-DD ou ISO 8601)"
+      ],
       "Start date for chart data (ISO 8601 format)": [
         "Data de início dos dados do gráfico (formato ISO 8601)"
+      ],
+      "Start date for chart data (YYYY-MM-DD or ISO 8601)": [
+        "Data inicial dos dados do gráfico (AAAA-MM-DD ou ISO 8601)"
       ],
       "State": [
         "Estado"

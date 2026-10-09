@@ -15,6 +15,7 @@ export {
 	labelClass,
 	hintClasses,
 	cardClass,
+	figureClass,
 	dropdownPanelClass,
 	dropdownItemClass,
 	badgeColors,

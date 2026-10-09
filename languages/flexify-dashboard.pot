@@ -431,11 +431,11 @@ msgstr ""
 msgid "A username column and an email column are needed."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:456
+#: app/src/shared/settings/settings-config.js:465
 msgid "Accent base"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:446
+#: app/src/shared/settings/settings-config.js:455
 msgid "Accent theme colors"
 msgstr ""
 
@@ -479,7 +479,7 @@ msgstr ""
 msgid "Activate WooCommerce to see the store metrics here."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:63
+#: app/src/shared/settings/settings-config.js:72
 msgid "Activating Flexify Dashboard enables updates and features"
 msgstr ""
 
@@ -690,7 +690,7 @@ msgstr ""
 msgid "Add to gallery"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:478
+#: app/src/shared/settings/settings-config.js:487
 msgid ""
 "Add URLs to any external stylesheets you want Flexify Dashboard to load "
 "into the admin"
@@ -736,15 +736,15 @@ msgstr ""
 msgid "Adjustments"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:507
+#: app/src/shared/settings/settings-config.js:516
 msgid "Admin favicon"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:208
+#: app/src/shared/settings/settings-config.js:217
 msgid "Admin layout"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:164
+#: app/src/react/shell/AppSidebar.tsx:167
 #: app/src/react/shell/search/CommandPalette.tsx:29
 msgid "Admin menu"
 msgstr ""
@@ -804,7 +804,7 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1029
+#: app/src/shared/settings/settings-config.js:1051
 msgid "All Actions"
 msgstr ""
 
@@ -853,13 +853,13 @@ msgstr ""
 msgid "Allow backorders?"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:573
+#: app/src/shared/settings/settings-config.js:595
 msgid ""
 "Allow dragging the sidebar edge to change its width. When disabled the "
 "sidebar uses the default width."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:729
+#: app/src/shared/settings/settings-config.js:751
 msgid ""
 "Allow font files (.woff2, .woff, .ttf, .otf) to be uploaded to the media "
 "library. This enables custom font support for your site."
@@ -869,7 +869,7 @@ msgstr ""
 msgid "Allow free shipping"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:714
+#: app/src/shared/settings/settings-config.js:736
 msgid ""
 "Allow SVG (Scalable Vector Graphics) files to be uploaded to the media "
 "library. All SVG files are automatically sanitized before upload to remove "
@@ -894,7 +894,7 @@ msgstr ""
 msgid "Alternative text"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:679
+#: app/src/shared/settings/settings-config.js:701
 msgid "Always show hidden update notifications for specific users/roles"
 msgstr ""
 
@@ -941,11 +941,11 @@ msgstr ""
 msgid "Analytics property"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:876
+#: app/src/shared/settings/settings-config.js:898
 msgid "Analytics Provider"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:208
+#: admin/src/Rest/Analytics.php:210
 msgid "Analytics settings to update"
 msgstr ""
 
@@ -999,7 +999,7 @@ msgid "Any tag"
 msgstr ""
 
 #: app/src/react/features/activity/ActivityList.tsx:187
-#: app/src/react/features/settings/SettingField.tsx:139
+#: app/src/react/features/settings/SettingField.tsx:141
 msgid "Anyone"
 msgstr ""
 
@@ -1012,7 +1012,7 @@ msgstr ""
 msgid "API"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:914
+#: app/src/shared/settings/settings-config.js:936
 msgid ""
 "API key used by the analytics map card. Store the token here instead of "
 "keeping it in source code."
@@ -1129,7 +1129,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1040
+#: app/src/shared/settings/settings-config.js:1062
 msgid "Auto Cleanup"
 msgstr ""
 
@@ -1150,7 +1150,7 @@ msgstr ""
 msgid "Automatic updates changed"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1041
+#: app/src/shared/settings/settings-config.js:1063
 msgid ""
 "Automatically delete logs older than the retention period. Disable to keep "
 "logs indefinitely."
@@ -1208,11 +1208,11 @@ msgstr ""
 msgid "Badges"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:438
+#: app/src/shared/settings/settings-config.js:447
 msgid "Base"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:428
+#: app/src/shared/settings/settings-config.js:437
 msgid "Base theme colors"
 msgstr ""
 
@@ -1268,7 +1268,7 @@ msgstr ""
 msgid "Bold"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:207
+#: app/src/react/features/dashboard/cards/analytics.tsx:208
 msgid "Bounce rate"
 msgstr ""
 
@@ -1303,7 +1303,7 @@ msgid ""
 msgstr ""
 
 #: admin/src/Analytics/Providers/FlexifyDashboardAnalyticsProvider.php:92
-#: app/src/shared/settings/settings-config.js:44
+#: app/src/shared/settings/settings-config.js:53
 msgid "Built-in Analytics"
 msgstr ""
 
@@ -1468,7 +1468,7 @@ msgstr ""
 msgid "Change status"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:267
+#: app/src/shared/settings/settings-config.js:276
 msgid ""
 "Change the login url from wp-login.php to a custom slug. Ensure you "
 "remember what you change this to."
@@ -1508,7 +1508,7 @@ msgstr ""
 msgid "Choose a CSV file"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:491
+#: app/src/shared/settings/settings-config.js:500
 msgid ""
 "Choose a custom font for the admin interface. Select from Google Fonts, "
 "enter a custom font URL, or upload your own font files."
@@ -1559,11 +1559,11 @@ msgstr ""
 msgid "Choose from the most used tags"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:557
+#: app/src/shared/settings/settings-config.js:566
 msgid "Choose from whether the submenu opens on click or hover."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:135
+#: app/src/shared/settings/settings-config.js:144
 msgid "Choose roles or usersnames to disable the theme for."
 msgstr ""
 
@@ -1575,24 +1575,24 @@ msgstr ""
 msgid "Choose variation image"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1021
+#: app/src/shared/settings/settings-config.js:1043
 msgid ""
 "Choose which actions to log. \"All Actions\" logs everything, \"Important "
 "Only\" logs only critical actions like deletions and role changes."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:877
+#: app/src/shared/settings/settings-config.js:899
 msgid ""
 "Choose which analytics provider to use for dashboard data. Select Built-in "
 "Analytics to use the Flexify Dashboard tracking system, or Google Analytics "
 "to display data from your GA4 property."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:150
+#: app/src/shared/settings/settings-config.js:159
 msgid "Choose which post types are available in the global search"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:209
+#: app/src/shared/settings/settings-config.js:218
 msgid "Choose your prefered admin layout"
 msgstr ""
 
@@ -1661,7 +1661,7 @@ msgstr ""
 msgid "Click to rename"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:189
+#: admin/src/Rest/Analytics.php:191
 msgid "Client-side session ID"
 msgstr ""
 
@@ -1671,7 +1671,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:177
+#: app/src/shared/settings/settings-config.js:186
 msgid ""
 "Close the public site while it is being worked on. Visitors see a "
 "maintenance page and search engines are told the site is coming back; "
@@ -1686,7 +1686,7 @@ msgstr ""
 msgid "Collapse"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:77
+#: app/src/react/shell/AppToolbar.tsx:49
 msgid "Collapse sidebar"
 msgstr ""
 
@@ -1785,11 +1785,11 @@ msgstr ""
 msgid "Components"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:106
+#: app/src/shared/settings/settings-config.js:115
 msgid "Configure remote WordPress sites for cross-site operations."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:931
+#: app/src/shared/settings/settings-config.js:953
 msgid ""
 "Configure the site key and secret key used by the modern administrative "
 "login and password recovery forms."
@@ -1815,7 +1815,7 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:894
+#: app/src/shared/settings/settings-config.js:916
 msgid ""
 "Connect your Google Analytics 4 property to display analytics data in the "
 "dashboard. You will need to create OAuth credentials in Google Cloud "
@@ -1892,7 +1892,7 @@ msgstr ""
 msgid "Could not load the data"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/shared.tsx:59
+#: app/src/react/features/dashboard/cards/shared.tsx:60
 msgid "Could not load this card."
 msgstr ""
 
@@ -1972,7 +1972,7 @@ msgstr ""
 msgid "Create an order manually, e.g. for phone or in-store sales."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:794
+#: app/src/shared/settings/settings-config.js:816
 msgid ""
 "Create and edit products in a modern editor with pricing, inventory, "
 "images, attributes and variations. Keep it disabled if your extensions add "
@@ -2027,15 +2027,15 @@ msgstr ""
 msgid "Custom attribute"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:464
+#: app/src/shared/settings/settings-config.js:473
 msgid "Custom css"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:465
+#: app/src/shared/settings/settings-config.js:474
 msgid "Custom css added here will only be added in the admin area and login page."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:842
+#: app/src/shared/settings/settings-config.js:864
 msgid "Custom Dashboard"
 msgstr ""
 
@@ -2043,7 +2043,7 @@ msgstr ""
 msgid "Custom fields"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:490
+#: app/src/shared/settings/settings-config.js:499
 msgid "Custom Font"
 msgstr ""
 
@@ -2082,7 +2082,7 @@ msgstr ""
 msgid "Customers"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:540
+#: app/src/shared/settings/settings-config.js:549
 msgid ""
 "Customize the text displayed in the WordPress admin area. Enter original "
 "words or phrases and their replacements to white-label the admin interface."
@@ -2093,28 +2093,35 @@ msgstr ""
 msgid "Danger zone"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:36
+#: app/src/shared/settings/settings-config.js:34
+#: app/src/shared/settings/settings-config.js:45
 msgid "Dark"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:97
+#: app/src/shared/settings/settings-config.js:582
+msgid ""
+"Dark keeps the sidebar dark in light mode too, so the menu stands apart "
+"from the page. Same as the admin theme follows light and dark mode."
+msgstr ""
+
+#: app/src/shared/settings/settings-config.js:106
 msgid "Dark Logo url"
 msgstr ""
 
 #: app/src/react/features/design-system/FoundationCheck.tsx:52
-#: app/src/react/shell/AppToolbar.tsx:111
+#: app/src/react/shell/AppToolbar.tsx:83
 #: app/src/react/shell/search/useQuickActions.ts:43
 msgid "Dark mode"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:90
+#: app/src/shared/settings/settings-config.js:99
 msgid "Dark mode logo"
 msgstr ""
 
 #: app/src/react/features/dashboard/DashboardPage.tsx:67
 #: app/src/react/features/frontend/FrontendBar.tsx:23
 #: app/src/react/features/settings/categories.ts:27
-#: app/src/react/shell/AppSidebar.tsx:125
+#: app/src/react/shell/AppSidebar.tsx:128
 msgid "Dashboard"
 msgstr ""
 
@@ -2397,15 +2404,15 @@ msgstr ""
 msgid "Direct"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:164
+#: app/src/shared/settings/settings-config.js:173
 msgid "Disable global search"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:165
+#: app/src/shared/settings/settings-config.js:174
 msgid "Disable global search for all users."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:134
+#: app/src/shared/settings/settings-config.js:143
 msgid "Disable theme"
 msgstr ""
 
@@ -2544,7 +2551,7 @@ msgstr ""
 msgid "Drag to reorder"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:251
+#: app/src/react/shell/AppSidebar.tsx:254
 msgid "Drag to resize; double-click to reset"
 msgstr ""
 
@@ -2642,7 +2649,7 @@ msgstr ""
 msgid "Edit my profile"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:65
+#: app/src/react/shell/AppToolbar.tsx:37
 msgid "Edit profile"
 msgstr ""
 
@@ -2698,11 +2705,11 @@ msgstr ""
 msgid "Empty response."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:985
+#: app/src/shared/settings/settings-config.js:1007
 msgid "Enable Activity Logger"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:584
+#: app/src/shared/settings/settings-config.js:606
 msgid "Enable Admin Menu Search"
 msgstr ""
 
@@ -2710,33 +2717,33 @@ msgstr ""
 msgid "Enable archives"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:862
+#: app/src/shared/settings/settings-config.js:884
 msgid ""
 "Enable built-in analytics to track user behavior, page views, and "
 "performance metrics within your WordPress admin."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:947
+#: app/src/shared/settings/settings-config.js:969
 msgid "Enable Database Explorer"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:861
+#: app/src/shared/settings/settings-config.js:883
 msgid "Enable Flexify Dashboard Analytics"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:728
+#: app/src/shared/settings/settings-config.js:750
 msgid "Enable Font Uploads"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:347
+#: app/src/shared/settings/settings-config.js:356
 msgid "Enable Google reCAPTCHA"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:603
+#: app/src/shared/settings/settings-config.js:625
 msgid "Enable modern list view"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:635
+#: app/src/shared/settings/settings-config.js:657
 msgid ""
 "Enable real-time collaboration in the modern post editor. Multiple users "
 "can edit the same post simultaneously with live cursor tracking and synced "
@@ -2747,31 +2754,31 @@ msgstr ""
 msgid "Enable reviews"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:966
+#: app/src/shared/settings/settings-config.js:988
 msgid "Enable Role Editor"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:585
+#: app/src/shared/settings/settings-config.js:607
 msgid "Enable search functionality in the admin menu to quickly find menu items."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:713
+#: app/src/shared/settings/settings-config.js:735
 msgid "Enable SVG Uploads"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:948
+#: app/src/shared/settings/settings-config.js:970
 msgid ""
 "Enable the modern database explorer interface to browse tables, view data, "
 "and execute SQL queries safely."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:967
+#: app/src/shared/settings/settings-config.js:989
 msgid ""
 "Enable the modern role editor interface to manage WordPress user roles and "
 "capabilities."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:298
+#: app/src/shared/settings/settings-config.js:307
 msgid "Enable TurnStyle"
 msgstr ""
 
@@ -2783,12 +2790,12 @@ msgstr ""
 msgid "End date for analytics (ISO 8601)"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:128
-msgid "End date for analytics data (ISO 8601 format)"
+#: admin/src/Rest/Analytics.php:130
+msgid "End date for analytics data (YYYY-MM-DD or ISO 8601)"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:230
-msgid "End date for chart data (ISO 8601 format)"
+#: admin/src/Rest/Analytics.php:234
+msgid "End date for chart data (YYYY-MM-DD or ISO 8601)"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/register.ts:70
@@ -2819,7 +2826,7 @@ msgstr ""
 msgid "Enter your email or username to recover your password."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:921
+#: app/src/shared/settings/settings-config.js:943
 msgid "Enter your Mapbox token"
 msgstr ""
 
@@ -2915,7 +2922,7 @@ msgstr ""
 msgid "Expand all"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:77
+#: app/src/react/shell/AppToolbar.tsx:49
 msgid "Expand sidebar"
 msgstr ""
 
@@ -2962,7 +2969,7 @@ msgstr ""
 msgid "Express shipping"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:477
+#: app/src/shared/settings/settings-config.js:486
 msgid "External stylesheets"
 msgstr ""
 
@@ -3021,11 +3028,11 @@ msgstr ""
 msgid "Failed to remove existing plugin: %s"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:608
+#: admin/src/Rest/Analytics.php:612
 msgid "Failed to retrieve chart data"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:475
+#: admin/src/Rest/Analytics.php:479
 msgid "Failed to track analytics event"
 msgstr ""
 
@@ -3041,11 +3048,11 @@ msgstr ""
 msgid "fallback to English"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:514
+#: app/src/shared/settings/settings-config.js:523
 msgid "Favicon url"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:131
+#: app/src/react/shell/AppSidebar.tsx:134
 msgid "Favourites"
 msgstr ""
 
@@ -3142,7 +3149,7 @@ msgstr ""
 msgid "Files uploaded"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:135
+#: admin/src/Rest/Analytics.php:137
 msgid "Filter by specific page URL"
 msgstr ""
 
@@ -3155,7 +3162,7 @@ msgstr ""
 msgid "Filter media items by tag IDs."
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:160
+#: app/src/react/shell/AppSidebar.tsx:163
 msgid "Filter the menu"
 msgstr ""
 
@@ -3229,7 +3236,7 @@ msgstr ""
 msgid "For"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:385
+#: app/src/shared/settings/settings-config.js:394
 msgid "Force global theme"
 msgstr ""
 
@@ -3356,11 +3363,11 @@ msgid "Go to the dashboard"
 msgstr ""
 
 #: admin/src/Analytics/Providers/GoogleAnalyticsProvider.php:133
-#: app/src/shared/settings/settings-config.js:45
+#: app/src/shared/settings/settings-config.js:54
 msgid "Google Analytics 4"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:893
+#: app/src/shared/settings/settings-config.js:915
 msgid "Google Analytics Connection"
 msgstr ""
 
@@ -3372,7 +3379,7 @@ msgstr ""
 msgid "Google Fonts"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:930
+#: app/src/shared/settings/settings-config.js:952
 msgid "Google reCAPTCHA"
 msgstr ""
 
@@ -3442,23 +3449,23 @@ msgstr ""
 msgid "Hidden"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:416
+#: app/src/shared/settings/settings-config.js:425
 msgid "Hide help toggle"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:283
+#: app/src/shared/settings/settings-config.js:292
 msgid "Hide language selector"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:668
+#: app/src/shared/settings/settings-config.js:690
 msgid "Hide plugin update notifications for selected plugins"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:401
+#: app/src/shared/settings/settings-config.js:410
 msgid "Hide screen options"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:417
+#: app/src/shared/settings/settings-config.js:426
 msgid "Hide the help toggle in the toolbar"
 msgstr ""
 
@@ -3466,7 +3473,7 @@ msgstr ""
 msgid "Hide the password"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:402
+#: app/src/shared/settings/settings-config.js:411
 msgid "Hide the screen options toggle in the toolbar"
 msgstr ""
 
@@ -3494,7 +3501,7 @@ msgstr ""
 msgid "How it will look"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1001
+#: app/src/shared/settings/settings-config.js:1023
 msgid ""
 "How many days to keep activity logs before automatic cleanup. Default is 90 "
 "days."
@@ -3556,7 +3563,7 @@ msgstr ""
 msgid "Image address"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:244
+#: app/src/shared/settings/settings-config.js:253
 msgid "Image url"
 msgstr ""
 
@@ -3584,7 +3591,7 @@ msgstr ""
 msgid "Import users"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1030
+#: app/src/shared/settings/settings-config.js:1052
 msgid "Important Only"
 msgstr ""
 
@@ -3781,7 +3788,7 @@ msgstr ""
 msgid "Invalid session. Please reload the page and try again."
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:378
+#: admin/src/Rest/Analytics.php:382
 msgid "Invalid stat type"
 msgstr ""
 
@@ -4015,7 +4022,7 @@ msgstr ""
 msgid "Latest conversations"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:189
+#: app/src/shared/settings/settings-config.js:198
 msgid "Leave empty for \"We will be back soon\"."
 msgstr ""
 
@@ -4062,7 +4069,7 @@ msgid "Licence deactivated"
 msgstr ""
 
 #: app/src/react/features/settings/custom/index.tsx:91
-#: app/src/shared/settings/settings-config.js:62
+#: app/src/shared/settings/settings-config.js:71
 msgid "Licence key"
 msgstr ""
 
@@ -4122,11 +4129,11 @@ msgid ""
 "temporarily."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:35
+#: app/src/shared/settings/settings-config.js:44
 msgid "Light"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:111
+#: app/src/react/shell/AppToolbar.tsx:83
 #: app/src/react/shell/search/useQuickActions.ts:42
 msgid "Light mode"
 msgstr ""
@@ -4186,12 +4193,12 @@ msgstr ""
 msgid "Log entry not found."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1020
+#: app/src/shared/settings/settings-config.js:1042
 msgid "Log Level"
 msgstr ""
 
 #: app/src/react/features/frontend/FrontendBar.tsx:26
-#: app/src/react/shell/AppToolbar.tsx:69
+#: app/src/react/shell/AppToolbar.tsx:41
 msgid "Log out"
 msgstr ""
 
@@ -4203,11 +4210,11 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:237
+#: app/src/shared/settings/settings-config.js:246
 msgid "Login image"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:266
+#: app/src/shared/settings/settings-config.js:275
 msgid "Login path"
 msgstr ""
 
@@ -4215,12 +4222,12 @@ msgstr ""
 msgid "Login successful."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:75
+#: app/src/shared/settings/settings-config.js:84
 msgid "Logo"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:82
-#: app/src/shared/settings/settings-config.js:258
+#: app/src/shared/settings/settings-config.js:91
+#: app/src/shared/settings/settings-config.js:267
 msgid "Logo url"
 msgstr ""
 
@@ -4234,15 +4241,15 @@ msgstr ""
 msgid "Low stock threshold"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:188
+#: app/src/shared/settings/settings-config.js:197
 msgid "Maintenance heading"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:198
+#: app/src/shared/settings/settings-config.js:207
 msgid "Maintenance message"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:176
+#: app/src/shared/settings/settings-config.js:185
 msgid "Maintenance mode"
 msgstr ""
 
@@ -4270,7 +4277,7 @@ msgstr ""
 msgid "Manual refund"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:913
+#: app/src/shared/settings/settings-config.js:935
 msgid "Mapbox API key"
 msgstr ""
 
@@ -4347,7 +4354,7 @@ msgstr ""
 #: app/src/react/features/menus/MenuEditor.tsx:221
 #: app/src/react/features/menus/MenusList.tsx:59
 #: app/src/react/features/settings/categories.ts:26
-#: app/src/react/shell/AppShell.tsx:151
+#: app/src/react/shell/AppShell.tsx:155
 msgid "Menu"
 msgstr ""
 
@@ -4431,47 +4438,47 @@ msgstr ""
 msgid "Moderation"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:823
+#: app/src/shared/settings/settings-config.js:845
 msgid "Modern Comments Page"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:251
+#: app/src/shared/settings/settings-config.js:260
 msgid "Modern login logo"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:698
+#: app/src/shared/settings/settings-config.js:720
 msgid "Modern Media Library"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:778
+#: app/src/shared/settings/settings-config.js:800
 msgid "Modern Orders Page"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:654
+#: app/src/shared/settings/settings-config.js:676
 msgid "Modern Plugin Manager"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:619
+#: app/src/shared/settings/settings-config.js:641
 msgid "Modern Post Editor"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:793
+#: app/src/shared/settings/settings-config.js:815
 msgid "Modern Product Editor"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:763
+#: app/src/shared/settings/settings-config.js:785
 msgid "Modern Products Page"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:748
+#: app/src/shared/settings/settings-config.js:770
 msgid "Modern Users Page"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:222
+#: app/src/shared/settings/settings-config.js:231
 msgid "Modernise login page"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:808
+#: app/src/shared/settings/settings-config.js:830
 msgid "Monthly revenue target"
 msgstr ""
 
@@ -4716,7 +4723,7 @@ msgid "Next page"
 msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:151
-#: app/src/shared/settings/settings-config.js:609
+#: app/src/shared/settings/settings-config.js:631
 msgid "No"
 msgstr ""
 
@@ -4876,8 +4883,8 @@ msgstr ""
 msgid "No other site is connected yet."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:251
-#: app/src/react/features/dashboard/cards/analytics.tsx:409
+#: app/src/react/features/dashboard/cards/analytics.tsx:252
+#: app/src/react/features/dashboard/cards/analytics.tsx:410
 msgid "No page views in this period."
 msgstr ""
 
@@ -4922,7 +4929,7 @@ msgstr ""
 msgid "No Rank Math sections are enabled."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:287
+#: app/src/react/features/dashboard/cards/analytics.tsx:288
 msgid "No referrers in this period."
 msgstr ""
 
@@ -4995,8 +5002,8 @@ msgstr ""
 msgid "No variations yet"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:269
-#: app/src/react/features/dashboard/cards/analytics.tsx:310
+#: app/src/react/features/dashboard/cards/analytics.tsx:270
+#: app/src/react/features/dashboard/cards/analytics.tsx:311
 #: app/src/react/features/dashboard/cards/extras.tsx:95
 msgid "No visits in this period."
 msgstr ""
@@ -5080,7 +5087,7 @@ msgstr ""
 msgid "Nothing in the library matches this."
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:165
+#: app/src/react/shell/AppSidebar.tsx:168
 msgid "Nothing in the menu matches that."
 msgstr ""
 
@@ -5166,7 +5173,7 @@ msgstr ""
 msgid "off"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:34
+#: app/src/shared/settings/settings-config.js:43
 msgid "Off"
 msgstr ""
 
@@ -5284,27 +5291,27 @@ msgstr ""
 msgid "Operation"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:680
+#: app/src/shared/settings/settings-config.js:702
 msgid ""
 "Optional allow list. Selected users or roles (for example, Editor) will "
 "still see update notifications for hidden plugins."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:508
+#: app/src/shared/settings/settings-config.js:517
 msgid "Optional favicon to replace the WordPress favicon in the admin."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:238
+#: app/src/shared/settings/settings-config.js:247
 msgid "Optional image that will be added to the empty panel in the login page"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:252
+#: app/src/shared/settings/settings-config.js:261
 msgid ""
 "Optional logo displayed in the modern login screen. When empty, the default "
 "dashboard logo will be used."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:76
+#: app/src/shared/settings/settings-config.js:85
 msgid "Optional logo for to be displayed in the menu"
 msgstr ""
 
@@ -5460,11 +5467,11 @@ msgstr ""
 msgid "Page data"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:733
+#: admin/src/Rest/Analytics.php:802
 msgid "Page title exceeds maximum length"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:421
+#: admin/src/Rest/Analytics.php:425
 msgid "Page URL is required"
 msgstr ""
 
@@ -5486,7 +5493,7 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:228
+#: app/src/react/features/dashboard/cards/analytics.tsx:229
 msgid "Pages per session"
 msgstr ""
 
@@ -6118,7 +6125,7 @@ msgstr ""
 msgid "Ready to build screens"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:634
+#: app/src/shared/settings/settings-config.js:656
 msgid "Real-time Collaboration"
 msgstr ""
 
@@ -6207,11 +6214,11 @@ msgstr ""
 msgid "Referrer data from search engines and social media"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:174
+#: admin/src/Rest/Analytics.php:176
 msgid "Referrer URL"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:741
+#: admin/src/Rest/Analytics.php:810
 msgid "Referrer URL exceeds maximum length"
 msgstr ""
 
@@ -6299,11 +6306,11 @@ msgid ""
 "below with support."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:118
+#: app/src/shared/settings/settings-config.js:127
 msgid "Remote Site Switcher Capability"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:105
+#: app/src/shared/settings/settings-config.js:114
 msgid "Remote Sites"
 msgstr ""
 
@@ -6350,7 +6357,7 @@ msgstr ""
 msgid "Remove filter"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:144
+#: app/src/react/shell/AppSidebar.tsx:147
 msgid "Remove from favourites"
 msgstr ""
 
@@ -6404,7 +6411,7 @@ msgstr ""
 msgid "Removed from featured"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:522
+#: app/src/shared/settings/settings-config.js:531
 msgid "Rename Flexify Dashboard"
 msgstr ""
 
@@ -6424,50 +6431,50 @@ msgstr ""
 msgid "Replace the biography"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:620
+#: app/src/shared/settings/settings-config.js:642
 msgid ""
 "Replace the built-in WordPress editor with a modern, enhanced post editor "
 "interface."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:655
+#: app/src/shared/settings/settings-config.js:677
 msgid ""
 "Replace the classic plugins page with a modern plugin manager with plugin "
 "profiling and improved features."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:824
+#: app/src/shared/settings/settings-config.js:846
 msgid ""
 "Replace the classic WordPress comments page with a modern, responsive "
 "comment manager with improved features and better organization."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:699
+#: app/src/shared/settings/settings-config.js:721
 msgid ""
 "Replace the classic WordPress media library with a modern, responsive media "
 "manager with improved upload and organization features."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:749
+#: app/src/shared/settings/settings-config.js:771
 msgid ""
 "Replace the classic WordPress users page with a modern, responsive user "
 "manager with improved features and better organization."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:843
+#: app/src/shared/settings/settings-config.js:865
 msgid ""
 "Replace the default WordPress dashboard with a modern, customizable "
 "dashboard interface."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:779
+#: app/src/shared/settings/settings-config.js:801
 msgid ""
 "Replace the WooCommerce orders list and order details with a modern page "
 "featuring filters, previews, status changes, notes and refunds. Works with "
 "HPOS and legacy order storage."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:764
+#: app/src/shared/settings/settings-config.js:786
 msgid ""
 "Replace the WooCommerce products list with a modern page featuring "
 "counters, filters, quick edit and bulk actions. The classic editor is still "
@@ -6499,7 +6506,7 @@ msgstr ""
 msgid "Reset everything"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:334
+#: app/src/shared/settings/settings-config.js:343
 msgid "Reset settings"
 msgstr ""
 
@@ -6515,7 +6522,7 @@ msgstr ""
 msgid "Resetting the plugin and other things that are hard to undo"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:572
+#: app/src/shared/settings/settings-config.js:594
 msgid "Resizable sidebar"
 msgstr ""
 
@@ -6523,7 +6530,7 @@ msgstr ""
 msgid "Resize card"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:250
+#: app/src/react/shell/AppSidebar.tsx:253
 msgid "Resize the menu"
 msgstr ""
 
@@ -6551,7 +6558,7 @@ msgstr ""
 msgid "Restore"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:335
+#: app/src/shared/settings/settings-config.js:344
 msgid "Restore all Flexify Dashboard settings to their default values."
 msgstr ""
 
@@ -6563,7 +6570,7 @@ msgstr ""
 msgid "Results come from WordPress.org. Only what you type is sent there."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:1000
+#: app/src/shared/settings/settings-config.js:1022
 msgid "Retention Period (Days)"
 msgstr ""
 
@@ -6584,7 +6591,7 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:365
+#: app/src/react/features/dashboard/cards/analytics.tsx:366
 msgid "right now"
 msgstr ""
 
@@ -6707,6 +6714,10 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:733
 msgid "Same as billing address"
+msgstr ""
+
+#: app/src/shared/settings/settings-config.js:35
+msgid "Same as the admin theme"
 msgstr ""
 
 #: app/src/react/features/media/ImageEditor.tsx:25
@@ -6867,7 +6878,7 @@ msgstr ""
 msgid "Search orders"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:149
+#: app/src/shared/settings/settings-config.js:158
 msgid "Search post types"
 msgstr ""
 
@@ -6935,7 +6946,7 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:94
+#: app/src/react/shell/AppToolbar.tsx:66
 msgid "Search…"
 msgstr ""
 
@@ -7003,7 +7014,7 @@ msgstr ""
 msgid "Select row"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:669
+#: app/src/shared/settings/settings-config.js:691
 msgid ""
 "Select the plugins that should not display available update notices in the "
 "Plugins table."
@@ -7063,17 +7074,17 @@ msgstr ""
 msgid "Session tracking and unique visitor data"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:224
+#: app/src/react/features/dashboard/cards/analytics.tsx:225
 msgid "Sessions"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:447
+#: app/src/shared/settings/settings-config.js:456
 msgid ""
 "Set a accent color and Flexify Dashboard will automatically create a color "
 "scale for you."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:429
+#: app/src/shared/settings/settings-config.js:438
 msgid ""
 "Set a base color and Flexify Dashboard will automatically create a color "
 "scale for you."
@@ -7087,7 +7098,7 @@ msgstr ""
 msgid "Set a target"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:91
+#: app/src/shared/settings/settings-config.js:100
 msgid ""
 "Set an alternative logo to use in dark mode. If one isn't set it will fall "
 "back to the standard logo."
@@ -7125,7 +7136,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:542
+#: admin/src/Rest/Analytics.php:546
 msgid "Settings must be an object"
 msgstr ""
 
@@ -7270,6 +7281,10 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
+#: app/src/shared/settings/settings-config.js:581
+msgid "Sidebar colour"
+msgstr ""
+
 #: app/src/react/features/posts/PostsList.tsx:258
 msgid "Sidebar view"
 msgstr ""
@@ -7308,7 +7323,7 @@ msgstr ""
 msgid "Site key"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:67
+#: app/src/react/shell/AppToolbar.tsx:39
 #: app/src/react/shell/search/useQuickActions.ts:35
 msgid "Site settings"
 msgstr ""
@@ -7424,12 +7439,12 @@ msgstr ""
 msgid "Start date for analytics (ISO 8601)"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:121
-msgid "Start date for analytics data (ISO 8601 format)"
+#: admin/src/Rest/Analytics.php:122
+msgid "Start date for analytics data (YYYY-MM-DD or ISO 8601)"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:223
-msgid "Start date for chart data (ISO 8601 format)"
+#: admin/src/Rest/Analytics.php:226
+msgid "Start date for chart data (YYYY-MM-DD or ISO 8601)"
 msgstr ""
 
 #: app/src/react/features/orders/OrdersList.tsx:299
@@ -7521,7 +7536,7 @@ msgstr ""
 msgid "Sua sessão foi encerrada."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:556
+#: app/src/shared/settings/settings-config.js:565
 msgid "Submenu style"
 msgstr ""
 
@@ -7665,7 +7680,7 @@ msgstr ""
 msgid "Text color"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:539
+#: app/src/shared/settings/settings-config.js:548
 msgid "Text Replacement"
 msgstr ""
 
@@ -7963,13 +7978,13 @@ msgstr ""
 msgid "This is the number of pageviews carried out by visitors from Search Engines."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:364
+#: app/src/shared/settings/settings-config.js:373
 msgid ""
 "This is the secret key for your turnstyle which can be created from your "
 "cloudflare dashboard."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:314
+#: app/src/shared/settings/settings-config.js:323
 msgid ""
 "This is the site key for your turnstyle which can be created from your "
 "cloudflare dashboard."
@@ -8048,7 +8063,7 @@ msgid ""
 "for testing purposes."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:523
+#: app/src/shared/settings/settings-config.js:532
 msgid ""
 "This will rename Flexify Dashboard in the plugins list as well as renaming "
 "it's settings link."
@@ -8058,7 +8073,7 @@ msgstr ""
 msgid "This year"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:214
+#: app/src/react/features/dashboard/cards/analytics.tsx:215
 msgid "Time on page"
 msgstr ""
 
@@ -8080,7 +8095,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:166
+#: admin/src/Rest/Analytics.php:168
 msgid "Title of the page being viewed"
 msgstr ""
 
@@ -8104,7 +8119,7 @@ msgstr ""
 msgid "Today"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:112
+#: app/src/react/shell/AppToolbar.tsx:84
 msgid "Toggle dark mode"
 msgstr ""
 
@@ -8113,15 +8128,15 @@ msgstr ""
 msgid "Toggle details"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:83
+#: app/src/react/shell/AppToolbar.tsx:55
 msgid "Toggle menu"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:78
+#: app/src/react/shell/AppToolbar.tsx:50
 msgid "Toggle sidebar"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:765
+#: admin/src/Rest/Analytics.php:834
 msgid "Too many requests"
 msgstr ""
 
@@ -8194,7 +8209,7 @@ msgstr ""
 msgid "Total spent"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:986
+#: app/src/shared/settings/settings-config.js:1008
 msgid ""
 "Track and log all admin actions including post changes, user updates, "
 "plugin activations, and more."
@@ -8256,11 +8271,11 @@ msgstr ""
 msgid "Turnstile validation failed. Please try again."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:363
+#: app/src/shared/settings/settings-config.js:372
 msgid "Turnstyle secret key"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:313
+#: app/src/shared/settings/settings-config.js:322
 msgid "Turnstyle site key"
 msgstr ""
 
@@ -8280,11 +8295,11 @@ msgstr ""
 msgid "Type %s to confirm"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:143
+#: admin/src/Rest/Analytics.php:145
 msgid "Type of analytics stats to retrieve"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:238
+#: admin/src/Rest/Analytics.php:242
 msgid "Type of chart data to retrieve"
 msgstr ""
 
@@ -8342,7 +8357,7 @@ msgstr ""
 msgid "Unique identifier with up to 28 characters."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:175
+#: app/src/react/features/dashboard/cards/analytics.tsx:176
 msgid "Unique visitors"
 msgstr ""
 
@@ -8357,7 +8372,7 @@ msgstr ""
 
 #: admin/src/Rest/ActivityLog.php:373
 #: admin/src/Rest/WooCommerceOrders.php:732
-#: app/src/react/features/dashboard/cards/analytics.tsx:69
+#: app/src/react/features/dashboard/cards/analytics.tsx:70
 msgid "Unknown"
 msgstr ""
 
@@ -8475,7 +8490,7 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:725
+#: admin/src/Rest/Analytics.php:794
 msgid "URL exceeds maximum length"
 msgstr ""
 
@@ -8483,7 +8498,7 @@ msgstr ""
 msgid "URL Hits"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:158
+#: admin/src/Rest/Analytics.php:160
 msgid "URL of the page being viewed"
 msgstr ""
 
@@ -8524,7 +8539,7 @@ msgstr ""
 msgid "Use file"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:348
+#: app/src/shared/settings/settings-config.js:357
 msgid ""
 "Use Google reCAPTCHA v2 checkbox in the modern administrative login and "
 "password recovery forms. Credentials are configured in Integrations."
@@ -8542,7 +8557,7 @@ msgstr ""
 msgid "Use the light theme"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:604
+#: app/src/shared/settings/settings-config.js:626
 msgid ""
 "Use the modern posts list interface instead of the classic WordPress table "
 "layout."
@@ -8580,7 +8595,7 @@ msgstr ""
 msgid "User actions"
 msgstr ""
 
-#: admin/src/Rest/Analytics.php:182
+#: admin/src/Rest/Analytics.php:184
 msgid "User agent string"
 msgstr ""
 
@@ -8592,7 +8607,7 @@ msgstr ""
 msgid "User created"
 msgstr ""
 
-#: app/src/react/shell/AppToolbar.tsx:123
+#: app/src/react/shell/AppToolbar.tsx:95
 msgid "User menu"
 msgstr ""
 
@@ -8767,7 +8782,7 @@ msgstr ""
 msgid "View Tag"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/analytics.tsx:168
+#: app/src/react/features/dashboard/cards/analytics.tsx:169
 msgid "Views"
 msgstr ""
 
@@ -8792,8 +8807,8 @@ msgstr ""
 msgid "Visible on the product page"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:275
-#: app/src/react/shell/AppToolbar.tsx:66
+#: app/src/react/shell/AppSidebar.tsx:278
+#: app/src/react/shell/AppToolbar.tsx:38
 msgid "Visit site"
 msgstr ""
 
@@ -8923,7 +8938,7 @@ msgstr ""
 msgid "What the image shows, for people who cannot see it."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:809
+#: app/src/shared/settings/settings-config.js:831
 msgid ""
 "What the store aims to earn each calendar month. The dashboard measures the "
 "month against it; leave it at 0 to hide the target."
@@ -8933,7 +8948,7 @@ msgstr ""
 msgid "What This Generates"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:199
+#: app/src/shared/settings/settings-config.js:208
 msgid "What visitors read under the heading."
 msgstr ""
 
@@ -8942,23 +8957,23 @@ msgstr ""
 msgid "When"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:299
+#: app/src/shared/settings/settings-config.js:308
 msgid ""
 "When enabled, a cloudflare turnstyle challenge will be displayed on the "
 "login page to enhance security. Cloudflare account is required"
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:223
+#: app/src/shared/settings/settings-config.js:232
 msgid "When enabled, Flexify Dashboard will modernise the default login page."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:386
+#: app/src/shared/settings/settings-config.js:395
 msgid ""
 "When enabled, the light / dark toggle will be removed and the selected "
 "theme set for all users."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:284
+#: app/src/shared/settings/settings-config.js:293
 msgid "When hidden the language selector on the login page will not be displayed"
 msgstr ""
 
@@ -9035,7 +9050,7 @@ msgstr ""
 msgid "WordPress calls it %s."
 msgstr ""
 
-#: app/src/shared/settings/settings-config.js:119
+#: app/src/shared/settings/settings-config.js:128
 msgid ""
 "WordPress capability required to see the remote site switcher in the "
 "toolbar. Defaults to \"manage_options\" (admin users). Users with this "
@@ -9063,7 +9078,7 @@ msgid "Write something…"
 msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:151
-#: app/src/shared/settings/settings-config.js:610
+#: app/src/shared/settings/settings-config.js:632
 msgid "Yes"
 msgstr ""
 

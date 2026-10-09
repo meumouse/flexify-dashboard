@@ -1090,6 +1090,9 @@ class Plugin {
                         'display_name' => $current_user->display_name,
                         'user_email'   => $current_user->user_email,
                         'roles'        => $current_user->roles,
+                        // WordPress's own address: it follows the site's avatar settings and any
+                        // local-avatar plugin, and never answers 404 the way a bare Gravatar does.
+                        'avatar'       => get_avatar_url( $current_user->ID, array( 'size' => 88 ) ),
                     ),
                     $format_args
                 )

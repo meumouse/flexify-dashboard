@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { useIsDark } from '@/react/app/ThemeProvider';
 import { cn } from '@/react/lib/cn';
+import { figureClass } from '@/react/ui/recipes';
 import { __ } from '@/react/lib/i18n';
 import { Icon, ProgressBar, Skeleton } from '@/react/ui';
 import { CardEmpty, CardError, CardLoading, compactNumber, useCardQuery, useRange, type CardProps } from '@/react/features/dashboard/cards/shared';
@@ -167,14 +168,14 @@ export const PageAnalyticsCard = ({ dateRange }: CardProps) => {
 			<div>
 				<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Views')}</p>
 				<p className="mt-1 flex items-baseline gap-2">
-					<span className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{compactNumber(viewsNow)}</span>
+					<span className={figureClass.card}>{compactNumber(viewsNow)}</span>
 					<Trend value={change(viewsNow, data?.comparison?.total_views ?? 0)} />
 				</p>
 			</div>
 			<div>
 				<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Unique visitors')}</p>
 				<p className="mt-1 flex items-baseline gap-2">
-					<span className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{compactNumber(visitorsNow)}</span>
+					<span className={figureClass.card}>{compactNumber(visitorsNow)}</span>
 					<Trend value={change(visitorsNow, data?.comparison?.total_unique_visitors ?? 0)} />
 				</p>
 			</div>
@@ -206,14 +207,14 @@ export const BounceRateCard = ({ dateRange }: CardProps) => {
 				<div>
 					<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Bounce rate')}</p>
 					<p className="mt-1 flex items-baseline gap-2">
-						<span className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{Math.round(data?.avg_bounce_rate ?? 0)}%</span>
+						<span className={figureClass.card}>{Math.round(data?.avg_bounce_rate ?? 0)}%</span>
 						<Trend value={change(data?.avg_bounce_rate ?? 0, data?.comparison?.avg_bounce_rate ?? 0)} inverted />
 					</p>
 				</div>
 				<div>
 					<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('Time on page')}</p>
 					<p className="mt-1 flex items-baseline gap-2">
-						<span className="text-title-xs font-bold text-gray-900 dark:text-gray-100">{time}</span>
+						<span className={figureClass.card}>{time}</span>
 						<Trend value={change(data?.avg_time_on_page ?? 0, data?.comparison?.avg_time_on_page ?? 0)} />
 					</p>
 				</div>
@@ -361,7 +362,7 @@ export const ActiveUsersCard = () => {
 					<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success-400 opacity-60" />
 					<span className="relative inline-flex h-3 w-3 rounded-full bg-success-500" />
 				</span>
-				<p className="text-title-sm font-bold text-gray-900 dark:text-gray-100">{compactNumber(data?.active_users ?? 0)}</p>
+				<p className={figureClass.hero}>{compactNumber(data?.active_users ?? 0)}</p>
 				<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('right now')}</p>
 			</div>
 
