@@ -200,6 +200,17 @@ export const UsersList = () => {
 					emptyIcon="group"
 					emptyTitle={__('No users here')}
 					emptyDescription={__('People with an account on this site show up here.')}
+					emptyAction={
+						params.search || params.role !== 'all' ? (
+							<Button variant="outline" size="sm" icon="close" onClick={() => apply({ search: '', role: 'all' })}>
+								{__('Clear filters')}
+							</Button>
+						) : (
+							<Button size="sm" icon="person" onClick={() => setCreateOpen(true)}>
+								{__('Add user')}
+							</Button>
+						)
+					}
 					bulkActions={() => (
 						<>
 							<Button variant="outline" size="sm" icon="edit" onClick={() => setBulkOpen(true)}>

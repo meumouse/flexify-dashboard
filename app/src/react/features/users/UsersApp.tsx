@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { PageShell } from '@/react/app/PageShell';
-import { Spinner } from '@/react/ui';
+import { PageSkeleton } from '@/react/ui';
 import { UsersList } from '@/react/features/users/UsersList';
 
 /**
@@ -15,11 +15,7 @@ export const UsersApp = () => (
 	<HashRouter>
 		<PageShell width="full">
 			<Suspense
-				fallback={
-					<div className="flex items-center justify-center py-20">
-						<Spinner className="h-8 w-8 text-brand-500" />
-					</div>
-				}
+				fallback={<PageSkeleton />}
 			>
 				<Routes>
 					<Route path="/" element={<UsersList />} />

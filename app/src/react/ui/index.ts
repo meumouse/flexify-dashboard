@@ -15,7 +15,7 @@ export { ProgressBar } from '@/react/ui/ProgressBar';
 export { Pagination, pageList } from '@/react/ui/Pagination';
 export { RichText } from '@/react/ui/RichText';
 export { Sheet } from '@/react/ui/Sheet';
-export { Skeleton, Spinner } from '@/react/ui/Spinner';
+export { PageSkeleton, Skeleton, Spinner } from '@/react/ui/Spinner';
 export { StatStrip, type StatItem } from '@/react/ui/StatStrip';
 export { Tabs, type TabItem } from '@/react/ui/Tabs';
 export { Tooltip, TooltipProvider } from '@/react/ui/Tooltip';

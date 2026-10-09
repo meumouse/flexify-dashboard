@@ -535,6 +535,17 @@ export const ProductsList = () => {
 					emptyIcon="inventory"
 					emptyTitle={hasActiveFilters ? __('No products match your filters') : __('No products yet')}
 					emptyDescription={hasActiveFilters ? __('Try adjusting the search or filters.') : __('Create your first product to start selling.')}
+					emptyAction={
+						hasActiveFilters ? (
+							<Button variant="outline" size="sm" icon="close" onClick={() => applyFilters({ ...DEFAULT_FILTERS, status: filters.status, per_page: filters.per_page })}>
+								{__('Clear filters')}
+							</Button>
+						) : can('edit_products') ? (
+							<Button size="sm" icon="add" href={store.product_editor ? '#/new' : store.urls.new_product}>
+								{__('Add product')}
+							</Button>
+						) : null
+					}
 					bulkActions={() =>
 						isTrash ? (
 							<>

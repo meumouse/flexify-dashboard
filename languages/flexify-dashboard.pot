@@ -313,7 +313,7 @@ msgstr ""
 msgid "%s row(s)"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:155
+#: app/src/react/data/DataTable.tsx:158
 #: app/src/react/features/media/MediaLibrary.tsx:266
 #: app/src/react/features/posts/PostsList.tsx:218
 msgid "%s selected"
@@ -644,6 +644,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderEditor.tsx:470
 #: app/src/react/features/orders/OrderEditor.tsx:475
 #: app/src/react/features/orders/OrdersList.tsx:526
+#: app/src/react/features/orders/OrdersList.tsx:628
 msgid "Add order"
 msgstr ""
 
@@ -653,6 +654,7 @@ msgstr ""
 
 #: app/src/react/features/products/editor/ProductEditor.tsx:589
 #: app/src/react/features/products/ProductsList.tsx:454
+#: app/src/react/features/products/ProductsList.tsx:545
 msgid "Add product"
 msgstr ""
 
@@ -696,6 +698,7 @@ msgstr ""
 
 #: app/src/react/features/users/UserModals.tsx:66
 #: app/src/react/features/users/UsersList.tsx:167
+#: app/src/react/features/users/UsersList.tsx:210
 msgid "Add user"
 msgstr ""
 
@@ -725,7 +728,7 @@ msgid "Adjust by"
 msgstr ""
 
 #: app/src/react/features/products/BulkPriceModal.tsx:48
-#: app/src/react/features/products/ProductsList.tsx:569
+#: app/src/react/features/products/ProductsList.tsx:580
 msgid "Adjust prices"
 msgstr ""
 
@@ -1461,7 +1464,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderDetails.tsx:265
 #: app/src/react/features/orders/OrderPreview.tsx:79
 #: app/src/react/features/orders/OrdersList.tsx:287
-#: app/src/react/features/orders/OrdersList.tsx:639
+#: app/src/react/features/orders/OrdersList.tsx:650
 msgid "Change status"
 msgstr ""
 
@@ -1637,10 +1640,13 @@ msgid "Clear all"
 msgstr ""
 
 #: app/src/react/data/FilterPopover.tsx:32
+#: app/src/react/features/orders/OrdersList.tsx:624
+#: app/src/react/features/products/ProductsList.tsx:541
+#: app/src/react/features/users/UsersList.tsx:206
 msgid "Clear filters"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:162
+#: app/src/react/data/DataTable.tsx:165
 #: app/src/react/data/EntityPicker.tsx:100
 #: app/src/react/features/media/MediaLibrary.tsx:277
 #: app/src/react/features/posts/PostsList.tsx:222
@@ -2200,7 +2206,7 @@ msgstr ""
 #: app/src/react/features/roles/RolesList.tsx:122
 #: app/src/react/features/users/DeleteUsersModal.tsx:55
 #: app/src/react/features/users/UsersList.tsx:138
-#: app/src/react/features/users/UsersList.tsx:209
+#: app/src/react/features/users/UsersList.tsx:220
 msgid "Delete"
 msgstr ""
 
@@ -2228,12 +2234,12 @@ msgstr ""
 #: app/src/react/features/media/MediaLibrary.tsx:119
 #: app/src/react/features/orders/OrdersList.tsx:257
 #: app/src/react/features/orders/OrdersList.tsx:279
-#: app/src/react/features/orders/OrdersList.tsx:628
+#: app/src/react/features/orders/OrdersList.tsx:639
 #: app/src/react/features/posts/PostRowMenu.tsx:23
 #: app/src/react/features/posts/PostRowMenu.tsx:39
 #: app/src/react/features/products/ProductsList.tsx:214
 #: app/src/react/features/products/ProductsList.tsx:234
-#: app/src/react/features/products/ProductsList.tsx:545
+#: app/src/react/features/products/ProductsList.tsx:556
 msgid "Delete permanently"
 msgstr ""
 
@@ -2584,7 +2590,7 @@ msgstr ""
 #: app/src/react/features/products/TagsView.tsx:112
 #: app/src/react/features/roles/RolesList.tsx:119
 #: app/src/react/features/users/UsersList.tsx:134
-#: app/src/react/features/users/UsersList.tsx:206
+#: app/src/react/features/users/UsersList.tsx:217
 msgid "Edit"
 msgstr ""
 
@@ -2900,7 +2906,7 @@ msgstr ""
 msgid "Exclude sale items"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:208
+#: app/src/react/data/DataTable.tsx:211
 #: app/src/react/features/posts/PostCells.tsx:146
 msgid "Expand"
 msgstr ""
@@ -2936,7 +2942,7 @@ msgstr ""
 msgid "Export"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:644
+#: app/src/react/features/orders/OrdersList.tsx:655
 msgid "Export CSV"
 msgstr ""
 
@@ -4475,7 +4481,7 @@ msgstr ""
 
 #: app/src/react/features/orders/OrdersList.tsx:520
 #: app/src/react/features/products/ProductsList.tsx:451
-#: app/src/react/features/products/ProductsList.tsx:577
+#: app/src/react/features/products/ProductsList.tsx:588
 msgid "More"
 msgstr ""
 
@@ -4792,8 +4798,8 @@ msgstr ""
 msgid "No file was uploaded."
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:186
-#: app/src/react/data/DataTable.tsx:267
+#: app/src/react/data/DataTable.tsx:189
+#: app/src/react/data/DataTable.tsx:270
 msgid "No items found"
 msgstr ""
 
@@ -6538,10 +6544,10 @@ msgid "Restock refunded items"
 msgstr ""
 
 #: app/src/react/features/orders/OrdersList.tsx:277
-#: app/src/react/features/orders/OrdersList.tsx:625
+#: app/src/react/features/orders/OrdersList.tsx:636
 #: app/src/react/features/posts/PostRowMenu.tsx:38
 #: app/src/react/features/products/ProductsList.tsx:232
-#: app/src/react/features/products/ProductsList.tsx:542
+#: app/src/react/features/products/ProductsList.tsx:553
 msgid "Restore"
 msgstr ""
 
@@ -6979,7 +6985,7 @@ msgstr ""
 msgid "Select a status"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:201
+#: app/src/react/data/DataTable.tsx:204
 #: app/src/react/features/products/editor/ProductAttributes.tsx:224
 msgid "Select all"
 msgstr ""
@@ -6992,8 +6998,8 @@ msgstr ""
 msgid "Select image"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:290
-#: app/src/react/data/DataTable.tsx:420
+#: app/src/react/data/DataTable.tsx:293
+#: app/src/react/data/DataTable.tsx:423
 msgid "Select row"
 msgstr ""
 
@@ -7452,7 +7458,7 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductEditor.tsx:998
 #: app/src/react/features/products/ProductQuickEdit.tsx:271
 #: app/src/react/features/products/ProductsList.tsx:337
-#: app/src/react/features/products/ProductsList.tsx:555
+#: app/src/react/features/products/ProductsList.tsx:566
 msgid "Status"
 msgstr ""
 
@@ -7465,7 +7471,7 @@ msgid "Status: %s"
 msgstr ""
 
 #: app/src/react/features/products/ProductsList.tsx:321
-#: app/src/react/features/products/ProductsList.tsx:564
+#: app/src/react/features/products/ProductsList.tsx:575
 #: app/src/react/features/products/ProductVariations.tsx:128
 msgid "Stock"
 msgstr ""
@@ -8102,8 +8108,8 @@ msgstr ""
 msgid "Toggle dark mode"
 msgstr ""
 
-#: app/src/react/data/DataTable.tsx:301
-#: app/src/react/data/DataTable.tsx:451
+#: app/src/react/data/DataTable.tsx:304
+#: app/src/react/data/DataTable.tsx:454
 msgid "Toggle details"
 msgstr ""
 
@@ -8227,10 +8233,10 @@ msgstr ""
 #: app/src/react/features/comments/queries.ts:47
 #: app/src/react/features/design-system/Showcase.tsx:371
 #: app/src/react/features/orders/OrdersList.tsx:174
-#: app/src/react/features/orders/OrdersList.tsx:648
+#: app/src/react/features/orders/OrdersList.tsx:659
 #: app/src/react/features/products/productFormat.ts:16
 #: app/src/react/features/products/ProductsList.tsx:119
-#: app/src/react/features/products/ProductsList.tsx:583
+#: app/src/react/features/products/ProductsList.tsx:594
 msgid "Trash"
 msgstr ""
 

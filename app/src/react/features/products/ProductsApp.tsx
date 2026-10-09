@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { PageShell } from '@/react/app/PageShell';
-import { Spinner } from '@/react/ui';
+import { PageSkeleton } from '@/react/ui';
 import { WooProvider } from '@/react/woo/WooProvider';
 import { ProductsList } from '@/react/features/products/ProductsList';
 
@@ -16,17 +16,11 @@ const AttributesView = lazy(() => import('@/react/features/products/AttributesVi
 const CouponsView = lazy(() => import('@/react/features/products/CouponsView').then((module) => ({ default: module.CouponsView })));
 const ProductEditor = lazy(() => import('@/react/features/products/editor/ProductEditor').then((module) => ({ default: module.ProductEditor })));
 
-const Loading = () => (
-	<div className="flex items-center justify-center py-20">
-		<Spinner className="h-8 w-8 text-brand-500" />
-	</div>
-);
-
 export const ProductsApp = () => (
 	<WooProvider>
 		<HashRouter>
 			<PageShell>
-				<Suspense fallback={<Loading />}>
+				<Suspense fallback={<PageSkeleton />}>
 					<Routes>
 						<Route path="/" element={<ProductsList />} />
 						<Route path="/new" element={<ProductEditor />} />

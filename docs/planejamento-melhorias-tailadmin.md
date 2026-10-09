@@ -477,7 +477,47 @@ Decisões tomadas ao executar:
 - **Revisão de foco e contraste** no modo escuro.
 - **Atualizar `design-system.md`**, que ainda aponta caminhos Vue (`components/app/menu`, `useChartTheme.js`).
 
-## 6. Fora do escopo
+**Feito em 08/10/2026.**
+- **Carregamento:** `PageSkeleton` (cabeçalho e cartão de linhas) entrou no kit e substituiu o spinner central no `Suspense` das nove telas com rotas carregadas sob demanda.
+- **Estados vazios:** o `DataTable` ganhou `emptyAction`. Pedidos, produtos e usuários vazios oferecem a saída: "Limpar filtros" quando a lista está vazia por causa deles, "Adicionar…" quando está vazia de verdade e a pessoa pode criar.
+- **Movimento reduzido:** com `prefers-reduced-motion: reduce`, animações e transições vão a zero, menos o spinner, porque um spinner parado parece travado (`globals.css`, camada `base` com `!important`, que vence as utilidades de camada acima).
+- **`design-system.md`:** perdeu os caminhos Vue. Ganhou a seção de gráficos como ela é hoje (Apex sob demanda, cores de `charts.ts`, SVG para os pequenos), a casca com o filtro, a largura e a barra de anúncio, e uma seção de movimento.
+
+O que não foi feito aqui: a revisão de contraste e foco no escuro foi visual, nas telas novas. Não houve auditoria com leitor de tela, que continua pendente desde a 4.0.0 (ver `planejamento-design-system-e-woocommerce.md`).
+
+## 6. Estado ao fim
+
+Fases 1 a 9 concluídas em 08/10/2026, um commit por fase, na branch `refactor-design-system`.
+
+| Fase | Commit |
+|---|---|
+| 1 — Peças do kit | `2d4e418` |
+| 2 — Telas de lista | `4f7129b` |
+| 3 — Telas de detalhe | `1415cae` |
+| 4 — Configurações | `43e0161` |
+| 5 — Painel | `d2f7a75` |
+| 6 — Casca | `c37d92e` |
+| 7 — Login e sistema | `ff1360c` |
+| 8 — Recursos novos | `5b95069` |
+| 9 — Acabamento | este |
+
+**Defeitos de antes encontrados no caminho**, todos corrigidos. O padrão é o mesmo do commit `8dc26dd`: código escrito contra o tipo ou o mock, nunca contra a rota rodando.
+- Cartões de produtos mais vendidos e pedidos recentes vazios (campos com outro nome na rota).
+- Cartão de mídia do painel sem os tipos e com "arquivos grandes" sempre em 0.
+- Cartões do painel espremidos no celular.
+- Tom dos avisos sempre "informação", e "Dispensar" em aviso não dispensável.
+- As opções "Sidebar redimensionável" e "Busca no menu" sem código por trás.
+- A imagem de login ignorada pela tela React.
+
+**O que continua sem verificação:** tudo foi conferido no harness, com dados simulados. O site local respondeu 502 a sessão inteira, então nenhuma rota PHP nova ou alterada rodou num WordPress de verdade:
+- `users/{id}/sessions`;
+- `store`, `comparison`, `channels` e `month` nos dados do WooCommerce;
+- a meta `display` dos avisos;
+- o modo manutenção.
+
+Elas passaram no `php -l`, e o autoload foi regenerado. Mesmo assim, a primeira coisa a fazer com o site no ar é abrir cada uma.
+
+## 7. Fora do escopo
 
 Esses itens não entram, e o motivo está escrito para não voltar a cada revisão:
 

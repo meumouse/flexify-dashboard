@@ -66,6 +66,8 @@ type Props<T> = {
 	emptyIcon?: string;
 	emptyTitle?: string;
 	emptyDescription?: string;
+	/** A way out of the empty list — create the first item, clear the filters */
+	emptyAction?: ReactNode;
 	empty?: ReactNode;
 };
 
@@ -96,6 +98,7 @@ export const DataTable = <T,>({
 	emptyIcon = 'inventory',
 	emptyTitle,
 	emptyDescription,
+	emptyAction,
 	empty,
 }: Props<T>) => {
 	const visibleColumns = columns.filter((column) => !column.hidden);
@@ -183,7 +186,7 @@ export const DataTable = <T,>({
 					clickableRows={clickableRows}
 					onRowClick={onRowClick}
 					rowClassName={rowClassName}
-					empty={empty ?? <EmptyState icon={emptyIcon} title={emptyTitle || __('No items found')} description={emptyDescription} />}
+					empty={empty ?? <EmptyState icon={emptyIcon} title={emptyTitle || __('No items found')} description={emptyDescription}>{emptyAction}</EmptyState>}
 				/>
 			) : (
 				<div className="max-w-full overflow-x-auto custom-scrollbar">
@@ -264,7 +267,7 @@ export const DataTable = <T,>({
 								))
 							) : rows.length === 0 ? (
 								<tr>
-									<td colSpan={columnCount}>{empty ?? <EmptyState icon={emptyIcon} title={emptyTitle || __('No items found')} description={emptyDescription} />}</td>
+									<td colSpan={columnCount}>{empty ?? <EmptyState icon={emptyIcon} title={emptyTitle || __('No items found')} description={emptyDescription}>{emptyAction}</EmptyState>}</td>
 								</tr>
 							) : (
 								rows.map((row, index) => {

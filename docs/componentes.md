@@ -38,7 +38,7 @@ Uma vitrine com todos eles fica em **Flexify Dashboard → Design System** (`adm
 | `MetricCard` | `label`, `value`, `icon`, `tone`, `trend`, `trendLabel`, `loading` | Ícone em quadrado, rótulo, número, badge de variação. |
 | `StatStrip` | `items` (`{ key, label, value, hint, tone, clickable, active }`), `loading`, `onSelect` | |
 | `Tabs` | `value`, `items` (`{ value, label, count, icon, disabled }`), `onChange`, `variant` (underline, segmented), `ariaLabel` | Navegação por setas. |
-| `DataTable` | `columns`, `rows`, `rowKey`, `loading`, `selectable` + `selected`/`onSelectedChange`, `sort`/`onSortChange`, `expandable` + `expanded`/`onExpandedChange`, `clickableRows`/`onRowClick`, `bulkActions` | `columns[].cell` desenha a célula; `renderExpanded` desenha a linha aberta. **Abaixo de 640px a tabela vira lista de cartões**: `columns[].card` escolhe o lugar de cada coluna no cartão (`title`, `meta`, `actions`, `hidden`). Coluna sem `label` já vai para as ações, então na maioria das telas não é preciso declarar nada. |
+| `DataTable` | `columns`, `rows`, `rowKey`, `loading`, `emptyIcon`/`emptyTitle`/`emptyDescription`/`emptyAction`, `selectable` + `selected`/`onSelectedChange`, `sort`/`onSortChange`, `expandable` + `expanded`/`onExpandedChange`, `clickableRows`/`onRowClick`, `bulkActions` | `columns[].cell` desenha a célula; `renderExpanded` desenha a linha aberta. **Abaixo de 640px a tabela vira lista de cartões**: `columns[].card` escolhe o lugar de cada coluna no cartão (`title`, `meta`, `actions`, `hidden`). Coluna sem `label` já vai para as ações, então na maioria das telas não é preciso declarar nada. |
 | `ProgressBar` | `value`, `max`, `tone` (brand, success, warning, error), `size` (sm, md), `showValue`, `label` | `role="progressbar"`. Passe `label` quando não houver rótulo visível ao lado. |
 | `TableCard` | `tabs`, `search`, `filters`, `activeFilters` (`{ key, label, onRemove }`), `onClearFilters`, `tools`, `busy`, `notice`, `footer` | Em `@/react/data`. A moldura de toda lista: abas, barra (busca, botão "Filtros", ferramentas), chips dos filtros ativos, aviso, linhas e rodapé. O botão "Filtros" só aparece com `filters`; abre um popover e, abaixo de 640px, um painel lateral. Os filtros valem na hora, sem botão de aplicar. Num teste, abra o painel com `openFilters` de `app/tests/filters.ts`. |
 | `Pagination` | `page`, `perPage`, `total`, `onPageChange`, `onPerPageChange`, `perPageOptions`, `showPerPage` | |
@@ -50,6 +50,7 @@ Uma vitrine com todos eles fica em **Flexify Dashboard → Design System** (`adm
 | `RichText` | `value`, `onChange`, `placeholder`, `minHeight` | Tiptap. |
 | `EmptyState` | `icon`, `title`, `description`, `compact` | |
 | `Skeleton`, `Spinner` | `className` | |
+| `PageSkeleton` | — | O formato de uma tela antes de ela chegar: use como `fallback` do `Suspense` das rotas. |
 | `Icon` | `name`, `className`, `title` | `name` é o arquivo em `assets/icons` sem a extensão — um nome sem arquivo desenha um quadrado vazio, e há teste para isso. |
 | `CardRender` | `card`, `props` | Desenha cartão de terceiro (HTML ou React). |
 

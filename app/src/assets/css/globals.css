@@ -159,3 +159,21 @@
 		color: var(--foreground);
 	}
 }
+
+/*
+ * Whoever asked the system for less motion gets none from the interface: popovers, sheets and
+ * modals appear in place, bars jump to their value. Spinners keep turning, because a still one
+ * reads as frozen. `!important` in a low layer still beats every animation utility above it.
+ */
+@layer base {
+	@media (prefers-reduced-motion: reduce) {
+		*:not(.animate-spin),
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}

@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { PageShell } from '@/react/app/PageShell';
-import { Spinner } from '@/react/ui';
+import { PageSkeleton } from '@/react/ui';
 import { WooProvider } from '@/react/woo/WooProvider';
 import { OrdersList } from '@/react/features/orders/OrdersList';
 
@@ -14,17 +14,11 @@ const OrderDetails = lazy(() => import('@/react/features/orders/OrderDetails').t
 const OrderPrint = lazy(() => import('@/react/features/orders/OrderPrint').then((module) => ({ default: module.OrderPrint })));
 const OrderEditor = lazy(() => import('@/react/features/orders/OrderEditor').then((module) => ({ default: module.OrderEditor })));
 
-const Loading = () => (
-	<div className="flex items-center justify-center py-20">
-		<Spinner className="h-8 w-8 text-brand-500" />
-	</div>
-);
-
 export const OrdersApp = () => (
 	<WooProvider>
 		<HashRouter>
 			<PageShell>
-				<Suspense fallback={<Loading />}>
+				<Suspense fallback={<PageSkeleton />}>
 					<Routes>
 						<Route path="/" element={<OrdersList />} />
 						<Route path="/new" element={<OrderEditor />} />

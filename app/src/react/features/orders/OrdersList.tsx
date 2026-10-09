@@ -618,6 +618,17 @@ export const OrdersList = () => {
 						emptyIcon="shopping_bag"
 						emptyTitle={hasActiveFilters ? __('No orders match your filters') : __('No orders yet')}
 						emptyDescription={hasActiveFilters ? __('Try adjusting the search or date range.') : __('New orders will appear here as soon as customers check out.')}
+						emptyAction={
+							hasActiveFilters ? (
+								<Button variant="outline" size="sm" icon="close" onClick={() => applyFilters({ ...DEFAULT_FILTERS, status: filters.status, period: filters.period, per_page: filters.per_page })}>
+									{__('Clear filters')}
+								</Button>
+							) : can('edit_shop_orders') ? (
+								<Button size="sm" icon="add" onClick={() => navigate('/new')}>
+									{__('Add order')}
+								</Button>
+							) : null
+						}
 						bulkActions={() =>
 							isTrash ? (
 								<>

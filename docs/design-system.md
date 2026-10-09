@@ -61,14 +61,12 @@ A classe `.dark` no `<html>` ativa as variantes `dark:`.
 
 ## Gráficos
 
-Use `useChartTheme()` (`app/src/composables/useChartTheme.js`) para herdar fonte, grade, eixos, tooltip e a paleta (reage ao modo escuro e à cor de destaque):
+- **ApexCharts** (`react-apexcharts`) é importado sob demanda (`lazy`), porque é a dependência mais pesada da tela. O gráfico recebe `key={isDark ? 'dark' : 'light'}`: remontar é o que faz o Apex pegar as cores novas. `RevenueChart.tsx` e `cards/ecommerce.tsx` são os exemplos.
+- **Cores:** `accentColor()` lê a cor de destaque dos tokens (`--fd-accent-*`), e `SERIES_COLORS` vem depois dela para séries categóricas. Os dois ficam em `features/dashboard/charts.ts`.
+- **Gráficos pequenos** (sparkline, meia-rosca de meta) são SVG, com a geometria em `charts.ts` e teste. Carregar o Apex para uma linha ou um arco custaria mais que o cartão.
+- **Grade:** `#F2F4F7` no claro e `#1D2939` no escuro, tracejada; o eixo X sem borda e sem marcas.
 
-```js
-const { chartOptions } = useChartTheme();
-const options = computed(() => chartOptions({ xaxis: { categories: labels.value } }));
-```
-
-## Extensões (React/Vue)
+## Extensões (React)
 
 As variáveis `--fd-accent-*`, `--fd-base-*` e `--fd-font-sans` são públicas e podem ser usadas por cards e componentes de terceiros: `color: rgb(var(--fd-accent-500))`. O filtro PHP `flexify-dashboard/theme/tokens` permite ajustar as declarações.
 
@@ -76,18 +74,23 @@ As variáveis `--fd-accent-*`, `--fd-base-*` e `--fd-font-sans` são públicas e
 
 | Área | Implementação | Regras |
 |---|---|---|
-| Sidebar | `components/app/menu` | 290 px expandida / 90 px recolhida; recolhida expande ao passar o mouse (sobrepõe o conteúdo). Abaixo de `lg` vira painel lateral (`FdSheet`) aberto pelo botão de menu. Redimensionamento opcional em **Configurações → Menu → Resizable sidebar** (`sidebar_resizable`). |
-| Itens de menu | `MenuItemLink`, `SubMenuItem` | Ativo `bg-brand-50 text-brand-500`, inativo `text-gray-700 hover:bg-gray-100`; submenu recuado `ms-9`; contadores em badge `brand`. |
-| Header | `components/app/toolbar` | `bg-white border-b`, botão para recolher a sidebar, busca (`Ctrl/⌘ K`), barra do WP desenhada a partir de `WP_Admin_Bar`, alternância claro/escuro e menu do usuário (perfil, site, configurações, tema, sair). |
-| Conteúdo | `components/app/wrapper` | Fundo `bg-gray-50 dark:bg-gray-900`. |
+| Sidebar | `react/shell/AppSidebar.tsx` | 290 px expandida / 90 px recolhida; recolhida expande ao passar o mouse (sobrepõe o conteúdo). Abaixo de `lg` vira painel lateral (`Sheet`) aberto pelo botão de menu. Com `sidebar_resizable`, a borda arrasta entre 220 e 400 px (`shell/menu/useSidebarWidth.ts`). Com `enable_admin_menu_search`, um filtro no topo (`shell/menu/filterMenu.ts`). Separador com nome vira título de grupo. |
+| Itens de menu | `react/shell/SidebarItem.tsx` | Ativo `bg-brand-50 text-brand-500`, inativo `text-gray-700 hover:bg-gray-100`; submenu recuado `ms-9`; contadores em badge `brand`. |
+| Header | `react/shell/AppToolbar.tsx` | `bg-white border-b`, botão para recolher a sidebar, busca (`Ctrl/⌘ K`), barra do WP desenhada a partir de `WP_Admin_Bar`, alternância claro/escuro e menu do usuário (perfil, site, configurações, tema, sair). |
+| Barra de anúncio | `react/shell/notices/AnnouncementBar.tsx` | Abaixo do header, o aviso do plugin marcado como barra (`display: bar`), um por vez. |
+| Conteúdo | `react/shell/AppShell.tsx` | Fundo `bg-gray-50 dark:bg-gray-900`. |
+
+## Movimento
+
+Popovers, sheets e modais entram com `fade-in` curto (`tw-animate-css`). Com `prefers-reduced-motion: reduce`, toda animação e transição vai a zero, menos o spinner (`globals.css`). Enquanto uma rota carrega, a tela mostra `PageSkeleton` (cabeçalho e cartão de linhas), não um spinner no meio.
 
 > Classes utilitárias **não se aplicam ao próprio elemento** `.flexify-dashboard-isolation` (o escopo vale para descendentes). Use uma regra CSS dedicada, como `.fd-sidebar-container`.
 
 ## Telas nativas do WordPress
 
-`app/src/apps/css/theme.css` é carregado em todo o wp-admin e estiliza as telas que não são Vue:
+`app/src/apps/css/theme.css` é carregado em todo o wp-admin e estiliza as telas que não são do plugin:
 
 - `theme/wp-admin-legacy.css` — regras herdadas (dashboard, site health, metaboxes, integrações de plugins).
 - `theme/tailadmin-wp.css` — receitas do TailAdmin para títulos, botões (`.button`, `.button-primary`, `.page-title-action`), campos, avisos (`.notice`), abas (`.nav-tab`), tabelas (`.wp-list-table`), metaboxes (`.postbox`) e WooCommerce (`mark.instock`, `mark.order-status`, abas de dados do produto).
 
-Todas as regras ficam na camada `fd-theme` e usam `:not(:where(.flexify-dashboard-isolation *))` para não afetar os apps Vue. A ordem das camadas é `wordpress-base < base < fd-theme < theme < components < utilities < fd-isolation`, declarada em `globals.css` e em `Plugin::layer_wordpress_styles()`.
+Todas as regras ficam na camada `fd-theme` e usam `:not(:where(.flexify-dashboard-isolation *))` para não afetar as telas React. A ordem das camadas é `wordpress-base < base < fd-theme < theme < components < utilities < fd-isolation`, declarada em `globals.css` e em `Plugin::layer_wordpress_styles()`.
