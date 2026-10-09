@@ -20,6 +20,7 @@ use MeuMouse\Flexify_Dashboard\Pages\CustomUsersPage;
 use MeuMouse\Flexify_Dashboard\Pages\DatabaseExplorerPage;
 use MeuMouse\Flexify_Dashboard\Pages\DesignSystemPage;
 use MeuMouse\Flexify_Dashboard\Pages\Frontend;
+use MeuMouse\Flexify_Dashboard\Security\MaintenanceMode;
 use MeuMouse\Flexify_Dashboard\Pages\Login;
 use MeuMouse\Flexify_Dashboard\Pages\MenuBuilder;
 use MeuMouse\Flexify_Dashboard\Pages\PostsList;
@@ -182,6 +183,7 @@ class Plugin {
         new MenuBuilder();
         new CustomPluginsPage();
         new Frontend();
+        new MaintenanceMode();
         new PluginManager();
         new MediaReplace();
         new MediaTags();

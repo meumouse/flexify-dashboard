@@ -73,14 +73,30 @@ export const LoginScreen = ({ config }: { config: LoginConfig }) => {
 			<aside
 				className="relative hidden items-center overflow-hidden lg:grid"
 				style={{
-					background: 'linear-gradient(135deg, rgb(var(--fd-login-gradient-start)) 0%, rgb(var(--fd-login-gradient-end)) 100%)',
+					background: config.loginImage
+						? // Quoted and escaped as a CSS string, so an address with a quote in it cannot end the rule.
+						  `center / cover no-repeat url(${JSON.stringify(config.loginImage)})`
+						: 'linear-gradient(135deg, rgb(var(--fd-login-gradient-start)) 0%, rgb(var(--fd-login-gradient-end)) 100%)',
 				}}
 			>
-				<span
-					aria-hidden
-					className="pointer-events-none absolute -left-32 top-1/4 h-96 w-96 rounded-full opacity-40 blur-3xl"
-					style={{ background: 'rgb(var(--fd-login-glow))' }}
-				/>
+				{config.loginImage ? (
+					// The site's own photo; darkened so the name over it stays readable on any picture.
+					<span aria-hidden className="pointer-events-none absolute inset-0 bg-gray-900/45" />
+				) : (
+					<>
+						<span
+							aria-hidden
+							className="pointer-events-none absolute -left-32 top-1/4 h-96 w-96 rounded-full opacity-40 blur-3xl"
+							style={{ background: 'rgb(var(--fd-login-glow))' }}
+						/>
+						{config.gridPatternUrl ? (
+							<img src={config.gridPatternUrl} alt="" aria-hidden className="pointer-events-none absolute end-0 top-0 w-full max-w-md opacity-50" />
+						) : null}
+						{config.gridPatternUrl ? (
+							<img src={config.gridPatternUrl} alt="" aria-hidden className="pointer-events-none absolute bottom-0 start-0 w-full max-w-md rotate-180 opacity-50" />
+						) : null}
+					</>
+				)}
 
 				<div className="relative z-10 mx-auto flex max-w-md flex-col items-center gap-6 p-12 text-center text-white">
 					{site.logoUrl ? (

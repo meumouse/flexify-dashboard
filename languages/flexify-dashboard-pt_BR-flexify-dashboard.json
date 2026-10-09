@@ -1085,6 +1085,9 @@
       "Close": [
         "Fechar"
       ],
+      "Close the public site while it is being worked on. Visitors see a maintenance page and search engines are told the site is coming back; anyone who can edit posts keeps seeing the site.": [
+        "Fecha o site público enquanto ele está em obras. Os visitantes veem uma página de manutenção e os buscadores entendem que o site volta; quem pode editar posts continua vendo o site."
+      ],
       "Code": [
         "Código"
       ],
@@ -2618,6 +2621,9 @@
       "Latest conversations": [
         "Últimas conversas"
       ],
+      "Leave empty for \"We will be back soon\".": [
+        "Deixe vazio para \"Voltamos em breve\"."
+      ],
       "Leave empty to create a guest order.": [
         "Deixe em branco para criar um pedido de visitante."
       ],
@@ -2758,6 +2764,18 @@
       ],
       "Low stock threshold": [
         "Limite de estoque baixo"
+      ],
+      "Maintenance heading": [
+        "Título da manutenção"
+      ],
+      "Maintenance message": [
+        "Mensagem da manutenção"
+      ],
+      "Maintenance mode": [
+        "Modo manutenção"
+      ],
+      "Maintenance mode is on": [
+        "Modo manutenção ativo"
       ],
       "Manage values": [
         "Gerenciar valores"
@@ -5126,6 +5144,9 @@
       "The settings could not be loaded.": [
         "Não foi possível carregar as configurações."
       ],
+      "The site is being updated. Thank you for your patience.": [
+        "O site está sendo atualizado. Obrigado pela paciência."
+      ],
       "The site itself": [
         "O próprio site"
       ],
@@ -5771,6 +5792,9 @@
       "We were unable to verify updates for the <strong>Flexify Dashboard</strong> plugin.": [
         "Não foi possível verificar atualizações para o plugin <strong>Flexify Dashboard</strong>."
       ],
+      "We will be back soon": [
+        "Voltamos em breve"
+      ],
       "Web admin": [
         "Painel administrativo"
       ],
@@ -5827,6 +5851,9 @@
       ],
       "What the store aims to earn each calendar month. The dashboard measures the month against it; leave it at 0 to hide the target.": [
         "Quanto a loja pretende faturar em cada mês do calendário. O painel compara o mês com esse valor; deixe 0 para esconder a meta."
+      ],
+      "What visitors read under the heading.": [
+        "O que os visitantes leem abaixo do título."
       ],
       "When": [
         "Quando"

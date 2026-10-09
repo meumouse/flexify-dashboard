@@ -168,6 +168,38 @@ export const settingsConfig = [
       class: 'max-w-[300px]',
     },
   },
+
+  {
+    id: 'maintenance_mode',
+    category: 'general',
+    type: 'toggle',
+    label: __('Maintenance mode', 'flexify-dashboard'),
+    description: __(
+      'Close the public site while it is being worked on. Visitors see a maintenance page and search engines are told the site is coming back; anyone who can edit posts keeps seeing the site.',
+      'flexify-dashboard'
+    ),
+    requiresActivation: false,
+  },
+
+  {
+    id: 'maintenance_title',
+    category: 'general',
+    type: 'input',
+    label: __('Maintenance heading', 'flexify-dashboard'),
+    description: __('Leave empty for "We will be back soon".', 'flexify-dashboard'),
+    requiresActivation: false,
+    condition: (settings) => settings.maintenance_mode === true,
+  },
+
+  {
+    id: 'maintenance_message',
+    category: 'general',
+    type: 'text',
+    label: __('Maintenance message', 'flexify-dashboard'),
+    description: __('What visitors read under the heading.', 'flexify-dashboard'),
+    requiresActivation: false,
+    condition: (settings) => settings.maintenance_mode === true,
+  },
   /*
   {
     id: 'layout',

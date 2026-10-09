@@ -28,6 +28,10 @@ export type LoginConfig = {
 	asideGradientStart?: string;
 	asideGradientEnd?: string;
 	asideGlowColor?: string;
+	/** The `login_image` setting: fills the brand panel when set */
+	loginImage?: string;
+	/** Square grid drawn faintly over the brand panel's gradient */
+	gridPatternUrl?: string;
 	recaptchaEnabled?: boolean;
 	recaptchaSiteKey?: string;
 	notice?: { type: string; message: string } | null;

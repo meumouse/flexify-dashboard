@@ -109,6 +109,18 @@ class GlobalOptions {
                     'type'    => 'boolean',
                     'default' => false,
                 ),
+                'maintenance_mode' => array(
+                    'type'    => 'boolean',
+                    'default' => false,
+                ),
+                'maintenance_title' => array(
+                    'type'    => 'string',
+                    'default' => '',
+                ),
+                'maintenance_message' => array(
+                    'type'    => 'string',
+                    'default' => '',
+                ),
                 'base_theme_color' => array(
                     'type'    => 'string',
                     'default' => '#008aff',
@@ -347,6 +359,7 @@ class GlobalOptions {
         $value = is_array( $value ) ? $value : array();
 
         $string_fields = array(
+            'maintenance_title',
             'license_key',
             'instance_id',
             'plugin_name',
@@ -401,6 +414,7 @@ class GlobalOptions {
             'activity_log_auto_cleanup',
             'hide_language_selector',
             'disable_search',
+            'maintenance_mode',
             'hide_screenoptions',
             'hide_help_toggle',
             'style_login',
@@ -427,6 +441,11 @@ class GlobalOptions {
 
         if ( isset( $value['activity_log_retention_days'] ) ) {
             $sanitized_value['activity_log_retention_days'] = absint( $value['activity_log_retention_days'] );
+        }
+
+        // Kept as written, line breaks included: the maintenance page shows them.
+        if ( isset( $value['maintenance_message'] ) ) {
+            $sanitized_value['maintenance_message'] = sanitize_textarea_field( $value['maintenance_message'] );
         }
 
         if ( isset( $value['monthly_revenue_target'] ) ) {

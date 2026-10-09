@@ -95,3 +95,21 @@ describe('login screen', () => {
 		expect(screen.getByRole('button', { name: 'Send the link' })).toBeInTheDocument();
 	});
 });
+
+describe('brand panel', () => {
+	it('fills the panel with the login image when the site set one', () => {
+		stubFetch({});
+		const { container } = render(<LoginScreen config={{ ...config, loginImage: 'https://site.test/wp-content/uploads/loja.jpg' }} />);
+
+		expect((container.querySelector('aside') as HTMLElement).style.background).toContain('loja.jpg');
+	});
+
+	it('draws the gradient and the grid when there is no image', () => {
+		stubFetch({});
+		const { container } = render(<LoginScreen config={{ ...config, gridPatternUrl: 'https://site.test/grid.svg' }} />);
+		const aside = container.querySelector('aside') as HTMLElement;
+
+		expect(aside.style.background).toContain('linear-gradient');
+		expect(aside.querySelectorAll('img[src="https://site.test/grid.svg"]')).toHaveLength(2);
+	});
+});

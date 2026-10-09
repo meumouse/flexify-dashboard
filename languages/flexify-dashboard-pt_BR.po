@@ -9258,3 +9258,39 @@ msgstr "Separador"
 #: app/src/react/features/notices/NoticeEditor.tsx:191
 msgid "Show as a bar on every screen"
 msgstr "Mostrar como barra em todas as telas"
+
+#: app/src/shared/settings/settings-config.js:177
+msgid "Close the public site while it is being worked on. Visitors see a maintenance page and search engines are told the site is coming back; anyone who can edit posts keeps seeing the site."
+msgstr "Fecha o site público enquanto ele está em obras. Os visitantes veem uma página de manutenção e os buscadores entendem que o site volta; quem pode editar posts continua vendo o site."
+
+#: app/src/shared/settings/settings-config.js:189
+msgid "Leave empty for \"We will be back soon\"."
+msgstr "Deixe vazio para \"Voltamos em breve\"."
+
+#: app/src/shared/settings/settings-config.js:188
+msgid "Maintenance heading"
+msgstr "Título da manutenção"
+
+#: app/src/shared/settings/settings-config.js:198
+msgid "Maintenance message"
+msgstr "Mensagem da manutenção"
+
+#: app/src/shared/settings/settings-config.js:176
+msgid "Maintenance mode"
+msgstr "Modo manutenção"
+
+#: admin/src/Security/MaintenanceMode.php:174
+msgid "Maintenance mode is on"
+msgstr "Modo manutenção ativo"
+
+#: admin/src/Security/MaintenanceMode.php:93
+msgid "The site is being updated. Thank you for your patience."
+msgstr "O site está sendo atualizado. Obrigado pela paciência."
+
+#: admin/src/Security/MaintenanceMode.php:92
+msgid "We will be back soon"
+msgstr "Voltamos em breve"
+
+#: app/src/shared/settings/settings-config.js:199
+msgid "What visitors read under the heading."
+msgstr "O que os visitantes leem abaixo do título."

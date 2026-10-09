@@ -416,6 +416,23 @@ Decisões tomadas ao executar:
 2. **404 dentro do app:** rota desconhecida no roteador React mostra a página de erro com "Voltar ao painel", em vez de tela vazia.
 3. *Se aprovado:* 2FA (entrada OTP de 6 caixas) e modo manutenção / em breve.
 
+**Feito em 08/10/2026.**
+- **Login:**
+  - A tela em React já era dividida (painel da marca e formulário), como no TailAdmin.
+  - O que faltava era usar o que o PHP já mandava e ela ignorava. Com `login_image` definida, a imagem preenche o painel, escurecida para o nome continuar legível. Sem imagem, a grade (`grid-login.svg`) aparece de leve sobre o degradê, nos dois cantos.
+  - Até aqui a opção "Imagem de login" não tinha efeito na tela React.
+- **Modo manutenção** (`Security/MaintenanceMode.php`, com as opções `maintenance_mode`, `maintenance_title` e `maintenance_message` em Geral):
+  - Fecha o site público com 503 e `Retry-After`, para os buscadores entenderem que o site volta.
+  - A página é independente do tema, porque um tema no meio de uma atualização não pode quebrá-la, e segue o modo escuro do sistema.
+  - Quem pode `edit_posts` continua vendo o site (filtro `flexify-dashboard/maintenance/bypass_capability`). Para essas pessoas, a barra mostra "Modo manutenção ativo".
+  - O login nunca fecha: o do plugin é servido no `init`, e o `template_redirect` vem depois.
+  - Conferido renderizando a página com as funções do WordPress simuladas, porque o site local estava fora do ar.
+
+Decisões tomadas ao executar:
+- **Sem 404 dentro do app.** As rotas desconhecidas continuam caindo na lista, de propósito. O WordPress põe no admin o link "Pular para o conteúdo" com `href="#wpbody-content"`, e, com `HashRouter`, esse hash vira a rota `wpbody-content`. Uma 404 no lugar da lista quebraria a navegação por teclado de todas as telas. Endereço de item que não existe (`/order/999999`) já mostra "não encontrado" na tela de detalhe.
+- **Sem 2FA nesta versão.** Autenticação em dois fatores tem que valer em todas as portas de entrada: o login do plugin (REST e AJAX), o `wp-login.php`, o XML-RPC e as senhas de aplicativo. Além disso exige segredo TOTP guardado com cuidado, códigos de recuperação e um caminho de resgate para quem perde o celular. Feito às pressas, abre a falha que deveria fechar. Precisa de um planejamento próprio, ou de integração com um plugin consolidado (Two Factor, WP 2FA) que o login do plugin respeite.
+- **Sem cadastro e sem "em breve" separado.** O cadastro do WordPress continua servindo. "Em breve" é o mesmo modo manutenção com outro texto.
+
 **Critério:** login testado em 375px. Uma URL inválida do app cai na 404.
 
 ### Fase 8 — Recursos novos (se aprovados)
