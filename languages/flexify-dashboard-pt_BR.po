@@ -9137,3 +9137,27 @@ msgstr "Perfil do usuário"
 #: app/src/react/features/users/UserDetails.tsx:93
 msgid "User sections"
 msgstr "Seções do usuário"
+
+#: app/src/react/features/settings/categories.ts:16
+msgid "Appearance"
+msgstr "Aparência"
+
+#: app/src/react/features/settings/categories.ts:17
+msgid "Content"
+msgstr "Conteúdo"
+
+#: app/src/react/features/settings/categories.ts:19
+msgid "Data and security"
+msgstr "Dados e segurança"
+
+#: app/src/react/features/settings/SettingsScreen.tsx:216
+msgid "Discard"
+msgstr "Descartar"
+
+#: app/src/react/features/settings/SettingsScreen.tsx:117
+msgid "Settings section"
+msgstr "Seção das configurações"
+
+#: app/src/react/features/settings/SettingsScreen.tsx:128
+msgid "Settings sections"
+msgstr "Seções das configurações"

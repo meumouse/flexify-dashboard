@@ -753,7 +753,7 @@ msgid "Administrator"
 msgstr ""
 
 #: app/src/react/features/products/editor/ProductEditor.tsx:969
-#: app/src/react/features/settings/categories.ts:29
+#: app/src/react/features/settings/categories.ts:38
 msgid "Advanced"
 msgstr ""
 
@@ -900,7 +900,7 @@ msgid "An error occurred while sanitizing the SVG file."
 msgstr ""
 
 #: admin/src/Rest/RankMathDashboardWidget.php:317
-#: app/src/react/features/settings/categories.ts:21
+#: app/src/react/features/settings/categories.ts:35
 msgid "Analytics"
 msgstr ""
 
@@ -1000,6 +1000,10 @@ msgstr ""
 msgid ""
 "API key used by the analytics map card. Store the token here instead of "
 "keeping it in source code."
+msgstr ""
+
+#: app/src/react/features/settings/categories.ts:16
+msgid "Appearance"
 msgstr ""
 
 #: app/src/react/features/settings/custom/connections.tsx:102
@@ -1643,7 +1647,7 @@ msgstr ""
 msgid "Collapse submenu"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:15
+#: app/src/react/features/settings/categories.ts:24
 msgid "Colours, styling and the look of the admin"
 msgstr ""
 
@@ -1690,7 +1694,7 @@ msgstr ""
 #: admin/src/Rest/PostsTables.php:443
 #: app/src/react/features/comments/CommentDetails.tsx:91
 #: app/src/react/features/comments/CommentsList.tsx:146
-#: app/src/react/features/settings/categories.ts:25
+#: app/src/react/features/settings/categories.ts:31
 msgid "Comments"
 msgstr ""
 
@@ -1779,6 +1783,10 @@ msgstr ""
 msgid "Connected to Google Analytics"
 msgstr ""
 
+#: app/src/react/features/settings/categories.ts:17
+msgid "Content"
+msgstr ""
+
 #: app/src/react/features/media/ImageEditor.tsx:21
 msgid "Contrast"
 msgstr ""
@@ -1811,7 +1819,7 @@ msgstr ""
 msgid "Copy URL"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:13
+#: app/src/react/features/settings/categories.ts:22
 msgid "Core plugin settings and the licence"
 msgstr ""
 
@@ -2032,6 +2040,7 @@ msgid ""
 "words or phrases and their replacements to white-label the admin interface."
 msgstr ""
 
+#: app/src/react/features/settings/SettingsScreen.tsx:169
 #: app/src/react/features/users/UserSecurity.tsx:156
 msgid "Danger zone"
 msgstr ""
@@ -2056,7 +2065,7 @@ msgstr ""
 
 #: app/src/react/features/dashboard/DashboardPage.tsx:67
 #: app/src/react/features/frontend/FrontendBar.tsx:23
-#: app/src/react/features/settings/categories.ts:20
+#: app/src/react/features/settings/categories.ts:27
 #: app/src/react/shell/AppSidebar.tsx:83
 msgid "Dashboard"
 msgstr ""
@@ -2069,12 +2078,16 @@ msgstr ""
 msgid "Dashboard sections"
 msgstr ""
 
+#: app/src/react/features/settings/categories.ts:19
+msgid "Data and security"
+msgstr ""
+
 #: app/src/react/features/design-system/Showcase.tsx:348
 msgid "Data table"
 msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:169
-#: app/src/react/features/settings/categories.ts:28
+#: app/src/react/features/settings/categories.ts:37
 msgid "Database"
 msgstr ""
 
@@ -2348,6 +2361,10 @@ msgstr ""
 #: app/src/react/features/design-system/Showcase.tsx:172
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:406
 msgid "Disabled"
+msgstr ""
+
+#: app/src/react/features/settings/SettingsScreen.tsx:216
+msgid "Discard"
 msgstr ""
 
 #: app/src/react/features/products/editor/ProductEditor.tsx:544
@@ -3194,7 +3211,8 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductEditor.tsx:675
 #: app/src/react/features/products/ProductQuickEdit.tsx:266
 #: app/src/react/features/roles/queries.ts:22
-#: app/src/react/features/settings/categories.ts:13
+#: app/src/react/features/settings/categories.ts:15
+#: app/src/react/features/settings/categories.ts:22
 msgid "General"
 msgstr ""
 
@@ -3414,11 +3432,11 @@ msgstr ""
 msgid "How many times your site was clicked on in the search results."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:17
+#: app/src/react/features/settings/categories.ts:26
 msgid "How the admin menu behaves"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:14
+#: app/src/react/features/settings/categories.ts:28
 msgid "How the login page looks and what guards it"
 msgstr ""
 
@@ -3557,7 +3575,7 @@ msgstr ""
 msgid "Integration with Google reCAPTCHA removed."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:22
+#: app/src/react/features/settings/categories.ts:23
 msgid "Integrations"
 msgstr ""
 
@@ -4094,7 +4112,7 @@ msgstr ""
 msgid "Logged out successfully"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:14
+#: app/src/react/features/settings/categories.ts:28
 msgid "Login"
 msgstr ""
 
@@ -4137,11 +4155,11 @@ msgstr ""
 msgid "Manage your catalog, prices and stock."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:18
+#: app/src/react/features/settings/categories.ts:29
 msgid "Managing and showing posts"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:24
+#: app/src/react/features/settings/categories.ts:32
 msgid "Managing the people with an account"
 msgstr ""
 
@@ -4186,7 +4204,7 @@ msgstr ""
 #: app/src/react/features/media/MediaEditScreen.tsx:64
 #: app/src/react/features/media/MediaLibrary.tsx:183
 #: app/src/react/features/roles/queries.ts:25
-#: app/src/react/features/settings/categories.ts:23
+#: app/src/react/features/settings/categories.ts:30
 msgid "Media"
 msgstr ""
 
@@ -4225,7 +4243,7 @@ msgstr ""
 
 #: app/src/react/features/menus/MenuEditor.tsx:204
 #: app/src/react/features/menus/MenusList.tsx:59
-#: app/src/react/features/settings/categories.ts:17
+#: app/src/react/features/settings/categories.ts:26
 #: app/src/react/shell/AppShell.tsx:135
 msgid "Menu"
 msgstr ""
@@ -4301,7 +4319,7 @@ msgstr ""
 msgid "Mobile app"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:25
+#: app/src/react/features/settings/categories.ts:31
 msgid "Moderating comments"
 msgstr ""
 
@@ -4451,7 +4469,7 @@ msgstr ""
 msgid "Name Z–A"
 msgstr ""
 
-#: app/src/react/features/settings/SettingsScreen.tsx:172
+#: app/src/react/features/settings/SettingsScreen.tsx:185
 msgid "Needs a licence"
 msgstr ""
 
@@ -4783,7 +4801,7 @@ msgstr ""
 msgid "No rows"
 msgstr ""
 
-#: app/src/react/features/settings/SettingsScreen.tsx:156
+#: app/src/react/features/settings/SettingsScreen.tsx:163
 msgid "No setting here matches that."
 msgstr ""
 
@@ -4866,10 +4884,6 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:561
 msgid "Not paid"
-msgstr ""
-
-#: app/src/react/features/settings/SettingsScreen.tsx:111
-msgid "Not saved yet"
 msgstr ""
 
 #: app/src/react/features/users/UserSecurity.tsx:106
@@ -5271,7 +5285,7 @@ msgstr ""
 msgid "Out of stock"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:22
+#: app/src/react/features/settings/categories.ts:23
 msgid "Outside services and their keys"
 msgstr ""
 
@@ -5599,7 +5613,7 @@ msgstr ""
 #: app/src/react/features/plugins/PluginsList.tsx:159
 #: app/src/react/features/plugins/PluginsList.tsx:164
 #: app/src/react/features/roles/queries.ts:27
-#: app/src/react/features/settings/categories.ts:19
+#: app/src/react/features/settings/categories.ts:33
 msgid "Plugins"
 msgstr ""
 
@@ -5622,7 +5636,7 @@ msgstr ""
 
 #: app/src/react/features/posts/PostsList.tsx:148
 #: app/src/react/features/roles/queries.ts:23
-#: app/src/react/features/settings/categories.ts:18
+#: app/src/react/features/settings/categories.ts:29
 #: app/src/react/shell/search/useGlobalSearch.ts:57
 msgid "Posts"
 msgstr ""
@@ -5954,7 +5968,7 @@ msgstr ""
 msgid "Reason (optional)"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:16
+#: app/src/react/features/settings/categories.ts:25
 msgid "Rebrand the interface: names, text and icons"
 msgstr ""
 
@@ -6329,11 +6343,11 @@ msgstr ""
 msgid "Reset your password"
 msgstr ""
 
-#: app/src/react/features/settings/SettingsScreen.tsx:193
+#: app/src/react/features/settings/SettingsScreen.tsx:170
 msgid "Resetting puts every setting back to how the plugin ships, for everyone."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:29
+#: app/src/react/features/settings/categories.ts:38
 msgid "Resetting the plugin and other things that are hard to undo"
 msgstr ""
 
@@ -6532,7 +6546,7 @@ msgstr ""
 #: app/src/react/features/notices/NoticeEditor.tsx:113
 #: app/src/react/features/products/AttributesView.tsx:329
 #: app/src/react/features/products/ProductVariations.tsx:208
-#: app/src/react/features/settings/SettingsScreen.tsx:116
+#: app/src/react/features/settings/SettingsScreen.tsx:219
 msgid "Save"
 msgstr ""
 
@@ -6704,6 +6718,7 @@ msgstr ""
 msgid "Search results only"
 msgstr ""
 
+#: app/src/react/features/settings/SettingsScreen.tsx:120
 #: app/src/react/features/settings/SettingsScreen.tsx:125
 msgid "Search settings"
 msgstr ""
@@ -6755,7 +6770,7 @@ msgstr ""
 msgid "Secret key"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:27
+#: app/src/react/features/settings/categories.ts:36
 #: app/src/react/features/users/UserSecurity.tsx:88
 msgid "Security"
 msgstr ""
@@ -6918,7 +6933,7 @@ msgstr ""
 #: app/src/react/features/design-system/Showcase.tsx:174
 #: app/src/react/features/posts/PostsSettings.tsx:44
 #: app/src/react/features/roles/queries.ts:29
-#: app/src/react/features/settings/SettingsScreen.tsx:107
+#: app/src/react/features/settings/SettingsScreen.tsx:108
 msgid "Settings"
 msgstr ""
 
@@ -6936,6 +6951,14 @@ msgstr ""
 
 #: app/src/react/features/settings/queries.ts:54
 msgid "Settings saved"
+msgstr ""
+
+#: app/src/react/features/settings/SettingsScreen.tsx:117
+msgid "Settings section"
+msgstr ""
+
+#: app/src/react/features/settings/SettingsScreen.tsx:128
+msgid "Settings sections"
 msgstr ""
 
 #: app/src/react/features/media/ImageEditor.tsx:24
@@ -7277,6 +7300,7 @@ msgid "Stock: %s"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:419
+#: app/src/react/features/settings/categories.ts:18
 msgid "Store"
 msgstr ""
 
@@ -7492,7 +7516,7 @@ msgstr ""
 msgid "The coupon code is required."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:20
+#: app/src/react/features/settings/categories.ts:27
 msgid "The custom dashboard and the admin interface"
 msgstr ""
 
@@ -7500,7 +7524,7 @@ msgstr ""
 msgid "The customer will get the confirmation by email."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:28
+#: app/src/react/features/settings/categories.ts:37
 msgid "The database explorer"
 msgstr ""
 
@@ -7529,7 +7553,7 @@ msgstr ""
 msgid "The gateway refused the charge."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:23
+#: app/src/react/features/settings/categories.ts:30
 msgid "The media library and uploads"
 msgstr ""
 
@@ -7562,7 +7586,7 @@ msgstr ""
 msgid "The plugin directory could not be reached."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:19
+#: app/src/react/features/settings/categories.ts:33
 msgid "The plugins screen"
 msgstr ""
 
@@ -7579,7 +7603,7 @@ msgstr ""
 msgid "The product name is required."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:26
+#: app/src/react/features/settings/categories.ts:34
 msgid "The products and orders screens"
 msgstr ""
 
@@ -7614,7 +7638,7 @@ msgstr ""
 msgid "The sanitized SVG file could not be saved."
 msgstr ""
 
-#: app/src/react/features/settings/SettingsScreen.tsx:97
+#: app/src/react/features/settings/SettingsScreen.tsx:99
 msgid "The settings could not be loaded."
 msgstr ""
 
@@ -7660,7 +7684,7 @@ msgstr ""
 msgid "Their account goes. You choose who keeps what they wrote."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:15
+#: app/src/react/features/settings/categories.ts:24
 msgid "Theme"
 msgstr ""
 
@@ -7670,10 +7694,6 @@ msgstr ""
 
 #: app/src/react/features/users/UsersList.tsx:62
 msgid "There is nothing to export."
-msgstr ""
-
-#: app/src/react/features/settings/SettingsScreen.tsx:192
-msgid "These are hard to undo."
 msgstr ""
 
 #: app/src/react/features/users/UserSecurity.tsx:66
@@ -8085,7 +8105,6 @@ msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:310
 #: app/src/react/features/orders/OrdersList.tsx:234
-#: app/src/react/features/settings/SettingsScreen.tsx:113
 #: app/src/react/ui/RichText.tsx:197
 msgid "Undo"
 msgstr ""
@@ -8140,6 +8159,7 @@ msgstr ""
 
 #: app/src/react/features/products/editor/ProductEditor.tsx:629
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:393
+#: app/src/react/features/settings/SettingsScreen.tsx:212
 msgid "Unsaved changes"
 msgstr ""
 
@@ -8383,7 +8403,7 @@ msgstr ""
 
 #: app/src/react/features/dashboard/cards/register.ts:51
 #: app/src/react/features/roles/queries.ts:26
-#: app/src/react/features/settings/categories.ts:24
+#: app/src/react/features/settings/categories.ts:32
 #: app/src/react/features/users/UserDetails.tsx:58
 #: app/src/react/features/users/UsersList.tsx:156
 #: app/src/react/shell/search/useGlobalSearch.ts:64
@@ -8645,11 +8665,11 @@ msgstr ""
 msgid "What happens on the site shows up here."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:27
+#: app/src/react/features/settings/categories.ts:36
 msgid "What is guarded and how"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:21
+#: app/src/react/features/settings/categories.ts:35
 msgid "What is measured and how"
 msgstr ""
 
@@ -8706,7 +8726,7 @@ msgstr ""
 msgid "Where the font comes from"
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:16
+#: app/src/react/features/settings/categories.ts:25
 msgid "White label"
 msgstr ""
 
@@ -8742,7 +8762,7 @@ msgstr ""
 msgid "With nothing chosen, everyone sees it."
 msgstr ""
 
-#: app/src/react/features/settings/categories.ts:26
+#: app/src/react/features/settings/categories.ts:34
 msgid "WooCommerce"
 msgstr ""
 

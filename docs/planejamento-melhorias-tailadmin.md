@@ -318,6 +318,17 @@ Decisões tomadas ao executar:
 4. **Zona de perigo** em cartão próprio, para resetar as configurações e apagar dados.
 5. **Integrações** como grade de cartões: logo, descrição, `Switch` de ativo e `Detalhes` abrindo `Sheet`.
 
+**Feito em 08/10/2026.**
+- **Grupos no menu:** os grupos ficaram em `features/settings/categories.ts`, que é onde as seções já eram definidas, e não no `settings-config.js`, que define as configurações. São Geral, Aparência, Conteúdo, Loja e Dados e segurança.
+- **Menu lateral:** fica preso ao rolar a página.
+- **Abaixo de 1024px:** o menu vira um `Select` agrupado com a busca ao lado, em vez de uma lista de 17 itens empurrando as configurações uma tela para baixo.
+- **Barra de salvar:** os botões Salvar e Desfazer saíram do cabeçalho. No lugar entrou uma barra fixa embaixo, que só aparece com alteração ("Alterações não salvas · Descartar · Salvar"). A proteção ao sair da página já existia (`useUnsavedChanges`).
+- **Zona de perigo:** "Avançado" é desenhado como zona de perigo (cartão com borda vermelha e título), no lugar do alerta solto que ficava embaixo.
+
+Decisões tomadas ao executar:
+- **As linhas não mudaram.** Rótulo e descrição à esquerda com o controle à direita já era o layout (`md:grid-cols-[18rem_1fr]`).
+- **Integrações não viraram grade de cartões.** A categoria tem duas configurações (chave do Mapbox e reCAPTCHA), e o Google Analytics fica em Analytics. Uma grade de cartões com logo e "Detalhes" serve para um catálogo, não para dois campos. Vale rever quando houver um catálogo de integrações de verdade.
+
 **Critério:**
 - Todas as categorias renderizam no novo layout.
 - Alterar um campo mostra a barra. Salvar a esconde. Navegar com alteração pendente pede confirmação.

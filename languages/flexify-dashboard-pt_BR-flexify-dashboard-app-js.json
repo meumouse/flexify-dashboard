@@ -677,6 +677,9 @@
       "Anything": [
         "Qualquer coisa"
       ],
+      "Appearance": [
+        "Aparência"
+      ],
       "Application password": [
         "Senha de aplicativo"
       ],
@@ -1181,6 +1184,9 @@
       "Connected to Google Analytics": [
         "Conectado ao Google Analytics"
       ],
+      "Content": [
+        "Conteúdo"
+      ],
       "Contrast": [
         "Contraste"
       ],
@@ -1370,6 +1376,9 @@
       "Dashboard sections": [
         "Seções do painel"
       ],
+      "Data and security": [
+        "Dados e segurança"
+      ],
       "Data table": [
         "Tabela de dados"
       ],
@@ -1522,6 +1531,9 @@
       ],
       "Disabled": [
         "Desativada"
+      ],
+      "Discard": [
+        "Descartar"
       ],
       "Discard changes": [
         "Descartar alterações"
@@ -4591,6 +4603,12 @@
       ],
       "Settings saved": [
         "Configurações salvas"
+      ],
+      "Settings section": [
+        "Seção das configurações"
+      ],
+      "Settings sections": [
+        "Seções das configurações"
       ],
       "Shadows": [
         "Sombras"

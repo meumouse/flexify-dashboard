@@ -5,6 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { AppProviders } from '@/react/app/AppProviders';
 import { SettingsScreen, isApplicable, matchesSearch } from '@/react/features/settings/SettingsScreen';
 import { SAVED_ELSEWHERE } from '@/react/features/settings/queries';
+import { CATEGORIES, groupCategories } from '@/react/features/settings/categories';
 import { googleFontUrl, normaliseSiteUrl } from '@/react/features/settings/custom/connections';
 import type { SettingDefinition } from '@/shared/settings/settings-config.js';
 import type { WpData } from '@/react/types/wordpress';
@@ -149,5 +150,35 @@ describe('settings screen', () => {
 		await userEvent.setup().click(screen.getByRole('button', { name: /^Theme/ }));
 
 		expect(await screen.findByRole('textbox', { name: 'Custom css' })).toHaveValue('<style>');
+	});
+});
+
+describe('settings sections', () => {
+	it('bunches the sections under their group, in order and with none left out', () => {
+		const categories = CATEGORIES();
+		const groups = groupCategories(categories);
+
+		expect(groups.map((entry) => entry.group)).toEqual(['General', 'Appearance', 'Content', 'Store', 'Data and security']);
+		expect(groups.flatMap((entry) => entry.items)).toEqual(categories);
+	});
+
+	it('shows the save bar only while there is something to save, and discards back to what is stored', async () => {
+		const user = userEvent.setup();
+		stubFetch();
+		renderScreen();
+
+		await screen.findByText('Licence key');
+		expect(screen.queryByText('Unsaved changes')).not.toBeInTheDocument();
+
+		await user.click(screen.getByRole('button', { name: /^Menu/ }));
+		const toggle = (await screen.findAllByRole('switch'))[0];
+		const before = (toggle as HTMLInputElement).checked;
+
+		await user.click(toggle);
+		expect(screen.getByText('Unsaved changes')).toBeInTheDocument();
+
+		await user.click(screen.getByRole('button', { name: 'Discard' }));
+		expect(screen.queryByText('Unsaved changes')).not.toBeInTheDocument();
+		expect(((await screen.findAllByRole('switch'))[0] as HTMLInputElement).checked).toBe(before);
 	});
 });
