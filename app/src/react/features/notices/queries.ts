@@ -13,6 +13,7 @@ export type NoticeMeta = {
 	notice_type?: string;
 	roles?: string[];
 	dismissible?: boolean;
+	display?: 'panel' | 'bar';
 	seen_by?: number[];
 };
 

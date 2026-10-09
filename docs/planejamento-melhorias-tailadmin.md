@@ -381,6 +381,31 @@ Decisões tomadas ao executar:
 5. **Barra de anúncio** reaproveitando os avisos do plugin (`notices`), para avisos com tom "anúncio".
 6. Resolver `sidebar_resizable`: implementar ou retirar a opção e o trecho em `design-system.md`.
 
+**Feito em 08/10/2026.**
+- **Títulos de grupo:** o menu lateral já desenhava como título um separador com nome. O que faltava era o editor de menus deixar dar esse nome. Agora o separador é selecionável no editor e tem "Título do grupo" e "Ocultar".
+- **Filtro do menu:**
+  - É liga e desliga pela opção `enable_admin_menu_search`, que existia sem código nenhum por trás.
+  - Ignora acentos e o markup dos nomes ("configuracoes" acha "Configurações").
+  - Um pai cujo nome bate mantém todos os subitens; um pai que entra só por um subitem mostra só esse subitem, aberto.
+  - Esc limpa o filtro. A lógica fica em `shell/menu/filterMenu.ts`, com teste.
+- **Largura arrastável:**
+  - Ligada pela opção `sidebar_resizable`, que também existia sem código.
+  - Arrastar a borda muda a largura entre 220 e 400px. As setas mudam de 16 em 16px, e o duplo clique volta aos 290px.
+  - A largura fica guardada por navegador (`useSidebarWidth`).
+- **Notificações:** cada aviso tem ícone do tom num círculo e o tempo relativo ("há 5 minutos"). `relativeDate` saiu do formatador de pedidos para `react/lib/time.ts`, porque agora são dois usos, em camadas diferentes.
+- **Barra de anúncio:**
+  - Um aviso do plugin pode ser marcado como "Mostrar como barra em todas as telas" (meta nova `display`, `panel` ou `bar`, validada no PHP).
+  - A barra mostra um aviso por vez, com "Ler mais", que abre o painel, e "Dispensar".
+  - O hook dos avisos passou a usar TanStack Query, para a barra e o painel dividirem a mesma requisição e a mesma dispensa.
+
+**Dois defeitos encontrados no caminho:**
+- O painel lia o tom do aviso em `meta.type`, mas o editor e o PHP gravam em `meta.notice_type`. Todo aviso aparecia como "informação".
+- O painel mostrava "Dispensar" mesmo em aviso marcado como não dispensável.
+
+Decisões tomadas ao executar:
+- **O modo trilho de ícones não virou layout novo.** O menu recolhido já é isso: 90px, ícones com tooltip, abrindo por cima ao passar o mouse. Um segundo modo, sem abrir, seria uma opção para uma diferença pequena. Por isso o `Tooltip` claro, que vinha da fase 1, também não entrou.
+- **O filtro não destaca o trecho encontrado.** Os nomes do menu podem trazer markup de plugins (bolhas, texto para leitor de tela), e cortá-los para destacar arrisca quebrar esse markup. Sobram só os itens que batem, o que já mostra o resultado.
+
 **Critério:**
 - Com 40+ itens de menu (WooCommerce + 5 plugins), digitar no filtro reduz a lista sem recarregar a página.
 - O trilho funciona só por teclado.

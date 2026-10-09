@@ -14,7 +14,7 @@ msgstr ""
 msgid "“%s” will be removed from every product that uses it."
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:139
+#: app/src/react/features/menus/MenuEditor.tsx:156
 msgid "(No label)"
 msgstr ""
 
@@ -26,10 +26,10 @@ msgstr ""
 #: admin/src/Rest/PostsTables.php:716
 #: app/src/react/features/comments/CommentDetails.tsx:142
 #: app/src/react/features/comments/CommentsList.tsx:127
-#: app/src/react/features/menus/MenuEditor.tsx:147
+#: app/src/react/features/menus/MenuEditor.tsx:164
 #: app/src/react/features/menus/MenusList.tsx:62
-#: app/src/react/features/notices/NoticeEditor.tsx:103
-#: app/src/react/features/notices/NoticeEditor.tsx:133
+#: app/src/react/features/notices/NoticeEditor.tsx:106
+#: app/src/react/features/notices/NoticeEditor.tsx:136
 #: app/src/react/features/notices/NoticesList.tsx:54
 #: app/src/react/features/posts/PostCells.tsx:194
 #: app/src/react/features/posts/PostPreview.tsx:31
@@ -218,7 +218,7 @@ msgstr ""
 msgid "%d variations"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:54
+#: app/src/react/shell/notices/NotificationsPanel.tsx:60
 msgid "%d waiting for you"
 msgstr ""
 
@@ -353,11 +353,11 @@ msgstr ""
 msgid "90 days"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:223
+#: app/src/react/features/menus/MenuEditor.tsx:252
 msgid "A Dashicons name, for example dashicons-cart."
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:207
+#: app/src/react/features/menus/MenuEditor.tsx:224
 msgid "A draft is kept but shown to nobody."
 msgstr ""
 
@@ -389,7 +389,7 @@ msgstr ""
 msgid "A role with this slug already exists."
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:312
+#: app/src/react/features/menus/MenuEditor.tsx:341
 msgid "A saved menu reaches people when the cache turns over."
 msgstr ""
 
@@ -506,11 +506,11 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:178
+#: app/src/react/features/menus/MenuEditor.tsx:195
 msgid "Add a link"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:240
+#: app/src/react/features/menus/MenuEditor.tsx:269
 msgid "Add a link under it"
 msgstr ""
 
@@ -688,7 +688,7 @@ msgstr ""
 msgid "Added here"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:221
+#: app/src/react/features/menus/MenuEditor.tsx:250
 msgid "Address"
 msgstr ""
 
@@ -722,22 +722,22 @@ msgstr ""
 msgid "Admin layout"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:116
+#: app/src/react/shell/AppSidebar.tsx:164
 #: app/src/react/shell/search/CommandPalette.tsx:29
 msgid "Admin menu"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:148
+#: app/src/react/features/menus/MenuEditor.tsx:165
 #: app/src/react/features/menus/MenusList.tsx:98
 msgid "Admin menus"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:104
+#: app/src/react/features/notices/NoticeEditor.tsx:107
 #: app/src/react/features/notices/NoticesList.tsx:112
 msgid "Admin notices"
 msgstr ""
 
-#: admin/src/Rest/AdminNotices.php:231
+#: admin/src/Rest/AdminNotices.php:259
 msgid "Admin Notices"
 msgstr ""
 
@@ -798,7 +798,7 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:121
+#: app/src/react/shell/notices/NotificationsPanel.tsx:141
 msgid "All caught up"
 msgstr ""
 
@@ -863,7 +863,7 @@ msgstr ""
 msgid "Allowed emails"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:301
+#: app/src/react/features/menus/MenuEditor.tsx:330
 msgid "Also these people"
 msgstr ""
 
@@ -1193,8 +1193,14 @@ msgstr ""
 msgid "Base theme colors"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:176
+#: app/src/react/features/notices/NoticeEditor.tsx:179
 msgid "Behaviour"
+msgstr ""
+
+#: app/src/react/features/notices/NoticeEditor.tsx:192
+msgid ""
+"Besides the notifications panel, it runs across the top of the admin until "
+"it is dismissed. For what nobody should miss."
 msgstr ""
 
 #: app/src/react/features/orders/OrderPreview.tsx:135
@@ -1302,7 +1308,7 @@ msgstr ""
 msgid "Campaigns"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:182
+#: app/src/react/features/notices/NoticeEditor.tsx:185
 msgid "Can be dismissed"
 msgstr ""
 
@@ -1503,7 +1509,7 @@ msgstr ""
 msgid "Choose an item from the list to see it and change its properties."
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:265
+#: app/src/react/features/menus/MenuEditor.tsx:294
 msgid "Choose an item on the left to change it."
 msgstr ""
 
@@ -1557,7 +1563,7 @@ msgstr ""
 msgid "Choose your prefered admin layout"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:212
+#: app/src/react/features/menus/MenuEditor.tsx:241
 msgid "Chosen item"
 msgstr ""
 
@@ -2065,7 +2071,7 @@ msgstr ""
 #: app/src/react/features/dashboard/DashboardPage.tsx:67
 #: app/src/react/features/frontend/FrontendBar.tsx:23
 #: app/src/react/features/settings/categories.ts:27
-#: app/src/react/shell/AppSidebar.tsx:83
+#: app/src/react/shell/AppSidebar.tsx:125
 msgid "Dashboard"
 msgstr ""
 
@@ -2133,11 +2139,11 @@ msgstr ""
 #: app/src/react/features/media/MediaDetails.tsx:114
 #: app/src/react/features/media/MediaLibrary.tsx:272
 #: app/src/react/features/menus/MenuEditor.tsx:103
-#: app/src/react/features/menus/MenuEditor.tsx:152
+#: app/src/react/features/menus/MenuEditor.tsx:169
 #: app/src/react/features/menus/MenusList.tsx:47
 #: app/src/react/features/menus/MenusList.tsx:87
-#: app/src/react/features/notices/NoticeEditor.tsx:89
-#: app/src/react/features/notices/NoticeEditor.tsx:109
+#: app/src/react/features/notices/NoticeEditor.tsx:92
+#: app/src/react/features/notices/NoticeEditor.tsx:112
 #: app/src/react/features/notices/NoticesList.tsx:34
 #: app/src/react/features/notices/NoticesList.tsx:101
 #: app/src/react/features/orders/OrderNotes.tsx:67
@@ -2236,7 +2242,7 @@ msgstr ""
 msgid "Delete this menu?"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:87
+#: app/src/react/features/notices/NoticeEditor.tsx:90
 #: app/src/react/features/notices/NoticesList.tsx:32
 msgid "Delete this notice?"
 msgstr ""
@@ -2409,7 +2415,8 @@ msgid "Disk: %sGB of %sGB"
 msgstr ""
 
 #: app/src/react/app/ToastProvider.tsx:110
-#: app/src/react/shell/notices/NotificationsPanel.tsx:90
+#: app/src/react/shell/notices/AnnouncementBar.tsx:47
+#: app/src/react/shell/notices/NotificationsPanel.tsx:109
 #: app/src/react/ui/Alert.tsx:42
 msgid "Dismiss"
 msgstr ""
@@ -2492,6 +2499,10 @@ msgstr ""
 msgid "Drag to reorder"
 msgstr ""
 
+#: app/src/react/shell/AppSidebar.tsx:251
+msgid "Drag to resize; double-click to reset"
+msgstr ""
+
 #: app/src/react/features/media/MediaLibrary.tsx:282
 msgid "Drop the files to upload them"
 msgstr ""
@@ -2520,9 +2531,9 @@ msgstr ""
 
 #: app/src/react/features/media/MediaEditScreen.tsx:64
 #: app/src/react/features/media/MediaLibrary.tsx:266
-#: app/src/react/features/menus/MenuEditor.tsx:148
+#: app/src/react/features/menus/MenuEditor.tsx:165
 #: app/src/react/features/menus/MenusList.tsx:85
-#: app/src/react/features/notices/NoticeEditor.tsx:104
+#: app/src/react/features/notices/NoticeEditor.tsx:107
 #: app/src/react/features/notices/NoticesList.tsx:99
 #: app/src/react/features/posts/PostPreview.tsx:61
 #: app/src/react/features/posts/PostRowMenu.tsx:33
@@ -2630,6 +2641,12 @@ msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:379
 msgid "Empty and loading states"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:235
+msgid ""
+"Empty draws a line. A name turns the line into the heading of the items "
+"below it."
 msgstr ""
 
 #: admin/src/License/LicenseService.php:410
@@ -2781,7 +2798,7 @@ msgstr ""
 msgid "Entry"
 msgstr ""
 
-#: app/src/react/features/notices/queries.ts:35
+#: app/src/react/features/notices/queries.ts:36
 msgid "Error"
 msgstr ""
 
@@ -2814,7 +2831,7 @@ msgstr ""
 msgid "Everyone"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:274
+#: app/src/react/features/menus/MenuEditor.tsx:303
 msgid "Everyone on this site"
 msgstr ""
 
@@ -2836,7 +2853,7 @@ msgstr ""
 msgid "Example orders"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:305
+#: app/src/react/features/menus/MenuEditor.tsx:334
 msgid "Except these people"
 msgstr ""
 
@@ -2983,7 +3000,7 @@ msgstr ""
 msgid "Favicon url"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:89
+#: app/src/react/shell/AppSidebar.tsx:131
 msgid "Favourites"
 msgstr ""
 
@@ -3093,6 +3110,10 @@ msgstr ""
 msgid "Filter media items by tag IDs."
 msgstr ""
 
+#: app/src/react/shell/AppSidebar.tsx:160
+msgid "Filter the menu"
+msgstr ""
+
 #: app/src/react/data/FilterPopover.tsx:27
 #: app/src/react/data/FilterPopover.tsx:57
 #: app/src/react/features/posts/PostsSettings.tsx:48
@@ -3198,7 +3219,7 @@ msgid "From %s"
 msgstr ""
 
 #: app/src/react/features/roles/RolesList.tsx:107
-#: app/src/react/shell/notices/NotificationsPanel.tsx:101
+#: app/src/react/shell/notices/NotificationsPanel.tsx:121
 msgid "From WordPress"
 msgstr ""
 
@@ -3335,6 +3356,10 @@ msgstr ""
 msgid "Gross revenue"
 msgstr ""
 
+#: app/src/react/features/menus/MenuEditor.tsx:234
+msgid "Group heading"
+msgstr ""
+
 #: app/src/react/features/products/editor/ProductEditor.tsx:596
 msgid "Grouped product"
 msgstr ""
@@ -3348,7 +3373,7 @@ msgid "Grouped products take their prices from the child products."
 msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:460
-#: app/src/react/features/orders/orderFormat.ts:34
+#: app/src/react/features/orders/orderFormat.ts:35
 msgid "Guest"
 msgstr ""
 
@@ -3400,8 +3425,12 @@ msgstr ""
 msgid "Hide the screen options toggle in the toolbar"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:225
+#: app/src/react/features/menus/MenuEditor.tsx:254
 msgid "Hide this item"
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:237
+msgid "Hide this separator"
 msgstr ""
 
 #: app/src/react/ui/RichText.tsx:184
@@ -3416,7 +3445,7 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:131
+#: app/src/react/features/notices/NoticeEditor.tsx:134
 msgid "How it will look"
 msgstr ""
 
@@ -3458,7 +3487,7 @@ msgstr ""
 msgid "I forgot my password"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:223
+#: app/src/react/features/menus/MenuEditor.tsx:252
 msgid "Icon"
 msgstr ""
 
@@ -3470,7 +3499,7 @@ msgstr ""
 msgid "Icon only button"
 msgstr ""
 
-#: admin/src/Rest/AdminNotices.php:322
+#: admin/src/Rest/AdminNotices.php:350
 msgid "ID of the notice to mark as seen"
 msgstr ""
 
@@ -3553,7 +3582,7 @@ msgstr ""
 msgid "Individual use only"
 msgstr ""
 
-#: app/src/react/features/notices/queries.ts:32
+#: app/src/react/features/notices/queries.ts:33
 msgid "Information"
 msgstr ""
 
@@ -3630,8 +3659,8 @@ msgstr ""
 msgid "Invalid media item"
 msgstr ""
 
-#: admin/src/Rest/AdminNotices.php:371
-#: admin/src/Rest/AdminNotices.php:379
+#: admin/src/Rest/AdminNotices.php:399
+#: admin/src/Rest/AdminNotices.php:407
 msgid "Invalid notice or user."
 msgstr ""
 
@@ -3746,7 +3775,7 @@ msgstr ""
 msgid "IP address"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:88
+#: app/src/react/features/notices/NoticeEditor.tsx:91
 #: app/src/react/features/notices/NoticesList.tsx:33
 msgid "It stops being shown and cannot be brought back."
 msgstr ""
@@ -3805,7 +3834,7 @@ msgstr ""
 msgid "Item updated"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:164
+#: app/src/react/features/menus/MenuEditor.tsx:181
 #: app/src/react/features/orders/OrderDetails.tsx:292
 #: app/src/react/features/orders/OrderEditor.tsx:500
 #: app/src/react/features/orders/OrderPreview.tsx:102
@@ -3864,7 +3893,7 @@ msgstr ""
 msgid "Keys are set"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:140
+#: app/src/react/features/notices/NoticeEditor.tsx:143
 #: app/src/react/features/roles/RolesList.tsx:104
 msgid "Kind"
 msgstr ""
@@ -3873,7 +3902,7 @@ msgstr ""
 msgid "Kinds of action"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:217
+#: app/src/react/features/menus/MenuEditor.tsx:246
 msgid "Label"
 msgstr ""
 
@@ -4243,10 +4272,10 @@ msgstr ""
 msgid "Memory: %sMB of %sMB"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:204
+#: app/src/react/features/menus/MenuEditor.tsx:221
 #: app/src/react/features/menus/MenusList.tsx:59
 #: app/src/react/features/settings/categories.ts:26
-#: app/src/react/shell/AppShell.tsx:135
+#: app/src/react/shell/AppShell.tsx:151
 msgid "Menu"
 msgstr ""
 
@@ -4280,7 +4309,7 @@ msgstr ""
 msgid "Menu saved"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:125
+#: app/src/react/features/notices/NoticeEditor.tsx:128
 msgid "Message"
 msgstr ""
 
@@ -4396,7 +4425,7 @@ msgstr ""
 msgid "Move coupon to trash?"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:167
+#: app/src/react/features/menus/MenuEditor.tsx:184
 #: app/src/react/features/posts/PostsSettings.tsx:141
 msgid "Move down"
 msgstr ""
@@ -4439,7 +4468,7 @@ msgstr ""
 msgid "Move to trash?"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:166
+#: app/src/react/features/menus/MenuEditor.tsx:183
 #: app/src/react/features/posts/PostsSettings.tsx:132
 msgid "Move up"
 msgstr ""
@@ -4450,7 +4479,7 @@ msgstr ""
 
 #: app/src/react/features/comments/CommentDetails.tsx:125
 #: app/src/react/features/design-system/Showcase.tsx:438
-#: app/src/react/features/menus/MenuEditor.tsx:206
+#: app/src/react/features/menus/MenuEditor.tsx:223
 #: app/src/react/features/products/AttributesView.tsx:51
 #: app/src/react/features/products/AttributesView.tsx:183
 #: app/src/react/features/products/AttributesView.tsx:265
@@ -4513,7 +4542,7 @@ msgstr ""
 msgid "Never expires"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:104
+#: app/src/react/features/notices/NoticeEditor.tsx:107
 msgid "New"
 msgstr ""
 
@@ -4534,7 +4563,7 @@ msgstr ""
 msgid "New menu"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:103
+#: app/src/react/features/notices/NoticeEditor.tsx:106
 msgid "New notice"
 msgstr ""
 
@@ -4717,7 +4746,7 @@ msgstr ""
 msgid "No notices yet"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:121
+#: app/src/react/shell/notices/NotificationsPanel.tsx:141
 msgid "No notifications on this screen."
 msgstr ""
 
@@ -4879,11 +4908,11 @@ msgstr ""
 msgid "No visits in this period."
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:306
+#: app/src/react/features/menus/MenuEditor.tsx:335
 msgid "Nobody excluded"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:302
+#: app/src/react/features/menus/MenuEditor.tsx:331
 msgid "Nobody in particular"
 msgstr ""
 
@@ -4954,6 +4983,10 @@ msgstr ""
 msgid "Nothing in the library matches this."
 msgstr ""
 
+#: app/src/react/shell/AppSidebar.tsx:165
+msgid "Nothing in the menu matches that."
+msgstr ""
+
 #: app/src/react/features/activity/ActivityList.tsx:212
 msgid "Nothing logged yet"
 msgstr ""
@@ -4974,7 +5007,7 @@ msgstr ""
 msgid "Nothing sold in this period."
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:54
+#: app/src/react/shell/notices/NotificationsPanel.tsx:60
 msgid "Nothing waiting"
 msgstr ""
 
@@ -4990,25 +5023,25 @@ msgstr ""
 msgid "Notice actions"
 msgstr ""
 
-#: app/src/react/features/notices/queries.ts:71
+#: app/src/react/features/notices/queries.ts:72
 msgid "Notice created"
 msgstr ""
 
-#: app/src/react/features/notices/queries.ts:80
+#: app/src/react/features/notices/queries.ts:81
 msgid "Notice deleted"
 msgstr ""
 
-#: app/src/react/features/notices/queries.ts:71
+#: app/src/react/features/notices/queries.ts:72
 msgid "Notice updated"
 msgstr ""
 
 #: app/src/react/app/ToastProvider.tsx:83
-#: app/src/react/shell/notices/NotificationsPanel.tsx:54
-#: app/src/react/shell/notices/NotificationsPanel.tsx:131
+#: app/src/react/shell/notices/NotificationsPanel.tsx:60
+#: app/src/react/shell/notices/NotificationsPanel.tsx:151
 msgid "Notifications"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:131
+#: app/src/react/shell/notices/NotificationsPanel.tsx:151
 msgid "Notifications (%d)"
 msgstr ""
 
@@ -5076,7 +5109,7 @@ msgstr ""
 msgid "On hold"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:183
+#: app/src/react/features/notices/NoticeEditor.tsx:186
 msgid "Once dismissed, that person does not see it again."
 msgstr ""
 
@@ -5110,7 +5143,7 @@ msgstr ""
 msgid "Only the first %d variations will be created."
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:206
+#: app/src/react/features/menus/MenuEditor.tsx:223
 msgid "Only you see this; it is how you tell your menus apart."
 msgstr ""
 
@@ -5118,7 +5151,7 @@ msgstr ""
 msgid "Open full editor"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:226
+#: app/src/react/features/menus/MenuEditor.tsx:255
 msgid "Open in a new tab"
 msgstr ""
 
@@ -5189,7 +5222,7 @@ msgstr ""
 
 #: admin/src/Activity/ActivityHooks.php:784
 #: admin/src/Activity/ActivityHooks.php:813
-#: app/src/react/features/orders/orderFormat.ts:37
+#: app/src/react/features/orders/orderFormat.ts:38
 msgid "Order #%s"
 msgstr ""
 
@@ -5972,7 +6005,8 @@ msgstr ""
 msgid "React foundation"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:86
+#: app/src/react/shell/notices/AnnouncementBar.tsx:44
+#: app/src/react/shell/notices/NotificationsPanel.tsx:104
 msgid "Read more"
 msgstr ""
 
@@ -6212,7 +6246,7 @@ msgstr ""
 msgid "Remove filter"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:102
+#: app/src/react/shell/AppSidebar.tsx:144
 msgid "Remove from favourites"
 msgstr ""
 
@@ -6221,7 +6255,7 @@ msgstr ""
 msgid "Remove from featured"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:258
+#: app/src/react/features/menus/MenuEditor.tsx:287
 msgid "Remove from this menu"
 msgstr ""
 
@@ -6385,6 +6419,10 @@ msgstr ""
 msgid "Resize card"
 msgstr ""
 
+#: app/src/react/shell/AppSidebar.tsx:250
+msgid "Resize the menu"
+msgstr ""
+
 #: app/src/react/features/orders/OrdersList.tsx:449
 msgid "REST API"
 msgstr ""
@@ -6521,7 +6559,7 @@ msgstr ""
 msgid "Role: %s"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:280
+#: app/src/react/features/menus/MenuEditor.tsx:309
 #: app/src/react/features/roles/RoleDetails.tsx:86
 #: app/src/react/features/roles/RolesList.tsx:138
 #: app/src/react/features/users/ImportUsersModal.tsx:26
@@ -6572,8 +6610,8 @@ msgid "Saturation"
 msgstr ""
 
 #: app/src/react/features/media/ImageEditor.tsx:363
-#: app/src/react/features/menus/MenuEditor.tsx:155
-#: app/src/react/features/notices/NoticeEditor.tsx:113
+#: app/src/react/features/menus/MenuEditor.tsx:172
+#: app/src/react/features/notices/NoticeEditor.tsx:116
 #: app/src/react/features/products/AttributesView.tsx:329
 #: app/src/react/features/products/ProductVariations.tsx:208
 #: app/src/react/features/settings/SettingsScreen.tsx:219
@@ -6817,7 +6855,7 @@ msgstr ""
 msgid "Security token"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:189
+#: app/src/react/features/notices/NoticeEditor.tsx:198
 #: app/src/react/features/notices/NoticesList.tsx:88
 msgid "Seen by"
 msgstr ""
@@ -6897,6 +6935,11 @@ msgstr ""
 #: app/src/react/features/products/editor/ProductEditor.tsx:1126
 #: app/src/react/features/products/ProductQuickEdit.tsx:372
 msgid "Separate tags with commas."
+msgstr ""
+
+#: app/src/react/features/menus/MenuEditor.tsx:141
+#: app/src/react/features/menus/MenuEditor.tsx:229
+msgid "Separator"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/register.ts:50
@@ -7069,11 +7112,15 @@ msgstr ""
 msgid "Short description of the product."
 msgstr ""
 
+#: app/src/react/features/notices/NoticeEditor.tsx:191
+msgid "Show as a bar on every screen"
+msgstr ""
+
 #: app/src/react/features/posts/PostsSettings.tsx:104
 msgid "Show child items"
 msgstr ""
 
-#: app/src/react/shell/notices/NotificationsPanel.tsx:86
+#: app/src/react/shell/notices/NotificationsPanel.tsx:104
 msgid "Show less"
 msgstr ""
 
@@ -7093,7 +7140,7 @@ msgstr ""
 msgid "Show the password"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:178
+#: app/src/react/features/notices/NoticeEditor.tsx:181
 msgid "Show this notice"
 msgstr ""
 
@@ -7368,7 +7415,7 @@ msgstr ""
 msgid "Subtotal"
 msgstr ""
 
-#: app/src/react/features/notices/queries.ts:33
+#: app/src/react/features/notices/queries.ts:34
 msgid "Success"
 msgstr ""
 
@@ -7911,7 +7958,7 @@ msgstr ""
 
 #: app/src/react/features/media/MediaBulkEdit.tsx:57
 #: app/src/react/features/media/MediaDetails.tsx:171
-#: app/src/react/features/notices/NoticeEditor.tsx:123
+#: app/src/react/features/notices/NoticeEditor.tsx:126
 msgid "Title"
 msgstr ""
 
@@ -8164,7 +8211,7 @@ msgstr ""
 msgid "Undo"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:245
+#: app/src/react/features/menus/MenuEditor.tsx:274
 msgid "Undo my changes to it"
 msgstr ""
 
@@ -8337,7 +8384,7 @@ msgstr ""
 msgid "Usage restrictions"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:313
+#: app/src/react/features/menus/MenuEditor.tsx:342
 msgid "Use “Apply to everyone now” on the menu list to make it immediate."
 msgstr ""
 
@@ -8386,7 +8433,7 @@ msgstr ""
 msgid "Use this file"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:207
+#: app/src/react/features/menus/MenuEditor.tsx:224
 msgid "Use this menu"
 msgstr ""
 
@@ -8621,7 +8668,7 @@ msgstr ""
 msgid "Visible on the product page"
 msgstr ""
 
-#: app/src/react/shell/AppSidebar.tsx:197
+#: app/src/react/shell/AppSidebar.tsx:275
 #: app/src/react/shell/AppToolbar.tsx:66
 msgid "Visit site"
 msgstr ""
@@ -8638,7 +8685,7 @@ msgstr ""
 msgid "vs previous period"
 msgstr ""
 
-#: app/src/react/features/notices/queries.ts:34
+#: app/src/react/features/notices/queries.ts:35
 msgid "Warning"
 msgstr ""
 
@@ -8800,11 +8847,11 @@ msgstr ""
 msgid "Who"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:269
+#: app/src/react/features/menus/MenuEditor.tsx:298
 msgid "Who gets this menu"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:161
+#: app/src/react/features/notices/NoticeEditor.tsx:164
 msgid "Who sees it"
 msgstr ""
 
@@ -8823,7 +8870,7 @@ msgstr ""
 msgid "With icon"
 msgstr ""
 
-#: app/src/react/features/notices/NoticeEditor.tsx:166
+#: app/src/react/features/notices/NoticeEditor.tsx:169
 msgid "With nothing chosen, everyone sees it."
 msgstr ""
 
@@ -8848,7 +8895,7 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: app/src/react/features/menus/MenuEditor.tsx:218
+#: app/src/react/features/menus/MenuEditor.tsx:247
 msgid "WordPress calls it %s."
 msgstr ""
 

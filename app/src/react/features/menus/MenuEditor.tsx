@@ -120,9 +120,26 @@ export const MenuEditor = () => {
 		});
 
 	const Row = ({ item, nested, position }: { item: MenuItem | SubMenuItem; nested?: boolean; position: Where }) =>
-		// WordPress separates groups of items with an entry that is only a line.
+		// WordPress separates groups of items with an entry that is only a line. Given a name it
+		// becomes the heading of the group below it, which is how the sidebar draws it.
 		'type' in item && item.type === 'separator' ? (
-			<span className="my-1 block h-px bg-gray-100 dark:bg-gray-800" role="separator" />
+			<button
+				type="button"
+				onClick={() => setSelected(item.id)}
+				className={cn(
+					'flex w-full items-center gap-2 rounded-lg px-2 py-1 text-start transition-colors',
+					selected === item.id ? 'bg-brand-50 dark:bg-brand-500/10' : 'hover:bg-gray-50 dark:hover:bg-white/5',
+					item.settings?.hidden && 'opacity-50'
+				)}
+				aria-current={selected === item.id}
+			>
+				{item.settings?.name ? (
+					<span className="min-w-0 flex-1 truncate text-theme-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">{item.settings.name}</span>
+				) : (
+					<span className="my-1.5 block h-px flex-1 bg-gray-200 dark:bg-gray-700" />
+				)}
+				<span className="sr-only">{__('Separator')}</span>
+			</button>
 		) : (
 			<button
 			type="button"
@@ -208,7 +225,19 @@ export const MenuEditor = () => {
 						</div>
 					</Card>
 
-					{current && where ? (
+					{current && where && 'type' in current && current.type === 'separator' ? (
+						<Card title={__('Separator')}>
+							<div className="flex flex-col gap-4">
+								<Input
+									value={current.settings?.name ?? ''}
+									onChange={(event) => changeSettings({ name: event.target.value })}
+									label={__('Group heading')}
+									hint={__('Empty draws a line. A name turns the line into the heading of the items below it.')}
+								/>
+								<Switch checked={Boolean(current.settings?.hidden)} onCheckedChange={(hidden) => changeSettings({ hidden })} label={__('Hide this separator')} />
+							</div>
+						</Card>
+					) : current && where ? (
 						<Card title={__('Chosen item')}>
 							<div className="flex flex-col gap-4">
 								<Input

@@ -1,7 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { AppProviders } from '@/react/app/AppProviders';
+import { AnnouncementBar } from '@/react/shell/notices/AnnouncementBar';
 import { NotificationsPanel } from '@/react/shell/notices/NotificationsPanel';
 import { NOTICES_SCRIPT_ID, readWpNotices } from '@/react/shell/notices/useWpNotices';
 import type { WpData } from '@/react/types/wordpress';
@@ -24,9 +25,9 @@ const wpData: WpData = {
 };
 
 const NOTICES = [
-	{ id: 1, title: { rendered: 'Manutenção' }, content: { rendered: '<p>O site será atualizado hoje.</p>' }, meta: { type: 'warning', roles: [], seen_by: [] } },
-	{ id: 2, title: { rendered: 'Só para admins' }, content: { rendered: '<p>Oi</p>' }, meta: { type: 'info', roles: [{ type: 'role', value: 'administrator' }], seen_by: [] } },
-	{ id: 3, title: { rendered: 'Já lida' }, content: { rendered: '<p>Oi</p>' }, meta: { type: 'info', roles: [], seen_by: [7] } },
+	{ id: 1, title: { rendered: 'Manutenção' }, content: { rendered: '<p>O site será atualizado hoje.</p>' }, meta: { notice_type: 'warning', roles: [], seen_by: [] } },
+	{ id: 2, title: { rendered: 'Só para admins' }, content: { rendered: '<p>Oi</p>' }, meta: { notice_type: 'info', roles: [{ type: 'role', value: 'administrator' }], seen_by: [] } },
+	{ id: 3, title: { rendered: 'Já lida' }, content: { rendered: '<p>Oi</p>' }, meta: { notice_type: 'info', roles: [], seen_by: [7] } },
 ];
 
 const stubRest = () => {
@@ -140,5 +141,70 @@ describe('NotificationsPanel', () => {
 
 		await waitFor(() => expect(screen.queryByText('Manutenção')).not.toBeInTheDocument());
 		expect(calls.find((call) => call.url.includes('notices/seen'))?.body).toEqual({ notice_id: 1 });
+	});
+});
+
+describe('announcement bar and notice tones', () => {
+	const BAR_NOTICES = [
+		{ id: 10, title: { rendered: 'Manutenção às 22h' }, content: { rendered: '<p>O site fica fora do ar por 10 minutos.</p>' }, meta: { notice_type: 'warning', display: 'bar', roles: [], seen_by: [] } },
+		{ id: 11, title: { rendered: 'Só no painel' }, content: { rendered: '<p>Oi</p>' }, meta: { notice_type: 'error', display: 'panel', dismissible: false, roles: [], seen_by: [] } },
+	];
+
+	const stubNotices = () => {
+		const posts: string[] = [];
+
+		vi.stubGlobal(
+			'fetch',
+			vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+				const url = String(input);
+
+				if (init?.method === 'POST') {
+					posts.push(url);
+				}
+
+				const body = url.includes('notices/seen') ? { seen_by: [7] } : BAR_NOTICES;
+
+				return new Response(JSON.stringify(body), { status: 200, headers: { 'Content-Type': 'application/json' } });
+			})
+		);
+
+		return posts;
+	};
+
+	it('runs a bar notice across the top and takes it away when dismissed', async () => {
+		const user = userEvent.setup();
+		const posts = stubNotices();
+		const openPanel = vi.fn();
+
+		render(
+			<AppProviders wpData={wpData}>
+				<AnnouncementBar onOpenPanel={openPanel} />
+			</AppProviders>
+		);
+
+		expect(await screen.findByText('Manutenção às 22h')).toBeInTheDocument();
+		expect(screen.queryByText('Só no painel')).not.toBeInTheDocument();
+
+		await user.click(screen.getByRole('button', { name: 'Read more' }));
+		expect(openPanel).toHaveBeenCalled();
+
+		await user.click(screen.getByRole('button', { name: 'Dismiss' }));
+		await waitFor(() => expect(screen.queryByText('Manutenção às 22h')).not.toBeInTheDocument());
+		expect(posts.some((url) => url.includes('notices/seen'))).toBe(true);
+	});
+
+	it('offers no dismiss on a notice that cannot be dismissed', async () => {
+		stubNotices();
+
+		render(
+			<AppProviders wpData={wpData}>
+				<NotificationsPanel open onOpenChange={() => {}} wpNotices={[]} onDismissWpNotice={() => {}} />
+			</AppProviders>
+		);
+
+		const title = await screen.findByText('Só no painel');
+		const article = title.closest('article') as HTMLElement;
+
+		expect(within(article).queryByRole('button', { name: 'Dismiss' })).not.toBeInTheDocument();
 	});
 });

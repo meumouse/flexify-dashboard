@@ -9217,3 +9217,44 @@ msgstr "vs. período anterior"
 #: app/src/shared/settings/settings-config.js:777
 msgid "What the store aims to earn each calendar month. The dashboard measures the month against it; leave it at 0 to hide the target."
 msgstr "Quanto a loja pretende faturar em cada mês do calendário. O painel compara o mês com esse valor; deixe 0 para esconder a meta."
+
+#: app/src/react/features/notices/NoticeEditor.tsx:192
+msgid "Besides the notifications panel, it runs across the top of the admin until it is dismissed. For what nobody should miss."
+msgstr "Além do painel de notificações, aparece no topo do admin até ser dispensado. Para o que ninguém pode deixar de ver."
+
+#: app/src/react/shell/AppSidebar.tsx:251
+msgid "Drag to resize; double-click to reset"
+msgstr "Arraste para redimensionar; clique duas vezes para voltar ao padrão"
+
+#: app/src/react/features/menus/MenuEditor.tsx:235
+msgid "Empty draws a line. A name turns the line into the heading of the items below it."
+msgstr "Vazio, desenha uma linha. Com nome, a linha vira o título dos itens abaixo dela."
+
+#: app/src/react/shell/AppSidebar.tsx:160
+msgid "Filter the menu"
+msgstr "Filtrar o menu"
+
+#: app/src/react/features/menus/MenuEditor.tsx:234
+msgid "Group heading"
+msgstr "Título do grupo"
+
+#: app/src/react/features/menus/MenuEditor.tsx:237
+msgid "Hide this separator"
+msgstr "Ocultar este separador"
+
+#: app/src/react/shell/AppSidebar.tsx:165
+msgid "Nothing in the menu matches that."
+msgstr "Nada no menu corresponde a isso."
+
+#: app/src/react/shell/AppSidebar.tsx:250
+msgid "Resize the menu"
+msgstr "Redimensionar o menu"
+
+#: app/src/react/features/menus/MenuEditor.tsx:141
+#: app/src/react/features/menus/MenuEditor.tsx:229
+msgid "Separator"
+msgstr "Separador"
+
+#: app/src/react/features/notices/NoticeEditor.tsx:191
+msgid "Show as a bar on every screen"
+msgstr "Mostrar como barra em todas as telas"

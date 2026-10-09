@@ -19,10 +19,12 @@ type Draft = {
 	notice_type: string;
 	roles: string[];
 	dismissible: boolean;
+	/** Also shown as a bar across the top of every screen */
+	bar: boolean;
 	active: boolean;
 };
 
-const EMPTY: Draft = { title: '', content: '', notice_type: 'info', roles: [], dismissible: true, active: true };
+const EMPTY: Draft = { title: '', content: '', notice_type: 'info', roles: [], dismissible: true, bar: false, active: true };
 
 const draftOf = (notice: Notice): Draft => ({
 	title: notice.title.raw ?? decodeHtml(stripTags(notice.title.rendered)),
@@ -30,6 +32,7 @@ const draftOf = (notice: Notice): Draft => ({
 	notice_type: notice.meta?.notice_type ?? 'info',
 	roles: notice.meta?.roles ?? [],
 	dismissible: notice.meta?.dismissible ?? true,
+	bar: notice.meta?.display === 'bar',
 	active: notice.status === 'publish',
 });
 
@@ -76,7 +79,7 @@ export const NoticeEditor = () => {
 					title: draft.title,
 					content: draft.content,
 					status: draft.active ? 'publish' : 'draft',
-					meta: { notice_type: draft.notice_type, roles: draft.roles, dismissible: draft.dismissible },
+					meta: { notice_type: draft.notice_type, roles: draft.roles, dismissible: draft.dismissible, display: draft.bar ? 'bar' : 'panel' },
 				},
 			},
 			{ onSuccess: (saved) => (isNew ? navigate(`/notice/${saved.id}`, { replace: true }) : undefined) }
@@ -181,6 +184,12 @@ export const NoticeEditor = () => {
 								onCheckedChange={(dismissible) => setDraft({ ...draft, dismissible })}
 								label={__('Can be dismissed')}
 								description={__('Once dismissed, that person does not see it again.')}
+							/>
+							<Switch
+								checked={draft.bar}
+								onCheckedChange={(bar) => setDraft({ ...draft, bar })}
+								label={__('Show as a bar on every screen')}
+								description={__('Besides the notifications panel, it runs across the top of the admin until it is dismissed. For what nobody should miss.')}
 							/>
 						</div>
 					</Card>

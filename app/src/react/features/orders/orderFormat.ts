@@ -1,5 +1,6 @@
 import { decodeHtml } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
+import { relativeTime } from '@/react/lib/time';
 import { formatPrice } from '@/react/woo/price';
 import type { Address, Currency, Order, StoreData } from '@/react/woo/types';
 
@@ -48,33 +49,7 @@ export const formatDate = (value?: string | null, withTime = false): string => {
 	return new Intl.DateTimeFormat(undefined, options).format(new Date(value));
 };
 
-export const relativeDate = (value?: string | null): string => {
-	if (!value) {
-		return '';
-	}
-
-	const seconds = Math.round((new Date(value).getTime() - Date.now()) / 1000);
-	const abs = Math.abs(seconds);
-	const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: 'auto' });
-
-	if (abs < 60) {
-		return rtf.format(seconds, 'second');
-	}
-
-	if (abs < 3600) {
-		return rtf.format(Math.round(seconds / 60), 'minute');
-	}
-
-	if (abs < 86400) {
-		return rtf.format(Math.round(seconds / 3600), 'hour');
-	}
-
-	if (abs < 86400 * 7) {
-		return rtf.format(Math.round(seconds / 86400), 'day');
-	}
-
-	return formatDate(value);
-};
+export const relativeDate = (value?: string | null): string => relativeTime(value, formatDate);
 
 /**
  * Money of an order, which may use a different currency than the store default.

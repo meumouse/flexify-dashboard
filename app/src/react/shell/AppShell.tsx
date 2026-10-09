@@ -4,9 +4,11 @@ import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
 import { iconOverrideStyles } from '@/react/shell/menu/iconStyles';
 import { useAdminMenu } from '@/react/shell/menu/useAdminMenu';
-import { AppSidebar, SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '@/react/shell/AppSidebar';
+import { useSidebarWidth } from '@/react/shell/menu/useSidebarWidth';
+import { AppSidebar, SIDEBAR_COLLAPSED_WIDTH } from '@/react/shell/AppSidebar';
 import { AppToolbar } from '@/react/shell/AppToolbar';
 import { PORTAL_ID } from '@/react/app/PageShell';
+import { AnnouncementBar } from '@/react/shell/notices/AnnouncementBar';
 import { NotificationsPanel } from '@/react/shell/notices/NotificationsPanel';
 import { useWpNotices } from '@/react/shell/notices/useWpNotices';
 import { CommandPalette } from '@/react/shell/search/CommandPalette';
@@ -37,6 +39,8 @@ export const AppShell = () => {
 	const { menu, loading, toggleOpen } = useAdminMenu();
 
 	const [collapsed, setCollapsed] = useState(readCollapsed);
+	const resizable = (settings as { sidebar_resizable?: boolean }).sidebar_resizable === true;
+	const sidebar = useSidebarWidth(resizable);
 	const [drawerOpen, setDrawerOpen] = useState(false);
 	const [searchOpen, setSearchOpen] = useState(false);
 	const [noticesOpen, setNoticesOpen] = useState(false);
@@ -108,9 +112,17 @@ export const AppShell = () => {
 			<div className="flexify-dashboard-layout">
 				<div
 					className={cn('flexify-dashboard-isolation fd-sidebar-container flexify-dashboard-normalize sticky top-0 box-border h-screen max-h-screen font-sans', isDark && 'dark')}
-					style={{ width: collapsed ? SIDEBAR_COLLAPSED_WIDTH : SIDEBAR_WIDTH }}
+					style={{ width: collapsed ? SIDEBAR_COLLAPSED_WIDTH : sidebar.width }}
 				>
-					<AppSidebar menu={menu} loading={loading} collapsed={collapsed} onToggleOpen={toggleOpen} />
+					<AppSidebar
+						menu={menu}
+						loading={loading}
+						collapsed={collapsed}
+						width={sidebar.width}
+						onResize={resizable ? sidebar.resize : undefined}
+						onResizeEnd={resizable ? sidebar.commit : undefined}
+						onToggleOpen={toggleOpen}
+					/>
 				</div>
 
 				<div className="fd-right-column">
@@ -123,6 +135,10 @@ export const AppShell = () => {
 							onOpenNotifications={() => setNoticesOpen(true)}
 							notificationsCount={wpNotices.count}
 						/>
+					</div>
+
+					<div className={cn('flexify-dashboard-isolation', isDark && 'dark')}>
+						<AnnouncementBar onOpenPanel={() => setNoticesOpen(true)} />
 					</div>
 
 					<div className="fd-body-container font-sans">

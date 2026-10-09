@@ -1,21 +1,27 @@
 import { useState } from 'react';
 import { cn } from '@/react/lib/cn';
+import { relativeTime } from '@/react/lib/time';
 import { __, sprintf } from '@/react/lib/i18n';
 import { useAdminNotices } from '@/react/shell/notices/useAdminNotices';
 import type { WpNotice } from '@/react/shell/notices/useWpNotices';
 import { Alert, Button, EmptyState, Icon, Sheet, Skeleton } from '@/react/ui';
+import { alertColors } from '@/react/ui/recipes';
 
 /**
  * Everything waiting for attention on this screen: the notices the site published and the ones
  * WordPress printed, both drawn here from what the server said.
  */
 
-const DOT_COLORS: Record<string, string> = {
-	info: 'bg-brand-500',
-	success: 'bg-success-500',
-	warning: 'bg-warning-500',
-	error: 'bg-error-500',
+// The tone of a notice is read at a glance from a coloured circle, the way TailAdmin marks who a
+// notification is from.
+const TONE_CIRCLES: Record<string, string> = {
+	info: 'bg-blue-light-50 dark:bg-blue-light-500/15',
+	success: 'bg-success-50 dark:bg-success-500/15',
+	warning: 'bg-warning-50 dark:bg-warning-500/15',
+	error: 'bg-error-50 dark:bg-error-500/15',
 };
+
+const longDate = (value: string) => new Intl.DateTimeFormat(undefined, { dateStyle: 'medium' }).format(new Date(value));
 
 const PREVIEW_LENGTH = 180;
 
@@ -63,15 +69,27 @@ export const NotificationsPanel = ({ open, onOpenChange, wpNotices, onDismissWpN
 				{notices.map((notice) => {
 					const html = notice.content?.rendered ?? '';
 					const open_ = expanded.includes(notice.id);
+					const tone = notice.meta?.notice_type && alertColors[notice.meta.notice_type] ? notice.meta.notice_type : 'info';
 
 					return (
 						<article key={notice.id} className="rounded-xl border border-gray-200 p-4 dark:border-gray-800">
 							<div className="flex items-start gap-3">
-								<span className={cn('mt-1.5 h-2 w-2 shrink-0 rounded-full', DOT_COLORS[notice.meta?.type ?? 'info'] ?? DOT_COLORS.info)} />
+								<span className={cn('flex h-9 w-9 shrink-0 items-center justify-center rounded-full', TONE_CIRCLES[tone])}>
+									<Icon name={alertColors[tone].iconName} className={cn('text-theme-lg', alertColors[tone].icon)} />
+								</span>
 								<div className="min-w-0 flex-1">
-									{notice.title?.rendered ? (
-										<h3 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90" dangerouslySetInnerHTML={{ __html: notice.title.rendered }} />
-									) : null}
+									<div className="flex items-baseline justify-between gap-3">
+										{notice.title?.rendered ? (
+											<h3 className="min-w-0 text-theme-sm font-semibold text-gray-800 dark:text-white/90" dangerouslySetInnerHTML={{ __html: notice.title.rendered }} />
+										) : (
+											<span />
+										)}
+										{notice.date ? (
+											<time dateTime={notice.date} title={longDate(notice.date)} className="shrink-0 text-theme-xs text-gray-400">
+												{relativeTime(notice.date, longDate)}
+											</time>
+										) : null}
+									</div>
 
 									{/* The body is authored in the WordPress editor, so it keeps its markup. */}
 									{open_ || !isLong(html) ? (
@@ -86,9 +104,11 @@ export const NotificationsPanel = ({ open, onOpenChange, wpNotices, onDismissWpN
 												{open_ ? __('Show less') : __('Read more')}
 											</button>
 										) : null}
-										<Button size="xs" variant="ghost" loading={dismissing === notice.id} onClick={() => dismiss(notice)}>
-											{__('Dismiss')}
-										</Button>
+										{notice.meta?.dismissible !== false ? (
+											<Button size="xs" variant="ghost" loading={dismissing === notice.id} onClick={() => dismiss(notice)}>
+												{__('Dismiss')}
+											</Button>
+										) : null}
 									</div>
 								</div>
 							</div>

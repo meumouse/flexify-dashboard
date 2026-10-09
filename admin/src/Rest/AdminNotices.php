@@ -146,6 +146,22 @@ class AdminNotices {
 			'auth_callback' => array( __CLASS__, 'can_access_notice_meta' ),
 		) );
 
+		// Where the notice shows: only in the notifications panel, or also as a bar across the top
+		// of every screen for something nobody should miss.
+		register_post_meta( self::POST_TYPE, 'display', array(
+			'type' => 'string',
+			'single' => true,
+			'default' => 'panel',
+			'show_in_rest' => array(
+				'schema' => array(
+					'type' => 'string',
+					'enum' => array( 'panel', 'bar' ),
+				),
+			),
+			'sanitize_callback' => array( __CLASS__, 'sanitize_display' ),
+			'auth_callback' => array( __CLASS__, 'can_access_notice_meta' ),
+		) );
+
 		register_post_meta( self::POST_TYPE, 'seen_by', array(
 			'type' => 'array',
 			'single' => true,
@@ -202,6 +218,18 @@ class AdminNotices {
 		}
 
 		return $sanitized;
+	}
+
+
+	/**
+	 * Keep the display to the two places a notice can show.
+	 *
+	 * @since 4.2.0
+	 * @param mixed $value Display value.
+	 * @return string
+	 */
+	public static function sanitize_display( $value ) {
+		return 'bar' === $value ? 'bar' : 'panel';
 	}
 
 

@@ -1,13 +1,15 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type PointerEvent } from 'react';
 import { useWpData } from '@/react/app/WpDataProvider';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
+import { filterMenu } from '@/react/shell/menu/filterMenu';
 import { formatUrl } from '@/react/shell/menu/location';
 import { isItemActive } from '@/react/shell/menu/active';
 import { useFavorites } from '@/react/shell/menu/useFavorites';
 import { MenuIcon, NotificationBadge, SidebarItem, SidebarSubItem } from '@/react/shell/SidebarItem';
-import { Icon, Skeleton, Tooltip } from '@/react/ui';
+import { Icon, SearchInput, Skeleton, Tooltip } from '@/react/ui';
 import type { MenuItem } from '@/react/shell/menu/types';
+import { MAX_WIDTH, MIN_WIDTH } from '@/react/shell/menu/useSidebarWidth';
 
 /**
  * The admin sidebar.
@@ -25,12 +27,22 @@ type Props = {
 	collapsed: boolean;
 	/** The drawer on small screens always renders the full sidebar */
 	mobile?: boolean;
+	/** Expanded width; it differs from the default when the site lets the edge be dragged */
+	width?: number;
+	/** Present when the edge can be dragged: the width while dragging, then once at the end */
+	onResize?: (width: number) => void;
+	onResizeEnd?: (width: number) => void;
 	onToggleOpen: (id: string) => void;
 };
 
-export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleOpen }: Props) => {
+const RESIZE_STEP = 16;
+
+export const AppSidebar = ({ menu, loading, collapsed, mobile = false, width: expandedWidth = SIDEBAR_WIDTH, onResize, onResizeEnd, onToggleOpen }: Props) => {
 	const { settings, siteUrl, adminUrl } = useWpData();
 	const { favorites, add, remove, isFavorite } = useFavorites();
+	const [query, setQuery] = useState('');
+	const [dragging, setDragging] = useState(false);
+	const dragStart = useRef<{ x: number; width: number; rtl: boolean } | null>(null);
 
 	const [hoverExpanded, setHoverExpanded] = useState(false);
 	const hoverTimer = useRef<number>(undefined);
@@ -57,6 +69,32 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 		}
 	};
 
+	const searchable = (settings as { enable_admin_menu_search?: boolean }).enable_admin_menu_search === true;
+	const shown = useMemo(() => filterMenu(menu, query), [menu, query]);
+
+	const startDrag = (event: PointerEvent<HTMLButtonElement>) => {
+		event.preventDefault();
+		event.currentTarget.setPointerCapture(event.pointerId);
+		dragStart.current = { x: event.clientX, width: expandedWidth, rtl: getComputedStyle(event.currentTarget).direction === 'rtl' };
+		setDragging(true);
+	};
+
+	const widthAt = (clientX: number) => {
+		const start = dragStart.current;
+
+		return start ? start.width + (clientX - start.x) * (start.rtl ? -1 : 1) : expandedWidth;
+	};
+
+	const resizeByKey = (event: KeyboardEvent<HTMLButtonElement>) => {
+		const rtl = getComputedStyle(event.currentTarget).direction === 'rtl';
+		const step = event.key === 'ArrowRight' ? RESIZE_STEP : event.key === 'ArrowLeft' ? -RESIZE_STEP : 0;
+
+		if (step) {
+			event.preventDefault();
+			onResizeEnd?.(expandedWidth + (rtl ? -step : step));
+		}
+	};
+
 	const activeById = useMemo(() => {
 		const states = new Map<string, boolean>();
 
@@ -70,12 +108,16 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 
 	const logo = (settings as { logo?: string; dark_logo?: string }).logo;
 
-	const width = mobile ? '100%' : `${minified ? SIDEBAR_COLLAPSED_WIDTH : SIDEBAR_WIDTH}px`;
+	const width = mobile ? '100%' : `${minified ? SIDEBAR_COLLAPSED_WIDTH : expandedWidth}px`;
 
 	return (
 		<aside
 			id="fd-menu"
-			className={cn('flex h-full max-h-full flex-col overflow-hidden border-e border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900', !mobile && 'transition-[width] duration-300')}
+			className={cn(
+				'relative flex h-full max-h-full flex-col overflow-hidden border-e border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900',
+				// The edge follows the pointer while it is dragged; easing it in would make it lag behind.
+				!mobile && !dragging && 'transition-[width] duration-300'
+			)}
 			style={{ width }}
 			onMouseEnter={onEnter}
 			onMouseLeave={onLeave}
@@ -113,10 +155,17 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 				</div>
 			) : null}
 
-			<nav className={cn('custom-scrollbar flex min-h-0 grow flex-col gap-1 overflow-y-auto px-3 pb-16', !favorites.length && 'mt-6')} aria-label={__('Admin menu')}>
+			{searchable && !minified ? (
+				<div className="mt-2 px-3" onKeyDown={(event) => (event.key === 'Escape' ? setQuery('') : undefined)}>
+					<SearchInput value={query} onChange={setQuery} debounce={0} size="sm" placeholder={__('Filter the menu')} aria-label={__('Filter the menu')} />
+				</div>
+			) : null}
+
+			<nav className={cn('custom-scrollbar flex min-h-0 grow flex-col gap-1 overflow-y-auto px-3 pb-16', !favorites.length && !searchable && 'mt-6', (favorites.length || searchable) && 'mt-3')} aria-label={__('Admin menu')}>
+				{query && !shown.length ? <p className="px-3 py-6 text-center text-theme-sm text-gray-500 dark:text-gray-400">{__('Nothing in the menu matches that.')}</p> : null}
 				{loading && !menu.length
 					? [0, 1, 2, 3, 4, 5].map((index) => <Skeleton key={index} className="h-10 w-full" />)
-					: menu.map((item) => {
+					: shown.map((item) => {
 							if (item.type === 'separator') {
 								if (item.settings?.hidden) {
 									return null;
@@ -189,6 +238,35 @@ export const AppSidebar = ({ menu, loading, collapsed, mobile = false, onToggleO
 							);
 						})}
 			</nav>
+
+			{onResize && !minified && !mobile ? (
+				<button
+					type="button"
+					role="separator"
+					aria-orientation="vertical"
+					aria-valuemin={MIN_WIDTH}
+					aria-valuemax={MAX_WIDTH}
+					aria-valuenow={expandedWidth}
+					aria-label={__('Resize the menu')}
+					title={__('Drag to resize; double-click to reset')}
+					className={cn(
+						'absolute inset-y-0 end-0 z-10 w-1.5 cursor-col-resize transition-colors hover:bg-brand-500/30 focus-visible:bg-brand-500/40 focus-visible:outline-hidden',
+						dragging && 'bg-brand-500/40'
+					)}
+					onPointerDown={startDrag}
+					onPointerMove={(event) => (dragStart.current ? onResize(widthAt(event.clientX)) : undefined)}
+					onPointerUp={(event) => {
+						if (dragStart.current) {
+							onResizeEnd?.(widthAt(event.clientX));
+						}
+
+						dragStart.current = null;
+						setDragging(false);
+					}}
+					onDoubleClick={() => onResizeEnd?.(SIDEBAR_WIDTH)}
+					onKeyDown={resizeByKey}
+				/>
+			) : null}
 
 			{!minified ? (
 				<div className="shrink-0 border-t border-gray-100 px-3 py-3 dark:border-gray-800">

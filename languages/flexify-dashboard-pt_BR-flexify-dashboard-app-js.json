@@ -815,6 +815,9 @@
       "Behaviour": [
         "Comportamento"
       ],
+      "Besides the notifications panel, it runs across the top of the admin until it is dismissed. For what nobody should miss.": [
+        "Além do painel de notificações, aparece no topo do admin até ser dispensado. Para o que ninguém pode deixar de ver."
+      ],
       "Billing": [
         "Cobrança"
       ],
@@ -1613,6 +1616,9 @@
       "Drag to reorder": [
         "Arraste para reordenar"
       ],
+      "Drag to resize; double-click to reset": [
+        "Arraste para redimensionar; clique duas vezes para voltar ao padrão"
+      ],
       "Drop the files to upload them": [
         "Solte os arquivos para enviá-los"
       ],
@@ -1693,6 +1699,9 @@
       ],
       "Empty and loading states": [
         "Estados vazio e de carregamento"
+      ],
+      "Empty draws a line. A name turns the line into the heading of the items below it.": [
+        "Vazio, desenha uma linha. Com nome, a linha vira o título dos itens abaixo dela."
       ],
       "Empty response.": [
         "Resposta vazia."
@@ -2018,6 +2027,9 @@
       "Filter media items by tag IDs.": [
         "Filtre itens de mídia por IDs de tags."
       ],
+      "Filter the menu": [
+        "Filtrar o menu"
+      ],
       "Filters": [
         "Filtros"
       ],
@@ -2186,6 +2198,9 @@
       "Gross revenue": [
         "Receita bruta"
       ],
+      "Group heading": [
+        "Título do grupo"
+      ],
       "Grouped product": [
         "Produto agrupado"
       ],
@@ -2236,6 +2251,9 @@
       ],
       "Hide this item": [
         "Ocultar este item"
+      ],
+      "Hide this separator": [
+        "Ocultar este separador"
       ],
       "Highlight color": [
         "Cor de destaque"
@@ -3299,6 +3317,9 @@
       "Nothing in the library matches this.": [
         "Nada na biblioteca corresponde a isso."
       ],
+      "Nothing in the menu matches that.": [
+        "Nada no menu corresponde a isso."
+      ],
       "Nothing logged yet": [
         "Nada registrado ainda"
       ],
@@ -4232,6 +4253,9 @@
       "Resize card": [
         "Redimensionar cartão"
       ],
+      "Resize the menu": [
+        "Redimensionar o menu"
+      ],
       "Restock refunded items": [
         "Repor itens reembolsados no estoque"
       ],
@@ -4571,6 +4595,9 @@
       "Separate tags with commas.": [
         "Separe as tags com vírgulas."
       ],
+      "Separator": [
+        "Separador"
+      ],
       "Server health": [
         "Saúde do servidor"
       ],
@@ -4678,6 +4705,9 @@
       ],
       "Short description of the product.": [
         "Descrição curta do produto."
+      ],
+      "Show as a bar on every screen": [
+        "Mostrar como barra em todas as telas"
       ],
       "Show child items": [
         "Mostrar itens filhos"
