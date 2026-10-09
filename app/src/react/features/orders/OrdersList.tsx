@@ -226,7 +226,14 @@ export const OrdersList = () => {
 		const result = await bulk.mutateAsync({ ids, action, value });
 		const { updated = [], failed = [] } = result ?? {};
 
-		if (updated.length) {
+		if (updated.length && action === 'trash') {
+			// The trash is the one bulk change that has an exact opposite, so it can be offered back.
+			notify({
+				title: sprintf(__('%d order(s) moved to the trash'), updated.length),
+				tone: 'success',
+				action: { label: __('Undo'), onClick: () => runBulk('restore', undefined, updated) },
+			});
+		} else if (updated.length) {
 			notify({ title: sprintf(__('%d order(s) updated'), updated.length), tone: 'success' });
 		}
 

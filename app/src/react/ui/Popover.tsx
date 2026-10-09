@@ -14,13 +14,16 @@ type Props = {
 	align?: 'start' | 'center' | 'end';
 	side?: 'top' | 'right' | 'bottom' | 'left';
 	className?: string;
+	/** Controlled state, for a panel that closes itself once a choice is made */
+	open?: boolean;
+	onOpenChange?: (open: boolean) => void;
 };
 
-export const Popover = ({ trigger, children, align = 'start', side = 'bottom', className }: Props) => {
+export const Popover = ({ trigger, children, align = 'start', side = 'bottom', className, open, onOpenChange }: Props) => {
 	const container = usePortalTarget();
 
 	return (
-		<RadixPopover.Root>
+		<RadixPopover.Root open={open} onOpenChange={onOpenChange}>
 			<RadixPopover.Trigger asChild>{trigger}</RadixPopover.Trigger>
 			<RadixPopover.Portal container={container}>
 				<RadixPopover.Content

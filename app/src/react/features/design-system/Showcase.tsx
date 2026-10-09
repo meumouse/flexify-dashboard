@@ -11,13 +11,17 @@ import {
 	Checkbox,
 	ColorPicker,
 	DataTable,
+	DatePicker,
+	DateRangePicker,
 	DropdownMenu,
+	Dropzone,
 	EmptyState,
 	Input,
 	MetricCard,
 	Modal,
 	PageHeader,
 	Pagination,
+	ProgressBar,
 	Radio,
 	SearchInput,
 	Select,
@@ -29,6 +33,7 @@ import {
 	Tabs,
 	Textarea,
 	Tooltip,
+	recentPresets,
 	type Column,
 	type RowKey,
 	type SortState,
@@ -71,6 +76,10 @@ export const Showcase = () => {
 	const [switched, setSwitched] = useState(true);
 	const [weight, setWeight] = useState(2);
 	const [colour, setColour] = useState('#008aff');
+	const [expires, setExpires] = useState('');
+	const [period, setPeriod] = useState({ from: '', to: '' });
+	const [file, setFile] = useState('');
+	const [alertOpen, setAlertOpen] = useState(false);
 	const [modalOpen, setModalOpen] = useState(false);
 	const [sheetOpen, setSheetOpen] = useState(false);
 	const [selected, setSelected] = useState<RowKey[]>([]);
@@ -247,6 +256,8 @@ export const Showcase = () => {
 								<Textarea label={__('Description')} rows={3} defaultValue={__('Short description of the product.')} />
 								<Slider label={__('Weight')} value={weight} onChange={setWeight} min={0} max={10} valueLabel={`${weight} kg`} />
 								<ColorPicker label={__('Badge colour')} value={colour} onChange={setColour} hint={__('Opens the system picker.')} />
+								<DatePicker label={__('Expiry date')} value={expires} onChange={setExpires} placeholder={__('Never expires')} />
+								<DateRangePicker label={__('Period')} value={period} onChange={setPeriod} presets={recentPresets()} />
 							</div>
 
 							<div className="mt-6 flex flex-wrap items-start gap-8">
@@ -267,6 +278,21 @@ export const Showcase = () => {
 						</Card>
 					</Section>
 
+					<Section title={__('Upload and progress')}>
+						<div className="grid gap-4 lg:grid-cols-2">
+							<Card>
+								<Dropzone accept=".csv,text/csv" onFile={(picked) => setFile(picked.name)} title={__('Choose a CSV file')} hint={file || __('The first row has to be the column headings.')} />
+							</Card>
+							<Card title={__('Progress')}>
+								<div className="space-y-4">
+									<ProgressBar value={40} label={__('Uploading')} showValue />
+									<ProgressBar value={78} tone="warning" size="sm" label={__('Disk space')} />
+									<ProgressBar value={95} tone="error" size="sm" label={__('Memory')} />
+								</div>
+							</Card>
+						</div>
+					</Section>
+
 					<Section title={__('Overlays')}>
 						<Card>
 							<div className="flex flex-wrap items-center gap-3">
@@ -275,6 +301,15 @@ export const Showcase = () => {
 								</Button>
 								<Button variant="outline" onClick={() => setSheetOpen(true)}>
 									{__('Open sheet')}
+								</Button>
+								<Button variant="outline" onClick={() => setAlertOpen(true)}>
+									{__('Alert modal')}
+								</Button>
+								<Button
+									variant="outline"
+									onClick={() => notify({ tone: 'success', title: __('3 order(s) moved to the trash'), action: { label: __('Undo'), onClick: () => notify({ title: __('Restored') }) } })}
+								>
+									{__('Toast with action')}
 								</Button>
 								<Button
 									variant="outline"
@@ -385,6 +420,17 @@ export const Showcase = () => {
 							<Input label={__('Refund amount')} prefix="R$" defaultValue="85,80" />
 							<Textarea label={__('Reason (optional)')} rows={2} />
 						</div>
+					</Modal>
+
+					<Modal
+						open={alertOpen}
+						onOpenChange={setAlertOpen}
+						tone="success"
+						size="sm"
+						title={__('Order created')}
+						footer={<Button onClick={() => setAlertOpen(false)}>{__('Okay, got it')}</Button>}
+					>
+						<p className="text-theme-sm text-gray-500 dark:text-gray-400">{__('The customer will get the confirmation by email.')}</p>
 					</Modal>
 
 					<Sheet open={sheetOpen} onOpenChange={setSheetOpen} title={__('Quick edit')} description={__('Camiseta Básica Algodão')} size="lg">

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useWpData } from '@/react/app/WpDataProvider';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Button, Card, Checkbox, EmptyState, Input, Modal, PageHeader, Tabs } from '@/react/ui';
+import { Button, Card, Checkbox, DateRangePicker, EmptyState, Modal, PageHeader, Tabs, recentPresets } from '@/react/ui';
 import { DashboardGrid } from '@/react/features/dashboard/DashboardGrid';
 import { useDashboardLayout } from '@/react/features/dashboard/useDashboardLayout';
 import { isoDate, parseDay as parseDate } from '@/react/features/dashboard/useWooDashboard';
@@ -12,8 +12,6 @@ import { isoDate, parseDay as parseDate } from '@/react/features/dashboard/useWo
  * Both the period and the category travel in the address bar, so a particular view can be
  * linked to and survives a reload.
  */
-
-const PRESETS = [7, 30, 90];
 
 const initialRange = (): [Date, Date] => {
 	const params = new URLSearchParams(window.location.search);
@@ -59,13 +57,6 @@ export const DashboardPage = () => {
 
 	const days = useMemo(() => Math.round((range[1].getTime() - range[0].getTime()) / 86_400_000) + 1, [range]);
 
-	const setPreset = (preset: number) => {
-		const from = new Date();
-		from.setDate(from.getDate() - (preset - 1));
-
-		setRange([from, new Date()]);
-	};
-
 	// Cards keep the props the Vue dashboard passed them: the period as a pair, and a store-shaped
 	// object, because a card reads `appData.state.adminUrl` to build its links.
 	const cardProps = useMemo(() => ({ dateRange: range, appData: { state: { adminUrl: wp.adminUrl, siteUrl: wp.siteUrl, pluginBase: wp.pluginBase, userID: wp.userId } } }), [range, wp]);
@@ -77,16 +68,16 @@ export const DashboardPage = () => {
 				description={sprintf(__('Last %s days'), String(days))}
 				actions={
 					<>
-						<div className="flex items-center gap-2">
-							<Input type="date" value={isoDate(range[0])} onChange={(event) => setRange([parseDate(event.target.value) ?? range[0], range[1]])} aria-label={__('Start date')} size="sm" />
-							<span className="text-gray-400">–</span>
-							<Input type="date" value={isoDate(range[1])} onChange={(event) => setRange([range[0], parseDate(event.target.value) ?? range[1]])} aria-label={__('End date')} size="sm" />
-						</div>
-						{PRESETS.map((preset) => (
-							<Button key={preset} size="sm" variant={days === preset ? 'primary' : 'outline'} onClick={() => setPreset(preset)}>
-								{sprintf(__('%s days'), String(preset))}
-							</Button>
-						))}
+						<DateRangePicker
+							value={{ from: isoDate(range[0]), to: isoDate(range[1]) }}
+							onChange={(next) => setRange([parseDate(next.from) ?? range[0], parseDate(next.to) ?? range[1]])}
+							presets={recentPresets()}
+							max={isoDate(new Date())}
+							required
+							align="end"
+							className="w-full sm:w-auto"
+							aria-label={__('Period')}
+						/>
 						<Button variant="outline" icon="view_column" onClick={() => setVisibilityOpen(true)}>
 							{__('Cards')}
 						</Button>

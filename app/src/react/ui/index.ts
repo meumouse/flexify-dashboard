@@ -11,6 +11,7 @@ export { MetricCard } from '@/react/ui/MetricCard';
 export { Modal } from '@/react/ui/Modal';
 export { PageHeader, type Breadcrumb } from '@/react/ui/PageHeader';
 export { Popover } from '@/react/ui/Popover';
+export { ProgressBar } from '@/react/ui/ProgressBar';
 export { Pagination, pageList } from '@/react/ui/Pagination';
 export { RichText } from '@/react/ui/RichText';
 export { Sheet } from '@/react/ui/Sheet';
@@ -21,6 +22,9 @@ export { Tooltip, TooltipProvider } from '@/react/ui/Tooltip';
 
 export { Checkbox } from '@/react/form/Checkbox';
 export { ColorPicker } from '@/react/form/ColorPicker';
+export { DatePicker } from '@/react/form/DatePicker';
+export { Dropzone } from '@/react/form/Dropzone';
+export { DateRangePicker, recentPresets, type DateRangePreset, type DateRangeValue } from '@/react/form/DateRangePicker';
 export { Field } from '@/react/form/Field';
 export { Input } from '@/react/form/Input';
 export { Radio } from '@/react/form/Radio';

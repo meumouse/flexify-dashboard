@@ -58,6 +58,9 @@
       "%d order(s) could not be updated": [
         "%d pedido(s) não puderam ser atualizados"
       ],
+      "%d order(s) moved to the trash": [
+        "%d pedido(s) movido(s) para a lixeira"
+      ],
       "%d order(s) updated": [
         "%d pedido(s) atualizado(s)"
       ],
@@ -228,6 +231,9 @@
       ],
       "162 orders": [
         "162 pedidos"
+      ],
+      "3 order(s) moved to the trash": [
+        "3 pedido(s) movido(s) para a lixeira"
       ],
       "30 days": [
         "30 dias"
@@ -504,6 +510,9 @@
       ],
       "Aggregated daily statistics": [
         "Estatísticas diárias agregadas"
+      ],
+      "Alert modal": [
+        "Modal de alerta"
       ],
       "Alerts": [
         "Alertas"
@@ -822,6 +831,9 @@
       ],
       "Bring one back to see it on the dashboard again.": [
         "Traga um de volta para vê-lo no painel outra vez."
+      ],
+      "Browse files": [
+        "Procurar arquivos"
       ],
       "Browser time in ISO format": [
         "Hora do navegador em formato ISO"
@@ -1489,6 +1501,9 @@
       "Discount type": [
         "Tipo de desconto"
       ],
+      "Disk space": [
+        "Espaço em disco"
+      ],
       "Disk: %sGB of %sGB": [
         "Disco: %sGB de %sGB"
       ],
@@ -1542,6 +1557,9 @@
       ],
       "Drop the files to upload them": [
         "Solte os arquivos para enviá-los"
+      ],
+      "Drop to add": [
+        "Solte para adicionar"
       ],
       "Dropdown": [
         "Menu suspenso"
@@ -2494,6 +2512,9 @@
       "Last modified": [
         "Última modificação"
       ],
+      "Last month": [
+        "Mês passado"
+      ],
       "Last name": [
         "Sobrenome"
       ],
@@ -2710,6 +2731,9 @@
       "Media library": [
         "Biblioteca de mídia"
       ],
+      "Memory": [
+        "Memória"
+      ],
       "Memory: %sMB of %sMB": [
         "Memória: %sMB de %sMB"
       ],
@@ -2925,6 +2949,9 @@
       ],
       "Next": [
         "Próximo"
+      ],
+      "Next month": [
+        "Próximo mês"
       ],
       "Next page": [
         "Próxima página"
@@ -3226,6 +3253,9 @@
       "Notify %s": [
         "Notificar %s"
       ],
+      "Now pick the last day": [
+        "Agora escolha o último dia"
+      ],
       "Number of Months": [
         "Número de meses"
       ],
@@ -3237,6 +3267,9 @@
       ],
       "Off": [
         "Desligado"
+      ],
+      "Okay, got it": [
+        "Ok, entendi"
       ],
       "Old entries removed": [
         "Entradas antigas removidas"
@@ -3342,6 +3375,9 @@
       ],
       "Order by": [
         "Ordenar por"
+      ],
+      "Order created": [
+        "Pedido criado"
       ],
       "Order items updated": [
         "Itens do pedido atualizados"
@@ -3493,6 +3529,9 @@
       "Percentage discount": [
         "Desconto percentual"
       ],
+      "Period": [
+        "Período"
+      ],
       "Permission denied: The service account does not have access to this Google Analytics property. Please add the service account email to your GA4 property with Viewer access. Go to Google Analytics → Admin → Property Access Management and add the service account email.": [
         "Permissão negada: a conta de serviço não tem acesso a esta propriedade do Google Analytics. Adicione o e-mail da conta de serviço à sua propriedade do GA4 com acesso de visualizador. Acesse Google Analytics → Administrador → Gerenciamento de acesso à propriedade e adicione o e-mail da conta de serviço."
       ],
@@ -3504,6 +3543,12 @@
       ],
       "Phone": [
         "Telefone"
+      ],
+      "Pick a date": [
+        "Escolha uma data"
+      ],
+      "Pick the first day": [
+        "Escolha o primeiro dia"
       ],
       "Pick what this section shows.": [
         "Escolha o que esta seção mostra."
@@ -3619,6 +3664,9 @@
       "Previous": [
         "Anterior"
       ],
+      "Previous month": [
+        "Mês anterior"
+      ],
       "Previous page": [
         "Página anterior"
       ],
@@ -3714,6 +3762,9 @@
       ],
       "Profile": [
         "Perfil"
+      ],
+      "Progress": [
+        "Progresso"
       ],
       "Property ID is required": [
         "É necessário o ID da propriedade."
@@ -4074,6 +4125,9 @@
       ],
       "Restore all Flexify Dashboard settings to their default values.": [
         "Restaure todas as configurações do painel Flexify para seus valores padrão."
+      ],
+      "Restored": [
+        "Restaurado"
       ],
       "Results come from WordPress.org. Only what you type is sent there.": [
         "Os resultados vêm do WordPress.org. Só o que você digita é enviado para lá."
@@ -4735,6 +4789,9 @@
       "That site is already on the list.": [
         "Esse site já está na lista."
       ],
+      "That type of file is not accepted here.": [
+        "Esse tipo de arquivo não é aceito aqui."
+      ],
       "The Flexify Dashboard plugin version is the latest.": [
         "A versão do plugin Flexify Dashboard é a mais recente."
       ],
@@ -4773,6 +4830,9 @@
       ],
       "The custom dashboard and the admin interface": [
         "O painel personalizado e a interface do admin"
+      ],
+      "The customer will get the confirmation by email.": [
+        "O cliente vai receber a confirmação por e-mail."
       ],
       "The database explorer": [
         "O explorador do banco de dados"
@@ -4995,6 +5055,9 @@
       ],
       "To": [
         "Até"
+      ],
+      "Toast with action": [
+        "Aviso com ação"
       ],
       "Today": [
         "Hoje"
@@ -5223,6 +5286,9 @@
       ],
       "Upload a file or change the search.": [
         "Envie um arquivo ou mude a busca."
+      ],
+      "Upload and progress": [
+        "Envio e progresso"
       ],
       "Upload directory is not available.": [
         "O diretório de uploads não está disponível."

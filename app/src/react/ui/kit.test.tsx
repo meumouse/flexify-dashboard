@@ -1,11 +1,33 @@
 import { describe, expect, it, vi } from 'vitest';
-import { render, screen, waitFor, within } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState, type ReactNode } from 'react';
 import { AppProviders } from '@/react/app/AppProviders';
 import { PageShell } from '@/react/app/PageShell';
 import { useConfirm } from '@/react/app/ConfirmProvider';
-import { Button, Checkbox, DataTable, DropdownMenu, Modal, Pagination, SearchInput, Switch, Tabs, pageList, type Column, type RowKey, type SortState } from '@/react/ui';
+import { useNotify } from '@/react/app/ToastProvider';
+import { acceptsFile } from '@/react/form/Dropzone';
+import { isoDate, lastDays } from '@/react/form/dates';
+import {
+	Button,
+	Checkbox,
+	DataTable,
+	DatePicker,
+	DateRangePicker,
+	DropdownMenu,
+	Dropzone,
+	Modal,
+	Pagination,
+	ProgressBar,
+	SearchInput,
+	Switch,
+	Tabs,
+	pageList,
+	recentPresets,
+	type Column,
+	type RowKey,
+	type SortState,
+} from '@/react/ui';
 import type { WpData } from '@/react/types/wordpress';
 
 const wpData: WpData = {
@@ -329,5 +351,156 @@ describe('DataTable', () => {
 
 		await user.click(screen.getByText('R$ 85,80'));
 		expect(onRowClick).toHaveBeenCalledWith(ORDERS[0], 0);
+	});
+});
+
+const dayButton = (iso: string) => document.querySelector<HTMLButtonElement>(`[data-day="${iso}"]`)!;
+
+describe('DatePicker', () => {
+	it('opens on the chosen day and reports the clicked one as YYYY-MM-DD', async () => {
+		const user = userEvent.setup();
+		const onChange = vi.fn();
+		renderKit(<DatePicker value="2026-10-07" onChange={onChange} label="Validade" />);
+
+		await user.click(screen.getByLabelText('Validade'));
+		await waitFor(() => expect(dayButton('2026-10-07')).toHaveFocus());
+
+		await user.click(dayButton('2026-10-20'));
+		expect(onChange).toHaveBeenCalledWith('2026-10-20');
+	});
+
+	it('moves through the days with the keyboard', async () => {
+		const user = userEvent.setup();
+		const onChange = vi.fn();
+		renderKit(<DatePicker value="2026-10-31" onChange={onChange} label="Validade" />);
+
+		await user.click(screen.getByLabelText('Validade'));
+		await waitFor(() => expect(dayButton('2026-10-31')).toHaveFocus());
+
+		// The next day is in another month: the grid follows it.
+		await user.keyboard('{ArrowRight}');
+		await waitFor(() => expect(dayButton('2026-11-01')).toHaveFocus());
+
+		await user.keyboard('{Enter}');
+		expect(onChange).toHaveBeenCalledWith('2026-11-01');
+	});
+
+	it('does not offer days outside the bounds', async () => {
+		const user = userEvent.setup();
+		renderKit(<DatePicker value="2026-10-10" onChange={() => {}} label="Fim" min="2026-10-05" />);
+
+		await user.click(screen.getByLabelText('Fim'));
+
+		await waitFor(() => expect(dayButton('2026-10-04')).toBeDisabled());
+		expect(dayButton('2026-10-05')).toBeEnabled();
+	});
+
+	it('clears an optional date', async () => {
+		const user = userEvent.setup();
+		const onChange = vi.fn();
+		renderKit(<DatePicker value="2026-10-07" onChange={onChange} label="Validade" />);
+
+		await user.click(screen.getByLabelText('Validade'));
+		await user.click(await screen.findByRole('button', { name: 'Clear' }));
+
+		expect(onChange).toHaveBeenCalledWith('');
+	});
+});
+
+describe('DateRangePicker', () => {
+	it('reports the period once, in order, after the second click', async () => {
+		const user = userEvent.setup();
+		const onChange = vi.fn();
+		renderKit(<DateRangePicker value={{ from: '2026-10-01', to: '2026-10-07' }} onChange={onChange} aria-label="Período" />);
+
+		await user.click(screen.getByRole('button', { name: 'Período' }));
+		await waitFor(() => expect(dayButton('2026-10-07')).toBeInTheDocument());
+
+		await user.click(dayButton('2026-10-09'));
+		expect(onChange).not.toHaveBeenCalled();
+
+		await user.click(dayButton('2026-10-02'));
+		expect(onChange).toHaveBeenCalledTimes(1);
+		expect(onChange).toHaveBeenCalledWith({ from: '2026-10-02', to: '2026-10-09' });
+	});
+
+	it('applies a preset in one click', async () => {
+		const user = userEvent.setup();
+		const onChange = vi.fn();
+		renderKit(<DateRangePicker value={{ from: '', to: '' }} onChange={onChange} presets={recentPresets()} aria-label="Período" />);
+
+		await user.click(screen.getByRole('button', { name: 'Período' }));
+		await user.click(await screen.findByRole('button', { name: 'Last 7 days' }));
+
+		const week = lastDays(7);
+		expect(onChange).toHaveBeenCalledWith({ from: isoDate(week.from), to: isoDate(week.to) });
+	});
+});
+
+describe('Dropzone', () => {
+	it('matches files by extension, by type and by type family', () => {
+		expect(acceptsFile({ name: 'Users.CSV', type: 'application/vnd.ms-excel' }, '.csv,text/csv')).toBe(true);
+		expect(acceptsFile({ name: 'export', type: 'text/csv' }, '.csv,text/csv')).toBe(true);
+		expect(acceptsFile({ name: 'photo.png', type: 'image/png' }, 'image/*')).toBe(true);
+		expect(acceptsFile({ name: 'photo.png', type: 'image/png' }, '.csv')).toBe(false);
+		expect(acceptsFile({ name: 'anything.bin', type: '' })).toBe(true);
+	});
+
+	it('takes a dropped file and refuses one of the wrong type', () => {
+		const onFile = vi.fn();
+		renderKit(<Dropzone accept=".csv" onFile={onFile} title="Escolha um CSV" />);
+
+		const zone = screen.getByRole('button', { name: /Escolha um CSV/ });
+		const csv = new File(['a,b'], 'users.csv', { type: 'text/csv' });
+		const png = new File([''], 'photo.png', { type: 'image/png' });
+
+		fireEvent.drop(zone, { dataTransfer: { files: [png] } });
+		expect(onFile).not.toHaveBeenCalled();
+		expect(screen.getByText('That type of file is not accepted here.')).toBeInTheDocument();
+
+		fireEvent.drop(zone, { dataTransfer: { files: [csv] } });
+		expect(onFile).toHaveBeenCalledWith(csv);
+	});
+});
+
+describe('ProgressBar', () => {
+	it('reports the share of the maximum, held between 0 and 100', () => {
+		renderKit(
+			<>
+				<ProgressBar value={3} max={4} label="Envio" showValue />
+				<ProgressBar value={9} max={4} label="Cota" />
+				<ProgressBar value={1} max={0} label="Vazio" />
+			</>
+		);
+
+		expect(screen.getByRole('progressbar', { name: 'Envio' })).toHaveAttribute('aria-valuenow', '75');
+		expect(screen.getByText('75%')).toBeInTheDocument();
+		expect(screen.getByRole('progressbar', { name: 'Cota' })).toHaveAttribute('aria-valuenow', '100');
+		expect(screen.getByRole('progressbar', { name: 'Vazio' })).toHaveAttribute('aria-valuenow', '0');
+	});
+});
+
+describe('Toast action', () => {
+	it('runs the action and closes the toast', async () => {
+		const user = userEvent.setup();
+		const undo = vi.fn();
+
+		const Trigger = () => {
+			const { notify } = useNotify();
+
+			return (
+				<button type="button" onClick={() => notify({ title: 'Movido para a lixeira', action: { label: 'Desfazer', onClick: undo } })}>
+					{'Excluir'}
+				</button>
+			);
+		};
+
+		renderKit(<Trigger />);
+
+		await user.click(screen.getByRole('button', { name: 'Excluir' }));
+		await user.click(await screen.findByRole('button', { name: 'Desfazer' }));
+
+		expect(undo).toHaveBeenCalledTimes(1);
+		await waitFor(() => expect(screen.queryByText('Movido para a lixeira')).not.toBeInTheDocument());
 	});
 });

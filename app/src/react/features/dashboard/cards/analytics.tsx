@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { useIsDark } from '@/react/app/ThemeProvider';
 import { cn } from '@/react/lib/cn';
 import { __ } from '@/react/lib/i18n';
-import { Icon, Skeleton } from '@/react/ui';
+import { Icon, ProgressBar, Skeleton } from '@/react/ui';
 import { CardEmpty, CardError, CardLoading, compactNumber, useCardQuery, useRange, type CardProps } from '@/react/features/dashboard/cards/shared';
 
 /**
@@ -95,9 +95,7 @@ const RankedBars = ({ rows, emptyMessage, icon }: { rows: { key: string; label: 
 						</span>
 						<span className="shrink-0 font-medium text-gray-800 dark:text-white/90">{compactNumber(row.views)}</span>
 					</div>
-					<div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
-						<div className="h-full rounded-full bg-brand-500" style={{ width: `${(row.views / max) * 100}%` }} />
-					</div>
+					<ProgressBar value={row.views} max={max} size="sm" />
 				</li>
 			))}
 		</ul>
@@ -326,9 +324,7 @@ export const DeviceUsageCard = ({ dateRange }: CardProps) => {
 							<span className="capitalize text-gray-700 dark:text-gray-300">{row.key}</span>
 							<span className="font-medium text-gray-800 dark:text-white/90">{Math.round((row.views / total) * 100)}%</span>
 						</div>
-						<div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
-							<div className="h-full rounded-full bg-brand-500" style={{ width: `${(row.views / total) * 100}%` }} />
-						</div>
+						<ProgressBar value={row.views} max={total} size="sm" className="mt-1" />
 					</div>
 				</li>
 			))}

@@ -8842,3 +8842,93 @@ msgstr "Usar este arquivo"
 
 msgid "WordPress toolbar"
 msgstr "Barra do WordPress"
+
+#: app/src/react/features/orders/OrdersList.tsx:232
+msgid "%d order(s) moved to the trash"
+msgstr "%d pedido(s) movido(s) para a lixeira"
+
+#: app/src/react/features/design-system/Showcase.tsx:310
+msgid "3 order(s) moved to the trash"
+msgstr "3 pedido(s) movido(s) para a lixeira"
+
+#: app/src/react/features/design-system/Showcase.tsx:306
+msgid "Alert modal"
+msgstr "Modal de alerta"
+
+#: app/src/react/form/Dropzone.tsx:105
+msgid "Browse files"
+msgstr "Procurar arquivos"
+
+#: app/src/react/features/design-system/Showcase.tsx:289
+msgid "Disk space"
+msgstr "Espaço em disco"
+
+#: app/src/react/form/Dropzone.tsx:103
+msgid "Drop to add"
+msgstr "Solte para adicionar"
+
+#: app/src/react/form/DateRangePicker.tsx:29
+msgid "Last month"
+msgstr "Mês passado"
+
+#: app/src/react/features/design-system/Showcase.tsx:290
+msgid "Memory"
+msgstr "Memória"
+
+#: app/src/react/form/Calendar.tsx:99
+msgid "Next month"
+msgstr "Próximo mês"
+
+#: app/src/react/form/DateRangePicker.tsx:155
+msgid "Now pick the last day"
+msgstr "Agora escolha o último dia"
+
+#: app/src/react/features/design-system/Showcase.tsx:431
+msgid "Okay, got it"
+msgstr "Ok, entendi"
+
+#: app/src/react/features/design-system/Showcase.tsx:430
+msgid "Order created"
+msgstr "Pedido criado"
+
+#: app/src/react/features/activity/ActivityList.tsx:194
+#: app/src/react/features/dashboard/DashboardPage.tsx:79
+#: app/src/react/features/design-system/Showcase.tsx:260
+msgid "Period"
+msgstr "Período"
+
+#: app/src/react/form/DatePicker.tsx:96
+msgid "Pick a date"
+msgstr "Escolha uma data"
+
+#: app/src/react/form/DateRangePicker.tsx:155
+msgid "Pick the first day"
+msgstr "Escolha o primeiro dia"
+
+#: app/src/react/form/Calendar.tsx:95
+msgid "Previous month"
+msgstr "Mês anterior"
+
+#: app/src/react/features/design-system/Showcase.tsx:286
+msgid "Progress"
+msgstr "Progresso"
+
+#: app/src/react/features/design-system/Showcase.tsx:310
+msgid "Restored"
+msgstr "Restaurado"
+
+#: app/src/react/form/Dropzone.tsx:107
+msgid "That type of file is not accepted here."
+msgstr "Esse tipo de arquivo não é aceito aqui."
+
+#: app/src/react/features/design-system/Showcase.tsx:433
+msgid "The customer will get the confirmation by email."
+msgstr "O cliente vai receber a confirmação por e-mail."
+
+#: app/src/react/features/design-system/Showcase.tsx:312
+msgid "Toast with action"
+msgstr "Aviso com ação"
+
+#: app/src/react/features/design-system/Showcase.tsx:281
+msgid "Upload and progress"
+msgstr "Envio e progresso"

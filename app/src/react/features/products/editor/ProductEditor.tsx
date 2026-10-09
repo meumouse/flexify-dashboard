@@ -13,6 +13,7 @@ import {
 	Button,
 	Card,
 	Checkbox,
+	DatePicker,
 	DropdownMenu,
 	EmptyState,
 	Icon,
@@ -728,12 +729,12 @@ export const ProductEditor = () => {
 										<Switch checked={form.schedule_sale} onCheckedChange={(schedule_sale) => set({ schedule_sale })} label={__('Schedule sale')} />
 										{form.schedule_sale ? (
 											<div className="grid gap-4 sm:grid-cols-2">
-												<Input value={form.date_on_sale_from} onChange={(event) => set({ date_on_sale_from: event.target.value })} type="date" label={__('Sale starts')} />
-												<Input
+												<DatePicker value={form.date_on_sale_from} onChange={(date_on_sale_from) => set({ date_on_sale_from })} label={__('Sale starts')} max={form.date_on_sale_to || undefined} />
+												<DatePicker
 													value={form.date_on_sale_to}
-													onChange={(event) => set({ date_on_sale_to: event.target.value })}
-													type="date"
+													onChange={(date_on_sale_to) => set({ date_on_sale_to })}
 													label={__('Sale ends')}
+													min={form.date_on_sale_from || undefined}
 													error={errors.date_on_sale_to}
 												/>
 											</div>

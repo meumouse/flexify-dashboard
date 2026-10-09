@@ -52,6 +52,7 @@ export const ConfirmProvider = ({ children }: { children: ReactNode }) => {
 					}
 				}}
 				size="sm"
+				tone={options?.variant === 'danger' ? 'error' : 'info'}
 				title={options?.title ?? ''}
 				footer={
 					<>

@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useQueryFilters } from '@/react/hooks/useQueryFilters';
-import { cn } from '@/react/lib/cn';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Button, Card, Icon, Modal, PageHeader, SearchInput, Select, Spinner, Switch, Tabs, useFilePicker, type TabItem } from '@/react/ui';
+import { Button, Card, Icon, Modal, PageHeader, ProgressBar, SearchInput, Select, Spinner, Switch, Tabs, useFilePicker, type TabItem } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
 import { MediaGrid } from '@/react/features/media/MediaGrid';
 import { MediaBulkEdit } from '@/react/features/media/MediaBulkEdit';
@@ -298,12 +297,7 @@ export const MediaLibrary = () => {
 
 			<Modal open={Boolean(progress)} onOpenChange={() => undefined} persistent hideClose title={__('Uploading')} size="sm">
 				<p className="mb-3 truncate text-theme-sm text-gray-600 dark:text-gray-400">{progress?.name}</p>
-				<div className="h-2 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
-					<div
-						className={cn('h-full rounded-full bg-brand-500 transition-[width]')}
-						style={{ width: `${progress?.total ? Math.round((progress.done / progress.total) * 100) : 0}%` }}
-					/>
-				</div>
+				<ProgressBar value={progress?.done ?? 0} max={progress?.total ?? 0} showValue label={__('Uploading')} />
 				<p className="mt-2 text-theme-xs text-gray-500 dark:text-gray-400">
 					{sprintf(__('%1$s of %2$s'), String(progress?.done ?? 0), String(progress?.total ?? 0))}
 				</p>

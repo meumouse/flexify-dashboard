@@ -5,7 +5,8 @@ import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { cn } from '@/react/lib/cn';
 import { decodeHtml } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Avatar, Button, Card, DataTable, Icon, Input, PageHeader, Pagination, SearchInput, Select, StatStrip, type Column, type StatItem } from '@/react/ui';
+import { Avatar, Button, Card, DataTable, DateRangePicker, Icon, PageHeader, Pagination, SearchInput, Select, StatStrip, recentPresets, type Column, type StatItem } from '@/react/ui';
+import { isoDate } from '@/react/form/dates';
 import { EntityPicker, userItem } from '@/react/data/EntityPicker';
 import { useActivities, useActivityCleanup, useActivityStats, userName, type Activity } from '@/react/features/activity/queries';
 
@@ -184,8 +185,14 @@ export const ActivityList = () => {
 						/>
 					</div>
 
-					<Input type="date" size="sm" value={params.date_from} onChange={(event) => apply({ date_from: event.target.value })} aria-label={__('From')} />
-					<Input type="date" size="sm" value={params.date_to} onChange={(event) => apply({ date_to: event.target.value })} aria-label={__('To')} />
+					<DateRangePicker
+						value={{ from: params.date_from, to: params.date_to }}
+						onChange={(next) => apply({ date_from: next.from, date_to: next.to })}
+						presets={recentPresets()}
+						max={isoDate(new Date())}
+						size="sm"
+						aria-label={__('Period')}
+					/>
 
 					{activities.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
 				</div>

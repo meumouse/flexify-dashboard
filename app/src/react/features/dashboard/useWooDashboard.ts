@@ -1,31 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import { useRest } from '@/react/app/WpDataProvider';
 import type { DateRange, WooDashboardMetrics } from '@/react/features/dashboard/types';
+import { isoDate } from '@/react/form/dates';
 
 /**
  * Store metrics for a period. The endpoint also answers when WooCommerce is off, so the
  * dashboard can say so instead of failing.
  */
 
-export const isoDate = (date: Date): string =>
-	`${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-
-/**
- * Read a `YYYY-MM-DD` value as that day where the user is.
- *
- * `new Date('2026-10-07')` is midnight UTC, which is the day before in the Americas; formatting
- * it back would walk the period one day into the past on every reload.
- */
-export const parseDay = (value: string | null): Date | null => {
-	if (!value) {
-		return null;
-	}
-
-	const parts = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-	const date = parts ? new Date(Number(parts[1]), Number(parts[2]) - 1, Number(parts[3])) : new Date(value);
-
-	return Number.isNaN(date.getTime()) ? null : date;
-};
+export { isoDate, parseDay } from '@/react/form/dates';
 
 type Response = {
 	woocommerce_active: boolean;

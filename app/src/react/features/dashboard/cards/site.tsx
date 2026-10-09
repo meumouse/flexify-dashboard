@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { useIsDark } from '@/react/app/ThemeProvider';
 import { cn } from '@/react/lib/cn';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Icon, Skeleton } from '@/react/ui';
+import { Icon, ProgressBar, Skeleton } from '@/react/ui';
 import { formatBytes } from '@/react/features/media/queries';
 import { CardError, CardLoading, StatRow, compactNumber, useCardQuery, useRange, type CardProps } from '@/react/features/dashboard/cards/shared';
 
@@ -80,7 +80,7 @@ type ServerHealth = {
 /** A usage bar that turns amber past three quarters and red past nine tenths. */
 const UsageBar = ({ used, total, label }: { used: number; total: number; label: string }) => {
 	const percent = total ? Math.min(100, Math.round((used / total) * 100)) : 0;
-	const tone = percent >= 90 ? 'bg-error-500' : percent >= 75 ? 'bg-warning-500' : 'bg-success-500';
+	const tone = percent >= 90 ? 'error' : percent >= 75 ? 'warning' : 'success';
 
 	return (
 		<div>
@@ -88,9 +88,7 @@ const UsageBar = ({ used, total, label }: { used: number; total: number; label: 
 				<span className="text-gray-500 dark:text-gray-400">{label}</span>
 				<span className="font-medium text-gray-800 dark:text-white/90">{percent}%</span>
 			</div>
-			<div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
-				<div className={cn('h-full rounded-full transition-[width]', tone)} style={{ width: `${percent}%` }} />
-			</div>
+			<ProgressBar value={percent} tone={tone} size="sm" label={label} />
 		</div>
 	);
 };

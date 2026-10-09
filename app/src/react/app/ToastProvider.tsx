@@ -16,6 +16,8 @@ export type Toast = {
 	message?: string;
 	/** Milliseconds before dismissing; 0 keeps the toast until the user closes it */
 	duration?: number;
+	/** One follow-up, such as undoing what was just done; using it closes the toast */
+	action?: { label: string; onClick: () => void };
 };
 
 type ToastInput = Omit<Toast, 'id' | 'tone'> & { tone?: ToastTone };
@@ -89,6 +91,18 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
 						<div className="min-w-0 flex-1">
 							<p className="text-theme-sm font-medium text-gray-800 dark:text-white/90">{toast.title}</p>
 							{toast.message ? <p className="mt-0.5 text-theme-xs text-gray-500 dark:text-gray-400">{toast.message}</p> : null}
+							{toast.action ? (
+								<button
+									type="button"
+									className="mt-2 text-theme-sm font-medium text-brand-500 transition-colors hover:text-brand-600 dark:text-brand-400 dark:hover:text-brand-300"
+									onClick={() => {
+										dismiss(toast.id);
+										toast.action?.onClick();
+									}}
+								>
+									{toast.action.label}
+								</button>
+							) : null}
 						</div>
 						<button
 							type="button"

@@ -1,7 +1,7 @@
 import { usePageData } from '@/react/app/WpDataProvider';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __ } from '@/react/lib/i18n';
-import { Button, Icon, Input, Popover, Select, Switch } from '@/react/ui';
+import { Button, DateRangePicker, Icon, Input, Popover, Select, Switch, recentPresets } from '@/react/ui';
 import { EntityPicker, termItem } from '@/react/data/EntityPicker';
 import type { PostColumn, PostsQuery } from '@/react/features/posts/types';
 
@@ -59,11 +59,13 @@ export const PostsSettings = ({ query, onChange, columns, onToggleColumn, onMove
 						</Row>
 					) : null}
 
-					<Row label={__('From')}>
-						<Input type="date" size="sm" value={query.start_date} onChange={(event) => onChange({ start_date: event.target.value, page: 1 })} />
-					</Row>
-					<Row label={__('To')}>
-						<Input type="date" size="sm" value={query.end_date} onChange={(event) => onChange({ end_date: event.target.value, page: 1 })} />
+					<Row label={__('Date')}>
+						<DateRangePicker
+							value={{ from: query.start_date, to: query.end_date }}
+							onChange={(next) => onChange({ start_date: next.from, end_date: next.to, page: 1 })}
+							presets={recentPresets()}
+							size="sm"
+						/>
 					</Row>
 				</section>
 

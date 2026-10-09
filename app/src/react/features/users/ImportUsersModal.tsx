@@ -3,7 +3,7 @@ import { parseCSV } from '@/shared/csv.js';
 import { useRest } from '@/react/app/WpDataProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Alert, Button, Icon, Modal, Select, Switch, useFilePicker } from '@/react/ui';
+import { Alert, Button, Dropzone, Modal, Select, Switch } from '@/react/ui';
 import { generatePassword } from '@/react/features/users/UserModals';
 import type { Role } from '@/react/features/users/queries';
 
@@ -72,7 +72,6 @@ type Parsed = { headers: string[]; rows: Record<string, string>[] };
 export const ImportUsersModal = ({ open, onClose, roles, onDone }: Props) => {
 	const rest = useRest();
 	const { notify } = useNotify();
-	const csv = useFilePicker({ accept: '.csv,text/csv', onPick: (files) => read(files[0]) });
 	const [parsed, setParsed] = useState<Parsed | null>(null);
 	const [mapping, setMapping] = useState<Record<string, string>>({});
 	const [role, setRole] = useState('subscriber');
@@ -179,18 +178,13 @@ export const ImportUsersModal = ({ open, onClose, roles, onDone }: Props) => {
 				</>
 			}
 		>
-			{csv.picker}
-
 			{!parsed ? (
-				<button
-					type="button"
-					onClick={csv.open}
-					className="flex w-full flex-col items-center gap-2 rounded-xl border-2 border-dashed border-gray-300 p-10 text-center transition-colors hover:border-brand-400 dark:border-gray-700"
-				>
-					<Icon name="upload_file" className="text-title-sm text-gray-400" />
-					<span className="text-theme-sm font-medium text-gray-700 dark:text-gray-300">{__('Choose a CSV file')}</span>
-					<span className="text-theme-xs text-gray-500 dark:text-gray-400">{__('The first row has to be the column headings.')}</span>
-				</button>
+				<Dropzone
+					accept=".csv,text/csv"
+					onFile={read}
+					title={__('Choose a CSV file')}
+					hint={__('The first row has to be the column headings.')}
+				/>
 			) : result ? (
 				<div className="flex flex-col gap-4">
 					<Alert variant={result.failed.length ? 'warning' : 'success'} title={sprintf(__('%d user(s) imported'), result.created)} />

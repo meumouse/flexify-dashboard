@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useNotify } from '@/react/app/ToastProvider';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Badge, Button, Card, Checkbox, DataTable, DropdownMenu, Input, PageHeader, Pagination, SearchInput, Select, Sheet, Textarea, Tooltip, type Column } from '@/react/ui';
+import { Badge, Button, Card, Checkbox, DataTable, DatePicker, DropdownMenu, Input, PageHeader, Pagination, SearchInput, Select, Sheet, Textarea, Tooltip, type Column } from '@/react/ui';
 import { useCoupons, useWooMutation, wooKeys } from '@/react/woo/queries';
 import { useWoo } from '@/react/woo/WooProvider';
 import type { BadgeColor } from '@/react/ui/recipes';
@@ -378,7 +378,7 @@ export const CouponsView = () => {
 								inputMode="decimal"
 								error={errors.amount}
 							/>
-							<Input value={form.date_expires} onChange={(event) => set({ date_expires: event.target.value })} type="date" label={__('Expiry date')} />
+							<DatePicker value={form.date_expires} onChange={(date_expires) => set({ date_expires })} label={__('Expiry date')} placeholder={__('Never expires')} />
 						</div>
 						<Checkbox
 							checked={form.free_shipping}
