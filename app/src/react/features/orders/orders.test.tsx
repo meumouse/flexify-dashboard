@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { render, screen, waitFor, within } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { HashRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
 import { AppProviders } from '@/react/app/AppProviders';
@@ -7,6 +7,8 @@ import { PageShell } from '@/react/app/PageShell';
 import { WooProvider } from '@/react/woo/WooProvider';
 import { OrdersList } from '@/react/features/orders/OrdersList';
 import { OrderPrint } from '@/react/features/orders/OrderPrint';
+import { OrdersBoard } from '@/react/features/orders/OrdersBoard';
+import { boardColumns, statusAfterDrop } from '@/react/features/orders/board';
 import { customerName, formatAddress, itemsCount, safeHtml, totalRefunded } from '@/react/features/orders/orderFormat';
 import type { Address, Order, StoreData } from '@/react/woo/types';
 import type { WpData } from '@/react/types/wordpress';
@@ -253,5 +255,69 @@ describe('OrderPrint', () => {
 		expect(document.documentElement).toHaveClass('dark');
 
 		document.documentElement.classList.remove('dark');
+	});
+});
+
+describe('orders board', () => {
+	it('shows the statuses that still move, in board order', () => {
+		const columns = boardColumns([
+			{ value: 'completed', label: 'Concluído' },
+			{ value: 'cancelled', label: 'Cancelado' },
+			{ value: 'pending', label: 'Pendente' },
+			{ value: 'processing', label: 'Processando' },
+		]);
+
+		expect(columns.map((column) => column.value)).toEqual(['pending', 'processing', 'completed']);
+	});
+
+	it('changes nothing when a card is dropped where it already is or off the board', () => {
+		expect(statusAfterDrop('processing', 'completed')).toBe('completed');
+		expect(statusAfterDrop('processing', 'processing')).toBeNull();
+		expect(statusAfterDrop('processing', 'refunded')).toBeNull();
+	});
+
+	it('moves an order to the column it is dropped on, after asking', async () => {
+		const user = userEvent.setup();
+		const writes: { url: string; body: unknown }[] = [];
+
+		vi.stubGlobal(
+			'fetch',
+			vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+				const url = new URL(String(input));
+
+				if (init?.method === 'PUT') {
+					writes.push({ url: url.pathname, body: JSON.parse(String(init.body)) });
+
+					return new Response(JSON.stringify(ORDERS[0]), { status: 200, headers: { 'Content-Type': 'application/json' } });
+				}
+
+				const body = ORDERS.filter((item) => item.status === url.searchParams.get('status'));
+
+				return new Response(JSON.stringify(body), { status: 200, headers: { 'Content-Type': 'application/json', 'X-WP-Total': String(body.length) } });
+			})
+		);
+
+		render(
+			<AppProviders wpData={wpData}>
+				<WooProvider>
+					<PageShell>
+						<OrdersBoard params={{}} counts={{}} onOpen={() => {}} />
+					</PageShell>
+				</WooProvider>
+			</AppProviders>
+		);
+
+		const card = (await screen.findByText('#1200')).closest('li') as HTMLElement;
+		const target = screen.getByRole('region', { name: 'Concluído' });
+
+		fireEvent.dragStart(card, { dataTransfer: { setData: () => {}, effectAllowed: '' } });
+		fireEvent.dragOver(target, { dataTransfer: { dropEffect: '' } });
+		fireEvent.drop(target, { dataTransfer: {} });
+
+		await user.click(await screen.findByRole('button', { name: 'Move' }));
+
+		await waitFor(() => expect(writes).toHaveLength(1));
+		expect(writes[0].url).toContain('orders/1200');
+		expect(writes[0].body).toEqual({ status: 'completed' });
 	});
 });

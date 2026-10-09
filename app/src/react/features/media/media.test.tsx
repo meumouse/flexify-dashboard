@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { AppProviders } from '@/react/app/AppProviders';
 import { MediaLibrary } from '@/react/features/media/MediaLibrary';
-import { fileNameOf, formatBytes, type MediaItem } from '@/react/features/media/queries';
+import { fileNameOf, formatBytes, typeBreakdown, type MediaItem } from '@/react/features/media/queries';
 import { NO_EDITS, cropFromCanvas, fitWithin, hasEdits, keepRatio, rectBetween } from '@/react/features/media/imageEdits';
 import type { WpData } from '@/react/types/wordpress';
 import { openFilters } from '../../../../tests/filters';
@@ -159,5 +159,19 @@ describe('media library', () => {
 		await user.click(await screen.findByRole('switch', { name: 'Unused only' }));
 
 		await waitFor(() => expect(urls.some((url) => url.includes('unused=true') && url.includes('unused_mode=deep'))).toBe(true));
+	});
+});
+
+describe('media overview', () => {
+	it('counts the library by the kinds its tabs use', () => {
+		const counts = typeBreakdown([
+			{ file_type: 'image', count: '120' },
+			{ file_type: 'application', count: '14' },
+			{ file_type: 'text', count: 2 },
+			{ file_type: 'video', count: '3' },
+			{ file_type: 'model', count: '1' },
+		]);
+
+		expect(counts).toEqual({ image: 120, video: 3, audio: 0, document: 16, other: 1 });
 	});
 });

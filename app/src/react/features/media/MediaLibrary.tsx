@@ -6,6 +6,7 @@ import { __, sprintf } from '@/react/lib/i18n';
 import { Button, Field, Icon, Modal, PageHeader, ProgressBar, SearchInput, Select, Spinner, Switch, TableCard, Tabs, Tooltip, useFilePicker, type ActiveFilter, type TabItem } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
 import { MediaGrid } from '@/react/features/media/MediaGrid';
+import { MediaOverview } from '@/react/features/media/MediaOverview';
 import { MediaBulkEdit } from '@/react/features/media/MediaBulkEdit';
 import { useMediaLibrary, useMediaMutations, type MediaFilters } from '@/react/features/media/queries';
 import { useRest } from '@/react/app/WpDataProvider';
@@ -190,6 +191,8 @@ export const MediaLibrary = () => {
 			/>
 
 			{filePicker.picker}
+
+			<MediaOverview active={query.type} onPick={(type) => apply({ type })} />
 
 			<TableCard
 				tabs={<Tabs items={TYPES} value={query.type} onChange={(type) => apply({ type })} ariaLabel={__('File type')} />}

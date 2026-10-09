@@ -28,6 +28,7 @@ import {
 import { useOrders, useOrdersBulk, useOrdersSummary } from '@/react/woo/queries';
 import { useWoo } from '@/react/woo/WooProvider';
 import { OrderPreview } from '@/react/features/orders/OrderPreview';
+import { OrdersBoard } from '@/react/features/orders/OrdersBoard';
 import { customerName, formatDate, itemsCount, relativeDate, shippingSummary, totalRefunded } from '@/react/features/orders/orderFormat';
 import { useOrderHelpers } from '@/react/features/orders/useOrderHelpers';
 import type { Order } from '@/react/woo/types';
@@ -50,6 +51,7 @@ const DEFAULT_FILTERS = {
 	per_page: 20,
 	orderby: 'date',
 	order: 'desc',
+	view: 'list',
 };
 
 const RELATIVE_PERIODS: Record<string, number> = { 7: 7, 30: 30, 90: 90 };
@@ -481,7 +483,16 @@ export const OrdersList = () => {
 			: []),
 	];
 
-	const clearFilters = () => applyFilters({ ...DEFAULT_FILTERS, search: filters.search, status: filters.status, period: filters.period, per_page: filters.per_page });
+	const clearFilters = () => applyFilters({ ...DEFAULT_FILTERS, search: filters.search, status: filters.status, period: filters.period, per_page: filters.per_page, view: filters.view });
+
+	const board = filters.view === 'board';
+
+	// The board pages and sorts each column itself; it only takes the search and the filters.
+	const boardParams = useMemo(() => {
+		const { page, per_page, status, orderby, order, ...rest } = listParams as Record<string, unknown>;
+
+		return rest;
+	}, [listParams]);
 
 	return (
 		<div>
@@ -523,16 +534,18 @@ export const OrdersList = () => {
 
 			<TableCard
 				footer={
-					<Pagination
-						page={filters.page}
-						perPage={filters.per_page}
-						total={total}
-						onPageChange={(page) => setFilters({ page })}
-						onPerPageChange={(per_page) => applyFilters({ per_page })}
-						disabled={orders.isFetching}
-					/>
+					board ? undefined : (
+						<Pagination
+							page={filters.page}
+							perPage={filters.per_page}
+							total={total}
+							onPageChange={(page) => setFilters({ page })}
+							onPerPageChange={(per_page) => applyFilters({ per_page })}
+							disabled={orders.isFetching}
+						/>
+					)
 				}
-				tabs={<Tabs value={filters.status} onChange={(status) => applyFilters({ status })} items={statusTabs} ariaLabel={__('Order status')} />}
+				tabs={board ? undefined : <Tabs value={filters.status} onChange={(status) => applyFilters({ status })} items={statusTabs} ariaLabel={__('Order status')} />}
 				search={<SearchInput value={filters.search} onChange={(search) => applyFilters({ search })} placeholder={__('Search order, customer or email')} aria-label={__('Search orders')} />}
 				filters={
 					<>
@@ -554,9 +567,20 @@ export const OrdersList = () => {
 				onClearFilters={clearFilters}
 				busy={orders.isFetching && !orders.isLoading}
 				tools={
-					<Tooltip text={__('Refresh')}>
-						<Button variant="outline" icon="refresh" iconOnly aria-label={__('Refresh')} onClick={refresh} />
-					</Tooltip>
+					<>
+						<Tooltip text={board ? __('List view') : __('Board view')}>
+							<Button
+								variant="outline"
+								icon={board ? 'view_list' : 'view_kanban'}
+								iconOnly
+								aria-label={board ? __('List view') : __('Board view')}
+								onClick={() => setFilters({ view: board ? 'list' : 'board' })}
+							/>
+						</Tooltip>
+						<Tooltip text={__('Refresh')}>
+							<Button variant="outline" icon="refresh" iconOnly aria-label={__('Refresh')} onClick={refresh} />
+						</Tooltip>
+					</>
 				}
 				notice={
 					newOrders ? (
@@ -575,56 +599,60 @@ export const OrdersList = () => {
 					) : null
 				}
 			>
-				<DataTable
-					columns={columns}
-					rows={rows}
-					loading={orders.isLoading}
-					skeletonRows={Math.min(filters.per_page, 10)}
-					caption={__('Orders')}
-					selectable
-					selected={selected}
-					onSelectedChange={setSelected}
-					clickableRows
-					onRowClick={openDetails}
-					sort={{ key: filters.orderby === 'id' ? 'order' : filters.orderby, direction: filters.order as 'asc' | 'desc' }}
-					onSortChange={(next) => applyFilters({ orderby: next.key === 'order' ? 'id' : next.key, order: next.direction })}
-					emptyIcon="shopping_bag"
-					emptyTitle={hasActiveFilters ? __('No orders match your filters') : __('No orders yet')}
-					emptyDescription={hasActiveFilters ? __('Try adjusting the search or date range.') : __('New orders will appear here as soon as customers check out.')}
-					bulkActions={() =>
-						isTrash ? (
-							<>
-								<Button size="xs" variant="outline" icon="undo" loading={bulk.isPending} onClick={() => runBulk('restore')}>
-									{__('Restore')}
-								</Button>
-								<Button size="xs" variant="danger-outline" icon="delete" onClick={() => confirmDelete('delete')}>
-									{__('Delete permanently')}
-								</Button>
-							</>
-						) : (
-							<>
-								<DropdownMenu
-									items={statusActions((status) => runBulk('status', status))}
-									align="start"
-									width="w-52"
-									trigger={
-										<Button size="xs" variant="outline" iconRight="expand_more" loading={bulk.isPending}>
-											{__('Change status')}
-										</Button>
-									}
-								/>
-								<Button size="xs" variant="outline" icon="download" onClick={exportCsv}>
-									{__('Export CSV')}
-								</Button>
-								{can('delete_shop_orders') ? (
-									<Button size="xs" variant="danger-outline" icon="delete" onClick={() => confirmDelete('trash')}>
-										{__('Trash')}
+				{board ? (
+					<OrdersBoard params={boardParams} counts={summary?.counts ?? {}} onOpen={openDetails} />
+				) : (
+					<DataTable
+						columns={columns}
+						rows={rows}
+						loading={orders.isLoading}
+						skeletonRows={Math.min(filters.per_page, 10)}
+						caption={__('Orders')}
+						selectable
+						selected={selected}
+						onSelectedChange={setSelected}
+						clickableRows
+						onRowClick={openDetails}
+						sort={{ key: filters.orderby === 'id' ? 'order' : filters.orderby, direction: filters.order as 'asc' | 'desc' }}
+						onSortChange={(next) => applyFilters({ orderby: next.key === 'order' ? 'id' : next.key, order: next.direction })}
+						emptyIcon="shopping_bag"
+						emptyTitle={hasActiveFilters ? __('No orders match your filters') : __('No orders yet')}
+						emptyDescription={hasActiveFilters ? __('Try adjusting the search or date range.') : __('New orders will appear here as soon as customers check out.')}
+						bulkActions={() =>
+							isTrash ? (
+								<>
+									<Button size="xs" variant="outline" icon="undo" loading={bulk.isPending} onClick={() => runBulk('restore')}>
+										{__('Restore')}
 									</Button>
-								) : null}
-							</>
-						)
-					}
-				/>
+									<Button size="xs" variant="danger-outline" icon="delete" onClick={() => confirmDelete('delete')}>
+										{__('Delete permanently')}
+									</Button>
+								</>
+							) : (
+								<>
+									<DropdownMenu
+										items={statusActions((status) => runBulk('status', status))}
+										align="start"
+										width="w-52"
+										trigger={
+											<Button size="xs" variant="outline" iconRight="expand_more" loading={bulk.isPending}>
+												{__('Change status')}
+											</Button>
+										}
+									/>
+									<Button size="xs" variant="outline" icon="download" onClick={exportCsv}>
+										{__('Export CSV')}
+									</Button>
+									{can('delete_shop_orders') ? (
+										<Button size="xs" variant="danger-outline" icon="delete" onClick={() => confirmDelete('trash')}>
+											{__('Trash')}
+										</Button>
+									) : null}
+								</>
+							)
+						}
+					/>
+				)}
 			</TableCard>
 
 			<OrderPreview

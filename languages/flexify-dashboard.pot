@@ -6,6 +6,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "x-domain: flexify-dashboard\n"
 
+#: app/src/react/features/posts/PostsCalendar.tsx:72
+msgid "“%1$s” moved to %2$s"
+msgstr ""
+
 #: app/src/react/features/products/AttributesView.tsx:101
 msgid "“%s” and all of its values will be removed from every product."
 msgstr ""
@@ -33,6 +37,7 @@ msgstr ""
 #: app/src/react/features/notices/NoticesList.tsx:54
 #: app/src/react/features/posts/PostCells.tsx:194
 #: app/src/react/features/posts/PostPreview.tsx:31
+#: app/src/react/features/posts/PostsCalendar.tsx:32
 #: app/src/react/features/posts/PostsSidebar.tsx:152
 msgid "(No title)"
 msgstr ""
@@ -55,13 +60,17 @@ msgstr ""
 msgid "%1$s columns, %2$s rows."
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:291
+#: app/src/react/features/media/MediaLibrary.tsx:294
 #: app/src/react/features/roles/RoleDetails.tsx:131
 msgid "%1$s of %2$s"
 msgstr ""
 
 #: app/src/react/features/posts/usePostMutations.ts:55
 msgid "%1$s of %2$s failed."
+msgstr ""
+
+#: app/src/react/features/media/MediaOverview.tsx:81
+msgid "%1$s of %2$s files unused"
 msgstr ""
 
 #: app/src/react/features/database/DatabaseExplorer.tsx:221
@@ -94,12 +103,13 @@ msgstr[1] ""
 msgid "%d file(s) will be changed. Fields left empty stay as they are."
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:117
+#: app/src/react/features/media/MediaLibrary.tsx:118
 msgid "%d file(s) will be deleted for good. The media library has no trash."
 msgstr ""
 
 #: app/src/react/features/menus/MenusList.tsx:63
 #: app/src/react/features/orders/OrderDetails.tsx:286
+#: app/src/react/features/orders/OrdersBoard.tsx:131
 msgid "%d item(s)"
 msgstr ""
 
@@ -107,33 +117,33 @@ msgstr ""
 msgid "%d item(s) will be changed. Fields left empty stay as they are."
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:88
+#: app/src/react/features/posts/PostsList.tsx:89
 msgid ""
 "%d item(s) will be moved to the trash. Items already there are deleted for "
 "good."
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:569
+#: app/src/react/features/orders/OrdersList.tsx:593
 msgid "%d new order(s) received"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:241
+#: app/src/react/features/orders/OrdersList.tsx:243
 msgid "%d order(s) could not be updated"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:232
+#: app/src/react/features/orders/OrdersList.tsx:234
 msgid "%d order(s) moved to the trash"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:237
+#: app/src/react/features/orders/OrdersList.tsx:239
 msgid "%d order(s) updated"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:254
+#: app/src/react/features/orders/OrdersList.tsx:256
 msgid "%d order(s) will be moved to the trash."
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:253
+#: app/src/react/features/orders/OrdersList.tsx:255
 msgid "%d order(s) will be permanently deleted. This action cannot be undone."
 msgstr ""
 
@@ -185,7 +195,7 @@ msgstr ""
 msgid "%d tag(s) will be deleted. Products will not be deleted."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:128
+#: app/src/react/features/dashboard/cards/site.tsx:117
 msgid "%d update(s) available"
 msgstr ""
 
@@ -256,8 +266,12 @@ msgstr ""
 msgid "%s entries"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:184
+#: app/src/react/features/media/MediaLibrary.tsx:185
 msgid "%s file(s)"
+msgstr ""
+
+#: app/src/react/features/media/MediaOverview.tsx:61
+msgid "%s files"
 msgstr ""
 
 #: app/src/react/features/products/editor/ProductVariationsEditor.tsx:402
@@ -273,7 +287,7 @@ msgstr ""
 msgid "%s installs"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:257
+#: app/src/react/features/posts/PostsList.tsx:282
 #: app/src/react/features/posts/PostsSidebar.tsx:103
 msgid "%s item(s)"
 msgstr ""
@@ -283,7 +297,7 @@ msgid "%s notice(s)"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:240
-#: app/src/react/features/orders/OrdersList.tsx:206
+#: app/src/react/features/orders/OrdersList.tsx:208
 msgid "%s orders"
 msgstr ""
 
@@ -291,7 +305,7 @@ msgstr ""
 msgid "%s out of 5"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:378
+#: app/src/react/features/orders/OrdersList.tsx:380
 msgid "%s refunded"
 msgstr ""
 
@@ -300,8 +314,8 @@ msgid "%s row(s)"
 msgstr ""
 
 #: app/src/react/data/DataTable.tsx:155
-#: app/src/react/features/media/MediaLibrary.tsx:263
-#: app/src/react/features/posts/PostsList.tsx:196
+#: app/src/react/features/media/MediaLibrary.tsx:266
+#: app/src/react/features/posts/PostsList.tsx:218
 msgid "%s selected"
 msgstr ""
 
@@ -325,6 +339,10 @@ msgstr ""
 msgid "%s will be moved to the trash."
 msgstr ""
 
+#: app/src/react/features/posts/PostsCalendar.tsx:222
+msgid "+%d more"
+msgstr ""
+
 #: app/src/react/features/posts/PostCells.tsx:200
 msgid "1 child item"
 msgstr ""
@@ -337,7 +355,7 @@ msgstr ""
 msgid "3 order(s) moved to the trash"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:500
+#: app/src/react/features/orders/OrdersList.tsx:511
 msgid "30 days"
 msgstr ""
 
@@ -345,11 +363,11 @@ msgstr ""
 msgid "404 Monitor"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:499
+#: app/src/react/features/orders/OrdersList.tsx:510
 msgid "7 days"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:501
+#: app/src/react/features/orders/OrdersList.tsx:512
 msgid "90 days"
 msgstr ""
 
@@ -435,7 +453,7 @@ msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:117
 #: app/src/react/features/orders/OrderDetails.tsx:246
-#: app/src/react/features/orders/OrdersList.tsx:419
+#: app/src/react/features/orders/OrdersList.tsx:421
 #: app/src/react/features/products/AttributesView.tsx:208
 #: app/src/react/features/products/CategoriesView.tsx:172
 #: app/src/react/features/products/CouponsView.tsx:266
@@ -591,7 +609,8 @@ msgid "Add menu"
 msgstr ""
 
 #: app/src/react/features/plugins/PluginsList.tsx:140
-#: app/src/react/features/posts/PostsList.tsx:238
+#: app/src/react/features/posts/PostsList.tsx:180
+#: app/src/react/features/posts/PostsList.tsx:263
 #: app/src/react/features/posts/PostsSidebar.tsx:77
 #: app/src/react/features/posts/PostsSidebar.tsx:124
 msgid "Add new"
@@ -624,11 +643,11 @@ msgstr ""
 #: app/src/react/features/design-system/Showcase.tsx:389
 #: app/src/react/features/orders/OrderEditor.tsx:470
 #: app/src/react/features/orders/OrderEditor.tsx:475
-#: app/src/react/features/orders/OrdersList.tsx:515
+#: app/src/react/features/orders/OrdersList.tsx:526
 msgid "Add order"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:428
+#: app/src/react/features/orders/OrdersList.tsx:430
 msgid "Add order in classic screen"
 msgstr ""
 
@@ -775,8 +794,8 @@ msgid "Align right"
 msgstr ""
 
 #: app/src/react/features/comments/CommentsList.tsx:79
-#: app/src/react/features/media/MediaLibrary.tsx:22
-#: app/src/react/features/orders/OrdersList.tsx:159
+#: app/src/react/features/media/MediaLibrary.tsx:23
+#: app/src/react/features/orders/OrdersList.tsx:161
 #: app/src/react/features/products/ProductsList.tsx:114
 #: app/src/react/features/roles/RoleDetails.tsx:150
 msgid "All"
@@ -950,21 +969,21 @@ msgstr ""
 msgid "Any category"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:549
+#: app/src/react/features/orders/OrdersList.tsx:562
 msgid "Any channel"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:150
-#: app/src/react/features/orders/OrdersList.tsx:539
+#: app/src/react/features/media/MediaLibrary.tsx:151
+#: app/src/react/features/orders/OrdersList.tsx:552
 #: app/src/react/form/DateRangePicker.tsx:121
 msgid "Any date"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:550
+#: app/src/react/features/orders/OrdersList.tsx:563
 msgid "Any origin"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:546
+#: app/src/react/features/orders/OrdersList.tsx:559
 msgid "Any payment method"
 msgstr ""
 
@@ -972,7 +991,7 @@ msgstr ""
 msgid "Any stock status"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:206
+#: app/src/react/features/media/MediaLibrary.tsx:209
 msgid "Any tag"
 msgstr ""
 
@@ -1089,7 +1108,8 @@ msgid "Attributes show extra information such as material or size."
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:51
-#: app/src/react/features/media/MediaLibrary.tsx:25
+#: app/src/react/features/media/MediaLibrary.tsx:26
+#: app/src/react/features/media/MediaOverview.tsx:14
 msgid "Audio"
 msgstr ""
 
@@ -1224,7 +1244,7 @@ msgstr ""
 msgid "Biography"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:447
+#: app/src/react/features/orders/OrdersList.tsx:449
 msgid "Block checkout"
 msgstr ""
 
@@ -1234,6 +1254,11 @@ msgstr ""
 
 #: app/src/react/features/media/ImageEditor.tsx:31
 msgid "Blur"
+msgstr ""
+
+#: app/src/react/features/orders/OrdersList.tsx:571
+#: app/src/react/features/orders/OrdersList.tsx:576
+msgid "Board view"
 msgstr ""
 
 #: app/src/react/ui/RichText.tsx:157
@@ -1295,12 +1320,17 @@ msgstr ""
 msgid "Buy product"
 msgstr ""
 
+#: app/src/react/features/posts/PostsList.tsx:259
+#: app/src/react/features/posts/PostsList.tsx:260
+msgid "Calendar view"
+msgstr ""
+
 #: app/src/react/features/design-system/Showcase.tsx:436
 msgid "Camiseta Básica Algodão"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:714
-#: app/src/react/features/orders/OrdersList.tsx:455
+#: app/src/react/features/orders/OrdersList.tsx:457
 msgid "Campaign"
 msgstr ""
 
@@ -1430,8 +1460,8 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:265
 #: app/src/react/features/orders/OrderPreview.tsx:79
-#: app/src/react/features/orders/OrdersList.tsx:285
-#: app/src/react/features/orders/OrdersList.tsx:612
+#: app/src/react/features/orders/OrdersList.tsx:287
+#: app/src/react/features/orders/OrdersList.tsx:639
 msgid "Change status"
 msgstr ""
 
@@ -1441,11 +1471,11 @@ msgid ""
 "remember what you change this to."
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:549
+#: app/src/react/features/orders/OrdersList.tsx:562
 msgid "Channel"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:470
+#: app/src/react/features/orders/OrdersList.tsx:472
 msgid "Channel: %s"
 msgstr ""
 
@@ -1568,15 +1598,15 @@ msgid "Chosen item"
 msgstr ""
 
 #: app/src/react/features/orders/AddressFields.tsx:45
-#: app/src/react/features/orders/OrdersList.tsx:297
+#: app/src/react/features/orders/OrdersList.tsx:299
 msgid "City"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:446
+#: app/src/react/features/orders/OrdersList.tsx:448
 msgid "Classic checkout"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:431
+#: app/src/react/features/orders/OrdersList.tsx:433
 msgid "Classic orders screen"
 msgstr ""
 
@@ -1612,8 +1642,8 @@ msgstr ""
 
 #: app/src/react/data/DataTable.tsx:162
 #: app/src/react/data/EntityPicker.tsx:100
-#: app/src/react/features/media/MediaLibrary.tsx:274
-#: app/src/react/features/posts/PostsList.tsx:200
+#: app/src/react/features/media/MediaLibrary.tsx:277
+#: app/src/react/features/posts/PostsList.tsx:222
 msgid "Clear selection"
 msgstr ""
 
@@ -1966,8 +1996,8 @@ msgid "Create your first product to start selling."
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:671
-#: app/src/react/features/orders/OrdersList.tsx:343
-#: app/src/react/features/orders/OrdersList.tsx:448
+#: app/src/react/features/orders/OrdersList.tsx:345
+#: app/src/react/features/orders/OrdersList.tsx:450
 msgid "Created in admin"
 msgstr ""
 
@@ -2023,8 +2053,8 @@ msgstr ""
 #: app/src/react/features/design-system/Showcase.tsx:95
 #: app/src/react/features/orders/OrderDetails.tsx:447
 #: app/src/react/features/orders/OrderEditor.tsx:754
-#: app/src/react/features/orders/OrdersList.tsx:297
-#: app/src/react/features/orders/OrdersList.tsx:349
+#: app/src/react/features/orders/OrdersList.tsx:299
+#: app/src/react/features/orders/OrdersList.tsx:351
 #: app/src/react/features/users/panels.tsx:237
 msgid "Customer"
 msgstr ""
@@ -2036,13 +2066,13 @@ msgstr ""
 msgid "Customer note"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:477
+#: app/src/react/features/orders/OrdersList.tsx:479
 msgid "Customer: %s"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:88
 #: app/src/react/features/design-system/Showcase.tsx:224
-#: app/src/react/features/orders/OrdersList.tsx:429
+#: app/src/react/features/orders/OrdersList.tsx:431
 msgid "Customers"
 msgstr ""
 
@@ -2110,9 +2140,9 @@ msgstr ""
 
 #: app/src/react/features/comments/CommentDetails.tsx:150
 #: app/src/react/features/comments/CommentsList.tsx:141
-#: app/src/react/features/orders/OrdersList.tsx:297
-#: app/src/react/features/orders/OrdersList.tsx:399
-#: app/src/react/features/orders/OrdersList.tsx:539
+#: app/src/react/features/orders/OrdersList.tsx:299
+#: app/src/react/features/orders/OrdersList.tsx:401
+#: app/src/react/features/orders/OrdersList.tsx:552
 #: app/src/react/features/posts/PostsSettings.tsx:62
 #: app/src/react/features/products/ProductsList.tsx:342
 msgid "Date"
@@ -2144,7 +2174,7 @@ msgstr ""
 #: app/src/react/features/design-system/Showcase.tsx:320
 #: app/src/react/features/design-system/Showcase.tsx:335
 #: app/src/react/features/media/MediaDetails.tsx:114
-#: app/src/react/features/media/MediaLibrary.tsx:272
+#: app/src/react/features/media/MediaLibrary.tsx:275
 #: app/src/react/features/menus/MenuEditor.tsx:103
 #: app/src/react/features/menus/MenuEditor.tsx:169
 #: app/src/react/features/menus/MenusList.tsx:47
@@ -2156,7 +2186,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderNotes.tsx:67
 #: app/src/react/features/plugins/PluginsList.tsx:32
 #: app/src/react/features/plugins/PluginsList.tsx:104
-#: app/src/react/features/posts/PostsList.tsx:163
+#: app/src/react/features/posts/PostsList.tsx:164
 #: app/src/react/features/products/AttributesView.tsx:102
 #: app/src/react/features/products/AttributesView.tsx:170
 #: app/src/react/features/products/AttributesView.tsx:206
@@ -2195,10 +2225,10 @@ msgstr ""
 #: app/src/react/features/comments/CommentsList.tsx:66
 #: app/src/react/features/comments/CommentsList.tsx:181
 #: app/src/react/features/media/MediaDetails.tsx:92
-#: app/src/react/features/media/MediaLibrary.tsx:118
-#: app/src/react/features/orders/OrdersList.tsx:255
-#: app/src/react/features/orders/OrdersList.tsx:277
-#: app/src/react/features/orders/OrdersList.tsx:601
+#: app/src/react/features/media/MediaLibrary.tsx:119
+#: app/src/react/features/orders/OrdersList.tsx:257
+#: app/src/react/features/orders/OrdersList.tsx:279
+#: app/src/react/features/orders/OrdersList.tsx:628
 #: app/src/react/features/posts/PostRowMenu.tsx:23
 #: app/src/react/features/posts/PostRowMenu.tsx:39
 #: app/src/react/features/products/ProductsList.tsx:214
@@ -2210,7 +2240,7 @@ msgstr ""
 #: app/src/react/features/comments/CommentDetails.tsx:73
 #: app/src/react/features/comments/CommentsList.tsx:62
 #: app/src/react/features/design-system/Showcase.tsx:318
-#: app/src/react/features/orders/OrdersList.tsx:251
+#: app/src/react/features/orders/OrdersList.tsx:253
 #: app/src/react/features/posts/PostRowMenu.tsx:21
 #: app/src/react/features/products/ProductsList.tsx:210
 msgid "Delete permanently?"
@@ -2232,7 +2262,7 @@ msgstr ""
 msgid "Delete their content too"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:116
+#: app/src/react/features/media/MediaLibrary.tsx:117
 msgid "Delete these files?"
 msgstr ""
 
@@ -2357,7 +2387,7 @@ msgstr ""
 #: admin/src/Rest/WooCommerceDashboard.php:668
 #: admin/src/Rest/WooCommerceDashboard.php:669
 #: admin/src/Rest/WooCommerceOrders.php:717
-#: app/src/react/features/orders/OrdersList.tsx:456
+#: app/src/react/features/orders/OrdersList.tsx:458
 msgid "Direct"
 msgstr ""
 
@@ -2417,7 +2447,7 @@ msgstr ""
 msgid "Disk space"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:124
+#: app/src/react/features/dashboard/cards/site.tsx:113
 msgid "Disk: %sGB of %sGB"
 msgstr ""
 
@@ -2440,12 +2470,13 @@ msgid "Do not allow"
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:52
-#: app/src/react/features/media/MediaLibrary.tsx:26
+#: app/src/react/features/media/MediaLibrary.tsx:27
+#: app/src/react/features/media/MediaOverview.tsx:15
 msgid "Documents"
 msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:159
-#: app/src/react/features/media/MediaLibrary.tsx:269
+#: app/src/react/features/media/MediaLibrary.tsx:272
 msgid "Download"
 msgstr ""
 
@@ -2463,7 +2494,7 @@ msgstr ""
 msgid "Download limit"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:143
+#: app/src/react/features/media/MediaLibrary.tsx:144
 msgid "Download started"
 msgstr ""
 
@@ -2489,6 +2520,7 @@ msgstr ""
 #: app/src/react/features/dashboard/cards/content.tsx:30
 #: app/src/react/features/design-system/Showcase.tsx:252
 #: app/src/react/features/menus/MenusList.tsx:73
+#: app/src/react/features/posts/PostsCalendar.tsx:23
 #: app/src/react/features/products/CouponsView.tsx:89
 #: app/src/react/features/products/editor/ProductEditor.tsx:994
 #: app/src/react/features/products/productFormat.ts:12
@@ -2510,7 +2542,7 @@ msgstr ""
 msgid "Drag to resize; double-click to reset"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:282
+#: app/src/react/features/media/MediaLibrary.tsx:285
 msgid "Drop the files to upload them"
 msgstr ""
 
@@ -2527,7 +2559,7 @@ msgid "Dummy analytics data generated successfully for %d month(s)."
 msgstr ""
 
 #: app/src/react/features/posts/PostRowMenu.tsx:35
-#: app/src/react/features/posts/PostsList.tsx:160
+#: app/src/react/features/posts/PostsList.tsx:161
 #: app/src/react/features/products/ProductsList.tsx:241
 msgid "Duplicate"
 msgstr ""
@@ -2537,14 +2569,14 @@ msgid "e-Commerce"
 msgstr ""
 
 #: app/src/react/features/media/MediaEditScreen.tsx:64
-#: app/src/react/features/media/MediaLibrary.tsx:266
+#: app/src/react/features/media/MediaLibrary.tsx:269
 #: app/src/react/features/menus/MenuEditor.tsx:165
 #: app/src/react/features/menus/MenusList.tsx:85
 #: app/src/react/features/notices/NoticeEditor.tsx:107
 #: app/src/react/features/notices/NoticesList.tsx:99
 #: app/src/react/features/posts/PostPreview.tsx:61
 #: app/src/react/features/posts/PostRowMenu.tsx:33
-#: app/src/react/features/posts/PostsList.tsx:154
+#: app/src/react/features/posts/PostsList.tsx:155
 #: app/src/react/features/products/AttributesView.tsx:204
 #: app/src/react/features/products/CategoriesView.tsx:167
 #: app/src/react/features/products/CouponsView.tsx:261
@@ -2630,7 +2662,7 @@ msgid "Edit variation"
 msgstr ""
 
 #: app/src/react/features/comments/CommentDetails.tsx:126
-#: app/src/react/features/orders/OrdersList.tsx:297
+#: app/src/react/features/orders/OrdersList.tsx:299
 #: app/src/react/features/users/ImportUsersModal.tsx:19
 #: app/src/react/features/users/panels.tsx:63
 #: app/src/react/features/users/UserModals.tsx:74
@@ -2846,7 +2878,7 @@ msgstr ""
 msgid "Everyone will see the new menu now"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:128
+#: app/src/react/features/dashboard/cards/site.tsx:117
 msgid "Everything is up to date"
 msgstr ""
 
@@ -2904,11 +2936,11 @@ msgstr ""
 msgid "Export"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:617
+#: app/src/react/features/orders/OrdersList.tsx:644
 msgid "Export CSV"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:426
+#: app/src/react/features/orders/OrdersList.tsx:428
 msgid "Export current page (CSV)"
 msgstr ""
 
@@ -3058,7 +3090,7 @@ msgstr ""
 msgid "File name contains invalid characters."
 msgstr ""
 
-#: app/src/react/features/media/queries.ts:236
+#: app/src/react/features/media/queries.ts:281
 msgid "File replaced"
 msgstr ""
 
@@ -3067,7 +3099,7 @@ msgid "File replaced successfully."
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:98
-#: app/src/react/features/media/MediaLibrary.tsx:195
+#: app/src/react/features/media/MediaLibrary.tsx:198
 msgid "File type"
 msgstr ""
 
@@ -3075,7 +3107,7 @@ msgstr ""
 msgid "File type not allowed."
 msgstr ""
 
-#: app/src/react/features/media/queries.ts:164
+#: app/src/react/features/media/queries.ts:209
 msgid "File updated"
 msgstr ""
 
@@ -3088,11 +3120,11 @@ msgstr ""
 msgid "File URL"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:42
+#: app/src/react/features/dashboard/cards/site.tsx:31
 msgid "Files"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:123
+#: app/src/react/features/media/MediaLibrary.tsx:124
 msgid "Files deleted"
 msgstr ""
 
@@ -3100,7 +3132,7 @@ msgstr ""
 msgid "Files updated"
 msgstr ""
 
-#: app/src/react/features/media/queries.ts:199
+#: app/src/react/features/media/queries.ts:244
 msgid "Files uploaded"
 msgstr ""
 
@@ -3183,7 +3215,7 @@ msgid "Font file"
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:53
-#: app/src/react/features/media/MediaLibrary.tsx:27
+#: app/src/react/features/media/MediaLibrary.tsx:28
 msgid "Fonts"
 msgstr ""
 
@@ -3354,8 +3386,8 @@ msgstr ""
 msgid "Green ← → Magenta"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:230
-#: app/src/react/features/media/MediaLibrary.tsx:236
+#: app/src/react/features/media/MediaLibrary.tsx:233
+#: app/src/react/features/media/MediaLibrary.tsx:239
 msgid "Grid view"
 msgstr ""
 
@@ -3523,7 +3555,8 @@ msgid "Image url"
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:49
-#: app/src/react/features/media/MediaLibrary.tsx:23
+#: app/src/react/features/media/MediaLibrary.tsx:24
+#: app/src/react/features/media/MediaOverview.tsx:12
 #: app/src/react/features/products/editor/ProductEditor.tsx:1020
 msgid "Images"
 msgstr ""
@@ -3553,7 +3586,7 @@ msgstr ""
 msgid "in %d day(s)"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:188
+#: app/src/react/features/dashboard/cards/site.tsx:177
 msgid "In period"
 msgstr ""
 
@@ -3800,7 +3833,7 @@ msgid "Item actions"
 msgstr ""
 
 #: app/src/react/features/posts/PostPreview.tsx:80
-#: app/src/react/features/posts/PostsList.tsx:125
+#: app/src/react/features/posts/PostsList.tsx:126
 msgid "Item author updated"
 msgstr ""
 
@@ -3825,7 +3858,7 @@ msgid "Item restored"
 msgstr ""
 
 #: app/src/react/features/posts/PostPreview.tsx:73
-#: app/src/react/features/posts/PostsList.tsx:121
+#: app/src/react/features/posts/PostsList.tsx:122
 msgid "Item status updated"
 msgstr ""
 
@@ -3833,7 +3866,7 @@ msgstr ""
 msgid "Item title"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:115
+#: app/src/react/features/posts/PostsList.tsx:116
 msgid "Item title updated"
 msgstr ""
 
@@ -3845,16 +3878,16 @@ msgstr ""
 #: app/src/react/features/orders/OrderDetails.tsx:292
 #: app/src/react/features/orders/OrderEditor.tsx:500
 #: app/src/react/features/orders/OrderPreview.tsx:102
-#: app/src/react/features/orders/OrdersList.tsx:297
-#: app/src/react/features/orders/OrdersList.tsx:367
+#: app/src/react/features/orders/OrdersList.tsx:299
+#: app/src/react/features/orders/OrdersList.tsx:369
 msgid "Items"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:94
+#: app/src/react/features/posts/PostsList.tsx:95
 msgid "Items deleted"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:159
+#: app/src/react/features/posts/PostsList.tsx:160
 msgid "Items duplicated"
 msgstr ""
 
@@ -3862,7 +3895,7 @@ msgstr ""
 msgid "Items per page"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:156
+#: app/src/react/features/posts/PostsList.tsx:157
 msgid "Items published"
 msgstr ""
 
@@ -3913,7 +3946,7 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:54
+#: app/src/react/features/dashboard/cards/site.tsx:43
 msgid "Large files"
 msgstr ""
 
@@ -3921,8 +3954,8 @@ msgstr ""
 msgid "Last %s days"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:153
-#: app/src/react/features/orders/OrdersList.tsx:439
+#: app/src/react/features/media/MediaLibrary.tsx:154
+#: app/src/react/features/orders/OrdersList.tsx:441
 #: app/src/react/form/DateRangePicker.tsx:26
 msgid "Last 30 days"
 msgstr ""
@@ -3931,13 +3964,13 @@ msgstr ""
 msgid "Last 30 Days"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:152
-#: app/src/react/features/orders/OrdersList.tsx:438
+#: app/src/react/features/media/MediaLibrary.tsx:153
+#: app/src/react/features/orders/OrdersList.tsx:440
 #: app/src/react/form/DateRangePicker.tsx:25
 msgid "Last 7 days"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:441
+#: app/src/react/features/orders/OrdersList.tsx:443
 #: app/src/react/form/DateRangePicker.tsx:27
 msgid "Last 90 days"
 msgstr ""
@@ -3956,7 +3989,7 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:154
+#: app/src/react/features/media/MediaLibrary.tsx:155
 msgid "Last year"
 msgstr ""
 
@@ -4105,8 +4138,14 @@ msgstr ""
 msgid "Linked products"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:230
-#: app/src/react/features/media/MediaLibrary.tsx:236
+#: app/src/react/features/posts/PostsList.tsx:177
+msgid "List"
+msgstr ""
+
+#: app/src/react/features/media/MediaLibrary.tsx:233
+#: app/src/react/features/media/MediaLibrary.tsx:239
+#: app/src/react/features/orders/OrdersList.tsx:571
+#: app/src/react/features/orders/OrdersList.tsx:576
 msgid "List view"
 msgstr ""
 
@@ -4260,7 +4299,7 @@ msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:105
 #: app/src/react/features/media/MediaEditScreen.tsx:64
-#: app/src/react/features/media/MediaLibrary.tsx:183
+#: app/src/react/features/media/MediaLibrary.tsx:184
 #: app/src/react/features/roles/queries.ts:25
 #: app/src/react/features/settings/categories.ts:30
 msgid "Media"
@@ -4295,7 +4334,7 @@ msgstr ""
 msgid "Memory"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:123
+#: app/src/react/features/dashboard/cards/site.tsx:112
 msgid "Memory: %sMB of %sMB"
 msgstr ""
 
@@ -4374,7 +4413,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:670
 #: admin/src/Rest/WooCommerceOrders.php:719
-#: app/src/react/features/orders/OrdersList.tsx:458
+#: app/src/react/features/orders/OrdersList.tsx:460
 msgid "Mobile app"
 msgstr ""
 
@@ -4434,7 +4473,7 @@ msgstr ""
 msgid "Monthly target"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:509
+#: app/src/react/features/orders/OrdersList.tsx:520
 #: app/src/react/features/products/ProductsList.tsx:451
 #: app/src/react/features/products/ProductsList.tsx:577
 msgid "More"
@@ -4448,6 +4487,10 @@ msgstr ""
 msgid "More details"
 msgstr ""
 
+#: app/src/react/features/orders/OrdersBoard.tsx:169
+msgid "Move"
+msgstr ""
+
 #: app/src/react/features/products/CouponsView.tsx:193
 msgid "Move coupon to trash?"
 msgstr ""
@@ -4457,28 +4500,40 @@ msgstr ""
 msgid "Move down"
 msgstr ""
 
+#: app/src/react/features/orders/OrdersBoard.tsx:167
+msgid "Move order #%1$s to %2$s?"
+msgstr ""
+
+#: app/src/react/features/orders/OrdersBoard.tsx:127
+msgid "Move order #%s"
+msgstr ""
+
+#: app/src/react/features/orders/OrdersBoard.tsx:125
+msgid "Move to"
+msgstr ""
+
 #: app/src/react/features/comments/CommentDetails.tsx:75
 #: app/src/react/features/comments/CommentDetails.tsx:95
 #: app/src/react/features/comments/CommentsList.tsx:66
 #: app/src/react/features/comments/CommentsList.tsx:181
 #: app/src/react/features/posts/PostRowMenu.tsx:23
 #: app/src/react/features/posts/PostRowMenu.tsx:39
-#: app/src/react/features/posts/PostsList.tsx:89
+#: app/src/react/features/posts/PostsList.tsx:90
 msgid "Move to the trash"
 msgstr ""
 
 #: app/src/react/features/comments/CommentDetails.tsx:73
 #: app/src/react/features/comments/CommentsList.tsx:62
 #: app/src/react/features/posts/PostRowMenu.tsx:21
-#: app/src/react/features/posts/PostsList.tsx:87
+#: app/src/react/features/posts/PostsList.tsx:88
 msgid "Move to the trash?"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:115
 #: app/src/react/features/orders/OrderDetails.tsx:164
 #: app/src/react/features/orders/OrderDetails.tsx:186
-#: app/src/react/features/orders/OrdersList.tsx:255
-#: app/src/react/features/orders/OrdersList.tsx:289
+#: app/src/react/features/orders/OrdersList.tsx:257
+#: app/src/react/features/orders/OrdersList.tsx:291
 #: app/src/react/features/products/CouponsView.tsx:195
 #: app/src/react/features/products/CouponsView.tsx:264
 #: app/src/react/features/products/editor/ProductEditor.tsx:525
@@ -4489,7 +4544,7 @@ msgid "Move to trash"
 msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:162
-#: app/src/react/features/orders/OrdersList.tsx:251
+#: app/src/react/features/orders/OrdersList.tsx:253
 #: app/src/react/features/products/editor/ProductEditor.tsx:525
 #: app/src/react/features/products/ProductsList.tsx:210
 msgid "Move to trash?"
@@ -4524,7 +4579,7 @@ msgstr ""
 msgid "Name (numeric)"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:216
+#: app/src/react/features/media/MediaLibrary.tsx:219
 msgid "Name A–Z"
 msgstr ""
 
@@ -4532,7 +4587,7 @@ msgstr ""
 msgid "Name shown to customer"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:217
+#: app/src/react/features/media/MediaLibrary.tsx:220
 msgid "Name Z–A"
 msgstr ""
 
@@ -4554,7 +4609,7 @@ msgstr ""
 msgid "Net revenue"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:204
+#: app/src/react/features/orders/OrdersList.tsx:206
 msgid "Net revenue (%s days)"
 msgstr ""
 
@@ -4595,7 +4650,7 @@ msgid "New notice"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:385
-#: app/src/react/features/orders/OrdersList.tsx:593
+#: app/src/react/features/orders/OrdersList.tsx:620
 msgid "New orders will appear here as soon as customers check out."
 msgstr ""
 
@@ -4637,7 +4692,7 @@ msgstr ""
 msgid "Newer order #%s"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:214
+#: app/src/react/features/media/MediaLibrary.tsx:217
 msgid "Newest first"
 msgstr ""
 
@@ -4645,6 +4700,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#: app/src/react/features/posts/PostsCalendar.tsx:121
 #: app/src/react/form/Calendar.tsx:99
 msgid "Next month"
 msgstr ""
@@ -4785,11 +4841,15 @@ msgstr ""
 msgid "No one has this role, so nothing changes for anybody."
 msgstr ""
 
+#: app/src/react/features/orders/OrdersBoard.tsx:137
+msgid "No orders here"
+msgstr ""
+
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:313
 msgid "No orders in this period."
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:592
+#: app/src/react/features/orders/OrdersList.tsx:619
 msgid "No orders match your filters"
 msgstr ""
 
@@ -4798,7 +4858,7 @@ msgid "No orders selected."
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:384
-#: app/src/react/features/orders/OrdersList.tsx:592
+#: app/src/react/features/orders/OrdersList.tsx:619
 msgid "No orders yet"
 msgstr ""
 
@@ -4985,7 +5045,11 @@ msgstr ""
 msgid "Note to customer"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:274
+#: app/src/react/features/posts/PostsCalendar.tsx:153
+msgid "Nothing dated in this month."
+msgstr ""
+
+#: app/src/react/features/posts/PostsList.tsx:299
 #: app/src/react/features/posts/PostsSidebar.tsx:122
 msgid "Nothing found"
 msgstr ""
@@ -5116,7 +5180,7 @@ msgstr ""
 msgid "Older order #%s"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:215
+#: app/src/react/features/media/MediaLibrary.tsx:218
 msgid "Oldest first"
 msgstr ""
 
@@ -5132,7 +5196,7 @@ msgid "On backorder"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:232
-#: app/src/react/features/orders/OrdersList.tsx:197
+#: app/src/react/features/orders/OrdersList.tsx:199
 msgid "On hold"
 msgstr ""
 
@@ -5140,7 +5204,7 @@ msgstr ""
 msgid "Once dismissed, that person does not see it again."
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:343
+#: app/src/react/features/orders/OrdersList.tsx:345
 msgid "Online store"
 msgstr ""
 
@@ -5183,7 +5247,7 @@ msgid "Open in a new tab"
 msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:184
-#: app/src/react/features/orders/OrdersList.tsx:288
+#: app/src/react/features/orders/OrdersList.tsx:290
 #: app/src/react/features/products/editor/ProductEditor.tsx:610
 #: app/src/react/features/products/editor/ProductEditor.tsx:667
 msgid "Open in classic editor"
@@ -5241,10 +5305,14 @@ msgstr ""
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:321
 #: app/src/react/features/design-system/Showcase.tsx:92
 #: app/src/react/features/orders/OrderEditor.tsx:811
-#: app/src/react/features/orders/OrdersList.tsx:297
-#: app/src/react/features/orders/OrdersList.tsx:329
+#: app/src/react/features/orders/OrdersList.tsx:299
+#: app/src/react/features/orders/OrdersList.tsx:331
 #: app/src/react/features/posts/PostsSettings.tsx:90
 msgid "Order"
+msgstr ""
+
+#: app/src/react/features/orders/OrdersBoard.tsx:179
+msgid "Order #%1$s is now %2$s"
 msgstr ""
 
 #: admin/src/Activity/ActivityHooks.php:784
@@ -5294,7 +5362,7 @@ msgstr ""
 msgid "Order notes"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:535
+#: app/src/react/features/orders/OrdersList.tsx:548
 msgid "Order status"
 msgstr ""
 
@@ -5317,18 +5385,18 @@ msgstr ""
 #: app/src/react/features/orders/OrderDetails.tsx:467
 #: app/src/react/features/orders/OrderEditor.tsx:473
 #: app/src/react/features/orders/OrderPrint.tsx:103
-#: app/src/react/features/orders/OrdersList.tsx:489
-#: app/src/react/features/orders/OrdersList.tsx:583
+#: app/src/react/features/orders/OrdersList.tsx:500
+#: app/src/react/features/orders/OrdersList.tsx:610
 #: app/src/react/features/users/panels.tsx:240
 msgid "Orders"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:283
+#: app/src/react/features/orders/OrdersList.tsx:285
 msgid "Orders from this customer"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:715
-#: app/src/react/features/orders/OrdersList.tsx:453
+#: app/src/react/features/orders/OrdersList.tsx:455
 msgid "Organic"
 msgstr ""
 
@@ -5341,11 +5409,11 @@ msgid "Organization"
 msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:590
-#: app/src/react/features/orders/OrdersList.tsx:550
+#: app/src/react/features/orders/OrdersList.tsx:563
 msgid "Origin"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:472
+#: app/src/react/features/orders/OrdersList.tsx:474
 msgid "Origin: %s"
 msgstr ""
 
@@ -5377,7 +5445,7 @@ msgstr ""
 msgid "Overlays"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:282
+#: app/src/react/features/posts/PostsList.tsx:307
 #: app/src/react/features/posts/PostsSidebar.tsx:106
 msgid "Page %1$s of %2$s"
 msgstr ""
@@ -5462,8 +5530,8 @@ msgid "Paused"
 msgstr ""
 
 #: app/src/react/features/orders/OrderDetails.tsx:553
-#: app/src/react/features/orders/OrdersList.tsx:297
-#: app/src/react/features/orders/OrdersList.tsx:382
+#: app/src/react/features/orders/OrdersList.tsx:299
+#: app/src/react/features/orders/OrdersList.tsx:384
 msgid "Payment"
 msgstr ""
 
@@ -5473,7 +5541,7 @@ msgstr ""
 
 #: app/src/react/features/orders/OrderEditor.tsx:829
 #: app/src/react/features/orders/OrderPrint.tsx:198
-#: app/src/react/features/orders/OrdersList.tsx:542
+#: app/src/react/features/orders/OrdersList.tsx:555
 msgid "Payment method"
 msgstr ""
 
@@ -5481,12 +5549,13 @@ msgstr ""
 msgid "Payment via %s"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:467
+#: app/src/react/features/orders/OrdersList.tsx:469
 msgid "Payment: %s"
 msgstr ""
 
 #: app/src/react/features/comments/CommentsList.tsx:175
 #: app/src/react/features/comments/queries.ts:45
+#: app/src/react/features/posts/PostsCalendar.tsx:24
 #: app/src/react/features/products/productFormat.ts:13
 #: app/src/react/features/products/ProductsList.tsx:117
 #: app/src/react/shell/search/commands.ts:63
@@ -5494,7 +5563,7 @@ msgid "Pending"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:230
-#: app/src/react/features/orders/OrdersList.tsx:181
+#: app/src/react/features/orders/OrdersList.tsx:183
 msgid "Pending payment"
 msgstr ""
 
@@ -5558,11 +5627,11 @@ msgid ""
 msgstr ""
 
 #: app/src/react/features/orders/AddressFields.tsx:50
-#: app/src/react/features/orders/OrdersList.tsx:297
+#: app/src/react/features/orders/OrdersList.tsx:299
 msgid "Phone"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:118
+#: app/src/react/features/dashboard/cards/site.tsx:107
 msgid "PHP"
 msgstr ""
 
@@ -5703,7 +5772,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:672
 #: admin/src/Rest/WooCommerceOrders.php:720
-#: app/src/react/features/orders/OrdersList.tsx:459
+#: app/src/react/features/orders/OrdersList.tsx:461
 msgid "Point of sale"
 msgstr ""
 
@@ -5719,7 +5788,7 @@ msgstr ""
 msgid "Postcode / ZIP"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:148
+#: app/src/react/features/posts/PostsList.tsx:149
 #: app/src/react/features/roles/queries.ts:23
 #: app/src/react/features/settings/categories.ts:29
 #: app/src/react/shell/search/useGlobalSearch.ts:57
@@ -5752,6 +5821,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
+#: app/src/react/features/posts/PostsCalendar.tsx:120
 #: app/src/react/form/Calendar.tsx:95
 msgid "Previous month"
 msgstr ""
@@ -5815,7 +5885,7 @@ msgid "Private note"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:231
-#: app/src/react/features/orders/OrdersList.tsx:189
+#: app/src/react/features/orders/OrdersList.tsx:191
 msgid "Processing"
 msgstr ""
 
@@ -5933,7 +6003,7 @@ msgstr ""
 msgid "Property saved successfully"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:157
+#: app/src/react/features/posts/PostsList.tsx:158
 #: app/src/react/features/products/editor/ProductEditor.tsx:644
 #: app/src/react/features/products/editor/ProductEditor.tsx:987
 msgid "Publish"
@@ -5942,6 +6012,7 @@ msgstr ""
 #: admin/src/Rest/PostsTables.php:439
 #: app/src/react/features/dashboard/cards/content.tsx:29
 #: app/src/react/features/design-system/Showcase.tsx:251
+#: app/src/react/features/posts/PostsCalendar.tsx:21
 #: app/src/react/features/products/editor/ProductEditor.tsx:993
 #: app/src/react/features/products/productFormat.ts:11
 #: app/src/react/features/products/ProductQuickEdit.tsx:114
@@ -6002,9 +6073,9 @@ msgstr ""
 msgid "Quick edit"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:284
-#: app/src/react/features/orders/OrdersList.tsx:415
-#: app/src/react/features/orders/OrdersList.tsx:416
+#: app/src/react/features/orders/OrdersList.tsx:286
+#: app/src/react/features/orders/OrdersList.tsx:417
+#: app/src/react/features/orders/OrdersList.tsx:418
 msgid "Quick preview"
 msgstr ""
 
@@ -6066,8 +6137,8 @@ msgstr ""
 msgid "reCAPTCHA keys saved"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:44
-#: app/src/react/features/dashboard/cards/site.tsx:189
+#: app/src/react/features/dashboard/cards/site.tsx:33
+#: app/src/react/features/dashboard/cards/site.tsx:178
 msgid "Recent"
 msgstr ""
 
@@ -6122,7 +6193,7 @@ msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:666
 #: admin/src/Rest/WooCommerceOrders.php:716
-#: app/src/react/features/orders/OrdersList.tsx:454
+#: app/src/react/features/orders/OrdersList.tsx:456
 msgid "Referral"
 msgstr ""
 
@@ -6139,8 +6210,8 @@ msgid "Referrer URL exceeds maximum length"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:132
-#: app/src/react/features/orders/OrdersList.tsx:557
-#: app/src/react/features/orders/OrdersList.tsx:558
+#: app/src/react/features/orders/OrdersList.tsx:580
+#: app/src/react/features/orders/OrdersList.tsx:581
 #: app/src/react/features/products/ProductsList.tsx:514
 #: app/src/react/features/products/ProductsList.tsx:515
 msgid "Refresh"
@@ -6450,7 +6521,7 @@ msgstr ""
 msgid "Resize the menu"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:449
+#: app/src/react/features/orders/OrdersList.tsx:451
 msgid "REST API"
 msgstr ""
 
@@ -6466,8 +6537,8 @@ msgstr ""
 msgid "Restock refunded items"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:275
-#: app/src/react/features/orders/OrdersList.tsx:598
+#: app/src/react/features/orders/OrdersList.tsx:277
+#: app/src/react/features/orders/OrdersList.tsx:625
 #: app/src/react/features/posts/PostRowMenu.tsx:38
 #: app/src/react/features/products/ProductsList.tsx:232
 #: app/src/react/features/products/ProductsList.tsx:542
@@ -6499,7 +6570,7 @@ msgstr ""
 msgid "Revenue"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:497
+#: app/src/react/features/orders/OrdersList.tsx:508
 msgid "Revenue period"
 msgstr ""
 
@@ -6703,6 +6774,7 @@ msgid "Schedule sale"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/content.tsx:31
+#: app/src/react/features/posts/PostsCalendar.tsx:22
 #: app/src/react/features/products/productFormat.ts:15
 #: app/src/react/shell/search/commands.ts:65
 msgid "Scheduled"
@@ -6781,11 +6853,11 @@ msgstr ""
 msgid "Search notices"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:536
+#: app/src/react/features/orders/OrdersList.tsx:549
 msgid "Search order, customer or email"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:536
+#: app/src/react/features/orders/OrdersList.tsx:549
 msgid "Search orders"
 msgstr ""
 
@@ -6793,7 +6865,7 @@ msgstr ""
 msgid "Search post types"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:149
+#: app/src/react/features/posts/PostsList.tsx:150
 #: app/src/react/shell/search/commands.ts:45
 msgid "Search posts"
 msgstr ""
@@ -6831,7 +6903,7 @@ msgid "Search Tags"
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:97
-#: app/src/react/features/media/MediaLibrary.tsx:196
+#: app/src/react/features/media/MediaLibrary.tsx:199
 msgid "Search the library"
 msgstr ""
 
@@ -7084,7 +7156,7 @@ msgstr ""
 #: app/src/react/features/orders/OrderPreview.tsx:124
 #: app/src/react/features/orders/OrderPreview.tsx:153
 #: app/src/react/features/orders/OrderPrint.tsx:89
-#: app/src/react/features/orders/OrdersList.tsx:385
+#: app/src/react/features/orders/OrdersList.tsx:387
 #: app/src/react/features/products/editor/ProductEditor.tsx:837
 #: app/src/react/features/products/ProductQuickEdit.tsx:328
 msgid "Shipping"
@@ -7147,11 +7219,12 @@ msgstr ""
 msgid "Show child items"
 msgstr ""
 
+#: app/src/react/features/posts/PostsCalendar.tsx:222
 #: app/src/react/shell/notices/NotificationsPanel.tsx:104
 msgid "Show less"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:572
+#: app/src/react/features/orders/OrdersList.tsx:596
 msgid "Show new orders"
 msgstr ""
 
@@ -7175,6 +7248,10 @@ msgstr ""
 msgid "Showing %1$s to %2$s of %3$s"
 msgstr ""
 
+#: app/src/react/features/orders/OrdersBoard.tsx:140
+msgid "Showing the newest %d"
+msgstr ""
+
 #: app/src/react/features/notices/NoticesList.tsx:63
 msgid "Shown to"
 msgstr ""
@@ -7187,7 +7264,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:236
+#: app/src/react/features/posts/PostsList.tsx:258
 msgid "Sidebar view"
 msgstr ""
 
@@ -7230,7 +7307,7 @@ msgstr ""
 msgid "Site settings"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:43
+#: app/src/react/features/dashboard/cards/site.tsx:32
 #: app/src/react/features/media/ImageEditor.tsx:299
 #: app/src/react/features/media/MediaDetails.tsx:151
 #: app/src/react/features/media/MediaDetails.tsx:186
@@ -7288,7 +7365,7 @@ msgstr ""
 msgid "Some fields may only be available in the classic editor."
 msgstr ""
 
-#: app/src/react/features/media/queries.ts:221
+#: app/src/react/features/media/queries.ts:266
 msgid "Some files could not be updated."
 msgstr ""
 
@@ -7312,7 +7389,7 @@ msgstr ""
 msgid "Sorry, you are not allowed to manage this user."
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:211
+#: app/src/react/features/media/MediaLibrary.tsx:214
 msgid "Sort"
 msgstr ""
 
@@ -7325,7 +7402,7 @@ msgstr ""
 msgid "Specific version to install (optional)"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:133
+#: app/src/react/features/dashboard/cards/site.tsx:122
 msgid "SSL"
 msgstr ""
 
@@ -7349,7 +7426,7 @@ msgstr ""
 msgid "Start date for chart data (ISO 8601 format)"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:297
+#: app/src/react/features/orders/OrdersList.tsx:299
 msgid "State"
 msgstr ""
 
@@ -7367,8 +7444,8 @@ msgstr ""
 #: app/src/react/features/menus/MenusList.tsx:70
 #: app/src/react/features/notices/NoticesList.tsx:79
 #: app/src/react/features/orders/OrderEditor.tsx:820
-#: app/src/react/features/orders/OrdersList.tsx:297
-#: app/src/react/features/orders/OrdersList.tsx:362
+#: app/src/react/features/orders/OrdersList.tsx:299
+#: app/src/react/features/orders/OrdersList.tsx:364
 #: app/src/react/features/posts/BatchEditModal.tsx:85
 #: app/src/react/features/posts/PostPreview.tsx:72
 #: app/src/react/features/products/CouponsView.tsx:246
@@ -7411,6 +7488,10 @@ msgstr ""
 
 #: app/src/react/features/products/ProductsList.tsx:416
 msgid "Stock: %s"
+msgstr ""
+
+#: app/src/react/features/media/MediaOverview.tsx:71
+msgid "Storage"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceDashboard.php:419
@@ -7507,7 +7588,7 @@ msgstr ""
 
 #: admin/src/Rest/MediaTags.php:129
 #: app/src/react/features/media/MediaDetails.tsx:192
-#: app/src/react/features/media/MediaLibrary.tsx:200
+#: app/src/react/features/media/MediaLibrary.tsx:203
 #: app/src/react/features/posts/BatchEditModal.tsx:98
 #: app/src/react/features/posts/PostPreview.tsx:93
 #: app/src/react/features/products/editor/ProductEditor.tsx:1125
@@ -7522,11 +7603,11 @@ msgstr ""
 msgid "Tags deleted"
 msgstr ""
 
-#: app/src/react/features/media/queries.ts:245
+#: app/src/react/features/media/queries.ts:290
 msgid "Tags updated"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:160
+#: app/src/react/features/media/MediaLibrary.tsx:161
 msgid "Tags: %d"
 msgstr ""
 
@@ -7646,7 +7727,7 @@ msgstr ""
 msgid "The database explorer"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:132
+#: app/src/react/features/media/MediaLibrary.tsx:133
 msgid "The download could not be prepared."
 msgstr ""
 
@@ -7901,7 +7982,7 @@ msgid "This menu could not be loaded."
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:168
-#: app/src/react/features/orders/OrdersList.tsx:440
+#: app/src/react/features/orders/OrdersList.tsx:442
 #: app/src/react/form/DateRangePicker.tsx:28
 msgid "This month"
 msgstr ""
@@ -7967,7 +8048,7 @@ msgid ""
 "it's settings link."
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:442
+#: app/src/react/features/orders/OrdersList.tsx:444
 msgid "This year"
 msgstr ""
 
@@ -7979,7 +8060,7 @@ msgstr ""
 msgid "Timeframe for metrics (hour, day, week, month)"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:137
+#: app/src/react/features/dashboard/cards/site.tsx:126
 msgid "Timezone"
 msgstr ""
 
@@ -8010,8 +8091,9 @@ msgid "today"
 msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:169
-#: app/src/react/features/media/MediaLibrary.tsx:151
-#: app/src/react/features/orders/OrdersList.tsx:437
+#: app/src/react/features/media/MediaLibrary.tsx:152
+#: app/src/react/features/orders/OrdersList.tsx:439
+#: app/src/react/features/posts/PostsCalendar.tsx:135
 #: app/src/react/form/DatePicker.tsx:109
 msgid "Today"
 msgstr ""
@@ -8055,13 +8137,13 @@ msgstr ""
 
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:204
 #: app/src/react/features/dashboard/cards/ecommerce.tsx:324
-#: app/src/react/features/dashboard/cards/site.tsx:187
+#: app/src/react/features/dashboard/cards/site.tsx:176
 #: app/src/react/features/design-system/Showcase.tsx:104
 #: app/src/react/features/orders/OrderDetails.tsx:300
 #: app/src/react/features/orders/OrderPreview.tsx:127
 #: app/src/react/features/orders/OrderPrint.tsx:161
-#: app/src/react/features/orders/OrdersList.tsx:297
-#: app/src/react/features/orders/OrdersList.tsx:373
+#: app/src/react/features/orders/OrdersList.tsx:299
+#: app/src/react/features/orders/OrdersList.tsx:375
 msgid "Total"
 msgstr ""
 
@@ -8126,7 +8208,7 @@ msgstr ""
 msgid "Track stock quantity"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:490
+#: app/src/react/features/orders/OrdersList.tsx:501
 msgid "Track, fulfil and manage your store orders."
 msgstr ""
 
@@ -8144,15 +8226,15 @@ msgstr ""
 
 #: app/src/react/features/comments/queries.ts:47
 #: app/src/react/features/design-system/Showcase.tsx:371
-#: app/src/react/features/orders/OrdersList.tsx:172
-#: app/src/react/features/orders/OrdersList.tsx:621
+#: app/src/react/features/orders/OrdersList.tsx:174
+#: app/src/react/features/orders/OrdersList.tsx:648
 #: app/src/react/features/products/productFormat.ts:16
 #: app/src/react/features/products/ProductsList.tsx:119
 #: app/src/react/features/products/ProductsList.tsx:583
 msgid "Trash"
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:593
+#: app/src/react/features/orders/OrdersList.tsx:620
 msgid "Try adjusting the search or date range."
 msgstr ""
 
@@ -8237,7 +8319,7 @@ msgid "Unchecked"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:310
-#: app/src/react/features/orders/OrdersList.tsx:234
+#: app/src/react/features/orders/OrdersList.tsx:236
 #: app/src/react/ui/RichText.tsx:197
 msgid "Undo"
 msgstr ""
@@ -8304,12 +8386,16 @@ msgstr ""
 msgid "Unused detection mode: shallow (default) or deep (scans post_content)."
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:50
+#: app/src/react/features/media/MediaOverview.tsx:79
+msgid "Unused files"
+msgstr ""
+
+#: app/src/react/features/dashboard/cards/site.tsx:39
 msgid "Unused media"
 msgstr ""
 
-#: app/src/react/features/media/MediaLibrary.tsx:161
-#: app/src/react/features/media/MediaLibrary.tsx:209
+#: app/src/react/features/media/MediaLibrary.tsx:162
+#: app/src/react/features/media/MediaLibrary.tsx:212
 msgid "Unused only"
 msgstr ""
 
@@ -8339,7 +8425,7 @@ msgid "Updates"
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:100
-#: app/src/react/features/media/MediaLibrary.tsx:187
+#: app/src/react/features/media/MediaLibrary.tsx:188
 msgid "Upload"
 msgstr ""
 
@@ -8359,18 +8445,18 @@ msgstr ""
 msgid "Upload directory is not available."
 msgstr ""
 
-#: app/src/react/features/media/queries.ts:189
+#: app/src/react/features/media/queries.ts:234
 msgid "Upload failed"
 msgstr ""
 
 #: app/src/react/features/media/MediaDetails.tsx:188
-#: app/src/react/features/media/MediaLibrary.tsx:199
+#: app/src/react/features/media/MediaLibrary.tsx:202
 msgid "Uploaded"
 msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:288
-#: app/src/react/features/media/MediaLibrary.tsx:287
-#: app/src/react/features/media/MediaLibrary.tsx:289
+#: app/src/react/features/media/MediaLibrary.tsx:290
+#: app/src/react/features/media/MediaLibrary.tsx:292
 msgid "Uploading"
 msgstr ""
 
@@ -8594,7 +8680,8 @@ msgid "Vibrance"
 msgstr ""
 
 #: app/src/react/app/MediaPickerProvider.tsx:50
-#: app/src/react/features/media/MediaLibrary.tsx:24
+#: app/src/react/features/media/MediaLibrary.tsx:25
+#: app/src/react/features/media/MediaOverview.tsx:13
 msgid "Video"
 msgstr ""
 
@@ -8626,7 +8713,7 @@ msgstr ""
 
 #: app/src/react/features/design-system/Showcase.tsx:113
 #: app/src/react/features/orders/OrderPreview.tsx:84
-#: app/src/react/features/orders/OrdersList.tsx:282
+#: app/src/react/features/orders/OrdersList.tsx:284
 msgid "View details"
 msgstr ""
 
@@ -8756,7 +8843,7 @@ msgid "We will be back soon"
 msgstr ""
 
 #: admin/src/Rest/WooCommerceOrders.php:718
-#: app/src/react/features/orders/OrdersList.tsx:457
+#: app/src/react/features/orders/OrdersList.tsx:459
 msgid "Web admin"
 msgstr ""
 
@@ -8869,7 +8956,7 @@ msgstr ""
 msgid "When hidden the language selector on the login page will not be displayed"
 msgstr ""
 
-#: app/src/react/features/posts/PostsList.tsx:275
+#: app/src/react/features/posts/PostsList.tsx:300
 msgid "When you create new items they will show up here."
 msgstr ""
 
@@ -8926,11 +9013,15 @@ msgstr ""
 msgid "WooCommerce is not active."
 msgstr ""
 
-#: app/src/react/features/orders/OrdersList.tsx:430
+#: app/src/react/features/orders/OrdersBoard.tsx:168
+msgid "WooCommerce may email the customer about the new status."
+msgstr ""
+
+#: app/src/react/features/orders/OrdersList.tsx:432
 msgid "WooCommerce settings"
 msgstr ""
 
-#: app/src/react/features/dashboard/cards/site.tsx:114
+#: app/src/react/features/dashboard/cards/site.tsx:103
 msgid "WordPress"
 msgstr ""
 

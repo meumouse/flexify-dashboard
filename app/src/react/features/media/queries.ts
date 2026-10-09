@@ -110,6 +110,51 @@ export const useMediaLibrary = (filters: MediaFilters) => {
 	});
 };
 
+/** What `flexify-dashboard/v1/media-analytics` answers: counts straight from the database. */
+export type MediaAnalytics = {
+	total_files?: number;
+	/** Raw bytes of the uploads folder; `total_size_formatted` is the one meant to be read */
+	total_size?: number;
+	total_size_formatted?: string;
+	average_file_size_formatted?: string;
+	recent_uploads?: number;
+	unused_media?: number;
+	large_files_estimate?: number;
+	/** Grouped by the part of the mime type before the slash; MySQL hands the count back as text */
+	file_types?: { file_type: string; count: number | string }[];
+};
+
+export const useMediaAnalytics = () => {
+	const rest = useRest();
+
+	return useQuery({
+		queryKey: ['media-analytics'],
+		staleTime: 300_000,
+		queryFn: ({ signal }) => rest.get<MediaAnalytics>('flexify-dashboard/v1/media-analytics', {}, signal),
+	});
+};
+
+export type MediaTypeKey = 'image' | 'video' | 'audio' | 'document' | 'other';
+
+/**
+ * The counts by the kinds the library's tabs use.
+ *
+ * The route groups by the first half of the mime type, so a PDF and a Word file both arrive as
+ * "application" and a plain text file as "text": those are the documents. Fonts are stored as
+ * "application" or "font" depending on the server, so they are not told apart here.
+ */
+export const typeBreakdown = (fileTypes: MediaAnalytics['file_types'] = []): Record<MediaTypeKey, number> => {
+	const counts: Record<MediaTypeKey, number> = { image: 0, video: 0, audio: 0, document: 0, other: 0 };
+
+	fileTypes.forEach(({ file_type, count }) => {
+		const key: MediaTypeKey = ['image', 'video', 'audio'].includes(file_type) ? (file_type as MediaTypeKey) : ['application', 'text'].includes(file_type) ? 'document' : 'other';
+
+		counts[key] += Number(count) || 0;
+	});
+
+	return counts;
+};
+
 export const useMediaItem = (id: number | null) => {
 	const rest = useRest();
 

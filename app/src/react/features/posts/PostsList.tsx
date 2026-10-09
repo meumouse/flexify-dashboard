@@ -4,11 +4,12 @@ import { useWpData } from '@/react/app/WpDataProvider';
 import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Button, Card, DataTable, Icon, PageHeader, Pagination, SearchInput, Tabs, type Column, type RowKey, type TabItem } from '@/react/ui';
+import { Button, Card, DataTable, Icon, PageHeader, Pagination, SearchInput, Tabs, Tooltip, type Column, type RowKey, type TabItem } from '@/react/ui';
 import { AuthorCell, StatusCell, TermsCell, TitleCell } from '@/react/features/posts/PostCells';
 import { PostsSidebar } from '@/react/features/posts/PostsSidebar';
 import { useViewMode } from '@/react/features/posts/useViewMode';
 import { BatchEditModal } from '@/react/features/posts/BatchEditModal';
+import { PostsCalendar } from '@/react/features/posts/PostsCalendar';
 import { PostRowMenu } from '@/react/features/posts/PostRowMenu';
 import { PostsSettings } from '@/react/features/posts/PostsSettings';
 import { usePostColumns } from '@/react/features/posts/usePostColumns';
@@ -165,6 +166,27 @@ export const PostsList = () => {
 		</>
 	);
 
+	if (mode === 'calendar') {
+		return (
+			<>
+				<PageHeader
+					title={title}
+					actions={
+						<>
+							<Button variant="outline" size="sm" icon="table_view" onClick={() => setMode('table')}>
+								{__('List')}
+							</Button>
+							<Button href={newUrl} icon="add">
+								{postType.labels?.new_item ?? __('Add new')}
+							</Button>
+						</>
+					}
+				/>
+				<PostsCalendar restBase={postType.rest_base} />
+			</>
+		);
+	}
+
 	if (mode === 'sidebar') {
 		return (
 			<>
@@ -234,6 +256,9 @@ export const PostsList = () => {
 							hierarchical={hierarchical}
 						/>
 						<Button variant="outline" size="sm" iconOnly icon="view_list" onClick={() => setMode('sidebar')} aria-label={__('Sidebar view')} />
+						<Tooltip text={__('Calendar view')}>
+							<Button variant="outline" size="sm" iconOnly icon="calendar_today" onClick={() => setMode('calendar')} aria-label={__('Calendar view')} />
+						</Tooltip>
 						<Button href={newUrl} icon="add">
 							{postType.labels?.new_item ?? __('Add new')}
 						</Button>

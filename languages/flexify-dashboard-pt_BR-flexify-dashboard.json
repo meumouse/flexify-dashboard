@@ -22,6 +22,9 @@
       "%1$s of %2$s failed.": [
         "%1$s de %2$s falharam."
       ],
+      "%1$s of %2$s files unused": [
+        "%1$s de %2$s arquivos sem uso"
+      ],
       "%1$s rows · %2$s": [
         "%1$s linhas · %2$s"
       ],
@@ -167,6 +170,9 @@
       "%s file(s)": [
         "%s arquivo(s)"
       ],
+      "%s files": [
+        "%s arquivos"
+      ],
       "%s in stock": [
         "%s em estoque"
       ],
@@ -226,6 +232,9 @@
       ],
       "(no title)": [
         "(sem título)"
+      ],
+      "+%d more": [
+        "+%d mais"
       ],
       "+%s%% vs previous period": [
         "+%s%% vs período anterior"
@@ -839,6 +848,9 @@
       "Blur": [
         "Borrão"
       ],
+      "Board view": [
+        "Visualização em quadro"
+      ],
       "Bold": [
         "Negrito"
       ],
@@ -880,6 +892,9 @@
       ],
       "Buy product": [
         "Comprar produto"
+      ],
+      "Calendar view": [
+        "Visualização em calendário"
       ],
       "Camiseta Básica Algodão": [
         "Camiseta Básica Algodão"
@@ -2708,6 +2723,9 @@
       "Linked products": [
         "Produtos vinculados"
       ],
+      "List": [
+        "Lista"
+      ],
       "List view": [
         "Visualização em lista"
       ],
@@ -2954,11 +2972,23 @@
       "More filters": [
         "Mais filtros"
       ],
+      "Move": [
+        "Mover"
+      ],
       "Move coupon to trash?": [
         "Mover cupom para a lixeira?"
       ],
       "Move down": [
         "Mover para baixo"
+      ],
+      "Move order #%1$s to %2$s?": [
+        "Mover o pedido #%1$s para %2$s?"
+      ],
+      "Move order #%s": [
+        "Mover o pedido #%s"
+      ],
+      "Move to": [
+        "Mover para"
       ],
       "Move to the trash": [
         "Mover para a lixeira"
@@ -3173,6 +3203,9 @@
       "No one has this role, so nothing changes for anybody.": [
         "Ninguém tem esta função, então nada muda para ninguém."
       ],
+      "No orders here": [
+        "Nenhum pedido aqui"
+      ],
       "No orders in this period.": [
         "Nenhum pedido neste período."
       ],
@@ -3316,6 +3349,9 @@
       ],
       "Note to customer": [
         "Nota para o cliente"
+      ],
+      "Nothing dated in this month.": [
+        "Nada com data neste mês."
       ],
       "Nothing found": [
         "Nada encontrado"
@@ -3490,6 +3526,9 @@
       ],
       "Order": [
         "Ordem"
+      ],
+      "Order #%1$s is now %2$s": [
+        "O pedido #%1$s agora está %2$s"
       ],
       "Order #%s": [
         "Pedido #%s"
@@ -4751,6 +4790,9 @@
       "Showing %1$s to %2$s of %3$s": [
         "Mostrando %1$s a %2$s de %3$s"
       ],
+      "Showing the newest %d": [
+        "Mostrando os %d mais recentes"
+      ],
       "Shown to": [
         "Mostrado para"
       ],
@@ -4888,6 +4930,9 @@
       ],
       "Stock: %s": [
         "Estoque: %s"
+      ],
+      "Storage": [
+        "Armazenamento"
       ],
       "Store": [
         "Loja"
@@ -5501,6 +5546,9 @@
       "Unused detection mode: shallow (default) or deep (scans post_content).": [
         "Modo de detecção não utilizado: superficial (padrão) ou profundo (analisa post_content)."
       ],
+      "Unused files": [
+        "Arquivos sem uso"
+      ],
       "Unused media": [
         "Mídia não utilizada"
       ],
@@ -5909,6 +5957,9 @@
       "WooCommerce is not active.": [
         "O WooCommerce não está ativo."
       ],
+      "WooCommerce may email the customer about the new status.": [
+        "O WooCommerce pode enviar um e-mail ao cliente sobre o novo status."
+      ],
       "WooCommerce settings": [
         "Configurações do WooCommerce"
       ],
@@ -6034,6 +6085,9 @@
       ],
       "wp.i18n loaded": [
         "wp.i18n carregado"
+      ],
+      "“%1$s” moved to %2$s": [
+        "“%1$s” movido para %2$s"
       ],
       "“%s” and all of its values will be removed from every product.": [
         "“%s” e todos os seus valores serão removidos de todos os produtos."

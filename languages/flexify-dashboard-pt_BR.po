@@ -9294,3 +9294,77 @@ msgstr "Voltamos em breve"
 #: app/src/shared/settings/settings-config.js:199
 msgid "What visitors read under the heading."
 msgstr "O que os visitantes leem abaixo do título."
+
+#: app/src/react/features/posts/PostsCalendar.tsx:72
+msgid "“%1$s” moved to %2$s"
+msgstr "“%1$s” movido para %2$s"
+
+#: app/src/react/features/media/MediaOverview.tsx:81
+msgid "%1$s of %2$s files unused"
+msgstr "%1$s de %2$s arquivos sem uso"
+
+#: app/src/react/features/media/MediaOverview.tsx:61
+msgid "%s files"
+msgstr "%s arquivos"
+
+#: app/src/react/features/posts/PostsCalendar.tsx:222
+msgid "+%d more"
+msgstr "+%d mais"
+
+#: app/src/react/features/orders/OrdersList.tsx:571
+#: app/src/react/features/orders/OrdersList.tsx:576
+msgid "Board view"
+msgstr "Visualização em quadro"
+
+#: app/src/react/features/posts/PostsList.tsx:259
+#: app/src/react/features/posts/PostsList.tsx:260
+msgid "Calendar view"
+msgstr "Visualização em calendário"
+
+#: app/src/react/features/posts/PostsList.tsx:177
+msgid "List"
+msgstr "Lista"
+
+#: app/src/react/features/orders/OrdersBoard.tsx:169
+msgid "Move"
+msgstr "Mover"
+
+#: app/src/react/features/orders/OrdersBoard.tsx:167
+msgid "Move order #%1$s to %2$s?"
+msgstr "Mover o pedido #%1$s para %2$s?"
+
+#: app/src/react/features/orders/OrdersBoard.tsx:127
+msgid "Move order #%s"
+msgstr "Mover o pedido #%s"
+
+#: app/src/react/features/orders/OrdersBoard.tsx:125
+msgid "Move to"
+msgstr "Mover para"
+
+#: app/src/react/features/orders/OrdersBoard.tsx:137
+msgid "No orders here"
+msgstr "Nenhum pedido aqui"
+
+#: app/src/react/features/posts/PostsCalendar.tsx:153
+msgid "Nothing dated in this month."
+msgstr "Nada com data neste mês."
+
+#: app/src/react/features/orders/OrdersBoard.tsx:179
+msgid "Order #%1$s is now %2$s"
+msgstr "O pedido #%1$s agora está %2$s"
+
+#: app/src/react/features/orders/OrdersBoard.tsx:140
+msgid "Showing the newest %d"
+msgstr "Mostrando os %d mais recentes"
+
+#: app/src/react/features/media/MediaOverview.tsx:71
+msgid "Storage"
+msgstr "Armazenamento"
+
+#: app/src/react/features/media/MediaOverview.tsx:79
+msgid "Unused files"
+msgstr "Arquivos sem uso"
+
+#: app/src/react/features/orders/OrdersBoard.tsx:168
+msgid "WooCommerce may email the customer about the new status."
+msgstr "O WooCommerce pode enviar um e-mail ao cliente sobre o novo status."

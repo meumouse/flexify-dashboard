@@ -3,7 +3,7 @@ import { useIsDark } from '@/react/app/ThemeProvider';
 import { cn } from '@/react/lib/cn';
 import { __, sprintf } from '@/react/lib/i18n';
 import { Icon, ProgressBar, Skeleton } from '@/react/ui';
-import { formatBytes } from '@/react/features/media/queries';
+import { formatBytes, type MediaAnalytics } from '@/react/features/media/queries';
 import { CardError, CardLoading, StatRow, compactNumber, useCardQuery, useRange, type CardProps } from '@/react/features/dashboard/cards/shared';
 
 /**
@@ -12,17 +12,6 @@ import { CardError, CardLoading, StatRow, compactNumber, useCardQuery, useRange,
  */
 
 const ReactApexChart = lazy(() => import('react-apexcharts'));
-
-type MediaAnalytics = {
-	total_files?: number;
-	/** Raw bytes; `total_size_formatted` is the one meant to be read */
-	total_size?: number;
-	total_size_formatted?: string;
-	recent_uploads?: number;
-	unused_media?: number;
-	large_files?: number;
-	file_types?: { type: string; count: number }[];
-};
 
 export const MediaAnalyticsCard = () => {
 	const { data, isLoading, isError } = useCardQuery<MediaAnalytics>(['media-analytics'], 'flexify-dashboard/v1/media-analytics');
@@ -52,15 +41,15 @@ export const MediaAnalyticsCard = () => {
 				</div>
 				<div className="flex justify-between gap-4">
 					<dt className="text-gray-500 dark:text-gray-400">{__('Large files')}</dt>
-					<dd className="font-medium text-gray-800 dark:text-white/90">{compactNumber(data.large_files ?? 0)}</dd>
+					<dd className="font-medium text-gray-800 dark:text-white/90">{compactNumber(data.large_files_estimate ?? 0)}</dd>
 				</div>
 			</dl>
 
 			{data.file_types?.length ? (
 				<div className="mt-4 flex flex-wrap gap-2">
 					{data.file_types.map((type) => (
-						<span key={type.type} className="rounded-full bg-gray-100 px-2.5 py-1 text-theme-xs text-gray-600 dark:bg-gray-800 dark:text-gray-400">
-							{type.type} · {compactNumber(type.count)}
+						<span key={type.file_type} className="rounded-full bg-gray-100 px-2.5 py-1 text-theme-xs text-gray-600 dark:bg-gray-800 dark:text-gray-400">
+							{type.file_type} · {compactNumber(Number(type.count))}
 						</span>
 					))}
 				</div>

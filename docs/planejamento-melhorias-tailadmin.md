@@ -443,6 +443,30 @@ Decisões tomadas ao executar:
 | Calendário editorial (posts agendados e rascunhos com data). Arrastar reagenda | calendar | `wp/v2/posts?status=future,draft` | Biblioteca de calendário: avaliar FullCalendar (a do TailAdmin) × montar sobre `DateRangePicker` |
 | Visão geral da mídia: blocos por tipo, uso de espaço, recentes | file-manager | Rota nova de estatística por `post_mime_type` | `ProgressBar`, rosca |
 
+**Feito em 08/10/2026.**
+- **Quadro de pedidos** (`OrdersBoard.tsx`, regras em `board.ts`):
+  - Os pedidos ganharam a visualização "Quadro" ao lado da lista (`?view=board`). São colunas Pagamento pendente, Processando, Aguardando e Concluído, cada uma com os 20 pedidos mais recentes e a mesma busca e filtros da lista.
+  - Arrastar um cartão para outra coluna pede confirmação, porque o WooCommerce pode mandar e-mail ao cliente, e só então muda o status.
+  - Cada cartão também tem um menu "Mover para" com todos os status: é o caminho por teclado e no celular, onde arrastar rola a tela.
+  - Sem `@dnd-kit`: arrastar usa o HTML5 nativo, como a grade do painel já fazia.
+- **Calendário editorial** (`PostsCalendar.tsx`, regras em `calendar.ts`):
+  - A tela de posts ganhou a visualização "Calendário" (para qualquer tipo de post, pelo `rest_base`), que mostra o mês com publicados, agendados, rascunhos e pendentes no seu dia, coloridos por status.
+  - Arrastar um agendado, rascunho ou pendente para outro dia o reagenda no mesmo horário.
+  - Publicados não se movem, porque mudariam o que o leitor já viu e, às vezes, o endereço. Nada vai para o passado, porque um agendado movido para ontem é publicado na hora.
+  - As datas ficam como texto no horário do site, sem fuso, para não andarem com o fuso do navegador.
+  - Abaixo de 768px o mês vira lista de dias.
+  - Sem biblioteca de calendário: a grade vem de `form/dates.ts` (fase 1).
+- **Visão geral da mídia** (`MediaOverview.tsx`):
+  - Blocos por tipo acima da biblioteca, com quantidade e porcentagem de arquivos. Clicar filtra a biblioteca.
+  - Há também um bloco de armazenamento com o total e a fatia sem uso.
+  - Usa a rota que já existia (`media-analytics`), sem rota nova.
+
+**Defeito encontrado no caminho:** o cartão "Biblioteca de mídia" do painel lia `type.type` e `large_files`, mas a rota devolve `file_type` e `large_files_estimate`. No site, as etiquetas por tipo saíam vazias e "arquivos grandes" ficava sempre em 0. O tipo da resposta passou a morar num lugar só (`media/queries.ts`), usado pelo cartão e pela visão geral.
+
+Decisões tomadas ao executar:
+- **Tamanho por tipo não aparece.** A rota soma o tamanho da pasta de uploads inteira. Medir por tipo exigiria ler os metadados de cada anexo a cada visita. A porcentagem mostrada é de arquivos, não de bytes, e o rótulo diz isso.
+- **O quadro não pagina por coluna.** Cada coluna mostra os 20 mais recentes e diz quando há mais. Quem precisa de todos usa a lista, que já tem a aba do status.
+
 **Critério:** cada recurso tem rota, teste da aritmética pura (agrupar por status, mover entre colunas) e verificação nas três larguras.
 
 ### Fase 9 — Acabamento
