@@ -64,6 +64,8 @@ export type StoreData = {
 	payment_gateways: Option[];
 	shipping_methods: Option[];
 	capabilities: Partial<Record<StoreCapability, boolean>>;
+	/** The shop itself, for what goes out with its name on it: a printed order */
+	store?: { name: string; address: string[]; email: string };
 	urls: StoreUrls;
 };
 

@@ -57,6 +57,7 @@ use MeuMouse\Flexify_Dashboard\Rest\SettingsManager;
 use MeuMouse\Flexify_Dashboard\Rest\UserAnalytics;
 use MeuMouse\Flexify_Dashboard\Rest\UserCapabilities;
 use MeuMouse\Flexify_Dashboard\Rest\UserRoles;
+use MeuMouse\Flexify_Dashboard\Rest\UserSessions;
 use MeuMouse\Flexify_Dashboard\Rest\WooCommerceCustomer;
 use MeuMouse\Flexify_Dashboard\Rest\WooCommerceDashboard;
 use MeuMouse\Flexify_Dashboard\Rest\WooCommerceOrders;
@@ -165,6 +166,7 @@ class Plugin {
         new Updater();
         new RestLogout();
         new UserRoles();
+        new UserSessions();
         new UserCapabilities();
         new ServerHealth();
         new MediaAnalytics();

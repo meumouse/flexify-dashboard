@@ -11,6 +11,7 @@ import { OrdersList } from '@/react/features/orders/OrdersList';
  */
 
 const OrderDetails = lazy(() => import('@/react/features/orders/OrderDetails').then((module) => ({ default: module.OrderDetails })));
+const OrderPrint = lazy(() => import('@/react/features/orders/OrderPrint').then((module) => ({ default: module.OrderPrint })));
 const OrderEditor = lazy(() => import('@/react/features/orders/OrderEditor').then((module) => ({ default: module.OrderEditor })));
 
 const Loading = () => (
@@ -29,6 +30,7 @@ export const OrdersApp = () => (
 						<Route path="/new" element={<OrderEditor />} />
 						<Route path="/order/:id" element={<OrderDetails />} />
 						<Route path="/order/:id/edit" element={<OrderEditor />} />
+						<Route path="/order/:id/print" element={<OrderPrint />} />
 						<Route path="*" element={<OrdersList />} />
 					</Routes>
 				</Suspense>

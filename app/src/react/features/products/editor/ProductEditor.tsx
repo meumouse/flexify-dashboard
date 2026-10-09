@@ -674,8 +674,17 @@ export const ProductEditor = () => {
 					<div className="min-w-0 space-y-6 xl:col-span-2">
 						<Card title={__('General')}>
 							<div className="space-y-5">
-								<Input value={form.name} onChange={(event) => set({ name: event.target.value })} label={__('Product name')} error={errors.name} required />
-								{!isNew ? <Input value={form.slug} onChange={(event) => set({ slug: event.target.value })} label={__('Slug')} hint={product?.permalink} /> : null}
+								<div className="grid gap-5 md:grid-cols-2">
+									<Input
+										value={form.name}
+										onChange={(event) => set({ name: event.target.value })}
+										label={__('Product name')}
+										error={errors.name}
+										required
+										className={isNew ? 'md:col-span-2' : undefined}
+									/>
+									{!isNew ? <Input value={form.slug} onChange={(event) => set({ slug: event.target.value })} label={__('Slug')} hint={product?.permalink} /> : null}
+								</div>
 
 								<div>
 									<Tabs

@@ -180,7 +180,7 @@ export const OrderDetails = () => {
 	const actionItems: MenuItem[] = [
 		...(context?.actions ?? []).map((action) => ({ label: action.label, icon: 'bolt', onSelect: () => runAction(action) })),
 		...((context?.actions ?? []).length ? [{ separator: true as const }] : []),
-		{ label: __('Print'), icon: 'print', onSelect: () => window.print() },
+		{ label: __('Print'), icon: 'print', onSelect: () => navigate(`/order/${id}/print`) },
 		{ label: __('Open in classic editor'), icon: 'open_in_new', href: context?.native_edit_url || classicUrl(id) },
 		...(can('delete_shop_orders') && order.status !== 'trash'
 			? [{ separator: true as const }, { label: __('Move to trash'), icon: 'delete', danger: true, onSelect: trashOrder }]

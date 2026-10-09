@@ -8,6 +8,7 @@ import { AppProviders } from '@/react/app/AppProviders';
 import { UsersList } from '@/react/features/users/UsersList';
 import { guessMapping } from '@/react/features/users/ImportUsersModal';
 import { generatePassword } from '@/react/features/users/UserModals';
+import { SecurityCard } from '@/react/features/users/UserSecurity';
 import type { User } from '@/react/features/users/queries';
 import type { WpData } from '@/react/types/wordpress';
 
@@ -151,5 +152,38 @@ describe('users screen', () => {
 
 		await waitFor(() => expect(writes).toHaveLength(1));
 		expect(writes[0].url).toContain('reassign=1');
+	});
+});
+
+describe('security card', () => {
+	it('counts the open sessions and ends them after asking', async () => {
+		const user = userEvent.setup();
+		const requests: { url: string; method: string }[] = [];
+
+		vi.stubGlobal(
+			'fetch',
+			vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+				const url = String(input);
+				const method = init?.method ?? 'GET';
+				requests.push({ url, method });
+
+				const body = method === 'DELETE' ? { count: 0 } : { count: 2, last_login: '2026-10-07T12:00:00Z' };
+
+				return new Response(JSON.stringify(body), { status: 200, headers: { 'Content-Type': 'application/json' } });
+			})
+		);
+
+		render(
+			<AppProviders wpData={wpData}>
+				<SecurityCard user={people[1]} />
+			</AppProviders>
+		);
+
+		expect(await screen.findByText(/2 devices signed in/)).toBeInTheDocument();
+
+		await user.click(screen.getByRole('button', { name: 'Sign out everywhere' }));
+		await user.click(await screen.findByRole('button', { name: 'Sign out everywhere' }));
+
+		await waitFor(() => expect(requests.some((request) => request.method === 'DELETE' && request.url.includes('users/2/sessions'))).toBe(true));
 	});
 });

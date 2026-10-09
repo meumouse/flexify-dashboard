@@ -1,11 +1,12 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
 import { AppProviders } from '@/react/app/AppProviders';
 import { PageShell } from '@/react/app/PageShell';
 import { WooProvider } from '@/react/woo/WooProvider';
 import { OrdersList } from '@/react/features/orders/OrdersList';
+import { OrderPrint } from '@/react/features/orders/OrderPrint';
 import { customerName, formatAddress, itemsCount, safeHtml, totalRefunded } from '@/react/features/orders/orderFormat';
 import type { Address, Order, StoreData } from '@/react/woo/types';
 import type { WpData } from '@/react/types/wordpress';
@@ -198,5 +199,59 @@ describe('OrdersList', () => {
 
 		// A closed overlay left behind would cover the page and swallow every click.
 		await waitFor(() => expect(container.querySelector('#fd-kit-portal')?.children.length).toBe(0));
+	});
+});
+
+describe('OrderPrint', () => {
+	const shop = { name: 'Loja Teste', address: ['Rua das Flores, 10', '01000-000 São Paulo'], email: 'loja@site.test' };
+
+	const renderPrint = () => {
+		vi.stubGlobal(
+			'fetch',
+			vi.fn(async (input: RequestInfo | URL) => {
+				const url = new URL(String(input));
+				const body = /orders\/1200$/.test(url.pathname) ? ORDERS[0] : [];
+
+				return new Response(JSON.stringify(body), { status: 200, headers: { 'Content-Type': 'application/json' } });
+			})
+		);
+
+		render(
+			<AppProviders wpData={{ ...wpData, page: { woocommerce: { ...store, store: shop } } }}>
+				<WooProvider>
+					<MemoryRouter initialEntries={['/order/1200/print']}>
+						<PageShell>
+							<Routes>
+								<Route path="/order/:id/print" element={<OrderPrint />} />
+							</Routes>
+						</PageShell>
+					</MemoryRouter>
+				</WooProvider>
+			</AppProviders>
+		);
+	};
+
+	it('puts the shop, the customer, the items and the total on the sheet', async () => {
+		renderPrint();
+
+		expect(await screen.findByText('Loja Teste')).toBeInTheDocument();
+		expect(screen.getByText('Rua das Flores, 10')).toBeInTheDocument();
+		expect(screen.getByText('Ana Souza')).toBeInTheDocument();
+		expect(screen.getByText('Camiseta')).toBeInTheDocument();
+		expect(screen.getByText('Refunded')).toBeInTheDocument();
+	});
+
+	it('keeps the sheet light while printing in the dark theme', async () => {
+		document.documentElement.classList.add('dark');
+		renderPrint();
+		await screen.findByText('Loja Teste');
+
+		window.dispatchEvent(new Event('beforeprint'));
+		expect(document.documentElement).not.toHaveClass('dark');
+
+		window.dispatchEvent(new Event('afterprint'));
+		expect(document.documentElement).toHaveClass('dark');
+
+		document.documentElement.classList.remove('dark');
 	});
 });

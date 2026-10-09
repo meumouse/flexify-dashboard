@@ -37,6 +37,10 @@
       "%d comment(s) will be moved to the trash.": [
         "%d comentário(s) serão movidos para a lixeira."
       ],
+      "%d device signed in": [
+        "%d dispositivo conectado",
+        "%d dispositivos conectados"
+      ],
       "%d file(s) will be changed. Fields left empty stay as they are.": [
         "%d arquivo(s) serão alterados. Os campos deixados em branco permanecem como estão."
       ],
@@ -330,6 +334,9 @@
       ],
       "Active": [
         "Ativo"
+      ],
+      "Active sessions": [
+        "Sessões ativas"
       ],
       "Active users": [
         "Usuários ativos"
@@ -703,6 +710,9 @@
       "Asked again because this cannot be undone.": [
         "Pedida novamente porque não há como desfazer."
       ],
+      "At least 8 characters.": [
+        "Pelo menos 8 caracteres."
+      ],
       "Attribute created": [
         "Atributo criado"
       ],
@@ -771,6 +781,9 @@
       ],
       "Back": [
         "Voltar"
+      ],
+      "Back to order": [
+        "Voltar ao pedido"
       ],
       "Back to orders": [
         "Voltar para pedidos"
@@ -924,6 +937,9 @@
       ],
       "Change author": [
         "Alterar autor"
+      ],
+      "Change password": [
+        "Alterar senha"
       ],
       "Change status": [
         "Alterar status"
@@ -1183,6 +1199,9 @@
       "Copy code": [
         "Copiar código"
       ],
+      "Copy it now: it is not shown again after saving.": [
+        "Copie agora: ela não aparece de novo depois de salvar."
+      ],
       "Core plugin settings and the licence": [
         "Configurações principais do plugin e a licença"
       ],
@@ -1327,6 +1346,9 @@
       "Customize the text displayed in the WordPress admin area. Enter original words or phrases and their replacements to white-label the admin interface.": [
         "Personalize o texto exibido na área administrativa do WordPress. Insira palavras ou frases originais e suas substituições para personalizar a interface administrativa com a sua marca."
       ],
+      "Danger zone": [
+        "Zona de perigo"
+      ],
       "Dark": [
         "Escuro"
       ],
@@ -1428,6 +1450,12 @@
       ],
       "Delete this table?": [
         "Excluir esta tabela?"
+      ],
+      "Delete this user": [
+        "Excluir este usuário"
+      ],
+      "Delete user": [
+        "Excluir usuário"
       ],
       "Delete value": [
         "Excluir valor"
@@ -2074,6 +2102,9 @@
       "Generate Test Data": [
         "Gerar dados de teste"
       ],
+      "Generate another": [
+        "Gerar outra"
+      ],
       "Generate code": [
         "Gerar código"
       ],
@@ -2416,6 +2447,9 @@
       "Invalid uploaded file.": [
         "Arquivo enviado inválido."
       ],
+      "Invalid user ID.": [
+        "ID de usuário inválido."
+      ],
       "Invalid username or password.": [
         "Nome de usuário ou senha inválidos."
       ],
@@ -2752,6 +2786,9 @@
       "Media library": [
         "Biblioteca de mídia"
       ],
+      "Member since %s": [
+        "Membro desde %s"
+      ],
       "Memory": [
         "Memória"
       ],
@@ -2955,6 +2992,9 @@
       ],
       "New owner": [
         "Novo responsável"
+      ],
+      "New password": [
+        "Nova senha"
       ],
       "New value": [
         "Novo valor"
@@ -3195,6 +3235,9 @@
       ],
       "Not saved yet": [
         "Ainda não salvo"
+      ],
+      "Not signed in anywhere": [
+        "Sem sessão em nenhum lugar"
       ],
       "Note": [
         "Nota"
@@ -3508,6 +3551,9 @@
       "Password": [
         "Senha"
       ],
+      "Password changed": [
+        "Senha alterada"
+      ],
       "Password is required for this operation.": [
         "É necessária uma senha para esta operação."
       ],
@@ -3723,6 +3769,9 @@
       ],
       "Print": [
         "Imprimir"
+      ],
+      "Print order #%s": [
+        "Imprimir pedido #%s"
       ],
       "Private": [
         "Privado"
@@ -4249,6 +4298,9 @@
       "SKU": [
         "SKU"
       ],
+      "SKU: %s": [
+        "SKU: %s"
+      ],
       "SSL": [
         "SSL"
       ],
@@ -4287,6 +4339,9 @@
       ],
       "Save items": [
         "Salvar itens"
+      ],
+      "Save password": [
+        "Salvar senha"
       ],
       "Save the keys": [
         "Salvar as chaves"
@@ -4504,6 +4559,9 @@
       "Set a base color and Flexify Dashboard will automatically create a color scale for you.": [
         "Defina uma cor base e o Flexify Dashboard criará automaticamente uma escala de cores para você."
       ],
+      "Set a new one. The current password stops working at once.": [
+        "Defina uma nova. A senha atual deixa de funcionar na hora."
+      ],
       "Set an alternative logo to use in dark mode. If one isn't set it will fall back to the standard logo.": [
         "Defina um logotipo alternativo para usar no modo escuro. Se nenhum for definido, o logotipo padrão será usado."
       ],
@@ -4615,8 +4673,17 @@
       "Sign in": [
         "Entrar"
       ],
+      "Sign out everywhere": [
+        "Sair de todos os dispositivos"
+      ],
+      "Sign out of every device?": [
+        "Sair de todos os dispositivos?"
+      ],
       "Signed in as": [
         "Conectado como"
+      ],
+      "Signed out of every device": [
+        "Sessões encerradas em todos os dispositivos"
       ],
       "Simple product": [
         "Produto simples"
@@ -4668,6 +4735,9 @@
       ],
       "Something went wrong on this screen": [
         "Algo deu errado nesta tela"
+      ],
+      "Sorry, you are not allowed to manage this user.": [
+        "Você não tem permissão para gerenciar este usuário."
       ],
       "Sort": [
         "Ordenar"
@@ -4990,6 +5060,9 @@
       "The user can change it after signing in.": [
         "O usuário poderá alterá-la depois de entrar."
       ],
+      "Their account goes. You choose who keeps what they wrote.": [
+        "A conta é removida. Você escolhe quem fica com o que a pessoa escreveu."
+      ],
       "Theme": [
         "Tema"
       ],
@@ -5001,6 +5074,9 @@
       ],
       "These are hard to undo.": [
         "Estas são difíceis de desfazer."
+      ],
+      "They will have to sign in again wherever they were.": [
+        "A pessoa vai precisar entrar de novo em todos os lugares."
       ],
       "This SKU is already in use.": [
         "Este SKU já está em uso."
@@ -5028,6 +5104,9 @@
       ],
       "This image could not be opened for editing.": [
         "Não foi possível abrir esta imagem para edição."
+      ],
+      "This includes this browser: you will be taken to the login screen.": [
+        "Isso inclui este navegador: você será levado à tela de login."
       ],
       "This is the administrator role.": [
         "Esta é a função de administrador."
@@ -5449,6 +5528,12 @@
       "User not found": [
         "Usuário não encontrado"
       ],
+      "User profile": [
+        "Perfil do usuário"
+      ],
+      "User sections": [
+        "Seções do usuário"
+      ],
       "User updated": [
         "Usuário atualizado"
       ],
@@ -5805,6 +5890,9 @@
       ],
       "in %d day(s)": [
         "em %d dia(s)"
+      ],
+      "latest %s": [
+        "último em %s"
       ],
       "missing": [
         "ausente"

@@ -9017,3 +9017,123 @@ msgstr "Tipo: %s"
 #: app/src/react/features/products/ProductsList.tsx:422
 msgid "Up to %s"
 msgstr "Até %s"
+
+#: app/src/react/features/users/UserSecurity.tsx:105
+msgid "%d device signed in"
+msgid_plural "%d devices signed in"
+msgstr[0] "%d dispositivo conectado"
+msgstr[1] "%d dispositivos conectados"
+
+#: app/src/react/features/users/UserSecurity.tsx:100
+msgid "Active sessions"
+msgstr "Sessões ativas"
+
+#: app/src/react/features/users/UserSecurity.tsx:145
+msgid "At least 8 characters."
+msgstr "Pelo menos 8 caracteres."
+
+#: app/src/react/features/orders/OrderPrint.tsx:110
+msgid "Back to order"
+msgstr "Voltar ao pedido"
+
+#: app/src/react/features/users/UserSecurity.tsx:95
+#: app/src/react/features/users/UserSecurity.tsx:124
+msgid "Change password"
+msgstr "Alterar senha"
+
+#: app/src/react/features/users/UserSecurity.tsx:125
+msgid "Copy it now: it is not shown again after saving."
+msgstr "Copie agora: ela não aparece de novo depois de salvar."
+
+#: app/src/react/features/users/UserSecurity.tsx:156
+msgid "Danger zone"
+msgstr "Zona de perigo"
+
+#: app/src/react/features/users/UserSecurity.tsx:158
+msgid "Delete this user"
+msgstr "Excluir este usuário"
+
+#: app/src/react/features/users/UserSecurity.tsx:162
+msgid "Delete user"
+msgstr "Excluir usuário"
+
+#: app/src/react/features/users/UserSecurity.tsx:147
+msgid "Generate another"
+msgstr "Gerar outra"
+
+#: admin/src/Rest/UserSessions.php:109
+msgid "Invalid user ID."
+msgstr "ID de usuário inválido."
+
+#: app/src/react/features/users/UserSecurity.tsx:105
+msgid "latest %s"
+msgstr "último em %s"
+
+#: app/src/react/features/users/UserDetails.tsx:78
+msgid "Member since %s"
+msgstr "Membro desde %s"
+
+#: app/src/react/features/users/UserSecurity.tsx:139
+msgid "New password"
+msgstr "Nova senha"
+
+#: app/src/react/features/users/UserSecurity.tsx:106
+msgid "Not signed in anywhere"
+msgstr "Sem sessão em nenhum lugar"
+
+#: app/src/react/features/users/UserSecurity.tsx:82
+msgid "Password changed"
+msgstr "Senha alterada"
+
+#: app/src/react/features/orders/OrderPrint.tsx:101
+msgid "Print order #%s"
+msgstr "Imprimir pedido #%s"
+
+#: app/src/react/features/users/UserSecurity.tsx:132
+msgid "Save password"
+msgstr "Salvar senha"
+
+#: app/src/react/features/users/UserSecurity.tsx:92
+msgid "Set a new one. The current password stops working at once."
+msgstr "Defina uma nova. A senha atual deixa de funcionar na hora."
+
+#: app/src/react/features/users/UserSecurity.tsx:67
+#: app/src/react/features/users/UserSecurity.tsx:113
+msgid "Sign out everywhere"
+msgstr "Sair de todos os dispositivos"
+
+#: app/src/react/features/users/UserSecurity.tsx:65
+msgid "Sign out of every device?"
+msgstr "Sair de todos os dispositivos?"
+
+#: app/src/react/features/users/UserSecurity.tsx:57
+msgid "Signed out of every device"
+msgstr "Sessões encerradas em todos os dispositivos"
+
+#: app/src/react/features/orders/OrderPrint.tsx:169
+msgid "SKU: %s"
+msgstr "SKU: %s"
+
+#: admin/src/Rest/UserSessions.php:113
+msgid "Sorry, you are not allowed to manage this user."
+msgstr "Você não tem permissão para gerenciar este usuário."
+
+#: app/src/react/features/users/UserSecurity.tsx:159
+msgid "Their account goes. You choose who keeps what they wrote."
+msgstr "A conta é removida. Você escolhe quem fica com o que a pessoa escreveu."
+
+#: app/src/react/features/users/UserSecurity.tsx:66
+msgid "They will have to sign in again wherever they were."
+msgstr "A pessoa vai precisar entrar de novo em todos os lugares."
+
+#: app/src/react/features/users/UserSecurity.tsx:66
+msgid "This includes this browser: you will be taken to the login screen."
+msgstr "Isso inclui este navegador: você será levado à tela de login."
+
+#: app/src/react/features/users/UserDetails.tsx:57
+msgid "User profile"
+msgstr "Perfil do usuário"
+
+#: app/src/react/features/users/UserDetails.tsx:93
+msgid "User sections"
+msgstr "Seções do usuário"

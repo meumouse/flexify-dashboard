@@ -281,6 +281,24 @@ Decisões tomadas ao executar:
    - cartão **Zona de perigo** (excluir, com `useConfirm`).
 4. **Produto** (editor): seções em cartões com título, como em add-product (Descrição, Preço e estoque, Imagens), e campos em grade de 2 colunas a partir de 768px.
 
+**Feito em 08/10/2026.**
+- **Impressão do pedido:** rota `/order/:id/print` (`OrderPrint.tsx`).
+  - A folha tem De/Para, itens, totais, pagamento, envio e nota do cliente.
+  - As regras de `@media print` escondem a casca pela visibilidade.
+  - O tema escuro sai durante a impressão e volta depois.
+  - "Imprimir" no menu do pedido abre essa rota em vez de imprimir a tela inteira.
+  - O nome, o endereço e o e-mail da loja vêm de um campo novo, `store`, nos dados do WooCommerce (`WooCommerce::get_store_address()`). O endereço segue o formato do país-base.
+- **Usuário:**
+  - A página ganhou um cartão de apresentação (avatar, nome, e-mail, login, membro desde, funções).
+  - Ganhou também o cartão **Segurança**, com troca de senha (gera uma e mostra antes de salvar) e sessões ativas ("Sair de todos os dispositivos"). As sessões vêm de uma rota nova, `flexify-dashboard/v1/users/{id}/sessions` (`Rest/UserSessions.php`, GET e DELETE, com `edit_user` sobre o id). O núcleo só oferece isso por admin-ajax.
+  - "Excluir" saiu do cabeçalho e foi para a **Zona de perigo**.
+- **Produto:** nome e slug ficam lado a lado a partir de 768px. O resto do editor já era um cartão por seção com grade de 2 colunas, como no add-product.
+
+Decisões tomadas ao executar:
+- **A linha do tempo do pedido continua com ícone por tipo de nota** (cliente, privada, sistema), que já existia. Separar as notas de sistema em "pago", "e-mail enviado" e outras exigiria ler o texto que o WooCommerce traduz, e isso quebra no primeiro idioma diferente.
+- **O perfil continua editável na própria página, sem o modal "Editar" do TailAdmin.** A tela de usuário serve para editar, e um modal poria um clique a mais em cada mudança. O aviso de alterações não salvas já existia.
+- **O pedido manteve o cabeçalho.** A faixa do TailAdmin (ID, status, data e ações) já é o que o `PageHeader` desta tela mostra.
+
 **Critério:**
 - As três telas seguem a grade em 1440px e empilham em 375px.
 - A impressão de um pedido real cabe em uma página A4 com até 10 itens.

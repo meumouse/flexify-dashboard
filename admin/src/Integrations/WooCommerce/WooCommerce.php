@@ -299,6 +299,11 @@ class WooCommerce {
 				'delete_shop_orders' => current_user_can( 'delete_shop_orders' ),
 				'manage_woocommerce' => current_user_can( 'manage_woocommerce' ),
 			),
+			'store' => array(
+				'name' => wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ),
+				'address' => self::get_store_address(),
+				'email' => sanitize_email( get_option( 'woocommerce_email_from_address', get_option( 'admin_email' ) ) ),
+			),
 			'urls' => array(
 				'products' => admin_url( 'edit.php?post_type=product' ),
 				'classic_products' => admin_url( 'edit.php?post_type=product&fd_classic=1' ),
@@ -324,6 +329,38 @@ class WooCommerce {
 		 * @param array $data Store data.
 		 */
 		return apply_filters( 'flexify-dashboard/woocommerce/js-data', $data );
+	}
+
+
+	/**
+	 * The store's own address, one line per entry, in the order the base country writes it.
+	 *
+	 * A printed order needs the shop on it, and WooCommerce already knows how each country lays
+	 * an address out; splitting its formatted version keeps that order instead of guessing one.
+	 *
+	 * @since 4.2.0
+	 * @return array
+	 */
+	private static function get_store_address() {
+		$countries = WC()->countries;
+
+		if ( ! $countries ) {
+			return array();
+		}
+
+		$formatted = $countries->get_formatted_address( array(
+			'company' => '',
+			'address_1' => $countries->get_base_address(),
+			'address_2' => $countries->get_base_address_2(),
+			'city' => $countries->get_base_city(),
+			'state' => $countries->get_base_state(),
+			'postcode' => $countries->get_base_postcode(),
+			'country' => $countries->get_base_country(),
+		) );
+
+		$lines = array_map( 'wp_strip_all_tags', explode( '<br/>', (string) $formatted ) );
+
+		return array_values( array_filter( array_map( 'trim', $lines ) ) );
 	}
 
 
