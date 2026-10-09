@@ -101,9 +101,10 @@ describe('plugins screen', () => {
 		stubFetch();
 		renderList();
 
-		expect(await screen.findByRole('tab', { name: 'Installed (2)' })).toBeInTheDocument();
-		expect(screen.getByRole('tab', { name: 'Active (1)' })).toBeInTheDocument();
-		expect(screen.getByRole('tab', { name: 'Updates (1)' })).toBeInTheDocument();
+		// The count is its own element inside the tab, so the name reads "Installed2".
+		expect(await screen.findByRole('tab', { name: /^Installed\s*2$/ })).toBeInTheDocument();
+		expect(screen.getByRole('tab', { name: /^Active\s*1$/ })).toBeInTheDocument();
+		expect(screen.getByRole('tab', { name: /^Updates\s*1$/ })).toBeInTheDocument();
 	});
 
 	it('deactivates the plugin that is on', async () => {

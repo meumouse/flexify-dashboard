@@ -8,7 +8,6 @@ import {
 	Avatar,
 	Badge,
 	Button,
-	Card,
 	DataTable,
 	DropdownMenu,
 	Icon,
@@ -17,8 +16,10 @@ import {
 	SearchInput,
 	Select,
 	StatStrip,
+	TableCard,
 	Tabs,
 	Tooltip,
+	type ActiveFilter,
 	type Column,
 	type MenuItem,
 	type RowKey,
@@ -85,7 +86,6 @@ export const OrdersList = () => {
 	const { filters, setFilters } = useQueryFilters(DEFAULT_FILTERS);
 	const [selected, setSelected] = useState<RowKey[]>([]);
 	const [preview, setPreview] = useState<{ open: boolean; order: Order | null }>({ open: false, order: null });
-	const [showMoreFilters, setShowMoreFilters] = useState(Boolean(filters.payment_method || filters.created_via || filters.origin));
 	const [seenTotal, setSeenTotal] = useState<number | null>(null);
 
 	const periodDays = Number(filters.period) || 30;
@@ -459,6 +459,30 @@ export const OrdersList = () => {
 		{ value: 'pos', label: __('Point of sale') },
 	];
 
+	const labelOf = (options: { value: string; label: string }[], value: string) => options.find((option) => option.value === value)?.label ?? value;
+
+	const activeFilters: ActiveFilter[] = [
+		...(filters.date ? [{ key: 'date', label: labelOf(dateOptions, filters.date), onRemove: () => applyFilters({ date: '' }) }] : []),
+		...(filters.payment_method
+			? [{ key: 'payment', label: sprintf(__('Payment: %s'), labelOf(paymentOptions, filters.payment_method)), onRemove: () => applyFilters({ payment_method: '' }) }]
+			: []),
+		...(filters.created_via
+			? [{ key: 'channel', label: sprintf(__('Channel: %s'), labelOf(createdViaOptions, filters.created_via)), onRemove: () => applyFilters({ created_via: '' }) }]
+			: []),
+		...(filters.origin ? [{ key: 'origin', label: sprintf(__('Origin: %s'), labelOf(originOptions, filters.origin)), onRemove: () => applyFilters({ origin: '' }) }] : []),
+		...(filters.customer
+			? [
+					{
+						key: 'customer',
+						label: sprintf(__('Customer: %s'), filters.customer_name || `#${filters.customer}`),
+						onRemove: () => applyFilters({ customer: '', customer_name: '' }),
+					},
+				]
+			: []),
+	];
+
+	const clearFilters = () => applyFilters({ ...DEFAULT_FILTERS, search: filters.search, status: filters.status, period: filters.period, per_page: filters.per_page });
+
 	return (
 		<div>
 			<PageHeader
@@ -497,8 +521,7 @@ export const OrdersList = () => {
 
 			<StatStrip className="mb-6" items={statItems} loading={summaryQuery.isLoading} onSelect={selectStat} />
 
-			<Card
-				padding="none"
+			<TableCard
 				footer={
 					<Pagination
 						page={filters.page}
@@ -509,105 +532,49 @@ export const OrdersList = () => {
 						disabled={orders.isFetching}
 					/>
 				}
-			>
-				<div className="px-5 pt-2 sm:px-6">
-					<Tabs value={filters.status} onChange={(status) => applyFilters({ status })} items={statusTabs} ariaLabel={__('Order status')} />
-				</div>
-
-				<div className="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:flex-row sm:flex-wrap sm:items-center sm:px-6">
-					<SearchInput value={filters.search} onChange={(search) => applyFilters({ search })} className="w-full sm:w-80" placeholder={__('Search order, customer or email')} />
-					<div className="flex flex-wrap items-center gap-2 sm:contents">
-						<Select
-							value={filters.date}
-							onChange={(next) => applyFilters({ date: next })}
-							options={dateOptions}
-							placeholder={__('Any date')}
-							className="min-w-0 flex-1 sm:w-48 sm:flex-none"
-							aria-label={__('Date')}
-						/>
-						<Button variant="outline" icon="filter_alt" aria-expanded={showMoreFilters} onClick={() => setShowMoreFilters((current) => !current)}>
-							{__('Filters')}
-						</Button>
-						<div className="flex items-center gap-2 sm:ms-auto">
-							{hasActiveFilters ? (
-								<Button
-									variant="ghost"
-									icon="close"
-									onClick={() => applyFilters({ ...DEFAULT_FILTERS, status: filters.status, period: filters.period, per_page: filters.per_page })}
-								>
-									{__('Clear filters')}
-								</Button>
-							) : null}
-							<Tooltip text={__('Refresh')}>
-								<Button variant="outline" icon="refresh" iconOnly aria-label={__('Refresh')} onClick={refresh} />
-							</Tooltip>
-						</div>
-					</div>
-				</div>
-
-				{showMoreFilters || filters.customer ? (
-					<div className="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:flex-row sm:flex-wrap sm:items-center sm:px-6">
-						{showMoreFilters ? (
-							<>
-								{paymentOptions.length ? (
-									<Select
-										value={filters.payment_method}
-										onChange={(next) => applyFilters({ payment_method: next })}
-										options={paymentOptions}
-										placeholder={__('Any payment method')}
-										className="sm:w-52"
-										aria-label={__('Payment method')}
-									/>
-								) : null}
-								<Select
-									value={filters.created_via}
-									onChange={(next) => applyFilters({ created_via: next })}
-									options={createdViaOptions}
-									placeholder={__('Any channel')}
-									className="sm:w-48"
-									aria-label={__('Channel')}
-								/>
-								<Select
-									value={filters.origin}
-									onChange={(next) => applyFilters({ origin: next })}
-									options={originOptions}
-									placeholder={__('Any origin')}
-									className="sm:w-44"
-									aria-label={__('Origin')}
-								/>
-							</>
+				tabs={<Tabs value={filters.status} onChange={(status) => applyFilters({ status })} items={statusTabs} ariaLabel={__('Order status')} />}
+				search={<SearchInput value={filters.search} onChange={(search) => applyFilters({ search })} placeholder={__('Search order, customer or email')} aria-label={__('Search orders')} />}
+				filters={
+					<>
+						<Select label={__('Date')} value={filters.date} onChange={(next) => applyFilters({ date: next })} options={dateOptions} placeholder={__('Any date')} />
+						{paymentOptions.length ? (
+							<Select
+								label={__('Payment method')}
+								value={filters.payment_method}
+								onChange={(next) => applyFilters({ payment_method: next })}
+								options={paymentOptions}
+								placeholder={__('Any payment method')}
+							/>
 						) : null}
-						{filters.customer ? (
-							<span className="inline-flex items-center gap-1.5 self-start rounded-full bg-brand-50 py-1 ps-3 pe-1.5 text-theme-sm text-brand-600 dark:bg-brand-500/15 dark:text-brand-400 sm:self-auto">
-								{sprintf(__('Customer: %s'), filters.customer_name || `#${filters.customer}`)}
-								<button
-									type="button"
-									className="rounded-full p-0.5 hover:bg-brand-100 dark:hover:bg-brand-500/20"
-									aria-label={__('Remove customer filter')}
-									onClick={() => applyFilters({ customer: '', customer_name: '' })}
-								>
-									<Icon name="close" className="text-theme-sm" />
-								</button>
+						<Select label={__('Channel')} value={filters.created_via} onChange={(next) => applyFilters({ created_via: next })} options={createdViaOptions} placeholder={__('Any channel')} />
+						<Select label={__('Origin')} value={filters.origin} onChange={(next) => applyFilters({ origin: next })} options={originOptions} placeholder={__('Any origin')} />
+					</>
+				}
+				activeFilters={activeFilters}
+				onClearFilters={clearFilters}
+				busy={orders.isFetching && !orders.isLoading}
+				tools={
+					<Tooltip text={__('Refresh')}>
+						<Button variant="outline" icon="refresh" iconOnly aria-label={__('Refresh')} onClick={refresh} />
+					</Tooltip>
+				}
+				notice={
+					newOrders ? (
+						<div
+							className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-100 bg-brand-50 px-5 py-3 text-theme-sm text-brand-700 dark:border-brand-500/20 dark:bg-brand-500/10 dark:text-brand-300 sm:px-6"
+							role="status"
+						>
+							<span className="flex items-center gap-2">
+								<Icon name="notifications" className="text-theme-lg" />
+								{sprintf(__('%d new order(s) received'), newOrders)}
 							</span>
-						) : null}
-					</div>
-				) : null}
-
-				{newOrders ? (
-					<div
-						className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-100 bg-brand-50 px-5 py-3 text-theme-sm text-brand-700 dark:border-brand-500/20 dark:bg-brand-500/10 dark:text-brand-300 sm:px-6"
-						role="status"
-					>
-						<span className="flex items-center gap-2">
-							<Icon name="notifications" className="text-theme-lg" />
-							{sprintf(__('%d new order(s) received'), newOrders)}
-						</span>
-						<Button size="xs" onClick={showNewOrders}>
-							{__('Show new orders')}
-						</Button>
-					</div>
-				) : null}
-
+							<Button size="xs" onClick={showNewOrders}>
+								{__('Show new orders')}
+							</Button>
+						</div>
+					) : null
+				}
+			>
 				<DataTable
 					columns={columns}
 					rows={rows}
@@ -658,7 +625,7 @@ export const OrdersList = () => {
 						)
 					}
 				/>
-			</Card>
+			</TableCard>
 
 			<OrderPreview
 				open={preview.open}

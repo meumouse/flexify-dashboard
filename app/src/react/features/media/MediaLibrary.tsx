@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useConfirm } from '@/react/app/ConfirmProvider';
 import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Button, Card, Icon, Modal, PageHeader, ProgressBar, SearchInput, Select, Spinner, Switch, Tabs, useFilePicker, type TabItem } from '@/react/ui';
+import { Button, Field, Icon, Modal, PageHeader, ProgressBar, SearchInput, Select, Spinner, Switch, TableCard, Tabs, Tooltip, useFilePicker, type ActiveFilter, type TabItem } from '@/react/ui';
 import { EntityPicker } from '@/react/data/EntityPicker';
 import { MediaGrid } from '@/react/features/media/MediaGrid';
 import { MediaBulkEdit } from '@/react/features/media/MediaBulkEdit';
@@ -146,7 +146,20 @@ export const MediaLibrary = () => {
 		}
 	};
 
-	const activeFilters = [query.type !== 'all', Boolean(query.after), query.unused, query.tags.length > 0].filter(Boolean).length;
+	const sinceOptions = [
+		{ value: 'all', label: __('Any date') },
+		{ value: 'today', label: __('Today') },
+		{ value: 'week', label: __('Last 7 days') },
+		{ value: 'month', label: __('Last 30 days') },
+		{ value: 'year', label: __('Last year') },
+	];
+
+	// The type is a tab, not a filter, so it stays put when the filters are cleared.
+	const activeFilters: ActiveFilter[] = [
+		...(filters.since !== 'all' ? [{ key: 'since', label: sinceOptions.find((option) => option.value === filters.since)?.label ?? '', onRemove: () => apply({ since: 'all' }) }] : []),
+		...(query.tags.length ? [{ key: 'tags', label: sprintf(__('Tags: %d'), query.tags.length), onRemove: () => apply({ tags: '' }) }] : []),
+		...(query.unused ? [{ key: 'unused', label: __('Unused only'), onRemove: () => apply({ unused: '' }) }] : []),
+	];
 
 	return (
 		<div
@@ -170,96 +183,72 @@ export const MediaLibrary = () => {
 				title={__('Media')}
 				description={sprintf(__('%s file(s)'), String(total))}
 				actions={
-					<>
-						<Button
-							variant="outline"
-							size="sm"
-							iconOnly
-							icon={view === 'grid' ? 'view_list' : 'grid_view'}
-							onClick={() => setFilters({ view: view === 'grid' ? 'list' : 'grid' })}
-							aria-label={view === 'grid' ? __('List view') : __('Grid view')}
-						/>
-						<Button icon="upload" loading={upload.isPending} onClick={filePicker.open}>
-							{__('Upload')}
-						</Button>
-					</>
+					<Button icon="upload" loading={upload.isPending} onClick={filePicker.open}>
+						{__('Upload')}
+					</Button>
 				}
 			/>
 
 			{filePicker.picker}
 
-			<Tabs items={TYPES} value={query.type} onChange={(type) => apply({ type })} className="mb-5" />
-
-			<Card className="mb-5 p-4">
-				<div className="flex flex-wrap items-center gap-3">
-					<SearchInput
-						value={String(filters.search)}
-						onChange={(search) => apply({ search })}
-						placeholder={__('Search the library')}
-						aria-label={__('Search the library')}
-						className="w-full sm:w-64"
-					/>
-
-					<Select
-						size="sm"
-						value={String(filters.since)}
-						options={[
-							{ value: 'all', label: __('Any date') },
-							{ value: 'today', label: __('Today') },
-							{ value: 'week', label: __('Last 7 days') },
-							{ value: 'month', label: __('Last 30 days') },
-							{ value: 'year', label: __('Last year') },
-						]}
-						onChange={(next) => apply({ since: next })}
-						aria-label={__('Date')}
-					/>
-
-					<Select
-						size="sm"
-						value={`${filters.orderby}:${filters.order}`}
-						options={[
-							{ value: 'date:desc', label: __('Newest first') },
-							{ value: 'date:asc', label: __('Oldest first') },
-							{ value: 'title:asc', label: __('Name A–Z') },
-							{ value: 'title:desc', label: __('Name Z–A') },
-						]}
-						onChange={(next) => {
-							const [orderby, order] = next.split(':');
-							apply({ orderby, order });
-						}}
-						aria-label={__('Sort')}
-					/>
-
-					<div className="w-full sm:w-56">
-						<EntityPicker
-							endpoint="flexify-dashboard/v1/media/tags"
-							toItem={(record) => ({ id: Number(record.id), label: String(record.name ?? '') })}
-							value={query.tags}
-							onChange={(tags) => apply({ tags: tags.join(',') })}
-							placeholder={__('Any tag')}
+			<TableCard
+				tabs={<Tabs items={TYPES} value={query.type} onChange={(type) => apply({ type })} ariaLabel={__('File type')} />}
+				search={<SearchInput value={String(filters.search)} onChange={(search) => apply({ search })} placeholder={__('Search the library')} aria-label={__('Search the library')} />}
+				filters={
+					<>
+						<Select label={__('Uploaded')} value={String(filters.since)} options={sinceOptions} onChange={(next) => apply({ since: next })} />
+						<Field label={__('Tags')}>
+							<EntityPicker
+								endpoint="flexify-dashboard/v1/media/tags"
+								toItem={(record) => ({ id: Number(record.id), label: String(record.name ?? '') })}
+								value={query.tags}
+								onChange={(tags) => apply({ tags: tags.join(',') })}
+								placeholder={__('Any tag')}
+							/>
+						</Field>
+						<Switch checked={query.unused} onCheckedChange={(unused) => apply({ unused: unused ? '1' : '' })} label={__('Unused only')} />
+						<Select
+							label={__('Sort')}
+							value={`${filters.orderby}:${filters.order}`}
+							options={[
+								{ value: 'date:desc', label: __('Newest first') },
+								{ value: 'date:asc', label: __('Oldest first') },
+								{ value: 'title:asc', label: __('Name A–Z') },
+								{ value: 'title:desc', label: __('Name Z–A') },
+							]}
+							onChange={(next) => {
+								const [orderby, order] = next.split(':');
+								apply({ orderby, order });
+							}}
 						/>
-					</div>
-
-					<Switch checked={query.unused} onCheckedChange={(unused) => apply({ unused: unused ? '1' : '' })} label={__('Unused only')} size="sm" />
-
-					{activeFilters ? (
-						<Button variant="ghost" size="sm" icon="close" onClick={() => apply({ type: 'all', since: 'all', unused: '', tags: '' })}>
-							{__('Clear filters')}
-						</Button>
-					) : null}
-
-					{library.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
+					</>
+				}
+				activeFilters={activeFilters}
+				onClearFilters={() => apply({ since: 'all', unused: '', tags: '' })}
+				busy={library.isFetching}
+				tools={
+					<Tooltip text={view === 'grid' ? __('List view') : __('Grid view')}>
+						<Button
+							variant="outline"
+							iconOnly
+							icon={view === 'grid' ? 'view_list' : 'grid_view'}
+							onClick={() => setFilters({ view: view === 'grid' ? 'list' : 'grid' })}
+							aria-label={view === 'grid' ? __('List view') : __('Grid view')}
+						/>
+					</Tooltip>
+				}
+			>
+				<div className="p-4 sm:p-5">
+					<MediaGrid
+						items={items}
+						view={view}
+						selected={selected}
+						onSelect={(id, checked) => setSelected((current) => (checked ? [...current, id] : current.filter((item) => item !== id)))}
+						onOpen={(item) => navigate(`/file/${item.id}`)}
+						loading={library.isLoading}
+					/>
 				</div>
-			</Card>
-
-			<MediaGrid
-				items={items}
-				view={view}
-				selected={selected}
-				onSelect={(id, checked) => setSelected((current) => (checked ? [...current, id] : current.filter((item) => item !== id)))}
-				onOpen={(item) => navigate(`/file/${item.id}`)}
-				loading={library.isLoading}
-			/>
+			</TableCard>
 
 			<div ref={sentinel} className="h-10" />
 

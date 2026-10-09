@@ -5,7 +5,7 @@ import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { cn } from '@/react/lib/cn';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Avatar, Button, Card, DataTable, Icon, PageHeader, Pagination, SearchInput, Tabs, type Column, type RowKey, type TabItem } from '@/react/ui';
+import { Avatar, Button, DataTable, PageHeader, Pagination, SearchInput, TableCard, Tabs, type Column, type RowKey, type TabItem } from '@/react/ui';
 import { STATUS_LABELS, postOf, useCommentCounts, useCommentMutations, useComments, type Comment } from '@/react/features/comments/queries';
 
 /**
@@ -145,20 +145,12 @@ export const CommentsList = () => {
 		<>
 			<PageHeader title={__('Comments')} description={sprintf(__('%s comment(s)'), String(total))} />
 
-			<Tabs items={tabs} value={params.status} onChange={(status) => apply({ status })} className="mb-5" />
-
-			<Card className="p-0">
-				<div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 p-4 dark:border-gray-800">
-					<SearchInput
-						value={String(filters.search)}
-						onChange={(search) => apply({ search })}
-						placeholder={__('Search comments')}
-						aria-label={__('Search comments')}
-						className="w-full sm:w-72"
-					/>
-
-					{comments.isFetching ? <Icon name="progress_activity" className="animate-spin text-theme-md text-gray-400" /> : null}
-				</div>
+			<TableCard
+				tabs={<Tabs items={tabs} value={params.status} onChange={(status) => apply({ status })} ariaLabel={__('Comment status')} />}
+				search={<SearchInput value={String(filters.search)} onChange={(search) => apply({ search })} placeholder={__('Search comments')} aria-label={__('Search comments')} />}
+				busy={comments.isFetching}
+				footer={<Pagination page={params.page} perPage={params.per_page} total={total} onPageChange={(page) => setFilters({ page })} />}
+			>
 
 				<DataTable
 					columns={columns}
@@ -191,11 +183,7 @@ export const CommentsList = () => {
 						</>
 					)}
 				/>
-
-				<div className="flex flex-wrap items-center justify-end gap-3 border-t border-gray-100 p-4 dark:border-gray-800">
-					<Pagination page={params.page} perPage={params.per_page} total={total} onPageChange={(page) => setFilters({ page })} />
-				</div>
-			</Card>
+			</TableCard>
 		</>
 	);
 };

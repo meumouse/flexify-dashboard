@@ -8932,3 +8932,88 @@ msgstr "Aviso com ação"
 #: app/src/react/features/design-system/Showcase.tsx:281
 msgid "Upload and progress"
 msgstr "Envio e progresso"
+
+#: app/src/react/features/activity/ActivityList.tsx:81
+msgid "Action: %s"
+msgstr "Ação: %s"
+
+#: app/src/react/features/products/ProductsList.tsx:413
+msgid "Category: %s"
+msgstr "Categoria: %s"
+
+#: app/src/react/features/orders/OrdersList.tsx:470
+msgid "Channel: %s"
+msgstr "Canal: %s"
+
+#: app/src/react/data/TableCard.tsx:82
+msgid "Clear all"
+msgstr "Limpar tudo"
+
+#: app/src/react/features/comments/CommentsList.tsx:149
+msgid "Comment status"
+msgstr "Status do comentário"
+
+#: app/src/react/data/FilterPopover.tsx:27
+msgid "Filters (%d)"
+msgstr "Filtros (%d)"
+
+#: app/src/react/features/products/ProductsList.tsx:421
+msgid "From %s"
+msgstr "A partir de %s"
+
+#: app/src/react/features/orders/OrdersList.tsx:472
+msgid "Origin: %s"
+msgstr "Origem: %s"
+
+#: app/src/react/features/orders/OrdersList.tsx:467
+msgid "Payment: %s"
+msgstr "Pagamento: %s"
+
+#: app/src/react/features/activity/ActivityList.tsx:186
+msgid "Person"
+msgstr "Pessoa"
+
+#: app/src/react/features/activity/ActivityList.tsx:83
+msgid "Person: %s"
+msgstr "Pessoa: %s"
+
+#: app/src/react/data/TableCard.tsx:73
+msgid "Remove filter"
+msgstr "Remover filtro"
+
+#: app/src/react/features/users/UsersList.tsx:183
+msgid "Role: %s"
+msgstr "Função: %s"
+
+#: app/src/react/features/orders/OrdersList.tsx:536
+msgid "Search orders"
+msgstr "Buscar pedidos"
+
+#: app/src/react/data/FilterPopover.tsx:61
+msgid "Show results"
+msgstr "Ver resultados"
+
+#: app/src/react/features/products/ProductsList.tsx:416
+msgid "Stock: %s"
+msgstr "Estoque: %s"
+
+#: app/src/react/features/products/ProductsList.tsx:500
+msgid "Tag"
+msgstr "Tag"
+
+#: app/src/react/features/products/ProductsList.tsx:420
+msgid "Tag: %s"
+msgstr "Tag: %s"
+
+#: app/src/react/features/media/MediaLibrary.tsx:160
+msgid "Tags: %d"
+msgstr "Tags: %d"
+
+#: app/src/react/features/activity/ActivityList.tsx:82
+#: app/src/react/features/products/ProductsList.tsx:414
+msgid "Type: %s"
+msgstr "Tipo: %s"
+
+#: app/src/react/features/products/ProductsList.tsx:422
+msgid "Up to %s"
+msgstr "Até %s"

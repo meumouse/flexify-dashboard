@@ -21,6 +21,7 @@ import {
 	ProgressBar,
 	SearchInput,
 	Switch,
+	TableCard,
 	Tabs,
 	pageList,
 	recentPresets,
@@ -502,5 +503,46 @@ describe('Toast action', () => {
 
 		expect(undo).toHaveBeenCalledTimes(1);
 		await waitFor(() => expect(screen.queryByText('Movido para a lixeira')).not.toBeInTheDocument());
+	});
+});
+
+describe('TableCard', () => {
+	it('counts the filters in effect and removes them from their chips', async () => {
+		const user = userEvent.setup();
+		const removeRole = vi.fn();
+		const clear = vi.fn();
+
+		renderKit(
+			<TableCard
+				search={<SearchInput value="" onChange={() => {}} aria-label="Buscar" />}
+				filters={<span>{'Campos do filtro'}</span>}
+				activeFilters={[
+					{ key: 'role', label: 'Papel: Cliente', onRemove: removeRole },
+					{ key: 'date', label: 'Últimos 7 dias', onRemove: () => {} },
+				]}
+				onClearFilters={clear}
+			>
+				<p>{'Linhas'}</p>
+			</TableCard>
+		);
+
+		await user.click(screen.getByRole('button', { name: 'Remove filter: Papel: Cliente' }));
+		expect(removeRole).toHaveBeenCalledTimes(1);
+
+		await user.click(screen.getByRole('button', { name: 'Clear all' }));
+		expect(clear).toHaveBeenCalledTimes(1);
+
+		await user.click(screen.getByRole('button', { name: 'Filters (2)' }));
+		expect(await screen.findByText('Campos do filtro')).toBeInTheDocument();
+	});
+
+	it('leaves the filter button out when the list has no filters', () => {
+		renderKit(
+			<TableCard search={<SearchInput value="" onChange={() => {}} aria-label="Buscar" />}>
+				<p>{'Linhas'}</p>
+			</TableCard>
+		);
+
+		expect(screen.queryByRole('button', { name: /^Filters/ })).not.toBeInTheDocument();
 	});
 });

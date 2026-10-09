@@ -48,7 +48,7 @@ type Props = {
 	'aria-label'?: string;
 };
 
-const rangeText = (range: DayRange): string => {
+export const rangeText = (range: DayRange): string => {
 	const formatter = dayFormat as Intl.DateTimeFormat & { formatRange?: (from: Date, to: Date) => string };
 
 	if (sameDay(range.from, range.to)) {
@@ -56,6 +56,14 @@ const rangeText = (range: DayRange): string => {
 	}
 
 	return formatter.formatRange ? formatter.formatRange(range.from, range.to) : `${dayFormat.format(range.from)} – ${dayFormat.format(range.to)}`;
+};
+
+/** A stored period in words, for a chip or a description; empty when either end is missing. */
+export const periodText = (value: DateRangeValue): string => {
+	const from = parseDay(value.from);
+	const to = parseDay(value.to);
+
+	return from && to ? rangeText({ from, to }) : '';
 };
 
 export const DateRangePicker = ({ value, onChange, presets = [], label, hint, required = false, placeholder, size = 'md', max, align = 'start', className, 'aria-label': ariaLabel }: Props) => {

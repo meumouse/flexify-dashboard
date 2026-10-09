@@ -4,7 +4,7 @@ import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { cn } from '@/react/lib/cn';
 import { decodeHtml, stripTags } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Badge, Button, Card, DropdownMenu, Icon, PageHeader, SearchInput, Skeleton, Switch, Tabs, useFilePicker, type TabItem } from '@/react/ui';
+import { Badge, Button, DropdownMenu, Icon, PageHeader, SearchInput, Skeleton, Switch, TableCard, Tabs, useFilePicker, type TabItem } from '@/react/ui';
 import { PluginRepository } from '@/react/features/plugins/PluginRepository';
 import { usePluginActions, usePlugins, useUploadPlugin, type Plugin } from '@/react/features/plugins/queries';
 
@@ -133,10 +133,10 @@ export const PluginsList = () => {
 	};
 
 	const tabs: TabItem[] = [
-		{ value: 'installed', label: `${__('Installed')} (${counts.installed})` },
-		{ value: 'active', label: `${__('Active')} (${counts.active})` },
-		{ value: 'inactive', label: `${__('Inactive')} (${counts.inactive})` },
-		{ value: 'updates', label: `${__('Updates')} (${counts.updates})` },
+		{ value: 'installed', label: __('Installed'), count: counts.installed },
+		{ value: 'active', label: __('Active'), count: counts.active },
+		{ value: 'inactive', label: __('Inactive'), count: counts.inactive },
+		{ value: 'updates', label: __('Updates'), count: counts.updates },
 		{ value: 'add', label: __('Add new') },
 	];
 
@@ -154,23 +154,19 @@ export const PluginsList = () => {
 
 			{zip.picker}
 
-			<Tabs items={tabs} value={view} onChange={(next) => setFilters({ view: next })} className="mb-5" />
-
 			{view === 'add' ? (
-				<PluginRepository installed={all} />
+				<>
+					<Tabs items={tabs} value={view} onChange={(next) => setFilters({ view: next })} className="mb-5" ariaLabel={__('Plugins')} />
+					<PluginRepository installed={all} />
+				</>
 			) : (
-				<Card className="p-0">
-					<div className="flex flex-wrap items-center gap-3 border-b border-gray-100 p-4 dark:border-gray-800">
-						<SearchInput
-							value={search}
-							onChange={(next) => setFilters({ search: next })}
-							placeholder={__('Search installed plugins')}
-							aria-label={__('Search installed plugins')}
-							className="w-full sm:w-72"
-						/>
-
-						{plugins.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
-					</div>
+				<TableCard
+					tabs={<Tabs items={tabs} value={view} onChange={(next) => setFilters({ view: next })} ariaLabel={__('Plugins')} />}
+					search={
+						<SearchInput value={search} onChange={(next) => setFilters({ search: next })} placeholder={__('Search installed plugins')} aria-label={__('Search installed plugins')} />
+					}
+					busy={plugins.isFetching}
+				>
 
 					{plugins.isLoading ? (
 						<div className="space-y-2 p-4">
@@ -190,7 +186,7 @@ export const PluginsList = () => {
 							))}
 						</ul>
 					)}
-				</Card>
+				</TableCard>
 			)}
 		</>
 	);

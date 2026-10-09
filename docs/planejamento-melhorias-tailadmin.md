@@ -249,6 +249,19 @@ O problema que essa fase resolve: hoje cada tela de lista monta o próprio cabe�
 4. Extrair `Breadcrumb` de `PageHeader` e levá-lo para a direita da linha do título, como no TailAdmin. Veio da fase 1.
 5. Migrar as sete telas, uma por commit.
 
+**Feito em 08/10/2026.**
+- `TableCard` e `FilterPopover` em `app/src/react/data`. As sete telas foram migradas.
+- Em 375px, a barra de todas tem uma linha só (68px) e nenhuma rola na horizontal. O mesmo vale para 768px.
+- No celular o botão vira ícone, com o número de filtros num selo.
+- Os chips dizem o que está filtrado ("Estoque: Fora de estoque"). O filtro de cliente dos pedidos, que era um chip feito à mão, virou um chip como os outros.
+- As abas de plugins passaram a usar o contador do `Tabs` em vez de "(2)" no texto.
+- Os testes que procuravam um filtro na barra agora abrem o painel antes, com `app/tests/filters.ts`.
+
+Decisões tomadas ao executar:
+- **Os filtros aplicam na hora, sem botão "Aplicar".** Já era assim quando ficavam na barra. Um "Aplicar" obrigaria cada tela a guardar um rascunho dos filtros, e a lista atrás do painel já serve de prévia.
+- **O breadcrumb continua acima do título (o item 4 não foi feito).** Ele só existe nas telas de detalhe, e lá a direita da linha do título é das ações (Reembolsar, Salvar). O TailAdmin põe o breadcrumb à direita porque leva as ações para o cabeçalho do cartão, e mudar isso tiraria as ações do lugar que a pessoa já conhece. Sem um segundo usuário, extrair o `Breadcrumb` não traria nada.
+- **A ordenação da mídia foi para o painel de filtros**, mas não conta como filtro nem vira chip.
+
 **Critério:**
 - As sete telas usam `TableCard`.
 - Nenhuma delas desenha mais uma fileira solta de `Select` de filtro.

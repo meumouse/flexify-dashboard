@@ -310,6 +310,9 @@
       "Action": [
         "Ação"
       ],
+      "Action: %s": [
+        "Ação: %s"
+      ],
       "Actions": [
         "Ações"
       ],
@@ -916,6 +919,9 @@
       "Category updated": [
         "Categoria atualizada"
       ],
+      "Category: %s": [
+        "Categoria: %s"
+      ],
       "Change author": [
         "Alterar autor"
       ],
@@ -927,6 +933,9 @@
       ],
       "Channel": [
         "Canal"
+      ],
+      "Channel: %s": [
+        "Canal: %s"
       ],
       "Check the stock": [
         "Conferir o estoque"
@@ -1030,6 +1039,9 @@
       "Clear": [
         "Claro"
       ],
+      "Clear all": [
+        "Limpar tudo"
+      ],
       "Clear filters": [
         "Limpar filtros"
       ],
@@ -1083,6 +1095,9 @@
       ],
       "Comment moved to the trash": [
         "Comentário movido para a lixeira"
+      ],
+      "Comment status": [
+        "Status do comentário"
       ],
       "Comment updated": [
         "Comentário atualizado"
@@ -1963,6 +1978,9 @@
       "Filters": [
         "Filtros"
       ],
+      "Filters (%d)": [
+        "Filtros (%d)"
+      ],
       "Find": [
         "Encontrar"
       ],
@@ -2025,6 +2043,9 @@
       ],
       "From": [
         "De"
+      ],
+      "From %s": [
+        "A partir de %s"
       ],
       "From WordPress": [
         "Do WordPress"
@@ -3421,6 +3442,9 @@
       "Origin": [
         "Origem"
       ],
+      "Origin: %s": [
+        "Origem: %s"
+      ],
       "Original file not found.": [
         "Arquivo original não encontrado."
       ],
@@ -3505,6 +3529,9 @@
       "Payment via %s": [
         "Pagamento via %s"
       ],
+      "Payment: %s": [
+        "Pagamento: %s"
+      ],
       "Pending": [
         "Pendente"
       ],
@@ -3537,6 +3564,12 @@
       ],
       "Persistent admin notices for Flexify Dashboard.": [
         "Avisos administrativos persistentes para o painel Flexify."
+      ],
+      "Person": [
+        "Pessoa"
+      ],
+      "Person: %s": [
+        "Pessoa: %s"
       ],
       "Phase 0 of the React migration: data, REST, translations, dark mode and notifications.": [
         "Fase 0 da migração para React: dados, REST, traduções, modo escuro e notificações."
@@ -4003,6 +4036,9 @@
       "Remove file": [
         "Remover arquivo"
       ],
+      "Remove filter": [
+        "Remover filtro"
+      ],
       "Remove from favourites": [
         "Remover dos favoritos"
       ],
@@ -4195,6 +4231,9 @@
       "Role updated": [
         "Função atualizada"
       ],
+      "Role: %s": [
+        "Função: %s"
+      ],
       "Roles": [
         "Funções"
       ],
@@ -4326,6 +4365,9 @@
       ],
       "Search order, customer or email": [
         "Buscar pedido, cliente ou e-mail"
+      ],
+      "Search orders": [
+        "Buscar pedidos"
       ],
       "Search post types": [
         "Pesquisar tipos de postagem"
@@ -4546,6 +4588,9 @@
       "Show password": [
         "Mostrar senha"
       ],
+      "Show results": [
+        "Ver resultados"
+      ],
       "Show the password": [
         "Mostrar a senha"
       ],
@@ -4678,6 +4723,9 @@
       "Stock status": [
         "Status do estoque"
       ],
+      "Stock: %s": [
+        "Estoque: %s"
+      ],
       "Store": [
         "Loja"
       ],
@@ -4729,6 +4777,9 @@
       "Tables Created:": [
         "Tabelas criadas:"
       ],
+      "Tag": [
+        "Tag"
+      ],
       "Tag created": [
         "Tag criada"
       ],
@@ -4738,6 +4789,9 @@
       "Tag updated": [
         "Tag atualizada"
       ],
+      "Tag: %s": [
+        "Tag: %s"
+      ],
       "Tags": [
         "Etiquetas"
       ],
@@ -4746,6 +4800,9 @@
       ],
       "Tags updated": [
         "Tags atualizadas"
+      ],
+      "Tags: %d": [
+        "Tags: %d"
       ],
       "Taking capabilities away from it can lock everyone out of parts of the site, including this screen.": [
         "Tirar permissões dela pode trancar todo mundo fora de partes do site, inclusive desta tela."
@@ -5188,6 +5245,9 @@
       "Type values separated by commas and press Enter": [
         "Digite valores separados por vírgulas e pressione Enter"
       ],
+      "Type: %s": [
+        "Tipo: %s"
+      ],
       "URL": [
         "URL"
       ],
@@ -5262,6 +5322,9 @@
       ],
       "Unused only": [
         "Somente não utilizados"
+      ],
+      "Up to %s": [
+        "Até %s"
       ],
       "Update": [
         "Atualizar"

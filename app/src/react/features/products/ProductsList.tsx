@@ -9,7 +9,6 @@ import { __, sprintf } from '@/react/lib/i18n';
 import {
 	Badge,
 	Button,
-	Card,
 	DataTable,
 	DropdownMenu,
 	Icon,
@@ -19,8 +18,11 @@ import {
 	SearchInput,
 	Select,
 	StatStrip,
+	Switch,
+	TableCard,
 	Tabs,
 	Tooltip,
+	type ActiveFilter,
 	type Column,
 	type MenuItem,
 	type RowKey,
@@ -72,7 +74,6 @@ export const ProductsList = () => {
 	const [quickEdit, setQuickEdit] = useState<{ open: boolean; product: Product | null }>({ open: false, product: null });
 	const [priceModalOpen, setPriceModalOpen] = useState(false);
 	const [categoryModal, setCategoryModal] = useState<{ open: boolean; mode: 'add' | 'remove' }>({ open: false, mode: 'add' });
-	const [showMoreFilters, setShowMoreFilters] = useState(Boolean(filters.tag || filters.min_price || filters.max_price));
 	const { hiddenColumns, toggleColumn } = useHiddenColumns('fd-products-hidden-columns', TOGGLEABLE_COLUMNS);
 
 	const products = useProducts(filters as ProductListParams);
@@ -406,6 +407,40 @@ export const ProductsList = () => {
 
 	const tagOptions = (tagsQuery.data?.data ?? []).map((tag) => ({ value: String(tag.id), label: decodeHtml(tag.name) }));
 
+	const labelOf = (options: { value: string | number; label: string }[], value: string) => options.find((option) => String(option.value) === value)?.label ?? value;
+
+	const activeFilters: ActiveFilter[] = [
+		...(filters.category ? [{ key: 'category', label: sprintf(__('Category: %s'), labelOf(categoryOptions(categories), filters.category)), onRemove: () => applyFilters({ category: '' }) }] : []),
+		...(filters.type ? [{ key: 'type', label: sprintf(__('Type: %s'), labelOf(store.product_types, filters.type)), onRemove: () => applyFilters({ type: '' }) }] : []),
+		...(filters.stock_status
+			? [{ key: 'stock', label: sprintf(__('Stock: %s'), labelOf(store.stock_statuses, filters.stock_status)), onRemove: () => applyFilters({ stock_status: '' }) }]
+			: []),
+		...(filters.low_stock ? [{ key: 'low', label: __('Low stock'), onRemove: () => applyFilters({ low_stock: '' }) }] : []),
+		...(filters.featured ? [{ key: 'featured', label: __('Featured only'), onRemove: () => applyFilters({ featured: '' }) }] : []),
+		...(filters.tag ? [{ key: 'tag', label: sprintf(__('Tag: %s'), labelOf(tagOptions, filters.tag)), onRemove: () => applyFilters({ tag: '' }) }] : []),
+		...(filters.min_price ? [{ key: 'min', label: sprintf(__('From %s'), price(filters.min_price)), onRemove: () => applyFilters({ min_price: '' }) }] : []),
+		...(filters.max_price ? [{ key: 'max', label: sprintf(__('Up to %s'), price(filters.max_price)), onRemove: () => applyFilters({ max_price: '' }) }] : []),
+	];
+
+	const clearFilters = () => applyFilters({ ...DEFAULT_FILTERS, search: filters.search, status: filters.status, per_page: filters.per_page });
+
+	// A price bound is applied on blur or Enter, so typing does not fire a request per keystroke.
+	const priceBound = (key: 'min_price' | 'max_price', placeholder: string) => (
+		<Input
+			defaultValue={filters[key]}
+			key={`${key}-${filters[key]}`}
+			prefix={currency.symbol}
+			inputMode="decimal"
+			label={placeholder}
+			onBlur={(event) => applyFilters({ [key]: toDecimal(event.target.value) })}
+			onKeyDown={(event) => {
+				if (event.key === 'Enter') {
+					applyFilters({ [key]: toDecimal(event.currentTarget.value) });
+				}
+			}}
+		/>
+	);
+
 	return (
 		<div>
 			<PageHeader
@@ -425,8 +460,7 @@ export const ProductsList = () => {
 
 			<StatStrip className="mb-6" items={statItems} loading={summaryQuery.isLoading} onSelect={selectStat} />
 
-			<Card
-				padding="none"
+			<TableCard
 				footer={
 					<Pagination
 						page={filters.page}
@@ -440,8 +474,7 @@ export const ProductsList = () => {
 						disabled={products.isFetching}
 					/>
 				}
-			>
-				<div className="px-5 pt-2 sm:px-6">
+				tabs={
 					<Tabs
 						value={filters.status}
 						onChange={(status) => {
@@ -451,95 +484,39 @@ export const ProductsList = () => {
 						items={statusTabs}
 						ariaLabel={__('Product status')}
 					/>
-				</div>
-
-				<div className="flex flex-col gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:px-6 2xl:flex-row 2xl:items-center">
-					<div className="flex min-w-0 items-center gap-2 2xl:contents">
-						<SearchInput
-							value={filters.search}
-							onChange={(search) => applyFilters({ search })}
-							className="min-w-0 flex-1 sm:max-w-80 2xl:w-72 2xl:flex-none"
-							placeholder={__('Search by name or SKU')}
-						/>
-						<div className="ms-auto flex shrink-0 items-center gap-2 2xl:order-last">
-							{hasActiveFilters ? (
-								<Button variant="ghost" icon="close" onClick={() => applyFilters({ ...DEFAULT_FILTERS, status: filters.status, per_page: filters.per_page })}>
-									{__('Clear filters')}
-								</Button>
-							) : null}
-							<Tooltip text={__('More filters')}>
-								<Button
-									variant="outline"
-									icon="filter_alt"
-									iconOnly
-									aria-label={__('More filters')}
-									aria-expanded={showMoreFilters}
-									onClick={() => setShowMoreFilters((current) => !current)}
-								/>
-							</Tooltip>
-							<DropdownMenu items={columnItems} width="w-52" trigger={<Button variant="outline" icon="view_column" iconOnly aria-label={__('Visible columns')} />} />
-							<Tooltip text={__('Refresh')}>
-								<Button variant="outline" icon="refresh" iconOnly aria-label={__('Refresh')} onClick={refresh} />
-							</Tooltip>
-						</div>
-					</div>
-					<div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 2xl:flex-1">
-						<Select value={filters.category} onChange={(next) => applyFilters({ category: next })} options={categoryOptions(categories)} placeholder={__('All categories')} aria-label={__('Categories')} />
-						<Select value={filters.type} onChange={(next) => applyFilters({ type: next })} options={store.product_types} placeholder={__('All types')} aria-label={__('Type')} />
+				}
+				search={<SearchInput value={filters.search} onChange={(search) => applyFilters({ search })} placeholder={__('Search by name or SKU')} aria-label={__('Search products')} />}
+				filters={
+					<>
+						<Select label={__('Category')} value={filters.category} onChange={(next) => applyFilters({ category: next })} options={categoryOptions(categories)} placeholder={__('All categories')} />
+						<Select label={__('Type')} value={filters.type} onChange={(next) => applyFilters({ type: next })} options={store.product_types} placeholder={__('All types')} />
 						<Select
+							label={__('Stock status')}
 							value={filters.stock_status}
 							onChange={(next) => applyFilters({ stock_status: next })}
 							options={store.stock_statuses}
 							placeholder={__('Any stock status')}
-							aria-label={__('Stock status')}
 						/>
-						<Select
-							value={filters.featured}
-							onChange={(next) => applyFilters({ featured: next })}
-							options={[{ value: '1', label: __('Featured only') }]}
-							placeholder={__('All products')}
-							aria-label={__('Featured')}
-						/>
-					</div>
-				</div>
-
-				{showMoreFilters ? (
-					<div className="grid grid-cols-1 gap-3 border-b border-gray-100 px-5 py-4 dark:border-gray-800 sm:grid-cols-3 sm:px-6 xl:flex xl:items-center">
-						<Select value={filters.tag} onChange={(next) => applyFilters({ tag: next })} options={tagOptions} placeholder={__('All tags')} className="xl:w-48" aria-label={__('Tags')} />
-						{/* The bound is applied on blur or Enter, so typing does not fire a request per keystroke. */}
-						<Input
-							defaultValue={filters.min_price}
-							key={`min-${filters.min_price}`}
-							prefix={currency.symbol}
-							inputMode="decimal"
-							className="xl:w-40"
-							placeholder={__('Min. price')}
-							aria-label={__('Minimum price')}
-							onBlur={(event) => applyFilters({ min_price: toDecimal(event.target.value) })}
-							onKeyDown={(event) => {
-								if (event.key === 'Enter') {
-									applyFilters({ min_price: toDecimal(event.currentTarget.value) });
-								}
-							}}
-						/>
-						<Input
-							defaultValue={filters.max_price}
-							key={`max-${filters.max_price}`}
-							prefix={currency.symbol}
-							inputMode="decimal"
-							className="xl:w-40"
-							placeholder={__('Max. price')}
-							aria-label={__('Maximum price')}
-							onBlur={(event) => applyFilters({ max_price: toDecimal(event.target.value) })}
-							onKeyDown={(event) => {
-								if (event.key === 'Enter') {
-									applyFilters({ max_price: toDecimal(event.currentTarget.value) });
-								}
-							}}
-						/>
-					</div>
-				) : null}
-
+						<Select label={__('Tag')} value={filters.tag} onChange={(next) => applyFilters({ tag: next })} options={tagOptions} placeholder={__('All tags')} />
+						<div className="grid grid-cols-2 gap-3">
+							{priceBound('min_price', __('Min. price'))}
+							{priceBound('max_price', __('Max. price'))}
+						</div>
+						<Switch checked={Boolean(filters.featured)} onCheckedChange={(featured) => applyFilters({ featured: featured ? '1' : '' })} label={__('Featured only')} />
+					</>
+				}
+				activeFilters={activeFilters}
+				onClearFilters={clearFilters}
+				busy={products.isFetching && !products.isLoading}
+				tools={
+					<>
+						<DropdownMenu items={columnItems} width="w-52" trigger={<Button variant="outline" icon="view_column" iconOnly aria-label={__('Visible columns')} />} />
+						<Tooltip text={__('Refresh')}>
+							<Button variant="outline" icon="refresh" iconOnly aria-label={__('Refresh')} onClick={refresh} />
+						</Tooltip>
+					</>
+				}
+			>
 				<DataTable
 					columns={columns}
 					rows={rows}
@@ -610,7 +587,7 @@ export const ProductsList = () => {
 						)
 					}
 				/>
-			</Card>
+			</TableCard>
 
 			<ProductQuickEdit
 				open={quickEdit.open}

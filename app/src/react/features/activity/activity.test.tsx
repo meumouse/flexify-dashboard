@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { chooseOption, openSelect } from '../../../../tests/select';
+import { openFilters } from '../../../../tests/filters';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
@@ -108,8 +109,10 @@ describe('activity screen', () => {
 		stubFetch();
 		renderList();
 
+		const user = userEvent.setup();
+		await openFilters(user);
 		await screen.findByRole('combobox', { name: 'Action' });
-		await openSelect(userEvent.setup(), 'Action');
+		await openSelect(user, 'Action');
 
 		await waitFor(() => expect(screen.getByRole('option', { name: 'updated (70)' })).toBeInTheDocument());
 	});
@@ -123,6 +126,7 @@ describe('activity screen', () => {
 
 		await screen.findByText('Como vender mais no Pix');
 
+		await openFilters(user);
 		await chooseOption(user, 'Action', 'updated (70)');
 
 		await waitFor(() => expect(urls.some((url) => url.includes('action=updated'))).toBe(true));

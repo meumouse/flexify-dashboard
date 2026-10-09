@@ -5,7 +5,7 @@ import { useNotify } from '@/react/app/ToastProvider';
 import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { decodeHtml } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Avatar, Badge, Button, Card, DataTable, DropdownMenu, Icon, PageHeader, Pagination, SearchInput, Select, type Column, type RowKey } from '@/react/ui';
+import { Avatar, Badge, Button, DataTable, DropdownMenu, PageHeader, Pagination, SearchInput, Select, TableCard, type Column, type RowKey } from '@/react/ui';
 import { DeleteUsersModal } from '@/react/features/users/DeleteUsersModal';
 import { ImportUsersModal } from '@/react/features/users/ImportUsersModal';
 import { BulkEditUsersModal, CreateUserModal } from '@/react/features/users/UserModals';
@@ -170,26 +170,21 @@ export const UsersList = () => {
 				}
 			/>
 
-			<Card className="p-0">
-				<div className="flex flex-wrap items-center gap-3 border-b border-gray-100 p-4 dark:border-gray-800">
-					<SearchInput
-						value={String(filters.search)}
-						onChange={(search) => apply({ search })}
-						placeholder={__('Search users')}
-						aria-label={__('Search users')}
-						className="w-full sm:w-64"
-					/>
-
+			<TableCard
+				search={<SearchInput value={String(filters.search)} onChange={(search) => apply({ search })} placeholder={__('Search users')} aria-label={__('Search users')} />}
+				filters={
 					<Select
-						size="sm"
+						label={__('Role')}
 						value={params.role}
 						options={[{ value: 'all', label: __('All roles') }, ...roles.map((role) => ({ value: role.slug, label: role.name }))]}
 						onChange={(next) => apply({ role: next })}
-						aria-label={__('Role')}
 					/>
-
-					{users.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
-				</div>
+				}
+				activeFilters={params.role !== 'all' ? [{ key: 'role', label: sprintf(__('Role: %s'), roleName(params.role)), onRemove: () => apply({ role: 'all' }) }] : []}
+				onClearFilters={() => apply({ role: 'all' })}
+				busy={users.isFetching}
+				footer={<Pagination page={params.page} perPage={params.per_page} total={total} onPageChange={(page) => setFilters({ page })} />}
+			>
 
 				<DataTable
 					columns={columns}
@@ -216,11 +211,7 @@ export const UsersList = () => {
 						</>
 					)}
 				/>
-
-				<div className="flex items-center justify-end border-t border-gray-100 p-4 dark:border-gray-800">
-					<Pagination page={params.page} perPage={params.per_page} total={total} onPageChange={(page) => setFilters({ page })} />
-				</div>
-			</Card>
+			</TableCard>
 
 			<CreateUserModal open={createOpen} onClose={() => setCreateOpen(false)} roles={roles} onCreated={(user) => navigate(`/user/${user.id}`)} />
 			<BulkEditUsersModal open={bulkOpen} onClose={() => setBulkOpen(false)} ids={selected.map(Number)} roles={roles} onDone={() => setSelected([])} />

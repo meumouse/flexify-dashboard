@@ -7,6 +7,7 @@ import { MediaLibrary } from '@/react/features/media/MediaLibrary';
 import { fileNameOf, formatBytes, type MediaItem } from '@/react/features/media/queries';
 import { NO_EDITS, cropFromCanvas, fitWithin, hasEdits, keepRatio, rectBetween } from '@/react/features/media/imageEdits';
 import type { WpData } from '@/react/types/wordpress';
+import { openFilters } from '../../../../tests/filters';
 
 const wpData: WpData = {
 	pluginBase: '',
@@ -154,7 +155,8 @@ describe('media library', () => {
 		renderLibrary();
 
 		await screen.findByText('praia.jpg');
-		await user.click(screen.getByRole('switch', { name: 'Unused only' }));
+		await openFilters(user);
+		await user.click(await screen.findByRole('switch', { name: 'Unused only' }));
 
 		await waitFor(() => expect(urls.some((url) => url.includes('unused=true') && url.includes('unused_mode=deep'))).toBe(true));
 	});

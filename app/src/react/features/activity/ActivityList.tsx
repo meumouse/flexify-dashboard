@@ -5,7 +5,7 @@ import { useQueryFilters } from '@/react/hooks/useQueryFilters';
 import { cn } from '@/react/lib/cn';
 import { decodeHtml } from '@/react/lib/html';
 import { __, sprintf } from '@/react/lib/i18n';
-import { Avatar, Button, Card, DataTable, DateRangePicker, Icon, PageHeader, Pagination, SearchInput, Select, StatStrip, recentPresets, type Column, type StatItem } from '@/react/ui';
+import { Avatar, Button, DataTable, DateRangePicker, Field, Icon, PageHeader, Pagination, SearchInput, Select, StatStrip, TableCard, periodText, recentPresets, type ActiveFilter, type Column, type StatItem } from '@/react/ui';
 import { isoDate } from '@/react/form/dates';
 import { EntityPicker, userItem } from '@/react/data/EntityPicker';
 import { useActivities, useActivityCleanup, useActivityStats, userName, type Activity } from '@/react/features/activity/queries';
@@ -68,6 +68,28 @@ export const ActivityList = () => {
 	const total = activities.data?.totalItems ?? 0;
 
 	const apply = (patch: Partial<typeof DEFAULTS>) => setFilters({ ...patch, page: patch.page ?? 1 });
+
+	const pickUser = (ids: number[]) => {
+		setUser(ids);
+		apply({ user_id: ids[0] ? String(ids[0]) : '' });
+	};
+
+	// Every row on screen belongs to the chosen person, so the first one already has their name.
+	const chosenName = rows[0] ? decodeHtml(userName(rows[0].user)) : '';
+
+	const activeFilters: ActiveFilter[] = [
+		...(params.action !== 'all' ? [{ key: 'action', label: sprintf(__('Action: %s'), params.action), onRemove: () => apply({ action: 'all' }) }] : []),
+		...(params.object_type !== 'all' ? [{ key: 'type', label: sprintf(__('Type: %s'), params.object_type), onRemove: () => apply({ object_type: 'all' }) }] : []),
+		...(params.user_id ? [{ key: 'user', label: sprintf(__('Person: %s'), chosenName || `#${params.user_id}`), onRemove: () => pickUser([]) }] : []),
+		...(params.date_from && params.date_to
+			? [{ key: 'date', label: periodText({ from: params.date_from, to: params.date_to }), onRemove: () => apply({ date_from: '', date_to: '' }) }]
+			: []),
+	];
+
+	const clearFilters = () => {
+		setUser([]);
+		apply({ action: 'all', object_type: 'all', user_id: '', date_from: '', date_to: '' });
+	};
 
 	const askThenClean = async () => {
 		const confirmed = await confirm({
@@ -139,64 +161,45 @@ export const ActivityList = () => {
 
 			<StatStrip items={summary} className="mb-5" />
 
-			<Card className="p-0">
-				<div className="flex flex-wrap items-center gap-3 border-b border-gray-100 p-4 dark:border-gray-800">
-					<SearchInput
-						value={String(filters.search)}
-						onChange={(search) => apply({ search })}
-						placeholder={__('Search the log')}
-						aria-label={__('Search the log')}
-						className="w-full sm:w-56"
-					/>
-
-					<Select
-						size="sm"
-						value={params.action}
-						options={[
-							{ value: 'all', label: __('Any action') },
-							...(stats.data?.actions ?? []).map((item) => ({ value: item.action, label: `${item.action} (${item.count})` })),
-						]}
-						onChange={(next) => apply({ action: next })}
-						aria-label={__('Action')}
-					/>
-
-					<Select
-						size="sm"
-						value={params.object_type}
-						options={[
-							{ value: 'all', label: __('Anything') },
-							...(stats.data?.object_types ?? []).map((item) => ({ value: item.object_type, label: `${item.object_type} (${item.count})` })),
-						]}
-						onChange={(next) => apply({ object_type: next })}
-						aria-label={__('Type')}
-					/>
-
-					<div className="w-48">
-						<EntityPicker
-							endpoint="wp/v2/users"
-							toItem={userItem}
-							multiple={false}
-							value={user}
-							onChange={(ids) => {
-								setUser(ids);
-								apply({ user_id: ids[0] ? String(ids[0]) : '' });
-							}}
-							placeholder={__('Anyone')}
+			<TableCard
+				search={<SearchInput value={String(filters.search)} onChange={(search) => apply({ search })} placeholder={__('Search the log')} aria-label={__('Search the log')} />}
+				filters={
+					<>
+						<Select
+							label={__('Action')}
+							value={params.action}
+							options={[
+								{ value: 'all', label: __('Any action') },
+								...(stats.data?.actions ?? []).map((item) => ({ value: item.action, label: `${item.action} (${item.count})` })),
+							]}
+							onChange={(next) => apply({ action: next })}
 						/>
-					</div>
-
-					<DateRangePicker
-						value={{ from: params.date_from, to: params.date_to }}
-						onChange={(next) => apply({ date_from: next.from, date_to: next.to })}
-						presets={recentPresets()}
-						max={isoDate(new Date())}
-						size="sm"
-						aria-label={__('Period')}
-					/>
-
-					{activities.isFetching ? <Icon name="progress_activity" className="ms-auto animate-spin text-theme-md text-gray-400" /> : null}
-				</div>
-
+						<Select
+							label={__('Type')}
+							value={params.object_type}
+							options={[
+								{ value: 'all', label: __('Anything') },
+								...(stats.data?.object_types ?? []).map((item) => ({ value: item.object_type, label: `${item.object_type} (${item.count})` })),
+							]}
+							onChange={(next) => apply({ object_type: next })}
+						/>
+						<Field label={__('Person')}>
+							<EntityPicker endpoint="wp/v2/users" toItem={userItem} multiple={false} value={user} onChange={pickUser} placeholder={__('Anyone')} />
+						</Field>
+						<DateRangePicker
+							label={__('Period')}
+							value={{ from: params.date_from, to: params.date_to }}
+							onChange={(next) => apply({ date_from: next.from, date_to: next.to })}
+							presets={recentPresets()}
+							max={isoDate(new Date())}
+						/>
+					</>
+				}
+				activeFilters={activeFilters}
+				onClearFilters={clearFilters}
+				busy={activities.isFetching}
+				footer={<Pagination page={params.page} perPage={params.per_page} total={total} onPageChange={(page) => setFilters({ page })} />}
+			>
 				<DataTable
 					columns={columns}
 					rows={rows}
@@ -209,11 +212,7 @@ export const ActivityList = () => {
 					emptyTitle={__('Nothing logged yet')}
 					emptyDescription={__('What happens on the site shows up here.')}
 				/>
-
-				<div className="flex items-center justify-end border-t border-gray-100 p-4 dark:border-gray-800">
-					<Pagination page={params.page} perPage={params.per_page} total={total} onPageChange={(page) => setFilters({ page })} />
-				</div>
-			</Card>
+			</TableCard>
 		</>
 	);
 };

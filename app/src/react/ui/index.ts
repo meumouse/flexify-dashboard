@@ -24,7 +24,7 @@ export { Checkbox } from '@/react/form/Checkbox';
 export { ColorPicker } from '@/react/form/ColorPicker';
 export { DatePicker } from '@/react/form/DatePicker';
 export { Dropzone } from '@/react/form/Dropzone';
-export { DateRangePicker, recentPresets, type DateRangePreset, type DateRangeValue } from '@/react/form/DateRangePicker';
+export { DateRangePicker, periodText, recentPresets, type DateRangePreset, type DateRangeValue } from '@/react/form/DateRangePicker';
 export { Field } from '@/react/form/Field';
 export { Input } from '@/react/form/Input';
 export { Radio } from '@/react/form/Radio';
@@ -36,3 +36,4 @@ export { Textarea } from '@/react/form/Textarea';
 export { useFilePicker } from '@/react/form/useFilePicker';
 
 export { DataTable, type Column, type RowKey, type SortState } from '@/react/data/DataTable';
+export { TableCard, type ActiveFilter } from '@/react/data/TableCard';
